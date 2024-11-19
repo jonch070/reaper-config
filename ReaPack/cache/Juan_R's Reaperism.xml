@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Juan_R's Reaperism" commit="c527e8af8e44970753af0dce068ba786ea601327">
+  <category name="MIDI">
+    <reapack name="MIDI-floating-split.jsfx" type="effect" desc="Juan_R MIDI Floating Split">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Floating Split (Juan_R)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Move the splitpoint along, tracking both hands.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Usage: Insert MIDI Floating Split on {\i source} track. Create two {\i receiving} tracks: one for the left hand, one for the right. Insert your favorite VSTis on the receiving tracks. Set up two MIDI sends from {\i source}: send LH-channel to the "Left Hand" receiving track, send RH-channel to "Right Hand" receiving track.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This is alpha. No hurry to actually see it committed before it goes out of alpha.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Hoping to improve it. More sophisticated heuristics anyone? The plug's collecting some data that isn't used yet.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 I'm submitting this as the snapshot of a working version: Something to get back to if experiments go astray. Todo - Manage one hand left alone corner case more gracefully.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Presets would be helpful. Switching presets = change to a slightly different FA. Some automated switching? Expose switching parameters?\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Suggestions, ideas and input welcome on the dedicated thread in Reaper Forums\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 https://forum.cockos.com/showthread.php?t=266570\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.04" author="Juan_R" time="2022-08-08T15:08:45Z">
+        <changelog><![CDATA[0.01a  initial release
+0.02a  it works but still needs some knowing it.
+0.03a  added usage notes in the about: section
+0.04   renamed adding Juan_R]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/8e4fd5835f07b9738860ff8eb2e30d30983a72e6/MIDI/MIDI-floating-split.jsfx</source>
+      </version>
+      <version name="0.05a" author="Juan_R" time="2022-08-08T18:17:41Z">
+        <changelog><![CDATA[0.01a  initial release
+0.02a  it works but still needs some knowing it.
+0.03a  added usage notes in the about: section
+0.04a  renamed adding Juan_R
+0.05a  more "about:" docs, link to thread for discussion]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/791629c7fd8dddd38df290c0cbd2d82be5a5d409/MIDI/MIDI-floating-split.jsfx</source>
+      </version>
+      <version name="0.06a" author="Juan_R" time="2022-08-09T19:41:51Z">
+        <changelog><![CDATA[0.01a  initial release
+0.02a  it works but still needs some knowing it.
+0.03a  added usage notes in the about: section
+0.04a  renamed adding Juan_R
+0.05a  more "about:" docs, link to thread for discussion
+0.06a  check hand spans to switch hand quickly]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/a456b1a9919667b3008d3eac9b89397d554f1a7e/MIDI/MIDI-floating-split.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI-Fret-and-pick.jsfx" type="effect" desc="Juan_R MIDI Fret and Pick">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Fret and pick (Juan_R)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Create two ranges on the keyboard: The fretting range and the picking range. Keys in the fretting range produce no note by themselves. Keys in the picking range trigger the fretting notes, one by one, in their respective low-high order.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Triggering may happen for all picking keys, only white keys, or only black keys. Keys in the picking range that would go beyond the highest fretted note ("idle"): option to discard, recycle through the same fretted notes, recycle at ascending octaves, or mixed recycle+octaves.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This plugin is left-right hand agnostic: picking and fretting range can be on either side, and even overlap, although in this case the results might not make too much sense.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The fretting range can be arbitrarily transposed, so that any range of notes can be reached, no matter where the range actually is on the keyboard.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.04" author="Juan_R" time="2022-08-08T15:08:45Z">
+        <changelog><![CDATA[1.00  initial release
+1.01  clean code, add idle option: mixed recycle+octave
+1.02  improved "about" docs
+1.03  added options to make fretting notes play immediately
+1.04  renamed adding Juan_R]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/8e4fd5835f07b9738860ff8eb2e30d30983a72e6/MIDI/MIDI-Fret-and-pick.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI-jrk_juan_r-stepped-pitchbend-by-semitones.jsfx" type="effect" desc="JRK/Juan_R bend by semitones">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Bend by semitones (JRK/Juan_R)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Based on JRK's code, modified by Juan_R Quantize the pitch bend wheel to work in semitone steps The Range slider should reflect the synth's Pitch Bend Range parameter, unless you know what you're doing (or don't, but just want some fun).\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.03" author="jrk &amp; Juan_R" time="2022-08-08T15:08:45Z">
+        <changelog><![CDATA[1.00  initial release
+1.01  removed unneeded channel variable
+1.02  added about: documentation
+1.03  added authors]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/8e4fd5835f07b9738860ff8eb2e30d30983a72e6/MIDI/MIDI-jrk_juan_r-stepped-pitchbend-by-semitones.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI-mirror-invert-keyboard.jsfx" type="effect" desc="Juan_R Keyboard Mirror/Invert">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Keyboard Mirror/Invert (Juan_R)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Mirror the keyboard around a user-selectable pivot point (e.g., C4) so that playing e.g. B3 yields C#4, playing E4 yields G#3 etc. This trick was made popular by Joe Zawinul.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.01" author="Juan_R" time="2022-08-08T15:08:45Z">
+        <changelog><![CDATA[1.00  initial release
+1.01   renamed adding Juan_R]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/8e4fd5835f07b9738860ff8eb2e30d30983a72e6/MIDI/MIDI-mirror-invert-keyboard.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI-round-robin-midi_channelize.jsfx" type="effect" desc="Juan_R MIDI Round Robin Channelize Notes">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Round Robin Channelize Notes (Juan_R)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Sends each note in a sequence to a different channel, in a round robin fashion. Produces timbral alternance patterns.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Suggested by valankar https://forum.cockos.com/showpost.php?p=2581890&postcount=13\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.02" author="Juan_R" time="2022-08-08T15:08:45Z">
+        <changelog><![CDATA[1.0   initial release
+1.01  additional check for duplicate incoming notes (thanks ashcat_lt)
+1.02  some code refactoring]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/8e4fd5835f07b9738860ff8eb2e30d30983a72e6/MIDI/MIDI-round-robin-midi_channelize.jsfx</source>
+      </version>
+      <version name="1.03" author="Juan_R" time="2022-08-08T15:27:00Z">
+        <changelog><![CDATA[1.0   initial release
+1.01  additional check for duplicate incoming notes (thanks ashcat_lt)
+1.02  some code refactoring
+1.03  slight edit to the about: docs]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/b46d4b2d1692ba41c678fe8ae4466d998a9ef3a5/MIDI/MIDI-round-robin-midi_channelize.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI-round-robin-midi_transpose.jsfx" type="effect" desc="Juan_R MIDI Round Robin Transpose Notes">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Round Robin Transpose Notes (Juan_R)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Transposes each note in a sequence by different amounts, in a round robin fashion. Produces uncommon, sometimes beautiful, arpeggio patterns.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Inspired by this video: 06:29 RETUNED ROUND ROBIN\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 https://www.youtube.com/watch?v=KPcAUHvnQi4&t=389s\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.01" author="Juan_R" time="2022-08-08T15:08:45Z">
+        <changelog><![CDATA[1.0   initial release
+1.01  typos and cosmetics: code and comments, renamed adding Juan_R]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/8e4fd5835f07b9738860ff8eb2e30d30983a72e6/MIDI/MIDI-round-robin-midi_transpose.jsfx</source>
+      </version>
+      <version name="1.02" author="Juan_R" time="2022-08-08T15:27:55Z">
+        <changelog><![CDATA[1.0   initial release
+1.01  typos and cosmetics: code and comments, renamed adding Juan_R
+1.02  slight edit to the about: docs]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/5b34ba48982105b75460d6b3312dd46e874b7bd5/MIDI/MIDI-round-robin-midi_transpose.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="NOP-instrument.jsfx" type="effect" desc="Juan_R NOP No operation (instrument)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 NOP (null instrument) (Juan_R)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Does nothing at all.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.00" author="Juan_R" time="2023-11-05T17:12:02Z">
+        <changelog><![CDATA[1.0   initial release]]></changelog>
+        <source>https://github.com/juanriccio/Reaperism/raw/c527e8af8e44970753af0dce068ba786ea601327/MIDI/NOP-instrument.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ReaScripts">
+    <reapack name="juan_r - Rename and renumber selected tracks name by name.lua" type="script" desc="Rename and renumber selected tracks, name by name">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Rename selected tracks by increasing their final number\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Rename selected tracks individually by increasing their final number (if they have one), or adding a number, starting from 1 (if they don't). Useful after duplicating tracks for further recording so each new track gets a different name.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0" author="Juan_r" time="2022-09-16T13:54:39Z">
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/b128fcd57c046ff90f10a3f2aea6a782e9e2cb67/ReaScripts/juan_r%20-%20Rename%20and%20renumber%20selected%20tracks%20name%20by%20name.lua</source>
+      </version>
+      <version name="1.0.1" author="Juan_R" time="2022-09-16T18:21:10Z">
+        <changelog><![CDATA[Added @about section. This will hopefully work.]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/b18322ce41e4f1475fbb770a7d988630153beb96/ReaScripts/juan_r%20-%20Rename%20and%20renumber%20selected%20tracks%20name%20by%20name.lua</source>
+      </version>
+      <version name="1.0.2" author="Juan_R" time="2022-09-17T12:40:08Z">
+        <changelog><![CDATA[Rewrote some @tags]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/40b5ca23d0de03fee904b59deafbf274fd8f9c91/ReaScripts/juan_r%20-%20Rename%20and%20renumber%20selected%20tracks%20name%20by%20name.lua</source>
+      </version>
+      <version name="1.0.3" author="Juan_R" time="2022-11-14T15:11:04Z">
+        <changelog><![CDATA[Improved @about tag]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/b72f546c2ab963934718a59ff14a29d8fa5daf43/ReaScripts/juan_r%20-%20Rename%20and%20renumber%20selected%20tracks%20name%20by%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="juan_r - Set region at PLAY cursor to time selection.lua" type="script" desc="Set region at PLAY cursor to time selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Modified by Juan_R to get PLAY position rather than edit cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0" author="Thonex, modified by juan_r 2021.02.12 to get PLAY position rather than edit cursor" time="2022-09-16T13:28:38Z">
+        <changelog><![CDATA[Initial Release]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/2f7d261af306439437de482b3f590290215765d6/ReaScripts/juan_r%20-%20Set%20region%20at%20PLAY%20cursor%20to%20time%20selection.lua</source>
+      </version>
+      <version name="1.0.1" author="Thonex/Juan_R" time="2022-09-16T18:22:36Z">
+        <changelog><![CDATA[Added @ tags in the header]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/70fca2b66f3b5549a75a943908ff482bb9d88518/ReaScripts/juan_r%20-%20Set%20region%20at%20PLAY%20cursor%20to%20time%20selection.lua</source>
+      </version>
+      <version name="1.0.2" author="Thonex &amp; Juan_R" time="2022-09-17T15:26:56Z">
+        <changelog><![CDATA[Added @tags in the header]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/3b2637a46e8000bd20bf10a4b338f37798152e62/ReaScripts/juan_r%20-%20Set%20region%20at%20PLAY%20cursor%20to%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="juan_r - Set time selection to region at PLAY cursor.lua" type="script" desc="Set time selection to region at PLAY cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Modified by Juan_R to get PLAY position rather than edit cursor\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0" author="Thonex, modified by juan_r 2021.02.12 to get PLAY position rather than edit cursor" time="2022-09-16T13:29:50Z">
+        <changelog><![CDATA[Initial Release]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/dcf6a17c33b87d1d9cb34d8759337e96e950a6e3/ReaScripts/juan_r%20-%20Set%20time%20selection%20to%20region%20at%20PLAY%20cursor.lua</source>
+      </version>
+      <version name="1.0.1" author="Thonex-Juan_R" time="2022-09-16T18:41:21Z">
+        <changelog><![CDATA[Added @ tags in the header]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/63c5d35cdc29e852a3930fa93bccc80bea659991/ReaScripts/juan_r%20-%20Set%20time%20selection%20to%20region%20at%20PLAY%20cursor.lua</source>
+      </version>
+      <version name="1.0.2" author="Thonex &amp; Juan_R" time="2022-09-17T15:27:31Z">
+        <changelog><![CDATA[Added @tags in the header]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/cc6c40cb9c96eb6c3358c2ae581481ae1612ad1f/ReaScripts/juan_r%20-%20Set%20time%20selection%20to%20region%20at%20PLAY%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="juan_r - Toggle horizontal zoom.lua" type="script" desc="Toggle horizontal zoom">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 juan_r - Toggle horizontal zoom\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Toggle between two pre-set horizontal zoom levels If zoom_center is set to mouse, the action should be assigned to a keyboard shortcut\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Juan_R" time="2023-01-24T20:46:07Z">
+        <changelog><![CDATA[Initial version]]></changelog>
+        <source main="main">https://github.com/juanriccio/Reaperism/raw/f7c21096a3fdba661fe83d34f1b620373eeb2acb/ReaScripts/juan_r%20-%20Toggle%20horizontal%20zoom.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Juan_R's Reaperism\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A repository of scripts, effects and other bits for Reaper, the DAW.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This repository is Reapack compatible (thanks for the template, and the autoindex, cfillion!) https://reapack.com/\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 To add it into your Reapack, do "Import repositories..." and paste this link: https://raw.githubusercontent.com/juanriccio/Reaperism/master/index.xml\par}
+}
+]]></description>
+  </metadata>
+</index>

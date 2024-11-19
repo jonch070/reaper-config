@@ -1,0 +1,15 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v1.0.0 (2021-10-02)
+  + Simple color palette to change tracks or item colors depending on what is selected
+  + menu: Add color copying from selection 
+  + color from selection works with multiple selected tracks or multiple selected items
+  + menu: Add tags colors
+  + Setting: color size by pixels (width and height)
+  + menu: Add color... 
+  + Color size options (from 1 to 4 font sizes)
+  + Right click + button to add a color copying the current selected track/item color
+  + menu: Load/Save palettes to files
+  

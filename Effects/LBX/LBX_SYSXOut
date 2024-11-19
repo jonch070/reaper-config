@@ -1,0 +1,145 @@
+desc:LBX_SYSXOut
+options:gmem=LBX_SK2_SharedMem
+
+slider1:-1<-1,255,1>-Sysx data
+slider2:1<0,2,1>-Ready
+slider3:0<0,255,1>-Byte count
+slider4:-1<-1,3,1>-Sysex device bus
+
+slider5:0<0,1,1>-Handshake active
+slider6:0<0,1,1>-Get Handshake
+slider7:0<0,255,1>-Handshake Length
+slider8:-1<-1,3,1>Device bus
+;slider9:1<0,1,1>Remove duplicate MIDI
+
+in_pin:none
+out_pin:none
+
+@init
+
+  boff = slider8*1000;
+
+  ext_midi_bus = 1;
+  message = 0;
+  offset = 0;
+  length = 0;
+  complete = 0;
+  slider2 = 1;
+  slider3 = 0;
+  
+  handshake_len = 0;
+  handshake = 500;
+  
+  gmem_handshake_len = 2009999;
+  gmem_handshake = 2010000;
+  
+  msg_lentot = 1999996;
+  msg_ready = 1999997;
+  msg_bus = 1999998;
+  msg_cnt = 1999999;
+  msg_len = 1999500;
+  sysx_msg = 2000000;
+  
+  gmem[msg_ready+boff] = 1;
+  gmem[msg_len+boff] = -1;
+  gmem[msg_bus+boff] = -2;
+  
+  mcode = 3000000;
+  
+  /*handshake_len[0] = 7;
+  handshake[0] = 0xF0;
+  handshake[1] = 0x00;
+  handshake[2] = 0x00;
+  handshake[3] = 0x66;
+  handshake[4] = 0x14;
+  handshake[5] = 0x00;
+  handshake[6] = 0xF7;
+  */
+  
+  handshake_timer = time();
+
+@serialize
+
+file_var(0, handshake_len);
+file_mem(0, handshake, handshake_len);
+
+@slider
+    
+  slider4 == slider8 ? (  
+    boff = slider8*1000;
+    
+    gmem[msg_ready +boff] = 0;
+    bus = slider4;
+    msgtot = gmem[msg_lentot+boff];
+    msgpos = 1;
+    loop(msgtot,
+      message[msgpos] = gmem[sysx_msg+boff+msgpos];
+      msgpos += 1;
+    );
+    slider4 = -1;
+    complete = 1;
+    
+  );
+  
+  slider6 == 1 ? (
+    p = 0;
+    hl = gmem[gmem_handshake_len];
+    slider7 = hl;
+    loop(hl,
+      handshake[p] = gmem[gmem_handshake + p];
+      p+=1;
+    );
+    handshake_len = hl;
+    slider5 = 1;
+    //handshake_timer = time();
+    
+    slider6 = 0;
+  );
+  
+@block
+
+  slider5 == 1 ? (
+  
+    time() > handshake_timer && slider7 > 0 ? (
+      midisend_buf(0, handshake, slider7);      
+      handshake_timer = time() + 1;  
+    );
+  
+  );
+  
+  // Output only bus 8-11
+  //while (midirecv(mpos,msg1,msg2,msg3))
+  //(
+  //  midi_bus >= 8 && midi_bus <= 11 ? (
+      //midi_bus = 0 + (midi_bus-8);
+  //    midisend(mpos,msg1,msg2,msg3);
+  //  );
+  //);
+
+//@sample
+
+  complete == 1 ? (
+    midi_bus = 0;
+    msgnum = 0;
+    msgpos = 1;
+    msgcnt = gmem[msg_cnt+boff];
+    loop(msgcnt,
+      length = gmem[msg_len+boff+msgnum];
+      midisend_buf(offset, message+msgpos, length-2);
+      msgpos += length;
+      msgnum += 1;
+    );
+    //bb = msgtot;
+      //memset(message, 0, length);
+    complete = 0;
+    //length = 0;
+    //msgnum = 0;
+    //msgpos = 0;
+    //msgtot = 0;
+    //gmem[msg_len] = -1;
+    gmem[msg_bus+boff] = -2;
+    gmem[msg_ready+boff] = 1;
+    //slider2 = 1;
+  );
+
+

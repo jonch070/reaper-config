@@ -1,0 +1,21 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+ 
+* v1.0.1 (2021-11-22)
+  + Do not steal focus for search box when switching pages
+  + Focus search box when running the action: HeDa_Track Inspector 2 VIP_Go to panel Tracks
+
+* v1.0.0 (2021-10-08)
+  + Search filter (Tab key, or right click to clear search box)
+  + Track: Right click to show track menu
+  + Panel Menu: Clear and Save sets of favorites
+  + Set buttons: left click load set of favorites
+  + Set buttons: right click select tracks from set
+  + TCP and MCP filter
+  + Tags display 
+  + Ctrl click to select multiple tracks
+  + Shift click to select multiple contiguous tracks, 
+  + Panel Menu: show/hide different elements
+  + Panel Menu: refresh time to update track list
+    

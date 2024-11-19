@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="AlbertoV5-ReaperTools" commit="eef713ee4a04bbeb53245cea479889fcbc1a2e13">
+  <category name="CycleGrid">
+    <reapack name="CycleGrid.data" type="data" desc="Cycle Grid: Go through the user-defined grid settings">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Edit variables at the top of the .lua to your needs\par}
+}
+]]></description>
+        <link rel="donation">https://paypal.me/albertov5</link>
+      </metadata>
+      <version name="1.0" author="AlbertoV5" time="2022-05-30T04:29:07Z">
+        <source main="main" type="script" file="cycle_grid_up.lua">https://github.com/AlbertoV5/ReaperTools/raw/2c2caaaaf0081b8d28e8df8c6f9a724069c0852f/CycleGrid/cycle_grid_up.lua</source>
+        <source main="main" type="script" file="cycle_grid_down.lua">https://github.com/AlbertoV5/ReaperTools/raw/2c2caaaaf0081b8d28e8df8c6f9a724069c0852f/CycleGrid/cycle_grid_down.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Link Multichannel FXs Parameters">
+    <reapack name="Link Multichannel FXs Parameters.lua" type="script" desc="Link Multichannel FXs Parameters">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Link Multichannel FXs Parameters\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script converts any plugin with external sidechain capabilities into a multichannel FX in order to ease the workflow of processing multiple channels for stem delivery.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script finds the last touched FX on the selected Track and creates multiple copies of it, then links all the copies to the original and sets up multichannel routing so each FX is connected to a different pair of channels but all of them receive sidechain input from the last pair of pins.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Recommended use is to create a new track and insert a new FX, then load any presets or change any parameters for a start and then run this script. You can then route your multi-tracks or buses into the channels of this new track. Then tweak the parameters of the first FX as you would normally do and the rest will follow because they are linked as if you had linked them manually but this script already did all the prep work for you.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Key features:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab JSFX is not yet supported.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab VST and VST3 supported and tested.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Pop up menus for user input.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab Modify the global variables at the top of the script for extra functionalities\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab This doesn't link across tracks as it's not a Reaper feature, other scripts out there do that!\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Know issues:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Some FXs don't let settings like oversampling or linear phase to be linked so set those before running this script!\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Some FXs don't support modifying or linking values from outside their interface so there is no way around that!\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Because the FXs are in series even if passing through the unmapped pins, the PDC remains as if they were in series anyway so the total PDC of the track can increase dramatically.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Reach out if you would like me to support JSFX or add other features.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Alberto V5" time="2022-04-26T17:14:10Z">
+        <changelog><![CDATA[First release. Supports VST and VST3.]]></changelog>
+        <source main="main">https://github.com/AlbertoV5/ReaperTools/raw/c2ce297a74a074dcb392f41f2372679af530b289/Link%20Multichannel%20FXs%20Parameters/Link%20Multichannel%20FXs%20Parameters.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="liszt">
+    <reapack name="liszt.data" type="data" desc="LISZT: Generate Touch OSC Templates from Reaper.">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This uses tosclib to create new .tosc files from data that Reaper can provide. How to use: Launch liszt-web from outside Reaper or generate then pull from within Reaper.\par}
+}
+]]></description>
+        <link rel="donation">https://paypal.me/albertov5</link>
+      </metadata>
+      <version name="0.1.1" author="AlbertoV5" time="2022-05-29T07:21:06Z">
+        <source main="main" type="script" file="liszt-generate.py">https://raw.githubusercontent.com/AlbertoV5/Reaper-Scripts/main/LISZT/liszt-generate.py</source>
+        <source main="main" type="script" file="liszt-pull.py">https://raw.githubusercontent.com/AlbertoV5/Reaper-Scripts/main/LISZT/liszt-pull.py</source>
+        <source type="script" file="liszt-web.py">https://raw.githubusercontent.com/AlbertoV5/tosclib/main/docs/demos/5-reaper-tosclib.py</source>
+      </version>
+      <version name="0.1.2" author="AlbertoV5" time="2022-05-29T21:43:47Z">
+        <source main="main" type="script" file="liszt-generate.py">https://github.com/AlbertoV5/ReaperTools/raw/090d5c29db4663b369165751cc91695e12a34c10/liszt/liszt-generate.py</source>
+        <source main="main" type="script" file="liszt-pull.py">https://github.com/AlbertoV5/ReaperTools/raw/090d5c29db4663b369165751cc91695e12a34c10/liszt/liszt-pull.py</source>
+        <source type="script" file="liszt-web.py">https://raw.githubusercontent.com/AlbertoV5/tosclib/main/docs/demos/5-reaper-tosclib.py</source>
+      </version>
+      <version name="0.1.3" author="AlbertoV5" time="2022-05-30T03:53:34Z">
+        <changelog><![CDATA[- Changed from .json to .xml files
+- Added ET.indent() for python >= 3.9]]></changelog>
+        <source main="main" type="script" file="liszt-generate.py">https://github.com/AlbertoV5/ReaperTools/raw/b49a8dff133480c4e3625c58fe4850abe564ab2f/liszt/liszt-generate.py</source>
+        <source main="main" type="script" file="liszt-pull.py">https://github.com/AlbertoV5/ReaperTools/raw/b49a8dff133480c4e3625c58fe4850abe564ab2f/liszt/liszt-pull.py</source>
+        <source type="script" file="liszt-web.py">https://github.com/AlbertoV5/ReaperTools/raw/b49a8dff133480c4e3625c58fe4850abe564ab2f/liszt/liszt-web.py</source>
+      </version>
+      <version name="0.1.4" author="AlbertoV5" time="2022-06-04T16:41:13Z">
+        <changelog><![CDATA[0.1.4
+- Fixed setFrame, setColor to support tosclib >=0.3.0]]></changelog>
+        <source main="main" type="script" file="liszt-generate.py">https://github.com/AlbertoV5/ReaperTools/raw/ba24d65a1acf9176f4ace0f6451617f628b0375a/liszt/liszt-generate.py</source>
+        <source main="main" type="script" file="liszt-pull.py">https://github.com/AlbertoV5/ReaperTools/raw/ba24d65a1acf9176f4ace0f6451617f628b0375a/liszt/liszt-pull.py</source>
+        <source type="script" file="liszt-web.py">https://github.com/AlbertoV5/ReaperTools/raw/ba24d65a1acf9176f4ace0f6451617f628b0375a/liszt/liszt-web.py</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="OSC">
+    <reapack name="stoicOSC.data" type="data" desc="STOIC: TouchOSC Reaper/Realearn Template">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 "STOIC" a template for TouchOSC and Reaper/Realearn\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/AlbertoV5/TouchOSC-Betov5/blob/main/UserGuide.md"}}{\fldrslt{\ul
+User Guide
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/AlbertoV5/TouchOSC-Betov5/blob/main/ConfigGuide.md"}}{\fldrslt{\ul
+Config Guide
+}}}
+\par}
+}
+]]></description>
+        <link rel="screenshot">https://raw.githubusercontent.com/AlbertoV5/stoicOSC/main/resources/osc2.JPG</link>
+        <link rel="donation">https://paypal.me/albertov5</link>
+      </metadata>
+      <version name="0.9.0" author="AlbertoV5" time="2022-04-26T23:36:50Z">
+        <source file="stoicOSC/stoic.reaperOSC">https://github.com/AlbertoV5/stoicOSC/blob/main/Reapack/stoic.ReaperOSC</source>
+        <source file="stoicOSC/stoic.tosc">https://github.com/AlbertoV5/stoicOSC/blob/main/Reapack/stoic.tosc</source>
+        <source file="stoicOSC/stoic.xml">https://github.com/AlbertoV5/stoicOSC/blob/main/Reapack/stoic.xml</source>
+      </version>
+      <version name="0.1" author="AlbertoV5" time="2022-04-27T00:52:51Z">
+        <source file="stoicOSC/stoic.reaperOSC">https://github.com/AlbertoV5/stoicOSC/blob/main/Reapack/stoic.ReaperOSC?raw=true</source>
+        <source file="stoicOSC/stoic.tosc">https://github.com/AlbertoV5/stoicOSC/blob/main/Reapack/stoic.tosc?raw=true</source>
+        <source file="stoicOSC/stoic.xml">https://github.com/AlbertoV5/stoicOSC/blob/main/Reapack/stoic.xml?raw=true</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Reaper Tools\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: https://github.com/AlbertoV5/ReaperTools/actions/workflows/check.yml/badge.svg]\cf0} {\cf1 [image: https://github.com/AlbertoV5/ReaperTools/actions/workflows/deploy.yml/badge.svg]\cf0}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Hello.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This is where I'll package most of my REAPER scripts and tools for sharing with the community.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Development will most likely happen in separate repositories and I'd link to releases from here.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Send me an email if you find any issues. Have fun.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 donate to: https://paypal.me/albertov5\par}
+}
+]]></description>
+  </metadata>
+</index>

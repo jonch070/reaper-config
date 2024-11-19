@@ -1,0 +1,7 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v1.0.0 (2021-10-09)
+  + Copy and paste track attributes
+  + panel menu: Show internal attribute names or descriptions of attributes

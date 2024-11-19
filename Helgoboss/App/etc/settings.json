@@ -1,0 +1,47 @@
+{
+  "main": {
+    "themeId": null,
+    "globalSizeFactor": 0.9,
+    "roundness": 1.0,
+    "colorScheme": 0,
+    "themeMode": "dark",
+    "colorIntensity": "pastel",
+    "contrast": "m",
+    "tidyAppearance": true,
+    "useContextColoring": true,
+    "useHostColors": false,
+    "displayDevStatusHints": true,
+    "preferNativePopupMenus": false,
+    "hideWindowOnEscapeInEmbeddedMode": true,
+    "showToolbar": true,
+    "showHelpPanel": false,
+    "showSidePane": true,
+    "showNavBar": true,
+    "showLicenseInfo": true,
+    "displayTooltipIfHelpPanelHidden": true,
+    "dimOpacity": 0.5
+  },
+  "playtime": {
+    "cellBaseHeight": 30.0,
+    "cellAspectRatio": 5.0,
+    "cellColorPosition": "fullCell",
+    "cellProgressPosition": "bottomLine",
+    "showColumnNumbers": true,
+    "showClipActivity": true,
+    "showControlUnits": true,
+    "showCellSelectionAsCrosshair": true,
+    "showTrackPane": false,
+    "showScenePane": true,
+    "showMainOutput": false,
+    "showMatrixPane": true,
+    "showMappings": false,
+    "showHypotheticalPlayCursor": false
+  },
+  "realearnProjectionSettings": {
+    "gridEnabled": true,
+    "controlAppearance": "outlinedMono",
+    "borderStyle": "dotted",
+    "fontSize": 14,
+    "feedbackEnabled": true
+  }
+}

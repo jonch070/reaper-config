@@ -1,0 +1,28 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v1.0.4 (2021-11-19)
+  # fixes in Auto Arm One selected track
+
+* v1.0.3 (2021-10-27)
+  # some fixes
+
+* v1.0.2 (2021-10-17)
+  # fix custom buttons margin again
+
+* v1.0.1 (2021-10-16)
+  # custom buttons margin
+  # small UI tweak
+
+* v1.0.0 (2021-10-10)
+  + Track Arm and monitor buttons
+  + Track record options button (input, outputs, MIDI overdub etc...)
+  + ARM (Auto record mode depending on time selection or item seleciton)
+  + Record modes (Normal, time seleciton and items auto punch)
+  + Sets (Save presets of track rec arm and monitor states)
+  + Setting: Unarm all tracks on project load 
+  + Setting: Arm one track only
+  + Right click Set: Rename, Update, delete
+  + Panel menu: Options to show different blocks
+  + Panel menu: Font size for Set button (1-4 from theme font sizes)

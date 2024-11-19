@@ -1,0 +1,113 @@
+return {
+-- Table: {1}
+{
+   {2},
+   {3},
+   {4},
+   {5},
+   {6},
+   {7},
+   {8},
+   {9},
+   {10},
+   {11},
+   {12},
+   {13},
+   {14},
+   {15},
+   {16},
+   {17},
+   {18},
+   {19},
+},
+-- Table: {2}
+{
+   ["color"]=16711680,
+   ["name"]="Color 1",
+},
+-- Table: {3}
+{
+   ["color"]=16733440,
+   ["name"]="Color 2",
+},
+-- Table: {4}
+{
+   ["color"]=16755200,
+   ["name"]="Color 3",
+},
+-- Table: {5}
+{
+   ["color"]=16776960,
+   ["name"]="Color 4",
+},
+-- Table: {6}
+{
+   ["color"]=11206400,
+   ["name"]="Color 5",
+},
+-- Table: {7}
+{
+   ["color"]=5635840,
+   ["name"]="Color 6",
+},
+-- Table: {8}
+{
+   ["color"]=65280,
+   ["name"]="Color 7",
+},
+-- Table: {9}
+{
+   ["color"]=65365,
+   ["name"]="Color 8",
+},
+-- Table: {10}
+{
+   ["color"]=65450,
+   ["name"]="Color 9",
+},
+-- Table: {11}
+{
+   ["color"]=65535,
+   ["name"]="Color 10",
+},
+-- Table: {12}
+{
+   ["color"]=43775,
+   ["name"]="Color 11",
+},
+-- Table: {13}
+{
+   ["color"]=22015,
+   ["name"]="Color 12",
+},
+-- Table: {14}
+{
+   ["color"]=255,
+   ["name"]="Color 13",
+},
+-- Table: {15}
+{
+   ["color"]=5570815,
+   ["name"]="Color 14",
+},
+-- Table: {16}
+{
+   ["color"]=11141375,
+   ["name"]="Color 15",
+},
+-- Table: {17}
+{
+   ["color"]=16711935,
+   ["name"]="Color 16",
+},
+-- Table: {18}
+{
+   ["color"]=16711850,
+   ["name"]="Color 17",
+},
+-- Table: {19}
+{
+   ["color"]=16711765,
+   ["name"]="Color 18",
+},
+}

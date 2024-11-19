@@ -1,0 +1,15 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v1.0.3 (2021-10-17)
+  # fix custom buttons margin again
+
+* v1.0.2 (2021-10-16)
+  # custom buttons margin
+
+* v1.0.1 (2021-10-10)
+  + Transpose Tracks or items (depending on last focused element)
+  + Apply Transpose button to transpose new items to track's transpose
+  + Transpose lock (useful for percussions etc) 
+  + Commit button to move MIDI notes and reset item transpose to 0

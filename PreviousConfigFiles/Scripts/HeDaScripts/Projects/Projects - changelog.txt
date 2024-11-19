@@ -1,0 +1,37 @@
+﻿---------------------------------------------------------------------------------------
+ HeDa Projects - Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v1.1.0 (2023-06-02)
+  + Set to Another Project in Directory...: Show other RPP files in the project's directory and choose which one to use.
+  + Set to Latest Version
+  + Save as New Version
+  # bug fix save as
+  + Setting: Toolbar: Show Close button
+  + Setting: Theme: text separation
+  # fix toolbar wrap. Thanks @Skorobagatko
+  + VIP version
+
+* v1.0.0 (2022-02-09)
+  + Add catalogs(databases) where to organize the projects. You can use catalogs to separate from different tasks, albums, clients, etc... 
+  + Add projects to a catalog. Left click to select a RPP file from disk, Right click to add current opened project.
+  + Double click to open a project, Right click to see a menu with options for the project... open in new tab.. etc... 
+  + Metadata: Tag, add a tag for each project, to organize projects by a keyword inside the same catalog. 
+  + Metadata: Released. Mark a project as released/finished.
+  + Metadata: Deadline date. Days remaining display.
+  + Metadata: Rating. Rate a project from 0 to 5 stars
+  + Properties: Set Image. Select the image file that defines the project(album cover, song cover, etc..) from disk
+  + Properties: Set Image by screenshot capture ( initially thought for getting a screen capture of your project tracks, but you can capture anything you see on the screen) (region capture only works on Linux)
+  + Properties: Set to open as new tab when double clickiing
+  + Properties: Set to open as project template when double clickiing
+  + Drag and drop to reorder for manual sorting mode. 
+  + Drag and drop to another catalog button to move the project to that catalog.
+  + Drag and drop to a tag button to set project to that existing tag.
+  + Sort by: Manual, by name, by deadline, by rating
+  + Cache images with a resized version. Requires imagemagick library installed. https://imagemagick.org
+  + Zooom in and out, + - buttons or CTRL+Mouse Wheel
+  + Show only Not-Released projects
+  + Show only Projects with deadline
+  + Filter by rating = or >= rating
+  + Search by project name
+    

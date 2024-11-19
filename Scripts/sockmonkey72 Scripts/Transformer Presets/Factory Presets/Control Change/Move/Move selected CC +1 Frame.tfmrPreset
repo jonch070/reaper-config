@@ -1,0 +1,9 @@
+{
+ actionMacro = "$position + 0:00:00:01",
+ actionScope = "$transform",
+ actionScopeFlags = "$none",
+ findMacro = "$type == $cc",
+ findScope = "$midieditorselected",
+ notes = "",
+ scriptIgnoreSelectionInArrangeView = false,
+}

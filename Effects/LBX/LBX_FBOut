@@ -1,0 +1,59 @@
+desc:LBX_FBOut
+
+slider1:-1<-1,255,1>-Sysx data
+slider2:1<0,2,1>-Ready
+slider3:0<0,255,1>-Byte count
+slider4:-1<-1,3,1>-Sysex device bus
+
+in_pin:none
+out_pin:none
+
+@init
+
+  ext_midi_bus = 1;
+  message = 0;
+  offset = 0;
+  length = 0;
+  complete = 0;
+  slider2 = 1;
+  slider3 = 0;
+
+@slider
+
+  slider1 != -1 ? (
+    sl1 = slider1;
+    
+    message[length] = sl1;
+    length += 1;
+    //slider2 = 0;
+    slider3 = length;
+  );
+  
+  slider4 != -1 ? (  
+    complete = 1;
+    bus = slider4;
+    slider4 = -1;
+  );
+  
+  
+@block
+
+  // Output only bus 8-11
+  while (midirecv(mpos,msg1,msg2,msg3))
+  (
+    midi_bus >= 8 && midi_bus <= 11 ? (
+      //midi_bus = 0 + (midi_bus-8);
+      midisend(mpos,msg1,msg2,msg3);
+    );
+  );
+  
+  complete == 1 ? (
+    
+    midi_bus = 8+bus;
+    midisend_buf(offset, message, length);
+    memset(message, 0, length);
+    complete = 0;
+    length = 0;
+    slider2 = 1;
+  
+  );

@@ -1,0 +1,2114 @@
+REAPER,VST/VSTi INSTALLED EXTRACTOR
+Version:,3.1 FERRETS
+by:,Tormy Van Cool
+Date:,2023-10-26 13:58:21
+
+CHECK,N.,INSTR.,VST/VSTi/AU/CLAP NAME (Manufacturer),FILE (VSTs) - INST-NotINST (AUs) - CLAP (for Clap Plugins)
+,1,,2B2G (x86) (Ambisonic Studio B2X) (9ch),2B2G.vst
+,2,,2B2Mix (x86) (Ambisonic Studio B2X) (72->9ch),2B2Mix.vst
+,3,,<SHELL>,360pan_suite.vst3
+,4,,360pan (Audio Ease) (7->9ch),360pan_suite.vst3<1021087109
+,5,,360radar (Audio Ease) (4ch),360pan_suite.vst3<1133721142
+,6,,360turner (Audio Ease) (4ch),360pan_suite.vst3<1186589039
+,7,,360pan (Audio Ease) (1->4ch),360pan_suite.vst3<1283971187
+,8,,360pan (Audio Ease) (2->9ch),360pan_suite.vst3<1298600378
+,9,,360pan (Audio Ease) (4->9ch),360pan_suite.vst3<1309344797
+,10,,360pan (Audio Ease) (4ch),360pan_suite.vst3<1382866194
+,11,,360reverb (Audio Ease) (9ch),360pan_suite.vst3<1456768700
+,12,,360pan (Audio Ease) (2->4ch),360pan_suite.vst3<1525813585
+,13,,360fuma to ambix (Audio Ease) (4ch),360pan_suite.vst3<1558240298
+,14,,360monitor speakers (Audio Ease) (4->5ch),360pan_suite.vst3<1581546076
+,15,,360reverb (Audio Ease) (4ch),360pan_suite.vst3<1706269532
+,16,,360pan (Audio Ease) (1->9ch),360pan_suite.vst3<1735564276
+,17,,360turner (Audio Ease) (9ch),360pan_suite.vst3<1767662234
+,18,,360monitor headphones (Audio Ease),360pan_suite.vst3<2023234593
+,19,,360pan (Audio Ease) (5->4ch),360pan_suite.vst3<316693119
+,20,,360pan (Audio Ease) (7->4ch),360pan_suite.vst3<402284840
+,21,,360radar (Audio Ease) (9ch),360pan_suite.vst3<457357050
+,22,,360monitor headphones (Audio Ease),360pan_suite.vst3<525388578
+,23,,360monitor speakers (Audio Ease),360pan_suite.vst3<718077287
+,24,,360ambix to fuma (Audio Ease) (4ch),360pan_suite.vst3<864183969
+,25,,360pan (Audio Ease) (5->9ch),360pan_suite.vst3<981960730
+,26,,360monitor speakers (Audio Ease) (4ch),360pan_suite.vst3<981982375
+,27,,360RACS (Audio Futures),360RACS.vst3
+,28,,3D Binaural Spatializer (Klingler),3D_Binaural_Spatializer.vst
+,29,,8-Bit Shaper (Xfer Records),8BitShaper.vst
+,30,,++bubbler (SoundHack),__bubbler.vst
+,31,,++delay (SoundHack),__delay.vst
+,32,,++flipper (SoundHack),__flipper.vst
+,33,,++pitchdelay (SoundHack),__pitchdelay.vst
+,34,,a1Monitor (SSA Plugins) (4ch),a1Monitor_demo.vst
+,35,,a1Panner (SSA Plugins) (2->4ch),a1Panner.vst
+,36,,AMBEO A-B Format Converter (Sennheiser) (4ch),A_B_Format_Converter.vst
+,37,,AMBEO A-B Format Converter (Sennheiser) (4ch),A_B_Format_Converter.vst3
+,38,,AB_LM (TBProAudio),AB_LM.vst
+,39,,AB_LM (TBProAudio),AB_LM.vst3
+,40,Instr.,Ample Bass P Lite II (Ample Sound)!!!VSTi,ABPL2.vst
+,41,Instr.,Absynth 5 (Native Instruments GmbH) (2->6ch)!!!VSTi,Absynth_5.vst
+,42,,Absynth 5 (Native Instruments GmbH),Absynth_5_FX.vst
+,43,,Absynth 5 (Native Instruments GmbH) (2->6ch),Absynth_5_FX_Surround.vst
+,44,Instr.,Absynth 5 (Native Instruments GmbH)!!!VSTi,Absynth_5_Stereo.vst
+,45,Instr.,ADSR Sample Manager (ADSR)!!!VSTi,ADSR_Sample_Manager.vst
+,46,Instr.,ADSR Sample Manager (ADSR)!!!VSTi,ADSR_Sample_Manager.vst3
+,47,Instr.,Ample Guitar M II Lite (Ample Sound)!!!VSTi,AGML2.vst
+,48,,Air (Sound Particles) (64ch),Air.vst
+,49,,Air (Sound Particles),Air.vst3
+,50,,AllRADecoder (IEM) (64ch),AllRADecoder.vst
+,51,,Ambi Converter (Noise Makers) (4ch),AmbiConverter.vst
+,52,,AmbiFreeverb (WigWare) (4ch),AmbiFreeverb.vst
+,53,,AmbiFreeverb 2 (WigWare) (4ch),AmbiFreeverb2.vst
+,54,,Ambi Head (Noise Makers) (4ch),AmbiHead.vst
+,55,,Ambi Head HD (Noise Makers) (16ch),AmbiHeadHD.vst
+,56,,Ambi Limiter HD (Noise Makers) (16ch),AmbiLimiterHD.vst
+,57,,Ambi Pan (Noise Makers) (2->4ch),AmbiPan.vst
+,58,,Ambi Pan HD (Noise Makers) (8->16ch),AmbiPanHD.vst
+,59,,Ambi Verb HD (Noise Makers) (16ch),AmbiVerbHD.vst
+,60,,ambix_binaural_o1 (kronlachner),ambix_binaural_o1.vst
+,61,,ambix_binaural_o3 (kronlachner),ambix_binaural_o3.vst
+,62,,ambix_binaural_o5 (kronlachner),ambix_binaural_o5.vst
+,63,,ambix_binaural_o7 (kronlachner),ambix_binaural_o7.vst
+,64,,ambix_converter_o1 (kronlachner) (4ch),ambix_converter_o1.vst
+,65,,ambix_converter_o3 (kronlachner) (16ch),ambix_converter_o3.vst
+,66,,ambix_converter_o5 (kronlachner) (36ch),ambix_converter_o5.vst
+,67,,ambix_converter_o7 (kronlachner) (64ch),ambix_converter_o7.vst
+,68,,ambix_decoder_o1 (kronlachner) (4->48ch),ambix_decoder_o1.vst
+,69,,ambix_decoder_o3 (kronlachner) (16->48ch),ambix_decoder_o3.vst
+,70,,ambix_decoder_o5 (kronlachner) (36->48ch),ambix_decoder_o5.vst
+,71,,ambix_decoder_o7 (kronlachner) (64ch),ambix_decoder_o7.vst
+,72,,ambix_directional_loudness_o1 (kronlachner) (4ch),ambix_directional_loudness_o1.vst
+,73,,ambix_directional_loudness_o3 (kronlachner) (16ch),ambix_directional_loudness_o3.vst
+,74,,ambix_directional_loudness_o5 (kronlachner) (36ch),ambix_directional_loudness_o5.vst
+,75,,ambix_directional_loudness_o7 (kronlachner) (64ch),ambix_directional_loudness_o7.vst
+,76,,ambix_encoder_i2_o1 (kronlachner) (2->4ch),ambix_encoder_i2_o1.vst
+,77,,ambix_encoder_i2_o3 (kronlachner) (2->16ch),ambix_encoder_i2_o3.vst
+,78,,ambix_encoder_i2_o5 (kronlachner) (2->36ch),ambix_encoder_i2_o5.vst
+,79,,ambix_encoder_i2_o7 (kronlachner) (2->64ch),ambix_encoder_i2_o7.vst
+,80,,ambix_encoder_i4_o1 (kronlachner) (4ch),ambix_encoder_i4_o1.vst
+,81,,ambix_encoder_i4_o3 (kronlachner) (4->16ch),ambix_encoder_i4_o3.vst
+,82,,ambix_encoder_i4_o5 (kronlachner) (4->36ch),ambix_encoder_i4_o5.vst
+,83,,ambix_encoder_i4_o7 (kronlachner) (4->64ch),ambix_encoder_i4_o7.vst
+,84,,ambix_encoder_i6_o1 (kronlachner) (6->4ch),ambix_encoder_i6_o1.vst
+,85,,ambix_encoder_i6_o3 (kronlachner) (6->16ch),ambix_encoder_i6_o3.vst
+,86,,ambix_encoder_i6_o5 (kronlachner) (6->36ch),ambix_encoder_i6_o5.vst
+,87,,ambix_encoder_i6_o7 (kronlachner) (6->64ch),ambix_encoder_i6_o7.vst
+,88,,ambix_encoder_i8_o1 (kronlachner) (8->4ch),ambix_encoder_i8_o1.vst
+,89,,ambix_encoder_i8_o3 (kronlachner) (8->16ch),ambix_encoder_i8_o3.vst
+,90,,ambix_encoder_i8_o5 (kronlachner) (8->36ch),ambix_encoder_i8_o5.vst
+,91,,ambix_encoder_i8_o7 (kronlachner) (8->64ch),ambix_encoder_i8_o7.vst
+,92,,ambix_encoder_o1 (kronlachner) (1->4ch),ambix_encoder_o1.vst
+,93,,ambix_encoder_o3 (kronlachner) (1->16ch),ambix_encoder_o3.vst
+,94,,ambix_encoder_o5 (kronlachner) (1->36ch),ambix_encoder_o5.vst
+,95,,ambix_encoder_o7 (kronlachner) (1->64ch),ambix_encoder_o7.vst
+,96,,ambix_maxre_o1 (kronlachner) (4ch),ambix_maxre_o1.vst
+,97,,ambix_maxre_o3 (kronlachner) (16ch),ambix_maxre_o3.vst
+,98,,ambix_maxre_o5 (kronlachner) (36ch),ambix_maxre_o5.vst
+,99,,ambix_maxre_o7 (kronlachner) (64ch),ambix_maxre_o7.vst
+,100,,ambix_mirror_o1 (kronlachner) (4ch),ambix_mirror_o1.vst
+,101,,ambix_mirror_o3 (kronlachner) (16ch),ambix_mirror_o3.vst
+,102,,ambix_mirror_o5 (kronlachner) (36ch),ambix_mirror_o5.vst
+,103,,ambix_mirror_o7 (kronlachner) (64ch),ambix_mirror_o7.vst
+,104,,ambix_rotator_o1 (kronlachner) (4ch),ambix_rotator_o1.vst
+,105,,ambix_rotator_o3 (kronlachner) (16ch),ambix_rotator_o3.vst
+,106,,ambix_rotator_o5 (kronlachner) (36ch),ambix_rotator_o5.vst
+,107,,ambix_rotator_o7 (kronlachner) (64ch),ambix_rotator_o7.vst
+,108,,ambix_rotator_z_o1 (kronlachner) (4ch),ambix_rotator_z_o1.vst
+,109,,ambix_rotator_z_o3 (kronlachner) (16ch),ambix_rotator_z_o3.vst
+,110,,ambix_rotator_z_o5 (kronlachner) (36ch),ambix_rotator_z_o5.vst
+,111,,ambix_rotator_z_o7 (kronlachner) (64ch),ambix_rotator_z_o7.vst
+,112,,ambix_vmic_o1 (kronlachner) (4->8ch),ambix_vmic_o1.vst
+,113,,ambix_vmic_o3 (kronlachner) (16->8ch),ambix_vmic_o3.vst
+,114,,ambix_vmic_o5 (kronlachner) (36->8ch),ambix_vmic_o5.vst
+,115,,ambix_vmic_o7 (kronlachner) (64->8ch),ambix_vmic_o7.vst
+,116,,ambix_warp_o1 (kronlachner) (4ch),ambix_warp_o1.vst
+,117,,ambix_warp_o3 (kronlachner) (16ch),ambix_warp_o3.vst
+,118,,ambix_warp_o5 (kronlachner) (36ch),ambix_warp_o5.vst
+,119,,ambix_warp_o7 (kronlachner) (64ch),ambix_warp_o7.vst
+,120,,ambix_widening_o1 (kronlachner) (4ch),ambix_widening_o1.vst
+,121,,ambix_widening_o3 (kronlachner) (16ch),ambix_widening_o3.vst
+,122,,ambix_widening_o5 (kronlachner) (36ch),ambix_widening_o5.vst
+,123,,ambix_widening_o7 (kronlachner) (64ch),ambix_widening_o7.vst
+,124,Instr.,Arcade (Output)!!!VSTi,Arcade.vst
+,125,Instr.,Arcade (Output)!!!VSTi,Arcade.vst3
+,126,Instr.,audioweather_free (AudioGaming) (6ch)!!!VSTi,audioweather_free.vst
+,127,,Audreio Effect (Audreio),Audreio.vst
+,128,,Auto-Align (Sound Radix),AutoAlign.vst
+,129,,Auto-Align (Sound Radix),AutoAlign.vst3
+,130,,AVOX ARTICULATOR (Antares),AVOX_ARTICULATOR.vst3
+,131,,AVOX ASPIRE (Antares),AVOX_ASPIRE.vst3
+,132,,AVOX CHOIR (Antares),AVOX_CHOIR.vst3
+,133,,AVOX DUO (Antares),AVOX_DUO.vst3
+,134,,AVOX MUTATOR (Antares),AVOX_MUTATOR.vst3
+,135,,AVOX PUNCH (Antares),AVOX_PUNCH.vst3
+,136,,AVOX SYBIL (Antares),AVOX_SYBIL.vst3
+,137,,AVOX THROAT (Antares),AVOX_THROAT.vst3
+,138,,AVOX WARM (Antares),AVOX_WARM.vst3
+,139,,aXMeter (SSA Plugins) (64ch),aXMeter.vst
+,140,,B2B (x86) (Ambisonic Studio B2X) (4ch),B2B.vst
+,141,,B2B5 (x86) (Ambisonic Studio B2X) (12ch),B2B5.vst
+,142,,audiounit (Ambisonic Studio) (4ch),B2B_alpha.vst
+,143,,B2D (x86) (Ambisonic Studio B2X) (12ch),B2D.vst
+,144,,B2G (x86) (Ambisonic Studio B2X) (6ch),B2G.vst
+,145,,B2Mix (x86) (Ambisonic Studio B2X) (32->4ch),B2Mix.vst
+,146,,audiounit (Ambisonic Studio),B2Stereo_Max_alpha.vst
+,147,,B2Stereo UHJ (x86) (Ambisonic Studio B2X) (4ch),B2Stereo_UHJ.vst
+,148,,B2Verb (x86) (Ambisonic Studio B2X) (4ch),B2Verb.vst
+,149,,Balancer (Focusrite),balancer.vst
+,150,,Balancer (Focusrite),balancer.vst3
+,151,Instr.,Battery 4 (Native Instruments GmbH) (32 out)!!!VSTi,Battery_4.vst
+,152,Instr.,BBC Symphony Orchestra (Spitfire Audio) (32 out)!!!VSTi,BBC_Symphony_Orchestra.vst
+,153,Instr.,BBC Symphony Orchestra (Spitfire Audio) (32 out)!!!VSTi,BBC_Symphony_Orchestra.vst3
+,154,,Air Shelf (Bertom),Bertom_Air_Shelf.vst3
+,155,,Denoiser (Bertom),Bertom_Denoiser.vst3
+,156,,EQ Curve Analyzer (Bertom),Bertom_EQ_Curve_Analyzer.vst3
+,157,,beyerdynamicVS (Beyerdynamic) (8ch),beyerdynamicVS.vst
+,158,,BinauralDecoder (IEM) (64ch),BinauralDecoder.vst
+,159,,Binauralizer (Noise Makers) (8ch),Binauralizer.vst
+,160,Instr.,BioTek (Tracktion)!!!VSTi,BioTek.vst
+,161,,BitterSweet v3 (FLUX SE) (8ch),BitterSweetV3_x64.vst
+,162,,BitterSweet v3 (x86) (Flux:: sound and picture development) (8ch),BitterSweetV3_x86.vst
+,163,Instr.,BlueARP (x86) (graywolf2004)!!!VSTi,BlueARP.vst
+,164,Instr.,BlueARP.x64 (graywolf2004)!!!VSTi,BlueARP.x64.vst
+,165,,BrightnessPanner (Sound Particles) (4->16ch),BrightnessPanner.vst
+,166,,BrightnessPanner (Sound Particles),BrightnessPanner.vst3
+,167,,ButterFLY (SIR Audio Tools) (16ch),ButterFLY.vst
+,168,,ButterFLY (SIR Audio Tools) (10ch),ButterFLY.vst3
+,169,,ConnectionOpen (ConnectionOpen Inc.),CO.vst
+,170,,Console Recall (Universal Audio /  Inc.),Console_Recall.vst
+,171,,CoordinateConverter (IEM) (64ch),CoordinateConverter.vst
+,172,,Correct2B (x86) (Ambisonic Studio B2X) (4ch),Correct2B.vst
+,173,Instr.,Cthulhu (Xfer Records)!!!VSTi,Cthulhu.vst
+,174,Instr.,DAWconnect Plugin (DAWconnect)!!!VSTi,DAWconnect_Plugin.vst
+,175,,DDSP Effect (Magenta),DDSP_Effect.vst3
+,176,Instr.,DDSP Synth (Magenta)!!!VSTi,DDSP_Synth.vst3
+,177,,dearVR AMBI MICRO (Dear Reality) (16ch),dearVR_AMBI_MICRO.vst
+,178,,dearVR AMBI MICRO (Dear Reality),dearVR_AMBI_MICRO.vst3
+,179,Instr.,DecentSampler (Decidedly)!!!VSTi,DecentSampler.vst
+,180,Instr.,DecentSampler (Decidedly)!!!VSTi,DecentSampler.vst3
+,181,,DeltaModulator (Xfer Records),DeltaModulator.vst
+,182,,Density (Sound Particles),Density.vst3
+,183,,Devil-Loc (SoundToys),Devil_Loc.vst
+,184,,Digital Musician Plug-In (x86) (Digital Musician Net),Digital_Musician_Plug_In.vst
+,185,,Dimension Expander (Xfer Records),DimensionExpander.vst
+,186,,DirectionalCompressor (IEM) (64ch),DirectionalCompressor.vst
+,187,,DirectivityShaper (IEM) (64ch),DirectivityShaper.vst
+,188,,DistanceCompensator (IEM) (64ch),DistanceCompensator.vst
+,189,,DJMFilter (Xfer Records),DJMFilter.vst
+,190,,DMS2B (x86) (Ambisonic Studio B2X) (3ch),DMS2B.vst
+,191,,DMS2Five (x86) (Ambisonic Studio) (6ch),DMS2Five.vst
+,192,,DMXIS (fx) (db audioware),DMXIS.vst
+,193,Instr.,DMXIS (instrument) (db audioware)!!!VSTi,DMXIS_Inst.vst
+,194,,Dolby Atmos Music Panner (Dolby Laboratories),Dolby_Atmos_Music_Panner.vst
+,195,,Dolby Atmos Music Panner (Dolby Laboratories),Dolby_Atmos_Music_Panner.vst3
+,196,,Doppler (Sound Particles) (24ch),Doppler.vst
+,197,,Doppler (Sound Particles),Doppler.vst3
+,198,,DMSMatrixEditGUI (x86) (Schalltechnik Dr.-Ing. Schoeps GmbH) (6ch),DoubleMSTool_Mac.vst
+,199,,dpMeter4 (TBProAudio) (6ch),dpMeter4.vst
+,200,,dpMeter4 (TBProAudio) (6ch),dpMeter4.vst3
+,201,,Driftmaker       (Puremagnetik),Driftmaker.vst
+,202,,Drum Leveler (Sound Radix),DrumLeveler.vst
+,203,,Drum Leveler (Sound Radix),DrumLeveler.vst3
+,204,,DualDelay (IEM) (64ch),DualDelay.vst
+,205,,Duo2B (x86) (Ambisonic Studio B2X) (4ch),Duo2B.vst
+,206,,Duo2B2 (x86) (Ambisonic Studio B2X) (9ch),Duo2B2.vst
+,207,,Duo2B5 (x86) (Ambisonic Studio B2X) (12ch),Duo2B5.vst
+,208,,audiounit (Ambisonic Studio) (4ch),Duo2B_alpha.vst
+,209,,Eckel (x86) (www.shuriken.se),Eckel.vst
+,210,Instr.,Sampler (Elias Software) (32 out)!!!VSTi,Elias_Sampler_1_1_VST.vst
+,211,,EmuVst (Enttec),emu_64bit_osx.vst3
+,212,,EnergyPanner (Sound Particles) (4->16ch),EnergyPanner.vst
+,213,,EnergyPanner (Sound Particles),EnergyPanner.vst3
+,214,,EnergyVisualizer (IEM) (64ch),EnergyVisualizer.vst
+,215,,EW Spaces II (East West),EW_Spaces_II.vst
+,216,Instr.,Expanse          (Puremagnetik)!!!VSTi,Expanse.vst
+,217,,FabFilter Micro (FabFilter),FabFilter_Micro.vst
+,218,,Micro (FabFilter),FabFilter_Micro.vst3
+,219,,FabFilter Micro (Mono) (FabFilter),FabFilter_Micro__Mono_.vst
+,220,Instr.,FabFilter One (FabFilter)!!!VSTi,FabFilter_One.vst
+,221,Instr.,One (FabFilter)!!!VSTi,FabFilter_One.vst3
+,222,,FabFilter Pro-C 2 (FabFilter),FabFilter_Pro_C_2.vst
+,223,,Pro-C 2 (FabFilter),FabFilter_Pro_C_2.vst3
+,224,,FabFilter Pro-C 2 (Mono) (FabFilter),FabFilter_Pro_C_2__Mono_.vst
+,225,,FabFilter Pro-DS (FabFilter),FabFilter_Pro_DS.vst
+,226,,Pro-DS (FabFilter),FabFilter_Pro_DS.vst3
+,227,,FabFilter Pro-DS (Mono) (FabFilter),FabFilter_Pro_DS__Mono_.vst
+,228,,FabFilter Pro-G (FabFilter),FabFilter_Pro_G.vst
+,229,,Pro-G (FabFilter),FabFilter_Pro_G.vst3
+,230,,FabFilter Pro-G (Mono) (FabFilter),FabFilter_Pro_G__Mono_.vst
+,231,,FabFilter Pro-L (FabFilter),FabFilter_Pro_L.vst
+,232,,FabFilter Pro-L (FabFilter),FabFilter_Pro_L.vst3
+,233,,FabFilter Pro-L 2 (FabFilter),FabFilter_Pro_L_2.vst
+,234,,Pro-L 2 (FabFilter),FabFilter_Pro_L_2.vst3
+,235,,FabFilter Pro-L (Mono) (FabFilter),FabFilter_Pro_L__Mono_.vst
+,236,,FabFilter Pro-MB (FabFilter),FabFilter_Pro_MB.vst
+,237,,Pro-MB (FabFilter),FabFilter_Pro_MB.vst3
+,238,,FabFilter Pro-MB (Mono) (FabFilter),FabFilter_Pro_MB__Mono_.vst
+,239,,FabFilter Pro-Q 2 (FabFilter),FabFilter_Pro_Q_2.vst
+,240,,FabFilter Pro-Q 2 (FabFilter),FabFilter_Pro_Q_2.vst3
+,241,,FabFilter Pro-Q 2 (Mono) (FabFilter),FabFilter_Pro_Q_2__Mono_.vst
+,242,,FabFilter Pro-Q 3 (FabFilter),FabFilter_Pro_Q_3.vst
+,243,,Pro-Q 3 (FabFilter),FabFilter_Pro_Q_3.vst3
+,244,,FabFilter Pro-R (FabFilter),FabFilter_Pro_R.vst
+,245,,Pro-R (FabFilter),FabFilter_Pro_R.vst3
+,246,,FabFilter Pro-R (Mono) (FabFilter),FabFilter_Pro_R__Mono_.vst
+,247,,FabFilter Saturn (FabFilter),FabFilter_Saturn.vst
+,248,,FabFilter Saturn (FabFilter),FabFilter_Saturn.vst3
+,249,,FabFilter Saturn 2 (FabFilter),FabFilter_Saturn_2.vst
+,250,,Saturn 2 (FabFilter),FabFilter_Saturn_2.vst3
+,251,,FabFilter Saturn (Mono) (FabFilter),FabFilter_Saturn__Mono_.vst
+,252,,FabFilter Simplon (FabFilter),FabFilter_Simplon.vst
+,253,,Simplon (FabFilter),FabFilter_Simplon.vst3
+,254,,FabFilter Timeless 2 (FabFilter),FabFilter_Timeless_2.vst
+,255,,FabFilter Timeless 2 (FabFilter),FabFilter_Timeless_2.vst3
+,256,,FabFilter Timeless 2 (SC) (FabFilter),FabFilter_Timeless_2__SC_.vst
+,257,,FabFilter Timeless 3 (FabFilter),FabFilter_Timeless_3.vst
+,258,,Timeless 3 (FabFilter),FabFilter_Timeless_3.vst3
+,259,Instr.,FabFilter Twin 2 (FabFilter)!!!VSTi,FabFilter_Twin_2.vst
+,260,Instr.,Twin 2 (FabFilter)!!!VSTi,FabFilter_Twin_2.vst3
+,261,,FabFilter Volcano 2 (FabFilter),FabFilter_Volcano_2.vst
+,262,,Volcano 2 (FabFilter),FabFilter_Volcano_2.vst3
+,263,,FabFilter Volcano 2 (Mono) (FabFilter),FabFilter_Volcano_2__Mono_.vst
+,264,,FabFilter Volcano 2 (SC) (FabFilter),FabFilter_Volcano_2__SC_.vst
+,265,,FabFilter Volcano 2 (Mono SC) (FabFilter),FabFilter_Volcano_2__SC_Mono_.vst
+,266,,FB360 Control (Two Big Ears) (8ch),FB360_Control.vst
+,267,,FB360 Control (Two Big Ears) (8ch),FB360_Control.vst3
+,268,,FB360 Control (ambiX) (Two Big Ears) (9ch),FB360_Control_ambiX.vst3
+,269,,FB360 Converter (ambiX) (Two Big Ears) (9ch),FB360_Converter_ambiX.vst3
+,270,,FB360 Mix Loudness (ambiX) (Two Big Ears) (9ch),FB360_Mix_Loudness_ambiX.vst3
+,271,,FB360 Spatialiser (Two Big Ears) (7->8ch),FB360_Spatialiser.vst
+,272,,FB360 Spatialiser (Two Big Ears) (7->8ch),FB360_Spatialiser.vst3
+,273,,FB360 Spatialiser (ambiX) (Two Big Ears) (9ch),FB360_Spatialiser_ambiX.vst3
+,274,,FB360 Stereo Loudness (ambiX) (Two Big Ears),FB360_Stereo_Loudness_ambiX.vst3
+,275,,FdnReverb (IEM) (64ch),FdnReverb.vst
+,276,,Five2B (x86) (Ambisonic Studio B2X) (6ch),Five2B.vst
+,277,,Five2B2 (x86) (Ambisonic Studio B2X) (9ch),Five2B2.vst
+,278,,Five2B5 (x86) (Ambisonic Studio B2X) (12ch),Five2B5.vst
+,279,Instr.,FM8 (Native Instruments GmbH)!!!VSTi,FM8.vst
+,280,,FM8 (Native Instruments GmbH),FM8_FX.vst
+,281,,FormantFilter (OliLarkin),FormantFilter.vst
+,282,,Fresh Air (Slate Digital),Fresh_Air.vst
+,283,,Ghz Midside Matrix 3 (Goodhertz),Ghz_Midside_Matrix_3.vst
+,284,,Ghz Midside Matrix 3 (Goodhertz),Ghz_Midside_Matrix_3.vst3
+,285,,GRM BandPass (Ina-GRM) (mono),GRM_BandPass.vst
+,286,,GRM BandPass Stereo (Ina-GRM),GRM_BandPass_Stereo.vst
+,287,,GRM Comb (Ina-GRM) (mono),GRM_Comb.vst
+,288,,GRM Comb Stereo (Ina-GRM),GRM_Comb_Stereo.vst
+,289,,GRM Contrast (Ina-GRM) (mono),GRM_Contrast.vst
+,290,,GRM Contrast Stereo (Ina-GRM),GRM_Contrast_Stereo.vst
+,291,,GRM Delays (Ina-GRM) (1->8ch),GRM_Delays.vst
+,292,,GRM Delays Stereo (Ina-GRM) (2->8ch),GRM_Delays_Stereo.vst
+,293,,GRM Doppler (Ina-GRM) (1->8ch),GRM_Doppler.vst
+,294,,GRM Doppler Stereo (Ina-GRM) (2->8ch),GRM_Doppler_Stereo.vst
+,295,,GRM Equalize (Ina-GRM) (mono),GRM_Equalize.vst
+,296,,GRM Equalize Stereo (Ina-GRM),GRM_Equalize_Stereo.vst
+,297,,GRM Evolution (Ina-GRM),GRM_Evolution.vst
+,298,,GRM Freeze (Ina-GRM) (1->8ch),GRM_Freeze.vst
+,299,,GRM Freeze Stereo (Ina-GRM) (2->8ch),GRM_Freeze_Stereo.vst
+,300,,GRM Shift (Ina-GRM) (mono),GRM_FreqShift.vst
+,301,,GRM Shift Stereo (Ina-GRM),GRM_FreqShift_Stereo.vst
+,302,,GRM Warp (Ina-GRM) (mono),GRM_FreqWarp.vst
+,303,,GRM Warp Stereo (Ina-GRM),GRM_FreqWarp_Stereo.vst
+,304,,GRM Fusion (Ina-GRM) (2->8ch),GRM_Fusion.vst
+,305,,GRM Grinder (Ina-GRM),GRM_Grinder.vst
+,306,,GRM PitchAccum (Ina-GRM) (mono),GRM_PitchAccum.vst
+,307,,GRM PitchAccum Stereo (Ina-GRM),GRM_PitchAccum_Stereo.vst
+,308,,GRM Reson (Ina-GRM) (1->8ch),GRM_Reson.vst
+,309,,GRM Reson Stereo (Ina-GRM) (2->8ch),GRM_Reson_Stereo.vst
+,310,,GRM Shuffling (Ina-GRM) (1->8ch),GRM_Shuffling.vst
+,311,,GRM Shuffling Stereo (Ina-GRM) (2->8ch),GRM_Shuffling_Stereo.vst
+,312,,GRM SpaceFilter (Ina-GRM) (2->6ch),GRM_SpaceFilter.vst
+,313,,GRM SpaceGrain (Ina-GRM) (2->6ch),GRM_SpaceGrain.vst
+,314,,GRM SpacesMaster (Ina-GRM) (64ch),GRM_SpaceMaster.vst
+,315,,GRM Spaces (Ina-GRM) (2->6ch),GRM_Spaces.vst
+,316,,GRM Spaces3D (Ina-GRM) (64ch),GRM_Spaces3D.vst
+,317,,GRM SpaceVR (Ina-GRM),GRM_SpaceVR.vst
+,318,,Guitar Rig 5 (Native Instruments GmbH),Guitar_Rig_5.vst
+,319,,Hadron (partikkelaudio),Hadron.vst
+,320,,Harmony Engine (Antares Audio Technologies),Harmony_Engine.vst3
+,321,,Harmony Engine (Antares),Harmony_Engine_4x.vst3
+,322,,Harpex-B (Harpex) (6->8ch),Harpex_B.vst
+,323,,Harpex-X (Harpex Ltd) (16ch),Harpex_X.vst
+,324,,IRCAM Tools - HEar v3 (Flux:: - IRCAM) (8ch),HEarV3_x64.vst
+,325,,IRCAM Tools - HEar v3 (x86) (Flux:: - IRCAM) (8ch),HEarV3_x86.vst
+,326,Instr.,Helm (Matt Tytel)!!!VSTi,helm.vst
+,327,Instr.,Helm (Matt Tytel)!!!VSTi,helm.vst3
+,328,,Insight 2 (iZotope /  Inc.),Insight_2.vst
+,329,,Insight 2 (iZotope /  Inc.),Insight_2.vst3
+,330,,iZotope Alloy 2 (iZotope /  Inc.),iZotope_Alloy_2.vst
+,331,,iZotope Alloy 2 (iZotope /  Inc.),iZotope_Alloy_2.vst3
+,332,,iZotope DDLY Dynamic Delay (iZotope /  Inc.),iZotope_DDLY_Dynamic_Delay.vst
+,333,,iZotope DDLY Dynamic Delay (iZotope /  Inc.),iZotope_DDLY_Dynamic_Delay.vst3
+,334,,iZotope Insight (iZotope /  Inc.) (6ch),iZotope_Insight.vst
+,335,,iZotope Insight (iZotope /  Inc.),iZotope_Insight.vst3
+,336,Instr.,iZotope Iris 2 (iZotope /  Inc.)!!!VSTi,iZotope_Iris_2.vst
+,337,Instr.,iZotope Iris 2 (iZotope /  Inc.)!!!VSTi,iZotope_Iris_2.vst3
+,338,,iZotope Meter Tap (iZotope /  Inc.) (6ch),iZotope_Meter_Tap.vst
+,339,,iZotope Meter Tap (iZotope /  Inc.),iZotope_Meter_Tap.vst3
+,340,,iZotope Mobius Filter (iZotope /  Inc.),iZotope_Mobius_Filter.vst
+,341,,iZotope Mobius Filter (iZotope /  Inc.),iZotope_Mobius_Filter.vst3
+,342,,iZotope Nectar 2 (iZotope /  Inc.),iZotope_Nectar_2.vst
+,343,,iZotope Nectar 2 (iZotope /  Inc.),iZotope_Nectar_2.vst3
+,344,,iZotope Nectar 2 Breath Control (iZotope /  Inc.),iZotope_Nectar_2_Breath_Control.vst
+,345,,iZotope Nectar 2 Breath Control (iZotope /  Inc.),iZotope_Nectar_2_Breath_Control.vst3
+,346,,iZotope Nectar 2 Pitch Editor (iZotope /  Inc.),iZotope_Nectar_2_Pitch_Editor.vst
+,347,,iZotope Nectar 2 Pitch Editor (iZotope /  Inc.),iZotope_Nectar_2_Pitch_Editor.vst3
+,348,,iZotope Ozone 5 (iZotope /  Inc.),iZotope_Ozone_5.vst
+,349,,iZotope Ozone 5 (iZotope /  Inc.),iZotope_Ozone_5.vst3
+,350,,iZotope Ozone 7 (iZotope /  Inc.),iZotope_Ozone_7.vst
+,351,,iZotope Ozone 7 (iZotope /  Inc.),iZotope_Ozone_7.vst3
+,352,,iZotope Ozone 7 Dynamic EQ (iZotope /  Inc.),iZotope_Ozone_7_Dynamic_EQ.vst
+,353,,iZotope Ozone 7 Dynamic EQ (iZotope /  Inc.),iZotope_Ozone_7_Dynamic_EQ.vst3
+,354,,iZotope Ozone 7 Dynamics (iZotope /  Inc.),iZotope_Ozone_7_Dynamics.vst
+,355,,iZotope Ozone 7 Dynamics (iZotope /  Inc.),iZotope_Ozone_7_Dynamics.vst3
+,356,,iZotope Ozone 7 Equalizer (iZotope /  Inc.),iZotope_Ozone_7_Equalizer.vst
+,357,,iZotope Ozone 7 Equalizer (iZotope /  Inc.),iZotope_Ozone_7_Equalizer.vst3
+,358,,iZotope Ozone 7 Exciter (iZotope /  Inc.),iZotope_Ozone_7_Exciter.vst
+,359,,iZotope Ozone 7 Exciter (iZotope /  Inc.),iZotope_Ozone_7_Exciter.vst3
+,360,,iZotope Ozone 7 Imager (iZotope /  Inc.),iZotope_Ozone_7_Imager.vst
+,361,,iZotope Ozone 7 Imager (iZotope /  Inc.),iZotope_Ozone_7_Imager.vst3
+,362,,iZotope Ozone 7 Maximizer (iZotope /  Inc.),iZotope_Ozone_7_Maximizer.vst
+,363,,iZotope Ozone 7 Maximizer (iZotope /  Inc.),iZotope_Ozone_7_Maximizer.vst3
+,364,,iZotope Ozone 7 Vintage Compres (iZotope /  Inc.),iZotope_Ozone_7_Vintage_Compressor.vst
+,365,,iZotope Ozone 7 Vintage Compressor (iZotope /  Inc.),iZotope_Ozone_7_Vintage_Compressor.vst3
+,366,,iZotope Ozone 7 Vintage EQ (iZotope /  Inc.),iZotope_Ozone_7_Vintage_EQ.vst
+,367,,iZotope Ozone 7 Vintage EQ (iZotope /  Inc.),iZotope_Ozone_7_Vintage_EQ.vst3
+,368,,iZotope Ozone 7 Vintage Limiter (iZotope /  Inc.),iZotope_Ozone_7_Vintage_Limiter.vst
+,369,,iZotope Ozone 7 Vintage Limiter (iZotope /  Inc.),iZotope_Ozone_7_Vintage_Limiter.vst3
+,370,,iZotope Ozone 7 Vintage Tape (iZotope /  Inc.),iZotope_Ozone_7_Vintage_Tape.vst
+,371,,iZotope Ozone 7 Vintage Tape (iZotope /  Inc.),iZotope_Ozone_7_Vintage_Tape.vst3
+,372,,iZotope RX 5 De-click (iZotope /  Inc.),iZotope_RX_5_De_click.vst
+,373,,iZotope RX 5 De-click (iZotope /  Inc.),iZotope_RX_5_De_click.vst3
+,374,,iZotope RX 5 De-clip (iZotope /  Inc.),iZotope_RX_5_De_clip.vst
+,375,,iZotope RX 5 De-clip (iZotope /  Inc.),iZotope_RX_5_De_clip.vst3
+,376,,iZotope RX 5 De-hum (iZotope /  Inc.),iZotope_RX_5_De_hum.vst
+,377,,iZotope RX 5 De-hum (iZotope /  Inc.),iZotope_RX_5_De_hum.vst3
+,378,,iZotope RX 5 Dialogue De-noise (iZotope /  Inc.),iZotope_RX_5_Dialogue_De_noise.vst
+,379,,iZotope RX 5 Dialogue De-noise (iZotope /  Inc.),iZotope_RX_5_Dialogue_De_noise.vst3
+,380,,iZotope Stutter Edit (iZotope /  Inc.),iZotope_Stutter_Edit.vst
+,381,,iZotope Stutter Edit (iZotope /  Inc.),iZotope_Stutter_Edit.vst3
+,382,,iZotope Trash 2 (iZotope /  Inc.),iZotope_Trash_2.vst
+,383,,iZotope Trash 2 (iZotope /  Inc.),iZotope_Trash_2.vst3
+,384,,iZotope VocalSynth (iZotope /  Inc.),iZotope_VocalSynth.vst
+,385,,iZotope VocalSynth (iZotope /  Inc.),iZotope_VocalSynth.vst3
+,386,,JACK-insert (x86) ((c) 2003-2009 /  J.Petrantoni /  Grame),JACK_insert.vst
+,387,,Chorus (kiloHearts),kHs_Chorus.vst
+,388,,Delay (kiloHearts),kHs_Delay.vst
+,389,,Formant Filter (kiloHearts),kHs_Formant_Filter.vst
+,390,,Gain (kiloHearts),kHs_Gain.vst
+,391,,Limiter (kiloHearts),kHs_Limiter.vst
+,392,,Stereo (kiloHearts),kHs_Stereo.vst
+,393,,Trance Gate (kiloHearts),kHs_Trance_Gate.vst
+,394,,Kickstart (Nicky Romero),Kickstart.vst
+,395,Instr.,Cream (Kirnu)!!!VSTi,Kirnu_Cream64_DEMO.vst
+,396,Instr.,Cream (x86) (Kirnu)!!!VSTi,Kirnu_Cream_DEMO.vst
+,397,Instr.,Kontakt 5 (Native Instruments GmbH) (64 out)!!!VSTi,Kontakt_5.vst
+,398,Instr.,Kontakt 5 (Native Instruments GmbH) (16 out)!!!VSTi,Kontakt_5_16out.vst
+,399,Instr.,Kontakt 5 (Native Instruments GmbH) (8 out)!!!VSTi,Kontakt_5_8out.vst
+,400,,KRETS (Klevgrand),krets.vst
+,401,,KRETS (Klevgrand),krets.vst3
+,402,Instr.,LABS (Spitfire Audio)!!!VSTi,LABS.vst
+,403,Instr.,LABS (Spitfire Audio)!!!VSTi,LABS.vst3
+,404,,LFOTool (Xfer Records),LFOTool.vst
+,405,Instr.,LIRA-8 (Pierre Guillot)!!!VSTi,LIRA_8.vst
+,406,Instr.,LIRA-8 (Undefined)!!!VSTi,LIRA_8.vst3
+,407,,Listento (Audiomovers) (16ch),Listento.vst
+,408,,Listento (Audiomovers),Listento.vst3
+,409,,Listento Receiver (Audiomovers) (16ch),Listento_Receiver.vst
+,410,,Listento Receiver (Audiomovers),Listento_Receiver.vst3
+,411,,Little AlterBoy (SoundToys),LittleAlterBoy.vst
+,412,,Little MicroShift (SoundToys),LittleMicroShift.vst
+,413,,Little Plate (Soundtoys),LittlePlate.vst
+,414,,Little Radiator (Soundtoys),LittleRadiator.vst
+,415,,Lua Protoplug Fx (pac),Lua_Protoplug_Fx.vst
+,416,Instr.,Lua Protoplug Gen (pac)!!!VSTi,Lua_Protoplug_Gen.vst
+,417,Instr.,M1 Le (KORG) (4 out)!!!VSTi,M1_Le.vst
+,418,,MAGC (MeldaProduction),MAGC.vst
+,419,,MAGC (MeldaProduction),MAGC.vst3
+,420,,MAmp (MeldaProduction),MAmp.vst
+,421,,MAmp (MeldaProduction),MAmp.vst3
+,422,,MAnalyzer (MeldaProduction),MAnalyzer.vst
+,423,,MAnalyzer (MeldaProduction),MAnalyzer.vst3
+,424,Instr.,The Mangle (Sound Guru)!!!VSTi,Mangle.vst
+,425,Instr.,Massive (Native Instruments GmbH)!!!VSTi,Massive.vst
+,426,,MatrixMultiplier (IEM) (64ch),MatrixMultiplier.vst
+,427,,MAutopan (MeldaProduction),MAutopan.vst
+,428,,MAutopan (MeldaProduction),MAutopan.vst3
+,429,,MAutoPitch (MeldaProduction),MAutoPitch.vst
+,430,,MAutoPitch (MeldaProduction),MAutoPitch.vst3
+,431,,MBandPass (MeldaProduction),MBandPass.vst
+,432,,MBandPass (MeldaProduction),MBandPass.vst3
+,433,,MBitFun (MeldaProduction),MBitFun.vst
+,434,,MBitFun (MeldaProduction),MBitFun.vst3
+,435,,MCCGenerator (MeldaProduction),MCCGenerator.vst
+,436,,MCCGenerator (MeldaProduction),MCCGenerator.vst3
+,437,,mcfx_convolver16 (kronlachner) (16ch),mcfx_convolver16.vst
+,438,,mcfx_convolver2 (kronlachner),mcfx_convolver2.vst
+,439,,mcfx_convolver24 (kronlachner) (24ch),mcfx_convolver24.vst
+,440,,mcfx_convolver32 (kronlachner) (32ch),mcfx_convolver32.vst
+,441,,mcfx_convolver36 (kronlachner) (36ch),mcfx_convolver36.vst
+,442,,mcfx_convolver4 (kronlachner) (4ch),mcfx_convolver4.vst
+,443,,mcfx_convolver50 (kronlachner) (50ch),mcfx_convolver50.vst
+,444,,mcfx_convolver64 (kronlachner) (64ch),mcfx_convolver64.vst
+,445,,mcfx_convolver8 (kronlachner) (8ch),mcfx_convolver8.vst
+,446,,mcfx_delay16 (kronlachner) (16ch),mcfx_delay16.vst
+,447,,mcfx_delay2 (kronlachner),mcfx_delay2.vst
+,448,,mcfx_delay24 (kronlachner) (24ch),mcfx_delay24.vst
+,449,,mcfx_delay32 (kronlachner) (32ch),mcfx_delay32.vst
+,450,,mcfx_delay36 (kronlachner) (36ch),mcfx_delay36.vst
+,451,,mcfx_delay4 (kronlachner) (4ch),mcfx_delay4.vst
+,452,,mcfx_delay50 (kronlachner) (50ch),mcfx_delay50.vst
+,453,,mcfx_delay64 (kronlachner) (64ch),mcfx_delay64.vst
+,454,,mcfx_delay8 (kronlachner) (8ch),mcfx_delay8.vst
+,455,,mcfx_filter16 (kronlachner) (16ch),mcfx_filter16.vst
+,456,,mcfx_filter2 (kronlachner),mcfx_filter2.vst
+,457,,mcfx_filter24 (kronlachner) (24ch),mcfx_filter24.vst
+,458,,mcfx_filter32 (kronlachner) (32ch),mcfx_filter32.vst
+,459,,mcfx_filter36 (kronlachner) (36ch),mcfx_filter36.vst
+,460,,mcfx_filter4 (kronlachner) (4ch),mcfx_filter4.vst
+,461,,mcfx_filter50 (kronlachner) (50ch),mcfx_filter50.vst
+,462,,mcfx_filter64 (kronlachner) (64ch),mcfx_filter64.vst
+,463,,mcfx_filter8 (kronlachner) (8ch),mcfx_filter8.vst
+,464,,mcfx_gain_delay16 (kronlachner) (16ch),mcfx_gain_delay16.vst
+,465,,mcfx_gain_delay2 (kronlachner),mcfx_gain_delay2.vst
+,466,,mcfx_gain_delay24 (kronlachner) (24ch),mcfx_gain_delay24.vst
+,467,,mcfx_gain_delay32 (kronlachner) (32ch),mcfx_gain_delay32.vst
+,468,,mcfx_gain_delay36 (kronlachner) (36ch),mcfx_gain_delay36.vst
+,469,,mcfx_gain_delay4 (kronlachner) (4ch),mcfx_gain_delay4.vst
+,470,,mcfx_gain_delay50 (kronlachner) (50ch),mcfx_gain_delay50.vst
+,471,,mcfx_gain_delay64 (kronlachner) (64ch),mcfx_gain_delay64.vst
+,472,,mcfx_gain_delay8 (kronlachner) (8ch),mcfx_gain_delay8.vst
+,473,,mcfx_meter16 (kronlachner) (16ch),mcfx_meter16.vst
+,474,,mcfx_meter2 (kronlachner),mcfx_meter2.vst
+,475,,mcfx_meter24 (kronlachner) (24ch),mcfx_meter24.vst
+,476,,mcfx_meter32 (kronlachner) (32ch),mcfx_meter32.vst
+,477,,mcfx_meter36 (kronlachner) (36ch),mcfx_meter36.vst
+,478,,mcfx_meter4 (kronlachner) (4ch),mcfx_meter4.vst
+,479,,mcfx_meter50 (kronlachner) (50ch),mcfx_meter50.vst
+,480,,mcfx_meter64 (kronlachner) (64ch),mcfx_meter64.vst
+,481,,mcfx_meter8 (kronlachner) (8ch),mcfx_meter8.vst
+,482,,MChannelMatrix (MeldaProduction),MChannelMatrix.vst
+,483,,MChannelMatrix (MeldaProduction),MChannelMatrix.vst3
+,484,,MCharmVerb (MeldaProduction),MCharmVerb.vst
+,485,,MCharmVerb (MeldaProduction),MCharmVerb.vst3
+,486,,MComb (MeldaProduction),MComb.vst
+,487,,MComb (MeldaProduction),MComb.vst3
+,488,,MCompressor (MeldaProduction),MCompressor.vst
+,489,,MCompressor (MeldaProduction),MCompressor.vst3
+,490,,MConvolutionEZ (MeldaProduction),MConvolutionEZ.vst
+,491,,MConvolutionEZ (MeldaProduction),MConvolutionEZ.vst3
+,492,Instr.,MelodicFlow (FeelYourSound)!!!VSTi,MelodicFlow.vst
+,493,,Melodyne (Celemony),Melodyne.vst3
+,494,,MEqualizer (MeldaProduction),MEqualizer.vst
+,495,,MEqualizer (MeldaProduction),MEqualizer.vst3
+,496,,MFilter (MeldaProduction),MFilter.vst
+,497,,MFilter (MeldaProduction),MFilter.vst3
+,498,,MFlanger (MeldaProduction),MFlanger.vst
+,499,,MFlanger (MeldaProduction),MFlanger.vst3
+,500,,MFreeformPhase (MeldaProduction),MFreeformPhase.vst
+,501,,MFreeformPhase (MeldaProduction),MFreeformPhase.vst3
+,502,,MFreqShifter (MeldaProduction),MFreqShifter.vst
+,503,,MFreqShifter (MeldaProduction),MFreqShifter.vst3
+,504,,Mic Mod (Antares),Mic_Mod.vst3
+,505,,Mic Mod EFX (Antares Audio Technologies),Mic_Mod_EFX.vst3
+,506,Instr.,Midi Madness 3 (Midi Madness Software)!!!VSTi,Midi_Madness_3.vst
+,507,Instr.,MIDI Shift Array (Xfer Records)!!!VSTi,MIDIShiftArray.vst
+,508,,MIOConsoleConnect (Metric Halo),MIOConsoleConnectVST.vst
+,509,,MLoudnessAnalyzer (MeldaProduction),MLoudnessAnalyzer.vst
+,510,,MLoudnessAnalyzer (MeldaProduction),MLoudnessAnalyzer.vst3
+,511,,MMetronome (MeldaProduction),MMetronome.vst
+,512,,MMetronome (MeldaProduction),MMetronome.vst3
+,513,,MMorph (MeldaProduction),MMorph.vst
+,514,,MMorph (MeldaProduction),MMorph.vst3
+,515,,MMultiBandAutopan (MeldaProduction),MMultiBandAutopan.vst
+,516,,MMultiBandAutopan (MeldaProduction),MMultiBandAutopan.vst3
+,517,,MMultiBandBitFun (MeldaProduction),MMultiBandBitFun.vst
+,518,,MMultiBandBitFun (MeldaProduction),MMultiBandBitFun.vst3
+,519,,MMultiBandChorus (MeldaProduction),MMultiBandChorus.vst
+,520,,MMultiBandChorus (MeldaProduction),MMultiBandChorus.vst3
+,521,,MMultiBandComb (MeldaProduction),MMultiBandComb.vst
+,522,,MMultiBandComb (MeldaProduction),MMultiBandComb.vst3
+,523,,MMultiBandConvolution (MeldaProduction),MMultiBandConvolution.vst
+,524,,MMultiBandConvolution (MeldaProduction),MMultiBandConvolution.vst3
+,525,,MMultiBandDelay (MeldaProduction),MMultiBandDelay.vst
+,526,,MMultiBandDelay (MeldaProduction),MMultiBandDelay.vst3
+,527,,MMultiBandDistortion (MeldaProduction),MMultiBandDistortion.vst
+,528,,MMultiBandDistortion (MeldaProduction),MMultiBandDistortion.vst3
+,529,,MMultiBandFlanger (MeldaProduction),MMultiBandFlanger.vst
+,530,,MMultiBandFlanger (MeldaProduction),MMultiBandFlanger.vst3
+,531,,MMultiBandFreqShifter (MeldaProduction),MMultiBandFreqShifter.vst
+,532,,MMultiBandFreqShifter (MeldaProduction),MMultiBandFreqShifter.vst3
+,533,,MMultiBandGranular (MeldaProduction),MMultiBandGranular.vst
+,534,,MMultiBandGranular (MeldaProduction),MMultiBandGranular.vst3
+,535,,MMultiBandHarmonizer (MeldaProduction),MMultiBandHarmonizer.vst
+,536,,MMultiBandHarmonizer (MeldaProduction),MMultiBandHarmonizer.vst3
+,537,,MMultiBandPhaser (MeldaProduction),MMultiBandPhaser.vst
+,538,,MMultiBandPhaser (MeldaProduction),MMultiBandPhaser.vst3
+,539,,MMultiBandReverb (MeldaProduction),MMultiBandReverb.vst
+,540,,MMultiBandReverb (MeldaProduction),MMultiBandReverb.vst3
+,541,,MMultiBandRhythmizer (MeldaProduction),MMultiBandRhythmizer.vst
+,542,,MMultiBandRhythmizer (MeldaProduction),MMultiBandRhythmizer.vst3
+,543,,MMultiBandRingModulator (MeldaProduction),MMultiBandRingModulator.vst
+,544,,MMultiBandRingModulator (MeldaProduction),MMultiBandRingModulator.vst3
+,545,,MMultiBandSaturator (MeldaProduction),MMultiBandSaturator.vst
+,546,,MMultiBandSaturator (MeldaProduction),MMultiBandSaturator.vst3
+,547,,MMultiBandTremolo (MeldaProduction),MMultiBandTremolo.vst
+,548,,MMultiBandTremolo (MeldaProduction),MMultiBandTremolo.vst3
+,549,,MMultiBandVibrato (MeldaProduction),MMultiBandVibrato.vst
+,550,,MMultiBandVibrato (MeldaProduction),MMultiBandVibrato.vst3
+,551,,MMultiBandWaveShaper (MeldaProduction),MMultiBandWaveShaper.vst
+,552,,MMultiBandWaveShaper (MeldaProduction),MMultiBandWaveShaper.vst3
+,553,,MNoiseGenerator (MeldaProduction),MNoiseGenerator.vst
+,554,,MNoiseGenerator (MeldaProduction),MNoiseGenerator.vst3
+,555,,MNotepad (MeldaProduction),MNotepad.vst
+,556,,MNotepad (MeldaProduction),MNotepad.vst3
+,557,,MOscillator (MeldaProduction),MOscillator.vst
+,558,,MOscillator (MeldaProduction),MOscillator.vst3
+,559,,MOscilloscope (MeldaProduction),MOscilloscope.vst
+,560,,MOscilloscope (MeldaProduction),MOscilloscope.vst3
+,561,,Movement (Output) (3ch),Movement.vst
+,562,,Movement (Output),Movement.vst3
+,563,,MPhaser (MeldaProduction),MPhaser.vst
+,564,,MPhaser (MeldaProduction),MPhaser.vst3
+,565,,MRatio (MeldaProduction),MRatio.vst
+,566,,MRatio (MeldaProduction),MRatio.vst3
+,567,,MRatioMB (MeldaProduction),MRatioMB.vst
+,568,,MRatioMB (MeldaProduction),MRatioMB.vst3
+,569,,MRecorder (MeldaProduction),MRecorder.vst
+,570,,MRecorder (MeldaProduction),MRecorder.vst3
+,571,,MRhythmizer (MeldaProduction),MRhythmizer.vst
+,572,,MRhythmizer (MeldaProduction),MRhythmizer.vst3
+,573,,MRingModulator (MeldaProduction),MRingModulator.vst
+,574,,MRingModulator (MeldaProduction),MRingModulator.vst3
+,575,,MRotary (MeldaProduction),MRotary.vst
+,576,,MRotary (MeldaProduction),MRotary.vst3
+,577,,audiounit (Ambisonic Studio),MS_Decoder.vst
+,578,,MSaturator (MeldaProduction),MSaturator.vst
+,579,,MSaturator (MeldaProduction),MSaturator.vst3
+,580,,MSpectralPan (MeldaProduction),MSpectralPan.vst
+,581,,MSpectralPan (MeldaProduction),MSpectralPan.vst3
+,582,,MStereoExpander (MeldaProduction),MStereoExpander.vst
+,583,,MStereoExpander (MeldaProduction),MStereoExpander.vst3
+,584,,MStereoScope (MeldaProduction),MStereoScope.vst
+,585,,MStereoScope (MeldaProduction),MStereoScope.vst3
+,586,,MTransformer (MeldaProduction),MTransformer.vst
+,587,,MTransformer (MeldaProduction),MTransformer.vst3
+,588,,MTremolo (MeldaProduction),MTremolo.vst
+,589,,MTremolo (MeldaProduction),MTremolo.vst3
+,590,,MTuner (MeldaProduction),MTuner.vst
+,591,,MTuner (MeldaProduction),MTuner.vst3
+,592,,MultiBandCompressor (IEM) (64ch),MultiBandCompressor.vst
+,593,,MultiEncoder (IEM) (64ch),MultiEncoder.vst
+,594,,MultiEQ (IEM) (64ch),MultiEQ.vst
+,595,,Muteomatic (Sound Radix),Muteomatic.vst
+,596,,Muteomatic (Sound Radix) (mono),Muteomatic.vst3
+,597,,MUtility (MeldaProduction),MUtility.vst
+,598,,MUtility (MeldaProduction),MUtility.vst3
+,599,,MVibrato (MeldaProduction),MVibrato.vst
+,600,,MVibrato (MeldaProduction),MVibrato.vst3
+,601,,MVintageRotary (MeldaProduction),MVintageRotary.vst
+,602,,MVintageRotary (MeldaProduction),MVintageRotary.vst3
+,603,,MVocoder (MeldaProduction),MVocoder.vst
+,604,,MVocoder (MeldaProduction),MVocoder.vst3
+,605,,MWaveFolder (MeldaProduction),MWaveFolder.vst
+,606,,MWaveFolder (MeldaProduction),MWaveFolder.vst3
+,607,,MWaveShaper (MeldaProduction),MWaveShaper.vst
+,608,,MWaveShaper (MeldaProduction),MWaveShaper.vst3
+,609,,MWobbler (MeldaProduction),MWobbler.vst
+,610,,MWobbler (MeldaProduction),MWobbler.vst3
+,611,,MXXX (MeldaProduction),MXXX.vst
+,612,,MXXX (MeldaProduction),MXXX.vst3
+,613,,MyBino (XAudio),MyBino.vst
+,614,,Nectar 3 (iZotope /  Inc.),Nectar_3.vst
+,615,,Nectar 3 (iZotope /  Inc.),Nectar_3.vst3
+,616,Instr.,Nerve (Xfer Records) (32 out)!!!VSTi,Nerve.vst
+,617,,Neutrino (iZotope /  Inc.),Neutrino.vst
+,618,,Neutrino (iZotope /  Inc.),Neutrino.vst3
+,619,,Neutron (iZotope /  Inc.),Neutron.vst
+,620,,Neutron (iZotope /  Inc.),Neutron.vst3
+,621,,Neutron 2 (iZotope /  Inc.),Neutron_2.vst
+,622,,Neutron 2 (iZotope /  Inc.),Neutron_2.vst3
+,623,,Neutron 2 Compressor (iZotope /  Inc.),Neutron_2_Compressor.vst
+,624,,Neutron 2 Compressor (iZotope /  Inc.),Neutron_2_Compressor.vst3
+,625,,Neutron 2 Equalizer (iZotope /  Inc.),Neutron_2_Equalizer.vst
+,626,,Neutron 2 Equalizer (iZotope /  Inc.),Neutron_2_Equalizer.vst3
+,627,,Neutron 2 Exciter (iZotope /  Inc.),Neutron_2_Exciter.vst
+,628,,Neutron 2 Exciter (iZotope /  Inc.),Neutron_2_Exciter.vst3
+,629,,Neutron 2 Gate (iZotope /  Inc.),Neutron_2_Gate.vst
+,630,,Neutron 2 Gate (iZotope /  Inc.),Neutron_2_Gate.vst3
+,631,,Neutron 2 Mix Tap (iZotope /  Inc.),Neutron_2_Mix_Tap.vst
+,632,,Neutron 2 Mix Tap (iZotope /  Inc.),Neutron_2_Mix_Tap.vst3
+,633,,Neutron 2 Transient Shaper (iZotope /  Inc.),Neutron_2_Transient_Shaper.vst
+,634,,Neutron 2 Transient Shaper (iZotope /  Inc.),Neutron_2_Transient_Shaper.vst3
+,635,,Neutron 2 Visual Mixer (iZotope /  Inc.),Neutron_2_Visual_Mixer.vst
+,636,,Neutron 2 Visual Mixer (iZotope /  Inc.),Neutron_2_Visual_Mixer.vst3
+,637,,Neutron 3 (iZotope /  Inc.),Neutron_3.vst
+,638,,Neutron 3 (iZotope /  Inc.),Neutron_3.vst3
+,639,,Neutron 3 Compressor (iZotope /  Inc.),Neutron_3_Compressor.vst
+,640,,Neutron 3 Compressor (iZotope /  Inc.),Neutron_3_Compressor.vst3
+,641,,Neutron 3 Equalizer (iZotope /  Inc.),Neutron_3_Equalizer.vst
+,642,,Neutron 3 Equalizer (iZotope /  Inc.),Neutron_3_Equalizer.vst3
+,643,,Neutron 3 Exciter (iZotope /  Inc.),Neutron_3_Exciter.vst
+,644,,Neutron 3 Exciter (iZotope /  Inc.),Neutron_3_Exciter.vst3
+,645,,Neutron 3 Gate (iZotope /  Inc.),Neutron_3_Gate.vst
+,646,,Neutron 3 Gate (iZotope /  Inc.),Neutron_3_Gate.vst3
+,647,,Neutron 3 Sculptor (iZotope /  Inc.),Neutron_3_Sculptor.vst
+,648,,Neutron 3 Sculptor (iZotope /  Inc.),Neutron_3_Sculptor.vst3
+,649,,Neutron 3 Transient Shaper (iZotope /  Inc.),Neutron_3_Transient_Shaper.vst
+,650,,Neutron 3 Transient Shaper (iZotope /  Inc.),Neutron_3_Transient_Shaper.vst3
+,651,,Neutron 3 Visual Mixer (iZotope /  Inc.),Neutron_3_Visual_Mixer.vst
+,652,,Neutron 3 Visual Mixer (iZotope /  Inc.),Neutron_3_Visual_Mixer.vst3
+,653,,Neutron Compressor (iZotope /  Inc.),Neutron_Compressor.vst
+,654,,Neutron Compressor (iZotope /  Inc.),Neutron_Compressor.vst3
+,655,,Neutron Equalizer (iZotope /  Inc.),Neutron_Equalizer.vst
+,656,,Neutron Equalizer (iZotope /  Inc.),Neutron_Equalizer.vst3
+,657,,Neutron Exciter (iZotope /  Inc.),Neutron_Exciter.vst
+,658,,Neutron Exciter (iZotope /  Inc.),Neutron_Exciter.vst3
+,659,,Neutron Transient Shaper (iZotope /  Inc.),Neutron_Transient_Shaper.vst
+,660,,Neutron Transient Shaper (iZotope /  Inc.),Neutron_Transient_Shaper.vst3
+,661,,Newfangled EQuivocate (Newfangled Audio),Newfangled_EQuivocate.vst
+,662,,<SHELL>,O3ACore.vst
+,663,,O3A Panner (Blue Ripple Sound Limited),O3ACore.vst<1635149926
+,664,,O3A Injector - O2A (Blue Ripple Sound Limited),O3ACore.vst<1651532653
+,665,,O3A Gain (Blue Ripple Sound Limited),O3ACore.vst<1668576109
+,666,,O3A Beamer (Blue Ripple Sound Limited),O3ACore.vst<1718579058
+,667,,O3A Virtual Microphone (Blue Ripple Sound Limited),O3ACore.vst<1718839909
+,668,,O3A Panner - Hemisphere (Blue Ripple Sound Limited),O3ACore.vst<1752003429
+,669,,O3A Panner - Two Channel (Blue Ripple Sound Limited),O3ACore.vst<1786000762
+,670,,O3A Panner - Classic (Blue Ripple Sound Limited),O3ACore.vst<1802594673
+,671,,O3A Panner - Large (Blue Ripple Sound Limited),O3ACore.vst<1803171449
+,672,,O3A Flare (Blue Ripple Sound Limited),O3ACore.vst<1818387571
+,673,,O3A Meter (Blue Ripple Sound Limited),O3ACore.vst<1835168622
+,674,,O3A Visualiser - Hemisphere (Blue Ripple Sound Limited),O3ACore.vst<1836217208
+,675,,O3A Decoder - FuMa (Blue Ripple Sound Limited),O3ACore.vst<1836278582
+,676,,O3A Decoder - Mono (Blue Ripple Sound Limited),O3ACore.vst<1869443682
+,677,,O3A Decoder - O1A (Blue Ripple Sound Limited),O3ACore.vst<1869640818
+,678,,O3A Visualiser (Blue Ripple Sound Limited),O3ACore.vst<1902934579
+,679,,O3A Rotation (Blue Ripple Sound Limited),O3ACore.vst<1919574892
+,680,,O3A Decoder - O2A (Blue Ripple Sound Limited),O3ACore.vst<1952869483
+,681,,O3A Injector - FuMa (Blue Ripple Sound Limited),O3ACore.vst<1952871276
+,682,,O3A Injector - O1A (Blue Ripple Sound Limited),O3ACore.vst<1969516407
+,683,,O3A Meter - Signal (Blue Ripple Sound Limited),O3ACore.vst<2003137402
+,684,,O3A Look (Blue Ripple Sound Limited),O3ACore.vst<2033214073
+,685,,O3A Decoder - 5.1 Basic (Blue Ripple Sound Limited),O3ACore.vst<2037280365
+,686,,O3A Colourizer (Blue Ripple Sound Limited),O3ACore.vst<811823716
+,687,,O3A Panner - Eight Channel (Blue Ripple Sound Limited),O3ACore.vst<812349306
+,688,,O3A Decoder - Stereo (Blue Ripple Sound Limited),O3ACore.vst<929593189
+,689,,Oculus Spatializer (Oculus),OculusSpatializer.vst
+,690,,OmniCompressor (IEM) (64ch),OmniCompressor.vst
+,691,Instr.,Omnisphere (Spectrasonics) (16 out)!!!VSTi,Omnisphere.vst
+,692,,OSL Side Effects (Oblivion Sound Lab),OSL_Side_Effects.vst3
+,693,,OTT (Xfer Records),OTT.vst
+,694,,Ozone 8 (iZotope /  Inc.),Ozone_8.vst
+,695,,Ozone 8 (iZotope /  Inc.),Ozone_8.vst3
+,696,,Ozone 8 Dynamic EQ (iZotope /  Inc.),Ozone_8_Dynamic_EQ.vst
+,697,,Ozone 8 Dynamic EQ (iZotope /  Inc.),Ozone_8_Dynamic_EQ.vst3
+,698,,Ozone 8 Dynamics (iZotope /  Inc.),Ozone_8_Dynamics.vst
+,699,,Ozone 8 Dynamics (iZotope /  Inc.),Ozone_8_Dynamics.vst3
+,700,,Ozone 8 Equalizer (iZotope /  Inc.),Ozone_8_Equalizer.vst
+,701,,Ozone 8 Equalizer (iZotope /  Inc.),Ozone_8_Equalizer.vst3
+,702,,Ozone 8 Exciter (iZotope /  Inc.),Ozone_8_Exciter.vst
+,703,,Ozone 8 Exciter (iZotope /  Inc.),Ozone_8_Exciter.vst3
+,704,,Ozone 8 Imager (iZotope /  Inc.),Ozone_8_Imager.vst
+,705,,Ozone 8 Imager (iZotope /  Inc.),Ozone_8_Imager.vst3
+,706,,Ozone 8 Maximizer (iZotope /  Inc.),Ozone_8_Maximizer.vst
+,707,,Ozone 8 Maximizer (iZotope /  Inc.),Ozone_8_Maximizer.vst3
+,708,,Ozone 8 Spectral Shaper (iZotope /  Inc.),Ozone_8_Spectral_Shaper.vst
+,709,,Ozone 8 Spectral Shaper (iZotope /  Inc.),Ozone_8_Spectral_Shaper.vst3
+,710,,Ozone 8 Vintage Compressor (iZotope /  Inc.),Ozone_8_Vintage_Compressor.vst
+,711,,Ozone 8 Vintage Compressor (iZotope /  Inc.),Ozone_8_Vintage_Compressor.vst3
+,712,,Ozone 8 Vintage EQ (iZotope /  Inc.),Ozone_8_Vintage_EQ.vst
+,713,,Ozone 8 Vintage EQ (iZotope /  Inc.),Ozone_8_Vintage_EQ.vst3
+,714,,Ozone 8 Vintage Limiter (iZotope /  Inc.),Ozone_8_Vintage_Limiter.vst
+,715,,Ozone 8 Vintage Limiter (iZotope /  Inc.),Ozone_8_Vintage_Limiter.vst3
+,716,,Ozone 8 Vintage Tape (iZotope /  Inc.),Ozone_8_Vintage_Tape.vst
+,717,,Ozone 8 Vintage Tape (iZotope /  Inc.),Ozone_8_Vintage_Tape.vst3
+,718,,Ozone 9 (iZotope /  Inc.),Ozone_9.vst
+,719,,Ozone 9 (iZotope /  Inc.),Ozone_9.vst3
+,720,,Ozone 9 Dynamic EQ (iZotope /  Inc.),Ozone_9_Dynamic_EQ.vst
+,721,,Ozone 9 Dynamic EQ (iZotope /  Inc.),Ozone_9_Dynamic_EQ.vst3
+,722,,Ozone 9 Dynamics (iZotope /  Inc.),Ozone_9_Dynamics.vst
+,723,,Ozone 9 Dynamics (iZotope /  Inc.),Ozone_9_Dynamics.vst3
+,724,,Ozone 9 Equalizer (iZotope /  Inc.),Ozone_9_Equalizer.vst
+,725,,Ozone 9 Equalizer (iZotope /  Inc.),Ozone_9_Equalizer.vst3
+,726,,Ozone 9 Exciter (iZotope /  Inc.),Ozone_9_Exciter.vst
+,727,,Ozone 9 Exciter (iZotope /  Inc.),Ozone_9_Exciter.vst3
+,728,,Ozone 9 Imager (iZotope /  Inc.),Ozone_9_Imager.vst
+,729,,Ozone 9 Imager (iZotope /  Inc.),Ozone_9_Imager.vst3
+,730,,Ozone 9 Low End Focus (iZotope /  Inc.),Ozone_9_Low_End_Focus.vst
+,731,,Ozone 9 Low End Focus (iZotope /  Inc.),Ozone_9_Low_End_Focus.vst3
+,732,,Ozone 9 Master Rebalance (iZotope /  Inc.),Ozone_9_Master_Rebalance.vst
+,733,,Ozone 9 Master Rebalance (iZotope /  Inc.),Ozone_9_Master_Rebalance.vst3
+,734,,Ozone 9 Match EQ (iZotope /  Inc.),Ozone_9_Match_EQ.vst
+,735,,Ozone 9 Match EQ (iZotope /  Inc.),Ozone_9_Match_EQ.vst3
+,736,,Ozone 9 Maximizer (iZotope /  Inc.),Ozone_9_Maximizer.vst
+,737,,Ozone 9 Maximizer (iZotope /  Inc.),Ozone_9_Maximizer.vst3
+,738,,Ozone 9 Spectral Shaper (iZotope /  Inc.),Ozone_9_Spectral_Shaper.vst
+,739,,Ozone 9 Spectral Shaper (iZotope /  Inc.),Ozone_9_Spectral_Shaper.vst3
+,740,,Ozone 9 Vintage Compressor (iZotope /  Inc.),Ozone_9_Vintage_Compressor.vst
+,741,,Ozone 9 Vintage Compressor (iZotope /  Inc.),Ozone_9_Vintage_Compressor.vst3
+,742,,Ozone 9 Vintage EQ (iZotope /  Inc.),Ozone_9_Vintage_EQ.vst
+,743,,Ozone 9 Vintage EQ (iZotope /  Inc.),Ozone_9_Vintage_EQ.vst3
+,744,,Ozone 9 Vintage Limiter (iZotope /  Inc.),Ozone_9_Vintage_Limiter.vst
+,745,,Ozone 9 Vintage Limiter (iZotope /  Inc.),Ozone_9_Vintage_Limiter.vst3
+,746,,Ozone 9 Vintage Tape (iZotope /  Inc.),Ozone_9_Vintage_Tape.vst
+,747,,Ozone 9 Vintage Tape (iZotope /  Inc.),Ozone_9_Vintage_Tape.vst3
+,748,,Ozone Imager (iZotope /  Inc.),Ozone_Imager.vst
+,749,,Ozone Imager (iZotope /  Inc.),Ozone_Imager.vst3
+,750,,PaulXStretch (Xenakios) (8ch),PaulXStretch.vst
+,751,,PHA-979 (Voxengo) (4ch),PHA_979.vst
+,752,,PHA-979 (Voxengo),PHA_979.vst3
+,753,,Phasis (Native Instruments GmbH),Phasis.vst
+,754,,Pi (Sound Radix),Pi.vst
+,755,,Pi (Sound Radix),Pi.vst3
+,756,Instr.,Play (East West) (2->18ch)!!!VSTi,Play.vst
+,757,Instr.,Play (East West) (18 out)!!!VSTi,Play.vst3
+,758,,ProbeDecoder (IEM) (64ch),ProbeDecoder.vst
+,759,,Quad2B (x86) (Ambisonic Studio B2X) (4ch),Quad2B.vst
+,760,,Quad2B2 (x86) (Ambisonic Studio B2X) (9ch),Quad2B2.vst
+,761,,QUARK (dublab) (4ch),QUARK.vst3
+,762,,Quartz (Artificial Audio),Quartz.vst
+,763,,ReaCast (Cockos),reacast.vst.dylib
+,764,,ReaComp (Cockos),reacomp.vst.dylib
+,765,,ReaControlMIDI (Cockos),reacontrolMIDI.vst.dylib
+,766,,ReaDelay (Cockos),readelay.vst.dylib
+,767,,ReaEQ (Cockos),reaeq.vst.dylib
+,768,,ReaFir (FFT EQ+Dynamics Processor) (Cockos),reafir.vst.dylib
+,769,,ReaGate (Cockos),reagate.vst.dylib
+,770,,ReaInsert (Cockos),reainsert.vst.dylib
+,771,Instr.,Reaktor5 (Native Instruments GmbH) (2->8ch)!!!VSTi,Reaktor5.vst
+,772,Instr.,Reaktor5 (Native Instruments GmbH) (2->16ch)!!!VSTi,Reaktor5_16out.vst
+,773,,Reaktor5 (Native Instruments GmbH),Reaktor5_FX.vst
+,774,,Reaktor5 (Native Instruments GmbH) (16ch),Reaktor5_FX_16x16.vst
+,775,,Reaktor5 (Native Instruments GmbH) (2->8ch),Reaktor5_FX_2x8.vst
+,776,,Reaktor5 (Native Instruments GmbH) (6ch),Reaktor5_Surround.vst
+,777,Instr.,Reaktor 6 (Native Instruments GmbH) (2->16ch)!!!VSTi,Reaktor_6.vst
+,778,,Reaktor 6 (Native Instruments GmbH) (16ch),Reaktor_6_FX.vst
+,779,,ReaLimit (Cockos),realimit.vst.dylib
+,780,,ReaNINJAM (Cockos),reaninjam.vst.dylib
+,781,,ReaPitch (Cockos),reapitch.vst.dylib
+,782,Instr.,ReaSamplOmatic5000 (Cockos)!!!VSTi,reasamplomatic.vst.dylib
+,783,,ReaStream (Cockos) (8ch),reastream.vst.dylib
+,784,,ReaSurround (Cockos),reasurround.vst.dylib
+,785,,ReaSurroundPan (Cockos),reasurround2.vst.dylib
+,786,Instr.,ReaSynDr (Cockos) (4 out)!!!VSTi,reasyndr.vst.dylib
+,787,Instr.,ReaSynth (Cockos)!!!VSTi,reasynth.vst.dylib
+,788,,ReaTune (Cockos),reatune.vst.dylib
+,789,,ReaVerb (Cockos),reaverb.vst.dylib
+,790,,ReaVerbate (Cockos),reaverbate.vst.dylib
+,791,,ReaVocode (Cockos),reavocode.vst.dylib
+,792,,ReaVoice (Cockos),reavoice.vst.dylib
+,793,,ReaXcomp (Cockos),reaxcomp.vst.dylib
+,794,,Relay (iZotope /  Inc.),Relay.vst
+,795,,Relay (iZotope /  Inc.),Relay.vst3
+,796,Instr.,Riffer (Audiomodern)!!!VSTi,Riffer_Trial.vst
+,797,Instr.,Riffer (Audiomodern)!!!VSTi,Riffer_Trial.vst3
+,798,,RondoReturn (Dysonics),RondoReturn.vst
+,799,,RondoReturn (Dysonics),RondoReturn.vst3
+,800,,RondoSend (Dysonics),RondoSend.vst
+,801,,RondoSend (Dysonics),RondoSend.vst3
+,802,,RoomEncoder (IEM) (64ch),RoomEncoder.vst
+,803,,RX 6 Connect (iZotope /  Inc.),RX_6_Connect.vst
+,804,,RX 6 Connect (iZotope /  Inc.),RX_6_Connect.vst3
+,805,,RX 6 De-click (iZotope /  Inc.),RX_6_De_click.vst
+,806,,RX 6 De-click (iZotope /  Inc.),RX_6_De_click.vst3
+,807,,RX 6 De-clip (iZotope /  Inc.),RX_6_De_clip.vst
+,808,,RX 6 De-clip (iZotope /  Inc.),RX_6_De_clip.vst3
+,809,,RX 6 De-crackle (iZotope /  Inc.),RX_6_De_crackle.vst
+,810,,RX 6 De-crackle (iZotope /  Inc.),RX_6_De_crackle.vst3
+,811,,RX 6 De-ess (iZotope /  Inc.),RX_6_De_ess.vst
+,812,,RX 6 De-ess (iZotope /  Inc.),RX_6_De_ess.vst3
+,813,,RX 6 De-hum (iZotope /  Inc.),RX_6_De_hum.vst
+,814,,RX 6 De-hum (iZotope /  Inc.),RX_6_De_hum.vst3
+,815,,RX 6 De-plosive (iZotope /  Inc.),RX_6_De_plosive.vst
+,816,,RX 6 De-plosive (iZotope /  Inc.),RX_6_De_plosive.vst3
+,817,,RX 6 De-reverb (iZotope /  Inc.),RX_6_De_reverb.vst
+,818,,RX 6 De-reverb (iZotope /  Inc.),RX_6_De_reverb.vst3
+,819,,RX 6 Monitor (iZotope /  Inc.),RX_6_Monitor.vst
+,820,,RX 6 Monitor (iZotope /  Inc.),RX_6_Monitor.vst3
+,821,,RX 6 Mouth De-click (iZotope /  Inc.),RX_6_Mouth_De_click.vst
+,822,,RX 6 Mouth De-click (iZotope /  Inc.),RX_6_Mouth_De_click.vst3
+,823,,RX 6 Spectral De-noise (iZotope /  Inc.),RX_6_Spectral_De_noise.vst
+,824,,RX 6 Spectral De-noise (iZotope /  Inc.),RX_6_Spectral_De_noise.vst3
+,825,,RX 6 Voice De-noise (iZotope /  Inc.),RX_6_Voice_De_noise.vst
+,826,,RX 6 Voice De-noise (iZotope /  Inc.),RX_6_Voice_De_noise.vst3
+,827,,RX 7 Breath Control (iZotope /  Inc.),RX_7_Breath_Control.vst
+,828,,RX 7 Breath Control (iZotope /  Inc.),RX_7_Breath_Control.vst3
+,829,,RX 7 Connect (iZotope /  Inc.),RX_7_Connect.vst
+,830,,RX 7 Connect (iZotope /  Inc.),RX_7_Connect.vst3
+,831,,RX 7 De-click (iZotope /  Inc.),RX_7_De_click.vst
+,832,,RX 7 De-click (iZotope /  Inc.),RX_7_De_click.vst3
+,833,,RX 7 De-clip (iZotope /  Inc.),RX_7_De_clip.vst
+,834,,RX 7 De-clip (iZotope /  Inc.),RX_7_De_clip.vst3
+,835,,RX 7 De-crackle (iZotope /  Inc.),RX_7_De_crackle.vst
+,836,,RX 7 De-crackle (iZotope /  Inc.),RX_7_De_crackle.vst3
+,837,,RX 7 De-ess (iZotope /  Inc.),RX_7_De_ess.vst
+,838,,RX 7 De-ess (iZotope /  Inc.),RX_7_De_ess.vst3
+,839,,RX 7 De-hum (iZotope /  Inc.),RX_7_De_hum.vst
+,840,,RX 7 De-hum (iZotope /  Inc.),RX_7_De_hum.vst3
+,841,,RX 7 De-plosive (iZotope /  Inc.),RX_7_De_plosive.vst
+,842,,RX 7 De-plosive (iZotope /  Inc.),RX_7_De_plosive.vst3
+,843,,RX 7 De-reverb (iZotope /  Inc.),RX_7_De_reverb.vst
+,844,,RX 7 De-reverb (iZotope /  Inc.),RX_7_De_reverb.vst3
+,845,,RX 7 Monitor (iZotope /  Inc.),RX_7_Monitor.vst
+,846,,RX 7 Monitor (iZotope /  Inc.),RX_7_Monitor.vst3
+,847,,RX 7 Mouth De-click (iZotope /  Inc.),RX_7_Mouth_De_click.vst
+,848,,RX 7 Mouth De-click (iZotope /  Inc.),RX_7_Mouth_De_click.vst3
+,849,,RX 7 Spectral De-noise (iZotope /  Inc.),RX_7_Spectral_De_noise.vst
+,850,,RX 7 Spectral De-noise (iZotope /  Inc.),RX_7_Spectral_De_noise.vst3
+,851,,RX 7 Voice De-noise (iZotope /  Inc.),RX_7_Voice_De_noise.vst
+,852,,RX 7 Voice De-noise (iZotope /  Inc.),RX_7_Voice_De_noise.vst3
+,853,,SceneRotator (IEM) (64ch),SceneRotator.vst
+,854,,AMBEO A-B Format Converter (Sennheiser) (4ch),Sennheiser_AMBEO_A_B_format_converter.vst
+,855,,AMBEO A-B Format Converter (Sennheiser) (4ch),Sennheiser_AMBEO_A_B_format_converter.vst3
+,856,,AMBEO Orbit (Sennheiser),Sennheiser_AMBEO_Orbit.vst
+,857,,AMBEO Orbit (Sennheiser),Sennheiser_AMBEO_Orbit.vst3
+,858,,MKH800 Twin Pattern (Sennheiser) (mono),SennheiserMKH800TWIN.vst
+,859,,MKH800 Twin Pattern (Sennheiser) (mono),SennheiserMKH800TWIN.vst3
+,860,Instr.,Serum (Xfer Records)!!!VSTi,Serum.vst
+,861,,SerumFX (Xfer Records),SerumFX.vst
+,862,,SessionStreamer (SoundStuff),SessionStreamer_Plugin.vst3
+,863,Instr.,sforzando (Plogue Art et Technologie /  Inc)!!!VSTi,sforzando.vst
+,864,Instr.,sforzando (Plogue Art et Technologie /  Inc)!!!VSTi,sforzando.vst3
+,865,,SH Mix Masher (x86) (Ambisonic Studio SH) (6ch),SH_Mix_Masher.vst
+,866,,SH Signal Router (x86) (Ambisonic Studio SH) (6ch),SH_Signal_Router.vst
+,867,,Sie-Q (SoundToys),SieQ.vst
+,868,,SimpleDecoder (IEM) (64ch),SimpleDecoder.vst
+,869,,SIR2 (Knufinke),SIR2.vst
+,870,,SIR3 (SIR Audio Tools),SIR3.vst
+,871,,SIR3 (SIR Audio Tools),SIR3.vst3
+,872,Instr.,Siren (Noise Makers)!!!VSTi,Siren.vst
+,873,,Snap Heap (kiloHearts),Snap_Heap.vst
+,874,,Snapshot (Non-Lethal Applications),Snapshot.vst
+,875,,Snapshot (Non-Lethal Applications),Snapshot.vst3
+,876,,Solid Bus Comp (Native Instruments GmbH),Solid_Bus_Comp.vst
+,877,,Solid Bus Comp (Native Instruments),Solid_Bus_Comp.vst3
+,878,,Solid Dynamics (Native Instruments GmbH),Solid_Dynamics.vst
+,879,,Solid EQ (Native Instruments GmbH),Solid_EQ.vst
+,880,,Solo2B (x86) (Ambisonic Studio B2X) (4ch),Solo2B.vst
+,881,,Solo2B2 (x86) (Ambisonic Studio B2X) (9ch),Solo2B2.vst
+,882,,Solo2B5 (x86) (Ambisonic Studio B2X) (12ch),Solo2B5.vst
+,883,,audiounit (Ambisonic Studio) (4ch),Solo2B_alpha.vst
+,884,,Sonarworks Reference 3 plug-in (Sonarworks),Sonarworks_Reference_3_plugin.vst
+,885,,Sonarworks Reference 4 (Sonarworks),Sonarworks_Reference_4_Plugin.vst
+,886,,Sonarworks Reference 4 (x86) (Sonarworks),Sonarworks_Reference_4_Plugin_x86_.vst
+,887,,SonoBus (Sonosaurus),SonoBus.vst
+,888,,SonoBus (Sonosaurus) (2->20ch),SonoBus.vst3
+,889,,SoundField By RODE (RODE) (8->12ch),SoundField_By_RODE.vst
+,890,,sparta_ambiDEC_o1 (AALTO) (4->64ch),sparta_ambiDEC_o1.vst
+,891,,sparta_ambiDEC_o3 (AALTO) (16->64ch),sparta_ambiDEC_o3.vst
+,892,,sparta_ambiDEC_o5 (AALTO) (36->64ch),sparta_ambiDEC_o5.vst
+,893,,sparta_ambiDEC_o7 (AALTO) (64ch),sparta_ambiDEC_o7.vst
+,894,,sparta_ambiDRC (AALTO) (64ch),sparta_ambiDRC.vst
+,895,,sparta_ambiENC (AALTO) (64ch),sparta_ambiENC.vst
+,896,,sparta_array2sh_o1 (AALTO) (64->4ch),sparta_array2sh_o1.vst
+,897,,sparta_array2sh_o2 (AALTO) (64->9ch),sparta_array2sh_o2.vst
+,898,,sparta_array2sh_o3 (AALTO) (64->16ch),sparta_array2sh_o3.vst
+,899,,sparta_array2sh_o4 (AALTO) (64->25ch),sparta_array2sh_o4.vst
+,900,,sparta_array2sh_o5 (AALTO) (64->36ch),sparta_array2sh_o5.vst
+,901,,sparta_array2sh_o6 (AALTO) (64->49ch),sparta_array2sh_o6.vst
+,902,,sparta_array2sh_o7 (AALTO) (64ch),sparta_array2sh_o7.vst
+,903,,sparta_binauraliser (AALTO),sparta_binauraliser.vst
+,904,,sparta_panner (AALTO) (64ch),sparta_panner.vst
+,905,,sparta_powermap_o1 (AALTO),sparta_powermap_o1.vst
+,906,,sparta_powermap_o3 (AALTO),sparta_powermap_o3.vst
+,907,,sparta_powermap_o5 (AALTO),sparta_powermap_o5.vst
+,908,,sparta_powermap_o7 (AALTO),sparta_powermap_o7.vst
+,909,,sparta_rotator (AALTO) (64ch),sparta_rotator.vst
+,910,,sparta_sldoa_o1 (AALTO),sparta_sldoa_o1.vst
+,911,,sparta_sldoa_o3 (AALTO),sparta_sldoa_o3.vst
+,912,,sparta_sldoa_o5 (AALTO),sparta_sldoa_o5.vst
+,913,,sparta_sldoa_o7 (AALTO),sparta_sldoa_o7.vst
+,914,,Spatifier (Voxengo),Spatifier.vst
+,915,,Spatifier (Voxengo),Spatifier.vst3
+,916,,Spat Revolution - Return (FLUX SE - IRCAM) (64ch),SpatRevolution_Return_x64.vst
+,917,,Spat Revolution - Room (FLUX SE - IRCAM) (64ch),SpatRevolution_Room_x64.vst
+,918,,Spat Revolution - Send (FLUX SE - IRCAM) (64ch),SpatRevolution_Send_x64.vst
+,919,,IRCAM Tools - Spat v3 (Flux:: - IRCAM) (16->8ch),SpatV3_x64.vst
+,920,,IRCAM Tools - Spat v3 (x86) (Flux:: - IRCAM) (16->8ch),SpatV3_x86.vst
+,921,,SplineEQ (Photosounder),SplineEQ.vst
+,922,,Stereo2B (x86) (Ambisonic Studio B2X) (4ch),Stereo2B.vst
+,923,,Stereo2B5 (x86) (Ambisonic Studio B2X) (12ch),Stereo2B5.vst
+,924,,Stereo Convo (x86) (Ambisonic Studio),Stereo_Convo.vst
+,925,,StereoEncoder (IEM) (64ch),StereoEncoder.vst
+,926,,StereoTool v3 (FLUX SE),StereoToolV3_x64.vst
+,927,,StereoTool v3 (x86) (Flux:: sound and picture development),StereoToolV3_x86.vst
+,928,,studiomux effect (zerodebug),studiomux_effect.vst
+,929,Instr.,studiomux generator (zerodebug)!!!VSTi,studiomux_generator.vst
+,930,,Supercharger (Native Instruments GmbH),Supercharger.vst
+,931,,SurferEQ (Sound Radix),SurferEQ.vst
+,932,,SurferEQ (Sound Radix),SurferEQ.vst3
+,933,,SurroundZone2 (SoundField Limited) (8ch),SurroundZone2.vst
+,934,,Tetra2B (x86) (Ambisonic Studio B2X) (4ch),Tetra2B.vst
+,935,,audiounit (Ambisonic Studio) (4ch),Tetra2B_alpha.vst
+,936,,<SHELL>,TOACore.vst
+,937,,TOA Panner - Classic (Blue Ripple Sound Limited),TOACore.vst<1131311188
+,938,,TOA Visualiser - Hemisphere (Blue Ripple Sound Limited),TOACore.vst<1214871124
+,939,,TOA Panner - Hemisphere (Blue Ripple Sound Limited),TOACore.vst<1215197268
+,940,,TOA Decoder - Stereo (Blue Ripple Sound Limited),TOACore.vst<1347642452
+,941,,TOA Decoder - To YouTube (Blue Ripple Sound Limited),TOACore.vst<1415144532
+,942,,TOA Injector - From YouTube (Blue Ripple Sound Limited),TOACore.vst<1415148884
+,943,,TOA Beamer (Blue Ripple Sound Limited),TOACore.vst<1634034260
+,944,,TOA Decoder - 5.1 Basic (Blue Ripple Sound Limited),TOACore.vst<1647666260
+,945,,TOA Meter - Signal (Blue Ripple Sound Limited),TOACore.vst<1766616404
+,946,,TOA Gain (Blue Ripple Sound Limited),TOACore.vst<1767991124
+,947,,TOA Virtual Microphone (Blue Ripple Sound Limited),TOACore.vst<1800238676
+,948,,TOA Panner (Blue Ripple Sound Limited),TOACore.vst<1851879508
+,949,,TOA Panner - Eight Channel (Blue Ripple Sound Limited),TOACore.vst<1852848212
+,950,,TOA Decoder - Mono (Blue Ripple Sound Limited),TOACore.vst<1867342932
+,951,,TOA Look (Blue Ripple Sound Limited),TOACore.vst<1885432370
+,952,,TOA Visualiser (Blue Ripple Sound Limited),TOACore.vst<1936291412
+,953,,TOA Meter (Blue Ripple Sound Limited),TOACore.vst<1952804180
+,954,,TOA Rotation (Blue Ripple Sound Limited),TOACore.vst<1953460820
+,955,,TOA Colourizer (Blue Ripple Sound Limited),TOACore.vst<845772372
+,956,,TOA Panner - Two Channel (Blue Ripple Sound Limited),TOACore.vst<846098516
+,957,,Tonal Balance Control (iZotope /  Inc.),Tonal_Balance_Control.vst
+,958,,Tonal Balance Control (iZotope /  Inc.),Tonal_Balance_Control.vst3
+,959,,Tonal Balance Control 2 (iZotope /  Inc.),Tonal_Balance_Control_2.vst
+,960,,Tonal Balance Control 2 (iZotope /  Inc.),Tonal_Balance_Control_2.vst3
+,961,,ToolBox (IEM) (64ch),ToolBox.vst
+,962,,ToscA (Ircam-Centre Pompidou),ToscA.vst
+,963,,ToscA (Ircam-Centre Pompidou) (mono),ToscA.vst3
+,964,,TrackSpacer (Wavesfactory),TrackSpacer.vst
+,965,,Trackspacer (Wavesfactory),TrackSpacer.vst3
+,966,,Transient Master (Native Instruments GmbH),Transient_Master.vst
+,967,,Transient Master (Native Instruments),Transient_Master.vst3
+,968,,IRCAM Tools - T.R.A.X. CS v3 (FLUX SE - IRCAM),TraxCsV3_x64.vst
+,969,,IRCAM Tools - T.R.A.X. CS v3 (x86) (Flux:: - IRCAM),TraxCsV3_x86.vst
+,970,,IRCAM Tools - T.R.A.X. SF v3 (FLUX SE - IRCAM),TraxSfV3_x64.vst
+,971,,IRCAM Tools - T.R.A.X. SF v3 (x86) (Flux:: - IRCAM),TraxSfV3_x86.vst
+,972,,IRCAM Tools - T.R.A.X. Tr. v3 (FLUX SE - IRCAM) (8ch),TraxV3_x64.vst
+,973,,IRCAM Tools - T.R.A.X. Tr. v3 (x86) (Flux:: - IRCAM) (8ch),TraxV3_x86.vst
+,974,,Tremolator (SoundToys),Tremolator.vst
+,975,Instr.,Trilian (Spectrasonics) (16 out)!!!VSTi,Trilian.vst
+,976,,UAD 4K Buss Compressor (Universal Audio /  Inc.),UAD_4K_Buss_Compressor.vst
+,977,,UAD 4K Buss Compressor (Universal Audio /  Inc.) (mono),UAD_4K_Buss_Compressor_m_.vst
+,978,,UAD 4K Channel Strip (Universal Audio /  Inc.),UAD_4K_Channel_Strip.vst
+,979,,UAD 4K Channel Strip (Universal Audio /  Inc.) (mono),UAD_4K_Channel_Strip_m_.vst
+,980,,UAD ADA STD-1 Stereo Tapped Dela (Universal Audio /  Inc.),UAD_ADA_STD_1_Stereo_Tapped_Delay.vst
+,981,,UAD ADA STD-1 Stereo Tapped Dela (Universal Audio /  Inc.) (mono),UAD_ADA_STD_1_Stereo_Tapped_Delay_m_.vst
+,982,,UAD AKG BX 20 (Universal Audio /  Inc.),UAD_AKG_BX_20.vst
+,983,,UAD AKG BX 20 (Universal Audio /  Inc.) (mono),UAD_AKG_BX_20_m_.vst
+,984,,UAD Ampeg B15N (Universal Audio /  Inc.),UAD_Ampeg_B15N.vst
+,985,,UAD Ampeg B15N (Universal Audio /  Inc.) (mono),UAD_Ampeg_B15N_m_.vst
+,986,,UAD Ampeg SVT3Pro (Universal Audio /  Inc.),UAD_Ampeg_SVT3Pro.vst
+,987,,UAD Ampeg SVT3Pro (Universal Audio /  Inc.) (mono),UAD_Ampeg_SVT3Pro_m_.vst
+,988,,UAD Ampeg SVTVR (Universal Audio /  Inc.),UAD_Ampeg_SVTVR.vst
+,989,,UAD Ampeg SVTVR (Universal Audio /  Inc.) (mono),UAD_Ampeg_SVTVR_m_.vst
+,990,,UAD Ampex ATR-102 (Universal Audio /  Inc.),UAD_Ampex_ATR_102.vst
+,991,,UAD Ampex ATR-102 (Universal Audio /  Inc.) (mono),UAD_Ampex_ATR_102_m_.vst
+,992,,UAD AMS RMX16 (Universal Audio /  Inc.),UAD_AMS_RMX16.vst
+,993,,UAD AMS RMX16 Expanded (Universal Audio /  Inc.),UAD_AMS_RMX16_Expanded.vst
+,994,,UAD AMS RMX16 Expanded (Universal Audio /  Inc.) (mono),UAD_AMS_RMX16_Expanded_m_.vst
+,995,,UAD AMS RMX16 (Universal Audio /  Inc.) (mono),UAD_AMS_RMX16_m_.vst
+,996,,UAD Antares Auto-Tune Realtime (Universal Audio /  Inc.),UAD_Antares_Auto_Tune_Realtime.vst
+,997,,UAD Antares Auto-Tune Realtime (Universal Audio /  Inc.) (mono),UAD_Antares_Auto_Tune_Realtime_m_.vst
+,998,,UAD API 2500 (Universal Audio /  Inc.),UAD_API_2500.vst
+,999,,UAD API 2500 (Universal Audio /  Inc.) (mono),UAD_API_2500_m_.vst
+,1000,,UAD API 550A (Universal Audio /  Inc.),UAD_API_550A.vst
+,1001,,UAD API 550A (Universal Audio /  Inc.) (mono),UAD_API_550A_m_.vst
+,1002,,UAD API 560 (Universal Audio /  Inc.),UAD_API_560.vst
+,1003,,UAD API 560 (Universal Audio /  Inc.) (mono),UAD_API_560_m_.vst
+,1004,,UAD API Vision Channel Strip (Universal Audio /  Inc.),UAD_API_Vision_Channel_Strip.vst
+,1005,,UAD API Vision Channel Strip (Universal Audio /  Inc.) (mono),UAD_API_Vision_Channel_Strip_m_.vst
+,1006,,UAD Bermuda Triangle (Universal Audio /  Inc.),UAD_Bermuda_Triangle.vst
+,1007,,UAD Bermuda Triangle (Universal Audio /  Inc.) (mono),UAD_Bermuda_Triangle_m_.vst
+,1008,,UAD Brigade Chorus (Universal Audio /  Inc.),UAD_Brigade_Chorus.vst
+,1009,,UAD Brigade Chorus (Universal Audio /  Inc.) (mono),UAD_Brigade_Chorus_m_.vst
+,1010,,UAD bx_digital V2 (Universal Audio /  Inc.),UAD_bx_digital_V2.vst
+,1011,,UAD bx_digital V2 Mono (Universal Audio /  Inc.),UAD_bx_digital_V2_Mono.vst
+,1012,,UAD bx_digital V2 Mono (Universal Audio /  Inc.),UAD_bx_digital_V2_Mono_m_.vst
+,1013,,UAD bx_digital V3 (Universal Audio /  Inc.),UAD_bx_digital_V3.vst
+,1014,,UAD bx_digital V3 mix (Universal Audio /  Inc.),UAD_bx_digital_V3_mix.vst
+,1015,,UAD bx_digital V3 mix (Universal Audio /  Inc.) (mono),UAD_bx_digital_V3_mix_m_.vst
+,1016,,UAD bx_refinement (Universal Audio /  Inc.),UAD_bx_refinement.vst
+,1017,,UAD bx_refinement (Universal Audio /  Inc.) (mono),UAD_bx_refinement_m_.vst
+,1018,,UAD bx_saturator V2 (Universal Audio /  Inc.),UAD_bx_saturator_V2.vst
+,1019,,UAD bx_saturator V2 (Universal Audio /  Inc.) (mono),UAD_bx_saturator_V2_m_.vst
+,1020,,UAD bx_subsynth (Universal Audio /  Inc.),UAD_bx_subsynth.vst
+,1021,,UAD bx_subsynth (Universal Audio /  Inc.) (mono),UAD_bx_subsynth_m_.vst
+,1022,,UAD bx_tuner (Universal Audio /  Inc.),UAD_bx_tuner.vst
+,1023,,UAD bx_tuner (Universal Audio /  Inc.) (mono),UAD_bx_tuner_m_.vst
+,1024,,UAD Cambridge (Universal Audio /  Inc.),UAD_Cambridge.vst
+,1025,,UAD Cambridge (Universal Audio /  Inc.) (mono),UAD_Cambridge_m_.vst
+,1026,,UAD Chandler GAV19T (Universal Audio /  Inc.),UAD_Chandler_GAV19T.vst
+,1027,,UAD Chandler GAV19T (Universal Audio /  Inc.) (mono),UAD_Chandler_GAV19T_m_.vst
+,1028,,UAD Chandler Limited Curve Bende (Universal Audio /  Inc.),UAD_Chandler_Limited_Curve_Bender.vst
+,1029,,UAD Chandler Limited Curve Bende (Universal Audio /  Inc.) (mono),UAD_Chandler_Limited_Curve_Bender_m_.vst
+,1030,,UAD Chandler Limited Zener Limit (Universal Audio /  Inc.),UAD_Chandler_Limited_Zener_Limiter.vst
+,1031,,UAD Chandler Limited Zener Limit (Universal Audio /  Inc.) (mono),UAD_Chandler_Limited_Zener_Limiter_m_.vst
+,1032,,UAD Cooper Time Cube (Universal Audio /  Inc.),UAD_Cooper_Time_Cube.vst
+,1033,,UAD Cooper Time Cube (Universal Audio /  Inc.) (mono),UAD_Cooper_Time_Cube_m_.vst
+,1034,,UAD CS-1 (Universal Audio /  Inc.),UAD_CS_1.vst
+,1035,,UAD CS-1 (Universal Audio /  Inc.) (mono),UAD_CS_1_m_.vst
+,1036,,UAD Dangerous BAX EQ Master (Universal Audio /  Inc.),UAD_Dangerous_BAX_EQ_Master.vst
+,1037,,UAD Dangerous BAX EQ Mix (Universal Audio /  Inc.),UAD_Dangerous_BAX_EQ_Mix.vst
+,1038,,UAD Dangerous BAX EQ Mix (Universal Audio /  Inc.) (mono),UAD_Dangerous_BAX_EQ_Mix_m_.vst
+,1039,,UAD dbx 160 (Universal Audio /  Inc.),UAD_dbx_160.vst
+,1040,,UAD dbx 160 (Universal Audio /  Inc.) (mono),UAD_dbx_160_m_.vst
+,1041,,UAD DreamVerb (Universal Audio /  Inc.),UAD_DreamVerb.vst
+,1042,,UAD DreamVerb (Universal Audio /  Inc.) (mono),UAD_DreamVerb_m_.vst
+,1043,,UAD Dytronics Cyclosonic Panner (Universal Audio /  Inc.),UAD_Dytronics_Cyclosonic_Panner.vst
+,1044,,UAD Dytronics Cyclosonic Panner (Universal Audio /  Inc.) (mono),UAD_Dytronics_Cyclosonic_Panner_m_.vst
+,1045,,UAD Eden WT800 (Universal Audio /  Inc.),UAD_Eden_WT800.vst
+,1046,,UAD Eden WT800 (Universal Audio /  Inc.) (mono),UAD_Eden_WT800_m_.vst
+,1047,,UAD EL7 FATSO Jr (Universal Audio /  Inc.),UAD_EL7_FATSO_Jr.vst
+,1048,,UAD EL7 FATSO Jr (Universal Audio /  Inc.) (mono),UAD_EL7_FATSO_Jr_m_.vst
+,1049,,UAD EL7 FATSO Sr (Universal Audio /  Inc.),UAD_EL7_FATSO_Sr.vst
+,1050,,UAD EL7 FATSO Sr (Universal Audio /  Inc.) (mono),UAD_EL7_FATSO_Sr_m_.vst
+,1051,,UAD elysia alpha master (Universal Audio /  Inc.),UAD_elysia_alpha_master.vst
+,1052,,UAD elysia alpha master (Universal Audio /  Inc.) (mono),UAD_elysia_alpha_master_m_.vst
+,1053,,UAD elysia alpha mix (Universal Audio /  Inc.),UAD_elysia_alpha_mix.vst
+,1054,,UAD elysia alpha mix (Universal Audio /  Inc.) (mono),UAD_elysia_alpha_mix_m_.vst
+,1055,,UAD elysia mpressor (Universal Audio /  Inc.),UAD_elysia_mpressor.vst
+,1056,,UAD elysia mpressor (Universal Audio /  Inc.) (mono),UAD_elysia_mpressor_m_.vst
+,1057,,UAD EMT 140 (Universal Audio /  Inc.),UAD_EMT_140.vst
+,1058,,UAD EMT 140 (Universal Audio /  Inc.) (mono),UAD_EMT_140_m_.vst
+,1059,,UAD EMT 250 (Universal Audio /  Inc.),UAD_EMT_250.vst
+,1060,,UAD EMT 250 (Universal Audio /  Inc.) (mono),UAD_EMT_250_m_.vst
+,1061,,UAD ENGL E646 VS (Universal Audio /  Inc.),UAD_ENGL_E646_VS.vst
+,1062,,UAD ENGL E646 VS (Universal Audio /  Inc.) (mono),UAD_ENGL_E646_VS_m_.vst
+,1063,,UAD ENGL E765 RT (Universal Audio /  Inc.),UAD_ENGL_E765_RT.vst
+,1064,,UAD ENGL E765 RT (Universal Audio /  Inc.) (mono),UAD_ENGL_E765_RT_m_.vst
+,1065,,UAD ENGL Savage 120 (Universal Audio /  Inc.),UAD_ENGL_Savage_120.vst
+,1066,,UAD ENGL Savage 120 (Universal Audio /  Inc.) (mono),UAD_ENGL_Savage_120_m_.vst
+,1067,,UAD EP-34 Tape Echo (Universal Audio /  Inc.),UAD_EP_34_Tape_Echo.vst
+,1068,,UAD EP-34 Tape Echo (Universal Audio /  Inc.) (mono),UAD_EP_34_Tape_Echo_m_.vst
+,1069,,UAD Eventide H910 Harmonizer (Universal Audio /  Inc.),UAD_Eventide_H910_Harmonizer.vst
+,1070,,UAD Eventide H910 Harmonizer (Universal Audio /  Inc.) (mono),UAD_Eventide_H910_Harmonizer_m_.vst
+,1071,,UAD Fairchild 660 (Universal Audio /  Inc.),UAD_Fairchild_660.vst
+,1072,,UAD Fairchild 660 (Universal Audio /  Inc.) (mono),UAD_Fairchild_660_m_.vst
+,1073,,UAD Fairchild 670 (Universal Audio /  Inc.),UAD_Fairchild_670.vst
+,1074,,UAD Fairchild 670 Legacy (Universal Audio /  Inc.),UAD_Fairchild_670_Legacy.vst
+,1075,,UAD Fairchild 670 Legacy (Universal Audio /  Inc.) (mono),UAD_Fairchild_670_Legacy_m_.vst
+,1076,,UAD Fairchild 670 (Universal Audio /  Inc.) (mono),UAD_Fairchild_670_m_.vst
+,1077,,UAD Fender 55 Tweed Deluxe (Universal Audio /  Inc.),UAD_Fender_55_Tweed_Deluxe.vst
+,1078,,UAD Fender 55 Tweed Deluxe (Universal Audio /  Inc.) (mono),UAD_Fender_55_Tweed_Deluxe_m_.vst
+,1079,,UAD Friedman BE100 (Universal Audio /  Inc.),UAD_Friedman_BE100.vst
+,1080,,UAD Friedman BE100 (Universal Audio /  Inc.) (mono),UAD_Friedman_BE100_m_.vst
+,1081,,UAD Friedman DS40 (Universal Audio /  Inc.),UAD_Friedman_DS40.vst
+,1082,,UAD Friedman DS40 (Universal Audio /  Inc.) (mono),UAD_Friedman_DS40_m_.vst
+,1083,,UAD Fuchs Overdrive Supreme 50 (Universal Audio /  Inc.),UAD_Fuchs_Overdrive_Supreme_50.vst
+,1084,,UAD Fuchs Overdrive Supreme 50 (Universal Audio /  Inc.) (mono),UAD_Fuchs_Overdrive_Supreme_50_m_.vst
+,1085,,UAD Fuchs Train II (Universal Audio /  Inc.),UAD_Fuchs_Train_II.vst
+,1086,,UAD Fuchs Train II (Universal Audio /  Inc.) (mono),UAD_Fuchs_Train_II_m_.vst
+,1087,,UAD Galaxy Tape Echo (Universal Audio /  Inc.),UAD_Galaxy_Tape_Echo.vst
+,1088,,UAD Galaxy Tape Echo (Universal Audio /  Inc.) (mono),UAD_Galaxy_Tape_Echo_m_.vst
+,1089,,UAD Harrison 32C (Universal Audio /  Inc.),UAD_Harrison_32C.vst
+,1090,,UAD Harrison 32C (Universal Audio /  Inc.) (mono),UAD_Harrison_32C_m_.vst
+,1091,,UAD Harrison 32C SE (Universal Audio /  Inc.),UAD_Harrison_32C_SE.vst
+,1092,,UAD Harrison 32C SE (Universal Audio /  Inc.) (mono),UAD_Harrison_32C_SE_m_.vst
+,1093,,UAD Helios 69 (Universal Audio /  Inc.),UAD_Helios_69.vst
+,1094,,UAD Helios 69 (Universal Audio /  Inc.) (mono),UAD_Helios_69_m_.vst
+,1095,,UAD Ibanez Tube Screamer TS808 (Universal Audio /  Inc.),UAD_Ibanez_Tube_Screamer_TS808.vst
+,1096,,UAD Ibanez Tube Screamer TS808 (Universal Audio /  Inc.) (mono),UAD_Ibanez_Tube_Screamer_TS808_m_.vst
+,1097,,UAD Korg SDD-3000 (Universal Audio /  Inc.),UAD_Korg_SDD_3000.vst
+,1098,,UAD Korg SDD-3000 (Universal Audio /  Inc.) (mono),UAD_Korg_SDD_3000_m_.vst
+,1099,,UAD LA3A (Universal Audio /  Inc.),UAD_LA3A.vst
+,1100,,UAD LA3A (Universal Audio /  Inc.) (mono),UAD_LA3A_m_.vst
+,1101,,UAD Lexicon 224 (Universal Audio /  Inc.),UAD_Lexicon_224.vst
+,1102,,UAD Lexicon 224 (Universal Audio /  Inc.) (mono),UAD_Lexicon_224_m_.vst
+,1103,,UAD Little Labs IBP (Universal Audio /  Inc.),UAD_Little_Labs_IBP.vst
+,1104,,UAD Little Labs IBP (Universal Audio /  Inc.) (mono),UAD_Little_Labs_IBP_m_.vst
+,1105,,UAD Little Labs VOG (Universal Audio /  Inc.),UAD_Little_Labs_VOG.vst
+,1106,,UAD Little Labs VOG (Universal Audio /  Inc.) (mono),UAD_Little_Labs_VOG_m_.vst
+,1107,,UAD Maag EQ4 (Universal Audio /  Inc.),UAD_Maag_EQ4.vst
+,1108,,UAD Maag EQ4 (Universal Audio /  Inc.) (mono),UAD_Maag_EQ4_m_.vst
+,1109,,UAD Manley Massive Passive (Universal Audio /  Inc.),UAD_Manley_Massive_Passive.vst
+,1110,,UAD Manley Massive Passive (Universal Audio /  Inc.) (mono),UAD_Manley_Massive_Passive_m_.vst
+,1111,,UAD Manley Massive Passive MST (Universal Audio /  Inc.),UAD_Manley_Massive_Passive_MST.vst
+,1112,,UAD Manley Massive Passive MST (Universal Audio /  Inc.) (mono),UAD_Manley_Massive_Passive_MST_m_.vst
+,1113,,UAD Manley Variable Mu (Universal Audio /  Inc.),UAD_Manley_Variable_Mu.vst
+,1114,,UAD Manley Variable Mu (Universal Audio /  Inc.) (mono),UAD_Manley_Variable_Mu_m_.vst
+,1115,,UAD Manley VOXBOX (Universal Audio /  Inc.),UAD_Manley_VOXBOX.vst
+,1116,,UAD Manley VOXBOX (Universal Audio /  Inc.) (mono),UAD_Manley_VOXBOX_m_.vst
+,1117,,UAD Marshall Bluesbreaker 1962 (Universal Audio /  Inc.),UAD_Marshall_Bluesbreaker_1962.vst
+,1118,,UAD Marshall Bluesbreaker 1962 (Universal Audio /  Inc.) (mono),UAD_Marshall_Bluesbreaker_1962_m_.vst
+,1119,,UAD Marshall JMP 2203 (Universal Audio /  Inc.),UAD_Marshall_JMP_2203.vst
+,1120,,UAD Marshall JMP 2203 (Universal Audio /  Inc.) (mono),UAD_Marshall_JMP_2203_m_.vst
+,1121,,UAD Marshall Plexi Super Lead 19 (Universal Audio /  Inc.),UAD_Marshall_Plexi_Super_Lead_1959.vst
+,1122,,UAD Marshall Plexi Super Lead 19 (Universal Audio /  Inc.) (mono),UAD_Marshall_Plexi_Super_Lead_1959_m_.vst
+,1123,,UAD Marshall Silver Jubilee 2555 (Universal Audio /  Inc.),UAD_Marshall_Silver_Jubilee_2555.vst
+,1124,,UAD Marshall Silver Jubilee 2555 (Universal Audio /  Inc.) (mono),UAD_Marshall_Silver_Jubilee_2555_m_.vst
+,1125,,UAD MDWEQ5-3B (Universal Audio /  Inc.),UAD_MDWEQ5_3B.vst
+,1126,,UAD MDWEQ5-3B (Universal Audio /  Inc.) (mono),UAD_MDWEQ5_3B_m_.vst
+,1127,,UAD MDWEQ5-5B (Universal Audio /  Inc.),UAD_MDWEQ5_5B.vst
+,1128,,UAD MDWEQ5-5B (Universal Audio /  Inc.) (mono),UAD_MDWEQ5_5B_m_.vst
+,1129,,UAD Millennia NSEQ-2 (Universal Audio /  Inc.),UAD_Millennia_NSEQ_2.vst
+,1130,,UAD Millennia NSEQ-2 (Universal Audio /  Inc.) (mono),UAD_Millennia_NSEQ_2_m_.vst
+,1131,,UAD Moog Multimode Filter (Universal Audio /  Inc.),UAD_Moog_Multimode_Filter.vst
+,1132,,UAD Moog Multimode Filter (Universal Audio /  Inc.) (mono),UAD_Moog_Multimode_Filter_m_.vst
+,1133,,UAD Moog Multimode Filter SE (Universal Audio /  Inc.),UAD_Moog_Multimode_Filter_SE.vst
+,1134,,UAD Moog Multimode Filter SE (Universal Audio /  Inc.) (mono),UAD_Moog_Multimode_Filter_SE_m_.vst
+,1135,,UAD Moog Multimode Filter XL (Universal Audio /  Inc.),UAD_Moog_Multimode_Filter_XL.vst
+,1136,,UAD Moog Multimode Filter XL (Universal Audio /  Inc.) (mono),UAD_Moog_Multimode_Filter_XL_m_.vst
+,1137,,UAD MXR Flanger-Doubler (Universal Audio /  Inc.),UAD_MXR_Flanger_Doubler.vst
+,1138,,UAD MXR Flanger-Doubler (Universal Audio /  Inc.) (mono),UAD_MXR_Flanger_Doubler_m_.vst
+,1139,,UAD Neve 1073 (Universal Audio /  Inc.),UAD_Neve_1073.vst
+,1140,,UAD Neve 1073 Legacy (Universal Audio /  Inc.),UAD_Neve_1073_Legacy.vst
+,1141,,UAD Neve 1073 Legacy (Universal Audio /  Inc.) (mono),UAD_Neve_1073_Legacy_m_.vst
+,1142,,UAD Neve 1073 (Universal Audio /  Inc.) (mono),UAD_Neve_1073_m_.vst
+,1143,,UAD Neve 1073SE Legacy (Universal Audio /  Inc.),UAD_Neve_1073SE_Legacy.vst
+,1144,,UAD Neve 1073SE Legacy (Universal Audio /  Inc.) (mono),UAD_Neve_1073SE_Legacy_m_.vst
+,1145,,UAD Neve 1081 (Universal Audio /  Inc.),UAD_Neve_1081.vst
+,1146,,UAD Neve 1081 (Universal Audio /  Inc.) (mono),UAD_Neve_1081_m_.vst
+,1147,,UAD Neve 1081SE (Universal Audio /  Inc.),UAD_Neve_1081SE.vst
+,1148,,UAD Neve 1081SE (Universal Audio /  Inc.) (mono),UAD_Neve_1081SE_m_.vst
+,1149,,UAD Neve 31102 (Universal Audio /  Inc.),UAD_Neve_31102.vst
+,1150,,UAD Neve 31102 (Universal Audio /  Inc.) (mono),UAD_Neve_31102_m_.vst
+,1151,,UAD Neve 31102SE (Universal Audio /  Inc.),UAD_Neve_31102SE.vst
+,1152,,UAD Neve 31102SE (Universal Audio /  Inc.) (mono),UAD_Neve_31102SE_m_.vst
+,1153,,UAD Neve 33609 (Universal Audio /  Inc.),UAD_Neve_33609.vst
+,1154,,UAD Neve 33609 (Universal Audio /  Inc.) (mono),UAD_Neve_33609_m_.vst
+,1155,,UAD Neve 33609SE (Universal Audio /  Inc.),UAD_Neve_33609SE.vst
+,1156,,UAD Neve 33609SE (Universal Audio /  Inc.) (mono),UAD_Neve_33609SE_m_.vst
+,1157,,UAD Neve 88RS (Universal Audio /  Inc.),UAD_Neve_88RS.vst
+,1158,,UAD Neve 88RS Legacy (Universal Audio /  Inc.),UAD_Neve_88RS_Legacy.vst
+,1159,,UAD Neve 88RS Legacy (Universal Audio /  Inc.) (mono),UAD_Neve_88RS_Legacy_m_.vst
+,1160,,UAD Neve 88RS (Universal Audio /  Inc.) (mono),UAD_Neve_88RS_m_.vst
+,1161,,UAD Ocean Way Studios (Universal Audio /  Inc.),UAD_Ocean_Way_Studios.vst
+,1162,,UAD Ocean Way Studios (Universal Audio /  Inc.) (mono),UAD_Ocean_Way_Studios_m_.vst
+,1163,,UAD OTO Biscuit 8-bit Effects (Universal Audio /  Inc.),UAD_OTO_Biscuit_8_bit_Effects.vst
+,1164,,UAD OTO Biscuit 8-bit Effects (Universal Audio /  Inc.) (mono),UAD_OTO_Biscuit_8_bit_Effects_m_.vst
+,1165,,UAD Oxford Dynamic EQ (Universal Audio /  Inc.),UAD_Oxford_Dynamic_EQ.vst
+,1166,,UAD Oxford Dynamic EQ (Universal Audio /  Inc.) (mono),UAD_Oxford_Dynamic_EQ_m_.vst
+,1167,,UAD Oxford Envolution (Universal Audio /  Inc.),UAD_Oxford_Envolution.vst
+,1168,,UAD Oxford Envolution (Universal Audio /  Inc.) (mono),UAD_Oxford_Envolution_m_.vst
+,1169,,UAD Oxford EQ (Universal Audio /  Inc.),UAD_Oxford_EQ.vst
+,1170,,UAD Oxford EQ (Universal Audio /  Inc.) (mono),UAD_Oxford_EQ_m_.vst
+,1171,,UAD Oxford Inflator (Universal Audio /  Inc.),UAD_Oxford_Inflator.vst
+,1172,,UAD Oxford Inflator (Universal Audio /  Inc.) (mono),UAD_Oxford_Inflator_m_.vst
+,1173,,UAD Oxford Limiter (Universal Audio /  Inc.),UAD_Oxford_Limiter.vst
+,1174,,UAD Oxford Limiter (Universal Audio /  Inc.) (mono),UAD_Oxford_Limiter_m_.vst
+,1175,,UAD Oxide Tape (Universal Audio /  Inc.),UAD_Oxide_Tape.vst
+,1176,,UAD Oxide Tape (Universal Audio /  Inc.) (mono),UAD_Oxide_Tape_m_.vst
+,1177,,UAD Precision Buss Compressor (Universal Audio /  Inc.),UAD_Precision_Buss_Compressor.vst
+,1178,,UAD Precision Buss Compressor (Universal Audio /  Inc.) (mono),UAD_Precision_Buss_Compressor_m_.vst
+,1179,,UAD Precision Channel Strip (Universal Audio /  Inc.),UAD_Precision_Channel_Strip.vst
+,1180,,UAD Precision Channel Strip (Universal Audio /  Inc.) (mono),UAD_Precision_Channel_Strip_m_.vst
+,1181,,UAD Precision De-Esser (Universal Audio /  Inc.),UAD_Precision_De_Esser.vst
+,1182,,UAD Precision De-Esser (Universal Audio /  Inc.) (mono),UAD_Precision_De_Esser_m_.vst
+,1183,,UAD Precision Delay Mod (Universal Audio /  Inc.),UAD_Precision_Delay_Mod.vst
+,1184,,UAD Precision Delay Mod L (Universal Audio /  Inc.),UAD_Precision_Delay_Mod_L.vst
+,1185,,UAD Precision Delay Mod L (Universal Audio /  Inc.) (mono),UAD_Precision_Delay_Mod_L_m_.vst
+,1186,,UAD Precision Delay Mod (Universal Audio /  Inc.) (mono),UAD_Precision_Delay_Mod_m_.vst
+,1187,,UAD Precision Enhancer Hz (Universal Audio /  Inc.),UAD_Precision_Enhancer_Hz.vst
+,1188,,UAD Precision Enhancer Hz (Universal Audio /  Inc.) (mono),UAD_Precision_Enhancer_Hz_m_.vst
+,1189,,UAD Precision Enhancer kHz (Universal Audio /  Inc.),UAD_Precision_Enhancer_kHz.vst
+,1190,,UAD Precision Enhancer kHz (Universal Audio /  Inc.) (mono),UAD_Precision_Enhancer_kHz_m_.vst
+,1191,,UAD Precision Equalizer (Universal Audio /  Inc.),UAD_Precision_Equalizer.vst
+,1192,,UAD Precision Equalizer (Universal Audio /  Inc.) (mono),UAD_Precision_Equalizer_m_.vst
+,1193,,UAD Precision K-Stereo (Universal Audio /  Inc.),UAD_Precision_K_Stereo.vst
+,1194,,UAD Precision K-Stereo (Universal Audio /  Inc.) (mono),UAD_Precision_K_Stereo_m_.vst
+,1195,,UAD Precision Limiter (Universal Audio /  Inc.),UAD_Precision_Limiter.vst
+,1196,,UAD Precision Limiter (Universal Audio /  Inc.) (mono),UAD_Precision_Limiter_m_.vst
+,1197,,UAD Precision Maximizer (Universal Audio /  Inc.),UAD_Precision_Maximizer.vst
+,1198,,UAD Precision Maximizer (Universal Audio /  Inc.) (mono),UAD_Precision_Maximizer_m_.vst
+,1199,,UAD Precision Multiband (Universal Audio /  Inc.),UAD_Precision_Multiband.vst
+,1200,,UAD Precision Multiband (Universal Audio /  Inc.) (mono),UAD_Precision_Multiband_m_.vst
+,1201,,UAD Precision Reflection Engine (Universal Audio /  Inc.),UAD_Precision_Reflection_Engine.vst
+,1202,,UAD Precision Reflection Engine (Universal Audio /  Inc.) (mono),UAD_Precision_Reflection_Engine_m_.vst
+,1203,,UAD Pultec EQP-1A (Universal Audio /  Inc.),UAD_Pultec_EQP_1A.vst
+,1204,,UAD Pultec EQP-1A Legacy (Universal Audio /  Inc.),UAD_Pultec_EQP_1A_Legacy.vst
+,1205,,UAD Pultec EQP-1A Legacy (Universal Audio /  Inc.) (mono),UAD_Pultec_EQP_1A_Legacy_m_.vst
+,1206,,UAD Pultec EQP-1A (Universal Audio /  Inc.) (mono),UAD_Pultec_EQP_1A_m_.vst
+,1207,,UAD Pultec HLF-3C (Universal Audio /  Inc.),UAD_Pultec_HLF_3C.vst
+,1208,,UAD Pultec HLF-3C (Universal Audio /  Inc.) (mono),UAD_Pultec_HLF_3C_m_.vst
+,1209,,UAD Pultec MEQ-5 (Universal Audio /  Inc.),UAD_Pultec_MEQ_5.vst
+,1210,,UAD Pultec MEQ-5 (Universal Audio /  Inc.) (mono),UAD_Pultec_MEQ_5_m_.vst
+,1211,,UAD Pultec-Pro Legacy (Universal Audio /  Inc.),UAD_Pultec_Pro_Legacy.vst
+,1212,,UAD Pultec-Pro Legacy (Universal Audio /  Inc.) (mono),UAD_Pultec_Pro_Legacy_m_.vst
+,1213,,UAD Pure Plate (Universal Audio /  Inc.),UAD_Pure_Plate.vst
+,1214,,UAD Pure Plate (Universal Audio /  Inc.) (mono),UAD_Pure_Plate_m_.vst
+,1215,,UAD Raw (Universal Audio /  Inc.),UAD_Raw.vst
+,1216,,UAD Raw (Universal Audio /  Inc.) (mono),UAD_Raw_m_.vst
+,1217,,UAD RealVerb-Pro (Universal Audio /  Inc.),UAD_RealVerb_Pro.vst
+,1218,,UAD RealVerb-Pro (Universal Audio /  Inc.) (mono),UAD_RealVerb_Pro_m_.vst
+,1219,,UAD Roland CE-1 (Universal Audio /  Inc.),UAD_Roland_CE_1.vst
+,1220,,UAD Roland CE-1 (Universal Audio /  Inc.) (mono),UAD_Roland_CE_1_m_.vst
+,1221,,UAD Roland Dimension D (Universal Audio /  Inc.),UAD_Roland_Dimension_D.vst
+,1222,,UAD Roland Dimension D (Universal Audio /  Inc.) (mono),UAD_Roland_Dimension_D_m_.vst
+,1223,,UAD Roland RE-201 (Universal Audio /  Inc.),UAD_Roland_RE_201.vst
+,1224,,UAD Roland RE-201 (Universal Audio /  Inc.) (mono),UAD_Roland_RE_201_m_.vst
+,1225,,UAD Shadow Hills Mastering Compr (Universal Audio /  Inc.),UAD_Shadow_Hills_Mastering_Compressor.vst
+,1226,,UAD Shadow Hills Mastering Compr (Universal Audio /  Inc.) (mono),UAD_Shadow_Hills_Mastering_Compressor_m_.vst
+,1227,,UAD Softube Amp Room Half-Stack (Universal Audio /  Inc.),UAD_Softube_Amp_Room_Half_Stack.vst
+,1228,,UAD Softube Amp Room Half-Stack (Universal Audio /  Inc.) (mono),UAD_Softube_Amp_Room_Half_Stack_m_.vst
+,1229,,UAD Softube Bass Amp Room (Universal Audio /  Inc.),UAD_Softube_Bass_Amp_Room.vst
+,1230,,UAD Softube Bass Amp Room 8x10 (Universal Audio /  Inc.),UAD_Softube_Bass_Amp_Room_8x10.vst
+,1231,,UAD Softube Bass Amp Room 8x10 (Universal Audio /  Inc.) (mono),UAD_Softube_Bass_Amp_Room_8x10_m_.vst
+,1232,,UAD Softube Bass Amp Room (Universal Audio /  Inc.) (mono),UAD_Softube_Bass_Amp_Room_m_.vst
+,1233,,UAD Softube Metal Amp Room (Universal Audio /  Inc.),UAD_Softube_Metal_Amp_Room.vst
+,1234,,UAD Softube Metal Amp Room (Universal Audio /  Inc.) (mono),UAD_Softube_Metal_Amp_Room_m_.vst
+,1235,,UAD Softube Vintage Amp Room (Universal Audio /  Inc.),UAD_Softube_Vintage_Amp_Room.vst
+,1236,,UAD Softube Vintage Amp Room (Universal Audio /  Inc.) (mono),UAD_Softube_Vintage_Amp_Room_m_.vst
+,1237,,UAD Sound Machine Wood Works (Universal Audio /  Inc.),UAD_Sound_Machine_Wood_Works.vst
+,1238,,UAD Sound Machine Wood Works (Universal Audio /  Inc.) (mono),UAD_Sound_Machine_Wood_Works_m_.vst
+,1239,,UAD SPL Transient Designer (Universal Audio /  Inc.),UAD_SPL_Transient_Designer.vst
+,1240,,UAD SPL Transient Designer (Universal Audio /  Inc.) (mono),UAD_SPL_Transient_Designer_m_.vst
+,1241,,UAD SPL TwinTube (Universal Audio /  Inc.),UAD_SPL_TwinTube.vst
+,1242,,UAD SPL TwinTube (Universal Audio /  Inc.) (mono),UAD_SPL_TwinTube_m_.vst
+,1243,,UAD SPL Vitalizer MK2-T (Universal Audio /  Inc.),UAD_SPL_Vitalizer_MK2_T.vst
+,1244,,UAD SPL Vitalizer MK2-T (Universal Audio /  Inc.) (mono),UAD_SPL_Vitalizer_MK2_T_m_.vst
+,1245,,UAD SSL E Channel Strip (Universal Audio /  Inc.),UAD_SSL_E_Channel_Strip.vst
+,1246,,UAD SSL E Channel Strip Legacy (Universal Audio /  Inc.),UAD_SSL_E_Channel_Strip_Legacy.vst
+,1247,,UAD SSL E Channel Strip Legacy (Universal Audio /  Inc.) (mono),UAD_SSL_E_Channel_Strip_Legacy_m_.vst
+,1248,,UAD SSL E Channel Strip (Universal Audio /  Inc.) (mono),UAD_SSL_E_Channel_Strip_m_.vst
+,1249,,UAD SSL G Bus Compressor (Universal Audio /  Inc.),UAD_SSL_G_Bus_Compressor.vst
+,1250,,UAD SSL G Bus Compressor Legacy (Universal Audio /  Inc.),UAD_SSL_G_Bus_Compressor_Legacy.vst
+,1251,,UAD SSL G Bus Compressor Legacy (Universal Audio /  Inc.) (mono),UAD_SSL_G_Bus_Compressor_Legacy_m_.vst
+,1252,,UAD SSL G Bus Compressor (Universal Audio /  Inc.) (mono),UAD_SSL_G_Bus_Compressor_m_.vst
+,1253,,UAD Studer A800 (Universal Audio /  Inc.),UAD_Studer_A800.vst
+,1254,,UAD Studer A800 (Universal Audio /  Inc.) (mono),UAD_Studer_A800_m_.vst
+,1255,,UAD Studio D Chorus (Universal Audio /  Inc.),UAD_Studio_D_Chorus.vst
+,1256,,UAD Studio D Chorus (Universal Audio /  Inc.) (mono),UAD_Studio_D_Chorus_m_.vst
+,1257,,UAD Summit Audio TLA-100A (Universal Audio /  Inc.),UAD_Summit_Audio_TLA_100A.vst
+,1258,,UAD Summit Audio TLA-100A (Universal Audio /  Inc.) (mono),UAD_Summit_Audio_TLA_100A_m_.vst
+,1259,,UAD Teletronix LA-2 (Universal Audio /  Inc.),UAD_Teletronix_LA_2.vst
+,1260,,UAD Teletronix LA-2 (Universal Audio /  Inc.) (mono),UAD_Teletronix_LA_2_m_.vst
+,1261,,UAD Teletronix LA-2A Gray (Universal Audio /  Inc.),UAD_Teletronix_LA_2A_Gray.vst
+,1262,,UAD Teletronix LA-2A Gray (Universal Audio /  Inc.) (mono),UAD_Teletronix_LA_2A_Gray_m_.vst
+,1263,,UAD Teletronix LA-2A Legacy (Universal Audio /  Inc.),UAD_Teletronix_LA_2A_Legacy.vst
+,1264,,UAD Teletronix LA-2A Legacy (Universal Audio /  Inc.) (mono),UAD_Teletronix_LA_2A_Legacy_m_.vst
+,1265,,UAD Teletronix LA-2A Silver (Universal Audio /  Inc.),UAD_Teletronix_LA_2A_Silver.vst
+,1266,,UAD Teletronix LA-2A Silver (Universal Audio /  Inc.) (mono),UAD_Teletronix_LA_2A_Silver_m_.vst
+,1267,,UAD Thermionic Culture Vulture (Universal Audio /  Inc.),UAD_Thermionic_Culture_Vulture.vst
+,1268,,UAD Thermionic Culture Vulture (Universal Audio /  Inc.) (mono),UAD_Thermionic_Culture_Vulture_m_.vst
+,1269,,UAD Tonelux Tilt (Universal Audio /  Inc.),UAD_Tonelux_Tilt.vst
+,1270,,UAD Tonelux Tilt Live (Universal Audio /  Inc.),UAD_Tonelux_Tilt_Live.vst
+,1271,,UAD Tonelux Tilt Live (Universal Audio /  Inc.) (mono),UAD_Tonelux_Tilt_Live_m_.vst
+,1272,,UAD Tonelux Tilt (Universal Audio /  Inc.) (mono),UAD_Tonelux_Tilt_m_.vst
+,1273,,UAD Townsend Labs Sphere (Universal Audio /  Inc.),UAD_Townsend_Labs_Sphere.vst
+,1274,,UAD Townsend Labs Sphere 180 (Universal Audio /  Inc.),UAD_Townsend_Labs_Sphere_180.vst
+,1275,,UAD Trident A-Range (Universal Audio /  Inc.),UAD_Trident_A_Range.vst
+,1276,,UAD Trident A-Range (Universal Audio /  Inc.) (mono),UAD_Trident_A_Range_m_.vst
+,1277,,UAD Tube-Tech CL 1B (Universal Audio /  Inc.),UAD_Tube_Tech_CL_1B.vst
+,1278,,UAD Tube-Tech CL 1B (Universal Audio /  Inc.) (mono),UAD_Tube_Tech_CL_1B_m_.vst
+,1279,,UAD Tube-Tech ME 1B (Universal Audio /  Inc.),UAD_Tube_Tech_ME_1B.vst
+,1280,,UAD Tube-Tech ME 1B (Universal Audio /  Inc.) (mono),UAD_Tube_Tech_ME_1B_m_.vst
+,1281,,UAD Tube-Tech PE 1C (Universal Audio /  Inc.),UAD_Tube_Tech_PE_1C.vst
+,1282,,UAD Tube-Tech PE 1C (Universal Audio /  Inc.) (mono),UAD_Tube_Tech_PE_1C_m_.vst
+,1283,,UAD UA 1176 Rev A (Universal Audio /  Inc.),UAD_UA_1176_Rev_A.vst
+,1284,,UAD UA 1176 Rev A (Universal Audio /  Inc.) (mono),UAD_UA_1176_Rev_A_m_.vst
+,1285,,UAD UA 1176AE (Universal Audio /  Inc.),UAD_UA_1176AE.vst
+,1286,,UAD UA 1176AE (Universal Audio /  Inc.) (mono),UAD_UA_1176AE_m_.vst
+,1287,,UAD UA 1176LN Legacy (Universal Audio /  Inc.),UAD_UA_1176LN_Legacy.vst
+,1288,,UAD UA 1176LN Legacy (Universal Audio /  Inc.) (mono),UAD_UA_1176LN_Legacy_m_.vst
+,1289,,UAD UA 1176LN Rev E (Universal Audio /  Inc.),UAD_UA_1176LN_Rev_E.vst
+,1290,,UAD UA 1176LN Rev E (Universal Audio /  Inc.) (mono),UAD_UA_1176LN_Rev_E_m_.vst
+,1291,,UAD UA 1176SE Legacy (Universal Audio /  Inc.),UAD_UA_1176SE_Legacy.vst
+,1292,,UAD UA 1176SE Legacy (Universal Audio /  Inc.) (mono),UAD_UA_1176SE_Legacy_m_.vst
+,1293,,UAD UA 610-A (Universal Audio /  Inc.),UAD_UA_610_A.vst
+,1294,,UAD UA 610-A (Universal Audio /  Inc.) (mono),UAD_UA_610_A_m_.vst
+,1295,,UAD UA 610-B (Universal Audio /  Inc.),UAD_UA_610_B.vst
+,1296,,UAD UA 610-B (Universal Audio /  Inc.) (mono),UAD_UA_610_B_m_.vst
+,1297,,UAD Valley People Dyna-mite (Universal Audio /  Inc.),UAD_Valley_People_Dyna_mite.vst
+,1298,,UAD Valley People Dyna-mite (Universal Audio /  Inc.) (mono),UAD_Valley_People_Dyna_mite_m_.vst
+,1299,,UAD Vertigo VSC-2 (Universal Audio /  Inc.),UAD_Vertigo_VSC_2.vst
+,1300,,UAD Vertigo VSC-2 (Universal Audio /  Inc.) (mono),UAD_Vertigo_VSC_2_m_.vst
+,1301,,UAD Vertigo VSM-3 (Universal Audio /  Inc.),UAD_Vertigo_VSM_3.vst
+,1302,,UAD Vertigo VSM-3 (Universal Audio /  Inc.) (mono),UAD_Vertigo_VSM_3_m_.vst
+,1303,,UltraChannel (Eventide),UltraChannel.vst
+,1304,,UNFILTER (Zynaptiq),UNFILTER_VST.vst
+,1305,,UNFILTER 8ch (Zynaptiq) (8ch),UNFILTER_VST_8ch.vst
+,1306,Instr.,UVIWorkstation (UVI) (34 out)!!!VSTi,UVIWorkstationVST.vst
+,1307,,ValhallaSupermassive (Valhalla DSP /  LLC),ValhallaSupermassive.vst
+,1308,,ValhallaSupermassive (Valhalla DSP /  LLC),ValhallaSupermassive.vst3
+,1309,,Vari Comp (Native Instruments GmbH),Vari_Comp.vst
+,1310,,Vari Comp (Native Instruments),Vari_Comp.vst3
+,1311,,IRCAM Tools - Verb Studio Session v3 (Flux:: - IRCAM),VerbSessionV3_x64.vst
+,1312,,IRCAM Tools - Verb Studio Session v3 (x86) (Flux:: - IRCAM),VerbSessionV3_x86.vst
+,1313,,IRCAM Tools - Verb v3 (Flux:: - IRCAM) (8ch),VerbV3_x64.vst
+,1314,,IRCAM Tools - Verb v3 (x86) (Flux:: - IRCAM) (8ch),VerbV3_x86.vst
+,1315,Instr.,Vienna Ensemble Pro (VSL) (32 out)!!!VSTi,Vienna_Ensemble_Pro.vst
+,1316,Instr.,Vienna Ensemble Pro (VSL) (32 out)!!!VSTi,Vienna_Ensemble_Pro.vst3
+,1317,,Vienna Ensemble Pro Audio Input (VSL),Vienna_Ensemble_Pro_Audio_Input.vst
+,1318,,Vienna Ensemble Pro Audio Input (VSL),Vienna_Ensemble_Pro_Audio_Input.vst3
+,1319,Instr.,Vienna Ensemble Pro Event Input (VSL)!!!VSTi,Vienna_Ensemble_Pro_Event_Input.vst
+,1320,Instr.,Vienna Ensemble Pro Event Input (VSL)!!!VSTi,Vienna_Ensemble_Pro_Event_Input.vst3
+,1321,Instr.,Vienna Ensemble Pro Surround (VSL) (32 out)!!!VSTi,Vienna_Ensemble_Pro_Surround.vst
+,1322,Instr.,Vienna Ensemble Pro Surround (VSL) (32 out)!!!VSTi,Vienna_Ensemble_Pro_Surround.vst3
+,1323,,iZotope Vinyl (iZotope /  Inc.),Vinyl.vst
+,1324,,iZotope Vinyl (iZotope /  Inc.),Vinyl.vst3
+,1325,,VocalSynth 2 (iZotope /  Inc.),VocalSynth_2.vst
+,1326,,VocalSynth 2 (iZotope /  Inc.),VocalSynth_2.vst3
+,1327,,Visual Virtual Mic (x86) (VVAudio) (4->8ch),VVMicVst.vst
+,1328,Instr.,Waverazor (MOK)!!!VSTi,Waverazor.vst
+,1329,Instr.,Waverazor (MOK)!!!VSTi,Waverazor.vst3
+,1330,,Waverazor FX (MOK),WaverazorFX.vst
+,1331,,Waverazor FX (MOK),WaverazorFX.vst3
+,1332,,<SHELL>,WaveShell1_VST3_14.0.vst3
+,1333,,LoAir Stereo (Waves),WaveShell1_VST3_14.0.vst3<1014857828
+,1334,,LoAir 5.0/5.1 (Waves) (5->6ch),WaveShell1_VST3_14.0.vst3<1963956404
+,1335,,LoAir 5.1 (Waves) (6ch),WaveShell1_VST3_14.0.vst3<675883923
+,1336,,LoAir Mono (Waves),WaveShell1_VST3_14.0.vst3<809005674
+,1337,,<SHELL>,WaveShell1_VST_14.0.vst
+,1338,,LoAir 5.1 (Waves),WaveShell1_VST_14.0.vst<1280262454
+,1339,,LoAir 5.0/5.1 (Waves),WaveShell1_VST_14.0.vst<1280262466
+,1340,,LoAir Mono (Waves),WaveShell1_VST_14.0.vst<1280262477
+,1341,,LoAir Stereo (Waves),WaveShell1_VST_14.0.vst<1280262483
+,1342,,<SHELL>,WaveShell_VST_9.0.vst
+,1343,,<SHELL>,WaveShell_VST_9.0.vst3
+,1344,,LoAir Stereo (Waves),WaveShell_VST_9.0.vst3<1014857828
+,1345,,C6 Stereo (Waves),WaveShell_VST_9.0.vst3<1016495808
+,1346,,CLA Guitars Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1027264538
+,1347,,H-Comp Stereo (Waves),WaveShell_VST_9.0.vst3<103137592
+,1348,,SoundShifter Graphic Stereo (Waves),WaveShell_VST_9.0.vst3<1034025046
+,1349,,GTR Tool Rack Stereo (Waves),WaveShell_VST_9.0.vst3<1036520602
+,1350,,WLM Meter 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<1039385568
+,1351,,TransX Wide Stereo (Waves),WaveShell_VST_9.0.vst3<1045290888
+,1352,,UM225 Stereo/5.0 (Waves) (2->5ch),WaveShell_VST_9.0.vst3<1050749976
+,1353,,Q3 Mono (Waves),WaveShell_VST_9.0.vst3<1055576991
+,1354,,CLA-2A Mono (Waves),WaveShell_VST_9.0.vst3<1072405404
+,1355,,CLA Unplugged Stereo (Waves),WaveShell_VST_9.0.vst3<1077422097
+,1356,,OneKnob Louder Mono (Waves),WaveShell_VST_9.0.vst3<1080082567
+,1357,,MV2 Stereo (Waves),WaveShell_VST_9.0.vst3<1091050614
+,1358,,CLA-3A Stereo (Waves),WaveShell_VST_9.0.vst3<1091448427
+,1359,,L2 Stereo (Waves),WaveShell_VST_9.0.vst3<1099428668
+,1360,,JJP-Vocals Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1101262324
+,1361,,LinEQ Lowband Stereo (Waves),WaveShell_VST_9.0.vst3<110902366
+,1362,,Q-Clone Mono (Waves),WaveShell_VST_9.0.vst3<1115790196
+,1363,,R360 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<11168803
+,1364,,Q2 Mono (Waves),WaveShell_VST_9.0.vst3<1117922111
+,1365,,MondoMod Stereo (Waves),WaveShell_VST_9.0.vst3<1121285408
+,1366,,SSLChannel Stereo (Waves),WaveShell_VST_9.0.vst3<1147844006
+,1367,,Maserati GTi Stereo (Waves),WaveShell_VST_9.0.vst3<1150279251
+,1368,,MV2 Mono (Waves),WaveShell_VST_9.0.vst3<1155363778
+,1369,,X-Hum Stereo (Waves),WaveShell_VST_9.0.vst3<115830721
+,1370,,IDR Stereo (Waves),WaveShell_VST_9.0.vst3<1165602930
+,1371,,OneKnob Driver Mono (Waves),WaveShell_VST_9.0.vst3<1167483735
+,1372,,X-Click Stereo (Waves),WaveShell_VST_9.0.vst3<1169156380
+,1373,,SuperTap 2-Taps Mono (Waves),WaveShell_VST_9.0.vst3<1169434002
+,1374,,VComp Mono (Waves),WaveShell_VST_9.0.vst3<1169783127
+,1375,,S1 Imager Stereo (Waves),WaveShell_VST_9.0.vst3<1173933
+,1376,,EKramer VC Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<117410589
+,1377,,OneKnob Pressure Mono (Waves),WaveShell_VST_9.0.vst3<117800040
+,1378,,RVerb Stereo (Waves),WaveShell_VST_9.0.vst3<1184593490
+,1379,,Aphex Vintage Exciter Mono (Waves),WaveShell_VST_9.0.vst3<1189814795
+,1380,,InPhase Stereo (Waves),WaveShell_VST_9.0.vst3<1193190106
+,1381,,C1 gate Mono (Waves),WaveShell_VST_9.0.vst3<1198157949
+,1382,,JJP-Bass Stereo (Waves),WaveShell_VST_9.0.vst3<1202793545
+,1383,,PuigChild 670 Stereo (Waves),WaveShell_VST_9.0.vst3<1210525509
+,1384,,Q6 Stereo (Waves),WaveShell_VST_9.0.vst3<1215125850
+,1385,,Q6 Mono (Waves),WaveShell_VST_9.0.vst3<1228972855
+,1386,,SSLComp Stereo (Waves),WaveShell_VST_9.0.vst3<1235610411
+,1387,,C1 comp Stereo (Waves),WaveShell_VST_9.0.vst3<123829597
+,1388,,L360 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<1241897557
+,1389,,PAZ- Position Stereo (Waves),WaveShell_VST_9.0.vst3<1265152014
+,1390,,Morphoder Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1268192860
+,1391,,SoundShifter Pitch Stereo (Waves),WaveShell_VST_9.0.vst3<1279090635
+,1392,,Q4 Mono (Waves),WaveShell_VST_9.0.vst3<1280410319
+,1393,,Morphoder Mono (Waves),WaveShell_VST_9.0.vst3<1281060447
+,1394,,CLA Drums Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1282671388
+,1395,,OneKnob Pressure Stereo (Waves),WaveShell_VST_9.0.vst3<1283761762
+,1396,,OneKnob Filter Stereo (Waves),WaveShell_VST_9.0.vst3<1283989964
+,1397,,MaxxBass Stereo (Waves),WaveShell_VST_9.0.vst3<1287589015
+,1398,,RChannel Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1287731291
+,1399,,WavesTune Mono (Waves),WaveShell_VST_9.0.vst3<1293163284
+,1400,,LinMB Mono (Waves),WaveShell_VST_9.0.vst3<1299536209
+,1401,,CLA-76 Mono (Waves),WaveShell_VST_9.0.vst3<1303613859
+,1402,,MaxxVolume Stereo (Waves),WaveShell_VST_9.0.vst3<1305855985
+,1403,,API-550A Mono (Waves),WaveShell_VST_9.0.vst3<1306714592
+,1404,,S1 Shuffler Stereo (Waves),WaveShell_VST_9.0.vst3<1309921396
+,1405,,JJP-Cymb-Perc Stereo (Waves),WaveShell_VST_9.0.vst3<1316502820
+,1406,,IR360 sound field Mono/5.0 (Waves) (1->5ch),WaveShell_VST_9.0.vst3<1319192538
+,1407,,JJP-Bass Mono (Waves),WaveShell_VST_9.0.vst3<1321909123
+,1408,,InPhase LT Live Mono (Waves),WaveShell_VST_9.0.vst3<1322633521
+,1409,,Maserati HMX Stereo (Waves),WaveShell_VST_9.0.vst3<1324793209
+,1410,,M360 Manager 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<1325436752
+,1411,,C1 comp-gate Stereo (Waves),WaveShell_VST_9.0.vst3<1327027067
+,1412,,LinMB Stereo (Waves),WaveShell_VST_9.0.vst3<1331471451
+,1413,,EKramer FX Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1336638589
+,1414,,PuigTec MEQ5 Mono (Waves),WaveShell_VST_9.0.vst3<1345434267
+,1415,,C1 comp Mono (Waves),WaveShell_VST_9.0.vst3<1346150377
+,1416,,NLS Buss Stereo (Waves),WaveShell_VST_9.0.vst3<1351333904
+,1417,,GTR Stomp 4 Mono (Waves),WaveShell_VST_9.0.vst3<1351630809
+,1418,,R360 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<1352712403
+,1419,,TrueVerb Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1358022952
+,1420,,TransX Multi Stereo (Waves),WaveShell_VST_9.0.vst3<1359148241
+,1421,,R360 Stereo/5.0 (Waves) (2->5ch),WaveShell_VST_9.0.vst3<1365699371
+,1422,,X-Hum Mono (Waves),WaveShell_VST_9.0.vst3<1365782231
+,1423,,PuigTec EQP1A Mono (Waves),WaveShell_VST_9.0.vst3<1369518659
+,1424,,Q-Clone Stereo (Waves),WaveShell_VST_9.0.vst3<1394627712
+,1425,,PAZ- Meters Stereo (Waves),WaveShell_VST_9.0.vst3<1397753942
+,1426,,Q10 Mono (Waves),WaveShell_VST_9.0.vst3<1397830709
+,1427,,InPhase LT Mono (Waves),WaveShell_VST_9.0.vst3<1405918146
+,1428,,JJP-Strings-Keys Stereo (Waves),WaveShell_VST_9.0.vst3<141645573
+,1429,,CLA-76 Stereo (Waves),WaveShell_VST_9.0.vst3<1424951490
+,1430,,UM226 Stereo/5.1 (Waves) (2->6ch),WaveShell_VST_9.0.vst3<1435388406
+,1431,,Doubler4 Mono (Waves),WaveShell_VST_9.0.vst3<1440032141
+,1432,,GTR Stomp 4 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1449639302
+,1433,,CLA Effects Stereo (Waves),WaveShell_VST_9.0.vst3<1455094664
+,1434,,W43 Stereo (Waves),WaveShell_VST_9.0.vst3<1460377200
+,1435,,PAZ- Analyzer Stereo (Waves),WaveShell_VST_9.0.vst3<1462399732
+,1436,,UltraPitch 3 Voices Mono (Waves),WaveShell_VST_9.0.vst3<1464521613
+,1437,,TrueVerb Stereo (Waves),WaveShell_VST_9.0.vst3<1470583064
+,1438,,H-Delay Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<147561447
+,1439,,IR360 sound field 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<1477434295
+,1440,,MondoMod Mono (Waves),WaveShell_VST_9.0.vst3<1477838186
+,1441,,Maserati GRP Mono (Waves),WaveShell_VST_9.0.vst3<1483424552
+,1442,,TrueVerb Mono (Waves),WaveShell_VST_9.0.vst3<1506250793
+,1443,,REQ 6 Stereo (Waves),WaveShell_VST_9.0.vst3<1513243202
+,1444,,API-550B Mono (Waves),WaveShell_VST_9.0.vst3<1514843568
+,1445,,REQ 4 Mono (Waves),WaveShell_VST_9.0.vst3<1516130508
+,1446,,JJP-Drums Stereo (Waves),WaveShell_VST_9.0.vst3<1517108099
+,1447,,IR360 sound field 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<1519697062
+,1448,,JJP-Guitars Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1533202980
+,1449,,Q-Capture Mono (Waves),WaveShell_VST_9.0.vst3<1540603153
+,1450,,UltraPitch 6 Voices Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1543713967
+,1451,,DeEsser Stereo (Waves),WaveShell_VST_9.0.vst3<1549465959
+,1452,,L360 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<1553360369
+,1453,,LinEQ Lowband Mono (Waves),WaveShell_VST_9.0.vst3<1557909248
+,1454,,L3 UltraMaximizer Mono (Waves),WaveShell_VST_9.0.vst3<1561968699
+,1455,,Doubler2 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1567052858
+,1456,,GTR Stomp 2 Mono (Waves),WaveShell_VST_9.0.vst3<1567459815
+,1457,,The Kings Microphones Mono (Waves),WaveShell_VST_9.0.vst3<1572695352
+,1458,,C6-SideChain Mono (Waves),WaveShell_VST_9.0.vst3<157391583
+,1459,,SSLComp Mono (Waves),WaveShell_VST_9.0.vst3<1576142159
+,1460,,GTR Stomp 4 Stereo (Waves),WaveShell_VST_9.0.vst3<1582781123
+,1461,,IR-L Mono (Waves),WaveShell_VST_9.0.vst3<1588611046
+,1462,,GTR Stomp 2 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1594086796
+,1463,,M360 Mixdown 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<1607700755
+,1464,,Q2 Stereo (Waves),WaveShell_VST_9.0.vst3<1610315674
+,1465,,IR360 eff discrete 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<1612923069
+,1466,,L1 limiter Stereo (Waves),WaveShell_VST_9.0.vst3<161582714
+,1467,,IR360 eff s.field Stereo/5.0 (Waves) (2->5ch),WaveShell_VST_9.0.vst3<1624143059
+,1468,,SSLGChannel Mono (Waves),WaveShell_VST_9.0.vst3<1626098235
+,1469,,NLS Channel Stereo (Waves),WaveShell_VST_9.0.vst3<1632766725
+,1470,,H-EQ Stereo (Waves),WaveShell_VST_9.0.vst3<1636169028
+,1471,,IR1 efficient Stereo (Waves),WaveShell_VST_9.0.vst3<1640344414
+,1472,,RBass Stereo (Waves),WaveShell_VST_9.0.vst3<1648198320
+,1473,,L316 Stereo (Waves),WaveShell_VST_9.0.vst3<1652756835
+,1474,,Z-Noise Mono (Waves),WaveShell_VST_9.0.vst3<1653960071
+,1475,,VEQ4 Mono (Waves),WaveShell_VST_9.0.vst3<1663201792
+,1476,,Q8 Mono (Waves),WaveShell_VST_9.0.vst3<1664450711
+,1477,,Kramer Tape Mono (Waves),WaveShell_VST_9.0.vst3<1666600221
+,1478,,API-2500 Mono (Waves),WaveShell_VST_9.0.vst3<1666834973
+,1479,,S360 Panner Stereo/5.1 (Waves) (2->6ch),WaveShell_VST_9.0.vst3<1674816968
+,1480,,VComp Stereo (Waves),WaveShell_VST_9.0.vst3<1677787201
+,1481,,S360 Imager 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<168173314
+,1482,,API-2500 Stereo (Waves),WaveShell_VST_9.0.vst3<1684519779
+,1483,,API-550B Stereo (Waves),WaveShell_VST_9.0.vst3<1694971170
+,1484,,H-Delay Stereo (Waves),WaveShell_VST_9.0.vst3<1707610720
+,1485,,TransX Wide Mono (Waves),WaveShell_VST_9.0.vst3<1710098774
+,1486,,L3 MultiMaximizer Mono (Waves),WaveShell_VST_9.0.vst3<1711222897
+,1487,,CLA Effects Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1718429525
+,1488,,CLA Vocals Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1744824135
+,1489,,OneKnob Phatter Mono (Waves),WaveShell_VST_9.0.vst3<1744920010
+,1490,,C1 comp-sc Mono (Waves),WaveShell_VST_9.0.vst3<174743757
+,1491,,IR360 eff discrete 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<1747928624
+,1492,,S360 Imager Mono/5.1 (Waves) (1->6ch),WaveShell_VST_9.0.vst3<1750429989
+,1493,,IDR360 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<1750759606
+,1494,,Kramer PIE Mono (Waves),WaveShell_VST_9.0.vst3<1751766740
+,1495,,RCompressor Stereo (Waves),WaveShell_VST_9.0.vst3<1756078207
+,1496,,InPhase Live Mono (Waves),WaveShell_VST_9.0.vst3<1768958331
+,1497,,REQ 2 Mono (Waves),WaveShell_VST_9.0.vst3<1769623316
+,1498,,VEQ3 Stereo (Waves),WaveShell_VST_9.0.vst3<1786236414
+,1499,,AudioTrack Mono (Waves),WaveShell_VST_9.0.vst3<1800640403
+,1500,,S360 Panner Mono/5.0 (Waves) (1->5ch),WaveShell_VST_9.0.vst3<180162396
+,1501,,DeBreath Mono (Waves),WaveShell_VST_9.0.vst3<1804248460
+,1502,,IR1 full Stereo (Waves),WaveShell_VST_9.0.vst3<1810375657
+,1503,,Bass Rider Live Mono (Waves),WaveShell_VST_9.0.vst3<1813047961
+,1504,,Doubler2 Stereo (Waves),WaveShell_VST_9.0.vst3<1815175507
+,1505,,CLA Vocals Stereo (Waves),WaveShell_VST_9.0.vst3<1815941030
+,1506,,JJP-Vocals Stereo (Waves),WaveShell_VST_9.0.vst3<1819580965
+,1507,,Renaissance Axx Mono (Waves),WaveShell_VST_9.0.vst3<1820886384
+,1508,,VEQ3 Mono (Waves),WaveShell_VST_9.0.vst3<1822020399
+,1509,,Enigma Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1822042413
+,1510,,W43 Mono (Waves),WaveShell_VST_9.0.vst3<1822484732
+,1511,,X-Crackle Mono (Waves),WaveShell_VST_9.0.vst3<1836474988
+,1512,,OneKnob Phatter Stereo (Waves),WaveShell_VST_9.0.vst3<1843943552
+,1513,,Maserati ACG Stereo (Waves),WaveShell_VST_9.0.vst3<1852265240
+,1514,,PuigChild 660 Mono (Waves),WaveShell_VST_9.0.vst3<1854274395
+,1515,,L3 UltraMaximizer Stereo (Waves),WaveShell_VST_9.0.vst3<186163489
+,1516,,REQ 4 Stereo (Waves),WaveShell_VST_9.0.vst3<1864324026
+,1517,,Q3 Stereo (Waves),WaveShell_VST_9.0.vst3<1866088926
+,1518,,PAZ- Frequency Mono (Waves),WaveShell_VST_9.0.vst3<1871592694
+,1519,,CLA Bass Stereo (Waves),WaveShell_VST_9.0.vst3<1877125416
+,1520,,IR360 eff discrete Stereo/5.0 (Waves) (2->5ch),WaveShell_VST_9.0.vst3<1884987255
+,1521,,REQ 2 Stereo (Waves),WaveShell_VST_9.0.vst3<188681498
+,1522,,EKramer VC Stereo (Waves),WaveShell_VST_9.0.vst3<1902416328
+,1523,,PuigTec MEQ5 Stereo (Waves),WaveShell_VST_9.0.vst3<1905803969
+,1524,,Dorrough360 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<1906188709
+,1525,,The Kings Microphones Stereo (Waves),WaveShell_VST_9.0.vst3<190811290
+,1526,,SoundShifter Parametric Stereo (Waves),WaveShell_VST_9.0.vst3<1910360663
+,1527,,C1 comp-gate Mono (Waves),WaveShell_VST_9.0.vst3<191070437
+,1528,,Dorrough Stereo (Waves),WaveShell_VST_9.0.vst3<1917369710
+,1529,,C360 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<1917760366
+,1530,,SSLChannel Mono (Waves),WaveShell_VST_9.0.vst3<1919131552
+,1531,,Kramer Tape Stereo (Waves),WaveShell_VST_9.0.vst3<1930579615
+,1532,,MaxxVolume Mono (Waves),WaveShell_VST_9.0.vst3<1938239203
+,1533,,MaxxBass Mono (Waves),WaveShell_VST_9.0.vst3<1943544117
+,1534,,LinEQ Broadband Mono (Waves),WaveShell_VST_9.0.vst3<1946232049
+,1535,,MetaFlanger Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1953885631
+,1536,,RChannel Stereo (Waves),WaveShell_VST_9.0.vst3<1960928030
+,1537,,LoAir 5.0/5.1 (Waves) (5->6ch),WaveShell_VST_9.0.vst3<1963956404
+,1538,,OneKnob Driver Stereo (Waves),WaveShell_VST_9.0.vst3<1969682057
+,1539,,PAZ- Frequency Stereo (Waves),WaveShell_VST_9.0.vst3<1970987420
+,1540,,MV360 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<1982070341
+,1541,,UltraPitch Shift Mono (Waves),WaveShell_VST_9.0.vst3<1982285526
+,1542,,Dorrough Mono (Waves),WaveShell_VST_9.0.vst3<1988294228
+,1543,,JJP-Strings-Keys Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<1988827912
+,1544,,PAZ- Meters Mono (Waves),WaveShell_VST_9.0.vst3<1996567056
+,1545,,InPhase LT Stereo (Waves),WaveShell_VST_9.0.vst3<1996904420
+,1546,,JJP-Cymb-Perc Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<2001594613
+,1547,,NLS Channel Mono (Waves),WaveShell_VST_9.0.vst3<201510099
+,1548,,Z-Noise Stereo (Waves),WaveShell_VST_9.0.vst3<2028450371
+,1549,,L3-LL Ultra Stereo (Waves),WaveShell_VST_9.0.vst3<203202682
+,1550,,RDeEsser Stereo (Waves),WaveShell_VST_9.0.vst3<203238587
+,1551,,CLA Drums Stereo (Waves),WaveShell_VST_9.0.vst3<2033047385
+,1552,,Maserati DRM Stereo (Waves),WaveShell_VST_9.0.vst3<2033543914
+,1553,,MetaFlanger Stereo (Waves),WaveShell_VST_9.0.vst3<2047259366
+,1554,,GTR Amp 2Cab Mono (Waves),WaveShell_VST_9.0.vst3<2060298040
+,1555,,OneKnob Louder Stereo (Waves),WaveShell_VST_9.0.vst3<2068714585
+,1556,,Doppler Stereo (Waves),WaveShell_VST_9.0.vst3<2075822561
+,1557,,SSLEQ Stereo (Waves),WaveShell_VST_9.0.vst3<2076071591
+,1558,,GTR Stomp 6 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<2097062672
+,1559,,AudioTrack Stereo (Waves),WaveShell_VST_9.0.vst3<210053937
+,1560,,Q10 Stereo (Waves),WaveShell_VST_9.0.vst3<2104435169
+,1561,,EKramer FX Stereo (Waves),WaveShell_VST_9.0.vst3<2109724936
+,1562,,Doubler4 Stereo (Waves),WaveShell_VST_9.0.vst3<2110847027
+,1563,,DeEsser Mono (Waves),WaveShell_VST_9.0.vst3<2114649267
+,1564,,RCompressor Mono (Waves),WaveShell_VST_9.0.vst3<2123677325
+,1565,,C6-SideChain Stereo (Waves),WaveShell_VST_9.0.vst3<2141929705
+,1566,,IR-L efficient Stereo (Waves),WaveShell_VST_9.0.vst3<217572345
+,1567,,API-560 Stereo (Waves),WaveShell_VST_9.0.vst3<22088401
+,1568,,C1 gate Stereo (Waves),WaveShell_VST_9.0.vst3<233448165
+,1569,,EKramer BA Mono (Waves),WaveShell_VST_9.0.vst3<247286166
+,1570,,C1 comp-sc Stereo (Waves),WaveShell_VST_9.0.vst3<248467731
+,1571,,Maserati VX1 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<261110826
+,1572,,LinEQ Broadband Stereo (Waves),WaveShell_VST_9.0.vst3<267727207
+,1573,,TransX Multi Mono (Waves),WaveShell_VST_9.0.vst3<270696387
+,1574,,WavesTune Stereo (Waves),WaveShell_VST_9.0.vst3<288610214
+,1575,,CLA Bass Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<295450949
+,1576,,H-Delay Mono (Waves),WaveShell_VST_9.0.vst3<298230292
+,1577,,GTR Amp Stereo (Waves),WaveShell_VST_9.0.vst3<302506146
+,1578,,X-Noise Mono (Waves),WaveShell_VST_9.0.vst3<303885550
+,1579,,RChannel Mono (Waves),WaveShell_VST_9.0.vst3<305449764
+,1580,,GTR Amp Mono (Waves),WaveShell_VST_9.0.vst3<306114270
+,1581,,L1 limiter Mono (Waves),WaveShell_VST_9.0.vst3<308315136
+,1582,,M360 Manager 5.0/5.1 (Waves) (5->6ch),WaveShell_VST_9.0.vst3<310536604
+,1583,,S360 Imager Stereo/5.0 (Waves) (2->5ch),WaveShell_VST_9.0.vst3<316756136
+,1584,,CLA-3A Mono (Waves),WaveShell_VST_9.0.vst3<322210818
+,1585,,Maserati ACG Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<323537585
+,1586,,L3-LL Multi Mono (Waves),WaveShell_VST_9.0.vst3<332725878
+,1587,,Dorrough360 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<344017476
+,1588,,S360 Imager Mono/5.0 (Waves) (1->5ch),WaveShell_VST_9.0.vst3<35651568
+,1589,,R360 Mono/5.1 (Waves) (1->6ch),WaveShell_VST_9.0.vst3<35952230
+,1590,,WNS Stereo (Waves),WaveShell_VST_9.0.vst3<360709579
+,1591,,MetaFlanger Mono (Waves),WaveShell_VST_9.0.vst3<361828060
+,1592,,L3-LL Multi Stereo (Waves),WaveShell_VST_9.0.vst3<362021908
+,1593,,L3 MultiMaximizer Stereo (Waves),WaveShell_VST_9.0.vst3<363263267
+,1594,,C4 Mono (Waves),WaveShell_VST_9.0.vst3<370384141
+,1595,,LFE360 Mono (Waves),WaveShell_VST_9.0.vst3<376119112
+,1596,,Vocal Rider Mono (Waves),WaveShell_VST_9.0.vst3<378014949
+,1597,,Vocal Rider Live Mono (Waves),WaveShell_VST_9.0.vst3<380511271
+,1598,,SoundShifter Parametric Mono (Waves),WaveShell_VST_9.0.vst3<381860706
+,1599,,GTR Stomp 2 Stereo (Waves),WaveShell_VST_9.0.vst3<382796677
+,1600,,IDR Mono (Waves),WaveShell_VST_9.0.vst3<386205230
+,1601,,RVox Stereo (Waves),WaveShell_VST_9.0.vst3<394356635
+,1602,,NLS Buss Mono (Waves),WaveShell_VST_9.0.vst3<403438986
+,1603,,IR360 discrete Mono/5.0 (Waves) (1->5ch),WaveShell_VST_9.0.vst3<403662143
+,1604,,InPhase Live Stereo (Waves),WaveShell_VST_9.0.vst3<411651617
+,1605,,API-560 Mono (Waves),WaveShell_VST_9.0.vst3<422242405
+,1606,,SoundShifter Graphic Mono (Waves),WaveShell_VST_9.0.vst3<429542272
+,1607,,IR1 Mono (Waves),WaveShell_VST_9.0.vst3<431787714
+,1608,,MondoMod Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<447338133
+,1609,,L316 Mono (Waves),WaveShell_VST_9.0.vst3<448565702
+,1610,,IDR360 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<450316247
+,1611,,R360 Stereo/5.1 (Waves) (2->6ch),WaveShell_VST_9.0.vst3<45647476
+,1612,,Maserati HMX Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<457630640
+,1613,,L2 Mono (Waves),WaveShell_VST_9.0.vst3<46734549
+,1614,,RDeEsser Mono (Waves),WaveShell_VST_9.0.vst3<47187333
+,1615,,SSLEQ Mono (Waves),WaveShell_VST_9.0.vst3<472986005
+,1616,,PuigTec EQP1A Stereo (Waves),WaveShell_VST_9.0.vst3<476302953
+,1617,,S360 Panner Mono/5.1 (Waves) (1->6ch),WaveShell_VST_9.0.vst3<486580469
+,1618,,EKramer GT Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<49659423
+,1619,,Kramer HLS Mono (Waves),WaveShell_VST_9.0.vst3<513989238
+,1620,,GTR Stomp 6 Mono (Waves),WaveShell_VST_9.0.vst3<515021987
+,1621,,UltraPitch 6 Voices Mono (Waves),WaveShell_VST_9.0.vst3<515940356
+,1622,,Bass Rider Stereo (Waves),WaveShell_VST_9.0.vst3<530019617
+,1623,,Maserati GTi Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<53273678
+,1624,,IR360 sound field Stereo/5.0 (Waves) (2->5ch),WaveShell_VST_9.0.vst3<535472974
+,1625,,OneKnob Brighter Stereo (Waves),WaveShell_VST_9.0.vst3<548034957
+,1626,,EKramer GT Stereo (Waves),WaveShell_VST_9.0.vst3<560838542
+,1627,,WLM Meter 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<563309057
+,1628,,GTR Amp Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<565103569
+,1629,,JJP-Bass Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<574600552
+,1630,,Center Stereo (Waves),WaveShell_VST_9.0.vst3<576218106
+,1631,,UltraPitch 3 Voices Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<577917850
+,1632,,Q8 Stereo (Waves),WaveShell_VST_9.0.vst3<579341266
+,1633,,REQ 6 Mono (Waves),WaveShell_VST_9.0.vst3<605406932
+,1634,,S360 Imager Stereo/5.1 (Waves) (2->6ch),WaveShell_VST_9.0.vst3<618583563
+,1635,,H-Comp Mono (Waves),WaveShell_VST_9.0.vst3<623476617
+,1636,,Doppler Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<627597958
+,1637,,InPhase Mono (Waves),WaveShell_VST_9.0.vst3<627634486
+,1638,,Maserati B72 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<628302270
+,1639,,X-Noise Stereo (Waves),WaveShell_VST_9.0.vst3<63038178
+,1640,,UltraPitch Shift Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<645193409
+,1641,,RVerb Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<646969791
+,1642,,EKramer BA Stereo (Waves),WaveShell_VST_9.0.vst3<647908616
+,1643,,Kramer HLS Stereo (Waves),WaveShell_VST_9.0.vst3<648522216
+,1644,,Maserati B72 Mono (Waves),WaveShell_VST_9.0.vst3<654427485
+,1645,,Vocal Rider Live Stereo (Waves),WaveShell_VST_9.0.vst3<671393701
+,1646,,S360 Panner Stereo/5.0 (Waves) (2->5ch),WaveShell_VST_9.0.vst3<673939143
+,1647,,LoAir 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<675883923
+,1648,,OneKnob Filter Mono (Waves),WaveShell_VST_9.0.vst3<6774094
+,1649,,Q1 Mono (Waves),WaveShell_VST_9.0.vst3<678487343
+,1650,,Q4 Stereo (Waves),WaveShell_VST_9.0.vst3<685404978
+,1651,,JJP-Drums Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<687268982
+,1652,,Maserati VX1 Stereo (Waves),WaveShell_VST_9.0.vst3<68910015
+,1653,,EKramer DR Mono (Waves),WaveShell_VST_9.0.vst3<689690790
+,1654,,Aphex Vintage Exciter Stereo (Waves),WaveShell_VST_9.0.vst3<698320493
+,1655,,GTR Stomp 6 Stereo (Waves),WaveShell_VST_9.0.vst3<714056505
+,1656,,InPhase LT Live Stereo (Waves),WaveShell_VST_9.0.vst3<724493355
+,1657,,RVox Mono (Waves),WaveShell_VST_9.0.vst3<726243722
+,1658,,SSLGChannel Stereo (Waves),WaveShell_VST_9.0.vst3<73413357
+,1659,,JJP-Guitars Stereo (Waves),WaveShell_VST_9.0.vst3<741146457
+,1660,,SuperTap 6-Taps Mono (Waves),WaveShell_VST_9.0.vst3<743764894
+,1661,,SuperTap 6-Taps Stereo (Waves),WaveShell_VST_9.0.vst3<746889276
+,1662,,H-EQ Mono (Waves),WaveShell_VST_9.0.vst3<7480357
+,1663,,M360 Manager 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<751334457
+,1664,,Bass Rider Live Stereo (Waves),WaveShell_VST_9.0.vst3<756960151
+,1665,,JJP-Drums Mono (Waves),WaveShell_VST_9.0.vst3<757061469
+,1666,,S1 MS Matrix Stereo (Waves),WaveShell_VST_9.0.vst3<759141181
+,1667,,C4 Stereo (Waves),WaveShell_VST_9.0.vst3<763288060
+,1668,,CLA Unplugged Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<764154612
+,1669,,IR-L Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<769038137
+,1670,,MV360 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<77479467
+,1671,,SuperTap 2-Taps Stereo (Waves),WaveShell_VST_9.0.vst3<778349000
+,1672,,GTR Tuner Mono (Waves),WaveShell_VST_9.0.vst3<781631839
+,1673,,R360 Mono/5.0 (Waves) (1->5ch),WaveShell_VST_9.0.vst3<783365915
+,1674,,SoundShifter Pitch Mono (Waves),WaveShell_VST_9.0.vst3<793494665
+,1675,,C360 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<796649822
+,1676,,X-Crackle Stereo (Waves),WaveShell_VST_9.0.vst3<801336118
+,1677,,S360 Imager 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<803077675
+,1678,,EKramer DR Stereo (Waves),WaveShell_VST_9.0.vst3<803553072
+,1679,,GTR Tool Rack Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<804933107
+,1680,,L1+ Ultramaximizer Stereo (Waves),WaveShell_VST_9.0.vst3<808838543
+,1681,,LoAir Mono (Waves),WaveShell_VST_9.0.vst3<809005674
+,1682,,WNS Mono (Waves),WaveShell_VST_9.0.vst3<810368115
+,1683,,CLA Guitars Stereo (Waves),WaveShell_VST_9.0.vst3<811598863
+,1684,,CLA-2A Stereo (Waves),WaveShell_VST_9.0.vst3<813879449
+,1685,,SuperTap 2-Taps Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<824397889
+,1686,,LFE360 5.1 (Waves) (6ch),WaveShell_VST_9.0.vst3<831512638
+,1687,,Enigma Stereo (Waves),WaveShell_VST_9.0.vst3<840337987
+,1688,,OneKnob Wetter Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<842974206
+,1689,,Kramer PIE Stereo (Waves),WaveShell_VST_9.0.vst3<850400258
+,1690,,Bass Rider Mono (Waves),WaveShell_VST_9.0.vst3<851785231
+,1691,,C6 Mono (Waves),WaveShell_VST_9.0.vst3<852397753
+,1692,,Renaissance Axx Stereo (Waves),WaveShell_VST_9.0.vst3<85428690
+,1693,,WLM Meter Mono (Waves),WaveShell_VST_9.0.vst3<854578616
+,1694,,X-Click Mono (Waves),WaveShell_VST_9.0.vst3<861227892
+,1695,,Doubler2 Mono (Waves),WaveShell_VST_9.0.vst3<861631373
+,1696,,Morphoder Stereo (Waves),WaveShell_VST_9.0.vst3<868227253
+,1697,,Vocal Rider Stereo (Waves),WaveShell_VST_9.0.vst3<870535783
+,1698,,Maserati DRM Mono (Waves),WaveShell_VST_9.0.vst3<872959960
+,1699,,L3-LL Ultra Mono (Waves),WaveShell_VST_9.0.vst3<874768588
+,1700,,SuperTap 6-Taps Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<87695285
+,1701,,WLM Meter Stereo (Waves),WaveShell_VST_9.0.vst3<881125410
+,1702,,M360 Mixdown 5.0 (Waves) (5ch),WaveShell_VST_9.0.vst3<887083138
+,1703,,API-550A Stereo (Waves),WaveShell_VST_9.0.vst3<889593894
+,1704,,Q1 Stereo (Waves),WaveShell_VST_9.0.vst3<893475054
+,1705,,OneKnob Wetter Stereo (Waves),WaveShell_VST_9.0.vst3<8959223
+,1706,,OneKnob Wetter Mono (Waves),WaveShell_VST_9.0.vst3<89843625
+,1707,,IR1 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<913650720
+,1708,,Doubler4 Mono/Stereo (Waves),WaveShell_VST_9.0.vst3<919806878
+,1709,,RBass Mono (Waves),WaveShell_VST_9.0.vst3<92228146
+,1710,,Maserati GRP Stereo (Waves),WaveShell_VST_9.0.vst3<932442010
+,1711,,Maserati B72 Stereo (Waves),WaveShell_VST_9.0.vst3<988431619
+,1712,,IR-L full Stereo (Waves),WaveShell_VST_9.0.vst3<993500261
+,1713,,VEQ4 Stereo (Waves),WaveShell_VST_9.0.vst3<993513677
+,1714,,OneKnob Brighter Mono (Waves),WaveShell_VST_9.0.vst3<99557459
+,1715,,API-550A Mono (x86) (Waves),WaveShell_VST_9.0.vst<1094009165
+,1716,,API-550A Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1094009171
+,1717,,API-550B Mono (x86) (Waves),WaveShell_VST_9.0.vst<1094009421
+,1718,,API-550B Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1094009427
+,1719,,API-560 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1095054669
+,1720,,API-560 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1095054675
+,1721,,API-2500 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1095779149
+,1722,,API-2500 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1095779155
+,1723,,Aphex Vintage Exciter Mono (x86) (Waves),WaveShell_VST_9.0.vst<1095780429
+,1724,,Aphex Vintage Exciter Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1095780435
+,1725,,DeBreath Mono (x86) (Waves),WaveShell_VST_9.0.vst<1112691789
+,1726,,Bass Rider Mono (x86) (Waves),WaveShell_VST_9.0.vst<1112755277
+,1727,,Bass Rider Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1112755283
+,1728,,Bass Rider Live Mono (x86) (Waves),WaveShell_VST_9.0.vst<1112757837
+,1729,,Bass Rider Live Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1112757843
+,1730,,IR-L Mono (x86) (Waves),WaveShell_VST_9.0.vst<1127236941
+,1731,,IR-L efficient Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1127236947
+,1732,,IR-L Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1127236952
+,1733,,IR-L full Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1127237203
+,1734,,C1 comp-sc Mono (x86) (Waves),WaveShell_VST_9.0.vst<1127301965
+,1735,,C1 comp-sc Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1127301971
+,1736,,C6 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1127633229
+,1737,,C6 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1127633235
+,1738,,C6-SideChain Mono (x86) (Waves),WaveShell_VST_9.0.vst<1127633741
+,1739,,C6-SideChain Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1127633747
+,1740,,CLA Bass Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128415571
+,1741,,CLA Bass Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128415576
+,1742,,CLA Drums Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128550995
+,1743,,CLA Drums Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128551000
+,1744,,CLA Effects Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128613459
+,1745,,CLA Effects Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128613464
+,1746,,CLA Guitars Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128748115
+,1747,,CLA Guitars Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1128748120
+,1748,,H-Comp Mono (x86) (Waves),WaveShell_VST_9.0.vst<1129070925
+,1749,,H-Comp Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129070931
+,1750,,C1 comp Mono (x86) (Waves),WaveShell_VST_9.0.vst<1129140301
+,1751,,C1 comp Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129140307
+,1752,,Center Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129206867
+,1753,,C1 comp-gate Mono (x86) (Waves),WaveShell_VST_9.0.vst<1129270605
+,1754,,C1 comp-gate Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129270611
+,1755,,CLA Unplugged Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129664083
+,1756,,CLA Unplugged Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129664088
+,1757,,IR360 sound field 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1129727285
+,1758,,IR360 sound field 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1129727286
+,1759,,IR1 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1129727309
+,1760,,IR1 efficient Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129727315
+,1761,,IR360 eff s.field Stereo/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1129727316
+,1762,,IR1 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129727320
+,1763,,IR360 sound field Mono/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1129727321
+,1764,,IR1 full Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129727571
+,1765,,IR360 sound field Stereo/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1129727572
+,1766,,CLA Vocals Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129729875
+,1767,,CLA Vocals Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1129729880
+,1768,,IR360 eff discrete 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1129730357
+,1769,,IR360 eff discrete 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1129730358
+,1770,,IR360 eff discrete Stereo/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1129730388
+,1771,,IR360 discrete Mono/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1129730393
+,1772,,C4 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1145393485
+,1773,,C4 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1145393491
+,1774,,Doppler Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1146110291
+,1775,,Doppler Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1146110296
+,1776,,Dorrough360 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1146242869
+,1777,,Dorrough360 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1146242870
+,1778,,Dorrough Mono (x86) (Waves),WaveShell_VST_9.0.vst<1146242893
+,1779,,Dorrough Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1146242899
+,1780,,DeEsser Mono (x86) (Waves),WaveShell_VST_9.0.vst<1146306893
+,1781,,DeEsser Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1146306899
+,1782,,EKramer BA Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162560077
+,1783,,EKramer BA Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162560083
+,1784,,EKramer DR Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162560589
+,1785,,EKramer DR Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162560595
+,1786,,EKramer FX Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162561107
+,1787,,EKramer FX Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162561112
+,1788,,EKramer GT Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162561363
+,1789,,EKramer GT Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162561368
+,1790,,EKramer VC Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162565203
+,1791,,EKramer VC Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162565208
+,1792,,Enigma Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162757971
+,1793,,Enigma Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162757976
+,1794,,Q1 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162948941
+,1795,,Q1 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162948947
+,1796,,Q2 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162949197
+,1797,,Q2 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162949203
+,1798,,Q3 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162949453
+,1799,,Q3 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162949459
+,1800,,Q4 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162949709
+,1801,,Q4 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162949715
+,1802,,Q6 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162950221
+,1803,,Q6 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162950227
+,1804,,Q8 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162950733
+,1805,,Q8 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162950739
+,1806,,Q10 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1162953037
+,1807,,Q10 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1162953043
+,1808,,PuigChild 660 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1178814541
+,1809,,PuigChild 670 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1178814547
+,1810,,MetaFlanger Mono (x86) (Waves),WaveShell_VST_9.0.vst<1179405901
+,1811,,MetaFlanger Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1179405907
+,1812,,MetaFlanger Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1179405912
+,1813,,GTR Amp 2Cab Mono (x86) (Waves),WaveShell_VST_9.0.vst<1195455053
+,1814,,GTR Amp Mono (x86) (Waves),WaveShell_VST_9.0.vst<1195461965
+,1815,,GTR Amp Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195461971
+,1816,,GTR Amp Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195461976
+,1817,,C1 gate Mono (x86) (Waves),WaveShell_VST_9.0.vst<1195463757
+,1818,,C1 gate Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195463763
+,1819,,GTR Stomp 2 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1195586125
+,1820,,GTR Stomp 2 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195586131
+,1821,,GTR Stomp 2 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195586136
+,1822,,GTR Stomp 4 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1195586637
+,1823,,GTR Stomp 4 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195586643
+,1824,,GTR Stomp 4 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195586648
+,1825,,GTR Stomp 6 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1195593293
+,1826,,GTR Stomp 6 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195593299
+,1827,,GTR Stomp 6 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1195593304
+,1828,,Maserati GRP Mono (x86) (Waves),WaveShell_VST_9.0.vst<1196576845
+,1829,,Maserati GRP Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1196576851
+,1830,,GTR Tool Rack Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1196838227
+,1831,,GTR Tool Rack Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1196838232
+,1832,,H-Delay Mono (x86) (Waves),WaveShell_VST_9.0.vst<1212302413
+,1833,,H-Delay Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1212302419
+,1834,,H-Delay Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1212302424
+,1835,,Kramer HLS Mono (x86) (Waves),WaveShell_VST_9.0.vst<1212501069
+,1836,,Kramer HLS Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1212501075
+,1837,,H-EQ Mono (x86) (Waves),WaveShell_VST_9.0.vst<1212502349
+,1838,,H-EQ Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1212502355
+,1839,,IDR Mono (x86) (Waves),WaveShell_VST_9.0.vst<1229214285
+,1840,,IDR Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1229214291
+,1841,,MaxxVolume Mono (x86) (Waves),WaveShell_VST_9.0.vst<1230392397
+,1842,,MaxxVolume Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1230392403
+,1843,,JJP-Bass Mono (x86) (Waves),WaveShell_VST_9.0.vst<1246773837
+,1844,,JJP-Bass Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246773843
+,1845,,JJP-Bass Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246773848
+,1846,,JJP-Drums Mono (x86) (Waves),WaveShell_VST_9.0.vst<1246774349
+,1847,,JJP-Drums Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246774355
+,1848,,JJP-Drums Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246774360
+,1849,,JJP-Guitars Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246775123
+,1850,,JJP-Guitars Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246775128
+,1851,,JJP-Cymb-Perc Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246777427
+,1852,,JJP-Cymb-Perc Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246777432
+,1853,,JJP-Strings-Keys Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246778195
+,1854,,JJP-Strings-Keys Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246778200
+,1855,,JJP-Vocals Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246778963
+,1856,,JJP-Vocals Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1246778968
+,1857,,OneKnob Phatter Mono (x86) (Waves),WaveShell_VST_9.0.vst<1263555661
+,1858,,OneKnob Phatter Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1263555667
+,1859,,L1 limiter Mono (x86) (Waves),WaveShell_VST_9.0.vst<1278296909
+,1860,,L1 limiter Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1278296915
+,1861,,L2 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1278365005
+,1862,,L2 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1278365011
+,1863,,L3 UltraMaximizer Mono (x86) (Waves),WaveShell_VST_9.0.vst<1278429005
+,1864,,L3 UltraMaximizer Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1278429011
+,1865,,IDR360 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1278429493
+,1866,,IDR360 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1278429494
+,1867,,L360 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1278430517
+,1868,,L360 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1278430518
+,1869,,L3 MultiMaximizer Mono (x86) (Waves),WaveShell_VST_9.0.vst<1278431309
+,1870,,L3 MultiMaximizer Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1278431315
+,1871,,L316 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1278431565
+,1872,,L316 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1278431571
+,1873,,CLA-2A Mono (x86) (Waves),WaveShell_VST_9.0.vst<1279341133
+,1874,,CLA-2A Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1279341139
+,1875,,CLA-3A Mono (x86) (Waves),WaveShell_VST_9.0.vst<1279341389
+,1876,,CLA-3A Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1279341395
+,1877,,LinMB Mono (x86) (Waves),WaveShell_VST_9.0.vst<1279472973
+,1878,,LinMB Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1279472979
+,1879,,LFE360 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1279673654
+,1880,,LFE360 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1279673677
+,1881,,L1+ Ultramaximizer Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1279872305
+,1882,,LoAir 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1280262454
+,1883,,LoAir 5.0/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1280262466
+,1884,,LoAir Mono (x86) (Waves),WaveShell_VST_9.0.vst<1280262477
+,1885,,LoAir Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1280262483
+,1886,,LinEQ Broadband Mono (x86) (Waves),WaveShell_VST_9.0.vst<1280393549
+,1887,,LinEQ Broadband Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1280393555
+,1888,,LinEQ Lowband Mono (x86) (Waves),WaveShell_VST_9.0.vst<1280398157
+,1889,,LinEQ Lowband Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1280398163
+,1890,,Vocal Rider Live Mono (x86) (Waves),WaveShell_VST_9.0.vst<1280459853
+,1891,,Vocal Rider Live Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1280459859
+,1892,,MondoMod Mono (x86) (Waves),WaveShell_VST_9.0.vst<1297040461
+,1893,,MondoMod Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297040467
+,1894,,MondoMod Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297040472
+,1895,,S1 MS Matrix Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297307731
+,1896,,SuperTap 2-Taps Mono (x86) (Waves),WaveShell_VST_9.0.vst<1297363533
+,1897,,SuperTap 2-Taps Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297363539
+,1898,,SuperTap 2-Taps Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297363544
+,1899,,SuperTap 6-Taps Mono (x86) (Waves),WaveShell_VST_9.0.vst<1297364557
+,1900,,SuperTap 6-Taps Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297364563
+,1901,,SuperTap 6-Taps Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297364568
+,1902,,MV2 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1297494605
+,1903,,MV2 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297494611
+,1904,,MaxxBass Mono (x86) (Waves),WaveShell_VST_9.0.vst<1297629773
+,1905,,MaxxBass Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297629779
+,1906,,MV360 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1297634869
+,1907,,MV360 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1297634870
+,1908,,RVox Mono (x86) (Waves),WaveShell_VST_9.0.vst<1297634893
+,1909,,RVox Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1297634899
+,1910,,VEQ3 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1313165645
+,1911,,VEQ3 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1313165651
+,1912,,S1 Shuffler Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1313424467
+,1913,,S1 Imager Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1314080851
+,1914,,VComp Mono (x86) (Waves),WaveShell_VST_9.0.vst<1314276173
+,1915,,VComp Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1314276179
+,1916,,OneKnob Brighter Mono (x86) (Waves),WaveShell_VST_9.0.vst<1330332237
+,1917,,OneKnob Brighter Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1330332243
+,1918,,OneKnob Pressure Mono (x86) (Waves),WaveShell_VST_9.0.vst<1330332493
+,1919,,OneKnob Pressure Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1330332499
+,1920,,OneKnob Driver Mono (x86) (Waves),WaveShell_VST_9.0.vst<1330332749
+,1921,,OneKnob Driver Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1330332755
+,1922,,OneKnob Louder Mono (x86) (Waves),WaveShell_VST_9.0.vst<1330334797
+,1923,,OneKnob Louder Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1330334803
+,1924,,OneKnob Wetter Mono (x86) (Waves),WaveShell_VST_9.0.vst<1330337613
+,1925,,OneKnob Wetter Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1330337619
+,1926,,OneKnob Wetter Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1330337624
+,1927,,PuigTec EQP1A Mono (x86) (Waves),WaveShell_VST_9.0.vst<1345405261
+,1928,,PuigTec EQP1A Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1345405267
+,1929,,InPhase LT Mono (x86) (Waves),WaveShell_VST_9.0.vst<1346912589
+,1930,,InPhase LT Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1346912595
+,1931,,InPhase LT Live Mono (x86) (Waves),WaveShell_VST_9.0.vst<1346912845
+,1932,,InPhase LT Live Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1346912851
+,1933,,InPhase Live Mono (x86) (Waves),WaveShell_VST_9.0.vst<1346915405
+,1934,,InPhase Live Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1346915411
+,1935,,InPhase Mono (x86) (Waves),WaveShell_VST_9.0.vst<1346918989
+,1936,,InPhase Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1346918995
+,1937,,PuigTec MEQ5 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1347237197
+,1938,,PuigTec MEQ5 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1347237203
+,1939,,M360 Manager 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1347306293
+,1940,,M360 Manager 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347306294
+,1941,,M360 Manager 5.0/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347306306
+,1942,,S360 Imager Mono/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1347306841
+,1943,,S360 Imager Mono/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347306842
+,1944,,S360 Imager 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1347307061
+,1945,,S360 Imager 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347307062
+,1946,,S360 Imager Stereo/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1347307092
+,1947,,S360 Imager Stereo/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347307093
+,1948,,M360 Mixdown 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1347308853
+,1949,,M360 Mixdown 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347308854
+,1950,,S360 Panner Stereo/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1347311700
+,1951,,S360 Panner Stereo/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347311701
+,1952,,S360 Panner Mono/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1347311705
+,1953,,S360 Panner Mono/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1347311706
+,1954,,Kramer PIE Mono (x86) (Waves),WaveShell_VST_9.0.vst<1348027725
+,1955,,Kramer PIE Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1348027731
+,1956,,L3-LL Ultra Mono (x86) (Waves),WaveShell_VST_9.0.vst<1379092301
+,1957,,L3-LL Ultra Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1379092307
+,1958,,L3-LL Multi Mono (x86) (Waves),WaveShell_VST_9.0.vst<1379094605
+,1959,,L3-LL Multi Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1379094611
+,1960,,R360 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1379095349
+,1961,,R360 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1379095350
+,1962,,R360 Stereo/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1379095380
+,1963,,R360 Stereo/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1379095381
+,1964,,R360 Mono/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1379095385
+,1965,,R360 Mono/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1379095386
+,1966,,Renaissance Axx Mono (x86) (Waves),WaveShell_VST_9.0.vst<1380014157
+,1967,,Renaissance Axx Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1380014163
+,1968,,Vocal Rider Mono (x86) (Waves),WaveShell_VST_9.0.vst<1380209229
+,1969,,Vocal Rider Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1380209235
+,1970,,RDeEsser Mono (x86) (Waves),WaveShell_VST_9.0.vst<1380209485
+,1971,,RDeEsser Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1380209491
+,1972,,RBass Mono (x86) (Waves),WaveShell_VST_9.0.vst<1380860493
+,1973,,RBass Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1380860499
+,1974,,RChannel Mono (x86) (Waves),WaveShell_VST_9.0.vst<1380865101
+,1975,,RChannel Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1380865107
+,1976,,RChannel Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1380865112
+,1977,,REQ 2 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1381053005
+,1978,,REQ 2 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1381053011
+,1979,,REQ 4 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1381053517
+,1980,,REQ 4 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1381053523
+,1981,,REQ 6 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1381054029
+,1982,,REQ 6 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1381054035
+,1983,,RVerb Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1381123667
+,1984,,RVerb Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1381123672
+,1985,,OneKnob Filter Mono (x86) (Waves),WaveShell_VST_9.0.vst<1381189197
+,1986,,OneKnob Filter Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1381189203
+,1987,,C360 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1381390389
+,1988,,C360 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1381390390
+,1989,,SSLGChannel Mono (x86) (Waves),WaveShell_VST_9.0.vst<1396918093
+,1990,,SSLGChannel Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1396918099
+,1991,,SSLChannel Mono (x86) (Waves),WaveShell_VST_9.0.vst<1396918349
+,1992,,SSLChannel Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1396918355
+,1993,,UltraPitch 3 Voices Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397240653
+,1994,,UltraPitch 3 Voices Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397240664
+,1995,,UltraPitch 6 Voices Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397241421
+,1996,,UltraPitch 6 Voices Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397241432
+,1997,,UltraPitch Shift Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397249101
+,1998,,UltraPitch Shift Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397249112
+,1999,,SSLComp Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397506893
+,2000,,SSLComp Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397506899
+,2001,,SSLEQ Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397510477
+,2002,,SSLEQ Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397510483
+,2003,,NLS Buss Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397576525
+,2004,,NLS Buss Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397576531
+,2005,,Q-Clone Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397829965
+,2006,,Q-Clone Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397829971
+,2007,,Q-Capture Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397838925
+,2008,,NLS Channel Mono (x86) (Waves),WaveShell_VST_9.0.vst<1397965645
+,2009,,NLS Channel Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1397965651
+,2010,,AudioTrack Mono (x86) (Waves),WaveShell_VST_9.0.vst<1398030669
+,2011,,AudioTrack Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1398030675
+,2012,,Kramer Tape Mono (x86) (Waves),WaveShell_VST_9.0.vst<1413566541
+,2013,,Kramer Tape Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1413566547
+,2014,,The Kings Microphones Mono (x86) (Waves),WaveShell_VST_9.0.vst<1414221133
+,2015,,The Kings Microphones Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414221139
+,2016,,GTR Tuner Mono (x86) (Waves),WaveShell_VST_9.0.vst<1414411085
+,2017,,Maserati ACG Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414414675
+,2018,,Maserati ACG Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414414680
+,2019,,Maserati B72 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1414414925
+,2020,,Maserati B72 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414414931
+,2021,,Maserati B72 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414414936
+,2022,,WavesTune Mono (x86) (Waves),WaveShell_VST_9.0.vst<1414416205
+,2023,,WavesTune Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414416211
+,2024,,Maserati HMX Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414416467
+,2025,,Maserati HMX Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414416472
+,2026,,Maserati GTi Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414419027
+,2027,,Maserati GTi Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414419032
+,2028,,Maserati DRM Mono (x86) (Waves),WaveShell_VST_9.0.vst<1414419277
+,2029,,Maserati DRM Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414419283
+,2030,,Maserati VX1 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414420051
+,2031,,Maserati VX1 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414420056
+,2032,,SoundShifter Pitch Mono (x86) (Waves),WaveShell_VST_9.0.vst<1414746701
+,2033,,SoundShifter Pitch Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414746707
+,2034,,TrueVerb Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414935635
+,2035,,TrueVerb Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1414942040
+,2036,,TrueVerb Mono (x86) (Waves),WaveShell_VST_9.0.vst<1414943565
+,2037,,TransX Multi Mono (x86) (Waves),WaveShell_VST_9.0.vst<1415066701
+,2038,,TransX Multi Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1415066707
+,2039,,TransX Wide Mono (x86) (Waves),WaveShell_VST_9.0.vst<1415075661
+,2040,,TransX Wide Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1415075667
+,2041,,WNS Mono (x86) (Waves),WaveShell_VST_9.0.vst<1431196237
+,2042,,WNS Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1431196243
+,2043,,UM225 Stereo/5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1431328852
+,2044,,UM226 Stereo/5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1431328853
+,2045,,RCompressor Mono (x86) (Waves),WaveShell_VST_9.0.vst<1431454541
+,2046,,RCompressor Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1431454547
+,2047,,Morphoder Mono (x86) (Waves),WaveShell_VST_9.0.vst<1447253837
+,2048,,Morphoder Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1447253843
+,2049,,Morphoder Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1447253848
+,2050,,VEQ4 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1447383373
+,2051,,VEQ4 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1447383379
+,2052,,W43 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1463038797
+,2053,,W43 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1463038803
+,2054,,PAZ- Frequency Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1463894355
+,2055,,PAZ- Frequency Mono (x86) (Waves),WaveShell_VST_9.0.vst<1463895373
+,2056,,PAZ- Analyzer Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1463895379
+,2057,,PAZ- Position Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1463898195
+,2058,,Doubler2 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1464087117
+,2059,,Doubler2 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1464087123
+,2060,,Doubler2 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1464087128
+,2061,,Doubler4 Mono (x86) (Waves),WaveShell_VST_9.0.vst<1464087629
+,2062,,Doubler4 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1464087635
+,2063,,Doubler4 Mono/Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1464087640
+,2064,,WLM Meter 5.0 (x86) (Waves),WaveShell_VST_9.0.vst<1464618293
+,2065,,WLM Meter 5.1 (x86) (Waves),WaveShell_VST_9.0.vst<1464618294
+,2066,,WLM Meter Mono (x86) (Waves),WaveShell_VST_9.0.vst<1464618317
+,2067,,WLM Meter Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1464618323
+,2068,,Z-Noise Mono (x86) (Waves),WaveShell_VST_9.0.vst<1464750925
+,2069,,Z-Noise Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1464750931
+,2070,,PAZ- Meters Mono (x86) (Waves),WaveShell_VST_9.0.vst<1465275725
+,2071,,PAZ- Meters Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1465275731
+,2072,,X-Click Mono (x86) (Waves),WaveShell_VST_9.0.vst<1480805453
+,2073,,X-Click Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1480805459
+,2074,,X-Crackle Mono (x86) (Waves),WaveShell_VST_9.0.vst<1480806989
+,2075,,X-Crackle Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1480806995
+,2076,,X-Hum Mono (x86) (Waves),WaveShell_VST_9.0.vst<1481133389
+,2077,,X-Hum Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1481133395
+,2078,,X-Noise Mono (x86) (Waves),WaveShell_VST_9.0.vst<1481528141
+,2079,,X-Noise Stereo (x86) (Waves),WaveShell_VST_9.0.vst<1481528147
+,2080,,CLA-76 Mono (x86) (Waves),WaveShell_VST_9.0.vst<926303053
+,2081,,CLA-76 Stereo (x86) (Waves),WaveShell_VST_9.0.vst<926303059
+,2082,,Ceave            (Puremagnetik),Weave.vst
+,2083,,Regular Shape 1st Order Decoder (WigWare) (4->8ch),WigAmbiDec_1o_GUI.vst
+,2084,,Irregular Shape 1st Order Ambisonic Decoder (WigWare) (3->5ch),WigAmbiDec_1o_ITU.vst
+,2085,,Irregular Shape 4th Order Ambisonic Decoder (WigWare) (9->5ch),WigAmbiDec_4o_ITU.vst
+,2086,,Wigware AmbiPan Polar 1 - 3d (WigWare) (1->4ch),WigAmbiEncPolar_1o_3D.vst
+,2087,,Wigware AmbiPan Polar 2 - 3d (WigWare) (1->9ch),WigAmbiEncPolar_2o_3D.vst
+,2088,,Wigware AmbiPan Polar 3 - 3d 2014 (WigWare) (1->16ch),WigAmbiEncPolar_3o_3D.vst
+,2089,,Wigware AmbiPan XY 1 - 3d (WigWare) (1->4ch),WigAmbiEncXY_1o_3D.vst
+,2090,,Wigware AmbiPan XY 2 - 2d (WigWare) (1->5ch),WigAmbiEncXY_2o_2D.vst
+,2091,,Wigware AmbiPan XY 2 - 3d (WigWare) (1->9ch),WigAmbiEncXY_2o_3D.vst
+,2092,,Wigware AmbiPan XY 3 - 2d (WigWare) (1->7ch),WigAmbiEncXY_3o_2D.vst
+,2093,,Wigware AmbiPan XY 3 - 3d (WigWare) (1->16ch),WigAmbiEncXY_3o_3D.vst
+,2094,,Wigware AmbiPan XY 4 - 2d (WigWare) (1->9ch),WigAmbiEncXY_4o_2D.vst
+,2095,,Wires (AudioThing),Wires.vst
+,2096,,Wires (AudioThing),Wires.vst3
+,2097,,Wormhole2 (x86) (plasq.com),Wormhole2.vst
+,2098,Instr.,XO (XLN Audio) (18 out)!!!VSTi,XO.vst
+,2099,,xvolvermt (unipr) (64ch),xvolvermt.vst
+,2100,,xvolvermt (unipr) (64ch),xvolvermt2.vst
+,2101,,xvolvermt (unipr) (64ch),xvolvermt_2.vst
+,2102,,X-Volver (x86) (LAE Group),XVolverVST.vst
+,2103,,Zoom2B (x86) (Ambisonic Studio B2X) (4ch),Zoom2B.vst
+,2104,,Zoom2B2 (x86) (Ambisonic Studio B2X) (9ch),Zoom2B2.vst
+,2105,,Zoom2Five (x86) (Ambisonic Studio) (6ch),Zoom2Five.vst
+
+MAC "AU PLUGINS"
+CHECk,N.,NAME (Manufacturer),INSTALLED / NOT INSTALLED

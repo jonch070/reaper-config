@@ -1,0 +1,359 @@
+ desc:HBC-2 Stereo Hybrid Bus Compressor
+version: 1.0
+author: SonicAnomaly
+changelog: init
+provides: hbc2_gfx/*
+
+/*****************************************************
+Copyright (C) 2016 Stige T.
+License: http://jsplugins.supermaailma.net/license.php
+*****************************************************/
+desc: HBC-2 Stereo Hybrid Bus Compressor (ZenoMOD)
+
+EffectName: Stereo Hybrid Bus Compressor
+VendorString: Sonic Anomaly
+VendorVersion: 1002
+UniqueId: 'HBC2'
+
+slider1:0<-40,0,1>Threshold
+slider2:1<0,100,1>Attack
+slider3:500<20,5000,1>Release
+slider4:4<1,20,1>Ratio
+slider5:0<0,20,1>Knee
+slider6:0.5<0,1,0.1>RMS/Peak Ratio
+slider7:0<-1,1,0.1>RMS Time
+slider8:0<0,1,1{Stereo,M/S}>Channel Processing
+slider9:0<0,100,10>Channel Link
+slider10:0<-20,20,1>Output
+
+slider51:300<0,1000,1>-Decay (ms)
+slider52:0.0<-60.0,0.0,0.1>-L (dBFS)
+slider53:0.0<-60.0,0.0,0.1>-R (dBFS)
+
+slider61:<-24,0>Peak L - GR
+slider62:<-24,0>Peak R - GR
+slider63:<-24,0>RMS L - GR
+slider64:<-24,0>RMS R - GR
+
+
+
+@init
+
+
+t005 = exp(-1/(srate*0.0005));
+t01 = exp(-1/(srate*0.001));
+t05 = exp(-1/(srate*0.005));
+t10 = exp(-1/(srate*0.01));
+t20 = exp(-1/(srate*0.02));
+t50 = exp(-1/(srate*0.05));
+t60 = exp(-1/(srate*0.06));
+t100 = exp(-1/(srate*0.1));
+t200 = exp(-1/(srate*0.2));
+t500 = exp(-1/(srate*0.5));
+t1000 = exp(-1/(srate*1));
+t2000 = exp(-1/(srate*2));
+
+function HFLF_init(freq)
+instance(n0,weight)
+(
+  n0 = 0;
+  weight = 1-exp(-2*$pi*freq/srate);
+);
+
+function HFcut(input)
+instance(out,n0,weight)
+(  
+  out = (n0+=((input-n0)*weight));
+);
+
+function LFcut(input)
+instance(out,n0,weight)
+(
+  out = input - (n0+=((input-n0)*weight));
+);
+
+function Interpolate(A, B, X) (
+  A + ((B-A)*X);
+);
+
+function rms_init(weight_ms)
+instance (weight)(
+  weight = 1-exp(-1/(weight_ms / 1000 * srate));
+);
+
+function rms(input)
+instance (s,rms,weight)(
+  rms = sqrt(s +=  weight * ( input^2 - s ));
+);
+
+function FollowerInit(attack,release,smoothing) (
+  this.a = exp(-1/(srate*attack/1000));
+  this.r = exp(-1/(srate*release/1000));
+  this.s = exp(-1/(srate*smoothing/1000));
+  this.a2 = 1-this.a;
+  this.r2 = 1-this.r;
+  this.maxRelease = this.r;
+  this.minRelease = exp(-1/(srate*(sqrt(release)*5)/1000));
+);
+
+function Follower(in) (
+  this.tmp = max(in + this.s * (this.tmp-in),in);
+  this.e <  this.tmp ? (
+    this.e = this.a * this.e + this.a2 * this.tmp;
+  ) : (
+    this.e = this.r * this.e + this.r2 * this.tmp;
+  );
+);
+
+function Curve(input) (
+  this.dB = 20 * log10( abs(input) + 0.0000001 );
+  this.env = this.dB - min(this.dB,threshCoef)  + 0.0000001;
+  this.env = this.env^2 / (this.env+param.knee);
+  this.env *= ratioCoef;
+  this.env = 10 ^ (this.env/20);
+);
+
+function FillEnvLut(start,end,step) (
+  this.len = end-start;
+  this.maxVal = this.len * step;
+  this.start = start;
+  this.end = end;
+  this.invStep = 1/step;
+  lutMem = start;
+  this.i = 0;
+  loop(this.len,
+    this.v = this.i * step;
+    lutMem[this.i] = Curve(this.v);
+    this.i += 1;
+  );
+);
+
+function GetLutVal(in) (
+  this.index = max(min(in * this.invStep,this.end),1);
+  this.floorIndex = floor(this.index);
+  lutMem = this.start;
+  this.lo = lutMem[this.floorIndex];
+  this.hi = lutMem[this.floorIndex+1];
+  this.frac = this.index - this.floorIndex;
+  Interpolate(this.lo, this.hi, this.frac);
+);
+
+function SampleSniffer(input) (
+  this.splCount += 1;
+  this.in.max = max(abs(input),this.in.max);
+  
+  (this.splCount > this.maxscount) ? (
+    this.in.max > 0.00000001 ? (
+      this.out = 1;
+      this.maxscount = SplSniffer.timeOut;
+    ) : (
+      this.out = 0;
+      this.maxscount = 10;
+    );
+    this.in.max = 0;
+    this.splCount = 0;
+  );
+  this.out;
+);
+
+function CompressorPeakSlow(in) (
+  this.dB = 20 * log10( abs(in) + 0.0000001 );
+  this.env = this.dB - min(this.dB,threshCoef) + 0.0000001;
+  this.env = this.env^2 / (this.env+param.knee);
+  this.env *= ratioCoef;
+  this.env = 10 ^ (this.env/20);
+  
+  this.rmod = 1/this.e1.Follower(this.env);
+  this.e0.r = Interpolate(this.e0.minRelease,this.e0.maxRelease,this.rmod);
+  this.e0.r2 = 1-this.e0.r;
+  
+  this.env = this.e0.Follower(this.env);
+);
+
+function CompressorPeak(in) (
+  this.sn.SampleSniffer(in) ? (
+    this.env = l0.GetLutVal(abs(in));
+    
+    this.rmod = 1/this.e1.Follower(this.env);
+    this.e0.r = Interpolate(this.e0.minRelease,this.e0.maxRelease,this.rmod);
+    this.e0.r2 = 1-this.e0.r;
+    
+    this.env = this.e0.Follower(this.env);
+  ) : (
+    1;
+  );
+);
+
+
+function CompressorRMS(in) (  
+  this.env = l0.GetLutVal(abs(in));
+  this.env = this.r.rms(this.env);
+);
+
+function CompressorComb() (
+
+  param.chlink ? (
+    in.A = max(in.L,in.R);
+    in.L = (in.L * param.chlinkInv) + (in.A * param.chlink);
+    in.R = (in.R * param.chlinkInv) + (in.A * param.chlink);
+  );
+
+  in.L.max = max(abs(in.L),in.L.max);
+  in.R.max = max(abs(in.R),in.R.max);
+  
+  splcount += 1;
+  
+  (splcount > usfactor) ? (
+    envR.L = cr0.CompressorRMS(in.L.max * 3.16) * param.rbal;
+    envR.R = cr1.CompressorRMS(in.R.max * 3.16) * param.rbal;
+    splcount = 1; in.L.max = in.R.max = 0;
+  );
+   
+  envP.L = cp0.CompressorPeak(in.L) * param.pbal;
+  envP.R = cp1.CompressorPeak(in.R) * param.pbal;
+    
+  env.L = envR.L + envP.L;
+  env.R = envR.R + envP.R;
+  
+);
+
+function ProcessSliders() (
+
+  param.threshold = slider1;
+  param.attack = slider2;
+  param.release = slider3;
+  param.ratio = slider4;
+  param.knee = slider5;
+  
+  cp0.e0.FollowerInit(param.attack,param.release,40);
+  cp0.e1.FollowerInit(0,max(param.release/5,20),20);
+  cp1.e0.FollowerInit(param.attack,param.release,40);
+  cp1.e1.FollowerInit(0,max(param.release/5,20),20);
+  
+  param.rmsTime = (slider7+1)*0.5;
+  
+  param.rmsw = sqrt(Interpolate(param.release/2,param.release*20,param.rmsTime^5))*30;
+  cr0.r.rms_init(param.rmsw/usfactor);
+  cr1.r.rms_init(param.rmsw/usfactor);
+  
+  ratioCoef = (1-(1/param.ratio));
+  threshCoef = param.threshold - param.knee;
+  
+  l0.FillEnvLut(1000,2001,0.01);
+  
+  param.pbal = Interpolate(0,1,slider6);
+  param.rbal = Interpolate(1,0,slider6);
+  
+  param.out = 10^(slider10/20);
+  
+  param.ms = slider8;
+  
+  param.chlink = slider9/100;
+  param.chlinkInv = 1-param.chlink;
+
+);
+
+usfactor = 10;
+cr0.r.s = 1;
+cr1.r.s = 1;
+cp0.sn.maxscount =
+cp1.sn.maxscount = 10;
+cp0.e0.e =
+cp1.e0.e = 1;
+SplSniffer.timeOut = srate/4;
+
+/* Meter Config */
+
+mtrX = 410;
+mtrY = 6;
+
+m.conf.s =
+m0.conf.s =
+m1.conf.s =
+m10.conf.s =
+m11.conf.s =
+1;
+
+m.conf.x = mtrX;
+m0.conf.x = m1.conf.x = 10 + mtrX;
+m10.conf.x = m11.conf.x = 30 + mtrX;
+m20.conf.x = 6 + mtrX;
+m21.conf.x = 34 + mtrX;
+
+amp_LO = 0.001;
+dB_LO = -60.0;
+peak_L = 
+peak_R =  0.0;
+peak_L_dB = 
+peak_R_dB = dB_LO;
+
+function peak_dB (a) local (p, dB)
+(
+  a <= amp_LO ? p = dB_LO : dB = 8.6562*log(a);
+);
+
+function peak (sample) local (in) instance (p)
+(
+  in = abs(sample);
+  in > p ? p = in : p = p*decay;
+);
+
+
+@slider
+
+s1.value = slider1;
+s2.value = slider2;
+s3.value = slider3;
+s4.value = slider4;
+s5.value = slider5;
+s6.value = slider6;
+s7.value = slider7;
+s8.checked = slider8;
+s9.value = slider9;
+s10.value = slider10;
+
+ProcessSliders();
+
+decay = exp(-1.0/(slider51*srate*0.001));
+
+@block
+
+peak_L_dB = peak_dB(peak_L);
+peak_R_dB = peak_dB(peak_R);
+
+slider52 = peak_L_dB;
+slider53 = peak_R_dB;
+
+@sample
+
+param.ms ? (
+  in.L = M = (spl0 + spl1) * 0.5;
+  in.R = S = (spl0 - spl1) * 1;
+  CompressorComb();
+  M /= env.L; S /= env.R; S *= 0.5;
+  spl0 = (M+S); spl1 = (M-S);
+) : (
+  in.L = spl0; in.R = spl1;
+  CompressorComb();
+  spl0 /= env.L; spl1 /= env.R;
+);
+
+spl0 *= param.out;
+spl1 *= param.out;
+
+
+// Calculate meters
+
+slider61 = log10(mtr.peakLin.L)*20;
+slider62 = log10(mtr.peakLin.R)*20;
+slider63 = log10(mtr.RMSLin.L)*20;
+slider64 = log10(mtr.RMSLin.R)*20;
+
+mtr.peakLin.L = 1/env.L;
+mtr.rmsLin.L = 1/(envR.L+(1-param.rbal));
+mtr.peakLin.R = 1/env.R;
+mtr.rmsLin.R = 1/(envR.R+(1-param.rbal));
+
+peak_L = L.p.peak(spl0);
+peak_R = R.p.peak(spl1);
+

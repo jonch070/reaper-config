@@ -1,0 +1,18 @@
+local info = {
+    ["name"] = "Archiving",
+    ["description"] = "Archiving/Unarchiving tracks",
+    ["author"] = "HeDa",
+    ["license"] = "Copyright",
+    ["deps"] = "",
+    ["version"] = "0.1.4",
+    ["TIversion"] = "2.3.4",
+    ["deps"] = "",
+    ["location"] = "panels",
+    ["warning"] = "",
+    ["doc_url"] = "https://reaper.hector-corcin.com/app/archiving",
+    ["tracker_url"] = "",
+    ["link"] = "",
+    ["category"] = "panels",
+}
+
+return info

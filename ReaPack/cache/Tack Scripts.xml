@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Tack Scripts" commit="30e9cd1c92b8f50c19e8c84ae1585be4c870aa2a">
+  <category name="MIDI">
+    <reapack name="meta_CC to Program Change.lua" type="script" desc="Insert Program Change by CC">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i DEPRECATED}: These scripts are obsolete and deprecated in favor of Reaticulate which is a much more capable solution for articulation management.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Converts a CC value (based on an action binding) to a Program Change (on Bank 0/32). If the MIDI editor is open and step input is enabled, the scripts will insert a Program Change event at the cursor.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Jason Tackaberry (tack)" time="2023-01-22T23:13:43Z">
+        <source main="main" file="tack_CC to Program Change - Channel 1.lua">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/MIDI/tack_CC%20to%20Program%20Change%20-%20Channel%201.lua</source>
+        <source main="main" file="tack_CC to Program Change - Channel 2.lua">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/MIDI/tack_CC%20to%20Program%20Change%20-%20Channel%202.lua</source>
+        <source main="main" file="tack_CC to Program Change - Channel 3.lua">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/MIDI/tack_CC%20to%20Program%20Change%20-%20Channel%203.lua</source>
+        <source main="main" file="tack_CC to Program Change - Channel 4.lua">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/MIDI/tack_CC%20to%20Program%20Change%20-%20Channel%204.lua</source>
+        <source main="main" file="tack_CC to Program Change - Current MIDI Editor Channel.lua">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/MIDI/tack_CC%20to%20Program%20Change%20-%20Current%20MIDI%20Editor%20Channel.lua</source>
+        <source file="tack_Functions.lua">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/MIDI/tack_Functions.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tack_Smart Record.lua" type="script" desc="Smart Record">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Starts recording, unless already recording, in which case the take is discarded and record starts over.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Jason Tackaberry (tack)" time="2017-04-01T15:58:12Z">
+        <source main="main">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/MIDI/tack_Smart%20Record.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tack_Track exclusive toggle inline editor for item under mouse cursor.lua" type="script" desc="Track-exclusive toggle inline MIDI editor for item under mouse cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i WARNING}: if you bind this script to the 'e' key to replace the REAPER-default binding to "Open inline editor" (which is recommended), you must also {\i remove} the 'e' shortcut from the "Close inline editor" action in the "MIDI Inline Editor" section in REAPER's Actions list. Otherwise this script won't be invoked to toggle the editor closed, which will break other funtionality. By simply removing the shortcut assigned in the MIDI Inline Editor section, it will pass through to the Main section where this script lives.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script toggles the inline MIDI editor under the mouse cursor, or the first selected item if there is no item under the cursor. The behavior is exclusive within the track, which means that on any given track online one item will have the inline editor open, but other tracks are allowed items with the inline editor. This behavior is geared toward workflows that use the inline editor for quick adjustments.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Track height is also adjusted as the inline editor is opened and closed. When the editor is first opened on a track, the track height is adjusted up. Once the editor is closed on the track, the track is restored to its previous height.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The first time you use this script and open the inline editor, the track height is adjusted to a sensible default. You can then adjust the track height to your desired size and when the editor is closed, that height will be remembered for the next inline editor open. That height is global and applies to all other tracks and projects.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 When you run this script, the item under the mouse cursor is always selected. The item's track is also selected if the inline editor is being opened. This logic is optimized for Reaticulate where the available articulations are based on the selected track.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 To set the CC lanes for the inline editor, I highly recommend the script called "js_Select CC lanes to show in MIDI item under mouse.lua" which is part of the ReaTeam Scrips ReaPack, automatically available to all ReaPack users.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Unfortunately, REAPER syncs the visible lanes between the full MIDI editor and the inline editor, but the lane heights are distinct between them, so double clicking on a lane in the inline editor will collapse it, while ensuring it remains visible in the full editor.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Jason Tackaberry (tack)" time="2023-01-22T23:21:08Z">
+        <source main="main">https://github.com/jtackaberry/reascripts/raw/30e9cd1c92b8f50c19e8c84ae1585be4c870aa2a/MIDI/tack_Track%20exclusive%20toggle%20inline%20editor%20for%20item%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Track">
+    <reapack name="meta_Sync MIDI CCs on Track Select.lua" type="script" desc="Sync MIDI CCs on Track Select">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i DEPRECATED}: These scripts are obsolete and deprecated in favor of Reaticulate which, apart from providing a solution for articulation management, includes more robust and user-friendly support for syncing CCs to a control surface. which is a much more capable solution for articulation management.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Original usage instructions follow.\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 1.\tx360\tab In Preferences / Audio / MIDI Devices, choose which MIDI output should receive the CCs and enable it for output, and also update the device's name to be suffixed with "Track Output". For example: "Bome MIDI Translator 1 - Track Output". The "Track Output" string is used by the script to identify the MIDI output device.\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 2.\tx360\tab Install the companion "MIDI CC Tracker" JSFX on each track whose last-seen CCs should be synced upon track select. If Bus 0 is used (default), all MIDI-consuming VSTs must be configured to output MIDI CCs, or Reaper configured to merge the VST's output with the MIDI bus, otherwise the MIDI hardware send won't receive the MIDI CCs. Or, a non-zero MIDI bus can be used, but then the receiving MIDI output device will need to support SysEx messages like F0 FF 52 50 62 0F B0 01 30 F7, where 0F is the MIDI bus (15), and B0 01 30 is the CC (channel 1, CC 1, value 30 in this example). For example, BOME MIDI Translator could be used to process these events and pass them along to a control surface. (This is what I do.)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It is also possible to trigger a flush of last-seen CCs by sending to the JSFX a note off MIDI message for key 127 with release velocity 0x42 (8f 7f 42). Use-case: switching MIDI channels from a control surface to trigger an update of the faders.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Jason Tackaberry (tack)" time="2023-01-22T23:13:43Z">
+        <source main="main" file="tack_Sync MIDI CCs on Track Select.lua">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/Track/tack_Sync%20MIDI%20CCs%20on%20Track%20Select.lua</source>
+        <source type="effect" file="../JSFX/tack_MIDI CC Sync.jsfx">https://github.com/jtackaberry/reascripts/raw/37ad5f7fa418663c23f03f6190c2d07bd63ed40b/JSFX/tack_MIDI%20CC%20Sync.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+</index>

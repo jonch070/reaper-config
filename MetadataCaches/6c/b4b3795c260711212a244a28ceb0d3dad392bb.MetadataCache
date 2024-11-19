@@ -1,0 +1,8 @@
+C10018 "/Users/jonathankawchuk/Downloads/matt test"
+F "072920_KellyFlatsThunderV2_3 copy 2.WAV" 268107706 0 1724267123 0
+D t 07-29-20 y 2020-07-29 d "dUBITS=00000000  dSCENE=GROSVENTRE  dTAKE=203  dTAPE=200729  dFRAMERATE=30.000ND  dSPEED=030.000-NDF  dTRK1=MixL  dTRK2=MixR  dTRK3=Front L  dTRK4=Front R  dTRK5=Back L  dTRK6=Back R  dTRK7=Front Top L  dTRK8=Front Top R  dTRK9=Back Top L  dTRK10=Back Top" s 96000
+D n 10 r 17:24:07.095 l 1:09.541 i 32
+F "072920_KellyFlatsThunderV2_3 copy 2_modified.WAV" 26703914 0 1724268584 0
+D s 96000 n 1 l 1:09.541 i 32
+F "072920_KellyFlatsThunderV2_3asd copy 2.WAV" 213630892 0 1724300789 0
+D s 96000 n 8 l 1:09.541 i 32

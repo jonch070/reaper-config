@@ -1,0 +1,274 @@
+﻿---------------------------------------------------------------------------------------
+  HeDa Panel - Changelog (What's new)
+---------------------------------------------------------------------------------------
+
+* v0.9.3 (2024-09-04)
+  # fix: dock when closing window in edit mode. thanks @lolol [p=2804825]
+  # fix: restore window title to default if entering blank title.
+
+* v0.9.2 (2024-08-25)
+  + Arrow keys to scroll page next and previous vertically or horizontally. 
+  + Edit mode: PAGE UP and PAGE DOWN keys to scroll page the parameters panel.
+  + Edit mode: focus zone: click somewhere in edit area or somewhere in the parameters panel to set focus for keys
+  + Arrow keys in edit mode: 
+    If focus is edit area it scrolls the edit area. If objects are selected, moves the object.  
+    If focus is on parameters zone, it scrolls up and down the parameters area.     
+  + Added special commands: scrollh(pixels), scrollv(pixels), scrollpageh(direction), scrollpagev(direction)
+  + Panel Setting Window Title to override the title of the window and docked tab. Changes are applied next time the script starts.
+
+* v0.9.1 (2024-06-10)
+  # fix buttons not working in About and Donate pages.
+
+* v0.9.0 (2024-06-09)
+  + Style parameter: Objects that share a style name are updated automatically.
+  + Action: Right click support for buttons
+  + Auto-Hide window option: When window is at an edge of the screen it hides the 
+    window instead of exiting. Shows it again when mouse is on edge. 
+    Works better with Frameless mode option.
+  + Scroll max value. stop scrolling when using mouse wheel afer this value has been reached.
+  + Display Scaling option. automatic scale objects based on display scaling in addition 
+    to the manual Zoom option
+  # fix edit buttons sometimes don't work if dragged window
+  # fix bordercolor(toggled on) not being loaded
+  # enabling "special command on mouse over" also works now as "action on mouse over" if no special command 
+    is defined.
+  # small bugs and some adjustments and optimizations
+
+* v0.8.9 (2024-05-21)
+  # fix precision and alignment issues when zooming
+  # fix in drawing grid and lines
+
+* v0.8.8 (2024-05-20)
+  # fix: selecting another button while a textbox is focused, caused the new selected 
+    button to get the textbox value. Thanks @Alez156 [p=2783521]
+  # fix: do not add image path as tooltip. Thanks @Alez156 [p=2783524]
+  # fix: snap lines values not updating correctly
+  # now you have to use SHIFT+click to show the overlapped selection menu, 
+    this works better to select buttons over groups
+
+* v0.8.7 (2024-04-20)
+  + Right click menu in edit mode: added Delete Selected
+  + Right click menu in edit mode: added Select everything to the 
+    Right, Bottom, Left, Top
+  # fix clicking buttons in edit panel when marquee selecting sometimes
+  # fix Zoom with center at mouse cursor
+
+* v0.8.6 (2024-04-20)
+  # fix edit panel settings background color 
+  # fix selecting from multiple overlapped buttons menu sometimes moves button accidentally
+
+* v0.8.5 (2024-04-18)
+  + Color Fill Opacity
+  + Fit Button to Image toggle
+  + Image Opacity
+  + Protect Frame (edges) from Image Stretching. It specifies the edge width in 
+    original image pixels to maintain without stretching. 
+    0 to disable and stretch all image.
+  + Image Frame Scale
+  + Select menu when clicking on overlapped buttons. +CTRL to force menu to show 
+    when already having some selected
+  # more changes in edit panel. 
+  # fix image and toggled on, when not set to toolbar button
+  # more bug fixes
+
+* v0.8.4 (2024-04-15)
+  + Border Color (Toggled On)
+  + focused number edit boxes can use mouse wheel and Shift + Mouse wheel to 
+    change values
+  + prevent accidental move when clicking to select buttons in edit mode. 
+    Now it needs to move at least 4 pixels to start moving or resizing 
+    ("unlockmove" UIsetting)
+  + Border Bottom toggle. Draw only the bottom line of the border. 
+  # fix border width when zooming
+  # increase default size of toolbar icons selector
+  # color boxes, red cross to indicate no color assigned
+  # some aesthetic changes in edit panel
+  # bug fixes
+
+* v0.8.3 (2024-04-14)
+  + Image Stretch to Fit Button. can be used for textures on buttons
+  + Send to Top and Send to Bottom: to reorder buttons manually.
+  + Focus to arrange after clicking when docked, except on buttons that open Panels
+  # fix .panel extension not detected on Windows when saving or loading panels
+  # fix position next panel on Windows to fit inside desktop
+  # fix show only .panel files appearing in quick load menu
+  # fix not saving window position on Linux in Frameless mode
+  # more bug fixes when using frameless window
+
+* v0.8.2 (2024-04-11)
+  + Align Next Panel: Option to start the panel aligned at the bottom left of the 
+    button that runs it
+  # fix: bug in loading panel settings 
+  # changed: when adding multiple actions, arrange them vertically by default, 
+    not horizontally..
+  + Panel Setting: option to arrange horizontally when adding multiple 
+    actions if needed.
+
+* v0.8.1 (2024-04-09)
+  + Surface Background Image Texture
+  # round decimals for position parameters display
+  # fix: small 1 pixel issue in Bevel
+  # fix: issues with frameless on Windows
+  # fix: dragging windows
+  + CTRL+drag to resize window even if it is frameless
+  # fix: do not open at mouse cursor for the edit panel window 
+  # fix: bug on position values outside the visible surface area
+  # fix round corner when having a margin
+  # fix issue 3d bevel and zoom
+
+* v0.8.0 (2024-04-08)
+  + Keyboard Shortcuts for buttons
+  + Panel setting: Exit when Losing window Focus
+  + 3D Border Bevel effect on buttons
+  + Shadows
+  + Round Corner
+  + CTRL+click on buttons to not exit even if Exit on action is set for the button.
+  + Mouse Wheel Scrolling
+    + edit panel settings to set mouse wheel speeds
+    + edit panel setting to set Scroll horizontally mode by default
+    + CTRL + Mouse wheel to switch scroll mode 
+    + SHIFT + Mouse wheel to scroll at different speed
+  # fix not refreshing when edit box in focus and mouse outside window
+
+* v0.7.1 (2024-04-06)
+  + Drag a color and Drop into another color or button to copy colors
+  + Use Shift key to always Marquee select
+  + Open at Mouse cursor alignment options
+  # fix: bug on Windows using open at mouse cursor
+  # more bug fixes and improvements
+
+* v0.7.0 (2024-04-02)
+  + Support for MIDI editor actions
+  + Always on Top. Option to set the window on top of other windows like 
+    MIDI editor. Tested on Windows. It may not work on Linux (depends on JS API)
+  + Option to do special commands on mouse over
+  + Support adding multiple actions at once. Select multiple actions when 
+    selecting the actionand it will copy and paste the button side by side 
+    and assign each action to them.
+  # tab key on edit box, also selects all text in the next editbox.
+  # fix display default text size number
+  # fix display of action description for extensions, scripts
+  # reorganized some edit elements, groups, special commands at the bottom.
+
+* v0.6.4 (2024-03-28)
+  + Text line spacing for multiline texts. 1.0 as default.
+  + CTRL+C and CTRL+V to copy and paste in edit boxes
+  # fixed text alignments (0,1,2, 4,5,6, 8,9,10), changed tooltip to be more clear.
+  # using arrow keys to change values supports different step values, for example 
+    for line spacing the step is 0.1
+  # Shift + Arrows up/down on edit boxes to change values by 10 times the step.
+  # fix text band in multiline text drawing only one rectangle for all lines
+  # fix setting incorrect values <=0 for width and height
+  # small bug fixes
+
+* v0.6.3 (2024-03-20)
+  # fix color mouse press on buttons without toggle actions
+
+* v0.6.2 (2024-03-19)
+  # change default Background Colors
+  # change default text margin from 0 to 5
+  # tweaks on color backgrounds with toggle buttons
+  # possible fix with autostart 
+
+* v0.6.1 (2024-03-18)
+  # fix crash in 1.6.0 with panels without groups
+
+* v0.6.0 (2024-03-17)
+  + Multiple selection resizing
+  + Image Offset X and Offset Y to move image from default position.
+  + Color Text Background Band and Opacity
+  + Color Border (on mouse over)
+  + Color Toggled, if set, now also paints over image
+  + Parent: to be able to manually set the parent group even if it is 
+    outside the group
+  + Up and Down arrow keys in edit box to increase/decrease value by 1
+  + DEL key to remove selected buttons
+  + ESC key to unselect all buttons(in edit mode) or Exit(not in edit mode)
+  + Snapping distance setting
+  # fix never exit when docked option
+  # rearrange some edit boxes
+  # fix multiline text with alignments different that center-center
+  # fix tab key on edit boxes to go to next edit box
+  # several other bug fixes
+
+* v0.5.1 (2024-03-07)
+  # fix Text colors
+  # Removing old menu right click on button
+  # fix bug when deleting text size value
+  # fix adding buttons at position where clicked and zoomed
+  + A key to Add button at mouse cursor
+
+* v0.5.0 (2024-03-07)
+  + Menu: Import .ReaperMenu files from exported toolbars.
+  + Groups and Buttons visibility support.
+  + Special Commands: 
+      - isolate(groupname) makes the group visible and hides the rest of groups
+      - toggle(groupname) toggles group visibility
+      - show(groupname) show group
+      - hide(groupname) hide Group
+      - exit() close the script.
+      you can combine them, for example: isolate(1) show(3)
+      group names can be names too, not only numbers.
+  + Option to never exit on action when docked even if the button is set to 
+    exit on action.
+  + Attribute Text Color On: color to use for the text when the action is 
+    toggled On.
+  + Drag edge of edit panel controls to resize it.
+  # fix zoom with margin attribute and images with image factor > 0 
+  # more snapping improvements, when using Shift key, it overrides to use 
+    snap to all objects mode and not snap to toucning mode.
+  # bug fixes
+
+* v0.4.0 (2024-03-05)
+  # fix Windows colors
+  # fix update toggled status on external actions and on play/stop
+  + Undo CTRL+Z
+  + Duplicate Selected: CTRL + D. it duplicates in the direction to the mouse cursor.
+  + Select All: CTRL + A
+  + Paste Size: SHIFT + CTRL+V to change size of selected object to the size of copied object.
+  + Button margin attribute. It doesn't change the size of the button but adds  
+    visually an internal margin
+  + Button tooltip attribute.
+  + Setting: Arrow keys move by. Specify the amount of pixels to move when using the arrow keys.
+  + Setting: SHIFT+Arrow keys move by. Specify the amount of pixels to move when using the SHiFT+arrow keys.
+  + x gap and y gap if multiple selected to distribute positions with a gap
+  + Menu: Open panels folder in file manager
+  # fix resetting some fields by right clicking on the edit box entering a blank value.
+  # improved snapping
+  # many bug fixes here and there
+
+* v0.3.0 (2024-03-01)
+  + Many bug fixes and cleaning some glitches, ready for first pre-release to VIP  
+  + Add Toolbar button: browse icons in Data/toolbar-icons folder and click to insert 
+    them as a button
+
+* v0.2.0 (2024-02-27)
+  + Settings: Frameless window.
+  + Settings: Opacity. Make the window semitransparent.
+  + Settings: Open at mouse cursor. If not docked, it floats the window where 
+    the mouse is. usseful for quick toolbar access. 
+  + Settings: Autostart option for each panel.
+
+* v0.1.0 (2024-02-26)
+  + Script to create panels with buttons that can be used to run actions
+  + Add Button. If you click somewhere first, the button is placed there, 
+    otherwise, the buton is placed next to the last button added. 
+    If you select a button first, the button is placed next to that button. 
+  + Add Group. Group moves all buttons that are inside them. Ctrl+drag to 
+    move independently.
+  + Copy/Paste: or CTRL+C and CTRL+V. Select oneor more buttons. Copy, and 
+    then put the mouse over the direction you want to paste and CTRL+V. Or 
+    click somewhere and Paste and it will be placed where you clicked. 
+  + Load/Save panels. When saving a panel as, it creates a .panel file in your 
+    settings folder and a REAPER action to use that panel directly.
+  + Dock/Undock. Use the panel as a docked toolbar or as a floating window.
+  + Zoom. Changes the scale of all the panel buttons. also Mouse wheel whiel 
+    in edit mode. 
+  + Snap to other buttons. Drag from the corner you want to snap to another 
+    touching button's edge
+  + Snap to all. Or SHIFT+Drag if not enabled. Find edged of other buttons 
+    to snap to even if they are not touching
+  + Snap to grid, grid width and height setting.
+  + Snap to custom lines. Enter numbers separated by space for the horizontal 
+    and vertical lines. 
+    Negative numbers align to the right and bottom

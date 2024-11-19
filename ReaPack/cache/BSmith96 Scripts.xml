@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="BSmith96 Scripts" commit="f9b88968ebc2028ab2d54d1ea53defb72a65318f">
+  <category name="Markers">
+    <reapack name="Locate to marker.lua" type="script" desc="Locate to marker by OSC">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Locate to marker ID via OSC\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - July 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The default option for moving the Reaper's playhead to a particular marker only works with the order of markers.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This script allows you to specify a marker number (i.e. marker ID) to navigate to.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Trigger this script via OSC. You will need to set a custom trigger.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Select a custom command to trigger the action.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Go into the actions list, select the action, and next to the "shortcuts" list, click "add".\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Send the command (this will ignore any value attached).\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab As an argument in your OSC command, include the marker ID you wish to locate to divided by 1000.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab E.g. for marker 21, send {\f1 /reaper/marker_cue 0.021}.\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This is because the reaper.get_action_context() command will only return the value of an OSC message if it is between 0 and 1.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The resolution of the interpreted value is 16383.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This script is intended to be used in conjuction with Figure 53's {\i QLab} software, and {\field{\*\fldinst{HYPERLINK "https://github.com/bsmith96/Qlab-Scripts/blob/master/Tech%20Rehearsals/Locate%20to%20Reaper%20Marker.applescript"}}{\fldrslt{\ul
+this script
+}}}
+ within Qlab.\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.0" author="Ben Smith" time="2021-08-08T22:18:06Z">
+        <changelog><![CDATA[+ Initial version]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/00cef1e4b944f1562e5e07c146825bad77d18e2e/Markers/Locate%20to%20marker.lua</source>
+      </version>
+      <version name="1.1" author="Ben Smith" time="2021-08-09T12:30:32Z">
+        <changelog><![CDATA[# Updated commenting to make the script easier to navigate]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/3a64b41837b2b92c0ea4982a40321d046882e453/Markers/Locate%20to%20marker.lua</source>
+      </version>
+      <version name="1.2" author="Ben Smith" time="2021-10-01T14:46:12Z">
+        <changelog><![CDATA[# Updated documentation]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/a4877ef322519e8e70cf65f8eb5b8257213e5ee1/Markers/Locate%20to%20marker.lua</source>
+      </version>
+      <version name="1.3" author="Ben Smith" time="2021-10-01T15:01:46Z">
+        <changelog><![CDATA[# Rename file provided]]></changelog>
+        <source main="main" file="bsmith96_Locate to marker.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79756306aecc585403f7c35bb3ed25c6725cfe62/Markers/Locate%20to%20marker.lua</source>
+      </version>
+      <version name="1.4" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Locate to marker.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Markers/Locate%20to%20marker.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Miscellaneous">
+    <reapack name="Autopan - Set tempo.lua" type="script" desc="Autopan - Set tempo">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set tempo template\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - September 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Designed for when using Reaper's built in LFO to control an autopanner, possibly in a live situation as an insert.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Edit this script with the tempo you want the autopanner to run at (for example, the tempo or your click track) and trigger it at the start of a bar.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Use ReaSurround as an insert on an "autopanner" track.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab This track should have its input (ideally mono) fed from a mix on your mixing desk, and should output to each of your 5.1 or 7.1 surround sends.\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Bundled with this script is a reasurround preset.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Go to Options > Show REAPER resource path in explorer/finder...\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Then go to Scripts > BSmith96 Scripts > Miscellaneous > FX Presets > Reasurround autopan.RPL\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Import this as a preset library to the effect (the {\f1 +} next to the preset list)\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Click Param > FX parameter list > Parameter modulation/midi link\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab in 1 X\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Enable parameter modulation = true\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab baseline value = far left\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab LFO = true\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Shape = sine\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Tempo sync = true\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Speed = 2\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Strength = 100\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Phase = 0.25\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Direction = positive\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Phase reset = on seek/loop\sa180\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab in 1 Y\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Enable parameter modulation = true\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab baseline value = far left\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab LFO = true\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Shape = sine\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Tempo sync = true\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Speed = 2\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Strength = 100\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Phase = 0.5\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Direction = positive\par}
+{\pard \ql \f0 \sa0 \li1080 \fi-360 \bullet \tx360\tab Phase reset = on seek/loop\sa180\sa180\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 User customisation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab userBPM\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab The user's tempo of choice\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab If you trigger the script with a custom OSC command, and send a number after it between 0 and 1, this value will be multiplied by 1000 and used as the BPM value.\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab rotationsPerBeat\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab How many rotations per beat.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab i.e. in 4/4 time signature, if this value is {\f1 1/4} it will pass the centre at the start of every bar.\sa180\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.6" author="Ben Smith" time="2021-10-01T17:27:13Z">
+        <changelog><![CDATA[# Bundled a preset library for reasurround]]></changelog>
+        <source main="main" file="bsmith96_Set tempo.lua">https://github.com/bsmith96/Reaper-Scripts/raw/b8e5d7808a8b541ebc574e3653b94b094c8eafa8/Miscellaneous/Autopan%20-%20Set%20tempo.lua</source>
+        <source file="FX Presets/Reasurround autopan.RPL">https://github.com/bsmith96/Reaper-Scripts/raw/b8e5d7808a8b541ebc574e3653b94b094c8eafa8/Miscellaneous/FX%20Presets/Reasurround%20autopan.RPL</source>
+      </version>
+    </reapack>
+    <reapack name="VCA Assign Template.lua" type="script" desc="VCA assign template">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 VCA assign template\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - 2018\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Edit this script to assign tracks to VCA masters. Could be used on midi recalls, to recall 'scenes', fired by Figure 53 Qlab.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Create a copy and a customised version of this script for every 'scene'\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="2.0" author="Ben Smith" time="2021-08-08T22:18:06Z">
+        <changelog><![CDATA[# Translated EEL script to LUA]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/00cef1e4b944f1562e5e07c146825bad77d18e2e/Miscellaneous/VCA%20Assign%20Template.lua</source>
+      </version>
+      <version name="2.1" author="Ben Smith" time="2021-08-09T12:30:32Z">
+        <changelog><![CDATA[# Updated commenting to make the script easier to navigate]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/3a64b41837b2b92c0ea4982a40321d046882e453/Miscellaneous/VCA%20Assign%20Template.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Recording">
+    <reapack name="Arm All Tracks Within Folders.lua" type="script" desc="Arm all tracks within folders">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Arm all tracks within folders\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Automatically toggles record arming for all tracks, but ignores folders used for organising your session\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.0" author="Ben Smith" time="2021-08-08T22:18:06Z">
+        <changelog><![CDATA[+ Initial version]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/00cef1e4b944f1562e5e07c146825bad77d18e2e/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+      </version>
+      <version name="1.1" author="Ben Smith" time="2021-08-09T12:30:32Z">
+        <changelog><![CDATA[# Updated commenting to make the script easier to navigate]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/3a64b41837b2b92c0ea4982a40321d046882e453/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+      </version>
+      <version name="1.2" author="Ben Smith" time="2021-09-04T14:29:59Z">
+        <changelog><![CDATA[+ Now metapackage to choose between arm, disarm and toggle arm
++ Added undo block]]></changelog>
+        <source main="main" file="Rec arm all tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/aed1f5945394d3ee2b9cb143055f8e27c4377603/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="Rec disarm tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/aed1f5945394d3ee2b9cb143055f8e27c4377603/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="Rec toggle tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/aed1f5945394d3ee2b9cb143055f8e27c4377603/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+      </version>
+      <version name="1.3" author="Ben Smith" time="2021-10-01T16:41:24Z">
+        <changelog><![CDATA[# Fix undo block]]></changelog>
+        <source main="main" file="Rec arm all tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="Rec disarm tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="Rec toggle tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+      </version>
+      <version name="1.4" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Rec arm all tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+      </version>
+      <version name="1.5-beta1" author="Ben Smith" time="2022-09-04T11:41:50Z">
+        <changelog><![CDATA[# If installed directly rather than via Reapack, toggles are state of tracks]]></changelog>
+        <source main="main" file="bsmith96_Rec arm all tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/ccc499e9c26de679ea7d70cda401325a896e07c2/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/ccc499e9c26de679ea7d70cda401325a896e07c2/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/ccc499e9c26de679ea7d70cda401325a896e07c2/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+      </version>
+      <version name="1.5" author="Ben Smith" time="2022-09-04T12:33:06Z">
+        <changelog><![CDATA[# If installed directly rather than via Reapack, toggles are state of tracks]]></changelog>
+        <source main="main" file="bsmith96_Rec arm all tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c39b5d17edb2f87461b1020d5620ec67aea7aa16/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c39b5d17edb2f87461b1020d5620ec67aea7aa16/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c39b5d17edb2f87461b1020d5620ec67aea7aa16/Recording/Arm%20All%20Tracks%20Within%20Folders.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Arm Tracks For Recording.lua" type="script" desc="Arm tracks for recording">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Arm tracks for recording\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Arm a specific set of tracks for recording \u8211-\u160?customise a version of this script for use with your project.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Useful when you are regularly arming and disarming the same group of tracks, but do not want to arm every track in the project (e.g. recording a multitrack performance, and you have groups or folders).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab "Arm all tracks within folders" is more useful, if that is what you need this for.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 User customisation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab tracksToArm\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab A list of all tracks you wish to toggle.\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab rangeToArm\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab A range of tracks which should all be toggled.\sa180\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.1" author="Ben Smith" time="2021-08-08T22:18:06Z">
+        <changelog><![CDATA[# Replaced trackToArm(track) function with tracksToArm({tracks})]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/00cef1e4b944f1562e5e07c146825bad77d18e2e/Recording/Arm%20Tracks%20For%20Recording.lua</source>
+      </version>
+      <version name="1.2" author="Ben Smith" time="2021-08-09T12:30:32Z">
+        <changelog><![CDATA[# Updated commenting to make the script easier to navigate]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/3a64b41837b2b92c0ea4982a40321d046882e453/Recording/Arm%20Tracks%20For%20Recording.lua</source>
+      </version>
+      <version name="1.3" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Arm Tracks For Recording.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Recording/Arm%20Tracks%20For%20Recording.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Arm Tracks Within Selected Folder.lua" type="script" desc="Arm tracks within selected folder">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Arm Tracks Within Selected Folder\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - November 2021 - Updated September 2022\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Run this script with a folder track selected to arm all tracks within that folder, which are not folders themselves.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Run this script with a child track selected to arm all peers within the parent folder.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Run this script with a top level track, or no track, selected to arm all tracks within folders.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Run this script (e.g. by keyboard shortcut) when a folder track is selected, a child track is selected, or without any tracks selected, as a shortcut to arming different sections of a template.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This could be useful for e.g. recording only a band, and ignoring vocal mics.\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.0-beta1" author="Ben Smith" time="2021-11-29T19:19:42Z">
+        <changelog><![CDATA[+ Initial version]]></changelog>
+        <source main="main" file="bsmith96_Rec arm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/41660f6cfeb372f81a00e1eb98c7dd3bb9277030/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/41660f6cfeb372f81a00e1eb98c7dd3bb9277030/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/41660f6cfeb372f81a00e1eb98c7dd3bb9277030/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+      </version>
+      <version name="1.0" author="Ben Smith" time="2022-01-13T22:13:39Z">
+        <changelog><![CDATA[+ Initial version]]></changelog>
+        <source main="main" file="bsmith96_Rec arm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/60ecf4326998435752565be447b7782e4f47e9ae/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/60ecf4326998435752565be447b7782e4f47e9ae/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/60ecf4326998435752565be447b7782e4f47e9ae/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+      </version>
+      <version name="2.0-beta1" author="Ben Smith" time="2022-09-04T11:41:34Z">
+        <changelog><![CDATA[# Improved functionality for different selections.
++ If no track is selected, arms all tracks within folders
++ If a child is selected, arms all peers
++ If a top level track is selected, arms all tracks within folders
+# If installed directly rather than via Reapack, toggles arm state of tracks]]></changelog>
+        <source main="main" file="bsmith96_Rec arm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/37e554954f109b916a3e41bdaa5588e59f687208/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/37e554954f109b916a3e41bdaa5588e59f687208/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/37e554954f109b916a3e41bdaa5588e59f687208/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+      </version>
+      <version name="2.0" author="Ben Smith" time="2022-09-04T12:33:06Z">
+        <changelog><![CDATA[# Improved functionality for different selections.
++ If no track is selected, arms all tracks within folders
++ If a child is selected, arms all peers
++ If a top level track is selected, arms all tracks within folders
+# If installed directly rather than via Reapack, toggles arm state of tracks]]></changelog>
+        <source main="main" file="bsmith96_Rec arm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c39b5d17edb2f87461b1020d5620ec67aea7aa16/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c39b5d17edb2f87461b1020d5620ec67aea7aa16/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c39b5d17edb2f87461b1020d5620ec67aea7aa16/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+      </version>
+      <version name="2.1" author="Ben Smith" time="2022-09-17T23:43:01Z">
+        <changelog><![CDATA[# Bug fix when one track is the end of multiple nested folders]]></changelog>
+        <source main="main" file="bsmith96_Rec arm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/453dc95c0e3dfd1dca7a684b04d30f41b5cbe0c5/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec disarm tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/453dc95c0e3dfd1dca7a684b04d30f41b5cbe0c5/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+        <source main="main" file="bsmith96_Rec toggle tracks within selected folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/453dc95c0e3dfd1dca7a684b04d30f41b5cbe0c5/Recording/Arm%20Tracks%20Within%20Selected%20Folder.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Routing">
+    <reapack name="Set track inputs 1-to-1.lua" type="script" desc="Set track inputs 1-to-1">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set track inputs 1-to-1\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - July 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Sets the track input channel sequentially, allowing you to set up projects with high track counts and quickly route the appropriate inputs to them.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This is ideal for recording live performances, such as concerts or theatre.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab All tracks are presumed mono.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab To use stereo tracks, append the names with "--2".\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Stereo tracks MUST start on odd input.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If your stereo tracks start with an even input (i.e. even/odd pair) the script will create {\i split stereo} tracks, a mono left and a mono right.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 User customisation\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab stereoSuffix: "--2"\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Allows you to customise the naming convention for indicating stereo tracks to the script.\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab stereoSplitSuffix: [".L", ".R"]\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Customise how stereo tracks which are split to mono are renamed. e.g. "Left", ".L"\sa180\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Metapackage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set track inputs 1-to-1\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Sets every track input to the track number\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set track inputs 1-to-1 for selected tracks\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Only affects selected tracks\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set track inputs 1-to-1 ignoring folders\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Assumes folders are used simply for structure, and does not include these.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab If track 1 is a folder and track 2 is not, track 2 will use input 1.\sa180\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="2.0" author="Ben Smith" time="2021-09-27T17:00:22Z">
+        <changelog><![CDATA[+ Now a metapackage, allowing easy launching of different versions of the script
+# Renamed package from "set channel inputs 1-to-1" to "set track inputs 1-to-1", for correct semantics.]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/6fd1a62a692509fec010e258c322663326f3cfe3/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="Set track inputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/6fd1a62a692509fec010e258c322663326f3cfe3/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="Set track inputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/6fd1a62a692509fec010e258c322663326f3cfe3/Routing/Set%20track%20inputs%201-to-1.lua</source>
+      </version>
+      <version name="2.1" author="Ben Smith" time="2021-10-01T16:41:24Z">
+        <changelog><![CDATA[# Fix undo block]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="Set track inputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="Set track inputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Routing/Set%20track%20inputs%201-to-1.lua</source>
+      </version>
+      <version name="2.2" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Routing/Set%20track%20inputs%201-to-1.lua</source>
+      </version>
+      <version name="2.3-b.2022.11.12" author="Ben Smith" time="2022-11-12T13:51:18Z">
+        <changelog><![CDATA[# Fix bug when splitting stereo at the end of a folder
+# Cleanup script - changed `splitStereo:len()` to match other instances of `#splitStereo`]]></changelog>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c84a5bd0b473f00977cd7b5fcd1c71fbbb307b7e/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c84a5bd0b473f00977cd7b5fcd1c71fbbb307b7e/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/c84a5bd0b473f00977cd7b5fcd1c71fbbb307b7e/Routing/Set%20track%20inputs%201-to-1.lua</source>
+      </version>
+      <version name="2.3-b.2022.11.13" author="Ben Smith" time="2022-11-13T15:15:20Z">
+        <changelog><![CDATA[# Fix bug when splitting stereo at the end of a folder
+# Cleanup script - changed `splitStereo:len()` to match other instances of `#splitStereo`]]></changelog>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1.lua">https://github.com/bsmith96/Reaper-Scripts/raw/f9b88968ebc2028ab2d54d1ea53defb72a65318f/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/f9b88968ebc2028ab2d54d1ea53defb72a65318f/Routing/Set%20track%20inputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track inputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/f9b88968ebc2028ab2d54d1ea53defb72a65318f/Routing/Set%20track%20inputs%201-to-1.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Set track outputs 1-to-1.lua" type="script" desc="Set track outputs 1-to-1">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set track outputs 1-to-1\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Routes tracks to the same output as their input, allowing quick routing for Virtual Sound Checks in live situations.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Also routes the master to alternative outputs: by default, the last stereo pair of the audio device (unless taken up by 1-to-1 channel routing), but can be customised by editing the {\i User Customisation Area} in the script\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Metapackage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set track outputs 1-to-1\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Sets the output of every track to be the same as the input routing\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set track outputs 1-to-1 for selected tracks\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Sets the output of selected tracks to match input routing\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set track outputs 1-to-1 ignoring folders\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Unroutes folders from the main output, but does not route them to a any output. Assumes they are used for structure.\sa180\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="2.0" author="Ben Smith" time="2021-09-27T17:00:29Z">
+        <changelog><![CDATA[+ Now a metapackage, allowing easy launching of different versions of the script
+# Renamed package from "set channel outputs 1-to-1" to "set track outputs 1-to-1", for correct semantics.]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/85404d0aca2900ddf516b724e9cb73a5b71e4f5a/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="Set track outputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/85404d0aca2900ddf516b724e9cb73a5b71e4f5a/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="Set track outputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/85404d0aca2900ddf516b724e9cb73a5b71e4f5a/Routing/Set%20track%20outputs%201-to-1.lua</source>
+      </version>
+      <version name="2.1" author="Ben Smith" time="2021-10-01T16:41:24Z">
+        <changelog><![CDATA[# Fix undo block]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="Set track outputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="Set track outputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Routing/Set%20track%20outputs%201-to-1.lua</source>
+      </version>
+      <version name="2.2" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Set track outputs 1-to-1.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track outputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track outputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Routing/Set%20track%20outputs%201-to-1.lua</source>
+      </version>
+      <version name="2.3" author="Ben Smith" time="2022-09-21T10:18:29Z">
+        <changelog><![CDATA[# Routes the master to alternative outputs (default to the last stereo pair, can be edited in the script) unless these are taken up by channels.]]></changelog>
+        <source main="main" file="bsmith96_Set track outputs 1-to-1.lua">https://github.com/bsmith96/Reaper-Scripts/raw/698f61299fd52112f082a316c98fe974b25f252e/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track outputs 1-to-1 for selected tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/698f61299fd52112f082a316c98fe974b25f252e/Routing/Set%20track%20outputs%201-to-1.lua</source>
+        <source main="main" file="bsmith96_Set track outputs 1-to-1 ignoring folders.lua">https://github.com/bsmith96/Reaper-Scripts/raw/698f61299fd52112f082a316c98fe974b25f252e/Routing/Set%20track%20outputs%201-to-1.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Toggle routing and solo to master.lua" type="script" desc="Toggle routing and solo to master">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Toggle routing and solo to master\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Routes the selected track/s to the master and solos them.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Quickly listen to a bus recording while your reaper is routed for Virtual Sound Checks.\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.0" author="Ben Smith" time="2021-08-08T22:18:06Z">
+        <changelog><![CDATA[+ Initial version]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/00cef1e4b944f1562e5e07c146825bad77d18e2e/Routing/Toggle%20routing%20and%20solo%20to%20master.lua</source>
+      </version>
+      <version name="1.1" author="Ben Smith" time="2021-08-09T12:30:32Z">
+        <changelog><![CDATA[# Updated commenting to make the script easier to navigate]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/3a64b41837b2b92c0ea4982a40321d046882e453/Routing/Toggle%20routing%20and%20solo%20to%20master.lua</source>
+      </version>
+      <version name="1.2" author="Ben Smith" time="2021-10-01T16:41:24Z">
+        <changelog><![CDATA[# Fix undo block]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Routing/Toggle%20routing%20and%20solo%20to%20master.lua</source>
+      </version>
+      <version name="1.3" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Toggle routing and solo to master.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Routing/Toggle%20routing%20and%20solo%20to%20master.lua</source>
+      </version>
+      <version name="1.4" author="Ben Smith" time="2022-09-21T10:18:12Z">
+        <changelog><![CDATA[# Bug fix: successfully routes tracks in folders to master by routing and soloing the folder too]]></changelog>
+        <source main="main" file="bsmith96_Toggle routing and solo to master.lua">https://github.com/bsmith96/Reaper-Scripts/raw/2c986f5b1b8bb94675c90a61a76be1b3c84ae14e/Routing/Toggle%20routing%20and%20solo%20to%20master.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Tracks">
+    <reapack name="Explode multichannel audio files.lua" type="script" desc="Explode multichannel audio files non-destructively">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Explode multichannel audio files non-destructively\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - August 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Quickly explode multichannel audio files into individual tracks.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Allows you to either explode a single track into x tracks, or to leave the selected track in place as a folder and place the individual stems inside it.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Explodes the selected multichannel audio file onto\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab A new set of tracks below the current one, muting the original file.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab The existing tracks below the current one, muting the original file (e.g. if you have multiple recordings with the same channels).\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab A new set of tracks in a folder of the current one, muting the original file.\sa180\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.0.alpha1" author="Ben Smith" time="2021-08-09T17:26:27Z">
+        <changelog><![CDATA[+ Initial version]]></changelog>
+        <source main="main" file="Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/4d9ef71f5310434c551a90d2e387507e9b82582e/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/4d9ef71f5310434c551a90d2e387507e9b82582e/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.0.alpha2" author="Ben Smith" time="2021-08-23T08:46:54Z">
+        <changelog><![CDATA[+ Implemented metapackage correctly
++ Put copy/paste into a function
++ Names new tracks
++ Undo blocks]]></changelog>
+        <source main="main" file="Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/3eb8b895a23b010db100e28cde67c6c8d16dc4da/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/3eb8b895a23b010db100e28cde67c6c8d16dc4da/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/3eb8b895a23b010db100e28cde67c6c8d16dc4da/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.0" author="Ben Smith" time="2021-08-23T08:52:27Z">
+        <changelog><![CDATA[- Publish from alpha version]]></changelog>
+        <source main="main" file="Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/1f0808c76185a1b61d47b9f89be97e9630844a56/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/1f0808c76185a1b61d47b9f89be97e9630844a56/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/1f0808c76185a1b61d47b9f89be97e9630844a56/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.1" author="Ben Smith" time="2021-08-23T10:39:38Z">
+        <changelog><![CDATA[# Bug fix to get the correct media item when exploding onto existing tracks]]></changelog>
+        <source main="main" file="Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/eddd77a995adea8d29c88daaae40c4f32f63bcf9/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/eddd77a995adea8d29c88daaae40c4f32f63bcf9/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/eddd77a995adea8d29c88daaae40c4f32f63bcf9/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.2" author="Ben Smith" time="2021-09-16T16:08:38Z">
+        <changelog><![CDATA[# Always puts new items on the correct tracks regardless of which track is selected]]></changelog>
+        <source main="main" file="Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/8f96a0940e55519e11ff97497bfe2868a30a24fb/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/8f96a0940e55519e11ff97497bfe2868a30a24fb/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/8f96a0940e55519e11ff97497bfe2868a30a24fb/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.3" author="Ben Smith" time="2021-10-01T16:41:24Z">
+        <changelog><![CDATA[# Fix undo block]]></changelog>
+        <source main="main" file="Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.4" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.5-beta1" author="Ben Smith" time="2022-09-09T11:47:26Z">
+        <changelog><![CDATA[# If installed directly rather than via reapack, explodes into new tracks by default]]></changelog>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/1c845251ff693464b0c58135c436133a3d80c55d/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/1c845251ff693464b0c58135c436133a3d80c55d/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/1c845251ff693464b0c58135c436133a3d80c55d/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.5" author="Ben Smith" time="2022-09-09T11:51:39Z">
+        <changelog><![CDATA[# If installed directly rather than via reapack, explodes into new tracks by default]]></changelog>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/be6d621c7def0a3a68e27c6888fecd7332abf88a/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/be6d621c7def0a3a68e27c6888fecd7332abf88a/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/be6d621c7def0a3a68e27c6888fecd7332abf88a/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.6-beta1" author="Ben Smith" time="2022-09-09T12:39:35Z">
+        <changelog><![CDATA[# Groups media items together so they remain in time with eachother
+# Adds the option of keeping routing when exploding into a folder]]></changelog>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/8511e7532df670e067f9f4fc288aac39b7692755/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder keeping routing.lua">https://github.com/bsmith96/Reaper-Scripts/raw/8511e7532df670e067f9f4fc288aac39b7692755/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/8511e7532df670e067f9f4fc288aac39b7692755/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/8511e7532df670e067f9f4fc288aac39b7692755/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.6-beta2" author="Ben Smith" time="2022-09-09T12:46:01Z">
+        <changelog><![CDATA[# fixed bug in grouping items]]></changelog>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/0bc3bca8e62d65d1335a96ba949667be3ebe6dbb/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder keeping routing.lua">https://github.com/bsmith96/Reaper-Scripts/raw/0bc3bca8e62d65d1335a96ba949667be3ebe6dbb/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/0bc3bca8e62d65d1335a96ba949667be3ebe6dbb/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/0bc3bca8e62d65d1335a96ba949667be3ebe6dbb/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+      <version name="1.6" author="Ben Smith" time="2022-09-09T12:53:20Z">
+        <changelog><![CDATA[# Groups media items together so they remain in time with each other
+# Adds the option of keeping routing when exploding into a folder]]></changelog>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder.lua">https://github.com/bsmith96/Reaper-Scripts/raw/477aaa7ac02c06e2f2f231d94ef79192c7eee37f/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into folder keeping routing.lua">https://github.com/bsmith96/Reaper-Scripts/raw/477aaa7ac02c06e2f2f231d94ef79192c7eee37f/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into new tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/477aaa7ac02c06e2f2f231d94ef79192c7eee37f/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+        <source main="main" file="bsmith96_Explode multichannel audio files into existing tracks.lua">https://github.com/bsmith96/Reaper-Scripts/raw/477aaa7ac02c06e2f2f231d94ef79192c7eee37f/Tracks/Explode%20multichannel%20audio%20files.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Put selected tracks in new folder track.lua" type="script" desc="Put selected tracks in a new folder">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Put selected tracks in a new folder\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Written by Ben Smith - 2021\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs28 Info\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Indents the selected tracks and places a new folder track above them\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Useful for organising large projects quickly.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab 2 versions - Reaper can prompt you for a name for the new folder or leave it empty.\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://www.bensmithsound.uk">Author</link>
+        <link rel="website" href="https://github.com/bsmith96/Reaper-Scripts">Repository</link>
+      </metadata>
+      <version name="1.0" author="Ben Smith" time="2021-08-08T22:18:06Z">
+        <changelog><![CDATA[+ Initial version]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/00cef1e4b944f1562e5e07c146825bad77d18e2e/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+      </version>
+      <version name="1.1" author="Ben Smith" time="2021-08-09T12:30:32Z">
+        <changelog><![CDATA[# Updated commenting to make the script easier to navigate]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/3a64b41837b2b92c0ea4982a40321d046882e453/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+      </version>
+      <version name="1.2" author="Ben Smith" time="2021-09-02T21:09:44Z">
+        <changelog><![CDATA[# Removed user customisation in favour of providing 2 separate scripts - either prompt for name or do not.]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/5c32855b1dfb05c649af2b9ad4ebbe088de9fd03/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+        <source main="main" file="Put selected tracks in new folder track and ask for name.lua">https://github.com/bsmith96/Reaper-Scripts/raw/5c32855b1dfb05c649af2b9ad4ebbe088de9fd03/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+      </version>
+      <version name="1.3" author="Ben Smith" time="2021-10-01T16:41:24Z">
+        <changelog><![CDATA[# Fix undo block]]></changelog>
+        <source main="main">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+        <source main="main" file="Put selected tracks in new folder track and ask for name.lua">https://github.com/bsmith96/Reaper-Scripts/raw/79898638a491825e90c7a8bda79021fd2345d3a1/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+      </version>
+      <version name="1.4" author="Ben Smith" time="2021-10-01T16:53:44Z">
+        <changelog><![CDATA[# Added user identifier to provided file names]]></changelog>
+        <source main="main" file="bsmith96_Put selected tracks in new folder track.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+        <source main="main" file="bsmith96_Put selected tracks in new folder track and ask for name.lua">https://github.com/bsmith96/Reaper-Scripts/raw/d53869a1d54aed09e1d5e899fea76263279b7388/Tracks/Put%20selected%20tracks%20in%20new%20folder%20track.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 BSmith96 Scripts - ReaScript\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 These scripts are largely designed for a live sound workflow - quick, easy, large scale multitrack recordings of live performances; facilitating virtual soundchecks; and simply project organisation.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 They are designed to be very adaptable - you can easily alter them to your liking without delving too deeply into the script, and make them work for your current project.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Manual installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 One way to do this is to keep the scripts in your project's directory (or a subdirectory), and add the name of the project to the start of the filename. This will allow you to easily find all the associated scripts in the actions menu.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You can either edit them in an external text editor before loading them into Reaper, or load them first and edit them in the built in ReaScript editor.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Once you've got all the scripts you want in a folder, go to the actions window (press '?') and select "New action...". Select "Load ReaScript" from the dropdown menu, navigate to your folder and highlight them all at once.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Now you can set keyboard shortcuts or midi triggers for the scripts.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Reapack\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you download the ReaPack package manager extension for reaper, you can import these scripts automatically, with the added benefit of easy updates and new additions.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Go to Extensions > ReaPack > Manage Repositories, then Import/export > import repository.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 There, paste this link: {\f1 https://raw.githubusercontent.com/bsmith96/Reaper-Scripts/master/index.xml} and you will have imported these scripts to use as you please!\par}
+}
+]]></description>
+  </metadata>
+</index>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="kawa Script2" commit="43a134e2a87927a9e344ab804236ba66c3a1fccd">
+  <category name="Extentions">
+    <reapack name="kawaScript2.ext" type="extension" desc="kawaScript2">
+      <version name="2018/11/13" author="kawa" time="2018-11-12T17:16:32Z">
+        <changelog><![CDATA[+ more change log at ( http://kawa.works/reascript-change-log )]]></changelog>
+        <source platform="darwin32" file="reaper_kawaScript2.dylib">https://bitbucket.org/kawaCat/kawascript2/raw/master/Binary/reaper_kawaScript2.dylib</source>
+        <source platform="darwin64" file="reaper_kawaScript2_64.dylib">https://bitbucket.org/kawaCat/kawascript2/raw/master/Binary/reaper_kawaScript2_64.dylib</source>
+        <source platform="win32" file="reaper_kawaSctipt2.dll">https://bitbucket.org/kawaCat/kawascript2/raw/master/Binary/reaper_kawaScript2.dll</source>
+        <source platform="win64" file="reaper_kawaScript2_64.dll">https://bitbucket.org/kawaCat/kawascript2/raw/master/Binary/reaper_kawaScript2_64.dll</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 kawaScript2 for Reaper v5.50~.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Extension For Cockos REAPER v5.50~.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Scripts info and Animation Preview at {\field{\*\fldinst{HYPERLINK "http://kawa.works/reascript-midi-section"}}{\fldrslt{\ul
+Wiki Page
+}}}
+.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Some actions need {\field{\*\fldinst{HYPERLINK "http://www.sws-extension.org/"}}{\fldrslt{\ul
+"SWS / S&M Extension"
+}}}
+.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Thank you Reaper And {\field{\*\fldinst{HYPERLINK "https://reapack.com/"}}{\fldrslt{\ul
+ReaPack
+}}}
+ And Sws extensiton!\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Animation Preview and Documents.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab {\field{\*\fldinst{HYPERLINK "http://kawa.works/reascript-midi-section"}}{\fldrslt{\ul
+MIDI-Section
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab {\field{\*\fldinst{HYPERLINK "http://kawa.works/reascript-midi-cc-section"}}{\fldrslt{\ul
+MIDI-CC-Section
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab {\field{\*\fldinst{HYPERLINK "http://kawa.works/reascript-main-section"}}{\fldrslt{\ul
+MAIN-Section
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab {\field{\*\fldinst{HYPERLINK "http://kawa.works/reascript-automation-items"}}{\fldrslt{\ul
+Automaion Items-Section
+}}}
+\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab {\field{\*\fldinst{HYPERLINK "http://kawa.works/reascript-change-log"}}{\fldrslt{\ul
+Change log
+}}}
+\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Other Projects ( Plugins )\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab kawaChord2 {\field{\*\fldinst{HYPERLINK "http://www.kvraudio.com/product/kawachord2-by-kawa/details"}}{\fldrslt{\ul
+KVR Audio Product Page
+}}}
+.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab kawaChord2 Free {\field{\*\fldinst{HYPERLINK "https://www.kvraudio.com/product/kawachord2-free-by-kawa"}}{\fldrslt{\ul
+KVR Audio Product Page
+}}}
+.\sa180\par}
+}
+]]></description>
+  </metadata>
+</index>

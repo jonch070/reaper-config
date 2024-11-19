@@ -1,0 +1,73 @@
+return {
+-- Table: {1}
+{
+   ["margin_items_v"]=10,
+   ["margin_items_h"]=10,
+   ["margin_icon_dir"]=15,
+   ["margin_icon_template"]=0,
+   ["button_opacity"]=0.05,
+   ["background_color_red"]=38,
+   ["background_color_green"]=38,
+   ["background_color_blue"]=38,
+   ["text_color_red"]=255,
+   ["text_color_green"]=255,
+   ["text_color_blue"]=255,
+   ["text_color2_red"]=255,
+   ["text_color2_green"]=0,
+   ["text_color2_blue"]=0,
+   ["text_color3_red"]=0,
+   ["text_color3_green"]=255,
+   ["text_color3_blue"]=0,
+   ["text_color4_red"]=255,
+   ["text_color4_green"]=0,
+   ["text_color4_blue"]=0,
+   
+   ["over_color_red"]=255,
+   ["over_color_green"]=255,
+   ["over_color_blue"]=255,
+   ["over2_color_red"]=0,
+   ["over2_color_green"]=255,
+   ["over2_color_blue"]=0,
+   
+   ["font_size1"]="14",
+   ["font_size2"]="20",
+   ["font_size3"]="24",
+   ["font_size4"]="30",
+   ["button_opacity"]=0.5,
+
+   ["font1"]="Arial", -- font used for icons (smaller)
+   ["font2"]="Arial", -- font used for icons (small)
+   ["font3"]="Arial", -- font used for icons
+   ["font4"]="LibreSans", -- font used for the toolbar
+   ["font1_Other"]="DejaVuSans", -- font used for icons (smaller)
+   ["font2_Other"]="DejaVuSans", -- font used for icons (small)
+   ["font3_Other"]="DejaVuSans", -- font used for icons
+   ["font4_Other"]="DejaVuSans", -- font used for the toolbar
+
+   ["margin_icon_dir_v"] = 10, -- vertical spacing for dirs panel
+   ["margin_icon_dir_h"] = 10, -- horizontal spacing for dirs panel
+
+   ["tb_menu"] = " ≡ ",
+   ["tb_home"] = " ⌂ ",
+   ["tb_prev"] = " .. ",
+   ["tb_fx"] = " FX ",
+   ["tb_tt"] = " TT ",
+   ["tb_fav"] = " ♥ ",
+   ["tb_refresh"] = " ѻ ",
+   ["tb_undock"] = " ■ ",
+   ["tb_dock"] = " □ ",
+   ["tb_dirs"] = " ║ ",
+   ["tb_insaschild"] = " ╚ ",
+   ["tb_smartins"] = " S ",
+   ["tb_actionbefore"] = " b ",
+   ["tb_actionafter"] = " a ",
+   ["tb_replace"] = " ₪ ",
+   ["tb_renametrack"] = " ₸ ",
+   ["tb_zoomout"] = " - ",
+   ["tb_zoomin"] = " + ",
+   ["tb_match"] = " Match ",
+   ["tb_tags"] = " # ",
+
+
+},
+}

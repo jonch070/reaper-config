@@ -1,0 +1,227 @@
+desc:LBX_RRMIDI 
+options:gmem=LBX_RRData
+
+//Original script by Eugen2777 - v20151213
+//Adapted to work with 'Smart Knobs' by LBX
+
+slider1:0<0,8388608,1>-MSG_Count
+slider2:0<0,2097151,1>-MSG_Number
+slider3:0<-4096,65536,0.001>-MSG_Position
+slider4:0<0,256,1>-msg1
+slider5:0<0,127,1>-msg2
+slider6:0<0,127,1>-msg3
+slider7:1<0,1,1{No(As Rec Out Mode),Yes(As Rec Normal Mode)}>Compensate Latency
+slider8:0<0,1,1{Only when you press Play,At each change of Playposition}>ReWrite Buffer
+slider9:0<0,8192,1>-data
+
+in_pin:none
+out_pin:none
+
+@init
+ext_midi_bus = 1;
+ext_noinit=1;//only execute on load or samplerate change
+buf=0;//buf offset for MSG-data
+others=8388600;//buf offset for other data
+blockcnt = -1;
+Stop_Offset = 0;
+
+d_msgdata = 0;
+d_other = 8388000;
+d_comp_latency = 8388100;
+d_b_latency = 8388101;
+d_clearbuf = 8388105;
+d_playpos = 8388106;
+d_playpos2 = 8388107;
+
+notesplayed = 8388108;
+cc64played = 8388109;
+cc1played = 8388110;
+pbplayed = 8388111;
+
+gmem[d_playpos] = play_position;
+gmem[d_playpos2] = play_position;
+
+gmem[d_comp_latency] = slider7;
+gmem[d_b_latency] = slider3;
+
+gmem[cc64played] = -1;
+gmem[cc1played] = -1;
+gmem[pbplayed] = -1;
+
+@slider 
+gmem[d_comp_latency] = slider7;
+gmem[d_b_latency] = slider3;
+
+@block
+
+  PSC = 0;
+  blockcnt != -1 ? (
+    blockcnt +=1;
+  );
+  (play_state == 0) ? (
+    SPP = play_position;
+  );
+  
+  (play_state != Last_Play_State) ? (
+    PSC = 1;
+    blockcnt = -1;
+    play_state == 1 ? (
+      Stop_Offset = 0;
+      PlayPos = SPP;
+      gmem[d_playpos] = SPP;
+    ) : (play_state == 0) ? (
+      gmem[notesplayed] = 0;
+      gmem[cc64played] = -1;
+      gmem[cc1played] = -1;
+      gmem[pbplayed] = -1;
+    );
+  );
+  
+  (play_state == 0 && PSC == 1) ? (
+    blockcnt = -1;
+    Start_Play_Position = play_position;//B_start 
+    Stop_Offset = Last_Play_Position - Start_Play_Position;
+    //uncomment to create new take when play stops from additional midi
+    /*i>=4 ? (
+      //===END Prev Item===//
+      buf[i] = Last_Play_Position;//Special Info = Prev item End Pos
+      buf[i+1] = -2; //msg2 As special Info = -2 = Prev item End Pos
+      buf[i+2]=j/4;  //msg2 As special Info = Item Number(0-based)
+      i+=4;j+=4;
+      
+      //===Start New Item===//s STOPPED
+      buf[i] = Last_Play_Position;//Special Info = New item Start Pos
+      buf[i+1] = -1; //msg1 As special Info = -1 = New item Start Pos
+      buf[i+2]=j/4;  //msg2 As special Info = Item Number(0-based)
+      i+=4;
+      item_count+=1;
+      input_msg_count+=2; 
+      slider1 = input_msg_count;//Update Slider MSG_Count
+      others[6]=item_count;//Update others[6]=item_count
+    );
+    others[6]=item_count;*/
+    Last_Play_Pos = play_position;
+    
+    
+  ) : play_state == 0 && play_position != Last_Play_Pos ? (
+    blockcnt = -1;
+    i = 0;  
+    j = 0;
+    gmem[d_other+5] = 0;
+    gmem[d_other+6] = 0;
+     
+    slider9=0;
+    Start_Play_Position = play_position;//B_start 
+    Last_Play_Pos = play_position;
+    Stop_Offset = 0;
+    
+  ) : (play_state==0 && blockcnt != -1) ? (
+    Start_Play_Position = play_position + blockcnt*(samplesblock/srate);//B_start
+  ) : (
+    Start_Play_Position = play_position;//B_start  
+  );
+  
+  //==========Reset Counters==========//
+  reset = 0;
+  (gmem[d_clearbuf] == 1 || slider9==8192 || (play_state == 1 && PSC == 1)) ? (
+    reset = 1;
+    gmem[d_clearbuf] = 0;
+    blockcnt = -1;
+    i=0;  
+    j=0; 
+    gmem[d_other+5] = 0;
+    gmem[d_other+6] = 0;
+    Stop_Offset = 0;
+    gmem[d_playpos] = play_position;
+    gmem[d_playpos2] = play_position;
+    PlayPos = play_position;
+    slider9=0;
+  );//i,j,msg_count,item_count=0 if val=8192
+    
+  (slider8>0 && abs(Start_Play_Position-Last_Play_Position)>0.125) /*)*/ ? (
+    i = 0; 
+    j=0; 
+    gmem[d_other+4] = samplesblock/srate;    
+  );//Reset i,j;//save sblock/srate
+
+  //==========Save start-end points for each Item============//
+  ((play_state==1 || play_state == 5) && abs(Start_Play_Position-Last_Play_Position)>0.125) ? (
+    i>=4 ? (
+      //===END Prev Item===//
+      gmem[d_msgdata+i] = Last_Play_Position;
+      gmem[d_msgdata+i+1] = -2;
+      gmem[d_msgdata+i+2] = j/4;
+      
+      i = min(i+=4,d_other-8);
+      j+=4;
+      
+      //===Start New Item===//s
+      gmem[d_msgdata+i] = Start_Play_Position;
+      gmem[d_msgdata+i+1] = -1;
+      gmem[d_msgdata+i+2] = j/4;
+
+      i = min(i+=4,d_other-8);
+      item_count+=1;
+      input_msg_count = min(input_msg_count+=2,d_other-8); 
+      gmem[d_other+5] = input_msg_count;
+      gmem[d_other+6] = item_count;
+    );
+    gmem[d_other+6] = item_count;
+  );
+
+  //===Save each position and msg1,msg2,msg3 to buf[.,.,.,.]===// 
+  play_state == 1 || play_state == 5 ? ( //1=play-main mode,5=rec-only for check!
+    while (midirecv(offset,msg1,msg2,msg3)) (
+      midi_bus == 0 ? (
+        ((msg1 & 240) == 144) ? (
+          gmem[notesplayed] = 1;
+        ) : ((msg1 & 240) == 176) ? (
+          (msg2 == 64) ? (
+            gmem[cc64played] = (msg1 & 15);
+          ) : (msg2 == 1) ? (
+            gmem[cc1played] = (msg1 & 15);
+          );
+        ) : ((msg1 & 240) == 224) ? (
+          gmem[pbplayed] = (msg1 & 15);
+        );
+      
+        i==0 ? (
+          input_msg_count=0;item_count=1;
+        );//Reset msg & item_count ONLY wh i=0 & NEW midirecvied
+        input_msg_count+=1;
+        gmem[d_msgdata+i] = Start_Play_Position + offset/srate;
+        gmem[d_msgdata+i+1] = msg1;
+        gmem[d_msgdata+i+2] = msg2;
+        gmem[d_msgdata+i+3] = msg3;
+
+        gmem[d_other+5] = input_msg_count;
+        gmem[d_other+6] = item_count;
+        i = min(i+=4,d_other-8);
+      );
+    ); 
+  ) : (
+    while (midirecv(offset,msg1,msg2,msg3)) (
+      midi_bus == 0 ? (
+        blockcnt == -1 ? (
+          blockcnt = 0;
+          gmem[d_playpos2] = PlayPos;
+          PlayPos = play_position;
+          gmem[d_playpos] = play_position;
+        );
+        i==0 ? (
+          input_msg_count=0;item_count=1;
+        );//Reset msg & item_count ONLY wh i=0 & NEW midirecvied
+        input_msg_count+=1; 
+        gmem[d_msgdata+i] = Start_Play_Position + Stop_offset + offset/srate;
+        gmem[d_msgdata+i+1] = msg1;
+        gmem[d_msgdata+i+2] = msg2;
+        gmem[d_msgdata+i+3] = msg3;
+        
+        gmem[d_other+5] = input_msg_count;
+        gmem[d_other+6] = item_count;
+        i = min(i+=4,d_other-8);
+      );
+    );  
+  );
+  Last_Play_Position = Start_Play_Position+samplesblock/srate;;//B_end
+  Last_Play_State = play_state;

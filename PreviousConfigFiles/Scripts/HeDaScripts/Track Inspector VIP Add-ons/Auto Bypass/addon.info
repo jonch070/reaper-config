@@ -1,0 +1,17 @@
+local info = {
+    ["name"] = "Auto Bypass",
+    ["description"] = "Automatic bypass track's plugins where there are no items",
+    ["author"] = "HeDa",
+    ["license"] = "Copyright",
+    ["deps"] = "",
+    ["TIversion"] = "2.0.2",
+    ["deps"] = "",
+    ["location"] = "addons",
+    ["warning"] = "",
+    ["doc_url"] = "",
+    ["tracker_url"] = "",
+    ["link"] = "",
+    ["category"] = "panels",
+}
+
+return info

@@ -1,0 +1,3 @@
+[displayname]XY Pad
+[defaultsize]200 200
+//

@@ -1,0 +1,53 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Send Kelp/SK Reaper Projects/SK_1m19/media"
+F "186-Arcade-MIDI - freeze-glued.wav" 18432044 0 1687055442 0
+D s 96000 n 2 l 0:24.000 i 32
+F "SK_1m19_1_freeze_Arcade [A3]-001.wav" 38976744 0 1687060291 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.152
+D l 0:50.750 i 32
+F "SK_1m19_1_freeze_Arcade [A3].wav" 36672744 0 1687059593 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.902
+D l 0:47.750 i 32
+F "SK_1m19_1_freeze_Arcade [E4]-001.wav" 38976744 0 1687060291 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.152
+D l 0:50.750 i 32
+F "SK_1m19_1_freeze_Arcade [E4].wav" 36672744 0 1687059593 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.902
+D l 0:47.750 i 32
+F "SK_1m19_1_freeze_Arcade [G3]-001.wav" 38976744 0 1687060291 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.152
+D l 0:50.750 i 32
+F "SK_1m19_1_freeze_Arcade [G3].wav" 36672744 0 1687059593 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.902
+D l 0:47.750 i 32
+F SK_1m19_1_freeze_Arcade-001.wav 36672744 0 1687059593 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.902
+D l 0:47.750 i 32
+F SK_1m19_1_freeze_Arcade-002.wav 36672744 0 1687059593 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.902
+D l 0:47.750 i 32
+F SK_1m19_1_freeze_Arcade-003.wav 38976744 0 1687060291 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.152
+D l 0:50.750 i 32
+F SK_1m19_1_freeze_Arcade-004.wav 38976744 0 1687060291 0
+D y 2023-06-17 s 96000 n 2 r 1:33:03.152
+D l 0:50.750 i 32
+F SK_1m19_1_freeze_Banjo.wav 22740384 0 1687058189 0
+D y 2023-06-17 s 96000 n 2 r 1:33:10.620
+D l 0:29.608 i 32
+F SK_1m19_2_freeze_Arcade-004.wav 75120744 0 1688073473 0
+D y 2023-06-29 s 96000 n 2 r 1:32:14.590
+D l 1:37.812 i 32
+F SK_1m19_2_freeze_Arcade-006.wav 75120744 0 1688073473 0
+D y 2023-06-29 s 96000 n 2 r 1:32:14.590
+D l 1:37.812 i 32
+F SK_1m19_2_freeze_Arcade-007.wav 19968744 0 1688073656 0
+D y 2023-06-29 s 96000 n 2 r 1:32:21.340
+D l 0:26.000 i 32
+F SK_1m19_2_freeze_Arcade-008.wav 20544744 0 1688073670 0
+D y 2023-06-29 s 96000 n 2 r 1:33:22.652
+D l 0:26.750 i 32
+F SK_1m19_freeze_Arcade.wav 25728044 0 1687055271 0
+D s 96000 n 2 l 0:33.500 i 32
+F "SK_1m19_freeze_El. Gtr. 1.wav" 36384744 0 1687056375 0
+D y 2023-06-17 s 96000 n 2 r 1:32:16.090
+D l 0:47.375 i 32

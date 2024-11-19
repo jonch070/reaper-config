@@ -1,0 +1,18 @@
+---------------------------------------------------
+  Import Export TXT - Changelog (What's new)     
+---------------------------------------------------
+
+* v1.0.0 (2023-08-12)
+  + REAPER v7 support
+  + added HeDa_Export Text Items to TXT with timestamps
+  + use JS_Dialog_BrowseForSaveFile for file name  js_reascriptAPI needed.
+
+* v0.3 (2018-05-19)
+  + HeDa_Import TXT to Text Items: optional fixed length parameter for each imported Text Item
+
+* v0.2 (2015-03-07)
+  + if there is a time selection it fits the import length to time selection
+ 
+* v0.1 (2015-02-25)
+  + Initial version
+  + configurable time length per character and separator lines

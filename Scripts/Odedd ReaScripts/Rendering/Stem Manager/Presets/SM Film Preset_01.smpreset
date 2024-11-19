@@ -1,0 +1,484 @@
+return {
+-- Table: {1}
+{
+   ["version"]="1.8.2",
+   ["settings"]={2},
+   ["stems"]={3},
+},
+-- Table: {2}
+{
+   ["renderaction"]=3,
+   ["show_hidden_tracks"]=false,
+   ["wait_time"]=5,
+   ["overwrite_without_asking"]=true,
+   ["play_sound_when_done"]=false,
+   ["syncmode"]=0,
+   ["render_setting_groups"]={4},
+   ["reflect_on_add"]=0,
+},
+-- Table: {3}
+{
+   ["Choir Dry"]={5},
+   ["2MIX"]={6},
+   ["Rhythm Section Dry"]={7},
+   ["Brass Dry"]={8},
+   ["Woodwinds Wet"]={9},
+   ["Pitched Percussion Wet"]={10},
+   ["Unpitched Percussion Wet"]={11},
+   ["Synths Wet"]={12},
+   ["Choir Wet"]={13},
+   ["Unpitched Percussion Dry"]={14},
+   ["Effects"]={15},
+   ["Brass Wet"]={16},
+   ["Pitched Percussion Dry"]={17},
+   ["Synths Dry"]={18},
+   ["Woodwinds Dry"]={19},
+   ["Rhythm Section Wet"]={20},
+   ["Strings Wet"]={21},
+   ["Strings Dry"]={22},
+},
+-- Table: {4}
+{
+   {23},
+   {24},
+   {25},
+   {26},
+   {27},
+   {28},
+   {29},
+   {30},
+   {31},
+},
+-- Table: {5}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=6,
+},
+-- Table: {6}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=1,
+   ["order"]=1,
+},
+-- Table: {7}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=8,
+},
+-- Table: {8}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=3,
+},
+-- Table: {9}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=11,
+},
+-- Table: {10}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=14,
+},
+-- Table: {11}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=13,
+},
+-- Table: {12}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=18,
+},
+-- Table: {13}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=15,
+},
+-- Table: {14}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=4,
+},
+-- Table: {15}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=10,
+},
+-- Table: {16}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=12,
+},
+-- Table: {17}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=5,
+},
+-- Table: {18}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=9,
+},
+-- Table: {19}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=2,
+},
+-- Table: {20}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=17,
+},
+-- Table: {21}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=3,
+   ["order"]=16,
+},
+-- Table: {22}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=7,
+},
+-- Table: {23}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=true,
+   ["description"]="MIX",
+   ["actions_to_run_after"]={32},
+   ["actions_to_run"]={33},
+   ["render_preset"]="SM Mix",
+   ["skip_empty_stems"]=false,
+   ["selected_markers"]={34},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={35},
+   ["select_regions"]=true,
+},
+-- Table: {24}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=true,
+   ["description"]="skinny stems dry",
+   ["actions_to_run_after"]={36},
+   ["actions_to_run"]={37},
+   ["render_preset"]="SM Skinny Stems Dry",
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={38},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={39},
+   ["select_regions"]=true,
+},
+-- Table: {25}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=true,
+   ["description"]="skinny stems wet",
+   ["actions_to_run_after"]={40},
+   ["actions_to_run"]={41},
+   ["render_preset"]="SM Skinny Stems Wet",
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={42},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={43},
+   ["select_regions"]=true,
+},
+-- Table: {26}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["actions_to_run_after"]={44},
+   ["actions_to_run"]={45},
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={46},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={47},
+   ["select_regions"]=false,
+},
+-- Table: {27}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["actions_to_run_after"]={48},
+   ["actions_to_run"]={49},
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={50},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={51},
+   ["select_regions"]=false,
+},
+-- Table: {28}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["actions_to_run_after"]={52},
+   ["actions_to_run"]={53},
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={54},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={55},
+   ["select_regions"]=false,
+},
+-- Table: {29}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["actions_to_run_after"]={56},
+   ["actions_to_run"]={57},
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={58},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={59},
+   ["select_regions"]=false,
+},
+-- Table: {30}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["actions_to_run_after"]={60},
+   ["actions_to_run"]={61},
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={62},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={63},
+   ["select_regions"]=false,
+},
+-- Table: {31}
+{
+   ["run_actions"]=false,
+   ["folder"]="",
+   ["timeSelEnd"]=0,
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["actions_to_run_after"]={64},
+   ["actions_to_run"]={65},
+   ["skip_empty_stems"]=true,
+   ["selected_markers"]={66},
+   ["run_actions_after"]=false,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["selected_regions"]={67},
+   ["select_regions"]=false,
+},
+-- Table: {32}
+{
+},
+-- Table: {33}
+{
+},
+-- Table: {34}
+{
+},
+-- Table: {35}
+{
+   {68},
+},
+-- Table: {36}
+{
+},
+-- Table: {37}
+{
+},
+-- Table: {38}
+{
+},
+-- Table: {39}
+{
+   {69},
+},
+-- Table: {40}
+{
+},
+-- Table: {41}
+{
+},
+-- Table: {42}
+{
+},
+-- Table: {43}
+{
+   {70},
+},
+-- Table: {44}
+{
+},
+-- Table: {45}
+{
+},
+-- Table: {46}
+{
+},
+-- Table: {47}
+{
+},
+-- Table: {48}
+{
+},
+-- Table: {49}
+{
+},
+-- Table: {50}
+{
+},
+-- Table: {51}
+{
+},
+-- Table: {52}
+{
+},
+-- Table: {53}
+{
+},
+-- Table: {54}
+{
+},
+-- Table: {55}
+{
+},
+-- Table: {56}
+{
+},
+-- Table: {57}
+{
+},
+-- Table: {58}
+{
+},
+-- Table: {59}
+{
+},
+-- Table: {60}
+{
+},
+-- Table: {61}
+{
+},
+-- Table: {62}
+{
+},
+-- Table: {63}
+{
+},
+-- Table: {64}
+{
+},
+-- Table: {65}
+{
+},
+-- Table: {66}
+{
+},
+-- Table: {67}
+{
+},
+-- Table: {68}
+{
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["name"]="Snow Birds",
+   ["id"]="R1",
+},
+-- Table: {69}
+{
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["name"]="Snow Birds",
+   ["id"]="R1",
+},
+-- Table: {70}
+{
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["name"]="Snow Birds",
+   ["id"]="R1",
+},
+}

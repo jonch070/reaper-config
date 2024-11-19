@@ -1,0 +1,17 @@
+C10018 "/Users/jonathankawchuk/Downloads/Lake Water_Juno_James Recording/ORS Lay In/media"
+F "2Beep-48K 24Bit.wav" 217214 0 1701497706 0
+D s 48000 n 1 l 0:01.502 i 24
+F Harp.01_02.wav 20866774 0 1701497706 0
+D y 2018-02-0 s 48000 n 1 r 1:00:00.000
+D l 2:24.028 i 24
+F "Juno Beach for ORS [chan 2].wav" 100787728 0 1701497715 0
+D y 2018-01-23 s 44100 n 1 l 12:41.806
+D i 24
+F MixPrint_01.wav 41222530 0 1701497712 0
+D y 2018-02-12 s 48000 n 2 r 1:00:00.000
+D l 2:22.320 i 24
+F Perc1.02_03.wav 20682846 0 1701497710 0
+D y 2018-02-0 s 48000 n 1 r 1:00:00.000
+D l 2:22.757 i 24
+F Sentiment.mp3 1705203 0 1701497712 0
+D s 48000 n 2 l 1:43.901 i 131k

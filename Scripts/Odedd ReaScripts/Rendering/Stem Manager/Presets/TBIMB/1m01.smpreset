@@ -1,0 +1,442 @@
+return {
+-- Table: {1}
+{
+   ["stems"]={2},
+   ["settings"]={3},
+   ["version"]="1.8.2",
+},
+-- Table: {2}
+{
+   ["2MIX"]={4},
+   ["Strings 03"]={5},
+   ["Synth Drones"]={6},
+   ["Synth Basses"]={7},
+   ["Woodwinds"]={8},
+   ["Strings 01"]={9},
+   ["Dax and Wood"]={10},
+   ["Pitched Percussion"]={11},
+   ["Strings 02"]={12},
+   ["Effects"]={13},
+   ["Unpitched Percussion"]={14},
+   ["DX"]={15},
+},
+-- Table: {3}
+{
+   ["overwrite_without_asking"]=true,
+   ["wait_time"]=5,
+   ["renderaction"]=3,
+   ["render_setting_groups"]={16},
+   ["show_hidden_tracks"]=false,
+   ["reflect_on_add"]=0,
+   ["syncmode"]=0,
+   ["play_sound_when_done"]=false,
+},
+-- Table: {4}
+{
+   ["order"]=1,
+   ["sync"]=-1,
+   ["render_setting_group"]=1,
+},
+-- Table: {5}
+{
+   ["order"]=8,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {6}
+{
+   ["order"]=10,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {7}
+{
+   ["order"]=11,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {8}
+{
+   ["order"]=3,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {9}
+{
+   ["order"]=6,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {10}
+{
+   ["order"]=9,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {11}
+{
+   ["order"]=5,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {12}
+{
+   ["order"]=7,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {13}
+{
+   ["order"]=12,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {14}
+{
+   ["order"]=4,
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+},
+-- Table: {15}
+{
+   ["order"]=2,
+   ["sync"]=-1,
+   ["render_setting_group"]=1,
+},
+-- Table: {16}
+{
+   {17},
+   {18},
+   {19},
+   {20},
+   {21},
+   {22},
+   {23},
+   {24},
+   {25},
+},
+-- Table: {17}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=true,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={26},
+   ["filename"]="",
+   ["description"]="MIX",
+   ["skip_empty_stems"]=false,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={27},
+   ["actions_to_run"]={28},
+   ["selected_regions"]={29},
+   ["timeSelStart"]=0,
+   ["render_preset"]="SM Mix",
+   ["select_regions"]=true,
+   ["run_actions_after"]=false,
+},
+-- Table: {18}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=true,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={30},
+   ["filename"]="",
+   ["description"]="skinny stems dry",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={31},
+   ["actions_to_run"]={32},
+   ["selected_regions"]={33},
+   ["timeSelStart"]=0,
+   ["render_preset"]="SM Skinny Stems Dry",
+   ["select_regions"]=true,
+   ["run_actions_after"]=false,
+},
+-- Table: {19}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=true,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={34},
+   ["filename"]="",
+   ["description"]="skinny stems wet",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={35},
+   ["actions_to_run"]={36},
+   ["selected_regions"]={37},
+   ["timeSelStart"]=0,
+   ["render_preset"]="SM Skinny Stems Wet",
+   ["select_regions"]=true,
+   ["run_actions_after"]=false,
+},
+-- Table: {20}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=false,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={38},
+   ["filename"]="",
+   ["description"]="",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={39},
+   ["actions_to_run"]={40},
+   ["selected_regions"]={41},
+   ["timeSelStart"]=0,
+   ["select_regions"]=false,
+   ["run_actions_after"]=false,
+},
+-- Table: {21}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=false,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={42},
+   ["filename"]="",
+   ["description"]="",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={43},
+   ["actions_to_run"]={44},
+   ["selected_regions"]={45},
+   ["timeSelStart"]=0,
+   ["select_regions"]=false,
+   ["run_actions_after"]=false,
+},
+-- Table: {22}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=false,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={46},
+   ["filename"]="",
+   ["description"]="",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={47},
+   ["actions_to_run"]={48},
+   ["selected_regions"]={49},
+   ["timeSelStart"]=0,
+   ["select_regions"]=false,
+   ["run_actions_after"]=false,
+},
+-- Table: {23}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=false,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={50},
+   ["filename"]="",
+   ["description"]="",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={51},
+   ["actions_to_run"]={52},
+   ["selected_regions"]={53},
+   ["timeSelStart"]=0,
+   ["select_regions"]=false,
+   ["run_actions_after"]=false,
+},
+-- Table: {24}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=false,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={54},
+   ["filename"]="",
+   ["description"]="",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={55},
+   ["actions_to_run"]={56},
+   ["selected_regions"]={57},
+   ["timeSelStart"]=0,
+   ["select_regions"]=false,
+   ["run_actions_after"]=false,
+},
+-- Table: {25}
+{
+   ["select_markers"]=false,
+   ["override_filename"]=false,
+   ["run_actions"]=false,
+   ["make_timeSel"]=false,
+   ["timeSelEnd"]=0,
+   ["actions_to_run_after"]={58},
+   ["filename"]="",
+   ["description"]="",
+   ["skip_empty_stems"]=true,
+   ["put_in_folder"]=false,
+   ["ignore_warnings"]=false,
+   ["folder"]="",
+   ["selected_markers"]={59},
+   ["actions_to_run"]={60},
+   ["selected_regions"]={61},
+   ["timeSelStart"]=0,
+   ["select_regions"]=false,
+   ["run_actions_after"]=false,
+},
+-- Table: {26}
+{
+},
+-- Table: {27}
+{
+},
+-- Table: {28}
+{
+},
+-- Table: {29}
+{
+   {62},
+},
+-- Table: {30}
+{
+},
+-- Table: {31}
+{
+},
+-- Table: {32}
+{
+},
+-- Table: {33}
+{
+   {63},
+},
+-- Table: {34}
+{
+},
+-- Table: {35}
+{
+},
+-- Table: {36}
+{
+},
+-- Table: {37}
+{
+   {64},
+},
+-- Table: {38}
+{
+},
+-- Table: {39}
+{
+},
+-- Table: {40}
+{
+},
+-- Table: {41}
+{
+},
+-- Table: {42}
+{
+},
+-- Table: {43}
+{
+},
+-- Table: {44}
+{
+},
+-- Table: {45}
+{
+},
+-- Table: {46}
+{
+},
+-- Table: {47}
+{
+},
+-- Table: {48}
+{
+},
+-- Table: {49}
+{
+},
+-- Table: {50}
+{
+},
+-- Table: {51}
+{
+},
+-- Table: {52}
+{
+},
+-- Table: {53}
+{
+},
+-- Table: {54}
+{
+},
+-- Table: {55}
+{
+},
+-- Table: {56}
+{
+},
+-- Table: {57}
+{
+},
+-- Table: {58}
+{
+},
+-- Table: {59}
+{
+},
+-- Table: {60}
+{
+},
+-- Table: {61}
+{
+},
+-- Table: {62}
+{
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["id"]="R1",
+   ["name"]="Snow Birds",
+},
+-- Table: {63}
+{
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["id"]="R1",
+   ["name"]="Snow Birds",
+},
+-- Table: {64}
+{
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["id"]="R1",
+   ["name"]="Snow Birds",
+},
+}

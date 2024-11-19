@@ -1,0 +1,100 @@
+﻿---------------------------------------------------------------------------------------
+  HeDaMixer Graph VIP - Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v2.1.4 (2024-06-26)
+  # fix crash when setting grid step to 0. thanks @ANDYZ [p=2791976]
+  
+* v2.1.3 (2024-06-23)
+  # Draw MonitorFX MASTER graph even if there is no tab
+  # fix crash if no track is selected when right clicking compare button to save track's current graph data
+  # fix compare function not working when using plugin instead of track vumeters.
+
+* v2.1.2 (2023-10-07)
+  # fix: filled areas draw lines instead when triangles are 1 pixel wide
+
+* v2.1.1 (2023-10-04)
+  # fix: automatically create a tab for selected tracks if needed when choosing LUFS mode. Thanks @X-Raym
+  # fix: optimize region draw. Thanks @X-Raym
+
+* v2.1.0 (2023-08-10)
+  + REAPER 7 support
+
+* v2.0.2 (2023-05-05)
+  # bug fix storing VUmode in the tab
+  + right click the VUmode button to reassign all tracks in tab the VUmode
+  # fix scroll TCP track into view when selecting track. 
+  + Consecutive track selection scrolls envelopes of the track into view.
+
+* v2.0.1 (2023-05-02)
+  # bug fix in VUmode menu
+  # default VUmode changed to LUFS-S(current)
+  + Settings added option to disable automatic set of VUmode for tracks when adding a tab
+
+* v2.0.0 (2023-04-30)
+  + Code optimizations. Less CPU usage.
+  + Get loudness data from all tabs, not only active tab. Quick switch from tab to tab without losing loudness graphs.
+  + VU meters mode(6.36+) support (more efficient that using sends to dpmeter or Loudness meter)
+  + Autoload/save graph to file. Do not lose current graph when switching projects
+  + Selectable curves to select track Ctrl+click to select multiple. Alt+click to clear track's curve.
+  + Integrated Loudness evolution display for master track
+  + Loudnes Range evolution display for master track
+  + Dynamic Range display for master track (experimental)
+  + IL, ML, SL, DR for master track, and VU modes(peaks, RMS, LUFS-M, LUFS-S) for tracks.
+  + Compare button: right click to save snapshot of the current track loudness curve and left click to enable disable visualization of the snapshot
+  + Zoom All button from =START to =END
+  + Zoom Loop button 
+  + Zoom Lock or unlock for Synchronization with arrange
+  + New Settings window for Graph related options
+  + Settings: Refresh time. Allows for less graph updates to save CPU for graph display.
+  + Settings: Show/Hide Regions and Markers
+  + Settings: Filled graph 
+  + Settings: Filled graph for Master track
+  + Settings: play cursor color, master graph default color.
+  + Settings: Show 3 reference levels, custom color, on/off and with over-level color change
+  + Settings: Show/hide grid
+  + Settings: PrePlay. Positions cursor 3 seconds before clicked on graph, to allow for SL buffer to calculate correct value
+  + Double click on graph to play/pause at position
+  + Mouse wheel over right scale top and bottom areas, to adjust vertical scale top and bottom (must be in LUFS mode, not EBU modes)
+
+* v1.0pre8 (2022-12-12)
+  + Settings: Cockos JS Loudness plugin name: default to "JS:Loudness Meter Peak/RMS/LUFS (Cockos)"
+
+* v1.0pre7 (2022-05-24)
+  + EBU+9, EBU+18 scales
+  + Setting: Monitor FX dpmeter name to use for master Graph
+  + Cockos loudness meter plugin support
+
+* v1.0pre6 (2020-04-18)
+  + "Lock" selected button to show on graph always the same tracks after changing track selections
+  # fix right dragging to clear part of the graph was crashing in some situations
+
+* v1.0pre5 (2020-03-22)
+  + Independent graph vertical scale (min/max) from the meters
+  + CTRL+mouse wheel upper half of graph to change maximum value
+  + CTRL+mouse wheel lower half of graph to change minimum value
+  # fix selected SL +ML mode
+
+* v1.0pre4 (2020-03-13)
+  # small fixes
+
+* v1.0pre3 (2020-03-10)
+  # fix: crash when checking for selected tracks that no longer exists
+  + graph width button: Left click: to adjust width of graph area to arrange width. Right click: continuoulsy adjust. (Requires js_ReascriptAPI)
+  + clear graph button
+  # use font 2 (smaller) for markers/regions
+
+* v1.0pre2 (2019-08-26)
+  # fix for monitorFX chain with dpmeter4
+
+* v1.0pre1 (2019-08-23)
+  + initial integration in HeDaMixer
+  + Loudness Graphs (ML, SL)
+  + Master Track graph display on/off
+  + Selected tracks graph isolation
+  + Regions and markers display on graph
+  + Right drag to erase graph area
+  + Left drag to define time selection
+  + Left click to go to time
+  + Mouse wheel zoom in/out
+  

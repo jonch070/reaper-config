@@ -1,0 +1,11 @@
+desc:LBX_SYSXBlocker
+
+@init
+
+maxlen = 1024*1024;
+
+@block
+
+while((recvlen = midirecv_buf(offset, buf, maxlen)) > 0) (
+  buf[0] != 0xF0 ? midisend_buf(offset, buf, recvlen);
+);

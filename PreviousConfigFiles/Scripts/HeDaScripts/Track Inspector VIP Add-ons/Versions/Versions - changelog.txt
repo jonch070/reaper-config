@@ -1,0 +1,34 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v0.6.1 (2022-05-26)
+  # Different custom buttons for old TrackVersions and addon Versions panels
+
+* v0.6.0 (2021-12-05)
+  + actions: Versions switch actions for Items, envelopes, fxchains
+  # fix crash on tempo envelope version switching
+
+* v0.5.4 (2021-11-05)
+  # support in multiple instances
+  + setting: Show selected track info
+  # mark current version in the versions lists
+ 
+* v0.5.3 (2021-10-30)
+  + Lock button for envelopes
+  + Setting: Show lock buttons
+
+* v0.5.2 (2021-10-25)
+  # increment suffix if file exists when adding versions. Thanks @HighVoltage
+  # fix renaming when there is only one version
+
+* v0.5.1 (2021-10-24)
+  # small fix FX Chains versions
+
+* v0.5.0 (2021-10-23)
+  + Item Versions
+  + Envelope Versions
+  + Tempo Versions
+  + FXChain Versions
+  + Track Groups
+  + Lock Item Version button

@@ -1,0 +1,19 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v0.1.2 (2023-05-30)
+  + Button to toggle between show all tracks and show only archived
+
+* v0.1.1 (2023-05-29)
+  # fix: always overwrite the file when archiving to External
+
+* v0.1.0 (2023-05-29)
+  + Archive. Archives the tracks inside the RPP file. Just mutes, hides the track and sets the FXChain to offline.
+  + Archive to External. Arhives track and removes FXChain saving it to a file in project's subfolder
+  + Archive to Global. Arhives track and removes FXChain saving it to a folder inside scripts configuration which is the same for all projects. Good for using with project templates where the tracks have always the same IDs.
+  + Panel menu setting: Hide tracks when archiving
+  + Panel menu setting: Locks tracks when archiving
+  + Panel menu setting: Ask to overwrite Global files. By default it doesn't overwrite the global files if you are archiving a track that already has a global file saved previously. If you want to update the template, you can enable this and say yes to overwrite when archiving the track. 
+
+

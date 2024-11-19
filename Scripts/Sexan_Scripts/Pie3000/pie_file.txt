@@ -1,0 +1,52 @@
+{
+ arrangeempty = {
+  name = "ARRANGE EMPTY",
+  RADIUS = 150,
+  guid = "{67A0263A-774C-4649-817C-BCCCAD8EFEF9}",
+ },
+ arrange = {
+  name = "ARRANGE",
+  RADIUS = 150,
+  guid = "{8CD5EC76-93D7-9548-B31F-792E9652C964}",
+ },
+ tcp = {
+  name = "TCP",
+  RADIUS = 150,
+  guid = "{B5C27989-B99A-D041-A79E-106B7A389982}",
+ },
+ tcpempty = {
+  name = "TCP EMPTY",
+  RADIUS = 150,
+  guid = "{6AF2A8C7-409B-4944-A02A-4A9B9D3A3BD7}",
+ },
+ envcp = {
+  name = "ENV CP",
+  RADIUS = 150,
+  guid = "{90B7AFEE-5C5A-CF49-BB46-0F683B9F9371}",
+ },
+ trans = {
+  name = "TRANSPORT",
+  RADIUS = 150,
+  guid = "{39A8585C-A161-E34E-8D9A-45BF9BFE9499}",
+ },
+ item = {
+  name = "ITEM",
+  RADIUS = 150,
+  guid = "{4FA28B02-83C4-4B4A-92CE-4E7D69BB4E2A}",
+ },
+ mcpempty = {
+  name = "MCP EMPTY",
+  RADIUS = 150,
+  guid = "{CA4B57B9-E52F-8D4D-B038-71566970C966}",
+ },
+ envelope = {
+  name = "ENVELOPE",
+  RADIUS = 150,
+  guid = "{50DE53B9-61CA-1B46-822A-D8E8F17DD9ED}",
+ },
+ mcp = {
+  name = "MCP",
+  RADIUS = 150,
+  guid = "{26335B41-BAF9-0747-8CF2-5921C798E7C2}",
+ },
+}

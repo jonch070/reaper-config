@@ -1,0 +1,83 @@
+// (C) 2007, Michael Gruhn.
+
+// NO WARRANTY IS GRANTED. THIS PLUG-IN IS PROVIDED ON AN "AS IS" BASIS, WITHOUT
+// WARRANTY OF ANY KIND. NO LIABILITY IS GRANTED, INCLUDING, BUT NOT LIMITED TO,
+// ANY DIRECT OR INDIRECT,  SPECIAL,  INCIDENTAL OR CONSEQUENTIAL DAMAGE ARISING
+// OUT OF  THE  USE  OR INABILITY  TO  USE  THIS PLUG-IN,  COMPUTER FAILTURE  OF
+// MALFUNCTION INCLUDED.  THE USE OF THE SOURCE CODE,  EITHER  PARTIALLY  OR  IN
+// TOTAL, IS ONLY GRANTED,  IF USED IN THE SENSE OF THE AUTHOR'S INTENTION,  AND
+// USED WITH ACKNOWLEDGEMENT OF THE AUTHOR. FURTHERMORE IS THIS PLUG-IN A  THIRD
+// PARTY CONTRIBUTION,  EVEN IF INCLUDED IN REAPER(TM),  COCKOS INCORPORATED  OR
+// ITS AFFILIATES HAVE NOTHING TO DO WITH IT.  LAST BUT NOT LEAST, BY USING THIS
+// PLUG-IN YOU RELINQUISH YOUR CLAIM TO SUE IT'S AUTHOR, AS WELL AS THE CLAIM TO
+// ENTRUST SOMEBODY ELSE WITH DOING SO.
+
+desc:Waveshaping Distortion (ZenoMOD)
+//tags: processing distortion waveshaper zeno
+//author: LOSER , Zeno
+
+slider1:0<0,100,.1>Distortion (%)
+slider2:0<-35,0,0.1>-Volume Compensation (dB
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+@init
+AMP_dB_i=1/8.68588963806504;
+AMP_dB_o=8.68588963806504*0.7848707453;
+AMP_comp=AMP_dB_o*(3/$pi);
+db=slider2;
+
+
+
+@slider
+hdistr = min(slider1/100,.999);
+foo = 2*hdistr/(1-hdistr);
+ddb=0.0;
+slider2= -slider1/AMP_comp;
+
+
+@block
+cnt=0;
+ddb=0.0;
+
+db_chg_splpos=slider_next_chg(1, tgtdb);
+db_chg_splpos > 0 ? 
+(
+  db=slider2;
+) : (
+  tgtdb = slider2;
+  db_chg_splpos = samplesblock;
+);
+
+ddb=(tgtdb-db)/db_chg_splpos;
+  
+
+@sample
+spl0 = min(max(spl0,-1),1);
+spl1 = min(max(spl1,-1),1);
+
+spl0 = (1+foo)*spl0/(1+foo*abs(spl0));
+spl1 = (1+foo)*spl1/(1+foo*abs(spl1));
+
+cnt == db_chg_splpos ? 
+(
+  ddb=0.0;
+  db_chg_splpos=slider_next_chg(1, tgtdb);
+  db_chg_splpos > cnt ? 
+  (
+    ddb=(tgtdb-db)/(db_chg_splpos-cnt);
+  );
+);
+
+adj=exp(db*AMP_DB_i);
+
+spl0 *= adj;
+spl1 *= adj;
+
+db += ddb;
+cnt += 1;
+
+

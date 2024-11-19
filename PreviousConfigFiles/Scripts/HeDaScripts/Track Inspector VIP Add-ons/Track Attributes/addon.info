@@ -1,0 +1,17 @@
+local info = {
+    ["name"] = "Track Attributes",
+    ["description"] = "Copy and Paste Track Attributes",
+    ["author"] = "HeDa",
+    ["license"] = "",
+    ["deps"] = "",
+    ["TIversion"] = "2.0.0",
+    ["deps"] = "",
+    ["location"] = "addons",
+    ["warning"] = "",
+    ["doc_url"] = "",
+    ["tracker_url"] = "",
+    ["link"] = "",
+    ["category"] = "panels",
+}
+
+return info

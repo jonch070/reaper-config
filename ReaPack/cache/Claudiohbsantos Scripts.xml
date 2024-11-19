@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" commit="bf4b8cc6ddae73ceae682b44498d5a59faa28ddb" name="Claudiohbsantos Scripts">
+  <category name="DBManager">
+    <reapack name="Reapack_Header.lua" type="script" desc="DBManager">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 DBManager is a tool designed to help organize and maintain Reaper Media Explorer Databases. It can help you import and export databases, add sounds to multiple databases at once and perform basic maintenance tasks such as removing duplicates and redirecting paths to a new location in the event of a library move. Uses DBAssistant to make changes - https://github.com/Claudiohbsantos/DBAssistant . The executable will be automatically downloaded upon installation. Depends on JS Reascript API and Lokasenna GUI Library v2.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2020-05-07T15:56:25Z">
+        <changelog><![CDATA[- Bug: crash when attempting to paste/import shortcuts without a selected db on list]]></changelog>
+        <source main="main" file="DBManager.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/DBManager.lua</source>
+        <source file="lua_modules/json.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/lua_modules/json.lua</source>
+        <source file="reascript_modules/DBM_popups.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/reascript_modules/DBM_popups.lua</source>
+        <source file="reascript_modules/DBM_helper.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/reascript_modules/DBM_helper.lua</source>
+        <source file="reascript_modules/DBM_GUI.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/reascript_modules/DBM_GUI.lua</source>
+        <source file="reascript_modules/DBM_actions.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/reascript_modules/DBM_actions.lua</source>
+        <source file="Documentation/Help.html">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/Documentation/Help.html</source>
+        <source file="Documentation/configTemplate.json">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/Documentation/configTemplate.json</source>
+        <source file="changelog.md">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/changelog.md</source>
+        <source platform="windows" file="dbassistant.exe">https://github.com/Claudiohbsantos/DBAssistant/releases/download/v0.3.6/dbassistant.exe</source>
+        <source platform="darwin" file="dbassistant">https://github.com/Claudiohbsantos/DBAssistant/releases/download/v0.3.6/dbassistant</source>
+        <source file="dbassistant_changelog.md">https://github.com/Claudiohbsantos/DBAssistant/releases/download/v0.3.6/changelog.md</source>
+        <source platform="darwin" file="osx_launchers/osx_add.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/osx_launchers/osx_add.sh</source>
+        <source platform="darwin" file="osx_launchers/osx_deduplicate.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/osx_launchers/osx_deduplicate.sh</source>
+        <source platform="darwin" file="osx_launchers/osx_export.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/osx_launchers/osx_export.sh</source>
+        <source platform="darwin" file="osx_launchers/osx_version.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/4b11437d21080f2fd3531c19dbc6854ada64be76/DBManager/osx_launchers/osx_version.sh</source>
+      </version>
+      <version name="1.12" author="Claudiohbsantos" time="2020-05-07T16:02:24Z">
+        <changelog><![CDATA[- Bug: crash when attempting to paste/import shortcuts without a selected db on list]]></changelog>
+        <source main="main" file="DBManager.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/DBManager.lua</source>
+        <source file="lua_modules/json.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/lua_modules/json.lua</source>
+        <source file="reascript_modules/DBM_popups.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/reascript_modules/DBM_popups.lua</source>
+        <source file="reascript_modules/DBM_helper.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/reascript_modules/DBM_helper.lua</source>
+        <source file="reascript_modules/DBM_GUI.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/reascript_modules/DBM_GUI.lua</source>
+        <source file="reascript_modules/DBM_actions.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/reascript_modules/DBM_actions.lua</source>
+        <source file="Documentation/Help.html">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/Help.html</source>
+        <source file="Documentation/images/CreateNewDialog.png">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/images/CreateNewDialog.png</source>
+        <source file="Documentation/images/ExportDialog.png">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/images/ExportDialog.png</source>
+        <source file="Documentation/images/Interface.png">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/images/Interface.png</source>
+        <source file="Documentation/images/addDialog.png">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/images/addDialog.png</source>
+        <source file="Documentation/images/folders.png">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/images/folders.png</source>
+        <source file="Documentation/images/redirectPath.png">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/images/redirectPath.png</source>
+        <source file="Documentation/images/unsavedWarning.png">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/images/unsavedWarning.png</source>
+        <source file="Documentation/configTemplate.json">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/Documentation/configTemplate.json</source>
+        <source file="changelog.md">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/changelog.md</source>
+        <source platform="windows" file="dbassistant.exe">https://github.com/Claudiohbsantos/DBAssistant/releases/download/v0.3.6/dbassistant.exe</source>
+        <source platform="darwin" file="dbassistant">https://github.com/Claudiohbsantos/DBAssistant/releases/download/v0.3.6/dbassistant</source>
+        <source file="dbassistant_changelog.md">https://github.com/Claudiohbsantos/DBAssistant/releases/download/v0.3.6/changelog.md</source>
+        <source platform="darwin" file="osx_launchers/osx_add.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/osx_launchers/osx_add.sh</source>
+        <source platform="darwin" file="osx_launchers/osx_deduplicate.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/osx_launchers/osx_deduplicate.sh</source>
+        <source platform="darwin" file="osx_launchers/osx_export.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/osx_launchers/osx_export.sh</source>
+        <source platform="darwin" file="osx_launchers/osx_version.sh">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/bf4b8cc6ddae73ceae682b44498d5a59faa28ddb/DBManager/osx_launchers/osx_version.sh</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="JSFX">
+    <reapack name="CS Channel 32 Channel Mixer.jsfx" type="effect" desc="CS Channel 32 Channel Mixer">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS Channel 32 Channel Mixer\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-07-02T20:59:21Z">
+        <changelog><![CDATA[- Initial Release ]]></changelog>
+        <source>https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7e3f24c6792a3b903a8c37e346718204e133b016/JSFX/CS%20Channel%2032%20Channel%20Mixer.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="CS Channel Router.jsfx" type="effect" desc="CS Channel Router">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS Channel Router\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-07-02T20:59:21Z">
+        <changelog><![CDATA[- Initial Release ]]></changelog>
+        <source>https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7e3f24c6792a3b903a8c37e346718204e133b016/JSFX/CS%20Channel%20Router.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="CS LR to Center Channel Send (Ch 3 Mixer).jsfx" type="effect" desc="CS LR to Center Channel Send (Ch 3 Mixer)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS LR to Center Channel Send (Ch 3 Mixer)\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-07-02T20:59:21Z">
+        <changelog><![CDATA[- Initial Release ]]></changelog>
+        <source>https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7e3f24c6792a3b903a8c37e346718204e133b016/JSFX/CS%20LR%20to%20Center%20Channel%20Send%20(Ch%203%20Mixer).jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="CS Stereo Phase Meter.jsfx" type="effect" desc="CS Stereo Phase Meter">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS Stereo Phase Meter\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.2" author="Claudiohbsantos" time="2018-07-02T21:00:25Z">
+        <changelog><![CDATA[- Initial Release ]]></changelog>
+        <source>https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d29f782d18f2b644b18a1d4aa442570cd6bfdbd5/JSFX/CS%20Stereo%20Phase%20Meter.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="CS Surround Channel Order Converter.jsfx" type="effect" desc="CS Surround Channel Order Converter">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS Surround Channel Order Converter\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-07-02T20:59:21Z">
+        <changelog><![CDATA[- Initial Release ]]></changelog>
+        <source>https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7e3f24c6792a3b903a8c37e346718204e133b016/JSFX/CS%20Surround%20Channel%20Order%20Converter.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="CS Surround LFE Send.jsfx" type="effect" desc="CS Surround LFE Send">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS Surround LFE Send\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-07-02T20:59:21Z">
+        <changelog><![CDATA[- Initial Release ]]></changelog>
+        <source>https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7e3f24c6792a3b903a8c37e346718204e133b016/JSFX/CS%20Surround%20LFE%20Send.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Automation">
+    <reapack name="CS_ConvertVolumeAutomationFadesToItemFades.lua" type="script" desc="Convert Volume Automation Fades To Item Fades">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Convert Volume Automation Fades To Item Fades\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-03-12T18:31:35Z">
+        <changelog><![CDATA[- Renamed]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/101453266e5cb0516100fba848a87d1bad008eea/Lua/Automation/CS_ConvertVolumeAutomationFadesToItemFades.lua</source>
+      </version>
+      <version name="1.21" author="Claudiohbsantos" time="2018-03-13T19:37:23Z">
+        <changelog><![CDATA[- Fixed cases in which there are two overlapping/very close points at the low end of the fade. ]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/77afac05871a9f00cd1a8aa2087a0a1c77f5d527/Lua/Automation/CS_ConvertVolumeAutomationFadesToItemFades.lua</source>
+      </version>
+      <version name="1.22" author="Claudiohbsantos" time="2018-03-13T19:49:35Z">
+        <changelog><![CDATA[- Fixed Problem with items with fade out but no fade in]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/be4cf3a7f1de4ee77df378f413acc6ae604c792b/Lua/Automation/CS_ConvertVolumeAutomationFadesToItemFades.lua</source>
+      </version>
+      <version name="1.23" author="Claudiohbsantos" time="2018-03-13T20:02:11Z">
+        <changelog><![CDATA[- Script now removes extra points in the threshold area to prevent script from chaning fade on retriggering.]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/005a13b5735a07b4a69301a5769563c54f9c9ab2/Lua/Automation/CS_ConvertVolumeAutomationFadesToItemFades.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Reset Volume Envelope from selected Tracks.lua" type="script" desc="CS_Reset Volume Envelope from selected Tracks">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Reset Volume Envelope from selected Tracks\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Removes all Volume envelope points from track. Keep in mind it doesn't remove automation items.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-03-11T20:17:54Z">
+        <changelog><![CDATA[- initial release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f27cb52a2ace901e26ed63c87830c568ca0f9d5/Lua/Automation/CS_Reset%20Volume%20Envelope%20from%20selected%20Tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Set All Track Envelopes To Fader Scaling.lua" type="script" desc="Set All Track Envelopes To Fader Scaling">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set All Track Envelopes To Fader Scaling\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab \sa180\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0beta" author="Claudiohbsantos" time="2017-07-26T19:50:48Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/30dd95905da3a1336be3ec4a4435ed7647a7d08a/Lua/Automation/CS_Set%20All%20Track%20Envelopes%20To%20Fader%20Scaling.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Editing">
+    <reapack name="CS_Copy selected item before all markers within time selection.lua" type="script" desc="Copy selected item before all markers within time selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Copy selected item before all markers within time selection\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Copy selected item before all markers within time selection/CS_Copy selected item before all markers within time selection.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Copy%20selected%20item%20before%20all%20markers%20within%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Copy Take Volume Envelope to Track Volume Envelope.lua" type="script" desc="Copy Take Volume Envelope to Track Volume Envelope">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Copy Take Volume Envelope to Track Volume Envelope\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Updated Dependency Loading]]></changelog>
+        <source main="main" file="CS_Copy Take Volume Envelope to Track Volume Envelope/CS_Copy Take Volume Envelope to Track Volume Envelope.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Copy%20Take%20Volume%20Envelope%20to%20Track%20Volume%20Envelope.lua</source>
+        <source file="CS_Copy Take Volume Envelope to Track Volume Envelope/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Copy Track Volume Envelope to Selected Takes and reset track envelope.lua" type="script" desc="CS_Copy Track Volume Envelope to Selected Takes and reset track envelope">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Copy Track Volume Envelope to Selected Takes and reset track envelope\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script copies the volume envelope from the item track and pastes it onto the selected take volume envelope, overwriting it if it already exists. The Track volume envelope in the section is reset to 0.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-28T06:06:24Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/c4316dcae28321d801d45912c6c1caf38b3e81c1/Lua/Editing/CS_Copy%20Track%20Volume%20Envelope%20to%20Selected%20Takes%20and%20reset%20track%20envelope.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Edit Bottom Item to Match Edits in selected items on top track.lua" type="script" desc="CS_Edit Bottom Item to Match Edits in selected items on top track">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Edit Bottom Item to Match Edits in selected items on top track\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script mirrors the cuts and fades on items on the top track onto a long item below them. Very useufl to crate quick layering of atmos and pads once you've edited one of the layers.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Instructions:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Select items on 2 tracks (tracks don't need to be contiguous).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Make sure there is only a single item selected on the bottom track\sa180\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-27T17:54:00Z">
+        <changelog><![CDATA[--  Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/21c74d235930306354fa9e43f254801d04e749f6/Lua/Editing/CS_Edit%20Bottom%20Item%20to%20Match%20Edits%20in%20selected%20items%20on%20top%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Extend edges in both directions fading from time selection.lua" type="script" desc="CS_Extend edges in both directions fading from time selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Extend edges in both directions fading from time selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Extends both clip edges, creating fades if there is a time selection within the clip\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-28T06:06:24Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/c4316dcae28321d801d45912c6c1caf38b3e81c1/Lua/Editing/CS_Extend%20edges%20in%20both%20directions%20fading%20from%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Extend Item to Full Length.lua" type="script" desc="CS_Extend Item to Full Length">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Extend Item to Full Length\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Extends selected items to it's full length in place.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="2.0" author="Claudiohbsantos" time="2017-03-27T17:54:00Z">
+        <changelog><![CDATA[- fixed bug when item is in beginning of timeline]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/21c74d235930306354fa9e43f254801d04e749f6/Lua/Editing/CS_Extend%20Item%20to%20Full%20Length.lua</source>
+      </version>
+      <version name="2.1" author="Claudiohbsantos" time="2017-04-02T17:26:45Z">
+        <changelog><![CDATA[- Script now keeps item selected after extending]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/9db484f0d5d21f89fe6ffb5c0654e7df683baf2b/Lua/Editing/CS_Extend%20Item%20to%20Full%20Length.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Extend selected item to fill time Selection.lua" type="script" desc="CS_Extend selected item to fill time Selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Extend selected item to fill time Selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Extends selected item to fill time selection. Time selection must overlap at least partially with selected item.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-29T07:16:04Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/81bb4b11c63798a4eb2e40e1abf2086ad47eb14b/Lua/Editing/CS_Extend%20selected%20item%20to%20fill%20time%20Selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Implode two monos into stereo.lua" type="script" desc="CS_Implode two monos into stereo">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Implode two monos into stereo\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Implodes two clips on separate tracks to a single stereo clip on te top track.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab keeps handles on both clips\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab prevents take envelope from being glue to file\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab keeps fades intact\sa180\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.3" author="Claudiohbsantos" time="2017-03-27T16:55:48Z">
+        <changelog><![CDATA[-- Prevents take envelope from being glued
+-- Prevents neighboring clips from having their fades altered]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b66a898fe7f950750e45ad018f52149f98cafd58/Lua/Editing/CS_Implode%20two%20monos%20into%20stereo.lua</source>
+      </version>
+      <version name="1.4" author="Claudiohbsantos" time="2018-05-03T03:47:52Z">
+        <changelog><![CDATA[-- Added Some error Catching to prevent errors when no items are selected.
+-- This is script is being made obsolete. Check the new ]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/206a3c2d1f7eaa03cc2ad02c8b6e4ddd10014c14/Lua/Editing/CS_Implode%20two%20monos%20into%20stereo.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Label REV if it has been reversed.lua" type="script" desc="CS_Label REV if it has been reversed">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Label REV if it has been reversed\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Labels a take name with the suffix {\b REV} if it has been reversed. Removes the label if it is unreversed.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-28T06:06:24Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/c4316dcae28321d801d45912c6c1caf38b3e81c1/Lua/Editing/CS_Label%20REV%20if%20it%20has%20been%20reversed.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Move Cursor To Middle of Time Selection.lua" type="script" desc="CS_Move Cursor To Middle of Time Selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Move Cursor To Middle of Time Selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Moves edit cursor to middle of current time selection\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Editing/CS_Move%20Cursor%20To%20Middle%20of%20Time%20Selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Nudge Cursor or Item left by grid division based on Item Selection.lua" type="script" desc="CS_Nudge Cursor or Item left by grid division based on Item Selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Nudge Cursor or Item left by grid division based on Item Selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If there is at least 1 item selected, the script nudges the items left by grid division. Otherwise it nudges the edit cursor left by same ammount\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-27T17:54:00Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/21c74d235930306354fa9e43f254801d04e749f6/Lua/Editing/CS_Nudge%20Cursor%20or%20Item%20left%20by%20grid%20division%20based%20on%20Item%20Selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Nudge Cursor or Item right by grid division based on Item Selection.lua" type="script" desc="CS_Nudge Cursor or Item right by grid division based on Item Selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Nudge Cursor or Item right by grid division based on Item Selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If there is at least 1 item selected, the script nudges the items right by grid division. Otherwise it nudges the edit cursor right by same ammount\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-27T17:54:00Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/21c74d235930306354fa9e43f254801d04e749f6/Lua/Editing/CS_Nudge%20Cursor%20or%20Item%20right%20by%20grid%20division%20based%20on%20Item%20Selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Pro Tools Tab to Next Transient.lua" type="script" desc="CS_Pro Tools Tab to Next Transient">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Pro Tools Tab to Next Transient\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tab to Next Transient action mimicking the behaviour of the {\b Pro Tools DAW} action, which jumps to the next clip once the end of the current one is reached.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2017-03-27T16:34:25Z">
+        <changelog><![CDATA[- slight optimization]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/84b0bc424d9cb197d30cb67156180bed58952bf1/Lua/Editing/CS_Pro%20Tools%20Tab%20to%20Next%20Transient.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Pro Tools Tab to Previous Transient.lua" type="script" desc="CS_Pro Tools Tab to Previous Transient">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Pro Tools Tab to Previous Transient\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tab to transient that mimicks Pro Tools behaviour of jumping to previous clip once edge of clip is reached\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-27T16:34:25Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/84b0bc424d9cb197d30cb67156180bed58952bf1/Lua/Editing/CS_Pro%20Tools%20Tab%20to%20Previous%20Transient.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Remove Selected area of Item and select right portion.lua" type="script" desc="CS_Remove Selected area of Item and select right portion">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Remove Selected area of Item and select right portion\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Removes area within time selection of selected item and selects right portion of remaining clip Specially useful in custom actions, such as paired with Snap to Previous Clip to create an action that removes selected area and closes gap without moving the whole track.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-28T06:06:24Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/c4316dcae28321d801d45912c6c1caf38b3e81c1/Lua/Editing/CS_Remove%20Selected%20area%20of%20Item%20and%20select%20right%20portion.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Render as new take with handles removing labels and extensions.lua" type="script" desc="CS_Render as new take with handles removing labels and extensions and setting original FX offline">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Render as new take with handles removing labels and extensions\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This scripts renders the item into a new take, keeping handles outside of the current item edges. After rendereing, it removes extensions such as .wav, render, -glued, and such. The fx in the original take are set to offline.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Editing/CS_Render%20as%20new%20take%20with%20handles%20removing%20labels%20and%20extensions.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Shrink edges in both directions fading from time selection.lua" type="script" desc="CS_Shrink edges in both directions fading from time selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Shrink edges in both directions fading from time selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Shrinks both clip edges, creating fades if there is a time selection within the clip\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-03-28T06:06:24Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/c4316dcae28321d801d45912c6c1caf38b3e81c1/Lua/Editing/CS_Shrink%20edges%20in%20both%20directions%20fading%20from%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Delete.lua" type="script" desc="Smart Delete">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Deletes based on mouse context\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.5" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Updated Dependency loading]]></changelog>
+        <source main="main" file="CS_Smart Delete/CS_Smart Delete.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Delete.lua</source>
+        <source file="CS_Smart Delete/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Fade.lua" type="script" desc="CS_Smart Fade">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Smart Fade\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b No Items Selected} When there are no items selected, the fade is applied to the Item under the Mouse, at the mouse position. If the Mouse is closer to the end of the item, a {\b Fade Out} is applied. If the Mouse is closer to the beginning of the item, a {\b Fade In} is applied. {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_noitems.gif"}}{\fldrslt{\ul
+No Items Selected
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b One Item Selected} When a single item is selected, the script behaves as follows (in order of highest priority to lowest):\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If there is a time selection covering part of the item, applies {\b SWS Fade in/out/In and out} depending on what part the time selection covers\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If there is no time selection or it doesn't overlap the item, {\b Fade in or out to mouse position}. Note that in this case the mouse doesn't have to be on top of the selected item.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_Single%20Item.gif"}}{\fldrslt{\ul
+1 Item Selected
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Two Items Selected} When two items are selected, the script behaves as follows (in order of highest priority to lowest):\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If time selection overlaps beginning or end of both, {\b Fade in} or {\b Fade Out}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If time selection overlaps the joint or gap between both items, {\b Extend Items to fill time selection and Fade}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If time selection doesn't overlap both items and mouse is not on top of items, {\b Fade overlap of items}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If time selection doesn't overlap both items and mouse is on top of items, {\b Fadein / fadeout}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i Mouse On Top} {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_2%20items%20No%20mouse.gif"}}{\fldrslt{\ul
+2 Items With Mouse
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i No Mouse On Top} {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_2%20items%20mouse%20on%20top%20difference.gif"}}{\fldrslt{\ul
+2 Items without Mouse
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i Comparing difference between mouse on top and not on top} {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_2%20items%20mouse%20on%20top%20difference.gif"}}{\fldrslt{\ul
+2 Items Comparison
+}}}
+ {\b Three Items Selected} When three Items are selected, the script behaves as follows (in order of highest priority to lowest)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If time selection is as big or bigger than center item, and is contained by outer items, {\b Extend center item to fill time selection and fade overlaps}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If time selection covers beginning or end of {\b all} items, {\b Fade in or Out to Time Selection}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If mouse is on top of item and it's position coincides with {\b all} selected items, {\b Fade in or Out to Mouse Position}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If all else is false, {\b fade overlaps between items}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_3%20items.gif"}}{\fldrslt{\ul
+3 Items Selected
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b Four or More Items Selected} When there are four or more items selected, the script behaves as follows (in order of highest priority to lowest)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If time selection covers beginning or end of {\b all} items, {\b Fade in or Out to Time Selection}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If mouse is on top of item and it's position coincides with {\b all} selected items, {\b Fade in or Out to Mouse Position}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If all else is false, {\b fade overlaps between items}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_Layers.gif"}}{\fldrslt{\ul
+4+ Items Selected
+}}}
+ {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SmartFade_Multiple%20Items.gif"}}{\fldrslt{\ul
+Multiple Selected
+}}}
+\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="3.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[--  Cleaned Up Code and Removed Dead Functions]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Fade.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Mute.lua" type="script" desc="Smart Mute">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Mutes based on mouse context\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Updated Dependencies]]></changelog>
+        <source main="main" file="CS_Smart Mute/CS_Smart Mute.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Mute.lua</source>
+        <source file="CS_Smart Mute/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Set Snap Offset.lua" type="script" desc="Smart Set Snap Offset">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Smart Set Snap Offset\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Trims behind item under mouse cursor,\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Updated Name]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Set%20Snap%20Offset.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Split Following Snapping.lua" type="script" desc="Smart Split - Following Snap">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Smart Split - Following Snap\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Splits item under mouse cursor at closest grid line\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Items always end deselected\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab If Mouse is on top of an item and enclosed by the time selection, split item at time selection edges\sa180\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Split%20Following%20Snapping.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Split.lua" type="script" desc="CS_Smart Split">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Smart Split\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Splits item under mouse cursor,\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.3" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Items always end deselected
+- If Mouse is on top of an item and enclosed by the time selection, split item at time selection edges]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Split.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Trim Left Edge.lua" type="script" desc="Smart Trim Left Edge">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Smart Trim Left Edge\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Trims behind item under mouse cursor,\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Updated Dependency loading]]></changelog>
+        <source main="main" file="CS_Smart Trim Left Edge/CS_Smart Trim Left Edge.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Trim%20Left%20Edge.lua</source>
+        <source file="CS_Smart Trim Left Edge/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Smart Trim Right Edge.lua" type="script" desc="CS_Smart Trim Right Edge">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Smart Trim Right Edge\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Trims behind item under mouse cursor,\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Updated Dependency loading]]></changelog>
+        <source main="main" file="CS_Smart Trim Right Edge/CS_Smart Trim Right Edge.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Editing/CS_Smart%20Trim%20Right%20Edge.lua</source>
+        <source file="CS_Smart Trim Right Edge/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Items">
+    <reapack name="CS_Item Disable Invert Phase.lua" type="script" desc="Item Disable Invert Phase">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Item Disable Invert Phase\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Items/CS_Item%20Disable%20Invert%20Phase.lua</source>
+      </version>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:13Z">
+        <changelog><![CDATA[- Updated Dependency loading]]></changelog>
+        <source main="main" file="CS_Item Disable Invert Phase/CS_Item Disable Invert Phase.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Items/CS_Item%20Disable%20Invert%20Phase.lua</source>
+        <source file="CS_Item Disable Invert Phase/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Item Disable LoopSource.lua" type="script" desc="Item Disable LoopSource">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Item Disable LoopSource\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Items/CS_Item%20Disable%20LoopSource.lua</source>
+      </version>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:13Z">
+        <changelog><![CDATA[-  Updated Dependency loading]]></changelog>
+        <source main="main" file="CS_Item Disable LoopSource/CS_Item Disable LoopSource.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Items/CS_Item%20Disable%20LoopSource.lua</source>
+        <source file="CS_Item Disable LoopSource/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Item Enable Invert Phase.lua" type="script" desc="Item Enable Invert Phase">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Item Enable Invert Phase\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Items/CS_Item%20Enable%20Invert%20Phase.lua</source>
+      </version>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:13Z">
+        <changelog><![CDATA[- Updated Dependency Loading]]></changelog>
+        <source main="main" file="CS_Item Enable Invert Phase/CS_Item Enable Invert Phase.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Items/CS_Item%20Enable%20Invert%20Phase.lua</source>
+        <source file="CS_Item Enable Invert Phase/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Item Enable LoopSource.lua" type="script" desc="Item Enable LoopSource">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Item Enable LoopSource\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Items/CS_Item%20Enable%20LoopSource.lua</source>
+      </version>
+      <version name="1.1" author="Claudiohbsantos" time="2018-05-18T23:51:13Z">
+        <changelog><![CDATA[- updated dependency loading]]></changelog>
+        <source main="main" file="CS_Item Enable LoopSource/CS_Item Enable LoopSource.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Items/CS_Item%20Enable%20LoopSource.lua</source>
+        <source file="CS_Item Enable LoopSource/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Select All item with same custom color as selected item.lua" type="script" desc="Select All item with same custom color as selected item">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Select All item with same custom color as selected item\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-06-06T14:35:51Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Select All item with same custom color as selected item/CS_Select All item with same custom color as selected item.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Items/CS_Select%20All%20item%20with%20same%20custom%20color%20as%20selected%20item.lua</source>
+        <source file="CS_Select All item with same custom color as selected item/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Select all items with same number of channels.lua" type="script" desc="Select all items with same number of channels">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Select all items with same number of channels\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-06-06T14:35:51Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Select all items with same number of channels/CS_Select all items with same number of channels.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Items/CS_Select%20all%20items%20with%20same%20number%20of%20channels.lua</source>
+        <source file="CS_Select all items with same number of channels/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Select all takes with volume below threshold.lua" type="script" desc="Select all active takes with take volume below threshold">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Select all active takes with take volume below threshold\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2019-04-17T22:18:14Z">
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/ecec2559110cce576d5a23b6a19314176c0b21ef/Lua/Items/CS_Select%20all%20takes%20with%20volume%20below%20threshold.lua</source>
+      </version>
+      <version name="1.2" author="Claudiohbsantos" time="2019-04-19T21:11:28Z">
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/ce744f62047426bab1d0e58060e3fcdd2c268795/Lua/Items/CS_Select%20all%20takes%20with%20volume%20below%20threshold.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Markers">
+    <reapack name="CS_Add First Marker that crosses item to the take name.lua" type="script" desc="Add First Marker that crosses item to the take name">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Add First Marker that crosses item to the take name\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-03T03:47:52Z">
+        <changelog><![CDATA[- ]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/206a3c2d1f7eaa03cc2ad02c8b6e4ddd10014c14/Lua/Markers/CS_Add%20First%20Marker%20that%20crosses%20item%20to%20the%20take%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Create Marker 0 - Blue.lua" type="script" desc="Create Marker 0 - Blue">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Create Marker 0 - Blue\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a blue marker 0 at edit cursor position. Can have many markers 0 created at different positions, and all are reset by action "Reset Marker 0 to Cursor Position", so it can be used to craeate temporary markers\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Markers/CS_Create%20Marker%200%20-%20Blue.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Create Marker 0 - Green.lua" type="script" desc="Create Marker 0 - Green">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Create Marker 0 - Green\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a green marker 0 at edit cursor position. Can have many markers 0 created at different positions, and all are reset by action "Reset Marker 0 to Cursor Position", so it can be used to craeate temporary markers\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Markers/CS_Create%20Marker%200%20-%20Green.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Create Marker 0.lua" type="script" desc="Create Marker 0 - Red">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Create Marker 0\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a marker with ID 0 and color red at the edit cursor position. Many markers with the same id can be added and removed at once with the "Reset Marker 0 to cursor position" action, so it's great to use as a temporary marker\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Markers/CS_Create%20Marker%200.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Create Markers at Snap Offsets.lua" type="script" desc="Create Markers at Selected Items Snap Offsets">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Create Markers at Snap Offsets\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-03T03:47:52Z">
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/206a3c2d1f7eaa03cc2ad02c8b6e4ddd10014c14/Lua/Markers/CS_Create%20Markers%20at%20Snap%20Offsets.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Create random colored region at time selection.lua" type="script" desc="CS_Create random colored region at time selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Create random colored region at time selection\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates a random colored regio at current time selection\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Markers/CS_Create%20random%20colored%20region%20at%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Go to highest numbered Marker.lua" type="script" desc="Go to highest numbered Marker">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Go to highest numbered Marker\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Go to highest numbered Marker/CS_Go to highest numbered Marker.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Markers/CS_Go%20to%20highest%20numbered%20Marker.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Place Markers at clipping points.lua" type="script" desc="Place Markers at clipping points">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Place Markers at clipping points\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Markers/CS_Place%20Markers%20at%20clipping%20points.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Place Markers at Out of Phase points.lua" type="script" desc="Place Markers at Out of Phase points">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Place Markers at Out of Phase points\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Markers/CS_Place%20Markers%20at%20Out%20of%20Phase%20points.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Remove all warning markers 998.lua" type="script" desc="Remove all warning markers (998)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Remove all warning markers (998)\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Markers/CS_Remove%20all%20warning%20markers%20998.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Remove all warning markers 999.lua" type="script" desc="Remove all warning markers (999)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Remove all warning markers (999)\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-12T23:20:41Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0339f8cce9665d62a14d302f16327eac6e868558/Lua/Markers/CS_Remove%20all%20warning%20markers%20999.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Reset Marker 0 to cursor position.lua" type="script" desc="CS_Reset Marker 0 to cursor position">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Reset Marker 0 to cursor position\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Deletes all markers with id 0 and creates a new marker with id 0 at the current edit cursor posisition. When used with "Create Marker 0" actions, can be used to quickly create and remove temporary markers during edit\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Markers/CS_Reset%20Marker%200%20to%20cursor%20position.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Playback">
+    <reapack name="CS_SoloXOR_Across_Projects.lua" type="script" desc="CS_SoloXOR_Across_Projects">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_SoloXOR_Across_Projects\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script performs a simple Solo X Or on the selected track. If any other tracks are soloed, they will be unsoloed so the selected track(s) is the only one playing. If background projects are playing they will also be muted. If more than one track is selected and they have diferent solo states, all selected tracks will follow the First track change. {\field{\*\fldinst{HYPERLINK "https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SoloXOR_Across_Projects.gif"}}{\fldrslt{\ul
+SoloXORExample
+}}}
+\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+        <link rel="screenshot" href="https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/blob/master/Licecaps/CS_SoloXOR_Across_Projects.gif">Example Gif</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-02T05:30:46Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/ca06bed8cfb4885dddd64ed6ed5c96a7f19256d3/Lua/Playback/CS_SoloXOR_Across_Projects.lua</source>
+      </version>
+      <version name="1.1" author="Claudiohbsantos" time="2018-06-06T14:35:51Z">
+        <changelog><![CDATA[- Fixed error when no tracks are selected
+- removed undo point
+- unsolo all if no track is selected]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Playback/CS_SoloXOR_Across_Projects.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Recording">
+    <reapack name="CS_Rename Currently Recording Take.lua" type="script" desc="Rename Currently Recording Take">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Rename Currently Recording Take\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ! Only works on Windows\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab renames file that is currently being recorded after recording is finished. Only works with the first recording track for now.\sa180\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Rename Currently Recording Take/CS_Rename Currently Recording Take.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Recording/CS_Rename%20Currently%20Recording%20Take.lua</source>
+        <source file="CS_Rename Currently Recording Take/TextInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Libraries/TextInput_Module.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Selection">
+    <reapack name="CS_Extend Track Selection to Track under Mouse.lua" type="script" desc="CS_Extend Track Selection to Track under Mouse">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Extend Track Selection to Track under Mouse\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Extends curent track selection to track currently under mouse\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2017-04-09T02:15:35Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/a82b380cac8c744b0748aca9a7430633b3beb7f3/Lua/Selection/CS_Extend%20Track%20Selection%20to%20Track%20under%20Mouse.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/Tools">
+    <reapack name="CS_Export item name list to clipboard.lua" type="script" desc="Export item name list to TXT">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Export item name list to TXT\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-06-06T14:35:51Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Export item name list to clipboard/CS_Export item name list to clipboard.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Tools/CS_Export%20item%20name%20list%20to%20clipboard.lua</source>
+        <source file="CS_Export item name list to clipboard/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Export item source list to clipboard.lua" type="script" desc="Export item source list to clipboard">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Export item source list to clipboard\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Export item source list to TXT/CS_Export item source list to TXT.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Tools/CS_Export%20item%20source%20list%20to%20clipboard.lua</source>
+        <source file="CS_Export item source list to TXT/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/Libraries/CS_Library.lua</source>
+      </version>
+      <version name="1.1" author="Claudiohbsantos" time="2018-06-06T14:35:51Z">
+        <changelog><![CDATA[- corrected name]]></changelog>
+        <source main="main" file="CS_Export item source list to clipboard/CS_Export item source list to clipboard.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Tools/CS_Export%20item%20source%20list%20to%20clipboard.lua</source>
+        <source file="CS_Export item source list to clipboard/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_GoToTime.lua" type="script" desc="CS_Go To Time">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Go To Time\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Go to Time input Press + or - to change to subtration or Addition Mode. Press Spacebar to reset default timecode to zero.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.5" author="Claudiohbsantos" time="2017-06-13T23:51:30Z">
+        <changelog><![CDATA[- fixed header (again)]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/eca82c5cb60c61ce1e63f54414fbda34fbec3fe3/Lua/Tools/CS_GoToTime.lua</source>
+      </version>
+      <version name="1.6" author="Claudiohbsantos" time="2017-06-15T03:33:06Z">
+        <changelog><![CDATA[- added library dependency to package]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.7" author="Claudiohbsantos" time="2017-08-07T01:15:29Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.8" author="Claudiohbsantos" time="2017-08-07T01:38:32Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.9b" author="Claudiohbsantos" time="2017-08-09T16:40:27Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.99" author="Claudiohbsantos" time="2017-08-10T09:16:10Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.999" author="Claudiohbsantos" time="2017-08-10T18:17:16Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b083dfe521d222fd6d3d5e212423ec784a620082/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b083dfe521d222fd6d3d5e212423ec784a620082/Lua/Libraries/TimecodeInput_Module.lua</source>
+        <source file="../Libraries/Go To Time/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b083dfe521d222fd6d3d5e212423ec784a620082/Lua/Libraries/CS_Library.lua</source>
+      </version>
+      <version name="2.0" author="Claudiohbsantos" time="2020-05-06T00:54:27Z">
+        <changelog><![CDATA[- MacOS compatible paths]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/095feae006a460ea581fe1d0860fa78b246acd7a/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/095feae006a460ea581fe1d0860fa78b246acd7a/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="2.1" author="Claudiohbsantos" time="2020-05-06T01:08:43Z">
+        <changelog><![CDATA[- Corrected download path from git]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/eff90deacc5845065ea200a225aad4a70b954b52/Lua/Tools/CS_GoToTime.lua</source>
+        <source file="../Libraries/Go To Time/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/eff90deacc5845065ea200a225aad4a70b954b52/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Set Minimum Grid Division Pixels to 0.lua" type="script" desc="Set Minimum Grid Division Pixels to 0">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Set Minimum Grid Division Pixels to 0\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set's the minimum grid division to 0.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-03-11T20:17:54Z">
+        <changelog><![CDATA[- initial release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f27cb52a2ace901e26ed63c87830c568ca0f9d5/Lua/Tools/CS_Set%20Minimum%20Grid%20Division%20Pixels%20to%200.lua</source>
+      </version>
+      <version name="1.0.1" author="Claudiohbsantos" time="2019-12-23T11:00:26Z">
+        <changelog><![CDATA[fix behavior with SWS 2.11]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/0ce3eeefc0385febbfca8774693a25eb733079fd/Lua/Tools/CS_Set%20Minimum%20Grid%20Division%20Pixels%20to%200.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Set Project Time at Cursor.lua" type="script" desc="Set Project Time at Cursor">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set Project Time at Cursor\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set Project Time at cursor. Press + or - to change to subtration or Addition Mode. Press Spacebar to reset default timecode to zero.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-03-12T20:17:15Z">
+        <changelog><![CDATA[- ]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/ddf1419109f6efa71875b3996dafa77636d56eb2/Lua/Tools/CS_Set%20Project%20Time%20at%20Cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Set Time Selection In.lua" type="script" desc="CS_Set Time Selection In">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Set Time Selection In\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set Time Selection In point via time input\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2017-06-13T23:31:38Z">
+        <changelog><![CDATA[- initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/2df7f88ea887878f68381ce4c3e768b3d258be59/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+      </version>
+      <version name="1.2" author="Claudiohbsantos" time="2017-06-13T23:35:48Z">
+        <changelog><![CDATA[- initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/2bbd6b7b0deee797c3c1db39906d305f489c1649/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+      </version>
+      <version name="1.3" author="Claudiohbsantos" time="2017-06-15T03:33:06Z">
+        <changelog><![CDATA[- added library dependency to package]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+        <source file="../Libraries/Set Time Selection In/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.4" author="Claudiohbsantos" time="2017-08-07T01:15:29Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+        <source file="../Libraries/Set Time Selection In/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.5" author="Claudiohbsantos" time="2017-08-07T01:38:32Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+        <source file="../Libraries/Set Time Selection In/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.6b" author="Claudiohbsantos" time="2017-08-09T16:40:27Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+        <source file="../Libraries/Set Time Selection In/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.7" author="Claudiohbsantos" time="2017-08-10T09:16:10Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+        <source file="../Libraries/Set Time Selection In/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.71" author="Claudiohbsantos" time="2017-08-10T18:18:29Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+        <source file="../Libraries/Set Time Selection In/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Libraries/TimecodeInput_Module.lua</source>
+        <source file="../Libraries/Set Time Selection In/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Libraries/CS_Library.lua</source>
+      </version>
+      <version name="1.72" author="Claudiohbsantos" time="2018-05-18T23:51:13Z">
+        <changelog><![CDATA[- Updated Libraries dependencies]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Tools/CS_Set%20Time%20Selection%20In.lua</source>
+        <source file="../Libraries/Set Time Selection In/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Set Time Selection Length.lua" type="script" desc="Set Time Selection Length">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set Time Selection Length\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set time Selection Length via time input\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2017-06-13T23:31:38Z">
+        <changelog><![CDATA[- initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/2df7f88ea887878f68381ce4c3e768b3d258be59/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+      </version>
+      <version name="1.2" author="Claudiohbsantos" time="2017-06-13T23:35:48Z">
+        <changelog><![CDATA[- initial Release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/2bbd6b7b0deee797c3c1db39906d305f489c1649/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+      </version>
+      <version name="1.3" author="Claudiohbsantos" time="2017-06-15T03:33:06Z">
+        <changelog><![CDATA[- added library dependency to package]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+        <source file="../Libraries/Set Time Selection Length/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.4" author="Claudiohbsantos" time="2017-08-07T01:15:29Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+        <source file="../Libraries/Set Time Selection Length/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.5" author="Claudiohbsantos" time="2017-08-07T01:38:32Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+        <source file="../Libraries/Set Time Selection Length/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.6b" author="Claudiohbsantos" time="2017-08-09T16:40:27Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+        <source file="../Libraries/Set Time Selection Length/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.7" author="Claudiohbsantos" time="2017-08-10T09:16:10Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+        <source file="../Libraries/Set Time Selection Length/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.71" author="Claudiohbsantos" time="2017-08-10T18:18:29Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+        <source file="../Libraries/Set Time Selection Length/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Libraries/TimecodeInput_Module.lua</source>
+        <source file="../Libraries/Set Time Selection Length/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Libraries/CS_Library.lua</source>
+      </version>
+      <version name="1.72" author="Claudiohbsantos" time="2018-05-18T23:51:13Z">
+        <changelog><![CDATA[- Updated Libraries dependencies]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Tools/CS_Set%20Time%20Selection%20Length.lua</source>
+        <source file="../Libraries/Set Time Selection Length/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Set Time Selection Out.lua" type="script" desc="CS_Set Time Selection Out">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 CS_Set Time Selection Out\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set time selection out via time input\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.1" author="Claudiohbsantos" time="2017-06-13T23:31:38Z">
+        <changelog><![CDATA[- initial release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/2df7f88ea887878f68381ce4c3e768b3d258be59/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+      </version>
+      <version name="1.2" author="Claudiohbsantos" time="2017-06-13T23:35:48Z">
+        <changelog><![CDATA[- initial release]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/2bbd6b7b0deee797c3c1db39906d305f489c1649/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+      </version>
+      <version name="1.3" author="Claudiohbsantos" time="2017-06-15T03:33:06Z">
+        <changelog><![CDATA[- added library dependency to package]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+        <source file="../Libraries/Set Time Selection Out/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f835cf5479535f6ce7fed5565011df3ce08bff1/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.4" author="Claudiohbsantos" time="2017-08-07T01:15:29Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+        <source file="../Libraries/Set Time Selection Out/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7efef0448fa39318199a293fdd438d045c7a960e/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.5" author="Claudiohbsantos" time="2017-08-07T01:38:32Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+        <source file="../Libraries/Set Time Selection Out/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e6df9d214f2a2cffb5e9af53c2acace82cb90763/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.6b" author="Claudiohbsantos" time="2017-08-09T16:40:27Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+        <source file="../Libraries/Set Time Selection Out/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/e5c72096fd8ca5d78a210ae84070d94dab5fe44c/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.7" author="Claudiohbsantos" time="2017-08-10T09:16:10Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+        <source file="../Libraries/Set Time Selection Out/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/67edb0deee17f692078b17729010f372dc569522/Lua/Libraries/TimecodeInput_Module.lua</source>
+      </version>
+      <version name="1.71" author="Claudiohbsantos" time="2017-08-10T18:18:29Z">
+        <changelog><![CDATA[- Fixed plus and minus mode when timeline doesnt start at 0]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+        <source file="../Libraries/Set Time Selection Out/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Libraries/TimecodeInput_Module.lua</source>
+        <source file="../Libraries/Set Time Selection Out/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/b2186b06f1479c93d858c81b30f3a5328ec2db16/Lua/Libraries/CS_Library.lua</source>
+      </version>
+      <version name="1.72" author="Claudiohbsantos" time="2018-05-18T23:51:13Z">
+        <changelog><![CDATA[- Updated Library loading. Shouldn't affect operation in any way.]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Tools/CS_Set%20Time%20Selection%20Out.lua</source>
+        <source file="../Libraries/Set Time Selection Out/TimecodeInput_Module.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/TimecodeInput_Module.lua</source>
+        <source file="../Libraries/Set Time Selection Out/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/f3e4b6d691e244983a90f6ff85380d01cae59900/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_SetProjectStartTime.lua" type="script" desc="Set Project Start Time (Offset)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set Project Start Time (Offset)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set project start time Press + or - to change to subtration or Addition Mode. Press Spacebar to reset default timecode to zero.\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-03-08T15:30:01Z">
+        <changelog><![CDATA[- ]]></changelog>
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d204a33019db33927baadcb5917044a1706d3b9d/Lua/Tools/CS_SetProjectStartTime.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Set all selected video items to Ignore Audio.lua" type="script" desc="Set all selected video items to Ignore Audio">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Set all selected video items to Ignore Audio\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-03-11T20:17:54Z">
+        <source main="main">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/7f27cb52a2ace901e26ed63c87830c568ca0f9d5/Lua/Tools/Set%20all%20selected%20video%20items%20to%20Ignore%20Audio.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Lua/View">
+    <reapack name="CS_Checkerboard Selected Items.lua" type="script" desc="Checkerboard Selected Items">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Checkerboard Selected Items\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Checkerboard Selected Items/CS_Checkerboard Selected Items.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/View/CS_Checkerboard%20Selected%20Items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Only Show Tracks With Items Inside Time Selection.lua" type="script" desc="Only Show Tracks With Items Inside Time Selection">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Only Show Tracks With Items Inside Time Selection\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Only Show Tracks With Items Inside Time Selection/CS_Only Show Tracks With Items Inside Time Selection.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/View/CS_Only%20Show%20Tracks%20With%20Items%20Inside%20Time%20Selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Show FX Chain for item or Track depending on mouse context.lua" type="script" desc="Show FX Chain for item or Track depending on mouse context">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Show FX Chain for item or Track depending on mouse context\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-05-18T23:51:39Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Show FX Chain for item or Track depending on mouse context/CS_Show FX Chain for item or Track depending on mouse context.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/d6697b40790e6e4ba3e34fb88ec1cb7927a32d9f/Lua/View/CS_Show%20FX%20Chain%20for%20item%20or%20Track%20depending%20on%20mouse%20context.lua</source>
+      </version>
+    </reapack>
+    <reapack name="CS_Toggle Item or Track Volume Envelope Visible depending on mouse context.lua" type="script" desc="Toggle Item or Track Volume Envelope Visible depending on mouse context">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Toggle Item or Track Volume Envelope Visible depending on mouse context\par}
+}
+]]></description>
+        <link rel="website">http://claudiohbsantos.com</link>
+      </metadata>
+      <version name="1.0" author="Claudiohbsantos" time="2018-06-06T14:35:51Z">
+        <changelog><![CDATA[- Initial Release]]></changelog>
+        <source main="main" file="CS_Toggle Item or Track Volume Envelope Visible depending on mouse context/CS_Toggle Item or Track Volume Envelope Visible depending on mouse context.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/View/CS_Toggle%20Item%20or%20Track%20Volume%20Envelope%20Visible%20depending%20on%20mouse%20context.lua</source>
+        <source file="CS_Toggle Item or Track Volume Envelope Visible depending on mouse context/CS_Library.lua">https://github.com/Claudiohbsantos/Claudiohbsantos-Scripts/raw/157d98ba38901791da03f824bcebad47cf0a89ab/Lua/Libraries/CS_Library.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Claudiohbsantos reascripts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Claudiohbsantos scripts for {\field{\*\fldinst{HYPERLINK "http://reaper.fm"}}{\fldrslt{\ul
+Reaper, by Cockos
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This repository contains all of my scripts that are available to the community. Please let me know if you have any problems with any of them and I'll try my best to help you out\par}
+}
+]]></description>
+    <link rel="website">http://claudiohbsantos.com</link>
+  </metadata>
+</index>

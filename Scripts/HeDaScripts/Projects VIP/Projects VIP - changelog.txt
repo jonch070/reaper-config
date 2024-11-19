@@ -1,0 +1,135 @@
+﻿---------------------------------------------------------------------------------------
+ HeDa Projects - Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v2.2.7 (2024-06-10)
+  + new toolbar icons, 150 and 200
+  # fix crash in Search and Replace paths
+
+* v2.2.6 (2024-02-21)
+  # small bug fix
+
+* v2.2.5 (2023-09-07)
+  # fix search box
+  # hide scrollbar if not needed
+
+* v2.2.4 (2023-09-05)
+  # fix: options for catalog menu to open current catalog options page correctly.
+
+* v2.2.3 (2023-09-04)
+  + Options page for catalog (Right click the catalog button)
+  + Improved edit boxes, browse for file, drag to select, double click to select all, home end keys
+  + Settings: Background also for titles
+  + Settings: Color Project Background (color for projects without image)
+  + Settings: Project Background Opacity (for projects without image)
+  # updated pdf guide
+  # fix yellow color in list view for opened projects
+  + Settings: scrollbar width size
+
+* v2.2.2 (2023-08-20)
+  + Added scrollbar to settings
+  + Add settings for play button size for grid and card view modes
+
+* v2.2.1 (2023-08-13)
+  # fix window size issues on MacOS with retina > 1.0
+
+* v2.2.0 (2023-08-10)
+  + REAPER 7 support
+  + Scrollbar
+  + Settings: Show Scrollbar
+  + Settings: Show Tags also to affect to show the tags buttons toolbar
+  # Search: also search custom titles and tags
+  # fix: some small fixes in scrolling
+
+* v2.1.5 (2023-07-28)
+  # final fix check for Imagemagick on start welcome screen
+
+* v2.1.4 (2023-07-28)
+  # fix 2 check for Imagemagick on start welcome screen
+
+* v2.1.3 (2023-07-25)
+  # fix check for Imagemagick on start welcome screen
+
+* v2.1.2 (2023-07-24)
+  + Multiple selection support: released, deadline, rating, tag, open in new tab, open as template
+  # fix: show close project button on other opened projects too. not only active project.
+  # improvements redrawing window
+
+* v2.1.1 (2023-07-19)
+  # fix: modify deadline wasn't being saved correctly
+
+* v2.1.0 (2023-07-18)
+  + Custom project titles
+  + Use External player setting (like vlc for example)
+  + Use SWS player setting (internal SWS function, doesn't provide seek, only play and stop)
+  + New Sort mode: by Opened Date (dates are updated only when the projects are opened from the script)
+  + New Sort mode: by Modified Date (experimental, can be slow)
+  + Press CTRL key while opening a project to open in new tab
+  # Better scrolling
+  # Performance improvements
+  # updated user guide PDF
+  + welcome screen new installations, check for imagemagick message.
+  # bug fixes
+
+* v2.0.1 (2023-06-23)
+  + User Guide PDF
+  # small bug fixes
+
+* v2.0.0 (2023-06-22)
+  + Audio Preview projects (supports RPP-PROX and manual audio file override per project)
+  + Recent filter (Show only projects that are in the REAPER's recent list)
+  + Import Folder (all RPP projects inside the folder)
+  + Import SubFolders (Imports one RPP project from each subfolder in the selected folder)
+  + Close button. Close current opened project
+  + Metadata Image file support TAG ID3:APIC_FILE
+  + Cards mode view. 1 project per row mode with optional RPP metadata display. 
+  + List mode view. 1 project per row mode.
+  + Setting: Read Title and Author from RPP. Displayed in Cards mode.
+  + Setting: Read Project Notes from RPP. Displayed in Cards mode.
+  + Setting: UI Toolbar: show list view toggle button 
+  + Setting: UI Misc: show .RPP extension
+  # UI improvements, fonts, wrap... 
+  # save and remember enabled tag filters
+  # trying to open a project that is not found, opens a dialog to replace project's path with a new path
+  # fix: search and replace paths in database also replaces paths for images
+  # keep focus for typing search when clicking buttons
+  # resized thumbnails generation improvements
+  # performance optimizations, bug fixes in UI, retina fix
+
+* v1.1.1 (2023-06-06)
+  # bug fix crash when there is only one project finding latest in directory.
+
+* v1.1.0 (2023-06-02)
+  + Set to Another Project in Directory...: Show other RPP files in the project's directory and choose which one to use.
+  + Set to Latest Version
+  + Save as New Version
+  # bug fix save as
+  + Setting: Toolbar: Show Close button
+  + Setting: Theme: text separation
+  # fix toolbar wrap. Thanks @Skorobagatko
+  + "imageresizecommand" variable in settings file for entering full path of image resizer command
+  + VIP version
+
+* v1.0.0 (2022-02-09)
+  + Add catalogs(databases) where to organize the projects. You can use catalogs to separate from different tasks, albums, clients, etc... 
+  + Add projects to a catalog. Left click to select a RPP file from disk, Right click to add current opened project.
+  + Double click to open a project, Right click to see a menu with options for the project... open in new tab.. etc... 
+  + Metadata: Tag, add a tag for each project, to organize projects by a keyword inside the same catalog. 
+  + Metadata: Released. Mark a project as released/finished.
+  + Metadata: Deadline date. Days remaining display.
+  + Metadata: Rating. Rate a project from 0 to 5 stars
+  + Properties: Set Image. Select the image file that defines the project(album cover, song cover, etc..) from disk
+  + Properties: Set Image by screenshot capture ( initially thought for getting a screen capture of your project tracks, but you can capture anything you see on the screen) (region capture only works on Linux)
+  + Properties: Set to open as new tab when double clickiing
+  + Properties: Set to open as project template when double clickiing
+  + Drag and drop to reorder for manual sorting mode. 
+  + Drag and drop to another catalog button to move the project to that catalog.
+  + Drag and drop to a tag button to set project to that existing tag.
+  + Sort by: Manual, by name, by deadline, by rating
+  + Cache images with a resized version. Requires imagemagick library installed. https://imagemagick.org
+  + Zooom in and out, + - buttons or CTRL+Mouse Wheel
+  + Show only Not-Released projects
+  + Show only Projects with deadline
+  + Filter by rating = or >= rating
+  + Search by project name
+    

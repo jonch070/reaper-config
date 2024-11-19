@@ -1,0 +1,18 @@
+local info = {
+    ["name"] = "Versions",
+    ["description"] = "Item/Envelope/FXChain versions per track. Tempo versions",
+    ["author"] = "HeDa",
+    ["license"] = "Copyright",
+    ["deps"] = "",
+    ["version"] = "0.7.0",
+    ["TIversion"] = "2.3.4",
+    ["deps"] = "",
+    ["location"] = "panels",
+    ["warning"] = "This is an experimental beta version",
+    ["doc_url"] = "",
+    ["tracker_url"] = "",
+    ["link"] = "",
+    ["category"] = "panels",
+}
+
+return info

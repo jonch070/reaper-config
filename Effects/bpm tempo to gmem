@@ -1,0 +1,6 @@
+desc:tempo to gmem
+
+options:gmem=jsfx_to_video
+
+@block
+gmem[6] = tempo;

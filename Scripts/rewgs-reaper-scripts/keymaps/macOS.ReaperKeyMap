@@ -1,0 +1,32 @@
+SCR 4 0 RS4fca1e4bf9ce621d53c6ed8dca420943bbdc5cb6 "Custom: rewgs - export midi - tracks to improve.lua" "rewgs-reaper-scripts/scripts/rewgs - export midi - tracks to improve.lua"
+SCR 4 0 RS6ca88a1353d273569b9e08e6e0aba8f200a41017 "Custom: rewgs - export midi - tracks to orchestrate.lua" "rewgs-reaper-scripts/scripts/rewgs - export midi - tracks to orchestrate.lua"
+SCR 4 0 RS2ab36ad431b99f35f6a6ba850ff459133a1eae2c "Custom: rewgs - export mix - mp3.lua" "rewgs-reaper-scripts/scripts/export-audio/rewgs - export mix - mp3.lua"
+SCR 4 0 RS9f80842c340aa05bceb20d60e2f02636a66a3298 "Custom: rewgs - export mix - wav.lua" "rewgs-reaper-scripts/scripts/export-audio/rewgs - export mix - wav.lua"
+SCR 4 0 RSbecb57b6223eb8865c7065a99c232b5afe11a575 "Custom: rewgs - export multitrack - dry.lua" "rewgs-reaper-scripts/scripts/export-audio/rewgs - export multitrack - dry.lua"
+SCR 4 0 RS9bb42fd2ad800f0bfe3d32c8deae438e603d8357 "Custom: rewgs - export multitrack - wet.lua" "rewgs-reaper-scripts/scripts/export-audio/rewgs - export multitrack - wet.lua"
+SCR 4 0 RSbee3af54b4789f78a6d985ef88f1aea8d2dad73b "Custom: rewgs - export tracks to transcribe - dry.lua" "rewgs-reaper-scripts/scripts/export-audio/rewgs - export tracks to transcribe - dry.lua"
+SCR 4 0 RS71137fbc106c94bbf4e0ef77b40cf688fb586aaf "Custom: rewgs - export tracks to transcribe - wet.lua" "rewgs-reaper-scripts/scripts/export-audio/rewgs - export tracks to transcribe - wet.lua"
+SCR 4 0 RSe3d215e53c76ba4b9edf1a14c3d8d99d7176f586 "Custom: rewgs - set grid to 1.lua" "rewgs-reaper-scripts/scripts/grid/main window/rewgs - set grid to 1.lua"
+SCR 4 0 RS1a6ca89998a03e8e5204316e948a7b0a3375044f "Custom: rewgs - set grid to 2.lua" "rewgs-reaper-scripts/scripts/grid/main window/rewgs - set grid to 2.lua"
+SCR 4 0 RSb17f4a1053a814d74a7822bf5f37e174b8074dae "Custom: rewgs - set grid to 4.lua" "rewgs-reaper-scripts/scripts/grid/main window/rewgs - set grid to 4.lua"
+SCR 4 0 RS05905012cef1764811626ef661044fc115dcfbd9 "Custom: rewgs - set grid to 8.lua" "rewgs-reaper-scripts/scripts/grid/main window/rewgs - set grid to 8.lua"
+SCR 4 0 RS70bfa0e90f16ff4bcc47521f2b3321e1b1613e49 "Custom: rewgs - set grid to 16.lua" "rewgs-reaper-scripts/scripts/grid/main window/rewgs - set grid to 16.lua"
+SCR 4 0 RSc76ab09a87b144518a88582ff7ac2df141355064 "Custom: rewgs - toggle mark track to improve.lua" "rewgs-reaper-scripts/scripts/mark-tracks/rewgs - toggle mark track to improve.lua"
+SCR 4 0 RS2b7b123f11de379fa9b6284b7f4cab07b733b407 "Custom: rewgs - toggle mark track to record.lua" "rewgs-reaper-scripts/scripts/mark-tracks/rewgs - toggle mark track to record.lua"
+SCR 4 0 RS6dc553db569bf00b238f751e975c7aa1bcd7fdb1 "Custom: rewgs - toggle mark track to transcribe.lua" "rewgs-reaper-scripts/scripts/mark-tracks/rewgs - toggle mark track to transcribe.lua"
+KEY 5 114 _RS4fca1e4bf9ce621d53c6ed8dca420943bbdc5cb6 0
+KEY 5 112 _RS6ca88a1353d273569b9e08e6e0aba8f200a41017 0
+KEY 1 117 _RS2ab36ad431b99f35f6a6ba850ff459133a1eae2c 0
+KEY 1 116 _RS9f80842c340aa05bceb20d60e2f02636a66a3298 0
+KEY 17 121 _RSbecb57b6223eb8865c7065a99c232b5afe11a575 0
+KEY 1 121 _RS9bb42fd2ad800f0bfe3d32c8deae438e603d8357 0
+KEY 21 113 _RSbee3af54b4789f78a6d985ef88f1aea8d2dad73b 0
+KEY 5 113 _RS71137fbc106c94bbf4e0ef77b40cf688fb586aaf 0
+KEY 1 49 _RSe3d215e53c76ba4b9edf1a14c3d8d99d7176f586 0
+KEY 1 50 _RS1a6ca89998a03e8e5204316e948a7b0a3375044f 0
+KEY 1 52 _RSb17f4a1053a814d74a7822bf5f37e174b8074dae 0
+KEY 1 56 _RS05905012cef1764811626ef661044fc115dcfbd9 0
+KEY 1 54 _RS70bfa0e90f16ff4bcc47521f2b3321e1b1613e49 0
+KEY 1 114 _RSc76ab09a87b144518a88582ff7ac2df141355064 0
+KEY 1 112 _RS2b7b123f11de379fa9b6284b7f4cab07b733b407 0
+KEY 1 113 _RS6dc553db569bf00b238f751e975c7aa1bcd7fdb1 0

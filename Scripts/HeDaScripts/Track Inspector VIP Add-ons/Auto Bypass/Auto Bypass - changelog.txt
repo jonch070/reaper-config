@@ -1,0 +1,20 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v1.2.0 (2024-07-20)
+  + Added a prompt to clear envelopes or not when disabling a track for auto bypass. 
+
+* v1.1.0 (2023-08-09)
+  + REAPER 7 support
+
+* v1.0.1 (2021-11-18)
+  # fix saving before and after values not being saved correctly
+
+* v1.0.0 (2021-10-17)
+  + Auto-Refresh (enable/disable refreshing all tracks envelopes on a time interval)
+  + Auto-Bypass Tracks (enable/disable for current track)
+  + setting: seconds before and after item 
+  + setting: refresh time interval
+  + setting: hide/show bypass envelopes 
+  

@@ -1,0 +1,48 @@
+HeDa_Track Inspector 2 VIP.lua
+HeDa_Track Inspector 2 VIP_Master.lua
+HeDa_Track Inspector 2 VIP_Tags.lua
+HeDa_Track Inspector 2 VIP_Floating.lua
+HeDa_Track Inspector 2 VIP_Floating_2.lua
+HeDa_Track Inspector 2 VIP Add-ons Manager.lua
+HeDa_Track Inspector 2 VIP_Switch to page 1.lua
+HeDa_Track Inspector 2 VIP_Switch to page 2.lua
+HeDa_Track Inspector 2 VIP_Switch to page 3.lua
+HeDa_Track Inspector VIP_Toggle Envelopes Track.lua
+HeDa_Track Inspector VIP_Toggle Enlarge Track.lua
+HeDa_Track Inspector VIP_Toggle Change Track on Item Selection.lua
+HeDa_Track Inspector VIP_New Track Version (duplicate).lua
+HeDa_Track Inspector VIP_New Track Version (clear items).lua
+HeDa_Track Inspector VIP_New Track Version (clear items and envelopes).lua
+HeDa_Track Inspector VIP_Render To New Version (stereo stems).lua
+HeDa_Track Inspector VIP_Render To New Version (mono).lua
+HeDa_Track Inspector VIP_Render To New Version (selected area stereo stems).lua
+HeDa_Track Inspector VIP_Render To New Version (selected area mono).lua
+HeDa_Track Inspector VIP_Freeze To New Version.lua
+HeDa_Track Inspector VIP_Autotag All Tracks.lua
+HeDa_Track Inspector VIP_Autotag Selected Tracks.lua
+HeDa_Track Inspector VIP_Open Send 1 FX UI.lua
+HeDa_Track Inspector VIP_Open Send 2 FX UI.lua
+HeDa_Track Inspector VIP_Open Send 3 FX UI.lua
+HeDa_Track Inspector VIP_Open Send 4 FX UI.lua
+HeDa_Track Inspector VIP_Show all versions.lua
+HeDa_Track Inspector VIP_Show previous version.lua
+HeDa_Track Inspector VIP_Show next version.lua
+HeDa_Track Inspector VIP_Add Track Marker.lua
+HeDa_Track Inspector VIP_Go to panel general.lua
+HeDa_Track Inspector VIP_Go to panel versions.lua
+HeDa_Track Inspector VIP_Go to panel tags.lua
+HeDa_Track Inspector VIP_Go to panel sends.lua
+HeDa_Track Inspector VIP_Go to panel receives.lua
+HeDa_Track Inspector VIP_Go to panel parameters.lua
+HeDa_Track Inspector VIP_Go to panel notepad.lua
+HeDa_Track Inspector VIP_Go to panel markers.lua
+HeDa_Track Inspector VIP_Go to panel fxchain.lua
+HeDa_Track Inspector VIP_Go to panel freeze.lua
+HeDa_Track Inspector VIP_Go to panel delay.lua
+HeDa_Track Inspector VIP_Go to panel custom.lua
+HeDa_Track Inspector VIP_Go to panel automation.lua
+HeDa_Track Inspector 2 VIP_Switch to next page.lua
+HeDa_Track Inspector 2 VIP_Switch to previous page.lua
+HeDa_Track Inspector 2 VIP_SetFXGroup All Tracks.lua
+HeDa_Track Inspector 2 VIP_SetFXGroup Current Track.lua
+HeDa_Track Inspector 2 VIP_SetFXGroup Selected Tracks.lua

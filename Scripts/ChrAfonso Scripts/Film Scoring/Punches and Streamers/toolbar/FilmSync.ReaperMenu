@@ -1,0 +1,35 @@
+[Floating toolbar 1]
+icon_0=text
+icon_1=text
+icon_3=text
+icon_4=text
+icon_6=ca_ps_add_punch.png
+icon_7=ca_ps_add_flutter.png
+icon_9=ca_ps_add_streamer_green_2s.png
+icon_10=ca_ps_add_streamer_red_2s.png
+icon_11=ca_ps_add_streamer_white_2s.png
+icon_12=ca_ps_add_streamer_yellow_2s.png
+icon_14=ca_ps_add_streamer_custom.png
+icon_15=text
+icon_17=toolbar_load.png
+icon_18=toolbar_save.png
+item_0=_RSe28eae5693ea82edc34c8aa41a6d6fe22e0a275b Update Punches and Streamers from Markers
+item_1=_RS3e39d82061f21d90321b5833171482f998cb6327 Update Click Track from Markers
+item_2=-1
+item_3=_RS1126aa01cbf464e95acfed0ae9372d0ef1e8e2af Start Inside Frame
+item_4=_RSa00941f214ed934185b5cffab9b57489d4cd6553 End Inside Frame
+item_5=-1
+item_6=_RSd7e68c9d9a939d0415b763a451642f5cc563fa73 Add Punch
+item_7=_RS2489d3fe9b67d09ccf4ed383bcb5e555d5c91eda Add Flutter
+item_8=-1
+item_9=_RS6a924fc917f3751e287f7edccc5b5be2f26c327b Add green 2s streamer
+item_10=_RS74c684d1f94cb98f298cebaeac90e7d18d853631 Add red 2s streamer
+item_11=_RSd15b67bd0ca26657acbea8147e6d4ca47584eef6 Add white 2s streamer
+item_12=_RS87ddcc90f8207422660febc84855dbc55b022f55 Add yellow 2s streamer
+item_13=-1
+item_14=_RS02f2c386f178fff6d94e617c37c971e80ae58ed3 Add custom streamer
+item_15=_RS783a62d1276020ec1c16cc763c12e47b79412355 S&P List
+item_16=-1
+item_17=_RS54503829d14d00af30a3c1bfa9b1b508fe5865cd Import items from CSV
+item_18=_RS441be595a5a9db8053345590cb87a4c1865cdd68 Export items to CSV
+

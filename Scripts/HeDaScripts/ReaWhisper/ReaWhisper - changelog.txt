@@ -1,0 +1,33 @@
+﻿---------------------------------------------------------------------------------------
+# ReaWhisper - Changelog (What's new)
+---------------------------------------------------------------------------------------
+
+* v0.2.2 (2024-07-06)
+	# fix create srt directory if needed
+	# fix for Windows paths using \
+
+## v0.2.1 (2024-06-05)
+	# fix temp file removal
+
+## v0.2.0 (2024-06-05)
+	+ Whisper.cpp support. To enable define the path to the whispercpp executable 
+	in the settings
+	+ Time selection support. If a time selection is defined, only process that 
+	part of the file (when using whispercpp)
+	+ Task parameter: task parameter in settings to transcribe or translate to english.
+	(when using a multilingual model)
+	+ custom args: add any additional parameters you would need.
+
+## v0.1.1 (2024-05-18)
+	* changes in settings to include the full path to the executable. 
+	  For windows, you must include the .exe extension. 
+
+## v0.1.0 (2024-05-17)
+  + Basic script to run OpenAI Whisper from REAPER.
+	Simple version with manual options from settings.lua.txt file.
+	It launches whisper command to transcribe the audio of a selected item
+	into a srt file, and then import the srt into a track in REAPER. 
+	The track is the next track of the item's track. so you may want to create 
+	an empty track after the track to transcribe first.
+
+    

@@ -1,0 +1,17 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Daily Writing/Battler Suite/media"
+F "Banff Centre.m4a" 1013435 0 1723067282 0
+D s 48000 n 1 l 2:00.400
+F "Battler Suite_1_02_Voice_2024-08-13_11-28_002.wav" 6270324 0 1723570730 0
+D s 48000 n 1 l 0:32.658 i 32
+F "Battler Suite_1_03_screams_2024-08-13_11-48_006.wav" 1904692 0 1723571304 0
+D y 2024-08-13 s 48000 n 1 r 0:01.485
+D l 0:09.916 i 32
+F "Battler Suite_1_03_Voice_2024-08-13_11-31_004.wav" 2975096 0 1723570620 0
+D y 2024-08-13 s 48000 n 1 r 0:02.673
+D l 0:15.495 i 32
+F "Battler Suite_1_04_Voice_2024-08-13_11-33_005.wav" 3670388 0 1723570548 0
+D y 2024-08-13 s 48000 n 1 r 0:03.861
+D l 0:19.116 i 32
+F "Battler Suite_2_stems_drums.wav" 11880164 0 1723586820 0
+D y 2024-08-13 s 96000 n 2 l 0:20.619
+D i 24

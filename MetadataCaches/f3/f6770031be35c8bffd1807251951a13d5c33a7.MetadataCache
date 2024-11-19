@@ -1,0 +1,20 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/The Bird in My Backyard/TIMB Grab Bag"
+F 242926__sonic-ranger__bullroarer.wav 10944036 0 1717974975 0
+D y 2014-07-19 s 44100 n 2 l 1:02.034
+D i 16
+F "242926__sonic-ranger__hbullroarer swirl.wav" 18364358 0 1717975795 0
+D s 48000 n 2 l 1:03.764 i 24
+F "TBIMB LFO Synth Design_01_46seconds_96000_24_nonnorm.wav" 26997100 0 1718227362 0
+D y 2024-06-12 s 96000 n 2 r 1:03:17.710
+D l 0:46.868 i 24
+F "TBIMB LFO Synth_2.wav" 28145714 0 1718226771 0
+D s 96000 n 2 l 0:48.864 i 24
+F "TBIMB Wing LFO_1.wav" 3514330 0 1718211126 0
+D y 2024-06-12 s 96000 n 2 r 59:53.590
+D l 0:06.099 i 24
+F "TBIMB Wing LFO_2.wav" 1187440 0 1718661168 0
+D y 2024-06-17 s 96000 n 2 r 59:53.590
+D l 0:02.060 i 24
+F "TBIMB Wing LFO_3.wav" 1187440 0 1718661255 0
+D y 2024-06-17 s 96000 n 2 r 59:53.590
+D l 0:02.060 i 24

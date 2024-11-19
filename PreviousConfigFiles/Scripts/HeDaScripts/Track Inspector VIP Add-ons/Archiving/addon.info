@@ -1,0 +1,19 @@
+local info = {
+    ["name"] = "Archiving",
+    ["description"] = "Archiving/Unarchiving tracks",
+    ["author"] = "HeDa",
+    ["license"] = "Copyright",
+    ["deps"] = "",
+    ["version"] = "0.1.0",
+    ["TIversion"] = "2.0",
+    ["deps"] = "",
+    ["location"] = "panels",
+    ["warning"] = "",
+    ["doc_url"] = "",
+    ["tracker_url"] = "",
+    ["link"] = "",
+    ["category"] = "panels",
+    ["link"] = "",
+}
+
+return info

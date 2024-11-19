@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="IX" commit="d9e32587a6ee2b074417af98b535aaab79db79e2">
+  <category name="Data">
+    <reapack name="ix_keymaps.data" type="data" desc="Key map files for IX effects">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Sample mapping file (no altered notes) used by MIDI_KeyMap. For details of how to define mappings see {\field{\*\fldinst{HYPERLINK "http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#IX_KeyMap_Files"}}{\fldrslt{\ul
+wiki entry.
+}}}
+\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:38:47Z">
+        <source file="../../ix_keymaps/00 - Default Mapping.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_keymaps/00%20-%20Default%20Mapping.txt</source>
+      </version>
+    </reapack>
+    <reapack name="ix_scales.data" type="data" desc="Scale files for IX effects">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Sample scale files used by MIDI_KeySnap and MIDI_Variant. For details of how to define scales see {\field{\*\fldinst{HYPERLINK "http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#IX_Scale_Files"}}{\fldrslt{\ul
+wiki entry.
+}}}
+\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:38:47Z">
+        <source file="../../ix_scales/Chromatic.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Chromatic.txt</source>
+        <source file="../../ix_scales/Dorian.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Dorian.txt</source>
+        <source file="../../ix_scales/Harmonic Minor.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Harmonic%20Minor.txt</source>
+        <source file="../../ix_scales/Locrian.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Locrian.txt</source>
+        <source file="../../ix_scales/Lydian.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Lydian.txt</source>
+        <source file="../../ix_scales/Major.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Major.txt</source>
+        <source file="../../ix_scales/Melodic Minor.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Melodic%20Minor.txt</source>
+        <source file="../../ix_scales/Mixolydian.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Mixolydian.txt</source>
+        <source file="../../ix_scales/Natural Minor.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Natural%20Minor.txt</source>
+        <source file="../../ix_scales/Pentatonic Major.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Pentatonic%20Major.txt</source>
+        <source file="../../ix_scales/Pentatonic Minor.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Pentatonic%20Minor.txt</source>
+        <source file="../../ix_scales/Phrygian.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Phrygian.txt</source>
+        <source file="../../ix_scales/Whole Tone.txt">https://github.com/IXix/JSFX/raw/2a706987860fb29c5f64235acf4b61667825d942/Data/ix_scales/Whole%20Tone.txt</source>
+      </version>
+    </reapack>
+    <reapack name="ix_sequences.data" type="data" desc="Sequence files for IX effects">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Sample sequence files used by MIDI_Variant and MIDI_Velocifier II. For details of how to define sequences see {\field{\*\fldinst{HYPERLINK "http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#IX_Sequence_Files"}}{\fldrslt{\ul
+wiki entry.
+}}}
+\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:38:47Z">
+        <source file="../../ix_sequences/1 - All Notes.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/1%20-%20All%20Notes.txt</source>
+        <source file="../../ix_sequences/2 - Accent on 1.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/2%20-%20Accent%20on%201.txt</source>
+        <source file="../../ix_sequences/2 - Accent on 2.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/2%20-%20Accent%20on%202.txt</source>
+        <source file="../../ix_sequences/3 - Accent on 1.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/3%20-%20Accent%20on%201.txt</source>
+        <source file="../../ix_sequences/3 - Accent on 2.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/3%20-%20Accent%20on%202.txt</source>
+        <source file="../../ix_sequences/3 - Accent on 3.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/3%20-%20Accent%20on%203.txt</source>
+        <source file="../../ix_sequences/4 - Accent On 1.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/4%20-%20Accent%20On%201.txt</source>
+        <source file="../../ix_sequences/4 - Accent On 2.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/4%20-%20Accent%20On%202.txt</source>
+        <source file="../../ix_sequences/4 - Accent On 3.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/4%20-%20Accent%20On%203.txt</source>
+        <source file="../../ix_sequences/4 - Accent On 4.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/4%20-%20Accent%20On%204.txt</source>
+        <source file="../../ix_sequences/5 - Accent on 5.txt">https://github.com/IXix/JSFX/raw/e1cb66c1d5b004190ffbb28d5f762ae457492063/Data/ix_sequences/5%20-%20Accent%20on%205.txt</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Effects/Audio">
+    <reapack name="Mixer_8xM-1xS.jsfx" type="effect" desc="Mixer_8xM-1xS (8 x mono to 1 x stereo)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Mixer 8xM - 1xS\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Mix inputs 1-8 into outputs 1+2.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Mixer_8xM-1xS\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../Mixer_8xM-1xS">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/Audio/Mixer_8xM-1xS.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Mixer_8xS-1xS.jsfx" type="effect" desc="Mixer_8xS-1xS (8 x stereo to 1 x stereo)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Mixer 8xS - 1xS\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Mix stereo input pairs 1+2 through 7+8 into outputs 1+2.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Mixer_8xS-1xS\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../Mixer_8xS-1xS">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/Audio/Mixer_8xS-1xS.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MuteOnStop.jsfx" type="effect" desc="MuteOnStop">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Mute On Stop\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Block audio on selected stereo channels when transport is stopped.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../MuteOnStop.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/Audio/MuteOnStop.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MuteRangeOnStop.jsfx" type="effect" desc="MuteRangeOnStop">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Mute Range On Stop\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Block audio on selected channel range when transport is stopped.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../MuteRangeOnStop.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/Audio/MuteRangeOnStop.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="PhaseAdjustingRouter.jsfx" type="effect" desc="PhaseAdjustingRouter (signal router with polarity options)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Phase Adjusting Router\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Send input channels to output channels with optional polarity adjustments. Output can either replace or merge with existing audio on the output channels.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#PhaseAdjustingRouter\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../PhaseAdjustingRouter">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/Audio/PhaseAdjustingRouter.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="StereoPhaseInvert.jsfx" type="effect" desc="StereoPhaseInvert (stereo channel polarity control)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Stereo Phase Inverter\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Independent adjustment of left/right channel polarity.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#StereoPhaseInvert\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../StereoPhaseInvert">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/Audio/StereoPhaseInvert.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Switcher2.jsfx" type="effect" desc="Switcher2 (channel input selector)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Switcher 2\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Send from input pairs 1+2 through 7+8 to outputs 1+2 Switcher 3 is better but this uses a tiny bit less CPU if you're desperate.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Switcher_2\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../Switcher2">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/Audio/Switcher2.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Switcher3.jsfx" type="effect" desc="Switcher3 (channel input selector)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Switcher 3\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Send from selectable stereo inputs A, B, C or D to outputs 1+2 with adjustable crossfade to avoid clicks.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Switcher_3\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1" author="IX" time="2018-04-01T21:03:03Z">
+        <changelog><![CDATA[+ Better crossfade code using one-pole filter (thanks SaulT!)]]></changelog>
+        <source file="../../Switcher3">https://github.com/IXix/JSFX/raw/d43a6d6e641f66c340d465c9ff1447566649ae9b/Effects/Audio/Switcher3.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Switcher5.jsfx" type="effect" desc="Switcher5 (channel input selector)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Switcher 5\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Send from selectable stereo inputs A, B, C or D to outputs 1+2 with adjustable crossfade to avoid clicks. Optionally block audio from source channels.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../Switcher5.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/Audio/Switcher5.jsfx</source>
+      </version>
+      <version name="1.1" author="IX" time="2020-03-01T19:16:36Z">
+        <changelog><![CDATA[+ Fixed broken gain sliders]]></changelog>
+        <source file="../../Switcher5.jsfx">https://github.com/IXix/JSFX/raw/0f7226842bc175b71adba09316678755bade6d60/Effects/Audio/Switcher5.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="SwixMitch.jsfx" type="effect" desc="SwixMitch (4x stereo in, 2 bus X-fader)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 SwixMitch\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Crossfade between busses A and B, fed from inputs 1+2 through 7+8.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#SwixMitch\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../SwixMitch">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/Audio/SwixMitch.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Effects/MIDI">
+    <reapack name="MIDI_AntiFlam.jsfx" type="effect" desc="MIDI_Antiflam (duplicate note blocker)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Antiflam\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Block duplicate note messages occurring within specified time within range of notes on specified channel.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../MIDI_Antiflam.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/MIDI/MIDI_AntiFlam.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_CCRider.jsfx" type="effect" desc="MIDI_CCRider (CC LFO generator)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI CC Rider\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Generates MIDI CC messages with an LFO. Useful back in the day. Pretty obsolete these days.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#CCRider\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_CCRider">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/MIDI/MIDI_CCRider.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_ChokingHazard.jsfx" type="effect" desc="MIDI_ChokingHazard (Note choke utility)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Choking Hazard\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Incoming notes choke (by note-off) up to four other notes.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#ChokingHazard\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1" author="IX" time="2018-04-01T20:42:00Z">
+        <source file="../../MIDI_ChokingHazard">https://github.com/IXix/JSFX/raw/daaafae27e0ec09435dac20fc8b785055ddeead6/Effects/MIDI/MIDI_ChokingHazard.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_DuplicateFilter.jsfx" type="effect" desc="MIDI_DuplicateFilter (duplicate note filter)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Duplicate Filter\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Counts incoming on/off message for each note and filters out all except the first on and last off, so overlapping short notes become one long note.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#DuplicateFilter\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_DuplicateFilter">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/MIDI/MIDI_DuplicateFilter.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_HighPriority.jsfx" type="effect" desc="MIDI_HighPriority (monosynth behaviour for polysynth)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI High Priority\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Simulates monophonic synth behaviour for polyphonic synths.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Higher notes cause lower notes to stop but releasing the high note will reactivate the lower note.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../MIDI_HighPriority.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/MIDI/MIDI_HighPriority.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_KeyMap II.jsfx" type="effect" desc="MIDI_KeyMap II (note mapping tool)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI KeyMap II\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Incoming notes are transformed according to internal mapping.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Slider 3 refers to input notes and will respond to incoming MIDI.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Slider 4 sets/displays the output note mapped to the input shown by slider 3.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#KeyMap_II\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1" author="IX" time="2018-04-01T20:42:00Z">
+        <changelog><![CDATA[+Added graphical mapping display]]></changelog>
+        <source file="../../MIDI_KeyMap II">https://github.com/IXix/JSFX/raw/f34c80a30fa9805561788347ed58c220e47c4ed6/Effects/MIDI/MIDI_KeyMap%20II.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_KeyMap.jsfx" type="effect" desc="MIDI_KeyMap (note mapping tool)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI KeyMap\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Incoming notes are transformed according to the data in the selected map file.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#KeyMap\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Note: Requires user defined key mapping files. A sample is provided in the package "Key map files for IX effects".\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_KeyMap">https://github.com/IXix/JSFX/raw/96c37b3eef3041f63808dfc06db23853922eb57d/Effects/MIDI/MIDI_KeyMap.jsfx</source>
+      </version>
+      <version name="2.1" author="IX" time="2018-04-01T20:42:00Z">
+        <changelog><![CDATA[+ Added graphical mapping display]]></changelog>
+        <source file="../../MIDI_KeyMap">https://github.com/IXix/JSFX/raw/f34c80a30fa9805561788347ed58c220e47c4ed6/Effects/MIDI/MIDI_KeyMap.jsfx</source>
+      </version>
+      <version name="2.2" author="IX" time="2024-06-18T11:09:05Z">
+        <changelog><![CDATA[+ Added graphical mapping display]]></changelog>
+        <source file="../../MIDI_KeyMap">https://github.com/IXix/JSFX/raw/d9e32587a6ee2b074417af98b535aaab79db79e2/Effects/MIDI/MIDI_KeyMap.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_KeySnap.jsfx" type="effect" desc="MIDI_KeySnap (snap notes to musical key)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Key Snap\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Out of key notes are either blocked or mapped to the nearest in key note.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#KeySnap\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Note: Requires user defined scale files. Samples are provided in the package "Scale files for IX effects".\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_KeySnap">https://github.com/IXix/JSFX/raw/96c37b3eef3041f63808dfc06db23853922eb57d/Effects/MIDI/MIDI_KeySnap.jsfx</source>
+      </version>
+      <version name="1.1" author="IX" time="2024-06-18T11:09:05Z">
+        <source file="../../MIDI_KeySnap">https://github.com/IXix/JSFX/raw/d9e32587a6ee2b074417af98b535aaab79db79e2/Effects/MIDI/MIDI_KeySnap.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Latch.jsfx" type="effect" desc="MIDI_Latch (note latching tool)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Latch\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Latched keys hold until next keypress.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Latch\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-01T20:42:00Z">
+        <source file="../../MIDI_Latch">https://github.com/IXix/JSFX/raw/f34c80a30fa9805561788347ed58c220e47c4ed6/Effects/MIDI/MIDI_Latch.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Looper.jsfx" type="effect" desc="MIDI_Looper">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Looper\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Loops all incoming MIDI except sysex messages.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Looper\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-01T20:42:00Z">
+        <source file="../../MIDI_Looper">https://github.com/IXix/JSFX/raw/f34c80a30fa9805561788347ed58c220e47c4ed6/Effects/MIDI/MIDI_Looper.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_PatchUtil.jsfx" type="effect" desc="MIDI_PatchUtil (bank/patch select utility)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Patch Utility\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Helper for sending MIDI bank/patch change messages.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#PatchUtil\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-01T20:42:00Z">
+        <source file="../../MIDI_PatchUtil">https://github.com/IXix/JSFX/raw/f34c80a30fa9805561788347ed58c220e47c4ed6/Effects/MIDI/MIDI_PatchUtil.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Probalocity.jsfx" type="effect" desc="MIDI_Probalocity (pattern variation generator)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Probalocity\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Input velocity determines chance of whether note will be passed or blocked.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Full (127) velocity notes will always be passed.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Use Scale and Offset to bring output velocities to the required level.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Scale lowers high velocities. Offset sets the base velocity level.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Probalocity\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-01T20:42:00Z">
+        <source file="../../MIDI_Probalocity">https://github.com/IXix/JSFX/raw/f34c80a30fa9805561788347ed58c220e47c4ed6/Effects/MIDI/MIDI_Probalocity.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Router.jsfx" type="effect" desc="MIDI_Router (send note range to channel)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Router\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 MIDI messages on input channel are diverted to the output channel. Can route notes, non-notes or all messages. Notes can be transposed.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Router\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_Router">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/MIDI/MIDI_Router.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_SerialKiller.jsfx" type="effect" desc="MIDI_SerialKiller (pass one note at a time)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI High Priority\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Pass only one note at a time. Each new note kills the previous note.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../MIDI_SerialKiller.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/MIDI/MIDI_SerialKiller.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Tool II.jsfx" type="effect" desc="MIDI_Tool II (transform note/velocity/channel)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Tool II\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Transform MIDI messages in various ways.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Tool_II\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_Tool II">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/MIDI/MIDI_Tool%20II.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Tool.jsfx" type="effect" desc="MIDI_Tool (obsolete, use MIDI_Tool II)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Tool (obsolete)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Transform MIDI messages in various ways. Superceded by IX/MIDI_Tool II\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Tool\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_Tool">https://github.com/IXix/JSFX/raw/2f70284fa402d2c6d4bd3af212f3b5fa79bfcaac/Effects/MIDI/MIDI_Tool.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Variant.jsfx" type="effect" desc="MIDI_Variant (pattern/scale variation generator)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Variant\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Creates variation in incoming note messages. When triggered by the pattern, outputs a random note from the specified scale.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Variant\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Note: Requires user defined scale and sequence files. Samples are provided in the packages "Scale files for IX effects" and "Sequence files for IX effects".\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_Variant">https://github.com/IXix/JSFX/raw/d3f10eecf24056d851bd9d3bb0d0de8a379d0738/Effects/MIDI/MIDI_Variant.jsfx</source>
+      </version>
+      <version name="1.1" author="IX" time="2018-04-01T20:42:00Z">
+        <changelog><![CDATA[+ fixed bug https://forum.cockos.com/showthread.php?p=1918238#post1918238 (thanks Veto!)]]></changelog>
+        <source file="../../MIDI_Variant">https://github.com/IXix/JSFX/raw/f34c80a30fa9805561788347ed58c220e47c4ed6/Effects/MIDI/MIDI_Variant.jsfx</source>
+      </version>
+      <version name="1.2" author="IX" time="2018-07-02T20:20:13Z">
+        <changelog><![CDATA[+ fixed scale/sequence file init bug on song load
++ fixed bug https://forum.cockos.com/showthread.php?p=1918238#post1918238 (thanks Veto!)]]></changelog>
+        <source file="../../MIDI_Variant">https://github.com/IXix/JSFX/raw/038d74cef750a6bbcc5075b6d9bdd7408164a13a/Effects/MIDI/MIDI_Variant.jsfx</source>
+      </version>
+      <version name="1.3" author="IX" time="2024-06-18T11:09:05Z">
+        <changelog><![CDATA[+ fixed scale/sequence file init bug on song load
++ fixed bug https://forum.cockos.com/showthread.php?p=1918238#post1918238 (thanks Veto!)]]></changelog>
+        <source file="../../MIDI_Variant">https://github.com/IXix/JSFX/raw/d9e32587a6ee2b074417af98b535aaab79db79e2/Effects/MIDI/MIDI_Variant.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Velocifier II.jsfx" type="effect" desc="MIDI_Velocifier II (velocity variation generator)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Velocifier II\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Modifies incoming velocities according to a pattern file\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Velocifier_II\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Note: Requires user defined sequence files. Samples are provided in the package "Sequence files for IX effects".\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_Velocifier II">https://github.com/IXix/JSFX/raw/96c37b3eef3041f63808dfc06db23853922eb57d/Effects/MIDI/MIDI_Velocifier%20II.jsfx</source>
+      </version>
+      <version name="1.1" author="IX" time="2024-06-18T11:09:05Z">
+        <source file="../../MIDI_Velocifier II">https://github.com/IXix/JSFX/raw/d9e32587a6ee2b074417af98b535aaab79db79e2/Effects/MIDI/MIDI_Velocifier%20II.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Wobulator.jsfx" type="effect" desc="MIDI_Wobulator (pitch wheel LFO)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Wobulator\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Sends pitch wheel messages with an LFO. Better methods of pitch modulation exist but none with a cool name like this.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#Wobulator\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-03-19T20:31:34Z">
+        <source file="../../MIDI_Wobulator">https://github.com/IXix/JSFX/raw/9293715ac22e8010f2e97f43c0bde98df2757cc6/Effects/MIDI/MIDI_Wobulator.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Effects/Utility">
+    <reapack name="DC Generator.jsfx" type="effect" desc="DC Generator">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 DC Generator\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Utility for generating a DC signal at a specific amplitude.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 DC can be bad for speakers so ensure this effect is not routed to the master output! Output volume defaults to -60dB for safety.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../DC Generator.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/Utility/DC%20Generator.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="GlobalSliders.jsfx" type="effect" desc="GlobalSliders (globally synchronised sliders)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Global Sliders\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Utility for cross-track parameter linking.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Four banks of eight sliders for use with parameter modulation, using custom namespaces to avoid using global memory.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Slider updates are performed in @block since REAPER parameter modulation is also updated on a per block basis ie. there's no accuracy to be gained by moving the updates into @sample **\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you modify this, please replace references to the namespace IX.GlobalSliders with a namespace of your own to avoid clashes.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ** this may no longer be true\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.4a" author="IX" time="2018-04-02T12:29:55Z">
+        <source file="../../GlobalSliders.jsfx">https://github.com/IXix/JSFX/raw/06d4f9ed8d6cb5ef11d81bc0e660d2d9910e5c53/Effects/Utility/GlobalSliders.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 IX JSFX\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A collection of effects and utilities for REAPER.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Documentation for plugins (well, some of them) can be found at http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#IX_Jesusonic_Plugins\par}
+}
+]]></description>
+  </metadata>
+</index>

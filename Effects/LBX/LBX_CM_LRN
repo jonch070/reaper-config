@@ -1,0 +1,81 @@
+desc:LBX_CM_LRN
+options:gmem=LBX_CM_SharedMem
+slider1:reset=0<0,1,1>Reset
+
+@init
+l_pindex = 0;
+l_nindex = 10000;
+l_cindex = 20000;
+
+l_counter = 0;
+
+g_reset = 0;
+g_counter = 1;
+g_data = 2;
+
+  memset(l_pindex,0,16);
+  memset(l_nindex,0,2048);
+  memset(l_cindex,0,2048);
+    
+@slider
+
+  reset == 1 ? (
+    l_counter = 0;
+    gmem[g_counter] = l_counter;
+    gmem[g_reset] = 0;
+    memset(l_pindex,0,16);
+    memset(l_nindex,0,2048);
+    memset(l_cindex,0,2048);
+    reset = 0;
+  );
+  
+@block
+
+  gmem[g_reset] == 1 ? (
+    l_counter = 0;
+    gmem[g_counter] = l_counter;
+    gmem[g_reset] = 0;
+    memset(l_pindex,0,16);
+    memset(l_nindex,0,2048);
+    memset(l_cindex,0,2048);
+    reset = 0;
+  );
+  
+  while (midirecv(mpos,msg1,msg2,msg3))
+  (
+    msgType = (msg1 & 240);
+    msgChannel = (msg1 & 15);
+    msgType == 224 ? ( //pitch
+      idx = msgChannel;
+      l_pindex[idx] != 1 ? (
+        l_pindex[idx] = 1;
+        gmem[g_data + l_counter*2 +0] = msgType;
+        gmem[g_data + l_counter*2 +1] = idx;
+        l_counter+=1;
+        gmem[g_counter] = l_counter;
+      );
+      
+    ) : msgType == 176 ? ( //cc
+      idx = (msgChannel << 8) + msg2;
+      l_cindex[idx] != 1 ? (
+        l_cindex[idx] = 1;
+        gmem[g_data + l_counter*2 +0] = msgType;
+        gmem[g_data + l_counter*2 +1] = idx;
+        l_counter+=1;
+        gmem[g_counter] = l_counter;
+      );
+      aaa = idx;
+    
+    ) : msgType == 144 ? (
+      idx = (msgChannel << 8) + msg2;
+      l_nindex[idx] != 1 ? (
+        l_nindex[idx] = 1;
+        gmem[g_data + l_counter*2 +0] = msgType;
+        gmem[g_data + l_counter*2 +1] = idx;
+        l_counter+=1;
+        gmem[g_counter] = l_counter;
+      );
+      aaa = idx;
+    );
+    
+  );

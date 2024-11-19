@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/curl -f -s -H "Cache-Control: no-cache" -w "%{http_code}" -o "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager/_resources/checkupdates.dat" "https://reaper.hector-corcin.com/updates" > "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager/_resources/writeout.dat"

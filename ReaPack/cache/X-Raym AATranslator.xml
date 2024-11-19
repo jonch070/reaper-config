@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" commit="238ac6761eb88e132d1712bb5fff824a0df83972" name="X-Raym AATranslator">
+  <category name="Items Properties">
+<reapack name="X-Raym_Select all items which need to be rendered.lua" type="script" desc="Select all items which need to be rendered">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 A way to select all items which may need to be rendered, for AATranslator workflow for eg.\par}
+}
+]]></description>
+        <link rel="screenshot">https://i.imgur.com/K4sDKWb.gifv</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2018-06-15T09:56:54Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=303e59a7e0931eca687d1f242b8f2e56d01c5f87&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.1" author="X-Raym" time="2018-06-15T14:44:44Z">
+        <changelog><![CDATA[# No BWFMetaEdit dependency
+# Loop correction
+# Console optimization]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=814bd01b7e5a97d2cf4c59dea9fe3444498894fc&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.1.1" author="X-Raym" time="2018-06-20T18:36:04Z">
+        <changelog><![CDATA[# loop detection fades fix]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=25311e1ac8b5f7e4b2a505df0b90cb64aab642cd&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.1.2" author="X-Raym" time="2018-06-20T18:43:40Z">
+        <changelog><![CDATA[# sel fix]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=52f3ae4fcaa2a8d9b4caa684b68d3860fd513663&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.1.3" author="X-Raym" time="2018-06-20T22:36:50Z">
+        <changelog><![CDATA[* Fix fades shapes by deactivating auto-crossfade]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=bc940877fbb8d05864bbfd4a6ad770046fdc8cd4&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.1.4" author="X-Raym" time="2018-06-20T22:53:55Z">
+        <changelog><![CDATA[* Don't select missing files]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=660d6d691d919ccd3e6dcd31c87cd476226f250b&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.2" author="X-Raym" time="2018-07-01T20:05:03Z">
+        <changelog><![CDATA[+ User input
+# Bug fix]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=0a7286913607c866b085d93726dbce825c0d5a1d&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.2.1" author="X-Raym" time="2019-10-07T10:03:16Z">
+        <changelog><![CDATA[+ User input]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=a07075ba830e647770ddb2412c5dcff42a4f5ab0&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.2.2" author="X-Raym" time="2019-10-07T12:09:05Z">
+        <changelog><![CDATA[# select invalid source]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=eb09bd563fb85065a265ffde903ca6c814f4d59f&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.3" author="X-Raym" time="2019-11-03T16:05:47Z">
+        <changelog><![CDATA[+ items not in project folder]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=90e4b422ff9076b5f7b87b05e510e596c0c6099b&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.3.1" author="X-Raym" time="2020-01-15T14:13:50Z">
+        <changelog><![CDATA[# Fix project sample rate]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=3701843cd93d25e5aea8e0f3a0a4252fecc94862&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.4" author="X-Raym" time="2020-09-24T17:30:17Z">
+        <changelog><![CDATA[# Fix input
+# Add save last input]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=562b13728b740197fe23469e43870086736e9043&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5" author="X-Raym" time="2021-04-05T19:33:27Z">
+        <changelog><![CDATA[+ Preset file support
+# better get bith depth function]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=c73ed2404ac0de17b355dc8ae22f7acec0b1c83f&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.1" author="X-Raym" time="2021-04-05T20:33:51Z">
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=4bd5ef15d23c2fc0b49060dcea9c9df914e72def&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.2" author="X-Raym" time="2023-06-05T16:40:15Z">
+        <changelog><![CDATA[# SWS dependency warning]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=3d0caec0c00cfbc8605f7d24d3824c0e7fd2f7fb&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.3" author="X-Raym" time="2023-07-18T17:38:00Z">
+        <changelog><![CDATA[# SWS dependency warning]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=091dd7b38254f42c564cd3b07741c100932e9087&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.4" author="X-Raym" time="2023-12-08T21:28:49Z">
+        <changelog><![CDATA[# Support special character in media FilePath
+# Path debug info]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=f274af873e6f256c3f186285dbc18169bdcadb11&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.5" author="X-Raym" time="2024-09-19T22:08:31Z">
+        <changelog><![CDATA[# Fix take env break]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=1e01c6c79270999076ff3baa649e4739c7b5982e&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.6" author="X-Raym" time="2024-09-19T22:41:36Z">
+        <changelog><![CDATA[# Only consider active env (need REAPER v7+)]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=af4cf9a37aacafb87b5227e63767306baa584d55&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.7" author="X-Raym" time="2024-09-19T22:42:34Z">
+        <changelog><![CDATA[# Only consider active env (need REAPER v7+)]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=c82095f6e41d21ab2b85cf965219b39c5769626f&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.8" author="X-Raym" time="2024-09-22T21:38:17Z">
+        <changelog><![CDATA[# Field to ignore volume envelope for AAT v2]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=fd53107b2400d8382362a94a28c0381c4c9c8bf2&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.9" author="X-Raym" time="2024-09-23T10:34:01Z">
+        <changelog><![CDATA[# Fix for envelopes]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=6f0bb2716f07daaf7fa63378c0e5f34698df0313&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+    </reapack>
+<reapack name="X-Raym_Select all items with active take pan offset and unselect the others.lua" type="script" desc="Select all items with active take pan offset and unselect the others">
+      <metadata>
+        <link rel="screenshot">https://i.imgur.com/2ogqvNc.gifv</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2018-01-05T16:46:34Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=ec23e931a0eaaa749d24d53dcdde6cd9344524de&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20with%20active%20take%20pan%20offset%20and%20unselect%20the%20others.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+    </reapack>
+<reapack name="X-Raym_Select all items with active take pitch offset and unselect the others.lua" type="script" desc="Select all items with active take pitch offset and unselect the others">
+      <metadata>
+        <link rel="screenshot">https://i.imgur.com/Brbhvqm.gifv</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2018-01-05T16:46:34Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=ec23e931a0eaaa749d24d53dcdde6cd9344524de&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20with%20active%20take%20pitch%20offset%20and%20unselect%20the%20others.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+    </reapack>
+<reapack name="X-Raym_Select all items with active take playrate offset and unselect the others.lua" type="script" desc="Select all items with active take playrate offset and unselect the others">
+      <metadata>
+        <link rel="screenshot">https://i.imgur.com/WbPXbVY.gifv</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2018-01-05T16:46:34Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=ec23e931a0eaaa749d24d53dcdde6cd9344524de&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20with%20active%20take%20playrate%20offset%20and%20unselect%20the%20others.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+    </reapack>
+<reapack name="X-Raym_Select all multichannel items on mono tracks and mono items on multichannel tracks.lua" type="script" desc="Select all multichannel items on mono tracks and mono items on multichannel tracks">
+      <metadata>
+        <link rel="screenshot">https://i.imgur.com/wtykbVt.gifv</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2019-02-18T11:31:37Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=ecec30583d47056b61b517a0d40908c9f19b2c36&amp;f=Items%20Properties/X-Raym_Select%20all%20multichannel%20items%20on%20mono%20tracks%20and%20mono%20items%20on%20multichannel%20tracks.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2019-02-19T09:06:46Z">
+        <changelog><![CDATA[# Bug fixes]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=2ba8b3ed4b38ac0c0cc69d989fa608737a64c2f6&amp;f=Items%20Properties/X-Raym_Select%20all%20multichannel%20items%20on%20mono%20tracks%20and%20mono%20items%20on%20multichannel%20tracks.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.0.2" author="X-Raym" time="2019-02-24T22:24:12Z">
+        <changelog><![CDATA[# Bug fixes]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=0daf1f3f7a6bc65cc6207e6acd264be029ebff77&amp;f=Items%20Properties/X-Raym_Select%20all%20multichannel%20items%20on%20mono%20tracks%20and%20mono%20items%20on%20multichannel%20tracks.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+    </reapack>
+<reapack name="X-Raym_Select items inside other items on the same track.lua" type="script" desc="Select items inside other items on the same track">
+      <version name="1.0" author="X-Raym" time="2017-11-19T19:11:38Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=fe48bb4dc8362a3e0456d5755eb31020cbf07fef&amp;f=Items%20Properties/X-Raym_Select%20items%20inside%20other%20items%20on%20the%20same%20track.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+    </reapack>
+  </category>
+</index>

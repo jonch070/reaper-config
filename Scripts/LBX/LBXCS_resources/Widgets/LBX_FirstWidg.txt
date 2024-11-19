@@ -1,0 +1,3 @@
+[displayname]Scrolling Text
+[defaultsize]200 50
+//

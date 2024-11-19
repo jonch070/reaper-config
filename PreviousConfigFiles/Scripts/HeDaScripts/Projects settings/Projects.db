@@ -1,0 +1,16 @@
+return {
+-- Table: {1}
+{
+   ["list"]={2},
+   ["settings"]={3},
+},
+-- Table: {2}
+{
+},
+-- Table: {3}
+{
+   ["numberthumbs2"]=10,
+   ["numberthumbs"]=4,
+   ["listmode"]=1,
+},
+}

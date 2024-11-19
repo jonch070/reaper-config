@@ -1,0 +1,17 @@
+local info = {
+    ["name"] = "Transpose",
+    ["description"] = "Transpose tracks or items changing item's pitch. Commit function for MIDI.",
+    ["author"] = "HeDa",
+    ["license"] = "Copyright",
+    ["deps"] = "",
+    ["TIversion"] = "2.0.0",
+    ["deps"] = "",
+    ["location"] = "addons",
+    ["warning"] = "",
+    ["doc_url"] = "",
+    ["tracker_url"] = "",
+    ["link"] = "",
+    ["category"] = "panels",
+}
+
+return info

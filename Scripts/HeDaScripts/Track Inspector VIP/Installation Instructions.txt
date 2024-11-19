@@ -1,0 +1,72 @@
+---------------------------------------------------
+  Track Inspector - Installation instructions
+---------------------------------------------------
+
+* Requirements
+
+    - REAPER v5.16 or above http://www.reaper.fm/download.php
+    - SWS Extensions v2.7.3 or more recent: http://sws-extension.org/
+    - js_ReaScriptAPI extension: https://forum.cockos.com/showthread.php?t=212174
+    - For Loudness meter: TBProAudio dpMeter4 v4.3.11 https://www.tbproaudio.de/
+
+
+* Installation
+
+  After installing it from HeDaScripts Manager, make sure you install SWS and
+  js_ReaScriptAPI too.
+
+  Install the VST3 version of dpMeter 4.3.11. if you want Loudness meter
+  support. Uncheck the VST2 version at installation to avoid using the VST2
+  version.
+
+  You can search now in actions list for HeDa Track Inspector and you cna run
+  the main action: "Script: HeDa_Track Inspector VIP.lua"
+  
+  You can create a toolbar button or assign it a keyboard shortcut.
+	
+  There is an additional lua file that starts the script in master mode by
+  default showing the master track. "Script: HeDa_Track Inspector
+  VIP_Master.lua"
+
+
+
+
+* How to start Track Inspector or any script every time you start REAPER?
+
+  In REAPER there is a special script that is run every time if the script
+  exists. The file is "__startup.lua" located in the Scripts folder in your
+  REAPER resources folder.
+
+  If you don't have this file, it is normal. You can create it by going to the
+  Actions window, and click in the New... button next to the Reascript: text.
+
+  It prompts you for the file name. Enter __startup.lua (notice there is a
+  double _ )and then you will be presented with a script editor. Here you have
+  to enter the code to call other scripts.
+
+  Enter this line to start Track Inspector VIP for example:
+
+    reaper.Main_OnCommand(reaper.NamedCommandLookup("_RSe3ad1140dc733c3ccfe65a67ec53bfc634535821"), -1) --Run Track Inspector VIP
+
+  you can enter new lines for each script you want to auto start. The
+  _RSe3ad1140dc733c3ccfe65a67ec53bfc634535821 in this example is the command ID
+  for Track Inspector VIP. To find other IDs for other scripts you must find them
+  in your actions list selecting the action for the script and right click and
+  Copy command ID. then you cna paste it in your script editor.
+
+  Now you only have to Save the script. (CTRL+S) and that's it. Try to test it
+  by restarting REAPER and the Track Inspector VIP should be started
+  automatically. It remembers the docker posiiton. If the first time appears in
+  a different docker, just move it to where you want it and next time it will be
+  there.
+
+
+
+
+* Terminating the script:
+
+  With the script running, running again the action will ask what do you want to
+  do. Terminate and close it. Or run another instance. You have to enable "remember my answer for this script"
+  and click "Terminate instances"
+	
+    

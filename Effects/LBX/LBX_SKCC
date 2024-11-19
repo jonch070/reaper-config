@@ -1,0 +1,821 @@
+desc:LBX_SKCC3
+options:gmem=LBX_SK2_SharedMem
+
+//import watch.jsfx-inc
+
+//0 = normal; 1 = mapped events only; 2 = non-mapped events
+slider1:0<0,2,1>-Mode
+slider2:0<0,1,1>-Data Set
+slider3:0<-1,128,1>-Map Name Set
+slider4:0<-1,128,1>-Map Name Set
+slider5:0<-1,128,1>-Map Name Set
+slider6:0<-1,128,1>-Map Name Set
+slider7:0<0,1,1>-skip
+slider8:0<0,1,1>-skip
+slider9:0<0,1,1>-skip
+slider10:0<0,1,1>-skip
+slider11:-1<-1,16384,1>-Manual Out Data
+slider12:-1<-1,16384,1>-Manual Out Data2
+slider13:0<0,1,1>-skip
+slider14:0<0,1,1>-skip
+slider15:0<0,1,1>-skip
+slider16:0<0,1,1>-StampCCTrigger
+slider17:0<0,1,1>-skip
+slider18:0<0,1,1>-skip
+slider19:0<0,1,1>-Manual Send
+slider20:0<0,255,1>-Manual Send Msg1
+slider21:0<0,127,1>-Manual Send Msg2
+slider22:0<0,127,1>-Manual Send Msg3
+slider23:0<0,1,1>-skip
+slider24:0<0,1,1>-skip
+slider25:0<0,1,1>-skip
+slider26:0<0,1,1>-skip
+slider27:0<0,1,1>-skip
+slider28:0<0,1,1>-skip
+slider29:0<0,1,1>-skip
+slider30:0<0,1,1>-skip
+slider31:0<0,1,1>-skip
+slider32:0<0,1,1>-skip
+slider33:0<0,1,1>-skip
+slider34:0<0,1,1>-skip
+slider35:0<0,1,1>-skip 
+slider36:0<0,16,1>-Fader mode
+
+slider37:0<0,1,1>-InReset
+slider38:0<0,256,1>-InSelect
+
+slider39:0<0,1,1>-FReset
+slider40:0<0,256,1>-FSelect
+ 
+// in data (cc/pitch/note + channel +devbus)
+slider41:0<0,16384,1>-FData1
+// in type 0-CC, 1-Pitch, 2-Note
+slider42:0<0,2,1>-FData2
+ 
+// out data (cc+channel)
+slider43:0<0,2048,1>-FData3
+
+in_pin:none
+out_pin:none
+
+@init
+
+//watch.Create(w1, 102064+224);         // watch at offset 0
+//watch.Create(w2, 102080);    // watch at offset 128
+//watch.SetPos(w2, 0, 100); // move w2 so it doesn't draw over w1
+gfx_h = 32;
+
+ext_noinit = 1.0;
+ext_midi_bus = 1;
+
+fader_val2 = 1024;
+fader_change = 2048;
+fader_relative = 3072;
+fader_input = 4096;
+
+fadertouch = 237000; //1024
+ftouch_in_cc = 200000; //16384
+ftouch_in_note = 216384; //16384
+ftouch_on = 233000; //1024
+ftouch_off = 235000; //1024
+
+fdata_sendcconrel = 260000; //1
+fdata_removedups = 260001; //1
+
+fdata_in_cc=1000000; //size 16384
+fdata_in_note=1016384; //size 16384
+fdata_in_pitch=1032768; //size 128
+fdata_fader=1150000;
+fdata_fadermode=1152000; //1024
+fdata_14bit=1154000; //1024
+fdata_polarity=1156000; //1024
+fdata_bmode = 1158000; //1024
+fdata_fine =1160000; //1024
+fdata_fineval =1162000; //1024
+
+//pass through notes + pitch messages on channel N - N = 1-16 or -1 = all channels, 0 = off
+fdata_notesthru = 1163025; //4
+
+fbuttype = 243000; //1024
+fbutstates = 245000; //1024
+
+fencoderres = 249000; //1024 -- set up via faderbox
+fdata_bstate = 257000;
+fbutstates_array = 3000000; //32*1024 = 32768
+fbutstate = 3040100; //1024
+
+mapname = 0;
+mapname2 = 1;
+mapname3 = 2;
+mapname4 = 3;
+manoval = -1;
+manoval2 = -1;
+
+ccstamp_active = 399999;
+ccstamp_cc_active = 400000;
+ccstamp_cc_val = 400128;
+ccstamp_cc_enabled = 400384;
+
+man_msg = 1998995;
+man_send = 1998998;
+man_val = 1998999;
+man_send2 = 1998996;
+man_val2 = 1998997;
+
+mansend_msg1 = 1999100;
+mansend_msg2 = 1999101;
+mansend_msg3 = 1999102;
+
+mansend_bufcnt = 0;
+mansend_buffer = 501;
+
+fineamt = 1163100; //1
+enctouch = 1163110; //1024
+
+lastval = 7000000; //32768
+resetlastval = 7033000; //32768
+
+memset(lastval,-1,32768);
+
+slider2 = 0;
+
+@serialize
+
+/*file_mem(0, fdata_in_cc, 16384);
+file_mem(0, fdata_in_note, 16384);
+file_mem(0, fdata_in_pitch, 128);
+file_mem(0, fdata_fader, 1024);
+file_mem(0, fdata_fadermode, 1024);
+file_mem(0, fencoderres, 1024);
+file_string(0, mapname);
+file_string(0, mapname2);
+file_string(0, mapname3);
+file_string(0, mapname4);
+*/
+
+@slider 
+
+slider3 != -1 ? (
+  slider3 == 0 ? (
+    strcpy(mapname, "");
+    strpos = 0;
+  ) : slider3 > 0 ? (
+    str_setchar(mapname,strpos,slider3);
+    strpos+=1;
+  );
+  slider3 = -1;
+);
+
+slider4 != -1 ? (
+  slider4 == 0 ? (
+    strcpy(mapname2, "");
+    strpos2 = 0;
+  ) : slider4 > 0 ? (
+    str_setchar(mapname2,strpos2,slider4);
+    strpos2+=1;
+  );
+  slider4 = -1;
+);
+
+slider5 != -1 ? (
+  slider5 == 0 ? (
+    strcpy(mapname3, "");
+    strpos3 = 0;
+  ) : slider5 > 0 ? (
+    str_setchar(mapname3,strpos3,slider5);
+    strpos3+=1;
+  );
+  slider5 = -1;
+);
+
+slider6 != -1 ? (
+  slider6 == 0 ? (
+    strcpy(mapname4, "");
+    strpos4 = 0;
+  ) : slider6 > 0 ? (
+    str_setchar(mapname4,strpos4,slider6);
+    strpos4+=1;
+  );
+  slider6 = -1;
+);
+
+  slider11 != -1 && gmem[man_val] != manoval ? (
+    fchan = (slider11 & 1920) >> 7;
+    fbus = (slider11 & 14336) >> 11;
+    manoval = gmem[man_val];
+    midi_bus = fbus;
+    gmem[man_send] = 1;
+    man_msg2 = slider11;
+  ) : slider11 == -1 && manoval != -1 ? (
+    manoval = -1;
+  );
+  slider11 = -1;
+
+  slider12 != -1 && gmem[man_val2] != manoval2 ? (
+    fchan2 = (slider12 & 1920) >> 7;
+    fbus2 = (slider12 & 14336) >> 11;
+    manoval2 = gmem[man_val2];
+    midi_bus = fbus2;
+    gmem[man_send2] = 1;
+    man_msg2_2 = slider12;
+  ) : slider12 == -1 && manoval2 != -1 ? (
+    manoval2 = -1;
+  );
+  slider12 = -1;
+  
+  slider19 != 0 ? (
+    mansend_bufcnt += 1;
+    mansend_buffer[(mansend_bufcnt-1)*3] = slider20; //gmem[mansend_msg1];
+    mansend_buffer[(mansend_bufcnt-1)*3+1] = slider21; //gmem[mansend_msg2];
+    mansend_buffer[(mansend_bufcnt-1)*3+2] = slider22; //gmem[mansend_msg3];
+    slider19 = 0;
+  );
+  
+@block
+
+  slider1 = 1;
+  
+  //ggg = gmem[fdata_notesthru+2];
+  /*slider11 != -1 && slider12 != manoval ? (
+    fchan = (slider11 & 1920) >> 7;
+    fbus = (slider11 & 14336) >> 11;
+    manoval = slider12;
+    midi_bus = fbus;
+    midisend(0,176 + fchan,slider11 & 127,slider12);
+    slider11 = -1;
+    slider12 = 0;
+  ) : slider11 == -1 && manoval != -1 ? (
+    manoval = -1;
+    slider12 = 0;
+  );*/
+  
+  slider16 == 1 ? (
+    //send4 = gmem[ccstamp_active];
+    gmem[ccstamp_active] == 1 ? (
+      cc = 0;
+      loop (128,
+        active = gmem[ccstamp_cc_active+cc];
+        enabled = gmem[ccstamp_cc_enabled+cc];
+        ccval = min(gmem[ccstamp_cc_val+cc],127);
+        active == 1 && enabled == 1 && ccval > -1 ? (
+          midi_bus = 0;
+          chan = 0;
+          ccmsg1 = 176 + chan;
+          ccmsg2 = cc;
+          ccmsg3 = ccval;
+          midisend(0,ccmsg1,ccmsg2,ccmsg3);
+        );
+        cc+=1;
+      );
+    );
+    slider16 = 0;
+  );
+  
+  remdups = gmem[fdata_removedups];
+  
+   while (midirecv(offset,msg1,msg2,msg3))
+   (
+      midi_bus <= 3 ? ( //only accept buses 0-3
+        skip = 0;
+        msgType = (msg1 & 240);
+        msgChannel = (msg1 & 15);
+        
+        ///////////////////////////////////////////////////////////
+        //check fader touch - to reset last CC value
+        //also store fader release play position for RR
+        faderT = -1;
+        msgType == 144 ? 
+        (
+          //NOTE ON
+          fpos = (msgChannel << 7) | (msg2 & 127) | ((midi_bus) << 11);
+          faderT = gmem[ftouch_in_note+fpos];
+          faderT != -1 ?
+          (
+            msg3 == gmem[ftouch_on+faderT] ? 
+            (
+              resetlastval[faderT] = 1;
+            ) : msg3 == gmem[ftouch_off+faderT] ? (
+              //on fader release - send last CC value
+              gmem[fdata_sendcconrel] == 1 ? (
+                rs_data = gmem[fdata_fader+faderT];
+                rs_data != -1 ? (
+                  rs_fchan = (rs_data & 1920) >> 7;
+                  rs_msg1 = 176 + rs_fchan;
+                  rs_msg2 = rs_data & 127;
+                  rs_msg3 = lastval[rs_msg1<<7 + rs_msg2];
+                  //deal with 14bit
+                  rs_msg3 != -1 ? (
+                    gmem[fdata_14bit+fader] == 1 ? (
+                      midi_bus = 0;
+                      midisend(offset,rs_msg1,rs_msg2,(rs_msg3>>7)&127);
+                      midisend(offset,rs_msg1,rs_msg2+32,rs_msg3&127);
+                      skip = 1;
+                    ) : (
+                      midi_bus = 0;
+                      midisend(offset,rs_msg1,rs_msg2,rs_msg3&127);
+                      skip = 1;
+                    );
+                  );
+                );
+              );
+            );
+          );
+        ) : msgType == 176 ? (
+          
+          //CC
+          fpos = (msgChannel << 7) | (msg2 & 127) | ((midi_bus) << 11);
+          faderT = gmem[ftouch_in_cc+fpos];
+          faderT != -1 ?
+          (
+            msg3 == gmem[ftouch_on+faderT] ? 
+            (
+              resetlastval[faderT] = 1;
+            ) : msg3 == gmem[ftouch_off+faderT] ? (
+              //on fader release - send last CC value
+              gmem[fdata_sendcconrel] == 1 ? (
+                rs_data = gmem[fdata_fader+faderT];
+                rs_data != -1 ? (
+                  rs_fchan = (rs_data & 1920) >> 7;
+                  rs_msg1 = 176 + rs_fchan;
+                  rs_msg2 = rs_data & 127;
+                  rs_msg3 = lastval[rs_msg1<<7 + rs_msg2];
+                  //deal with 14bit
+                  rs_msg3 != -1 ? (
+                    gmem[fdata_14bit+fader] == 1 ? (
+                      midi_bus = 0;
+                      midisend(offset,rs_msg1,rs_msg2,(rs_msg3>>7)&127);
+                      midisend(offset,rs_msg1,rs_msg2+32,rs_msg3&127);
+                      skip = 1;
+                    ) : (
+                      midi_bus = 0;
+                      midisend(offset,rs_msg1,rs_msg2,rs_msg3&127);
+                      skip = 1;
+                    );
+                  );
+                );
+              );
+            );
+          );      
+        );
+        ///////////////////////////////////////////////////////////
+        
+        msg2_LSB = -1;
+        fader = -1;
+        msgType == 176 ? (
+          code = msgChannel << 7 | (msg2 & 127) | (midi_bus << 11);
+          fader = gmem[fdata_in_cc+code];
+          
+        ) : msgType == 224 ? (
+          //check notes thru flag
+          ntflag = gmem[fdata_notesthru + midi_bus];
+          ntflag == 0 ? (
+            code = msgChannel + (midi_bus << 4);
+            fader = gmem[fdata_in_pitch+code];
+  
+            fader != -1 && gmem[fdata_14bit+fader] == 1 ? (
+              data = gmem[fdata_fader+fader];
+              msg3_LSB = msg2;
+              msg2_LSB = (data & 127)+32;
+            );
+          ) : (
+            ((ntflag == -1) || (ntflag == msgChannel+1)) ? (
+              //thru notes
+              midi_bus = 0;
+              skip = 1;
+              midisend(offset,msg1,msg2,msg3); //Pass thru
+            ) : (
+              code = msgChannel + (midi_bus << 4);
+              fader = gmem[fdata_in_pitch+code];
+    
+              fader != -1 && gmem[fdata_14bit+fader] == 1 ? (
+                data = gmem[fdata_fader+fader];
+                msg3_LSB = msg2;
+                msg2_LSB = (data & 127)+32;
+              );
+            );
+          );
+  
+        ) : msgType == 144 ? (
+          //check notes thru flag
+          ntflag = gmem[fdata_notesthru + midi_bus];
+          ntflag == 0 ? (
+            code = msgChannel << 7 | (msg2 & 127) | (midi_bus << 11);
+            fader = gmem[fdata_in_note+code];
+          ) : (
+            ((ntflag == -1) || (ntflag == msgChannel+1)) ? (
+              //thru notes
+              midi_bus = 0;
+              skip = 1;
+              midisend(offset,msg1,msg2,msg3); //Pass thru
+            ) : (
+              code = msgChannel << 7 | (msg2 & 127) | (midi_bus << 11);
+              fader = gmem[fdata_in_note+code];
+            );
+          );
+        ) : msgType == 128 ? (
+          //check notes thru flag
+          ntflag = gmem[fdata_notesthru + midi_bus];
+          ntflag != 0 ? (
+            ((ntflag == -1) || (ntflag == msgChannel+1)) ? (
+              //thru notes
+              midi_bus = 0;
+              skip = 1;
+              midisend(offset,msg1,msg2,msg3); //Pass thru
+            );          
+          );
+        );
+
+        fader != -1 ? (
+          isabs = 1; //used to determine if continuous (not button)
+          gmem[fader_input+fader] = 1;
+          data = gmem[fdata_fader+fader];
+          data != -1 ? (
+            slider1 != 2 ? (
+              fchan = (data & 1920) >> 7;
+              msg1 = 176 + fchan;
+              msg2 = data & 127;
+              midi_bus = 0;
+
+              gmem[fdata_fadermode+fader] == 3 ? ( //relative 3 (reaper 3)
+                //isabs = 0;
+                gmem[enctouch+fader] = 1;
+                encres = gmem[fencoderres+fader];
+                msg3 > 0x40 ? (
+                  vv = floor(((msg3-0x40))*(encres+1)+0.5);
+                  gm = max(gmem[fader_val2+fader] - vv,0);
+                ) : (
+                  vv = floor(((msg3))*(encres+1)+0.5);
+                  gm = min(gmem[fader_val2+fader] + vv,16383);
+                );
+                //gmem[fader] = gm;
+                gmem[fdata_14bit+fader] == 1 ? (
+                  data = gmem[fdata_fader+fader];
+                  msg3_LSB = (gm & 127);
+                  msg2_LSB = (data & 127)+32;
+                );
+                
+                gmem[fader_val2+fader] = floor(gm);
+                gmem[fader_change+fader] = floor(gm);
+                msg3 = floor((gm & 16256) >> 7);                
+
+              ) : gmem[fdata_fadermode+fader] == 2 ? ( //relative 2 (reaper 2)
+                //isabs = 0;
+                gmem[enctouch+fader] = 1;
+                encres = gmem[fencoderres+fader];
+                msg3 > 0x40 ? (
+                  vv = floor(((msg3-0x40))*(encres+1)+0.5);
+                  gm = min(gmem[fader_val2+fader] + vv,16383);
+                ) : (
+                  vv = floor(((msg3))*(encres+1)+0.5);
+                  gm = max(gmem[fader_val2+fader] - vv,0);
+                );
+                //gmem[fader] = gm;
+                gmem[fdata_14bit+fader] == 1 ? (
+                  data = gmem[fdata_fader+fader];
+                  msg3_LSB = (gm & 127);
+                  msg2_LSB = (data & 127)+32;
+                );
+                
+                gmem[fader_val2+fader] = floor(gm);
+                gmem[fader_change+fader] = floor(gm);
+                msg3 = floor((gm & 16256) >> 7);                
+
+              ) : gmem[fdata_fadermode+fader] == 6 ? ( //relative 63/65
+                //isabs = 0;
+                gmem[enctouch+fader] = 1;
+                encres = gmem[fencoderres+fader];
+                
+                vv = floor(((msg3-0x40))*(encres+1)+0.5);
+                gm = max(min(gmem[fader_val2+fader] + vv,16383),0);
+                
+                gmem[fdata_14bit+fader] == 1 ? (
+                  data = gmem[fdata_fader+fader];
+                  msg3_LSB = (gm & 127);
+                  msg2_LSB = (data & 127)+32;
+                );
+                
+                gmem[fader_val2+fader] = floor(gm);
+                gmem[fader_change+fader] = floor(gm);
+                msg3 = floor((gm & 16256) >> 7);
+
+              ) : gmem[fdata_fadermode+fader] == 7 ? ( //relative 1/127 (reaper 1)
+                //isabs = 0;
+                gmem[enctouch+fader] = 1;
+                encres = gmem[fencoderres+fader];
+                msg3 > 0x40 ? (
+                  vv = floor(((msg3-128))*(encres+1)+0.5);
+                  gm = max(min(gmem[fader_val2+fader] + vv,16383),0);
+                ) : (
+                  vv = floor(((msg3))*(encres+1)+0.5);
+                  gm = max(min(gmem[fader_val2+fader] + vv,16383),0);
+                );
+                
+                gmem[fdata_14bit+fader] == 1 ? (
+                  data = gmem[fdata_fader+fader];
+                  msg3_LSB = (gm & 127);
+                  msg2_LSB = (data & 127)+32;
+                );
+                
+                gmem[fader_val2+fader] = floor(gm);
+                gmem[fader_change+fader] = floor(gm);
+                msg3 = floor((gm & 16256) >> 7);
+                
+              ) : gmem[fdata_fadermode+fader] == 4 ? ( //button
+                isabs = 0;
+                gmem[fdata_bmode+fader] == 0 ? (
+
+                  msg3 == 127 ? (
+                    states = gmem[fbutstates+fader];
+                    pos = gmem[fbutstate+fader] +1;
+                    pos > states-1 ? (
+                      pos = 0;
+                    );
+                    gmem[fbutstate+fader] = pos;
+                    pos > 0 ? (
+                      gmem[fdata_bstate+fader] = 1;
+                    ) : (
+                      gmem[fdata_bstate+fader] = 0;
+                    );
+                    v = gmem[fbutstates_array+((fader+1)*32) + pos];
+                    v != -1 ? (
+                      msg3 = v;
+                      gmem[fdata_14bit+fader] == 1 ? (
+                        msg3_LSB = (v & 127);
+                        msg2_LSB = (msg2 & 127)+32;
+                        msg3 = (v & 16383) >> 7;
+                      );
+                    ) : ( //invalid
+                      skip = 1;
+                    );
+                    gmem[fader_change+fader] = v;
+                    //gmem[fader_val2+fader] = v;
+                    //gmem[fader] = v;
+                  ) : (
+                    skip = 1;
+                  );
+                ) : (
+                  msg3 == 127 ? (
+                    states = gmem[fbutstates+fader];
+                    pos = states-1; //gmem[fbutstate+fader] +1;
+                    //pos > states-1 ? (
+                    //  pos = 0;
+                    //);
+                    (pos != gmem[fbutstate+fader]) ? (
+                      gmem[fbutstate+fader] = pos;
+                      v = gmem[fbutstates_array+((fader+1)*32) + pos];
+                      v != -1 ? (
+                        msg3 = v;
+                        gmem[fdata_14bit+fader] == 1 ? (
+                          msg3_LSB = (v & 127);
+                          msg2_LSB = (msg2 & 127)+32;
+                          msg3 = (v & 16383) >> 7;
+                        );
+                      ) : ( //invalid
+                        skip = 1;
+                      );
+                      gmem[fader_change+fader] = v;
+                    ) : (
+                      skip = 1;
+                    );
+                  ) : (
+                    states = gmem[fbutstates+fader];
+                    pos = 0; //gmem[fbutstate+fader] +1;
+                    //pos > states-1 ? (
+                    //  pos = 0;
+                    //);
+                    (pos != gmem[fbutstate+fader]) ? (
+                      gmem[fbutstate+fader] = pos;
+                      v = gmem[fbutstates_array+((fader+1)*32) + pos];
+                      v != -1 ? (
+                        msg3 = v;
+                        gmem[fdata_14bit+fader] == 1 ? (
+                          msg3_LSB = (v & 127);
+                          msg2_LSB = (msg2 & 127)+32;
+                          msg3 = (v & 16383) >> 7;
+                        );
+                      ) : ( //invalid
+                        skip = 1;
+                      );
+                      gmem[fader_change+fader] = v;
+                    ) : (
+                      skip = 1;
+                    );
+                  );
+                );
+              );
+            ) : (
+              skip = 1;
+            );              
+          ) : gmem[fdata_fadermode+fader] == 3 ? (
+            //isabs = 0;
+            encres = gmem[fencoderres+fader];
+            msg3 > 0x40 ? (
+              //vv = floor(((msg3-0x40)/encres)*16383);
+              vv = floor(((msg3-0x40))*encres);
+              gm = max((gmem[fader_val2+fader]) - vv,0);
+              gmem[fader_relative+fader] = -(msg3-0x40);
+              gmem[fader] = gmem[fader_val2+fader] = floor(gm);
+              //msg3 = (gm/16383)*127;
+            ) : (
+              //vv = floor(((msg3)/encres)*16383);
+              vv = floor(((msg3))*encres);
+              gm = min((gmem[fader_val2+fader]) + vv,16383);
+              gmem[fader_relative+fader] = msg3;
+              gmem[fader] = gmem[fader_val2+fader] = floor(gm);
+              //msg3 = (gm/16383)*127;                
+            );
+            skip = 1;
+          ) : gmem[fdata_fadermode+fader] == 2 ? (
+            //isabs = 0;        
+            encres = gmem[fencoderres+fader];
+            msg3 > 0x40 ? (
+              //vv = floor(((msg3-0x40)/encres)*16383);
+              vv = floor(((msg3-0x40))*encres);
+              gm = min((gmem[fader_val2+fader]) + vv,16383);
+              gmem[fader_relative+fader] = (msg3-0x40);
+              gmem[fader] = gmem[fader_val2+fader] = floor(gm);
+              //msg3 = (gm/16383)*127;
+            ) : (
+              //vv = floor(((msg3)/encres)*16383);
+              vv = floor(((msg3))*encres);
+              gm = max((gmem[fader_val2+fader]) - vv,0);
+              gmem[fader_relative+fader] = -msg3;
+              gmem[fader] = gmem[fader_val2+fader] = floor(gm);
+              //msg3 = (gm/16383)*127;                
+            );
+            skip = 1;
+          ) : gmem[fdata_fadermode+fader] == 6 ? (
+            //isabs = 0;        
+            encres = gmem[fencoderres+fader];
+            vv = floor(((msg3-0x40))*encres);
+            gm = max(min((gmem[fader_val2+fader]) + vv,16383),0);
+            gmem[fader_relative+fader] = (msg3-0x40);
+            gmem[fader] = gmem[fader_val2+fader] = floor(gm);
+
+            skip = 1;
+          ) : gmem[fdata_fadermode+fader] == 7 ? (
+            //isabs = 0;        
+            encres = gmem[fencoderres+fader];
+            msg3 > 0x40 ? (
+              vv = floor(((msg3-128))*encres);
+              gm = max(min((gmem[fader_val2+fader]) + vv,16383),0);
+              gmem[fader_relative+fader] = msg3-128;
+              gmem[fader] = gmem[fader_val2+fader] = floor(gm);
+            ) : (
+              vv = floor(((msg3))*encres);
+              gm = max(min((gmem[fader_val2+fader]) + vv,16383),0);
+              gmem[fader_relative+fader] = msg3+1;
+              gmem[fader] = gmem[fader_val2+fader] = floor(gm);
+            );
+            skip = 1;
+          ) : (
+            skip = 1;
+          );
+          
+          //RESET LAST VALUE (TRIGGERED BY FADER TOUCH
+          resetlastval[fader] == 1 ? (
+            resetlastval[fader] = -1;
+            lastval[msg1<<7 + msg2] = -1;
+          );
+          
+        ) : (
+          slider1 != 1 ? (
+            midi_bus = 12+midi_bus;
+          ) : (
+            skip = 1;
+          );
+        );
+              
+        skip == 0 ? (
+          msg2_LSB != -1 ? (
+            ((fader != -1) && (gmem[fdata_polarity+fader] == 1)) ? (
+              msg3 = ((16383 - ((msg3 << 7) + msg3_LSB)) >> 7) & 127;
+              msg3_LSB = ((16383 - ((msg3 << 7) + msg3_LSB))) & 127;
+            );
+            ((fader != -1) && (gmem[fdata_fine+fader] == 1)) ? (
+              gmem[fadertouch+fader] == 1 ? 
+              ( 
+                val14 = (msg3 << 7) + msg3_LSB;
+                gmem[fdata_fineval+fader] != -1 ? (
+                  diff = floor((((val14) - 8192)/8192)*(gmem[fineamt]));
+                  mmm = floor(((gmem[fdata_fineval+fader]))+0.5);
+                  val14 = max(min(mmm + diff,16383),0);
+                  msg3 = val14 >> 7;
+                  msg3_LSB = val14 & 127;
+                  gmem[fader] = val14;
+                ) : (
+                  skip = 1;
+                );
+              ) : (
+                skip = 1;
+              );
+            );
+
+            skip == 0 ? (
+              remdups == 0 ? (
+                lastval[msg1<<7 + msg2] = ((msg3&127)<<7 + (msg3_LSB&127));
+                midisend(offset,msg1,msg2,msg3&127);//Pass thru
+                midisend(offset,msg1,msg2_LSB,msg3_LSB&127);
+                            ) : (
+                (isabs == 0 || lastval[msg1<<7 + msg2] != ((msg3&127)<<7 + (msg3_LSB&127))) ? (
+                  lastval[msg1<<7 + msg2] = ((msg3&127)<<7 + (msg3_LSB&127));
+                  midisend(offset,msg1,msg2,msg3&127);//Pass thru
+                  midisend(offset,msg1,msg2_LSB,msg3_LSB&127);
+                );
+              );
+            );
+          ) : (
+            ((fader != -1) && (gmem[fdata_polarity+fader] == 1)) ? (
+              msg3 = 127 - (msg3&127);
+            );
+            ((fader != -1) && (gmem[fdata_fine+fader] == 1)) ? (
+              gmem[fadertouch+fader] == 1 ? 
+              (
+                gmem[fdata_fineval+fader] != -1 ? (
+                  diff = floor((((msg3&127) - 64)/64)*(gmem[fineamt]/128));
+                  mmm = floor(((gmem[fdata_fineval+fader]/16383)*127)+0.5);
+                  msg3 = max(min(mmm + diff,127),0);
+                  gmem[fader] = (msg3/127)*16383;
+                ) : (
+                  skip = 1;
+                );
+              ) : (
+                skip = 1;
+              );
+            );
+            skip == 0 ? (
+              remdups == 0 ? (
+                lastval[msg1<<7 + msg2] = msg3&127;
+                midisend(offset,msg1,msg2,msg3&127);//Pass thru
+              ) : (
+                (isabs == 0 || lastval[msg1<<7 + msg2] != msg3&127) ? (
+                  lastval[msg1<<7 + msg2] = msg3&127;
+                  midisend(offset,msg1,msg2,msg3&127);//Pass thru
+                );
+              );
+            );
+          );
+        ); 
+        midi_bus = 0;
+      );
+   );
+
+  gmem[man_send] == 1 /*gmem[man_val] != manoval*/ ? (
+    manoval = gmem[man_val];
+    man_msg2 = gmem[man_msg];
+    midisend(0,176 + fchan, man_msg2 & 127, floor((manoval*127)+0.5));
+    gmem[man_send] = 0;  
+  );
+  gmem[man_send2] == 1 /*gmem[man_val2] != manoval2*/ ? (
+    manoval2 = gmem[man_val2];
+    man_msg2_2 = gmem[man_msg] + 32;
+    midisend(0,176 + fchan2, man_msg2_2 & 127, floor((manoval2*127)+0.5));
+    gmem[man_send2] = 0;  
+  );
+  
+  mansend_bufcnt > 0 ? (
+    buffer_pos = 0;
+    midi_bus = 0;
+    loop(mansend_bufcnt,
+      midisend(0, mansend_buffer[buffer_pos*3], mansend_buffer[buffer_pos*3+1], mansend_buffer[buffer_pos*3+2]);
+      buffer_pos += 1;
+    );
+    mansend_bufcnt = 0;
+  );
+  
+@gfx
+gfx_r=gfx_b=gfx_g=1;
+gfx_x = 0;
+gfx_y = 5;
+strlen(mapname) > 0 ? (
+  gfx_drawstr("MIDI MAP 1: ");
+  gfx_r=gfx_b=0;gfx_g=1;
+  gfx_drawstr(mapname);
+  gfx_r=gfx_b=gfx_g=1;
+  gfx_x = 0;
+  gfx_y += 12;
+);
+strlen(mapname2) > 0 ? (
+  gfx_drawstr("MIDI MAP 2: ");
+  gfx_r=gfx_b=0;gfx_g=1;
+  gfx_drawstr(mapname2);
+  gfx_r=gfx_b=gfx_g=1;
+  gfx_x = 0;
+  gfx_y += 12;
+);
+strlen(mapname3) > 0 ? (
+  gfx_drawstr("MIDI MAP 3: ");
+  gfx_r=gfx_b=0;gfx_g=1;
+  gfx_drawstr(mapname3);
+  gfx_r=gfx_b=gfx_g=1;
+  gfx_x = 0;
+  gfx_y += 12;
+);
+strlen(mapname4) > 0 ? (
+  gfx_drawstr("MIDI MAP 4: ");
+  gfx_r=gfx_b=0;gfx_g=1;
+  gfx_drawstr(mapname4);
+);
+
+//watch.Draw(w1);
+//watch.Draw(w2);

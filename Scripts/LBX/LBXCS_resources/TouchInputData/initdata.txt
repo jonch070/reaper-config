@@ -1,0 +1,5 @@
+[overlay_window]LBX_Overlay
+[parent_window]- LBX Stripper -
+[drawoffset_x]5
+[drawoffset_y]5
+[space]1

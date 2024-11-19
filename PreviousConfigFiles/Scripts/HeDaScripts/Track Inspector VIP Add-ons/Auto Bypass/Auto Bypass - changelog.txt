@@ -1,0 +1,14 @@
+﻿---------------------------------------------------------------------------------------
+ Changelog (What's new)     
+---------------------------------------------------------------------------------------
+
+* v1.0.1 (2021-11-18)
+  # fix saving before and after values not being saved correctly
+
+* v1.0.0 (2021-10-17)
+  + Auto-Refresh (enable/disable refreshing all tracks envelopes on a time interval)
+  + Auto-Bypass Tracks (enable/disable for current track)
+  + setting: seconds before and after item 
+  + setting: refresh time interval
+  + setting: hide/show bypass envelopes 
+  

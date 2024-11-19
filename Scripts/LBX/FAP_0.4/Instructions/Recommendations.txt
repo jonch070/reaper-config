@@ -1,0 +1,15 @@
+Melda Production Plugins - Need turn on "Automation compatibility mode for v10" in plugin settings
+ReaDelay - Need add second tape to default preset
+ReaEQ - Make in default preset Low Cut - Band 1, High Cut - Band 6
+JS - Some plugins parameters can be fully controlled only in native shell
+JS - Some JS compressors have reduction meter
+
+At this moment need to do "2" and "3" in "Step 6" every time, when you open new project from template
+
+
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+
+WV PLAYER
+
+Play all your Multimedia files... can play any multimedia files, from
+sound to movies, WAV, MIDI, MPG, AVI, MP3, ... in fact anything you
+want, provided you have all the necessary filters and codecs available
+in your computer.
+
+This used to be named WavPlayer, so it really is the same program and
+not a diferent one. But the name was a little misleading, as it didn't
+stop at wav files only. It was called WavPlayer, just because it started
+it's life as a simple WAV player... 
+Then, it naturally evolved to a full multimedia player.
+
+Can play videos zoomed and full screen, show frame rate and play in 
+slow motion (not all, just some..), save AVI individual frames as JPG 
+to disk, etc...
+
+Also has a special 'kiosk mode' that shows the interface centered in
+the middle of the screen, with no caption and a few menus disabled, 
+for a few special uses.
+
+Works with multiple soundcards for playing WAV files, if you are
+lucky to have more than one (soundcard) installed - or want to send
+different 'voice' commands to different sound interfaces. This works
+even from the command line.
+
+Has a full 'Play List' to which you may add any files you want, and
+let it play all unatended, amoung a few other goodies. :-)
+
+Allows multiselect of files to play directly from the file browser
+too, as well as 'select all'.
+
+
+Can also work only from the command line, using a string like:
+"{path_to_program}\wv_player.exe" /n:x {path_to_file}\sound.wav"
+to play only the files and auto exit.
+
+To make it clearer, here is a command line example:
+* you have player (wv_player.exe) in folder  C:\Programs\utils 
+* you have a file to play (sound.wav) in folder  C:\win\sounds\
+ 
+so, command line, with above example, should go like this:
+ "C:\Programs\utils\wv_player.exe C:\win\sounds\sound.wav"
+ 
+And if you want to repeat the playing, there is an extra option; 
+so if you want the sound to play twice:
+ "C:\Programs\utils\wv_player.exe /n:2 C:\win\sounds\sound.wav"
+
+And if you want to play (wav file) it on a different soundcard - lucky you;)
+there is another option; so to play it twice on your second card:
+ "C:\Programs\utils\wv_player.exe /n:2 /c:1 C:\win\sounds\sound.wav"
+
+The /n: switch is the number of times the command line will repeat 
+playback, and must be right after the program's name, before the
+filenames to play. Note: to stop the playback in command line mode, 
+just use the combination    Ctrl+Break   keys.
+
+The /c: switch is the soundcard's number you want to play on.
+Just note that 1st soundcard is numbered 'zero' (0). second is
+numbered 'one' (1), etc... Note: multi-soundcards only work for WAV
+files :(
+
+
+Ah, and don't forget that command lines that have spaces in it are
+required by Windows itself to be between "". So, an example with spaces
+in the path name could be like this:
+ "C:\Documents and Settings\wv_player.exe" "C:\Documents and Settings\wav\Missing.wav"
+note: both parts of the command line are between "" as both have
+spaces in it...
+ 
+--------------------------
+Install / Uninstall
+
+Never liked programs that install files all over the hard disk;
+To install this program, you only have to copy the files to a
+suitable directory, and then run it from there.
+
+To uninstall, you only have to delete the directory you created and
+the files within, and... that's all !
+
+--------------------------
+Contact me
+
+If you wish to sponsor development of other handy utilities,
+or you enjoy using this viewer so much that you can't resist...
+
+Please find the time to mail me regarding problems, enhancements or
+donations :) . Enhancements that I consider to be worth while,
+I will add and both mail the enhanced version to the specific person
+and also re-post it to any server site which has agreed to house it.
+
+You can e-mail me at         jmfalcao@webxpace.com
+
+--------------------------
+Free Downloads
+
+And, of course, you can always download the latest versions of
+the software from my web page, at
+
+              http://www.webxpace.net/software/software.html
+
+--------------------------
+Disclaimer
+
+Anybody may use or copy this program free of charge.
+However if anyone wishes to make any volume distributions, CD's
+and the like I would very much like to be asked first.
+I must stress that they do so at their own risk. I can't be held
+responsible for this program or any other programs malfunction.
+
+As this is freeware, it can be used freely in any FREE use... 
+If you are using it on any commercial application, you need to 
+ask first.
+
+--------------------------
+Thank you
+
+A big Thank You to all the people that cared to donate a few $$$
+to help keep the development of this freeware alive. Those are
+truly the ones that believe those utilities are worth something
+and keep me motivated creating and improving freeware!
+
+
+
+And also for the help and trouble of writing back with feedback
+and suggestions, to :
+
+ Keith Tonge
+ Kurt San
+ Greg Ackerson
+ Dale Hawthorn
+ Milton Xavier
+ B. james
+ Ken Garris (multi soundcards)
+ Denys Jones
+ Liv De Lange
+ Michael Marquart
+ Henry Schwartzman
+ Carl Sawyer
+ Michael Bayley
+
+--------------------------
+
+© 1998-2012 J.Falcao

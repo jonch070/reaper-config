@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Audiokinetic" commit="a7149e11db207fb085fc8f70bb389281841beeae">
+  <category name="Extensions">
+    <reapack name="ReaWwise.ext" type="extension" desc="ReaWwise">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaWwise\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaWwise is a REAPER extension that sound designers can use to transfer audio files from REAPER into Wwise projects. The transfer process creates Wwise objects in manually defined hierarchies, so that Wwise users can start working with the imported sounds immediately.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Supported Platforms\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Windows\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mac\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Basic Usage\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Open your REAPER and Wwise projects.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Configure your REAPER render settings appropriately. The render settings determine which files will be transferred to Wwise.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Open ReaWwise and configure settings such as the Originals Subfolder (optional), Import Destination, Wwise Structures, and so on.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab Preview the audio files and Wwise objects to be transferred in the Preview Panel.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab Click {\b Transfer To Wwise} to transfer the audio files and create the corresponding Wwise objects.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 UserPlugins Directory\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Windows: %appdata%\\REAPER\\UserPlugins\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mac: ~/Library/Application Support/REAPER/UserPlugins\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Other Resources\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Refer to the {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com/library/reawwise"}}{\fldrslt{\ul
+ReaWwise User Guide
+}}}
+ for more information regarding usage, installation and troubleshooting of the extension.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 For general questions about usage, refer to Audiokinetic's {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/ask"}}{\fldrslt{\ul
+Community Q&A
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The repository is not open to pull request but in the case of a bug report, bugfix or a suggestions, please feel free to {\field{\*\fldinst{HYPERLINK "https://github.com/audiokinetic/ReaWwise/issues"}}{\fldrslt{\ul
+open an issue
+}}}
+.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Feature requests can also be submitted to the {\field{\*\fldinst{HYPERLINK "https://www.audiokinetic.com/qa/questions/reawwise"}}{\fldrslt{\ul
+feature request section
+}}}
+ of Audiokinetic's Community Q&A. Use ReaWwise as the Category when submitting a question.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2024 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+Audiokinetic Inc.
+}}}
+ All rights reserved.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Acknowledgements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Inspired by the work of {\field{\*\fldinst{HYPERLINK "https://github.com/karltechno"}}{\fldrslt{\ul
+Karl Davis
+}}}
+\par}
+}
+]]></description>
+        <link rel="screenshot" href="https://github.com/audiokinetic/ReaWwise/blob/main/user-interface.png">User Interface</link>
+      </metadata>
+      <version name="1.0.1" author="Audiokinetic" time="2022-09-13T18:40:25Z">
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.1/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.2" author="Audiokinetic" time="2022-09-21T20:22:30Z">
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.2/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.2/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.3" author="Audiokinetic" time="2022-09-23T20:59:21Z">
+        <changelog><![CDATA[Bug fix:
+  - Fixed issue where the preview panel is empty due to parsing RENDER_TARGETS incorrectly for REAPER 6.68]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.3/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.3/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.4" author="Audiokinetic" time="2022-11-18T19:04:37Z">
+        <changelog><![CDATA[New Features:
+  - Added "ReaWwise: Open", "ReaWwise: Close" and "ReaWwise: Transfer To Wwise" actions to REAPER's action list. And added AK_Json_Clear and AK_Json_ClearAll functions to ReaScript.
+
+Miscellaneous Changes:
+  - Made read-only text fields look different from editable ones.
+  - Added focus feedback for drop-down lists.
+  - Added more tooltips throughout the user interface.
+  - Added Actor-Mixer as a possible Object Type for Wwise structures.
+
+Bug Fixes:
+  - Fixed: A corrupted preset file is created when clicking Cancel in the Wwise structures Save Preset dialog.
+  - Fixed: Transfer to Wwise button is still available when there are no items in preview pane.
+  - Fixed: Import details are wrong when Originals folder is blank.
+  - Fixed: When attempting to create a Sound SFX directly under a Physical Folder (an illegal parent/child relationship), no error is generated and the audio files are added to the Originals folder.]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.4/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.4/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.5" author="Audiokinetic" time="2023-07-19T14:48:16Z">
+        <changelog><![CDATA[New Features:
+
+- Added the ability to copy lines from the preview to the clipboard.
+
+- Object names with unresolved wildcards now display the placeholder
+  text "<wildcard_missing>". During transfer operations, users will be
+  warned about incomplete paths. They have the option to proceed while
+  skipping the import or creation of objects that contain these
+  incomplete paths.
+
+Bug Fixes:
+
+- Fixed: Possible to import sound voices without selecting a language.
+  Sound voice objects now default to the appropriate language based on
+  the version of Wwise being used. For Wwise Version 21.1 and earlier,
+  the default language is set to the first language in the project's
+  language list. For Wwise 22.1 and later, the default language is set
+  to the reference language of the Wwise project.
+
+- Fixed: Incorrect icon displayed for actor mixer containers in the
+  preview panel.
+
+- Fixed: When the import summary has many errors, the View Details and
+  Close buttons overlap some text.
+
+- Fixed: Import fails when the file path contains non English
+  characters. Changed the font from Open Sans to GoNotoCurrent to
+  support additional languages including Japanese and Chinese. More
+  information on the exact character set supported is on GitHub at:
+  https://github.com/satbyy/go-noto-universal]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.5/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.5/reaper_reawwise.dylib</source>
+      </version>
+      <version name="1.0.6a" author="Audiokinetic" time="2024-06-26T20:56:05Z">
+        <changelog><![CDATA[New Features:
+
+- Added the ability to transfer files from REAPER to an instance of Wwise 
+  located on a different machine.]]></changelog>
+        <source platform="win64" file="reaper_reawwise.dll">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6a/reaper_reawwise.dll</source>
+        <source platform="darwin" file="reaper_reawwise.dylib">https://github.com/audiokinetic/ReaWwise/releases/download/1.0.6a/reaper_reawwise.dylib</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="OpenAssociatedReaperProject">
+    <reapack name="OpenAssociatedReaperProject.lua" type="script" desc="Open Associated REAPER Project">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Open Associated REAPER Project\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The Open Associated REAPER Project package allows you to open the associated REAPER project of a rendered wav file used in a Wwise project. The package consists of three scripts:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab OpenAssociatedReaperProject_Install Wwise Command.lua installs the "Open Associated REAPER Project" Wwise command to open the associated REAPER project of a rendered wav file an configure the root lookup directory for the REAPER source projects.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab OpenAssociatedReaperProject_Script.lua is used by the Wwise command to find the associated project and region from the wav file.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Utilities.lua expose utilities and helper functions for the previous two scripts.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 To complete the installation, run the OpenAssociatedReaperProject_Install Wwise Command.lua action.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It will install the Wwise custom command: "Open Associated REAPER Project" and configure your REAPER projects root directory. The same action can be use to update the REAPER projects root directory.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Minimum Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 REAPER v6.80\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Important Note\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Open Associated REAPER Project needs the Start offset and Title metadata embedded in the rendered file, make sure "Embed title/date/time if not provided" and "Embed start offset (media position in project)" in the REAPER Project Render Metadata are enabled before rendering the file.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 License\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright (c) 2023 AUDIOKINETIC Inc.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The script in this file is licensed to use under the license available at: https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/main/License.txt (the "License"). You may not use this file except in compliance with the License.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0-rc.1" author="Audiokinetic" time="2023-07-06T15:35:21Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source file="Utilities.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/3ff02e2876443beb7fd0f30df260d97a4511b409/OpenAssociatedReaperProject/Utilities.lua</source>
+        <source file="OpenAssociatedReaperProject_Script.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/3ff02e2876443beb7fd0f30df260d97a4511b409/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Script.lua</source>
+        <source main="main" file="OpenAssociatedReaperProject_Install Wwise Command.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/3ff02e2876443beb7fd0f30df260d97a4511b409/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Install%20Wwise%20Command.lua</source>
+      </version>
+      <version name="1.0.0-rc.2" author="Audiokinetic" time="2023-07-18T14:37:11Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source file="Utilities.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/a472587a926117b9796cddb80af53a43d08e598a/OpenAssociatedReaperProject/Utilities.lua</source>
+        <source file="OpenAssociatedReaperProject_Script.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/a472587a926117b9796cddb80af53a43d08e598a/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Script.lua</source>
+        <source main="main" file="OpenAssociatedReaperProject_Install Wwise Command.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/a472587a926117b9796cddb80af53a43d08e598a/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Install%20Wwise%20Command.lua</source>
+      </version>
+      <version name="1.0.0" author="Audiokinetic" time="2023-07-24T13:23:10Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source file="Utilities.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/05a38d99ca2005dbd8c09622b130fbc6c535bdf3/OpenAssociatedReaperProject/Utilities.lua</source>
+        <source file="OpenAssociatedReaperProject_Script.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/05a38d99ca2005dbd8c09622b130fbc6c535bdf3/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Script.lua</source>
+        <source main="main" file="OpenAssociatedReaperProject_Install Wwise Command.lua">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/05a38d99ca2005dbd8c09622b130fbc6c535bdf3/OpenAssociatedReaperProject/OpenAssociatedReaperProject_Install%20Wwise%20Command.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Scripts">
+    <reapack name="Strata_Copy selection to next project.lua" type="script" desc="Strata_Copy selection to next project">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Copy selection to next project\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script will identify regions and clips within user's time selection, hide any tracks that are not parents and have NO items - or tracks that are purposefully muted. Project content is then copied from the current project tab to the next open project tab to the immediate right.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Setup\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 User should have a Strata (or other) collection project open and the desired project they would like to copy strata takes/regions etc. into. The destination project should be the NEXT tab to the right of the source/Strata project. Make a selection in the source project timeline and run the script.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The repository is not open to pull request but in the case of a bug report, bugfix or a suggestions, please feel free to contact us via the {\field{\*\fldinst{HYPERLINK "http://www.audiokinetic.com/qa/feature-requests/"}}{\fldrslt{\ul
+feature request section
+}}}
+ of Audiokinetic's Community Q&A.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright (c) 2024 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+Audiokinetic Inc.
+}}}
+ All rights reserved.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 License\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright (c) 2024 AUDIOKINETIC Inc.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The script in this file is licensed to use under the license available at: https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/main/License.txt (the "License"). You may not use this file except in compliance with the License.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.2a" author="Audiokinetic" time="2024-10-02T15:02:21Z">
+        <changelog><![CDATA[SP-4763: Rename Script to "Strata_Copy selection to next project"]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/8f259badba8dea287a47ca0347a9622e56eb6937/Scripts/Strata_Copy%20selection%20to%20next%20project.lua</source>
+      </version>
+      <version name="1.0.2" author="Audiokinetic" time="2024-10-02T16:13:00Z">
+        <changelog><![CDATA[SP-4763: Remove the alpha flag]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/a7149e11db207fb085fc8f70bb389281841beeae/Scripts/Strata_Copy%20selection%20to%20next%20project.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Strata_Open associated Strata project from selected audio file.lua" type="script" desc="Strata_Open associated Strata project from selected audio file">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 The script opens up the associated Strata project for the currectly selected audio file in the Media Explorer.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0-rc.1" author="Audiokinetic" time="2022-11-30T21:43:34Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source main="mediaexplorer">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/b94a29e1314a9246c4bfceee3d6951041a85830f/Scripts/Strata_Open%20associated%20Strata%20project%20from%20selected%20audio%20file.lua</source>
+      </version>
+      <version name="1.1.0" author="Audiokinetic" time="2023-01-27T20:04:35Z">
+        <changelog><![CDATA[Added support for Media Explorer Databases]]></changelog>
+        <source main="mediaexplorer">https://raw.githubusercontent.com/audiokinetic/Reaper-Tools/6cdc562e0b8daeca273b79a09b9e8244ba028bda/Scripts/Strata_Open%20associated%20Strata%20project%20from%20selected%20audio%20file.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Audiokinetic Reaper Tools Repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Collection of extensions, scripts and tools for Reaper.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in {\b Extensions} > {\b ReaPack} > {\b Import repositories...}\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 https://github.com/Audiokinetic/Reaper-Tools/raw/main/index.xml\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 About Audiokinetic\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Audiokinetic is the leading provider of cross-platform audio solutions for interactive media and gaming. The company's middleware solutions include the award-winning Wwise\u174 ? and SoundSeed\u174 ?, as well as Wwise Automotive\u8482 ? and Strata\u8482 ?. For more information, please visit http://www.audiokinetic.com/\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Legal\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copyright \u169 ? 2023 {\field{\*\fldinst{HYPERLINK "https://audiokinetic.com"}}{\fldrslt{\ul
+Audiokinetic Inc.
+}}}
+ All rights reserved.\par}
+}
+]]></description>
+  </metadata>
+</index>

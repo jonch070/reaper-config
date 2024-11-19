@@ -1,0 +1,17 @@
+local info = {
+    ["name"] = "Rec Arm",
+    ["description"] = "Record Arm/Disarm, Record Arm Sets, Auto Record mode",
+    ["author"] = "HeDa",
+    ["license"] = "Copyright",
+    ["deps"] = "",
+    ["TIversion"] = "2.0.0",
+    ["deps"] = "",
+    ["location"] = "addons",
+    ["warning"] = "",
+    ["doc_url"] = "",
+    ["tracker_url"] = "",
+    ["link"] = "",
+    ["category"] = "panels",
+}
+
+return info
