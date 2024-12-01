@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam JSFX" commit="de1faadd17ae962bf7436b312881af15b75cdfbf">
+<index version="1" name="ReaTeam JSFX" commit="a1ebfccf88d05d34606104b462acb08b0e8104ec">
   <category name="Distortion">
     <reapack name="Loudener.jsfx" type="effect" desc="Loudener">
       <metadata>
@@ -2225,6 +2225,52 @@ And a bit of source code cleaning.]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/115ad3269c0873c9c9b989d31273ed6b8af37756/MIDI/talagan_MIDI%20Channel%20Matrix%20Router.jsfx</source>
       </version>
     </reapack>
+    <reapack name="talagan_MIDI Delay X.jsfx" type="effect" desc="MIDI Delay X">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 MIDI Delay X\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This plugin is an eXtended version of 'MIDI Delay' which is shipped with REAPER.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It aims to be part of a {\b very experimental} workflow that tries to address the problem of synths or orchestral VSTs that play various type of samples that need to "ramp up" before reaching their attack climax, and thus, have their notes played "off grid".\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 One simple solution to be "on grid", when the attack time is constant and homogeneous, is to set a "media track offset" on the track in REAPER to force every MIDI event to play in advance, to compensate the slow attack.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 But for complex instruments with an attack time that varies in time, it's not always sufficient. It is the case with modern orchestral instruments that allow to switch between articulations (short, long, etc).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The objective of this plugin is thus to offer a MIDI delay that is automatable, and appliable on selectable MIDI event types.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The user would set a negative media track offset on the track to the compensate the worst case delay, set the opposite as the max delay for this plugin, and automate the "amount" (0.0-1.0) parameter to make the compensation vary.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Please note that this technique may have drawbacks : the MIDI event order may be changed, thus it needs to be used cautiously. And again, this is experimental !\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?business=3YEZMY9D6U8NC&amp;no_recurring=1&amp;currency_code=EUR</link>
+      </metadata>
+      <version name="0.3" author="Ben 'Talagan' Babut" time="2024-11-18T22:38:08Z">
+        <changelog><![CDATA[- Initial release.]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/5f8d18f7941f41390119c757fcfecc65f8b8fa97/MIDI/talagan_MIDI%20Delay%20X.jsfx</source>
+      </version>
+      <version name="0.4" author="Ben 'Talagan' Babut" time="2024-11-19T08:57:21Z">
+        <changelog><![CDATA[- [Bug/Behaviour Fix] Once an event programmation date is decided, do not make this trigger date subject to change by automation.]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/a1ebfccf88d05d34606104b462acb08b0e8104ec/MIDI/talagan_MIDI%20Delay%20X.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="talagan_MIDI Force Notes to Range.jsfx" type="effect" desc="MIDI Force Notes To Range">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 With a specific note range defined, all notes that are outside that range will be remapped inside of it by either adding octavi (if too low) or removing octavi (if too high) until falling again into it.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This is more or less a port to JSFX of pizzmidi's midiForceToRange as requested on the REAPER forum in this thread: https://forum.cockos.com/showthread.php?t=295480.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ATM, the script may be installed on a selected MIDI Bus (or any), and a selected MIDI Channel (or any). and does not offer bus/chan routing (thus, it does not offer a passthrough option either). Not sure yet if it's really useful.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Since multiple keys may be routed on the same note, the script implements a system to avoid overlapping notes (successive Note ON events without Note OFF events in the between are not allowed, so in that case a Note OFF event is inserted before the Note ON event).\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?business=3YEZMY9D6U8NC&amp;no_recurring=1&amp;currency_code=EUR</link>
+      </metadata>
+      <version name="0.5" author="Ben 'Talagan' Babut" time="2024-11-14T12:32:42Z">
+        <changelog><![CDATA[- Initial version]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/75226ffbcdabab68d94ccf87727f2d7ee956077e/MIDI/talagan_MIDI%20Force%20Notes%20to%20Range.jsfx</source>
+      </version>
+    </reapack>
     <reapack name="talagan_MIDI Note Remapper.jsfx" type="effect" desc="MIDI Note Remapper">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -4341,6 +4387,26 @@ Added the freembuf call to indicate how much memory is used.]]></changelog>
       <version name="1.0" author="Corey Scogin" time="2018-06-13T05:09:19Z">
         <changelog><![CDATA[initial release]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/7f2f0c085b27393a6c642f3f6cffd8197aa4f262/Utility/CoreyScogin_TimeDelayByDistance.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="denisfilippov_Simple Stereo Width Control.jsfx" type="effect" desc="Simple Stereo Width Control">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Simple Stereo Width Control\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Controls the width parameter with one slider.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Features:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Lightweight and simple width controller.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Does not affect signal when set to 1.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Usage:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Add to item or track, move the slider to change width.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Denis Filippov" time="2024-11-15T14:07:26Z">
+        <source>https://github.com/ReaTeam/JSFX/raw/74461a8f7932a1a944ec1d186987cc9d20306d19/Utility/denisfilippov_Simple%20Stereo%20Width%20Control.jsfx</source>
       </version>
     </reapack>
     <reapack name="dylanmadigan_Automatic Gain Stager.jsfx" type="effect" desc="Automatic Gain Stager">

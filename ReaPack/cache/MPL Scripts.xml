@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a12d61793ef6a9cf541b296691ba019b4f4d1a83" name="MPL Scripts">
+<index version="1" commit="e14e659c2bb1639a7a5db1dc81e754c77db4ae0a" name="MPL Scripts">
   <category name="Automation Items">
     <reapack name="mpl_Convert selected envelope points to automation item.lua" type="script" desc="Convert selected envelope points to automation item">
       <metadata>
@@ -7425,6 +7425,39 @@
 # restore all the render fields]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/a12d61793ef6a9cf541b296691ba019b4f4d1a83/Render/mpl_Render-in-place.lua</source>
       </version>
+      <version name="1.09" author="MPL" time="2024-11-16T13:56:03Z">
+        <changelog><![CDATA[+ Postprocessing overhaul
++ Postprocessing / Destination: Same track
++ Postprocessing / Destination / Same track / New take to item if possible
++ Postprocessing / Destination / Same track / New take to item if possible
++ Source / Sel.item: add option to exclude if items are catched by razor areas
++ Postprocessing: do not mute track if rendering to the same track
++ Postprocessing: do not mute item if rendering to the same item take
++ Postprocessing / Same track / Lane: improve sharing logic, forbidden for common track
++ Postprocessing / Same track / Lane: set first lane play exclusively
++ Postprocessing / Common or new track: allow to change position
++ Postprocessing: support #trname wildcard for taking source track name]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/b663dc9e3f54698fe81ab5fbaca1171e6d8b836e/Render/mpl_Render-in-place.lua</source>
+      </version>
+      <version name="1.10" author="MPL" time="2024-11-19T15:43:21Z">
+        <changelog><![CDATA[+ Source / Sel.item: Ignore if at least one razor area exists
+# improved sharing to fixed lanes]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/6761bccdbb279ab2f0a0cda3d595f6323a229c86/Render/mpl_Render-in-place.lua</source>
+      </version>
+      <version name="1.11" author="MPL" time="2024-11-23T19:35:18Z">
+        <changelog><![CDATA[# Postprocessing/Same track/New lanes: set first lane enbled by default
++ Postprocessing/Same track/New lanes: allow to do not set change active lane
++ Postprocessing/Same track/New lanes: allow to set last lane active]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/aa87ccaf8c40bd3fc464ee3a417194fda9171c2f/Render/mpl_Render-in-place.lua</source>
+      </version>
+      <version name="1.12" author="MPL" time="2024-11-23T20:38:30Z">
+        <changelog><![CDATA[# use audio device sample rate for render, thanks MathieuC [p=2825117]]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/295162de2e286c1f47938b8d73859d628ae6c642/Render/mpl_Render-in-place.lua</source>
+      </version>
+      <version name="1.13" author="MPL" time="2024-11-24T15:26:59Z">
+        <changelog><![CDATA[# use audio device sample rate for render, thanks MathieuC [p=2825117]]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/e14e659c2bb1639a7a5db1dc81e754c77db4ae0a/Render/mpl_Render-in-place.lua</source>
+      </version>
     </reapack>
     <reapack name="mpl_Set render bounds to entire project.lua" type="script" desc="Set render bounds to entire project">
       <metadata>
@@ -7887,11 +7920,23 @@
     </reapack>
     <reapack name="mpl_Stretch marker guard.lua" type="script" desc="Stretch marker guard">
       <metadata>
-        <link rel="website">http://forum.cockos.com/member.php?u=70694</link>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Script for protecting area around stretch markers\par}
+}
+]]></description>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=165672</link>
       </metadata>
       <version name="1.02" author="MPL" time="2023-04-10T18:32:17Z">
         <changelog><![CDATA[# remove SWS dependency]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/08868abafdcb03eb74d020c03460aa1960cef964/Stretch%20Markers/mpl_Stretch%20marker%20guard.lua</source>
+      </version>
+      <version name="1.03" author="MPL" time="2024-11-23T20:49:19Z">
+        <changelog><![CDATA[+ Ported to ReaImGui
+# uses specially namedd take markers to define source point of the central stretch markers]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/3b1aeb6f13e89f776646e72a03ca17c8321a1cd1/Stretch%20Markers/mpl_Stretch%20marker%20guard.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Tape start selected items.lua" type="script" desc="Tape start selected items">
@@ -8066,6 +8111,31 @@
     <reapack name="mpl_Import Cubase tempo map.lua" type="script" desc="Import Cubase tempo map">
       <version name="1.0" author="Michael Pilyavskiy (mpl)" time="2016-06-11T07:29:01Z">
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/b0bbbc46b349837b79ac23c2661562de41a73639/Tempo/mpl_Import%20Cubase%20tempo%20map.lua</source>
+      </version>
+    </reapack>
+    <reapack name="mpl_Tempo versions.lua" type="script" desc="Tempo versions">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Script for manipulating REAPER objects time and values\par}
+}
+]]></description>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=165672</link>
+      </metadata>
+      <version name="1.0" author="MPL" time="2024-11-14T10:45:33Z">
+        <changelog><![CDATA[+ init]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/9175263be98b7c29a2c4a8b452fa9ecb72b15518/Tempo/mpl_Tempo%20versions.lua</source>
+      </version>
+      <version name="1.01" author="MPL" time="2024-11-15T07:26:31Z">
+        <changelog><![CDATA[# update items that have auto stretch at tempo changes on version load
++ Allow to import/export from/to text file]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/856391bfa9d38298d8922c7f04e568b3d882380f/Tempo/mpl_Tempo%20versions.lua</source>
+      </version>
+      <version name="1.02" author="MPL" time="2024-11-19T17:37:07Z">
+        <changelog><![CDATA[+ Show timestamps]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/2804257689d4b2c1912bd1ed5854292819f59b35/Tempo/mpl_Tempo%20versions.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Toggle gradually transition for tempo marker before edit cursor.lua" type="script" desc="Toggle gradually transition for tempo marker before edit cursor">
@@ -8947,6 +9017,10 @@ various fixes]]></changelog>
 + Support #preset wildcard in track name edit field]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/0137fddfffaeb748d85a5a87b01f8ab40442b793/Tracks%20Properties/mpl_Send%20control.lua</source>
       </version>
+      <version name="1.25" author="MPL" time="2024-11-15T07:34:59Z">
+        <changelog><![CDATA[+ fix collision of right click to rename destination and main menu]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/bbb82eda39ceb29f5b75df34e40f742f058e1fd5/Tracks%20Properties/mpl_Send%20control.lua</source>
+      </version>
     </reapack>
     <reapack name="mpl_Set hardware MIDI output to GM.lua" type="script" desc="Set hardware MIDI output to GM">
       <metadata>
@@ -9157,6 +9231,15 @@ various fixes]]></changelog>
       <version name="1.03" author="MPL" time="2024-09-01T07:50:42Z">
         <changelog><![CDATA[# VF independent]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/002ad736f4670669a14cdf007f53e573cac57c6c/Tracks%20Properties/mpl_Toggle%20recarm%20on%20track%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="mpl_Toggle reference track.lua" type="script" desc="Toggle &quot;Reference&quot; track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=188335</link>
+      </metadata>
+      <version name="1.0" author="MPL" time="2024-11-20T17:11:54Z">
+        <changelog><![CDATA[+ init]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1f844556886893c8d60bf70f9add6ac2890cc389/Tracks%20Properties/mpl_Toggle%20reference%20track.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Toggle reverse pan flag and invert color of track under mouse cursor.lua" type="script" desc="Toggle reverse pan flag and invert color of track under mouse cursor">
@@ -12386,6 +12469,11 @@ various fixes]]></changelog>
       <version name="4.02" author="MPL" time="2024-11-09T06:54:41Z">
         <changelog><![CDATA[# fix small corner cases]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/bc19fcdf39bb66c262d0a96777d6c8b3d9e8a332/Various/mpl_Quantize%20Tool.lua</source>
+      </version>
+      <version name="4.03" author="MPL" time="2024-11-24T07:26:53Z">
+        <changelog><![CDATA[# fix lim error
++ Add tooltip on buttons about right click]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/f06e1773ec8ed548b5235a80a25d870e0b798cf5/Various/mpl_Quantize%20Tool.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Reset audio and MIDI devices.lua" type="script" desc="Reset audio and MIDI devices">

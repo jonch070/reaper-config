@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="c0045ec68a4939764bb1674416ea2ca141b41b6d" name="X-Raym Scripts">
+<index version="1" commit="9fd4a6549171c73b17a98ffdad3400e8afc0ffe9" name="X-Raym Scripts">
   <category name="Color">
     <reapack name="X-Raym_Display color of selected tracks items and takes in the console.eel" type="script">
       <version name="1.0" author="X-Raym" time="2015-03-03T13:52:58Z">
@@ -2307,6 +2307,21 @@
       <version name="1.0" author="X-Raym" time="2015-04-06T21:06:33Z">
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Items%20Editing/X-Raym_Multiply%20selected%20items%20length%20by%20two%20avoiding%20overlapping%20with%20next%20item.eel</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Paste items-tracks and snap items if selected and snap enabled.lua" type="script" desc="Paste items-tracks and snap items if selected and snap enabled">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Workarround REAPER paste MIDI item timing bug\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1" author="X-Raym" time="2024-11-24T12:13:23Z">
+        <changelog><![CDATA[# Only snap MIDI items]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/9fd4a6549171c73b17a98ffdad3400e8afc0ffe9/Items%20Editing/X-Raym_Paste%20items-tracks%20and%20snap%20items%20if%20selected%20and%20snap%20enabled.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Prevent items overlapping on selected items tracks (shuffle edit)_background.lua" type="script" desc="Prevent items overlapping on selected items tracks (shuffle edit)_background">
@@ -4809,6 +4824,52 @@
         <source file="Images/tamborine.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/0c40ef6c0ac462d5c74e5fe83eba7ad6a888aca3/JSFX/MIDI/Images/tamborine.png</source>
         <source file="Images/tom.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/0c40ef6c0ac462d5c74e5fe83eba7ad6a888aca3/JSFX/MIDI/Images/tom.png</source>
       </version>
+      <version name="1.20" author="X-Raym" time="2024-11-18T10:46:01Z">
+        <changelog><![CDATA[# Label changes
+# NONE.txt
+# C Major and C Natural Minor in presets]]></changelog>
+        <source>https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/X-Raym_16%20pads%20MIDI%20Notes%20Map.jsfx</source>
+        <source file="X-Raym_16 pads MIDI Notes Map.jsfx.rpl">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/X-Raym_16%20pads%20MIDI%20Notes%20Map.jsfx.rpl</source>
+        <source type="data" file="MIDINoteImages/mt-power-drum-kit.txt">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/MIDINoteImages/mt-power-drum-kit.txt</source>
+        <source type="data" file="MIDINoteImages/NONE.txt">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/MIDINoteImages/NONE.txt</source>
+        <source file="Images/bongos.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/bongos.png</source>
+        <source file="Images/cabasa.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/cabasa.png</source>
+        <source file="Images/congas.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/congas.png</source>
+        <source file="Images/cowbell.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/cowbell.png</source>
+        <source file="Images/cowbell_more.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/cowbell_more.png</source>
+        <source file="Images/cymbal_large.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/cymbal_large.png</source>
+        <source file="Images/cymbal_small.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/cymbal_small.png</source>
+        <source file="Images/hihat.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/hihat.png</source>
+        <source file="Images/kick.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/kick.png</source>
+        <source file="Images/maracas.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/maracas.png</source>
+        <source file="Images/ride_bell.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/ride_bell.png</source>
+        <source file="Images/ride_rim.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/ride_rim.png</source>
+        <source file="Images/snare_top.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/snare_top.png</source>
+        <source file="Images/tamborine.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/tamborine.png</source>
+        <source file="Images/tom.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/9f4b56875bcbedb4f55fd2e23d054cb35932cb83/JSFX/MIDI/Images/tom.png</source>
+      </version>
+      <version name="1.21" author="X-Raym" time="2024-11-18T10:53:09Z">
+        <changelog><![CDATA[# Load images in Serialize block]]></changelog>
+        <source>https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/X-Raym_16%20pads%20MIDI%20Notes%20Map.jsfx</source>
+        <source file="X-Raym_16 pads MIDI Notes Map.jsfx.rpl">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/X-Raym_16%20pads%20MIDI%20Notes%20Map.jsfx.rpl</source>
+        <source type="data" file="MIDINoteImages/mt-power-drum-kit.txt">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/MIDINoteImages/mt-power-drum-kit.txt</source>
+        <source type="data" file="MIDINoteImages/NONE.txt">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/MIDINoteImages/NONE.txt</source>
+        <source file="Images/bongos.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/bongos.png</source>
+        <source file="Images/cabasa.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/cabasa.png</source>
+        <source file="Images/congas.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/congas.png</source>
+        <source file="Images/cowbell.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/cowbell.png</source>
+        <source file="Images/cowbell_more.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/cowbell_more.png</source>
+        <source file="Images/cymbal_large.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/cymbal_large.png</source>
+        <source file="Images/cymbal_small.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/cymbal_small.png</source>
+        <source file="Images/hihat.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/hihat.png</source>
+        <source file="Images/kick.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/kick.png</source>
+        <source file="Images/maracas.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/maracas.png</source>
+        <source file="Images/ride_bell.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/ride_bell.png</source>
+        <source file="Images/ride_rim.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/ride_rim.png</source>
+        <source file="Images/snare_top.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/snare_top.png</source>
+        <source file="Images/tamborine.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/tamborine.png</source>
+        <source file="Images/tom.png">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8cfa9b5ccf297fa4b0f1d60b5928be376bfae49/JSFX/MIDI/Images/tom.png</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Last MIDI event monitor.jsfx" type="effect" desc="Last MIDI event monitor">
       <version name="1.0" author="X-Raym" time="2018-10-25T08:44:54Z">
@@ -5426,6 +5487,14 @@
       </version>
       <version name="1.0.1" author="X-Raym" time="2023-02-12T17:32:49Z">
         <source main="midi_editor">https://github.com/X-Raym/REAPER-ReaScripts/raw/68cba602baa81f474e535bf2e36bd73a497284b2/MIDI%20Editor/X-Raym_Shift%20MIDI%20lyrics%20events%20message%20after%20edit%20cursor%20to%20one%20event%20on%20the%20right.lua</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Snap edit cursor to closest MIDI editor grid line.lua" type="script" desc="Snap edit cursor to closest MIDI editor grid line">
+      <metadata>
+        <link rel="screenshot">https://i.imgur.com/EBjhma4.gif</link>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2024-11-19T12:28:19Z">
+        <source main="midi_editor">https://github.com/X-Raym/REAPER-ReaScripts/raw/fc6f12a0b2d25e900b6176f5c662373ef5719b39/MIDI%20Editor/X-Raym_Snap%20edit%20cursor%20to%20closest%20MIDI%20editor%20grid%20line.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Split selected MIDI notes half in 2 notes.lua" type="script" desc="Split selected MIDI notes half in 2 notes">
@@ -8673,7 +8742,7 @@
     </reapack>
     <reapack name="X-Raym_Set SWS global startup action extstate value to Off.lua" type="script" desc="X-Raym_Set SWS global startup action extstate value to Off">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -8684,10 +8753,14 @@
       <version name="1.0" time="2021-12-06T16:28:21Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Various/X-Raym_Set%20SWS%20global%20startup%20action%20extstate%20value%20to%20Off.lua</source>
       </version>
+      <version name="1.1" time="2024-11-14T00:31:38Z">
+        <changelog><![CDATA[# Remove defer. No need to put it in reverse in global startup action anymore.]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c03c1dc130490ff3b58c3e7efe900464fe078f8c/Various/X-Raym_Set%20SWS%20global%20startup%20action%20extstate%20value%20to%20Off.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Set SWS global startup action extstate value to On.lua" type="script" desc="X-Raym_Set SWS global startup action extstate value to On">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -8697,6 +8770,10 @@
       </metadata>
       <version name="1.0" time="2021-12-06T16:28:21Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Various/X-Raym_Set%20SWS%20global%20startup%20action%20extstate%20value%20to%20On.lua</source>
+      </version>
+      <version name="1.1" time="2024-11-14T00:31:38Z">
+        <changelog><![CDATA[# Remove defer. No need to put it in reverse in global startup action anymore.]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c03c1dc130490ff3b58c3e7efe900464fe078f8c/Various/X-Raym_Set%20SWS%20global%20startup%20action%20extstate%20value%20to%20On.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Set SWS project startup action extstate value to Off.lua" type="script" desc="Set SWS project startup action extstate value to Off">
@@ -8798,6 +8875,16 @@
       </version>
       <version name="1.1.1" author="X-Raym" time="2021-12-06T16:28:26Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Various/X-Raym_Toggle%20Sonarworks%20SoundID%20monitor%20FX%20instance%20Calibration%20state.lua</source>
+      </version>
+      <version name="1.2" author="X-Raym" time="2024-11-14T00:31:38Z">
+        <changelog><![CDATA[# Remove defer]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c03c1dc130490ff3b58c3e7efe900464fe078f8c/Various/X-Raym_Toggle%20Sonarworks%20SoundID%20monitor%20FX%20instance%20Calibration%20state.lua</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Toggle Sonarworks SoundID monitor FX instance Speakers and Headphones presets.lua" type="script" desc="Toggle Sonarworks SoundID monitor FX instance Speakers and Headphones presets">
+      <version name="1.0" author="X-Raym" time="2024-11-14T10:45:51Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/ce5ddb8e2ad1477cb42a893e13bff72036107261/Various/X-Raym_Toggle%20Sonarworks%20SoundID%20monitor%20FX%20instance%20Speakers%20and%20Headphones%20presets.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_XR ReaImGui themer.lua" type="script" desc="XR ReaImGui themer">

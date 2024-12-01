@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="041e7c6f7f16e89af70d575f327768a5361c83d8" name="ReaTeam Scripts">
+<index version="1" commit="4df6b821c03dbc1fbd5b68e9882355b3d6b3a7b9" name="ReaTeam Scripts">
   <category name="Cursor">
     <reapack name="amagalma_Move edit cursor to closest item edge (among the selected items).lua" type="script" desc="Move edit cursor to closest item edge (among the selected items)">
       <metadata>
@@ -216,6 +216,25 @@
     <reapack name="az_Play from mouse cursor with 2 sec shift (move edit cursor).lua" type="script" desc="Play from mouse cursor with 2 sec shift (move edit cursor)">
       <version name="1.0" author="AZ" time="2021-10-27T03:58:35Z">
         <source main="main midi_inlineeditor midi_editor">https://github.com/ReaTeam/ReaScripts/raw/724354ca8f20d12849bc44d2520407db9d8ea81c/Cursor/az_Play%20from%20mouse%20cursor%20with%202%20sec%20shift%20(move%20edit%20cursor).lua</source>
+      </version>
+    </reapack>
+    <reapack name="az_Play item or track under mouse until shortcut released.lua" type="script" desc="Play item or track under mouse until shortcut released">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 #Play item or track under mouse until shortcut released\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The script is written to be replacement of SWS action SWS/BR: Play from mouse cursor position and solo item and track under mouse for the duration (perform until shortcut released)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 My script works fine in heavy projects, has improved solo/mute logic and doesn't produce extra loud sounds. Also it doesn't stop recording.\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=288069">Forum thread</link>
+        <link rel="donation" href="https://www.paypal.me/AZsound">Donate via PayPal</link>
+      </metadata>
+      <version name="1.0" author="AZ" time="2024-11-19T09:13:02Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/37602e97eac770ded39bb7aa985d8907f171e736/Cursor/az_Play%20item%20or%20track%20under%20mouse%20until%20shortcut%20released.lua</source>
+        <source file="az_Play item or track under mouse until shortcut released/speaker.cur">https://github.com/ReaTeam/ReaScripts/raw/37602e97eac770ded39bb7aa985d8907f171e736/Cursor/az_Play%20item%20or%20track%20under%20mouse%20until%20shortcut%20released/speaker.cur</source>
       </version>
     </reapack>
     <reapack name="BuyOne_Move edit cursor to snap offset cursor;  fades;  take, stretch markers; media cues; razor edit area edges.lua" type="script" desc="Move edit cursor to snap offset cursor / fades / take|stretch markers / media cues / Razor Edit area edges (16 scripts)">
@@ -5436,7 +5455,10 @@ website
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Explodes each selected item into separate items for the video and the audio part. Original items are turned into video-only items, and the new audio--only items are placed in a new track underneath.\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Explodes each selected video item into separate items for the video and the audio part. Original items are turned into video-only items, and the new audio-only items are placed in a new track underneath.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Supports items with any number of takes\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Only selected items with at least one video take will be processed\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Undo will be created only if something is changed\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Inside the script you can specify:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 1)\tx360\tab the name for the new audio-only tracks\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 2)\tx360\tab the suffix for the video-only items\par}
@@ -5448,6 +5470,10 @@ website
       </metadata>
       <version name="1.00" author="amagalma" time="2024-11-11T13:21:39Z">
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/041e7c6f7f16e89af70d575f327768a5361c83d8/Items%20Editing/amagalma_Explode%20video%20items%20to%20separate%20audio%20and%20video%20items%20in%20separate%20tracks.lua</source>
+      </version>
+      <version name="1.20" author="amagalma" time="2024-11-19T12:42:05Z">
+        <changelog><![CDATA[- Force all video takes in selected items to be video-only, and the copies in the added tracks to be audio-only]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/4df6b821c03dbc1fbd5b68e9882355b3d6b3a7b9/Items%20Editing/amagalma_Explode%20video%20items%20to%20separate%20audio%20and%20video%20items%20in%20separate%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Fill space between selected items with empty items.lua" type="script" desc="Fill space between selected items with empty items">
@@ -6134,6 +6160,12 @@ website
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/30d7d01e0d6ec1517cac7418e1554e0e115faad4/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection).lua</source>
         <source file="az_Fade tool (work on context of mouse, razor or time selection)/az_Options window for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/30d7d01e0d6ec1517cac7418e1554e0e115faad4/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Options%20window%20for%20az_Fade%20tool.lua</source>
         <source main="main" file="az_Fade tool (work on context of mouse, razor or time selection)/az_Open options for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/30d7d01e0d6ec1517cac7418e1554e0e115faad4/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Open%20options%20for%20az_Fade%20tool.lua</source>
+      </version>
+      <version name="2.2.3" author="AZ" time="2024-11-16T12:35:58Z">
+        <changelog><![CDATA[- to avoid simultaneous work of Batch fade tool and changing fade under the mouse - ignore TS if one of it's edges is out of arrange view and the mouse is over an item.]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/0f02df6591e7af08a23b2c964839d18b051027ac/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection).lua</source>
+        <source file="az_Fade tool (work on context of mouse, razor or time selection)/az_Options window for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/0f02df6591e7af08a23b2c964839d18b051027ac/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Options%20window%20for%20az_Fade%20tool.lua</source>
+        <source main="main" file="az_Fade tool (work on context of mouse, razor or time selection)/az_Open options for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/0f02df6591e7af08a23b2c964839d18b051027ac/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Open%20options%20for%20az_Fade%20tool.lua</source>
       </version>
     </reapack>
     <reapack name="az_Open item copy in primary external editor with handles.lua" type="script" desc="Open item copy in primary external editor with handles">
@@ -10225,6 +10257,12 @@ Use ReaImGui for displaying the options menu (if installed)]]></changelog>
         <source main="midi_editor">https://github.com/ReaTeam/ReaScripts/raw/7fd3f170262c138ce683caea442e0381a5f5239f/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
         <source main="midi_editor" file="cfillion_Step sequencing (options).lua">https://github.com/ReaTeam/ReaScripts/raw/7fd3f170262c138ce683caea442e0381a5f5239f/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
         <source type="effect" file="cfillion_Step sequencing (replace mode).jsfx">https://github.com/ReaTeam/ReaScripts/raw/7fd3f170262c138ce683caea442e0381a5f5239f/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).jsfx</source>
+      </version>
+      <version name="1.1.4" author="cfillion" time="2024-11-19T08:13:42Z">
+        <changelog><![CDATA[Fix toggling "Skip unselected notes" in the fallback (non-ReaImGui) options menu [p=2823664]]]></changelog>
+        <source main="midi_editor">https://github.com/ReaTeam/ReaScripts/raw/9a18d6e0740cd6b54d5f80585f4db23f86ce0e64/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
+        <source main="midi_editor" file="cfillion_Step sequencing (options).lua">https://github.com/ReaTeam/ReaScripts/raw/9a18d6e0740cd6b54d5f80585f4db23f86ce0e64/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
+        <source type="effect" file="cfillion_Step sequencing (replace mode).jsfx">https://github.com/ReaTeam/ReaScripts/raw/9a18d6e0740cd6b54d5f80585f4db23f86ce0e64/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).jsfx</source>
       </version>
     </reapack>
     <reapack name="cfillion_Toggle MIDI preview on transport change.lua" type="script" desc="Toggle MIDI preview on transport change">
@@ -21508,6 +21546,10 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
       <version name="2.20" author="amagalma" time="2024-10-29T19:09:21Z">
         <changelog><![CDATA[- Delete all unnecessary peak files]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/e7af1cdef8363fcdf318889dd0640715f709ff7e/Various/amagalma_Create%20Impulse%20Response%20(IR)%20of%20the%20FX%20chain%20of%20the%20selected%20track.lua</source>
+      </version>
+      <version name="2.21" author="amagalma" time="2024-11-15T12:07:23Z">
+        <changelog><![CDATA[- Removed hack to load IR in ReaVerb and used proper API (that did not exist back then)]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/38182e635e6708048b536c73ab0d59ba7846a064/Various/amagalma_Create%20Impulse%20Response%20(IR)%20of%20the%20FX%20chain%20of%20the%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Distinguish visually the ripple editing modes.lua" type="script" desc="Distinguish visually the ripple editing modes">
