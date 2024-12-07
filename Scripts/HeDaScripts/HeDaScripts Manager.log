@@ -1,33 +1,33 @@
-1730179673.7774  1.47
-1730179673.7775  nil
-1730179673.7775  nil
-1730179673.7776  nil
-1730179673.7776  (2023-09-08)
-1730179673.7779  ---- Starting Manager -----
-1730179673.778  Script path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts Manager OSX/Scripts/HeDaScripts/HeDaScripts Manager/
-1730179673.7781  Scripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/
-1730179673.7781  Settings path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/
-1730179673.7782  _resources path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/
-1730179673.7782  HeDaScripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/
-1730179673.7783  Name script: HeDaScripts Manager
-1730179673.7783  Version: 1.47
-1730179673.7789  Is MacOS
-1730179673.779  using system curl: /usr/bin/curl
-1730179673.7791  found 7zz at: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
-1730179673.7791  ______________ Testing curl: /usr/bin/curl --version
-1730179673.8694  0
+1733439499.4345  1.47
+1733439499.4346  nil
+1733439499.4346  nil
+1733439499.4347  nil
+1733439499.4347  (2023-09-08)
+1733439499.4355  ---- Starting Manager -----
+1733439499.4355  Script path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts Manager OSX/Scripts/HeDaScripts/HeDaScripts Manager/
+1733439499.4356  Scripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/
+1733439499.4356  Settings path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/
+1733439499.4356  _resources path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/
+1733439499.4357  HeDaScripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/
+1733439499.4357  Name script: HeDaScripts Manager
+1733439499.4357  Version: 1.47
+1733439499.436  Is MacOS
+1733439499.436  using system curl: /usr/bin/curl
+1733439499.4361  found 7zz at: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
+1733439499.4361  ______________ Testing curl: /usr/bin/curl --version
+1733439499.4434  0
 curl 8.4.0 (x86_64-apple-darwin23.0) libcurl/8.4.0 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.58.0
 Release-Date: 2023-10-11
 Protocols: dict file ftp ftps gopher gophers http https imap imaps ldap ldaps mqtt pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
 Features: alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM NTLM_WB SPNEGO SSL threadsafe UnixSockets
 
-1730179673.8695  40
-1730179673.8699  curl installed ok
-1730179673.8699  _________________ Testing 7z: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
-1730179674.0844  0
+1733439499.4435  40
+1733439499.4435  curl installed ok
+1733439499.4435  _________________ Testing 7z: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
+1733439499.582  0
 
 7-Zip (z) 23.01 (arm64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
- 64-bit arm_v:8 locale=en_US.UTF-8 Threads:8 OPEN_MAX:9223372036854775807, ASM
+ 64-bit arm_v:8 locale=en_US.UTF-8 Threads:8 OPEN_MAX:10240, ASM
 
 Usage: 7zz <command> [<switches>...] <archive_name> [<file_names>...] [@listfile]
 
@@ -93,17 +93,218 @@ Usage: 7zz <command> [<switches>...] <archive_name> [<file_names>...] [@listfile
   -x[r[-|0]]{@listfile|!wildcard} : eXclude filenames
   -y : assume Yes on all queries
 
-1730179674.0848  6
-1730179674.085  7z installed ok
-1730179674.0851  starting...
-1730179674.0852  Mon Oct 28 22:27:54 2024
-1730179674.099  ok
-1730179674.1804  reading index updates
-1730179674.1805  1730179674.1805
-1730179674.1808  https://reaper.hector-corcin.com/hsmanager_downloads/index_updates.dat
-1730179674.8638  /usr/bin/curl
-1730179674.8641  
-1730179674.8642  found
-1730179674.8643  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/index_updates.dat
-1730179674.8645  index read ok
-1730179763.832  exiting.
+1733439499.5824  6
+1733439499.5824  7z installed ok
+1733439499.5824  starting...
+1733439499.5825  Thu Dec  5 14:58:19 2024
+1733439499.6028  ok
+1733439499.725  reading index updates
+1733439499.7251  1733439499.7251
+1733439499.7251  https://reaper.hector-corcin.com/hsmanager_downloads/index_updates.dat
+1733439500.3331  /usr/bin/curl
+1733439500.3333  
+1733439500.3333  found
+1733439500.3334  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/index_updates.dat
+1733439500.3337  index read ok
+1733439507.1078  +++++++++++++ Downloading and installing Projects VIP
+1733439507.1079  Version before: 2.2.7
+1733439507.108  Downloading new update...
+1733439507.108  
+1733439507.1081  Projects VIP.7z
+1733439507.1081  
+1733439507.1082  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/update.sh
+1733439507.1084  Updating...
+1733439508.4902  checking update...
+1733439508.4902  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Projects VIP/Projects VIP - changelog.txt
+1733439508.4903  found
+1733439508.4903  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Projects VIP/Projects VIP - changelog.txt
+1733439508.4909  installedchangelog
+1733439508.4909  table: 0x600058cd3f00
+1733439508.491  reading actions to add in (macOS-arm64)
+1733439508.4977  HeDa_Projects VIP.lua
+1733439508.4978  Adding actions...
+1733439508.4978  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Projects VIP/HeDa_Projects VIP.lua
+1733439508.5069  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Projects VIP/HeDa_Projects VIP.lua
+1733439508.5069  Version after: 2.3.2
+1733439510.8282  +++++++++++++ Downloading and installing HeDaMixer Graph VIP
+1733439510.8283  Version before: 2.1.4
+1733439510.8284  Downloading new update...
+1733439510.8284  
+1733439510.8284  HeDaMixer Graph VIP.7z
+1733439510.8284  
+1733439510.8285  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/update.sh
+1733439510.8287  Updating...
+1733439511.7574  checking update...
+1733439511.7574  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaMixer Graph VIP/HeDaMixer Graph VIP - changelog.txt
+1733439511.7575  found
+1733439511.7575  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaMixer Graph VIP/HeDaMixer Graph VIP - changelog.txt
+1733439511.7577  installedchangelog
+1733439511.7577  table: 0x60005880f300
+1733439511.7578  reading actions to add in (macOS-arm64)
+1733439511.7638  HeDaMixer Graph Settings VIP.lua
+1733439511.7638  Adding actions...
+1733439511.7639  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaMixer Graph VIP/HeDaMixer Graph Settings VIP.lua
+1733439511.7682  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaMixer Graph VIP/HeDaMixer Graph Settings VIP.lua
+1733439511.7682  Version after: 2.1.5
+1733439515.0581  +++++++++++++ Downloading and installing Track Inspector 2 VIP
+1733439515.0582  Version before: 2.3.15
+1733439515.0585  Downloading new update...
+1733439515.0586  
+1733439515.0586  Track Inspector 2 VIP.7z
+1733439515.0587  
+1733439515.0587  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/update.sh
+1733439515.0591  Updating...
+1733439516.684  checking update...
+1733439516.684  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/Track Inspector 2 VIP - changelog.txt
+1733439516.6841  found
+1733439516.6841  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/Track Inspector 2 VIP - changelog.txt
+1733439516.6843  installedchangelog
+1733439516.6843  table: 0x600058688740
+1733439516.6845  reading actions to add in (macOS-arm64)
+1733439516.6886  HeDa_Track Inspector 2 VIP Add-ons Manager.lua
+1733439516.6886  HeDa_Track Inspector 2 VIP.lua
+1733439516.6886  HeDa_Track Inspector 2 VIP_Floating.lua
+1733439516.6887  HeDa_Track Inspector 2 VIP_Floating_2.lua
+1733439516.6887  HeDa_Track Inspector 2 VIP_Master.lua
+1733439516.6887  HeDa_Track Inspector 2 VIP_SetFXGroup All Tracks.lua
+1733439516.6887  HeDa_Track Inspector 2 VIP_SetFXGroup Current Track.lua
+1733439516.6888  HeDa_Track Inspector 2 VIP_SetFXGroup Selected Tracks.lua
+1733439516.6888  HeDa_Track Inspector 2 VIP_Switch to next page.lua
+1733439516.6888  HeDa_Track Inspector 2 VIP_Switch to page 1.lua
+1733439516.6888  HeDa_Track Inspector 2 VIP_Switch to page 2.lua
+1733439516.6889  HeDa_Track Inspector 2 VIP_Switch to page 3.lua
+1733439516.6889  HeDa_Track Inspector 2 VIP_Switch to previous page.lua
+1733439516.6889  HeDa_Track Inspector 2 VIP_Tags.lua
+1733439516.6889  HeDa_Track Inspector VIP_Add Track Marker.lua
+1733439516.689  HeDa_Track Inspector VIP_Autotag All Tracks.lua
+1733439516.689  HeDa_Track Inspector VIP_Autotag Selected Tracks.lua
+1733439516.689  HeDa_Track Inspector VIP_Freeze To New Version.lua
+1733439516.689  HeDa_Track Inspector VIP_Go to panel automation.lua
+1733439516.6891  HeDa_Track Inspector VIP_Go to panel custom.lua
+1733439516.6891  HeDa_Track Inspector VIP_Go to panel delay.lua
+1733439516.6891  HeDa_Track Inspector VIP_Go to panel freeze.lua
+1733439516.6891  HeDa_Track Inspector VIP_Go to panel fxchain.lua
+1733439516.6892  HeDa_Track Inspector VIP_Go to panel general.lua
+1733439516.6892  HeDa_Track Inspector VIP_Go to panel markers.lua
+1733439516.6892  HeDa_Track Inspector VIP_Go to panel notepad.lua
+1733439516.6892  HeDa_Track Inspector VIP_Go to panel parameters.lua
+1733439516.6892  HeDa_Track Inspector VIP_Go to panel receives.lua
+1733439516.6893  HeDa_Track Inspector VIP_Go to panel sends.lua
+1733439516.6893  HeDa_Track Inspector VIP_Go to panel tags.lua
+1733439516.6893  HeDa_Track Inspector VIP_Go to panel versions.lua
+1733439516.6893  HeDa_Track Inspector VIP_New Track Version (clear items and envelopes).lua
+1733439516.6894  HeDa_Track Inspector VIP_New Track Version (clear items).lua
+1733439516.6894  HeDa_Track Inspector VIP_New Track Version (duplicate).lua
+1733439516.6894  HeDa_Track Inspector VIP_Open Send 1 FX UI.lua
+1733439516.6894  HeDa_Track Inspector VIP_Open Send 2 FX UI.lua
+1733439516.6895  HeDa_Track Inspector VIP_Open Send 3 FX UI.lua
+1733439516.6895  HeDa_Track Inspector VIP_Open Send 4 FX UI.lua
+1733439516.6895  HeDa_Track Inspector VIP_Render To New Version (mono).lua
+1733439516.6895  HeDa_Track Inspector VIP_Render To New Version (selected area mono).lua
+1733439516.6895  HeDa_Track Inspector VIP_Render To New Version (selected area stereo stems).lua
+1733439516.6896  HeDa_Track Inspector VIP_Render To New Version (stereo stems).lua
+1733439516.6896  HeDa_Track Inspector VIP_Show all versions.lua
+1733439516.6896  HeDa_Track Inspector VIP_Show next version.lua
+1733439516.6897  HeDa_Track Inspector VIP_Show previous version.lua
+1733439516.6897  HeDa_Track Inspector VIP_Toggle Change Track on Item Selection.lua
+1733439516.6897  HeDa_Track Inspector VIP_Toggle Enlarge Track.lua
+1733439516.6897  HeDa_Track Inspector VIP_Toggle Envelopes Track.lua
+1733439516.6898  Adding actions...
+1733439516.6898  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP Add-ons Manager.lua
+1733439516.6899  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP Add-ons Manager.lua
+1733439516.6899  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP.lua
+1733439516.69  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP.lua
+1733439516.69  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Floating.lua
+1733439516.6901  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Floating.lua
+1733439516.6901  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Floating_2.lua
+1733439516.6901  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Floating_2.lua
+1733439516.6902  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Master.lua
+1733439516.6902  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Master.lua
+1733439516.6903  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_SetFXGroup All Tracks.lua
+1733439516.6903  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_SetFXGroup All Tracks.lua
+1733439516.6904  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_SetFXGroup Current Track.lua
+1733439516.6904  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_SetFXGroup Current Track.lua
+1733439516.6905  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_SetFXGroup Selected Tracks.lua
+1733439516.6905  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_SetFXGroup Selected Tracks.lua
+1733439516.6906  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to next page.lua
+1733439516.6906  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to next page.lua
+1733439516.6906  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to page 1.lua
+1733439516.6907  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to page 1.lua
+1733439516.6907  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to page 2.lua
+1733439516.6907  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to page 2.lua
+1733439516.6908  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to page 3.lua
+1733439516.6908  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to page 3.lua
+1733439516.6909  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to previous page.lua
+1733439516.6909  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Switch to previous page.lua
+1733439516.691  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Tags.lua
+1733439516.691  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector 2 VIP_Tags.lua
+1733439516.691  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Add Track Marker.lua
+1733439516.6911  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Add Track Marker.lua
+1733439516.6911  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Autotag All Tracks.lua
+1733439516.6912  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Autotag All Tracks.lua
+1733439516.6914  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Autotag Selected Tracks.lua
+1733439516.6915  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Autotag Selected Tracks.lua
+1733439516.6916  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Freeze To New Version.lua
+1733439516.6918  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Freeze To New Version.lua
+1733439516.6919  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel automation.lua
+1733439516.692  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel automation.lua
+1733439516.6921  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel custom.lua
+1733439516.6922  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel custom.lua
+1733439516.6924  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel delay.lua
+1733439516.6925  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel delay.lua
+1733439516.6926  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel freeze.lua
+1733439516.6927  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel freeze.lua
+1733439516.6928  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel fxchain.lua
+1733439516.693  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel fxchain.lua
+1733439516.6931  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel general.lua
+1733439516.6934  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel general.lua
+1733439516.6935  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel markers.lua
+1733439516.6936  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel markers.lua
+1733439516.6937  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel notepad.lua
+1733439516.6938  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel notepad.lua
+1733439516.6939  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel parameters.lua
+1733439516.694  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel parameters.lua
+1733439516.6941  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel receives.lua
+1733439516.6943  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel receives.lua
+1733439516.6943  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel sends.lua
+1733439516.6945  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel sends.lua
+1733439516.6946  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel tags.lua
+1733439516.6947  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel tags.lua
+1733439516.6948  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel versions.lua
+1733439516.6949  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Go to panel versions.lua
+1733439516.695  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_New Track Version (clear items and envelopes).lua
+1733439516.6951  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_New Track Version (clear items and envelopes).lua
+1733439516.6952  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_New Track Version (clear items).lua
+1733439516.6953  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_New Track Version (clear items).lua
+1733439516.6954  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_New Track Version (duplicate).lua
+1733439516.6955  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_New Track Version (duplicate).lua
+1733439516.6957  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 1 FX UI.lua
+1733439516.6958  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 1 FX UI.lua
+1733439516.6959  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 2 FX UI.lua
+1733439516.696  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 2 FX UI.lua
+1733439516.6961  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 3 FX UI.lua
+1733439516.6962  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 3 FX UI.lua
+1733439516.6963  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 4 FX UI.lua
+1733439516.6965  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Open Send 4 FX UI.lua
+1733439516.6987  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (mono).lua
+1733439516.6989  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (mono).lua
+1733439516.699  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (selected area mono).lua
+1733439516.699  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (selected area mono).lua
+1733439516.6991  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (selected area stereo stems).lua
+1733439516.6991  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (selected area stereo stems).lua
+1733439516.6992  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (stereo stems).lua
+1733439516.6992  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Render To New Version (stereo stems).lua
+1733439516.6993  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Show all versions.lua
+1733439516.6993  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Show all versions.lua
+1733439516.6994  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Show next version.lua
+1733439516.6994  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Show next version.lua
+1733439516.6994  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Show previous version.lua
+1733439516.6995  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Show previous version.lua
+1733439516.6996  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Toggle Change Track on Item Selection.lua
+1733439516.6996  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Toggle Change Track on Item Selection.lua
+1733439516.6997  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Toggle Enlarge Track.lua
+1733439516.6997  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Toggle Enlarge Track.lua
+1733439516.6998  adding /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Toggle Envelopes Track.lua
+1733439516.7021  successfully added action: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Inspector 2 VIP/HeDa_Track Inspector VIP_Toggle Envelopes Track.lua
+1733439516.7022  Version after: 2.3.16
+1733439525.7912  exiting.

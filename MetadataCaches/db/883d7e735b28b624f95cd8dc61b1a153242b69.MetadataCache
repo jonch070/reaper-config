@@ -1,4 +1,27 @@
 C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Frozen in Time/FIT Reaper Projects/FIT - 1m21 - Nats Nadir/media"
+F "36-IM montreal flutes  01-glued-01.wav" 28619464 0 1733260392 0
+D y 2024-11-21 s 96000 n 2 l 0:37.260
+D i 32
+F "37-IM montreal flutes  02-glued-01.wav" 28616664 0 1733260392 0
+D y 2024-12-03 s 96000 n 2 r 1:20:27.398
+D l 0:37.260 i 32
+F "38-IM montreal flutes  03-glued-01.wav" 28616664 0 1733260393 0
+D y 2024-12-03 s 96000 n 2 r 1:20:27.398
+D l 0:37.260 i 32
+F "40-IM montreal flutes  04-glued-01.wav" 28619464 0 1733260393 0
+D y 2024-11-21 s 96000 n 2 l 0:37.260
+D i 32
+F "41-IM montreal flutes  05-glued-01.wav" 28616664 0 1733260394 0
+D y 2024-12-03 s 96000 n 2 r 1:20:27.398
+D l 0:37.260 i 32
+F "42-IM montreal flutes  06-glued-01.wav" 28619464 0 1733260394 0
+D y 2024-11-21 s 96000 n 2 l 0:37.260
+D i 32
+F "43-IM montreal flutes  07-glued-01.wav" 28616664 0 1733260395 0
+D y 2024-12-03 s 96000 n 2 r 1:20:27.398
+D l 0:37.260 i 32
+F "ACBF Working Session - v01.01.01_36_Flute Coles_2024-11-21_11-31_028-glued.wav" 10075404 0 1733255856 0
+D s 96000 n 2 l 0:13.119 i 32
 F "FIT - 1m21 - Nats Nadir - v01.01.01_freeze_MAYSUN SAMPLES - Piano - 15 Lydian Eb - Sustain 01.wav" 19200744 0 1731704818 0
 D y 2024-11-15 s 96000 n 2 r 1:27:39.243
 D l 0:25.000 i 32
@@ -68,6 +91,14 @@ D y 2024-11-15 s 96000 n 1 r 1:27:52.382
 D l 0:24.500 i 32
 F "FIT - 1m21 - Nats Nadir - v01.01.01_freeze_MAYSUN SAMPLES - Piano - 17 Lydian Eb - Sustain 03_nmf_173170551505952.wav" 56448044 0 1731705554 0
 D s 96000 n 6 l 0:24.500 i 32
+F "FIT - 1m21 - Nats Nadir - v01.02.08_freeze_IM montreal flute-001.wav" 58521736 0 1733334409 0
+D y 2024-12-04 s 96000 n 2 r 1:27:34.421
+D l 1:16.199 i 32
+F "FIT - 1m21 - Nats Nadir - v01.02.08_freeze_IM montreal flute.wav" 69740192 0 1733334260 0
+D y 2024-12-04 s 96000 n 2 r 1:27:27.440
+D l 1:30.807 i 32
+F "Harp Haromics Swirl Battle_2.wav" 12201302 0 1733267687 0
+D s 96000 n 2 l 0:21.183 i 24
 F "Maysun Piano Swirl Battle_2 - Main Oct.wav" 42563120 0 1731706795 0
 D s 96000 n 2 l 1:13.894 i 24
 F "Maysun Piano Swirl Battle_2 - Oct Up.wav" 42563120 0 1731706778 0
@@ -80,3 +111,45 @@ F "Maysun Piano Swirl Battle_All Samples - Oct Up - less.wav" 29586338 0 1732111
 D s 96000 n 2 l 0:51.365 i 24
 F "Maysun Piano Swirl Battle_All Samples - Oct Up.wav" 33316250 0 1731715039 0
 D s 96000 n 2 l 0:57.841 i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-01.wav" 6414992 0 1733266689 0
+D y 2023-11-04 s 96000 n 2 l 0:11.131
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-02.wav" 185480 0 1733267469 0
+D y 2023-11-04 s 96000 n 2 l 0:00.316
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-03.wav" 194894 0 1733267469 0
+D y 2023-11-04 s 96000 n 2 l 0:00.332
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-04.wav" 197354 0 1733267469 0
+D y 2023-11-04 s 96000 n 2 l 0:00.336
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-05.wav" 383432 0 1733267469 0
+D y 2023-11-04 s 96000 n 2 l 0:00.660
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-06.wav" 222152 0 1733267469 0
+D y 2023-11-04 s 96000 n 2 l 0:00.380
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-07.wav" 225026 0 1733267469 0
+D y 2023-11-04 s 96000 n 2 l 0:00.385
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-08.wav" 218552 0 1733267469 0
+D y 2023-11-04 s 96000 n 2 l 0:00.373
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-09.wav" 498410 0 1733267470 0
+D y 2023-11-04 s 96000 n 2 l 0:00.859
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-10.wav" 275900 0 1733267470 0
+D y 2023-11-04 s 96000 n 2 l 0:00.473
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-11.wav" 290582 0 1733267470 0
+D y 2023-11-04 s 96000 n 2 l 0:00.498
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-12.wav" 330080 0 1733267470 0
+D y 2023-11-04 s 96000 n 2 l 0:00.567
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued-13.wav" 2644808 0 1733267470 0
+D y 2023-11-04 s 96000 n 2 l 0:04.586
+D i 24
+F "Strings - Harps - REC Harp 6 - Harmonics - BTI - 1m04 - Tree of Life - v03.01.01 - 01.12.14.18 - wet-glued.wav" 6415376 0 1733266607 0
+D y 2023-11-04 s 96000 n 2 l 0:11.132
+D i 24

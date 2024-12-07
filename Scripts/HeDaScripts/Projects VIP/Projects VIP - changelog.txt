@@ -2,6 +2,23 @@
  HeDa Projects - Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v2.3.2 (2024-12-03)
+  + Set Color.../ Remove Color: Sets and resets custom color for each project.
+
+* v2.3.1 (2024-11-28)
+  + Sort catalogs (right click to open the catalog settings page and use the buttons to move it left or right)
+  + added Rename and Remove buttons to the catalog settings page.
+  # small bug fixes and optimizations
+
+* v2.3.0 (2024-11-24)
+  + Recent catalog. If a catalog with the name "Recent" is created, it will be always automatically filled with projects from the recent menu.
+  + Settings: Recents Catalog Name. Create an empty catalog with this name to be used for Recent projects.
+  + Settings: Keep all recent projects. Disabling this to limit to the number of recent projects as in the REAPER menu.
+  + Settings: Catalogs databases path setting. maybe useful if sharing the catalogs on different devices.  
+
+* v2.2.8 (2024-11-16)
+  # fix Recent filter sometimes not working
+
 * v2.2.7 (2024-06-10)
   + new toolbar icons, 150 and 200
   # fix crash in Search and Replace paths

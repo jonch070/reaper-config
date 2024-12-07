@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="e14e659c2bb1639a7a5db1dc81e754c77db4ae0a" name="MPL Scripts">
+<index version="1" commit="c2cad4a1eff41f8c054553fe6926eba5cd345c7e" name="MPL Scripts">
   <category name="Automation Items">
     <reapack name="mpl_Convert selected envelope points to automation item.lua" type="script" desc="Convert selected envelope points to automation item">
       <metadata>
@@ -3535,6 +3535,10 @@
         <changelog><![CDATA[# VF independent]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/4ac2501e920c454e4953369488306cda2d25dae2/FX%20specific/mpl_Export%20selected%20items%20to%20RS5k%20instances%20on%20selected%20track%20(use%20original%20source).lua</source>
       </version>
+      <version name="1.06" author="MPL" time="2024-11-27T19:16:34Z">
+        <changelog><![CDATA[# fix addmidi error]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/6fe6448c07f43882f3990be4aca79ab59dd63b9f/FX%20specific/mpl_Export%20selected%20items%20to%20RS5k%20instances%20on%20selected%20track%20(use%20original%20source).lua</source>
+      </version>
     </reapack>
     <reapack name="mpl_Export selected items to RS5k instances on selected track (use original source, wait for input).lua" type="script" desc="Export selected items to RS5k instances on selected track (use original source, wait for input)">
       <metadata>
@@ -3616,6 +3620,15 @@
       <version name="1.0" author="MPL" time="2022-09-15T19:26:03Z">
         <changelog><![CDATA[+ init]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/eb3d3090a29a34274405ea62fd46632b856e5d98/FX%20specific/mpl_Float%20Fre(a)koscope%20on%20selected%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="mpl_Float RS5k instance by last clicked MIDI editor note.lua" type="script" desc="Float RS5k instance by last clicked MIDI editor note">
+      <metadata>
+        <link rel="website">https://forum.cockos.com/showthread.php?t=188335</link>
+      </metadata>
+      <version name="1.0" author="MPL" time="2024-11-27T19:27:27Z">
+        <changelog><![CDATA[+ init]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/3573e882a9f7b99edc439fb62e3e0f3d5e4b83af/FX%20specific/mpl_Float%20RS5k%20instance%20by%20last%20clicked%20MIDI%20editor%20note.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Float RS5k instance by last incoming note.lua" type="script" desc="Float RS5k instance by last incoming note">
@@ -5896,6 +5909,10 @@
         <changelog><![CDATA[+ init]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/40bf7337046643c12de87779d5e8c70a138cc05d/Items%20Properties/mpl_Item%20ADSR.lua</source>
       </version>
+      <version name="1.01" author="MPL" time="2024-12-03T15:31:38Z">
+        <changelog><![CDATA[# fix spamming ext state]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/c2cad4a1eff41f8c054553fe6926eba5cd345c7e/Items%20Properties/mpl_Item%20ADSR.lua</source>
+      </version>
     </reapack>
     <reapack name="mpl_Mute item under mouse cursor.lua" type="script" desc="Mute item under mouse cursor">
       <metadata>
@@ -7458,6 +7475,10 @@
         <changelog><![CDATA[# use audio device sample rate for render, thanks MathieuC [p=2825117]]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/e14e659c2bb1639a7a5db1dc81e754c77db4ae0a/Render/mpl_Render-in-place.lua</source>
       </version>
+      <version name="1.14" author="MPL" time="2024-12-03T15:22:37Z">
+        <changelog><![CDATA[# fix sapmming extstate.ini]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/f246fee125fd8813a29662494e3b39c519f114a1/Render/mpl_Render-in-place.lua</source>
+      </version>
     </reapack>
     <reapack name="mpl_Set render bounds to entire project.lua" type="script" desc="Set render bounds to entire project">
       <metadata>
@@ -7937,6 +7958,10 @@
         <changelog><![CDATA[+ Ported to ReaImGui
 # uses specially namedd take markers to define source point of the central stretch markers]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/3b1aeb6f13e89f776646e72a03ca17c8321a1cd1/Stretch%20Markers/mpl_Stretch%20marker%20guard.lua</source>
+      </version>
+      <version name="1.04" author="MPL" time="2024-12-03T15:31:38Z">
+        <changelog><![CDATA[# fix spamming extstate]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/c2cad4a1eff41f8c054553fe6926eba5cd345c7e/Stretch%20Markers/mpl_Stretch%20marker%20guard.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Tape start selected items.lua" type="script" desc="Tape start selected items">
@@ -12474,6 +12499,10 @@ various fixes]]></changelog>
         <changelog><![CDATA[# fix lim error
 + Add tooltip on buttons about right click]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/f06e1773ec8ed548b5235a80a25d870e0b798cf5/Various/mpl_Quantize%20Tool.lua</source>
+      </version>
+      <version name="4.04" author="MPL" time="2024-12-03T15:22:37Z">
+        <changelog><![CDATA[# fix spamming extstate]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/f246fee125fd8813a29662494e3b39c519f114a1/Various/mpl_Quantize%20Tool.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Reset audio and MIDI devices.lua" type="script" desc="Reset audio and MIDI devices">

@@ -2,6 +2,9 @@
   Track Inspector 2 - Changelog     
 ---------------------------------------------------------------------------------------
 
+* v2.3.16 (2024-11-14)
+  # Freeze: fix setting freeze n for all multiple selected tracks.
+
 * v2.3.15 (2024-08-14)
   # fix focus arrange when opening fx by default. added setting "floatfx_focusarrange"
   # some cleaning in parts of the code
