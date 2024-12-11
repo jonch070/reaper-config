@@ -61,7 +61,7 @@ out_pin:monitor output
 out_pin:click output
 
 config: nch "Channels" 8 1 2 4 8="8 (namesake)" 12 16 24 32 48
-config: maxmem "Memory Size" 256 64="64MB - max length 0:23 for 8 channels @ 44.1kHz" 128="128MB - max length 0:47 for 8 channels @ 44.1kHz" 256="256MB (default) - max length 1:35 for 8 channels @ 44.1kHz" 512="512MB - max length 3:10 for 8 channels @ 44.1kHz" 1024="1GB - max length 6:20 for 8 channels @ 44.1kHz"
+config: maxmem "Memory Size -preserve-config" 256 64="64MB - max length 0:23 for 8 channels @ 44.1kHz" 128="128MB - max length 0:47 for 8 channels @ 44.1kHz" 256="256MB (default) - max length 1:35 for 8 channels @ 44.1kHz" 512="512MB - max length 3:10 for 8 channels @ 44.1kHz" 1024="1GB - max length 6:20 for 8 channels @ 44.1kHz"
 
 options: maxmem=<? printf("%d",maxmem*1024*128); ?> no_meter gfx_idle prealloc=* 
 

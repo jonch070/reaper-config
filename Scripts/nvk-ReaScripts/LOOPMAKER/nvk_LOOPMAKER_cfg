@@ -1,0 +1,53 @@
+config = {
+	always_on_top = false,
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	disable_auto_updates = false,
+	font = "Verdana",
+	font_size = 14,
+	glue = false,
+	hide_stats = false,
+	keys = {
+		
+	},
+	new_instance_close = false,
+	scale = 1,
+	style_vars = {
+		
+	},
+	time_selection_warning = true,
+	version = "2.3.5"
+}
+tabs = {
+	default = {
+		color_items = false,
+		crossfade = true,
+		curve = 0,
+		default = true,
+		fade = 48,
+		fade_max = 0.0,
+		guid = "default",
+		leading_zeros = 1,
+		loops = 1,
+		match_length_of_overlapping_items = false,
+		name = false,
+		number = false,
+		number_start = 1,
+		position = true,
+		prefix = "",
+		preset_name = "Default",
+		remove_extensions = false,
+		second_snap = false,
+		separator = 0,
+		shepardtone = false,
+		shuffle_variation_positions = false,
+		space = 0.0,
+		suffix = "",
+		zerocrossing = false,
+		zerocrossing_offset = 0
+	}
+}
