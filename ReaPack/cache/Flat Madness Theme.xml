@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Flat Madness Theme" commit="1a6359b3364b1886a5012156e3b064b0551c4f9f">
+<index version="1" name="Flat Madness Theme" commit="86b3cd20f23c629fa89f53f05cdc33a531419946">
   <category name="ColorThemes">
+    <reapack name="Flat Madness Black CI.theme" type="theme" desc="Flat Madness Black CI">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Hi Everyone! this theme is created for people who love modern cute flat design. This theme is created to make people enjoy to work with TCP FX list, so at first - go to options, and enable "show FX inserts in TCP" and "show FX sends in TCP" enjoy!\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=247086">Forum Thread</link>
+        <link rel="screenshot">https://github.com/gapalil001/FlatMadness/raw/master/Adjuster/images/screenshot.png</link>
+        <link rel="donation">https://buymeacoffee.com/flatmadness</link>
+      </metadata>
+      <version name="4.2.0" author="Dmytro Hapochka" time="2025-01-05T23:32:33Z">
+        <changelog><![CDATA[- two additional color schemes
+- adjustable backgrounds in TCP/MCP
+- adjuster presets
+- adjuster quick layout switch
+- adjustable TCP label brightness
+- clearly rounded items
+- left orientation for TCP folder/longname states]]></changelog>
+        <source file="Flat Madness Black CI.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/512d38c93c7729bc3ab516ab210e05203c0c952a/ColorThemes/Flat%20Madness%20Black%20CI.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.1" author="Dmytro Hapochka" time="2025-01-10T22:36:51Z">
+        <changelog><![CDATA[- re-designed folders and longname layouts to be more consistant
+- fixed issues with colors for disabled sends and stretch markers
+- increased range for TCP label color (unselected)
+- improved behavior in longname layouts
+- added two color variations - solid item backgrounds for bright and grey themes (experimental)
+- some refactoring stuff]]></changelog>
+        <source file="Flat Madness Black CI.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/5d984f5b9751718e2bc46fe34f64ecc5a724a6b4/ColorThemes/Flat%20Madness%20Black%20CI.ReaperThemeZip</source>
+      </version>
+    </reapack>
     <reapack name="Flat Madness Black.theme" type="theme" desc="Flat Madness Black">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -101,6 +134,25 @@
         <changelog><![CDATA[- fixed bug when FX List disappears in colored fader TCP layouts]]></changelog>
         <source file="Flat Madness Black.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/1a6359b3364b1886a5012156e3b064b0551c4f9f/ColorThemes/Flat%20Madness%20Black.ReaperThemeZip</source>
       </version>
+      <version name="4.2.0" author="Dmytro Hapochka" time="2025-01-05T23:26:45Z">
+        <changelog><![CDATA[- two additional color schemes
+- adjustable backgrounds in TCP/MCP
+- adjuster presets
+- adjuster quick layout switch
+- adjustable TCP label brightness
+- clearly rounded items
+- left orientation for TCP folder/longname states]]></changelog>
+        <source file="Flat Madness Black.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/7ebe2bc27af21ddba5f13998fcd6412b2e563165/ColorThemes/Flat%20Madness%20Black.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.1" author="Dmytro Hapochka" time="2025-01-12T12:50:01Z">
+        <changelog><![CDATA[- re-designed folders and longname layouts to be more consistant
+- fixed issues with colors for disabled sends and stretch markers
+- increased range for TCP label color (unselected)
+- improved behavior in longname layouts
+- added two color variations - solid item backgrounds for bright and grey themes (experimental)
+- some refactoring stuff]]></changelog>
+        <source file="Flat Madness Black.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/86b3cd20f23c629fa89f53f05cdc33a531419946/ColorThemes/Flat%20Madness%20Black.ReaperThemeZip</source>
+      </version>
     </reapack>
     <reapack name="Flat Madness Bright.theme" type="theme" desc="Flat Madness Bright">
       <metadata>
@@ -200,6 +252,58 @@
       <version name="4.1.2" author="Dmytro Hapochka" time="2024-11-25T14:18:29Z">
         <changelog><![CDATA[- fixed bug when FX List disappears in colored fader TCP layouts]]></changelog>
         <source file="Flat Madness Bright.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/1a6359b3364b1886a5012156e3b064b0551c4f9f/ColorThemes/Flat%20Madness%20Bright.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.0" author="Dmytro Hapochka" time="2025-01-05T23:26:45Z">
+        <changelog><![CDATA[- two additional color schemes
+- adjustable backgrounds in TCP/MCP
+- adjuster presets
+- adjuster quick layout switch
+- adjustable TCP label brightness
+- clearly rounded items
+- left orientation for TCP folder/longname states]]></changelog>
+        <source file="Flat Madness Bright.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/7ebe2bc27af21ddba5f13998fcd6412b2e563165/ColorThemes/Flat%20Madness%20Bright.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.1" author="Dmytro Hapochka" time="2025-01-12T12:50:01Z">
+        <changelog><![CDATA[- re-designed folders and longname layouts to be more consistant
+- fixed issues with colors for disabled sends and stretch markers
+- increased range for TCP label color (unselected)
+- improved behavior in longname layouts
+- added two color variations - solid item backgrounds for bright and grey themes (experimental)
+- some refactoring stuff]]></changelog>
+        <source file="Flat Madness Bright.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/86b3cd20f23c629fa89f53f05cdc33a531419946/ColorThemes/Flat%20Madness%20Bright.ReaperThemeZip</source>
+      </version>
+    </reapack>
+    <reapack name="Flat Madness Dark CI.theme" type="theme" desc="Flat Madness Dark CI">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Hi Everyone! this theme is created for people who love modern cute flat design. This theme is created to make people enjoy to work with TCP FX list, so at first - go to options, and enable "show FX inserts in TCP" and "show FX sends in TCP" enjoy!\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=247086">Forum Thread</link>
+        <link rel="screenshot">https://github.com/gapalil001/FlatMadness/raw/master/Adjuster/images/screenshot.png</link>
+        <link rel="donation">https://buymeacoffee.com/flatmadness</link>
+      </metadata>
+      <version name="4.2.0" author="Dmytro Hapochka" time="2025-01-05T23:32:33Z">
+        <changelog><![CDATA[- two additional color schemes
+- adjustable backgrounds in TCP/MCP
+- adjuster presets
+- adjuster quick layout switch
+- adjustable TCP label brightness
+- clearly rounded items
+- left orientation for TCP folder/longname states]]></changelog>
+        <source file="Flat Madness Dark CI.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/512d38c93c7729bc3ab516ab210e05203c0c952a/ColorThemes/Flat%20Madness%20Dark%20CI.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.1" author="Dmytro Hapochka" time="2025-01-10T22:36:51Z">
+        <changelog><![CDATA[- re-designed folders and longname layouts to be more consistant
+- fixed issues with colors for disabled sends and stretch markers
+- increased range for TCP label color (unselected)
+- improved behavior in longname layouts
+- added two color variations - solid item backgrounds for bright and grey themes (experimental)
+- some refactoring stuff]]></changelog>
+        <source file="Flat Madness Dark CI.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/5d984f5b9751718e2bc46fe34f64ecc5a724a6b4/ColorThemes/Flat%20Madness%20Dark%20CI.ReaperThemeZip</source>
       </version>
     </reapack>
     <reapack name="Flat Madness Dark.theme" type="theme" desc="Flat Madness Dark">
@@ -302,6 +406,25 @@
         <changelog><![CDATA[- fixed bug when FX List disappears in colored fader TCP layouts]]></changelog>
         <source file="Flat Madness Dark.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/1a6359b3364b1886a5012156e3b064b0551c4f9f/ColorThemes/Flat%20Madness%20Dark.ReaperThemeZip</source>
       </version>
+      <version name="4.2.0" author="Dmytro Hapochka" time="2025-01-05T23:26:45Z">
+        <changelog><![CDATA[- two additional color schemes
+- adjustable backgrounds in TCP/MCP
+- adjuster presets
+- adjuster quick layout switch
+- adjustable TCP label brightness
+- clearly rounded items
+- left orientation for TCP folder/longname states]]></changelog>
+        <source file="Flat Madness Dark.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/7ebe2bc27af21ddba5f13998fcd6412b2e563165/ColorThemes/Flat%20Madness%20Dark.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.1" author="Dmytro Hapochka" time="2025-01-12T12:50:01Z">
+        <changelog><![CDATA[- re-designed folders and longname layouts to be more consistant
+- fixed issues with colors for disabled sends and stretch markers
+- increased range for TCP label color (unselected)
+- improved behavior in longname layouts
+- added two color variations - solid item backgrounds for bright and grey themes (experimental)
+- some refactoring stuff]]></changelog>
+        <source file="Flat Madness Dark.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/86b3cd20f23c629fa89f53f05cdc33a531419946/ColorThemes/Flat%20Madness%20Dark.ReaperThemeZip</source>
+      </version>
     </reapack>
     <reapack name="Flat Madness Grey.theme" type="theme" desc="Flat Madness Grey">
       <metadata>
@@ -401,6 +524,25 @@
       <version name="4.1.2" author="Dmytro Hapochka" time="2024-11-25T14:18:29Z">
         <changelog><![CDATA[- fixed bug when FX List disappears in colored fader TCP layouts]]></changelog>
         <source file="Flat Madness Grey.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/1a6359b3364b1886a5012156e3b064b0551c4f9f/ColorThemes/Flat%20Madness%20Grey.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.0" author="Dmytro Hapochka" time="2025-01-05T23:26:45Z">
+        <changelog><![CDATA[- two additional color schemes
+- adjustable backgrounds in TCP/MCP
+- adjuster presets
+- adjuster quick layout switch
+- adjustable TCP label brightness
+- clearly rounded items
+- left orientation for TCP folder/longname states]]></changelog>
+        <source file="Flat Madness Grey.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/7ebe2bc27af21ddba5f13998fcd6412b2e563165/ColorThemes/Flat%20Madness%20Grey.ReaperThemeZip</source>
+      </version>
+      <version name="4.2.1" author="Dmytro Hapochka" time="2025-01-12T12:50:01Z">
+        <changelog><![CDATA[- re-designed folders and longname layouts to be more consistant
+- fixed issues with colors for disabled sends and stretch markers
+- increased range for TCP label color (unselected)
+- improved behavior in longname layouts
+- added two color variations - solid item backgrounds for bright and grey themes (experimental)
+- some refactoring stuff]]></changelog>
+        <source file="Flat Madness Grey.ReaperThemeZip">https://github.com/gapalil001/FlatMadness/raw/86b3cd20f23c629fa89f53f05cdc33a531419946/ColorThemes/Flat%20Madness%20Grey.ReaperThemeZip</source>
       </version>
     </reapack>
   </category>
@@ -571,6 +713,114 @@
         <source file="images/pref_trans_position_left.png">https://github.com/gapalil001/FlatMadness/raw/cc030f7d38d1ad442f648b65666b2b91f014c9ee/Utility/images/pref_trans_position_left.png</source>
         <source file="images/pref_trans_position_right.png">https://github.com/gapalil001/FlatMadness/raw/cc030f7d38d1ad442f648b65666b2b91f014c9ee/Utility/images/pref_trans_position_right.png</source>
         <source file="images/screenshot.png">https://github.com/gapalil001/FlatMadness/raw/cc030f7d38d1ad442f648b65666b2b91f014c9ee/Utility/images/screenshot.png</source>
+      </version>
+      <version name="1.1.0" author="Ed Kashinsky" time="2025-01-05T23:29:54Z">
+        <changelog><![CDATA[- added support of version 4.2.0
+- added presets
+- added support of layouts changing
+- added version details to about section]]></changelog>
+        <source main="main">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/FM_4.0_theme_adjuster.lua</source>
+        <source file="images/bmc_qr_hapochka.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/bmc_qr_hapochka.png</source>
+        <source file="images/bmc_qr_kashinsky.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/bmc_qr_kashinsky.png</source>
+        <source file="images/header.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/header.png</source>
+        <source file="images/pref_mcp_colorbg.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_mcp_colorbg.png</source>
+        <source file="images/pref_mcp_custom.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_mcp_custom.png</source>
+        <source file="images/pref_mcp_greybg.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_mcp_greybg.png</source>
+        <source file="images/pref_mcp_layout_1.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_mcp_layout_1.png</source>
+        <source file="images/pref_mcp_layout_2.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_mcp_layout_2.png</source>
+        <source file="images/pref_mcp_paddingoff.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_mcp_paddingoff.png</source>
+        <source file="images/pref_mcp_paddingon.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_mcp_paddingon.png</source>
+        <source file="images/pref_tcp_colorbg.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_colorbg.png</source>
+        <source file="images/pref_tcp_custom.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_custom.png</source>
+        <source file="images/pref_tcp_embedinstead.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_embedinstead.png</source>
+        <source file="images/pref_tcp_embedright.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_embedright.png</source>
+        <source file="images/pref_tcp_greybg.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_greybg.png</source>
+        <source file="images/pref_tcp_knob.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_knob.png</source>
+        <source file="images/pref_tcp_layout_1.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_layout_1.png</source>
+        <source file="images/pref_tcp_layout_2.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_layout_2.png</source>
+        <source file="images/pref_tcp_meterbridge.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_meterbridge.png</source>
+        <source file="images/pref_tcp_meterleft.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_meterleft.png</source>
+        <source file="images/pref_tcp_meterright.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_meterright.png</source>
+        <source file="images/pref_tcp_meterrightedge.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_meterrightedge.png</source>
+        <source file="images/pref_tcp_norecarms.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_norecarms.png</source>
+        <source file="images/pref_tcp_recarms.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_recarms.png</source>
+        <source file="images/pref_tcp_slider.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_tcp_slider.png</source>
+        <source file="images/pref_trans_position_center.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_trans_position_center.png</source>
+        <source file="images/pref_trans_position_left.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_trans_position_left.png</source>
+        <source file="images/pref_trans_position_right.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/pref_trans_position_right.png</source>
+        <source file="images/screenshot.png">https://github.com/gapalil001/FlatMadness/raw/3c1a422b7a396d011693ea96a8e610e4bee75d3b/Utility/images/screenshot.png</source>
+      </version>
+      <version name="1.1.1" author="Ed Kashinsky" time="2025-01-05T23:53:07Z">
+        <changelog><![CDATA[- added support of version 4.2.0
+- added presets
+- added support of layouts changing
+- added version details to about section]]></changelog>
+        <source main="main">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/FM_4.0_theme_adjuster.lua</source>
+        <source file="images/bmc_qr_hapochka.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/bmc_qr_hapochka.png</source>
+        <source file="images/bmc_qr_kashinsky.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/bmc_qr_kashinsky.png</source>
+        <source file="images/header.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/header.png</source>
+        <source file="images/pref_mcp_colorbg.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_mcp_colorbg.png</source>
+        <source file="images/pref_mcp_custom.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_mcp_custom.png</source>
+        <source file="images/pref_mcp_greybg.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_mcp_greybg.png</source>
+        <source file="images/pref_mcp_layout_1.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_mcp_layout_1.png</source>
+        <source file="images/pref_mcp_layout_2.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_mcp_layout_2.png</source>
+        <source file="images/pref_mcp_paddingoff.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_mcp_paddingoff.png</source>
+        <source file="images/pref_mcp_paddingon.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_mcp_paddingon.png</source>
+        <source file="images/pref_tcp_colorbg.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_colorbg.png</source>
+        <source file="images/pref_tcp_custom.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_custom.png</source>
+        <source file="images/pref_tcp_embedinstead.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_embedinstead.png</source>
+        <source file="images/pref_tcp_embedright.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_embedright.png</source>
+        <source file="images/pref_tcp_greybg.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_greybg.png</source>
+        <source file="images/pref_tcp_knob.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_knob.png</source>
+        <source file="images/pref_tcp_layout_1.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_layout_1.png</source>
+        <source file="images/pref_tcp_layout_2.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_layout_2.png</source>
+        <source file="images/pref_tcp_meterbridge.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_meterbridge.png</source>
+        <source file="images/pref_tcp_meterleft.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_meterleft.png</source>
+        <source file="images/pref_tcp_meterright.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_meterright.png</source>
+        <source file="images/pref_tcp_meterrightedge.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_meterrightedge.png</source>
+        <source file="images/pref_tcp_norecarms.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_norecarms.png</source>
+        <source file="images/pref_tcp_recarms.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_recarms.png</source>
+        <source file="images/pref_tcp_slider.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_tcp_slider.png</source>
+        <source file="images/pref_trans_position_center.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_trans_position_center.png</source>
+        <source file="images/pref_trans_position_left.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_trans_position_left.png</source>
+        <source file="images/pref_trans_position_right.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/pref_trans_position_right.png</source>
+        <source file="images/screenshot.png">https://github.com/gapalil001/FlatMadness/raw/dbe911db55077e2d65cd188645fbd6cae298cfd7/Utility/images/screenshot.png</source>
+      </version>
+      <version name="1.1.2" author="Ed Kashinsky" time="2025-01-06T00:06:54Z">
+        <changelog><![CDATA[- added support of version 4.2.0
+- added presets
+- added support of layouts changing
+- added version details to about section]]></changelog>
+        <source main="main">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/FM_4.0_theme_adjuster.lua</source>
+        <source file="images/bmc_qr_hapochka.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/bmc_qr_hapochka.png</source>
+        <source file="images/bmc_qr_kashinsky.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/bmc_qr_kashinsky.png</source>
+        <source file="images/header.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/header.png</source>
+        <source file="images/pref_mcp_colorbg.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_mcp_colorbg.png</source>
+        <source file="images/pref_mcp_custom.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_mcp_custom.png</source>
+        <source file="images/pref_mcp_greybg.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_mcp_greybg.png</source>
+        <source file="images/pref_mcp_layout_1.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_mcp_layout_1.png</source>
+        <source file="images/pref_mcp_layout_2.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_mcp_layout_2.png</source>
+        <source file="images/pref_mcp_paddingoff.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_mcp_paddingoff.png</source>
+        <source file="images/pref_mcp_paddingon.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_mcp_paddingon.png</source>
+        <source file="images/pref_tcp_colorbg.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_colorbg.png</source>
+        <source file="images/pref_tcp_custom.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_custom.png</source>
+        <source file="images/pref_tcp_embedinstead.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_embedinstead.png</source>
+        <source file="images/pref_tcp_embedright.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_embedright.png</source>
+        <source file="images/pref_tcp_greybg.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_greybg.png</source>
+        <source file="images/pref_tcp_knob.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_knob.png</source>
+        <source file="images/pref_tcp_layout_1.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_layout_1.png</source>
+        <source file="images/pref_tcp_layout_2.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_layout_2.png</source>
+        <source file="images/pref_tcp_meterbridge.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_meterbridge.png</source>
+        <source file="images/pref_tcp_meterleft.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_meterleft.png</source>
+        <source file="images/pref_tcp_meterright.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_meterright.png</source>
+        <source file="images/pref_tcp_meterrightedge.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_meterrightedge.png</source>
+        <source file="images/pref_tcp_norecarms.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_norecarms.png</source>
+        <source file="images/pref_tcp_recarms.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_recarms.png</source>
+        <source file="images/pref_tcp_slider.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_tcp_slider.png</source>
+        <source file="images/pref_trans_position_center.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_trans_position_center.png</source>
+        <source file="images/pref_trans_position_left.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_trans_position_left.png</source>
+        <source file="images/pref_trans_position_right.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/pref_trans_position_right.png</source>
+        <source file="images/screenshot.png">https://github.com/gapalil001/FlatMadness/raw/35a932b56e35044456b195c27ce6992e0f8deb9f/Utility/images/screenshot.png</source>
       </version>
     </reapack>
   </category>

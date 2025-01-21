@@ -3,7 +3,7 @@
  Author: LKC
  REAPER: 6
  Extensions: SWS
- Version: 1.08
+ Version: 1.09
  Provides:
   Data/Lokasenna_GUI/Class - Button.dat
   Data/Lokasenna_GUI/Class - Label.dat
@@ -42,6 +42,8 @@
 
 --[[
  * Changelog:
+    * v1.09 (2025-01-14)
+        + Fixed an issue with Minimal View being always active in MCP
     * v1.08 (2024-11-04)
         + Changed licensing model - LKC Content Navigator is now FREE for  both personal and commercial use
         + Fixed (ALL) button affecting MPC when Affect MPC setting is disabled

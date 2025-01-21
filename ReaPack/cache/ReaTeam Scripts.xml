@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="bdc7579272df4910256c0f8cc193dec109126859" name="ReaTeam Scripts">
+<index version="1" commit="98773615d8e64f511b93c2b04ded0e65be10c37e" name="ReaTeam Scripts">
   <category name="Cursor">
     <reapack name="amagalma_Move edit cursor to closest item edge (among the selected items).lua" type="script" desc="Move edit cursor to closest item edge (among the selected items)">
       <metadata>
@@ -580,6 +580,15 @@
       </version>
       <version name="1.1" author="amagalma, X-Raym" time="2022-07-18T16:49:45Z">
         <source>https://github.com/ReaTeam/ReaScripts/raw/32e7b53f799d110200db4415957a3f20549683c0/Development/amagalma_Theme%20variable%20descriptions.lua</source>
+      </version>
+    </reapack>
+    <reapack name="cfillion_Color inspector.lua" type="script" desc="Color inspector">
+      <metadata>
+        <link rel="screenshot">https://i.imgur.com/GVoBSUs.gif</link>
+        <link rel="donation">https://reapack.com/donate</link>
+      </metadata>
+      <version name="1.0" author="cfillion" time="2024-12-14T01:12:15Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/0132f32368edf0dec3d554df65027a198439d4cf/Development/cfillion_Color%20inspector.lua</source>
       </version>
     </reapack>
     <reapack name="cfillion_Dump file to string literal.lua" type="script" desc="Dump file to string literal">
@@ -2535,7 +2544,7 @@ Refactored/reorganized the code for readability]]></changelog>
     </reapack>
     <reapack name="BuyOne_Move selected FX envelope in track to top_bottom_upwards_downwards.lua" type="script" desc="Move selected FX envelope in track to top/bottom/upwards/downwards (6 scripts)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -2569,6 +2578,15 @@ Refactored/reorganized the code for readability]]></changelog>
       <version name="1.2" author="BuyOne" time="2023-01-17T14:41:00Z">
         <changelog><![CDATA[#Fixed script crach when applying to the only envelope of a particular FX]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/fa51291b7f6a690a79d37a9e9c3e91871cd64031/Envelopes/BuyOne_Move%20selected%20FX%20envelope%20in%20track%20to%20top_bottom_upwards_downwards.lua</source>
+      </version>
+      <version name="1.2-1" author="BuyOne" time="2024-12-10T16:12:43Z">
+        <changelog><![CDATA[Fix packaging of the 6 actions]]></changelog>
+        <source main="main" file="BuyOne_Move selected FX envelope/BuyOne_Move selected FX envelope in track to top lane.lua">https://github.com/ReaTeam/ReaScripts/raw/cab13cfbfcf3d748f0e886debc1b986be38dda59/Envelopes/BuyOne_Move%20selected%20FX%20envelope%20in%20track%20to%20top_bottom_upwards_downwards.lua</source>
+        <source main="main" file="BuyOne_Move selected FX envelope/BuyOne_Move selected FX envelope in track to bottom lane.lua">https://github.com/ReaTeam/ReaScripts/raw/cab13cfbfcf3d748f0e886debc1b986be38dda59/Envelopes/BuyOne_Move%20selected%20FX%20envelope%20in%20track%20to%20top_bottom_upwards_downwards.lua</source>
+        <source main="main" file="BuyOne_Move selected FX envelope/BuyOne_Move selected FX envelope in track up one lane (cycle).lua">https://github.com/ReaTeam/ReaScripts/raw/cab13cfbfcf3d748f0e886debc1b986be38dda59/Envelopes/BuyOne_Move%20selected%20FX%20envelope%20in%20track%20to%20top_bottom_upwards_downwards.lua</source>
+        <source main="main" file="BuyOne_Move selected FX envelope/BuyOne_Move selected FX envelope in track down one lane (cycle).lua">https://github.com/ReaTeam/ReaScripts/raw/cab13cfbfcf3d748f0e886debc1b986be38dda59/Envelopes/BuyOne_Move%20selected%20FX%20envelope%20in%20track%20to%20top_bottom_upwards_downwards.lua</source>
+        <source main="main" file="BuyOne_Move selected FX envelope/BuyOne_Move selected FX envelope in track up one lane (swap).lua">https://github.com/ReaTeam/ReaScripts/raw/cab13cfbfcf3d748f0e886debc1b986be38dda59/Envelopes/BuyOne_Move%20selected%20FX%20envelope%20in%20track%20to%20top_bottom_upwards_downwards.lua</source>
+        <source main="main" file="BuyOne_Move selected FX envelope/BuyOne_Move selected FX envelope in track down one lane (swap).lua">https://github.com/ReaTeam/ReaScripts/raw/cab13cfbfcf3d748f0e886debc1b986be38dda59/Envelopes/BuyOne_Move%20selected%20FX%20envelope%20in%20track%20to%20top_bottom_upwards_downwards.lua</source>
       </version>
     </reapack>
     <reapack name="cfillion_Delete points before or after the edit cursor in selected envelope.lua" type="script" desc="Delete points before or after the edit cursor in selected envelope">
@@ -4406,6 +4424,17 @@ Fixed a bug of copying FX to the same FX chain]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/0457844816122a563def3997222cc19e1cc3af6b/FX/cfillion_Show%20ReaPack%20about%20dialog%20for%20the%20focused%20JSFX.lua</source>
       </version>
     </reapack>
+    <reapack name="cfillion_Toggle bypass or offline of selected FX in the focused FX chain window.lua" type="script" desc="Toggle bypass or offline of selected FX in the focused FX chain window">
+      <metadata>
+        <link rel="website">https://cfillion.ca</link>
+        <link rel="website" href="https://forum.cockos.com/showpost.php?p=2834699">Request post</link>
+        <link rel="donation">https://reapack.com/donate</link>
+      </metadata>
+      <version name="1.0" author="cfillion" time="2025-01-02T13:05:03Z">
+        <source main="main" file="cfillion_Toggle bypass of selected FX in the focused FX chain window.lua">https://github.com/ReaTeam/ReaScripts/raw/3cd512ee6a2c3c51f429011dc9843c3af7dd99d2/FX/cfillion_Toggle%20bypass%20or%20offline%20of%20selected%20FX%20in%20the%20focused%20FX%20chain%20window.lua</source>
+        <source main="main" file="cfillion_Toggle offline of selected FX in the focused FX chain window.lua">https://github.com/ReaTeam/ReaScripts/raw/3cd512ee6a2c3c51f429011dc9843c3af7dd99d2/FX/cfillion_Toggle%20bypass%20or%20offline%20of%20selected%20FX%20in%20the%20focused%20FX%20chain%20window.lua</source>
+      </version>
+    </reapack>
     <reapack name="cfillion_Toggle input FX bypass for selected tracks.lua" type="script" desc="Toggle input FX bypass for selected tracks (8 actions)">
       <version name="1.0" author="cfillion" time="2018-03-24T20:16:30Z">
         <source main="main" file="cfillion_Toggle input FX 1 bypass for selected tracks.lua">https://github.com/ReaTeam/ReaScripts/raw/284d9646f46b0fbf45ba4467baf676e5fa26ac83/FX/cfillion_Toggle%20input%20FX%20bypass%20for%20selected%20tracks.lua</source>
@@ -4416,6 +4445,22 @@ Fixed a bug of copying FX to the same FX chain]]></changelog>
         <source main="main" file="cfillion_Toggle input FX 6 bypass for selected tracks.lua">https://github.com/ReaTeam/ReaScripts/raw/284d9646f46b0fbf45ba4467baf676e5fa26ac83/FX/cfillion_Toggle%20input%20FX%20bypass%20for%20selected%20tracks.lua</source>
         <source main="main" file="cfillion_Toggle input FX 7 bypass for selected tracks.lua">https://github.com/ReaTeam/ReaScripts/raw/284d9646f46b0fbf45ba4467baf676e5fa26ac83/FX/cfillion_Toggle%20input%20FX%20bypass%20for%20selected%20tracks.lua</source>
         <source main="main" file="cfillion_Toggle input FX 8 bypass for selected tracks.lua">https://github.com/ReaTeam/ReaScripts/raw/284d9646f46b0fbf45ba4467baf676e5fa26ac83/FX/cfillion_Toggle%20input%20FX%20bypass%20for%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="daodan_Alt+shift+left click to exclusive solo FX (bypass others) in TCP, MCP FX list (background).lua" type="script" desc="Alt+shift+left click to exclusive solo FX (bypass others) in TCP, MCP FX list (background)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Alt+shift+left click to exclusive solo FX (bypass others) in TCP, MCP FX list (background)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 While script running you can alt+shift+left click FX in TCP, MCP FX list to solo this FX, i.e. bypass other FXs on this track.\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?p=2809719">Forum thread</link>
+      </metadata>
+      <version name="1.0" author="daodan" time="2025-01-18T02:28:51Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/98773615d8e64f511b93c2b04ded0e65be10c37e/FX/daodan_Alt+shift+left%20click%20to%20exclusive%20solo%20FX%20(bypass%20others)%20in%20TCP,%20MCP%20FX%20list%20(background).lua</source>
       </version>
     </reapack>
     <reapack name="edgemeal_Copy FX from item under mouse to selected items.lua" type="script" desc="Copy FX from item under mouse to selected items">
@@ -4621,6 +4666,9 @@ Alternative FX browser fixes]]></changelog>
       <version name="1.0" author="Eugen2777, DarkStar, Kawa" time="2018-09-07T07:55:54Z">
         <changelog><![CDATA[# Reapack Release by X-Raym from version c01]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/a22bb49688a60e84c8c29f6f951e06342f517650/FX/kawa_TrackFXs_Routing_Matrix_DS_KW.lua</source>
+      </version>
+      <version name="1.0.1" author="Eugen2777, DarkStar, Kawa" time="2024-12-07T16:28:14Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/be7f5689e9a2671d9c5f18fec872e055b09bf423/FX/kawa_TrackFXs_Routing_Matrix_DS_KW.lua</source>
       </version>
     </reapack>
     <reapack name="larryseyer_Live keys scripts.lua" type="script" desc="Live keys scripts">
@@ -5041,11 +5089,11 @@ Colored pitch key]]></changelog>
     </reapack>
     <reapack name="tompad_FX chain AB.lua" type="script" desc="FX chain A-B">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 tompad_FX_chain_AB\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 tompad_FX_chain_AB\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Reascript for A/B-ing FX chains in Reaper DAW\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Use tompad_FX_chain_AB to compare different fx chains you create on a track.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 How to use:\par}
@@ -5080,16 +5128,20 @@ Removed in description about copying to another track - waiting for
 a solution on possible bug in ultraschall.SetFXStateChunk.]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/116e2b2f93f3e04527080dc04caadd5106470e60/FX/tompad_FX%20chain%20AB.lua</source>
       </version>
+      <version name="1.04" author="Thomas Dahl" time="2025-01-07T17:45:39Z">
+        <changelog><![CDATA[Added support for use on master track also.]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/b3045d3a007cd942b47e17ecc30b2f88574bce78/FX/tompad_FX%20chain%20AB.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Items Editing">
     <reapack name="80icio_Perfect Timing! - Audio Quantizer.lua" type="script" desc="Perfect Timing! - Audio Quantizer">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 PERFECT TIMING!\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 PERFECT TIMING!\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 is a script for audio quantizing with advanced features.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Fast transient analysis with 2 visualization options.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Timesaving Grid Based detection.\par}
@@ -5145,6 +5197,10 @@ BugFix
         <changelog><![CDATA[- Fixed graphic issue between mouse position indication vertical line and arrange window trigger lines
 - Fixed arrange window trigger lines behaviour when tracks disappear in folder]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f5b35d9a55fa132cac6469fa3f7ad76f9f0d308e/Items%20Editing/80icio_Perfect%20Timing!%20-%20Audio%20Quantizer.lua</source>
+      </version>
+      <version name="0.28" author="80icio" time="2025-01-05T15:08:03Z">
+        <changelog><![CDATA[- Fixed warp quantize not working randomly]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/af4ff8f2a602793c0b79c41a91776a9399b87d34/Items%20Editing/80icio_Perfect%20Timing!%20-%20Audio%20Quantizer.lua</source>
       </version>
     </reapack>
     <reapack name="Add project markers as cue points to selected items and replace source files.lua" type="script" desc="amagalma_Add project markers as cue points to selected items and replace source files">
@@ -6077,12 +6133,12 @@ website
     </reapack>
     <reapack name="az_Fade tool (work on context of mouse, razor or time selection).lua" type="script" desc="Fade tool (works on context of mouse, razor or time selection)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Fade tool\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Options window can be opened by pressing the shortcut assigned the script when mouse placed on transport or mixer panel.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Fade tool\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Options window can be opened by pressing the shortcut assigned the script when mouse placed on transport or mixer panel.\par}
 {\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab Use top/bottom mouse placement on the item to define what fade you need, in or out.\par}
 {\pard \ql \f0 \sa180 \li360 \fi0 There is two ways that you can change in the options.\par}
 {\pard \ql \f0 \sa180 \li360 \fi0 \f1   Default is: top / bottom -> fadein / fadeout\line
@@ -6186,6 +6242,14 @@ website
         <source file="az_Fade tool (work on context of mouse, razor or time selection)/az_Options window for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/0f02df6591e7af08a23b2c964839d18b051027ac/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Options%20window%20for%20az_Fade%20tool.lua</source>
         <source main="main" file="az_Fade tool (work on context of mouse, razor or time selection)/az_Open options for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/0f02df6591e7af08a23b2c964839d18b051027ac/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Open%20options%20for%20az_Fade%20tool.lua</source>
       </version>
+      <version name="2.2.4" author="AZ" time="2025-01-13T19:03:35Z">
+        <changelog><![CDATA[- Improved behavior for batch fades/crossfades options
+- Added option for immediate applying actual batch settings without dialog
+- added workaround for some math inaccuracy related to razor area]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/43b828d0ea57f472d7bebdf3779331d4713ee326/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection).lua</source>
+        <source file="az_Fade tool (work on context of mouse, razor or time selection)/az_Options window for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/43b828d0ea57f472d7bebdf3779331d4713ee326/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Options%20window%20for%20az_Fade%20tool.lua</source>
+        <source main="main" file="az_Fade tool (work on context of mouse, razor or time selection)/az_Open options for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/43b828d0ea57f472d7bebdf3779331d4713ee326/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Open%20options%20for%20az_Fade%20tool.lua</source>
+      </version>
     </reapack>
     <reapack name="az_Open item copy in primary external editor with handles.lua" type="script" desc="Open item copy in primary external editor with handles">
       <metadata>
@@ -6205,13 +6269,13 @@ website
     </reapack>
     <reapack name="az_Smart split items by mouse cursor.lua" type="script" desc="Smart split items using mouse cursor context (also edit cursor, razor area and time selection)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Smart split items using mouse cursor context\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Smart split items using mouse cursor context\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Forum thread: https://forum.cockos.com/showthread.php?t=259751\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Split items respect grouping, depend on context of mouse cursor, split at razor edit area or time selection if exist, split at mouse or edit cursor otherwise.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Split items respect grouping, depends on context of mouse cursor, split at razor edit area or time selection if they exist, split at mouse or edit cursor otherwise.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 There are a lot of options. To open options window place mouse on the transport panel or mixer panel and press assigned shortcut.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 By design it should be assigned to a keyboard shortcut, not to a mouse modifier.\par}
 }
@@ -6295,6 +6359,13 @@ Added experimental fixed lanes support]]></changelog>
 - fixed bug for take envelopes]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/9468b44c02bf00adc974825b237c89061bea0c22/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
         <source main="main" file="az_Smart split items by mouse cursor/az_Open options for az_Smart split items by mouse cursor.lua">https://github.com/ReaTeam/ReaScripts/raw/9468b44c02bf00adc974825b237c89061bea0c22/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor/az_Open%20options%20for%20az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
+      </version>
+      <version name="3.41" author="AZ" time="2025-01-09T17:42:41Z">
+        <changelog><![CDATA[- New option to preserve razor area selection
+- New options to preserve or clear item selection after splitting
+- Fixed bug when single grouped item was stayed in the same group with other it's parts]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/6bdceb6fbd136a8f4400cc0d1ed83a13f387e59f/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
+        <source main="main" file="az_Smart split items by mouse cursor/az_Open options for az_Smart split items by mouse cursor.lua">https://github.com/ReaTeam/ReaScripts/raw/6bdceb6fbd136a8f4400cc0d1ed83a13f387e59f/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor/az_Open%20options%20for%20az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="az_Trim left, right or both item edges via mouse and razor.lua" type="script" desc="Trim left, right or both item edges via mouse and razor">
@@ -9445,6 +9516,21 @@ Added replacement with /clear; erases entire name of matching markers/regions.]]
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/eb6644c54ee35db3da43a0d952b35804ed741dfb/Markers/amagalma_Go%20to%20marker%20(choose%20from%20menu%20list).lua</source>
       </version>
     </reapack>
+    <reapack name="amagalma_Insert time signature changes Tool.lua" type="script" desc="Insert time signature changes Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Inserts a time signature change at the closest start of measure position to the edit cursor\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-01-10T07:50:44Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/b82d4d86d862ce7d9bd6cc8033ec83644b92484f/Markers/amagalma_Insert%20time%20signature%20changes%20Tool.lua</source>
+      </version>
+    </reapack>
     <reapack name="amagalma_Rename region at edit cursor after the first selected item.lua" type="script" desc="Rename region at edit cursor after the first selected item">
       <metadata>
         <link rel="website">https://forum.cockos.com/showpost.php?p=2358410&amp;postcount=20</link>
@@ -10297,6 +10383,44 @@ Use ReaImGui for displaying the options menu (if installed)]]></changelog>
       <version name="1.1.1" author="cfillion" time="2021-02-03T15:46:31Z">
         <changelog><![CDATA[Register the script in the main section too]]></changelog>
         <source main="main midi_editor">https://github.com/ReaTeam/ReaScripts/raw/07cdda1a7198358e41f3929c446ec50862ce9dc0/MIDI%20Editor/cfillion_Toggle%20MIDI%20preview%20on%20transport%20change.lua</source>
+      </version>
+    </reapack>
+    <reapack name="daodan_Resample notes.lua" type="script" desc="Resample notes">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 #Resample notes - render selected notes, load to sampler (rs5k)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Midi Editor script to automatically copy selected notes to new item, apply fx, load sample to sampler, set root note in sampler, remove new item, mute originally selected notes in original item and insert root note in the corresponding position. Basically. There are several options here so you can change the behavior to suit your needs. You can change them in [USER SETTINGS] section in code in main script or preset scripts inside "Resample notes Presets" folder or via GUI script (Resample notes - GUI.lua).\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=297511">Forum thread</link>
+      </metadata>
+      <version name="1.0" author="daodan" time="2025-01-17T08:38:34Z">
+        <source main="midi_editor" file="daodan_Resample notes/daodan_Resample notes.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/daodan_Resample%20notes.lua</source>
+        <source main="main midi_editor" file="daodan_Resample notes/daodan_Resample notes - GUI.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/daodan_Resample%20notes%20-%20GUI.lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Duplicate notes octave up (with fx).lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Duplicate%20notes%20octave%20up%20(with%20fx).lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Duplicate notes octave up.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Duplicate%20notes%20octave%20up.lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Resample notes default.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Resample%20notes%20default.lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Reverse notes and sample +pitch.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Reverse%20notes%20and%20sample%20+pitch.lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Reverse notes and sample.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Reverse%20notes%20and%20sample.lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Reversed on midi ch 2.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Reversed%20on%20midi%20ch%202.lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Reversed on new track.lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Reversed%20on%20new%20track.lua</source>
+        <source file="daodan_Resample notes/Presets/daodan_Swell FX (reverse sample).lua">https://github.com/ReaTeam/ReaScripts/raw/a6fa35cd7e45e436db64b3d4f7b6ea79ea93eb0c/MIDI%20Editor/daodan_Resample%20notes/Presets/daodan_Swell%20FX%20(reverse%20sample).lua</source>
+      </version>
+      <version name="1.0.0-1" author="daodan" time="2025-01-17T09:52:10Z">
+        <changelog><![CDATA[Packaging: fix incorrectly renamed Presets directory]]></changelog>
+        <source main="midi_editor" file="daodan_Resample notes/daodan_Resample notes.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/daodan_Resample%20notes.lua</source>
+        <source main="main midi_editor" file="daodan_Resample notes/daodan_Resample notes - GUI.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/daodan_Resample%20notes%20-%20GUI.lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Duplicate notes octave up (with fx).lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Duplicate%20notes%20octave%20up%20(with%20fx).lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Duplicate notes octave up.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Duplicate%20notes%20octave%20up.lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Resample notes default.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Resample%20notes%20default.lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Reverse notes and sample +pitch.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Reverse%20notes%20and%20sample%20+pitch.lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Reverse notes and sample.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Reverse%20notes%20and%20sample.lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Reversed on midi ch 2.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Reversed%20on%20midi%20ch%202.lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Reversed on new track.lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Reversed%20on%20new%20track.lua</source>
+        <source file="daodan_Resample notes/Resample Notes Presets/daodan_Swell FX (reverse sample).lua">https://github.com/ReaTeam/ReaScripts/raw/65e6e8a81a56b274a3b0b10ee86f4d64637ceb5b/MIDI%20Editor/daodan_Resample%20notes/Resample%20Notes%20Presets/daodan_Swell%20FX%20(reverse%20sample).lua</source>
       </version>
     </reapack>
     <reapack name="edgemeal_Close all floating MIDI windows.lua" type="script" desc="Close all floating MIDI windows">
@@ -17693,6 +17817,22 @@ Replace GetLastWord func with quicker solution (Thanks: Mespotine[t=233393]).]]>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/131267ffae107aee0ef3f987e7a24e7102eb8e3e/Regions/amagalma_Go%20to%20region%20marker%20(choose%20from%20menu%20list).lua</source>
       </version>
     </reapack>
+    <reapack name="amagalma_Move cursor to equivalent position inside next similarly named Region.lua" type="script" desc="Move cursor to equivalent position inside next similarly named Region">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2024-12-11T07:40:37Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/b641bfbe39abe15ffec9cdc7f9c29e0d0f0163e0/Regions/amagalma_Move%20cursor%20to%20equivalent%20position%20inside%20next%20similarly%20named%20Region.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Move cursor to equivalent position inside previous similarly named Region.lua" type="script" desc="Move cursor to equivalent position inside previous similarly named Region">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2024-12-11T07:41:40Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/93d24e43ce8710c92f18b5e44b4047f426279599/Regions/amagalma_Move%20cursor%20to%20equivalent%20position%20inside%20previous%20similarly%20named%20Region.lua</source>
+      </version>
+    </reapack>
     <reapack name="ausbaxter_Save and Load region render matrix.lua" type="script" desc="Save and Load region render matrix (9 actions)">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -18220,6 +18360,12 @@ Add support for tail length]]></changelog>
         <changelog><![CDATA[Display REAPER v7.23's new normalization options]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/7250e6a24d813a76b04136b87a46136834bf47c7/Rendering/cfillion_Apply%20render%20preset.lua</source>
         <source main="main" file="cfillion_Apply render preset (create action).lua">https://github.com/ReaTeam/ReaScripts/raw/7250e6a24d813a76b04136b87a46136834bf47c7/Rendering/cfillion_Apply%20render%20preset.lua</source>
+      </version>
+      <version name="2.1.6" author="cfillion" time="2025-01-07T17:49:48Z">
+        <changelog><![CDATA[Display REAPER v7.23's new "Adjust mono media an additional -3 dB" normalize option
+Accept REAPER v7.29's new batch converter settings [p=2835830]]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/3cf955672c8c867ca60e48344689206e5d4db0a1/Rendering/cfillion_Apply%20render%20preset.lua</source>
+        <source main="main" file="cfillion_Apply render preset (create action).lua">https://github.com/ReaTeam/ReaScripts/raw/3cf955672c8c867ca60e48344689206e5d4db0a1/Rendering/cfillion_Apply%20render%20preset.lua</source>
       </version>
     </reapack>
     <reapack name="DSG_Render time selection to new track.lua" type="script" desc="Render time selection to new track">
@@ -21686,11 +21832,11 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
     </reapack>
     <reapack name="amagalma_gianfini_ReaNamer (track-item-region-marker renaming utility).lua" type="script" desc="ReaNamer (track-item-region-marker renaming utility)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Utility to manipulate track, item, region or marker names\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Utility to manipulate track, item, region or marker names\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Manipulate track/item/region/marker names (prefix/suffix, trim start/end, keep, clear, uppercase/lowercase, swap case/capitalize/titlecase, replace, strip leading & trailing whitespaces).\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mode (tracks or items) is automatically chosen when the script starts. Then to change mode click on appropriate button.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab When satisfied with the modifications (which can be previewed in the list), COMMIT button writes the values to tracks/items/regions/markers and creates an Undo point in Reaper's Undo History\par}
@@ -21715,6 +21861,12 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/446dc379abe2987cfea4912bf9bd5c85e71c42f3/Various/amagalma_gianfini_ReaNamer%20(track-item-region-marker%20renaming%20utility).lua</source>
         <source file="amagalma_ReaNamer Replace Help.lua">https://github.com/ReaTeam/ReaScripts/raw/446dc379abe2987cfea4912bf9bd5c85e71c42f3/Various/amagalma_ReaNamer%20Replace%20Help.lua</source>
         <source file="amagalma_ReaNamer utf8data.lua">https://github.com/ReaTeam/ReaScripts/raw/446dc379abe2987cfea4912bf9bd5c85e71c42f3/Various/amagalma_ReaNamer%20utf8data.lua</source>
+      </version>
+      <version name="1.48" author="amagalma &amp; gianfini" time="2024-12-15T12:41:59Z">
+        <changelog><![CDATA[- Fixed trim end dialog box name]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/33073dcb6d7fda593defdd5c0755c8086dda946d/Various/amagalma_gianfini_ReaNamer%20(track-item-region-marker%20renaming%20utility).lua</source>
+        <source file="amagalma_ReaNamer Replace Help.lua">https://github.com/ReaTeam/ReaScripts/raw/33073dcb6d7fda593defdd5c0755c8086dda946d/Various/amagalma_ReaNamer%20Replace%20Help.lua</source>
+        <source file="amagalma_ReaNamer utf8data.lua">https://github.com/ReaTeam/ReaScripts/raw/33073dcb6d7fda593defdd5c0755c8086dda946d/Various/amagalma_ReaNamer%20utf8data.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Go to track (mousewheel only) reverse.eel" type="script" desc="amagalma_Go to track (mousewheel only) reverse">
@@ -22167,12 +22319,11 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
     </reapack>
     <reapack name="amagalma_Show menu for dry run (calculate loudness) actions.lua" type="script" desc="Show menu for dry run (calculate loudness) actions">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Shows a menu with all the dry run actions at the mouse cursor\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requires JS_ReaScriptAPI\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Shows a menu with all the dry run actions at the mouse cursor\par}
 }
 ]]></description>
         <link rel="website">https://forum.cockos.com/showthread.php?t=239556</link>
@@ -22189,6 +22340,10 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
       <version name="1.02" author="amagalma" time="2022-02-11T23:00:23Z">
         <changelog><![CDATA[Added option to calculate for Selected Items]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/89fa0d0481e15bb211cfa66f369c7789a94f5d3b/Various/amagalma_Show%20menu%20for%20dry%20run%20(calculate%20loudness)%20actions.lua</source>
+      </version>
+      <version name="1.03" author="amagalma" time="2025-01-13T12:01:39Z">
+        <changelog><![CDATA[No JS_ReaScriptAPI dependency]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/3272dbf8025552435edcd5d5f816e536324c6475/Various/amagalma_Show%20menu%20for%20dry%20run%20(calculate%20loudness)%20actions.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Show offscreen item selection as a tooltip.lua" type="script" desc="Show offscreen item selection as a tooltip">
@@ -22711,18 +22866,26 @@ v1.0
     </reapack>
     <reapack name="az_Simple project reconform.lua" type="script" desc="Simple project reconform">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Simple Project Reconform\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 The script is under development, but you can try to use it. Read more: https://forum.cockos.com/showthread.php?t=288069\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Simple Project Reconform\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It can be useful for post-production to automatically adapt your project to the new version of video.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The script is under development, but you can try to use it. Read more: https://forum.cockos.com/showthread.php?p=2803375#post2803375\par}
 }
 ]]></description>
-        <link rel="website" href="https://forum.cockos.com/showthread.php?t=288069">Forum thread</link>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?p=2803375#post2803375">Forum thread</link>
+        <link rel="donation" href="https://www.paypal.me/AZsound">Donate via PayPal</link>
       </metadata>
       <version name="0.5" author="AZ" time="2024-08-14T19:59:23Z">
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/a274a7044d05135934ca1ca1415ee1097c9f9880/Various/az_Simple%20project%20reconform.lua</source>
+      </version>
+      <version name="0.6" author="AZ" time="2025-01-15T20:21:06Z">
+        <changelog><![CDATA[- EDL analisation module
+- other improvements and options
+- bug fixies]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/9d95f3961c843543283124952602fc642554cd62/Various/az_Simple%20project%20reconform.lua</source>
       </version>
     </reapack>
     <reapack name="beaunus_Import_clip_splicer_specification_json.py" type="script" desc="Import Clip Splicer JSON file">
@@ -27268,18 +27431,69 @@ Streamable link
     </reapack>
   </category>
   <category name="View">
-    <reapack name="talagan_Docking tools.lua" type="script" desc="Docking tools : actions to resize docks">
+    <reapack name="amagalma_Zoom to current region (where edit cursor is).lua" type="script" desc="Zoom to current region (where edit cursor is)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 This package provide actions to quickly resize the MIDI dock and the bottommost dock (maximize, minimize, or set to custom height).\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 These actions are meant to be small bricks of bigger custom actions where you perform a reorganisation of the UI (e.g. use FTC's scrolling scripts for the MIDI editor).\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 You can copy / paste the "... (500).lua" action files and modify their name to put a custom height instead of 500.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 Thanks to @edgemeal for the technical advice / windows support and @X-raym for the code review!\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI\par}
 }
 ]]></description>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2024-12-14T21:36:42Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/73fbb0e6e31b937e9c7ca09f246ef841ac5f0204/View/amagalma_Zoom%20to%20current%20region%20(where%20edit%20cursor%20is).lua</source>
+      </version>
+    </reapack>
+    <reapack name="talagan_Docking tools.lua" type="script" desc="Docking tools : actions to resize docks">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This package provide actions to quickly resize the docks in REAPER.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 These actions are meant to be small bricks of bigger custom actions where you perform a reorganisation of the UI (e.g. use FTC's scrolling scripts for the MIDI editor).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 All actions in this package are duplicates of the same one, with a different name that will decide of it's behaviour. The syntax of the name should be one of the following :\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Maximize A_DOCK.lua\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Minimize A_DOCK.lua\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set A_DOCK size (SIZES).lua\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A_DOCK can be either :\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab DIRMOST dock\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab dock containing A_WIDGET\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 DIRMOST can be one of the following :\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab leftmost\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab rightmost\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab bottommost\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab topmost\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A_WIDGET can be one of the following :\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab active MIDI Editor\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mixer\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Project Bay\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Media Explorer\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Track Manager\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Track Group Manager\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Take Properties\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Undo History\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Envelope Manager\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Routing Matrix\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Track Grouping Matrix\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Track Wiring Diagram\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Region Render Matrix\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab FX Browser\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Navigator\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Big Clock\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Performance Meter\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Finally SIZES syntax is one of the following\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab T,R,B,L\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab DIM\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 T,R,B,L and DIM are either pixel sizes, or "min" or "max"\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If using the first syntax, each value T,R,B or L applies conditionally to the dock depending on its position (top, right, bottom or left). That way you may write, for example, your own "set to big" function that will use custom sizes for you desired "biggest" dock config, wherever the dock is.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Various actions using this syntax are installed with this package and may be used as an example.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If you want to add your own custom behaviours, just duplicate one (copy-paste the corresponding file {\b in the same directory}) and rename it to your will.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Thanks to @Edgemeal for the technical advice / windows support and @X-raym for the code review!\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=296531">Forum Thread</link>
         <link rel="donation">https://www.paypal.com/donate/?business=3YEZMY9D6U8NC&amp;no_recurring=1&amp;currency_code=EUR</link>
       </metadata>
       <version name="0.1" author="Ben 'Talagan' Babut" time="2024-12-02T21:54:54Z">
@@ -27292,20 +27506,46 @@ Streamable link
         <source main="main midi_editor" file="talagan_Set dock containing active MIDI Editor height (500).lua">https://github.com/ReaTeam/ReaScripts/raw/00497704efdfdbd2300091c785d10d1dd215d84f/View/talagan_Docking%20tools/actions/talagan_Set%20dock%20containing%20active%20MIDI%20Editor%20height%20(500).lua</source>
         <source file="talagan_Docking tools/docking_lib.lua">https://github.com/ReaTeam/ReaScripts/raw/00497704efdfdbd2300091c785d10d1dd215d84f/View/talagan_Docking%20tools/docking_lib.lua</source>
       </version>
+      <version name="0.2" author="Ben 'Talagan' Babut" time="2024-12-18T14:47:03Z">
+        <changelog><![CDATA[- Added support for all dock positions (left/top/bottom/right)
+- New syntax for duplicated action names allow to define conditional heights depending on the dock position
+- New syntax for duplicated action names allow to target other widgets than the active MIDI Editor]]></changelog>
+        <source main="main" file="talagan_Set bottommost dock height (500).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Set dock containing active MIDI Editor height (500).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Maximize dock containing project bay.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Minimize dock containing project bay.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Set dock containing project bay size (500,700,500,700).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Maximize bottommost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Minimize bottommost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Set bottommost dock size (500).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Maximize topmost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Minimize topmost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Set topmost dock size (500).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Maximize rightmost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Minimize rightmost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Set rightmost dock size (500).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Maximize leftmost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Minimize leftmost dock.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main" file="talagan_Set leftmost dock size (500).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main midi_editor" file="talagan_Maximize dock containing active MIDI Editor.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main midi_editor" file="talagan_Minimize dock containing active MIDI Editor.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source main="main midi_editor" file="talagan_Set dock containing active MIDI Editor size (500).lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/actions/talagan_Generic%20dock%20resize%20action.lua</source>
+        <source file="talagan_Docking tools/docking_lib.lua">https://github.com/ReaTeam/ReaScripts/raw/018279a29c20ca7a482b950445decc99931eb3f9/View/talagan_Docking%20tools/docking_lib.lua</source>
+      </version>
     </reapack>
   </category>
   <metadata>
-    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ReaTeam Scripts Repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaTeam Scripts Repository\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\cf1 [image: https://github.com/ReaTeam/ReaScripts/workflows/check/badge.svg]\cf0}\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Community-maintained collection of scripts for REAPER.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in Extensions > ReaPack > Import a repository:\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://github.com/ReaTeam/ReaScripts/raw/master/index.xml\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Use {\field{\*\fldinst{HYPERLINK "https://reapack.com/upload/reascript"}}{\fldrslt{\ul
 https://reapack.com/upload/reascript
 }}}

@@ -1,15 +1,15 @@
 -- @description MIDI Transformer
--- @version 1.0.5
+-- @version 1.0.10
 -- @author sockmonkey72
 -- @about
 --   # MIDI Transformer
 -- @changelog
---   - when triggering a 'MIDI Editor'-scoped, exported script from the
---     Arrange view, use the 'Selected Items' scope for acquiring takes
---     on which to operate, rather than only operating on items with open
---     MIDI Editors.
+--   - fix crash when reading in old linear ramp presets
+--   - add (and accommodate) 'text' type
+--   - fix state restoration of scope & mods
 -- @provides
 --   {Transformer}/*
+--   Transformer/icons/*
 --   Transformer/MIDIUtils.lua https://raw.githubusercontent.com/jeremybernstein/ReaScripts/main/MIDI/MIDIUtils.lua
 --   Transformer Presets/Factory Presets/**/*.tfmrPreset > ../$path
 --   [main=main,midi_editor,midi_eventlisteditor,midi_inlineeditor] sockmonkey72_Transformer.lua
@@ -21,7 +21,7 @@
 -----------------------------------------------------------------------------
 --------------------------------- STARTUP -----------------------------------
 
-local versionStr = '1.0.5'
+local versionStr = '1.0.10'
 
 local r = reaper
 
@@ -76,8 +76,12 @@ local ctx = r.ImGui_CreateContext(scriptID)
 r.ImGui_SetConfigVar(ctx, r.ImGui_ConfigVar_DockingWithShift(), 1)
 
 local IMAGEBUTTON_SIZE = 13
-local GearImage = r.ImGui_CreateImage(debug.getinfo(1, 'S').source:match [[^@?(.*[\/])[^\/]-$]] .. 'Transformer/' .. 'gear_40031.png')
+local GearImage = r.ImGui_CreateImage(debug.getinfo(1, 'S').source:match [[^@?(.*[\/])[^\/]-$]] .. 'Transformer/icons/' .. 'gear_40031.png')
 if GearImage then r.ImGui_Attach(ctx, GearImage) end
+local UndoImage = r.ImGui_CreateImage(debug.getinfo(1, 'S').source:match [[^@?(.*[\/])[^\/]-$]] .. 'Transformer/icons/' .. 'left-arrow_9144323.png')
+if UndoImage then r.ImGui_Attach(ctx, UndoImage) end
+local RedoImage = r.ImGui_CreateImage(debug.getinfo(1, 'S').source:match [[^@?(.*[\/])[^\/]-$]] .. 'Transformer/icons/' .. 'right-arrow_9144322.png')
+if RedoImage then r.ImGui_Attach(ctx, RedoImage) end
 
 -----------------------------------------------------------------------------
 ----------------------------- GLOBAL VARS -----------------------------------
@@ -94,6 +98,7 @@ local scriptPrefix = 'Xform_'
 local scriptPrefix_Empty = '<no prefix>'
 local presetExt = '.tfmrPreset'
 local presetSubPath
+local restoreLastState = false
 
 local CANONICAL_FONTSIZE_LARGE = 13
 local FONTSIZE_LARGE = 13
@@ -201,6 +206,26 @@ NewHasTable = false
 -----------------------------------------------------------------------------
 ----------------------------- GLOBAL FUNS -----------------------------------
 
+local function doUpdate(action)
+  local updateState = tx.update(action, restoreLastState)
+  if updateState then
+    local lastState = {
+      state = updateState,
+      presetSubPath = presetSubPath,
+      presetName = presetNameTextBuffer
+    }
+    r.SetExtState(scriptID, 'lastState', base64encode(serialize(lastState)), true)
+  end
+end
+
+local function doFindUpdate()
+  doUpdate()
+end
+
+local function doActionUpdate()
+  doUpdate(true)
+end
+
 local bitFieldCallback = r.ImGui_CreateFunctionFromEEL([[
   (EventChar < '0' || EventChar > '9') ? EventChar = 0
     : EventChar != '0' ? EventChar = '1'
@@ -276,7 +301,7 @@ local function addFindRow(idx, row)
   table.insert(findRowTable, idx, row)
   selectedFindRow = idx
   lastSelectedRowType = 0 -- Find
-  tx.processFind()
+  doFindUpdate()
 end
 
 local function removeFindRow()
@@ -284,7 +309,7 @@ local function removeFindRow()
   if selectedFindRow ~= 0 then
     table.remove(findRowTable, selectedFindRow) -- shifts
     selectedFindRow = selectedFindRow <= #findRowTable and selectedFindRow or #findRowTable
-    tx.processFind()
+    doFindUpdate()
   end
 end
 
@@ -294,28 +319,35 @@ local function setupRowFormat(row, condOpTab)
 
   local target = isFind and tx.findTargetEntries[row.targetEntry] or tx.actionTargetEntries[row.targetEntry]
   local condOp = condOpTab[isFind and row.conditionEntry or row.operationEntry]
-  local paramTypes = tx.GetParamTypesForRow(row, target, condOp)
+  local paramTypes = tx.getParamTypesForRow(row, target, condOp)
   local isEveryN = condOp.everyn
   local isNewMIDIEvent = condOp.newevent
   local isMetric = condOp.metricgrid or (condOp.split and condOp.split[1].metricgrid) -- metric/musical only allowed as param1
   local isMusical = condOp.musical or (condOp.split and condOp.split[1].musical)
   local isParam3 = condOp.param3
+  local isEventSelector = condOp.eventselector or (condOp.split and condOp.split[1].eventselector)
 
   -- ensure that there are no lingering tables
   row.mg = nil
   row.evn = nil
   row.nme = nil
+  row.evsel = nil
   row.params[3] = nil
 
   for i = 1, 2 do
     if condOp.split and condOp.split[i].default then
+      local menuEntry
       row.params[i].textEditorStr = tostring(condOp.split[i].default) -- hack
+      if paramTypes[i] == tx.PARAM_TYPE_MENU then
+        menuEntry = tonumber(row.params[i].textEditorStr)
+      end
+      row.params[i].menuEntry = menuEntry and menuEntry or 1
     else
       row.params[i].textEditorStr = '0'
+      row.params[i].menuEntry = 1
     end
     row.params[i].percentVal = nil
     row.params[i].editorType = nil
-    row.params[i].menuEntry = 1
   end
 
   if isMetric or isMusical then
@@ -332,6 +364,8 @@ local function setupRowFormat(row, condOpTab)
     tx.makeDefaultNewMIDIEvent(row)
   elseif isParam3 then
     tx.makeParam3(row)
+  elseif isEventSelector then
+    tx.makeDefaultEventSelector(row)
   end
 
   local p1 = tx.DEFAULT_TIMEFORMAT_STRING
@@ -371,7 +405,7 @@ local function addActionRow(idx, row)
   table.insert(actionRowTable, idx, row)
   selectedActionRow = idx
   lastSelectedRowType = 1
-  tx.processAction()
+  doActionUpdate()
 end
 
 local function removeActionRow()
@@ -380,7 +414,79 @@ local function removeActionRow()
     table.remove(actionRowTable, selectedActionRow) -- shifts
     selectedActionRow = selectedActionRow <= #actionRowTable and selectedActionRow or #actionRowTable
     lastSelectedRowType = 1
-    tx.processAction()
+    doActionUpdate()
+  end
+end
+
+local function check14Bit(paramType)
+  local has14bit = false
+  local hasOther = false
+  if paramType == tx.PARAM_TYPE_INTEDITOR then
+    local hasTable, fresh = tx.getHasTable()
+    has14bit = hasTable[0xE0] and true or false
+    hasOther = (hasTable[0x90] or hasTable[0xA0] or hasTable[0xB0] or hasTable[0xD0] or hasTable[0xF0]) and true or false
+    if fresh then NewHasTable = true end
+  end
+  return has14bit, hasOther
+end
+
+local function overrideEditorType(row, target, condOp, paramTypes, idx)
+  local has14bit, hasOther = check14Bit(paramTypes[idx])
+  if condOp.bitfield or (condOp.split and condOp.split[idx].bitfield) then
+    tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_BITFIELD)
+  elseif not (paramTypes[idx] == tx.PARAM_TYPE_INTEDITOR or paramTypes[idx] == tx.PARAM_TYPE_FLOATEDITOR)
+    or (condOp.norange or (condOp.split and condOp.split[idx].norange))
+    or (condOp.nooverride or (condOp.split and condOp.split[idx].nooverride))
+  then
+    tx.setEditorTypeForRow(row, idx, nil)
+  elseif target.notation == '$velocity' or target.notation == '$relvel' then
+    if condOp.bipolar or (condOp.split and condOp.split[idx].bipolar) then
+      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT_BIPOLAR)
+    elseif target.notation == '$velocity' and not condOp.fullrange then
+      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT_NOZERO)
+    else
+      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT)
+    end
+  elseif has14bit then
+    if condOp.bipolar or (condOp.split and condOp.split[idx].bipolar) then
+      tx.setEditorTypeForRow(row, idx, hasOther and tx.EDITOR_TYPE_PERCENT_BIPOLAR or tx.EDITOR_TYPE_PITCHBEND_BIPOLAR)
+    else
+      tx.setEditorTypeForRow(row, idx, hasOther and tx.EDITOR_TYPE_PERCENT or tx.EDITOR_TYPE_PITCHBEND)
+    end
+  elseif target.notation ~= '$position'
+    and target.notation ~= '$length'
+    and target.notation ~= '$channel'
+  then
+    if condOp.bipolar or (condOp.split and condOp.split[idx].bipolar) then
+      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT_BIPOLAR)
+    else
+      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT)
+    end
+  else
+    tx.setEditorTypeForRow(row, idx, nil)
+  end
+end
+
+local function overrideEditorTypeForAllRows()
+  local rows = tx.findRowTable()
+  for _, row in ipairs(rows) do
+    local _, _, _, currentFindTarget, currentFindCondition = tx.findTabsFromTarget(row)
+    local paramTypes = tx.getParamTypesForRow(row, currentFindTarget, currentFindCondition)
+    overrideEditorType(row, currentFindTarget, currentFindCondition, paramTypes, 1)
+    overrideEditorType(row, currentFindTarget, currentFindCondition, paramTypes, 2)
+    if currentFindCondition.param3 then
+      overrideEditorType(row, currentFindTarget, currentFindCondition, paramTypes, 3)
+    end
+  end
+  rows = tx.actionRowTable()
+  for _, row in ipairs(rows) do
+    local _, _, _, currentActionTarget, currentActionOperation = tx.actionTabsFromTarget(row)
+    local paramTypes = tx.getParamTypesForRow(row, currentActionTarget, currentActionOperation)
+    overrideEditorType(row, currentActionTarget, currentActionOperation, paramTypes, 1)
+    overrideEditorType(row, currentActionTarget, currentActionOperation, paramTypes, 2)
+    if currentActionOperation.param3 then
+      overrideEditorType(row, currentActionTarget, currentActionOperation, paramTypes, 3)
+    end
   end
 end
 
@@ -416,6 +522,29 @@ local function handleExtState()
   if r.HasExtState(scriptID, 'scriptPrefix') then
     state = r.GetExtState(scriptID, 'scriptPrefix')
     scriptPrefix = (state and state ~= scriptPrefix_Empty) and state or ''
+  end
+
+  state = r.GetExtState(scriptID, 'restoreLastState')
+  if isValidString(state) then
+    restoreLastState = tonumber(state) == 1 and true or false
+    if restoreLastState then
+      state = r.GetExtState(scriptID, 'lastState')
+      if isValidString(state) then
+        local presetStateStr = base64decode(state)
+        if isValidString(presetStateStr) then
+          local lastState = deserialize(presetStateStr)
+          if lastState then
+            if lastState.state then
+              presetNameTextBuffer = lastState.presetName
+              if dirExists(lastState.presetSubPath) then presetSubPath = lastState.presetSubPath end
+              presetNotesBuffer = tx.loadPresetFromTable(lastState.state)
+              overrideEditorTypeForAllRows()
+              doActionUpdate()
+            end
+          end
+        end
+      end
+    end
   end
 end
 
@@ -481,55 +610,6 @@ local function prepWindowAndFont()
   processBaseFontUpdate(tonumber(r.GetExtState(scriptID, 'baseFont')))
 end
 
-local function check14Bit(paramType)
-  local has14bit = false
-  local hasOther = false
-  if paramType == tx.PARAM_TYPE_INTEDITOR then
-    local hasTable, fresh = tx.getHasTable()
-    has14bit = hasTable[0xE0] and true or false
-    hasOther = (hasTable[0x90] or hasTable[0xA0] or hasTable[0xB0] or hasTable[0xD0] or hasTable[0xF0]) and true or false
-    if fresh then NewHasTable = true end
-  end
-  return has14bit, hasOther
-end
-
-local function overrideEditorType(row, target, condOp, paramTypes, idx)
-  local has14bit, hasOther = check14Bit(paramTypes[idx])
-  if condOp.bitfield or (condOp.split and condOp.split[idx].bitfield) then
-    tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_BITFIELD)
-  elseif not (paramTypes[idx] == tx.PARAM_TYPE_INTEDITOR or paramTypes[idx] == tx.PARAM_TYPE_FLOATEDITOR)
-    or (condOp.norange or (condOp.split and condOp.split[idx].norange))
-    or (condOp.nooverride or (condOp.split and condOp.split[idx].nooverride))
-  then
-    tx.setEditorTypeForRow(row, idx, nil)
-  elseif target.notation == '$velocity' or target.notation == '$relvel' then
-    if condOp.bipolar or (condOp.split and condOp.split[idx].bipolar) then
-      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT_BIPOLAR)
-    elseif target.notation == '$velocity' and not condOp.fullrange then
-      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT_NOZERO)
-    else
-      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT)
-    end
-  elseif has14bit then
-    if condOp.bipolar or (condOp.split and condOp.split[idx].bipolar) then
-      tx.setEditorTypeForRow(row, idx, hasOther and tx.EDITOR_TYPE_PERCENT_BIPOLAR or tx.EDITOR_TYPE_PITCHBEND_BIPOLAR)
-    else
-      tx.setEditorTypeForRow(row, idx, hasOther and tx.EDITOR_TYPE_PERCENT or tx.EDITOR_TYPE_PITCHBEND)
-    end
-  elseif target.notation ~= '$position'
-    and target.notation ~= '$length'
-    and target.notation ~= '$channel'
-  then
-    if condOp.bipolar or (condOp.split and condOp.split[idx].bipolar) then
-      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT_BIPOLAR)
-    else
-      tx.setEditorTypeForRow(row, idx, tx.EDITOR_TYPE_7BIT)
-    end
-  else
-    tx.setEditorTypeForRow(row, idx, nil)
-  end
-end
-
 local function moveFindRowUp()
   local index = selectedFindRow
   if index > 1 then
@@ -538,7 +618,7 @@ local function moveFindRowUp()
     rows[index - 1] = rows[index]
     rows[index] = tmp
     selectedFindRow = index - 1
-    ProcessFind()
+    doFindUpdate()
   end
 end
 
@@ -550,7 +630,7 @@ local function moveFindRowDown()
     rows[index + 1] = rows[index]
     rows[index] = tmp
     selectedFindRow = index + 1
-    ProcessFind()
+    doFindUpdate()
   end
 end
 
@@ -562,7 +642,7 @@ local function moveActionRowUp()
     rows[index - 1] = rows[index]
     rows[index] = tmp
     selectedActionRow = index - 1
-    ProcessAction()
+    doActionUpdate()
   end
 end
 
@@ -574,7 +654,7 @@ local function moveActionRowDown()
     rows[index + 1] = rows[index]
     rows[index] = tmp
     selectedActionRow = index + 1
-    ProcessAction()
+    doActionUpdate()
   end
 end
 
@@ -583,7 +663,7 @@ local function enableDisableFindRow()
   local rows = tx.findRowTable()
   if index > 0 and index <= #rows then
     rows[index].disabled = not rows[index].disabled and true or false
-    ProcessFind()
+    doFindUpdate()
   end
 end
 
@@ -592,15 +672,21 @@ local function enableDisableActionRow()
   local rows = tx.actionRowTable()
   if index > 0 and index <= #rows then
     rows[index].disabled = not rows[index].disabled and true or false
-    ProcessAction()
+    doActionUpdate()
   end
 end
 
+local function setPresetNotesBuffer(buf)
+  presetNotesBuffer = buf
+  tx.setPresetNotesBuffer(presetNotesBuffer)
+end
+
 local function endPresetLoad(pLabel, notes, ignoreSelectInArrange)
+  overrideEditorTypeForAllRows()
   presetNameTextBuffer = pLabel
-  presetNotesBuffer = notes and notes or ''
+  setPresetNotesBuffer(notes and notes or '')
   scriptIgnoreSelectionInArrangeView = ignoreSelectInArrange
-  tx.processAction() -- also calls processFind()
+  doActionUpdate()
 end
 
 -----------------------------------------------------------------------------
@@ -751,6 +837,74 @@ local function windowFn()
 
   local currentRect = {}
 
+  local gearPopupLeft
+
+  local function MakeClearAll()
+    r.ImGui_SameLine(ctx)
+    r.ImGui_SetCursorPosX(ctx, gearPopupLeft - (DEFAULT_ITEM_WIDTH * 2) - (10 * canvasScale))
+    r.ImGui_Button(ctx, 'Clear All', DEFAULT_ITEM_WIDTH * 1.5)
+    if r.ImGui_IsItemHovered(ctx) and r.ImGui_IsMouseClicked(ctx, 0) then
+        tx.suspendUndo()
+        tx.clearFindRows()
+        selectedFindRow = 0
+        tx.setCurrentFindScope(3)
+        tx.setFindScopeFlags(0)
+        tx.clearFindPostProcessingInfo()
+        tx.clearActionRows()
+        selectedActionRow = 0
+        tx.setCurrentActionScope(1)
+        tx.setCurrentActionScopeFlags(1)
+        presetLabel = ''
+        presetNotesBuffer = ''
+        tx.resumeUndo()
+        doActionUpdate()
+    end
+  end
+
+  local function MakeUndoRedo()
+    r.ImGui_SameLine(ctx)
+    r.ImGui_SetCursorPosX(ctx, gearPopupLeft - (DEFAULT_ITEM_WIDTH * 1) - (10 * canvasScale))
+
+    local ibSize = FONTSIZE_LARGE * canvasScale
+
+    gearPopupLeft = r.ImGui_GetCursorPosX(ctx)
+
+    local hasUndo = tx.hasUndoSteps()
+    local hasRedo = tx.hasRedoSteps()
+
+    if not hasUndo then
+      r.ImGui_BeginDisabled(ctx)
+    end
+    if r.ImGui_ImageButton(ctx, 'undo', UndoImage, ibSize, ibSize) then
+      local undoState = tx.popUndo()
+      if undoState then
+        presetNotesBuffer = tx.loadPresetFromTable(undoState)
+        overrideEditorTypeForAllRows()
+        doActionUpdate()
+      end
+    end
+    if not hasUndo then
+      r.ImGui_EndDisabled(ctx)
+    end
+
+    r.ImGui_SameLine(ctx)
+
+    if not hasRedo then
+      r.ImGui_BeginDisabled(ctx)
+    end
+    if r.ImGui_ImageButton(ctx, 'redo', RedoImage, ibSize, ibSize) then
+      local redoState = tx.popRedo()
+      if redoState then
+        presetNotesBuffer = tx.loadPresetFromTable(redoState)
+        overrideEditorTypeForAllRows()
+        doActionUpdate()
+      end
+    end
+    if not hasRedo then
+      r.ImGui_EndDisabled(ctx)
+    end
+  end
+
   local function MakeGearPopup()
     r.ImGui_SameLine(ctx)
 
@@ -763,6 +917,7 @@ local function windowFn()
     r.ImGui_PushStyleColor(ctx, r.ImGui_Col_PopupBg(), 0x333355FF)
 
     local wantsPop = false
+    gearPopupLeft = r.ImGui_GetCursorPosX(ctx)
     if r.ImGui_ImageButton(ctx, 'gear', GearImage, ibSize, ibSize) then
       wantsPop = true
     end
@@ -822,6 +977,22 @@ local function windowFn()
         scriptPrefix = v == scriptPrefix_Empty and '' or v
         r.SetExtState(scriptID, 'scriptPrefix', v, true)
         r.ImGui_CloseCurrentPopup(ctx)
+      end
+
+      r.ImGui_Spacing(ctx)
+      r.ImGui_Separator(ctx)
+
+      r.ImGui_Spacing(ctx)
+      rv, v = r.ImGui_Checkbox(ctx, 'Restore Previous State on Startup', restoreLastState)
+      if rv then
+        restoreLastState = v
+        r.SetExtState(scriptID, 'restoreLastState', v and '1' or '0', true)
+        if restoreLastState then
+          doFindUpdate()
+        else
+          r.DeleteExtState(scriptID, 'lastState', true)
+        end
+        -- r.ImGui_CloseCurrentPopup(ctx) -- feels weird if it closes, feels weird if it doesn't
       end
       r.ImGui_EndPopup(ctx)
     end
@@ -897,25 +1068,6 @@ local function windowFn()
   ---------------------------------------------------------------------------
   --------------------------------- UTILITIES -------------------------------
 
-  -- https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua
-  --- Check if a file or directory exists in this path
-  local function filePathExists(file)
-    local ok, err, code = os.rename(file, file)
-    if not ok then
-      if code == 13 then
-      -- Permission denied, but it exists
-        return true
-      end
-    end
-    return ok, err
-  end
-
-    --- Check if a directory exists in this path
-  local function dirExists(path)
-    -- '/' works on both Unix and Windows
-    return filePathExists(path:match('/$') and path or path..'/')
-  end
-
   local function ensureNumString(str, range, floor)
     local num = tonumber(str)
     if not num then num = 0 end
@@ -987,6 +1139,88 @@ local function windowFn()
     return rv, folderNameTextBuffer
   end
 
+  local function generateFindPostProcessingPopup()
+    if r.ImGui_BeginPopup(ctx, 'findPostPocessingMenu', r.ImGui_WindowFlags_NoMove()) then
+      local deactivated
+      if r.ImGui_IsKeyPressed(ctx, r.ImGui_Key_Escape()) then
+        r.ImGui_CloseCurrentPopup(ctx)
+        handledEscape = true
+      end
+      local ppInfo = tx.getFindPostProcessingInfo()
+      local ppFlags = ppInfo.flags
+      local rv, sel, buf
+      local changed
+
+      rv, sel = r.ImGui_Checkbox(ctx, 'Retain first', ppFlags & tx.FIND_POSTPROCESSING_FLAG_FIRSTEVENT ~= 0)
+      if rv then
+        ppFlags = sel and (ppFlags | tx.FIND_POSTPROCESSING_FLAG_FIRSTEVENT) or (ppFlags & ~tx.FIND_POSTPROCESSING_FLAG_FIRSTEVENT)
+        changed = true
+      end
+      r.ImGui_SameLine(ctx)
+      r.ImGui_SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
+      rv, buf = r.ImGui_InputText(ctx, 'events beginning at offset##frontcount', ppInfo.front.count,
+        r.ImGui_InputTextFlags_CallbackCharFilter(), numbersOnlyCallback)
+      if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+      if kbdEntryIsCompleted(rv) then
+        ppInfo.front.count = tonumber(buf)
+        if not ppInfo.front.count or ppInfo.front.count < 1 then ppInfo.front.count = 0 end
+        changed = true
+      end
+      r.ImGui_SameLine(ctx)
+      r.ImGui_SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
+      rv, buf = r.ImGui_InputText(ctx, 'from front##frontoffset', ppInfo.front.offset,
+        r.ImGui_InputTextFlags_CallbackCharFilter(), numbersOnlyCallback)
+      if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+      if kbdEntryIsCompleted(rv) then
+        ppInfo.front.offset = tonumber(buf)
+        if not ppInfo.front.offset then ppInfo.front.offset = 0 end
+        changed = true
+      end
+
+      rv, sel = r.ImGui_Checkbox(ctx, 'Retain last', ppFlags & tx.FIND_POSTPROCESSING_FLAG_LASTEVENT ~= 0)
+      if rv then
+        ppFlags = sel and (ppFlags | tx.FIND_POSTPROCESSING_FLAG_LASTEVENT) or (ppFlags & ~tx.FIND_POSTPROCESSING_FLAG_LASTEVENT)
+        changed = true
+      end
+      r.ImGui_SameLine(ctx)
+      r.ImGui_SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
+      rv, buf = r.ImGui_InputText(ctx, 'events beginning at offset##backcount', ppInfo.back.count,
+        r.ImGui_InputTextFlags_CallbackCharFilter(), numbersOnlyCallback)
+      if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+      if kbdEntryIsCompleted(rv) then
+        ppInfo.back.count = tonumber(buf)
+        if not ppInfo.back.count or ppInfo.back.count < 1 then ppInfo.back.count = 1 end
+        changed = true
+      end
+      r.ImGui_SameLine(ctx)
+      r.ImGui_SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
+      rv, buf = r.ImGui_InputText(ctx, 'from end##backoffset', ppInfo.back.offset,
+        r.ImGui_InputTextFlags_CallbackCharFilter(), numbersOnlyCallback)
+      if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+      if kbdEntryIsCompleted(rv) then
+        ppInfo.back.offset = tonumber(buf)
+        if not ppInfo.back.offset then ppInfo.back.offset = 0 end
+        changed = true
+      end
+
+      if changed then
+        ppInfo.flags = ppFlags
+        tx.setFindPostProcessingInfo(ppInfo)
+        doUpdate()
+      end
+
+      if not r.ImGui_IsAnyItemActive(ctx) and not deactivated then
+        if completionKeyPress() then
+          r.ImGui_CloseCurrentPopup(ctx)
+        end
+      end
+
+      r.ImGui_EndPopup(ctx)
+    end
+
+    generateLabelOnLine('Post-Processing', true)
+  end
+
   local function generatePresetMenu(source, path, lab, filter, onlyFolders)
     local mousePos = {}
     mousePos.x, mousePos.y = r.ImGui_GetMousePos(ctx)
@@ -1041,6 +1275,7 @@ local function windowFn()
       local rv, selected = r.ImGui_Selectable(ctx, 'Save presets here...', false)
       if rv and selected then
         presetSubPath = path ~= presetPath and path or nil
+        doFindUpdate()
       end
 
       rv, selected = r.ImGui_Selectable(ctx, 'New folder here...', false)
@@ -1105,6 +1340,8 @@ local function windowFn()
     return label
   end
 
+  local dontCloseXPos
+
   local function createPopup(row, name, source, selEntry, fun, special, dontClose)
     if r.ImGui_BeginPopup(ctx, name, r.ImGui_WindowFlags_NoMove()) then
       if r.ImGui_IsKeyPressed(ctx, r.ImGui_Key_Escape()) then
@@ -1126,6 +1363,11 @@ local function windowFn()
 
       local listed = false
       if dontClose then
+        if type(dontClose) == 'string' then
+          r.ImGui_Text(ctx, dontClose)
+          r.ImGui_SameLine(ctx)
+          dontCloseXPos = r.ImGui_GetCursorPosX(ctx)
+        end
         listed = r.ImGui_BeginListBox(ctx, '##wrapperBox', nil, currentFrameHeightEx * #source)
       end
 
@@ -1194,7 +1436,8 @@ local function windowFn()
   ----------------------------------- GEAR ----------------------------------
 
   MakeGearPopup()
-
+  MakeUndoRedo()
+  MakeClearAll()
   ---------------------------------------------------------------------------
   --------------------------------- FIND ROWS -------------------------------
 
@@ -1230,6 +1473,7 @@ local function windowFn()
     if optDown then
       tx.clearFindRows()
       selectedFindRow = 0
+      doFindUpdate()
     else
       removeFindRow()
     end
@@ -1240,6 +1484,19 @@ local function windowFn()
       return tostring(mu.MIDI_NoteNameToNoteNumber(buf))
     end
     return buf
+  end
+
+  local function chanMsgToName(chanmsg)
+    return chanmsg == 0x00 and 'Any'
+      or chanmsg == 0x90 and 'Note'
+      or chanmsg == 0xA0 and 'Poly Pressure'
+      or chanmsg == 0xB0 and 'Controller'
+      or chanmsg == 0xC0 and 'Program Change'
+      or chanmsg == 0xD0 and 'Aftertouch'
+      or chanmsg == 0xE0 and 'Pitch Bend'
+      or chanmsg == 0xF0 and 'System Exclusive'
+      or chanmsg == 0x100 and 'Text'
+      or 'Unknown'
   end
 
   local function doHandleTableParam(row, target, condOp, paramType, editorType, index, flags, procFn)
@@ -1316,6 +1573,9 @@ local function windowFn()
 
   local function handleTableParam(row, condOp, paramTab, paramType, index, procFn)
     local rv = false
+
+    if paramType == tx.PARAM_TYPE_HIDDEN then return end
+
     local editorType = row.params[index].editorType
     local flags = {}
     flags.isMetricOrMusical = paramType == tx.PARAM_TYPE_METRICGRID or paramType == tx.PARAM_TYPE_MUSICAL
@@ -1324,18 +1584,23 @@ local function windowFn()
     flags.isFloat = (paramType == tx.PARAM_TYPE_FLOATEDITOR or editorType == tx.EDITOR_TYPE_PERCENT) and true or false
     flags.isNewMIDIEvent = paramType == tx.PARAM_TYPE_NEWMIDIEVENT
     flags.isParam3 = condOp.param3 and paramType ~= tx.PARAM_TYPE_MENU -- param3 exception -- make this nicer
+    flags.isEventSelector = paramType == tx.PARAM_TYPE_EVENTSELECTOR
 
-    if flags.isMetricOrMusical and index == 1 then paramType = tx.PARAM_TYPE_MENU end -- special case, sorry
-    if flags.isEveryN and index == 1 then paramType = tx.PARAM_TYPE_MENU end
-    if flags.isNewMIDIEvent then paramType = tx.PARAM_TYPE_MENU end
-    if flags.isParam3 then paramType = tx.PARAM_TYPE_MENU end
+    if (flags.isMetricOrMusical and index == 1) -- special case, sorry
+      or (flags.isEveryN and index == 1)
+      or flags.isNewMIDIEvent
+      or flags.isParam3
+      or flags.isEventSelector
+    then
+      paramType = tx.PARAM_TYPE_MENU
+    end
 
     if condOp.terms >= index then
       local targetTab = row:is_a(tx.FindRow) and tx.findTargetEntries or tx.actionTargetEntries
       local target = targetTab[row.targetEntry]
 
       if paramType == tx.PARAM_TYPE_MENU then
-        local canOpen = (flags.isEveryN or flags.isParam3) and true or #paramTab ~= 0
+        local canOpen = (flags.isEveryN or flags.isParam3 or flags.isEventSelector) and true or #paramTab ~= 0
         local paramEntry = paramTab[row.params[index].menuEntry]
         local label =  #paramTab ~= 0 and paramEntry.label or '---'
         if flags.isEveryN then
@@ -1357,6 +1622,14 @@ local function windowFn()
           end
         elseif flags.isParam3 and row.params[3] and row.params[3].menuLabel then
           label = row.params[3].menuLabel(row, target, condOp)
+        elseif flags.isEventSelector then
+          label = chanMsgToName(row.evsel.chanmsg) .. ' [' .. (row.evsel.channel == -1 and 'Any' or tostring(row.evsel.channel + 1)) .. ']'
+          local useVal1 = row.evsel.chanmsg ~= 0x00 and row.evsel.chanmsg < 0xD0 and row.evsel.useval1
+          if useVal1 then
+            label = label .. ' ('
+            .. (row.evsel.chanmsg == 0x90 and mu.MIDI_NoteNumberToNoteName(row.evsel.msg2) or tostring(row.evsel.msg2))
+            .. ')'
+          end
         end
         if flags.isMetricOrMusical and paramEntry.notation ~= '$grid' then
           local mgMods, mgReaSwing = tx.GetMetricGridModifiers(row.mg)
@@ -1451,8 +1724,8 @@ local function windowFn()
       subtypeValueLabel = 'Databyte 1'
       mainValueLabel = 'Databyte 2'
     elseif numTypes == 1 then
-      subtypeValueLabel = tx.GetSubtypeValueLabel((foundType >> 4) - 8)
-      mainValueLabel = tx.GetMainValueLabel((foundType >> 4) - 8)
+      subtypeValueLabel = tx.getSubtypeValueLabel((foundType >> 4) - 8)
+      mainValueLabel = tx.getMainValueLabel((foundType >> 4) - 8)
     else
       subtypeValueLabel = 'Multiple (Databyte 1)'
       mainValueLabel = 'Multiple (Databyte 2)'
@@ -1774,6 +2047,207 @@ local function windowFn()
     newMIDIEventActionParam1Special(fun, row)
   end
 
+  local function eventSelectorActionParam1Special(fun, row) -- type list is main menu
+    local evsel = row.evsel
+    local deactivated = false
+    local rv
+
+    r.ImGui_PushStyleColor(ctx, r.ImGui_Col_HeaderHovered(), hoverAlphaCol)
+    r.ImGui_PushStyleColor(ctx, r.ImGui_Col_HeaderActive(), activeAlphaCol)
+
+    r.ImGui_Separator(ctx)
+
+    r.ImGui_AlignTextToFramePadding(ctx)
+
+    r.ImGui_Text(ctx, 'Chan.')
+    r.ImGui_SameLine(ctx)
+
+    if dontCloseXPos then r.ImGui_SetCursorPosX(ctx, dontCloseXPos) end
+
+    if r.ImGui_BeginListBox(ctx, '##chanList', currentFontWidth * 10, currentFrameHeight * 3) then
+      rv = r.ImGui_MenuItem(ctx, tostring('Any'), nil, evsel.channel == -1)
+      if rv then
+        if evsel.channel == -1 then r.ImGui_CloseCurrentPopup(ctx) end
+        evsel.channel = -1
+      end
+
+      for i = 1, 16 do
+        rv = r.ImGui_MenuItem(ctx, tostring(i), nil, evsel.channel == i - 1)
+        if rv then
+          if evsel.channel == i - 1 then r.ImGui_CloseCurrentPopup(ctx) end
+          evsel.channel = i - 1
+        end
+      end
+      r.ImGui_EndListBox(ctx)
+    end
+    if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+
+    local saveNextLineY = r.ImGui_GetCursorPosY(ctx)
+
+    r.ImGui_SameLine(ctx)
+
+    local disableUseVal1 = evsel.chanmsg == 0x00 or evsel.chanmsg >= 0xD0
+    local saveX, saveY = r.ImGui_GetCursorPos(ctx)
+    if disableUseVal1 then
+      r.ImGui_BeginDisabled(ctx)
+    end
+    local sel
+    rv, sel = r.ImGui_Checkbox(ctx, 'Use Val1?', evsel.useval1)
+    if rv then
+      evsel.useval1 = sel
+    end
+    if disableUseVal1 then
+      r.ImGui_EndDisabled(ctx)
+    end
+
+    local isNote = evsel.chanmsg == 0x90
+    local disableVal1 = disableUseVal1 or not evsel.useval1
+    if disableVal1 then
+      r.ImGui_BeginDisabled(ctx)
+    end
+    r.ImGui_SetCursorPos(ctx, saveX, saveY + currentFrameHeight * 1.5)
+    r.ImGui_SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
+    local byte1Txt = tostring(evsel.msg2)
+    rv, byte1Txt = r.ImGui_InputText(ctx, '##Val1', byte1Txt,
+      inputFlag | r.ImGui_InputTextFlags_CallbackCharFilter(),
+      isNote and numbersOrNoteNameCallback or numbersOnlyCallback)
+    if rv then
+      if isNote then
+        byte1Txt = rewriteNoteName(byte1Txt)
+      end
+      local nummy = tonumber(byte1Txt) or 0
+      evsel.msg2 = nummy < 0 and 0 or nummy > 127 and 127 or nummy
+    end
+    if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+    if isNote then
+      local noteName = mu.MIDI_NoteNumberToNoteName(evsel.msg2)
+      if noteName then
+        r.ImGui_SameLine(ctx)
+        r.ImGui_AlignTextToFramePadding(ctx)
+        r.ImGui_TextColored(ctx, 0x7FFFFFCF, '[' .. noteName .. ']')
+      end
+    end
+    if disableVal1 then
+      r.ImGui_EndDisabled(ctx)
+    end
+
+    r.ImGui_SetCursorPosY(ctx, saveNextLineY)
+
+    r.ImGui_Separator(ctx)
+
+    r.ImGui_Text(ctx, 'Sel.')
+    r.ImGui_SameLine(ctx)
+
+    if dontCloseXPos then r.ImGui_SetCursorPosX(ctx, dontCloseXPos) end
+
+    if r.ImGui_BeginListBox(ctx, '##selList', currentFontWidth * 14, currentFrameHeight * 3) then
+      rv = r.ImGui_MenuItem(ctx, tostring('Any'), nil, evsel.selected == -1)
+      if rv then
+        if evsel.selected == -1 then r.ImGui_CloseCurrentPopup(ctx) end
+        evsel.selected = -1
+      end
+
+      rv = r.ImGui_MenuItem(ctx, tostring('Unselected'), nil, evsel.selected == 0)
+      if rv then
+        if evsel.selected == 0 then r.ImGui_CloseCurrentPopup(ctx) end
+        evsel.selected = 0
+      end
+
+      rv = r.ImGui_MenuItem(ctx, tostring('Selected'), nil, evsel.selected == 1)
+      if rv then
+        if evsel.selected == 1 then r.ImGui_CloseCurrentPopup(ctx) end
+        evsel.selected = 1
+      end
+      r.ImGui_EndListBox(ctx)
+    end
+    if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+
+    r.ImGui_SameLine(ctx)
+
+    r.ImGui_Text(ctx, 'Muted')
+    r.ImGui_SameLine(ctx)
+
+    if r.ImGui_BeginListBox(ctx, '##muteList', currentFontWidth * 12, currentFrameHeight * 3) then
+      rv = r.ImGui_MenuItem(ctx, tostring('Any'), nil, evsel.muted == -1)
+      if rv then
+        if evsel.muted == -1 then r.ImGui_CloseCurrentPopup(ctx) end
+        evsel.muted = -1
+      end
+
+      rv = r.ImGui_MenuItem(ctx, tostring('Unmuted'), nil, evsel.muted == 0)
+      if rv then
+        if evsel.muted == 0 then r.ImGui_CloseCurrentPopup(ctx) end
+        evsel.muted = 0
+      end
+
+      rv = r.ImGui_MenuItem(ctx, tostring('Muted'), nil, evsel.muted == 1)
+      if rv then
+        if evsel.muted == 1 then r.ImGui_CloseCurrentPopup(ctx) end
+        evsel.muted = 1
+      end
+      r.ImGui_EndListBox(ctx)
+    end
+    if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+
+    if not r.ImGui_IsAnyItemActive(ctx) and not deactivated then
+      if completionKeyPress() then
+        r.ImGui_CloseCurrentPopup(ctx)
+      end
+    end
+
+    r.ImGui_PopStyleColor(ctx, 2)
+  end
+
+  local function eventSelectorParam1Special(fun, row)
+    eventSelectorActionParam1Special(fun, row)
+  end
+
+  local function musicalSlopParamSpecial(fun, row, underEditCursor)
+    local deactivated = false
+    r.ImGui_PushStyleColor(ctx, r.ImGui_Col_HeaderHovered(), hoverAlphaCol)
+    r.ImGui_PushStyleColor(ctx, r.ImGui_Col_HeaderActive(), activeAlphaCol)
+
+    r.ImGui_Separator(ctx)
+
+    r.ImGui_AlignTextToFramePadding(ctx)
+
+    r.ImGui_Text(ctx, '+- % of unit')
+    r.ImGui_SameLine(ctx)
+
+    r.ImGui_SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
+    local retval, buf = r.ImGui_InputText(ctx, '##eventSelectorParam2',
+      underEditCursor and row.params[2].textEditorStr or row.evsel.scaleStr,
+      r.ImGui_InputTextFlags_CharsDecimal() + r.ImGui_InputTextFlags_CharsNoBlank())
+    local scale = tonumber(buf)
+    scale = scale == nil and 100 or scale < 0 and 0 or scale > 100 and 100 or scale
+    if underEditCursor then
+      row.params[2].textEditorStr = tostring(scale)
+    else
+      row.evsel.scaleStr = tostring(scale)
+    end
+    if kbdEntryIsCompleted(retval) then
+      inTextInput = false
+    elseif retval then inTextInput = true
+    end
+    if r.ImGui_IsItemDeactivated(ctx) then deactivated = true end
+
+    if not r.ImGui_IsAnyItemActive(ctx) and not deactivated then
+      if completionKeyPress() then
+        r.ImGui_CloseCurrentPopup(ctx)
+      end
+    end
+
+    r.ImGui_PopStyleColor(ctx, 2)
+  end
+
+  local function eventSelectorParam2Special(fun, row)
+    musicalSlopParamSpecial(fun, row, false)
+  end
+
+  local function underEditCursorParam1Special(fun, row)
+    musicalSlopParamSpecial(fun, row, true)
+  end
+
   local function newMIDIEventActionParam2Special(fun, row) -- type list is main menu
     local nme = row.nme
     local deactivated = false
@@ -1861,7 +2335,7 @@ local function windowFn()
     r.ImGui_AlignTextToFramePadding(ctx)
 
     local _, _, _, target, operation = tx.actionTabsFromTarget(row)
-    local paramTypes = tx.GetParamTypesForRow(row, target, operation)
+    local paramTypes = tx.getParamTypesForRow(row, target, operation)
     local flags = {}
 
     if r.ImGui_IsWindowAppearing(ctx) then r.ImGui_SetKeyboardFocusHere(ctx) end
@@ -1875,7 +2349,7 @@ local function windowFn()
       r.ImGui_SameLine(ctx)
       r.ImGui_SetCursorPosX(ctx, currentFontWidth * 4)
       r.ImGui_SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
-      if doHandleTableParam(row, target, operation, paramType, editorType, i, flags, tx.processAction) then deactivated = true end
+      if doHandleTableParam(row, target, operation, paramType, editorType, i, flags, doActionUpdate) then deactivated = true end
     end
 
     if not r.ImGui_IsAnyItemActive(ctx) and not deactivated then
@@ -2015,12 +2489,12 @@ local function windowFn()
         selectedFindRow = k
         lastSelectedRowType = 0 -- Find
         currentRow.except = true
-        tx.processFind()
+        doFindUpdate()
         r.ImGui_OpenPopup(ctx, 'targetMenu')
       end
       if not r.ImGui_IsPopupOpen(ctx, 'targetMenu') and currentRow.except then
         currentRow.except = nil
-        tx.processFind()
+        doFindUpdate()
       end
 
       colIdx = colIdx + 1
@@ -2047,12 +2521,12 @@ local function windowFn()
         r.ImGui_OpenPopup(ctx, 'conditionMenu')
       end
 
-      local paramTypes = tx.GetParamTypesForRow(currentRow, currentFindTarget, currentFindCondition)
+      local paramTypes = tx.getParamTypesForRow(currentRow, currentFindTarget, currentFindCondition)
 
       colIdx = colIdx + 1
       r.ImGui_TableSetColumnIndex(ctx, colIdx) -- 'Parameter 1'
       overrideEditorType(currentRow, currentFindTarget, currentFindCondition, paramTypes, 1)
-      if handleTableParam(currentRow, currentFindCondition, param1Entries, paramTypes[1], 1, tx.processFind) then
+      if handleTableParam(currentRow, currentFindCondition, param1Entries, paramTypes[1], 1, doFindUpdate) then
         selectedFindRow = k
         lastSelectedRowType = 0
       end
@@ -2060,7 +2534,7 @@ local function windowFn()
       colIdx = colIdx + 1
       r.ImGui_TableSetColumnIndex(ctx, colIdx) -- 'Parameter 2'
       overrideEditorType(currentRow, currentFindTarget, currentFindCondition, paramTypes, 2)
-      if handleTableParam(currentRow, currentFindCondition, param2Entries, paramTypes[2], 2, tx.processFind) then
+      if handleTableParam(currentRow, currentFindCondition, param2Entries, paramTypes[2], 2, doFindUpdate) then
         selectedFindRow = k
         lastSelectedRowType = 0
       end
@@ -2100,7 +2574,7 @@ local function windowFn()
           currentRow.booleanEntry = currentRow.booleanEntry == 1 and 2 or 1
           selectedFindRow = k
           lastSelectedRowType = 0
-          tx.processFind()
+          doFindUpdate()
         end
       end
 
@@ -2149,12 +2623,12 @@ local function windowFn()
 
       createPopup(currentRow, 'startParenMenu', tx.startParenEntries, currentRow.startParenEntry, function(i)
           currentRow.startParenEntry = i
-          tx.processFind()
+          doFindUpdate()
         end)
 
       createPopup(currentRow, 'endParenMenu', tx.endParenEntries, currentRow.endParenEntry, function(i)
           currentRow.endParenEntry = i
-          tx.processFind()
+          doFindUpdate()
         end)
 
       createPopup(currentRow, 'targetMenu', tx.findTargetEntries, currentRow.targetEntry, function(i)
@@ -2166,21 +2640,24 @@ local function windowFn()
             if vv.notation == oldNotation then currentRow.conditionEntry = kk break end
           end
           setupRowFormat(currentRow, conditionEntries)
-          tx.processFind()
+          doFindUpdate()
         end)
 
       createPopup(currentRow, 'conditionMenu', conditionEntries, currentRow.conditionEntry, function(i)
           currentRow.conditionEntry = i
           local condNotation = conditionEntries[i].notation
           setupRowFormat(currentRow, conditionEntries)
-          tx.processFind()
+          doFindUpdate()
         end)
 
       createPopup(currentRow, 'param1Menu', param1Entries, currentRow.params[1].menuEntry, function(i, isSpecial)
           if not isSpecial then
+            if paramTypes[1] == tx.PARAM_TYPE_EVENTSELECTOR then
+              currentRow.evsel.chanmsg = tonumber(param1Entries[i].text)
+            end
             currentRow.params[1].menuEntry = i
           end
-          tx.processFind()
+          doFindUpdate()
         end,
         paramTypes[1] == tx.PARAM_TYPE_METRICGRID
             and metricParam1Special
@@ -2188,17 +2665,25 @@ local function windowFn()
             and musicalParam1Special
           or paramTypes[1] == tx.PARAM_TYPE_EVERYN
             and everyNParam1Special
-          or nil)
+          or paramTypes[1] == tx.PARAM_TYPE_EVENTSELECTOR
+            and eventSelectorParam1Special
+          or conditionEntries[currentRow.conditionEntry].notation == ':undereditcursor'
+            and underEditCursorParam1Special
+          or nil,
+        paramTypes[1] == tx.PARAM_TYPE_EVENTSELECTOR and 'Type' or false)
 
       createPopup(currentRow, 'param2Menu', param2Entries, currentRow.params[2].menuEntry, function(i)
           currentRow.params[2].menuEntry = i
-          tx.processFind()
-        end)
+          doFindUpdate()
+        end,
+        paramTypes[1] == tx.PARAM_TYPE_EVENTSELECTOR
+          and eventSelectorParam2Special
+        or nil)
 
       if showTimeFormatColumn then
         createPopup(currentRow, 'timeFormatMenu', tx.findTimeFormatEntries, currentRow.timeFormatEntry, function(i)
             currentRow.timeFormatEntry = i
-            tx.processFind()
+            doFindUpdate()
           end)
       end
 
@@ -2237,6 +2722,7 @@ local function windowFn()
 
   createPopup(nil, 'findScopeMenu', tx.findScopeTable, tx.currentFindScope(), function(i)
     tx.setCurrentFindScope(i)
+    doUpdate()
   end)
 
   r.ImGui_SetCursorPos(ctx, saveX, saveY)
@@ -2261,6 +2747,7 @@ local function windowFn()
       local oldflags = tx.getFindScopeFlags()
       local newflags = sel and (oldflags | tx.FIND_SCOPE_FLAG_SELECTED_ONLY) or (oldflags & ~tx.FIND_SCOPE_FLAG_SELECTED_ONLY)
       tx.setFindScopeFlags(newflags)
+      doUpdate()
     end
 
     rv, sel = r.ImGui_Checkbox(ctx, 'Active Note Row (+ notes only)', tx.getFindScopeFlags() & tx.FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW ~= 0)
@@ -2268,13 +2755,27 @@ local function windowFn()
       local oldflags = tx.getFindScopeFlags()
       local newflags = sel and (oldflags | tx.FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW) or (oldflags & ~tx.FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW)
       tx.setFindScopeFlags(newflags)
+      doUpdate()
     end
     r.ImGui_EndPopup(ctx)
   end
 
+  r.ImGui_SameLine(ctx)
+
+  saveX, saveY = r.ImGui_GetCursorPos(ctx)
+
   generateLabelOnLine('Scope Mods', true)
 
   if not isActiveEditorScope then r.ImGui_EndDisabled(ctx) end
+
+  r.ImGui_SetCursorPos(ctx, saveX, saveY)
+
+  r.ImGui_Button(ctx, tx.getFindPostProcessingLabel(), DEFAULT_ITEM_WIDTH * 1.7)
+  if r.ImGui_IsItemHovered(ctx) and r.ImGui_IsMouseClicked(ctx, 0) then
+    r.ImGui_OpenPopup(ctx, 'findPostPocessingMenu')
+  end
+
+  generateFindPostProcessingPopup()
 
   r.ImGui_AlignTextToFramePadding(ctx)
   r.ImGui_Text(ctx, findParserError)
@@ -2313,6 +2814,7 @@ local function windowFn()
         for k, v in ipairs(tx.actionScopeTable) do
           if v.notation == '$transform' then
             tx.setCurrentActionScope(k)
+            doUpdate()
           end
         end
       end
@@ -2333,6 +2835,7 @@ local function windowFn()
     if optDown then
       tx.clearActionRows()
       selectedActionRow = 0
+      doActionUpdate()
     else
       removeActionRow()
     end
@@ -2419,18 +2922,18 @@ local function windowFn()
         r.ImGui_OpenPopup(ctx, 'operationMenu')
       end
 
-      local paramTypes = tx.GetParamTypesForRow(currentRow, currentActionTarget, currentActionOperation)
+      local paramTypes = tx.getParamTypesForRow(currentRow, currentActionTarget, currentActionOperation)
 
       r.ImGui_TableSetColumnIndex(ctx, 2) -- 'Parameter 1'
       overrideEditorType(currentRow, currentActionTarget, currentActionOperation, paramTypes, 1)
-      if handleTableParam(currentRow, currentActionOperation, param1Entries, paramTypes[1], 1, tx.processAction) then
+      if handleTableParam(currentRow, currentActionOperation, param1Entries, paramTypes[1], 1, doActionUpdate) then
         selectedActionRow = k
         lastSelectedRowType = 1
       end
 
       r.ImGui_TableSetColumnIndex(ctx, 3) -- 'Parameter 2'
       overrideEditorType(currentRow, currentActionTarget, currentActionOperation, paramTypes, 2)
-      if handleTableParam(currentRow, currentActionOperation, param2Entries, paramTypes[2], 2, tx.processAction) then
+      if handleTableParam(currentRow, currentActionOperation, param2Entries, paramTypes[2], 2, doActionUpdate) then
         selectedActionRow = k
         lastSelectedRowType = 1
       end
@@ -2496,13 +2999,13 @@ local function windowFn()
             if vv.notation == oldNotation then currentRow.operationEntry = kk break end
           end
           setupRowFormat(currentRow, operationEntries)
-          tx.processAction()
+          doActionUpdate()
         end)
 
       createPopup(currentRow, 'operationMenu', operationEntries, currentRow.operationEntry, function(i)
           currentRow.operationEntry = i
           setupRowFormat(currentRow, operationEntries)
-          tx.processAction()
+          doActionUpdate()
         end)
 
       local isLineOp = currentActionOperation.param3
@@ -2516,7 +3019,7 @@ local function windowFn()
             elseif operationEntries[currentRow.operationEntry].newevent then
               currentRow.nme.chanmsg = tonumber(param1Entries[i].text)
             end
-            tx.processAction()
+            doActionUpdate()
           end
         end,
         paramTypes[1] == tx.PARAM_TYPE_MUSICAL
@@ -2537,7 +3040,7 @@ local function windowFn()
               currentActionOperation.param3.paramProc(currentRow, 2, i)
             end
             currentRow.params[2].menuEntry = i
-            tx.processAction()
+            doActionUpdate()
           end
         end,
         paramTypes[2] == tx.PARAM_TYPE_NEWMIDIEVENT
@@ -2593,6 +3096,7 @@ local function windowFn()
 
   createPopup(nil, 'actionScopeMenu', tx.actionScopeTable, tx.currentActionScope(), function(i)
       tx.setCurrentActionScope(i)
+      doUpdate()
     end)
 
   r.ImGui_SameLine(ctx)
@@ -2619,6 +3123,7 @@ local function windowFn()
 
   createPopup(nil, 'actionScopeFlagsMenu', tx.actionScopeFlagsTable, tx.currentActionScopeFlags(), function(i)
       tx.setCurrentActionScopeFlags(i)
+      doUpdate()
     end)
 
   r.ImGui_PopStyleColor(ctx, 4)
@@ -2683,6 +3188,7 @@ local function windowFn()
     local newPath = newFolderParentPath .. '/' .. folderName
     if r.RecursiveCreateDirectory(newPath, 0) ~= 0 then
       presetSubPath = newPath ~= presetPath and newPath or nil
+      doFindUpdate()
     else
       -- some kind of status message
     end
@@ -2763,7 +3269,7 @@ local function windowFn()
   end
 
   local function doSavePreset(path, fname)
-    local saved, scriptPath = tx.savePreset(path, presetNotesBuffer, { script = presetInputDoesScript, ignoreSelectionInArrangeView = scriptIgnoreSelectionInArrangeView, scriptPrefix = scriptPrefix })
+    local saved, scriptPath = tx.savePreset(path, { script = presetInputDoesScript, ignoreSelectionInArrangeView = scriptIgnoreSelectionInArrangeView, scriptPrefix = scriptPrefix })
     statusMsg = (saved and 'Saved' or 'Failed to save') .. (presetInputDoesScript and ' + export' or '') .. ' ' .. fname
     statusTime = r.time_precise()
     statusContext = 2
@@ -2780,6 +3286,7 @@ local function windowFn()
           r.AddRemoveReaScript(true, 32062, scriptPath, false)
         end
       end
+      doFindUpdate()
     else
       presetLabel = ''
     end
@@ -2935,14 +3442,14 @@ local function windowFn()
         handledEscape = true -- don't revert the buffer if escape was pressed, use whatever's in there. causes a momentary flicker
       else
         if buf:gsub('%s+', '') == '' then buf = '' end
-        presetNotesBuffer = buf
+        setPresetNotesBuffer(buf)
       end
       presetNotesViewEditor = false
       inTextInput = false
     else
       if retval then inTextInput = true end
       if buf:gsub('%s+', '') == '' then buf = '' end
-      presetNotesBuffer = buf
+      setPresetNotesBuffer(buf)
     end
     updateCurrentRect()
   end

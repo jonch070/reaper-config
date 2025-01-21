@@ -67,10 +67,10 @@ local SYXTEXT_TYPE = 2
 local OTHER_TYPE = 7
 
 local CC_CURVE_SQUARE = 0
-local CC_CURVE_LINEAR = 1
-local CC_CURVE_SLOW_START_END = 2
-local CC_CURVE_FAST_START = 3
-local CC_CURVE_FAST_END = 4
+-- local CC_CURVE_LINEAR = 1
+-- local CC_CURVE_SLOW_START_END = 2
+-- local CC_CURVE_FAST_START = 3
+-- local CC_CURVE_FAST_END = 4
 local CC_CURVE_BEZIER = 5
 
 local SELECT_TIME_SHEBANG = 0
@@ -86,79 +86,7 @@ local wantsTab = {}
 local allEvents = {}
 local selectedEvents = {}
 
------------------------------------------------------------------------------
------------------------------------ OOP -------------------------------------
-
-local DEBUG_CLASS = false -- enable to check whether we're using known object properties
-
-local function class(base, setup, init) -- http://lua-users.org/wiki/SimpleLuaClasses
-  local c = {}    -- a new class instance
-  if not init and type(base) == 'function' then
-    init = base
-    base = nil
-  elseif type(base) == 'table' then
-   -- our new class is a shallow copy of the base class!
-    for i, v in pairs(base) do
-      c[i] = v
-    end
-    c._base = base
-  end
-  if DEBUG_CLASS then
-    c._names = {}
-    if setup then
-      for i, v in pairs(setup) do
-        c._names[i] = true
-      end
-    end
-
-    c.__newindex = function(table, key, value)
-      local found = false
-      if table._names and table._names[key] then found = true
-      else
-        local m = getmetatable(table)
-        while (m) do
-          if m._names[key] then found = true break end
-          m = m._base
-        end
-      end
-      if not found then
-        error('unknown property: '..key, 3)
-      else rawset(table, key, value)
-      end
-    end
-  end
-
-  -- the class will be the metatable for all its objects,
-  -- and they will look up their methods in it.
-  c.__index = c
-
-  -- expose a constructor which can be called by <classname>(<args>)
-  local mt = {}
-  mt.__call = function(class_tbl, ...)
-    local obj = {}
-    setmetatable(obj, c)
-    if class_tbl.init then
-      class_tbl.init(obj,...)
-    else
-      -- make sure that any stuff from the base class is initialized!
-      if base and base.init then
-        base.init(obj, ...)
-      end
-    end
-    return obj
-  end
-  c.init = init
-  c.is_a = function(self, klass)
-    local m = getmetatable(self)
-    while m do
-      if m == klass then return true end
-      m = m._base
-    end
-    return false
-  end
-  setmetatable(c, mt)
-  return c
-end
+local libPresetNotesBuffer = ''
 
 -----------------------------------------------------------------------------
 ------------------------------- TRANSFORMER ---------------------------------
@@ -207,13 +135,38 @@ function FindScopeFlagFromNotation(notation)
       end
     end
   end
-  return 0x00 -- default
+  return FIND_SCOPE_FLAG_NONE -- default
 end
 
-local function isREAPER7()
-  local v = r.GetAppVersion()
-  if v and v:sub(1, 1) == '7' then return true end
-  return false
+local FIND_POSTPROCESSING_FLAG_NONE = 0x00
+local FIND_POSTPROCESSING_FLAG_FIRSTEVENT = 0x01
+local FIND_POSTPROCESSING_FLAG_LASTEVENT = 0x02
+
+local currentFindPostProcessingInfo
+
+function ClearFindPostProcessingInfo()
+  currentFindPostProcessingInfo = {
+    flags = FIND_POSTPROCESSING_FLAG_NONE,
+    front = { count = 1, offset = 0 },
+    back = { count = 1, offset = 0 },
+  }
+end
+ClearFindPostProcessingInfo()
+
+local findPostProcessingTable = {
+  { notation = '$firstevent', flag = FIND_POSTPROCESSING_FLAG_FIRSTEVENT },
+  { notation = '$lastevent', flag = FIND_POSTPROCESSING_FLAG_LASTEVENT },
+}
+
+function FindPostProcessingFlagFromNotation(notation)
+  if notation then
+    for _, v in ipairs(findPostProcessingTable) do
+      if v.notation == notation then
+        return v.flag
+      end
+    end
+  end
+  return FIND_POSTPROCESSING_FLAG_NONE -- default
 end
 
 local actionScopeTable = {
@@ -224,11 +177,11 @@ local actionScopeTable = {
   { notation = '$transform', label = 'Transform' },
   { notation = '$replace', label = 'Transform & Replace' },
   { notation = '$copy', label = 'Transform to Track' },
-  { notation = '$copylane', label = 'Transform to Lane', disable = not isREAPER7() },
+  { notation = '$copylane', label = 'Transform to Lane', disable = not te.isREAPER7() },
   { notation = '$insert', label = 'Insert' },
   { notation = '$insertexclusive', label = 'Insert Exclusive' },
   { notation = '$extracttrack', label = 'Extract to Track' },
-  { notation = '$extractlane', label = 'Extract to Lane', disable = not isREAPER7() },
+  { notation = '$extractlane', label = 'Extract to Lane', disable = not te.isREAPER7() },
   { notation = '$delete', label = 'Delete' },
 }
 
@@ -420,8 +373,10 @@ local findPositionConditionEntries = {
   { notation = ':inbarrange', label = 'Inside Bar Range %', text = 'InBarRange(take, PPQ, event.ppqpos, {param1}, {param2})', terms = 2, split = {{ floateditor = true, percent = true }, { floateditor = true, percent = true, default = 100 }}, timeselect = SELECT_TIME_RANGE },
   { notation = ':onmetricgrid', label = 'On Metric Grid', text = 'OnMetricGrid(take, PPQ, event.ppqpos, {metricgridparams})', terms = 2, metricgrid = true, split = {{ }, { bitfield = true, default = '0', rangelabel = 'bitfield' }}, timeselect = SELECT_TIME_INDIVIDUAL },
   { notation = ':cursorpos', label = 'Cursor Position', text = 'CursorPosition(event, {tgt}, r.GetCursorPositionEx(0) + GetTimeOffset(), {param1})', terms = 1, menu = true, notnot = true },
+  { notation = ':undereditcursor', label = 'Under Edit Cursor (Slop)', text = 'UnderEditCursor(event, take, PPQ, r.GetCursorPositionEx(0), {param1}, {param2})', terms = 2, split = { { menu = true, default = 4 }, { hidden = true, literal = true } }, freeterm = true },
   { notation = ':intimesel', label = 'Inside Time Selection', text = 'TestEvent2(event, {tgt}, OP_INRANGE_EXCL, GetTimeSelectionStart(), GetTimeSelectionEnd())', terms = 0, timeselect = SELECT_TIME_RANGE },
   { notation = ':inrazor', label = 'Inside Razor Area', text = 'InRazorArea(event, take)', terms = 0, timeselect = SELECT_TIME_RANGE },
+  { notation = ':nearevent', label = 'Is Near Event', text = 'IsNearEvent(event, take, PPQ, {eventselectorparams}, {param2})', terms = 2, split = {{ eventselector = true }, { menu = true, default = 4 }}, freeterm = true },
   -- { label = 'Inside Selected Marker', text = { '>= GetSelectedRegionStart() and', '<= GetSelectedRegionEnd()' }, terms = 0 } -- region?
 }
 
@@ -460,6 +415,11 @@ local typeEntries = {
 
 local findTypeParam1Entries = tableCopy(typeEntries)
 table.insert(findTypeParam1Entries, { notation = '$syx', label = 'System Exclusive', text = '0xF0' })
+table.insert(findTypeParam1Entries, { notation = '$txt', label = 'Text', text = '0x100' }) -- special case; these need a new chanmsg
+
+local typeEntriesForEventSelector = tableCopy(typeEntries)
+table.insert(typeEntriesForEventSelector, 1, { notation = '$any', label = 'Any', text = '0x00' })
+table.insert(typeEntriesForEventSelector, { notation = '$syx', label = 'System Exclusive', text = '0xF0' })
 
 local findChannelParam1Entries = {
   { notation = '1', label = '1', text = '0' },
@@ -515,6 +475,9 @@ local findMusicalParam1Entries = {
   { notation = '$4/1', label = '4/1', text = '4' },
   { notation = '$grid', label = 'Current Grid', text = '-1' },
 }
+
+local findPositionMusicalSlopEntries = tableCopy(findMusicalParam1Entries)
+table.insert(findPositionMusicalSlopEntries, 1, { notation = '$none', label = '<none>', text = '0' })
 
 local findBooleanEntries = { -- in cubase this a simple toggle to switch, not a bad idea
   { notation = '&&', label = 'And', text = 'and'},
@@ -639,8 +602,9 @@ local actionOperationMult = { notation = '*', label = 'Multiply', text = 'Operat
 local actionOperationDivide = { notation = '/', label = 'Divide By', text = 'OperateEvent1(event, {tgt}, OP_DIV, {param1})', terms = 1, floateditor = true, norange = true, literal = true, nixnote = true }
 local actionOperationRound = { notation = ':round', label = 'Round By', text = 'QuantizeTo(event, {tgt}, {param1})', terms = 1, inteditor = true, literal = true }
 local actionOperationClamp = { notation = ':clamp', label = 'Clamp Between', text = 'ClampValue(event, {tgt}, {param1}, {param2})', terms = 2, inteditor = true }
-local actionOperationRandom = { notation = ':random', label = 'Random Values Between', text = 'RandomValue(event, {tgt}, {param1}, {param2})', terms = 2, inteditor = true }
-local actionOperationRelRandom = { notation = ':relrandom', label = 'Relative Random Values Between', text = 'OperateEvent1(event, {tgt}, OP_ADD, RandomValue(event, nil, {param1}, {param2}))', terms = 2, inteditor = true, range = { -127, 127 }, fullrange = true, bipolar = true, literal = true }
+local actionOperationRandom = { notation = ':random', label = 'Random Values Btw', text = 'RandomValue(event, {tgt}, {param1}, {param2})', terms = 2, inteditor = true }
+local actionOperationRelRandom = { notation = ':relrandom', label = 'Relative Random Values Btw', text = 'OperateEvent1(event, {tgt}, OP_ADD, RandomValue(event, nil, {param1}, {param2}))', terms = 2, inteditor = true, range = { -127, 127 }, fullrange = true, bipolar = true, literal = true, nixnote = true }
+local actionOperationRelRandomSingle = { notation = ':relrandomsingle', label = 'Single Relative Random Value Btw', text = 'OperateEvent1(event, {tgt}, OP_ADD, RandomValue(event, nil, {param1}, {param2}, {randomsingle}))', terms = 2, inteditor = true, range = { -127, 127 }, fullrange = true, bipolar = true, literal = true, nixnote = true }
 local actionOperationFixed = { notation = '=', label = 'Set to Fixed Value', text = 'OperateEvent1(event, {tgt}, OP_FIXED, {param1})', terms = 1 }
 local actionOperationLine = { notation = ':line', label = 'Ramp in Selection Range', text = 'LinearChangeOverSelection(event, {tgt}, event.projtime, {param1}, {param2}, {param3}, _context)', terms = 3, split = {{ inteditor = true }, { menu = true }, { inteditor = true }}, freeterm = true, param3 = te.lineParam3Tab }
 local actionOperationRelLine = { notation = ':relline', label = 'Relative Ramp in Selection Range', text = 'OperateEvent1(event, {tgt}, OP_ADD, LinearChangeOverSelection(event, nil, event.projtime, {param1}, {param2}, {param3}, _context))', terms = 3, split = {{ inteditor = true }, { menu = true }, { inteditor = true }}, freeterm = true, fullrange = true, bipolar = true, param3 = te.lineParam3Tab }
@@ -677,11 +641,12 @@ local actionPositionOperationEntries = {
   lengthMod(actionOperationRound),
   { notation = ':roundmusical', label = 'Quantize to Musical Value', text = 'QuantizeMusicalPosition(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true, showswing = true }, { floateditor = true, default = 100, percent = true }} },
   positionMod(actionOperationFixed),
-  positionMod(actionOperationRandom), lengthMod(actionOperationRelRandom),
+  positionMod(actionOperationRandom), lengthMod(actionOperationRelRandom), lengthMod(actionOperationRelRandomSingle),
   { notation = ':tocursor', label = 'Move to Cursor', text = 'MoveToCursor(event, {tgt}, {param1})', terms = 1, menu = true },
-  -- { notation = ':endtocursor', label = 'Move Note-Off to Cursor', text = '= MoveNoteOffToCursor(event, {param1})', terms = 1, menu = true },
   { notation = ':addlength', label = 'Add Length', text = 'AddLength(event, {tgt}, {param1}, _context)', terms = 1, menu = true },
   { notation = ':scaleoffset', label = 'Scale + Offset (rel.)', text = 'MultiplyPosition(event, {tgt}, {param1}, {param2}, \'{param3}\', _context)', terms = 3, split = {{}, { menu = true }, {}}, param3 = te.positionScaleOffsetParam3Tab },
+  { notation = ':toitemstart', label = 'Move to Item Start', text = 'MoveToItemPos(event, {tgt}, 0, \'{param1}\', _context)', terms = 1, timedur = true, timearg = true },
+  { notation = ':toitemend', label = 'Move to Item End', text = 'MoveToItemPos(event, {tgt}, 1, \'{param1}\', _context)', terms = 1, timedur = true, timearg = true },
 }
 
 local actionPositionMultParam2Menu = {
@@ -698,9 +663,10 @@ local actionLengthOperationEntries = {
   { notation = ':roundendmusical', label = 'Quantize Note-Off to Musical Value', text = 'QuantizeMusicalEndPos(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true, showswing = true }, { floateditor = true, default = 100, percent = true }} },
   lengthMod(actionOperationFixed),
   { notation = ':quantmusical', label = 'Set to Musical Length', text = 'SetMusicalLength(event, take, PPQ, {musicalparams})', terms = 1, musical = true },
-  lengthMod(actionOperationRandom), lengthMod(actionOperationRelRandom),
+  lengthMod(actionOperationRandom), lengthMod(actionOperationRelRandom), lengthMod(actionOperationRelRandomSingle),
   { notation = ':tocursor', label = 'Move to Cursor', text = 'MoveLengthToCursor(event, {tgt})', terms = 0 },
   { notation = ':scaleoffset', label = 'Scale + Offset', text = 'OperateEvent2(event, {tgt}, OP_SCALEOFF, {param1}, TimeFormatToSeconds(\'{param2}\', event.projtime, _context, true))', terms = 2, split = {{ floateditor = true, default = 1. }, { timedur = true }}, range = {}, timearg = true },
+  { notation = ':toitemend', label = 'Extend to Item End', text = 'MoveToItemPos(event, {tgt}, 2, \'{param1}\', _context)', terms = 1, timedur = true, timearg = true },
 }
 
 local function channelMod(op)
@@ -713,7 +679,7 @@ end
 local actionChannelOperationEntries = {
   channelMod(actionOperationPlus), channelMod(actionOperationMinus),
   actionOperationFixed,
-  channelMod(actionOperationRandom), channelMod(actionOperationRelRandom),
+  channelMod(actionOperationRandom), channelMod(actionOperationRelRandom), channelMod(actionOperationRelRandomSingle),
   channelMod(actionOperationLine), channelMod(actionOperationRelLine)
 }
 
@@ -764,14 +730,14 @@ local actionLineParam2Entries = te.param3LineEntries
 
 local actionSubtypeOperationEntries = {
   actionOperationPlus, actionOperationMinus, actionOperationMult, actionOperationDivide,
-  actionOperationRound, actionOperationFixed, actionOperationClamp, actionOperationRandom, actionOperationRelRandom,
+  actionOperationRound, actionOperationFixed, actionOperationClamp, actionOperationRandom, actionOperationRelRandom, actionOperationRelRandomSingle,
   { notation = ':getvalue2', label = 'Use Value 2', text = 'OperateEvent1(event, {tgt}, OP_FIXED, GetMainValue(event))', terms = 0 }, -- note that this is different for AT and PB
   actionOperationMirror, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
 }
 
 local actionVelocityOperationEntries = {
   actionOperationPlus, actionOperationMinus, actionOperationMult, actionOperationDivide,
-  actionOperationRound, actionOperationFixed, actionOperationClamp, actionOperationRandom, actionOperationRelRandom,
+  actionOperationRound, actionOperationFixed, actionOperationClamp, actionOperationRandom, actionOperationRelRandom, actionOperationRelRandomSingle,
   { notation = ':getvalue1', label = 'Use Value 1', text = 'OperateEvent1(event, {tgt}, OP_FIXED, GetSubtypeValue(event))', terms = 0 }, -- ?? note that this is different for AT and PB
   actionOperationMirror, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
 }
@@ -796,7 +762,7 @@ local newMIDIEventPositionEntries = {
 
 local actionGenericOperationEntries = {
   actionOperationPlus, actionOperationMinus, actionOperationMult, actionOperationDivide,
-  actionOperationRound, actionOperationFixed, actionOperationRandom, actionOperationRelRandom,
+  actionOperationRound, actionOperationFixed, actionOperationRandom, actionOperationRelRandom, actionOperationRelRandomSingle,
   actionOperationMirror, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
 }
 
@@ -811,6 +777,8 @@ local PARAM_TYPE_MUSICAL = 7
 local PARAM_TYPE_EVERYN = 8
 local PARAM_TYPE_NEWMIDIEVENT = 9
 local PARAM_TYPE_PARAM3 = 10
+local PARAM_TYPE_EVENTSELECTOR = 11
+local PARAM_TYPE_HIDDEN = 12
 
 local EDITOR_TYPE_PITCHBEND = 100
 local EDITOR_TYPE_PITCHBEND_BIPOLAR = 101
@@ -975,7 +943,7 @@ local currentSwing = 0. -- -1. to 1
 function GetGridUnitFromSubdiv(subdiv, PPQ, mgParams)
   local gridUnit
   local mgMods = GetMetricGridModifiers(mgParams)
-  if subdiv > 0 then
+  if subdiv >= 0 then
     gridUnit = PPQ * (subdiv * 4)
     if mgMods == MG_GRID_DOTTED then gridUnit = gridUnit * 1.5
     elseif mgMods == MG_GRID_TRIPLET then gridUnit = (gridUnit * 2 / 3) end
@@ -1183,12 +1151,28 @@ function CursorPosition(event, property, cursorPosProj, which)
   elseif which == CURSOR_GTE then -- after/at
     return time >= cursorPosProj
   elseif which == CURSOR_UNDER then
-    local endtime = time + event.projlen
     if GetEventType(event) == NOTE_TYPE then
+      local endtime = time + event.projlen
       return cursorPosProj >= time and cursorPosProj < endtime
     else
       return time == cursorPosProj
     end
+  end
+  return false
+end
+
+function UnderEditCursor(event, take, PPQ, cursorPosProj, param1, param2)
+  local gridUnit = GetGridUnitFromSubdiv(param1, PPQ)
+  local PPQPercent = gridUnit + (gridUnit * (param2 / 100))
+  local cursorPPQPos = r.MIDI_GetPPQPosFromProjTime(take, cursorPosProj)
+  local minRange = cursorPPQPos - PPQPercent
+  local maxRange = cursorPPQPos + PPQPercent
+
+  local time = event.ppqpos
+  if time >= minRange and time < maxRange then return true end
+  if GetEventType(event) == NOTE_TYPE then
+    local endtime = event.endppqpos
+    if time <= minRange and endtime > minRange then return true end
   end
   return false
 end
@@ -1219,7 +1203,7 @@ end
 
 function ChanMsgToType(chanmsg)
   if chanmsg == 0x90 then return NOTE_TYPE
-  elseif chanmsg == 0xF0 then return SYXTEXT_TYPE
+  elseif chanmsg == 0xF0 or chanmsg == 0x100 then return SYXTEXT_TYPE
   elseif chanmsg >= 0xA0 and chanmsg <= 0xEF then return CC_TYPE
   else return OTHER_TYPE
   end
@@ -1381,6 +1365,71 @@ function InRazorArea(event, take)
   return false
 end
 
+function IsNearEvent(event, take, PPQ, evSelParams, param2)
+  local scale = tonumber(evSelParams.scaleStr)
+  local gridUnit = GetGridUnitFromSubdiv(param2, PPQ)
+  local PPQPercent = gridUnit + (gridUnit * (scale / 100))
+  local minRange = event.ppqpos - PPQPercent
+  local maxRange = event.ppqpos + PPQPercent
+
+  for k, ev in ipairs(allEvents) do
+    local sameEvent = false
+    local ppqMatch = false
+    local typeMatch = false
+    local selMatch = false
+    local muteMatch = false
+
+    if ev.chanmsg == event.chanmsg
+      and ev.idx == event.idx
+    then
+      sameEvent = true
+    end
+
+    if not sameEvent then
+      if ev.ppqpos >= minRange
+        and ev.ppqpos < maxRange
+      then
+        ppqMatch = true -- can we bail early once we're outside of a certain range?
+      end
+    end
+
+    if ppqMatch then
+      if evSelParams.chanmsg == 0x00
+        or ev.chanmsg == evSelParams.chanmsg
+      then
+        typeMatch = true
+      end
+    end
+
+    if typeMatch then
+      if evSelParams.selected == -1
+        or evSelParams.selected == 0 and not ev.selected
+        or evSelParams.selected == 1 and ev.selected
+      then
+        selMatch = true
+      end
+    end
+
+    if selMatch then
+      if evSelParams.muted == -1
+        or evSelParams.muted == 0 and not ev.muted
+        or evSelParams.muted == 1 and ev.muted
+      then
+        muteMatch = true
+      end
+    end
+
+    if muteMatch then
+      if not evSelParams.useval1
+        or ev.msg2 == evSelParams.msg2
+      then
+        return true
+      end
+    end
+  end
+  return false
+end
+
 function OnMetricGrid(take, PPQ, ppqpos, mgParams)
   if not take then return false end
 
@@ -1520,19 +1569,16 @@ end
 function CreateNewMIDIEvent()
 end
 
-function RandomValue(event, property, min, max)
+function RandomValue(event, property, min, max, single)
   local oldval = GetValue(event, property)
   if event.firstlastevent then return oldval end
 
   local newval = oldval
 
-  if math.type(min) == 'integer' and math.type(max) == 'integer' then
-    newval = math.random(min, max)
-    return SetValue(event, property, newval)
-  end
-  local rnd = math.random()
-  newval = (rnd * (max - min)) + min
+  local rnd = single and single or math.random()
 
+  newval = (rnd * (max - min)) + min
+  if math.type(min) == 'integer' and math.type(max) == 'integer' then newval = math.floor(newval) end
   return SetValue(event, property, newval)
 end
 
@@ -1643,6 +1689,26 @@ function MoveLengthToCursor(event)
 
   event.projlen = cursorPos - event.projtime
   return event.projlen
+end
+
+function MoveToItemPos(event, property, way, offset, context)
+  local take = context.take
+  if not take then return event[property] end
+
+  if GetEventType(event) ~= NOTE_TYPE and way == 2 then return event[property] end
+  local item = r.GetMediaItemTake_Item(take)
+  if item then
+    if way == 0 then
+      local targetPos = r.GetMediaItemInfo_Value(item, 'D_POSITION') + GetTimeOffset()
+      local offsetTime = offset and LengthFormatToSeconds(offset, targetPos, context) or 0
+      event[property] = targetPos + offsetTime
+    elseif way == 1 or way == 2 then
+      local targetPos = r.GetMediaItemInfo_Value(item, 'D_POSITION') + GetTimeOffset() + r.GetMediaItemInfo_Value(item, 'D_LENGTH')
+      local offsetTime = offset and LengthFormatToSeconds(offset, targetPos, context) or 0
+      event[property] = way == 1 and (targetPos + offsetTime) or ((targetPos - event.projtime) + offsetTime)
+    end
+  end
+  return event[property]
 end
 
 -----------------------------------------------------------------------------
@@ -2023,6 +2089,11 @@ function FindTabsFromTarget(row)
         param1Tab = findMusicalParam1Entries
       elseif condition.notation == ':cursorpos' then
         param1Tab = findCursorParam1Entries
+      elseif condition.notation == ':nearevent' then
+        param1Tab = typeEntriesForEventSelector
+        param2Tab = findPositionMusicalSlopEntries
+      elseif condition.notation == ':undereditcursor' then
+        param1Tab = findPositionMusicalSlopEntries
       end
     end
   elseif notation == '$length' then
@@ -2109,9 +2180,12 @@ function SetMetricGridModifiers(mg, mgMods, mgReaSwing)
 end
 
 function GetMetricGridModifiers(mg)
-  local mods = mg.modifiers & 0x7
-  local reaperSwing = mg.modifiers & MG_GRID_SWING_REAPER ~= 0
-  return mods, reaperSwing
+  if mg then
+    local mods = mg.modifiers & 0x7
+    local reaperSwing = mg.modifiers & MG_GRID_SWING_REAPER ~= 0
+    return mods, reaperSwing
+  end
+  return MG_GRID_STRAIGHT, false
 end
 
 function ParseMetricGridNotation(str)
@@ -2180,6 +2254,61 @@ function ParseEveryNNotation(str)
   return evn
 end
 
+function GenerateEventSelectorNotation(row)
+  if not row.evsel then return '' end
+  local evsel = row.evsel
+  local evSelStr = string.format('%02X', evsel.chanmsg)
+  evSelStr = evSelStr .. '|' .. evsel.channel
+  evSelStr = evSelStr .. '|' .. evsel.selected
+  evSelStr = evSelStr .. '|' .. evsel.muted
+  if evsel.useval1 then
+    evSelStr = evSelStr .. string.format('|%02X', evsel.msg2)
+  end
+  local scale = tonumber(evsel.scaleStr)
+  if not scale then scale = 100 end
+  if scale ~= 100 then
+    evSelStr = evSelStr .. string.format('|%0.4f', scale):gsub("%.?0+$", "")
+  end
+  return evSelStr
+end
+
+function ParseEventSelectorNotation(str, row, paramTab)
+  local evsel = {}
+  local fs, fe, chanmsg, channel, selected, muted = string.find(str, '([0-9A-Fa-f]+)|(%-?%d+)|(%-?%d+)|(%-?%d+)')
+  local msg2, scale, savefe
+  if fs and fe then
+    savefe = fe
+    evsel.chanmsg = tonumber(chanmsg:sub(1, 2), 16)
+    evsel.channel = tonumber(channel)
+    evsel.selected = tonumber(selected)
+    evsel.muted = tonumber(muted)
+    evsel.useval1 = false
+    evsel.msg2 = 60
+    evsel.scaleStr = '100'
+
+    fs, fe, msg2 = string.find(str, '|([0-9A-Fa-f]+)', fe)
+    if fs and fe then
+      evsel.useval1 = true
+      evsel.msg2 = tonumber(msg2:sub(1, 2), 16)
+    end
+
+    if not fe then fe = savefe end
+    fs, fe, scale = string.find(str, '|([0-9.]+)', fe)
+    if fs and fe then
+      evsel.scaleStr = scale
+    end
+
+    for k, v in ipairs(paramTab) do
+      if tonumber(v.text) == evsel.chanmsg then
+        row.params[1].menuEntry = k
+        break
+      end
+    end
+    return evsel
+  end
+  return nil
+end
+
 function GenerateNewMIDIEventNotation(row)
   if not row.nme then return '' end
   local nme = row.nme
@@ -2194,7 +2323,7 @@ end
 function ParseNewMIDIEventNotation(str, row, paramTab, index)
   if index == 1 then
     local nme = {}
-    local fs, fe, msg, flags, pos, dur, relvel = string.find(str, '([0-9A-Fa-f]+)|(%d)|([0-9%.:t]+)|([0-9%.:t]+)|([0-9A-Fa-f]+)')
+    local fs, fe, msg, flags, pos, dur, relvel = string.find(str, '([0-9A-Fa-f]+)|(%d)|([0-9%.%-:t]+)|([0-9%.:t]+)|([0-9A-Fa-f]+)')
     if fs and fe then
       local status = tonumber(msg:sub(1, 2), 16)
       nme.chanmsg = status & 0xF0
@@ -2259,6 +2388,8 @@ function GetParamType(src)
     or src.everyn and PARAM_TYPE_EVERYN
     or src.newevent and PARAM_TYPE_NEWMIDIEVENT
     or src.param3 and PARAM_TYPE_PARAM3
+    or src.eventselector and PARAM_TYPE_EVENTSELECTOR
+    or src.hidden and PARAM_TYPE_HIDDEN
     or PARAM_TYPE_UNKNOWN
 end
 
@@ -2320,7 +2451,9 @@ function HandleMacroParam(row, target, condOp, paramTab, paramStr, index)
 
   local isEveryN = paramType == PARAM_TYPE_EVERYN
   local isNewEvent = paramType == PARAM_TYPE_NEWMIDIEVENT
-  if not (isEveryN or isNewEvent) and #paramTab ~= 0 then
+  local isEventSelector = paramType == PARAM_TYPE_EVENTSELECTOR
+
+  if not (isEveryN or isNewEvent or isEventSelector) and #paramTab ~= 0 then
     for kk, vv in ipairs(paramTab) do
       local pa, pb
       if paramStr == vv.notation then
@@ -2350,6 +2483,8 @@ function HandleMacroParam(row, target, condOp, paramTab, paramStr, index)
     row.evn = ParseEveryNNotation(paramStr)
   elseif isNewEvent then
     ParseNewMIDIEventNotation(paramStr, row, paramTab, index)
+  elseif isEventSelector then
+    row.evsel = ParseEventSelectorNotation(paramStr, row, paramTab)
   elseif condOp.bitfield or (condOp.split and condOp.split[index] and condOp.split[index].bitfield) then
     row.params[index].textEditorStr = paramStr
   elseif paramType == PARAM_TYPE_INTEDITOR or paramType == PARAM_TYPE_FLOATEDITOR then
@@ -2370,6 +2505,7 @@ function HandleMacroParam(row, target, condOp, paramTab, paramStr, index)
     or paramType == PARAM_TYPE_EVERYN
     or paramType == PARAM_TYPE_NEWMIDIEVENT -- fallbacks or used?
     or paramType == PARAM_TYPE_PARAM3
+    or paramType == PARAM_TYPE_HIDDEN
   then
     row.params[index].textEditorStr = paramStr
   end
@@ -2448,12 +2584,12 @@ function ProcessFindMacroRow(buf, boolstr)
         condTab, param1Tab, param2Tab = FindTabsFromTarget(row)
         if param2 and not isValidString(param1) then param1 = param2 param2 = nil end
         if isValidString(param1) then
-          -- mu.post('param1', param1)
           param1 = HandleMacroParam(row, findTargetEntries[row.targetEntry], condTab[row.conditionEntry], param1Tab, param1, 1)
+          -- mu.post('param1', param1)
         end
         if isValidString(param2) then
-          -- mu.post('param2', param2)
           param2 = HandleMacroParam(row, findTargetEntries[row.targetEntry], condTab[row.conditionEntry], param2Tab, param2, 2)
+          -- mu.post('param2', param2)
         end
         break
       -- else -- still not found, maybe an old thing (can be removed post-release)
@@ -2613,6 +2749,7 @@ context.FindEveryNPattern = FindEveryNPattern
 context.FindEveryNNote = FindEveryNNote
 context.EqualsMusicalLength = EqualsMusicalLength
 context.CursorPosition = CursorPosition
+context.UnderEditCursor = UnderEditCursor
 context.SelectChordNote = SelectChordNote
 
 context.OP_EQ = OP_EQ
@@ -2649,6 +2786,7 @@ context.OnMetricGrid = OnMetricGrid
 context.OnGrid = OnGrid
 context.InBarRange = InBarRange
 context.InRazorArea = InRazorArea
+context.IsNearEvent = IsNearEvent
 context.CCHasCurve = CCHasCurve
 context.CCSetCurve = CCSetCurve
 context.LinearChangeOverSelection = LinearChangeOverSelection
@@ -2665,6 +2803,7 @@ context.SetMusicalLength = SetMusicalLength
 context.QuantizeMusicalPosition = QuantizeMusicalPosition
 context.QuantizeMusicalLength = QuantizeMusicalLength
 context.QuantizeMusicalEndPos = QuantizeMusicalEndPos
+context.MoveToItemPos = MoveToItemPos
 
 context.OP_ADD = OP_ADD
 context.OP_SUB = OP_SUB
@@ -2678,11 +2817,13 @@ function DoProcessParams(row, target, condOp, paramType, paramTab, index, notati
   local addEveryNNotation = false
   local addNewMIDIEventNotation = false
   local isParam3 = paramType == PARAM_TYPE_PARAM3
+  local addEventSelectorNotation = false
 
   if paramType == PARAM_TYPE_METRICGRID
     or paramType == PARAM_TYPE_MUSICAL
     or paramType == PARAM_TYPE_EVERYN
     or paramType == PARAM_TYPE_NEWMIDIEVENT
+    or paramType == PARAM_TYPE_EVENTSELECTOR
   then
     if index == 1 then
       if notation then
@@ -2690,6 +2831,8 @@ function DoProcessParams(row, target, condOp, paramType, paramTab, index, notati
           addEveryNNotation = true
         elseif paramType == PARAM_TYPE_NEWMIDIEVENT then
           addNewMIDIEventNotation = true
+        elseif paramType == PARAM_TYPE_EVENTSELECTOR then
+          addEventSelectorNotation = true
         else
           addMetricGridNotation = true
         end
@@ -2708,16 +2851,16 @@ function DoProcessParams(row, target, condOp, paramType, paramTab, index, notati
     if override == EDITOR_TYPE_BITFIELD then
       paramVal = row.params[index].textEditorStr
     elseif (override == EDITOR_TYPE_PERCENT or override == EDITOR_TYPE_PERCENT_BIPOLAR) then
-      paramVal = string.format(percentFormat, percentVal and percentVal or tonumber(row.params[index].textEditorStr))
+      paramVal = string.format(percentFormat, percentVal and percentVal or tonumber(row.params[index].textEditorStr)):gsub("%.?0+$", "")
     elseif (override == EDITOR_TYPE_PITCHBEND or override == EDITOR_TYPE_PITCHBEND_BIPOLAR) then
-      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) + (1 << 13)) / ((1 << 14) - 1) * 100)
+      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) + (1 << 13)) / ((1 << 14) - 1) * 100):gsub("%.?0+$", "")
     elseif ((override == EDITOR_TYPE_14BIT or override == EDITOR_TYPE_14BIT_BIPOLAR)) then
-      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 14) - 1)) * 100)
+      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 14) - 1)) * 100):gsub("%.?0+$", "")
     elseif ((override == EDITOR_TYPE_7BIT
         or override == EDITOR_TYPE_7BIT_NOZERO
         or override == EDITOR_TYPE_7BIT_BIPOLAR))
       then
-        paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 7) - 1)) * 100)
+        paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 7) - 1)) * 100):gsub("%.?0+$", "")
     else
       mu.post('unknown override: ' .. override)
     end
@@ -2732,6 +2875,7 @@ function DoProcessParams(row, target, condOp, paramType, paramTab, index, notati
     or paramType == PARAM_TYPE_EVERYN
     or paramType == PARAM_TYPE_PARAM3
     or override == EDITOR_TYPE_BITFIELD
+    or paramType == PARAM_TYPE_HIDDEN
   then
     paramVal = row.params[index].textEditorStr
   elseif #paramTab ~= 0 then
@@ -2744,6 +2888,8 @@ function DoProcessParams(row, target, condOp, paramType, paramTab, index, notati
     paramVal = GenerateEveryNNotation(row)
   elseif addNewMIDIEventNotation then
     paramVal = GenerateNewMIDIEventNotation(row)
+  elseif addEventSelectorNotation then
+    paramVal = GenerateEventSelectorNotation(row)
   end
 
   return paramVal
@@ -2825,7 +2971,7 @@ function UpdateEventCount(event, counts, onlyNoteRow)
   -- also get counts for specific notes so that we can do rows as an option
   local eventIdx = EventToIdx(event)
   if not counts[eventIdx] then counts[eventIdx] = {} end
-  local subIdx = event.msg2
+  local subIdx = event.msg2 and event.msg2 or 0 -- sysex/text
   if event.chanmsg >= 0xC0 then subIdx = 0 end
   if not counts[eventIdx][subIdx] then counts[eventIdx][subIdx] = 0 end
   local cname = GetEventType(event) == NOTE_TYPE and 'ncount' or 'count'
@@ -2943,6 +3089,8 @@ function RunFind(findFn, params, runFn)
     if runFn then runFn(event, matches) end
   end
 
+  found, unfound = HandleFindPostProcessing(found, unfound)
+
   -- it was a time selection, add a final event to make behavior predictable
   if params.addRangeEvents and params.findRange.frStart and params.findRange.frEnd then
     local frStart = params.findRange.frStart
@@ -2987,6 +3135,7 @@ function RunFind(findFn, params, runFn)
     findFnString = params and params.findFnString,
     actionFnString = params and params.actionFnString,
   }
+
   return found, contextTab, getUnfound and unfound or nil
 end
 
@@ -3104,6 +3253,7 @@ function ProcessFind(take, fromHasTable)
     local isMetricGrid = paramTypes[1] == PARAM_TYPE_METRICGRID and true or false
     local isMusical = paramTypes[1] == PARAM_TYPE_MUSICAL and true or false
     local isEveryN = paramTypes[1] == PARAM_TYPE_EVERYN and true or false
+    local isEventSelector = paramTypes[1] == PARAM_TYPE_EVENTSELECTOR and true or false
 
     if isMetricGrid or isMusical then
       local mgParams = tableCopy(row.mg)
@@ -3113,6 +3263,9 @@ function ProcessFind(take, fromHasTable)
     elseif isEveryN then
       local evnParams = tableCopy(row.evn)
       findTerm = string.gsub(findTerm, '{everyNparams}', serialize(evnParams))
+    elseif isEventSelector then
+      local evSelParams = tableCopy(row.evsel)
+      findTerm = string.gsub(findTerm, '{eventselectorparams}', serialize(evSelParams))
     end
 
     if curTarget.cond then
@@ -3388,13 +3541,41 @@ end
 
 local mediaItemCount
 local mediaItemIndex
+local enumTakesMode
+
+function GetEnumTakesMode()
+  return 1
+  -- if not enumTakesMode then
+  --   enumTakesMode = 0
+  --   local rv, mevars = r.get_config_var_string('midieditor')
+  --   if mevars then
+  --     local mevarsVal = tonumber(mevars)
+  --     enumTakesMode = mevarsVal & 1 ~= 0 and 0 or 1 -- project mode, set to 0 (false)
+  --   end
+  -- end
+  -- return enumTakesMode
+end
 
 function GetNextTake()
-  local take
+  local take = nil
   local notation = findScopeTable[currentFindScope].notation
-  if notation == '$midieditor' and not mediaItemCount then
-    mediaItemCount = 1
-    take = r.MIDIEditor_GetTake(r.MIDIEditor_GetActive())
+  if notation == '$midieditor' then
+    local me = r.MIDIEditor_GetActive()
+    if me then
+      if not mediaItemCount then
+        mediaItemCount = 0
+        while me do
+          local t = r.MIDIEditor_EnumTakes(me, mediaItemCount, GetEnumTakesMode())
+          if not t then break end
+          mediaItemCount = mediaItemCount + 1 -- we probably don't really need this iteration, but whatever
+        end
+        mediaItemIndex = 0
+      end
+      if mediaItemIndex < mediaItemCount then
+        take = r.MIDIEditor_EnumTakes(me, mediaItemIndex, GetEnumTakesMode())
+        mediaItemIndex = mediaItemIndex + 1
+      end
+    end
     return take
   elseif notation == '$selected' then
     if not mediaItemCount then
@@ -3507,6 +3688,10 @@ function InitializeTake(take)
     local e = { type = SYXTEXT_TYPE, idx = syxidx }
     _, e.selected, e.muted, e.ppqpos, e.chanmsg, e.textmsg = mu.MIDI_GetTextSysexEvt(take, syxidx)
     e.flags = (e.muted and 2 or 0) | (e.selected and 1 or 0)
+    if e.chanmsg ~- 0xF0 then
+      e.msg2 = e.chanmsg
+      e.chanmsg = 0x100
+    end
     CalcMIDITime(take, e)
     table.insert(allEvents, e)
     if e.selected then table.insert(selectedEvents, e) end
@@ -3576,6 +3761,48 @@ function DeleteEventsInTake(take, eventTab, doTx)
   if doTx == true or doTx == nil then
     mu.MIDI_CommitWriteTransaction(take, false, true)
   end
+end
+
+function DoFindPostProcessing(found, unfound)
+  local wantsFront = currentFindPostProcessingInfo.flags & FIND_POSTPROCESSING_FLAG_FIRSTEVENT ~= 0
+  local wantsBack = currentFindPostProcessingInfo.flags & FIND_POSTPROCESSING_FLAG_LASTEVENT ~= 0
+  local newfound = {}
+
+  if wantsFront then
+    local num = currentFindPostProcessingInfo.front.count
+    local offset = currentFindPostProcessingInfo.front.offset + 1
+    for i = 1, #found do
+      local f = found[i]
+      if i >= offset and (i - offset) < num then
+        table.insert(newfound, f)
+      else
+        table.insert(unfound, f)
+      end
+    end
+  end
+  if wantsBack then
+    local num = currentFindPostProcessingInfo.back.count
+    local offset = currentFindPostProcessingInfo.back.offset + 1
+    local ii = 1
+    for i = #found, 1, -1 do
+      local f = found[i]
+      if ii >= offset and (ii - offset) < num then
+        table.insert(newfound, f)
+      else
+        table.insert(unfound, f)
+      end
+      ii = ii + 1
+    end
+  end
+  if #newfound ~= 0 then found = newfound end
+  return found
+end
+
+function HandleFindPostProcessing(found, unfound)
+  if currentFindPostProcessingInfo.flags ~= FIND_POSTPROCESSING_FLAG_NONE then
+    return DoFindPostProcessing(found, unfound)
+  end
+  return found, unfound
 end
 
 local CreateNewMIDIEvent_Once
@@ -3679,7 +3906,7 @@ function InsertEventsIntoTake(take, eventTab, actionFn, contextTab, doTx)
         mu.MIDI_SetCCShape(take, newidx, event.setcurve, event.setcurveext)
       end
     elseif GetEventType(event) == SYXTEXT_TYPE then
-      mu.MIDI_InsertTextSysexEvt(take, event.selected, event.muted, event.ppqpos, event.chanmsg, event.textmsg)
+      mu.MIDI_InsertTextSysexEvt(take, event.selected, event.muted, event.ppqpos, event.chanmsg == 0xF0 and event.chanmsg or event.msg2, event.textmsg)
     end
   end
   HandleCreateNewMIDIEvent(take, contextTab)
@@ -3844,7 +4071,7 @@ function TransformEntryInTake(take, eventTab, actionFn, contextTab, replace)
       end
     elseif eventType == SYXTEXT_TYPE then
       if not event.orig_type or event.orig_type == SYXTEXT_TYPE then
-        mu.MIDI_SetTextSysexEvt(take, event.idx, event.selected, event.muted, event.ppqpos, event.chanmsg, event.textmsg)
+        mu.MIDI_SetTextSysexEvt(take, event.idx, event.selected, event.muted, event.ppqpos, event.chanmsg == 0xF0 and event.chanmsg or event.msg2, event.textmsg)
       else
         if event.orig_type == NOTE_TYPE then
           mu.MIDI_DeleteNote(take, event.idx)
@@ -3916,6 +4143,8 @@ function NewTakeInNewLane(take)
 end
 
 function GrabAllTakes()
+  enumTakesMode = nil -- refresh
+
   local take = GetNextTake()
   if not take then return {} end
 
@@ -3991,6 +4220,9 @@ function ProcessActionForTake(take)
     actionTerm = string.gsub(actionTerm, '{tgt}', targetTerm)
     actionTerm = string.gsub(actionTerm, '{param1}', tostring(paramTerms[1]))
     actionTerm = string.gsub(actionTerm, '{param2}', tostring(paramTerms[2]))
+    if curOperation.notation == ':relrandomsingle' then
+      actionTerm = string.gsub(actionTerm, '{randomsingle}', tostring(math.random()))
+    end
     if row.params[3] and isValidString(row.params[3].textEditorStr) then
       actionTerm = string.gsub(actionTerm, '{param3}', row.params[3].funArg and row.params[3].funArg(row, curTarget, curOperation, paramTerms[3]) or row.params[3].textEditorStr)
     end
@@ -4032,6 +4264,13 @@ function ProcessActionForTake(take)
   return fnString
 end
 
+function ItemInTable(it, t)
+  for i = 1, #t do
+    if it == t[i] then return true end
+  end
+  return false
+end
+
 function ProcessAction(execute, fromScript)
   mediaItemCount = nil
   mediaItemIndex = nil
@@ -4040,16 +4279,53 @@ function ProcessAction(execute, fromScript)
     and findScopeTable[currentFindScope].notation == '$midieditor'
   then
     local _, _, sectionID = r.get_action_context()
-    if scriptIgnoreSelectionInArrangeView
-      and currentFindScopeFlags ~= 0
-    then
-      if sectionID == 0 then currentFindScopeFlags = FIND_SCOPE_FLAG_NONE end -- eliminate all find scope flags
+    local canOverride = true
+
+    -- experimental support for main-context selection consideration
+    -- IF the active MIDI Editor
+    if sectionID == 0 then
+      local found = false
+      local meTakes = {}
+      local me = r.MIDIEditor_GetActive()
+      if me then
+        local selCount = r.CountSelectedMediaItems(0)
+        if selCount > 0 then
+          local ec = 0
+          while true do
+            local etake = r.MIDIEditor_EnumTakes(me, ec, GetEnumTakesMode())
+            if not etake then break end
+            table.insert(meTakes, etake)
+            ec = ec + 1
+          end
+          if #meTakes ~= 0 then
+            found = true -- assume it works
+            for i = 0, selCount - 1 do
+              local item = r.GetSelectedMediaItem(0, i)
+              if item then
+                local itake = r.GetActiveTake(item)
+                if not ItemInTable(itake, meTakes) then
+                  found = false
+                  break
+                end
+              end
+            end
+          end
+        end
+      end
+      if not found then
+        currentFindScope = 2 -- '$selected'
+      else
+        canOverride = false
+      end
     end
-    -- We're in the Main context, an open MIDI Editor isn't relevant.
-    -- This can be a little confusing if we're in the Main context
-    -- and there _is_ an open MIDI Edtor, but I think that this is
-    -- more consistent and easier to explain overall.
-    if sectionID == 0 then currentFindScope = 2 end -- '$selected'
+
+    if sectionID == 0
+      and scriptIgnoreSelectionInArrangeView
+      and currentFindScopeFlags ~= FIND_SCOPE_FLAG_NONE
+      and canOverride
+    then
+      currentFindScopeFlags = FIND_SCOPE_FLAG_NONE -- eliminate all find scope flags
+    end
   end
 
   local takes = GrabAllTakes()
@@ -4180,7 +4456,7 @@ function ProcessAction(execute, fromScript)
           end
         end
       elseif notation == '$copylane' then
-        if isREAPER7() then
+        if te.isREAPER7() then
           local found, contextTab = RunFind(findFn, defParams)
           if canProcess(found) then
             local newtake = NewTakeInNewLane(take)
@@ -4216,7 +4492,7 @@ function ProcessAction(execute, fromScript)
           DeleteEventsInTake(take, found)
         end
       elseif notation == '$extractlane' then
-        if isREAPER7() then
+        if te.isREAPER7() then
           local found, contextTab = RunFind(findFn, defParams)
           if canProcess(found) then
             local newtake = NewTakeInNewLane(take)
@@ -4240,7 +4516,42 @@ function ProcessAction(execute, fromScript)
   r.Undo_EndBlock2(0, 'Transformer: ' .. actionScopeTable[currentActionScope].label, -1)
 end
 
-function SavePreset(pPath, notes, scriptTab)
+function SetPresetNotesBuffer(buf)
+  libPresetNotesBuffer = buf
+end
+
+function GetCurrentPresetState()
+  local fsFlags
+  if findScopeTable[currentFindScope].notation == '$midieditor' then
+    fsFlags = {} -- not pretty
+    if currentFindScopeFlags & FIND_SCOPE_FLAG_SELECTED_ONLY ~= 0 then table.insert(fsFlags, '$selectedonly') end
+    if currentFindScopeFlags & FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW ~= 0 then table.insert(fsFlags, '$activenoterow') end
+  end
+
+  local ppInfo
+  if currentFindPostProcessingInfo.flags ~= FIND_POSTPROCESSING_FLAG_NONE then
+    local ppFlags = currentFindPostProcessingInfo.flags
+    ppInfo = tableCopy(currentFindPostProcessingInfo)
+    ppInfo.flags = {}
+    if ppFlags & FIND_POSTPROCESSING_FLAG_FIRSTEVENT ~= 0 then table.insert(ppInfo.flags, '$firstevent') end
+    if ppFlags & FIND_POSTPROCESSING_FLAG_LASTEVENT ~= 0 then table.insert(ppInfo.flags, '$lastevent') end
+  end
+
+  local presetTab = {
+    findScope = findScopeTable[currentFindScope].notation,
+    findScopeFlags = fsFlags,
+    findMacro = FindRowsToNotation(),
+    findPostProcessing = ppInfo,
+    actionScope = actionScopeTable[currentActionScope].notation,
+    actionMacro = ActionRowsToNotation(),
+    actionScopeFlags = actionScopeFlagsTable[currentActionScopeFlags].notation,
+    notes = libPresetNotesBuffer,
+    scriptIgnoreSelectionInArrangeView = false
+  }
+  return presetTab
+end
+
+function SavePreset(pPath, scriptTab)
   local f = io.open(pPath, 'wb')
   local saved = false
   local wantsScript = scriptTab.script
@@ -4248,23 +4559,8 @@ function SavePreset(pPath, notes, scriptTab)
   local scriptPrefix = scriptTab.scriptPrefix
 
   if f then
-    local fsFlags
-    if findScopeTable[currentFindScope].notation == '$midieditor' then
-       fsFlags = {} -- not pretty
-      if currentFindScopeFlags & FIND_SCOPE_FLAG_SELECTED_ONLY ~= 0 then table.insert(fsFlags, '$selectedonly') end
-      if currentFindScopeFlags & FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW ~= 0 then table.insert(fsFlags, '$activenoterow') end
-    end
-
-    local presetTab = {
-      findScope = findScopeTable[currentFindScope].notation,
-      findScopeFlags = fsFlags,
-      findMacro = FindRowsToNotation(),
-      actionScope = actionScopeTable[currentActionScope].notation,
-      actionMacro = ActionRowsToNotation(),
-      actionScopeFlags = actionScopeFlagsTable[currentActionScopeFlags].notation,
-      notes = notes,
-      scriptIgnoreSelectionInArrangeView = ignoreSelectionInArrangeView
-    }
+    local presetTab = GetCurrentPresetState()
+    presetTab.scriptIgnoreSelectionInArrangeView = ignoreSelectionInArrangeView
     f:write(serialize(presetTab) .. '\n')
     f:close()
     saved = true
@@ -4296,6 +4592,28 @@ function SavePreset(pPath, notes, scriptTab)
   return saved, scriptPath
 end
 
+local undoTable = {}
+local undoPointer = 0
+local undoSuspended = false
+
+function SuspendUndo()
+  undoSuspended = true
+end
+
+function ResumeUndo()
+  undoSuspended = false
+end
+
+function CreateUndoStep(state)
+  if undoSuspended then return end
+  while undoPointer > 1 do
+    table.remove(undoTable, 1)
+    undoPointer = undoPointer - 1
+  end
+  table.insert(undoTable, 1, state and state or GetCurrentPresetState())
+  undoPointer = 1
+end
+
 function LoadPresetFromTable(presetTab)
   currentFindScopeFlags = FIND_SCOPE_FLAG_NONE -- do this first (FindScopeFromNotation() may populate it)
   currentFindScope = FindScopeFromNotation(presetTab.findScope)
@@ -4303,6 +4621,16 @@ function LoadPresetFromTable(presetTab)
   if fsFlags then
     for _, v in ipairs(fsFlags) do
       currentFindScopeFlags = currentFindScopeFlags | FindScopeFlagFromNotation(v)
+    end
+  end
+  if presetTab.findPostProcessing then
+    local ppFlags = presetTab.findPostProcessing.flags
+    currentFindPostProcessingInfo = tableCopy(presetTab.findPostProcessing)
+    currentFindPostProcessingInfo.flags = FIND_POSTPROCESSING_FLAG_NONE
+    if ppFlags then
+      for _, v in ipairs(ppFlags) do
+        currentFindPostProcessingInfo.flags = currentFindPostProcessingInfo.flags | FindPostProcessingFlagFromNotation(v)
+      end
     end
   end
   currentActionScope = ActionScopeFromNotation(presetTab.actionScope)
@@ -4433,6 +4761,18 @@ function HandlePercentString(strVal, row, target, condOp, paramType, editorType,
   return strVal
 end
 
+function Update(action, wantsState)
+  if not action then
+    ProcessFind()
+  else
+    ProcessAction()
+  end
+
+  local nowState = GetCurrentPresetState()
+  CreateUndoStep(nowState)
+  return wantsState and nowState or nil
+end
+
 local lastHasTable = {}
 
 function GetHasTable()
@@ -4488,13 +4828,28 @@ end
 
 TransformerLib.findScopeTable = findScopeTable
 TransformerLib.currentFindScope = function() return currentFindScope end
-TransformerLib.setCurrentFindScope = function(val) currentFindScope = val < 1 and 1 or val > #findScopeTable and #findScopeTable or val end
+TransformerLib.setCurrentFindScope = function(val)
+  currentFindScope = val < 1 and 1 or val > #findScopeTable and #findScopeTable or val
+end
+TransformerLib.getFindScopeFlags = function() return currentFindScopeFlags end
+TransformerLib.setFindScopeFlags = function(flags)
+  currentFindScopeFlags = flags
+end
+TransformerLib.getFindPostProcessingInfo = function() return currentFindPostProcessingInfo end
+TransformerLib.setFindPostProcessingInfo = function(info)
+  currentFindPostProcessingInfo = info -- could add error checking, but nope
+end
+TransformerLib.clearFindPostProcessingInfo = ClearFindPostProcessingInfo
 TransformerLib.actionScopeTable = actionScopeTable
 TransformerLib.currentActionScope = function() return currentActionScope end
-TransformerLib.setCurrentActionScope = function(val) currentActionScope = val < 1 and 1 or val > #actionScopeTable and #actionScopeTable or val end
+TransformerLib.setCurrentActionScope = function(val)
+  currentActionScope = val < 1 and 1 or val > #actionScopeTable and #actionScopeTable or val
+end
 TransformerLib.actionScopeFlagsTable = actionScopeFlagsTable
 TransformerLib.currentActionScopeFlags = function() return currentActionScopeFlags end
-TransformerLib.setCurrentActionScopeFlags = function(val) currentActionScopeFlags = val < 1 and 1 or val > #actionScopeFlagsTable and #actionScopeFlagsTable or val end
+TransformerLib.setCurrentActionScopeFlags = function(val)
+  currentActionScopeFlags = val < 1 and 1 or val > #actionScopeFlagsTable and #actionScopeFlagsTable or val
+end
 
 TransformerLib.ParamInfo = ParamInfo
 
@@ -4514,8 +4869,8 @@ TransformerLib.clearActionRows = function() actionRowTable = {} end
 TransformerLib.findTargetEntries = findTargetEntries
 TransformerLib.actionTargetEntries = actionTargetEntries
 
-TransformerLib.GetSubtypeValueLabel = GetSubtypeValueLabel
-TransformerLib.GetMainValueLabel = GetMainValueLabel
+TransformerLib.getSubtypeValueLabel = GetSubtypeValueLabel
+TransformerLib.getMainValueLabel = GetMainValueLabel
 
 TransformerLib.processFindMacro = ProcessFindMacro
 TransformerLib.processActionMacro = ProcessActionMacro
@@ -4529,7 +4884,7 @@ TransformerLib.loadPreset = LoadPreset
 TransformerLib.timeFormatRebuf = TimeFormatRebuf
 TransformerLib.lengthFormatRebuf = LengthFormatRebuf
 
-TransformerLib.GetParamTypesForRow = GetParamTypesForRow
+TransformerLib.getParamTypesForRow = GetParamTypesForRow
 TransformerLib.findTabsFromTarget = FindTabsFromTarget
 TransformerLib.actionTabsFromTarget = ActionTabsFromTarget
 TransformerLib.findRowToNotation = FindRowToNotation
@@ -4551,6 +4906,19 @@ TransformerLib.getFindScopeFlagLabel = function()
   end
   if currentFindScopeFlags & FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW ~= 0 then
     label = label .. (label ~= '' and ' + ' or '') .. 'NoteRow'
+  end
+  if label == '' then label = 'None' end
+  return label
+end
+
+TransformerLib.getFindPostProcessingLabel = function()
+  local label = ''
+  local flags = currentFindPostProcessingInfo.flags
+  if flags & FIND_POSTPROCESSING_FLAG_FIRSTEVENT ~= 0 then
+    label = label .. (label ~= '' and ' + ' or '') .. 'First'
+  end
+  if flags & FIND_POSTPROCESSING_FLAG_LASTEVENT ~= 0 then
+    label = label .. (label ~= '' and ' + ' or '') .. 'Last'
   end
   if label == '' then label = 'None' end
   return label
@@ -4606,11 +4974,28 @@ local function makeDefaultNewMIDIEvent(row)
   }
 end
 
-TransformerLib.getFindScopeFlags = function() return currentFindScopeFlags end
-TransformerLib.setFindScopeFlags = function(flags) currentFindScopeFlags = flags end
+local function makeDefaultEventSelector(row)
+  row.params[1].menuEntry = 1
+  row.params[2].menuEntry = 4 -- $1/16
+  row.evsel = {
+    chanmsg = 0x00,
+    channel = -1,
+    selected = -1,
+    muted = -1,
+    useval1 = false,
+    msg2 = 60,
+    scale = 100,
+    scaleStr = '100'
+  }
+end
+
 TransformerLib.FIND_SCOPE_FLAG_NONE = FIND_SCOPE_FLAG_NONE
 TransformerLib.FIND_SCOPE_FLAG_SELECTED_ONLY = FIND_SCOPE_FLAG_SELECTED_ONLY
 TransformerLib.FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW = FIND_SCOPE_FLAG_ACTIVE_NOTE_ROW
+
+TransformerLib.FIND_POSTPROCESSING_FLAG_NONE = FIND_POSTPROCESSING_FLAG_NONE
+TransformerLib.FIND_POSTPROCESSING_FLAG_FIRSTEVENT = FIND_POSTPROCESSING_FLAG_FIRSTEVENT
+TransformerLib.FIND_POSTPROCESSING_FLAG_LASTEVENT = FIND_POSTPROCESSING_FLAG_LASTEVENT
 
 TransformerLib.PARAM_TYPE_UNKNOWN = PARAM_TYPE_UNKNOWN
 TransformerLib.PARAM_TYPE_MENU = PARAM_TYPE_MENU
@@ -4623,6 +5008,8 @@ TransformerLib.PARAM_TYPE_MUSICAL = PARAM_TYPE_MUSICAL
 TransformerLib.PARAM_TYPE_EVERYN = PARAM_TYPE_EVERYN
 TransformerLib.PARAM_TYPE_NEWMIDIEVENT = PARAM_TYPE_NEWMIDIEVENT
 TransformerLib.PARAM_TYPE_PARAM3 = PARAM_TYPE_PARAM3
+TransformerLib.PARAM_TYPE_EVENTSELECTOR = PARAM_TYPE_EVENTSELECTOR
+TransformerLib.PARAM_TYPE_HIDDEN = PARAM_TYPE_HIDDEN
 
 TransformerLib.EDITOR_TYPE_PITCHBEND = EDITOR_TYPE_PITCHBEND
 TransformerLib.EDITOR_PITCHBEND_RANGE = { -(1 << 13), (1 << 13) - 1 }
@@ -4660,6 +5047,7 @@ TransformerLib.makeParam3 = function(row)
     te.makeParam3Line(row)
   end
 end
+TransformerLib.makeDefaultEventSelector = makeDefaultEventSelector
 
 TransformerLib.startup = startup
 TransformerLib.mu = mu
@@ -4679,6 +5067,55 @@ TransformerLib.MG_GRID_TRIPLET = MG_GRID_TRIPLET
 TransformerLib.MG_GRID_SWING = MG_GRID_SWING
 TransformerLib.GetMetricGridModifiers = GetMetricGridModifiers
 TransformerLib.SetMetricGridModifiers = SetMetricGridModifiers
+
+TransformerLib.typeEntriesForEventSelector = typeEntriesForEventSelector
+TransformerLib.setPresetNotesBuffer = SetPresetNotesBuffer
+TransformerLib.update = Update
+TransformerLib.loadPresetFromTable = LoadPresetFromTable
+
+TransformerLib.hasUndoSteps = function()
+  local undoStackLen = #undoTable
+  if undoStackLen > 1 and undoPointer < undoStackLen then
+    return true
+  end
+  return false
+end
+
+TransformerLib.hasRedoSteps = function()
+  local undoStackLen = #undoTable
+  if undoStackLen > 1 and undoPointer > 1 then
+    return true
+  end
+  return false
+end
+
+TransformerLib.popUndo = function()
+  local undoStackLen = #undoTable
+  if undoStackLen > 1 and undoPointer < undoStackLen then
+    undoPointer = undoPointer + 1
+    return undoTable[undoPointer]
+  end
+  return nil
+end
+
+TransformerLib.popRedo = function()
+  local undoStackLen = #undoTable
+  if undoStackLen > 1 and undoPointer > 1 then
+    undoPointer = undoPointer - 1
+    return undoTable[undoPointer]
+  end
+  return nil
+end
+
+TransformerLib.createUndoStep = CreateUndoStep
+TransformerLib.clearUndo = function()
+  undoTable = {}
+  undoPointer = 0
+  CreateUndoStep()
+end
+
+TransformerLib.suspendUndo = SuspendUndo
+TransformerLib.resumeUndo = ResumeUndo
 
 return TransformerLib
 

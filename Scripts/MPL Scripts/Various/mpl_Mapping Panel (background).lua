@@ -1,15 +1,16 @@
 -- @description MappingPanel
--- @version 4.04
+-- @version 4.08
 -- @author MPL
 -- @website https://forum.cockos.com/showthread.php?t=188335
 -- @about Script for link parameters across tracks
 -- @changelog
---    # еуые зфеср ащк вщслук
+--    # fix initial baseline for denormalized JSFX faders
+--    # exit on losing context state
 
 
 
 
-  local vrs = 4.04
+  local vrs = 4.08
 
   --[[ gmem map: 
   Master
@@ -33,7 +34,7 @@
      
      if not reaper.ImGui_GetBuiltinPath then return reaper.MB('This script require ReaImGui extension','',0) end
      package.path =   reaper.ImGui_GetBuiltinPath() .. '/?.lua'
-     ImGui = require 'imgui' '0.9.2'
+     ImGui = require 'imgui' '0.9.3.2'
      
      
      
@@ -43,7 +44,6 @@
            viewport_posY = 10,
            viewport_posW = 640,
            viewport_posH = 400, 
-           viewport_dock = 0, 
            
            CONF_setslaveparamtomaster = 1,
            CONF_randstrength = 1,
@@ -126,6 +126,7 @@
                   (math.floor(t.hexarray_scale_min*255)<<16) + 
                   (math.floor(t.hexarray_scale_max*255)<<24)
         TrackFX_SetParam( tr, t.slave_jsfx_ID, t.slave_jsfx_paramID+16*3, out_hex2) 
+        --TrackFX_SetNamedConfigParm( tr, t.destfx_FXID, 'param.'..t.destfx_paramID..'.mod.baseline',0 )
     end
     
     if EXT.CONF_mode == 1 then
@@ -370,9 +371,13 @@
       
     -- link to that slider
       local prelinkedparamvalue = TrackFX_GetParamNormalized( tr, fxnumber, paramnumber)
+      local retval, minval, maxval = TrackFX_GetParam( tr, fxnumber, paramnumber)
       TrackFX_SetNamedConfigParm( tr, fxnumber, 'param.'..paramnumber..'.plink.active', 1 )
       TrackFX_SetNamedConfigParm( tr, fxnumber, 'param.'..paramnumber..'.plink.effect', slavefx_id )
       TrackFX_SetNamedConfigParm( tr, fxnumber, 'param.'..paramnumber..'.plink.param', freeslider )
+      
+      -- set base
+      TrackFX_SetNamedConfigParm( tr, fxnumber, 'param.'..paramnumber..'.mod.baseline', minval )
      
     -- link slider to selected knob
       
@@ -857,7 +862,7 @@
       --window_flags = window_flags | ImGui.WindowFlags_NoNav()
       --window_flags = window_flags | ImGui.WindowFlags_NoBackground()
       --window_flags = window_flags | ImGui.WindowFlags_NoDocking
-      --window_flags = window_flags | ImGui.WindowFlags_TopMost
+      window_flags = window_flags | ImGui.WindowFlags_TopMost
       window_flags = window_flags | ImGui.WindowFlags_NoScrollWithMouse
       --window_flags = window_flags | ImGui.WindowFlags_NoSavedSettings()
       --window_flags = window_flags | ImGui.WindowFlags_UnsavedDocument()
@@ -919,10 +924,10 @@
       
     -- We specify a default position/size in case there's no data in the .ini file.
       local main_viewport = ImGui.GetMainViewport(ctx)
-      local x, y, w, h, dock =EXT.viewport_posX,EXT.viewport_posY, EXT.viewport_posW,EXT.viewport_posH,EXT.viewport_dock
+      local x, y, w, h =EXT.viewport_posX,EXT.viewport_posY, EXT.viewport_posW,EXT.viewport_posH
       ImGui.SetNextWindowPos(ctx, x, y, ImGui.Cond_Appearing )
-      ImGui.SetNextWindowSize(ctx, w, h, ImGui.Cond_Appearing) 
-      ImGui.SetNextWindowDockID( ctx, EXT.viewport_dock, ImGui.Cond_Appearing )
+      ImGui.SetNextWindowSize(ctx, w, h, ImGui.Cond_Appearing)
+      
       
     -- init UI 
       ImGui.PushFont(ctx, DATA.font1) 
@@ -931,8 +936,8 @@
         local Viewport = ImGui.GetWindowViewport(ctx)
         DATA.display_x, DATA.display_y = ImGui.Viewport_GetPos(Viewport) 
         DATA.display_w, DATA.display_h = ImGui.Viewport_GetSize(Viewport) 
-        DATA.display_dock = ImGui.GetWindowDockID( ctx )
         DATA.display_w_region, DATA.display_h_region = ImGui.Viewport_GetSize(Viewport) 
+        
         
       -- calc stuff for childs
         UI.calc_xoffset,UI.calc_yoffset = ImGui.GetStyleVar(ctx, ImGui.StyleVar_WindowPadding)
@@ -1067,6 +1072,9 @@
     DATA:CollectData_eachloop()
     DATA.upd = false
     
+    -- refresh at losing context
+    if not reaper.ImGui_ValidatePtr(ctx,'ImGui_Context*') then return end --ctx = ImGui.CreateContext(DATA.UI_name)  end
+    
     -- draw UI
     UI.open = UI.MAIN_styledefinition(true)  
     UI.MAIN_shortcuts()
@@ -1133,14 +1141,10 @@
     if not DATA.display_w_last then DATA.display_w_last = DATA.display_w end
     if not DATA.display_h_last then DATA.display_h_last = DATA.display_h end
     
-    if not DATA.display_dock_last then DATA.display_dock_last = DATA.display_dock  end
-    
-    
     if  DATA.display_x_last~= DATA.display_x 
       or DATA.display_y_last~= DATA.display_y 
       or DATA.display_w_last~= DATA.display_w 
       or DATA.display_h_last~= DATA.display_h 
-      or DATA.display_dock_last~= DATA.display_dock 
       then 
       DATA.display_schedule_save = os.clock() 
     end
@@ -1149,7 +1153,6 @@
       EXT.viewport_posY = DATA.display_y
       EXT.viewport_posW = DATA.display_w
       EXT.viewport_posH = DATA.display_h
-      EXT.viewport_dock = DATA.display_dock
       EXT:save() 
       DATA.display_schedule_save = nil 
     end
@@ -1157,7 +1160,6 @@
     DATA.display_y_last = DATA.display_y
     DATA.display_w_last = DATA.display_w
     DATA.display_h_last = DATA.display_h
-    DATA.display_dock_last = DATA.display_dock
   end
   -------------------------------------------------------------------------------- 
   function UI.draw_knob(sliderID, sliderW,  sliderH, paramval, app_func_onmouseclick, app_func_onmousedrag, app_func_header, iscollapsed, selected, name, col) 

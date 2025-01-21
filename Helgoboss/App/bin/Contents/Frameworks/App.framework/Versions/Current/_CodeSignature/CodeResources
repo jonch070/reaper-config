@@ -10,11 +10,11 @@
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.bin</key>
 		<data>
-		GZcn8u1AGdvVXu1CNTnykwqxki8=
+		QF/zNsMkp77hfntVrGqY8EeGTmQ=
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<data>
-		l8qdzX8zhx9tOCWGGdg94wFC7Gw=
+		uVPohxR8PouVfo8ydjksMbFYK94=
 		</data>
 		<key>Resources/flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,11 @@
 		</data>
 		<key>Resources/flutter_assets/NOTICES.Z</key>
 		<data>
-		vxsz/RtgVmVfKnpc0v8wmLFX/h8=
+		+AW6JQhjbYor+J1KQswvUpk4zeA=
+		</data>
+		<key>Resources/flutter_assets/assets/demo/Chill%20Loop%20Guitar.caf.reapeaks</key>
+		<data>
+		2qmwSrXMq1K6NnXVT7w653cjM88=
 		</data>
 		<key>Resources/flutter_assets/assets/fonts/JetBrainsMono-Regular.ttf</key>
 		<data>
@@ -76,10 +80,6 @@
 		<data>
 		b6BErIpJBC8vTuhwqEzpDZz9VpM=
 		</data>
-		<key>Resources/flutter_assets/pubspec.yaml</key>
-		<data>
-		N/b6eD+nKCtz1Ml71CoyqSk0pdc=
-		</data>
 		<key>Resources/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
 		VoVnsu58hN7wrwazX0nyAopiB0Q=
@@ -98,14 +98,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gtmsW3ZozF+e6Pe5FAil4EVAXf3fx/WFQO9EswkcOu8=
+			W0eFJmEV6J7cdBlhdGrCmxdAS6cTGrYTPQcPGsIUFQw=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			aY6028VsJkgIRMbdrAZtZvVpI/2/aAD79ATKQ19iPv0=
+			uxqINfYGXch7f9Kc7Rw0DvL3CP1Y7NE/O3Spb7/eqSE=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/FontManifest.json</key>
@@ -119,7 +119,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sg69tdwZxenGuz2LfmKYL4b8r14Zqt3dSz+TDSqi9kI=
+			ZJ57ihEdrQ2iCC36Bf7YSkN8Ufb6hcX0zM9Nx3AjY3M=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/assets/demo/Chill%20Loop%20Guitar.caf.reapeaks</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5yvNwyRdrKCFBfGk7DOkzXh/ZrLGoeW4t9HKoAv8+6o=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/assets/fonts/JetBrainsMono-Regular.ttf</key>
@@ -211,13 +218,6 @@
 			<key>hash2</key>
 			<data>
 			XKrqLGzQPM1N5+D0F+E7/tAADkKGRD8wFELTiHiJITE=
-			</data>
-		</dict>
-		<key>Resources/flutter_assets/pubspec.yaml</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			XxIbTowNy4ylqm6/FCRePuqYMA/DRok8/9pweEK4j3E=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/shaders/ink_sparkle.frag</key>

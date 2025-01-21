@@ -1,12 +1,13 @@
 --[[
   @author Ilias-Timon Poulakis (FeedTheCat)
   @license MIT
-  @version 2.2.1
+  @version 2.3.0
   @provides [main=main,midi_editor] .
   @about Adds a little box to the MIDI editor that displays chord information
   @changelog
-    - Display inversions on chord degrees
-    - Fix option to display chord inversions
+    - Show selected chords only when notes overlap
+    - Show inversions by default
+    - Fix certain chords being incorrectly displayed as octaves
 ]]
 local box_x_offs = 0
 local box_y_offs = 0
@@ -265,7 +266,8 @@ local note_names_solfege_flat = {'Do ', 'Reb ', 'Re ', 'Mib ', 'Mi ', 'Fa ',
 local use_input = reaper.GetExtState(extname, 'input') ~= '0'
 local degree_mode = tonumber(reaper.GetExtState(extname, 'degree_only')) or 3
 
-local use_inversions = reaper.GetExtState(extname, 'inversions') == '1'
+local sel_mode = tonumber(reaper.GetExtState(extname, 'sel_mode')) or 2
+local use_inversions = reaper.GetExtState(extname, 'inversions') ~= '0'
 local use_solfege = reaper.GetExtState(extname, 'solfege') == '1'
 local use_sharps = reaper.GetExtState(extname, 'sharps') == '1'
 local use_sharps_autodetect = reaper.GetExtState(extname, 'sharps_auto') ~= '0'
@@ -339,6 +341,12 @@ function SetSharpMode(is_sharp)
     end
 end
 
+function ToggleSelectionMode()
+    sel_mode = sel_mode == 2 and 1 or 2
+    reaper.SetExtState(extname, 'sel_mode', sel_mode, 1)
+    prev_hash = nil
+end
+
 function ToggleSharpsAutoDetect()
     use_sharps_autodetect = not use_sharps_autodetect
     local state = use_sharps_autodetect and '1' or '0'
@@ -384,7 +392,12 @@ function IdentifyChord(notes)
         intervals = {}
         for _, note in ipairs(notes) do
             local diff = note.pitch - root
-            if diff >= 12 then intervals[diff % 12 + 13] = 1 end
+            if diff >= 12 then
+                intervals[diff % 12 + 13] = 1
+            elseif diff > 0 then
+                intervals = {}
+                break
+            end
         end
         -- Create compound chord key string
         local comp_key = '1'
@@ -570,7 +583,25 @@ function GetChords(take)
 
     local sel_chord
     if #sel_notes >= 2 then
-        sel_chord = BuildChord(sel_notes) or {name = 'none'}
+        if sel_mode == 1 then
+            sel_chord = BuildChord(sel_notes) or {name = 'none'}
+        end
+        if sel_mode == 2 then
+            -- Check for gaps in selected notes
+            local has_gaps = false
+            local max_eppq = sel_notes[1].eppq
+            for i = 2, #sel_notes do
+                local note = sel_notes[i]
+                if note.sppq > max_eppq then
+                    has_gaps = true
+                    break
+                end
+                if note.eppq > max_eppq then max_eppq = note.eppq end
+            end
+            if not has_gaps then
+                sel_chord = BuildChord(sel_notes) or {name = 'none'}
+            end
+        end
     end
     if #notes >= 2 then
         local chord = BuildChord(notes)
@@ -1484,10 +1515,6 @@ function ShowChordBoxMenu()
         {
             title = 'Export chords as',
             {
-                title = 'Chord track',
-                OnReturn = CreateChordTrack,
-            },
-            {
                 title = 'Project regions',
                 OnReturn = CreateChordProjectRegions,
             },
@@ -1506,6 +1533,10 @@ function ShowChordBoxMenu()
             {
                 title = 'Notation events',
                 OnReturn = CreateChordNotationEvents,
+            },
+            {
+                title = 'Chord track',
+                OnReturn = CreateChordTrack,
             },
         },
         {
@@ -1574,6 +1605,11 @@ function ShowChordBoxMenu()
                     OnReturn = ToggleReuseChordTrack,
                     is_checked = reuse_chord_track,
                 },
+            },
+            {
+                title = 'Show selected chord only when notes overlap',
+                OnReturn = ToggleSelectionMode,
+                is_checked = sel_mode == 2,
             },
             {
                 title = 'Analyze incoming MIDI (live input)',

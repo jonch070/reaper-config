@@ -1,11 +1,11 @@
 -- @description FX Devices
 -- @author Bryan Chi
--- @version 1.0beta16.5.7
+-- @version 1.0beta16.9
 -- @changelog
---  - Added option to enable Modulation Control Popup window on mouse hover. Available in Settings - General behavior.
---  - Layout Editor : Add tooltip helper when user hover on Color 2.
---  - Layout Editor : Fix Selecting Selection crashes.
---  - Minor fix to ReaComp layout
+--  - Background Editor : the repeat feature is now available for drawing shapes with specified gaps like in the attached drawings.
+--  - Background Editor : Fixed behavior when drawing lines.
+--  - Background Editor : improved layout in the properties window.
+--  - Improved layout for Snap Heap.
 -- @provides
 --   [effect] FXD JSFXs/*.jsfx
 --   [effect] FXD JSFXs/*.jsfx-inc
@@ -63,6 +63,7 @@ GetLTParam()
 local CommanID = r.NamedCommandLookup('_RSfc35279165adeb0f3708a5921116cc0fee7a78f6')
 
 ctx = im.CreateContext('FX Devices', im.ConfigFlags_DockingEnable)
+
 Retrieve_All_Info_Needed_Before_Main_Loop()
 r.SetToggleCommandState(0, CommanID, 1)
 
@@ -70,6 +71,7 @@ r.SetToggleCommandState(0, CommanID, 1)
 
 
 function loop()
+    If_New_Font()
     local validctx = r.ImGui_ValidatePtr(ctx,'ImGui_Context*')
     
     if ChangeFont then
@@ -83,13 +85,7 @@ function loop()
             ChangeFont_Var = nil
         end
     end
-    --[[ if ChangeFontSize_TB then 
-        for i, v in ipairs(ChangeFontSize_TB) do 
-            v.FontSize = ChangeFontSize_Size
-        end 
-        ChangeFontSize_TB = nil
-        ChangeFontSize_Size = nil 
-    end  ]]    
+
     GetLT_FX_Num()
     GetLTParam()
 
@@ -124,11 +120,10 @@ function loop()
     GetAllMods( )
 
 
-    if visible and LT_Track then
+    if visible and LT_Track and OpenMainWIN then
         
     
         r.gmem_write(4, 0) -- set jsfx mode to none , telling it user is not making any changes, this prevents bipolar modulation from going back to unipolar by setting modamt from 100~101 back to 0~1
-
         Execute_Keyboard_Shortcuts(ctx,KB_Shortcut,Command_ID, Mods)
         HelperMsg= {}    HelperMsg.Others = {}
         GetAllInfoNeededEachLoop()
@@ -408,7 +403,7 @@ function loop()
 
             local ViewPort_DL = im.GetWindowDrawList(ctx)
             im.DrawList_AddLine(ViewPort_DL, 0, 0, 0, 0, Clr.Dvdr.outline) -- Needed for drawlist to be active
-
+            When_User_Switch_Track_Beginning_Of_Loop()
             for FX_Idx = 0, Sel_Track_FX_Count - 1, 1 do
                 retval, FX_Name = r.TrackFX_GetFXName(LT_Track, FX_Idx) --i used to be i-1
                 FXGUID[FX_Idx] = r.TrackFX_GetFXGUID(LT_Track, FX_Idx)
@@ -2594,6 +2589,7 @@ function loop()
 
 
     else --on script close
+        im.End(ctx)
         NumOfTotalTracks = r.GetNumTracks()
         for T = 0, NumOfTotalTracks - 1, 1 do
             local track = r.GetTrack(0, T)
@@ -2606,7 +2602,6 @@ function loop()
             Delete_All_FXD_AnalyzerFX(track)
         end
         r.SetToggleCommandState(0, CommanID, 0)
-
     end
     Track_Fetch_At_End = r.GetLastTouchedTrack()
 

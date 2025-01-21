@@ -1,0 +1,545 @@
+return {
+-- Table: {1}
+{
+   ["settings"]={2},
+   ["stems"]={3},
+   ["version"]="1.8.3",
+},
+-- Table: {2}
+{
+   ["overwrite_without_asking"]=true,
+   ["render_setting_groups"]={4},
+   ["renderaction"]=3,
+   ["show_hidden_tracks"]=false,
+   ["wait_time"]=5,
+   ["reflect_on_add"]=0,
+   ["syncmode"]=0,
+   ["play_sound_when_done"]=false,
+},
+-- Table: {3}
+{
+   ["Dry"]={5},
+   ["Woodwinds Dry"]={6},
+   ["Strings Dry"]={7},
+   ["Brass Wet"]={8},
+   ["DX Reference"]={9},
+   ["Strings Wet"]={10},
+   ["Rhythm Section Dry"]={11},
+   ["Video"]={12},
+   ["2MIX"]={13},
+   ["Unpitched Percussion Dry"]={14},
+   ["Pitched Percussion Wet"]={15},
+   ["Pitched Percussion Dry"]={16},
+   ["Choir Dry"]={17},
+   ["Unpitched Percussion Wet"]={18},
+   ["Synths Wet"]={19},
+   ["Rhythm Section Wet"]={20},
+   ["Wet"]={21},
+   ["Effects"]={22},
+   ["Brass Dry"]={23},
+   ["Click"]={24},
+   ["Temp Reference"]={25},
+   ["Woodwinds Wet"]={26},
+   ["Synths Dry"]={27},
+   ["Choir Wet"]={28},
+},
+-- Table: {4}
+{
+   {29},
+   {30},
+   {31},
+   {32},
+   {33},
+   {34},
+   {35},
+   {36},
+   {37},
+},
+-- Table: {5}
+{
+   ["sync"]=-1,
+   ["order"]=23,
+   ["render_setting_group"]=4,
+},
+-- Table: {6}
+{
+   ["sync"]=-1,
+   ["order"]=2,
+   ["render_setting_group"]=2,
+},
+-- Table: {7}
+{
+   ["sync"]=-1,
+   ["order"]=7,
+   ["render_setting_group"]=2,
+},
+-- Table: {8}
+{
+   ["sync"]=-1,
+   ["order"]=12,
+   ["render_setting_group"]=3,
+},
+-- Table: {9}
+{
+   ["sync"]=-1,
+   ["order"]=20,
+   ["render_setting_group"]=1,
+},
+-- Table: {10}
+{
+   ["sync"]=-1,
+   ["order"]=16,
+   ["render_setting_group"]=3,
+},
+-- Table: {11}
+{
+   ["sync"]=-1,
+   ["order"]=8,
+   ["render_setting_group"]=2,
+},
+-- Table: {12}
+{
+   ["sync"]=-1,
+   ["order"]=19,
+   ["render_setting_group"]=8,
+},
+-- Table: {13}
+{
+   ["sync"]=-1,
+   ["order"]=1,
+   ["render_setting_group"]=1,
+},
+-- Table: {14}
+{
+   ["sync"]=-1,
+   ["order"]=4,
+   ["render_setting_group"]=2,
+},
+-- Table: {15}
+{
+   ["sync"]=-1,
+   ["order"]=14,
+   ["render_setting_group"]=3,
+},
+-- Table: {16}
+{
+   ["sync"]=-1,
+   ["order"]=5,
+   ["render_setting_group"]=2,
+},
+-- Table: {17}
+{
+   ["sync"]=-1,
+   ["order"]=6,
+   ["render_setting_group"]=2,
+},
+-- Table: {18}
+{
+   ["sync"]=-1,
+   ["order"]=13,
+   ["render_setting_group"]=3,
+},
+-- Table: {19}
+{
+   ["sync"]=-1,
+   ["order"]=18,
+   ["render_setting_group"]=3,
+},
+-- Table: {20}
+{
+   ["sync"]=-1,
+   ["order"]=17,
+   ["render_setting_group"]=3,
+},
+-- Table: {21}
+{
+   ["sync"]=-1,
+   ["order"]=24,
+   ["render_setting_group"]=5,
+},
+-- Table: {22}
+{
+   ["sync"]=-1,
+   ["order"]=10,
+   ["render_setting_group"]=2,
+},
+-- Table: {23}
+{
+   ["sync"]=-1,
+   ["order"]=3,
+   ["render_setting_group"]=2,
+},
+-- Table: {24}
+{
+   ["sync"]=-1,
+   ["order"]=21,
+   ["render_setting_group"]=1,
+},
+-- Table: {25}
+{
+   ["sync"]=-1,
+   ["order"]=22,
+   ["render_setting_group"]=1,
+},
+-- Table: {26}
+{
+   ["sync"]=-1,
+   ["order"]=11,
+   ["render_setting_group"]=3,
+},
+-- Table: {27}
+{
+   ["sync"]=-1,
+   ["order"]=9,
+   ["render_setting_group"]=2,
+},
+-- Table: {28}
+{
+   ["sync"]=-1,
+   ["order"]=15,
+   ["render_setting_group"]=3,
+},
+-- Table: {29}
+{
+   ["run_actions_after"]=false,
+   ["description"]="MIX",
+   ["folder"]="",
+   ["selected_markers"]={38},
+   ["render_preset"]="SM Mix 96",
+   ["run_actions"]=false,
+   ["actions_to_run"]={39},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={40},
+   ["filename"]="",
+   ["override_filename"]=true,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={41},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+},
+-- Table: {30}
+{
+   ["run_actions_after"]=false,
+   ["description"]="skinny stems dry",
+   ["folder"]="",
+   ["selected_markers"]={42},
+   ["render_preset"]="SM Skinny Stems Dry 96",
+   ["run_actions"]=false,
+   ["actions_to_run"]={43},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={44},
+   ["filename"]="$project/skinny stems/skinny stems dry/$project - $starttc - Skinny - $stem",
+   ["override_filename"]=true,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={45},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+},
+-- Table: {31}
+{
+   ["run_actions_after"]=false,
+   ["description"]="skinny stems wet",
+   ["folder"]="",
+   ["selected_markers"]={46},
+   ["render_preset"]="SM Skinny Stems Wet 96",
+   ["run_actions"]=false,
+   ["actions_to_run"]={47},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={48},
+   ["filename"]="$project/skinny stems/skinny stems wet/$project - $starttc - Skinny - $stem",
+   ["override_filename"]=true,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={49},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+},
+-- Table: {32}
+{
+   ["run_actions_after"]=false,
+   ["description"]="selected stems dry",
+   ["folder"]="$project/wide stems/wide stems dry",
+   ["selected_markers"]={50},
+   ["render_preset"]="SM wide stems selected dry",
+   ["run_actions"]=false,
+   ["actions_to_run"]={51},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={52},
+   ["filename"]="$project - $starttc - Wide - $track $stem",
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={53},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+},
+-- Table: {33}
+{
+   ["run_actions_after"]=false,
+   ["description"]="selected stems wet",
+   ["folder"]="$project/wide stems/wide stems wet",
+   ["selected_markers"]={54},
+   ["render_preset"]="SM wide stems selected wet",
+   ["run_actions"]=false,
+   ["actions_to_run"]={55},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={56},
+   ["filename"]="$project - $starttc - Wide - $track $stem",
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={57},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+},
+-- Table: {34}
+{
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["put_in_folder"]=false,
+   ["selected_markers"]={58},
+   ["run_actions"]=false,
+   ["actions_to_run"]={59},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={60},
+   ["filename"]="",
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={61},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["folder"]="",
+   ["select_regions"]=false,
+   ["make_timeSel"]=false,
+},
+-- Table: {35}
+{
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["put_in_folder"]=false,
+   ["selected_markers"]={62},
+   ["run_actions"]=false,
+   ["actions_to_run"]={63},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={64},
+   ["filename"]="",
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={65},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["folder"]="",
+   ["select_regions"]=false,
+   ["make_timeSel"]=false,
+},
+-- Table: {36}
+{
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["folder"]="",
+   ["selected_markers"]={66},
+   ["render_preset"]="SM Video Proxy",
+   ["run_actions"]=false,
+   ["actions_to_run"]={67},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={68},
+   ["filename"]="",
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={69},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["select_regions"]=false,
+   ["make_timeSel"]=false,
+},
+-- Table: {37}
+{
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["put_in_folder"]=false,
+   ["selected_markers"]={70},
+   ["run_actions"]=false,
+   ["actions_to_run"]={71},
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["selected_regions"]={72},
+   ["filename"]="",
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["actions_to_run_after"]={73},
+   ["timeSelEnd"]=0,
+   ["timeSelStart"]=0,
+   ["folder"]="",
+   ["select_regions"]=false,
+   ["make_timeSel"]=false,
+},
+-- Table: {38}
+{
+},
+-- Table: {39}
+{
+},
+-- Table: {40}
+{
+   {74},
+},
+-- Table: {41}
+{
+},
+-- Table: {42}
+{
+},
+-- Table: {43}
+{
+},
+-- Table: {44}
+{
+   {75},
+},
+-- Table: {45}
+{
+},
+-- Table: {46}
+{
+},
+-- Table: {47}
+{
+},
+-- Table: {48}
+{
+   {76},
+},
+-- Table: {49}
+{
+},
+-- Table: {50}
+{
+},
+-- Table: {51}
+{
+},
+-- Table: {52}
+{
+   {77},
+},
+-- Table: {53}
+{
+},
+-- Table: {54}
+{
+},
+-- Table: {55}
+{
+},
+-- Table: {56}
+{
+   {78},
+},
+-- Table: {57}
+{
+},
+-- Table: {58}
+{
+},
+-- Table: {59}
+{
+},
+-- Table: {60}
+{
+},
+-- Table: {61}
+{
+},
+-- Table: {62}
+{
+},
+-- Table: {63}
+{
+},
+-- Table: {64}
+{
+},
+-- Table: {65}
+{
+},
+-- Table: {66}
+{
+},
+-- Table: {67}
+{
+},
+-- Table: {68}
+{
+},
+-- Table: {69}
+{
+},
+-- Table: {70}
+{
+},
+-- Table: {71}
+{
+},
+-- Table: {72}
+{
+},
+-- Table: {73}
+{
+},
+-- Table: {74}
+{
+   ["id"]="R24",
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["name"]="1m24 - All the Resting",
+},
+-- Table: {75}
+{
+   ["is_rgn"]=true,
+   ["id"]="R24",
+   ["selected"]=true,
+   ["name"]="1m24 - All the Resting",
+},
+-- Table: {76}
+{
+   ["is_rgn"]=true,
+   ["id"]="R24",
+   ["selected"]=true,
+   ["name"]="1m24 - All the Resting",
+},
+-- Table: {77}
+{
+   ["id"]="R1",
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["name"]="",
+},
+-- Table: {78}
+{
+   ["id"]="R1",
+   ["is_rgn"]=true,
+   ["selected"]=true,
+   ["name"]="",
+},
+}
