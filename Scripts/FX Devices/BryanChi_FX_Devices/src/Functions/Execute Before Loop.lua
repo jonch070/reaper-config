@@ -345,7 +345,7 @@ function Colors()
     Btns_DefaultColor = 0x333333ff
     Btns_ClickedColor = 0x358f8fff
     BGColor_FXLayeringWindow = 0x262626ff
-
+    --[[ 
     Macro1Color = 0xff2121ff
     Macro2Color = 0xff5521ff
     Macro3Color = 0xff8921ff
@@ -354,7 +354,7 @@ function Colors()
     Macro6Color = 0xb9ff21ff
     Macro7Color = 0x6fff21ff
     Macro8Color = 0x21ff6bff
-    MacroClrs = { 0xff2121ff, 0xff5521ff, 0xff8921ff, 0xffd321ff,0xf4ff21ff,0xb9ff21ff,0x6fff21ff,0x21ff6bff}
+    MacroClrs = { 0xff2121ff, 0xff5521ff, 0xff8921ff, 0xffd321ff,0xf4ff21ff,0xb9ff21ff,0x6fff21ff,0x21ff6bff} ]]
 
     EightColors = {
         LowMidSat = {},
@@ -499,7 +499,8 @@ function Retrieve_All_Saved_Data_Of_Project()
             m.Smooth = RC('Macro ' .. i .. ' Follower Speed')
             m.Gain = RC('Macro ' .. i .. ' Follower Gain')
 
-            m.LFO_NodeCt = RC('Mod ' .. i .. 'Total Number of Nodes')
+            --m.LFO_NodeCt = RC('Mod ' .. i .. 'Total Number of Nodes')
+            m.LFO_NodeCt = RC('LFO' .. i .. 'Curve number of points')
             m.LFO_spd = RC('Mod ' .. i .. 'LFO Speed')
             m.LFO_leng = RC('Mod ' .. i .. 'LFO Length')
             m.LFO_Legato = RC('Mod ' .. i .. 'LFO_Legato')
@@ -527,7 +528,7 @@ function Retrieve_All_Saved_Data_Of_Project()
 
 
             for N = 1, (m.LFO_NodeCt or 0), 1 do
-                m.Node = m.Node or {}
+                --[[ m.Node = m.Node or {}
                 m.Node[N] = m.Node[N] or {}
                 m.Node[N].x = RC('Mod ' .. i .. 'Node ' .. N .. ' X')
 
@@ -536,7 +537,12 @@ function Retrieve_All_Saved_Data_Of_Project()
                 m.Node[N].ctrlX   = RC('Mod ' .. i .. 'Node' .. N .. 'Ctrl X')
 
                 m.Node[N].ctrlY   = RC('Mod ' .. i .. 'Node' .. N .. 'Ctrl Y')
-                m.NodeNeedConvert = true
+                m.NodeNeedConvert = true ]]
+                m.Node = m.Node or {}
+                m.Node[N] = m.Node[N] or {}
+                m.Node[N][1] = RC('LFO' .. i ..' curve pt'..N..'x')
+                m.Node[N][2] = RC('LFO' .. i ..' curve pt'..N..'y')
+                m.Node[N][3] = RC('LFO'..i..' point '..N.. ' Curve')
             end
             if RC('Mod ' .. i .. 'LFO_Rel_Node') then
                 local ID = RC('Mod ' .. i .. 'LFO_Rel_Node')
@@ -677,8 +683,7 @@ function Retrieve_All_Saved_Data_Of_Project()
                 --FX.InLyr[FxGUID] = StringToBool[FX.InLyr[FxGUID]]
                 _, FX.LyrNum[FxGUID]         = r.GetProjExtState(0, 'FX Devices', 'FXLayer ' .. FxGUID .. 'LayerNum')
                 _, FX[FxGUID].inWhichLyr     = r.GetProjExtState(0, 'FX Devices', 'FXLayer - ' .. FxGUID .. 'is in Layer ID')
-                _, FX[FxGUID].ContainerTitle = r.GetProjExtState(0, 'FX Devices - ',
-                    'FX' .. FxGUID .. 'FX Layer Container Title ')
+                _, FX[FxGUID].ContainerTitle = r.GetProjExtState(0, 'FX Devices - ', 'FX' .. FxGUID .. 'FX Layer Container Title ')
                 if FX[FxGUID].ContainerTitle == '' then FX[FxGUID].ContainerTitle = nil end
 
                 FX[FxGUID].inWhichLyr = tonumber(FX[FxGUID].inWhichLyr)

@@ -29,8 +29,13 @@ function Clouds.apply.GenerateClouds(proj, is_selection, is_delete)
                         table.remove(t.tracks,k)
                     end
                 end
+                -- Check if it has Clouds FX
+                Clouds.Item.EnsureFX(item)
     
                 t.cloud = item
+
+                Clouds.Item.UpdateVersion(t)
+
                 clouds[#clouds+1] = t
             end
         end
@@ -100,14 +105,12 @@ function Clouds.apply.GenerateClouds(proj, is_selection, is_delete)
                 -- body
             end
         end
-        
-
 
         -- if delete then check items at cloud items positions and delete
         if is_delete then
             local dt = {}
             if Settings.is_del_area then
-                dt = DL.item.GetItemsInRange(proj, cloud.start, cloud.fim, false, false) 
+                dt = DL.item.GetItemsInRange(proj, cloud.start, cloud.fim, false, false, true) 
             else
                 for item in DL.enum.MediaItem(proj) do
                     dt[#dt+1] = item
@@ -120,6 +123,20 @@ function Clouds.apply.GenerateClouds(proj, is_selection, is_delete)
                 end
             end
         end
+
+        -- Set general Random Seed 
+        local seed = ct.seed.seed ~= 0 and math.randomseed(ct.seed.seed,0) or math.randomseed(math.random(1,100000),0)
+        table.insert(ct.seed.history, seed)
+        if #ct.seed.history == SEEDLIMIT then
+            table.remove(ct.seed.history, 1)
+        end
+        Clouds.Item.SaveSettings(proj, ct.cloud, ct)
+        if ct.cloud == CloudTable.cloud then -- Update GUI Cloud Table
+            CloudTable.seed = ct.seed
+        end
+
+        -- Creates the reroll table to store information about the randomness.
+        local reroll = {}
 
         -- calculate the position of each item using density values. output a table with the position for each new item t = {i = position}
         local positions = {} -- [1] = 0
@@ -376,14 +393,11 @@ function Clouds.apply.GenerateClouds(proj, is_selection, is_delete)
                         if ct.randomization.vol.envelope and envs.randomization.vol then
                             local retval, env_val = reaper.Envelope_Evaluate(envs.randomization.vol, pos * cloud.rate, 0, 0) 
                             min, max = min * env_val, max * env_val 
-                        end    
+                        end  
                         min, max = min + CONSTRAINS.db_minmax, max + CONSTRAINS.db_minmax
                         local new_vol = DL.num.RandomFloatExp(min, max, 10)
                         new_vol = new_vol - CONSTRAINS.db_minmax
                         new_values.vol = (new_values.vol or 0) + new_vol
-                        --local cur = DL.num.LinearTodB(reaper.GetMediaItemInfo_Value(new_item.item, 'D_VOL')) --TODO CHANGE TO GET ONLY ONCE
-                        --local result_l = DL.num.dBToLinear(new_vol + cur)
-                        --reaper.SetMediaItemInfo_Value(new_item.item, 'D_VOL', result_l)
                     end
                 end
 

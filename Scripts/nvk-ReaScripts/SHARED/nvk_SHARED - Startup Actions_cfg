@@ -1,0 +1,38 @@
+config = {
+	always_on_top = false,
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	default_actions = {
+		_RS63d0ae0358ab71583bb03746ef94907166200505 = false,
+		_RSdb3313975d3fbc015c0333c914ec75f2a1b69c2b = false,
+		_RSe085574d2b4a331306da5e236b361d886ae0ef78 = false
+	},
+	font = "Verdana",
+	font_size = 14,
+	keys = {
+		
+	},
+	new_instance_close = false,
+	scale = 1,
+	style_vars = {
+		
+	},
+	user_actions = {
+		"_RS33c36901779e76d0ef0542466abe875e36c6b57d",
+		"_RSc18de16721a3c34e4867889bd9bf02450163b2f8",
+		_RS33c36901779e76d0ef0542466abe875e36c6b57d = false,
+		_RSc18de16721a3c34e4867889bd9bf02450163b2f8 = false
+	},
+	version = "3.2.1"
+}
+tabs = {
+	default = {
+		default = true,
+		guid = "default",
+		preset_name = "Default"
+	}
+}

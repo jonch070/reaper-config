@@ -1,0 +1,36 @@
+config = {
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	font = "Verdana",
+	font_size = 14,
+	item = true,
+	keys = {
+		
+	},
+	scale = 1,
+	style_vars = {
+		
+	},
+	version = "2.10.2"
+}
+tabs = {
+	default = {
+		automation = false,
+		default = true,
+		groups = false,
+		guid = "default",
+		position_curve = 0.0,
+		position_randomization = 0.0,
+		position_scaling = 1.0,
+		preset_name = "Default",
+		reposition_from = 0,
+		reposition_time = "",
+		scale = 100,
+		snap_offsets = false,
+		time_unit = 0
+	}
+}

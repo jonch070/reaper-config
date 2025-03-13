@@ -1,0 +1,1094 @@
+config = {
+	always_on_top = false,
+	apply_theme_on_change = false,
+	auto_update_warning = true,
+	child_brightness = 1,
+	child_color_increment = 0,
+	child_gradient = false,
+	color_theme = {
+		colors = {
+			10378072,
+			9792582,
+			9341015,
+			5864276,
+			5405559,
+			5336979,
+			8026018,
+			8677265
+		},
+		default = true,
+		id = 1,
+		name = "nvk_RAINBOW"
+	},
+	color_themes = {
+		
+	},
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	custom_track_colors = {
+		6099901,
+		dirty = true
+	},
+	custom_track_names = {
+		"Movie"
+	},
+	embedded_fx_ui = true,
+	font = "Verdana",
+	font_size = 14,
+	fx_custom = {
+		
+	},
+	headers = {
+		Color = false,
+		["Envelope Panel"]=false,
+		Font = false,
+		["Master Mixer Panel"]=false,
+		["Master Track Panel"]=false,
+		["Mixer Panel"]=false,
+		["Track Panel"]=false,
+		Transport = false,
+		track_colors = false
+	},
+	keys = {
+		
+	},
+	new_instance_close = false,
+	scale = 1,
+	style_vars = {
+		
+	},
+	tab_active = 0,
+	track_color_preserve = false,
+	track_color_project_confirm = false,
+	track_color_targets = {
+		child = true,
+		excluded_words = "video renders unused",
+		named = false,
+		parent = true,
+		unnamed = false
+	},
+	track_color_top_level = false,
+	version = "1.3.0"
+}
+tabs = {
+	default = {
+		default = true,
+		guid = "default",
+		preset_name = "Default",
+		section_params = {
+			Color = {
+				{
+					defValue = 230,
+					idx = 3,
+					label = "Text color brightness threshold",
+					maxValue = 300,
+					minValue = 60,
+					name = "color_TextColorThresh_Param",
+					value = 230
+				},
+				{
+					defValue = 28,
+					idx = 4,
+					label = "Selected track brightness",
+					maxValue = 100,
+					minValue = 0,
+					name = "color_SelectionOpacity_Param",
+					value = 28
+				},
+				{
+					defValue = 100,
+					idx = 5,
+					label = "Custom color strength",
+					maxValue = 100,
+					minValue = 0,
+					name = "color_ColorDepth_Param",
+					value = 100
+				},
+				{
+					defValue = 1000,
+					idx = -1000,
+					label = "Gamma",
+					maxValue = 2000,
+					minValue = 250,
+					name = "__color_gamma",
+					value = 1000
+				},
+				{
+					defValue = 0,
+					idx = -1001,
+					label = "Shadows",
+					maxValue = 256,
+					minValue = -256,
+					name = "__color_shadows",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = -1002,
+					label = "Midtones",
+					maxValue = 256,
+					minValue = -256,
+					name = "__color_midtones",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = -1003,
+					label = "Highlights",
+					maxValue = 256,
+					minValue = -256,
+					name = "__color_highlights",
+					value = 0
+				},
+				{
+					defValue = 256,
+					idx = -1004,
+					label = "Saturation",
+					maxValue = 512,
+					minValue = 0,
+					name = "__color_saturation",
+					value = 256
+				},
+				{
+					defValue = 192,
+					idx = -1005,
+					label = "Tint",
+					maxValue = 384,
+					minValue = 0,
+					name = "__color_tint",
+					value = 192
+				},
+				{
+					defValue = 0,
+					idx = -1006,
+					label = "Apply to project colors",
+					maxValue = 1,
+					minValue = 0,
+					name = "__color_apply_project",
+					value = 0
+				},
+				label = "Color"
+			},
+			Font = {
+				{
+					defValue = 3,
+					idx = 6,
+					label = "Track name",
+					maxValue = 5,
+					minValue = 1,
+					name = "font_TrackName_Param",
+					value = 3
+				},
+				{
+					defValue = 2,
+					idx = 7,
+					label = "Labels & values",
+					maxValue = 5,
+					minValue = 1,
+					name = "font_Value_Param",
+					value = 2
+				},
+				{
+					defValue = 1,
+					idx = 8,
+					label = "FX inserts",
+					maxValue = 5,
+					minValue = 1,
+					name = "font_FXInserts_Param",
+					value = 1
+				},
+				label = "Font"
+			},
+			envcp = {
+				{
+					defValue = 50,
+					format = "%d%%",
+					idx = 27,
+					label = "Envelope indent",
+					maxValue = 100,
+					minValue = 0,
+					name = "envcp_IndentPercentage_Param",
+					value = 50
+				},
+				{
+					defValue = 82,
+					idx = 28,
+					label = "Minimum label length",
+					maxValue = 220,
+					minValue = 82,
+					name = "envcp_LabelPreserveLength_Param",
+					value = 82
+				},
+				{
+					defValue = 3,
+					idx = 29,
+					label = "Padding",
+					maxValue = 6,
+					minValue = 1,
+					name = "envcp_PaddingSize_Param",
+					value = 3
+				},
+				label = "Envelope Panel",
+				section = {
+					idx = 1,
+					label = "Envelope Panel",
+					layouts = {
+						"A",
+						"A 150%",
+						"A 200%",
+						"B",
+						"B 150%",
+						"B 200%"
+					},
+					name = "envcp",
+					value = ""
+				}
+			},
+			master_mcp = {
+				{
+					defValue = 3,
+					idx = 72,
+					label = "A padding",
+					maxValue = 6,
+					minValue = 1,
+					name = "master_mcp_mPaddingSize_Param",
+					value = 3
+				},
+				{
+					defValue = 2,
+					idx = 73,
+					label = "B padding",
+					maxValue = 4,
+					minValue = 1,
+					name = "master_mcp_mThinPaddingSize_Param",
+					value = 2
+				},
+				{
+					defValue = 100,
+					idx = 74,
+					label = "Meter size",
+					maxValue = 100,
+					minValue = 50,
+					name = "master_mcp_MeterSize_Param",
+					value = 100
+				},
+				{
+					defValue = 116,
+					idx = 75,
+					label = "Side FX size",
+					maxValue = 460,
+					minValue = 80,
+					name = "master_mcp_SideFXSize_Param",
+					value = 116
+				},
+				{
+					defValue = 16,
+					idx = 76,
+					label = "FX insert height",
+					maxValue = 40,
+					minValue = 16,
+					name = "master_mcp_FXListHeight_Param",
+					value = 16
+				},
+				{
+					defValue = 16,
+					idx = 77,
+					label = "Send insert height",
+					maxValue = 40,
+					minValue = 16,
+					name = "master_mcp_SendListHeight_Param",
+					value = 16
+				},
+				{
+					defValue = 16,
+					idx = 78,
+					label = "FX parameter height",
+					maxValue = 40,
+					minValue = 16,
+					name = "master_mcp_FXParmHeight_Param",
+					value = 16
+				},
+				{
+					defValue = 0,
+					idx = 79,
+					label = "Hide pan and width section",
+					maxValue = 1,
+					minValue = 0,
+					name = "master_mcp_HidePanWidth_Param",
+					value = 1
+				},
+				{
+					defValue = 0,
+					idx = 80,
+					label = "FX inserts on the side",
+					maxValue = 1,
+					minValue = 0,
+					name = "master_mcp_SideFxInserts_Param",
+					value = 1
+				},
+				label = "Master Mixer Panel",
+				section = {
+					idx = 2,
+					label = "Master Mixer Panel",
+					layouts = {
+						"A",
+						"A 150%",
+						"A 200%",
+						"B",
+						"B 150%",
+						"B 200%",
+						"C",
+						"C 150%",
+						"C 200%",
+						"D",
+						"D 150%",
+						"D 200%"
+					},
+					name = "master_mcp",
+					value = ""
+				}
+			},
+			master_tcp = {
+				{
+					defValue = 70,
+					idx = 30,
+					label = "Track color brightness",
+					maxValue = 255,
+					minValue = 0,
+					name = "master_tcp_BackGroundColor_Param",
+					value = 70
+				},
+				{
+					defValue = 16,
+					idx = 31,
+					label = "FX insert height",
+					maxValue = 40,
+					minValue = 16,
+					name = "master_tcp_FXInsertHeight_Param",
+					value = 16
+				},
+				{
+					defValue = 25,
+					idx = 32,
+					label = "Meter width",
+					maxValue = 189,
+					minValue = 9,
+					name = "master_tcp_MeterWidth_Param",
+					value = 25
+				},
+				{
+					defValue = 3,
+					idx = 33,
+					label = "Padding",
+					maxValue = 6,
+					minValue = 1,
+					name = "master_tcp_PaddingSize_Param",
+					value = 3
+				},
+				{
+					defValue = 2,
+					idx = 34,
+					label = "FX max columns",
+					maxValue = 6,
+					minValue = 1,
+					name = "master_tcp_FXMaxColumns_Param",
+					value = 2
+				},
+				{
+					defValue = 0,
+					idx = 35,
+					label = "Hide stereo button",
+					maxValue = 1,
+					minValue = 0,
+					name = "master_tcp_HideStereoButton_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 36,
+					label = "Hide output buttons",
+					maxValue = 1,
+					minValue = 0,
+					name = "master_tcp_HideOutputButtons_Param",
+					value = 0
+				},
+				label = "Master Track Panel",
+				section = {
+					idx = 4,
+					label = "Master Track Panel",
+					layouts = {
+						"A",
+						"A 150%",
+						"A 200%",
+						"B",
+						"B 150%",
+						"B 200%"
+					},
+					name = "master_tcp",
+					value = ""
+				}
+			},
+			mcp = {
+				{
+					defValue = 12,
+					idx = 65,
+					label = "Folder indent size",
+					maxValue = 24,
+					minValue = 0,
+					name = "mcp_FolderIndent_Param",
+					value = 12
+				},
+				{
+					defValue = 16,
+					idx = 66,
+					label = "FX insert height",
+					maxValue = 40,
+					minValue = 16,
+					name = "mcp_FXInsertHeight_Param",
+					value = 16
+				},
+				{
+					defValue = 100,
+					idx = 67,
+					label = "Meter size",
+					maxValue = 100,
+					minValue = 50,
+					name = "mcp_MeterSize_Param",
+					value = 100
+				},
+				{
+					defValue = 3,
+					idx = 68,
+					label = "A Padding",
+					maxValue = 6,
+					minValue = 1,
+					name = "mcp_PaddingSize_Param",
+					value = 3
+				},
+				{
+					defValue = 2,
+					idx = 69,
+					label = "B Padding",
+					maxValue = 4,
+					minValue = 1,
+					name = "mcp_ThinPaddingSize_Param",
+					value = 2
+				},
+				{
+					defValue = 0,
+					idx = 70,
+					label = "Hide record controls on parent tracks",
+					maxValue = 1,
+					minValue = 0,
+					name = "mcp_HideRecFolder_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 71,
+					label = "Only show record controls on selected tracks",
+					maxValue = 1,
+					minValue = 0,
+					name = "mcp_ShowRecSelected_Param",
+					value = 0
+				},
+				label = "Mixer Panel",
+				section = {
+					idx = 3,
+					label = "Mixer Panel",
+					layouts = {
+						"A",
+						"A 150%",
+						"A 200%",
+						"B",
+						"B 150%",
+						"B 200%",
+						"C",
+						"C 150%",
+						"C 200%",
+						"D",
+						"D 150%",
+						"D 200%",
+						"Meter A",
+						"Meter A 150%",
+						"Meter A 200%",
+						"Meter B",
+						"Meter B 150%",
+						"Meter B 200%"
+					},
+					name = "mcp",
+					value = ""
+				}
+			},
+			tcp = {
+				{
+					defValue = 100,
+					idx = 9,
+					label = "Default track color brightness",
+					maxValue = 180,
+					minValue = 60,
+					name = "tcp_BackGroundColor_Param",
+					value = 100
+				},
+				{
+					defValue = 96,
+					idx = 10,
+					label = "FX insert width",
+					maxValue = 200,
+					minValue = 40,
+					name = "tcp_FXSectionWidth_Param",
+					value = 96
+				},
+				{
+					defValue = 16,
+					idx = 11,
+					label = "FX insert height",
+					maxValue = 40,
+					minValue = 16,
+					name = "tcp_FXInsertHeight_Param",
+					value = 16
+				},
+				{
+					defValue = 2,
+					idx = 12,
+					label = "FX max columns",
+					maxValue = 6,
+					minValue = 1,
+					name = "tcp_FXMaxColumns_Param",
+					value = 2
+				},
+				{
+					defValue = 48,
+					idx = 13,
+					label = "Minimum label length",
+					maxValue = 220,
+					minValue = 48,
+					name = "tcp_LabelPreserveLength_Param",
+					value = 48
+				},
+				{
+					defValue = 24,
+					idx = 14,
+					label = "Folder indent size",
+					maxValue = 48,
+					minValue = 0,
+					name = "tcp_FolderIndent_Param",
+					value = 24
+				},
+				{
+					defValue = 25,
+					idx = 15,
+					label = "Meter width",
+					maxValue = 189,
+					minValue = 9,
+					name = "tcp_MeterWidth_Param",
+					value = 25
+				},
+				{
+					defValue = 3,
+					idx = 16,
+					label = "Padding",
+					maxValue = 6,
+					minValue = 1,
+					name = "tcp_PaddingSize_Param",
+					value = 3
+				},
+				{
+					defValue = 0,
+					idx = 17,
+					label = "Color track on selection only",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_limitedColor_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 18,
+					label = "nvk_FOLDER_ITEMS track toggle",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_nvkFolder_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 19,
+					label = "Volume is always a knob",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_ForceVolKnob_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 20,
+					label = "Minimal mode",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_MinimalDesign_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 21,
+					label = "Hide pan and width labels",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_HidePanWidthLabels_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 22,
+					label = "Show meter values",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_MeterNumbers_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 23,
+					label = "Always show record section",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_ShowRec_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 24,
+					label = "Mute/solo on right",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_PinMuteSoloRight_Param",
+					value = 1
+				},
+				{
+					defValue = 0,
+					idx = 25,
+					label = "Track FX buttons",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_CustomFX_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 26,
+					label = "Folder button on hover",
+					maxValue = 1,
+					minValue = 0,
+					name = "tcp_FolderButton_Param",
+					value = 1
+				},
+				label = "Track Panel",
+				section = {
+					idx = 5,
+					label = "Track Panel",
+					layouts = {
+						"A",
+						"A 150%",
+						"A 200%",
+						"B",
+						"B 150%",
+						"B 200%",
+						"Meter",
+						"Meter 150%",
+						"Meter 200%"
+					},
+					name = "tcp",
+					value = ""
+				}
+			},
+			trans = {
+				{
+					defValue = 26,
+					idx = 37,
+					label = "Separator height",
+					maxValue = 36,
+					minValue = 0,
+					name = "trans_SeparatorHeight_Param",
+					value = 26
+				},
+				{
+					defValue = 354,
+					idx = 38,
+					label = "Status width",
+					maxValue = 700,
+					minValue = 150,
+					name = "trans_StatusWidth_Param",
+					value = 354
+				},
+				{
+					defValue = 3,
+					idx = 39,
+					label = "Padding",
+					maxValue = 6,
+					minValue = 1,
+					name = "trans_XPaddingSize_Param",
+					value = 3
+				},
+				{
+					defValue = 1,
+					idx = 40,
+					label = "Status",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_SectionStatus_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 41,
+					label = "Global automation override ",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_SectionAutom_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 42,
+					label = "Tempo",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_SectionBPM_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 43,
+					label = "Playback controls",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_SectionControls_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 44,
+					label = "Playrate slider",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_SectionRate_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 45,
+					label = "Enable custom transport buttons",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewEnable_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 46,
+					label = "nvk_SEARCH",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewSearch_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 47,
+					label = "nvk_CREATE",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewCreate_Param",
+					value = 1
+				},
+				{
+					defValue = 0,
+					idx = 48,
+					label = "nvk_SUBPROJECT",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewSub_Param",
+					value = 0
+				},
+				{
+					defValue = 1,
+					idx = 49,
+					label = "nvk_AUTODOPPLER",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewAutodoppler_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 50,
+					label = "nvk_LOOPMAKER",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewLoopmaker_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 51,
+					label = "nvk_VARIATIONS",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewVariations_Param",
+					value = 1
+				},
+				{
+					defValue = 0,
+					idx = 52,
+					label = "nvk_FOLDER_ITEMS - Rename",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewRename_Param",
+					value = 0
+				},
+				{
+					defValue = 0,
+					idx = 53,
+					label = "nvk_FOLDER_ITEMS - Render",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewRender_Param",
+					value = 0
+				},
+				{
+					defValue = 1,
+					idx = 54,
+					label = "Track Colors",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewColor_Param",
+					value = 1
+				},
+				{
+					defValue = 0,
+					idx = 55,
+					label = "Project bay",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewBay_Param",
+					value = 0
+				},
+				{
+					defValue = 1,
+					idx = 56,
+					label = "Video",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewVideo_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 57,
+					label = "Mixer",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewMixer_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 58,
+					label = "Media Explorer",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewMedia_Param",
+					value = 1
+				},
+				{
+					defValue = 0,
+					idx = 59,
+					label = "Region/Marker Manager",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewMarker_Param",
+					value = 0
+				},
+				{
+					defValue = 1,
+					idx = 60,
+					label = "FX Browser",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewFX_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 61,
+					label = "Master Track",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewMTCP_Param",
+					value = 1
+				},
+				{
+					defValue = 0,
+					idx = 62,
+					label = "Floating Mixer Master",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewMMCP_Param",
+					value = 0
+				},
+				{
+					defValue = 1,
+					idx = 63,
+					label = "Theme Adjuster",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewTheme_Param",
+					value = 1
+				},
+				{
+					defValue = 1,
+					idx = 64,
+					label = "nvk.tools logo",
+					maxValue = 1,
+					minValue = 0,
+					name = "trans_ViewNVK_Param",
+					value = 1
+				},
+				label = "Transport",
+				section = {
+					idx = 0,
+					label = "Transport",
+					layouts = {
+						"A",
+						"A 150%",
+						"A 200%",
+						"B",
+						"B 150%",
+						"B 200%",
+						"C",
+						"C 150%",
+						"C 200%"
+					},
+					name = "trans",
+					value = ""
+				}
+			}
+		},
+		sections = {
+			{
+				idx = 0,
+				label = "Transport",
+				layouts = {
+					"A",
+					"A 150%",
+					"A 200%",
+					"B",
+					"B 150%",
+					"B 200%",
+					"C",
+					"C 150%",
+					"C 200%"
+				},
+				name = "trans",
+				value = ""
+			},
+			{
+				idx = 1,
+				label = "Envelope Panel",
+				layouts = {
+					"A",
+					"A 150%",
+					"A 200%",
+					"B",
+					"B 150%",
+					"B 200%"
+				},
+				name = "envcp",
+				value = ""
+			},
+			{
+				idx = 2,
+				label = "Master Mixer Panel",
+				layouts = {
+					"A",
+					"A 150%",
+					"A 200%",
+					"B",
+					"B 150%",
+					"B 200%",
+					"C",
+					"C 150%",
+					"C 200%",
+					"D",
+					"D 150%",
+					"D 200%"
+				},
+				name = "master_mcp",
+				value = ""
+			},
+			{
+				idx = 3,
+				label = "Mixer Panel",
+				layouts = {
+					"A",
+					"A 150%",
+					"A 200%",
+					"B",
+					"B 150%",
+					"B 200%",
+					"C",
+					"C 150%",
+					"C 200%",
+					"D",
+					"D 150%",
+					"D 200%",
+					"Meter A",
+					"Meter A 150%",
+					"Meter A 200%",
+					"Meter B",
+					"Meter B 150%",
+					"Meter B 200%"
+				},
+				name = "mcp",
+				value = ""
+			},
+			{
+				idx = 4,
+				label = "Master Track Panel",
+				layouts = {
+					"A",
+					"A 150%",
+					"A 200%",
+					"B",
+					"B 150%",
+					"B 200%"
+				},
+				name = "master_tcp",
+				value = ""
+			},
+			{
+				idx = 5,
+				label = "Track Panel",
+				layouts = {
+					"A",
+					"A 150%",
+					"A 200%",
+					"B",
+					"B 150%",
+					"B 200%",
+					"Meter",
+					"Meter 150%",
+					"Meter 200%"
+				},
+				name = "tcp",
+				value = ""
+			}
+		},
+		track_colors = false
+	}
+}

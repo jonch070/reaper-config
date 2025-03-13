@@ -41,7 +41,6 @@ function Save_to_Trk(str,v, trk  )
 end
 
 function Load_from_Trk(str, trk, type)
-    local trk = trk or LT_Track
     local _ , v = r.GetSetMediaTrackInfo_String(trk or LT_Track, 'P_EXT: '..str, '', false) 
     if type == 'bool' then
         return v == 'true' and true or false
@@ -1090,6 +1089,7 @@ function GetFocusedWindow()
 end
 
 function HideCursorTillMouseUp(MouseBtn, triggerKey)
+
     if OS == "OSX32" or OS == "OSX64" or OS == "macOS-arm64" then
         Invisi_Cursor = r.JS_Mouse_LoadCursorFromFile(r.GetResourcePath() .. '/Cursors/Empty Cursor.cur')
     end
@@ -1377,13 +1377,16 @@ function ToggleCollapseAll(FX_Idx)
     end
     if All_Collapsed == false then
         for i = 0, Sel_Track_FX_Count - 1, 1 do
+            FX[FXGUID[i]].Width_Before_Collapse = FX[FXGUID[i]].Width_Before_Collapse or  FX[FXGUID[i]].Width
             FX[FXGUID[i]].Collapse = true
             FX[FXGUID[i]].Width_Collapse = COLLAPSED_FX_WIDTH
+            
         end
     else -- if all is collapsed
         for i = 0, Sel_Track_FX_Count - 1, 1 do
             FX[FXGUID[i]].Collapse = false
             FX[FXGUID[i]].Width_Collapse = nil
+            FX[FXGUID[i]].Width_Before_Collapse = nil
         end
         BlinkFX = FX_Idx
     end

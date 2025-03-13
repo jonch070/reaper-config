@@ -82,23 +82,9 @@ function Clouds.GUI.Main()
             FixedCloud = nil
         end
     end
-    if (not CreatingClouds) and (not FixedCloud) then
-        Clouds.Item.CheckSelection(Proj)
-    end
-    --checks if items/tracks exists
-    if CloudTable then
-        for k, v in DL.t.ipairs_reverse(CloudTable.items) do
-            if not reaper.ValidatePtr2(Proj, v.item, 'MediaItem*') then
-                table.remove(CloudTable.items,k)
-            end
-        end
+    
+    Clouds.Item.CheckSelection(Proj)
 
-        for k, v in DL.t.ipairs_reverse(CloudTable.tracks) do -- dont need to check self
-            if not reaper.ValidatePtr2(Proj, v.track, 'MediaTrack*') then
-                table.remove(CloudTable.tracks,k)
-            end
-        end
-    end
     --- Keyboard shortcuts
     DL.imgui.SWSPassKeys(ctx, false)
     --- UI
@@ -116,7 +102,7 @@ function Clouds.GUI.Main()
 
     --- Window
     ImGui.SetNextWindowSize(ctx, guiW, guiH, ImGui.Cond_Once)
-    ImGui.SetNextWindowSizeConstraints(ctx, 375, 50, guiW, FLT_MAX)
+    ImGui.SetNextWindowSizeConstraints(ctx, guiW, 50, guiW, FLT_MAX)
     ImGui.PushFont(ctx, font_text)
     local visible, open = ImGui.Begin(ctx, SCRIPT_NAME..' '..SCRIPT_V, true, window_flags) 
     
@@ -127,13 +113,13 @@ function Clouds.GUI.Main()
     end
 
     Clouds.GUI.BUY()
-    
+    local setting_change
     if visible then
         local ctrl = ImGui.IsKeyDown(ctx, ImGui.Mod_Ctrl)
         local alt = ImGui.IsKeyDown(ctx, ImGui.Mod_Alt)
         if ImGui.BeginMenuBar(ctx) then
             if ImGui.BeginMenu(ctx, "Settings") then
-                local setting_change, change = false, false
+                local change = false
                 -- Playback
                 if ImGui.MenuItem(ctx, 'Stop Playback On Generate', nil, Settings.stop_playback) then
                     Settings.stop_playback = not Settings.stop_playback
@@ -153,7 +139,7 @@ function Clouds.GUI.Main()
                     Settings = Clouds.Settings.Default()
                     setting_change = true
                 end
-                tooltip(ctx, Settings.tooltip, ToolTips.settings.is_del_area)
+                tooltip(ctx, Settings.tooltip, ToolTips.settings.default)
 
                 ImGui.Separator(ctx)
 
@@ -173,10 +159,7 @@ function Clouds.GUI.Main()
 
                     ImGui.EndMenu(ctx)
                 end
-    
-                if setting_change then
-                    Clouds.Settings.Save(SETTINGS.path, Settings)
-                end
+
                 ImGui.EndMenu(ctx)
             end
 
@@ -204,9 +187,9 @@ function Clouds.GUI.Main()
             end
 
             if ImGui.BeginMenu(ctx, 'About') then
-                if ImGui.MenuItem(ctx, 'Manual') then
+                --[[ if ImGui.MenuItem(ctx, 'Manual') then
                     DL.url.OpenURL(URL.manual)
-                end
+                end ]]
                 if ImGui.MenuItem(ctx, 'Forum') then
                     DL.url.OpenURL(URL.thread)
                 end
@@ -607,8 +590,10 @@ function Clouds.GUI.Main()
                 --Input
                 ImGui.BeginDisabled(ctx, not CloudTable.randomization.vol.on)
                 ImGui.SetNextItemWidth(ctx, SLIDERS_W2)
-                local change, min, max = ImGui.DragDouble2(ctx, "Volume##randominput", CloudTable.randomization.vol.min, CloudTable.randomization.vol.max, 0.07, -FLT_MAX, FLT_MAX, '%.2f dB')
+                local change, min, max = ImGui.DragDouble2(ctx, "Volume##randominput", CloudTable.randomization.vol.min, CloudTable.randomization.vol.max, 0.07, -CONSTRAINS.db_minmax+1, FLT_MAX, '%.2f dB')
                 if change then -- clamp
+                    min = min < -CONSTRAINS.db_minmax+1 and -CONSTRAINS.db_minmax+1 or min
+                    max = max < -CONSTRAINS.db_minmax+1 and -CONSTRAINS.db_minmax+1 or max
                     if min > max then 
                         if min ~= CloudTable.randomization.vol.min then
                             max = min
@@ -645,6 +630,8 @@ function Clouds.GUI.Main()
                 ImGui.SetNextItemWidth(ctx, SLIDERS_W2)
                 local change, min, max = ImGui.DragDouble2(ctx, "Pan##randominput", CloudTable.randomization.pan.min, CloudTable.randomization.pan.max, 0.01, -1, 1, '%.2f')
                 if change then -- clamp
+                    min = DL.num.Clamp(min, -1, 1)
+                    max = DL.num.Clamp(max, -1, 1)
                     if min > max then 
                         if min ~= CloudTable.randomization.pan.min then
                             max = min
@@ -722,9 +709,12 @@ function Clouds.GUI.Main()
                 --Input
                 ImGui.BeginDisabled(ctx, not CloudTable.randomization.stretch.on)
                 ImGui.SetNextItemWidth(ctx, SLIDERS_W2)
-                local change, min, max = ImGui.DragDouble2(ctx, "Playrate##randominput", CloudTable.randomization.stretch.min, CloudTable.randomization.stretch.max, 0.03, CONSTRAINS.stretch_low, FLT_MAX, '%.2f x')
+                local format_str =  CloudTable.randomization.stretch.min < 0.01 and '%.3f x' or '%.2f x'
+                local change, min, max = ImGui.DragDouble2(ctx, "Playrate##randominput", CloudTable.randomization.stretch.min, CloudTable.randomization.stretch.max, 0.0009, CONSTRAINS.stretch_low, FLT_MAX, format_str)
                 something_changed = something_changed or change
                 if change then -- clamp
+                    min = min < CONSTRAINS.stretch_low and CONSTRAINS.stretch_low or min
+                    max = max < CONSTRAINS.stretch_low and CONSTRAINS.stretch_low or max
                     if min > max then 
                         if min ~= CloudTable.randomization.stretch.min then
                             max = min
@@ -872,11 +862,7 @@ function Clouds.GUI.Main()
 
             ImGui.SameLine(ctx)
             if ImGui.Button(ctx, 'Paste Settings') and CopySettings then
-                local cloud = CloudTable.cloud
-                CloudTable = DL.t.DeepCopy(CopySettings)
-                CloudTable.cloud = cloud
-                Clouds.Item.ShowHideAllEnvelopes()
-                Clouds.Item.SaveSettings(Proj, CloudTable.cloud, CloudTable)
+                Clouds.Item.Paste(true)
             end
             tooltip(ctx, Settings.tooltip, ToolTips.buttons.paste)
 
@@ -906,13 +892,15 @@ function Clouds.GUI.Main()
                 ImGui.Separator(ctx)
                 local _
                 --_, PresetName = ImGui.InputText(ctx, 'Preset Name', PresetName)
-                if ImGui.Button(ctx, 'Save', 150) then
-                    local retval, fileName = reaper.JS_Dialog_BrowseForSaveFile( 'Save Cloud Preset', PRESETS.path, PresetName..'.json', 'json' )
-                    Clouds.Presets.SavePreset(fileName, CloudTable)
+                if ImGui.Button(ctx, 'Save', -FLT_MIN) then
+                    local retval, fileName = reaper.JS_Dialog_BrowseForSaveFile( 'Save Cloud Preset', PRESETS.path, PresetName..'.json', '' )
+                    if retval ~= 0 then
+                        Clouds.Presets.SavePreset(fileName, CloudTable)
+                    end
                 end
                 
                 ImGui.EndCombo(ctx)
-            else 
+            elseif Presets then 
                 Presets = nil
             end
 
@@ -938,6 +926,21 @@ function Clouds.GUI.Main()
                 --Clouds.apply.GenerateClouds(Proj, not ctrl, not alt)                    
             end
             ImGui.SetItemTooltip(ctx, text_help)
+            if ImGui.BeginPopupContextItem(ctx, '') then
+                local w = 200
+                ImGui.Text(ctx, 'Fix Seed:')
+                ImGui.SetNextItemWidth(ctx, w)
+                something_changed, CloudTable.seed.seed = ImGui.InputInt(ctx, '##Fix Seed', CloudTable.seed.seed, 0, 0)
+
+                ImGui.Text(ctx, 'Print N Seeds:')
+                ImGui.SetNextItemWidth(ctx, w)
+                setting_change, Settings.seed_print = ImGui.InputInt(ctx, '##Print Number', Settings.seed_print, 0, 0)
+
+                if ImGui.Button(ctx, 'Print Seed History', w) then
+                    Clouds.Item.PrintSeedHistory(CloudTable)
+                end
+                ImGui.EndPopup(ctx)
+            end    
 
             -- Progress Bar
             if CreatingClouds then
@@ -967,6 +970,11 @@ function Clouds.GUI.Main()
             tooltip(ctx, Settings.tooltip, ToolTips.create_item)
         end
         ImGui.End(ctx)
+    end
+
+    
+    if setting_change then
+        Clouds.Settings.Save(SETTINGS.path, Settings)
     end
 
     ImGui.PopFont(ctx)

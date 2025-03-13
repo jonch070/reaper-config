@@ -42,26 +42,60 @@ end
 function Clouds.Item.CheckSelection(proj)
     local cnt = reaper.GetProjectStateChangeCount(proj)
     if cnt ~= CurrentProjCount then
-        local found = false
-        for item in DL.enum.SelectedMediaItem(proj) do
-            local retval, extstate = DL.item.GetExtState(item, EXT_NAME, 'settings')
-            if extstate ~= '' then
-                found = true
-                if CloudTable and CloudTable.cloud == item then
-                    break
+        local something_changed = false
+        if (not FixedCloud) and (not CreatingClouds) then -- Update selected cloud to GUI. If fixed cloud or it is generating, prevent it.
+            local found = false
+            for item in DL.enum.SelectedMediaItem(proj) do
+                local retval, extstate = DL.item.GetExtState(item, EXT_NAME, 'settings')
+                if extstate ~= '' then
+                    found = true
+                    if CloudTable and CloudTable.cloud == item then
+                        break
+                    end
+                    local ext_table = DL.serialize.stringToTable(extstate)
+                    -- Guids to Items/Tracks
+                    CloudTable = Clouds.convert.ConvertGUIDToUserDataRecursive(proj, ext_table)
+                    if CloudTable then -- check if cloud table havent been corrupted at some script crash
+                        something_changed = Clouds.Item.UpdateVersion(CloudTable)
+                        CloudTable.cloud = item
+                        break
+                    end
                 end
-                local ext_table = DL.serialize.stringToTable(extstate)
-                -- Guids to Items/Tracks
-                CloudTable = Clouds.convert.ConvertGUIDToUserDataRecursive(proj, ext_table)
-                if CloudTable then -- check if cloud table havent been corrupted at some script crash
-                    CloudTable.cloud = item
-                    break
+            end
+            if not found then
+                CloudTable = nil
+            end
+        end
+
+        --Checks
+        if CloudTable then
+            for k, v in DL.t.ipairs_reverse(CloudTable.items) do
+                if not reaper.ValidatePtr2(Proj, v.item, 'MediaItem*') then
+                    table.remove(CloudTable.items,k)
+                    something_changed = true
+                end
+            end
+
+            for k, v in DL.t.ipairs_reverse(CloudTable.tracks) do -- dont need to check self
+                if not reaper.ValidatePtr2(Proj, v.track, 'MediaTrack*') then
+                    table.remove(CloudTable.tracks,k)
+                    something_changed = true
+                end
+            end
+
+            -- Check if cloud item has FX
+            Clouds.Item.EnsureFX(CloudTable.cloud)   
+            
+            if something_changed then
+                Clouds.Item.SaveSettings(proj, CloudTable.cloud, CloudTable)
+
+                if CreatingClouds then -- Something got deleted while it was generating
+                    CreatingClouds = nil
+                    -- TODO give a warning message. 
                 end
             end
         end
-        if not found then
-            CloudTable = nil
-        end
+
         CurrentProjCount = cnt
     end
 end
@@ -196,6 +230,7 @@ end
 
 function Clouds.Item.DefaultTable()
     local t = {
+        version = SCRIPT_V,
         items = {},
         density = {
             random = {
@@ -322,9 +357,28 @@ function Clouds.Item.DefaultTable()
                 on = true,
                 val = 20 -- in %. 100% = fadein + fadeout = item_length 
             }
+        },
+        seed = {
+            seed = 0,
+            history = {}
         }
     }
     return t
+end
+
+function Clouds.Item.UpdateVersion(cloud)
+    local was_updated = false
+    if not cloud.version or not DL.num.CompareVersion(cloud.version, '1.1.0') then -- V 1.1
+        cloud.version = '1.1.0'
+        cloud.seed = {
+            seed = 0,
+            history = {}
+        }
+
+        was_updated = true
+    end
+    
+    return was_updated
 end
 
 function Clouds.Item.ShowHideEnvelope(bool,envelope_n)
@@ -359,6 +413,48 @@ function Clouds.Item.ShowHideAllEnvelopes()
     Clouds.Item.ShowHideEnvelope(CloudTable.randomization.pitch.on and CloudTable.randomization.pitch.chance.env,FXENVELOPES.randomization.c_pitch)
     Clouds.Item.ShowHideEnvelope(CloudTable.randomization.stretch.on and CloudTable.randomization.stretch.chance.env,FXENVELOPES.randomization.c_stretch)
     Clouds.Item.ShowHideEnvelope(CloudTable.randomization.reverse.on and CloudTable.randomization.reverse.chance.env,FXENVELOPES.randomization.c_reverse)
+end
+
+function Clouds.Item.EnsureFX(cloud)
+    local retval, buf = reaper.TakeFX_GetFXName( reaper.GetActiveTake(cloud), 0 )
+    if not buf:match(FX_NAME) then
+        reaper.TakeFX_AddByName( reaper.GetActiveTake(cloud), FX_NAME, -1 )
+        Clouds.Item.ShowHideAllEnvelopes()
+    end
+end
+
+function Clouds.Item.Paste(is_selected)
+    local t = {CloudTable.cloud} -- already start with current Cloud Table, as it could be pinned and not selected
+
+    if is_selected then
+        for item in DL.enum.SelectedMediaItem(Proj) do
+            if item ~= CloudTable.cloud then
+                local retval, extstate = DL.item.GetExtState(item, EXT_NAME, 'settings')
+                if extstate ~= '' then
+                    t[#t+1] = item
+                end
+            end
+        end
+    end
+
+    if #t > 0 then
+        reaper.Undo_BeginBlock2(Proj)
+        reaper.PreventUIRefresh(1)
+        
+        local cloud = CloudTable.cloud
+        CloudTable = DL.t.DeepCopy(CopySettings)
+        for k, item in ipairs(t) do
+            CloudTable.cloud = item
+            Clouds.Item.UpdateVersion(CloudTable)
+            Clouds.Item.ShowHideAllEnvelopes()
+            Clouds.Item.SaveSettings(Proj, CloudTable.cloud, CloudTable)
+        end
+        CloudTable.cloud = cloud
+
+        reaper.UpdateArrange()
+        reaper.PreventUIRefresh(-1)
+        reaper.Undo_EndBlock2(Proj, 'Paste Clouds', -1)
+    end
 end
 
 ------ Generated Items:
@@ -447,4 +543,18 @@ function Clouds.Item.DeleteAnyGeneration(proj)
     reaper.PreventUIRefresh(-1)
     reaper.Undo_EndBlock2(proj, 'Clouds: Delete All Generated Items', -1)
     reaper.UpdateArrange()
+end
+
+--- Misc Actions
+function Clouds.Item.PrintSeedHistory(cloud)
+    reaper.ClearConsole()
+    local len = #cloud.seed.history
+    local start = len - (Settings.seed_print-1) > 0 and len - (Settings.seed_print-1) or 1
+    for i = start, len do 
+        if cloud.seed.history[i] then
+            print('Seed ' .. tostring(len - i + 1).. ' : '..cloud.seed.history[i])
+        else 
+            break
+        end
+    end
 end

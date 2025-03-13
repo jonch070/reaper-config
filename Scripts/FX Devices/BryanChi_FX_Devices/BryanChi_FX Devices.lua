@@ -1,14 +1,14 @@
 -- @description FX Devices
 -- @author Bryan Chi
--- @version 1.0beta16.9
+-- @version 1.0beta17.3.4
 -- @changelog
---  - Background Editor : the repeat feature is now available for drawing shapes with specified gaps like in the attached drawings.
---  - Background Editor : Fixed behavior when drawing lines.
---  - Background Editor : improved layout in the properties window.
---  - Improved layout for Snap Heap.
+--   - Layout Editor : added size sync option to attached drawing's Y offset.
+--   - Layout Editor : Fixed crashing when adding text to background editor. 
+--   - Added a new FX layout - Acon Digital Multiply.
 -- @provides
 --   [effect] FXD JSFXs/*.jsfx
 --   [effect] FXD JSFXs/*.jsfx-inc
+--   [effect] FXD JSFXs/cookdsp/*.jsfx-inc
 --   src/Constants.lua
 --   src/Fonts/*.ttf
 --   src/Functions/*.lua

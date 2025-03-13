@@ -18,17 +18,19 @@ function GetCurveValue(x, p, xmin, xmax, ymin, ymax)
     local x_norm = (x - xmin) / (xmax - xmin)
     
     local y_norm
-    if p > 1 then
-        -- Exponential curve: y_norm = x_norm^p
-        y_norm = x_norm^p
-    elseif p < 0 then
-        -- Logarithmic-like curve: scaled log formula using |p|
-        local p_abs = math.abs(p)
-        y_norm = math.log(1 + (math.exp(p_abs) - 1) * x_norm) / math.log(math.exp(p_abs))
+    if p == 0 then
+        y_norm = x_norm  -- Linear case
     else
-        -- Linear interpolation: y_norm = x_norm when p = 0
-        y_norm = x_norm
+        local p_abs = math.abs(p)
+        local scale = (math.exp(p_abs) - 1)
+
+      if p > 0 then
+        y_norm = x_norm ^ p  -- 
+      else
+        y_norm = 1 - (1 - x_norm) ^ p_abs
+      end
     end
+
     
     -- Scale y_norm back to the range [ymin, ymax]
     local y = ymin + y_norm * (ymax - ymin)
@@ -61,21 +63,7 @@ function InvisiBtn(ctx, x, y, str, w, h)
     local rv = im.InvisibleButton(ctx, str, w, h or w)
     return rv
 end
-function Container_CollapseIfTab(FxGUID, FX_Idx)
-    if r.ImGui_IsWindowHovered(ctx, r.ImGui_HoveredFlags_ChildWindows()) then 
 
-        local _ , name = r.TrackFX_GetNamedConfigParm(LT_Track,FX_Idx,'original_name')
-        if name == 'Container' and not Tab_Collapse_Win then 
-            if r.ImGui_IsKeyPressed(ctx, r.ImGui_Key_Tab())  then
-                if FX[FxGUID].Cont_Collapse == 0 then FX[FxGUID].Cont_Collapse= 1
-                elseif FX[FxGUID].Cont_Collapse==1 then FX[FxGUID].Cont_Collapse= 0 end 
-                Tab_Collapse_Win = true 
-                NeedRetrieveLayout = true 
-            end
-        end
-    end
-
-end
 function Cross_Out( clr, thick , DL )
     local WDL = DL or WDL 
     local clr = clr or 0xD30000ff
@@ -104,9 +92,9 @@ function RoundBtn (W,H , lbl, clr, fillclr, fillsz)
     if im.IsItemActive(ctx) then  
         --im.DrawList_AddCircleFilled(WDL ,x,y , W/3 , 0x000000ff )
         im.DrawList_AddCircle(WDL ,x,y , W/1.8 , clr, nil,3 )
-
+        local active = true
         local DtX, DtY = im.GetMouseDelta(ctx)
-        return DtX, DtY
+        return DtX, DtY, active
     end
 
 end
@@ -139,9 +127,9 @@ function draw_dotted_line(x1, y1, x2, y2, clr, segment_length, gap)
         local end_length = math.min(current_length + segment_length, distance)
         local end_x = x1 + direction_x * end_length
         local end_y = y1 + direction_y * end_length
-        
+
         -- Draw the line segment
-        im.DrawList_AddLine(im.GetWindowDrawList(ctx), start_x, start_y, end_x, end_y, clr or im.ColorConvertFloat4ToU32(1, 1, 1, 1)) -- white line
+        im.DrawList_AddLine(im.GetWindowDrawList(ctx), start_x, start_y, end_x, end_y, clr or im.ColorConvertDouble4ToU32(1, 1, 1, 1)) -- white line
     end
 end
 
@@ -205,6 +193,11 @@ function Draw_Single_Curve(nX, X, nY, Y, curve , thick , lineClr, ofs)
         table.insert(Pts.y, y)
         table.insert(Pts.x, i)
     end
+    local WDL = WDL or im.GetWindowDrawList(ctx)
+    if nX == X then
+
+        im.DrawList_AddLine(WDL, X + ofs, Y + ofs, nX + ofs, nY + ofs, lineClr, thick)
+    end
 
     for i, v in ipairs(Pts.x) do
         if i ~= #Pts.x then
@@ -216,8 +209,32 @@ function Draw_Single_Curve(nX, X, nY, Y, curve , thick , lineClr, ofs)
         end
     end
 end
+function Draw_Curve (WDL, PtsTB , i , L, R, B, W, H, PtSz , lineClr, thick)
+    local lineClr = lineClr or 0xffffff99
+    local v = PtsTB[i]
+    if not v or type(v)~= 'table' then return end 
 
-function CurveEditor(W,H, PtsTB, lbl)
+    local X, Y = L+v[1]* W , B - v[2]*H 
+    if PtsTB[i+1] then 
+        local n = PtsTB[i+1]
+        local nX , nY = L + n[1] * W ,  B - n[2] * H 
+        local DtX, DtY
+        local ofs = PtSz/2
+        local x1, y1, x2, y2 = X+ofs, Y+ofs , nX+ofs ,  nY+ofs
+        local mX, mY = im.GetMousePos(ctx)
+        if not v[3] then 
+            im.DrawList_AddLine(WDL, x1, y1, x2, y2, lineClr, thick)
+        else
+            Draw_Single_Curve(nX, X, nY, Y, v[3] , thick,lineClr, ofs)
+        end
+    end
+
+end
+function CurveEditor(W,H, PtsTB, lbl , MacroTB, IsContainer)
+    local IsLFO = lbl:find('LFO') and true or false
+    local gmem_space = IsContainer and 'ContainerMacro' or 'ParamValues'
+    local Macro = MacroTB and MacroTB.Num
+    local Mc = MacroTB
     local Pad = 15
     local PtSz = 15
     local x, y = im.GetCursorPos(ctx)
@@ -226,36 +243,39 @@ function CurveEditor(W,H, PtsTB, lbl)
     local thick = 4
     local lineClr = 0xffffff99
     local NoteOnVel = r.gmem_read(91)
-    
-    local function Get_MidiMod_Ofs()
-        local ofs = 0 
-        for i, v in ipairs(Midi_Mods) do 
-            if lbl == v then 
-                ofs = i-1
-            end
-        end
-       
-        return ofs
-    end
 
-    r.gmem_write(8, 1+ Get_MidiMod_Ofs()) -- tells jsfx the curve editor is open ,and so it needs to send back velocity or random 's value'
+    
+    
+
+    r.gmem_write(8, 1+ Get_MidiMod_Ofs(lbl)) -- tells jsfx the curve editor is open ,and so it needs to send back velocity or random 's value'
 
 
     local function DrawGrid()
         local x, y = im.GetCursorScreenPos(ctx)
+        local P = PtSz/2 
+        local L , R = x + P , x + W - P
+        local W = W - P
+        local Gd = IsLFO and Mc.LFO_leng or LFO.Def.Len
+       
+
         local  Clr1 , Clr2 = 0xffffff55 , 0xffffff22
-        draw_dotted_line(x + W/2 ,y, x+W/2 , y+H, Clr1, 3, 2)-- center x axis
-        draw_dotted_line(x  ,y + H/2 , x+W , y+H/2, Clr1, 3, 2)-- center y axis
+        draw_dotted_line(L + W/2 ,y, L+W/2 , y+H, Clr1, 3, 2)-- center x axis
+        draw_dotted_line(L  ,y + H/2 , R , y+H/2, Clr1, 3, 2)-- center y axis
 
-        draw_dotted_line(x + W/4 ,y, x+W/4 , y+H, Clr2, 3, 2)-- 4/1 x axis
-        draw_dotted_line(x +W - W/4 ,y, x+W - W/4, y+H, Clr2, 3, 2)-- 4/3 x axis
+        draw_dotted_line(L + W/4 ,y, L+W/4 , y+H, Clr2, 3, 2)-- 4/1 x axis
+        draw_dotted_line(L +W - W/4 ,y, L+W - W/4, y+H, Clr2, 3, 2)-- 4/3 x axis
 
-        draw_dotted_line(x  ,y + H/4 , x+W , y+H/4, Clr2, 3, 2)-- center y axis
-        draw_dotted_line(x  ,y + H - H/4 , x+W , y+H -H/4, Clr2, 3, 2)-- center y axis
+        draw_dotted_line(L  ,y + H/4 , R , y+H/4, Clr2, 3, 2)-- center y axis
+        draw_dotted_line(L  ,y + H - H/4 , R , y+H -H/4, Clr2, 3, 2)-- center y axis
 
 
 
-        --im.DrawList_AddLine(WDL, x + W/2 , y , x+W/2 , y+H , 0xffffffff, 5)
+        im.DrawList_AddLine(WDL, L , y , L , y+H , 0xffffff33, 2)
+        im.DrawList_AddLine(WDL,R, y , R , y+H , 0xffffff33, 2)
+        im.DrawList_AddLine(WDL,L, y , R , y , 0xffffff33, 2)
+        im.DrawList_AddLine(WDL,L, y+H , R , y+H , 0xffffff33, 2)
+
+
     end
 
 
@@ -280,13 +300,13 @@ function CurveEditor(W,H, PtsTB, lbl)
         end
 
         local function ConvertScreenY(y)
-            return B- y * H + PtSz /2 
+            return B- y * (H + PtSz /2 )
         end
         local function ConvertScreenX(x)
-            return  L + x * (W ) + PtSz/2
+            return  L + x * (W  + PtSz/2)
         end
         if NoteOnVel > -1  then 
-            if NoteOnVel > X and NoteOnVel < nX then 
+            if NoteOnVel >= X and NoteOnVel <= nX then 
                 --local W , H = W  , H - PtSz/2
 
                 local x = ConvertScreenX(NoteOnVel)
@@ -301,26 +321,24 @@ function CurveEditor(W,H, PtsTB, lbl)
                 end
                 --GLOWING_CIRCLE({x,y}, 3, 3, 5 , ThemeClr("Accent_Clr") ) 
                 AddPt(x, y )
-            elseif (NoteOnVel <= X and i == 1) or (NoteOnVel > X and i == #PtsTB) then 
-                AddPt(  ConvertScreenX(NoteOnVel) , ConvertScreenY(Y))
+            --[[ elseif (NoteOnVel <= X and i == 1) or (NoteOnVel > X and i == #PtsTB) then 
+                AddPt(  ConvertScreenX(NoteOnVel) , ConvertScreenY(Y)) ]]
             end
         end
 
         for i, v in ipairs(Midi_Mod_Indicator)  do 
 
-            v.Opacity , v.time  , v.Complete = Anim_Update( 0.1 , 20, 1, 0 , v .time)
+            v.Opacity , v.time  , v.Complete = Anim_Update( 0.1 , 4, 1, 0 , v .time)
             local glowSz = 10
 
             local clr = ThemeClr("Accent_Clr")
 
-            local lineClr = Change_Clr_A( clr, -1.2 +  v.Opacity * 0.3)
-            local CircleClr = Change_Clr_A( clr,  v.Opacity-1 )  
-            local GlowOut = 10
-            local GlowOut = 3 + v.Opacity*glowSz
-  
-            --LOWING_CIRCLE({v.x,v.y}, 1, GlowOut, 2 , CircleClr, nil, 0xffffffff) 
+            local lineClr = Change_Clr_A( clr, -1.2 +  v.Opacity * 0.4)
+            local CircleClr =  --[[ lineClr or ]] Change_Clr_A( clr,  v.Opacity-1 )  
 
             local glow_in = 1
+            local GlowOut = glow_in + v.Opacity*glowSz
+
             for i= glow_in, GlowOut, 1 do 
                 local I =  (GlowOut - i)   
                 local range =  GlowOut - glow_in
@@ -349,20 +367,10 @@ function CurveEditor(W,H, PtsTB, lbl)
 
     end
     
-    local function Update_Info_To_Jsfx()
-        r.gmem_attach('ParamValues')
-        r.gmem_write(4, 25) -- tells jsfx to get all points info    
-        r.gmem_write(12, Get_MidiMod_Ofs())  -- tells which midi mod it is , velocity is (+0) , Random is (+1~3) , KeyTrack is(+4~6)
-        r.gmem_write(13, #PtsTB) -- tells how many points in total
-
-        for i, v in ipairs(PtsTB) do 
-            r.gmem_write(11, i) -- tells which pt
-            if v[1] then r.gmem_write(20+i, v[1]) end
-            if  v[2] then r.gmem_write(30+i, v[2]) end
-        end
-    end
     
     im.Dummy(ctx,W + Pad,H + Pad)
+    local CursorPosEndX, CursorPosEndY = im.GetCursorPos(ctx)
+
     im.SetCursorPos(ctx, x + Pad/2 , y + Pad/2 )
     DrawGrid()
     local ClickOnBG = im.Dummy(ctx, W, H)
@@ -371,7 +379,7 @@ function CurveEditor(W,H, PtsTB, lbl)
     local R, B = im.GetItemRectMax(ctx)
     local R, B = R - PtSz, B - PtSz
 
-    Highlight_Itm(WDL, nil, 0xffffff33)
+    --Highlight_Itm(WDL, nil, 0xffffff33)
     PtsTB=PtsTB or { {0, 0} , {1, 1} }
     if not next(PtsTB) then 
     
@@ -381,28 +389,46 @@ function CurveEditor(W,H, PtsTB, lbl)
 
     local Hvr_Pt , Hvr_Ctrl_Pt
     local W , H = W - PtSz , H - PtSz
+    if im.IsWindowAppearing (ctx) --[[ or im.IsItemHovered(ctx) ]] then 
+        Update_Info_To_Jsfx(PtsTB, lbl , IsLFO, Macro)
+    end
+    local TWEAKING 
+    local function LFO_Add_Release_Node_If_None()
+        if not Mc.Rel_Type then return end 
+        if not  Mc.Rel_Type:find('Custom Release') then return end 
+        local found 
+        for i, v in ipairs( PtsTB) do 
+            if v.Rel then return end 
+        end
+        if not found then 
+            PtsTB [#PtsTB - 1 ].Rel = true 
+        end
+    end
 
-    Update_Info_To_Jsfx()
-
-    
-
+    LFO_Add_Release_Node_If_None()
     for i, v in ipairs( PtsTB) do 
         
         local X, Y = L+v[1]* W , B - v[2]*H 
-
         im.SetCursorScreenPos(ctx, X, Y )
-        local DtX, DtY = RoundBtn(PtSz, PtSz, i, 0xffffffff, 0xffffffff, PtSz/3)
+        local DtX, DtY, Tweaking = RoundBtn(PtSz, PtSz, i, 0xffffffff, 0xffffffff, PtSz/3)
+        if Tweaking then TWEAKING = true end  
         local lX = i>1 and PtsTB[i-1][1] or 0 
         local nX = i<#PtsTB and PtsTB[i+1][1] or 1
         local nY = i<#PtsTB and PtsTB[i+1][2] or v[2]
         v[1] = DtX and SetMinMax(v[1]+DtX/W , lX , nX)   or v[1]
         v[2] = DtY and SetMinMax(v[2]-DtY/H , 0, 1)   or v[2]
+        if i == 1 then 
+            v[1] = 0
+        elseif i == #PtsTB then 
+            v[1] = 1
+        end
+
         Hvr_Pt = im.IsItemHovered(ctx) and true  
         
         local function Send_gmem(Pt , mode )
-            r.gmem_attach('ParamValues')
+            r.gmem_attach(gmem_space)
             r.gmem_write(4, mode or 23) -- tells jsfx user is changing the curve
-            r.gmem_write(12, Get_MidiMod_Ofs())  -- - tells which midi mod it is , velocity is (+0) , Random is (+1~3) , KeyTrack is(+4~6)
+            r.gmem_write(12, Get_MidiMod_Ofs(lbl))  -- - tells which midi mod it is , velocity is (+0) , Random is (+1~3) , KeyTrack is(+4~6)
             r.gmem_write(11, Pt) -- tells which pt
             r.gmem_write(13, #PtsTB) -- tells how many points in total
         end
@@ -411,14 +437,24 @@ function CurveEditor(W,H, PtsTB, lbl)
             local mX, mY = im.GetMousePos(ctx)
          
             if mX > X and mX < L+ nX *W then 
-                if Wheel_V then 
+
+                if Wheel_V and Wheel_V~=0 then 
                     v[3] =  (v[3] or 0 ) 
                     v[3] = v[3]+ Wheel_V /10
+                    if v[3] < 1 and v[3] > -1 then
+                        if Wheel_V > 0 then 
+                            v[3] = 1
+                        else 
+                            v[3] = -1
+                        end
+                    end
                     Send_gmem(i, 24 )
+                    r.gmem_attach(gmem_space)
                     r.gmem_write(15, v[3])
                     Save_to_Trk(lbl..' point '..i..' Curve', v[3])
                     
                 end
+                return true
             end
         
         end
@@ -426,9 +462,9 @@ function CurveEditor(W,H, PtsTB, lbl)
         local function Send_gmem_If_Drag_Node()
             if DtX or DtY then 
                 --Send_gmem(i )
-                r.gmem_attach('ParamValues')
+                r.gmem_attach(gmem_space)
                 r.gmem_write(4, 23) -- tells jsfx user is changing the curve
-                r.gmem_write(12, Get_MidiMod_Ofs())  -- - tells which midi mod it is , velocity is (+0) , Random is (+1~3) , KeyTrack is(+4~6)
+                r.gmem_write(12, Get_MidiMod_Ofs(lbl))  -- - tells which midi mod it is , velocity is (+0) , Random is (+1~3) , KeyTrack is(+4~6)
                 r.gmem_write(11, i) -- tells which pt
                 r.gmem_write(13, #PtsTB) -- tells how many points in total
                 if DtX then  
@@ -448,23 +484,26 @@ function CurveEditor(W,H, PtsTB, lbl)
                 Save_to_Trk(lbl..' point '..i..' X', '')
                 Save_to_Trk(lbl..' point '..i..' Curve', '')
                 table.remove(PtsTB, i )
+
                 SaveCurve()
-                --Update_Info_To_Jsfx()
+                Update_Info_To_Jsfx(PtsTB, lbl , IsLFO, Macro)
             end
         end
+
         local function AddPoint_If_DoubleClick ()
 
             if AddPt   and not Hvr_Pt and not Hvr_Ctrl_Pt  then 
                 local mX, mY = im.GetMousePos(ctx)
                 local mX , mY = (mX - L ) / W  , (B-mY ) / H
                 local n = PtsTB[i+1]
+                local Limit = IsLFO and 50 or 10 
                 if n then 
-                    if mX > v[1] and mX < n[1] and #PtsTB<10 then 
+                    if mX > v[1] and mX < n[1] and #PtsTB<Limit then 
                         table.insert(PtsTB , i+1, {})
                         PtsTB[i+1][1]=mX 
                         PtsTB[i+1][2]=mY 
                         SaveCurve()
-                       -- Update_Info_To_Jsfx()
+                        Update_Info_To_Jsfx(PtsTB, lbl , IsLFO, Macro)
                         Save_to_Trk(lbl..' point '.. #PtsTB..' X',mX)
                         Save_to_Trk(lbl..' point '.. #PtsTB..' Y',mY)
                         Save_to_Trk(lbl.. 'Curve number of points',  #PtsTB)
@@ -474,39 +513,150 @@ function CurveEditor(W,H, PtsTB, lbl)
                 end
             end         
         end
-        Wheel_To_Adjust_Curve()
-        Show_Played_Notes_Velocity(v[1] , nX, v[2] , nY,L, B, W, H, v[3], i)
-        --Send_gmem_If_Drag_Node()
-        Delete_Node_If_Alt_Click()
-        AddPoint_If_DoubleClick ()
-        if PtsTB[i+1] then 
-            local n = PtsTB[i+1]
-            local nX , nY = L + n[1] * W ,  B - n[2] * H 
-            local DtX, DtY
-            local ofs = PtSz/2
-            local x1, y1, x2, y2 = X+ofs, Y+ofs , nX+ofs ,  nY+ofs
 
-            if not v[3] then 
-                im.DrawList_AddLine(WDL, x1, y1, x2, y2, lineClr, thick)
-            else
-                Draw_Single_Curve(nX, X, nY, Y, v[3] , thick,lineClr, ofs)
+        local function Draw_Playhead_If_LFO()
+            if not IsLFO then return end 
+            local MOD  = math.abs(SetMinMax((r.gmem_read(100 + Macro) or 0) / 127, -1, 1))
+            local PlayPos = L + PtSz/2 + r.gmem_read(108 + Macro) / 4 * W / ((Mc.LFO_leng or LFO.Def.Len) / 4)
+            local H = H 
+            local T = T + PtSz/2
+            local X = PlayPos 
+            local Y = T + H - MOD * H
+            im.DrawList_AddLine(WDL, X, T, X, T + H, EightColors.LFO[Macro], 1)
+            --im.DrawList_AddCircleFilled(WDL, X, Y, 3, EightColors.LFO[Macro])
+            GLOWING_CIRCLE({X, Y}, 0, 15, 0, EightColors.LFO[Macro], WDL)
+            --[[ local function DrawValueTrail()
+                local M = Mc
+                local PlayPos = L + PtSz/2 + r.gmem_read(108 + Macro) / 4 * W / ((Mc.LFO_leng or LFO.Def.Len) / 4)
+                M.Trail = M.Trail or {}
+
+                -- Store previous frame's position
+                local prevPlayPos = M.Trail[#M.Trail] and M.Trail[#M.Trail].x or PlayPos
+                
+                -- Find if we crossed any points
+                local crossedPoints = {}
+                for i = 1, #PtsTB do
+                    local ptX = L + PtsTB[i][1] * W + PtSz/2
+                    -- Check if point lies between previous and current playhead position
+                    if (prevPlayPos < ptX and ptX < PlayPos) then
+                        table.insert(crossedPoints, {
+                            x = ptX,
+                            y = T + H - PtsTB[i][2] * H
+                        })
+                    end
+                end
+                if #crossedPoints > 0 then 
+                    -- Add all points in sequence
+                    for _, pt in ipairs(crossedPoints) do
+                        table.insert(M.Trail, pt)
+                    end
+                else 
+                    -- Add current position
+                    table.insert(M.Trail, { x = PlayPos, y = Y })
+                end
+                if #M.Trail > 40 then table.remove(M.Trail, 1) end
+                
+                -- Draw trail segments
+                for i = 2, #M.Trail do
+                    local v = M.Trail[i]
+                    local ls = M.Trail[i-1]
+                    if v.x >= ls.x then
+                        local FDL = im.GetWindowDrawList(ctx)
+                        local clr =  Change_Clr_A(0xffffff00, (i/#M.Trail) * 0.4 )
+                        im.DrawList_AddLine(FDL, v.x, v.y, ls.x, ls.y, clr, 8 - 8 / i  )
+                    end
+                end
+            end ]]
+            -- DrawValueTrail()
+            function Show_Position_Retroactively()
+                Mc.Trail = Mc.Trail or {}
+                --local prevPlayPos = M.Trail[#M.Trail] and M.Trail[#M.Trail].x or PlayPos
+                table.insert(Mc.Trail, PlayPos)
+                if #Mc.Trail > 40 then table.remove(Mc.Trail, 1) end
+                for i = 2, #Mc.Trail do
+                    local v = Mc.Trail[i]
+                    local ls = Mc.Trail[i-1]
+                    if v >= ls then
+                        local FDL = im.GetWindowDrawList(ctx)
+                        local CLR = Change_Clr_A(EightColors.LFO[Macro], -1)
+                        local clr =  Change_Clr_A(CLR, (i/#Mc.Trail) * 0.02 )
+                        im.DrawList_AddRectFilled(FDL, ls, T-PtSz/2, v, B+PtSz, clr  )
+                    end
+                end
+            end
+            Show_Position_Retroactively()
+        end 
+
+        local function LFO_Release_Node ()
+            if not Mc.Rel_Type then return end 
+            if  Mc.LFO_Env_or_Loop ~= 'Envelope'  then return end
+            if Mc.Rel_Type:find('Custom Release') then 
+                if v.Rel  then
+                    local function If_Choose_Rel(id)
+                        PtsTB[id].Rel = true
+                        v.Rel = nil 
+                        r.gmem_write(4, 20) -- set mode to 20 , which means User is choosing release point
+                        r.gmem_write(9, id) -- tells which point(node) is the release
+                        LFO_REL_MS_DT = nil
+                        im.ResetMouseDragDelta(ctx)
+                    end
+                    local L =X + PtSz/2
+                    --im.DrawList_AddCircle(WDL, L, T + PtSz / 2, 6, 0xffffffaa)
+                    local T = T - PtSz-3
+                    local B = B + PtSz
+                    im.DrawList_AddLine(WDL, L, T, L, B, 0xffffff55, PtSz/3)
+                    --im.DrawList_AddText(WDL, L + PtSz/2, T, 0xffffffaa, 'Release')
+                    local X, Y = im.GetCursorPos(ctx)
+                    im.SetCursorScreenPos(ctx, L , T)
+                    if im.ArrowButton(ctx, 'ReleaseLeft', 0) then 
+                        If_Choose_Rel(math.max(i-1 , 1 ) ) 
+                    end
+                    SL(nil,0 ) 
+                    im.Button(ctx, 'R' ) 
+                    if im.IsItemActive(ctx) then  
+                        TWEAKING =true   
+                        local MsX, MsY = im.GetMouseDragDelta(ctx)
+                        LFO_REL_MS_DT =  (LFO_REL_MS_DT or 0 ) + MsX
+                        if LFO_REL_MS_DT > 20 then 
+                            If_Choose_Rel(math.min(i+1 , #PtsTB))
+                        elseif LFO_REL_MS_DT < -20 then 
+                            If_Choose_Rel(math.max(i-1 , 1))
+
+                        end
+                        
+                    end 
+                    SL(nil, 0)
+                    if im.ArrowButton(ctx, 'ReleaseRight', 1) then 
+                        If_Choose_Rel(math.min(i+1 , #PtsTB))
+
+
+                    end
+                    im.SetCursorScreenPos(ctx, X, Y) 
+
+
+                end
             end
         end
-    end
-    if PtsTB[1] then
-        if  PtsTB[1][1] + L ~= L then 
-            local X, Y = L + PtsTB[1][1] * W   + PtSz / 2 , B - PtsTB[1][2] * H + PtSz / 2 
-            im.DrawList_AddLine(WDL, L, Y, X,  Y, lineClr, thick)
-        end
-        if PtsTB[#PtsTB][1]+ R ~= R then 
-            local X, Y = L + PtsTB[#PtsTB][1] * W  , B - PtsTB[#PtsTB][2] * H + PtSz /2
-            
-            im.DrawList_AddLine(WDL, X, Y, R ,  Y, lineClr, thick)
-        end
-    end
-    SaveCurve()
 
-    return PtsTB
+
+        
+        
+        local HoverOnCurve =   Wheel_To_Adjust_Curve()
+        local thick = HoverOnCurve and 6 or 4
+        Draw_Curve (WDL,PtsTB, i, L, R, B, W, H, PtSz , lineClr , thick)
+        Draw_Playhead_If_LFO()
+        Show_Played_Notes_Velocity(v[1] , nX, v[2] , nY,L, B, W, H, v[3], i)
+        Send_gmem_If_Drag_Node()
+        Delete_Node_If_Alt_Click()
+        AddPoint_If_DoubleClick ()
+        LFO_Release_Node ()
+        
+    end
+    
+    SaveCurve()
+    im.SetCursorPos(ctx, CursorPosEndX, CursorPosEndY)
+
+    return PtsTB , TWEAKING
     --[[ im.SetCursorScreenPos(ctx, R-PtSz, T)
     RoundBtn(PtSz, PtSz, 'Max', 0xffffffff) ]]
 
@@ -1091,9 +1241,8 @@ function AddWindowBtn(FxGUID, FX_Idx, width, CantCollapse, CantAddPrm, isContain
     if Animate_FX_Width==FxGUID then 
 
         if fx.Collapse then  -- if user is collapsing 
-
             fx.Width_Before_Collapse = fx.Width_Before_Collapse or  fx.Width
-            fx.Width, Anim_Time, fx.AnimComplete = Anim_Update( 0.1, 0.8,  fx.Width or  DefaultWidth , COLLAPSED_FX_WIDTH, Anim_Time)
+            fx.Width, Anim_Time, fx.AnimComplete = Anim_Update( 0.1, 0.8,  fx.Width or  DefaultWidth or Default_WindowBtnWidth , COLLAPSED_FX_WIDTH, Anim_Time)
 
             if fx.AnimComplete  then 
 
@@ -2015,7 +2164,7 @@ function Draw_Attached_Drawings(FP,FX_Idx, pos, Prm_Val, Prm_Type, FxGUID )
 
 
             local VV = v.Angle_Max_VA_BP and (Val-0.5 )*2 or Val 
-            local t = (v.Angle_Max_VA and v.Angle_Max_VA~=0) and VV * v.Angle_Max_VA  or 1
+            local t = (v.Angle_Max_VA and v.Angle_Max_VA~=0) and VV * v.Angle_Max_VA  or VV
             local angle = ANGLE_MIN + (ANGLE_MAX - ANGLE_MIN) * t
             local angle_cos, angle_sin = math.cos(angle), math.sin(angle)
             local IN = v.Rad_In or 0 -- modify this for the center begin point
@@ -2062,30 +2211,30 @@ function Draw_Attached_Drawings(FP,FX_Idx, pos, Prm_Val, Prm_Type, FxGUID )
                         local rpt = (v.Repeat_VA and v.Repeat_VA~= 0) and Val * v.Repeat_VA or 1
                         local gap = (v.Gap_VA and v.Gap_VA~= 0) and Val * v.Gap* v.Gap_VA or 1   
 
+                        if v.Type == 'Knob Numbers' then
+                            
+                            for i = 0, v.Repeat* (rpt ) , math.max(1*gap, 0.01) do 
+                                local t = (i/v.Repeat- 0) / (1 - 0)
+                                local VV = v.Angle_Max_VA_BP and (Val-0.5 )*2 or Val 
+                                local VV = v.Type == 'Knob Numbers' and i or VV
+                                local  ANGLE_MAX = (v.Angle_Max_VA and v.Angle_Max_VA~=0) and ANGLE_MIN + (ANGLE_MAX - ANGLE_MIN)   * (VV * v.Angle_Max_VA) or ANGLE_MAX
+                                local angle = ANGLE_MIN + (ANGLE_MAX - ANGLE_MIN) * t
+                                local angle_cos, angle_sin = math.cos(angle), math.sin(angle)
 
-                        
-                        for i = 0, v.Repeat* (rpt ) , math.max(1*gap, 0.01) do 
-                            local t = (i/v.Repeat- 0) / (1 - 0)
-                            local VV = v.Angle_Max_VA_BP and (Val-0.5 )*2 or Val 
-                            local ANGLE_MAX = ANGLE_MAX
-                            if v.Type == 'Knob Numbers' then VV = 1 end 
-                            ANGLE_MAX = (v.Angle_Max_VA and v.Angle_Max_VA~=0) and ANGLE_MIN + (ANGLE_MAX - ANGLE_MIN)   * (VV * v.Angle_Max_VA) or ANGLE_MAX
-                            local angle = ANGLE_MIN + (ANGLE_MAX - ANGLE_MIN) * t
-                            local angle_cos, angle_sin = math.cos(angle), math.sin(angle)
-
-                            local x1, y1 = x + angle_cos * IN,  y + angle_sin * IN
-                            local x2, y2 = x + angle_cos * (OUT - Thick), y + angle_sin * (OUT - Thick)
-                            local Clr = BlendColors(v.Clr or 0xffffffff, v.RPT_Clr or 0xff33ffff, i / v.Repeat)
-                            if v.Type == 'Knob Numbers' then
-                                local hi, lo = v.Value_Range_High or v.Repeat, v.Value_Range_Low or 0
-                                local val =  (i / v.Repeat) * (hi - lo) + lo
-                                local val = round(val, v.Decimal_Places or 1)
-                                if v.Decimal_Places == 0 or not v.Decimal_Places then
-                                    val = math.floor(val)
+                                local x1, y1 = x + angle_cos * IN,  y + angle_sin * IN
+                                local x2, y2 = x + angle_cos * (OUT - Thick), y + angle_sin * (OUT - Thick)
+                                local Clr = BlendColors(v.Clr or 0xffffffff, v.RPT_Clr or 0xffffffff, i / v.Repeat)
+                                if v.Type == 'Knob Numbers' then
+                                    local hi, lo = v.Value_Range_High or v.Repeat, v.Value_Range_Low or 0
+                                    local val =  (i / v.Repeat) * (hi - lo) + lo
+                                    local val = round(val, v.Decimal_Places or 1)
+                                    if v.Decimal_Places == 0 or not v.Decimal_Places then
+                                        val = math.floor(val)
+                                    end
+                                    im.DrawList_AddTextEx(WDL, Arial_12, 12, x1, y1, Clr or v.Clr or 0x999999aa, tostring(val))
+                                else
+                                    im.DrawList_AddLine(WDL, x1, y1, x2, y2, Clr or v.Clr or 0x999999aa, Thick)
                                 end
-                                im.DrawList_AddTextEx(WDL, Arial_12, 12, x1, y1, Clr or v.Clr or 0x999999aa, tostring(val))
-                            else
-                                im.DrawList_AddLine(WDL, x1, y1, x2, y2, Clr or v.Clr or 0x999999aa, Thick)
                             end
                         end
 
@@ -2095,9 +2244,14 @@ function Draw_Attached_Drawings(FP,FX_Idx, pos, Prm_Val, Prm_Type, FxGUID )
                         for i = IN, OUT, (1 + (v.Gap or 0)) do
                             --local ANGLE_MIN = v.Angle_Min_VA and ANGLE_MIN \
                             local VV = v.Angle_Max_VA_BP and (Val-0.5 )*2 or Val 
-
-                            local VV = (v.Angle_Max_VA and v.Angle_Max_VA~=0) and VV * v.Angle_Max_VA
-                            local ANGLE_MAX = (v.Angle_Max_VA and v.Angle_Max_VA~=0) and ANGLE_MIN +(ANGLE_MAX - ANGLE_MIN) * VV or ANGLE_MAX
+                            if v.Angle_Max_VA and v.Angle_Max_VA~=0 then 
+                                VV = VV * v.Angle_Max_VA
+                            elseif v.Angle_Max_VA and v.Angle_Max_VA== 0 then 
+                                VV = 1
+                            else 
+                                VV = VV
+                            end 
+                            local ANGLE_MAX =  ANGLE_MIN +(ANGLE_MAX - ANGLE_MIN) * VV  
             
                             -- local ANGLE_MAX = v.Angle_Max_BP and ANGLE_MIN +(ANGLE_MAX - ANGLE_MIN) * ((Val-0.5 )*2) or ANGLE_MAX
                             im.DrawList_PathArcTo(WDL, x, y, i, ANGLE_MIN,SetMinMax(ANGLE_MIN +(ANGLE_MAX - ANGLE_MIN)  ,ANGLE_MIN, ANGLE_MAX))
@@ -4202,7 +4356,7 @@ function createFXWindow(FX_Idx, Cur_X_Ofs)
                             ---!!!!!! use  drawlist  splitter here?  So that Mod Lines can be on top, or to decide what drawings take precedence
                             local function Create_Item()
                                 local pos =  { im.GetCursorScreenPos(ctx) }
-                                local Lbl = '##' .. (FP.Name or Fx_P) .. FX_Name.. FP.Num
+                                local Lbl = '##' .. (FP.Name or Fx_P) .. FX_Name.. (FP.Num or 0)
                                 --- Add Parameter controls ---------
                                 if FP.Type == 'Slider' or (not FP.Type and not FX[FxGUID].DefType) or FX[FxGUID].DefType == 'Slider' then
                                     AddSlider(ctx, Lbl, FP.CustomLbl, FP.V or 0, 0, 1, Fx_P, FX_Idx, FP.Num, Style, FP.Sldr_W or FX.Def_Sldr_W[FxGUID], 0, Disable, Vertical, GrabSize, FP.Lbl, 8)
@@ -4263,7 +4417,7 @@ function createFXWindow(FX_Idx, Cur_X_Ofs)
                             ------ EXECUTION -----
                             ---
                             local pos = Create_Item()
-                            Show_Modulator_Control_Panel(pos, FP)
+                            Show_Modulator_Control_Panel(pos, FP, FxGUID)
 
                             --Prm_Modulation_tooltip_Win(FP)
 
@@ -4589,7 +4743,6 @@ function createFXWindow(FX_Idx, Cur_X_Ofs)
                 im.DrawList_AddRectFilled(WDL, Win_L, Win_T, Win_R, Win_B, 0x00000088)
             end
 
-            Container_CollapseIfTab(FxGUID, FX_Idx)
             
 
             WindowSize = im.GetWindowSize(ctx)
@@ -4693,7 +4846,7 @@ function AddSpaceBtwnFXs(FX_Idx, SpaceIsBeforeRackMixer, AddLastSpace, LyrID, Sp
         Dvdr.Clr[ClrLbl] = Dvdr.Clr[ClrLbl] or Clr.Dvdr.In_Layer
     end
 
-    im.PushStyleColor(ctx, im.Col_FrameBg, Dvdr.Clr[ClrLbl])
+    im.PushStyleColor(ctx, im.Col_ChildBg, 0x000000ff)
 
     local w = 10 + Dvdr.Width[TblIdxForSpace] + (Dvdr.Spc_Hover[TblIdxForSpace] or 0) + (AdditionalWidth or 0)
     local _, FX_Name = r.TrackFX_GetFXName(LT_Track, FX_Idx)
@@ -4745,8 +4898,8 @@ function AddSpaceBtwnFXs(FX_Idx, SpaceIsBeforeRackMixer, AddLastSpace, LyrID, Sp
                 local BtnSign = im.IsPopupOpen(ctx, 'Btwn FX Windows' .. FX_Idx)  and '' or BtnSign
 
                 im.PushFont(ctx, Arial_30)
-                im.PushStyleColor(ctx, im.Col_Button, 0x00000000)
-                local btn  = im.Button(ctx, BtnSign..'##Button between Windows', w, 210)
+                im.PushStyleColor(ctx, im.Col_Button, 0x000000ff)
+                local btn  = im.Button(ctx, BtnSign..'##Button between Windows', w, 220)
                 Draw_Lines_If_Popup_Open()
                 im.PopStyleColor(ctx)
                 im.PopFont(ctx)
@@ -4776,7 +4929,7 @@ function AddSpaceBtwnFXs(FX_Idx, SpaceIsBeforeRackMixer, AddLastSpace, LyrID, Sp
             
 
             AddFX_Menu(FX_Idx, LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, SpcIsInPre, SpcInPost, SpcIDinPost)
-            if SpaceIsBeforeRackMixer == 'Normal' then
+
                 if im.IsPopupOpen(ctx, 'Btwn FX Windows' .. FX_Idx) then 
                     ADD_FX_MENU_WIN_SZ_X, ADD_FX_MENU_WIN_SZ_Y = im.GetWindowSize(ctx)
                     local l, t  = im.GetItemRectMin(ctx)
@@ -4789,7 +4942,7 @@ function AddSpaceBtwnFXs(FX_Idx, SpaceIsBeforeRackMixer, AddLastSpace, LyrID, Sp
                     im.DrawList_AddRect(WDL, l , t, l+w, t+h , 0xffffffff)
 
                 end
-            end
+
 
 
 
@@ -5359,15 +5512,15 @@ function Draw_Background(FxGUID, pos, Draw_Which , IsPreviewBtn)
         local L = pos[1] or (Win_L + D.L)
         local T = pos[2] or (Win_T + D.T)
         local R = pos[3] or (Win_L + (D.R or 0))
-        local B = pos[4] or (Win_T + D.B)
+        local B = pos[4] or (Win_T + (D.B or 0))
         local Xg, Yg = D.XGap or 0, D.YGap or 0
         local Gap = D.Gap or 0
         if IsPreviewBtn then -- if it's used for the preview button in layout editor
             local Sz = {pos[3]- pos[1] , pos[4] - pos[2]}
             L = SetMinMax( pos[1] + (D.L / FX[FxGUID].Width) * Sz[1], pos[1], pos[3])
             T = SetMinMax( pos[2] + (D.T / 220) * Sz[2], pos[2], pos[4])
-            R = SetMinMax( pos[1] + (D.R / FX[FxGUID].Width) * Sz[1], pos[1], pos[3])
-            B = SetMinMax( pos[2] + (D.B / 220) * Sz[2], pos[2], pos[4])
+            R = SetMinMax( pos[1] + ((D.R or 0) / FX[FxGUID].Width) * Sz[1], pos[1], pos[3])
+            B = SetMinMax( pos[2] + ((D.B or 0) / 220) * Sz[2], pos[2], pos[4])
             Xg = Xg / FX[FxGUID].Width * Sz[1]
             Yg = (Yg / 220) * Sz[2]
         end
