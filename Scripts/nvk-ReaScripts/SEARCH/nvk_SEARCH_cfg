@@ -72,11 +72,15 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
-			id = "Script: sockmonkey72_StartupManager.lua (RS2af1f2a87373fb4e11747db22ea548541fcf0b19) (Main)",
+			id = "SWS/BR: Move closest grid line to edit cursor (BR_MOVE_GRID_TO_EDIT_CUR) (Main)",
 			type = "action"
 		},
 		{
-			id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
+			id = "Item: Set snap offset to cursor (40541) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/BR: Move closest project marker to edit cursor (obey snapping) (BR_CLOSEST_PROJ_MARKER_EDIT_SNAP) (Main)",
 			type = "action"
 		},
 		{
@@ -84,7 +88,67 @@ config = {
 			type = "action"
 		},
 		{
+			id = "SWS: Normalize item(s) to peak RMS (SWS_NORMPEAKRMS) (Main)",
+			type = "action"
+		},
+		{
+			id = "Open selected item source media in explorer/finder (42411) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item properties: Toggle polarity/phase for active take (40181) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item edit: Move right edge of item to edit cursor (41307) (Main)",
+			type = "action"
+		},
+		{
+			id = "Move edit cursor to next zero crossing in items (40791) (Main)",
+			type = "action"
+		},
+		{
+			id = "Take: Crop to active take in items (40131) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Remove all empty takes (41348) (Main)",
+			type = "action"
+		},
+		{
+			id = "View: Jump (go) to time window (40069) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Select only parent(s) of selected folder track(s) (SWS_SELPARENTS) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Select parent(s) of selected folder track(s) (SWS_SELPARENTS2) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Duplicate tracks (40062) (Main)",
+			type = "action"
+		},
+		{
 			id = "Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: sockmonkey72_StartupManager.lua (RS2af1f2a87373fb4e11747db22ea548541fcf0b19) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
 			type = "action"
 		},
 		{
@@ -168,14 +232,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Duplicate tracks (40062) (Main)",
-			type = "action"
-		},
-		{
 			id = "AU:Solid Bus Comp (Native Instruments)",
 			type = "au"
 		},
@@ -210,10 +266,6 @@ config = {
 		{
 			id = "AU:Air (Sound Particles)",
 			type = "au"
-		},
-		{
-			id = "SWS/BR: Move closest grid line to edit cursor (BR_MOVE_GRID_TO_EDIT_CUR) (Main)",
-			type = "action"
 		},
 		{
 			id = "Insert empty item (40142) (Main)",
@@ -256,20 +308,12 @@ config = {
 			type = "action"
 		},
 		{
-			id = "View: Jump (go) to time window (40069) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: nvk_SUBPROJECT - Update - Render (no reposition).lua (RSf7af7e3008e9d3cf2f351cea89387a51a8ea63e3) (Main)",
 			type = "action"
 		},
 		{
 			id = "AU:AUNewPitch (Apple)",
 			type = "au"
-		},
-		{
-			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
-			type = "action"
 		},
 		{
 			id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
@@ -324,10 +368,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Open selected item source media in explorer/finder (42411) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: spk77_Rename items to track name.eel (RS4fa0ff3424b6f0cfd8d1e7ec2c67e8980f5d022e) (Main)",
 			type = "action"
 		},
@@ -353,10 +393,6 @@ config = {
 		},
 		{
 			id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Set snap offset to cursor (40541) (Main)",
 			type = "action"
 		},
 		{
@@ -393,10 +429,6 @@ config = {
 		},
 		{
 			id = "Script: mpl_Toggle gradually transition for tempo marker before edit cursor.lua (RS574b4fecece3350bfad4168835d35bc4d1d4520e) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item edit: Move right edge of item to edit cursor (41307) (Main)",
 			type = "action"
 		},
 		{
@@ -437,38 +469,6 @@ config = {
 		},
 		{
 			id = "SWS/BR: Convert selected CC events in active item to linear envelope points in selected envelope (BR_ME_CC_TO_ENV_LINEAR) (MIDI Editor)",
-			type = "action"
-		},
-		{
-			id = "Envelope: Invert selected points (40334) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:TDR Kotelnikov (Tokyo Dawn Labs)",
-			type = "vst3"
-		},
-		{
-			id = "AU:BBC Symphony Orchestra (Spitfire Audio)",
-			type = "aui"
-		},
-		{
-			id = "VST3i:Phrasebox (Venomode)",
-			type = "vst3i"
-		},
-		{
-			id = "VSTi:UVIWorkstation (UVI) (34 out)",
-			type = "vsti"
-		},
-		{
-			id = "JS:MIDI Velocity and Timing Humanizer",
-			type = "jsfx"
-		},
-		{
-			id = "JS:MIDI Tool v2",
-			type = "jsfx"
-		},
-		{
-			id = "Script: sr_Delete short notes.lua (RSadec32166d5be32d8cc0275378427db22c35e442) (Main)",
 			type = "action"
 		}
 	},
