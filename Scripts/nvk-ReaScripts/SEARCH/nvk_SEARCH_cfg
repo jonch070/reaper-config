@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "realau",
+	SEARCH = "",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -72,6 +72,10 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
+			id = "Script: sockmonkey72_StartupManager.lua (RS2af1f2a87373fb4e11747db22ea548541fcf0b19) (Main)",
+			type = "action"
+		},
+		{
 			id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
 			type = "action"
 		},
@@ -109,10 +113,6 @@ config = {
 		},
 		{
 			id = "SWS/S&M: Show project/global startup actions (S&M_SHOW_PRJ_ACTION) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: sockmonkey72_StartupManager.lua (RS2af1f2a87373fb4e11747db22ea548541fcf0b19) (Main)",
 			type = "action"
 		},
 		{
