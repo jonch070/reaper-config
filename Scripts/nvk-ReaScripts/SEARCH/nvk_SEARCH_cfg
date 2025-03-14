@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "",
+	SEARCH = "pref pos",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -72,7 +72,175 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
+			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
+			type = "action"
+		},
+		{
+			id = "File: Export project MIDI... (40849) (Main)",
+			type = "action"
+		},
+		{
+			id = "File: Batch file converter (41076) (Main)",
+			type = "action"
+		},
+		{
+			id = "VSTi:UVIWorkstation (UVI) (34 out)",
+			type = "vsti"
+		},
+		{
+			id = "VST3i:UVIWorkstation (UVI) (34 out)",
+			type = "vst3i"
+		},
+		{
+			id = "AU:LABS (Spitfire Audio)",
+			type = "aui"
+		},
+		{
+			id = "AU:UAD Little Labs IBP (Universal Audio)",
+			type = "au"
+		},
+		{
+			id = "Item: Add/edit take marker at play position or edit cursor (42385) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Duplicate track without contents (098d275fab6f46cabc751dae4732d645) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
+			type = "action"
+		},
+		{
+			id = "File: Spawn new instance of REAPER (40063) (Main)",
+			type = "action"
+		},
+		{
+			id = "View: Jump (go) to time window (40069) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:MIDI Velocity and Timing Humanizer",
+			type = "jsfx"
+		},
+		{
+			id = "JS:MIDI Tool v2",
+			type = "jsfx"
+		},
+		{
+			id = "VST3i:Kontakt 7 (Native Instruments) (64 out)",
+			type = "vst3i"
+		},
+		{
+			id = "VST3:Pro-Q 3 (FabFilter)",
+			type = "vst3"
+		},
+		{
+			id = "VST3i:Pendulate (Newfangled Audio)",
+			type = "vst3i"
+		},
+		{
+			id = "Track: Duplicate tracks (40062) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item properties: Loop item source (40636) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Glue items, ignoring time selection (40362) (Main)",
+			type = "action"
+		},
+		{
+			id = "AU:Air (Sound Particles)",
+			type = "au"
+		},
+		{
+			id = "AU:Pendulate (Newfangled Audio)",
+			type = "aui"
+		},
+		{
+			id = "Script: rewgs-enable-track.lua (RS2269795255b016fdcd83dd2b85fa8a92bd1dd0e0) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/FNG: Rotate selected media items positions (reverse) (FNG_ROTATE_POS_REV) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Item - Glue items separately, ignoring time selection (preserve stuff).lua (RS984f432a1f31a0767bda1278d9f00d2890a5f7f9) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST:ReaEQ (Cockos)",
+			type = "vst"
+		},
+		{
+			id = "Script: nvk_THEME - Settings.lua (RS5090bcf8eb35e73f381a07670564e93f184342d7) (Main)",
+			type = "action"
+		},
+		{
+			id = "AU:Spectral Blurring (Michael Norris)",
+			type = "au"
+		},
+		{
+			id = "Correct overlapping notes (40659) (MIDI Editor)",
+			type = "action"
+		},
+		{
+			id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
+			type = "action"
+		},
+		{
+			id = "Insert empty item (40142) (Main)",
+			type = "action"
+		},
+		{
 			id = "SWS/BR: Move closest grid line to edit cursor (BR_MOVE_GRID_TO_EDIT_CUR) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item properties: Unlock (40689) (Main)",
+			type = "action"
+		},
+		{
+			id = "File: Open render queue (40929) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: mpl_Toggle gradually transition for tempo marker before edit cursor.lua (RS574b4fecece3350bfad4168835d35bc4d1d4520e) (Main)",
+			type = "action"
+		},
+		{
+			id = "Tempo envelope: Insert tempo/time signature change marker at edit cursor... (40256) (Main)",
+			type = "action"
+		},
+		{
+			id = "Show action list (40605) (Main)",
+			type = "action"
+		},
+		{
+			id = "Open selected item source media in explorer/finder (42411) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3i:Arcade (Output)",
+			type = "vst3i"
+		},
+		{
+			id = "JS:Global Sampler",
+			type = "jsfx"
+		},
+		{
+			id = "Script: BirdBird_Global Sampler.lua (RSdbf64708ea8abea46b82a08cabc050148d65176c) (Main)",
 			type = "action"
 		},
 		{
@@ -84,19 +252,7 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)",
-			type = "action"
-		},
-		{
 			id = "SWS: Normalize item(s) to peak RMS (SWS_NORMPEAKRMS) (Main)",
-			type = "action"
-		},
-		{
-			id = "Open selected item source media in explorer/finder (42411) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
 			type = "action"
 		},
 		{
@@ -120,10 +276,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "View: Jump (go) to time window (40069) (Main)",
-			type = "action"
-		},
-		{
 			id = "SWS: Select only parent(s) of selected folder track(s) (SWS_SELPARENTS) (Main)",
 			type = "action"
 		},
@@ -132,23 +284,7 @@ config = {
 			type = "action"
 		},
 		{
-			id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Duplicate tracks (40062) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: sockmonkey72_StartupManager.lua (RS2af1f2a87373fb4e11747db22ea548541fcf0b19) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
 			type = "action"
 		},
 		{
@@ -248,27 +384,7 @@ config = {
 			type = "action"
 		},
 		{
-			id = "AU:Spectral Blurring (Michael Norris)",
-			type = "au"
-		},
-		{
-			id = "Script: rewgs-enable-track.lua (RS2269795255b016fdcd83dd2b85fa8a92bd1dd0e0) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Glue items, ignoring time selection (40362) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: Lokasenna_Snap time selection to grid.lua (RSa86ceaf660e5f369891731db5cd8ff55455aecef) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:Air (Sound Particles)",
-			type = "au"
-		},
-		{
-			id = "Insert empty item (40142) (Main)",
 			type = "action"
 		},
 		{
@@ -276,19 +392,7 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Custom: Duplicate track without contents (098d275fab6f46cabc751dae4732d645) (Main)",
-			type = "action"
-		},
-		{
 			id = "Item: Glue items within time selection (42432) (Main)",
-			type = "action"
-		},
-		{
-			id = "File: Export project MIDI... (40849) (Main)",
-			type = "action"
-		},
-		{
-			id = "File: Spawn new instance of REAPER (40063) (Main)",
 			type = "action"
 		},
 		{
@@ -297,10 +401,6 @@ config = {
 		},
 		{
 			id = "Item: Open items in primary external editor (40109) (Main)",
-			type = "action"
-		},
-		{
-			id = "Tempo envelope: Insert tempo/time signature change marker at edit cursor... (40256) (Main)",
 			type = "action"
 		},
 		{
@@ -324,15 +424,7 @@ config = {
 			type = "action"
 		},
 		{
-			id = "VST3i:Kontakt 7 (Native Instruments) (64 out)",
-			type = "vst3i"
-		},
-		{
 			id = "Script: spk77_Pan active takes randomly (normal distribution).eel (RSacf6463b9fe716eb5f2031526881f786d7902441) (Main)",
-			type = "action"
-		},
-		{
-			id = "File: Batch file converter (41076) (Main)",
 			type = "action"
 		},
 		{
@@ -345,10 +437,6 @@ config = {
 		},
 		{
 			id = "Script: cfillion_Set timecode at edit cursor.lua (RS3a2747d2324fb60fe601f09ee153859d0b2395e8) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Add/edit take marker at play position or edit cursor (42385) (Main)",
 			type = "action"
 		},
 		{
@@ -372,10 +460,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Correct overlapping notes (40659) (MIDI Editor)",
-			type = "action"
-		},
-		{
 			id = "Edit: Split notes (40046) (MIDI Editor)",
 			type = "action"
 		},
@@ -386,90 +470,6 @@ config = {
 		{
 			id = "VST3i:LABS (Spitfire Audio)",
 			type = "vst3i"
-		},
-		{
-			id = "Script: HeDa_Regions&Markers from Items.lua (RS326a6d0cc690e1f285d5ea6e2ae32086d195a3ee) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:Spectral Freezing (Michael Norris)",
-			type = "au"
-		},
-		{
-			id = "Item properties: Decrease item rate by ~0.6% (10 cents), clear 'preserve pitch' (40800) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:UVIWorkstation (UVI)",
-			type = "aui"
-		},
-		{
-			id = "SWS/S&M: Set project startup action (S&M_SET_PRJ_ACTION) (Main)",
-			type = "action"
-		},
-		{
-			id = "Show action list (40605) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:Air (Sound Particles)",
-			type = "vst3"
-		},
-		{
-			id = "Script: nvk_FOLDER_ITEMS.lua (RSdb3313975d3fbc015c0333c914ec75f2a1b69c2b) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/S&M: Open/close Notes window (S&M_SHOW_NOTES_VIEW) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: mpl_Toggle gradually transition for tempo marker before edit cursor.lua (RS574b4fecece3350bfad4168835d35bc4d1d4520e) (Main)",
-			type = "action"
-		},
-		{
-			id = "Edit: Move right edge of note to edit cursor (40793) (MIDI Editor)",
-			type = "action"
-		},
-		{
-			id = "Item edit: Nudge/set... (41226) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item properties: Unlock (40689) (Main)",
-			type = "action"
-		},
-		{
-			id = "Envelope: Insert automation item (42082) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:LABS (Spitfire Audio)",
-			type = "aui"
-		},
-		{
-			id = "VST:Little Plate (Soundtoys)",
-			type = "vst"
-		},
-		{
-			id = "Create measure from time selection (detect tempo, detect number of measures) (40338) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item properties: Lock (40688) (Main)",
-			type = "action"
-		},
-		{
-			id = "Markers: Insert region from time selection (40174) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/BR: Convert selected CC events in active item to linear envelope points in selected envelope (BR_ME_CC_TO_ENV_LINEAR) (MIDI Editor)",
-			type = "action"
 		}
 	},
 	recent_results_amount = 30,
