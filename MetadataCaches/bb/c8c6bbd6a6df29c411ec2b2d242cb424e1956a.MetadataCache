@@ -1,0 +1,35 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Dad Eulogy Media/music"
+F "01 Tell Me Before You Go.m4a" 7504814 0 1752015534 0
+D s 44100 n 2 l 3:28.236
+F "01 What a Wonderful World.m4a" 5587075 0 1752015514 0
+D s 44100 n 2 l 2:19.482
+F "03 Housequake.m4a" 9863802 0 1752015427 0
+D s 44100 n 2 l 4:42.168
+F "10 Dancing In the Moonlight (Bass).wav" 52237034 0 1752017645 0
+D y 2025-07-08 s 48000 n 2 r 1:11:51.000
+D l 3:01.133 i 24
+F "10 Dancing In the Moonlight (Drums).wav" 52237034 0 1752017648 0
+D y 2025-07-08 s 48000 n 2 r 1:11:51.000
+D l 3:01.133 i 24
+F "10 Dancing In the Moonlight (Other).wav" 52237034 0 1752017643 0
+D y 2025-07-08 s 48000 n 2 r 1:11:51.000
+D l 3:01.133 i 24
+F "10 Dancing In the Moonlight.m4a" 6562291 0 1752015373 0
+D s 44100 n 2 l 3:01.185
+F "SpotiDownloader.com - Love Story - Taylor Swift.mp3" 9548996 0 1752015189 0
+D t "Love Story" a "Taylor Swift" b Fearless y 2008
+D s 48000 n 2 l 3:55.296 i 320k
+D m 2/5 j "mime:image/jpeg offset:269 length:131793"
+F "SpotiDownloader.com - With A Little Help From My Friends - Remastered 2017 - The Beatles (Bass).wav" 47669028 0 1752016824 0
+D y 2025-07-08 s 48000 n 2 r 1:00:00.000
+D l 2:45.293 i 24
+F "SpotiDownloader.com - With A Little Help From My Friends - Remastered 2017 - The Beatles (Drums).wav" 47669028 0 1752016826 0
+D y 2025-07-08 s 48000 n 2 r 1:00:00.000
+D l 2:45.293 i 24
+F "SpotiDownloader.com - With A Little Help From My Friends - Remastered 2017 - The Beatles (Other).wav" 47669028 0 1752016822 0
+D y 2025-07-08 s 48000 n 2 r 1:00:00.000
+D l 2:45.293 i 24
+F "SpotiDownloader.com - With A Little Help From My Friends - Remastered 2017 - The Beatles.mp3" 6873651 0 1752015142 0
+D t "With A Little Help From My Friends - Remastered 2017" a "The Beatles" b "Sgt. Pepper's Lonely Hearts Club Band (Super Deluxe Edition)" y 1967
+D s 44100 n 2 l 2:45.293 i 320k
+D m 1/5 j "mime:image/jpeg offset:496 length:254818"

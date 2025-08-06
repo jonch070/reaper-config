@@ -1,6 +1,6 @@
 --[[
 Description: nvk_SEARCH
-Version: 1.17.2
+Version: 1.17.9
 About:
     # nvk_SEARCH
 
@@ -10,6 +10,24 @@ Links:
     REAPER forum thread https://forum.cockos.com/showthread.php?t=286729
     User Guide: https://nvk.tools/docs/search
 Changelog:
+    1.17.9
+        Option to set new instrument tracks to auto-arm when selected
+    1.17.8
+        Reverting back to old behavior of adding to the selected track or item when adding instrument plug-ins. The default behavior can now be changed in the settings and as before toggled with alt
+        Name tracks when adding instruments
+    1.17.7
+        Option to check for missing project files and remove them from the search results (increases startup time)
+        Removing unnecessary Reaper 6 compatibility code
+    1.17.6
+        Dragging a virtual instrument to an empty track area will create a new armed track
+        Fix right-click context menu text for virtual instruments
+    1.17.5
+        Add shortcut to add FX to specific slot numbers (e.g. Ctrl+1 adds to FX slot 1, etc.)
+    1.17.4
+        Make new track with armed midi the default behavior when adding instrument plug-ins. Now alt-add will add to the selected track or item
+        New hotkey: Ctrl+F to clear the search field and reset the filter
+    1.17.3
+        Script was not properly getting the last clicked item or track when determining where to add FX
     1.17.2
         Refactoring - make sure to grab latest version of nvk_SHARED
         Alt key to open or not open projects in new tab (opposite of default setting)

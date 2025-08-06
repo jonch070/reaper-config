@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam JSFX" commit="69de0b91fe05a8454432db53e22f9ad205d016ed">
+<index version="1" name="ReaTeam JSFX" commit="9ff4669c904ab09d2109007e66d3eb1ecafeae11">
+  <category name="Development">
+    <reapack name="philranger_GUI and Audio Library.jsfx" type="effect" desc="GUI and Audio Library">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This is about the library, not the plugin itself as it is given only as an example of using most of the function's library. Comments welcome! Resizing of the graphic components is automatic, automatic memory management, JSFX exclusively so it's easy to understand, edit and improve Main graphic functions included: Linear and non-linear range management, GUI for Texts and numbers, panels, pictures, knobs, sliders, switches and meters. Sliders, switches and knobs have a default style or can be whatever picture you want. Audio functions included: EQ (all main types), enveloppe follower, clipper, delay (with clipping@+12 dB) and conversion utilities\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.Alpha2" author="Phil Ranger" time="2025-03-06T18:12:36Z">
+        <source>https://github.com/ReaTeam/JSFX/raw/31d05a54d3f7ffdefa828912261464c63bc47e99/Development/philranger_GUI%20and%20Audio%20Library.jsfx</source>
+        <source file="philranger_GUI and Audio Library/PhilRangerAudioLibraryAlpha2.jsfx-inc">https://github.com/ReaTeam/JSFX/raw/31d05a54d3f7ffdefa828912261464c63bc47e99/Development/philranger_GUI%20and%20Audio%20Library/PhilRangerAudioLibraryAlpha2.jsfx-inc</source>
+        <source file="philranger_GUI and Audio Library/Knob.png">https://github.com/ReaTeam/JSFX/raw/31d05a54d3f7ffdefa828912261464c63bc47e99/Development/philranger_GUI%20and%20Audio%20Library/Knob.png</source>
+        <source file="philranger_GUI and Audio Library/Highlight.png">https://github.com/ReaTeam/JSFX/raw/31d05a54d3f7ffdefa828912261464c63bc47e99/Development/philranger_GUI%20and%20Audio%20Library/Highlight.png</source>
+        <source file="philranger_GUI and Audio Library/Switch.png">https://github.com/ReaTeam/JSFX/raw/31d05a54d3f7ffdefa828912261464c63bc47e99/Development/philranger_GUI%20and%20Audio%20Library/Switch.png</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Distortion">
     <reapack name="Loudener.jsfx" type="effect" desc="Loudener">
       <metadata>
@@ -93,6 +113,30 @@ Minor optimizations]]></changelog>
       </metadata>
       <version name="1.0" author="RCJacH" time="2021-09-21T19:54:58Z">
         <source>https://github.com/ReaTeam/JSFX/raw/2ab83011ebb4e10130c5614e864b46235e0680d3/Distortion/rcjach_RCInflator.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="reincore_MegaGrit.jsfx" type="effect" desc="MegaGrit – 3-Band + Feedback Distortion">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Multiband JSFX distortion for REAPER \u8211- splits audio into low/mid/high, adds unique dirt per band, then a feedback \u8220"breather\u8221" that bends with your playing.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/reincore/megagrit-jsfx">MegaGrit GitHub Repo</link>
+      </metadata>
+      <version name="1.0" author="reincore" time="2025-07-23T13:27:29Z">
+        <source>https://github.com/ReaTeam/JSFX/raw/2e992d33e9fa76af1df04ba34e74c043cd2059dc/Distortion/reincore_MegaGrit.jsfx</source>
+      </version>
+      <version name="2.0" author="reincore" time="2025-07-26T05:17:30Z">
+        <changelog><![CDATA[- Fixed a critical bug where the mid-band signal was always silent.
+- Added 'Envelope Smoothness' slider for direct control over the modulation's character.
+- Replaced the high-band clipper with a smoother soft-clip distortion.
+- Added input clamping for improved stability at high gain.
+- Lowered the default 'Input Drive' for a better experience.
+* Special thanks to ashcat_lt for the feedback!]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/9ff4669c904ab09d2109007e66d3eb1ecafeae11/Distortion/reincore_MegaGrit.jsfx</source>
       </version>
     </reapack>
     <reapack name="TiaR_Ze Morpho Dist.jsfx" type="effect" desc="Ze Morpho Dist">
@@ -727,11 +771,11 @@ here
     </reapack>
     <reapack name="mschnell_MIDI CC fluctuation.jsfx" type="effect" desc="MIDI CC fluctuation">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Description\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Description\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 \f1 MIDI CC fluctuation generates a randomly fluctuating 14 bit (high resolution) CC Midi data stream. Normal 7 Bit CC numbers also can be selected.\line
 \line
 The fluctuation is generated by randomly increasing / decreasing the current CC value. The way this is done, can be "humanized" by several parameters.\line
@@ -802,6 +846,11 @@ Some bug fixes]]></changelog>
         <changelog><![CDATA[user interface can be selected to be simple, medium or complex]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/f0777040996436e43ea185e7197d31935ffb66a5/MIDI/mschnell_MIDI%20CC%20fluctuation.jsfx</source>
         <source type="data" file="mschnell_MIDI CC fluctuation/Voice Doubling.RfxChain">https://github.com/ReaTeam/JSFX/raw/f0777040996436e43ea185e7197d31935ffb66a5/MIDI/mschnell_MIDI%20CC%20fluctuation/Voice%20Doubling.RfxChain</source>
+      </version>
+      <version name="3.1" author="Michael Schnell (mschnell@bschnell.de)" time="2025-01-29T12:42:49Z">
+        <changelog><![CDATA[Improve low resolution output slider display]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/db943927cad0b31056aacb7278f390dd2e78914e/MIDI/mschnell_MIDI%20CC%20fluctuation.jsfx</source>
+        <source type="data" file="mschnell_MIDI CC fluctuation/Voice Doubling.RfxChain">https://github.com/ReaTeam/JSFX/raw/db943927cad0b31056aacb7278f390dd2e78914e/MIDI/mschnell_MIDI%20CC%20fluctuation/Voice%20Doubling.RfxChain</source>
       </version>
     </reapack>
     <reapack name="mschnell_MIDI glissando.jsfx" type="effect" desc="MIDI glissando">
@@ -986,6 +1035,45 @@ bugfix]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/cd154af80f9e7e1458bb5f1745ff76fbb6379d4c/MIDI/mschnell_MIDI%20Slider%20and%20MIDI%20CC.jsfx</source>
       </version>
     </reapack>
+    <reapack name="mschnell_Note On Delay Tool.jsfx" type="effect" desc="Note On Delay Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Note On Delay\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tool modulates the Note-On and Note-Off time of the notes passing through, according to two parameters and a random amount. One of the two parameters can be controlled by Midi CC messages.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It can be used to humanize recorded loops. E.g. feeding the first parameter by an envelope, the second by a random-walk fluctuation plugin (such as MIDI CC fluctuation), and adding some individual randomness to any note. Randomness for chords results in a melody-alike feeling.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Parameters:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Input Channel" selects the Midi channel for the notes and the CC messages (or "Any" for all channels)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Controller for Delay 2" selects the (low resolution) CC message that is used to modulate the second delay (or "-" for no modulation by CC)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Controller Factor" sets the factor to be used when modulating Delay2 by CC messages\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Delay Headroom (ms)" "Plugin Delay Compensation" (i.e. negative delay) imposed to allow for negative amount of delay modulation. The resulting negative delay is limited to this value.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Delay 1 (ms)" delay imposed on Note-On and related Note-Off events\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Delay 2 (ms)" delay imposed on Note-On and related Note-Off events\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Random (ms)" amount of random delay imposed on Note-On and related Note-Off events\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Delay (ms)" displays the resulting delay\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Random Profile" select more centrist or equal distribution\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Michael Schnell (mschnell@bschnell.de)" time="2025-01-29T16:26:47Z">
+        <changelog><![CDATA[initial release]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/8b1b973a9400fac013a6f6905ae0de2e04f72ca0/MIDI/mschnell_Note%20On%20Delay%20Tool.jsfx</source>
+      </version>
+      <version name="1.1" author="Michael Schnell (mschnell@bschnell.de)" time="2025-02-03T02:37:31Z">
+        <changelog><![CDATA[PDC was not working]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/572bba467b8cd3ce06b02f6c3eff30c933afc78a/MIDI/mschnell_Note%20On%20Delay%20Tool.jsfx</source>
+      </version>
+      <version name="1.2" author="Michael Schnell (mschnell@bschnell.de)" time="2025-02-19T16:06:08Z">
+        <changelog><![CDATA[Adding Random Profile slider]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/df47a7c25fc828729d18980212c27c021e1fa521/MIDI/mschnell_Note%20On%20Delay%20Tool.jsfx</source>
+      </version>
+      <version name="1.3" author="Michael Schnell (mschnell@bschnell.de)" time="2025-05-28T09:57:08Z">
+        <changelog><![CDATA[bugfix: use Slider 4 for PDC]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/65012bd6e6cb500f050a639ed957132053c01cae/MIDI/mschnell_Note%20On%20Delay%20Tool.jsfx</source>
+      </version>
+    </reapack>
     <reapack name="mschnell_Note On under X velocity to Note Off and send All Notes Off.jsfx" type="effect" desc="Note On under X velocity to Note Off and send All Notes Off">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -1009,6 +1097,37 @@ Kills all notes below a selectable velocity threshold and sends an "All Notes Of
       <version name="1.1" author="Michael Schnell (mschnell@bschnell.de)" time="2019-05-26T23:06:04Z">
         <changelog><![CDATA[allow for setting vel = 0 -> pass through]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/8df4d36e6338cfda5684790552f0c71530504e63/MIDI/mschnell_Note%20On%20under%20X%20velocity%20to%20Note%20Off%20and%20send%20All%20Notes%20Off.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="mschnell_Note On Velocity Tool.jsfx" type="effect" desc="Note On Velocity Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Note On Velocity Tool\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 modulates the Note-On velocity of the notes passing through, according to two parameters and a random amount. One of the two parameters can be controlled by Midi CC messages.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It can be used to humanize recorded loops. E.g. feeding the first parameter by an envelope, the second by a random-walk fluctuation plugin (such as MIDI CC fluctuation), and adding some individual randomness to any note. Randomness for chords results in a multiple-player-alike feeling.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Parameters:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Input Channel" selects the Midi channel for the notes and the CC messages (or "Any" for all channels)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Controller for Offset 2" selects the (low resolution) CC message that is used to modulate the second offset (or "-" for no modulation by CC)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Controller Factor" sets the factor to be used when modulating Offset2 by CC messages\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Velocity Offset 1" addition to the velocity\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Velocity Offset 2" addition to the velocity\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Velocity Factor" factor imposed on the input velocity after addition\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Random Factor" amount of additional random velocity to the resulting velocity\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Random Value" displays the additional random velocity\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 "Random Profile" select centrist or equal ramdom distribution\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Michael Schnell (mschnell@bschnell.de)" time="2025-01-29T16:27:00Z">
+        <changelog><![CDATA[initial release]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/295b72b8f05c2c617a62d78baab88e53074df611/MIDI/mschnell_Note%20On%20Velocity%20Tool.jsfx</source>
+      </version>
+      <version name="1.2" author="Michael Schnell (mschnell@bschnell.de)" time="2025-02-19T16:05:56Z">
+        <changelog><![CDATA[add Random Profile slider]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/9c50d42c143474a039015fe36c9a669f4ea9089e/MIDI/mschnell_Note%20On%20Velocity%20Tool.jsfx</source>
       </version>
     </reapack>
     <reapack name="mschnell_Send All Notes Off.jsfx" type="effect" desc="Send All Notes Off">
@@ -1165,11 +1284,11 @@ Moreover DAW-Parameters (hidden sliders) "x" and "Y" are provided for being dire
     </reapack>
     <reapack name="talagan_MIDI CC Mapper X.jsfx" type="effect" desc="MIDI CC Mapper X">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Midi CC Mapper X\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Midi CC Mapper X\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 This JSFX is an extended version of the original plugin called "MIDI CC Mapper" with many more features. It allows to modify the behavior and the real-time feel of a MIDI controller, by acting as a pre-filter on the MIDI input. It can :\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Tweak CC (or Channel Pressure) / Pitch Bend / Keyboard Velocity / Poly After Touch response curves :\par}
 {\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab By using predefined curves, some of them being parametric\par}
@@ -1190,13 +1309,13 @@ Moreover DAW-Parameters (hidden sliders) "x" and "Y" are provided for being dire
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Handle High-Res input and Output for the CCs (CC/CC+32) and Keyboard velocity (CC#88 format).\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 The UI shows a virtual controller, on which CCs can be attributed to controls, allowing a user to visually map her/his real controller.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 High-Res MIDI input can be enabled via a global parameter, and High-Res MIDI output can be enabled on CCs individually.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Keyboard Filtering Module\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Keyboard Filtering Module\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Located in the top left of the main window, it can be used to achieve keyboard splitting, up to five different ranges (green/red/blue/orange/purple). You can enable/disable the whole splitting configuration with the button located in the module title bar. If splitting is enabled, the keys can be colorized with the mouse by left/right clicking and moving the mouse on them while the mouse is down. The UI provides feedback for currently pressed keys on the MIDI Controller.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 An input channel may be defined for the keyboard, it may be "any" or a specific one : all other channels will be ignored by the plugin. Output channels may be defined for the each color range of the keyboard to possibly reroute them, with the option to drop each of them (to filter some keys out).\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 This module can be of great help for defining regions on the keyboard, especially when used on multiple tracks at the same time ; you can easily achieve left/right hand split, multi-instruments combinations and more. In addition to routing, each range has its own configuration for transposition, velocity response curve, and After-Touch response curve.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Keyboard Transposition Module\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Keyboard Transposition Module\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Located in the top right of the main window. This module can be enabled or bypassed globally with the button located in the module title bar. If enabled, applies the sum of two parameters, one for transposing by octaves, one for transposing by semitones ; each keyboard color range has its own set of params and may be enabled/disabled individually.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 CC Routing/Curve tweaking\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 CC Routing/Curve tweaking\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Located in the bottom of the main window. This module UI is contextual to the selected control. When selected, a control can be enabled or disabled individually with the button located in the module title bar.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 There are 4 types of control, depending on the MIDI feature, which can be (from left to right) :\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Pitch Bend (1 pitch wheel)\par}
@@ -1217,16 +1336,16 @@ Moreover DAW-Parameters (hidden sliders) "x" and "Y" are provided for being dire
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This output CC can be copied from the input CC\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Note that MIDI Channel Pressure is not technically a MIDI CC# and uses a different type of MIDI message. However, MIDI CC Mapper X unifies CC and CP by proposing a virtual "Channel Pressure" CC #128. If selected as input and routing is ok, messages of type Channel Pressure will be converted to CC messages and reversely if selected as output.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Additionally, for Pitch Bend and CC controls, channel routing may be achieved.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Morphing curves\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Morphing curves\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 For each control, an additional response curve may be defined. The control will now used a morphed curve calculated from the start curve and this new end curve, using a morph parameter, which can be automated.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 An auto-emit option is available for standard controls (cc + pitch bend). This option will ensure that, if there was some activity on the control, and the morph parameter is moved (by automation, e.g.) some midi events will be forged and emitted to ensure the continuity of the MIDI flow.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Customizing the function library\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Customizing the function library\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 The function library is customizable. You can rearrange things, remove sets and functions, and add your own functions after having generated them or having exported them from REAPER. Please refer to the library manual, which is located in <REAPER_RESOURCE_PATH>/Data/talagan_MIDI CC Mapper X/README.md .\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Reaper forum thread\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Reaper forum thread\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 https://forum.cockos.com/showthread.php?t=172630\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Detailed PDF Documentation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Detailed PDF Documentation\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 https://stash.reaper.fm/45839/MIDI%20CC%20Mapper%20X.pdf\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Notes\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Notes\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Older versions (v1 and v2) can be found on the forum thread.\par}
 }
 ]]></description>
@@ -2210,6 +2329,83 @@ And a bit of source code cleaning.]]></changelog>
         <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s9_m.txt">https://github.com/ReaTeam/JSFX/raw/f9ebaf83a4dc55d44d9a1aaaf935bb3583523875/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s9_m.txt</source>
         <source type="data" file="talagan_MIDI CC Mapper X/func/user_lib/USER_LIB_FILES_GO_HERE.md">https://github.com/ReaTeam/JSFX/raw/f9ebaf83a4dc55d44d9a1aaaf935bb3583523875/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/user_lib/USER_LIB_FILES_GO_HERE.md</source>
       </version>
+      <version name="5.4.0" author="Ben 'Talagan' Babut" time="2025-04-25T13:42:44Z">
+        <changelog><![CDATA[- Adding some sliders for yielding control outputs, for MIDI parameter modulation]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X.jsfx</source>
+        <source main="main" type="script" file="talagan_MIDI CC Mapper X/MIDI CC Mapper X - Dump Current Function.lua">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/MIDI%20CC%20Mapper%20X%20-%20Dump%20Current%20Function.lua</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/README.md">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/README.md</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/lib.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/lib.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/_tools/make_curves.rb">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/_tools/make_curves.rb</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/LIB_FILES_GO_HERE.md">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/LIB_FILES_GO_HERE.md</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/classic.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/classic.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/classic_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/classic_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/classic_m_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/classic_m_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/classic_r.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/classic_r.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/classic_rm.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/classic_rm.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/classic_rm_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/classic_rm_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/step.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/step.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/step_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/step_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/step_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/step_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/step_m_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/step_m_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/step_r.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/step_r.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/circ/step_rm.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/circ/step_rm.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/kawaik4/exp2_classic.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/kawaik4/exp2_classic.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/kawaik4/exp_classic.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/kawaik4/exp_classic.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/kawaik4/lin_clamp_hi.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/kawaik4/lin_clamp_hi.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/kawaik4/lin_clamp_lo.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/kawaik4/lin_clamp_lo.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/kawaik4/lin_classic.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/kawaik4/lin_classic.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/classic.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/classic.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/classic_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/classic_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/classic_m_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/classic_m_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/classic_r.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/classic_r.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/classic_rm.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/classic_rm.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/classic_rm_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/classic_rm_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse_r.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse_r.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse_rm.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse_rm.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse_step.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse_step.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse_step_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse_step_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse_step_r.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse_step_r.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/inverse_step_rm.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/inverse_step_rm.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/step.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/step.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/step_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/step_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/step_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/step_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/step_m_gate.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/step_m_gate.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/step_r.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/step_r.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sin/step_rm.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sin/step_rm.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s0.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s0.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s0_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s0_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s1.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s1.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s10.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s10.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s10_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s10_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s11.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s11.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s11_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s11_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s12.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s12.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s12_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s12_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s13.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s13.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s13_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s13_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s14.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s14.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s14_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s14_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s1_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s1_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s2.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s2.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s2_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s2_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s3.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s3.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s3_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s3_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s4.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s4.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s4_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s4_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s5.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s5.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s5_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s5_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s6.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s6.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s6_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s6_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s7.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s7.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s7_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s7_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s8.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s8.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s8_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s8_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s9.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s9.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/lib/sstep/s9_m.txt">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/lib/sstep/s9_m.txt</source>
+        <source type="data" file="talagan_MIDI CC Mapper X/func/user_lib/USER_LIB_FILES_GO_HERE.md">https://github.com/ReaTeam/JSFX/raw/66be53b0e7bd620ad186f7284afc8d126406b1bb/MIDI/talagan_MIDI%20CC%20Mapper%20X/func/user_lib/USER_LIB_FILES_GO_HERE.md</source>
+      </version>
     </reapack>
     <reapack name="talagan_MIDI Channel Matrix Router.jsfx" type="effect" desc="MIDI Channel Matrix Router">
       <metadata>
@@ -2296,6 +2492,53 @@ And a bit of source code cleaning.]]></changelog>
       <version name="0.5" author="Ben 'Talagan' Babut" time="2024-11-14T12:32:42Z">
         <changelog><![CDATA[- Initial version]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/75226ffbcdabab68d94ccf87727f2d7ee956077e/MIDI/talagan_MIDI%20Force%20Notes%20to%20Range.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="talagan_MIDI Multi Channel Pre-Delay.jsfx" type="effect" desc="MIDI Multi Channel Pre-Delay">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 MIDI Multi Channel Pre-Delay\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This plugin allows to set different pre-delays for MIDI Channels, and perform what we could call "MIDI channel delay compensation".\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 It targets workflows where composers use different MIDI Channels for articulations (slow, staccato, etc). Each articulation may have an attack time that is necessary for the note to ramp up, and in such circumstances an instrumentist would anticipate and start to play before the grid. When composing/programming, this makes things difficult because not working on the grid is time consuming. One technique is to put an articulation type per track, and set a time offset on the track, specific to the articulation. Still, this is greedy in tracks, not always quite readable, and time consuming too.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Here, the aim is instead to use one articulation per MIDI Chan, and set the articulation delays on each Chan.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 How to use\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The plugin sliders are all set to zero by default, but you can pull them in the "past", to adjust the articulation's pre-delay, using e.g. the values recommended by the editor of the VST you want to control.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 What happens then is that the MIDI Chan with the biggest pre-delay will not be delayed, but the other ones will be, using the difference between their pre-delays and the biggest one. This is what's usually called "delay compensation"\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Wait ... Everything will now be layered correctly, but too late !\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 To correct this and have everything synced, there are two options.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The first one is to put a track offset on the track with a value equal to the biggest pre-delay. This will shift everything back earlier.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Or, you can use Reaper's MIDI PDC (Plugin Delay Compensation), which can be enabled by the first slider "Apply Max Pre-Delay as PDC".\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This slider will automatically set the MIDI PDC to the biggest pre-delay, and Reaper will know how to apply PDC to the MIDI plugin.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 There are advantages to use the PDC instead of the track offset : for example, freezing the audio will make things fall on the grid, and the obtained audio item does not need to know anything about delays.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Do not delay live events\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This plugin also implements a way to bypass delays for live events. This can be useful during recording/playback/overdub. Without this option, delays are applied to live events, which means that everything that should be "in the past" will be played immediately, and everything that should be "in the present" will be delayed.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This is probably not what you want (except if you learn to play in advance and anticipate ramp-ups), but you may prefer having live events undelayed.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 To be able to activate this behaviour, you MUST :\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Enable the "Don't delay live events" slider\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Install the "MIDI Multi Channel Pre-Delay Flagger" companion JSFX in the {\i input FX chain} of the track\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The companion JSFX will listen to live events, and buffer them in memory for the current block. The main JSFX will listen to events coming from the track, and lookup into memory to check for each event if it is present in the "live buffer"\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 If it is the case, the delay is not applied. The comparison is made on the full event content + the event offset in the block, so {\i you should not modify any live event between the companion JSFX and the main JSFX}. Don't apply MIDI routing or filtering between both.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The safest way to do this, is to layer your JSFXes so that:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab the companion JSFX is {\i the last of the input FX chain}\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab the main JSFX is {\i the first of the normal FX chain}\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Of course, if you really know what you do, you may give yourself some more flexibility but you've been warned.\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.com/donate/?business=3YEZMY9D6U8NC&amp;no_recurring=1&amp;currency_code=EUR</link>
+      </metadata>
+      <version name="0.5" author="Ben 'Talagan' Babut" time="2025-05-02T08:23:48Z">
+        <changelog><![CDATA[- Initial Version]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/268ecd157d90b802dc7bc2ac10c732ef1fb20de1/MIDI/talagan_MIDI%20Multi%20Channel%20Pre-Delay.jsfx</source>
+      </version>
+      <version name="0.6" author="Ben 'Talagan' Babut" time="2025-05-09T01:37:27Z">
+        <changelog><![CDATA[- [Feature] Added "Max Delay" option, in case 1 second is not sufficient
+- [Feature] Added "Don't delay live events" option, using companion JSFX
+- [Prereq]  Added companion JSFX for option above]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/84b688dfa127042cce339c482406436f9f0e1771/MIDI/talagan_MIDI%20Multi%20Channel%20Pre-Delay.jsfx</source>
+        <source file="talagan_MIDI Multi Channel Pre-Delay Live Flagger.jsfx">https://github.com/ReaTeam/JSFX/raw/84b688dfa127042cce339c482406436f9f0e1771/MIDI/talagan_MIDI%20Multi%20Channel%20Pre-Delay%20Live%20Flagger.jsfx</source>
       </version>
     </reapack>
     <reapack name="talagan_MIDI Note Remapper.jsfx" type="effect" desc="MIDI Note Remapper">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="19ef53aa4bf1c11f4076b9eef1e5cec9f1fe3ad3" name="X-Raym Scripts">
+<index version="1" commit="72d0b37e29671200b5df35f2b145adc400b392be" name="X-Raym Scripts">
   <category name="Color">
     <reapack name="X-Raym_Display color of selected tracks items and takes in the console.eel" type="script">
       <version name="1.0" author="X-Raym" time="2015-03-03T13:52:58Z">
@@ -1609,6 +1609,11 @@
       <version name="0.2.3" author="X-Raym" time="2025-01-07T18:57:57Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/da3865e2c30d17f21d2432ad076c36cf8b98724e/FX/X-Raym_List%20installed%20FX%20according%20to%20their%20installation%20order_ReaImGui.lua</source>
       </version>
+      <version name="0.2.4" author="X-Raym" time="2025-01-28T13:21:53Z">
+        <changelog><![CDATA[# Window resize border color
+# Moving window with click and drag titlebar only]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/daf57ad206831930911ad4e616e947af394ea100/FX/X-Raym_List%20installed%20FX%20according%20to%20their%20installation%20order_ReaImGui.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Propagate last focused FX parameters values but bypass to similarly named FX on child tracks (real-time).lua" type="script" desc="Propagate last focused FX parameters values but bypass to similarly named FX on child tracks (real-time)">
       <metadata>
@@ -2673,14 +2678,10 @@
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Items%20Editing/X-Raym_Sort%20selected%20items%20order%20by%20takes%20names%20alphabetically%20keeping%20snap%20offset%20positions%20per%20tracks.lua</source>
       </version>
     </reapack>
-    <reapack name="X-Raym_Split first selected item at edit carret position in SWS notes window.lua" type="script" desc="Split first selected item at edit carret position in SWS notes window">
-      <version name="1.0" author="X-Raym" time="2020-01-31T14:29:58Z">
-        <changelog><![CDATA[+ Initial Release]]></changelog>
-        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Items%20Editing/X-Raym_Split%20first%20selected%20item%20at%20edit%20carret%20position%20in%20SWS%20notes%20window.lua</source>
-      </version>
-      <version name="1.0.1" author="X-Raym" time="2024-07-18T11:49:13Z">
-        <changelog><![CDATA[+ SWS HWND 2.4.0 fix]]></changelog>
-        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/52e40c3527ba724c6d4231b272af230a3f4638bd/Items%20Editing/X-Raym_Split%20first%20selected%20item%20at%20edit%20carret%20position%20in%20SWS%20notes%20window.lua</source>
+    <reapack name="X-Raym_Split first selected item at edit caret position in SWS notes window.lua" type="script" desc="Split first selected item at edit caret position in SWS notes window">
+      <version name="1.0.2" author="X-Raym" time="2025-07-30T10:00:55Z">
+        <changelog><![CDATA[# Renamed: typo in script name fix]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/2556f963984cbbeee1a3df33c5a4fdcb78f67f00/Items%20Editing/X-Raym_Split%20first%20selected%20item%20at%20edit%20caret%20position%20in%20SWS%20notes%20window.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Split selected items according to items on selected tracks and delete new items at spaces.lua" type="script" desc="Split selected items according to items on selected tracks and delete new items at spaces">
@@ -2700,6 +2701,10 @@
 # Bug fixes
 + Multitracks as source support]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/f27a4180d39859bd4bb282cf6fd6353fccec0da2/Items%20Editing/X-Raym_Split%20selected%20items%20according%20to%20items%20on%20selected%20tracks%20and%20delete%20new%20items%20at%20spaces.lua</source>
+      </version>
+      <version name="2.1" author="X-Raym" time="2025-08-03T08:50:37Z">
+        <changelog><![CDATA[# One split per overlapping set]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/72d0b37e29671200b5df35f2b145adc400b392be/Items%20Editing/X-Raym_Split%20selected%20items%20according%20to%20items%20on%20selected%20tracks%20and%20delete%20new%20items%20at%20spaces.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Split selected items according to items on selected tracks and keep new items at spaces.lua" type="script" desc="Split selected items according to items on selected tracks and keep new items at spaces">
@@ -3288,6 +3293,10 @@
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/01d0ff3b0cb2dd09b696202680b048e829743478/Items%20Properties/X-Raym_Delete%20take%20markers%20outside%20of%20selected%20items%20boundaries.lua</source>
       </version>
+      <version name="1.0.1" author="X-Raym" time="2025-01-28T13:14:06Z">
+        <changelog><![CDATA[+ Tooltip report]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/bf712bdbf90ecef5fa8a11976fed9250f5909050/Items%20Properties/X-Raym_Delete%20take%20markers%20outside%20of%20selected%20items%20boundaries.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Display list of selected media items active take names in the console.lua" type="script" desc="Display list of selected media items active take names in the console">
       <version name="1.0" author="X-Raym" time="2018-04-03T10:37:21Z">
@@ -3477,6 +3486,11 @@
       <version name="1.1.5" author="X-Raym" time="2025-01-09T20:04:21Z">
         <changelog><![CDATA[# Exit via context menu]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/19ef53aa4bf1c11f4076b9eef1e5cec9f1fe3ad3/Items%20Properties/X-Raym_Move%20selected%20items%20to%20named%20tracks_ReaImGui.lua</source>
+      </version>
+      <version name="1.1.6" author="X-Raym" time="2025-01-28T13:21:53Z">
+        <changelog><![CDATA[# Window resize border color
+# Moving window with click and drag titlebar only]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/daf57ad206831930911ad4e616e947af394ea100/Items%20Properties/X-Raym_Move%20selected%20items%20to%20named%20tracks_ReaImGui.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Multiply selected items rate by X and adjust length.lua" type="script" desc="Multiply selected items rate by X and adjust length">
@@ -4347,6 +4361,11 @@
       <version name="1.1.5" author="X-Raym" time="2025-01-09T20:04:21Z">
         <changelog><![CDATA[# Exit via context menu]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/19ef53aa4bf1c11f4076b9eef1e5cec9f1fe3ad3/Items%20Properties/X-Raym_Take%20FX%20list_ReaImGui.lua</source>
+      </version>
+      <version name="1.1.6" author="X-Raym" time="2025-01-28T13:21:53Z">
+        <changelog><![CDATA[# Window resize border color
+# Moving window with click and drag titlebar only]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/daf57ad206831930911ad4e616e947af394ea100/Items%20Properties/X-Raym_Take%20FX%20list_ReaImGui.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Toggle selected active takes reverse arround their snap offset.lua" type="script" desc="Toggle selected active takes reverse arround their snap offset">
@@ -6599,9 +6618,37 @@
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Text%20Items%20and%20Item%20Notes/Creation/X-Raym_Merge%20selected%20text%20items%20notes%20adding%20dialog%20dash.lua</source>
       </version>
     </reapack>
+    <reapack name="X-Raym_Merge selected text items notes adding new line.lua" type="script" desc="Merge selected text items notes adding new line">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Edit the User Config Areas to make it work. Name above could typicallly be Original Script Name - Preset Name or Num, but it can be whatever you want.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2025-05-22T11:34:55Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c7a51a9965ccef515361fced84fcf7c9da18084a/Text%20Items%20and%20Item%20Notes/Creation/X-Raym_Merge%20selected%20text%20items%20notes%20adding%20new%20line.lua</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Merge selected text items notes adding space.lua" type="script" desc="Merge selected text items notes adding space">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Edit the User Config Areas to make it work. Name above could typicallly be Original Script Name - Preset Name or Num, but it can be whatever you want.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2025-05-22T11:34:55Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c7a51a9965ccef515361fced84fcf7c9da18084a/Text%20Items%20and%20Item%20Notes/Creation/X-Raym_Merge%20selected%20text%20items%20notes%20adding%20space.lua</source>
+      </version>
+    </reapack>
     <reapack name="X-Raym_Merge selected text items notes.lua" type="script" desc="Merge selected text items notes">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -6612,6 +6659,11 @@
       <version name="1.1" author="X-Raym" time="2015-12-24T16:57:47Z">
         <changelog><![CDATA[# Better Set Notes]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Text%20Items%20and%20Item%20Notes/Creation/X-Raym_Merge%20selected%20text%20items%20notes.lua</source>
+      </version>
+      <version name="1.2" author="X-Raym" time="2025-05-22T11:34:55Z">
+        <changelog><![CDATA[# Presets script support for inbetween character
+# Remove newline character (this will be added in a preset script)]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c7a51a9965ccef515361fced84fcf7c9da18084a/Text%20Items%20and%20Item%20Notes/Creation/X-Raym_Merge%20selected%20text%20items%20notes.lua</source>
       </version>
     </reapack>
   </category>
@@ -7042,6 +7094,11 @@
       <version name="0.7.4" author="X-Raym" time="2025-01-09T20:04:21Z">
         <changelog><![CDATA[# Exit via context menu]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/19ef53aa4bf1c11f4076b9eef1e5cec9f1fe3ad3/Theme/X-Raym_Theme%20color%20tweaker_ReaImGui.lua</source>
+      </version>
+      <version name="0.7.5" author="X-Raym" time="2025-01-28T13:21:53Z">
+        <changelog><![CDATA[# Window resize border color
+# Moving window with click and drag titlebar only]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/daf57ad206831930911ad4e616e947af394ea100/Theme/X-Raym_Theme%20color%20tweaker_ReaImGui.lua</source>
       </version>
     </reapack>
   </category>
@@ -7815,6 +7872,10 @@
       </metadata>
       <version name="1.0.1" author="X-Raym" time="2021-10-14T21:23:58Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Track%20Properties/X-Raym_Sort%20selected%20tracks%20order%20according%20to%20their%20first%20item%20positions.lua</source>
+      </version>
+      <version name="1.0.2" author="X-Raym" time="2025-03-13T11:20:06Z">
+        <changelog><![CDATA[# Last track in folder fix. Thx Luca!]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/f82deeb5cd5fa4fe3a096fce7561560aaa8cb7bc/Track%20Properties/X-Raym_Sort%20selected%20tracks%20order%20according%20to%20their%20first%20item%20positions.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Toggle selected tracks solo (no undo).lua" type="script" desc="Toggle selected tracks solo (no undo)">
@@ -8599,6 +8660,11 @@
         <changelog><![CDATA[# Exit via context menu]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/19ef53aa4bf1c11f4076b9eef1e5cec9f1fe3ad3/Various/X-Raym_Lua%20pattern%20viewer_ReaImGui.lua</source>
       </version>
+      <version name="1.1.6" author="X-Raym" time="2025-01-28T13:21:53Z">
+        <changelog><![CDATA[# Window resize border color
+# Moving window with click and drag titlebar only]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/daf57ad206831930911ad4e616e947af394ea100/Various/X-Raym_Lua%20pattern%20viewer_ReaImGui.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Move edit cursor to time 0 or to project start.lua" type="script" desc="Move edit cursor to time 0 or to project start">
       <metadata>
@@ -8651,6 +8717,10 @@
       </version>
       <version name="1.0.4" author="X-Raym" time="2024-01-10T21:12:38Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/abdae2245f4501f8af68684f3cdc56e717c341f0/Various/X-Raym_Open%20render%20folder%20in%20explorer%20or%20finder.lua</source>
+      </version>
+      <version name="1.0.5" author="X-Raym" time="2025-03-28T17:00:34Z">
+        <changelog><![CDATA[+ MacOS fix (thx edkashinsky!)]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/36dd90cb60c7a887adfc467e7a969b537918388c/Various/X-Raym_Open%20render%20folder%20in%20explorer%20or%20finder.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Remove content of time selection preserving time selection and relative play cursor in place.eel" type="script" desc="Remove content of time selection preserving time sleection and relative play cursor in place">
@@ -8781,6 +8851,19 @@
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c03c1dc130490ff3b58c3e7efe900464fe078f8c/Various/X-Raym_Set%20SWS%20global%20startup%20action%20extstate%20value%20to%20On.lua</source>
       </version>
     </reapack>
+    <reapack name="X-Raym_Set SWS Notes window font size.lua" type="script" desc="Set SWS Notes window font size">
+      <version name="1.0.0" author="X-Raym" time="2025-05-28T21:07:32Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/38f25f123c61bdddad58e30bd155dd92d8dc553b/Various/X-Raym_Set%20SWS%20Notes%20window%20font%20size.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2025-06-02T17:13:32Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/567928080c995fb37b9c7e2e29f8e047facc3d3f/Various/X-Raym_Set%20SWS%20Notes%20window%20font%20size.lua</source>
+      </version>
+      <version name="1.0.2" author="X-Raym" time="2025-07-22T10:24:17Z">
+        <changelog><![CDATA[# Works even if not already set once]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/52fc95c992d82ae810591470c1bf4d5c93cbafb1/Various/X-Raym_Set%20SWS%20Notes%20window%20font%20size.lua</source>
+      </version>
+    </reapack>
     <reapack name="X-Raym_Set SWS project startup action extstate value to Off.lua" type="script" desc="Set SWS project startup action extstate value to Off">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -8881,6 +8964,20 @@
         <changelog><![CDATA[# Exit via context menu]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/19ef53aa4bf1c11f4076b9eef1e5cec9f1fe3ad3/Various/X-Raym_State%20chunk%20editor_ReaImGui.lua</source>
       </version>
+      <version name="1.0.7" author="X-Raym" time="2025-01-28T13:21:53Z">
+        <changelog><![CDATA[# Window resize border color
+# Moving window with click and drag titlebar only]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/daf57ad206831930911ad4e616e947af394ea100/Various/X-Raym_State%20chunk%20editor_ReaImGui.lua</source>
+      </version>
+      <version name="1.1.0" author="X-Raym" time="2025-03-28T16:52:17Z">
+        <changelog><![CDATA[+ Copy to clipboard button
+# Put buttons over every chunks textarea
+# Change text selected color]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/83b96417369ad7a4838977997ad7761b27e91ebf/Various/X-Raym_State%20chunk%20editor_ReaImGui.lua</source>
+      </version>
+      <version name="1.1.1" author="X-Raym" time="2025-07-07T13:38:03Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c6194173174573f95356a6b0ff989e6946838f8a/Various/X-Raym_State%20chunk%20editor_ReaImGui.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Toggle Sonarworks SoundID monitor FX instance Calibration state.lua" type="script" desc="Toggle Sonarworks SoundID monitor FX instance Calibration state">
       <version name="1.0" author="X-Raym" time="2021-12-05T19:17:55Z">
@@ -8927,6 +9024,11 @@
       <version name="0.1.4" author="X-Raym" time="2025-01-09T20:04:21Z">
         <changelog><![CDATA[# Exit via context menu]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/19ef53aa4bf1c11f4076b9eef1e5cec9f1fe3ad3/Various/X-Raym_XR%20ReaImGui%20Themer_ReaImGui.lua</source>
+      </version>
+      <version name="0.1.5" author="X-Raym" time="2025-01-28T13:21:53Z">
+        <changelog><![CDATA[# Window resize border color
+# Moving window with click and drag titlebar only]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/daf57ad206831930911ad4e616e947af394ea100/Various/X-Raym_XR%20ReaImGui%20Themer_ReaImGui.lua</source>
       </version>
     </reapack>
   </category>
@@ -9221,6 +9323,15 @@
 List display improvements]]></changelog>
         <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/312f12f2f00a9c213298256c4f1df0fa731d7fd7/Web%20Interfaces/X-Raym_Lyrics.html</source>
       </version>
+      <version name="1.4.2" author="X-Raym" time="2025-07-27T07:41:20Z">
+        <changelog><![CDATA[Clickable action names]]></changelog>
+        <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/fda617cb97108539eb263dcd5b9674063a5b22f7/Web%20Interfaces/X-Raym_Lyrics.html</source>
+      </version>
+      <version name="1.4.3" author="X-Raym" time="2025-07-27T10:06:59Z">
+        <changelog><![CDATA[Clickable action names
+Do not redraw UI when not needed]]></changelog>
+        <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/42d11da86d9bebb0f6b1d9876f13a8e5a63fc5da/Web%20Interfaces/X-Raym_Lyrics.html</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Scrolling Lyrics.www" type="webinterface" desc="Scrolling Lyrics Web Interface">
       <metadata>
@@ -9240,6 +9351,16 @@ List display improvements]]></changelog>
 List display improvements
 Click lyrics to move edit cursor in REAPER]]></changelog>
         <source file="X-Raym_Scrolling Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/9291cf3fd485b4965bcc320285e0474b5c67d97d/Web%20Interfaces/X-Raym_Scrolling%20Lyrics.html</source>
+      </version>
+      <version name="1.0.4" author="X-Raym" time="2025-07-27T07:41:20Z">
+        <changelog><![CDATA[Action name correction
+Clickable action name]]></changelog>
+        <source file="X-Raym_Scrolling Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/fda617cb97108539eb263dcd5b9674063a5b22f7/Web%20Interfaces/X-Raym_Scrolling%20Lyrics.html</source>
+      </version>
+      <version name="1.0.5" author="X-Raym" time="2025-07-27T10:06:59Z">
+        <changelog><![CDATA[Action name correction
+Clickable action name]]></changelog>
+        <source file="X-Raym_Scrolling Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/42d11da86d9bebb0f6b1d9876f13a8e5a63fc5da/Web%20Interfaces/X-Raym_Scrolling%20Lyrics.html</source>
       </version>
     </reapack>
   </category>

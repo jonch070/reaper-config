@@ -133,10 +133,15 @@ local KEYMAP = (function()
 
   return map
 end)()
+local FONT_FLAG_IMMASK = 0xFFFFFFFF
+local FONT_FLAG_INVERT = 1<<32
 local FONT_FLAGS = {
-  [0]                = ImGui.FontFlags_None,
-  [string.byte('b')] = ImGui.FontFlags_Bold,
-  [string.byte('i')] = ImGui.FontFlags_Italic,
+  -- bits 0-31 = reaimgui flags
+  ['\0'] = ImGui.FontFlags_None,
+  [ 'b'] = ImGui.FontFlags_Bold,
+  [ 'i'] = ImGui.FontFlags_Italic,
+  -- bits 32-63 = gfx2imgui flags
+  [ 'v'] = FONT_FLAG_INVERT,
 }
 local FALLBACK_STRING = '<bad string>'
 local DEFAULT_FONT_SIZE = 13 -- gfx default texth is 8
@@ -473,19 +478,19 @@ local function nearest(array, target_key)
 end
 
 local function getCachedFont(font)
-  return dig(state.fontmap, font.family, font.flags, font.size)
+  return dig(state.fontmap, font.family, font.flags & FONT_FLAG_IMMASK, font.size)
 end
 
 local function warnUnavailableFont(font)
   warn("font '%s'@%d[%x] temporarily unavailable: \z
     frame already started (falling back to nearest match for up to %d frames)",
-    font.family, font.size, font.flags, THROTTLE_FONT_LOADING_FRAMES)
+    font.family, font.size, font.flags & FONT_FLAG_IMMASK, THROTTLE_FONT_LOADING_FRAMES)
 end
 
 local function getNearestCachedFont(font)
   if not font then return nil, nil, 0 end
 
-  local sizes = dig(state.fontmap, font.family, font.flags)
+  local sizes = dig(state.fontmap, font.family, font.flags & FONT_FLAG_IMMASK)
   if not sizes then
     warnUnavailableFont(font)
     return nil, nil, DEFAULT_FONT_SIZE - font.size
@@ -548,10 +553,10 @@ local function loadRequestedFonts()
       end
 
       -- print(('Attach() %s@%d[%d]'):format(font.family, font.size, font.flags))
-      local instance = ImGui.CreateFont(font.family, font.size, font.flags)
+      local instance = ImGui.CreateFont(font.family, font.size, font.flags & FONT_FLAG_IMMASK)
       local keep_alive = hasValue(global_state.fonts, font)
       ImGui.Attach(state.ctx, instance)
-      put(state.fontmap, font.family, font.flags, font.size, {
+      put(state.fontmap, font.family, font.flags & FONT_FLAG_IMMASK, font.size, {
         attached   = true,
         last_use   = state.frame_count,
         keep_alive = keep_alive,
@@ -714,7 +719,7 @@ local function combineMatrix(matrix,
 end
 
 local function drawPixel(draw_list, cmd, i, opts)
-  local x, y, c = cmd[i+0], cmd[i+1], cmd[i+2] 
+  local x, y, c = cmd[i], cmd[i+1], cmd[i+2] 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
     c = (c & ~0xff) | ((c & 0xff) * opts.alpha // 1 & 0xFF)
   else
@@ -827,7 +832,7 @@ setmetatable(gfx, {
 
 -- translation functions
 local function drawArc(draw_list, cmd, i, opts)
-  local x, y, r, c, ang1, ang2 = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
+  local x, y, r, c, ang1, ang2 = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
   -- transformPoint(x, y, opts, 0)
     x, y = x * opts.scale_x, y * opts.scale_y
   
@@ -899,12 +904,9 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawArc, ((not x or x ~= x or x == INF or x == MINF) and 0 or (x // 1))
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawArc, ((not x or x ~= x or x == INF or x == MINF) and 0 or (x // 1))
  + 1, ((not y or y ~= y or y == INF or y == MINF) and 0 or (y // 1))
 , r, c, ang1 - quarter, ang2 - quarter, 0
-
   end
 
   return 0
@@ -912,7 +914,7 @@ end
 
 local function drawBlit(draw_list, cmd, i, opts)
   local commands, sourceCommands, alpha, mode, scale_x, scale_y, more =
-    cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5], cmd[i+6] 
+    cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5], cmd[i+6] 
   local srcx, srcy, srcw, srch, dstx, dsty, dstw, dsth,
         angle, angle_sin, angle_cos, rotxoffs, rotyoffs = table.unpack(more)
 
@@ -1133,10 +1135,7 @@ function gfx.blit(source, ...)
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawBlit, commands, sourceCommands, gfx_vars.a or 1, gfx_vars.mode, scale_x, scale_y, payload
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawBlit, commands, sourceCommands, gfx_vars.a or 1, gfx_vars.mode, scale_x, scale_y, payload
   end
 
 
@@ -1154,7 +1153,7 @@ function gfx.blurto()
 end
 
 local function drawCircle(draw_list, cmd, i, opts)
-  local circleFunc, x, y, r, c = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4] 
+  local circleFunc, x, y, r, c = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4] 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
     c = (c & ~0xff) | ((c & 0xff) * opts.alpha // 1 & 0xFF)
   else
@@ -1227,13 +1226,10 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawCircle, circleFunc, ((not x or x ~= x or x == INF or x == MINF) and 0 or (x // 1))
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawCircle, circleFunc, ((not x or x ~= x or x == INF or x == MINF) and 0 or (x // 1))
 , ((not y or y ~= y or y == INF or y == MINF) and 0 or (y // 1))
 , ((not r or r ~= r or r == INF or r == MINF) and 0 or (r // 1))
 , c, 0, 0
-
   end
 
   return 0
@@ -1284,7 +1280,7 @@ function gfx.drawnumber(n, ndigits)
 end
 
 local function drawString(draw_list, cmd, i, opts)
-  local c, str, size, xy, xy_off, rb, font = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5], cmd[i+6] 
+  local c, str, size, xy, xy_off, rb, f, f_cache, f_inst, invert = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5], cmd[i+6][1], cmd[i+6][2], cmd[i+6][3], cmd[i+6][4] 
   local x,     y      = unpackSigned(xy)
   local x_off, y_off  = unpackSigned(xy_off)
   local right, bottom = unpackSigned(rb)
@@ -1295,13 +1291,13 @@ local function drawString(draw_list, cmd, i, opts)
   -- search for a new font as the draw call may have been stored for a
   -- long time in an offscreen buffer while the font instance got detached
   -- or the script may have re-created the context with gfx.quit+gfx.init
-  if font.cache and not font.cache.attached then
-    font.cache, font.inst = getNearestCachedFont(f)
+  if f_cache and not f_cache.attached then
+    f_cache, f_inst = getNearestCachedFont(f)
   end
 
   -- keep the font alive while the draw call is still in use (eg. from a blit)
-  if font.cache then
-    font.cache.last_use = state.frame_count
+  if f_cache then
+    f_cache.last_use = state.frame_count
   end
 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
@@ -1360,8 +1356,20 @@ local function drawString(draw_list, cmd, i, opts)
       end
   
   end
+  if invert then
+    local w, h = unpackSigned(invert)
+    -- transformPoint(w, h, opts, 9)
+    w, h = w * opts.scale_x, h * opts.scale_y
+  
+  
+    w, h = w // 1, h // 1
+  
+  
+    DL_AddRectFilled(draw_list, x, y, x + w, y + h, c)
+    c = (~c & 0xFFFFFF00) | (c & 0xFF) -- FIXME: transparent text
+  end
   DL_AddTextEx(
-    draw_list, font.inst, size, x + x_off, y + y_off, c, str, 0, x, y, right, bottom)
+    draw_list, f_inst, size, x + x_off, y + y_off, c, str, 0, x, y, right, bottom)
 end
 
 function gfx.drawstr(str, flags, right, bottom)
@@ -1409,7 +1417,8 @@ end
   local xy, xy_off, rb =
     packSigned(x, y), packSigned(x_off, y_off),
     packSigned(right or 0x7FFFFFFF, bottom or 0x7FFFFFFF)
-  local payload = { cache = f_cache, inst = f_inst }
+  local invert = (f.flags & FONT_FLAG_INVERT) ~= 0 and
+    packSigned(right and (right-x) or (w//1), bottom and (bottom-y) or (h//1))
   do
   local list = global_state.commands[gfx_vars.dest]
   if not list then
@@ -1426,10 +1435,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawString, c, str, f_sz, xy, xy_off, rb, payload
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawString, c, str, f_sz, xy, xy_off, rb, {f, f_cache, f_inst, invert}
   end
 
   return 0
@@ -1438,7 +1444,7 @@ end
 function gfx.getchar(char)
   if not state then return -1, 0 end
   if not char or char < 2 then
-    if state.want_close then return -1 end
+    if state.want_close then return -1, 0 end
     if state.charqueue.ptr == state.charqueue.rptr then return 0, 0 end
     local char = state.charqueue[state.charqueue.rptr + 1]
     state.charqueue.rptr = (state.charqueue.rptr + 1) % state.charqueue.max_size
@@ -1489,7 +1495,7 @@ function gfx.getpixel()
 end
 
 local function drawGradRect(draw_list, cmd, i, opts)
-  local xy1, xy2, ctl, ctr, cbr, cbl = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
+  local xy1, xy2, ctl, ctr, cbr, cbl = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
   local x1, y1 = unpackSigned(xy1)
   local x2, y2 = unpackSigned(xy2)
   if not opts.mode or BLIT_NO_PREMULTIPLY then
@@ -1570,18 +1576,18 @@ local function drawGradRect(draw_list, cmd, i, opts)
     local x3, y3, x4, y4
     x4, y4, x3, y3 = x1, y2, x2, y2
   x2, y2, x1, y1 = x2, y1, x1, y1
-  -- transformPoint(x1, y2, opts, 0)
-    x1, y2 = x1 * opts.scale_x, y2 * opts.scale_y
+  -- transformPoint(x1, y1, opts, 0)
+    x1, y1 = x1 * opts.scale_x, y1 * opts.scale_y
   
-    x1, y2 = x1 + opts.screen_x, y2 + opts.screen_y
+    x1, y1 = x1 + opts.screen_x, y1 + opts.screen_y
   
-    x1, y2 = x1 // 1, y2 // 1
+    x1, y1 = x1 // 1, y1 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x1, y2 = m1[1]*x1 + m1[2]*y2 + m1[3],
-             m2[1]*x1 + m2[2]*y2 + m2[3]
+    x1, y1 = m1[1]*x1 + m1[2]*y1 + m1[3],
+             m2[1]*x1 + m2[2]*y1 + m2[3]
       end
   
   -- transformPoint(x2, y2, opts, 0)
@@ -1598,32 +1604,32 @@ local function drawGradRect(draw_list, cmd, i, opts)
              m2[1]*x2 + m2[2]*y2 + m2[3]
       end
   
-  -- transformPoint(x2, y1, opts, 0)
-    x2, y1 = x2 * opts.scale_x, y1 * opts.scale_y
+  -- transformPoint(x3, y3, opts, 0)
+    x3, y3 = x3 * opts.scale_x, y3 * opts.scale_y
   
-    x2, y1 = x2 + opts.screen_x, y1 + opts.screen_y
+    x3, y3 = x3 + opts.screen_x, y3 + opts.screen_y
   
-    x2, y1 = x2 // 1, y1 // 1
+    x3, y3 = x3 // 1, y3 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x2, y1 = m1[1]*x2 + m1[2]*y1 + m1[3],
-             m2[1]*x2 + m2[2]*y1 + m2[3]
+    x3, y3 = m1[1]*x3 + m1[2]*y3 + m1[3],
+             m2[1]*x3 + m2[2]*y3 + m2[3]
       end
   
-  -- transformPoint(x1, y1, opts, 0)
-    x1, y1 = x1 * opts.scale_x, y1 * opts.scale_y
+  -- transformPoint(x4, y4, opts, 0)
+    x4, y4 = x4 * opts.scale_x, y4 * opts.scale_y
   
-    x1, y1 = x1 + opts.screen_x, y1 + opts.screen_y
+    x4, y4 = x4 + opts.screen_x, y4 + opts.screen_y
   
-    x1, y1 = x1 // 1, y1 // 1
+    x4, y4 = x4 // 1, y4 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x1, y1 = m1[1]*x1 + m1[2]*y1 + m1[3],
-             m2[1]*x1 + m2[2]*y1 + m2[3]
+    x4, y4 = m1[1]*x4 + m1[2]*y4 + m1[3],
+             m2[1]*x4 + m2[2]*y4 + m2[3]
       end
   
 
@@ -1723,17 +1729,14 @@ function gfx.gradrect(x, y, w, h, r, g, b, a, drdx, dgdx, dbdx, dadx, drdy, dgdy
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawGradRect, xy, wh, ctl, ctr, cbr, cbl, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawGradRect, xy, wh, ctl, ctr, cbr, cbl, 0
   end
 
   return 0
 end
 
 local function drawImGui(draw_list, cmd, i, opts)
-  local callback, x, y = cmd[i+0], cmd[i+1], cmd[i+2] 
+  local callback, x, y = cmd[i], cmd[i+1], cmd[i+2] 
   -- transformPoint(x, y, opts, 0)
     x, y = x * opts.scale_x, y * opts.scale_y
   
@@ -1772,12 +1775,9 @@ function gfx.imgui(callback)
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawImGui, callback, ((not x or x ~= x or x == INF or x == MINF) and 0 or (x // 1))
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawImGui, callback, ((not x or x ~= x or x == INF or x == MINF) and 0 or (x // 1))
 , ((not y or y ~= y or y == INF or y == MINF) and 0 or (y // 1))
 , 0, 0, 0, 0
-
   end
 
   return 0
@@ -1787,8 +1787,10 @@ function gfx.init(name, width, height, dockstate, xpos, ypos)
   local is_new = not state
 
   if is_new then
+    name = name and tostring(name) or ''
+
     local ctx_name = name
-    if ctx_name:len() < 1 then ctx_name = 'gfx2imgui' end
+    if #ctx_name < 1 then ctx_name = 'gfx2imgui' end
 
     local ctx_flags    = ImGui.ConfigFlags_NoSavedSettings
     local canary_flags = ImGui.ConfigFlags_NoSavedSettings
@@ -1830,7 +1832,7 @@ function gfx.init(name, width, height, dockstate, xpos, ypos)
     setDock(dockstate)
 
     gfx_vars.ext_retina = 1 -- ReaImGui scales automatically
-  elseif name and name:len() > 0 then
+  elseif name and #name > 0 then
     state.name = name
     return 1
   end
@@ -1861,7 +1863,7 @@ function gfx.init(name, width, height, dockstate, xpos, ypos)
 end
 
 local function drawLine(draw_list, cmd, i, opts)
-  local x1, y1, x2, y2, c = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4] 
+  local x1, y1, x2, y2, c = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4] 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
     c = (c & ~0xff) | ((c & 0xff) * opts.alpha // 1 & 0xFF)
   else
@@ -1994,10 +1996,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawPixel, x1, y1, c, 0, 0, 0, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawPixel, x1, y1, c, 0, 0, 0, 0
   end
 
   else
@@ -2017,10 +2016,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawLine, x1, y1, x2, y2, c, 0, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawLine, x1, y1, x2, y2, c, 0, 0
   end
 
   end
@@ -2035,7 +2031,7 @@ function gfx.lineto(x, y, aa)
 end
 
 local function drawImage(draw_list, cmd, i, opts)
-  local filename, imageState, x, y, w, h = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
+  local filename, imageState, x, y, w, h = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
 
   if not imageState.attached then
     -- could not attach before in loadimg, as it can be called before gfx.init
@@ -2188,10 +2184,7 @@ function gfx.loadimg(image, filename)
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawImage, filename, imageState, x, y, w, h, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawImage, filename, imageState, x, y, w, h, 0
   end
 
   gfx_vars.dest = dest_backup
@@ -2246,7 +2239,7 @@ function gfx.quit()
 end
 
 local function drawRect(draw_list, cmd, i, opts)
-  local rectFunc, quadFunc, x1, y1, x2, y2, c = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5], cmd[i+6] 
+  local rectFunc, quadFunc, x1, y1, x2, y2, c = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5], cmd[i+6] 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
     c = (c & ~0xff) | ((c & 0xff) * opts.alpha // 1 & 0xFF)
   else
@@ -2271,18 +2264,18 @@ local function drawRect(draw_list, cmd, i, opts)
     local x3, y3, x4, y4
     x4, y4, x3, y3 = x1, y2, x2, y2
   x2, y2, x1, y1 = x2, y1, x1, y1
-  -- transformPoint(x1, y2, opts, 0)
-    x1, y2 = x1 * opts.scale_x, y2 * opts.scale_y
+  -- transformPoint(x1, y1, opts, 0)
+    x1, y1 = x1 * opts.scale_x, y1 * opts.scale_y
   
-    x1, y2 = x1 + opts.screen_x, y2 + opts.screen_y
+    x1, y1 = x1 + opts.screen_x, y1 + opts.screen_y
   
-    x1, y2 = x1 // 1, y2 // 1
+    x1, y1 = x1 // 1, y1 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x1, y2 = m1[1]*x1 + m1[2]*y2 + m1[3],
-             m2[1]*x1 + m2[2]*y2 + m2[3]
+    x1, y1 = m1[1]*x1 + m1[2]*y1 + m1[3],
+             m2[1]*x1 + m2[2]*y1 + m2[3]
       end
   
   -- transformPoint(x2, y2, opts, 0)
@@ -2299,32 +2292,32 @@ local function drawRect(draw_list, cmd, i, opts)
              m2[1]*x2 + m2[2]*y2 + m2[3]
       end
   
-  -- transformPoint(x2, y1, opts, 0)
-    x2, y1 = x2 * opts.scale_x, y1 * opts.scale_y
+  -- transformPoint(x3, y3, opts, 0)
+    x3, y3 = x3 * opts.scale_x, y3 * opts.scale_y
   
-    x2, y1 = x2 + opts.screen_x, y1 + opts.screen_y
+    x3, y3 = x3 + opts.screen_x, y3 + opts.screen_y
   
-    x2, y1 = x2 // 1, y1 // 1
+    x3, y3 = x3 // 1, y3 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x2, y1 = m1[1]*x2 + m1[2]*y1 + m1[3],
-             m2[1]*x2 + m2[2]*y1 + m2[3]
+    x3, y3 = m1[1]*x3 + m1[2]*y3 + m1[3],
+             m2[1]*x3 + m2[2]*y3 + m2[3]
       end
   
-  -- transformPoint(x1, y1, opts, 0)
-    x1, y1 = x1 * opts.scale_x, y1 * opts.scale_y
+  -- transformPoint(x4, y4, opts, 0)
+    x4, y4 = x4 * opts.scale_x, y4 * opts.scale_y
   
-    x1, y1 = x1 + opts.screen_x, y1 + opts.screen_y
+    x4, y4 = x4 + opts.screen_x, y4 + opts.screen_y
   
-    x1, y1 = x1 // 1, y1 // 1
+    x4, y4 = x4 // 1, y4 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x1, y1 = m1[1]*x1 + m1[2]*y1 + m1[3],
-             m2[1]*x1 + m2[2]*y1 + m2[3]
+    x4, y4 = m1[1]*x4 + m1[2]*y4 + m1[3],
+             m2[1]*x4 + m2[2]*y4 + m2[3]
       end
   
 
@@ -2404,10 +2397,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawRect, rectFunc, quadFunc, x, y, x+w, y+h, c
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawRect, rectFunc, quadFunc, x, y, x+w, y+h, c
   end
 
   return 0
@@ -2420,7 +2410,7 @@ function gfx.rectto(x, y)
 end
 
 local function drawRoundRect(draw_list, cmd, i, opts)
-  local x1, y1, x2, y2, c, radius = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
+  local x1, y1, x2, y2, c, radius = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
     c = (c & ~0xff) | ((c & 0xff) * opts.alpha // 1 & 0xFF)
   else
@@ -2447,18 +2437,18 @@ local function drawRoundRect(draw_list, cmd, i, opts)
     x1, y1, x2, y2 = x1 + radius, y1 + radius, x2 - radius, y2 - radius
     x4, y4, x3, y3 = x1, y2, x2, y2
   x2, y2, x1, y1 = x2, y1, x1, y1
-  -- transformPoint(x1, y2, opts, 0)
-    x1, y2 = x1 * opts.scale_x, y2 * opts.scale_y
+  -- transformPoint(x1, y1, opts, 0)
+    x1, y1 = x1 * opts.scale_x, y1 * opts.scale_y
   
-    x1, y2 = x1 + opts.screen_x, y2 + opts.screen_y
+    x1, y1 = x1 + opts.screen_x, y1 + opts.screen_y
   
-    x1, y2 = x1 // 1, y2 // 1
+    x1, y1 = x1 // 1, y1 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x1, y2 = m1[1]*x1 + m1[2]*y2 + m1[3],
-             m2[1]*x1 + m2[2]*y2 + m2[3]
+    x1, y1 = m1[1]*x1 + m1[2]*y1 + m1[3],
+             m2[1]*x1 + m2[2]*y1 + m2[3]
       end
   
   -- transformPoint(x2, y2, opts, 0)
@@ -2475,32 +2465,32 @@ local function drawRoundRect(draw_list, cmd, i, opts)
              m2[1]*x2 + m2[2]*y2 + m2[3]
       end
   
-  -- transformPoint(x2, y1, opts, 0)
-    x2, y1 = x2 * opts.scale_x, y1 * opts.scale_y
+  -- transformPoint(x3, y3, opts, 0)
+    x3, y3 = x3 * opts.scale_x, y3 * opts.scale_y
   
-    x2, y1 = x2 + opts.screen_x, y1 + opts.screen_y
+    x3, y3 = x3 + opts.screen_x, y3 + opts.screen_y
   
-    x2, y1 = x2 // 1, y1 // 1
+    x3, y3 = x3 // 1, y3 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x2, y1 = m1[1]*x2 + m1[2]*y1 + m1[3],
-             m2[1]*x2 + m2[2]*y1 + m2[3]
+    x3, y3 = m1[1]*x3 + m1[2]*y3 + m1[3],
+             m2[1]*x3 + m2[2]*y3 + m2[3]
       end
   
-  -- transformPoint(x1, y1, opts, 0)
-    x1, y1 = x1 * opts.scale_x, y1 * opts.scale_y
+  -- transformPoint(x4, y4, opts, 0)
+    x4, y4 = x4 * opts.scale_x, y4 * opts.scale_y
   
-    x1, y1 = x1 + opts.screen_x, y1 + opts.screen_y
+    x4, y4 = x4 + opts.screen_x, y4 + opts.screen_y
   
-    x1, y1 = x1 // 1, y1 // 1
+    x4, y4 = x4 // 1, y4 // 1
   
     if opts.angle then
         local matrix = opts.rotation
     local m1, m2, m3 = matrix[1], matrix[2], matrix[3]
-    x1, y1 = m1[1]*x1 + m1[2]*y1 + m1[3],
-             m2[1]*x1 + m2[2]*y1 + m2[3]
+    x4, y4 = m1[1]*x4 + m1[2]*y4 + m1[3],
+             m2[1]*x4 + m2[2]*y4 + m2[3]
       end
   
 
@@ -2583,10 +2573,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawRoundRect, x, y, x + w, y + h, c, radius, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawRoundRect, x, y, x + w, y + h, c, radius, 0
   end
 
   return 0
@@ -2646,7 +2633,7 @@ function gfx.setfont(idx, fontface, sz, flags)
 
   if idx > 0 and (fontface or sz) then
     -- gfx does this
-    if not fontface or fontface:len() == 0 then
+    if not fontface or #fontface == 0 then
       fontface = 'Arial'
     end
     sz = math.min(((not sz or sz ~= sz or sz == INF or sz == MINF) and 0 or (sz // 1))
@@ -2659,7 +2646,8 @@ function gfx.setfont(idx, fontface, sz, flags)
     flags = ((not tonumber(flags) or tonumber(flags) ~= tonumber(flags) or tonumber(flags) == INF or tonumber(flags) == MINF) and 0 or (tonumber(flags) // 1))
 
     while flags and flags ~= 0 do
-      local imflag = FONT_FLAGS[flags & 0xFF]
+      local flag = string.char(flags & 0xFF):lower()
+      local imflag = FONT_FLAGS[flag]
       if imflag then
         imflags = imflags | imflag
       else
@@ -2668,14 +2656,11 @@ function gfx.setfont(idx, fontface, sz, flags)
       flags = flags >> 8
     end
 
-    local is_new
+    local is_new, old_inst
 
     if font then
       is_new = font.family ~= fontface or font.size ~= sz or font.flags ~= imflags
-      if is_new and state then
-        local cache = getCachedFont(font)
-        if cache then cache.keep_alive = false end
-      end
+      old_inst = is_new and state and getCachedFont(font)
     else
       is_new = true
     end
@@ -2685,8 +2670,13 @@ function gfx.setfont(idx, fontface, sz, flags)
       global_state.fonts[idx] = font
     end
 
-    if state and not getCachedFont(font) then
-      state.fontqueue[#state.fontqueue + 1] = font
+    if state then
+      local new_inst = getCachedFont(font)
+      if not new_inst then
+        state.fontqueue[#state.fontqueue + 1] = font
+      elseif old_inst and new_inst ~= old_inst then
+        old_inst.keep_alive = false
+      end
     end
   end
 
@@ -2736,14 +2726,11 @@ function gfx.setpixel(r, g, b)
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawPixel, gfx_vars.x, gfx_vars.y, ((((r) * 0xFF) // 1) << 24 |
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawPixel, gfx_vars.x, gfx_vars.y, ((((r) * 0xFF) // 1) << 24 |
    (((g) * 0xFF) // 1) << 16 |
    (((b) * 0xFF) // 1) <<  8 |
   ((((1) * 0xFF) // 1) & 0xFF))
 , 0, 0, 0, 0
-
   end
 
   return r
@@ -2784,7 +2771,7 @@ function gfx.transformblit()
 end
 
 local function drawTriangle6(draw_list, cmd, i, opts)
-  local points, center_x, center_y, c = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3] 
+  local points, center_x, center_y, c = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3] 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
     c = (c & ~0xff) | ((c & 0xff) * opts.alpha // 1 & 0xFF)
   else
@@ -2858,7 +2845,7 @@ local function drawTriangle6(draw_list, cmd, i, opts)
 end
 
 local function drawTriangleN(draw_list, cmd, i, opts)
-  local points, screen_points, n_coords, center_x, center_y, c = cmd[i+0], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
+  local points, screen_points, n_coords, center_x, center_y, c = cmd[i], cmd[i+1], cmd[i+2], cmd[i+3], cmd[i+4], cmd[i+5] 
   if not opts.mode or BLIT_NO_PREMULTIPLY then
     c = (c & ~0xff) | ((c & 0xff) * opts.alpha // 1 & 0xFF)
   else
@@ -2966,10 +2953,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawPixel, center_x, center_y, c, 0, 0, 0, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawPixel, center_x, center_y, c, 0, 0, 0, 0
   end
 
     return 0
@@ -2998,10 +2982,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawLine, center_x, min_y, center_x, max_y, c, 0, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawLine, center_x, min_y, center_x, max_y, c, 0, 0
   end
 
     return 0
@@ -3030,10 +3011,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawLine, min_x, center_y, max_x, center_y, c, 0, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawLine, min_x, center_y, max_x, center_y, c, 0, 0
   end
 
     return 0
@@ -3062,10 +3040,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawLine, points[1], points[2], points[3], points[4], c, 0, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawLine, points[1], points[2], points[3], points[4], c, 0, 0
   end
 
     return 0
@@ -3086,10 +3061,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawTriangle6, points, center_x, center_y, c, 0, 0, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawTriangle6, points, center_x, center_y, c, 0, 0, 0
   end
 
     return 0
@@ -3110,10 +3082,7 @@ end
   if size < max_size then list.size = size + 8 end
 end
 
-  list[ptr  ], list[ptr+1], list[ptr+2], list[ptr+3],
-  list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] =
-    drawTriangleN, points, points_arr, n_coords, center_x, center_y, c, 0
-
+  list[ptr], list[ptr+1], list[ptr+2], list[ptr+3], list[ptr+4], list[ptr+5], list[ptr+6], list[ptr+7] = drawTriangleN, points, points_arr, n_coords, center_x, center_y, c, 0
   end
 
     return 0

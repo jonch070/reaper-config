@@ -1,4 +1,4 @@
--- @version 1.1.3
+-- @version 1.2.0
 -- @author Daniel Lumertz
 -- @provides
 --    [main] daniellumertz_Clouds Generate for All Items.lua
@@ -14,13 +14,22 @@
 --    [effect] FX/daniellumertz_Clouds.jsfx
 -- @changelog
 --    + Fixed Randomization UI issue with out-of-bounds values for pan, volume, and stretch when the user manually inputs a value.
+-- @license 
+--[[
+    I am not sure which license to use. This code is open-source. You may not bypass the pay window, besides that you are free to modify this code, or use my functions in your project. If you make something cool share with me! 
+]]
 -- Debug
---[[ if reaper.file_exists( "c:/Users/DSL/.vscode/extensions/antoinebalaine.reascript-docs-0.1.12/debugger/LoadDebug.lua" ) then
+if reaper.file_exists( "c:/Users/DSL/.vscode/extensions/antoinebalaine.reascript-docs-0.1.12/debugger/LoadDebug.lua" ) then
     VSDEBUG = dofile("c:/Users/DSL/.vscode/extensions/antoinebalaine.reascript-docs-0.1.12/debugger/LoadDebug.lua")
-end ]]
+end
+
+--[[ local profiler = dofile(reaper.GetResourcePath() ..
+  '/Scripts/ReaTeam Scripts/Development/cfillion_Lua profiler.lua')
+reaper.defer = profiler.defer ]]
+
 -- Constants:
 SCRIPT_NAME = 'Clouds'
-SCRIPT_V  = '1.1.3' -- version should always be three digits! leters, for beta versions, are acceptable.
+SCRIPT_V  = '1.2.0' -- version should always be three digits! leters, for beta versions, are acceptable.
 EXT_NAME = 'daniellumertz_Clouds'     -- keys: settings (for clouds), is_item (for generated items)
 FX_NAME = 'daniellumertz_Clouds'
 Proj = 0
@@ -49,12 +58,22 @@ FXENVELOPES = {
         c_random_position = 17,
         randomize_position = 10
     },
+    envelopes = {
+        vol = 18,
+        c_vol = 22,
+        pan = 19,
+        c_pan = 23,
+        pitch = 20,
+        c_pitch = 24,
+        stretch = 21,
+        c_stretch = 25
+    },
 }
 CONSTRAINS = {
     exp = 0.01,
     grain_low = 1/10, --in ms
     grain_rand_low = -99.99, -- in %
-    stretch_low = 0.005,
+    stretch_low = 0.001,
     db_minmax = 151,
     grain_density_ratio = {
         min = 25,
@@ -74,14 +93,15 @@ URL = {
     buy = 'https://daniellumertz.gumroad.com/l/ReaperClouds',
     thread = 'https://forum.cockos.com/showthread.php?t=298170',
     manual = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-    video = 'https://youtu.be/IWLGhHi0nnE?si=JSRBwFhlzvBVbVf-'
+    video = 'https://youtu.be/IWLGhHi0nnE?si=JSRBwFhlzvBVbVf-',
+    download_counter = 'https://script.google.com/macros/s/AKfycbx9cZIU94m6bAQA0Npo4TbYPT6i3DcYGkDXBUYaZODr1R7O3o0bLth82yPqgDAumKAAWw/exec',
+    over_counter = 'https://script.google.com/macros/s/AKfycbz_ddl3D-fry577nLS_E9cYcMpWK8tPxVqnd_3Kv8cQzMXUpulEnpuc_aHHIlAmk0bc/exec'
 }
 SEEDLIMIT = 1024 -- maximum number of seeds history saved in a item
 
--- Initialize ImGUI
+-- Initialize ImGUI?
 package.path = package.path..';'..reaper.ImGui_GetBuiltinPath() .. '/?.lua'
 ImGui = require 'imgui' '0.9.2' 
---demo = require 'ReaImGui_Demo' --DEBUG
 
 -- Initialize Functions
 --package.path = package.path..';'..debug.getinfo(1, "S").source:match [[^@?(.*[\/])[^\/]-$]] .. "/DL Functions/?.lua;" -- GET DIRECTORY FOR REQUIRE
@@ -110,6 +130,8 @@ require('Clouds Settings')
 require('Clouds Tracks')
 require('Clouds GUI')
 require('Clouds Tooltips')
+require('Clouds ReRoll')
+require('Clouds Variator')
 
 -- Check versions
 DL.check.ReaImGUI('0.9.2')
@@ -120,5 +142,15 @@ DL.check.SWS()
 -- Load User Settings
 Settings = Clouds.Settings.Load(SETTINGS.path)
 
+--- Debug
+
+--[[ profiler.attachToWorld()
+profiler.detachFrom('math')
+profiler.detachFrom('type')
+profiler.detachFrom('string')
+profiler.detachFrom('tostring')
+profiler.run() ]]
 -- Start Main
 reaper.defer(Clouds.GUI.Main)
+reaper.atexit(Clouds.Item.atexit)
+

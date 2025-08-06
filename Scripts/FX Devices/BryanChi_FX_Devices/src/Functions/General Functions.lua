@@ -8,7 +8,7 @@ function msg(...)
     end
 end
 
-function deepCopy(orig)
+function DeepCopy(orig)
     -- Table to store already copied tables to handle cyclic references
     local copies = {}
     
@@ -108,6 +108,7 @@ end
 ---@param fxidx integer 0 based or something like 33554455 in container
 ---@return table<Index,fxslot> table
 function get_container_path_from_fx_id(tr, fxidx) -- returns a list of 1-based FXIDs as a table from a fx-address, e.g. 1, 2, 4
+    if type(fxidx)=='string' then return end 
     if fxidx & 0x2000000 then
       local ret = { }
       local n = r.TrackFX_GetCount(tr)
@@ -206,9 +207,13 @@ end
 ---@return string "NextFX"
 ---@return string "PreviousFX"
 function GetNextAndPreviousFXID(FX_Idx)
+
     local incontainer, parent_container = r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, "parent_container")
     if incontainer then
+
         path_table = get_container_path_from_fx_id(LT_Track, FX_Idx)
+
+       -- r.TrackFX_GetNamedConfigParm(LT_Track,FX_Idx, 'container_item.')
         next_fxidx = TrackFX_GetInsertPositionInContainer(parent_container, path_table[#path_table] + 1) 
         local target_pos = path_table[#path_table]
         local name_pos = path_table[#path_table] - 1
@@ -226,6 +231,30 @@ function GetNextAndPreviousFXID(FX_Idx)
     end
     local _, NextFX = r.TrackFX_GetFXName(LT_Track, next_fxidx)
     return next_fxidx, previous_fxidx, NextFX, PreviousFX
+end
+
+
+function  GetNextAndPreviousFXID_NEW(FX_Idx) 
+
+    local parent = tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx,'parent_container')))
+    if parent then
+        local ct = tonumber (select(2, r.TrackFX_GetNamedConfigParm(LT_Track, parent,'container_count')))
+        for i= 0 , ct - 1 do
+            local Cont_Itm_ID = select(2, r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_item.' .. i))
+            if Cont_Itm_ID == FX_Idx then 
+                local NextFX_Idx = parent and  tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_item.' .. Cont_Itm_ID + 1)))
+                local PrevFX_Idx = parent and  tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_item.' .. Cont_Itm_ID - 1)))
+                local NextFxName =  NextFX_Idx and  select(2,r.TrackFX_GetFXName(LT_Track, NextFX_Idx ))
+                local PrevFxName =  PrevFX_Idx and  select(2,r.TrackFX_GetFXName(LT_Track, PrevFX_Idx ))
+                return NextFX_Idx, PrevFX_Idx, NextFxName, PrevFxName
+            end
+        end
+    else 
+        local NextFX_Idx , PrevFX_Idx = FX_Idx + 1 , FX_Idx - 1 
+        local NextFxName =  NextFX_Idx and  select(2,r.TrackFX_GetFXName(LT_Track, NextFX_Idx ))
+        local PrevFxName =  PrevFX_Idx and  select(2,r.TrackFX_GetFXName(LT_Track, PrevFX_Idx ))
+        return NextFX_Idx , PrevFX_Idx, NextFxName, PrevFxName
+    end
 end
 
 ---@param container_id integer 0 based or something like 33554455 in container
@@ -292,15 +321,17 @@ function BuildFXTree_item(tr, fxid, scale, oldscale)
         fxname = buf,
         isopen = reaper.TrackFX_GetOpen(tr, fxid),
         GUID = reaper.TrackFX_GetFXGUID(tr, fxid),
-        addr_fxid = fxid,
+        addr_fxid = tonumber(fxid),
         scale = oldscale,
         parallel = parallel
     }
     local fxGUID = r.TrackFX_GetFXGUID(tr, fxid)
     FX = FX or {}
-    FX[fxGUID] = FX[fxGUID] or {}
-    FX[fxGUID].addr_fxid =  fxid
 
+
+    if not fxGUID then return end
+    FX[fxGUID] = FX[fxGUID] or {}
+    FX[fxGUID].addr_fxid = tonumber(fxid)
 
 
     if ccok then -- if fx in container is a container
@@ -315,64 +346,155 @@ function BuildFXTree_item(tr, fxid, scale, oldscale)
 end
 
 
+local function Build_FX_TREE_ITEM(tr, id, scale, oldscale)
+    local tr = tr or LT_Track or r.GetLastTouchedTrack()
 
+    local  Cont_FX_Ct =  tonumber(select(2, r.TrackFX_GetNamedConfigParm(tr, id, 'container_count')))
+
+    local ret = {
+        fxname = select(2, r.TrackFX_GetFXName(tr, id)),
+        isopen = reaper.TrackFX_GetOpen(tr, id),
+        GUID = reaper.TrackFX_GetFXGUID(tr, id),
+        addr_fxid = tonumber(id),
+        scale = oldscale,
+        parallel = select(2,  r.TrackFX_GetNamedConfigParm(tr, id, 'parallel') ) == '1' and true
+    }
+
+    if Cont_FX_Ct then 
+        ret.children = {}
+        for I = 0 , Cont_FX_Ct-1 do 
+            local ID = tonumber(select(2, r.TrackFX_GetNamedConfigParm(tr, id, 'container_item.'..I)))
+            local newscale = scale * (tonumber(Cont_FX_Ct) + 1)
+
+            ret.children[I+1] = Build_FX_TREE_ITEM(tr, ID, newscale, scale)
+
+        end
+    end
+    return ret
+end
 
 
 function BuildFXTree(tr)
     -- table with referencing ID tree
-    local tr = tr or LT_Track
+    local tr = tr or LT_Track 
     if tr then
-        tree = {}
+        TREE = {}
         local cnt = reaper.TrackFX_GetCount(tr)
-        for i = 1, cnt do
-            tree[i] = BuildFXTree_item(tr, 0x2000000 + i, cnt + 1, cnt + 1)
+        --[[ for i = 1, cnt do
+
+            local _, Orig_Nm = r.TrackFX_GetNamedConfigParm(tr, i-1, 'original_name')
+            local Is_Cont =  Orig_Nm == 'Container' and true  
+
+            local is_2nd_lvl = reaper.TrackFX_GetNamedConfigParm(tr, i-1, 'container_count')
+            local idx =  is_2nd_lvl and 0x2000000 + i or i-1 
+
+            --local idx = i-1
+            TREE[i] = BuildFXTree_item(tr, idx, cnt + 1, cnt + 1)
+        end ]]
+
+        for i = 0, cnt-1 do
+            TREE[i+1] = Build_FX_TREE_ITEM(tr, i, cnt + 1, cnt + 1)
+            
         end
 
-
-
-
-        local last_parallel_fx
-
-        local NeedCheckNext 
-
-        local function find_parallel_sequences(tree)
+        local function find_parallel_sequences(tree_items, parent_path, container_id)
             local sequences = {}
-            local start_index = nil
-            local count = 0
-        
-            for i = 1, #tree do
-                if tree[i].parallel then
-                    if start_index == nil then
-                        start_index = i -1   -- Start of a new sequence
+            local current_sequence = nil
+            parent_path = parent_path or ""
+            
+            for i = 1, #tree_items do
+
+                -- Check if this FX is parallel or the next FX is parallel
+                local is_parallel = tree_items[i].parallel
+                local next_is_parallel = tree_items[i+1] and tree_items[i+1].parallel
+                local Is_Root
+                local function Check_If_FX_Is_Root__If_So_Add_To_Table()
+                    
+                    -- If this is the first FX in a sequence we're detecting
+                    if not current_sequence then
+                        if is_parallel or next_is_parallel then
+
+                            current_sequence = {
+                                path = parent_path,
+                                container_id = container_id,
+                            }
+                            
+                            -- If the next FX is parallel but current isn't, we need to add current FX first
+                            if not is_parallel and next_is_parallel then
+                                table.insert(current_sequence, {
+                                    index = i,
+                                    addr_fxid = tree_items[i].addr_fxid,
+                                    name = tree_items[i].fxname,
+                                    guid = tree_items[i].GUID,
+                                    scale = tree_items[i].scale
+
+                                })
+                                Is_Root = true
+                            end
+                        end
                     end
-                    count = count + 1
-                else
-                    if count >= 1 then
-                        table.insert(sequences, {start_index, i - 1})
+                end
+                Check_If_FX_Is_Root__If_So_Add_To_Table()
+
+                
+                    -- Add the current FX to the sequence if it's parallel
+                if not Is_Root then 
+                    if is_parallel  then
+                        table.insert(current_sequence, {
+                            index = i,
+                            addr_fxid = tree_items[i].addr_fxid,
+                            name = tree_items[i].fxname,
+                            guid = tree_items[i].GUID,
+                            scale = tree_items[i].scale
+                        })
+
+                    else
+                        -- If we were building a sequence and hit a non-parallel FX, finalize the sequence
+                        if current_sequence and #current_sequence > 1 then
+
+                            table.insert(sequences, current_sequence)
+                            current_sequence = nil
+                            Check_If_FX_Is_Root__If_So_Add_To_Table()
+                        elseif current_sequence and #current_sequence == 1 then -- if there's a FX set to parallel but there's no FX before it 
+                            r.TrackFX_SetNamedConfigParm( tr, current_sequence[1].addr_fxid , 'parallel', '0' ) -- set to not parallel 
+
+                        end
                     end
-                    start_index = nil
-                    count = 0
+                end
+                    
+                -- Recursively process children if this is a container
+                if tree_items[i].children and #tree_items[i].children > 0 then
+                    local child_path = parent_path .. "." .. i
+                    -- Pass the container's FX ID to the recursive call
+                    local child_sequences = find_parallel_sequences(
+                        tree_items[i].children, 
+                        child_path, 
+                        tree_items[i].addr_fxid
+                    )
+                    
+                    -- Add all child sequences to our results
+                    for _, seq in ipairs(child_sequences) do
+                        table.insert(sequences, seq)
+                    end
                 end
             end
-        
-            -- Check if the loop ended while still in a sequence
-            if count >=1 then
-                table.insert(sequences, {start_index, #tree})
+            
+            -- Check if we ended the loop while still building a sequence
+
+            if current_sequence and #current_sequence > 1 then
+                table.insert(sequences, current_sequence)
+            elseif current_sequence and #current_sequence == 1 then -- if there's a FX set to parallel but there's no FX before it 
+                r.TrackFX_SetNamedConfigParm( LT_Track, current_sequence[1].addr_fxid , 'parallel', '0' ) -- set to not parallel 
             end
-        
+            
             return sequences
         end
 
+        PAR_FXs = find_parallel_sequences(TREE)
 
-
-        PAR_FXs = find_parallel_sequences(tree)
-
-
-
-        return tree
+        return TREE
     end
 end
-
 function Check_If_Has_Children_Prioritize_Empty_Container(TB)
     local Candidate
     for i, v in ipairs(TB) do
@@ -477,7 +599,7 @@ function Find_FxID_By_GUID (GUID)
 
     local function children(tb)
         if tb.children then 
-
+            local out
             for i, v in ipairs(tb.children)do 
 
                 if v.GUID == GUID then 
@@ -488,7 +610,10 @@ function Find_FxID_By_GUID (GUID)
             end
             for i, v in ipairs(tb.children)do 
                 if v.children then 
-                    children(v.children)
+                    out = children(v.children)
+                    if out then 
+                        return out 
+                    end
                 end
             end
         end
@@ -497,7 +622,7 @@ function Find_FxID_By_GUID (GUID)
     for i , v in pairs(TREE) do 
 
         if v.GUID == GUID then 
-            return i-1 
+            return v.addr_fxid 
         end
         local out = children(v)
         if out then return out end 
@@ -557,6 +682,15 @@ function get_aftr_Equal(str)
     end
 end
 
+function getTableName(tbl)
+    for name, value in pairs(_G) do
+        if value == tbl then
+            return name
+        end
+    end
+    return nil
+end
+
 ---@param Str string
 ---@param Id string
 ---@param Fx_P integer
@@ -572,6 +706,7 @@ function RecallInfo(Str, Id, Fx_P, Type, untilwhere)
              ID = Id.. ' = ' 
         else     
              ID = Fx_P .. '%. ' .. Id .. ' = '
+
         end
         local Start, End = Str:find(ID)
 
@@ -589,10 +724,11 @@ function RecallInfo(Str, Id, Fx_P, Type, untilwhere)
                 if string.sub(Str, End + 1, LineChange - 1) == 'true' then Out = true else Out = false end
             else
                 Out = string.sub(Str, End + 1, LineChange - 1)
+
             end
         end
         if Out == '' then Out = nil end
-
+        if Out == 'true' then Out = true end
         
         
 
@@ -831,14 +967,24 @@ function scandir(directory)
     --return F ---TODO should this be Files instead of F ?
 end
 
+function Change_Unrenderable_characters(str)
+    return str:gsub('\u{202F}', ' '):gsub('\u{2212}', '-')
+end
+
 ---@param str string
 ---@param DecimalPlaces number
 function RoundPrmV(str, DecimalPlaces)
+    local str = str:gsub('\u{202F}', ' '):gsub('\u{2212}', '-')
     local A = tostring('%.' .. DecimalPlaces .. 'f')
-    --local num = tonumber(str:gsub('[^%d%.]', '')..str:gsub('[%d%.]',''))
-    local otherthanNum = str:gsub('[%d%.]', '')
-    local num = str:gsub('[^%d%.]', '')
-    return string.format(A, tonumber(num) or 0) .. otherthanNum
+    
+    -- Extract the numeric part
+    local num = str:gsub('[^%d%.%-%+]', '')
+    local formattedNum = string.format(A, tonumber(num) or 0)
+    
+    -- Replace the numeric part in the original string
+    local result = str:gsub('[%d%.%-%+]+', formattedNum)
+    
+    return result
 end
 
 ---@param str string
@@ -1290,19 +1436,49 @@ end
 
 function GetLTParam()
     LT_Track = r.GetLastTouchedTrack()
-    retval, LT_Prm_TrackNum, LT_FXNum, LT_ParamNum = r.GetLastTouchedFX()
+    retval, LT_Prm_TrackNum, LT_FXNum--[[ , LT_ParamNum ]] = r.GetLastTouchedFX()
     --GetTrack_LT_Track = r.GetTrack(0,LT_TrackNum)
 
     if LT_Track ~= nil then
         retval, LT_FXName = r.TrackFX_GetFXName(LT_Track, LT_FXNum)
-        retval, LT_ParamName = r.TrackFX_GetParamName(LT_Track, LT_FXNum, LT_ParamNum)
+        
     end
 end
 
 function GetLT_FX_Num()
-    retval, LT_Prm_TrackNum, LT_FX_Number, LT_ParamNum = r.GetLastTouchedFX()
+    --_, LT_Prm_TrackNum, LT_FX_Number, LT_ParamNum = r.GetLastTouchedFX()
+    _,  LT_Prm_TrackNum,  itemidx,  takeidx,  LT_FX_Number,  LT_ParamNum = r.GetTouchedOrFocusedFX(0) -- 0 means to query last touched parameter, 1 to query currently focused FX.
+    _,  LT_Prm_TrackNum,  itemidx,  takeidx,  FOCUSED_LT_FX_Number,  FOCUSED_LT_ParamNum = r.GetTouchedOrFocusedFX(1) -- 0 means to query last touched parameter, 1 to query currently focused FX.
+
     LT_Track = r.GetLastTouchedTrack()
+    if not LT_Track then return end 
+
+
+     retval, LT_ParamName = r.TrackFX_GetParamName(LT_Track, LT_FXNum, LT_ParamNum)
 end
+
+    function mergeUnique(target, source)
+        for key, value in pairs(source) do
+            if type(value) == "table" then
+                -- If the key exists in target and is also a table, recurse
+                if type(target[key]) == "table" then
+                    mergeUnique(target[key], value)
+                else
+                    -- Otherwise, copy the whole table (to avoid reference issues)
+                    target[key] = {}
+                    mergeUnique(target[key], value)
+                end
+            else
+                -- Only copy non-table values if the key is not in target
+                if target[key] == nil then
+                    target[key] = value
+                end
+            end
+        end
+    end
+    
+
+
 
 ---@param FxGUID string
 function GetProjExt_FxNameNum(FxGUID , Trk)
@@ -1351,11 +1527,11 @@ function ToggleBypassFX(LT_Track, FX_Idx)
 end
 
 
----TODO I think Position is meant to be used as «instantiate» variable, is this the intent?
+
 ---@param track MediaTrack
 ---@param fx_name string
 ---@param Position integer
-function AddFX_HideWindow(track, fx_name, Position)
+function AddFX_HideWindow(track, fx_name, Position, parallel)
     local val = r.SNM_GetIntConfigVar("fxfloat_focus", 0)
     if val & 4 == 0 then
         return r.TrackFX_AddByName(track, fx_name, 0, Position)   -- add fx
@@ -1399,7 +1575,6 @@ end
 function DeleteAllParamOfFX(FXGUID, TrkID)
     for p, v in pairs(Trk.Prm.FXGUID) do
         if Trk.Prm.FXGUID[p] == FXGUID and FXGUID ~= nil then
-            Trk.Prm.Inst[TrkID] = Trk.Prm.Inst[TrkID] - 1
             Prm.Num[p] = nil
             PM.HasMod[p] = nil
 
@@ -1409,10 +1584,9 @@ function DeleteAllParamOfFX(FXGUID, TrkID)
         end
     end
 end
-function Check_If_Its_Root_of_Parallel(FX_Idx_to_Check) -- if it is, set the next fx to no be parallel with previous fx
+function FX_Is_Root_Of_Parallel_Chain(FX_Idx_to_Check) -- if it is, set the next fx to no be parallel with previous fx
     for i, v in ipairs(PAR_FXs)do 
-
-        if FX_Idx_to_Check == v[1]-1 and FX_Idx_to_Check > 0 then 
+        if FX_Idx_to_Check == v[1].addr_fxid and FX_Idx_to_Check >= 0 then 
             return true 
         end
 
@@ -1516,10 +1690,13 @@ end
 ---@param FxGUID string
 ---@param Fx_P integer parameter index
 ---@param FX_Idx integer
-function DeletePrm(FxGUID, Fx_P, FX_Idx)
+function DeletePrm(FxGUID, Fx_P, FX_Idx, Remove_selection)
     --LE.Sel_Items[1] = nil
 
     local FP = FX[FxGUID][Fx_P]
+    if type(Fx_P) == 'table' then  LE.Delete_VB_Popup_Open = true  return end 
+
+    if not FP then return end 
     for i, v in ipairs(FX[FxGUID]) do
         if v.ConditionPrm then
             v.ConditionPrm = nil
@@ -1547,10 +1724,6 @@ function DeletePrm(FxGUID, Fx_P, FX_Idx)
     end
 
     table.remove(FX[FxGUID], Fx_P)
-    if Trk.Prm.Inst[TrkID] then
-        Trk.Prm.Inst[TrkID] = Trk.Prm.Inst[TrkID] - 1
-        r.GetSetMediaTrackInfo_String(LT_Track, 'P_EXT: Trk Prm Count', Trk.Prm.Inst[TrkID], true)
-    end
 
 
     for i, v in ipairs(FX[FxGUID]) do
@@ -1562,13 +1735,16 @@ function DeletePrm(FxGUID, Fx_P, FX_Idx)
     Save_to_Trk('Prm Count' .. FxGUID ,   #FX[FxGUID])
    -- r.SetProjExtState(0, 'FX Devices', 'Prm Count' .. FxGUID, #FX[FxGUID])
     -- Delete Proj Ext state data!!!!!!!!!!
+    if Remove_selection then
+        LE.Sel_Items = {}
+    end
 end
 
 function SyncTrkPrmVtoActualValue()
     for FX_Idx = 0, Sel_Track_FX_Count, 1 do                 ---for every selected FX in cur track
-        local FxGUID = r.TrackFX_GetFXGUID(LT_Track, FX_Idx) ---get FX’s GUID
+        local FxGUID = r.TrackFX_GetFXGUID(LT_Track, FX_Idx) ---get FX's GUID
         if FxGUID then
-            FX[FxGUID] = FX[FxGUID] or {}                    ---create new params table for FX if it doesn’t exist
+            FX[FxGUID] = FX[FxGUID] or {}                    ---create new params table for FX if it doesn't exist
             for Fx_P = 1, #FX[FxGUID] or 0, 1 do             ---for each param
                 if TrkID then
                     if not FX[FxGUID][Fx_P].WhichMODs then
@@ -1629,7 +1805,6 @@ function DndAddFXfromBrowser_TARGET(Dest, ClrLbl, SpaceIsBeforeRackMixer, SpcIDi
                 FX[FxGUID_Container] = FX[FxGUID_Container] or {}
                 DropFXintoBS(FxID, FxGUID_Container, FX[FxGUID_Container].Sel_Band, FX_Idx, Dest + 1)
             end
-            FX_Idx_OpenedPopup = nil
         end
         im.EndDragDropTarget(ctx)
     end
@@ -1689,18 +1864,33 @@ function Execute_Keyboard_Shortcuts(ctx,KB_Shortcut,Command_ID, Mods)
     end
 end
 
+function GetFormatPrmV(FX_Idx, V, OrigV, i)
+    r.TrackFX_SetParamNormalized(LT_Track, FX_Idx, i, V)
+    local _, RV = r.TrackFX_GetFormattedParamValue(LT_Track, FX_Idx, i)
+    r.TrackFX_SetParamNormalized(LT_Track, FX_Idx, i, OrigV)
+    return Change_Unrenderable_characters(RV)
+end
 
 
-function HSV_Change(InClr, H, S, V, A)
+function HSV_Change(InClr, H, S, V, A, Change_S_If_V_Is_Full)
     local R, g, b, a = im.ColorConvertU32ToDouble4(InClr)
-
+    local SS
     local h, s, v = im.ColorConvertRGBtoHSV(R, g, b)
-    local h, s, v, a = (H or 0) + h, s + (S or 0), v + (V or 0), a + (A or 0)
-    local R, g, b = im.ColorConvertHSVtoRGB(h, s, v)
+    if Change_S_If_V_Is_Full then   
+        if v == 1 then
+            SS = math.min(s + (Change_S_If_V_Is_Full), 1)
+        end
+    end
+    local h, s, v, a = math.min((H or 0) + h, 1), math.min(s + (S or 0), 1), math.min(v + (V or 0), 1), math.min(a + (A or 0), 1)
+    
+    local R, g, b = im.ColorConvertHSVtoRGB(h, SS or s, v)
     return im.ColorConvertDouble4ToU32(R, g, b, a)
 end
 
 function BlendColors(Clr1, Clr2, pos)
+    if type(Clr1) ~= 'number' then return end
+    if type(Clr2) ~= 'number' then return end
+    if not pos then return end
     local R1, G1, B1, A1 = im.ColorConvertU32ToDouble4(Clr1)
 
     local R2, G2, B2, A2 = im.ColorConvertU32ToDouble4(Clr2)
@@ -1758,7 +1948,7 @@ function DrawChildMenu(tbl, path, FX_Idx)
            end
        end
        if type(tbl[i]) ~= "table" then
-           if im.Selectable(ctx, tbl[i], false) then -- TODO for all calls to ImGui_Selectable, let’s pass the third argument as false instead of nil
+           if im.Selectable(ctx, tbl[i], false) then -- TODO for all calls to ImGui_Selectable, let's pass the third argument as false instead of nil
                if TRACK then
                    r.TrackFX_AddByName(TRACK, table.concat({ path, os_separator, tbl[i] }), false,
                        -1000 - FX_Idx)
@@ -1789,24 +1979,26 @@ function Filter_actions(filter_text)
     return t
 end
 
-function Put_FXs_Into_New_Container(FX_Idx, cont, i ) -- i = pos in container
+function Put_FXs_Into_New_Container(FX_Idx, cont, i , scale) -- i = pos in container
 
     --local to =  TrackFX_GetInsertPositionInContainer(cont, i  )
 
     local to 
     local id = FX_Idx 
 
-    local scale = tree[id].scale
+    local scale = scale or  TREE[id] and TREE[id].scale or 1
 
     --local cont = cont +1
     local  ct = tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, cont, 'container_count')))
+    local rv , nm = r.TrackFX_GetFXName(LT_Track, FX_Idx)
+    local rv , cont_Name = r.TrackFX_GetFXName(LT_Track, cont)
 
 
-    if ct > 0  then 
+    if ct and ct > 0  then 
         to = tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, cont, 'container_item.'..(ct-1 )))) + scale
-        
     else    -- if container is empty 
-        to =  0x2000000 + 1*(r.TrackFX_GetCount(LT_Track)+1) + FX_Idx
+
+        to =  0x2000000 + 1*(r.TrackFX_GetCount(LT_Track)+1) + (cont+1)
     end
     r.TrackFX_CopyToTrack(LT_Track, FX_Idx, LT_Track, to , true)
 
@@ -1824,15 +2016,16 @@ function FilterBox(FX_Idx, LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, SpcI
     local MAX_FX_SIZE = 250
     local FxGUID = FXGUID[FX_Idx_For_AddFX or FX_Idx]
     im.SetNextItemWidth(ctx, 180)
-    _, ADDFX_FILTER = im.InputTextWithHint(ctx, '##input', "SEARCH FX", ADDFX_FILTER,
-        im.InputTextFlags_AutoSelectAll)
+    _, ADDFX_FILTER = im.InputTextWithHint(ctx, '##input', "SEARCH FX", ADDFX_FILTER, im.InputTextFlags_AutoSelectAll)
 
     if im.IsWindowAppearing(ctx) then
         local tb = FX_LIST
         im.SetKeyboardFocusHere(ctx, -1)
+        ADDFX_FILTER = ''
     end
 
     local filtered_fx = Filter_actions(ADDFX_FILTER)
+    if #filtered_fx == 0 then return end 
     --im.SetNextWindowPos(ctx, im.GetItemRectMin(ctx), ({ im.GetItemRectMax(ctx) })[2])
     local filter_h = #filtered_fx == 0 and 2 or (#filtered_fx > 40 and 20 * 17 or (17 * #filtered_fx))
     local function InsertFX(Name)
@@ -1877,7 +2070,9 @@ function FilterBox(FX_Idx, LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, SpcI
         if Name =='Container' then 
             r.TrackFX_Show(LT_Track, FX_Idx , 2)
         end
+        local FXCount = r.TrackFX_GetCount(LT_Track)
 
+        RetrieveFXsSavedLayout(FXCount)
         ADDFX_FILTER = nil
     end
     if ADDFX_FILTER ~= '' and ADDFX_FILTER then
@@ -1893,14 +2088,15 @@ function FilterBox(FX_Idx, LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, SpcI
         if im.BeginPopup(ctx, "##popupp", im.WindowFlags_NoFocusOnAppearing --[[ MAX_FX_SIZE, filter_h ]]) then
             ADDFX_Sel_Entry = SetMinMax(ADDFX_Sel_Entry or 1, 1, #filtered_fx)
             for i = 1, #filtered_fx do
+
                 local ShownName
                 if filtered_fx[i]:find('VST:') then
                     local fx = filtered_fx[i]
                     ShownName = fx:sub(5, (fx:find('.vst') or 999) - 1)
                     local clr = FX_Adder_VST or
                         CustomColorsDefault
-                        .FX_Adder_VST -- TODO I think all these FX_ADDER vars came from FX_ADDER module, which isn’t there anymore. Should we bring it back ?
-                    ---if we do have to bring it back, my bad, I thought it was a duplicate of Sexan’s module
+                        .FX_Adder_VST -- TODO I think all these FX_ADDER vars came from FX_ADDER module, which isn't there anymore. Should we bring it back ?
+                    ---if we do have to bring it back, my bad, I thought it was a duplicate of Sexan's module
                     MyText('VST', nil, clr)
                     SL()
                     HighlightSelectedItem(nil, clr, 0, L, T, R, B, h, w, 1, 1, 'GetItemRect')
@@ -2073,8 +2269,6 @@ function AddFX_Menu(FX_Idx ,LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, Spc
     im.PushStyleColor(ctx, im.Col_Border, 0xffffffff)
     if im.BeginPopup(ctx, 'Btwn FX Windows' .. FX_Idx) then
         local AddedFX
-        FX_Idx_OpenedPopup = FX_Idx .. (tostring(SpaceIsBeforeRackMixer) or '')
-
         im.SeparatorText(ctx, "PLUGINS")
         for i = 1, #CAT do
 
@@ -2219,7 +2413,6 @@ function AddFX_Menu(FX_Idx ,LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, Spc
 
 
 
-            FX_Idx_OpenedPopup = nil
             im.CloseCurrentPopup(ctx)
             if val & 4 ~= 0 then
                 r.SNM_SetIntConfigVar("fxfloat_focus", val|4) -- re-enable Auto-float
@@ -2234,7 +2427,6 @@ function AddFX_Menu(FX_Idx ,LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, Spc
                 r.SetMediaTrackInfo_Value(LT_Track, 'I_NCHAN', 12)
             end
 
-            FX_Idx_OpenedPopup = nil
             --r.TrackFX_AddByName(LT_Track, 'FXD Bandjoiner', 0, -1000-FX_Idx)
         end
         --DndAddFX_SRC("FXD Saike BandSplitter")
@@ -2269,7 +2461,8 @@ function AddFX_Menu(FX_Idx ,LyrID, SpaceIsBeforeRackMixer, FxGUID_Container, Spc
 end
 
 function If_Theres_Pro_C_Analyzers(FX_Name, FX_Idx)
-    local next_fxidx, previous_fxidx, NextFX, PreviousFX = GetNextAndPreviousFXID(FX_Idx)
+    --local next_fxidx, previous_fxidx, NextFX, PreviousFX = GetNextAndPreviousFXID(FX_Idx)
+    local next_fxidx, previous_fxidx, NextFX, PreviousFX = GetNextAndPreviousFXID_NEW(FX_Idx) 
     local FxGUID =  r.TrackFX_GetFXGUID(LT_Track, FX_Idx)
     local FxGUID_Next =  r.TrackFX_GetFXGUID(LT_Track, next_fxidx)
     local FxGUID_Prev =  r.TrackFX_GetFXGUID(LT_Track, previous_fxidx)
@@ -2524,9 +2717,14 @@ function At_Begining_of_Loop()
 
         if Sel_Track_FX_Count then
             for FX_Idx = 0, Sel_Track_FX_Count - 1, 1 do
-                local function Do(FX_Idx)
+                local function Do(FX_Idx, is_container, Cont_Itm_ID)  
+
                     local _, FX_Name = r.TrackFX_GetFXName(LT_Track, FX_Idx or 0)
-                    local next_fxidx, previous_fxidx, NextFX, PreviousFX = GetNextAndPreviousFXID(FX_Idx)
+                    --local next_fxidx, previous_fxidx, NextFX, PreviousFX = GetNextAndPreviousFXID(FX_Idx)
+                    local NextFX_Idx = is_container and  tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_item.' .. Cont_Itm_ID + 1)))
+                    local PrevFX_Idx = is_container and  tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_item.' .. Cont_Itm_ID - 1)))
+                    local NextFX =  NextFX_Idx and  select(2,r.TrackFX_GetFXName(LT_Track, NextFX_Idx ))
+                    local PrevFX =  PrevFX_Idx and  select(2,r.TrackFX_GetFXName(LT_Track, PrevFX_Idx ))
 
                     if FX_Name == 'JS: FXD Gain Reduction Scope' then
                         if string.find(PreviousFX, 'Pro%-C 2') == nil then
@@ -2553,15 +2751,13 @@ function At_Begining_of_Loop()
                     end
                 end
 
-                local is_container, container_count = r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx,
-                    'container_count')
+                local is_container, container_count = r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_count')
 
                 if is_container then
-                    for i = 1, container_count, 1 do
-                        local Idx = tonumber(select(2,
-                            r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_item.' .. i)))
+                    for i = 0, container_count-1, 1 do
+                        local Idx = tonumber(select(2, r.TrackFX_GetNamedConfigParm(LT_Track, FX_Idx, 'container_item.' .. i)))
                         if Idx then
-                            Do(Idx)
+                            Do(Idx, is_container, i)
                         end
                     end
                 else
@@ -2573,12 +2769,34 @@ function At_Begining_of_Loop()
         end
     end
 
+    local function If_Just_Dropped_FX () -- this prevents the spac between fx hover state from triggering when user has just dropping fx
+        if Dvdr.JustDroppedFX then
+            if not Dvdr.JustDrop.X then
+                Dvdr.JustDrop.X, Dvdr.JustDrop.Y = im.GetMousePos(ctx)
+            end
+            local X, Y = im.GetMousePos(ctx)
+
+            if X > Dvdr.JustDrop.X + 15 or X < Dvdr.JustDrop.X - 15 then
+                Dvdr.JustDroppedFX = nil
+                Dvdr.JustDrop.X = nil
+                Dvdr.JustDrop.Y = nil
+            end
+        end
+    end
+    local function Check_FX_Count_Is_Changed ()
+
+        if ImGUI_Time > 3 then
+            CompareFXCount = r.TrackFX_GetCount(LT_Track);
+            ImGUI_Time = 0
+        end
+    end
+
     If_Need_Add_FX ()   
     If_Ned_Del_FX ()
 
-
-
-
+    Always_Move_Modulator_to_1st_Slot()
+    If_Just_Dropped_FX ()
+    If_New_FX_Is_Added()
 
 
     for i, v in ipairs(DelFX.GUID) do 
@@ -2643,17 +2861,17 @@ function At_Begining_of_Loop()
         for i, v in ipairs(MovFX.FromPos) do -- move FX
 
             
-
+            
             r.TrackFX_CopyToTrack(LT_Track, v, LT_Track, MovFX.ToPos[i], true)
             if MovFX.Parallel then 
 
                 if tonumber(MovFX.Parallel) then -- if type is number / if user drags fx to the root of parallel fx
                     -- Set the FX Being Dragged into not parallel
                     r.TrackFX_SetNamedConfigParm( LT_Track, MovFX.ToPos[i] , 'parallel', '0' ) 
-                    r.TrackFX_SetNamedConfigParm( LT_Track, tonumber(MovFX.Parallel +1), 'parallel', '1' )
-
+                    --r.TrackFX_SetNamedConfigParm( LT_Track, tonumber(MovFX.Parallel + (MovFX.scale or 1)), 'parallel', '1' )
                 else
-                    r.TrackFX_SetNamedConfigParm( LT_Track,  MovFX.ToPos[i], 'parallel', '1' )
+
+                    --r.TrackFX_SetNamedConfigParm( LT_Track,  MovFX.ToPos[i] - (MovFX.scale or 1), 'parallel', '1' )
                 end
             
             end
@@ -2695,6 +2913,13 @@ function At_Begining_of_Loop()
     end
 
 
+    ----- Duplicating FX to Layer -------
+    if DragFX_Dest then
+        MoveFX(DragFX_Src, DragFX_Src + 1, false)
+        DropFXtoLayerNoMove(DroptoRack, DropToLyrID, DragFX_Src)
+        MoveFX(DragFX_Src, DragFX_Dest + 1, true)
+        DragFX_Src, DragFX_Dest, DropToLyrID = nil -- TODO should these be DragFX_Src, DragFX_Dest, DropToLyrID = nil, nil, nil
+    end
 
 end
 
@@ -2764,7 +2989,7 @@ function When_User_Switch_Track()
             reaper .gmem_write(0,NumOfTotalTracks )]]
         end
         
-        for P = 0, Trk.Prm.Inst[TrkID] or 0, 1 do
+        for P = 0, Trk[TrkID].ModPrmInst or 0, 1 do
             for m = 1, 8, 1 do
                 r.gmem_write(1000 * m + P, 0)
             end
@@ -2772,7 +2997,7 @@ function When_User_Switch_Track()
         RetrieveFXsSavedLayout(Sel_Track_FX_Count)
         TREE = BuildFXTree(LT_Track)
 
-
+        DRAW_PAR_ENCLOSURE = nil
 
         
         layoutRetrieved = true
@@ -2968,12 +3193,14 @@ function At_End_Of_Loop()
         Long_Or_Short_Click_Time_Start = nil 
         Create_Insert_FX_Preview = nil
         DragFX_ID = nil
+        DRAW_PAR_ENCLOSURE =nil
     end
     if RBtnRel then 
         MARQUEE_SELECTING_FX = nil
         
     end
 
+    Track_Fetch_At_End = r.GetLastTouchedTrack()
 
 end
 
@@ -3061,6 +3288,19 @@ function If_New_Font()
 
 end
 
+function If_Change_Font()
+    if ChangeFont then
+        local ft =  _G[(ChangeFont_Font or 'Font_Andale_Mono') .. '_' .. (ChangeFont_Size or ChangeFont.FtSize)]
+        if r.ImGui_ValidatePtr(ft, 'ImGui_Font') then 
+
+            im.Attach(ctx, _G[(ChangeFont_Font or 'Font_Andale_Mono') .. '_' .. (ChangeFont_Size or ChangeFont.FtSize)])
+            ChangeFont = nil
+            ChangeFont_Size = nil
+            ChangeFont_Font = nil
+            ChangeFont_Var = nil
+        end
+    end
+end
 
 
 
@@ -3083,4 +3323,107 @@ function Set_Prm_To_Default(FX_Idx, FP)
             ToDef = { ID = FX_Idx, P = P_Num, V = Df }
         end
     end
+end
+
+function SimpleCombo(ctx, label, current_value, options, width)
+    local selected_value = current_value
+    local combo_width = width or -1
+    
+    if im.BeginCombo(ctx, label, combo_width) then
+        for i, option in ipairs(options) do
+            local is_selected = (current_value == option)
+            if im.Selectable(ctx, option, is_selected) then
+                selected_value = option
+            end
+            if is_selected then
+                im.SetItemDefaultFocus(ctx)
+            end
+        end
+        im.EndCombo(ctx)
+    end
+    
+    return selected_value
+end
+
+---@generic T
+---@param table1 table<string, T>
+---@param table2 table<string, T>
+---@param excludeKeys? table<string, boolean> A table of keys to exclude from comparison
+---@return boolean
+function CompareTables(table1, table2, excludeKeys)
+    -- Check if both are tables
+    if type(table1) ~= "table" or type(table2) ~= "table" then
+        return false
+    end
+    
+    -- Initialize excludeKeys if not provided
+    excludeKeys = excludeKeys or {}
+    
+    -- Check if they have the same number of elements (excluding the excluded keys)
+    local count1, count2 = 0, 0
+    for k, _ in pairs(table1) do
+        if not excludeKeys[k] then
+            count1 = count1 + 1
+        end
+    end
+    for k, _ in pairs(table2) do
+        if not excludeKeys[k] then
+            count2 = count2 + 1
+        end
+    end
+    if count1 ~= count2 then
+        return false
+    end
+    
+    -- Compare each element
+    for k, v in pairs(table1) do
+        -- Skip excluded keys
+        if not excludeKeys[k] then
+            if type(v) == "table" and type(table2[k]) == "table" then
+                -- Recursively compare nested tables
+                if not CompareTables(v, table2[k], excludeKeys) then
+                    return false
+                end
+            elseif table2[k] ~= v then
+                return false
+            end
+        end
+    end
+    
+    return true
+end
+
+
+
+function Detect_If_FX_Deleted()
+    for i = 0, #FXGUID do
+        local FXid = r.TrackFX_GetFXGUID(LT_Track, i)
+
+        if FXid ~= FXGUID[i] then
+        end
+        --Detects if any FX is deleted
+        if FXid == nil then
+            FXGUID[i] = nil
+        else
+        end
+    end 
+
+    if Sel_Track_FX_Count == 0 and DeletePrms == nil then --if it's the only fx
+        DeleteAllParamOfFX(FXGUID[0], TrkID, 0)
+        FXGUID[0] = nil
+        DeletePrms = true
+    elseif Sel_Track_FX_Count ~= 0 then
+        DeletePrms = nil
+    end
+
+end
+
+function At_Script_Close(CommanID)
+    im.End(ctx)
+    NumOfTotalTracks = r.GetNumTracks()
+    for T = 0, NumOfTotalTracks - 1, 1 do
+        local track = r.GetTrack(0, T)
+        Delete_All_FXD_AnalyzerFX(track)
+    end
+    r.SetToggleCommandState(0, CommanID, 0)
 end

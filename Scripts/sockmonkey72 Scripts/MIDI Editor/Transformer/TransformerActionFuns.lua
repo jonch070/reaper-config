@@ -51,7 +51,8 @@ local function quantizeMusicalPosition(event, take, PPQ, mgParams)
   local som = r.MIDI_GetPPQPos_StartOfMeasure(take, oldppqpos)
 
   local ppqinmeasure = oldppqpos - som -- get the position from the start of the measure
-  local newppqpos = som + (gridUnit * math.floor((ppqinmeasure / gridUnit) + 0.5))
+  local roundval = (mgParams.roundmode == 'floor') and 0 or (mgParams.roundmode == 'ceil') and 0.9999 or 0.5
+  local newppqpos = som + (gridUnit * math.floor((ppqinmeasure / gridUnit) + roundval))
 
   local mgMods, mgReaSwing = mgdefs.getMetricGridModifiers(mgParams)
 
@@ -96,7 +97,8 @@ local function quantizeMusicalLength(event, take, PPQ, mgParams)
   local endppqpos = r.MIDI_GetPPQPosFromProjTime(take, (event.projtime + event.projlen) - timeAdjust)
   local ppqlen = endppqpos - ppqpos
 
-  local newppqlen = (gridUnit * math.floor((ppqlen / gridUnit) + 0.5))
+  local roundval = (mgParams.roundmode == 'floor') and 0 or (mgParams.roundmode == 'ceil') and 0.9999 or 0.5
+  local newppqlen = (gridUnit * math.floor((ppqlen / gridUnit) + roundval))
   if newppqlen == 0 then newppqlen = gridUnit end
 
   if strength and strength ~= 100 then
@@ -130,7 +132,8 @@ local function quantizeMusicalEndPos(event, take, PPQ, mgParams)
 
   local ppqinmeasure = endppqpos - som -- get the position from the start of the measure
 
-  local quant = (gridUnit * math.floor((ppqinmeasure / gridUnit) + 0.5))
+  local roundval = (mgParams.roundmode == 'floor') and 0 or (mgParams.roundmode == 'ceil') and 0.9999 or 0.5
+  local quant = (gridUnit * math.floor((ppqinmeasure / gridUnit) + roundval))
   local newendppqpos = som + quant
   local newppqlen = newendppqpos - ppqpos
   if newppqlen < ppqlen * 0.5 then
@@ -238,7 +241,8 @@ local function randomValue(event, property, min, max, single)
 
   local rnd = single and single or math.random()
 
-  newval = (rnd * (max - min)) + min
+  newval = (rnd * ((max - min) + 1)) + min
+  newval = newval < min and min or newval > max and max or newval
   if math.type(min) == 'integer' and math.type(max) == 'integer' then newval = math.floor(newval) end
   return setValue(event, property, newval)
 end
@@ -249,10 +253,10 @@ local function clampValue(event, property, low, high)
   return setValue(event, property, newval)
 end
 
-local function quantizeTo(event, property, quant)
+local function quantizeTo(event, property, quant, floor)
   local oldval = Shared.getValue(event, property)
   if quant == 0 then return oldval end
-  local newval = quant * math.floor((oldval / quant) + 0.5)
+  local newval = quant * math.floor((oldval / quant) + (floor and 0 or 0.5))
   return setValue(event, property, newval)
 end
 
@@ -262,7 +266,13 @@ local function mirror(event, property, mirrorVal)
   return setValue(event, property, newval)
 end
 
-local function linearChangeOverSelection(event, property, projTime, p1, type, p2, mult, context)
+local function threshold(event, property, p1, p2, p3)
+  local oldval = Shared.getValue(event, property)
+  local newval = oldval < p1 and p2 or p3
+  return setValue(event, property, newval)
+end
+
+local function getLerpVal(projTime, p1, type, p2, mult, context)
   local firstTime = context.firstTime
   local lastTime = context.lastTime
 
@@ -283,6 +293,14 @@ local function linearChangeOverSelection(event, property, projTime, p1, type, p2
       scalePos = ((mult - 1) * ((2 * linearPos) - 1)) / (2 * ((4 * mult) * math.abs(linearPos - 0.5) - mult - 1)) + 0.5
     end
     newval = ((p2 - p1) * scalePos) + p1
+    return newval
+  end
+  return nil
+end
+
+local function linearChangeOverSelection(event, property, projTime, p1, type, p2, mult, context)
+  local newval = getLerpVal(projTime, p1, type, p2, mult, context)
+  if newval then
     return setValue(event, property, newval)
   end
   return setValue(event, property, 0)
@@ -409,6 +427,18 @@ local function multiplyPosition(event, property, param, relative, offset, contex
   return scaledPosition
 end
 
+local function scaledRampOverSelection(event, property, projTime, p1, type, p2, mult, context)
+  local newval = getLerpVal(projTime, p1, type, p2, mult, context)
+  if newval then
+    if property == 'projtime' then
+      return multiplyPosition(event, property, newval, 1, nil, context)
+    else
+      return operateEvent1(event, property, adefs.OP_MULT, newval)
+    end
+  end
+  return event[property]
+end
+
 ActionFuns.setMusicalLength = setMusicalLength
 ActionFuns.quantizeMusicalPosition = quantizeMusicalPosition
 ActionFuns.quantizeMusicalLength = quantizeMusicalLength
@@ -422,6 +452,7 @@ ActionFuns.clampValue = clampValue
 ActionFuns.quantizeTo = quantizeTo
 ActionFuns.mirror = mirror
 ActionFuns.linearChangeOverSelection = linearChangeOverSelection
+ActionFuns.scaledRampOverSelection = scaledRampOverSelection
 ActionFuns.addLength = addLength
 ActionFuns.moveToCursor = moveToCursor
 ActionFuns.moveLengthToCursor = moveLengthToCursor
@@ -430,5 +461,6 @@ ActionFuns.ccSetCurve = ccSetCurve
 ActionFuns.addDuration = addDuration
 ActionFuns.subtractDuration = subtractDuration
 ActionFuns.multiplyPosition = multiplyPosition
+ActionFuns.threshold = threshold
 
 return ActionFuns

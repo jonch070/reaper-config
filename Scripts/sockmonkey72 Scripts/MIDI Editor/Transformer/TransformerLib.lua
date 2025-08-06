@@ -111,6 +111,7 @@ clearFindPostProcessingInfo()
 
 local currentActionScope = adefs.actionScopeFromNotation()
 local currentActionScopeFlags = adefs.actionScopeFlagsFromNotation()
+local currentStripRepetitions = false
 
 local scriptIgnoreSelectionInArrangeView = false
 
@@ -806,6 +807,7 @@ local function handleMacroParam(row, target, condOp, paramTab, paramStr, index)
         if paramType == gdefs.PARAM_TYPE_METRICGRID or paramType == gdefs.PARAM_TYPE_MUSICAL then
           row.mg = mgdefs.parseMetricGridNotation(paramStr:sub(pb))
           row.mg.showswing = condOp.showswing or (condOp.split and condOp.split[index].showswing)
+          row.mg.showround = condOp.showround or (condOp.split and condOp.split[index].showround)
         end
         break
       end
@@ -1084,7 +1086,9 @@ context.CreateNewMIDIEvent = afuns.createNewMIDIEvent
 context.RandomValue = afuns.randomValue
 context.QuantizeTo = afuns.quantizeTo
 context.Mirror = afuns.mirror
+context.Threshold = afuns.threshold
 context.LinearChangeOverSelection = afuns.linearChangeOverSelection
+context.ScaledRampOverSelection = afuns.scaledRampOverSelection
 context.ClampValue = afuns.clampValue
 context.AddLength = afuns.addLength
 context.MoveToCursor = afuns.moveToCursor
@@ -1152,16 +1156,16 @@ local function doProcessParams(row, target, condOp, paramType, paramTab, index, 
     if override == gdefs.EDITOR_TYPE_BITFIELD then
       paramVal = row.params[index].textEditorStr
     elseif (override == gdefs.EDITOR_TYPE_PERCENT or override == gdefs.EDITOR_TYPE_PERCENT_BIPOLAR) then
-      paramVal = string.format(percentFormat, percentVal and percentVal or tonumber(row.params[index].textEditorStr)):gsub("%.?0+$", "")
+      paramVal = string.format(percentFormat, percentVal and percentVal or tonumber(row.params[index].textEditorStr)):gsub('%.?0+$', '')
     elseif (override == gdefs.EDITOR_TYPE_PITCHBEND or override == gdefs.EDITOR_TYPE_PITCHBEND_BIPOLAR) then
-      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) + (1 << 13)) / ((1 << 14) - 1) * 100):gsub("%.?0+$", "")
+      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) + (1 << 13)) / ((1 << 14) - 1) * 100):gsub('%.?0+$', '')
     elseif ((override == gdefs.EDITOR_TYPE_14BIT or override == gdefs.EDITOR_TYPE_14BIT_BIPOLAR)) then
-      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 14) - 1)) * 100):gsub("%.?0+$", "")
+      paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 14) - 1)) * 100):gsub('%.?0+$', '')
     elseif ((override == gdefs.EDITOR_TYPE_7BIT
         or override == gdefs.EDITOR_TYPE_7BIT_NOZERO
         or override == gdefs.EDITOR_TYPE_7BIT_BIPOLAR))
       then
-        paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 7) - 1)) * 100):gsub("%.?0+$", "")
+        paramVal = string.format(percentFormat, percentVal and percentVal or (tonumber(row.params[index].textEditorStr) / ((1 << 7) - 1)) * 100):gsub('%.?0+$', '')
     else
       mu.post('unknown override: ' .. override)
     end
@@ -1384,24 +1388,28 @@ local function runFind(findFn, params, runFn)
           local notePpq = r.MIDI_GetPPQPosFromProjTime(take, noteOnset)
           local matched = false
           local updateFirstNote = true
+          local notesInChord = tg.getNotesInChord()
+
           if firstNotePpq then
             if notePpq >= firstNotePpq - (params.PPQ * 0.05) and notePpq <= firstNotePpq + (params.PPQ * 0.05) then
-              if prevEvents[1] and prevEvents[2] then
+              local isChord = true
+              for i = 1, notesInChord - 1 do
+                if not prevEvents[i] then isChord = false break end
+              end
+              if isChord then
                 event.flags = event.flags | 4
                 counts.noteCount = firstNoteCount
                 event.count = counts.noteCount
-                if prevEvents[1] then
-                  prevEvents[1].flags = prevEvents[1].flags | 4
-                  prevEvents[1].count = counts.noteCount
-                end
-                if prevEvents[2] then
-                  prevEvents[2].flags = prevEvents[2].flags | 4
-                  prevEvents[2].count = counts.noteCount
+                for i = 1, notesInChord - 1 do
+                  prevEvents[i].flags = prevEvents[i].flags | 4
+                  prevEvents[i].count = counts.noteCount
                 end
                 matched = true
               end
 
-              prevEvents[2] = prevEvents[1]
+              for i = notesInChord - 1, 2, -1 do
+                prevEvents[i] = prevEvents[i - 1]
+              end
               prevEvents[1] = event
               updateFirstNote = false
               firstNotePpq = (firstNotePpq + notePpq) / 2 -- running avg
@@ -1416,8 +1424,7 @@ local function runFind(findFn, params, runFn)
               firstNotePpq = notePpq
               firstNoteIndex = k
               firstNoteCount = counts.noteCount + 1
-              prevEvents[1] = event
-              prevEvents[2] = nil
+              prevEvents = { event }
             end
           end
           updateEventCount(event, counts, matched)
@@ -1723,7 +1730,10 @@ local function actionTabsFromTarget(row)
 
   local opnota = operation.notation
 
-  if opnota == ':line' or opnota == ':relline' then -- param3 operation
+  if opnota == ':line'
+    or opnota == ':relline'
+    or opnota == ':rampscale'
+  then -- param3 operation
     param1Tab = { }
     param2Tab = adefs.actionLineParam2Entries
   elseif notation == '$position' then
@@ -1741,8 +1751,8 @@ local function actionTabsFromTarget(row)
     end
   elseif notation == '$length' then
     if opnota == ':quantmusical'
-    or opnota == ':roundlenmusical'
-    or opnota == ':roundendmusical'
+      or opnota == ':roundlenmusical'
+      or opnota == ':roundendmusical'
     then
       param1Tab = fdefs.findMusicalParam1Entries
     end
@@ -2169,10 +2179,29 @@ local function preProcessSelection(take)
   end
 end
 
+local function handleRepetitions(prevEvents, event)
+  if currentStripRepetitions then
+    if prevEvents[event.chan] then
+      local pEv = prevEvents[event.chan][event.chanmsg]
+      if pEv
+        and event.msg2 == pEv.msg2
+        and event.msg3 == pEv.msg3
+      then
+        event.delete = true
+      end
+    end
+    prevEvents[event.chan] = prevEvents[event.chan] or {}
+    prevEvents[event.chan][event.chanmsg] = event
+  end
+end
+
 local function insertEventsIntoTake(take, eventTab, actionFn, contextTab, doTx)
   if doTx == true or doTx == nil then
     mu.MIDI_OpenWriteTransaction(take)
   end
+
+  local prevEvents = {}
+
   preProcessSelection(take)
   for _, event in ipairs(eventTab) do
     local timeAdjust = getTimeOffset()
@@ -2186,9 +2215,14 @@ local function insertEventsIntoTake(take, eventTab, actionFn, contextTab, doTx)
       event.msg3 = event.msg3 < 1 and 1 or event.msg3 -- do not turn off the note
       mu.MIDI_InsertNote(take, event.selected, event.muted, event.ppqpos, event.endppqpos, event.chan, event.msg2, event.msg3, event.relvel)
     elseif getEventType(event) == gdefs.CC_TYPE then
-      local rv, newidx = mu.MIDI_InsertCC(take, event.selected, event.muted, event.ppqpos, event.chanmsg, event.chan, event.msg2, event.msg3)
-      if rv and event.setcurve then
-        mu.MIDI_SetCCShape(take, newidx, event.setcurve, event.setcurveext)
+      handleRepetitions(prevEvents, event)
+      if event.delete then
+        -- drop it
+      else
+        local rv, newidx = mu.MIDI_InsertCC(take, event.selected, event.muted, event.ppqpos, event.chanmsg, event.chan, event.msg2, event.msg3)
+        if rv and event.setcurve then
+          mu.MIDI_SetCCShape(take, newidx, event.setcurve, event.setcurveext)
+        end
       end
     elseif getEventType(event) == gdefs.SYXTEXT_TYPE then
       mu.MIDI_InsertTextSysexEvt(take, event.selected, event.muted, event.ppqpos, event.chanmsg == 0xF0 and event.chanmsg or event.msg2, event.textmsg)
@@ -2221,6 +2255,8 @@ local function transformEntryInTake(take, eventTab, actionFn, contextTab, replac
   local replaceTab = replace and {} or nil
   local timeAdjust = getTimeOffset()
 
+  local prevEvents = {}
+
   for _, event in ipairs(eventTab) do
     local eventType = getEventType(event)
     actionFn(event, getSubtypeValueName(event), getMainValueName(event), contextTab)
@@ -2251,6 +2287,10 @@ local function transformEntryInTake(take, eventTab, actionFn, contextTab, replac
       table.insert(eventData, event.ppqpos)
       if not eventData.startPpq or event.ppqpos < eventData.startPpq then eventData.startPpq = event.ppqpos end
       if not eventData.endPpq or event.ppqpos > eventData.endPpq then eventData.endPpq = event.ppqpos end
+    end
+
+    if eventType == gdefs.CC_TYPE then
+      handleRepetitions(prevEvents, event)
     end
   end
 
@@ -2314,7 +2354,9 @@ local function transformEntryInTake(take, eventTab, actionFn, contextTab, replac
         end
       end
     elseif eventType == gdefs.CC_TYPE then
-      if not event.orig_type or event.orig_type == gdefs.CC_TYPE then
+      if event.delete then
+        mu.MIDI_DeleteCC(take, event.idx)
+      elseif not event.orig_type or event.orig_type == gdefs.CC_TYPE then
         mu.MIDI_SetCC(take, event.idx, event.selected, event.muted, event.ppqpos, event.chanmsg, event.chan, event.msg2, event.msg3)
         if event.setcurve then
           mu.MIDI_SetCCShape(take, event.idx, event.setcurve, event.setcurveext)
@@ -2811,7 +2853,9 @@ local function getCurrentPresetState()
     actionMacro = actionRowsToNotation(),
     actionScopeFlags = adefs.actionScopeFlagsTable[currentActionScopeFlags].notation,
     notes = libPresetNotesBuffer,
-    scriptIgnoreSelectionInArrangeView = false
+    scriptIgnoreSelectionInArrangeView = false,
+    notesInChord = tg.getNotesInChord(),
+    stripRepetitions = currentStripRepetitions
   }
   return presetTab
 end
@@ -2905,6 +2949,8 @@ local function loadPresetFromTable(presetTab)
   adefs.clearActionRowTable()
   processActionMacro(presetTab.actionMacro)
   scriptIgnoreSelectionInArrangeView = presetTab.scriptIgnoreSelectionInArrangeView
+  tg.setNotesInChord(presetTab.notesInChord)
+  currentStripRepetitions = presetTab.stripRepetitions
   return presetTab.notes
 end
 
@@ -2948,6 +2994,7 @@ local function setRowParam(row, index, paramType, editorType, strVal, range, lit
   local isMetricOrMusical = (paramType == gdefs.PARAM_TYPE_METRICGRID or paramType == gdefs.PARAM_TYPE_MUSICAL)
   local isNewMIDIEvent = paramType == gdefs.PARAM_TYPE_NEWMIDIEVENT
   local isBitField = editorType == gdefs.EDITOR_TYPE_BITFIELD
+  -- here is where range is enforced after text entry (in ensureNumString)
   row.params[index].textEditorStr = (isMetricOrMusical or isBitField or isNewMIDIEvent) and strVal or tg.ensureNumString(strVal, range)
   if (isMetricOrMusical or isBitField or isNewMIDIEvent) or not editorType then
     row.params[index].percentVal = nil
@@ -3192,10 +3239,17 @@ TransformerLib.makeDefaultEveryN = evndefs.makeDefaultEveryN
 TransformerLib.makeDefaultNewMIDIEvent = nmedefs.makeDefaultNewMIDIEvent
 TransformerLib.makeParam3 = function(row)
   local _, _, _, target, operation = actionTabsFromTarget(row)
-  if target.notation == '$position' and operation.notation == ':scaleoffset' then
+  if target.notation == '$position'
+    and operation.notation == ':scaleoffset'
+  then
     p3.makeParam3PositionScaleOffset(row)
-  elseif operation.notation == ':line' or operation.notation == ':relline' then
-    p3.makeParam3Line(row)
+  elseif operation.notation == ':line'
+    or operation.notation == ':relline'
+    or operation.notation == ':rampscale'
+  then
+    p3.makeParam3Line(row, operation.notation == ':rampscale')
+  elseif operation.notation == ':thresh' then
+    p3.makeParam3Thresh(row, target)
   end
 end
 TransformerLib.makeDefaultEventSelector = evseldefs.makeDefaultEventSelector
@@ -3257,6 +3311,9 @@ TransformerLib.suspendUndo = suspendUndo
 TransformerLib.resumeUndo = resumeUndo
 
 TransformerLib.isANote = isANote
+
+TransformerLib.getWantsStripRepetitions = function() return currentStripRepetitions end
+TransformerLib.setWantsStripRepetitions = function(way) currentStripRepetitions = way and true or false end
 
 return TransformerLib
 

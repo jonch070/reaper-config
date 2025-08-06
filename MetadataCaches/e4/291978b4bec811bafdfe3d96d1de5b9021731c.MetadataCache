@@ -1,0 +1,11 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/San Juan Islands Museum of Art Kelp Installation/SJIMA SP3 Projects/sjima sound install testing sp3/outputs"
+F "BatchRender_kelp closer smaller ambix all mics 1st order.wav" 241605776 0 1753311030 0
+D s 96000 n 4 l 3:29.727 i 24
+F "BatchRender_kelp closer smaller ambix all mics 3rd order.wav" 967376504 0 1753320861 0
+D s 96000 n 16 l 3:29.934 i 24
+F BatchRender_sp2_out_Run1.wav 881757176 0 1752995036 0
+D s 96000 n 14 l 3:38.689 i 24
+F BatchRender_sp2_out_Run2.wav 883018730 0 1753003694 0
+D s 96000 n 14 l 3:39.002 i 24
+F BatchRender_sp2_out_Run3.wav 886082630 0 1753012376 0
+D s 96000 n 14 l 3:39.762 i 24

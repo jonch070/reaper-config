@@ -3,6 +3,33 @@ F "01 - Become Desert.flac" 1034680269 0 1730302214 0
 D t "Become Desert" a "Seattle Symphony" b "John Luther Adams: Become Desert" y 2019
 D g Classical s 48000 n 6 l 40:22.451
 D i 24 m 1
+F "2025-03-19 18-48-29.mp4" 124844095 0 1742431890 0
+D s 48000 n 2 l 2:36.400
+F "2025-03-19 18-53-15.mp4" 102033029 0 1742432144 0
+D s 48000 n 2 l 2:27.000
+F "2025-03-19 18-56-18.mp4" 3280629 0 1742432198 0
+D s 48000 n 2 l 0:18.800
+F "2025-03-19 18-57-18.mp4" 3576002 0 1742432242 0
+D s 48000 n 2 l 0:03.833
+F "2025-03-19 19-06-20.mp4" 1359930 0 1742432788 0
+D s 48000 n 2 l 0:07.867
+F "2025-03-19 19-07-17.mp4" 1627186 0 1742432847 0
+D s 48000 n 2 l 0:08.867
+F "2025-03-19 19-09-34.mp4" 1718900 0 1742432985 0
+D s 48000 n 2 l 0:09.767
+F "2025-03-19 19-09-56.mp4" 2193341 0 1742433009 0
+D s 48000 n 2 l 0:12.700
+F "2025-03-19 19-10-18.mp4" 3517306 0 1742433040 0
+D s 48000 n 2 l 0:21.367
+F "2025-03-19 19-11-29.mp4" 1102523 0 1742433097 0
+D s 48000 n 2 l 0:06.500
+F "2025-03-19 19-12-01.mp4" 6367871 0 1742433128 0
+D s 48000 n 2 l 0:05.833
+F "2025-03-19 19-12-16.mp4" 3239428 0 1742433156 0
+D s 48000 n 2 l 0:18.567
+F 2025-halogen-halo-freemix-work-bounce-01-for-jon.wav 401296492 0 1751220492 0
+D y 2025-06-29 s 96000 n 2 r 1:00:00.000
+D l 11:35.788 i 24
 F "40 Years Young (1080p_24fps_H264-128kbit_AAC).mp4" 461441701 0 1702483870 0
 D s 44100 n 2 l 24:02.912
 F 437744A3-4D46-45C9-AFDE-9B7FF1473591.mov 15877831 0 1667232125 0
@@ -62,6 +89,14 @@ D s 44100 n 1 l 0:10.168
 F "Ski Your Ass Off (360p_30fps_H264-128kbit_AAC).mp4" 7140396 0 1702485594 0
 D s 44100 n 2 l 1:51.201
 F solar-plexus-96-24.wav 125004488 0 1647837402 0
+F "SpotiDownloader.com - Fireflies - Owl City.mp3" 9225982 0 1742446794 0
+D t Fireflies a "Owl City" b "Ocean Eyes" y 2009
+D s 44100 n 2 l 3:48.347 i 320k
+D j "mime:image/jpeg desc:Cover of Fireflies by Owl City type:3 offset:258 length:85042"
+F "SpotiDownloader.com - Scott Street - Phoebe Bridgers.mp3" 12352465 0 1742432603 0
+D t "Scott Street" a "Phoebe Bridgers" b "Stranger in the Alps" y 2017
+D s 44100 n 2 l 5:05.001 i 320k
+D j "mime:image/jpeg desc:Cover of Scott Street by Phoebe Bridgers type:3 offset:308 length:145744"
 F "TBIMB Sound Mix V1a.mov" 2244465229 0 1720130246 0
 D s 48000 n 2 l 20:08.457
 F "the quickening (w_ reference perc).mp3" 8784583 0 1674622540 0

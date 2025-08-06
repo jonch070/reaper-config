@@ -8,6 +8,10 @@
 		<data>
 		jqU87p/MJtpIAzfj0wm59ZtbI3o=
 		</data>
+		<key>Resources/PrivacyInfo.xcprivacy</key>
+		<data>
+		B3Chzxf8P+/dQrjYEe6D43q2Ggo=
+		</data>
 		<key>Resources/icudtl.dat</key>
 		<data>
 		ipm8hg7aB3LzsfShJfpNR0QQ4hw=
@@ -20,6 +24,13 @@
 			<key>hash2</key>
 			<data>
 			aDYD1VCbX1UQIZikBOHcRjPXPmzUntLnd7K2cjnvfoQ=
+			</data>
+		</dict>
+		<key>Resources/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QlQkcAQ6Cjrzq0Uq5DVb92S5FrekQtPIFPNiJBp5RFQ=
 			</data>
 		</dict>
 		<key>Resources/icudtl.dat</key>

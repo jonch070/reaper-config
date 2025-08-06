@@ -63,6 +63,7 @@ local SettingDefs = {
   SnapItemBounds                                            = { type = "bool",    default = true },
 
   AutoScrollArrangeView                                     = { type = "bool",    default = true },
+  AlwaysFocusMEOnLaunch                                     = { type = "bool",    default = false},
 
   AllowKeyEventNavigation                                   = { type = "bool",    default = false },
 
@@ -70,6 +71,7 @@ local SettingDefs = {
   NoteHiglightingDuringPlay                                 = { type = "bool",    default = false },
 
   UseDebugger                                               = { type = "bool",    default = false },
+  UseProfiler                                               = { type = "bool",    default = false },
 
   VelocityLimiterEnabled                                    = { type = "bool",    default = false },
   VelocityLimiterMin                                        = { type = "int",     default = 0,    min = 0, max = 127 },

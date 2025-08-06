@@ -1,10 +1,10 @@
 -- @description MIDI Transformer
--- @version 1.0.12
+-- @version 1.0.14
 -- @author sockmonkey72
 -- @about
 --   # MIDI Transformer
 -- @changelog
---   - back to official (identical to beta.4)
+--   - version bump (no changes from 1.0.14-beta.10)
 -- @provides
 --   {Transformer}/*
 --   Transformer/icons/*
@@ -19,7 +19,7 @@
 -----------------------------------------------------------------------------
 --------------------------------- STARTUP -----------------------------------
 
-local versionStr = '1.0.12'
+local versionStr = '1.0.14-beta.10'
 
 local r = reaper
 
@@ -93,6 +93,8 @@ local UndoImage = ImGui.CreateImage(debug.getinfo(1, 'S').source:match [[^@?(.*[
 if UndoImage then ImGui.Attach(ctx, UndoImage) end
 local RedoImage = ImGui.CreateImage(debug.getinfo(1, 'S').source:match [[^@?(.*[\/])[^\/]-$]] .. 'Transformer/icons/' .. 'right-arrow_9144322.png')
 if RedoImage then ImGui.Attach(ctx, RedoImage) end
+local FocusImage = ImGui.CreateImage(debug.getinfo(1, 'S').source:match [[^@?(.*[\/])[^\/]-$]] .. 'Transformer/icons/' .. 'focus.png')
+if FocusImage then ImGui.Attach(ctx, FocusImage) end
 
 -----------------------------------------------------------------------------
 ----------------------------- GLOBAL VARS -----------------------------------
@@ -110,6 +112,7 @@ local scriptPrefix_Empty = '<no prefix>'
 local presetExt = '.tfmrPreset'
 local presetSubPath
 local restoreLastState = false
+local focusWhenDone = false
 
 local CANONICAL_FONTSIZE_LARGE = 13
 local FONTSIZE_LARGE = 13
@@ -160,6 +163,7 @@ local actionConsoleText = ''
 local presetTable = {}
 local presetFolders = {}
 local presetLabel = ''
+local presetIsEdited = false
 local presetInputVisible = false
 local presetInputDoesScript = false
 local presetNotesBuffer = ''
@@ -227,6 +231,7 @@ local function doUpdate(action)
     }
     r.SetExtState(scriptID, 'lastState', tg.base64encode(tg.serialize(lastState)), true)
   end
+  presetIsEdited = true
 end
 
 local function doFindUpdate()
@@ -369,6 +374,7 @@ local function setupRowFormat(row, condOpTab)
     data.metricLastBarRestart = metricLastBarRestart
     tx.makeDefaultMetricGrid(row, data)
     if row.mg then row.mg.showswing = condOp.showswing or (condOp.split and condOp.split[1].showswing) end
+    if row.mg then row.mg.showround = condOp.showround or (condOp.split and condOp.split[1].showround) end
   elseif isEveryN then
     tx.makeDefaultEveryN(row)
   elseif isNewMIDIEvent then
@@ -523,6 +529,11 @@ local function handleExtState()
     scriptPrefix = (state and state ~= scriptPrefix_Empty) and state or ''
   end
 
+  state = r.GetExtState(scriptID, 'notesInChord')
+  if tg.isValidString(state) then
+    tg.setNotesInChord(tonumber(state))
+  end
+
   state = r.GetExtState(scriptID, 'restoreLastState')
   if tg.isValidString(state) then
     restoreLastState = tonumber(state) == 1 and true or false
@@ -535,6 +546,8 @@ local function handleExtState()
           if lastState then
             if lastState.state then
               presetNameTextBuffer = lastState.presetName
+              presetLabel = string.gsub(presetNameTextBuffer, '%.tfmrPreset', '')
+              presetIsEdited = true
               if tg.dirExists(lastState.presetSubPath) then presetSubPath = lastState.presetSubPath end
               presetNotesBuffer = tx.loadPresetFromTable(lastState.state)
               overrideEditorTypeForAllRows()
@@ -544,6 +557,11 @@ local function handleExtState()
         end
       end
     end
+  end
+
+  if r.HasExtState(scriptID, 'focusWhenDone') then
+    state = r.GetExtState(scriptID, 'focusWhenDone')
+    focusWhenDone = tonumber(state) == 1 and true or false
   end
 end
 
@@ -799,6 +817,9 @@ local function handleKeys(handledEscape)
     elseif ImGui.IsKeyPressed(ctx, ImGui.Key_Enter) then
       handledKey = true
       tx.processAction(true)
+      if canReveal and focusWhenDone then
+        r.SN_FocusMIDIEditor()
+      end
     end
   end
 
@@ -845,27 +866,40 @@ local function windowFn()
 
   local currentRect = {}
 
-  local gearPopupLeft
+  local gearPopupLeft, undoRedoLeft
+
+  local function MakeFocusME()
+    if canReveal then
+      ImGui.SetCursorPosX(ctx, gearPopupLeft)
+      local ibSize = FONTSIZE_LARGE * canvasScale
+      ImGui.ImageButton(ctx, 'focusME', FocusImage, ibSize, ibSize)
+      if ImGui.IsItemHovered(ctx) and ImGui.IsMouseClicked(ctx, 0) then
+        r.SN_FocusMIDIEditor()
+      end
+    end
+  end
 
   local function MakeClearAll()
     ImGui.SameLine(ctx)
-    ImGui.SetCursorPosX(ctx, gearPopupLeft - (DEFAULT_ITEM_WIDTH * 2) - (10 * canvasScale))
+    ImGui.SetCursorPosX(ctx, undoRedoLeft - (DEFAULT_ITEM_WIDTH * 2) - (10 * canvasScale))
     ImGui.Button(ctx, 'Clear All', DEFAULT_ITEM_WIDTH * 1.5)
     if ImGui.IsItemHovered(ctx) and ImGui.IsMouseClicked(ctx, 0) then
-        tx.suspendUndo()
-        tx.clearFindRows()
-        selectedFindRow = 0
-        tx.setCurrentFindScope(3)
-        tx.setFindScopeFlags(0)
-        tx.clearFindPostProcessingInfo()
-        tx.clearActionRows()
-        selectedActionRow = 0
-        tx.setCurrentActionScope(1)
-        tx.setCurrentActionScopeFlags(1)
-        presetLabel = ''
-        presetNotesBuffer = ''
-        tx.resumeUndo()
-        doActionUpdate()
+      tg.setNotesInChord()
+      tx.suspendUndo()
+      tx.clearFindRows()
+      selectedFindRow = 0
+      tx.setCurrentFindScope(3)
+      tx.setFindScopeFlags(0)
+      tx.clearFindPostProcessingInfo()
+      tx.clearActionRows()
+      selectedActionRow = 0
+      tx.setCurrentActionScope(1)
+      tx.setCurrentActionScopeFlags(1)
+      presetLabel = ''
+      presetIsEdited = false
+      presetNotesBuffer = ''
+      tx.resumeUndo()
+      doActionUpdate()
     end
   end
 
@@ -875,7 +909,7 @@ local function windowFn()
 
     local ibSize = FONTSIZE_LARGE * canvasScale
 
-    gearPopupLeft = ImGui.GetCursorPosX(ctx)
+    undoRedoLeft = ImGui.GetCursorPosX(ctx)
 
     local hasUndo = tx.hasUndoSteps()
     local hasRedo = tx.hasRedoSteps()
@@ -1002,6 +1036,24 @@ local function windowFn()
         end
         -- ImGui.CloseCurrentPopup(ctx) -- feels weird if it closes, feels weird if it doesn't
       end
+
+      if canReveal then
+        ImGui.Spacing(ctx)
+        ImGui.Separator(ctx)
+
+        ImGui.Spacing(ctx)
+        rv, v = ImGui.Checkbox(ctx, 'Focus MIDI Editor after Operation', focusWhenDone)
+        if rv then
+          focusWhenDone = v
+          r.SetExtState(scriptID, 'focusWhenDone', v and '1' or '0', true)
+          if focusWhenDone then
+            doFindUpdate()
+          else
+            r.DeleteExtState(scriptID, 'focusWhenDone', true)
+          end
+        end
+      end
+
       ImGui.EndPopup(ctx)
     end
     ImGui.PopStyleColor(ctx)
@@ -1261,6 +1313,7 @@ local function windowFn()
             if success then
               presetLabel = source[i].label
               endPresetLoad(presetLabel, notes, ignoreSelectInArrange)
+              presetIsEdited = false
             end
           end
           ImGui.CloseCurrentPopup(ctx)
@@ -1427,7 +1480,7 @@ local function windowFn()
   end
 
   ImGui.SameLine(ctx)
-  ImGui.TextColored(ctx, 0x00AAFFFF, presetLabel)
+  ImGui.TextColored(ctx, 0x00AAFFFF, presetLabel .. (presetIsEdited and '*' or ''))
 
   ---------------------------------------------------------------------------
   ----------------------------------- GEAR ----------------------------------
@@ -1435,6 +1488,8 @@ local function windowFn()
   MakeGearPopup()
   MakeUndoRedo()
   MakeClearAll()
+  MakeFocusME()
+
   ---------------------------------------------------------------------------
   --------------------------------- FIND ROWS -------------------------------
 
@@ -1512,14 +1567,21 @@ local function windowFn()
     end
 
     if isNote then ImGui.SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75) end
+    local editVal = row.params[index].textEditorStr
+    if condOp.preEdit then
+      editVal = condOp.preEdit(editVal)
+    end
     local retval, buf = ImGui.InputText(ctx, '##' .. 'param' .. index .. 'Edit',
-      row.params[index].textEditorStr,
+      editVal,
       flags.isFloat and floatFlags or ImGui.InputTextFlags_CallbackCharFilter,
       flags.isFloat and nil or isNote and numbersOrNoteNameCallback or flags.isBitField and bitFieldCallback or numbersOnlyCallback)
 
     if kbdEntryIsCompleted(retval) then
       if isNote then
         buf = rewriteNoteName(buf)
+      end
+      if condOp.postEdit then
+        buf = condOp.postEdit(buf)
       end
       tx.setRowParam(row, index, paramType, editorType, buf, range, condOp.literal and true or false)
       procFn()
@@ -1559,8 +1621,8 @@ local function windowFn()
         or condOp.percent or (condOp.split and condOp.split[index].percent) -- hack
       then
         ImGui.TextColored(ctx, 0xFFFFFF7F, '%')
-      elseif range and range[1] and range[2] then
-        ImGui.TextColored(ctx, 0xFFFFFF7F, '(' .. range[1] .. ' - ' .. range[2] .. ')')
+      else
+        ImGui.TextColored(ctx, 0xFFFFFF7F, '(' .. (range[1] or '...') .. ' - ' .. (range[2] or '...') .. ')')
       end
       ImGui.PopFont(ctx)
     end
@@ -1582,6 +1644,13 @@ local function windowFn()
     flags.isNewMIDIEvent = paramType == gdefs.PARAM_TYPE_NEWMIDIEVENT
     flags.isParam3 = condOp.param3 and paramType ~= gdefs.PARAM_TYPE_MENU -- param3 exception -- make this nicer
     flags.isEventSelector = paramType == gdefs.PARAM_TYPE_EVENTSELECTOR
+
+    if flags.isParam3 and condOp.param3.tableParamType and condOp.param3.tableParamType[index] then
+      paramType = condOp.param3.tableParamType[index]
+      if paramType ~= gdefs.PARAM_TYPE_MENU then
+        flags.isParam3 = false
+      end
+    end
 
     if (flags.isMetricOrMusical and index == 1) -- special case, sorry
       or (flags.isEveryN and index == 1)
@@ -1633,6 +1702,9 @@ local function windowFn()
           if mgMods == gdefs.MG_GRID_TRIPLET then label = label .. 'T'
           elseif mgMods == gdefs.MG_GRID_DOTTED then label = label .. '.'
           elseif mgMods == gdefs.MG_GRID_SWING then label = label .. 'sw' .. (mgReaSwing and 'R' or '')
+          end
+          if row.mg.roundmode == 'floor' then label = label .. ' (floor)'
+          elseif row.mg.roundmode == 'ceil' then label = label .. ' (ceil)'
           end
         end
         ImGui.Button(ctx, label)
@@ -1741,25 +1813,26 @@ local function windowFn()
     local tripVal = not useGrid and mgMods == gdefs.MG_GRID_TRIPLET or false
     local swingVal = not useGrid and mgMods == gdefs.MG_GRID_SWING or false
     local showSwing = mg.showswing
+    local showRound = mg.showround
 
     if useGrid then ImGui.BeginDisabled(ctx) end
     local rv, sel = ImGui.Checkbox(ctx, 'Dotted', dotVal)
     if rv then
       newMgMods = tx.setMetricGridModifiers(mg, sel and gdefs.MG_GRID_DOTTED or gdefs.MG_GRID_STRAIGHT)
-      fun(1, true)
+      doActionUpdate()
     end
 
     rv, sel = ImGui.Checkbox(ctx, 'Triplet', tripVal)
     if rv then
-      newMgMods = tx.setFindScopeFlagsetMetricGridModifiers(mg, sel and gdefs.MG_GRID_TRIPLET or gdefs.MG_GRID_STRAIGHT)
-      fun(2, true)
+      newMgMods = tx.setMetricGridModifiers(mg, sel and gdefs.MG_GRID_TRIPLET or gdefs.MG_GRID_STRAIGHT)
+      doActionUpdate()
     end
 
     if showSwing then
       rv, sel = ImGui.Checkbox(ctx, 'Swing', swingVal)
       if rv then
         newMgMods = tx.setMetricGridModifiers(mg, sel and gdefs.MG_GRID_SWING or gdefs.MG_GRID_STRAIGHT)
-        fun(4, true)
+      doActionUpdate()
       end
 
       ImGui.SameLine(ctx)
@@ -1785,6 +1858,7 @@ local function windowFn()
           end
           mgReaSwing = newMgReaSwing
         end
+        doActionUpdate()
       end
       ImGui.SameLine(ctx)
       ImGui.Text(ctx, ']')
@@ -1797,6 +1871,22 @@ local function windowFn()
       end
     end
 
+    if showRound then
+      ImGui.Separator(ctx)
+      if ImGui.RadioButton(ctx, 'Round', not mg.roundmode or mg.roundmode == 'round') then
+        mg.roundmode = 'round'
+        doActionUpdate()
+      end
+      if ImGui.RadioButton(ctx, 'Round Down', mg.roundmode == 'floor') then
+        mg.roundmode = 'floor'
+        doActionUpdate()
+      end
+      if ImGui.RadioButton(ctx, 'Round Up', mg.roundmode == 'ceil') then
+        mg.roundmode = 'ceil'
+        doActionUpdate()
+      end
+    end
+
     if useGrid then ImGui.EndDisabled(ctx) end
 
     if addMetric then
@@ -1804,7 +1894,7 @@ local function windowFn()
       rv, sel = ImGui.Checkbox(ctx, 'Restart pattern at next bar', mg.wantsBarRestart)
       if rv then
         mg.wantsBarRestart = sel
-        fun(3, true)
+        doActionUpdate()
       end
     end
 
@@ -1818,14 +1908,14 @@ local function windowFn()
       rv, tbuf = ImGui.InputDouble(ctx, 'Pre', mg.preSlopPercent, nil, nil, '%0.2f')
       if kbdEntryIsCompleted(rv) then
         mg.preSlopPercent = tbuf
-        fun(4, true)
+        doActionUpdate()
       end
       ImGui.SameLine(ctx)
       ImGui.SetNextItemWidth(ctx, scaled(50))
       rv, tbuf = ImGui.InputDouble(ctx, 'Post', mg.postSlopPercent, nil, nil, '%0.2f')
       if kbdEntryIsCompleted(rv) then
         mg.postSlopPercent = tbuf
-        fun(5, true)
+        doActionUpdate()
       end
     end
   end
@@ -2323,7 +2413,7 @@ local function windowFn()
     ImGui.PopStyleColor(ctx, 2)
   end
 
-  local function LineParam1Special(fun, row)
+  local function lineParam1Special(fun, row)
     local deactivated = false
 
     ImGui.PushStyleColor(ctx, ImGui.Col_HeaderHovered, hoverAlphaCol)
@@ -2358,7 +2448,7 @@ local function windowFn()
     ImGui.PopStyleColor(ctx, 2)
   end
 
-  local function LineParam2Special(fun, row)
+  local function lineParam2Special(fun, row)
     local deactivated = false
 
     ImGui.PushStyleColor(ctx, ImGui.Col_HeaderHovered, hoverAlphaCol)
@@ -2395,6 +2485,43 @@ local function windowFn()
         mod = 0
       end
       row.params[3].mod = mod
+    end
+
+    if not ImGui.IsAnyItemActive(ctx) and not deactivated then
+      if completionKeyPress() then
+        ImGui.CloseCurrentPopup(ctx)
+      end
+    end
+
+    ImGui.PopStyleColor(ctx, 2)
+  end
+
+  -- TODO collapse some of this logic
+  -- TODO refactor, is 'fun' even used anywhere?
+  local function threshParam2Special(fun, row)
+    local deactivated = false
+
+    ImGui.PushStyleColor(ctx, ImGui.Col_HeaderHovered, hoverAlphaCol)
+    ImGui.PushStyleColor(ctx, ImGui.Col_HeaderActive, activeAlphaCol)
+
+    ImGui.AlignTextToFramePadding(ctx)
+
+    local _, _, _, target, operation = tx.actionTabsFromTarget(row)
+    local paramTypes = tx.getParamTypesForRow(row, target, operation)
+    local flags = {}
+
+    if ImGui.IsWindowAppearing(ctx) then ImGui.SetKeyboardFocusHere(ctx) end
+    for i = 2, 3 do
+      overrideEditorType(row, target, operation, paramTypes, i)
+      local paramType = paramTypes[i]
+      local editorType = row.params[i].editorType
+      flags.isFloat = (paramType == gdefs.PARAM_TYPE_FLOATEDITOR or editorType == gdefs.EDITOR_TYPE_PERCENT) and true or false
+      ImGui.AlignTextToFramePadding(ctx)
+      ImGui.Text(ctx, i == 2 and 'Lo:' or 'Hi:')
+      ImGui.SameLine(ctx)
+      ImGui.SetCursorPosX(ctx, currentFontWidth * 4)
+      ImGui.SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 0.75)
+      if doHandleTableParam(row, target, operation, paramType, editorType, i, flags, doActionUpdate) then deactivated = true end
     end
 
     if not ImGui.IsAnyItemActive(ctx) and not deactivated then
@@ -2774,9 +2901,27 @@ local function windowFn()
 
   generateFindPostProcessingPopup()
 
+  ImGui.SameLine(ctx)
+
+  local crx = ImGui.GetContentRegionMax(ctx)
+  local frame_padding_x = ImGui.GetStyleVar(ctx, ImGui.StyleVar_FramePadding)
+
+  ImGui.SetCursorPos(ctx, crx - (DEFAULT_ITEM_WIDTH * 1.5), saveY)
+  ImGui.SetNextItemWidth(ctx, DEFAULT_ITEM_WIDTH * 1.5)
+  local rv, buf = ImGui.InputText(ctx, '##notesInChord', tostring(tg.getNotesInChord()),
+                                  inputFlag | ImGui.InputTextFlags_CallbackCharFilter,
+                                  numbersOnlyCallback)
+  if kbdEntryIsCompleted(rv) then
+    tg.setNotesInChord(buf)
+    r.SetExtState(scriptID, 'notesInChord', tostring(tg.getNotesInChord()), true)
+    ImGui.SetKeyboardFocusHere(ctx)
+  end
+  generateLabelOnLine('# Notes in Chord', true)
+
   ImGui.AlignTextToFramePadding(ctx)
   ImGui.Text(ctx, findParserError)
   ImGui.SameLine(ctx)
+
 
   ImGui.PopStyleColor(ctx, 4)
 
@@ -3006,7 +3151,9 @@ local function windowFn()
         end)
 
       local isLineOp = currentActionOperation.param3
-        and (currentActionOperation.notation == ':line' or currentActionOperation.notation == ':relline')
+        and (currentActionOperation.notation == ':line'
+          or currentActionOperation.notation == ':relline'
+          or currentActionOperation.notation == ':rampscale')
 
       createPopup(currentRow, 'param1Menu', param1Entries, currentRow.params[1].menuEntry, function(i, isSpecial)
           if not isSpecial then
@@ -3025,7 +3172,7 @@ local function windowFn()
             and newMIDIEventParam1Special
           or currentActionOperation.param3
             and (currentActionOperation.notation == ':scaleoffset' and positionScaleOffsetParam1Special
-            or isLineOp and LineParam1Special)
+              or isLineOp and lineParam1Special)
           or nil,
           paramTypes[1] == gdefs.PARAM_TYPE_NEWMIDIEVENT)
 
@@ -3042,8 +3189,9 @@ local function windowFn()
         end,
         paramTypes[2] == gdefs.PARAM_TYPE_NEWMIDIEVENT
             and newMIDIEventParam2Special
-          or isLineOp
-            and LineParam2Special
+          or (currentActionOperation.param3
+            and (isLineOp and lineParam2Special
+              or currentActionOperation.notation == ':thresh' and threshParam2Special))
           or nil,
           isLineOp or paramTypes[1] == gdefs.PARAM_TYPE_NEWMIDIEVENT)
 
@@ -3073,6 +3221,9 @@ local function windowFn()
   ImGui.Button(ctx, 'Apply', DEFAULT_ITEM_WIDTH / 1.25)
   if ImGui.IsItemHovered(ctx) and ImGui.IsMouseClicked(ctx, 0) then
     tx.processAction(true)
+    if canReveal and focusWhenDone then
+      r.SN_FocusMIDIEditor()
+    end
   end
 
   ImGui.SameLine(ctx)
@@ -3105,7 +3256,11 @@ local function windowFn()
 
   if isSelectScope then ImGui.BeginDisabled(ctx) end
 
-  ImGui.Button(ctx, tx.actionScopeFlagsTable[tx.currentActionScopeFlags()].label, DEFAULT_ITEM_WIDTH * 2.5)
+  local scopeFlagsLabel = tx.actionScopeFlagsTable[tx.currentActionScopeFlags()].label
+  if tx.getWantsStripRepetitions() then
+    scopeFlagsLabel = scopeFlagsLabel .. ' [F]'
+  end
+  ImGui.Button(ctx, scopeFlagsLabel, DEFAULT_ITEM_WIDTH * 2.5)
   if ImGui.IsItemHovered(ctx) and ImGui.IsMouseClicked(ctx, 0) then
     ImGui.OpenPopup(ctx, 'actionScopeFlagsMenu')
   end
@@ -3118,10 +3273,19 @@ local function windowFn()
 
   if isSelectScope then ImGui.EndDisabled(ctx) end
 
-  createPopup(nil, 'actionScopeFlagsMenu', tx.actionScopeFlagsTable, tx.currentActionScopeFlags(), function(i)
+  createPopup(nil, 'actionScopeFlagsMenu', tx.actionScopeFlagsTable, tx.currentActionScopeFlags(),
+    function(i)
       tx.setCurrentActionScopeFlags(i)
       doUpdate()
-    end)
+    end,
+    function(fun, row)
+      local ret, v = ImGui.Checkbox(ctx, 'Strip CC Repetitions', tx.getWantsStripRepetitions())
+      if ret then
+        tx.setWantsStripRepetitions(v)
+        doUpdate()
+      end
+    end
+  )
 
   ImGui.PopStyleColor(ctx, 4)
 
@@ -3287,6 +3451,7 @@ local function windowFn()
     else
       presetLabel = ''
     end
+    presetIsEdited = false
   end
 
   local function manageSaveAndOverwrite(pathFn, saveFn, statusCtx, suppressOverwrite)
@@ -3746,6 +3911,7 @@ local function loop()
           local success, notes, ignoreSelectInArrange = tx.loadPreset(filedrag)
           if success then
             presetLabel = string.match(filedrag, '.*[/\\](.*)' .. presetExt)
+            presetIsEdited = false
             endPresetLoad(presetLabel, notes, ignoreSelectInArrange)
           end
         end

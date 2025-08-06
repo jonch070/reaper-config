@@ -1,0 +1,322 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Niagara Parks Commission/NPC Reaper Projects/NPC - 10m06 - Aero Car to Botanical Gardens/media"
+F "02-Joc c#-180909_2115-glued.wav" 5602136 0 1731454308 0
+D s 96000 n 1 l 0:14.589 i 32
+F 1_T13_OCT_2_NIAGARA013.wav 254549664 0 1731448950 0
+D y 2024-10-24 d "dUBITS=$10242400  dSCENE=1  dTAKE=13  dTAPE=OCT_2_NIAGARA  dFRAMERATE=30FF  dTRK1=LEFT_MIX  dTRK2=RIGHT_MIX  dTRK3=VOX  dTRK4=BASS  dTRK5=PIANO  dTRK6=DRUMS1  dTRK7=DRUMS2  " s 48000 n 7
+D r 16:44:53.655 l 4:12.523 i 24
+F 1bar_cluster_fall_alt_full.wav 1099076 0 1701677698 0
+D y 2018-05-07 s 48000 n 2 r 2:04:59.284
+D l 0:03.789 i 24
+F 1bar_cluster_fall_full.wav 1008856 0 1701677700 0
+D y 2018-05-07 s 48000 n 2 r 2:04:51.762
+D l 0:03.478 i 24
+F 1bar_cluster_rise_full_1.wav 997794 0 1701677699 0
+D y 2018-05-07 s 48000 n 2 r 2:02:18.232
+D l 0:03.440 i 24
+F 1bar_cluster_rise_full_2.wav 1079910 0 1701677700 0
+D y 2018-05-07 s 48000 n 2 r 2:02:35.284
+D l 0:03.723 i 24
+F "2023_SK_3M07_The Farm Is In_StereoMix.mp3" 3670080 0 1694291230 0
+D s 48000 n 2 l 1:31.698 i 320k
+F "2023_SK_3M14_Green Gravel_StereoMix.mp3" 5390400 0 1694291240 0
+D s 48000 n 2 l 2:14.702 i 320k
+F 2023_SK_3M19_Spring_StereoMix.mp3 4803840 0 1694291242 0
+D s 48000 n 2 l 2:00.039 i 320k
+F 2023_SK_EndCredits_StereoMix.mp3 3885120 0 1694291244 0
+D s 48000 n 2 l 1:37.067 i 320k
+F "26-NPC Deck Themes 1-Diva (V2)-250318_0132-jsfx.wav" 3026192 0 1742283175 0
+D y 2025-03-18 s 48000 n 2 l 0:07.879
+D i 32
+F 2bars_120bpm_cluster_cresc_full_1-[4].wav 1478070 0 1701677700 0
+D s 48000 n 2 l 0:05.132 i 24
+F 2bars_120bpm_cluster_cresc_men.wav 1449546 0 1701677701 0
+D y 2018-05-07 s 48000 n 2 r 1:04:07.600
+D l 0:05.000 i 24
+F 2bars_cluster_fall_alt_full.wav 1830502 0 1701677701 0
+D y 2018-05-07 s 48000 n 2 r 2:05:14.474
+D l 0:06.316 i 24
+F 2bars_cluster_fall_full.wav 1830496 0 1701677701 0
+D y 2018-05-07 s 48000 n 2 r 2:05:06.863
+D l 0:06.316 i 24
+F 32877__lonemonk__bagpipe-drone-solo-1.wav 502874 0 1741186389 0
+D y 2007-01-20 s 44100 n 2 l 0:02.845
+D i 16
+F 697813__iainmccurdy__highland-bagpipes-drones.wav 16647468 0 1741186447 0
+D y 2023-07-29 s 96000 n 2 l 0:28.901
+D i 24
+F 709382__tildeyann__230730_antropocene-bagpipe-2.wav 81492524 0 1741186429 0
+D s 44100 n 2 l 5:07.984 i 24
+F 709392__tildeyann__antropocene-bagpipe-1.wav 8467244 0 1741186419 0
+D s 44100 n 2 l 0:48.000 i 16
+F 709393__tildeyann__antropocene-bagpipe-2.wav 8467244 0 1741186409 0
+D s 44100 n 2 l 0:48.000 i 16
+F "Bass Trombone Take 1.wav" 64768986 0 1741206486 0
+D s 96000 n 1 l 3:44.892 i 24
+F "Bass Trombone Take 2.wav" 64768986 0 1741206507 0
+D s 96000 n 1 l 3:44.892 i 24
+F "Bass Trombone Take 3.wav" 64768986 0 1741206523 0
+D s 96000 n 1 l 3:44.892 i 24
+F "Bass Trombone Take 4.wav" 64768986 0 1741206552 0
+D s 96000 n 1 l 3:44.892 i 24
+F "Bass Trombone Take 5.wav" 64768986 0 1741206569 0
+D s 96000 n 1 l 3:44.892 i 24
+F "BTI_1m02_StereoMix_DNA Is a Blueprint.mp3" 9180474 0 1702901851 0
+D y 2023-11-17 s 44100 n 2 r 1:03:39.590
+D l 3:49.417 i 320k
+F "BTI_1m11_StereoMix_Siberian Dirt.mp3" 7557748 0 1702901862 0
+D y 2023-11-17 s 44100 n 2 r 1:29:41.590
+D l 3:08.860 i 320k
+F BTI_1m26_StereoMix_Mastodon.mp3 4872360 0 1702901878 0
+D y 2023-11-17 s 44100 n 2 r 2:04:47.876
+D l 2:01.705 i 320k
+F "BTI_1m27_StereoMix_Weird World.mp3" 10260899 0 1702901887 0
+D y 2023-11-17 s 44100 n 2 r 2:06:51.590
+D l 4:16.427 i 320k
+F "cello 1.wav" 91058858 0 1739987106 0
+D t "NPC Deck Themes" s 96000 n 1 l 3:57.128
+D i 32
+F "cello 2.wav" 91058858 0 1739987106 0
+D t "NPC Deck Themes" s 96000 n 1 l 3:57.128
+D i 32
+F "cello 3.wav" 91058858 0 1739987106 0
+D t "NPC Deck Themes" s 96000 n 1 l 3:57.128
+D i 32
+F CRB_StereoMix_3M_01.mp3 2866246 0 1646866641 0
+D s 44100 n 2 l 1:32.527 i 248k
+F "Dempster Melodic Test.mp3" 5723324 0 1730149342 0
+D y 2020-09-22 s 48000 n 2 l 2:23.000
+D i 320k
+F "Dolby Pink @ -20dbfs.aif" 8694654 0 1585085969 0
+D s 48000 n 1 l 1:00.218 i 24
+F EXT_ImpulseBalloonAKGPair_01.wav 1497342 0 1727103618 0
+D y 2024-09-23 s 96000 n 2 r 13:11.796
+D l 0:02.583 i 24
+F FIT_MusicMix_1m01_StereoMix.mp3 3917215 0 1739474093 0
+D t "Crazy World" b "Frozen in TIme (Original Motion Picture Soundtrack)" y 2025-02-09 s 48000
+D n 2 l 1:37.846 i 320k m 01/26
+F FIT_MusicMix_1m07-8_StereoMix.mp3 7200449 0 1739474115 0
+D t "Girl Nerd/Roadkill" b "Frozen in TIme (Original Motion Picture Soundtrack)" y 2025-02-09 s 48000
+D n 2 l 2:59.907 i 320k m 04/26
+F FIT_MusicMix_1m26_StereoMix.mp3 8575135 0 1739474147 0
+D t "Coming Home" b "Frozen in TIme (Original Motion Picture Soundtrack)" y 2025-02-09 s 48000
+D n 2 l 3:34.288 i 320k m 21/26
+F FIT_MusicMix_1m29_StereoMix.mp3 11772879 0 1739474158 0
+D t Mandible b "Frozen in TIme (Original Motion Picture Soundtrack)" y 2025-02-09 s 48000
+D n 2 l 4:54.219 i 320k m 24/26
+F "Jhonatan Kawchuck - NPC Deck lead vocal tk 1.wav" 33615356 0 1740415931 0
+D s 48000 n 1 l 3:53.440 i 24
+F "Jhonatan Kawchuck - NPC Deck lead vocal tk 2.wav" 33615356 0 1740415951 0
+D s 48000 n 1 l 3:53.440 i 24
+F "Jhonatan Kawchuck - NPC Deck lead vocal tk 3.wav" 33615356 0 1740415973 0
+D s 48000 n 1 l 3:53.440 i 24
+F "Jonathan Kawchuk - North - 08 Lagos.mp3" 8016303 0 1671133826 0
+D t Lagos a "Jonathan Kawchuk" b North y 2018
+D s 44100 n 2 l 4:30.069 i 232k
+D m 8 j "mime:image/jpeg desc:cover type:3 offset:161 length:171755"
+F "NPC - Temp Music - FULL FILM (oct30 cut) - VERSION 1.wav" 103335182 0 1730770454 0
+D y 2024-11-04 s 48000 n 2 r 59:58.688
+D l 5:58.313 i 24
+F "NPC - Temp Music - FULL FILM (oct30 cut) - VERSION 3 (vocals).wav" 103335182 0 1730770432 0
+D y 2024-11-04 s 48000 n 2 r 59:58.688
+D l 5:58.313 i 24
+F "NPC - Temping - v11.01.05_freeze.wav" 10661464 0 1731352474 0
+D y 2024-11-11 s 48000 n 2 r 59:56.322
+D l 0:27.762 i 32
+F "NPC Blue Disk Romance alt - 01.01.37.11 - $stem no voice.wav" 33825424 0 1741189477 0
+D y 2025-03-05 s 96000 n 2 r 1:01:41.182
+D l 0:58.723 i 24
+F "NPC Blue Disk Romance alt_2 short - 01.01.34.22 - Master.wav" 27942868 0 1742276532 0
+D y 2025-03-17 s 96000 n 2 r 1:01:38.629
+D l 0:48.511 i 24
+F "NPC Blue Disk Soaring_1 - 01.02.43.19 - Master-001.wav" 39460288 0 1740879633 0
+D y 2025-03-01 s 96000 n 2 r 1:02:47.565
+D l 1:08.506 i 24
+F "NPC Blue Disk Soaring_1 no harp and piano - 01.02.43.19 - harp.wav" 39460288 0 1741133011 0
+D y 2025-03-04 s 96000 n 2 r 1:02:47.565
+D l 1:08.506 i 24
+F "NPC Blue Disk Soaring_1 no harp and piano - 01.02.43.19 - Master.wav" 39460288 0 1741132595 0
+D y 2025-03-04 s 96000 n 2 r 1:02:47.565
+D l 1:08.506 i 24
+F "NPC Blue Disk Soaring_1 no harp and piano - 01.02.43.19 - piano.wav" 39460288 0 1741133010 0
+D y 2025-03-04 s 96000 n 2 r 1:02:47.565
+D l 1:08.506 i 24
+F "NPC Jon Arranging Prelim Themes_3 - A1.wav" 28800736 0 1739690839 0
+D y 2025-02-16 s 96000 n 2 r 58:33.510
+D l 0:50.000 i 24
+F "NPC Jon Arranging Prelim Themes_3 - A2.wav" 33408736 0 1739690840 0
+D y 2025-02-16 s 96000 n 2 r 59:49.510
+D l 0:58.000 i 24
+F "NPC Jon Arranging Prelim Themes_3 - B1.wav" 39168736 0 1739690841 0
+D y 2025-02-16 s 96000 n 2 r 1:02:29.510
+D l 1:08.000 i 24
+F "NPC Jon Arranging Prelim Themes_3 - B2.wav" 43776736 0 1739690840 0
+D y 2025-02-16 s 96000 n 2 r 1:00:47.510
+D l 1:16.000 i 24
+F "NPC Master Session Pre and Main Show_22_freeze.wav" 16672976 0 1742256126 0
+D y 2025-03-17 s 96000 n 2 r 1:02:33.433
+D l 0:21.709 i 32
+F "NPC MUS Theme Board Layups_13 - 01.02.46.07 - $stem.wav" 38023180 0 1741896851 0
+D y 2025-03-13 s 96000 n 2 r 1:02:50.060
+D l 1:06.011 i 24
+F "NPC MUS Theme Board Layups_2 - 01.00.41.23 - A2 String Textures.mp3" 953448 0 1740206604 0
+D y 2025-02-19 s 48000 n 2 r 2:01:31.211
+D l 0:47.452 i 161k
+F "NPC MUS Theme Board Layups_2 - 01.00.41.23 - A2 String Textures.wav" 27332992 0 1739987092 0
+D y 2025-02-19 s 96000 n 2 r 1:00:45.606
+D l 0:47.452 i 24
+F "NPC Template Holding Cell_34_freeze_midi.wav" 45978512 0 1740987833 0
+D y 2025-03-03 s 96000 n 2 r 1:01:15.333
+D l 0:59.867 i 32
+F "NPC Template Holding Cell_38_freeze_697813__iainmccurdy__highland-bagpipes-drones.wav" 26453232 0 1741187293 0
+D y 2025-03-05 s 96000 n 2 r 1:00:57.830
+D l 0:34.443 i 32
+F "NPC Themes Stem BRASS-glued-01.wav" 2540872 0 1741138187 0
+D y 2025-02-15 s 96000 n 2 l 0:04.405
+D i 24
+F "NPC Themes Stem BRASS.wav" 67039588 0 1739668164 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem CHOIR.wav" 67039588 0 1739668599 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem FX.wav" 67039588 0 1739668854 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem KEYS.wav" 67039588 0 1739667958 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem ORCH.wav" 67039588 0 1739668703 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem PERCUSSION HIGH.wav" 67039588 0 1739668761 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem PERCUSSION LOOPS SAMPLES.wav" 67039588 0 1739668881 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem STRINGS SOLO.wav" 67039588 0 1739668239 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F "NPC Themes Stem TEXTURES 2.wav" 67039588 0 1739668543 0
+D y 2025-02-15 s 48000 n 2 r 1:00:03.600
+D l 3:52.471 i 24
+F NPC-LON-T004.WAV 147776768 0 1727621358 0
+D y 2024-09-29 c "SCENE 4F 03 IS TAKE 2" d "SPEED=30.000ND  TAKE=004  UBITS=00000000  SCENE=NPC-LON  TAPE=  CIRCLED=FALSE  TR2=Tr2  TR3=Tr3  TR4=Tr4  TR6=Tr2  TR7=Tr3  TR8=Tr4  NOTE=SCENE 4F 03 IS TAKE 2  " s 48000
+D n 6 r 10:53:19.000 l 2:51.000 i 24
+F NPC-LON-WILD-T002.WAV 20768768 0 1727611034 0
+D y 2024-09-29 c "SCENE 4F 03 IS TAKE 2" d "SPEED=30.000ND  TAKE=002  UBITS=00000000  SCENE=NPC-LON-WILD  TAPE=  CIRCLED=FALSE  TR1=Tr1  TR3=Tr3  TR5=Tr1  TR7=Tr3  NOTE=SCENE 4F 03 IS TAKE 2  " s 48000
+D n 4 l 0:36.000 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - Alto Voice 1 DRY_KS.wav" 26139702 0 1742898889 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - Alto Voice 3 DRY_KS.wav" 26139702 0 1742898889 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - Cello 0 DRY_KS.wav" 26139702 0 1742898890 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - Cello 1 DRY_KS.wav" 26139702 0 1742898890 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - HARMONY (PIANO) - high pedal tone.wav" 26139702 0 1742925220 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Harp - adds 1.wav" 26139702 0 1742925219 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Harp - adds 2.wav" 26139702 0 1742925220 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Main Piano - sixteenths - option 1.wav" 26139702 0 1742925221 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Main Piano - sixteenths - option 2.wav" 26139702 0 1742925221 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Main Piano - triplets - option 3.wav" 26139702 0 1742925220 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Main Piano - triplets - option 4.wav" 26139702 0 1742925221 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Piano - adds 1.wav" 26139702 0 1742925220 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F "NPC_10m06 Aero Car to Botanical Gardens_v02.01.01 - 01.02.02.44 - KS Piano - adds 2.wav" 26139702 0 1742925218 0
+D y 2025-03-25 s 96000 n 2 r 1:02:02.733
+D l 0:45.319 i 24
+F NPC_Animatic_Dome_v5_July29.mp4 250919576 0 1738857607 0
+D s 48000 n 2 l 6:18.859
+F NTF_edit_mar_5.mp4 397429339 0 1741216494 0
+D n 1 l 7:15.250
+F "Organic Hit.wav" 601774 0 1430452333 0
+D y 2015-04-30 s 48000 n 2 r 1:00:33.391
+D l 0:02.087 i 24
+F "phil swirl.wav" 4947986 0 1731369269 0
+D s 48000 n 2 l 0:17.180 i 24
+F samriser_b_02.wav 4583430 0 1203423252 0
+D s 44100 n 2 l 0:17.276 i 24
+F strbrfx_cl_tu_cre+gliss5_xs.wav 2553792 0 1204808546 0
+D s 44100 n 2 l 0:09.605 i 24
+F strbrfx_cl_tu_cre+gliss7_xs.wav 2314368 0 1204808548 0
+D s 44100 n 2 l 0:08.700 i 24
+F strfx_glishi_dn_04_xs.wav 1278720 0 1204640302 0
+D s 44100 n 2 l 0:04.786 i 24
+F "strfx_glishi_dn_06_xs-glued reversed 001.wav" 598730 0 1741741601 0
+D y 2025-03-11 s 96000 n 2 l 0:01.033
+D i 24
+F strfx_glishi_dn_06_xs-glued.wav 595930 0 1741741591 0
+D y 2025-03-11 s 96000 n 2 r 59:54.767
+D l 0:01.033 i 24
+F "TIB_1m10_FULL_MIX_A Climbers Body.mp3" 6774912 0 1647449151 0
+D s 48000 n 2 l 3:46.935 i 239k
+F Urei_CLICK.aif 22568 0 1332580941 0
+D s 44100 n 2 l 0:00.125 i 16
+F "W2341-KAWCHUK-NPC-drums-v3 Dancers.wav" 28869162 0 1731430944 0
+D y 2024-11-12 s 96000 n 2 r 1:00:42.652
+D l 0:50.054 i 24
+F "W2341-KAWCHUK-NPC-drums-v3 Drums.wav" 28869162 0 1731430944 0
+D y 2024-11-12 s 96000 n 2 r 1:00:42.652
+D l 0:50.054 i 24
+F "W2341-KAWCHUK-NPC-drums-v3 Location Audio.wav" 28869162 0 1731430943 0
+D y 2024-11-12 s 96000 n 2 r 1:00:42.652
+D l 0:50.054 i 24
+F "W2341-KAWCHUK-NPC-drums-v3 SFX Ambience.wav" 28869162 0 1731430947 0
+D y 2024-11-12 s 96000 n 2 r 1:00:42.652
+D l 0:50.054 i 24
+F "W2341-KAWCHUK-NPC-drums-v3 SFX.wav" 28869162 0 1731430946 0
+D y 2024-11-12 s 96000 n 2 r 1:00:42.652
+D l 0:50.054 i 24
+F W2431-KAWCHUK-NPC-000-themeB1-v2.wav 15147606 0 1741213364 0
+D y 2025-03-05 s 48000 n 2 r 1:05:20.017
+D l 0:52.525 i 24
+F x1_ha_full_1-[1].wav 167184 0 1701677736 0
+D s 48000 n 2 l 0:00.580 i 24
+F x1_ha_full_2-[1].wav 148770 0 1701677736 0
+D s 48000 n 2 l 0:00.516 i 24
+F x1_ha_full_pp-Gain_01.wav 212142 0 1701677737 0
+D y 2018-05-04 s 48000 n 2 r 1:36:46.100
+D l 0:00.726 i 24
+F x1_ha_full_pp-Gain_04.wav 193540 0 1701677737 0
+D y 2018-05-04 s 48000 n 2 r 1:36:54.070
+D l 0:00.662 i 24
+F x1_hm_full_1-[1].wav 154830 0 1701677738 0
+D s 48000 n 2 l 0:00.537 i 24
+F x1_hm_full_2-[1].wav 154302 0 1701677738 0
+D s 48000 n 2 l 0:00.536 i 24
+F x1_hm_full_pp-Gain_03.wav 236016 0 1701677738 0
+D y 2018-05-04 s 48000 n 2 r 1:36:50.033
+D l 0:00.809 i 24
+F x1_hm_full_pp-Gain_06.wav 153142 0 1701677738 0
+D y 2018-05-04 s 48000 n 2 r 1:36:58.044
+D l 0:00.522 i 24
+F x1_ho_full_1-[1].wav 221130 0 1701677738 0
+D s 48000 n 2 l 0:00.768 i 24
+F x1_ho_full_2-[1].wav 156078 0 1701677739 0
+D s 48000 n 2 l 0:00.542 i 24
+F x1_ho_full_pp-Gain_02.wav 220210 0 1701677739 0
+D y 2018-05-04 s 48000 n 2 r 1:36:48.075
+D l 0:00.754 i 24
+F x1_ho_full_pp-Gain_05.wav 175948 0 1701677739 0
+D y 2018-05-04 s 48000 n 2 r 1:36:56.065
+D l 0:00.601 i 24

@@ -128,6 +128,8 @@ function EditTrackName()
                     icon = string.gsub(icon," ", "_")
                     icon = "wwise_" .. icon .. ".png"
 
+                    if icon == "wwise_.png" then icon = "" end -- july 2024 fix for missing file annoying bug
+
                     if remove_track_icon then icon = "" end
                     
                     retval, stringNeedBig = reaper.GetSetMediaTrackInfo_String( track, "P_ICON", icon, true )
@@ -248,6 +250,8 @@ function SetTrackType()
             icon = string.lower(icon)
             icon = string.gsub(icon," ", "_")
             icon = "wwise_" .. icon .. ".png"
+
+            if icon == "wwise_.png" then icon = "" end -- july 2024 fix for missing file annoying bug
 
             if remove_track_icon then icon = "" end
 

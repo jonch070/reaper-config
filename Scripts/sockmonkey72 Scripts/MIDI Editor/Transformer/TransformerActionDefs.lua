@@ -56,6 +56,7 @@ local actionOperationMinus = { notation = '-', label = 'Subtract', text = 'Opera
 local actionOperationMult = { notation = '*', label = 'Multiply', text = 'OperateEvent1(event, {tgt}, OP_MULT, {param1})', terms = 1, floateditor = true, norange = true, literal = true, nixnote = true }
 local actionOperationDivide = { notation = '/', label = 'Divide By', text = 'OperateEvent1(event, {tgt}, OP_DIV, {param1})', terms = 1, floateditor = true, norange = true, literal = true, nixnote = true }
 local actionOperationRound = { notation = ':round', label = 'Round By', text = 'QuantizeTo(event, {tgt}, {param1})', terms = 1, inteditor = true, literal = true }
+local actionOperationFloor = { notation = ':floor', label = 'Round By (Down)', text = 'QuantizeTo(event, {tgt}, {param1}, true)', terms = 1, inteditor = true, literal = true }
 local actionOperationClamp = { notation = ':clamp', label = 'Clamp Between', text = 'ClampValue(event, {tgt}, {param1}, {param2})', terms = 2, inteditor = true }
 local actionOperationRandom = { notation = ':random', label = 'Random Values Btw', text = 'RandomValue(event, {tgt}, {param1}, {param2})', terms = 2, inteditor = true }
 local actionOperationRelRandom = { notation = ':relrandom', label = 'Relative Random Values Btw', text = 'OperateEvent1(event, {tgt}, OP_ADD, RandomValue(event, nil, {param1}, {param2}))', terms = 2, inteditor = true, range = { -127, 127 }, fullrange = true, bipolar = true, literal = true, nixnote = true }
@@ -65,6 +66,7 @@ local actionOperationLine = { notation = ':line', label = 'Ramp in Selection Ran
 local actionOperationRelLine = { notation = ':relline', label = 'Relative Ramp in Selection Range', text = 'OperateEvent1(event, {tgt}, OP_ADD, LinearChangeOverSelection(event, nil, event.projtime, {param1}, {param2}, {param3}, _context))', terms = 3, split = {{ inteditor = true }, { menu = true }, { inteditor = true }}, freeterm = true, fullrange = true, bipolar = true, param3 = p3.lineParam3Tab }
 local actionOperationScaleOff = { notation = ':scaleoffset', label = 'Scale + Offset', text = 'OperateEvent2(event, {tgt}, OP_SCALEOFF, {param1}, {param2})', terms = 2, split = {{ floateditor = true, norange = true }, { inteditor = true, bipolar = true }}, freeterm = true, literal = true, nixnote = true }
 local actionOperationMirror = { notation = ':mirror', label = 'Mirror', text = 'Mirror(event, {tgt}, {param1})', terms = 1 }
+local actionOperationThresh = { notation = ':thresh', label = 'Threshold', text = 'Threshold(event, {tgt}, {param1}, {param2}, {param3})', terms = 3, freeterm = true, param3 = p3.threshParam3Tab, inteditor = true, split = {{ default = 64 }, { default = 0 }, { default = 127 }} }
 
 local function positionMod(op)
   local newop = tg.tableCopy(op)
@@ -94,7 +96,8 @@ local actionPositionOperationEntries = {
   { notation = '*', label = 'Multiply (rel.)', text = 'MultiplyPosition(event, {tgt}, {param1}, {param2}, nil, _context)', terms = 2, split = {{ floateditor = true }, { menu = true }}, norange = true, literal = true },
   { notation = '/', label = 'Divide (rel.)', text = 'MultiplyPosition(event, {tgt}, {param1} ~= 0 and (1 / {param1}) or 0, {param2}, nil, _context)', terms = 2, split = {{ floateditor = true }, { menu = true }}, norange = true, literal = true },
   lengthMod(actionOperationRound),
-  { notation = ':roundmusical', label = 'Quantize to Musical Value', text = 'QuantizeMusicalPosition(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true, showswing = true }, { floateditor = true, default = 100, percent = true }} },
+  lengthMod(actionOperationFloor),
+  { notation = ':roundmusical', label = 'Quantize to Musical Value', text = 'QuantizeMusicalPosition(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true, showswing = true, showround = true }, { floateditor = true, default = 100, percent = true }} },
   positionMod(actionOperationFixed),
   positionMod(actionOperationRandom), lengthMod(actionOperationRelRandom), lengthMod(actionOperationRelRandomSingle),
   { notation = ':tocursor', label = 'Move to Cursor', text = 'MoveToCursor(event, {tgt}, {param1})', terms = 1, menu = true },
@@ -102,6 +105,7 @@ local actionPositionOperationEntries = {
   { notation = ':scaleoffset', label = 'Scale + Offset (rel.)', text = 'MultiplyPosition(event, {tgt}, {param1}, {param2}, \'{param3}\', _context)', terms = 3, split = {{}, { menu = true }, {}}, param3 = p3.positionScaleOffsetParam3Tab },
   { notation = ':toitemstart', label = 'Move to Item Start', text = 'MoveToItemPos(event, {tgt}, 0, \'{param1}\', _context)', terms = 1, timedur = true, timearg = true },
   { notation = ':toitemend', label = 'Move to Item End', text = 'MoveToItemPos(event, {tgt}, 1, \'{param1}\', _context)', terms = 1, timedur = true, timearg = true },
+  { notation = ':rampscale', label = 'Ramped Scale', text = 'ScaledRampOverSelection(event, {tgt}, event.projtime, {param1}, {param2}, {param3}, _context)', terms = 3, split = {{ floateditor = true, default = 1., range = { 0., nil } }, { menu = true }, { floateditor = true, default = 1., range = { 0., nil } }}, literal = true, freeterm = true, param3 = p3.lineParam3Tab },
 }
 
 local actionPositionMultParam2Menu = {
@@ -114,14 +118,16 @@ local actionLengthOperationEntries = {
   { notation = '-', label = 'Subtract', text = 'SubtractDuration(event, {tgt}, \'{param1}\', event.projlen, _context)', terms = 1, timedur = true, timearg = true },
   actionOperationMult, actionOperationDivide,
   lengthMod(actionOperationRound),
-  { notation = ':roundlenmusical', label = 'Quantize Length to Musical Value', text = 'QuantizeMusicalLength(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true }, { floateditor = true, default = 100, percent = true }} },
-  { notation = ':roundendmusical', label = 'Quantize Note-Off to Musical Value', text = 'QuantizeMusicalEndPos(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true, showswing = true }, { floateditor = true, default = 100, percent = true }} },
+  lengthMod(actionOperationFloor),
+  { notation = ':roundlenmusical', label = 'Quantize Length to Musical Value', text = 'QuantizeMusicalLength(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true, showround = true }, { floateditor = true, default = 100, percent = true }} },
+  { notation = ':roundendmusical', label = 'Quantize Note-Off to Musical Value', text = 'QuantizeMusicalEndPos(event, take, PPQ, {musicalparams})', terms = 2, split = {{ musical = true, showswing = true, showround = true }, { floateditor = true, default = 100, percent = true }} },
   lengthMod(actionOperationFixed),
   { notation = ':quantmusical', label = 'Set to Musical Length', text = 'SetMusicalLength(event, take, PPQ, {musicalparams})', terms = 1, musical = true },
   lengthMod(actionOperationRandom), lengthMod(actionOperationRelRandom), lengthMod(actionOperationRelRandomSingle),
   { notation = ':tocursor', label = 'Move to Cursor', text = 'MoveLengthToCursor(event, {tgt})', terms = 0 },
   { notation = ':scaleoffset', label = 'Scale + Offset', text = 'OperateEvent2(event, {tgt}, OP_SCALEOFF, {param1}, TimeFormatToSeconds(\'{param2}\', event.projtime, _context, true))', terms = 2, split = {{ floateditor = true, default = 1. }, { timedur = true }}, range = {}, timearg = true },
   { notation = ':toitemend', label = 'Extend to Item End', text = 'MoveToItemPos(event, {tgt}, 2, \'{param1}\', _context)', terms = 1, timedur = true, timearg = true },
+  { notation = ':rampscale', label = 'Ramped Scale', text = 'ScaledRampOverSelection(event, {tgt}, event.projtime, {param1}, {param2}, {param3}, _context)', terms = 3, split = {{ floateditor = true, default = 1., range = { 0., nil } }, { menu = true }, { floateditor = true, default = 1., range = { 0., nil } }}, literal = true, freeterm = true, param3 = p3.lineParam3Tab },
 }
 
 local function channelMod(op)
@@ -131,11 +137,32 @@ local function channelMod(op)
   return newop
 end
 
+local function channelModRerange(tab, ranges)
+  local newTab = tg.tableCopy(channelMod(tab))
+  newTab.preEdit = function(val)
+    local numval = tonumber(val)
+    if numval then
+      return tostring(numval + 1)
+    end
+    return val
+  end
+  newTab.postEdit = function(val)
+    local numval = tonumber(val)
+    if numval then
+      return tostring(numval - 1)
+    end
+    return val
+  end
+  newTab.rangelabel = ranges or { '1 - 16', '1 - 16' }
+  return newTab
+end
+
 local actionChannelOperationEntries = {
   channelMod(actionOperationPlus), channelMod(actionOperationMinus),
   actionOperationFixed,
-  channelMod(actionOperationRandom), channelMod(actionOperationRelRandom), channelMod(actionOperationRelRandomSingle),
-  channelMod(actionOperationLine), channelMod(actionOperationRelLine)
+  channelModRerange(actionOperationRandom, nil),
+  channelMod(actionOperationRelRandom), channelMod(actionOperationRelRandomSingle),
+  channelModRerange(actionOperationLine, { '1 - 16', nil, '1 - 16' }), channelMod(actionOperationRelLine)
 }
 local actionTypeOperationEntries = {
   actionOperationFixed
@@ -185,14 +212,14 @@ local actionSubtypeOperationEntries = {
   actionOperationPlus, actionOperationMinus, actionOperationMult, actionOperationDivide,
   actionOperationRound, actionOperationFixed, actionOperationClamp, actionOperationRandom, actionOperationRelRandom, actionOperationRelRandomSingle,
   { notation = ':getvalue2', label = 'Use Value 2', text = 'OperateEvent1(event, {tgt}, OP_FIXED, GetMainValue(event))', terms = 0 }, -- note that this is different for AT and PB
-  actionOperationMirror, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
+  actionOperationMirror, actionOperationThresh, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
 }
 
 local actionVelocityOperationEntries = {
   actionOperationPlus, actionOperationMinus, actionOperationMult, actionOperationDivide,
   actionOperationRound, actionOperationFixed, actionOperationClamp, actionOperationRandom, actionOperationRelRandom, actionOperationRelRandomSingle,
   { notation = ':getvalue1', label = 'Use Value 1', text = 'OperateEvent1(event, {tgt}, OP_FIXED, GetSubtypeValue(event))', terms = 0 }, -- ?? note that this is different for AT and PB
-  actionOperationMirror, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
+  actionOperationMirror, actionOperationThresh, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
 }
 
 local actionNewEventOperationEntries = {
@@ -215,7 +242,7 @@ local newMIDIEventPositionEntries = {
 local actionGenericOperationEntries = {
   actionOperationPlus, actionOperationMinus, actionOperationMult, actionOperationDivide,
   actionOperationRound, actionOperationFixed, actionOperationRandom, actionOperationRelRandom, actionOperationRelRandomSingle,
-  actionOperationMirror, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
+  actionOperationMirror, actionOperationThresh, actionOperationLine, actionOperationRelLine, actionOperationScaleOff
 }
 
 ActionDefs.ActionRow = ActionRow

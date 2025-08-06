@@ -10,19 +10,23 @@
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.bin</key>
 		<data>
-		QF/zNsMkp77hfntVrGqY8EeGTmQ=
+		9EuCcTnMWc21Ahpo952xsyFDgfI=
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<data>
-		uVPohxR8PouVfo8ydjksMbFYK94=
+		I+9FE/HDdOF9vLXDDfQ4yHPlbmo=
 		</data>
 		<key>Resources/flutter_assets/FontManifest.json</key>
 		<data>
-		mAN+TfmSxoOu0MnfPriaD3sf6TU=
+		Qx5BAxloISDAaelcVyAmVUCfcec=
 		</data>
 		<key>Resources/flutter_assets/NOTICES.Z</key>
 		<data>
-		+AW6JQhjbYor+J1KQswvUpk4zeA=
+		2mRYYbIC9+KrHy/H/D9XRJv0RBE=
+		</data>
+		<key>Resources/flutter_assets/NativeAssetsManifest.json</key>
+		<data>
+		re4p7E8rPLLsN+wzaPN/+AVpXTY=
 		</data>
 		<key>Resources/flutter_assets/assets/demo/Chill%20Loop%20Guitar.caf.reapeaks</key>
 		<data>
@@ -32,25 +36,33 @@
 		<data>
 		Ng8VQ2t7NCx2axhl4jGAzEAjKKk=
 		</data>
-		<key>Resources/flutter_assets/assets/fonts/NotoSansMath-Regular.ttf</key>
-		<data>
-		3qWJUw0wT4UnKbxNAooqmzgx0pE=
-		</data>
 		<key>Resources/flutter_assets/assets/fonts/Orbitron-Regular.ttf</key>
 		<data>
 		gwUcAVCJXeBz/R2Ol9NocHDl36Y=
-		</data>
-		<key>Resources/flutter_assets/assets/images/playtime-logo.svg</key>
-		<data>
-		YpEkBXd1Pkec6O+w6OfENU9CBec=
 		</data>
 		<key>Resources/flutter_assets/assets/images/realearn-logo.png</key>
 		<data>
 		mJuZsC8kAIRbkXRJ4Kj1TEgAUzo=
 		</data>
+		<key>Resources/flutter_assets/assets/vectors/MaterialSymbolsArrowBack2Rounded.svg</key>
+		<data>
+		hABrAAgckewv6sh6p+RrxQyALVU=
+		</data>
+		<key>Resources/flutter_assets/assets/vectors/NotoThumbsUp.svg</key>
+		<data>
+		E747Uok4AcMf4wEQoUrY5psGo48=
+		</data>
+		<key>Resources/flutter_assets/assets/vectors/playtime-logo.svg</key>
+		<data>
+		GPtbyfEBcXibmxqC/tXPJEaW3RM=
+		</data>
 		<key>Resources/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
-		N1+6EkWkOAPhIei5JlkF0PIvGn4=
+		LZDAFV4k8+eySwQgL0NAda/AbHY=
+		</data>
+		<key>Resources/flutter_assets/fonts/NotoSansMath-Regular.ttf</key>
+		<data>
+		PmMOnDNaM5B1ncoJFGyRs+m6HD8=
 		</data>
 		<key>Resources/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -98,28 +110,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			W0eFJmEV6J7cdBlhdGrCmxdAS6cTGrYTPQcPGsIUFQw=
+			T8qUj0vvwwkn7tLOq4KfNANUQQJdoIqrUI1aUBkBUvo=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uxqINfYGXch7f9Kc7Rw0DvL3CP1Y7NE/O3Spb7/eqSE=
+			W5tXVU4ws/w/T8OG5EBbbmWIr3psK+TIviJaJTIpj3I=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Wn8Pk80GqcxHUMBOZjGagfRlDqlpjtgVa1WCdprSkVE=
+			ooEoSkTR5wRd51pudJTDZWldfMaEZvdyPg8uXELNuZg=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZJ57ihEdrQ2iCC36Bf7YSkN8Ufb6hcX0zM9Nx3AjY3M=
+			kP82B3WU1KV5ZcgWg2gkZP+3PjbXTt6edS51LaA+dtU=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/NativeAssetsManifest.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			lUijHkoEgTXB2U+Rkyi/tirix7s8q5ZVfHlB2ql3dss=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/assets/demo/Chill%20Loop%20Guitar.caf.reapeaks</key>
@@ -136,25 +155,11 @@
 			kognlxsMKoiTWBeyrOpbKcETL7dqodFi1PBzRIKHLeA=
 			</data>
 		</dict>
-		<key>Resources/flutter_assets/assets/fonts/NotoSansMath-Regular.ttf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			4bEmcP0P1GamQ/Gac6tINDy3/kcCr6WRg+e+i0epCRI=
-			</data>
-		</dict>
 		<key>Resources/flutter_assets/assets/fonts/Orbitron-Regular.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
 			6Q5z8umjg1ENYiGpGHIXamM+97ItGaz7bqYAigUf/CU=
-			</data>
-		</dict>
-		<key>Resources/flutter_assets/assets/images/playtime-logo.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			Pt7FyGaVO59ehxfcKFXhENNcLZW+4W2BkfJCkXZ5iS8=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/assets/images/realearn-logo.png</key>
@@ -164,11 +169,39 @@
 			IYJaaacBxIRBwmtCnwdVKBz1AseCwPNzSagO7rvUx28=
 			</data>
 		</dict>
+		<key>Resources/flutter_assets/assets/vectors/MaterialSymbolsArrowBack2Rounded.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WED3W607XODVtFyY1SUt0CDr58xlQoJwevO5Fb9jySQ=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/assets/vectors/NotoThumbsUp.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TVUNNbR4Pz1Jft+dy+0P3WJwPYiecEITag162IF1upY=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/assets/vectors/playtime-logo.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Ae8PuK5v4UOyGAIrmpSYlMOAogUwqapm6Go11iZxmmY=
+			</data>
+		</dict>
 		<key>Resources/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nsw1qdSuSaJKZCX83Y76e+kKtGU91U4EJ6nKUCTcvqc=
+			S9DXFyTcwq63crQBVzChj2D9ZgYx7TvoA3xDCLC6lZI=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/fonts/NotoSansMath-Regular.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FiYk4PuV+TyiP+QVbDYT+WMB/KwKzkWbKCIN81XRe0A=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

@@ -1,12 +1,25 @@
 C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Niagara Parks Commission/NPC Grab Bag"
+F 103687__chimerical__melt-down-1.wav 2469644 0 1742259079 0
+D s 44100 n 2 l 0:14.000 i 16
+F 195929__oneiroidstate__beep-1000-hz-length-of-1-frame-to-30-framesec-code-american-tv.wav 5088 0 1743293101 0
+D y 2013-08-02 s 44100 n 1 r 59:11.300
+D l 0:00.033 i 16
 F 2023_SK_3M19_Spring_StereoMix.mp3 4803840 0 1694291242 0
 D s 48000 n 2 l 2:00.039 i 320k
 F 32877__lonemonk__bagpipe-drone-solo-1.wav 502874 0 1741186389 0
 D y 2007-01-20 s 44100 n 2 l 0:02.845
 D i 16
+F 392072__alexbuk__metal-sfx-foley-key-jingles.wav 7010904 0 1743145231 0
+D s 48000 n 1 l 0:48.686 i 24
 F 408213__idalize__two-glass-bells.wav 6730984 0 1741756231 0
 D y 2017-11-02 s 48000 n 2 l 0:23.369
 D i 24
+F 440079__processaurus__m-long-applause-n-hoots-staggered.wav 8732704 0 1743145036 0
+D y 2018-08-21 s 44100 n 4 r 1:00:39.500
+D l 0:16.500 i 24
+F 489073__straget__waterfall.wav 32284290 0 1743645184 0
+D t 190710 y 2019-07-10 d "SPEED=29.970D  TAKE=010  UBITS=00000000  SCENE=190710  TAPE=190710  CIRCLED=FALSE  TR1=Tr1  TR2=Tr2  NOTE=  " s 44100
+D n 2 r 23:47.027 l 2:01.989 i 24
 F 697813__iainmccurdy__highland-bagpipes-drones.wav 16647468 0 1741186447 0
 D y 2023-07-29 s 96000 n 2 l 0:28.901
 D i 24
@@ -16,6 +29,8 @@ F 709392__tildeyann__antropocene-bagpipe-1.wav 8467244 0 1741186419 0
 D s 44100 n 2 l 0:48.000 i 16
 F 709393__tildeyann__antropocene-bagpipe-2.wav 8467244 0 1741186409 0
 D s 44100 n 2 l 0:48.000 i 16
+F 711539__lastouski__drone_a.wav 9878444 0 1742280015 0
+D s 44100 n 1 l 1:52.000 i 16
 F "Blue Disc.mp3" 891216 0 1685903094 0
 D s 48000 n 2 l 0:32.102 i 222k
 F BTI_1m01_StereoMix_Pre-title.mp3 8643397 0 1702901846 0
@@ -24,3 +39,8 @@ D l 3:35.990 i 320k
 F BTI_1m26_StereoMix_Mastodon.mp3 4872360 0 1702901878 0
 D y 2023-11-17 s 44100 n 2 r 2:04:47.876
 D l 2:01.705 i 320k
+F "NPC - 10m05 - Jet Boat - v01.01.01_freeze_NPC Deck Themes 1-Diva (V2).wav" 23816424 0 1741807123 0
+D y 2025-03-12 s 96000 n 2 r 1:01:52.500
+D l 0:31.010 i 32
+F "NPC Harmonic Swirl Battle_01 ste.wav" 4186730 0 1742266791 0
+D s 48000 n 2 l 0:14.537 i 24

@@ -192,7 +192,14 @@ local function param3LineMenuLabel(row, target, condOp, newHasTable)
     end
   end
 
-  return row.params[1].textEditorStr .. (note1 and ' [' .. note1 .. ']' or '') .. ' / ' .. row.params[3].textEditorStr .. (note3 and ' [' .. note3 .. ']' or '')
+  local text1 = row.params[1].textEditorStr
+  local text3 = row.params[3].textEditorStr
+  if condOp.preEdit then
+    text1 = condOp.preEdit(text1)
+    text3 = condOp.preEdit(text3)
+  end
+
+  return text1 .. (note1 and ' [' .. note1 .. ']' or '') .. ' / ' .. text3 .. (note3 and ' [' .. note3 .. ']' or '')
 end
 
 local function param3LineFunArg(row, target, condOp, param3Term)
@@ -213,15 +220,85 @@ local lineParam3Tab = {
     paramProc = param3LineParamProc,
 }
 
-local function makeParam3Line(row)
+local function makeParam3Line(row, isRampScale)
   row.params[1].menuEntry = 1 -- unused
   row.params[2].menuEntry = 1 -- this is the curve type menu
-  row.params[1].textEditorStr = '0'
+  row.params[1].textEditorStr = isRampScale and '1.' or '0'
   row.params[3] = tg.ParamInfo()
   for k, v in pairs(lineParam3Tab) do row.params[3][k] = v end
-  row.params[3].textEditorStr = '0'
+  row.params[3].textEditorStr = isRampScale and '1.' or '0'
   row.params[3].mod = 2. -- curve type mod, a param4
   row.params[3].modrange = { 0, nil }
+end
+
+----------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------
+
+-- param3Formatter
+local function param3FormatThresh(row)
+  local rowText, param1Val, param2Val, param3Val = Shared.getRowTextAndParameterValues(row)
+  rowText = rowText .. '('
+  if tg.isValidString(param1Val) then
+    rowText = rowText .. param1Val
+    if tg.isValidString(param2Val) then
+      rowText = rowText .. ', ' .. param2Val
+      if tg.isValidString(param3Val) then
+        rowText = rowText .. ', ' .. param3Val
+      end
+    end
+  end
+  rowText = rowText .. ')'
+  return rowText
+end
+
+-- param3Parser
+local function param3ParseThresh(row, param1, param2, param3)
+  local _, param1Tab, param2Tab, target, condOp = Shared.actionTabsFromTarget(row)
+  if tg.isValidString(param1) then
+    param1 = Shared.handleMacroParam(row, target, condOp, param1Tab, param1, 1)
+  else
+    param1 = Shared.defaultValueIfAny(row, condOp, 1)
+  end
+  if tg.isValidString(param2) then
+    param2 = Shared.handleMacroParam(row, target, condOp, param2Tab, param2, 2)
+  else
+    param2 = Shared.defaultValueIfAny(row, condOp, 2)
+  end
+  if tg.isValidString(param3) then
+    param3 = Shared.handleMacroParam(row, target, condOp, {}, param3, 3)
+  else
+    param3 = Shared.defaultValueIfAny(row, condOp, 3)
+  end
+
+  row.params[1].textEditorStr = Shared.handlePercentString(param1, row, target, condOp, gdefs.PARAM_TYPE_INTEDITOR, row.params[1].editorType, 1)
+  row.params[2].textEditorStr = Shared.handlePercentString(param2, row, target, condOp, gdefs.PARAM_TYPE_INTEDITOR, row.params[2].editorType, 2)
+  row.params[3].textEditorStr = Shared.handlePercentString(param3, row, target, condOp, gdefs.PARAM_TYPE_INTEDITOR, row.params[3].editorType, 3)
+end
+
+local function param3ThreshMenuLabel(row)
+  if not tg.isValidString(row.params[3].textEditorStr) then
+    row.params[3].textEditorStr = 127
+  end
+  return row.params[2].textEditorStr .. ' / ' .. row.params[3].textEditorStr
+end
+
+local threshParam3Tab = {
+  formatter = param3FormatThresh,
+  parser = param3ParseThresh,
+  tableParamType = { gdefs.PARAM_TYPE_INTEDITOR, gdefs.PARAM_TYPE_MENU },
+  menuLabel = param3ThreshMenuLabel,
+}
+
+local function makeParam3Thresh(row, target)
+  row.params[1].menuEntry = 1
+  row.params[2].menuEntry = 1
+  local range = target.range or { 0, 127 }
+  row.params[1].textEditorStr = tostring(math.floor(((range[2] - range[1]) / 2) + range[1] + 0.5))
+  row.params[2].textEditorStr = tostring(math.floor(range[1]))
+  row.params[3] = tg.ParamInfo()
+  for k, v in pairs(threshParam3Tab) do row.params[3][k] = v end
+  row.params[3].menuEntry = 1
+  row.params[3].textEditorStr = tostring(math.floor(range[2]))
 end
 
 ----------------------------------------------------------------------------------------
@@ -232,5 +309,7 @@ Param3.makeParam3PositionScaleOffset = makeParam3PositionScaleOffset
 Param3.lineParam3Tab = lineParam3Tab
 Param3.makeParam3Line = makeParam3Line
 Param3.param3LineEntries = param3LineEntries
+Param3.threshParam3Tab = threshParam3Tab
+Param3.makeParam3Thresh = makeParam3Thresh
 
 return Param3

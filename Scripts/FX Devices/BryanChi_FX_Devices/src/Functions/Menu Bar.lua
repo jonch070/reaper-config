@@ -1,4 +1,4 @@
-
+-- @noindex
 function StoreSettings()
     local data = tableToString(
         {
@@ -16,32 +16,32 @@ end
 function If_Theres_Selected_FX()
     local Sel_FX = TrkID and Trk[TrkID] and  Trk[TrkID].Sel_FX
     if Sel_FX and Sel_FX[1] then  
-        Sel_FxGUID = {}
+
         table.sort(Sel_FX)
         local function Put_FXs_Into_Container()
         
             if im.Button(ctx, 'Put FXs into Container') then 
-                for i, v in ipairs(Sel_FX) do 
-                    local v = Find_FxID_By_GUID (v)
-                    local _, Name = r.TrackFX_GetFXName(LT_Track, v )
-                    local FxGUID = r.TrackFX_GetFXGUID(LT_Track, v)
-                    table.insert(Sel_FxGUID, FxGUID)
-                end
-                local firstSlot =  Find_FxID_By_GUID (Sel_FX[1])
 
-                local cont = AddFX_HideWindow(LT_Track, 'Container', -1000 - firstSlot)
-                local ContFxGUID = r.TrackFX_GetFXGUID(LT_Track, cont)
+                local cont = AddFX_HideWindow(LT_Track, 'Container', -1000 - Sel_FX_Idx[1])
+               -- local ContFxGUID = r.TrackFX_GetFXGUID(LT_Track, cont)
                 TREE = BuildFXTree(LT_Track)
 
-                for i, v in ipairs(Sel_FX) do 
-                    local cont = Find_FxID_By_GUID (ContFxGUID)
-                    local id = Find_FxID_By_GUID (v)
+                for i, v in ipairs(Sel_FX_Idx) do 
+                    --local cont = Find_FxID_By_GUID (ContFxGUID)
 
-                    --[[ if cont <= v then v = v + 1 end ]]
-                    Put_FXs_Into_New_Container(id, cont, i )
+                    --[[ local id = Find_FxID_By_GUID (v)
+                    local Tree_Idx 
+                    for I, V in ipairs(TREE) do
+                        if id == V.addr_fxid then
+
+                            Tree_Idx = I 
+                            break
+                        end
+                    end ]]
+                    Put_FXs_Into_New_Container(v, cont, i --[[ , Tree_Idx and TREE[Tree_Idx].scale ]] )
                 end
                 Sel_FX = nil 
-                Sel_FxGUID= nil
+
             end 
         end
 
@@ -195,11 +195,16 @@ function Layout_Edit_MenuBar_Buttons()
 
     if not FX.LayEdit then return end 
     local FxGUID = FX.LayEdit
+    local BtnSz = 15
 
     local function Grid_Adjust_Btns()
-        if im.Button(ctx, 'Grid +') then
+        im.Text(ctx, 'Grid: ')
+        SL(nil, 0)
+        if im.Button(ctx, '+',BtnSz*2 ) then
             LE.GridSize = LE.GridSize + 5
-        elseif im.Button(ctx, 'Grid -') then
+        end
+        SL(nil,0)
+        if im.Button(ctx, '-', BtnSz*2 ) then
             LE.GridSize = LE.GridSize - 5
         end
     end
@@ -253,12 +258,161 @@ function Layout_Edit_MenuBar_Buttons()
             end
         end
     end
+    local function Delete()
+        if not LE.Sel_Items[1] then return end 
+        im.SetNextItemWidth(ctx, 20)
+        
+        if im.ImageButton(ctx, '## Delete', Img.Trash, BtnSz, BtnSz) then
+            local tb = {}
+            local isVirtualButton = type(LE.Sel_Items[1]) == 'table'
+            local Undo_LBL = isVirtualButton and 'Delete Virtual Button' or (#LE.Sel_Items > 1 and 'Delete '..#LE.Sel_Items..' Parameters' or 'Delete '..(FX[FxGUID][LE.Sel_Items[1]].Name or ''))
+            Create_Undo_Point(Undo_LBL, FxGUID)
 
+            for i, v in pairs(LE.Sel_Items) do
+                tb[i] = v
+            end
+            table.sort(tb)
+
+            for i = #tb, 1, -1 do
+                DeletePrm(FxGUID, tb[i], FX_Idx, true)
+            end
+
+
+            if not FX[FxGUID][1] then FX[FxGUID].AllPrmHasBeenDeleted = true else FX[FxGUID].AllPrmHasBeenDeleted = nil end
+
+            
+        end
+    end
+
+    local function Copy_and_Properties ()
+        if not LE.Sel_Items[1] then return end 
+        if im.ImageButton(ctx, '## Copy', Img.Copy, BtnSz, BtnSz) then
+            local I = FX[FxGUID][LE.Sel_Items[1]]
+            CopyPrm = {}
+            CopyPrm = I.Link and I.Link or I
+        end
+
+        if CopyPrm  then 
+            local FS = FX[FxGUID][LE.Sel_Items[1]]
+            im.InvisibleButton(ctx, '## paste arrow', BtnSz, BtnSz)
+            DrawArrow(nil,nil,nil,nil, 2)
+            if im.ImageButton(ctx, '## paste', Img.Paste, BtnSz, BtnSz) then
+                Create_Undo_Point('Paste Properties', FxGUID)
+                for i, v in pairs(LE.Sel_Items) do
+                    local I = FX[FxGUID][v]
+                    I.Type        = CopyPrm.Type
+                    I.Sldr_W      = CopyPrm.Sldr_W
+                    I.Style       = CopyPrm.Style
+                    I.V_FontSize  = CopyPrm.V_FontSize
+                    --I.CustomLbl   = CopyPrm.CustomLbl
+                    I.Image       = CopyPrm.Image
+                    I.AtchImgFileNm = CopyPrm.AtchImgFileNm
+                    I.FontSize    = CopyPrm.FontSize
+                    I.Sldr_H      = CopyPrm.Sldr_H
+                    I.BgClr       = CopyPrm.BgClr
+                    I.GrbClr      = CopyPrm.GrbClr
+                    I.Lbl_Pos     = CopyPrm.Lbl_Pos
+                    I.Lbl_Pos_X   = CopyPrm.Lbl_Pos_X
+                    I.Lbl_Pos_Y   = CopyPrm.Lbl_Pos_Y
+                    I.V_Pos       = CopyPrm.V_Pos
+                    I.Lbl_Clr     = CopyPrm.Lbl_Clr
+                    I.V_Clr       = CopyPrm.V_Clr
+                    I.DragDir     = CopyPrm.DragDir
+                    I.Value_Thick = CopyPrm.Value_Thick
+                    I.V_Pos_X     = CopyPrm.V_Pos_X
+                    I.V_Pos_Y     = CopyPrm.V_Pos_Y
+                    
+                    I.ImgFilesName   = CopyPrm.ImgFilesName
+                    I.ImgAngleMinOfs = CopyPrm.ImgAngleMinOfs
+                    I.DontReotateImg = CopyPrm.DontReotateImg
+                    I.Height      = CopyPrm.Height
+                    I.Invisible = CopyPrm.Invisible
+                    I.V_Clr_At_Full = CopyPrm.V_Clr_At_Full
+                    I.Lbl_Clr_At_Full = CopyPrm.Lbl_Clr_At_Full
+                    I.XY_Pad_Y_PNum = CopyPrm.XY_Pad_Y_PNum
+                    I.V_Round = CopyPrm.V_Round
+
+
+                    --arrows
+                    I.AddArrows = CopyPrm.AddArrows
+                    I.ArrowPic = CopyPrm.ArrowPic
+                    I.ArrowPicFileName= CopyPrm.ArrowPicFileName
+
+
+                    I.Conditions = DeepCopy(CopyPrm.Conditions)
+                    I.Switch_On_Clr = CopyPrm.Switch_On_Clr
+
+                    -- font related
+                    I.Lbl_FONT    = CopyPrm.Lbl_FONT
+                    I.Val_FONT    = CopyPrm.Val_FONT
+                    I.Lbl_Italic  = CopyPrm.Lbl_Italic
+                    I.Val_Italic  = CopyPrm.Val_Italic
+                    I.Lbl_Bold    = CopyPrm.Lbl_Bold
+                    I.Val_Bold    = CopyPrm.Val_Bold
+
+
+                    --  switch
+                    I.SwitchType = CopyPrm.SwitchType
+                    I.SwitchTargV = CopyPrm.SwitchTargV
+                    I.SwitchBaseV = CopyPrm.SwitchBaseV
+
+                    if I.Conditions then 
+                        for i, v in ipairs(I.Conditions) do
+
+                            local i = i==1 and '' or i
+                            local Prm = CopyPrm['ConditionPrm' .. i]
+                            I['ConditionPrm' .. i] = Prm
+                            I['ConditionPrm_V'.. i] = CopyPrm['ConditionPrm_V'.. i]
+                            I['ConditionPrm_V_Norm'.. i] = CopyPrm['ConditionPrm_V_Norm'.. i]
+                        end
+                    end
+
+                    if CopyPrm.Draw then
+                        -- use this line to pool
+                        --I.Draw = CopyPrm.Draw
+                        I.Draw = I.Draw or {}
+                        for i, v in pairs(CopyPrm.Draw) do
+                            I.Draw[i] = {}
+                            for d, v in pairs(v) do
+                                I.Draw[i][d] = v
+                            end
+                        end
+                    end
+                end
+            end
+            if im.Button(ctx, 'Link',  nil, BtnSz * 1.25 ) then 
+                for i, v in pairs(LE.Sel_Items) do
+                    FX[FxGUID][v].Link = CopyPrm
+                end
+            end
+            Tooltip_If_Itm_Hvr('Link ' .. (FS.CustomLbl or FS.Name) ..'\'s properties to '.. (CopyPrm.CustomLbl or CopyPrm.Name or ''))
+        end
+    end
+    local function LayEdit_and_Backrgound_Edit_Undo_Button()
+        if Draw.DrawMode or FX.LayEdit then
+            LE.Undo_Points = LE.Undo_Points or {}
+            if #LE.Undo_Points > 0 then
+                local str = ( 'Undo ' .. LE.Undo_Points[#LE.Undo_Points].Undo_Pt_Name)
+                if im.ImageButton(ctx, 'Undo', Img.Undo, BtnSz , BtnSz , nil,nil,nil,nil, nil) then
     
+                    FX[FX.LayEdit] = DeepCopy (LE.Undo_Points[#LE.Undo_Points])
+                    table.remove(LE.Undo_Points, #LE.Undo_Points)
+    
+                end
+                Tooltip_If_Itm_Hvr(str)
+            end
+        end
+    end
+    LayEdit_and_Backrgound_Edit_Undo_Button()
     Grid_Adjust_Btns()
+    im.PushStyleVar(ctx, im.StyleVar_FramePadding, 10, 2)
+    Delete()
+    Copy_and_Properties ()
+    im.PopStyleVar(ctx)
     Align_Btns()
     Equalize_Btns()
     Swap_Btns()
+    
 
     im.Separator(ctx)
 
@@ -277,16 +431,29 @@ end
 
 function Align(Sel_Itms, TB, index, Min_or_Max)
     local tb = {}
+
     for i, v in ipairs(Sel_Itms) do 
-        table.insert(tb, TB[v][index])
+        local indx = type(v)== 'table' and v[index] or TB[v][index]
+
+
+        table.insert(tb, indx)
     end
     local min = math.min(table.unpack(tb))
     local max = math.max(table.unpack(tb))
     for i, v in ipairs(Sel_Itms) do
-        if Min_or_Max == 'Max' then
-            TB[v][index] = max
-        elseif Min_or_Max == 'Min' then
-            TB[v][index] = min
+        local indx = type(v)== 'table' and v[index] or TB[v][index]
+        if type(v)== 'table' then 
+            if Min_or_Max == 'Max' then
+                v[index] = max
+            elseif Min_or_Max == 'Min' then
+                v[index] = min
+            end
+        else 
+            if Min_or_Max == 'Max' then
+                TB[v][index] = max
+            elseif Min_or_Max == 'Min' then
+                TB[v][index] = min
+            end
         end
     end
 end
@@ -303,7 +470,7 @@ function Backrgound_Edit_MenuBar_Buttons()
         local function Preview(preview_str, func, ...)
             if im.IsItemHovered(ctx) then 
                 if not FX[FxGUID].Draw.Preview then
-                    FX[FxGUID].Draw.Preview = deepCopy(FX[FxGUID].Draw)
+                    FX[FxGUID].Draw.Preview = DeepCopy(FX[FxGUID].Draw)
                 else 
                     func(...)
                     Draw.Preview = preview_str
@@ -385,27 +552,14 @@ function ShowTrackName(Condition)
     end
 end 
 
-function LayEdit_and_Backrgound_Edit_Undo_Button()
-    if Draw.DrawMode or FX.LayEdit then
-        LE.Undo_Points = LE.Undo_Points or {}
-        if #LE.Undo_Points > 0 then
-            if im.Button(ctx, ( 'Undo ' .. LE.Undo_Points[#LE.Undo_Points].Undo_Pt_Name)) then
 
-                    FX[FX.LayEdit] = deepCopy (LE.Undo_Points[#LE.Undo_Points])
-                    table.remove(LE.Undo_Points, #LE.Undo_Points)
-
-            end
-        end
-    end
-end
 
 
 
 
 local function Modulation_Btn()
-    local y = im.GetCursorPosY(ctx)
-    im.SetCursorPosY(ctx, y + 3)
-    local ModIconSz = 20
+
+    local ModIconSz = 14
     if not TrkID then return end 
     Trk[TrkID] = Trk[TrkID] or {}
     local clr =  Trk[TrkID].ShowMOD and ThemeClr('Accent_Clr') or 0xffffffff
@@ -413,13 +567,12 @@ local function Modulation_Btn()
     im.PushStyleColor(ctx, im.Col_Button, 0x00000000)
 
 
-    if im.ImageButton(ctx, '##', Img.ModIconHollow, ModIconSz , ModIconSz*0.46, nil, nil, nil, nil, 0x00000000, clr) then 
+    if im.ImageButton(ctx, '##', Img.ModIconHollow, ModIconSz , ModIconSz, nil, nil, nil, nil, 0x00000000, clr) then 
         Trk[TrkID].ShowMOD= toggle( Trk[TrkID].ShowMOD)
         AddMacroJSFX()
         r.GetSetMediaTrackInfo_String(LT_Track, 'P_EXT: Show Modulations' ,'true', true)
     end
     im.PopStyleColor(ctx)
-    im.SetCursorPosY(ctx, y)
 
 
 
@@ -432,7 +585,6 @@ function MenuBar ()
 
     im.PushStyleVar(ctx, im.StyleVar_FrameRounding, 4)
     im.PushStyleVar(ctx, im.StyleVar_FrameBorderSize, 2)
-    LayEdit_and_Backrgound_Edit_Undo_Button()
 
     Layout_Edit_MenuBar_Buttons()
     Backrgound_Edit_MenuBar_Buttons()

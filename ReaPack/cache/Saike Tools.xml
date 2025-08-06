@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Saike Tools" commit="867fa7526b29b063f62184eadce36fa1eb2d2d86">
+<index version="1" name="Saike Tools" commit="9348b4203c1f80e500c95172f13addfe5e24e9eb">
   <category name="Abyss">
     <reapack name="saike_abyss.jsfx" type="effect" desc="Abyss Reverb (Saike) [BETA]">
       <version name="0.01" author="Joep Vanlier" time="2021-06-13T15:05:07Z">
@@ -308,6 +308,39 @@
         <source file="Amaranth_Dependencies/Amaranth_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/7f7bd661fe6d5b20eae865c56038e170ddc77112/Amaranth/Amaranth_Dependencies/Amaranth_widgets.jsfx-inc</source>
         <source file="Amaranth_Dependencies/Logo4.png">https://github.com/JoepVanlier/JSFX/raw/7f7bd661fe6d5b20eae865c56038e170ddc77112/Amaranth/Amaranth_Dependencies/Logo4.png</source>
       </version>
+      <version name="0.30" author="Joep Vanlier" time="2025-03-29T14:50:27Z">
+        <changelog><![CDATA[Add preprocessor option to use fixed seed on init.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth.jsfx</source>
+        <source file="Amaranth_Dependencies/Amaranth_envelopes.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth_Dependencies/Amaranth_envelopes.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth_Dependencies/Amaranth_filters.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_grainlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth_Dependencies/Amaranth_grainlib.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_mouse.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth_Dependencies/Amaranth_mouse.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth_Dependencies/Amaranth_widgetdata.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth_Dependencies/Amaranth_widgets.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Logo4.png">https://github.com/JoepVanlier/JSFX/raw/3924f66fa0137625cb7797c2ce0232f4ff5e1d69/Amaranth/Amaranth_Dependencies/Logo4.png</source>
+      </version>
+      <version name="0.31" author="Joep Vanlier" time="2025-03-31T19:46:16Z">
+        <changelog><![CDATA[Fix cropping bug.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth.jsfx</source>
+        <source file="Amaranth_Dependencies/Amaranth_envelopes.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth_Dependencies/Amaranth_envelopes.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth_Dependencies/Amaranth_filters.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_grainlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth_Dependencies/Amaranth_grainlib.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_mouse.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth_Dependencies/Amaranth_mouse.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth_Dependencies/Amaranth_widgetdata.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth_Dependencies/Amaranth_widgets.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Logo4.png">https://github.com/JoepVanlier/JSFX/raw/52567c60a9084d0b4085aa60fe6369821ff1e3da/Amaranth/Amaranth_Dependencies/Logo4.png</source>
+      </version>
+      <version name="0.32" author="Joep Vanlier" time="2025-04-01T18:57:38Z">
+        <changelog><![CDATA[Fix logo filename capitalization.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth.jsfx</source>
+        <source file="Amaranth_Dependencies/Amaranth_envelopes.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth_Dependencies/Amaranth_envelopes.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth_Dependencies/Amaranth_filters.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_grainlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth_Dependencies/Amaranth_grainlib.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_mouse.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth_Dependencies/Amaranth_mouse.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth_Dependencies/Amaranth_widgetdata.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Amaranth_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth_Dependencies/Amaranth_widgets.jsfx-inc</source>
+        <source file="Amaranth_Dependencies/Logo4.png">https://github.com/JoepVanlier/JSFX/raw/61aa97d6141601e4ba5e15daed4682315de5e1ea/Amaranth/Amaranth_Dependencies/Logo4.png</source>
+      </version>
     </reapack>
   </category>
   <category name="Basics">
@@ -477,6 +510,10 @@ here
       <version name="1.05" author="Joep Vanlier" time="2021-11-20T13:42:49Z">
         <changelog><![CDATA[Small syntax fix]]></changelog>
         <source>https://github.com/JoepVanlier/JSFX/raw/8732560e3598cfe18a012d41bbf12fce05f514bc/Basics/MS-20.jsfx</source>
+      </version>
+      <version name="1.06" author="Joep Vanlier" time="2025-04-10T20:23:29Z">
+        <changelog><![CDATA[Fix Jacobian]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/f13d210af3e5fff22012701e94540921dbac6af0/Basics/MS-20.jsfx</source>
       </version>
     </reapack>
     <reapack name="Saike Stereo Bub II.jsfx" type="effect" desc="Saike Stereo Bub II Stereoizer">
@@ -651,6 +688,11 @@ here
         <changelog><![CDATA[fix division by zero in ACF part]]></changelog>
         <source>https://github.com/JoepVanlier/JSFX/raw/867fa7526b29b063f62184eadce36fa1eb2d2d86/Basics/Saike_Pitch_Shift.jsfx</source>
         <source file="saike_pitchlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/867fa7526b29b063f62184eadce36fa1eb2d2d86/Basics/saike_pitchlib.jsfx-inc</source>
+      </version>
+      <version name="0.04" author="Joep Vanlier" time="2025-03-31T19:58:37Z">
+        <changelog><![CDATA[add snapping to semitone option]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/d04c5ea17825df9256d3a82eecbe89944b9b8fb2/Basics/Saike_Pitch_Shift.jsfx</source>
+        <source file="saike_pitchlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/d04c5ea17825df9256d3a82eecbe89944b9b8fb2/Basics/saike_pitchlib.jsfx-inc</source>
       </version>
     </reapack>
     <reapack name="Saike_Routing_Utility.jsfx" type="effect" desc="Saike Monitor Routing Utility [ALPHA]">
@@ -1467,6 +1509,32 @@ Screenshot
         <source file="bab_dependencies/saike_bab_settings.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/274a6cffb00f9c07971a0b8fca4c6579fef1e34d/bric-a-brac/bab_dependencies/saike_bab_settings.jsfx-inc</source>
         <source file="bab_dependencies/saike_bab_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/274a6cffb00f9c07971a0b8fca4c6579fef1e34d/bric-a-brac/bab_dependencies/saike_bab_widgetdata.jsfx-inc</source>
         <source file="bab_dependencies/saike_bab_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/274a6cffb00f9c07971a0b8fca4c6579fef1e34d/bric-a-brac/bab_dependencies/saike_bab_widgets.jsfx-inc</source>
+      </version>
+      <version name="0.47" author="Joep Vanlier" time="2025-03-08T14:43:02Z">
+        <changelog><![CDATA[Fix pan step size. Add option to send audio to multiple channels.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/saike_bric_a_brac.jsfx</source>
+        <source file="bab_dependencies/saike_bab_LFOs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_LFOs.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_buffer_plotting.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_buffer_plotting.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_filters.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_palettes.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_palettes.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_playback.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_playback.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_sample_editor.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_sample_editor.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_settings.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_settings.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_widgetdata.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/61f51facdd2332e9b96ac0f617d1183b5e643960/bric-a-brac/bab_dependencies/saike_bab_widgets.jsfx-inc</source>
+      </version>
+      <version name="0.48" author="Joep Vanlier" time="2025-03-08T22:58:58Z">
+        <changelog><![CDATA[Fix LFO mapping issue.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/saike_bric_a_brac.jsfx</source>
+        <source file="bab_dependencies/saike_bab_LFOs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_LFOs.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_buffer_plotting.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_buffer_plotting.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_filters.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_palettes.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_palettes.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_playback.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_playback.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_sample_editor.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_sample_editor.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_settings.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_settings.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_widgetdata.jsfx-inc</source>
+        <source file="bab_dependencies/saike_bab_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/bfb3461371b7b63c8d27951932fac4c662cfe95f/bric-a-brac/bab_dependencies/saike_bab_widgets.jsfx-inc</source>
       </version>
     </reapack>
   </category>
@@ -2913,6 +2981,11 @@ major bugfix extrapolation]]></changelog>
         <source>https://github.com/JoepVanlier/JSFX/raw/db51c9434c6ee693419c921d7a6e2a33b7f30c70/Filther/Filther.jsfx</source>
         <source file="Filther.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/db51c9434c6ee693419c921d7a6e2a33b7f30c70/Filther/Filther.jsfx.rpl</source>
       </version>
+      <version name="3.20" author="Joep Vanlier" time="2025-04-10T20:23:29Z">
+        <changelog><![CDATA[Fix typo in Jacobian (thanks ...!)]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/f13d210af3e5fff22012701e94540921dbac6af0/Filther/Filther.jsfx</source>
+        <source file="Filther.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/f13d210af3e5fff22012701e94540921dbac6af0/Filther/Filther.jsfx.rpl</source>
+      </version>
     </reapack>
   </category>
   <category name="FinalBoss">
@@ -3639,6 +3712,18 @@ major bugfix extrapolation]]></changelog>
         <source file="Lava_Dependencies/saike_lava_pitchlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c4f6629d3661bcc0ea7f77a9c3fda13c9165f672/lavaverb/Lava_Dependencies/saike_lava_pitchlib.jsfx-inc</source>
         <source file="Lava_Dependencies/saike_lava_verb.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c4f6629d3661bcc0ea7f77a9c3fda13c9165f672/lavaverb/Lava_Dependencies/saike_lava_verb.jsfx-inc</source>
         <source file="saike_lava.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/c4f6629d3661bcc0ea7f77a9c3fda13c9165f672/lavaverb/saike_lava.jsfx.rpl</source>
+      </version>
+      <version name="0.28" author="Joep Vanlier" time="2025-04-19T17:57:36Z">
+        <changelog><![CDATA[Don't use gfx functions outside of @gfx]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/saike_lava.jsfx</source>
+        <source file="Lava_Dependencies/saike_fft_verb.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/Lava_Dependencies/saike_fft_verb.jsfx-inc</source>
+        <source file="Lava_Dependencies/saike_lava_cabs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/Lava_Dependencies/saike_lava_cabs.jsfx-inc</source>
+        <source file="Lava_Dependencies/saike_lava_delays.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/Lava_Dependencies/saike_lava_delays.jsfx-inc</source>
+        <source file="Lava_Dependencies/saike_lava_fluid.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/Lava_Dependencies/saike_lava_fluid.jsfx-inc</source>
+        <source file="Lava_Dependencies/saike_lava_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/Lava_Dependencies/saike_lava_gfx.jsfx-inc</source>
+        <source file="Lava_Dependencies/saike_lava_pitchlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/Lava_Dependencies/saike_lava_pitchlib.jsfx-inc</source>
+        <source file="Lava_Dependencies/saike_lava_verb.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/Lava_Dependencies/saike_lava_verb.jsfx-inc</source>
+        <source file="saike_lava.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/b71575017be404a845e1a45c92cab276032dec84/lavaverb/saike_lava.jsfx.rpl</source>
       </version>
     </reapack>
   </category>
@@ -5893,6 +5978,24 @@ major bugfix extrapolation]]></changelog>
         <source file="protosynth_dependencies/saike_proto_synth_wt.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/f91afa7065bfd5462e721bb0b5dce1a5436e8051/protosynth/protosynth_dependencies/saike_proto_synth_wt.jsfx-inc</source>
         <source file="saike_protosynth.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/f91afa7065bfd5462e721bb0b5dce1a5436e8051/protosynth/saike_protosynth.jsfx.rpl</source>
       </version>
+      <version name="0.55" author="Joep Vanlier" time="2025-03-09T20:15:29Z">
+        <changelog><![CDATA[Fixed bug in anti-aliasing code for DSF waveshapes. This could lead the individual waveforms going out of phase leading to excessive aliasing when played at very high pitches.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/saike_protosynth.jsfx</source>
+        <source file="protosynth_dependencies/bigfont_caps.png">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/bigfont_caps.png</source>
+        <source file="protosynth_dependencies/bigfont_caps3.png">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/bigfont_caps3.png</source>
+        <source file="protosynth_dependencies/font.png">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/font.png</source>
+        <source file="protosynth_dependencies/saike_proto_diffusion.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_diffusion.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_stft_fx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_stft_fx.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_filters.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_fx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_fx.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_kp_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_kp_midi.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_os_nl_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_os_nl_filters.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_oscillators.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_oscillators.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_pixel_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_pixel_gfx.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_spreader.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_spreader.jsfx-inc</source>
+        <source file="protosynth_dependencies/saike_proto_synth_wt.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/protosynth_dependencies/saike_proto_synth_wt.jsfx-inc</source>
+        <source file="saike_protosynth.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/345e5a8b2a5bcbda3f9da26cae8ac765df72bb6f/protosynth/saike_protosynth.jsfx.rpl</source>
+      </version>
     </reapack>
   </category>
   <category name="Ravager">
@@ -7162,6 +7265,27 @@ here
         <source file="midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/0effd0ddb0b83a77f5bad6ea0ded7fc7f8d2dce4/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc</source>
         <source file="midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/0effd0ddb0b83a77f5bad6ea0ded7fc7f8d2dce4/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc</source>
       </version>
+      <version name="0.42" author="Joep Vanlier" time="2025-01-10T00:35:34Z">
+        <changelog><![CDATA[Improve undo state handling.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/saike_midi_arp/saike_midi_arp.jsfx</source>
+        <source file="midi_arp_dependencies/saike_arp_midi_handling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/saike_midi_arp/midi_arp_dependencies/saike_arp_midi_handling.jsfx-inc</source>
+        <source file="midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc</source>
+        <source file="midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc</source>
+      </version>
+      <version name="0.43" author="Joep Vanlier" time="2025-06-05T20:44:17Z">
+        <changelog><![CDATA[Expose pattern loop length as modulatable parameter.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/1660b823ac4f00cd91888518d108da9ffb017f88/saike_midi_arp/saike_midi_arp.jsfx</source>
+        <source file="midi_arp_dependencies/saike_arp_midi_handling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/1660b823ac4f00cd91888518d108da9ffb017f88/saike_midi_arp/midi_arp_dependencies/saike_arp_midi_handling.jsfx-inc</source>
+        <source file="midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/1660b823ac4f00cd91888518d108da9ffb017f88/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc</source>
+        <source file="midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/1660b823ac4f00cd91888518d108da9ffb017f88/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc</source>
+      </version>
+      <version name="0.44" author="Joep Vanlier" time="2025-06-05T21:34:28Z">
+        <changelog><![CDATA[Add option to reset play position with CC trigger (right click on menu to enable). To only trigger on CC's, set to "Free" mode and then enable Reset position on CC (and pick a CC value to trigger on).]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/9348b4203c1f80e500c95172f13addfe5e24e9eb/saike_midi_arp/saike_midi_arp.jsfx</source>
+        <source file="midi_arp_dependencies/saike_arp_midi_handling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9348b4203c1f80e500c95172f13addfe5e24e9eb/saike_midi_arp/midi_arp_dependencies/saike_arp_midi_handling.jsfx-inc</source>
+        <source file="midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9348b4203c1f80e500c95172f13addfe5e24e9eb/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_gfx_funcs.jsfx-inc</source>
+        <source file="midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9348b4203c1f80e500c95172f13addfe5e24e9eb/saike_midi_arp/midi_arp_dependencies/saike_midi_arp_pattern_handling.jsfx-inc</source>
+      </version>
     </reapack>
   </category>
   <category name="saikedrums">
@@ -7343,6 +7467,29 @@ here
         <source file="saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/8e47fef55f1f6cdbc6e6923ff226d3282ef9b7b6/saikedrums/saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc</source>
         <source file="saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/8e47fef55f1f6cdbc6e6923ff226d3282ef9b7b6/saikedrums/saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc</source>
         <source file="saikedrums.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/8e47fef55f1f6cdbc6e6923ff226d3282ef9b7b6/saikedrums/saikedrums.jsfx.rpl</source>
+      </version>
+      <version name="0.16" author="Joep Vanlier" time="2025-03-22T14:32:32Z">
+        <changelog><![CDATA[Added extra cymbal option]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums.jsfx</source>
+        <source file="saikedrums_dependencies/font.png">https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums_dependencies/font.png</source>
+        <source file="saikedrums_dependencies/saikedrums_basic_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums_dependencies/saikedrums_basic_filters.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_drum_elements.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums_dependencies/saikedrums_drum_elements.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_freq_shift.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums_dependencies/saikedrums_freq_shift.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc</source>
+        <source file="saikedrums.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/24afad2663087ec362b1d6e4de6607ed03d46b82/saikedrums/saikedrums.jsfx.rpl</source>
+      </version>
+      <version name="0.18" author="Joep Vanlier" time="2025-03-22T23:44:03Z">
+        <changelog><![CDATA[Add option to load custom samples on some of the pads (clap, cymbal, closed hat, open hat, shaker and rim), simply drag and drop from the media bay. Added extra default shaker sound.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums.jsfx</source>
+        <source file="saikedrums_dependencies/font.png">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/font.png</source>
+        <source file="saikedrums_dependencies/saikedrums_basic_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/saikedrums_basic_filters.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_drum_elements.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/saikedrums_drum_elements.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_freq_shift.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/saikedrums_freq_shift.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_sample_playback.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/saikedrums_sample_playback.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc</source>
+        <source file="saikedrums.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums.jsfx.rpl</source>
       </version>
     </reapack>
   </category>
@@ -8639,6 +8786,18 @@ here
         <source file="seqs_dependencies/saike_seqs_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/f0096d34e1c45be592e4dc4103c2993b6b1b6df6/SequencedFX/seqs_dependencies/saike_seqs_widgetdata.jsfx-inc</source>
         <source file="seqs_dependencies/saike_seqs_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/f0096d34e1c45be592e4dc4103c2993b6b1b6df6/SequencedFX/seqs_dependencies/saike_seqs_widgets.jsfx-inc</source>
       </version>
+      <version name="0.126" author="Joep Vanlier" time="2025-01-10T00:35:34Z">
+        <changelog><![CDATA[Improve undo state handling.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/SequencedFX.jsfx</source>
+        <source file="seqs_dependencies/saike_seqs_delays.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_delays.jsfx-inc</source>
+        <source file="seqs_dependencies/saike_seqs_envelope.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_envelope.jsfx-inc</source>
+        <source file="seqs_dependencies/saike_seqs_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_filters.jsfx-inc</source>
+        <source file="seqs_dependencies/saike_seqs_interpolators.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_interpolators.jsfx-inc</source>
+        <source file="seqs_dependencies/saike_seqs_midilib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_midilib.jsfx-inc</source>
+        <source file="seqs_dependencies/saike_seqs_pitchlib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_pitchlib.jsfx-inc</source>
+        <source file="seqs_dependencies/saike_seqs_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_widgetdata.jsfx-inc</source>
+        <source file="seqs_dependencies/saike_seqs_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/79b9c9e9b25db95920d5c10c73d4e6801414441a/SequencedFX/seqs_dependencies/saike_seqs_widgets.jsfx-inc</source>
+      </version>
     </reapack>
   </category>
   <category name="SpectrumAnalyzer">
@@ -9044,6 +9203,11 @@ here
         <changelog><![CDATA[Make sure all apodization windows are accessible through clicking. Minor tweaks regarding visibility frequency axis. Support renaming channels. Click the channel while holding CTRL and start typing. Allow modifying the number of active tracks. Serialize stored track colors and names so that you don't have to hit LoadSpectrum every time.]]></changelog>
         <source>https://github.com/JoepVanlier/JSFX/raw/e96a3f887cf31d8ad85662cb950d6a4dcdcfa676/SpectrumAnalyzer/SaikeMultiSpectralAnalyzer.jsfx</source>
         <source file="colormaps.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/e96a3f887cf31d8ad85662cb950d6a4dcdcfa676/SpectrumAnalyzer/colormaps.jsfx-inc</source>
+      </version>
+      <version name="5.0.40" author="Joep Vanlier, Trond-Viggo Melssen, Cockos, Feed The Cat" time="2025-02-01T14:13:49Z">
+        <changelog><![CDATA[Store number of custom tracks that are open.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/5e2ee6c42068b9086ab865c7fa4f482c2049f215/SpectrumAnalyzer/SaikeMultiSpectralAnalyzer.jsfx</source>
+        <source file="colormaps.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/5e2ee6c42068b9086ab865c7fa4f482c2049f215/SpectrumAnalyzer/colormaps.jsfx-inc</source>
       </version>
     </reapack>
     <reapack name="SaikeMultiSpectralAnalyzer_MK2.jsfx" type="effect" desc="Saike Spectral Analyzer (Alternative)">
@@ -11437,6 +11601,26 @@ Screenshot
         <source file="Yutani_Dependencies/Saike_Yutani_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/1e972149df86bd69cc3fab52af855f29aaf16021/Yutani/Yutani_Dependencies/Saike_Yutani_widgets.jsfx-inc</source>
         <source file="bass_presets.rpl">https://github.com/JoepVanlier/JSFX/raw/1e972149df86bd69cc3fab52af855f29aaf16021/Yutani/bass_presets.rpl</source>
         <source file="Saike_Yutani.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/1e972149df86bd69cc3fab52af855f29aaf16021/Yutani/Saike_Yutani.jsfx.rpl</source>
+      </version>
+      <version name="0.102" author="Joep Vanlier" time="2025-02-01T14:13:26Z">
+        <changelog><![CDATA[Fix up slider count for oscillators.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Saike_Yutani.jsfx</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_Delays.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_Delays.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_Envelope.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_Envelope.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_Filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_Filters.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_LFOs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_LFOs.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_Oscs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_Oscs.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_WT.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_WT.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_distortion.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_distortion.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_interpolators.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_interpolators.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_midilib.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_midilib.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_oversampling.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_oversampling.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_sample_delay_buffer.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_sample_delay_buffer.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_upsamplers.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_upsamplers.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_widgetdata.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_widgetdata.jsfx-inc</source>
+        <source file="Yutani_Dependencies/Saike_Yutani_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Yutani_Dependencies/Saike_Yutani_widgets.jsfx-inc</source>
+        <source file="bass_presets.rpl">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/bass_presets.rpl</source>
+        <source file="Saike_Yutani.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/9513c5bba4c65ff969e0a5b3ae5b25938c87ea62/Yutani/Saike_Yutani.jsfx.rpl</source>
       </version>
     </reapack>
   </category>

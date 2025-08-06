@@ -1,0 +1,424 @@
+return {
+-- Table: {1}
+{
+   ["version"]="1.8.3",
+   ["settings"]={2},
+   ["stems"]={3},
+},
+-- Table: {2}
+{
+   ["wait_time"]=5,
+   ["overwrite_without_asking"]=true,
+   ["renderaction"]=3,
+   ["reflect_on_add"]=0,
+   ["syncmode"]=0,
+   ["show_hidden_tracks"]=false,
+   ["render_setting_groups"]={4},
+   ["play_sound_when_done"]=false,
+},
+-- Table: {3}
+{
+   ["2MIX_CUEDB"]={5},
+   ["Video"]={6},
+   ["2MIX"]={7},
+},
+-- Table: {4}
+{
+   {8},
+   {9},
+   {10},
+   {11},
+   {12},
+   {13},
+   {14},
+   {15},
+   {16},
+},
+-- Table: {5}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=6,
+   ["order"]=3,
+},
+-- Table: {6}
+{
+   ["sync"]=-1,
+   ["order"]=1,
+   ["render_setting_group"]=8,
+},
+-- Table: {7}
+{
+   ["sync"]=-1,
+   ["order"]=2,
+   ["render_setting_group"]=7,
+},
+-- Table: {8}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Mix",
+   ["filename"]="",
+   ["run_actions"]=false,
+   ["actions_to_run"]={17},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={18},
+   ["select_regions"]=true,
+   ["description"]="MIX",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={19},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=true,
+   ["skip_empty_stems"]=true,
+   ["select_markers"]=false,
+   ["folder"]="",
+   ["selected_markers"]={20},
+},
+-- Table: {9}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Skinny Stems Dry",
+   ["filename"]="$project/skinny stems/skinny stems dry/$project - $starttc - Skinny - $stem",
+   ["run_actions"]=false,
+   ["actions_to_run"]={21},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={22},
+   ["select_regions"]=true,
+   ["description"]="skinny stems dry",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={23},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=true,
+   ["skip_empty_stems"]=true,
+   ["select_markers"]=false,
+   ["folder"]="",
+   ["selected_markers"]={24},
+},
+-- Table: {10}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Skinny Stems Wet",
+   ["filename"]="$project/skinny stems/skinny stems wet/$project - $starttc - Skinny - $stem",
+   ["run_actions"]=false,
+   ["actions_to_run"]={25},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={26},
+   ["select_regions"]=true,
+   ["description"]="skinny stems wet",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={27},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=true,
+   ["skip_empty_stems"]=true,
+   ["select_markers"]=false,
+   ["folder"]="",
+   ["selected_markers"]={28},
+},
+-- Table: {11}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM wide stems selected dry",
+   ["filename"]="$project - $starttc - Wide - $track $stem",
+   ["run_actions"]=false,
+   ["actions_to_run"]={29},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={30},
+   ["select_regions"]=true,
+   ["description"]="selected stems dry",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={31},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["select_markers"]=false,
+   ["folder"]="$project/wide stems/wide stems dry",
+   ["selected_markers"]={32},
+},
+-- Table: {12}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM wide stems selected wet",
+   ["filename"]="$project - $starttc - Wide - $track $stem",
+   ["run_actions"]=false,
+   ["actions_to_run"]={33},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={34},
+   ["select_regions"]=true,
+   ["description"]="selected stems wet",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={35},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["select_markers"]=false,
+   ["folder"]="$project/wide stems/wide stems wet",
+   ["selected_markers"]={36},
+},
+-- Table: {13}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Audio Watch Folder",
+   ["skip_empty_stems"]=true,
+   ["run_actions"]=false,
+   ["actions_to_run"]={37},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=true,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={38},
+   ["select_regions"]=true,
+   ["description"]="",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={39},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["select_markers"]=false,
+   ["selected_markers"]={40},
+   ["folder"]="NPC DB Watch Folder/NPC CueDB Watch Folder",
+   ["filename"]="",
+},
+-- Table: {14}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Mix 96",
+   ["skip_empty_stems"]=true,
+   ["run_actions"]=false,
+   ["actions_to_run"]={41},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={42},
+   ["select_regions"]=true,
+   ["description"]="",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={43},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["select_markers"]=false,
+   ["selected_markers"]={44},
+   ["folder"]="NPC DB Watch Folder/NPC CueDB Watch Folder",
+   ["filename"]="",
+},
+-- Table: {15}
+{
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Video Watch Folder",
+   ["filename"]="",
+   ["run_actions"]=false,
+   ["actions_to_run"]={45},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=true,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={46},
+   ["select_regions"]=true,
+   ["description"]="",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={47},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["skip_empty_stems"]=true,
+   ["select_markers"]=false,
+   ["folder"]="NPC DB Watch Folder/NPC CueDB Watch Folder",
+   ["selected_markers"]={48},
+},
+-- Table: {16}
+{
+   ["make_timeSel"]=false,
+   ["skip_empty_stems"]=true,
+   ["run_actions"]=false,
+   ["actions_to_run"]={49},
+   ["timeSelStart"]=0,
+   ["put_in_folder"]=false,
+   ["timeSelEnd"]=0,
+   ["selected_regions"]={50},
+   ["select_regions"]=false,
+   ["description"]="",
+   ["run_actions_after"]=false,
+   ["actions_to_run_after"]={51},
+   ["ignore_warnings"]=false,
+   ["override_filename"]=false,
+   ["select_markers"]=false,
+   ["selected_markers"]={52},
+   ["folder"]="",
+   ["filename"]="",
+},
+-- Table: {17}
+{
+},
+-- Table: {18}
+{
+   {53},
+},
+-- Table: {19}
+{
+},
+-- Table: {20}
+{
+},
+-- Table: {21}
+{
+},
+-- Table: {22}
+{
+   {54},
+},
+-- Table: {23}
+{
+},
+-- Table: {24}
+{
+},
+-- Table: {25}
+{
+},
+-- Table: {26}
+{
+   {55},
+},
+-- Table: {27}
+{
+},
+-- Table: {28}
+{
+},
+-- Table: {29}
+{
+},
+-- Table: {30}
+{
+   {56},
+},
+-- Table: {31}
+{
+},
+-- Table: {32}
+{
+},
+-- Table: {33}
+{
+},
+-- Table: {34}
+{
+   {57},
+},
+-- Table: {35}
+{
+},
+-- Table: {36}
+{
+},
+-- Table: {37}
+{
+},
+-- Table: {38}
+{
+   {58},
+},
+-- Table: {39}
+{
+},
+-- Table: {40}
+{
+},
+-- Table: {41}
+{
+},
+-- Table: {42}
+{
+   {59},
+},
+-- Table: {43}
+{
+},
+-- Table: {44}
+{
+},
+-- Table: {45}
+{
+},
+-- Table: {46}
+{
+   {60},
+},
+-- Table: {47}
+{
+},
+-- Table: {48}
+{
+},
+-- Table: {49}
+{
+},
+-- Table: {50}
+{
+},
+-- Table: {51}
+{
+},
+-- Table: {52}
+{
+},
+-- Table: {53}
+{
+   ["selected"]=true,
+   ["id"]="R1",
+   ["is_rgn"]=true,
+   ["name"]="1m01 - Crazy World",
+},
+-- Table: {54}
+{
+   ["selected"]=true,
+   ["id"]="R22",
+   ["is_rgn"]=true,
+   ["name"]="1m25 - Paleo Mind",
+},
+-- Table: {55}
+{
+   ["selected"]=true,
+   ["id"]="R22",
+   ["is_rgn"]=true,
+   ["name"]="1m25 - Paleo Mind",
+},
+-- Table: {56}
+{
+   ["selected"]=true,
+   ["id"]="R1",
+   ["is_rgn"]=true,
+   ["name"]="",
+},
+-- Table: {57}
+{
+   ["selected"]=true,
+   ["id"]="R1",
+   ["is_rgn"]=true,
+   ["name"]="",
+},
+-- Table: {58}
+{
+   ["is_rgn"]=true,
+   ["id"]="R6",
+   ["selected"]=true,
+   ["name"]="",
+},
+-- Table: {59}
+{
+   ["is_rgn"]=true,
+   ["id"]="R6",
+   ["selected"]=true,
+   ["name"]="",
+},
+-- Table: {60}
+{
+   ["is_rgn"]=true,
+   ["id"]="R6",
+   ["selected"]=true,
+   ["name"]="",
+},
+}

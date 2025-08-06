@@ -18,6 +18,7 @@ CloudTable:
             val:
             envelope: boolean
         cap: 0
+        ngen: 1 -- number of generators per Cloud
     tracks:
         self: 
             chance:
@@ -103,6 +104,37 @@ CloudTable:
         fade:
             on:
             val:
+    envelopes:
+        vol: // adds to original value
+            on: false
+            min:
+            max:
+            chance:
+                val: --between 0 and 100%. 100 is always apply
+                env:
+        pan: // overwrite the original value
+            on: false
+            min:
+            max:
+            chance:
+                val: --between 0 and 100%. 100 is always apply
+                env:
+        pitch: // adds to the original value
+            on: false
+            min:
+            max:
+            quantize:
+            chance:
+                val: --between 0 and 100%. 100 is always apply
+                env:
+        stretch: // multiplies to original value
+            on: false
+            min:
+            max:
+            chance:
+                val: --between 0 and 100%. 100 is always apply
+                env:
+
                       
 
             

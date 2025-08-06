@@ -1,6 +1,6 @@
 --[[
 @description Source-Destination edit
-@version 1.4.0
+@version 1.6.0
 @author Paweł Łyżwa (ply)
 @about
   # Source-Destination edit
@@ -27,9 +27,7 @@
 
   Use `Source-Destination configuration` script for customization.
 @changelog
-  - add marker copying option
-  - edit: refactor edit
-  - configure: check window bounds in mouse-over highlighting
+  - add an option to select only new items in the destination project
 @provides
   [main] ply_Source-Destination edit.lua
   [main] ply_Source-Destination setup.lua
@@ -37,7 +35,7 @@
   [nomain] config.lua
   [nomain] gfxu.lua
 
-Copyright (C) 2020--2021 Paweł Łyżwa
+Copyright (C) 2020--2025 Paweł Łyżwa
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -92,6 +90,28 @@ local function set_selected_tracks (selected_tracks)
   for _, track in ipairs(selected_tracks) do reaper.SetTrackSelected(track, true) end
 end
 
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+local function get_selected_items (proj)
+  local selected_items = {}
+  for i = 0, reaper.CountMediaItems(proj) - 1 do
+      local item = reaper.GetMediaItem(proj, i)
+      if reaper.GetMediaItemInfo_Value(item, "B_UISEL") == 1 then -- if selected in arrange view
+        table.insert(selected_items, item)
+    end
+  end
+  return selected_items
+end
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+local function set_selected_items (proj, items)
+  reaper.SelectAllMediaItems(proj, false)
+  for _, item in ipairs(items) do
+    reaper.SetMediaItemSelected(item, true)
+  end
+end
+
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -138,7 +158,7 @@ end
 
 --------------------------------------------------------------------------------------
 -- Paste items from clipboard (3- or 4-point, depending on time selection in project).
--- Expects dummy tiem on added track in the clipboard
+-- Expects a dummy item on an added track in the clipboard
 -- Note: changes cursor position and time selection
 --
 -- @param dst_proj    Destination project
@@ -152,7 +172,8 @@ local function paste_items (dst_proj, src_length)
   reaper.InsertTrackAtIndex(0, false)
   local track0 = reaper.GetTrack(dst_proj, 0)
   local start, end_ = reaper.GetSet_LoopTimeRange2(dst_proj, false, false, 0, 0, false)
-  if not config.insert and start == end_ then -- override in destination when on 3-point edit if requested
+  if config.behaviour == config.enums.behaviour.override and start == end_ then
+    -- override in destination when on 3-point edit
     local cursor_pos = reaper.GetCursorPositionEx(dst_proj)
     start, end_ = reaper.GetSet_LoopTimeRange2(dst_proj, true, false, cursor_pos, cursor_pos + src_length, false)
   end
@@ -221,6 +242,7 @@ local function main()
 
     -- IN DESTINATION PROJECT ----------------------------------------------------
     reaper.SelectProjectInstance(dst_proj)
+    local item_selection = nil
 
     -- store track selection and cursor position
     local selected_tracks = get_selected_tracks(dst_proj)
@@ -229,6 +251,9 @@ local function main()
     reaper.SelectProjectInstance(dst_proj)
     reaper.Undo_BeginBlock2(dst_proj)
     local start, end_ = paste_items(dst_proj, src_length)
+    if config.item_selection == config.enums.item_selection.new_items then
+      item_selection = get_selected_items(dst_proj)
+    end
     -- crossfades
     make_crossfade(dst_proj, end_, config._xfade_len)
     make_crossfade(dst_proj, start, config._xfade_len) -- selects edited items
@@ -246,12 +271,22 @@ local function main()
       reaper.GetSet_LoopTimeRange2(dst_proj, true, false, 0, 0, false)
     end
 
-    -- recall cursor position if not requesting cursor at the end of the edit
-    if not config.dst_cur_to_edit_end then
+    -- move the cursor
+    if config.move_cursor == config.enums.move_cursor.no then
+      -- recall the postion
       reaper.SetEditCurPos2(dst_proj, cursor_pos, true, true)
+    elseif config.move_cursor == config.enums.move_cursor.start then
+      reaper.SetEditCurPos2(dst_proj, start, true, true)
+    elseif config.move_cursor == config.enums.move_cursor.end_ then
+      reaper.SetEditCurPos2(dst_proj, end_, true, true)
     end
+
     -- recall track selection
     set_selected_tracks(selected_tracks)
+    -- select items if needed
+    if item_selection then
+      set_selected_items(dst_proj, item_selection)
+    end
 
     reaper.Undo_EndBlock2(dst_proj, "Source-Destination edit", -1)
     reaper.MarkProjectDirty(dst_proj)

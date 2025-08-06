@@ -10,16 +10,22 @@ dofile(DATA_PATH .. 'functions.dat')
 if not functionsLoaded then return end
 -- SCRIPT ---
 run(function()
+    Items.Selected().join:Delete()
     local items = Items.Selected()
-    if #items == 0 then
-        r.MB('No items selected', scr.name, 0)
+    items.join:Delete()
+    items = items:Validate()
+    local folder_items = items.folder
+    if #folder_items == 0 then
+        r.MB('No folder items selected', scr.name, 0)
         return
+    elseif #folder_items == 1 then
+        local folder_item = folder_items[1]
+        local child_items = folder_item:ChildItems()
+        if #child_items > 0 then
+            folder_item.s, folder_item.e = child_items.s, child_items.e
+        end
     end
-    local track = items.tracks[1]
-    if not track.folder then
-        r.MB('First selected items not on a folder track', scr.name, 0)
-        return
-    end
+    local track = folder_items.tracks[1]
     local tracks = track:Children()
     local dummy_track = tracks:Find '[JOIN ITEMS]'
     if not dummy_track then

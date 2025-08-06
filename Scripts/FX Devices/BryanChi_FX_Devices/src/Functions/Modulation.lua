@@ -257,7 +257,7 @@ function AssignMod (FxGUID, Fx_P, FX_Idx, P_Num, p_value, trigger)
     if trigger == 'No Item Trigger' then RC = im.IsMouseClicked(ctx, 1) end 
     if --[[Assign Mod]] (AssigningMacro or AssigningMidiMod) and RC then
 
-         _, ValBeforeMod = r.GetSetMediaTrackInfo_String(LT_Track,'P_EXT: FX' .. FxGUID .. 'Prm' .. Fx_P .. 'Value before modulation','', false)
+        _, ValBeforeMod = r.GetSetMediaTrackInfo_String(LT_Track,'P_EXT: FX' .. FxGUID .. 'Prm' .. Fx_P .. 'Value before modulation','', false)
         if not ValBeforeMod or ValBeforeMod == '' then
             r.GetSetMediaTrackInfo_String(LT_Track,'P_EXT: FX' .. FxGUID .. 'Prm' .. Fx_P .. 'Value before modulation', FX[FxGUID][Fx_P].V, true)
         end
@@ -282,11 +282,7 @@ function AssignMod (FxGUID, Fx_P, FX_Idx, P_Num, p_value, trigger)
         local CC = FP.WhichCC
 
 
-        if not Trk.Prm.WhichMcros[CC .. TrkID] then
-            Trk.Prm.WhichMcros[CC .. TrkID] = tostring(AssigningMacro)
-        elseif Trk.Prm.WhichMcros[CC .. TrkID] and not string.find(Trk.Prm.WhichMcros[CC .. TrkID], tostring(AssigningMacro)) then --if there's more than 1 macro assigned, and the assigning macro is new to this param.
-            Trk.Prm.WhichMcros[CC .. TrkID] = Trk.Prm.WhichMcros[CC .. TrkID] .. tostring(AssigningMacro)
-        end
+
         r.GetSetMediaTrackInfo_String(LT_Track, 'P_EXT: FX' .. FxGUID .. 'Prm' .. Fx_P .. 'Linked to which Mods',FP.WhichMODs, true)
 
 
@@ -360,7 +356,12 @@ function MakeModulationPossible(FxGUID, Fx_P, FX_Idx, P_Num, p_value, Sldr_Width
     --if trigger == 'No Item Trigger' then RC = im.IsMouseClicked(ctx, 1) end 
     local RC = trigger == 'No Item Trigger' and im.IsMouseClicked(ctx, 1) or RC
 
-
+    if AssigningMacro then
+        local PosL, PosT = im.GetItemRectMin(ctx)
+        local PosR, PosB = im.GetItemRectMax(ctx)
+        local draw_list = im.GetWindowDrawList(ctx)
+        im.DrawList_AddRectFilled(draw_list, PosL, PosT, PosR, PosB, EightColors.bgWhenAsgnMod[AssigningMacro] or 0xffff33ff)
+    end
     if --[[Link CC back when mouse is up]] Tweaking == P_Num .. FxGUID and IsLBtnHeld == false then
 
         if FP.WhichCC  then
@@ -373,8 +374,6 @@ function MakeModulationPossible(FxGUID, Fx_P, FX_Idx, P_Num, p_value, Sldr_Width
         end
     end
     local function Mouse_Interaction_When_Theres_Mod_Assigned()
-
-
         if RC and FP.ModAMT and AssigningMacro == nil and (Mods == 0 or Mods == Alt) then
             for M, v in ipairs(MacroNums) do
                 if FP.ModAMT[M] then
@@ -567,7 +566,7 @@ function MakeModulationPossible(FxGUID, Fx_P, FX_Idx, P_Num, p_value, Sldr_Width
             
             local rv,ContID, Index = FindExactStringInTable(Trk[TrkID].Container_Id , AssignContMacro_FxGuID)
             
-            Ct= FX[AssignContMacro_FxGuID]
+            local Ct= FX[AssignContMacro_FxGuID]
             
             
 
@@ -600,7 +599,7 @@ function MakeModulationPossible(FxGUID, Fx_P, FX_Idx, P_Num, p_value, Sldr_Width
                     r.gmem_attach('ContainerMacro')
                     local M = AssignContMacro+1
 
-                     r.gmem_write(4, 1) --  Gmem 4 sets jsfx's mode, mode 1 means user is assgining modulation to a param\
+                    r.gmem_write(4, 1) --  Gmem 4 sets jsfx's mode, mode 1 means user is assgining modulation to a param\
                     r.gmem_write(2, FX[Cont_FxGUID].DIY_FxGUID) --Sends diy FxGUID for jsfx to determine which Container
 
 
@@ -616,7 +615,7 @@ function MakeModulationPossible(FxGUID, Fx_P, FX_Idx, P_Num, p_value, Sldr_Width
 
                         -- Draw Mod Lines
                     
-                    r.gmem_attach('')
+                    r.gmem_attach('ContainerMacro')
 
                 end
                 
@@ -652,15 +651,14 @@ function MakeModulationPossible(FxGUID, Fx_P, FX_Idx, P_Num, p_value, Sldr_Width
         end 
 
         if not IsRBtnHeld then AssigningCont_Prm_Mod = nil end 
-
-        if --[[Link CC back when mouse is up]] FP.Cont_Which_CC and  Tweaking == P_Num .. FxGUID and IsLBtnHeld == false then
+        --Link CC back when mouse is up
+        if FP.Cont_Which_CC and  Tweaking == P_Num .. FxGUID and IsLBtnHeld == false then
             r.gmem_attach('ContainerMacro')
-
             local CC =  FP.Cont_Which_CC
             local bus_ofs = 0
             if FP.Cont_Which_CC then 
                 local  guid = r.TrackFX_GetFXGUID(LT_Track, FX[FxGUID].parent)
-                    _,_, bus_ofs = FindExactStringInTable(Trk[TrkID].Container_Id , guid)
+                _,_, bus_ofs = FindExactStringInTable(Trk[TrkID].Container_Id , guid)
             end 
 
             r.GetSetMediaTrackInfo_String(LT_Track, 'P_EXT: FX' .. FxGUID .. 'Prm' .. Fx_P .. 'Value before modulation', FP.V, true)
@@ -904,6 +902,14 @@ function Cont_ChangeLFO(mode, V, gmem, StrName,fx, Macro,FxGUID)
     if StrName then
         r.GetSetMediaTrackInfo_String(LT_Track, 'P_EXT: Container '..FxGUID.. 'Mod '.. Macro .. StrName, V, true)
         
+    end
+end
+
+function Always_Move_Modulator_to_1st_Slot()
+    MacroPos = r.TrackFX_AddByName(LT_Track, 'FXD Macros', 0, 0)
+    if MacroPos ~= -1 and MacroPos ~= 0 then -- if macro exists on track, and Macro is not the 1st fx
+        if FX.Win_Name[0] ~= 'JS: FXD Macros' then r.TrackFX_CopyToTrack(LT_Track, MacroPos, LT_Track, 0, true)
+        end -- move it to 1st slot
     end
 end
 
@@ -3637,14 +3643,14 @@ end
 
 
 function MacroKnob(mc, i, Size , TB, IsContainer, FxGUID)
-    local I = i +1
+    local I =  i +1
     local row = math.ceil ( I /4 )
 
     if mc.Type =='Macro' and ( TB and TB[1]  or TB =='Track') then 
         mc.Val = mc.Val 
         local Macro_FXid = TB =='Track' and 0 or TB[1].addr_fxid
-        local fx = fx or Trk[TrkID]
         local FxGUID = FxGUID or TrkID
+        local fx = FX[FxGUID] or Trk[TrkID]
 
         local W = Size + Size*4 
         local x, y = im.GetCursorScreenPos(ctx)
@@ -3652,9 +3658,9 @@ function MacroKnob(mc, i, Size , TB, IsContainer, FxGUID)
             if MACRO_SZ then 
                 im.DrawList_AddRectFilled(im.GetWindowDrawList(ctx), x , y , x+ MACRO_SZ[1], y + MACRO_SZ[2], ThemeClr('Track_Modulator_Individual_BG'))
             end
-    
+            local ii = IsContainer and I or i
             local v = r.TrackFX_GetParamNormalized(LT_Track, Macro_FXid, i)
-            mc.TweakingKnob , mc.Val , mc.center = AddKnob_Simple(ctx , FxGUID..'Macro'..i,  mc.Val or v, Size, -1, ThemeClr('Track_Modulator_Knob'), EightColors.LFO[i], EightColors.LFO[i] , EightColors.Bright_HighSat[i])
+            mc.TweakingKnob , mc.Val , mc.center = AddKnob_Simple(ctx , FxGUID..'Macro'..i,  mc.Val or v, Size, -1, ThemeClr('Track_Modulator_Knob'), EightColors.LFO[ii], EightColors.LFO[ii] , EightColors.Bright_HighSat[ii])
             if im.IsItemHovered(ctx) then 
                 fx.HvrMacro =  i
                 AnyMacroHovered = true 

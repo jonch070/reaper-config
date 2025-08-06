@@ -1,6 +1,6 @@
 --[[
 Description: nvk_SUBPROJECT
-Version: 2.8.6
+Version: 2.10.1
 About:
     # nvk_SUBPROJECT
 
@@ -10,8 +10,14 @@ Links:
     Store Page https://gum.co/nvk_WORKFLOW
     User Guide https://nvk.tools/docs/workflow/subproject
 Changelog:
-    2.8.6
-        Refactoring - grab latest version of nvk_FOLDER_ITEMS
+    2.10.1
+        Time selection length will now be used when creating subprojects with empty tracks
+    2.10.0
+        IMPORTANT: Removing support for Reaper 6. To use this script, you must upgrade to REAPER 7 or higher. Older versions can be downloaded from the full repository: https://raw.githubusercontent.com/nickvonkaenel/nvk-ReaScripts/main/index.xml
+    2.9.0
+        Time selections could interfere with subproject render length
+    2.8.7
+        Refactoring - grab latest version of nvk_FOLDER_ITEMS and nvk_SHARED
     For full changelog, visit https://nvk.tools/docs/workflow/subproject#changelog
 Provides:
     **/*.dat

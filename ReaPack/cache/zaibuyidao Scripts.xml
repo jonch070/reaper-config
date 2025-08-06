@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="zaibuyidao Scripts" commit="9a93bd919cc19e4bccb30e774b5929ab77b966f8">
+<index version="1" name="zaibuyidao Scripts" commit="a2899a20c06c88cff555cd8f5c193bc20c4ed47e">
   <category name="Development">
     <reapack name="Lokasenna_GUI library.lua" type="script" desc="Get Lokasenna_GUI library">
       <metadata>
@@ -385,6 +385,32 @@
         <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/2f0637b47744c2149c35ded37a723463b9fc3ce2/Items%20Editing/zaibuyidao_Batch%20Rename%20Items.lua</source>
       </version>
     </reapack>
+    <reapack name="zaibuyidao_Batch Rename Source Files of Selected Items.lua" type="script" desc="Batch Rename Source Files of Selected Items">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-05-12T16:17:55Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/2cf726538437f392f10acb3fc9624c23c7ecaa82/Items%20Editing/zaibuyidao_Batch%20Rename%20Source%20Files%20of%20Selected%20Items.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-05-12T16:36:40Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/0ce8ac00a9487da64c8c0bf7308f7a6a7f2f7476/Items%20Editing/zaibuyidao_Batch%20Rename%20Source%20Files%20of%20Selected%20Items.lua</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-05-13T04:01:25Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/d418bcecf7c8fbd83320fce55f33d2e3587fc3b2/Items%20Editing/zaibuyidao_Batch%20Rename%20Source%20Files%20of%20Selected%20Items.lua</source>
+      </version>
+    </reapack>
     <reapack name="zaibuyidao_Batch Set Item Names.lua" type="script" desc="Batch Set Item Names">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -593,6 +619,24 @@
       <version name="1.0" author="zaibuyidao" time="2021-05-22T11:22:43Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/01df275ef728fa89df9bcde94f2af1ff1d51ddc5/Items%20Editing/zaibuyidao_Equal%20Cut.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Find Duplicate Items.lua" type="script" desc="Find Duplicate Items">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-03-17T09:16:39Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/33988506c1bb8c2897779180b7f1bb21e501e4e9/Items%20Editing/zaibuyidao_Find%20Duplicate%20Items.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Humanize Item Volume.lua" type="script" desc="Humanize Item Volume">
@@ -865,6 +909,24 @@
       <version name="1.0" author="zaibuyidao" time="2024-05-05T12:35:54Z">
         <changelog><![CDATA[New Script]]></changelog>
         <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/80b5e842ab7331f07ad36aac52942b670a771f28/Items%20Editing/zaibuyidao_List%20Names%20of%20Selected%20Items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Locate Items.lua" type="script" desc="Locate Items">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-03-17T09:16:39Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/33988506c1bb8c2897779180b7f1bb21e501e4e9/Items%20Editing/zaibuyidao_Locate%20Items.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Move Items To Track In Track Row Order.lua" type="script" desc="Move Items To Track In Track Row Order">
@@ -1266,6 +1328,24 @@
       <version name="1.0" author="zaibuyidao" time="2021-05-22T11:22:43Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/01df275ef728fa89df9bcde94f2af1ff1d51ddc5/Items%20Editing/zaibuyidao_Random%20Take%20Volume.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Remove Items by Name.lua" type="script" desc="Remove Items by Name">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-03-17T09:52:01Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/601bfe20c7a4f21caa54bc5b6ebb51567ac9dc73/Items%20Editing/zaibuyidao_Remove%20Items%20by%20Name.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Reposition Items.lua" type="script" desc="Reposition Items">
@@ -3108,6 +3188,44 @@
         <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/e21908c3bd0d51d14ae0f40f88535addc809dee0/MIDI%20Editor/zaibuyidao_Harmony.lua</source>
       </version>
     </reapack>
+    <reapack name="zaibuyidao_Hold to Preview Selected MIDI Notes.lua" type="script" desc="Hold to Preview Selected MIDI Notes">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-04-17T15:33:58Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/1de0070ad359b202f066052e0fe674805657bb6d/MIDI%20Editor/zaibuyidao_Hold%20to%20Preview%20Selected%20MIDI%20Notes.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-04-18T04:01:37Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/58fb75cda124e336b9b86e5a5011959404ca0ef0/MIDI%20Editor/zaibuyidao_Hold%20to%20Preview%20Selected%20MIDI%20Notes.lua</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-04-20T08:56:11Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/f0ccbb902886afaf4a39ea3617568b7345b0c13b/MIDI%20Editor/zaibuyidao_Hold%20to%20Preview%20Selected%20MIDI%20Notes.lua</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-04-20T09:01:23Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/160c95a87c9f1574415eb71922809b94bed24760/MIDI%20Editor/zaibuyidao_Hold%20to%20Preview%20Selected%20MIDI%20Notes.lua</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-04-20T09:45:17Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/30ac39767e65166c6fd9f348812bef1da2109e6d/MIDI%20Editor/zaibuyidao_Hold%20to%20Preview%20Selected%20MIDI%20Notes.lua</source>
+      </version>
+      <version name="1.0.5" author="zaibuyidao" time="2025-04-20T10:26:26Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/864adfe73127c762832ed789167e162dee4409cf/MIDI%20Editor/zaibuyidao_Hold%20to%20Preview%20Selected%20MIDI%20Notes.lua</source>
+      </version>
+    </reapack>
     <reapack name="zaibuyidao_Humanize Velocity (Customize).lua" type="script" desc="Humanize Velocity (Customize)">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -3194,6 +3312,28 @@
         <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/3cd3d7d786cae21ad492f921d986023ab0facab3/MIDI%20Editor/zaibuyidao_Insert%20All%20Sound%20Off.lua</source>
       </version>
     </reapack>
+    <reapack name="zaibuyidao_Insert Alternating L-R CC Events for Selected Notes.lua" type="script" desc="Insert Alternating L/R CC Events for Selected Notes">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website" href="https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80">webpage</link>
+        <link rel="website" href="https://github.com/zaibuyidao/ReaScripts">repo</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-03-20T16:12:08Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/2987aff203574cfc5892a6197d0bfb2fe5eea4c7/MIDI%20Editor/zaibuyidao_Insert%20Alternating%20L-R%20CC%20Events%20for%20Selected%20Notes.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-03-20T16:19:36Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/ab4777bb684081383c9c0359aa213bdce27c96a2/MIDI%20Editor/zaibuyidao_Insert%20Alternating%20L-R%20CC%20Events%20for%20Selected%20Notes.lua</source>
+      </version>
+    </reapack>
     <reapack name="zaibuyidao_Insert CC Curve (Sawtooth).lua" type="script" desc="Insert CC Curve (Sawtooth)">
       <metadata>
         <link rel="donation">http://www.paypal.me/zaibuyidao</link>
@@ -3239,54 +3379,7 @@
         <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/93f417fd12ef3267003d44b653c52618faaa30d8/MIDI%20Editor/zaibuyidao_Insert%20CC%20Curve.lua</source>
       </version>
     </reapack>
-    <reapack name="zaibuyidao_Insert CC Events 1.lua" type="script" desc="Insert CC Events 1">
-      <metadata/>
-      <version name="1.1" author="zaibuyidao" time="2019-12-19T12:04:39Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/617bcdb057d00ad895680c6639bb8ac50352aae8/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%201.lua</source>
-      </version>
-      <version name="1.2" author="zaibuyidao" time="2019-12-19T20:09:22Z">
-        <changelog><![CDATA[+ 移除用户输入偏移设置，并优化脚本。]]></changelog>
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/5f6fa4a564996413f4e83d9406f71ade825d68dd/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%201.lua</source>
-      </version>
-      <version name="1.3" author="zaibuyidao" time="2020-02-16T14:56:24Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/15ef6644c9177cb40170f37ebc05e2122d7f9f49/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%201.lua</source>
-      </version>
-      <version name="1.4" author="zaibuyidao" time="2021-01-06T18:34:11Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/61a198f97763e85b3144e1b00ad3a86fec79ba8c/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%201.lua</source>
-      </version>
-    </reapack>
-    <reapack name="zaibuyidao_Insert CC Events 2 (Within Time Selection).lua" type="script" desc="Insert CC Events 2 (Within Time Selection)">
-      <metadata>
-        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
-      </metadata>
-      <version name="1.0" author="zaibuyidao" time="2020-03-04T18:36:05Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/d48239e619c3f6a4643c7bd2204335ee94233da9/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%202%20(Within%20Time%20Selection).lua</source>
-      </version>
-      <version name="1.1" author="zaibuyidao" time="2020-03-05T11:54:39Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/80fa4a17562d650a137a5d110ef3c0e8050a6be4/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%202%20(Within%20Time%20Selection).lua</source>
-      </version>
-      <version name="1.2" author="zaibuyidao" time="2021-01-06T18:34:11Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/61a198f97763e85b3144e1b00ad3a86fec79ba8c/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%202%20(Within%20Time%20Selection).lua</source>
-      </version>
-    </reapack>
-    <reapack name="zaibuyidao_Insert CC Events 2.lua" type="script" desc="Insert CC Events 2">
-      <metadata/>
-      <version name="1.0" author="zaibuyidao" time="2019-12-19T12:04:39Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/617bcdb057d00ad895680c6639bb8ac50352aae8/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%202.lua</source>
-      </version>
-      <version name="1.1" author="zaibuyidao" time="2020-02-16T14:56:24Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/15ef6644c9177cb40170f37ebc05e2122d7f9f49/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%202.lua</source>
-      </version>
-      <version name="1.2" author="zaibuyidao" time="2021-01-06T18:34:11Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/61a198f97763e85b3144e1b00ad3a86fec79ba8c/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%202.lua</source>
-      </version>
-      <version name="1.3" author="zaibuyidao" time="2021-01-21T20:09:16Z">
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/be789d5cbe4d4559a8e7f7498c1473744418dc7d/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%202.lua</source>
-      </version>
-    </reapack>
-    <reapack name="zaibuyidao_Insert CC Events LR.lua" type="script" desc="Insert CC Events LR">
+    <reapack name="zaibuyidao_Insert CC Events at Note Edges.lua" type="script" desc="Insert CC Events at Note Edges">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
@@ -3295,26 +3388,75 @@
 {\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
 }
 ]]></description>
-        <link rel="website" href="https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80">webpage</link>
-        <link rel="website" href="https://github.com/zaibuyidao/ReaScripts">repo</link>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
         <link rel="donation">http://www.paypal.me/zaibuyidao</link>
       </metadata>
-      <version name="1.0" author="zaibuyidao" time="2021-01-25T18:39:19Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/ce78b9da98e5022718c00a9fc43492fa1103d9bf/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%20LR.lua</source>
-      </version>
-      <version name="1.0.1" author="zaibuyidao" time="2023-05-01T08:06:20Z">
-        <changelog><![CDATA[Initial release]]></changelog>
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/35de512167165000e7e14c28dccefeb9af1cbbc3/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%20LR.lua</source>
+      <version name="1.0" author="zaibuyidao" time="2025-03-20T16:59:10Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/d770a204611dde163960fe96496b914dd4f819ec/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%20at%20Note%20Edges.lua</source>
       </version>
     </reapack>
-    <reapack name="zaibuyidao_Insert Expression (Set CC Shape).lua" type="script" desc="Insert Expression (Set CC Shape)">
+    <reapack name="zaibuyidao_Insert CC Events at Time Selection Bounds.lua" type="script" desc="Insert CC Events at Time Selection Bounds">
       <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
         <link rel="donation">http://www.paypal.me/zaibuyidao</link>
       </metadata>
-      <version name="1.0" author="zaibuyidao" time="2020-08-28T20:08:36Z">
-        <changelog><![CDATA[+ Initial release]]></changelog>
-        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/07e4afec91e0e7ea2b3cd1fe6ca880652222b0bf/MIDI%20Editor/zaibuyidao_Insert%20Expression%20(Set%20CC%20Shape).lua</source>
+      <version name="1.0" author="zaibuyidao" time="2025-03-20T14:59:52Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/7383249757942085773538e76792b796cb9536d0/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%20at%20Time%20Selection%20Bounds.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-03-20T16:19:36Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/ab4777bb684081383c9c0359aa213bdce27c96a2/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events%20at%20Time%20Selection%20Bounds.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Insert CC Events.lua" type="script" desc="Insert CC Events">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-03-20T16:46:27Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/f37b18ddc17bf6feee28830327c5244796188a0a/MIDI%20Editor/zaibuyidao_Insert%20CC%20Events.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Insert Expression CC Events and Set CC Shape.lua" type="script" desc="Insert Expression CC Events and Set CC Shape">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-04-05T12:57:18Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/039c6b7ca33e34d56cf0c8e516b209ddc859b2c0/MIDI%20Editor/zaibuyidao_Insert%20Expression%20CC%20Events%20and%20Set%20CC%20Shape.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-04-05T12:59:27Z">
+        <changelog><![CDATA[+ New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/a87ec195acb8009d5feeeaa0f38c8e82384298f4/MIDI%20Editor/zaibuyidao_Insert%20Expression%20CC%20Events%20and%20Set%20CC%20Shape.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Insert Patch Change (Bank MSB LSB).lua" type="script" desc="Insert Patch Change (Bank MSB/LSB)">
@@ -4330,6 +4472,47 @@
         <changelog><![CDATA[New Script]]></changelog>
         <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/f8a6b35b03e59b4cddacb8373ef02d6f32e87448/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
       </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-05-28T09:42:45Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/c4c06b56a8809f440e04c562317b52fcf47818ea/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-05-28T13:28:16Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/d3e4261f03db58f614245c173435d0820ff0b2c5/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-05-28T14:08:46Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/7cacc95d129dfc1f23319e1cb7a96b2c5af4a1d7/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.5" author="zaibuyidao" time="2025-05-29T03:29:41Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/987303b07c60c2e6eb22ae2feb1e87c74a8c2fcf/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.6" author="zaibuyidao" time="2025-05-29T03:40:14Z">
+        <changelog><![CDATA[Optimized inserted pitch bend shape
+Added feature: automatically removes consecutive pitch bend reset events, keeping only the first one]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/5e1f9dc8d88ace677f44b76e9ed1094cde5ebb42/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.7" author="zaibuyidao" time="2025-05-29T16:05:05Z">
+        <changelog><![CDATA[Optimized inserted pitch bend shape
+Added feature: automatically removes consecutive pitch bend reset events, keeping only the first one]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/abd358110c41b0d5d293ab00362598651d0d4776/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.8" author="zaibuyidao" time="2025-05-29T17:04:06Z">
+        <changelog><![CDATA[Optimized the logic for inserting the final pitch bend reset (value 0).]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/6bb1d2325ddafb766f5df024e89bf23b410a3947/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.9" author="zaibuyidao" time="2025-05-30T07:57:40Z">
+        <changelog><![CDATA[Optimized the logic for inserting the final pitch bend reset (value 0).]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/2e527b0f5000e4fe6142aed0fe7868117d12fe94/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.10" author="zaibuyidao" time="2025-06-03T06:18:30Z">
+        <changelog><![CDATA[Optimized the logic for inserting the final pitch bend reset (value 0).
+Added mode selection:
+  1. Set selected notes to the target channel and mute them.
+  2. Delete selected notes.]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/47cdf935b511215fb4d511cf0063f0fb13c123f5/MIDI%20Editor/zaibuyidao_Notes%20to%20Pitch%20Bend.lua</source>
+      </version>
     </reapack>
     <reapack name="zaibuyidao_Notes to Smooth Pitch Bend.lua" type="script" desc="Notes to Smooth Pitch Bend">
       <metadata>
@@ -4347,6 +4530,35 @@
       <version name="1.0" author="zaibuyidao" time="2024-06-19T09:46:51Z">
         <changelog><![CDATA[New Script]]></changelog>
         <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/eeffbae1be8b1ece26fb0a998cd5ca3faaf8539c/MIDI%20Editor/zaibuyidao_Notes%20to%20Smooth%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-05-28T09:42:45Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/c4c06b56a8809f440e04c562317b52fcf47818ea/MIDI%20Editor/zaibuyidao_Notes%20to%20Smooth%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-05-29T03:29:41Z">
+        <changelog><![CDATA[Optimized inserted pitch bend shape
+Added feature: automatically removes consecutive pitch bend reset events, keeping only the first one]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/987303b07c60c2e6eb22ae2feb1e87c74a8c2fcf/MIDI%20Editor/zaibuyidao_Notes%20to%20Smooth%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-05-29T16:05:05Z">
+        <changelog><![CDATA[Optimized inserted pitch bend shape
+Added feature: automatically removes consecutive pitch bend reset events, keeping only the first one]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/abd358110c41b0d5d293ab00362598651d0d4776/MIDI%20Editor/zaibuyidao_Notes%20to%20Smooth%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-05-29T17:04:06Z">
+        <changelog><![CDATA[Optimized the logic for inserting the final pitch bend reset (value 0).]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/6bb1d2325ddafb766f5df024e89bf23b410a3947/MIDI%20Editor/zaibuyidao_Notes%20to%20Smooth%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.5" author="zaibuyidao" time="2025-05-30T07:57:40Z">
+        <changelog><![CDATA[Optimized the logic for inserting the final pitch bend reset (value 0).]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/2e527b0f5000e4fe6142aed0fe7868117d12fe94/MIDI%20Editor/zaibuyidao_Notes%20to%20Smooth%20Pitch%20Bend.lua</source>
+      </version>
+      <version name="1.0.6" author="zaibuyidao" time="2025-06-03T06:18:30Z">
+        <changelog><![CDATA[Optimized the logic for inserting the final pitch bend reset (value 0).
+Added mode selection:
+  1. Set selected notes to the target channel and mute them.
+  2. Delete selected notes.]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/47cdf935b511215fb4d511cf0063f0fb13c123f5/MIDI%20Editor/zaibuyidao_Notes%20to%20Smooth%20Pitch%20Bend.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Paste Selected Arpeggio.lua" type="script" desc="Paste Selected Arpeggio">
@@ -4395,6 +4607,24 @@
       </version>
       <version name="1.6.1" author="zaibuyidao" time="2021-07-18T12:12:35Z">
         <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/3cd3d7d786cae21ad492f921d986023ab0facab3/MIDI%20Editor/zaibuyidao_Paste%20Selected%20Rhythm.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Preview Selected MIDI Notes for 1 Second.lua" type="script" desc="Preview Selected MIDI Notes for 1 Second">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-04-20T10:21:09Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/4cfbae522155891eaa6941047cc1e9bfc01d96e8/MIDI%20Editor/zaibuyidao_Preview%20Selected%20MIDI%20Notes%20for%201%20Second.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Quantize (Fast).lua" type="script" desc="Quantize (Fast)">
@@ -5052,6 +5282,28 @@
         <source main="main midi_inlineeditor midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/201cd3b960bcb9ff1d35bafa9e7a270a02563d85/MIDI%20Editor/zaibuyidao_Random%20Velocity.lua</source>
       </version>
     </reapack>
+    <reapack name="zaibuyidao_Remove Duplicate Zero Pitch Bends.lua" type="script" desc="Remove Duplicate Zero Pitch Bends">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Pitch Bend Script Series, filter "zaibuyidao pitch bend" in ReaPack or Actions to access all scripts. Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-05-29T03:29:41Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/987303b07c60c2e6eb22ae2feb1e87c74a8c2fcf/MIDI%20Editor/zaibuyidao_Remove%20Duplicate%20Zero%20Pitch%20Bends.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-05-29T16:05:05Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/abd358110c41b0d5d293ab00362598651d0d4776/MIDI%20Editor/zaibuyidao_Remove%20Duplicate%20Zero%20Pitch%20Bends.lua</source>
+      </version>
+    </reapack>
     <reapack name="zaibuyidao_Remove Redundant CCs.lua" type="script" desc="Remove Redundant CCs">
       <version name="1.0" author="zaibuyidao" time="2021-03-07T10:07:46Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
@@ -5494,6 +5746,24 @@
       <version name="1.0" author="zaibuyidao" time="2021-09-21T11:02:53Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/8391675c45e56d3491c6fa2e477dbc179fef5e8b/MIDI%20Editor/zaibuyidao_Set%20MIDI%20Note%20Shape.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Set MIDI Note Shapes.lua" type="script" desc="Set MIDI Note Shapes">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-02-25T03:59:35Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="midi_editor">https://github.com/zaibuyidao/ReaScripts/raw/76083f154d0c7e7c6142584c520ff86cc72d0326/MIDI%20Editor/zaibuyidao_Set%20MIDI%20Note%20Shapes.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Set Note Ends to Edit Cursor (FNG).lua" type="script" desc="Set Note Ends to Edit Cursor (FNG)">
@@ -7406,6 +7676,38 @@
         <changelog><![CDATA[Brand new REAPER: 7.30, SWS: 2.14.0.3]]></changelog>
         <source>https://github.com/zaibuyidao/ReaScripts/raw/9a93bd919cc19e4bccb30e774b5929ab77b966f8/Translations/Chinese%20(Simplified).ReaperLangPack</source>
       </version>
+      <version name="1.1.6-733" author="zaibuyidao" time="2025-02-07T06:32:23Z">
+        <changelog><![CDATA[Brand new REAPER: 7.33, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/3bf402f626d4e059ffd3f2279085cdd7050fdf24/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="1.1.7-734" author="zaibuyidao" time="2025-03-04T09:45:02Z">
+        <changelog><![CDATA[Brand new REAPER: 7.34, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/a284779ce24b347cc16b1222a0d39c4b057b9459/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="7.35" author="zaibuyidao" time="2025-03-24T11:48:00Z">
+        <changelog><![CDATA[Brand new REAPER: 7.35, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/2c74321882df5690b6c74fad7c1d64e6e3fcee83/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="7.36" author="zaibuyidao" time="2025-04-15T02:25:32Z">
+        <changelog><![CDATA[Brand new REAPER: 7.36, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/4f066c657bdf5488fc8513ee98300ecb25efdb31/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="7.38" author="zaibuyidao" time="2025-05-07T16:39:45Z">
+        <changelog><![CDATA[Brand new REAPER: 7.38, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/fdea3a5b5492679ac7a803470f7edacee7f9a661/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="7.39" author="zaibuyidao" time="2025-05-21T09:52:39Z">
+        <changelog><![CDATA[Brand new REAPER: 7.39, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/0350a32f8cf006c87a5472dd5d3cc5a5b4be4d6a/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="7.41" author="zaibuyidao" time="2025-07-05T17:52:15Z">
+        <changelog><![CDATA[Brand new REAPER: 7.41, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/a79d00e546d1d8fba99f7f4da426123a87a29184/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="7.42" author="zaibuyidao" time="2025-07-28T06:21:00Z">
+        <changelog><![CDATA[Brand new REAPER: 7.42, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/3741276b6ca487414b806c83388b58789041083a/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
     </reapack>
     <reapack name="Chinese (Traditional).ReaperLangPack" type="langpack" desc="Chinese Traditional (繁體中文)">
       <metadata>
@@ -7442,6 +7744,38 @@
       <version name="1.1.5-730" author="zaibuyidao" time="2025-01-10T03:21:29Z">
         <changelog><![CDATA[Brand new REAPER: 7.30, SWS: 2.14.0.3]]></changelog>
         <source>https://github.com/zaibuyidao/ReaScripts/raw/9a93bd919cc19e4bccb30e774b5929ab77b966f8/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="1.1.6-733" author="zaibuyidao" time="2025-02-07T06:32:23Z">
+        <changelog><![CDATA[Brand new REAPER: 7.33, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/3bf402f626d4e059ffd3f2279085cdd7050fdf24/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="1.1.7-734" author="zaibuyidao" time="2025-03-04T09:45:02Z">
+        <changelog><![CDATA[Brand new REAPER: 7.34, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/a284779ce24b347cc16b1222a0d39c4b057b9459/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.35" author="zaibuyidao" time="2025-03-24T11:48:00Z">
+        <changelog><![CDATA[Brand new REAPER: 7.35, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/2c74321882df5690b6c74fad7c1d64e6e3fcee83/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.36" author="zaibuyidao" time="2025-04-15T02:25:32Z">
+        <changelog><![CDATA[Brand new REAPER: 7.36, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/4f066c657bdf5488fc8513ee98300ecb25efdb31/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.38" author="zaibuyidao" time="2025-05-07T16:39:45Z">
+        <changelog><![CDATA[Brand new REAPER: 7.38, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/fdea3a5b5492679ac7a803470f7edacee7f9a661/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.39" author="zaibuyidao" time="2025-05-21T09:52:39Z">
+        <changelog><![CDATA[Brand new REAPER: 7.39, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/0350a32f8cf006c87a5472dd5d3cc5a5b4be4d6a/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.41" author="zaibuyidao" time="2025-07-05T17:52:15Z">
+        <changelog><![CDATA[Brand new REAPER: 7.41, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/a79d00e546d1d8fba99f7f4da426123a87a29184/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.42" author="zaibuyidao" time="2025-07-28T06:21:00Z">
+        <changelog><![CDATA[Brand new REAPER: 7.42, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/3741276b6ca487414b806c83388b58789041083a/Translations/Chinese%20(Traditional).ReaperLangPack</source>
       </version>
     </reapack>
   </category>
@@ -7498,6 +7832,111 @@
       <version name="1.0" author="zaibuyidao" time="2024-06-25T02:07:11Z">
         <changelog><![CDATA[New Script]]></changelog>
         <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/68534ca85e7a9369930d071f361da11afd481fcc/Utility/zaibuyidao_Auto-Load%20VSTi%20for%20MIDI%20Playback.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Batch Import Audio from Folder as Tracks.lua" type="script" desc="Batch Import Audio from Folder as Tracks">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao, ChangoW" time="2025-05-06T05:54:57Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/5b963f2fb4b72025ec3451b4631e3992b78c7969/Utility/zaibuyidao_Batch%20Import%20Audio%20from%20Folder%20as%20Tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Batch Rename Plus.lua" type="script" desc="Batch Rename Plus">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-05-05T14:42:50Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/e1e98da656f5dffceea9082c01660bb1b973fee4/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-05-06T14:34:05Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/ebfaf7657820781793840356be63063f212cfb4d/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-05-06T14:51:22Z">
+        <changelog><![CDATA[+ Optimize global expand/collapse for table preview]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/ba1d679d97af141f646f4e3854b199d54e4dcfe8/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-05-08T15:47:32Z">
+        <changelog><![CDATA[+ Optimize global expand/collapse for table preview]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/ef8c3f97b886f6036d331abb5362cba70e89f8e5/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-05-10T07:48:31Z">
+        <changelog><![CDATA[+  The Replace mode now offers an “Occurrence” setting, letting you target the first, last, or all matches—and supports case-insensitive searching.
++  The Item vs Source list now includes a quick-copy feature: simply Ctrl+LeftClick any table cell to instantly copy its content to the clipboard.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/d6548275c563edb3959e42e7916f60d53d49fec0/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.5" author="zaibuyidao" time="2025-05-10T09:02:46Z">
+        <changelog><![CDATA[+  Improved the Items-mode table preview to honor the “Sort by” setting, ensuring the preview order always matches the actual renaming results.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/503ddf749cfbb145415e9480083e18adaf4b2c1f/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.6" author="zaibuyidao" time="2025-05-14T17:08:52Z">
+        <changelog><![CDATA[+ New Source File Renaming Added]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/44cc62064b450ff69c2662307f98ac3b0f21e56b/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.7" author="zaibuyidao" time="2025-05-15T16:09:09Z">
+        <changelog><![CDATA[+ After clicking the “Preview” button, a preview popup appears. You can drag it and dock it to any side of the main script interface for a more flexible workflow.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/09acbfaee8f10cafd44170b559ae2cdad62fed9d/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.8" author="zaibuyidao" time="2025-05-18T14:09:10Z">
+        <changelog><![CDATA[+ Introduced user preset management - allowing users to save, rename, and delete presets, with full import/export support.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/c0e8209ba72e4b384f06d4b7211dbf821b448d55/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.9" author="zaibuyidao" time="2025-05-18T15:14:09Z">
+        <changelog><![CDATA[+ Introduced user preset management - allowing users to save, rename, and delete presets, with full import/export support.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/60b59af911a36eb3e81cbd28c15186d43d2b2d2a/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.10" author="zaibuyidao" time="2025-05-18T15:59:59Z">
+        <changelog><![CDATA[* Fix: nil indexing error in Batch Mode.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/96ee7faeba7ac6487b13a6dde7a3c4c0d283c69e/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.11" author="zaibuyidao" time="2025-05-19T16:28:36Z">
+        <changelog><![CDATA[Add: Mouse-wheel support for switching batch modes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/c59893119a82b0945794932c97b98ab16cd0e5d9/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.12" author="zaibuyidao" time="2025-05-20T09:38:36Z">
+        <changelog><![CDATA[Added mouse-wheel support for switching batch modes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/83675c68bafae9b6f9ae7e36e46f80756133ea10/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.13" author="zaibuyidao" time="2025-05-20T16:55:18Z">
+        <changelog><![CDATA[Added text filtering to the preview panel.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/7279d191736dc4c337168beb172d18100181990b/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.14" author="zaibuyidao" time="2025-05-21T11:53:18Z">
+        <changelog><![CDATA[Added case‐transform wildcard support (e.g. `$item` / `$Item` / `$ITEM`, `$region` / `$Region` / `$REGION`).]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/161ecab445472960d525069c752eb07481ec08b3/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.15" author="zaibuyidao" time="2025-05-21T17:05:07Z">
+        <changelog><![CDATA[Added a status bar to the preview panel to display error counts, duplicate-name warnings, and the current batch mode.
+Added Ctrl+MouseWheel support in the preview panel to adjust the preview font size on the fly.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/925832c26e3bb1977332af59bdc53c7a200168e1/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
+      </version>
+      <version name="1.0.16" author="zaibuyidao" time="2025-06-13T19:23:59Z">
+        <changelog><![CDATA[Added a status bar to the preview panel to display error counts, duplicate-name warnings, and the current batch mode.
+Added Ctrl+MouseWheel support in the preview panel to adjust the preview font size on the fly.
+Added a new options menu for easier access to settings.
+Added automatic check for ReaImGui dependency. The script now guides users to install or update ReaImGui if it is missing or outdated.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/0e60bfc4e91f06af8c9d1a8bbe01983db02cfb94/Utility/zaibuyidao_Batch%20Rename%20Plus.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Build MIDI Routing Channels to Selected Tracks.lua" type="script" desc="Build MIDI Routing Channels to Selected Tracks">
@@ -7749,36 +8188,12 @@
 {\pard \ql \f0 \sa180 \li0 \fi0 Core Function Library\par}
 }
 ]]></description>
-        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
         <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
       </metadata>
-      <version name="1.0" author="zaibuyidao" time="2024-05-01T15:57:15Z">
+      <version name="1.0.11" author="zaibuyidao" time="2025-05-26T16:42:33Z">
         <changelog><![CDATA[New Script]]></changelog>
-        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/f27c5fbffb853f5130a12f70c67382a7eb5ba260/Utility/zaibuyidao_Functions.lua</source>
-      </version>
-      <version name="1.0.1" author="zaibuyidao" time="2024-05-02T11:19:33Z">
-        <changelog><![CDATA[New Script]]></changelog>
-        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/ce59dc115e3335597aca9721a18c0ae5f7a4bf53/Utility/zaibuyidao_Functions.lua</source>
-      </version>
-      <version name="1.0.2" author="zaibuyidao" time="2024-05-10T06:59:20Z">
-        <changelog><![CDATA[New Script]]></changelog>
-        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/b1a1cc2dd0943a7ac9a18d7a9cec8192da18ca6c/Utility/zaibuyidao_Functions.lua</source>
-      </version>
-      <version name="1.0.3" author="zaibuyidao" time="2024-05-10T07:45:09Z">
-        <changelog><![CDATA[New Script]]></changelog>
-        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/ef06a968ac1a89efbaf9e27cb0f54cb5d1986323/Utility/zaibuyidao_Functions.lua</source>
-      </version>
-      <version name="1.0.4" author="zaibuyidao" time="2024-05-11T09:46:18Z">
-        <changelog><![CDATA[New Script]]></changelog>
-        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/783504f7115e5edf4fe913da85d70a4d0c8c073c/Utility/zaibuyidao_Functions.lua</source>
-      </version>
-      <version name="1.0.5" author="zaibuyidao" time="2024-05-13T05:50:30Z">
-        <changelog><![CDATA[New Script]]></changelog>
-        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/391b7e3b579a4a0ce6151a2efd3a58e4ef600e85/Utility/zaibuyidao_Functions.lua</source>
-      </version>
-      <version name="1.0.6" author="zaibuyidao" time="2024-05-15T07:37:58Z">
-        <changelog><![CDATA[New Script]]></changelog>
-        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/9d10d322e2f16d93ec517c3532268283c2759739/Utility/zaibuyidao_Functions.lua</source>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/5a66817f5cb9a656ef8e6168160717bc20e52e65/Utility/zaibuyidao_Functions.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Implode Drums.lua" type="script" desc="Implode Drums">
@@ -7875,6 +8290,28 @@
       <version name="1.0" author="zaibuyidao" time="2021-08-29T08:41:19Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/4e06c45b98b415f8cbdd4aa37fea710e4c3a3cd0/Utility/zaibuyidao_MIDI%20File%20Track%20Name%20Fix.lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Mouse Modifiers - Toggle Default Settings.lua" type="script" desc="Mouse Modifiers - Toggle Default Settings">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-02-21T15:37:48Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/2281a5c1d7514e02fb71fe2954d63f840aa6c437/Utility/zaibuyidao_Mouse%20Modifiers%20-%20Toggle%20Default%20Settings.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-02-21T15:44:06Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/a961b70d8afe6580a044e26d2660da5c9a2c4705/Utility/zaibuyidao_Mouse%20Modifiers%20-%20Toggle%20Default%20Settings.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Mouse Modifiers - Toggle Marquee Selection.lua" type="script" desc="Mouse Modifiers - Toggle Marquee Selection">
@@ -7981,6 +8418,441 @@
       <version name="1.0" author="zaibuyidao" time="2024-02-02T07:41:13Z">
         <changelog><![CDATA[+ New Script]]></changelog>
         <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/2cb69e8f0d98267ab14439e8b64ece8634592d8d/Utility/zaibuyidao_Paste%20Tempo%20Time%20Signature%20In%20Time%20Selection%20(Relative%20Position).lua</source>
+      </version>
+    </reapack>
+    <reapack name="zaibuyidao_Project Audio File Explorer.lua" type="script" desc="Project Audio Explorer">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI, SWS Extension, and ReaImGui.\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-05-31T18:45:33Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/c7e455060110d941d7ccfe54ce21ba5caa10c21c/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-06-01T08:14:34Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/3e383dca63a76d581fccb7e7368adbf35257bc29/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-06-01T15:22:37Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/8db2d8dedb84f0a4e01e1e8b2da8bbcc6075f0bb/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-06-01T18:21:59Z">
+        <changelog><![CDATA[+ Added settings for:
+  1. Double-click action (insert, preview, or do nothing)
+  2. Auto-play selected media
+  3. Adjustable window background alpha
++ Added support for spacebar to play/stop preview.
++ Added support for Up/Down arrow keys to select and scroll through the table.
++ Improved scroll-following behavior for selected row.
++ UI and usability enhancements.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/3997408c6f6fc9641a6287be45ebebde5b638214/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-06-02T11:08:04Z">
+        <changelog><![CDATA[+ Added settings for:
+  1. Double-click action (insert, preview, or do nothing)
+  2. Auto-play selected media
+  3. Adjustable window background alpha
++ Added support for spacebar to play/stop preview.
++ Added support for Up/Down arrow keys to select and scroll through the table.
++ Improved scroll-following behavior for selected row.
++ UI and usability enhancements.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/be67feb3e48b2b995d3fae54ba23a0ea663d4e44/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.5" author="zaibuyidao" time="2025-06-02T13:10:45Z">
+        <changelog><![CDATA[+ Added support for saving and restoring settings via the Settings dialog.
++ Added option to adjust progress bar height for easier interaction.
++ Improved table text color scheme to better distinguish previewed items.
++ Enhanced overall interaction to better match the REAPER Media Explorer experience.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/1af4fa3b9097080fb149ea0633591f150565b0a7/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.6" author="zaibuyidao" time="2025-06-02T13:30:58Z">
+        <changelog><![CDATA[+ Added support for saving and restoring settings via the Settings dialog.
++ Added option to adjust progress bar height for easier interaction.
++ Improved table text color scheme to better distinguish previewed items.
++ Enhanced overall interaction to better match the REAPER Media Explorer experience.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/1112020a252b132e8e7827fd6f3bd4712ade3772/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.7" author="zaibuyidao" time="2025-06-02T14:37:55Z">
+        <changelog><![CDATA[+ Added support for saving and restoring settings via the Settings dialog.
++ Added option to adjust progress bar height for easier interaction.
++ Improved table text color scheme to better distinguish previewed items.
++ Enhanced overall interaction to better match the REAPER Media Explorer experience.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/2c15f62c602c74c33a30a520f00b016182d4335f/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.8" author="zaibuyidao" time="2025-06-02T16:13:10Z">
+        <changelog><![CDATA[+ Added rotary knob controls for both playback rate and pitch adjustment.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/7a29675c9f96c204c25ba614670dc3a1d23de0d4/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.9" author="zaibuyidao" time="2025-06-02T16:36:52Z">
+        <changelog><![CDATA[+ Added rotary knob controls for both playback rate and pitch adjustment.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/80500c8c3ce748fa425bef65893b82fe7979d31a/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.10" author="zaibuyidao" time="2025-06-03T15:13:45Z">
+        <changelog><![CDATA[+ Added rotary knob controls for both playback rate and pitch adjustment.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/635a674bc13f0c0f093ef583115d55376e2770cc/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.11" author="zaibuyidao" time="2025-06-03T15:19:21Z">
+        <changelog><![CDATA[+ Added "All Items (Per Take)" mode for listing all items with per-take detail and multi-instance merging.
++ Optimized rotary knobs for volume, pitch, and rate controls.
++ Added fine and ultra-fine adjustment for pitch and rate knobs: hold Shift for fine tuning, hold Ctrl for ultra-fine tuning.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/5d50ff53121e54d70b0ef755c20b7b8c04981235/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.12" author="zaibuyidao" time="2025-06-08T14:53:39Z">
+        <changelog><![CDATA[+ Added waveform preview window.
++ Optimized mouse playback interactions in the waveform preview window.
++ Improved audio playback controls.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/03446c92c4b526409154e13c3dbecdac6f119dff/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.13" author="zaibuyidao" time="2025-06-09T01:49:45Z">
+        <changelog><![CDATA[+ Added waveform preview window.
++ Optimized mouse playback interactions in the waveform preview window.
++ Improved audio playback controls.
++ Optimized waveform sampling for short audio to prevent display issues caused by sparse sampling.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/11cffb00f7635e4dd8ace83caacb3082f082825b/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.14" author="zaibuyidao" time="2025-06-09T09:35:28Z">
+        <changelog><![CDATA[+ Added waveform preview window.
++ Optimized mouse playback interactions in the waveform preview window.
++ Improved audio playback controls.
++ Optimized waveform sampling for short audio to prevent display issues caused by sparse sampling.
++ Fixed waveform preview display for item mode.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/08a47caa49421fd9677ed5f6faca6616cdb9540f/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.15" author="zaibuyidao" time="2025-06-09T09:41:51Z">
+        <changelog><![CDATA[+ Added waveform preview window.
++ Optimized mouse playback interactions in the waveform preview window.
++ Improved audio playback controls.
++ Optimized waveform sampling for short audio to prevent display issues caused by sparse sampling.
++ Fixed waveform preview display for item mode.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/239d72e71d1a5479e13b1b202a16f8a04f228245/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.16" author="zaibuyidao" time="2025-06-10T06:58:08Z">
+        <changelog><![CDATA[Added waveform preview caching to improve performance and avoid redundant peak calculations.
+Cached waveform data is stored in the script's "waveform_cache" folder using file path and modification time hash.
+Loading a previously viewed audio file now uses cached data for faster preview.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/758162b6a2c9dd92d8a6bbee1c520d3b725a799f/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.17" author="zaibuyidao" time="2025-06-10T16:30:35Z">
+        <changelog><![CDATA[Added waveform preview caching to improve performance and avoid redundant peak calculations.
+Cached waveform data is stored in the script's "waveform_cache" folder using file path and modification time hash.
+Loading a previously viewed audio file now uses cached data for faster preview.
+Enhanced the Media Items mode: added right-click context menu and keyboard shortcut support for more efficient file management.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/988fb7e8515ab92c3a0abb0b7165d43152aed31f/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.18" author="zaibuyidao" time="2025-06-10T16:42:54Z">
+        <changelog><![CDATA[Added waveform preview caching to improve performance and avoid redundant peak calculations.
+Cached waveform data is stored in the script's "waveform_cache" folder using file path and modification time hash.
+Loading a previously viewed audio file now uses cached data for faster preview.
+Enhanced the Media Items mode: added right-click context menu and keyboard shortcut support for more efficient file management.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/cfe96dfe7407f47cf752f511a7468a7245b14567/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.19" author="zaibuyidao" time="2025-06-11T06:18:44Z">
+        <changelog><![CDATA[Fixed the issue where clicking the waveform could not accurately locate the play cursor after changing the playback rate.
+Fixed an issue where changing the playback rate caused inaccurate play cursor positioning when clicking the waveform.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/01b038e3138815cc95ee5170f228bd5f591b8445/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.20" author="zaibuyidao" time="2025-06-11T08:33:00Z">
+        <changelog><![CDATA[Fixed the issue where clicking the waveform could not accurately locate the play cursor after changing the playback rate.
+Fixed an issue where changing the playback rate caused inaccurate play cursor positioning when clicking the waveform.
+Refined and optimized the user interface experience.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/9b307c3c999df393be4fb766990648a517a77739/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.21" author="zaibuyidao" time="2025-06-11T13:47:10Z">
+        <changelog><![CDATA[Fixed the issue where clicking the waveform could not accurately locate the play cursor after changing the playback rate.
+Fixed an issue where changing the playback rate caused inaccurate play cursor positioning when clicking the waveform.
+Refined and optimized the user interface experience.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/33c65627be4fc86a1a548de7423861b64dfe7e62/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.22" author="zaibuyidao" time="2025-06-11T15:58:40Z">
+        <changelog><![CDATA[Improved "Referenced from RPP" mode.
+Fixed incomplete display of track name, position, and usages information in some modes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/0b27147666a7584da2a65e6ac27a881394340bf3/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.23" author="zaibuyidao" time="2025-06-12T05:53:18Z">
+        <changelog><![CDATA[Audio files can now be dragged directly from the table to the REAPER arrange window for quick insertion.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/331ec6c636af6fa2a423a66423e42d6ef622e98e/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.24" author="zaibuyidao" time="2025-06-12T07:48:09Z">
+        <changelog><![CDATA[New: Added drag-and-drop support for inserting selected regions directly into the REAPER arrange view.
+Added support for clearing the selection by pressing the ESC key.
+Enhanced selection clearing logic—selection will only be cleared after releasing the mouse button when clicking outside the selection area, for a smoother workflow.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/29977557fc351c73cae0b348d9d0d0b6384fdccf/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.25" author="zaibuyidao" time="2025-06-12T08:44:54Z">
+        <changelog><![CDATA[New: Added drag-and-drop support for inserting selected regions directly into the REAPER arrange view.
+Added support for clearing the selection by pressing the ESC key.
+Enhanced selection clearing logic—selection will only be cleared after releasing the mouse button when clicking outside the selection area, for a smoother workflow.
+Moved drag-and-drop insertion logic outside the table row loop.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/3f0cb4c881f04d845613422e36bcf8355b6f176a/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.26" author="zaibuyidao" time="2025-06-12T14:59:25Z">
+        <changelog><![CDATA[New: Added drag-and-drop support for inserting selected regions directly into the REAPER arrange view.
+Added support for clearing the selection by pressing the ESC key.
+Enhanced selection clearing logic—selection will only be cleared after releasing the mouse button when clicking outside the selection area, for a smoother workflow.
+Moved drag-and-drop insertion logic outside the table row loop.
+Fixed unintended audio insertion when dragging in waveform area.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/b881fc57c91d9f4e4cd66cac3fbf9f3989da44ce/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.27" author="zaibuyidao" time="2025-06-12T16:13:58Z">
+        <changelog><![CDATA[New: Added drag-and-drop support for inserting selected regions directly into the REAPER arrange view.
+Added support for clearing the selection by pressing the ESC key.
+Enhanced selection clearing logic—selection will only be cleared after releasing the mouse button when clicking outside the selection area, for a smoother workflow.
+Moved drag-and-drop insertion logic outside the table row loop.
+Fixed unintended audio insertion when dragging in waveform area.
+Refined and optimized the user interface.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/c96e2ee88eca693ea8467a05a6509258393047c0/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.28" author="zaibuyidao" time="2025-06-13T08:29:03Z">
+        <changelog><![CDATA[New: Added drag-and-drop support for inserting selected regions directly into the REAPER arrange view.
+Refined and optimized the user interface.
+Fixed the issue of auto-crossfade when inserting audio.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/277e5afb37f7d0f9f56da447472e826830c9f5ab/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.29" author="zaibuyidao" time="2025-06-13T18:32:26Z">
+        <changelog><![CDATA[New: Added drag-and-drop support for inserting selected regions directly into the REAPER arrange view.
+Fixed the issue of auto-crossfade when inserting audio.
+Waveform preview now fully supports multichannel audio files. All channels are displayed independently instead of being limited to 2.
+Added a toggle for automatic waveform scrolling during playback. The setting can be enabled or disabled in the settings dialog and is remembered by the script.
+Pitch, playback rate, and volume parameters will only restart preview playback when changed during playback.
+Added "Auto Play Next" feature: audio files in the table can now be played in sequence automatically.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/1584fd5e572b55181d25060f96cf32f8b0eedb18/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.30" author="zaibuyidao" time="2025-06-14T16:58:45Z">
+        <changelog><![CDATA[New: Hold Ctrl and scroll mouse wheel up/down to vertically zoom in/out the waveform preview.
+Fixed: The play cursor now always moves to the selection start when first selecting a range, rather than the end point.
+New: Now you can click anywhere inside the selection to set the play cursor, and clicking outside the selection will immediately clear the selection.
+New: When playing a waveform selection (with loop disabled), playback now automatically stops at the end of the selection and the play cursor returns to the selection start.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/b0494180dbc9ff1fb252f51ca9c1beb6007d3794/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.31" author="zaibuyidao" time="2025-06-15T12:58:30Z">
+        <changelog><![CDATA[New: The table area now automatically resizes when dragging the window or resizing the interface, providing a more flexible and user-friendly browsing experience.
+New: Added "Waveform Height Offset" option. Users can now adjust the waveform preview height in real time in settings. The value is saved automatically and restored when reopening the script.
+Fixed: Corrected an issue where the progress bar time display was inaccurate when changing the playback rate.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/ffd1b7cf5350bce5dbb1a1f36c9150d73b3594b6/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.32" author="zaibuyidao" time="2025-06-15T13:10:05Z">
+        <changelog><![CDATA[New: The table area now automatically resizes when dragging the window or resizing the interface, providing a more flexible and user-friendly browsing experience.
+New: Added "Waveform Height Offset" option. Users can now adjust the waveform preview height in real time in settings. The value is saved automatically and restored when reopening the script.
+Fixed: Corrected an issue where the progress bar time display was inaccurate when changing the playback rate.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/2d3d048993d91c205c9deb833eb6fd2156f1c4fe/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.33" author="zaibuyidao" time="2025-06-19T14:40:10Z">
+        <changelog><![CDATA[New: Added support for merging and grouping audio resources by "file path + section offset and length".
+Optimization: The original path-based merging method no longer ignores SECTION segments and can handle both entire files and multiple section references simultaneously.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/79a0b5deea50cc75bdc6506867a1df53b64101e4/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.34" author="zaibuyidao" time="2025-06-21T17:34:00Z">
+        <changelog><![CDATA[New: Added support for merging and grouping audio resources by "file path + section offset and length".
+Optimization: The original path-based merging method no longer ignores SECTION segments and can handle both entire files and multiple section references simultaneously.
+New: Play button now starts playback from the play cursor if set; otherwise, from the beginning.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/8865114bc0f2849e5c4cda9209ee3c4c65b94bdb/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.0.35" author="zaibuyidao" time="2025-06-22T10:37:33Z">
+        <changelog><![CDATA[New: Added support for merging and grouping audio resources by "file path + section offset and length".
+Optimization: The original path-based merging method no longer ignores SECTION segments and can handle both entire files and multiple section references simultaneously.
+New: Play button now starts playback from the play cursor if set; otherwise, from the beginning.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/f19034e6ff3aacd24b00a7d10c823c77a43d6dc4/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5" author="zaibuyidao" time="2025-06-22T13:30:07Z">
+        <changelog><![CDATA[Added mode switching on the left panel for quickly toggling different audio resource browsing modes.
+Added "This Computer" entry, supporting tree view access to all local drives and browsing audio resources from any location.
+Added "Folder Shortcuts" feature—users can bookmark any local folder path for quick access to frequently used audio directories.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/3c1c810c86a5a2e8a619973b6bd85b573863dcfd/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.1" author="zaibuyidao" time="2025-06-24T04:03:38Z">
+        <changelog><![CDATA[New: Added "Custom Folders" feature—users can now create and manage custom folders to organize and classify audio assets freely.
+New: Audio selection, waveform preview, and drag-insertion remain available after switching folders or modes. Selection and insertion now work even if the file table is refreshed or cleared.
+Fix: All PCM_source-related errors (e.g., GetMediaSourceType) in custom folder mode are resolved; drag-in and section operations now support both standard and custom files robustly.
+Fix: Improved playback state management—audio preview and selection are now decoupled, ensuring reliable UI feedback and accurate Now playing display at all times.
+Change: Switching between any folders or modes now clears the file table selection for consistent user experience across all modes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/6c919b33083b820f56da685a2c37354e27cbf5fc/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.2" author="zaibuyidao" time="2025-06-24T14:17:12Z">
+        <changelog><![CDATA[Fix: Completely exclude .rpp project files to prevent unintended generation of .rpp-PROX cache files.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/6648bf2002881c3e1db592f0ccd1de3743be2679/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.3" author="zaibuyidao" time="2025-06-25T03:00:44Z">
+        <changelog><![CDATA[Fixed an issue where adjusting the pitch or rate knob would incorrectly update the waveform preview cursor to the mouse position.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/19ce6a2eca96d154cda9732f1c0204bbd357aa09/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.4" author="zaibuyidao" time="2025-06-27T12:55:20Z">
+        <changelog><![CDATA[Optimized play cursor jumping when adjusting playback rate.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/2451364822280386c5b373e8bab7dd1c93981037/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.5" author="zaibuyidao" time="2025-06-28T17:42:12Z">
+        <changelog><![CDATA[Introducing the Collections feature, which enables creation of custom folders with unlimited nesting levels.
+Added a "Group" feature, allowing users to create custom groups and drag audio files into them for more efficient organization and categorization of audio assets.
+Added a "Group" column, allowing users to easily manage and organize audio files in the table list into groups via right-click.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/03251bc760dbbc7090811e83561f26092a2eceb8/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.6" author="zaibuyidao" time="2025-06-29T10:28:29Z">
+        <changelog><![CDATA[Added a draggable splitter bar that lets users freely adjust the height of the waveform preview area by dragging.
+Added a context menu to the "Now playing" address bar, enabling users to open the containing folder and automatically highlight the audio file.
+Added a "Random Play" button, allowing random playback of any audio file from the current sound list.
+Optimized the mouse cursor in the waveform preview area: text input cursor appears when selecting, drag cursor when exporting a selection, and default cursor for clicks and other actions.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/9615f2a23cebeec128dbb8154b9869edd7243fc7/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.7" author="zaibuyidao" time="2025-06-30T14:41:50Z">
+        <changelog><![CDATA[The peektree section now uses CollapsingHeader instead of TreeNode for a cleaner and more intuitive interface.
+Pressing ESC will now quickly exit the script if there is no selection in the waveform preview window.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/b1a1c8df2109256da5a69bbbd410126cf1800337/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.8" author="zaibuyidao" time="2025-06-30T15:57:34Z">
+        <changelog><![CDATA[The peektree section now uses CollapsingHeader instead of TreeNode for a cleaner and more intuitive interface.
+Pressing ESC will now quickly exit the script if there is no selection in the waveform preview window.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/a2ad04e6a2f5602130275e0d3c44b8acfe6bb819/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.9" author="zaibuyidao" time="2025-07-02T08:47:44Z">
+        <changelog><![CDATA[Added: "Recently Played" list in the sidebar for quick access and playback of recently used audio files.
+Improved: Mode switching—clicking the main table now exits Recently Played mode.
+Fixed: Path separators now automatically match the current operating system for better cross-platform compatibility.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/00794dd384a745f41347d672a025d3d8ee5d7b05/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.10" author="zaibuyidao" time="2025-07-02T14:27:13Z">
+        <changelog><![CDATA[Added: Waveform preview is now available for each audio row in the table, allowing fast and intuitive browsing.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/eebfc5a5f8b4c6670bd7fc15116c1e8860c80334/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.11" author="zaibuyidao" time="2025-07-06T15:54:12Z">
+        <changelog><![CDATA[After playback stops, the playback cursor will automatically return to the previous playback start position.
+Added content area font size and row height settings. You can now customize the font size and row height of the content area.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/35f44b9912c39bf09ea2219f546705ef4b2ea191/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.12" author="zaibuyidao" time="2025-07-07T01:57:53Z">
+        <changelog><![CDATA[After playback stops, the playback cursor will automatically return to the previous playback start position.
+Added content area font size and row height settings. You can now customize the font size and row height of the content area.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/8afb7e3b860fe7e243ca59e2813914dcd7e23796/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.13" author="zaibuyidao" time="2025-07-08T09:20:16Z">
+        <changelog><![CDATA[Added album cover display feature that shows cover art for audio files on the left side of the file list.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/5a0de942b1dec4f6067c0979cb463ed803b8b978/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.14" author="zaibuyidao" time="2025-07-08T14:31:11Z">
+        <changelog><![CDATA[Added album cover display feature that shows cover art for audio files on the left side of the file list.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/12303c549d67ae8c236e3beb618165fab5b76131/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.15" author="zaibuyidao" time="2025-07-09T02:31:32Z">
+        <changelog><![CDATA[Added album cover display feature that shows cover art for audio files on the left side of the file list.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/93fbf33ed8a9f140bed84431086fdc3bc1a67c4c/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.16" author="zaibuyidao" time="2025-07-09T14:13:39Z">
+        <changelog><![CDATA[Added album cover display feature that shows cover art for audio files on the left side of the file list.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/e001ee35f8fde11dc1c72e2e3f90557ab238c638/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.17" author="zaibuyidao" time="2025-07-09T14:39:08Z">
+        <changelog><![CDATA[Added album cover display feature that shows cover art for audio files on the left side of the file list.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/dbb42867e829ab461cb71e3237c4faf522d23c13/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.18" author="zaibuyidao" time="2025-07-09T14:58:02Z">
+        <changelog><![CDATA[Added album cover display feature that shows cover art for audio files on the left side of the file list.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/d0197f90c69795518c782c5d4d16714f7c52c1ef/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.19" author="zaibuyidao" time="2025-07-10T14:53:58Z">
+        <changelog><![CDATA[Added segmented path browsing: you can now click any folder segment in the path to quickly browse audio files in that folder.
+Fixed the issue where duplicate entries could appear in the Recently Played list.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/53e999d646e6c9295d91463e73303d281eb52d0f/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.20" author="zaibuyidao" time="2025-07-12T15:40:48Z">
+        <changelog><![CDATA[Added a "Refresh Covers For All In List" button, allowing users to manually fetch cover images from metadata when needed. If image metadata is not used, the script will still display album cover images from the local folder if available.
+Fixed path separator normalization issues to ensure stable and consistent path handling across platforms.
+Fixed an issue where pressing the spacebar while typing in a text box would stop playback.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/a5f67a827e2e39a22e3a21c0ded4ebed1d41d9aa/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.21" author="zaibuyidao" time="2025-07-12T16:15:01Z">
+        <changelog><![CDATA[Added a "Refresh Covers For All In List" button, allowing users to manually fetch cover images from metadata when needed. If image metadata is not used, the script will still display album cover images from the local folder if available.
+Fixed path separator normalization issues to ensure stable and consistent path handling across platforms.
+Fixed an issue where pressing the spacebar while typing in a text box would stop playback.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/a9772d87a0ae5f8e696883701d17bd493f14070c/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.22" author="zaibuyidao" time="2025-07-12T18:38:11Z">
+        <changelog><![CDATA[Added a "Refresh Covers For All In List" button, allowing users to manually fetch cover images from metadata when needed. If image metadata is not used, the script will still display album cover images from the local folder if available.
+Fixed path separator normalization issues to ensure stable and consistent path handling across platforms.
+Fixed an issue where pressing the spacebar while typing in a text box would stop playback.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/87b8c5babaa17015d983d565a797b5dc9aa87161/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.23" author="zaibuyidao" time="2025-07-12T19:31:18Z">
+        <changelog><![CDATA[Added a "Refresh Covers For All In List" button, allowing users to manually fetch cover images from metadata when needed. If image metadata is not used, the script will still display album cover images from the local folder if available.
+Fixed path separator normalization issues to ensure stable and consistent path handling across platforms.
+Fixed an issue where pressing the spacebar while typing in a text box would stop playback.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/4e7cc1b5c0aa4e7269b989afd35c02aab6192e28/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.24" author="zaibuyidao" time="2025-07-12T19:37:24Z">
+        <changelog><![CDATA[Added a "Refresh Covers For All In List" button, allowing users to manually fetch cover images from metadata when needed. If image metadata is not used, the script will still display album cover images from the local folder if available.
+Fixed path separator normalization issues to ensure stable and consistent path handling across platforms.
+Fixed an issue where pressing the spacebar while typing in a text box would stop playback.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/d0c9c59a4d0ca54ad20d5c38a8971108e43f23cd/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.25" author="zaibuyidao" time="2025-07-13T14:31:18Z">
+        <changelog><![CDATA[Added a "Refresh Covers For All In List" button, allowing users to manually fetch cover images from metadata when needed. If image metadata is not used, the script will still display album cover images from the local folder if available.
+Fixed path separator normalization issues to ensure stable and consistent path handling across platforms.
+Fixed an issue where pressing the spacebar while typing in a text box would stop playback.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/9432973b122e2801469a9399a38ffa2478f24f6b/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.26" author="zaibuyidao" time="2025-07-13T14:56:51Z">
+        <changelog><![CDATA[Added a "Refresh Covers For All In List" button, allowing users to manually fetch cover images from metadata when needed. If image metadata is not used, the script will still display album cover images from the local folder if available.
+Fixed path separator normalization issues to ensure stable and consistent path handling across platforms.
+Fixed an issue where pressing the spacebar while typing in a text box would stop playback.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/b0f1410f2949430093def4188324d9634d7d2c6f/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.27" author="zaibuyidao" time="2025-07-13T17:12:53Z">
+        <changelog><![CDATA[Fixed error caused by empty item in project.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/a53b492c2715c067cb4840cd7519aaf9a6715b9a/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.28" author="zaibuyidao" time="2025-07-14T15:56:19Z">
+        <changelog><![CDATA[Added UCS list search feature code (search functionality is not yet enabled).]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/d0d4318fd545fe662abb1f58f5d197265dca07cd/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.29" author="zaibuyidao" time="2025-07-15T06:02:10Z">
+        <changelog><![CDATA[Added UCS list search feature code (search functionality is not yet enabled).
+Temporarily disabled UCS CSV file reading.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/f8c2bcb146c9efc0ed42dc779944584ac783fe71/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.30" author="zaibuyidao" time="2025-07-15T16:30:59Z">
+        <changelog><![CDATA[Added UCS list search feature code (search functionality is not yet enabled).
+Temporarily disabled UCS CSV file reading.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/ec0331db0096fa433d8f070e2204f6509c4099a6/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.31" author="zaibuyidao" time="2025-07-16T16:19:34Z">
+        <changelog><![CDATA[Added image metadata support. Audio files with embedded cover art can now be displayed automatically without any third-party tools.
+Added the option "Close audio device when stopped or inactive" in settings.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/a57b648e788791bc9bb21d58a9b29e96ec015248/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.32" author="zaibuyidao" time="2025-07-16T16:34:21Z">
+        <changelog><![CDATA[Added image metadata support. Audio files with embedded cover art can now be displayed automatically without any third-party tools.
+Added the option "Close audio device when stopped or inactive" in settings.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/d32e99a87d708d061c36c2207cced9bc0a58560e/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
+      </version>
+      <version name="1.5.33" author="zaibuyidao" time="2025-07-17T15:10:06Z">
+        <changelog><![CDATA[Skip Silence feature added. playback preview now automatically jumps to the first audible moment, bypassing leading silence.]]></changelog>
+        <source main="main">https://github.com/zaibuyidao/ReaScripts/raw/00e8660808eec49dfff9c18b0a22d51385e57d1b/Utility/zaibuyidao_Project%20Audio%20File%20Explorer.lua</source>
       </version>
     </reapack>
     <reapack name="zaibuyidao_Set Default Reabank.lua" type="script" desc="Set Default Reabank">
@@ -8222,6 +9094,72 @@
         <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track.lua">https://github.com/zaibuyidao/ReaScripts/raw/a99e8053774db4cc95091eaeb294440eefa12f01/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track.lua</source>
         <source file="Advanced Solo/lib/speaker.cur">https://github.com/zaibuyidao/ReaScripts/raw/a99e8053774db4cc95091eaeb294440eefa12f01/Various/Advanced%20Solo/lib/speaker.cur</source>
         <source file="Advanced Solo/lib/serpent.lua">https://github.com/zaibuyidao/ReaScripts/raw/a99e8053774db4cc95091eaeb294440eefa12f01/Various/Advanced%20Solo/lib/serpent.lua</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-02-24T09:41:34Z">
+        <changelog><![CDATA[# Fixed the "attempt to index a nil value" issue.]]></changelog>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from First Selected Item.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20First%20Selected%20Item.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item Without Moving Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20Without%20Moving%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo MIDI Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20MIDI%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo MIDI Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20MIDI%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo Note from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Note%20from%20Edit%20Cursor.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo Note from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Note%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Edit Cursor (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Edit%20Cursor%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Mouse Position (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Mouse%20Position%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track Without Moving Edit Cursor (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20Without%20Moving%20Edit%20Cursor%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track Without Moving Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20Without%20Moving%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from First Selected Item.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20First%20Selected%20Item.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo MIDI Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20MIDI%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo MIDI Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20MIDI%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo Note from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Note%20from%20Edit%20Cursor.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo Note from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Note%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Track from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Track%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Track from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Track%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo Automatically for Selected Tracks.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20Automatically%20for%20Selected%20Tracks.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo for Selected Tracks or Track Under Mouse.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Selected%20Tracks%20or%20Track%20Under%20Mouse.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo for Selected Tracks.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Selected%20Tracks.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track (Settings).lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track%20(Settings).lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track.lua</source>
+        <source file="Advanced Solo/lib/speaker.cur">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/lib/speaker.cur</source>
+        <source file="Advanced Solo/lib/serpent.lua">https://github.com/zaibuyidao/ReaScripts/raw/a328fc787eff11565e6877a8db6f812006308827/Various/Advanced%20Solo/lib/serpent.lua</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-05-09T09:00:17Z">
+        <changelog><![CDATA[# Fixed the "attempt to index a nil value" issue.]]></changelog>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from First Selected Item.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20First%20Selected%20Item.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item Without Moving Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20Without%20Moving%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo MIDI Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20MIDI%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo MIDI Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20MIDI%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo Note from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Note%20from%20Edit%20Cursor.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo Note from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Note%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Edit Cursor (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Edit%20Cursor%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Mouse Position (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Mouse%20Position%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track Without Moving Edit Cursor (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20Without%20Moving%20Edit%20Cursor%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track Without Moving Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20Without%20Moving%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from First Selected Item.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20First%20Selected%20Item.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo MIDI Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20MIDI%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo MIDI Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20MIDI%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo Note from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Note%20from%20Edit%20Cursor.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo Note from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Note%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Track from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Track%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Track from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Track%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo Automatically for Selected Tracks.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20Automatically%20for%20Selected%20Tracks.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo for Selected Tracks or Track Under Mouse.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Selected%20Tracks%20or%20Track%20Under%20Mouse.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo for Selected Tracks.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Selected%20Tracks.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track (Settings).lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track%20(Settings).lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track.lua</source>
+        <source file="Advanced Solo/lib/speaker.cur">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/lib/speaker.cur</source>
+        <source file="Advanced Solo/lib/serpent.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/lib/serpent.lua</source>
       </version>
     </reapack>
     <reapack name="Articulation Map Bundle.lua" type="script" desc="Articulation Map Bundle">
@@ -9633,7 +10571,7 @@
 {\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
 }
 ]]></description>
-        <link rel="website">https://www.soundengine.cn/user/%E5%86%8D%E8%A3%9C%E4%B8%80%E5%88%80</link>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
         <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
         <link rel="donation">http://www.paypal.me/zaibuyidao</link>
       </metadata>
@@ -13054,6 +13992,367 @@ Add "scroll to top" feature to UCS list]]></changelog>
         <source file="SFX Tag Search/lib/config-thesaurus-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/e1ed16543d7bfdfccdfca935739298311d9d574d/Various/SFX%20Tag%20Search/lib/config-thesaurus-default.ini</source>
         <source file="SFX Tag Search/lib/config-ucs-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/e1ed16543d7bfdfccdfca935739298311d9d574d/Various/SFX%20Tag%20Search/lib/config-ucs-default.ini</source>
         <source file="SFX Tag Search/lib/config-ucs-synonym-index-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/e1ed16543d7bfdfccdfca935739298311d9d574d/Various/SFX%20Tag%20Search/lib/config-ucs-synonym-index-default.ini</source>
+      </version>
+      <version name="2.0.16" author="zaibuyidao" time="2025-04-22T09:02:01Z">
+        <changelog><![CDATA[+ Optimized search term sending.
+  Please back up the configuration files (*.ini) in the script directory and delete them.
+  Running the script again will recreate the configuration files.]]></changelog>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Custom Tags.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Custom%20Tags.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Database.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Database.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Favorite.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Favorite.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Thesaurus.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Thesaurus.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - UCS Synonym Index.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20UCS%20Synonym%20Index.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - UCS.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20UCS.lua</source>
+        <source file="SFX Tag Search/lib/LIP.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/LIP.lua</source>
+        <source file="SFX Tag Search/lib/core_custom_tags.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/core_custom_tags.lua</source>
+        <source file="SFX Tag Search/lib/core_database.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/core_database.lua</source>
+        <source file="SFX Tag Search/lib/core_favorite.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/core_favorite.lua</source>
+        <source file="SFX Tag Search/lib/core_thesaurus.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/core_thesaurus.lua</source>
+        <source file="SFX Tag Search/lib/core_ucs.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/core_ucs.lua</source>
+        <source file="SFX Tag Search/lib/pinyin.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/pinyin.lua</source>
+        <source file="SFX Tag Search/req/JGui.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/JGui.lua</source>
+        <source file="SFX Tag Search/req/JGuiColors.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/JGuiColors.lua</source>
+        <source file="SFX Tag Search/req/JGuiControls.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/JGuiControls.lua</source>
+        <source file="SFX Tag Search/req/JGuiFunctions.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/JGuiFunctions.lua</source>
+        <source file="SFX Tag Search/req/JProjectClass.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/JProjectClass.lua</source>
+        <source file="SFX Tag Search/req/JProjectClassReq.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/JProjectClassReq.lua</source>
+        <source file="SFX Tag Search/req/jKeyboard.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/jKeyboard.lua</source>
+        <source file="SFX Tag Search/req/j_file_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/j_file_functions.lua</source>
+        <source file="SFX Tag Search/req/j_settings_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/j_settings_functions.lua</source>
+        <source file="SFX Tag Search/req/j_string_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/j_string_functions.lua</source>
+        <source file="SFX Tag Search/req/j_tables.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/j_tables.lua</source>
+        <source file="SFX Tag Search/req/j_trackstatechunk_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/j_trackstatechunk_functions.lua</source>
+        <source file="SFX Tag Search/req/mouse.lua">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/req/mouse.lua</source>
+        <source file="SFX Tag Search/keywords_thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/keywords_thesaurus.csv</source>
+        <source file="SFX Tag Search/keywords_ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/keywords_ucs.csv</source>
+        <source file="SFX Tag Search/lib/config-custom-tags-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/config-custom-tags-default.ini</source>
+        <source file="SFX Tag Search/lib/config-database-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/config-database-default.ini</source>
+        <source file="SFX Tag Search/lib/config-favorite-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/config-favorite-default.ini</source>
+        <source file="SFX Tag Search/lib/config-thesaurus-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/config-thesaurus-default.ini</source>
+        <source file="SFX Tag Search/lib/config-ucs-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/config-ucs-default.ini</source>
+        <source file="SFX Tag Search/lib/config-ucs-synonym-index-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/6e9ca556dd50db2bcb8372c61ca20dfe10ed78a1/Various/SFX%20Tag%20Search/lib/config-ucs-synonym-index-default.ini</source>
+      </version>
+      <version name="2.0.17" author="zaibuyidao" time="2025-05-26T14:50:02Z">
+        <changelog><![CDATA[+ Optimized search term sending.
+  Please back up the configuration files (*.ini) in the script directory and delete them.
+  Running the script again will recreate the configuration files.]]></changelog>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Custom Tags.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Custom%20Tags.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Database.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Database.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Favorite.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Favorite.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Thesaurus.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Thesaurus.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - UCS Synonym Index.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20UCS%20Synonym%20Index.lua</source>
+        <source main="main" file="SFX Tag Search/zaibuyidao_SFX Tag Search - UCS.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20UCS.lua</source>
+        <source file="SFX Tag Search/lib/LIP.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/LIP.lua</source>
+        <source file="SFX Tag Search/lib/core_custom_tags.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/core_custom_tags.lua</source>
+        <source file="SFX Tag Search/lib/core_database.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/core_database.lua</source>
+        <source file="SFX Tag Search/lib/core_favorite.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/core_favorite.lua</source>
+        <source file="SFX Tag Search/lib/core_thesaurus.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/core_thesaurus.lua</source>
+        <source file="SFX Tag Search/lib/core_ucs.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/core_ucs.lua</source>
+        <source file="SFX Tag Search/lib/pinyin.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/pinyin.lua</source>
+        <source file="SFX Tag Search/req/JGui.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/JGui.lua</source>
+        <source file="SFX Tag Search/req/JGuiColors.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/JGuiColors.lua</source>
+        <source file="SFX Tag Search/req/JGuiControls.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/JGuiControls.lua</source>
+        <source file="SFX Tag Search/req/JGuiFunctions.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/JGuiFunctions.lua</source>
+        <source file="SFX Tag Search/req/JProjectClass.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/JProjectClass.lua</source>
+        <source file="SFX Tag Search/req/JProjectClassReq.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/JProjectClassReq.lua</source>
+        <source file="SFX Tag Search/req/jKeyboard.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/jKeyboard.lua</source>
+        <source file="SFX Tag Search/req/j_file_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/j_file_functions.lua</source>
+        <source file="SFX Tag Search/req/j_settings_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/j_settings_functions.lua</source>
+        <source file="SFX Tag Search/req/j_string_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/j_string_functions.lua</source>
+        <source file="SFX Tag Search/req/j_tables.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/j_tables.lua</source>
+        <source file="SFX Tag Search/req/j_trackstatechunk_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/j_trackstatechunk_functions.lua</source>
+        <source file="SFX Tag Search/req/mouse.lua">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/req/mouse.lua</source>
+        <source file="SFX Tag Search/keywords_thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/keywords_thesaurus.csv</source>
+        <source file="SFX Tag Search/keywords_ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/keywords_ucs.csv</source>
+        <source file="SFX Tag Search/lib/config-custom-tags-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/config-custom-tags-default.ini</source>
+        <source file="SFX Tag Search/lib/config-database-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/config-database-default.ini</source>
+        <source file="SFX Tag Search/lib/config-favorite-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/config-favorite-default.ini</source>
+        <source file="SFX Tag Search/lib/config-thesaurus-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/config-thesaurus-default.ini</source>
+        <source file="SFX Tag Search/lib/config-ucs-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/config-ucs-default.ini</source>
+        <source file="SFX Tag Search/lib/config-ucs-synonym-index-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search/lib/config-ucs-synonym-index-default.ini</source>
+        <source main="main mediaexplorer">https://github.com/zaibuyidao/ReaScripts/raw/58616059591d330292e04df7e8b11d09197953b8/Various/SFX%20Tag%20Search%20Bundle.lua</source>
+      </version>
+      <version name="2.0.18" author="zaibuyidao" time="2025-05-26T16:25:31Z">
+        <changelog><![CDATA[+ Optimized search term sending.
+  Please back up the configuration files (*.ini) in the script directory and delete them.
+  Running the script again will recreate the configuration files.]]></changelog>
+        <source main="main mediaexplorer" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Custom Tags.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Custom%20Tags.lua</source>
+        <source main="main mediaexplorer" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Database.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Database.lua</source>
+        <source main="main mediaexplorer" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Favorite.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Favorite.lua</source>
+        <source main="main mediaexplorer" file="SFX Tag Search/zaibuyidao_SFX Tag Search - Thesaurus.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20Thesaurus.lua</source>
+        <source main="main mediaexplorer" file="SFX Tag Search/zaibuyidao_SFX Tag Search - UCS Synonym Index.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20UCS%20Synonym%20Index.lua</source>
+        <source main="main mediaexplorer" file="SFX Tag Search/zaibuyidao_SFX Tag Search - UCS.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/zaibuyidao_SFX%20Tag%20Search%20-%20UCS.lua</source>
+        <source file="SFX Tag Search/lib/LIP.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/LIP.lua</source>
+        <source file="SFX Tag Search/lib/core_custom_tags.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/core_custom_tags.lua</source>
+        <source file="SFX Tag Search/lib/core_database.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/core_database.lua</source>
+        <source file="SFX Tag Search/lib/core_favorite.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/core_favorite.lua</source>
+        <source file="SFX Tag Search/lib/core_thesaurus.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/core_thesaurus.lua</source>
+        <source file="SFX Tag Search/lib/core_ucs.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/core_ucs.lua</source>
+        <source file="SFX Tag Search/lib/pinyin.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/pinyin.lua</source>
+        <source file="SFX Tag Search/req/JGui.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/JGui.lua</source>
+        <source file="SFX Tag Search/req/JGuiColors.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/JGuiColors.lua</source>
+        <source file="SFX Tag Search/req/JGuiControls.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/JGuiControls.lua</source>
+        <source file="SFX Tag Search/req/JGuiFunctions.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/JGuiFunctions.lua</source>
+        <source file="SFX Tag Search/req/JProjectClass.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/JProjectClass.lua</source>
+        <source file="SFX Tag Search/req/JProjectClassReq.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/JProjectClassReq.lua</source>
+        <source file="SFX Tag Search/req/jKeyboard.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/jKeyboard.lua</source>
+        <source file="SFX Tag Search/req/j_file_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/j_file_functions.lua</source>
+        <source file="SFX Tag Search/req/j_settings_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/j_settings_functions.lua</source>
+        <source file="SFX Tag Search/req/j_string_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/j_string_functions.lua</source>
+        <source file="SFX Tag Search/req/j_tables.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/j_tables.lua</source>
+        <source file="SFX Tag Search/req/j_trackstatechunk_functions.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/j_trackstatechunk_functions.lua</source>
+        <source file="SFX Tag Search/req/mouse.lua">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/req/mouse.lua</source>
+        <source file="SFX Tag Search/keywords_thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/keywords_thesaurus.csv</source>
+        <source file="SFX Tag Search/keywords_ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/keywords_ucs.csv</source>
+        <source file="SFX Tag Search/lib/config-custom-tags-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/config-custom-tags-default.ini</source>
+        <source file="SFX Tag Search/lib/config-database-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/config-database-default.ini</source>
+        <source file="SFX Tag Search/lib/config-favorite-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/config-favorite-default.ini</source>
+        <source file="SFX Tag Search/lib/config-thesaurus-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/config-thesaurus-default.ini</source>
+        <source file="SFX Tag Search/lib/config-ucs-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/config-ucs-default.ini</source>
+        <source file="SFX Tag Search/lib/config-ucs-synonym-index-default.ini">https://github.com/zaibuyidao/ReaScripts/raw/2abbeae9997b824436ec9ae6733052c61d4a3c0b/Various/SFX%20Tag%20Search/lib/config-ucs-synonym-index-default.ini</source>
+      </version>
+    </reapack>
+    <reapack name="Soundmole.lua" type="script" desc="Soundmole">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-07-18T16:36:49Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/6d3fe43ce956626c69b8aa301bd65f852e51ddb5/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/6d3fe43ce956626c69b8aa301bd65f852e51ddb5/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/6d3fe43ce956626c69b8aa301bd65f852e51ddb5/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/6d3fe43ce956626c69b8aa301bd65f852e51ddb5/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-07-18T17:53:56Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/ae26ebcf5c71a0b250b47b33a196d1e02e9a5ccb/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/ae26ebcf5c71a0b250b47b33a196d1e02e9a5ccb/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/ae26ebcf5c71a0b250b47b33a196d1e02e9a5ccb/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/ae26ebcf5c71a0b250b47b33a196d1e02e9a5ccb/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-07-19T17:29:21Z">
+        <changelog><![CDATA[Added a dropdown menu for selectable search fields.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/e56fdba2170c988a31f4e2a91464051a7d908c9c/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/e56fdba2170c988a31f4e2a91464051a7d908c9c/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/e56fdba2170c988a31f4e2a91464051a7d908c9c/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/e56fdba2170c988a31f4e2a91464051a7d908c9c/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-07-23T08:43:35Z">
+        <changelog><![CDATA[Added auto-save for mode selection, restoring the previous mode on next startup.
+Added a dropdown menu for selectable search fields.
+Included a new ucs.csv file for UCS support (functionality not yet active; work in progress).]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/339ec4bca38b97735204a9c1049f686df6f1d0b6/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/339ec4bca38b97735204a9c1049f686df6f1d0b6/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/339ec4bca38b97735204a9c1049f686df6f1d0b6/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/339ec4bca38b97735204a9c1049f686df6f1d0b6/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-07-24T16:24:53Z">
+        <changelog><![CDATA[Added saved search feature. You can now save your search box content for quick access next time.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/5d837b76021c73b631f28ebe4c32493679bb76fb/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/5d837b76021c73b631f28ebe4c32493679bb76fb/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/5d837b76021c73b631f28ebe4c32493679bb76fb/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/5d837b76021c73b631f28ebe4c32493679bb76fb/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.5" author="zaibuyidao" time="2025-07-25T06:42:11Z">
+        <changelog><![CDATA[Added "Saved Search" feature. You can now save your search box content for quick access next time.
+Added "Recently Searched" feature. The script now automatically records historical search keywords.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/b86e5ce9346e83fa9b08cb30eb3f3736cbabfc72/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/b86e5ce9346e83fa9b08cb30eb3f3736cbabfc72/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/b86e5ce9346e83fa9b08cb30eb3f3736cbabfc72/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/b86e5ce9346e83fa9b08cb30eb3f3736cbabfc72/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.6" author="zaibuyidao" time="2025-07-26T18:21:59Z">
+        <changelog><![CDATA[Added "Synonyms" feature: If the search keyword has synonyms, you can enable the "Synonyms" option to trigger synonym-based searching, automatically matching all results for related words.
+Added "Same Folder" feature: Quickly jump to the folder containing the currently playing file and browse all audio files in that directory.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/2408698e7cc2b97637b141b4594113f48a6f0089/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/2408698e7cc2b97637b141b4594113f48a6f0089/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/2408698e7cc2b97637b141b4594113f48a6f0089/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/2408698e7cc2b97637b141b4594113f48a6f0089/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/2408698e7cc2b97637b141b4594113f48a6f0089/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.7" author="zaibuyidao" time="2025-07-27T05:26:20Z">
+        <changelog><![CDATA[Optimized the arrangement and spacing of interface sections.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/fc171a62d2c4e0bb57538d1762e5bc2d2cf1f650/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/fc171a62d2c4e0bb57538d1762e5bc2d2cf1f650/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/fc171a62d2c4e0bb57538d1762e5bc2d2cf1f650/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/fc171a62d2c4e0bb57538d1762e5bc2d2cf1f650/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/fc171a62d2c4e0bb57538d1762e5bc2d2cf1f650/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.8" author="zaibuyidao" time="2025-07-27T08:56:26Z">
+        <changelog><![CDATA[Optimized the arrangement and spacing of interface sections.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/96c958174afbb61ac3638b9e35faaf6d22f9369a/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/96c958174afbb61ac3638b9e35faaf6d22f9369a/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/96c958174afbb61ac3638b9e35faaf6d22f9369a/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/96c958174afbb61ac3638b9e35faaf6d22f9369a/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/96c958174afbb61ac3638b9e35faaf6d22f9369a/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.9" author="zaibuyidao" time="2025-07-30T07:23:06Z">
+        <changelog><![CDATA[Optimized the arrangement and spacing of interface sections.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/05cfd1b0c55a1e71ceb5b00dc16e2513fcf796c4/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/05cfd1b0c55a1e71ceb5b00dc16e2513fcf796c4/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/05cfd1b0c55a1e71ceb5b00dc16e2513fcf796c4/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/05cfd1b0c55a1e71ceb5b00dc16e2513fcf796c4/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/05cfd1b0c55a1e71ceb5b00dc16e2513fcf796c4/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.10" author="zaibuyidao" time="2025-07-30T16:36:19Z">
+        <changelog><![CDATA[Added UCS columns to display Category, Subcategory, and CatID fields.
+Added UCS tab keyword search. Clicking a category or subcategory now instantly performs an implicit search for that field, with no manual input required.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/1ad13c7731a17ea12d41fd660c7ff7bed535f115/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/1ad13c7731a17ea12d41fd660c7ff7bed535f115/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/1ad13c7731a17ea12d41fd660c7ff7bed535f115/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/1ad13c7731a17ea12d41fd660c7ff7bed535f115/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/1ad13c7731a17ea12d41fd660c7ff7bed535f115/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.11" author="zaibuyidao" time="2025-07-31T07:27:35Z">
+        <changelog><![CDATA[Optimized peak cache directory structure with hexadecimal subfolder distribution.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/bf5728046383df3685f510a5aea42d07646abfce/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/bf5728046383df3685f510a5aea42d07646abfce/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/bf5728046383df3685f510a5aea42d07646abfce/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/bf5728046383df3685f510a5aea42d07646abfce/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/bf5728046383df3685f510a5aea42d07646abfce/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.12" author="zaibuyidao" time="2025-07-31T09:51:29Z">
+        <changelog><![CDATA[Optimized peak cache directory structure with hexadecimal subfolder distribution.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/2d31d9493c1eea16e8c97f43dd576bfc2dd3e135/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/2d31d9493c1eea16e8c97f43dd576bfc2dd3e135/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/2d31d9493c1eea16e8c97f43dd576bfc2dd3e135/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/2d31d9493c1eea16e8c97f43dd576bfc2dd3e135/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/2d31d9493c1eea16e8c97f43dd576bfc2dd3e135/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.13" author="zaibuyidao" time="2025-07-31T15:46:00Z">
+        <changelog><![CDATA[Added Media Database feature. You can now create databases for quick access to your audio assets.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/1df0a366a7d85393c0aae4ff2d06cbd27c3828e5/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/1df0a366a7d85393c0aae4ff2d06cbd27c3828e5/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/1df0a366a7d85393c0aae4ff2d06cbd27c3828e5/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/1df0a366a7d85393c0aae4ff2d06cbd27c3828e5/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/1df0a366a7d85393c0aae4ff2d06cbd27c3828e5/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.14" author="zaibuyidao" time="2025-07-31T16:03:35Z">
+        <changelog><![CDATA[Added Media Database feature. You can now create databases for quick access to your audio assets.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/c9182a14edba5086c676017c6a8c3f9e2b7d440d/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/c9182a14edba5086c676017c6a8c3f9e2b7d440d/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/c9182a14edba5086c676017c6a8c3f9e2b7d440d/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/c9182a14edba5086c676017c6a8c3f9e2b7d440d/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/c9182a14edba5086c676017c6a8c3f9e2b7d440d/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.15" author="zaibuyidao" time="2025-07-31T16:16:26Z">
+        <changelog><![CDATA[Added Media Database feature. You can now create databases for quick access to your audio assets.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/c783967611a2c7a11095262c5e30427f55ec633b/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/c783967611a2c7a11095262c5e30427f55ec633b/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/c783967611a2c7a11095262c5e30427f55ec633b/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/c783967611a2c7a11095262c5e30427f55ec633b/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/c783967611a2c7a11095262c5e30427f55ec633b/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.16" author="zaibuyidao" time="2025-08-01T03:32:39Z">
+        <changelog><![CDATA[Added Media Database feature. You can now create databases for quick access to your audio assets.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/a07ab302a007a40bc3c0f933a6fd53541373fa71/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/a07ab302a007a40bc3c0f933a6fd53541373fa71/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/a07ab302a007a40bc3c0f933a6fd53541373fa71/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/a07ab302a007a40bc3c0f933a6fd53541373fa71/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/a07ab302a007a40bc3c0f933a6fd53541373fa71/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.17" author="zaibuyidao" time="2025-08-01T16:47:58Z">
+        <changelog><![CDATA[Added database build progress popup, showing creation progress and supporting interruption.
+Fixed lag when scrolling and playing back large audio lists.
+Render only visible rows to dramatically improve table responsiveness.
+On-demand waveform loading prioritizes rendering in view.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/4895cb96a6f23c12f226da329a08c715ffe608a6/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/4895cb96a6f23c12f226da329a08c715ffe608a6/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/4895cb96a6f23c12f226da329a08c715ffe608a6/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/4895cb96a6f23c12f226da329a08c715ffe608a6/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/4895cb96a6f23c12f226da329a08c715ffe608a6/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.18" author="zaibuyidao" time="2025-08-01T17:07:21Z">
+        <changelog><![CDATA[Added database build progress popup, showing creation progress and supporting interruption.
+Fixed lag when scrolling and playing back large audio lists.
+Render only visible rows to dramatically improve table responsiveness.
+On-demand waveform loading prioritizes rendering in view.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/20c9568e25ad9a9fdfb798a312091cd336e26814/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/20c9568e25ad9a9fdfb798a312091cd336e26814/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/20c9568e25ad9a9fdfb798a312091cd336e26814/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/20c9568e25ad9a9fdfb798a312091cd336e26814/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/20c9568e25ad9a9fdfb798a312091cd336e26814/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.19" author="zaibuyidao" time="2025-08-02T13:47:42Z">
+        <changelog><![CDATA[Corrected waveform rendering discrepancies so that displayed waveforms now accurately reflect the underlying audio data.
+Fixed an index mismatch in the filtering and sorting logic to ensure click, playback, and random-play actions always target the intended visible item.
+A visual progress bar has been added during the database creation process to display indexing and import progress in real time.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/4041843baed82c62942e2edb886cef2b9abe81ae/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/4041843baed82c62942e2edb886cef2b9abe81ae/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/4041843baed82c62942e2edb886cef2b9abe81ae/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/4041843baed82c62942e2edb886cef2b9abe81ae/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/4041843baed82c62942e2edb886cef2b9abe81ae/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.20" author="zaibuyidao" time="2025-08-02T15:21:29Z">
+        <changelog><![CDATA[Added support for shortcut Q to add samples to the selected track's RS5K plugin.
+Added support for loading samples into RS5K plugin via right-click menu.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/864f1bac7b9e0b24ff4b1345a1f0c21b19c80578/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/864f1bac7b9e0b24ff4b1345a1f0c21b19c80578/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/864f1bac7b9e0b24ff4b1345a1f0c21b19c80578/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/864f1bac7b9e0b24ff4b1345a1f0c21b19c80578/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/864f1bac7b9e0b24ff4b1345a1f0c21b19c80578/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.21" author="zaibuyidao" time="2025-08-02T16:27:58Z">
+        <changelog><![CDATA[Added support for shortcut Q to add samples to the selected track's RS5K plugin.
+Added support for loading samples into RS5K plugin via right-click menu.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/9253b5cc0ed8275d95cbde5fd26f09d3c87a6497/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/9253b5cc0ed8275d95cbde5fd26f09d3c87a6497/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/9253b5cc0ed8275d95cbde5fd26f09d3c87a6497/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/9253b5cc0ed8275d95cbde5fd26f09d3c87a6497/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/9253b5cc0ed8275d95cbde5fd26f09d3c87a6497/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.22" author="zaibuyidao" time="2025-08-02T17:42:42Z">
+        <changelog><![CDATA[Added support for shortcut Q to add samples to the selected track's RS5K plugin.
+Added support for loading samples into RS5K plugin via right-click menu.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/fcbf5f7e62058d3c47d31ba10dcf08e28c1762be/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/fcbf5f7e62058d3c47d31ba10dcf08e28c1762be/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/fcbf5f7e62058d3c47d31ba10dcf08e28c1762be/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/fcbf5f7e62058d3c47d31ba10dcf08e28c1762be/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/fcbf5f7e62058d3c47d31ba10dcf08e28c1762be/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.23" author="zaibuyidao" time="2025-08-03T09:16:08Z">
+        <changelog><![CDATA[Hold Shift and click to select a continuous range in the file list and drag it into Group, Collections, or Database.
+In the Database Mode, use the context menu to remove all selected audio files in one operation.
+In the Collections Mode, use the context menu to remove all selected audio files at once.
+In the Group Mode, bulk add or remove tags for all selected items.
+On database refresh, only new entries are loaded, avoiding a full re-read of the .MoleFileList.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/9aec24662b5d81f72f3a492519a241b9ba43bc1a/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/9aec24662b5d81f72f3a492519a241b9ba43bc1a/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/9aec24662b5d81f72f3a492519a241b9ba43bc1a/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/9aec24662b5d81f72f3a492519a241b9ba43bc1a/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/9aec24662b5d81f72f3a492519a241b9ba43bc1a/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.24" author="zaibuyidao" time="2025-08-04T15:25:33Z">
+        <changelog><![CDATA[Optimized database creation logic to support adding multiple folder paths to a single database.
+Unified progress bar display for database building and batch path import operations.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/data/ucs.csv</source>
       </version>
     </reapack>
     <reapack name="UCS Tag Search Rename Bundle.lua" type="script" desc="UCS Tag Search Rename Bundle">

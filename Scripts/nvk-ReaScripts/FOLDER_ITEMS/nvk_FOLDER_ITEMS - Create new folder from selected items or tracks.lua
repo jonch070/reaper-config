@@ -8,31 +8,24 @@ DATA_PATH = debug.getinfo(1, 'S').source:match '@(.+[/\\])' .. DATA .. SEP
 dofile(DATA_PATH .. 'functions.dat')
 if not functionsLoaded then return end
 -- SCRIPT --
+---@param tracks Tracks
 local function create_folder(tracks)
-    local track = tracks[1]
-    local idx = track.num
-    r.InsertTrackAtIndex(idx - 1, true) -- insert new track above first selected track
-    Tracks():Unselect()
-    tracks:Select()
-    r.ReorderSelectedTracks(idx, 1) -- add tracks to folder in newly created track
-    tracks:Unselect()
-    track.parent:Select()
-    track.parent.channels = tracks.maxchannels
+    local parent = tracks:AddToFolder()
     local items = tracks.items
     local columns = Columns(items.unmuted)
     Items.UnselectAll()
     for i, column in ipairs(columns) do
-        FolderItem.Create(track.parent, column).sel = true
+        FolderItem.Create(parent, column).sel = true
     end
     items.sel = true
-    if COLLAPSE_FOLDER_TRACK_AFTER_CREATION then track.parent:ToggleVisibility() end
-    track.parent:SetLastTouched()
+    if COLLAPSE_FOLDER_TRACK_AFTER_CREATION then parent:ToggleVisibility() end
+    parent:SetLastTouched()
 end
 
 local rv = run(function()
     local focus = r.GetCursorContext()
     local items = Items.Selected()
-    local tracks = Tracks()
+    local tracks = Tracks.Selected()
     if focus == 0 or #items == 0 then
         if #tracks == 0 then return end
         create_folder(tracks)
@@ -47,7 +40,7 @@ local rv = run(function()
             r.Main_OnCommand(40006, 0) -- Item: Remove items
             Track(idx):SetLastTouched()
             r.Main_OnCommand(42398, 0) -- Item: Paste items/tracks
-            item_tracks = Tracks()
+            item_tracks = Tracks.Selected()
             item_tracks.items.unselected:Delete() -- delete unselected newly copied items on new tracks
         end
         create_folder(item_tracks)

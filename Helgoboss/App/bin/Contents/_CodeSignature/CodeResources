@@ -23,19 +23,19 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ZBiLh4KRNc+XtTc544rpVhsQn/Y=
+			sE4rEeebm3D1bFmlCk1SDUr9Qao=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"64188b87829135cf97b53739e38ae9561b109ff6" or cdhash H"9cc45cfd36e7f3361cb0ad533b024fdb3f78dcf9"</string>
+			<string>cdhash H"b04e2b11e79b9b70f56c59a50a4d520d4afd41aa" or cdhash H"6c4bd24b83960003fefd422aed76d2a148964276"</string>
 		</dict>
 		<key>Frameworks/FlutterMacOS.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			c4aEjLj5VywdGbZyewK/rMlPkhw=
+			56YOSzGC2if9kR/BW9mbbuSFau0=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"7386848cb8f9572c1d19b6727b02bfacc94f921c" or cdhash H"ae93d8a5df1389af75668871b34d75d052e4617b"</string>
+			<string>cdhash H"e7a60e4b3182da27fd911fc15bd99b6ee4856aed" or cdhash H"555d4cf07b4c64543a9238febfb3db6b3f4c173c"</string>
 		</dict>
 		<key>Frameworks/cryptography_flutter.framework</key>
 		<dict>
@@ -239,10 +239,10 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			gX5p8oz4ZAVf0QgR3YsQ78rj/Yg=
+			cfcgkOGT6KqeOZNa94GzclAuOpI=
 			</data>
 			<key>requirement</key>
-			<string>cdhash H"817e69f28cf864055fd10811dd8b10efcae3fd88" or cdhash H"439445d8693ef7c0ca20b000ebaf88f4f4047b20"</string>
+			<string>cdhash H"71f72090e193e8aa9e39935af781b372502e3a92" or cdhash H"2591c1f8eb78ba310c3f25ce80c47a6f90e2759e"</string>
 		</dict>
 		<key>Frameworks/screen_retriever.framework</key>
 		<dict>

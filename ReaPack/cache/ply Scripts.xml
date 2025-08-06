@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ply Scripts" commit="820e29e0a3a6dde7b9678d3a0b958f4e4b66d184">
+<index version="1" name="ply Scripts" commit="f0a200c612b3618b2ab2f2079d4ca518b34992da">
   <category name="Items Editing">
     <reapack name="ply_Synchronize and heal selected items.lua" type="script" desc="Synchronize and heal selected media items">
       <version name="0.2.1" author="Paweł Łyżwa (ply)" time="2020-12-19T13:51:52Z">
@@ -13,16 +13,16 @@
   <category name="Items Editing/Source-Destination">
     <reapack name="ply_Source-Destination edit.lua" type="script" desc="Source-Destination edit">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Source-Destination edit\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Source-Destination edit\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 3- & 4-point editing for REAPER. This package is very inspired by {\field{\*\fldinst{HYPERLINK "https://forum.cockos.com/showthread.php?t=116213"}}{\fldrslt{\ul
 pelleke's actions
 }}}
  (thank you).\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 First, open the source project and use {\f1 Source-Destination setup} script. It opens a duplicate of the currently opened project in a new tab (reads last saved version), removes all items, markers and regions and sets all necessary options. It will ask you for a filename to save the destination project.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Use {\f1 Source-Destination edit} to do the actual edits. It can do both 3- and 4-point edits. It copies audio from time selection in source project to:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab time selection in destination project if there is any time selection\par}
@@ -58,6 +58,25 @@ pelleke's actions
         <source main="main" file="ply_Source-Destination configuration.lua">https://github.com/ply/ReaScripts/raw/820e29e0a3a6dde7b9678d3a0b958f4e4b66d184/Items%20Editing/Source-Destination/ply_Source-Destination%20configuration.lua</source>
         <source file="config.lua">https://github.com/ply/ReaScripts/raw/820e29e0a3a6dde7b9678d3a0b958f4e4b66d184/Items%20Editing/Source-Destination/config.lua</source>
         <source file="gfxu.lua">https://github.com/ply/ReaScripts/raw/820e29e0a3a6dde7b9678d3a0b958f4e4b66d184/Items%20Editing/Source-Destination/gfxu.lua</source>
+      </version>
+      <version name="1.5.0" author="Paweł Łyżwa (ply)" time="2025-05-20T19:32:11Z">
+        <changelog><![CDATA[- add an option to move the cursor to the start of the edit
+- fix the cursor not being placed at the end of the edit when the user requests it
+- change how configuration toggles are handled internally
+- minor wording changes and fixes]]></changelog>
+        <source main="main">https://github.com/ply/ReaScripts/raw/66bbf987bd4dfb9dc8080f6bcdb12179640b3628/Items%20Editing/Source-Destination/ply_Source-Destination%20edit.lua</source>
+        <source main="main" file="ply_Source-Destination setup.lua">https://github.com/ply/ReaScripts/raw/66bbf987bd4dfb9dc8080f6bcdb12179640b3628/Items%20Editing/Source-Destination/ply_Source-Destination%20setup.lua</source>
+        <source main="main" file="ply_Source-Destination configuration.lua">https://github.com/ply/ReaScripts/raw/66bbf987bd4dfb9dc8080f6bcdb12179640b3628/Items%20Editing/Source-Destination/ply_Source-Destination%20configuration.lua</source>
+        <source file="config.lua">https://github.com/ply/ReaScripts/raw/66bbf987bd4dfb9dc8080f6bcdb12179640b3628/Items%20Editing/Source-Destination/config.lua</source>
+        <source file="gfxu.lua">https://github.com/ply/ReaScripts/raw/66bbf987bd4dfb9dc8080f6bcdb12179640b3628/Items%20Editing/Source-Destination/gfxu.lua</source>
+      </version>
+      <version name="1.6.0" author="Paweł Łyżwa (ply)" time="2025-06-18T21:20:11Z">
+        <changelog><![CDATA[- add an option to select only new items in the destination project]]></changelog>
+        <source main="main">https://github.com/ply/ReaScripts/raw/f0a200c612b3618b2ab2f2079d4ca518b34992da/Items%20Editing/Source-Destination/ply_Source-Destination%20edit.lua</source>
+        <source main="main" file="ply_Source-Destination setup.lua">https://github.com/ply/ReaScripts/raw/f0a200c612b3618b2ab2f2079d4ca518b34992da/Items%20Editing/Source-Destination/ply_Source-Destination%20setup.lua</source>
+        <source main="main" file="ply_Source-Destination configuration.lua">https://github.com/ply/ReaScripts/raw/f0a200c612b3618b2ab2f2079d4ca518b34992da/Items%20Editing/Source-Destination/ply_Source-Destination%20configuration.lua</source>
+        <source file="config.lua">https://github.com/ply/ReaScripts/raw/f0a200c612b3618b2ab2f2079d4ca518b34992da/Items%20Editing/Source-Destination/config.lua</source>
+        <source file="gfxu.lua">https://github.com/ply/ReaScripts/raw/f0a200c612b3618b2ab2f2079d4ca518b34992da/Items%20Editing/Source-Destination/gfxu.lua</source>
       </version>
     </reapack>
   </category>
@@ -184,15 +203,16 @@ pelleke's actions
     </reapack>
     <reapack name="ply_Playhead vs selected track items and markers window.lua" type="script" desc="Playhead vs selected track item &amp; markers (window)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Playhead vs selected track item & markers (window)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Playhead vs selected track item & markers (window)\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Runs a window which shows:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab which item on selected track is under playhead\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab playhead position relative to item's position and source\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab list of markers before playhead (id, name, color, and position relative to playhead)\sa180\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab list of markers before playhead (id, name, color, and position relative to playhead)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab next recording pass number (guessed)\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Use a mouse wheel to change font size.\par}
 }
 ]]></description>
@@ -203,6 +223,10 @@ pelleke's actions
 - add screenshot
 - add usage information about mouse wheel]]></changelog>
         <source main="main">https://github.com/ply/ReaScripts/raw/c000beaa5ebfcb710c667e79cf0ad58901bdb033/Various/ply_Playhead%20vs%20selected%20track%20items%20and%20markers%20window.lua</source>
+      </version>
+      <version name="1.2.0" author="Paweł Łyżwa (ply)" time="2025-03-19T17:13:36Z">
+        <changelog><![CDATA[- show next recording pass number (guessed)]]></changelog>
+        <source main="main">https://github.com/ply/ReaScripts/raw/c6272281b98d970362e8ec526d78075b343c1e14/Various/ply_Playhead%20vs%20selected%20track%20items%20and%20markers%20window.lua</source>
       </version>
     </reapack>
     <reapack name="ply_Transport StartStop (recording safe).eel" type="script" desc="Transport: play/stop (recording safe)">
@@ -256,19 +280,19 @@ pelleke's actions
     </reapack>
   </category>
   <metadata>
-    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 ply ReaScripts\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ply ReaScripts\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 This is a collection of scripts for {\field{\*\fldinst{HYPERLINK "http://reaper.fm/"}}{\fldrslt{\ul
 REAPER
 }}}
- DAW by Pawe\u322? \u321?y\u380?wa ({\field{\*\fldinst{HYPERLINK "https://github.com/ply/"}}{\fldrslt{\ul
+ DAW by Pawe\u322 ? \u321 ?y\u380 ?wa ({\field{\*\fldinst{HYPERLINK "https://github.com/ply/"}}{\fldrslt{\ul
 ply
 }}}
 ).\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Install\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Install\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 The suggested way to install them is to use {\field{\*\fldinst{HYPERLINK "https://reapack.com/"}}{\fldrslt{\ul
 ReaPack
 }}}
@@ -282,9 +306,9 @@ instructions
 directly from GitHub
 }}}
 .\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 After installation, scripts can be run from 'Actions' window (default keyboard shortcut: {\f1 ?}). All of them have names starting with {\f1 ply_}. For each action (script) it's possible there to set your own keyboard shortcuts or add to toolbars or menus. Script-specific information can be found in ReaPack's {\f1 About this package} (double-click should do the job) or script source ({\f1 Edit action} in action window).\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Support and feedback\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Support and feedback\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 The preferred way to report bugs or request features is the GitHub's {\field{\*\fldinst{HYPERLINK "https://github.com/ply/ReaScripts/issues"}}{\fldrslt{\ul
 issue tracker
 }}}
@@ -292,7 +316,7 @@ issue tracker
 pull requests
 }}}
 .\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Content\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Content\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Items Editing:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Source-Destination edit (package)\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Synchronize and heal selected items\sa180\par}

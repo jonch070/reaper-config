@@ -1,8 +1,8 @@
 desc:Saike MIDI ARP (beta)
 tags: midi arpeggiator
-version: 0.41
+version: 0.44
 author: Joep Vanlier
-changelog: Make sure coupled is the default after fresh init.
+changelog: Add option to reset play position with CC trigger (right click on menu to enable). To only trigger on CC's, set to "Free" mode and then enable Reset position on CC (and pick a CC value to trigger on).
 license: MIT
 provides:
   midi_arp_dependencies/*
@@ -52,6 +52,8 @@ slider35:cc8_choice=0<0,119,1>-Assignable CC8
 slider36:min_cc8=1<0,127,1>-Minimum Assignable CC8
 slider37:max_cc8=127<0,128,1>-Maximum Assignable CC8
 slider38:enable_speed=0<0,1,1>-Enable speed override
+slider39:pattern_loop_length=32<2,64,1>-Loop length
+slider40:cc_reset=102<0,255,1>-CC which resets MIDI position
 
 in_pin:left input
 in_pin:right input
@@ -68,13 +70,13 @@ import saike_midi_arp_gfx_funcs.jsfx-inc
 );
 
 blocks_in_view = loop_length <= 32 ? 32 : 64;
-file_version = CURRENT_VERSION = 8;
+file_version = CURRENT_VERSION = 9;
 last_sequencer_index = -1;
 
 function init_scaling()
 (
-  block_scaling = loop_point <= 32 ? 1.0 : 0.5;
-  blocks_in_view = loop_point <= 32 ? 32 : 64;
+  block_scaling = pattern_loop_length <= 32 ? 1.0 : 0.5;
+  blocks_in_view = pattern_loop_length <= 32 ? 32 : 64;
 );
 init_scaling();
 
@@ -154,7 +156,7 @@ max_stored_patterns = 64;
 initialize_patterns();
 
 n_segments == 0 ? n_segments = blocks_in_view;
-loop_point == 0 ? loop_point = 32;
+pattern_loop_length == 0 ? pattern_loop_length = 32;
 
 DRAG_STRING = 50;
 DRAG_BLOCK = 1;
@@ -303,6 +305,9 @@ writing = file_avail(0) < 0;
 file_var(0, file_version);
 serialize_patterns(writing, file_version);
 file_var(0, loop_point);
+(file_version < 8.5) ? (
+  pattern_loop_length = loop_point;  // Legacy loop point storage
+);
 file_var(0, enable_vel);
 file_var(0, enable_mod);
 
@@ -378,6 +383,8 @@ file_var(0, enable_mod);
   viewed_pattern_index = current_pattern_index;
   follow_current_pattern = 1;
 );
+
+file_var(0, reset_on_cc);
 
 file_version = CURRENT_VERSION;
 
@@ -552,7 +559,7 @@ local()
 function update_time_info()
 (
   samples_per_beat = current_speed > 0 ? (srate * 60) / tempo / current_speed : (srate * 60) / tempo * (abs(current_speed) + 2);
-  loop_length = loop_point * samples_per_beat;
+  loop_length = pattern_loop_length * samples_per_beat;
   pattern_length = n_segments * samples_per_beat;
   to_index = n_segments / pattern_length;
   from_beat = 60 * srate / tempo;
@@ -586,7 +593,7 @@ loop(samplesblock,
     midi.assign_notes(current_arp, poly_mode);
   );
   
-  (time_mode == 1) ? ( reset_playhead ? ( current_sample = 0; reset_playhead = 0; ) );
+  ((time_mode == 1) || reset_on_cc) ? ( reset_playhead ? ( current_sample = 0; reset_playhead = 0; ) );
   play.pattern_update(current_pattern_index);
   
   current_sample > loop_length ? 
@@ -666,13 +673,13 @@ global(mouse_wheel)
 );
 
 function shift_drag(y_over, me, mem, idx)
-global(loop_point, mouse_cap, last_cap, current_cursor, shuffle_buffer, last_shift,
+global(pattern_loop_length, mouse_cap, last_cap, current_cursor, shuffle_buffer, last_shift,
        shift_ref, dragging, captured_by, drag_mode, idx_ref,
        DRAG_NUDGE, DRAG_NUDGE_ALL)
 local(shift)
 (
   // Shift row
-  y_over && (idx >= 0) && (idx <= loop_point) ? (
+  y_over && (idx >= 0) && (idx <= pattern_loop_length) ? (
     (mouse_cap & 16) == 16 ? (
       current_cursor = 32644;
       ((mouse_cap & 1 == 1) && (mouse_cap & 16 == 16)) ? (
@@ -699,13 +706,13 @@ local(shift)
       //   ... albeit a very inefficient one.
       loop(abs(shift),
         shift > 0 ? (
-          shuffle_buffer[0] = mem[loop_point - 1];
-          memcpy(shuffle_buffer + 1, mem, loop_point - 1);
+          shuffle_buffer[0] = mem[pattern_loop_length - 1];
+          memcpy(shuffle_buffer + 1, mem, pattern_loop_length - 1);
         ) : ( shift < 0 ) ? (
-          shuffle_buffer[loop_point - 1] = mem[0];
-          memcpy(shuffle_buffer, mem + 1, loop_point - 1);
+          shuffle_buffer[pattern_loop_length - 1] = mem[0];
+          memcpy(shuffle_buffer, mem + 1, pattern_loop_length - 1);
         );
-        memcpy(mem, shuffle_buffer, loop_point);
+        memcpy(mem, shuffle_buffer, pattern_loop_length);
       );
       
       (drag_mode != DRAG_NUDGE_ALL) ? idx_ref = idx;
@@ -871,8 +878,8 @@ local(connect_size, txt_w, txt_h, ptr, idx, target, y_over, last, current, activ
           (mouse_x < x) ? (
             (randomize_toggle.value) ? (
               // Randomize drag
-              (mouse_cap & 1) ? randomize_row(mem, n_segments, 1);
-              (mouse_cap & 2 == 2) ? randomize_row_proba(mem, n_segments);
+              (mouse_cap & 1) ? ( randomize_row(mem, n_segments, 1); );
+              (mouse_cap & 2 == 2) ? ( randomize_row_proba(mem, n_segments); );
             );
           );
         );
@@ -1071,20 +1078,39 @@ global()
   s
 );
 
+function setup_cc_string(menu_cc_string)
+local(cc_menu_idx)
+global(cc_reset)
+(
+  cc_menu_idx = 0;
+  menu_cc_string = sprintf(menu_cc_string, "|>CC to use for reset");
+  loop(255,
+    menu_cc_string = sprintf(menu_cc_string, "%s|%sCC%d", menu_cc_string, cc_reset == cc_menu_idx ? "!" : "", cc_menu_idx);
+    cc_menu_idx += 1;
+  );
+  
+  menu_cc_string
+);
+
+
 mouse_y < (2 + block_width) && mouse_x < cc_pos ? (
   mouse_cap & 2 == 2 ? (
     gfx_x = mouse_x;
     gfx_y = mouse_y;
-    
-    menu_selection = gfx_showmenu(sprintf(8, ">In channel%s|>Out channel%s|%sMIDI passthrough", setup_menu_string(8, in_channel, 0), setup_menu_string(9, out_channel, 1), disable_midi ? "!" : ""));
+
+    menu_selection = gfx_showmenu(sprintf(8, ">In channel%s|>Out channel%s|%sMIDI passthrough|%s%sReset position on CC%s", setup_menu_string(8, in_channel, 0), setup_menu_string(9, out_channel, 1), disable_midi ? "!" : "", reset_on_cc ? "!" : "", time_mode == 0 ? "#" : "", (reset_on_cc && (time_mode > 0)) ? setup_cc_string(10) : ""));
     (menu_selection > 0) ? (
       menu_selection < 18 ? (
         slider_automate(in_channel = menu_selection - 1);
       ) : (
         menu_selection < 34 ? (
           slider_automate(out_channel = menu_selection - 17);
-        ) : (
+        ) : (menu_selection == 34) ? (
           disable_midi = 1 - disable_midi;
+        ) : (menu_selection == 35) ? (
+          reset_on_cc = 1 - reset_on_cc;
+        ) : (
+          cc_reset = menu_selection - 36;
         );
       );
     );
@@ -1139,7 +1165,7 @@ micro_view ? (
   cx += ctrl_spacing;
   
   cx = pattern_toggle.selection_button(5, cx, yc + 2, 0.8 * block_width, host_toggles, "▲", 0.316, 0.3, 0.425, "Increase pattern length.");
-  cx = pattern_toggle.drag_button(6, cx, yc + 2, 1.2 * block_width, host_toggles, sprintf(3, "%d", loop_point), 0.316, 0.3, 0.425, "Current pattern length", DRAG_SETTING);
+  cx = pattern_toggle.drag_button(6, cx, yc + 2, 1.2 * block_width, host_toggles, sprintf(3, "%d", pattern_loop_length), 0.316, 0.3, 0.425, "Current pattern length", DRAG_SETTING);
   cx = pattern_toggle.selection_button(7, cx, yc + 2, 0.8 * block_width, host_toggles, "▼", 0.316, 0.3, 0.425, "Decrease pattern length.");
   
   cx += ctrl_spacing;
@@ -1240,9 +1266,9 @@ pattern_toggle.value == 0 ? (
 )
 : ( pattern_toggle.value == 3 ) ? ( copy_pattern(viewed_pattern_index) ) :
 ( pattern_toggle.value == 4 ) ? ( paste_pattern(viewed_pattern_index) ) :
-( pattern_toggle.value == 5 ) ? ( loop_point = min(loop_point + 1, 64); ) :
-( pattern_toggle.value == 6 ) ? ( loop_point = max(min(loop_point + pattern_toggle.change, 64), 2); ) :
-( pattern_toggle.value == 7 ) ? ( loop_point = max(loop_point - 1, 2); ) :
+( pattern_toggle.value == 5 ) ? ( pattern_loop_length = min(pattern_loop_length + 1, 64); ) :
+( pattern_toggle.value == 6 ) ? ( pattern_loop_length = max(min(pattern_loop_length + pattern_toggle.change, 64), 2); ) :
+( pattern_toggle.value == 7 ) ? ( pattern_loop_length = max(pattern_loop_length - 1, 2); ) :
 ( pattern_toggle.value == 10 ) ? ( current_speed = min(current_speed + 1, 16); slider_automate(1); ) :
 ( pattern_toggle.value == 9 ) ? ( current_speed = max(min(current_speed + pattern_toggle.change, 16), -6); slider_automate(1);) :
 ( pattern_toggle.value == 8 ) ? ( current_speed = max(current_speed - 1, -6); slider_automate(1); ) :
@@ -1579,7 +1605,7 @@ global(mouse_cap, last_cap, gfx_x, gfx_y, mouse_x, mouse_y,
 idx_ref = min(floor((mouse_x - (x + label_width)) / (block_width + block_spacing)), n_segments);
 
 gfx_set(0, 0, 0, .6);
-gfx_rect(grid_origin_x + label_width + (block_width + block_spacing) * (loop_point) - 2, grid_origin_y, (n_segments - loop_point) * (block_width + block_spacing) + 1, yc - grid_origin_y);
+gfx_rect(grid_origin_x + label_width + (block_width + block_spacing) * (pattern_loop_length) - 2, grid_origin_y, (n_segments - pattern_loop_length) * (block_width + block_spacing) + 1, yc - grid_origin_y);
 
 gfx_set(1, 1, 1, .1);
 // current_sample / samples_per_beat
@@ -1625,3 +1651,9 @@ loop(10,
 follow_current_pattern ? (
   current_pattern_index = viewed_pattern_index;
 );
+
+(data_change) ? (
+  sliderchange(-1);
+  data_change = 0;
+);
+
