@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "parent",
+	SEARCH = "reafir",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -75,6 +75,22 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
+			id = "VST:ReaFir (FFT EQ+Dynamics Processor) (Cockos)",
+			type = "vst"
+		},
+		{
+			id = "VST3:Concatenator (DataMind Audio)",
+			type = "vst3"
+		},
+		{
+			id = "JS:MIDI Tool v2",
+			type = "jsfx"
+		},
+		{
+			id = "AU:Serum 2 (Xfer Records)",
+			type = "aui"
+		},
+		{
 			id = "SWS: Toggle master/parent send on selected track(s) (SWS_TOGMPSEND) (Main)",
 			type = "action"
 		},
@@ -97,10 +113,6 @@ config = {
 		{
 			id = "VST:ReaTune (Cockos)",
 			type = "vst"
-		},
-		{
-			id = "AU:Serum 2 (Xfer Records)",
-			type = "aui"
 		},
 		{
 			id = "VST:imitone voice-to-midi (imitone)",
@@ -459,20 +471,8 @@ config = {
 			type = "au"
 		},
 		{
-			id = "VST3:Concatenator (DataMind Audio)",
-			type = "vst3"
-		},
-		{
 			id = "Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)",
 			type = "action"
-		},
-		{
-			id = "VST3i:BBC Symphony Orchestra (Spitfire Audio) (32 out)",
-			type = "vst3i"
-		},
-		{
-			id = "JS:ReEQ",
-			type = "jsfx"
 		}
 	},
 	recent_results_amount = 30,
