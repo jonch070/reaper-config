@@ -237,6 +237,13 @@ def BR_GetMouseCursorContext_Envelope(p0):
   r=f(byref(t[0]))
   return (rpr_unpackp('TrackEnvelope*',r),int(t[0].value))
 
+def BR_GetMouseCursorContext_EnvelopeEx(p0,p1,p2):
+  a=rpr_getfp('BR_GetMouseCursorContext_EnvelopeEx')
+  f=CFUNCTYPE(c_uint64,c_void_p,c_void_p,c_void_p)(a)
+  t=(c_byte(p0),c_int(p1),c_int(p2))
+  r=f(byref(t[0]),byref(t[1]),byref(t[2]))
+  return (rpr_unpackp('TrackEnvelope*',r),int(t[0].value),int(t[1].value),int(t[2].value))
+
 def BR_GetMouseCursorContext_Item():
   a=rpr_getfp('BR_GetMouseCursorContext_Item')
   f=CFUNCTYPE(c_uint64)(a)
@@ -855,12 +862,26 @@ def CF_LocateInExplorer(p0):
   r=f(t[0])
   return r
 
-def CF_PCM_Source_SetSectionInfo(p0,p1,p2,p3,p4):
+def CF_NormalizeUTF8(p0,p1,p2,p3):
+  a=rpr_getfp('CF_NormalizeUTF8')
+  f=CFUNCTYPE(None,c_char_p,c_int,c_char_p,c_int)(a)
+  t=(rpr_packsc(p0),c_int(p1),rpr_packs(p2),c_int(p3))
+  f(t[0],t[1],t[2],t[3])
+  return (p0,p1,rpr_unpacks(t[2]),p3)
+
+def CF_PCM_Source_SetSectionInfo(p0,p1,p2,p3,p4,p5):
   a=rpr_getfp('CF_PCM_Source_SetSectionInfo')
-  f=CFUNCTYPE(c_byte,c_uint64,c_uint64,c_double,c_double,c_byte)(a)
-  t=(rpr_packp('PCM_source*',p0),rpr_packp('PCM_source*',p1),c_double(p2),c_double(p3),c_byte(p4))
-  r=f(t[0],t[1],t[2],t[3],t[4])
-  return r
+  f=CFUNCTYPE(c_byte,c_uint64,c_uint64,c_double,c_double,c_byte,c_void_p)(a)
+  t=(rpr_packp('PCM_source*',p0),rpr_packp('PCM_source*',p1),c_double(p2),c_double(p3),c_byte(p4),c_double(p5))
+  r=f(t[0],t[1],t[2],t[3],t[4],byref(t[5]))
+  return (r,p0,p1,p2,p3,p4,float(t[5].value))
+
+def CF_Preview_GetOutputTrack(p0):
+  a=rpr_getfp('CF_Preview_GetOutputTrack')
+  f=CFUNCTYPE(c_uint64,c_uint64)(a)
+  t=(rpr_packp('CF_Preview*',p0),)
+  r=f(t[0])
+  return rpr_unpackp('MediaTrack*',r)
 
 def CF_Preview_GetPeak(p0,p1,p2):
   a=rpr_getfp('CF_Preview_GetPeak')
@@ -909,12 +930,26 @@ def CF_Preview_StopAll():
   f=CFUNCTYPE(None)(a)
   f()
 
+def CF_SelectTakeFX(p0,p1):
+  a=rpr_getfp('CF_SelectTakeFX')
+  f=CFUNCTYPE(c_byte,c_uint64,c_int)(a)
+  t=(rpr_packp('MediaItem_Take*',p0),c_int(p1))
+  r=f(t[0],t[1])
+  return r
+
 def CF_SelectTrackFX(p0,p1):
   a=rpr_getfp('CF_SelectTrackFX')
   f=CFUNCTYPE(c_byte,c_uint64,c_int)(a)
   t=(rpr_packp('MediaTrack*',p0),c_int(p1))
   r=f(t[0],t[1])
   return r
+
+def CF_SendActionShortcut(p0,p1,p2,p3):
+  a=rpr_getfp('CF_SendActionShortcut')
+  f=CFUNCTYPE(c_byte,c_uint64,c_int,c_int,c_void_p)(a)
+  t=(rpr_packp('void*',p0),c_int(p1),c_int(p2),c_int(p3))
+  r=f(t[0],t[1],t[2],byref(t[3]))
+  return (r,p0,p1,p2,int(t[3].value))
 
 def CF_SetClipboard(p0):
   a=rpr_getfp('CF_SetClipboard')
@@ -932,6 +967,12 @@ def CF_SetMediaSourceOnline(p0,p1):
   a=rpr_getfp('CF_SetMediaSourceOnline')
   f=CFUNCTYPE(None,c_uint64,c_byte)(a)
   t=(rpr_packp('PCM_source*',p0),c_byte(p1))
+  f(t[0],t[1])
+
+def CF_SetTcpScroll(p0,p1):
+  a=rpr_getfp('CF_SetTcpScroll')
+  f=CFUNCTYPE(None,c_uint64,c_int)(a)
+  t=(rpr_packp('MediaTrack*',p0),c_int(p1))
   f(t[0],t[1])
 
 def CF_ShellExecute(p0):
@@ -987,6 +1028,19 @@ def FNG_SetMidiNoteIntProperty(p0,p1,p2):
   f=CFUNCTYPE(None,c_uint64,c_char_p,c_int)(a)
   t=(rpr_packp('RprMidiNote*',p0),rpr_packsc(p1),c_int(p2))
   f(t[0],t[1],t[2])
+
+def JB_GetSWSExtraProjectNotes(p0):
+  a=rpr_getfp('JB_GetSWSExtraProjectNotes')
+  f=CFUNCTYPE(c_char_p,c_uint64)(a)
+  t=(rpr_packp('ReaProject*',p0),)
+  r=f(t[0])
+  return str(r.decode())
+
+def JB_SetSWSExtraProjectNotes(p0,p1):
+  a=rpr_getfp('JB_SetSWSExtraProjectNotes')
+  f=CFUNCTYPE(None,c_uint64,c_char_p)(a)
+  t=(rpr_packp('ReaProject*',p0),rpr_packsc(p1))
+  f(t[0],t[1])
 
 def NF_AnalyzeMediaItemPeakAndRMS(p0,p1,p2,p3,p4,p5):
   a=rpr_getfp('NF_AnalyzeMediaItemPeakAndRMS')
@@ -1132,6 +1186,13 @@ def NF_GetSWSTrackNotes(p0):
   r=f(t[0])
   return str(r.decode())
 
+def NF_GetThemeDefaultTCPHeights(p0,p1,p2,p3):
+  a=rpr_getfp('NF_GetThemeDefaultTCPHeights')
+  f=CFUNCTYPE(None,c_void_p,c_void_p,c_void_p,c_void_p)(a)
+  t=(c_int(p0),c_int(p1),c_int(p2),c_int(p3))
+  f(byref(t[0]),byref(t[1]),byref(t[2]),byref(t[3]))
+  return (int(t[0].value),int(t[1].value),int(t[2].value),int(t[3].value))
+
 def NF_ReadAudioFileBitrate(p0):
   a=rpr_getfp('NF_ReadAudioFileBitrate')
   f=CFUNCTYPE(c_int,c_char_p)(a)
@@ -1244,6 +1305,13 @@ def SNM_GetDoubleConfigVar(p0,p1):
   r=f(t[0],t[1])
   return r
 
+def SNM_GetDoubleConfigVarEx(p0,p1,p2):
+  a=rpr_getfp('SNM_GetDoubleConfigVarEx')
+  f=CFUNCTYPE(c_double,c_uint64,c_char_p,c_double)(a)
+  t=(rpr_packp('ReaProject*',p0),rpr_packsc(p1),c_double(p2))
+  r=f(t[0],t[1],t[2])
+  return r
+
 def SNM_GetFastString(p0):
   a=rpr_getfp('SNM_GetFastString')
   f=CFUNCTYPE(c_char_p,c_uint64)(a)
@@ -1265,12 +1333,26 @@ def SNM_GetIntConfigVar(p0,p1):
   r=f(t[0],t[1])
   return r
 
+def SNM_GetIntConfigVarEx(p0,p1,p2):
+  a=rpr_getfp('SNM_GetIntConfigVarEx')
+  f=CFUNCTYPE(c_int,c_uint64,c_char_p,c_int)(a)
+  t=(rpr_packp('ReaProject*',p0),rpr_packsc(p1),c_int(p2))
+  r=f(t[0],t[1],t[2])
+  return r
+
 def SNM_GetLongConfigVar(p0,p1,p2):
   a=rpr_getfp('SNM_GetLongConfigVar')
   f=CFUNCTYPE(c_byte,c_char_p,c_void_p,c_void_p)(a)
   t=(rpr_packsc(p0),c_int(p1),c_int(p2))
   r=f(t[0],byref(t[1]),byref(t[2]))
   return (r,p0,int(t[1].value),int(t[2].value))
+
+def SNM_GetLongConfigVarEx(p0,p1,p2,p3):
+  a=rpr_getfp('SNM_GetLongConfigVarEx')
+  f=CFUNCTYPE(c_byte,c_uint64,c_char_p,c_void_p,c_void_p)(a)
+  t=(rpr_packp('ReaProject*',p0),rpr_packsc(p1),c_int(p2),c_int(p3))
+  r=f(t[0],t[1],byref(t[2]),byref(t[3]))
+  return (r,p0,p1,int(t[2].value),int(t[3].value))
 
 def SNM_GetMediaItemTakeByGUID(p0,p1):
   a=rpr_getfp('SNM_GetMediaItemTakeByGUID')
@@ -1356,6 +1438,13 @@ def SNM_SetDoubleConfigVar(p0,p1):
   r=f(t[0],t[1])
   return r
 
+def SNM_SetDoubleConfigVarEx(p0,p1,p2):
+  a=rpr_getfp('SNM_SetDoubleConfigVarEx')
+  f=CFUNCTYPE(c_byte,c_uint64,c_char_p,c_double)(a)
+  t=(rpr_packp('ReaProject*',p0),rpr_packsc(p1),c_double(p2))
+  r=f(t[0],t[1],t[2])
+  return r
+
 def SNM_SetFastString(p0,p1):
   a=rpr_getfp('SNM_SetFastString')
   f=CFUNCTYPE(c_uint64,c_uint64,c_char_p)(a)
@@ -1370,11 +1459,25 @@ def SNM_SetIntConfigVar(p0,p1):
   r=f(t[0],t[1])
   return r
 
+def SNM_SetIntConfigVarEx(p0,p1,p2):
+  a=rpr_getfp('SNM_SetIntConfigVarEx')
+  f=CFUNCTYPE(c_byte,c_uint64,c_char_p,c_int)(a)
+  t=(rpr_packp('ReaProject*',p0),rpr_packsc(p1),c_int(p2))
+  r=f(t[0],t[1],t[2])
+  return r
+
 def SNM_SetLongConfigVar(p0,p1,p2):
   a=rpr_getfp('SNM_SetLongConfigVar')
   f=CFUNCTYPE(c_byte,c_char_p,c_int,c_int)(a)
   t=(rpr_packsc(p0),c_int(p1),c_int(p2))
   r=f(t[0],t[1],t[2])
+  return r
+
+def SNM_SetLongConfigVarEx(p0,p1,p2,p3):
+  a=rpr_getfp('SNM_SetLongConfigVarEx')
+  f=CFUNCTYPE(c_byte,c_uint64,c_char_p,c_int,c_int)(a)
+  t=(rpr_packp('ReaProject*',p0),rpr_packsc(p1),c_int(p2),c_int(p3))
+  r=f(t[0],t[1],t[2],t[3])
   return r
 
 def SNM_SetProjectMarker(p0,p1,p2,p3,p4,p5,p6):
