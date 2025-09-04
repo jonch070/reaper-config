@@ -5,3 +5,12 @@ D l 0:16.280 i 24
 F "sjima sound install testing_26_178_Imitone_2025-08-06_12-43_001.wav" 6541624 0 1754498659 0
 D y 2025-08-06 s 48000 n 1 r 1:52.000
 D l 0:34.067 i 32
+F "sjima sound install testing_36_stems_swellotron.wav" 1622016600 0 1755706877 0
+D y 2025-08-20 s 96000 n 6 l 11:43.999
+D i 32
+F "sjima sound install testing_37_stems_spectral waves.wav" 282624696 0 1755814208 0
+D y 2025-08-21 s 96000 n 2 l 6:07.999
+D i 32
+F "sjima sound install testing_37_stems_swellotron.wav" 847872600 0 1755814301 0
+D y 2025-08-21 s 96000 n 6 l 6:07.999
+D i 32

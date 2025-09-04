@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="zaibuyidao Scripts" commit="a2899a20c06c88cff555cd8f5c193bc20c4ed47e">
+<index version="1" name="zaibuyidao Scripts" commit="081236ccabbc87a287829148cf0f2fe066a75513">
   <category name="Development">
     <reapack name="Lokasenna_GUI library.lua" type="script" desc="Get Lokasenna_GUI library">
       <metadata>
@@ -14353,6 +14353,268 @@ Other detailed improvements and bug fixes.]]></changelog>
         <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/lib/utils.lua</source>
         <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/data/thesaurus.csv</source>
         <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/a2899a20c06c88cff555cd8f5c193bc20c4ed47e/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.25" author="zaibuyidao" time="2025-08-05T17:16:17Z">
+        <changelog><![CDATA[Fix table lag issue by implementing manual clipping of visible rows and deferred loading, significantly improving scrolling performance on large lists.
+Optimize recursive scanning process to reduce total scan time.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/5fd4cc37e3c372d94eb1c9ae6aa1fc74c89a2723/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/5fd4cc37e3c372d94eb1c9ae6aa1fc74c89a2723/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/5fd4cc37e3c372d94eb1c9ae6aa1fc74c89a2723/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/5fd4cc37e3c372d94eb1c9ae6aa1fc74c89a2723/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/5fd4cc37e3c372d94eb1c9ae6aa1fc74c89a2723/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.26" author="zaibuyidao" time="2025-08-05T17:22:32Z">
+        <changelog><![CDATA[Fix table lag issue by implementing manual clipping of visible rows and deferred loading, significantly improving scrolling performance on large lists.
+Optimize recursive scanning process to reduce total scan time.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/e2656ecb72496c34929ee1c4d95379afdbb2e2c3/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/e2656ecb72496c34929ee1c4d95379afdbb2e2c3/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/e2656ecb72496c34929ee1c4d95379afdbb2e2c3/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/e2656ecb72496c34929ee1c4d95379afdbb2e2c3/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/e2656ecb72496c34929ee1c4d95379afdbb2e2c3/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.27" author="zaibuyidao" time="2025-08-06T08:14:48Z">
+        <changelog><![CDATA[Fix table cache confusion when switching between different modes and databases.
+Fix table lag issue by implementing manual clipping of visible rows and deferred loading, significantly improving scrolling performance on large lists.
+Optimize recursive scanning process to reduce total scan time.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/f08d8dbdf3188e568902d54330a7fa1e6f3126a7/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/f08d8dbdf3188e568902d54330a7fa1e6f3126a7/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/f08d8dbdf3188e568902d54330a7fa1e6f3126a7/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/f08d8dbdf3188e568902d54330a7fa1e6f3126a7/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/f08d8dbdf3188e568902d54330a7fa1e6f3126a7/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.28" author="zaibuyidao" time="2025-08-06T18:34:05Z">
+        <changelog><![CDATA[Waveform loading is deferred during scrolling or column resizing and only batches visible rows after 2 seconds of idle time.
+The file list automatically switches to the newly created database mode and refreshes upon database creation.
+All static filter and sort caches are cleared when switching databases to ensure filters and sorting are reapplied.
+Column-width changes only clear the affected row's waveform cache and reset its loading flag; the clipper idle logic centrally handles loading.
+start_pos is always set via FindFirstNonSilentTime(info) or 0 to prevent passing nil to CF_Preview_SetValue.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/3074e57f19c149f4b959647f6ef48bca09258837/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/3074e57f19c149f4b959647f6ef48bca09258837/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/3074e57f19c149f4b959647f6ef48bca09258837/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/3074e57f19c149f4b959647f6ef48bca09258837/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/3074e57f19c149f4b959647f6ef48bca09258837/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.29" author="zaibuyidao" time="2025-08-07T17:44:05Z">
+        <changelog><![CDATA[Updated ImGui API calls for ReaImGui v0.10 to ensure full compatibility.
+Fixed the issue where Chinese volume labels did not display correctly in the My Computer drive list.
+Wrapped all widgets in loops with PushID()/PopID() to resolve conflicting ID warnings.
+Corrected ListClipper method calls to prevent nil value errors.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/144cd88ac5ddb3dec6057f8925832c334bd516f5/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/144cd88ac5ddb3dec6057f8925832c334bd516f5/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/144cd88ac5ddb3dec6057f8925832c334bd516f5/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/144cd88ac5ddb3dec6057f8925832c334bd516f5/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/144cd88ac5ddb3dec6057f8925832c334bd516f5/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.30" author="zaibuyidao" time="2025-08-10T12:13:38Z">
+        <changelog><![CDATA[Added column drag Reorder columns by dragging left or right in the file list.
+Fixed clipper error No invalid pointer crash when the window is collapsed.
+Fix autosave behavior Save immediately in Enter mode save after two seconds idle in live mode.
+Live search adds 0.5s debounce Filtering triggers after 0.5s idle reducing per-keystroke refresh lag.
+RS5K optimization reuse the first RS5K on the selected track and set the loaded sample as the active slot.
+Batch creation create a new track per selected sample and load an RS5K instance for each.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/ace725460900ca2873f90f20b184f33d29f423a6/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/ace725460900ca2873f90f20b184f33d29f423a6/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/ace725460900ca2873f90f20b184f33d29f423a6/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/ace725460900ca2873f90f20b184f33d29f423a6/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/ace725460900ca2873f90f20b184f33d29f423a6/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.31" author="zaibuyidao" time="2025-08-10T12:36:08Z">
+        <changelog><![CDATA[Added column drag Reorder columns by dragging left or right in the file list.
+Fixed clipper error No invalid pointer crash when the window is collapsed.
+Fix autosave behavior Save immediately in Enter mode save after two seconds idle in live mode.
+Live search adds 0.5s debounce Filtering triggers after 0.5s idle reducing per-keystroke refresh lag.
+RS5K optimization reuse the first RS5K on the selected track and set the loaded sample as the active slot.
+Batch creation create a new track per selected sample and load an RS5K instance for each.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/f4b6375b6d69b2b49e7ce7ef237bf8a611ec20c1/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/f4b6375b6d69b2b49e7ce7ef237bf8a611ec20c1/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/f4b6375b6d69b2b49e7ce7ef237bf8a611ec20c1/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/f4b6375b6d69b2b49e7ce7ef237bf8a611ec20c1/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/f4b6375b6d69b2b49e7ce7ef237bf8a611ec20c1/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.32" author="zaibuyidao" time="2025-08-10T15:58:39Z">
+        <changelog><![CDATA[Optimized waveform cache loading with a dual-delay strategy for cached and uncached waveforms.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/4f26fa88a4b759a8a2a010e5111f12e539c9aff9/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/4f26fa88a4b759a8a2a010e5111f12e539c9aff9/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/4f26fa88a4b759a8a2a010e5111f12e539c9aff9/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/4f26fa88a4b759a8a2a010e5111f12e539c9aff9/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/4f26fa88a4b759a8a2a010e5111f12e539c9aff9/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.33" author="zaibuyidao" time="2025-08-11T15:26:07Z">
+        <changelog><![CDATA[Optimize UCS category and subcategory search logic.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/86c9aac120dfbfbf531c88ac6f92fb6a4307db93/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/86c9aac120dfbfbf531c88ac6f92fb6a4307db93/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/86c9aac120dfbfbf531c88ac6f92fb6a4307db93/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/86c9aac120dfbfbf531c88ac6f92fb6a4307db93/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/86c9aac120dfbfbf531c88ac6f92fb6a4307db93/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.34" author="zaibuyidao" time="2025-08-11T15:57:37Z">
+        <changelog><![CDATA[Optimize UCS category and subcategory search logic.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/66b11dfc741e1a65998bcfd8ce4240053a9435ed/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/66b11dfc741e1a65998bcfd8ce4240053a9435ed/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/66b11dfc741e1a65998bcfd8ce4240053a9435ed/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/66b11dfc741e1a65998bcfd8ce4240053a9435ed/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/66b11dfc741e1a65998bcfd8ce4240053a9435ed/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.35" author="zaibuyidao" time="2025-08-13T13:53:15Z">
+        <changelog><![CDATA[Support dragging audio files directly from REAPER's Media Explorer or the system file manager to Collections nodes.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/56223fdb64867d599c007ecf4b343ddd35bb34c7/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/56223fdb64867d599c007ecf4b343ddd35bb34c7/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/56223fdb64867d599c007ecf4b343ddd35bb34c7/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/56223fdb64867d599c007ecf4b343ddd35bb34c7/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/56223fdb64867d599c007ecf4b343ddd35bb34c7/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.36" author="zaibuyidao" time="2025-08-13T14:19:14Z">
+        <changelog><![CDATA[Support dragging audio files directly from REAPER's Media Explorer or the system file manager to Collections nodes.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/d50d4847a16d7526ffd8d42eb3e383d002bd9901/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/d50d4847a16d7526ffd8d42eb3e383d002bd9901/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/d50d4847a16d7526ffd8d42eb3e383d002bd9901/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/d50d4847a16d7526ffd8d42eb3e383d002bd9901/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/d50d4847a16d7526ffd8d42eb3e383d002bd9901/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.37" author="zaibuyidao" time="2025-08-17T09:35:51Z">
+        <changelog><![CDATA[Added Key and BPM metadata columns.
+Added support for REAPER Shortcuts and Databases, which are now mirrored inside Soundmole.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/d9fe83c118da909c2ac4bcf605fd12f078390e8a/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/d9fe83c118da909c2ac4bcf605fd12f078390e8a/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/d9fe83c118da909c2ac4bcf605fd12f078390e8a/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/d9fe83c118da909c2ac4bcf605fd12f078390e8a/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/d9fe83c118da909c2ac4bcf605fd12f078390e8a/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.38" author="zaibuyidao" time="2025-08-19T13:43:46Z">
+        <changelog><![CDATA[Optimized database loading (streamed in chunks with preview-aware pausing) to prevent UI stutter and speed up switching.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/d927e095d8d3a5c5d6722405f76e4c5134808757/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/d927e095d8d3a5c5d6722405f76e4c5134808757/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/d927e095d8d3a5c5d6722405f76e4c5134808757/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/d927e095d8d3a5c5d6722405f76e4c5134808757/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/d927e095d8d3a5c5d6722405f76e4c5134808757/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.39" author="zaibuyidao" time="2025-08-21T02:59:12Z">
+        <changelog><![CDATA[Optimized database loading for faster first paint and smoother scrolling and search.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/66ef4a070c390ce37aaf86e1710e1dbd2ff8f74d/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/66ef4a070c390ce37aaf86e1710e1dbd2ff8f74d/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/66ef4a070c390ce37aaf86e1710e1dbd2ff8f74d/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/66ef4a070c390ce37aaf86e1710e1dbd2ff8f74d/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/66ef4a070c390ce37aaf86e1710e1dbd2ff8f74d/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.40" author="zaibuyidao" time="2025-08-21T15:56:33Z">
+        <changelog><![CDATA[Added dashed connectors between folder parent and child to clarify hierarchy, linking each child to its direct parent only, applied to Collections, This Computer, Shortcuts, and Shortcut Mirror.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/17b6502d194f17f0f6f96ef635e262658fcb08e2/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/17b6502d194f17f0f6f96ef635e262658fcb08e2/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/17b6502d194f17f0f6f96ef635e262658fcb08e2/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/17b6502d194f17f0f6f96ef635e262658fcb08e2/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/17b6502d194f17f0f6f96ef635e262658fcb08e2/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.41" author="zaibuyidao" time="2025-08-22T12:26:51Z">
+        <changelog><![CDATA[Added dashed connectors between folder parent and child to clarify hierarchy, linking each child to its direct parent only, applied to Collections, This Computer, Shortcuts, and Shortcut Mirror.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/7629fabfccfa7921e2233e1f671cd01c10756694/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/7629fabfccfa7921e2233e1f671cd01c10756694/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/7629fabfccfa7921e2233e1f671cd01c10756694/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/7629fabfccfa7921e2233e1f671cd01c10756694/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/7629fabfccfa7921e2233e1f671cd01c10756694/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.42" author="zaibuyidao" time="2025-08-24T14:28:05Z">
+        <changelog><![CDATA[Added Freesound mode, allowing direct search of online resources within Soundmole. If you want to download the original files (instead of preview MP3/OGG), you need to complete OAuth 2.0 authorization.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/1715d8f6f51200184cdb24b30b6c68d540ab104f/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/1715d8f6f51200184cdb24b30b6c68d540ab104f/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/1715d8f6f51200184cdb24b30b6c68d540ab104f/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/1715d8f6f51200184cdb24b30b6c68d540ab104f/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/1715d8f6f51200184cdb24b30b6c68d540ab104f/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.43" author="zaibuyidao" time="2025-08-25T01:50:35Z">
+        <changelog><![CDATA[Added Freesound mode, allowing direct search of online resources within Soundmole. If you want to download the original files (instead of preview MP3/OGG), you need to complete OAuth 2.0 authorization.
+Added "API key (token)" field in the Freesound sidebar to call /search/text and fetch MP3/OGG preview URLs without OAuth.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/b06f4bc145f3af490fe02be2a757f0209864ad6a/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/b06f4bc145f3af490fe02be2a757f0209864ad6a/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/b06f4bc145f3af490fe02be2a757f0209864ad6a/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/b06f4bc145f3af490fe02be2a757f0209864ad6a/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/b06f4bc145f3af490fe02be2a757f0209864ad6a/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.44" author="zaibuyidao" time="2025-08-25T16:19:41Z">
+        <changelog><![CDATA[Fixed Media Items error PCM_source now uses safe metadata read.
+Fixed get_ucstag wrong call now uses local safe function.
+Fixed ImGui Missing EndChild warning now always pairs calls.
+Fixed database deletion not taking effect now closes stream before deletion and refreshes state.
+Hardened waveform cache save now prevents nil in format.
+Compatibility non audio sources are now skipped for metadata reads.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/7009d15c48b95e145b8e6ea894aaa5ff35946fe2/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/7009d15c48b95e145b8e6ea894aaa5ff35946fe2/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/7009d15c48b95e145b8e6ea894aaa5ff35946fe2/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/7009d15c48b95e145b8e6ea894aaa5ff35946fe2/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/7009d15c48b95e145b8e6ea894aaa5ff35946fe2/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.45" author="zaibuyidao" time="2025-08-26T15:28:58Z">
+        <changelog><![CDATA[Fixed crash when switching REAPER Database due to nil audio_len.
+Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/12ca6a4efdbe88d7a2c0fc28f0a56fc9703cb7d0/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/12ca6a4efdbe88d7a2c0fc28f0a56fc9703cb7d0/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/12ca6a4efdbe88d7a2c0fc28f0a56fc9703cb7d0/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/12ca6a4efdbe88d7a2c0fc28f0a56fc9703cb7d0/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/12ca6a4efdbe88d7a2c0fc28f0a56fc9703cb7d0/Various/Soundmole/data/ucs.csv</source>
+      </version>
+      <version name="1.0.47" author="zaibuyidao" time="2025-08-27T14:39:19Z">
+        <changelog><![CDATA[Font size control fixed. The slider and Ctrl plus mouse wheel now take effect immediately based on your preset table.
+Settings button improved.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/76ba7150805a5513f4d6c4c928d28a9e0265d37a/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/76ba7150805a5513f4d6c4c928d28a9e0265d37a/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/76ba7150805a5513f4d6c4c928d28a9e0265d37a/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/76ba7150805a5513f4d6c4c928d28a9e0265d37a/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/76ba7150805a5513f4d6c4c928d28a9e0265d37a/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/76ba7150805a5513f4d6c4c928d28a9e0265d37a/Various/Soundmole/data/icons.otf</source>
+      </version>
+      <version name="1.0.48" author="zaibuyidao" time="2025-08-27T14:41:21Z">
+        <changelog><![CDATA[Font size control fixed. The slider and Ctrl plus mouse wheel now take effect immediately based on your preset table.
+Settings button improved.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/cc1057b52c4acc9e651e446ebcec762187885118/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/cc1057b52c4acc9e651e446ebcec762187885118/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/cc1057b52c4acc9e651e446ebcec762187885118/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/cc1057b52c4acc9e651e446ebcec762187885118/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/cc1057b52c4acc9e651e446ebcec762187885118/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/cc1057b52c4acc9e651e446ebcec762187885118/Various/Soundmole/data/icons.otf</source>
+      </version>
+      <version name="1.0.49" author="zaibuyidao" time="2025-08-30T05:39:30Z">
+        <changelog><![CDATA[Added preview routing to a track, supporting auto or named track.
+Fixed incomplete Windows drive enumeration, adding support for local, removable, and mapped network drives, including Chinese volume labels.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/c7fe73f5c70fa200e46e6781c39bb23f3a161ca7/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/c7fe73f5c70fa200e46e6781c39bb23f3a161ca7/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/c7fe73f5c70fa200e46e6781c39bb23f3a161ca7/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/c7fe73f5c70fa200e46e6781c39bb23f3a161ca7/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/c7fe73f5c70fa200e46e6781c39bb23f3a161ca7/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/c7fe73f5c70fa200e46e6781c39bb23f3a161ca7/Various/Soundmole/data/icons.otf</source>
+      </version>
+      <version name="1.0.50" author="zaibuyidao" time="2025-08-31T12:12:00Z">
+        <changelog><![CDATA[Adjustments to parts of the UI.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/960fa5577991ee78fccc43c8fdca082180afda21/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/960fa5577991ee78fccc43c8fdca082180afda21/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/960fa5577991ee78fccc43c8fdca082180afda21/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/960fa5577991ee78fccc43c8fdca082180afda21/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/960fa5577991ee78fccc43c8fdca082180afda21/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/960fa5577991ee78fccc43c8fdca082180afda21/Various/Soundmole/data/icons.otf</source>
+      </version>
+      <version name="1.0.51" author="zaibuyidao" time="2025-09-01T14:29:22Z">
+        <changelog><![CDATA[Fixed random play and ensured that in long lists the selected row scrolls into view and centers automatically.]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/081236ccabbc87a287829148cf0f2fe066a75513/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/081236ccabbc87a287829148cf0f2fe066a75513/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/081236ccabbc87a287829148cf0f2fe066a75513/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/081236ccabbc87a287829148cf0f2fe066a75513/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/081236ccabbc87a287829148cf0f2fe066a75513/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/081236ccabbc87a287829148cf0f2fe066a75513/Various/Soundmole/data/icons.otf</source>
       </version>
     </reapack>
     <reapack name="UCS Tag Search Rename Bundle.lua" type="script" desc="UCS Tag Search Rename Bundle">

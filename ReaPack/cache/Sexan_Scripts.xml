@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="737ce5a410028df24727afc22e7663c5dc7f20ed" name="Sexan_Scripts">
+<index version="1" commit="4a12479f304abfaa0ffa1ba4d61c2d68e6212032" name="Sexan_Scripts">
   <category name="Alpha">
     <reapack name="Sexan_Track_versions_gui.lua" type="script" desc="Track versions v2">
       <metadata>
@@ -782,6 +782,14 @@ Include adding folder chains code]]></changelog>
         <changelog><![CDATA[Fix table item for adding fx chains from user folders]]></changelog>
         <source main="main">https://github.com/GoranKovac/ReaScripts/raw/737ce5a410028df24727afc22e7663c5dc7f20ed/FX/Sexan_FX_Browser_ParserV7.lua</source>
       </version>
+      <version name="1.47" author="Sexan" time="2025-08-12T11:21:04Z">
+        <changelog><![CDATA[Updated example code for requireing]]></changelog>
+        <source main="main">https://github.com/GoranKovac/ReaScripts/raw/81d3a9c82820c77462505e5d4364f5fee25ceb6d/FX/Sexan_FX_Browser_ParserV7.lua</source>
+      </version>
+      <version name="1.48" author="Sexan" time="2025-08-12T11:35:48Z">
+        <changelog><![CDATA[Updated example to require script from ReaPack]]></changelog>
+        <source main="main">https://github.com/GoranKovac/ReaScripts/raw/520c39c58b41fe68ab648c0acc59fa1490c381cb/FX/Sexan_FX_Browser_ParserV7.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="ImGui_Tools">
@@ -914,6 +922,10 @@ Include adding folder chains code]]></changelog>
         <changelog><![CDATA[Fixed button width]]></changelog>
         <source main="main">https://github.com/GoranKovac/ReaScripts/raw/2671fd34e728037f50e82bc15dc9a4e2fa4f863b/Lil_Series/Lil_Item_Homie.lua</source>
       </version>
+      <version name="1.25" author="Sexan" time="2025-08-11T15:55:00Z">
+        <changelog><![CDATA[Add backward compatibility for latest imgui]]></changelog>
+        <source main="main">https://github.com/GoranKovac/ReaScripts/raw/81ece895e176605808f592d2601b1f9a7eb4613e/Lil_Series/Lil_Item_Homie.lua</source>
+      </version>
     </reapack>
     <reapack name="Lil_Track_Homie.lua" type="script" desc="Lil Track Homie">
       <version name="1.9" author="Sexan" time="2022-04-14T10:23:50Z">
@@ -939,6 +951,10 @@ Include adding folder chains code]]></changelog>
       <version name="1.14" author="Sexan" time="2023-08-25T21:48:40Z">
         <changelog><![CDATA[+ use mouse under track unless multiple tracks are selected]]></changelog>
         <source main="main">https://github.com/GoranKovac/ReaScripts/raw/6122b788d19d53d94c59d173d8224556d0f31060/Lil_Series/Lil_Track_Homie.lua</source>
+      </version>
+      <version name="1.15" author="Sexan" time="2025-08-11T15:55:00Z">
+        <changelog><![CDATA[Add backward compatibility for latest imgui]]></changelog>
+        <source main="main">https://github.com/GoranKovac/ReaScripts/raw/81ece895e176605808f592d2601b1f9a7eb4613e/Lil_Series/Lil_Track_Homie.lua</source>
       </version>
     </reapack>
   </category>
@@ -3953,6 +3969,37 @@ Zoom value is dependent on max zoom (cannot be greater)]]></changelog>
         <source type="effect" file="JSFX/MSMidFX.jsfx">https://github.com/GoranKovac/ReaScripts/raw/5386a17125ca1819a193572e1533ccdc3085f5af/ParanormalFX/JSFX/MSMidFX.jsfx</source>
         <source type="effect" file="JSFX/MSSideFX.jsfx">https://github.com/GoranKovac/ReaScripts/raw/5386a17125ca1819a193572e1533ccdc3085f5af/ParanormalFX/JSFX/MSSideFX.jsfx</source>
       </version>
+      <version name="1.44" author="Sexan" time="2025-08-06T11:55:37Z">
+        <changelog><![CDATA[Load imgui shims for backward compatibility]]></changelog>
+        <source main="main">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Sexan_ParaNormal_FX_Router.lua</source>
+        <source file="Modules/Canvas.lua">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Modules/Canvas.lua</source>
+        <source file="Modules/ContainerCode.lua">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Modules/ContainerCode.lua</source>
+        <source file="Modules/Drawing.lua">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Modules/Drawing.lua</source>
+        <source file="Modules/Functions.lua">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Modules/Functions.lua</source>
+        <source file="Modules/Utils.lua">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Modules/Utils.lua</source>
+        <source file="Modules/flux.lua">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Modules/flux.lua</source>
+        <source file="Fonts/Icons.ttf">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Fonts/Icons.ttf</source>
+        <source file="Fonts/ProggyClean.ttf">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/Fonts/ProggyClean.ttf</source>
+        <source file="JSFX/MSMidFX.jsfx">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/JSFX/MSMidFX.jsfx</source>
+        <source file="JSFX/MSSideFX.jsfx">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/JSFX/MSSideFX.jsfx</source>
+        <source file="FXChains/3BANDSTOCK.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/3BANDSTOCK.RfxChain</source>
+        <source file="FXChains/4BANDSTOCK.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/4BANDSTOCK.RfxChain</source>
+        <source file="FXChains/5BANDSTOCK.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/5BANDSTOCK.RfxChain</source>
+        <source file="FXChains/LEWLOIWC_2_4_MODE_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/LEWLOIWC_2_4_MODE_SETUP.RfxChain</source>
+        <source file="FXChains/LEWLOIWC_2_BANDNOTCH_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/LEWLOIWC_2_BANDNOTCH_SETUP.RfxChain</source>
+        <source file="FXChains/LEWLOIWC_2_COMBPHASE_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/LEWLOIWC_2_COMBPHASE_SETUP.RfxChain</source>
+        <source file="FXChains/LEWLOIWC_3_MIN_PHASE_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/LEWLOIWC_3_MIN_PHASE_SETUP.RfxChain</source>
+        <source file="FXChains/LEWLOIWC_ENVELOPE_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/LEWLOIWC_ENVELOPE_SETUP.RfxChain</source>
+        <source file="FXChains/LEWLOIWC_GATE_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/LEWLOIWC_GATE_SETUP.RfxChain</source>
+        <source file="FXChains/LEWLOIWC_TRANSIENT_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/LEWLOIWC_TRANSIENT_SETUP.RfxChain</source>
+        <source file="FXChains/MS_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/MS_SETUP.RfxChain</source>
+        <source file="FXChains/SAIKE_2_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/SAIKE_2_SETUP.RfxChain</source>
+        <source file="FXChains/SAIKE_3_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/SAIKE_3_SETUP.RfxChain</source>
+        <source file="FXChains/SAIKE_4_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/SAIKE_4_SETUP.RfxChain</source>
+        <source file="FXChains/SAIKE_5_SETUP.RfxChain">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/FXChains/SAIKE_5_SETUP.RfxChain</source>
+        <source type="effect" file="JSFX/MSMidFX.jsfx">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/JSFX/MSMidFX.jsfx</source>
+        <source type="effect" file="JSFX/MSSideFX.jsfx">https://github.com/GoranKovac/ReaScripts/raw/ed7a3b47809fe555482ea8cebaa6a76589289b89/ParanormalFX/JSFX/MSSideFX.jsfx</source>
+      </version>
     </reapack>
   </category>
   <category name="Pie3000">
@@ -6106,6 +6153,111 @@ DropDown mode reset last action if no item is hovered]]></changelog>
         <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/77f430bcee56c4624e1b63c7b107b8a334020bd4/Pie3000/fontello1.ttf</source>
         <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/77f430bcee56c4624e1b63c7b107b8a334020bd4/Pie3000/Roboto-Medium.ttf</source>
         <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/77f430bcee56c4624e1b63c7b107b8a334020bd4/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.35.63" author="Sexan" time="2025-08-06T11:32:47Z">
+        <changelog><![CDATA[Fix button width in setup script for upcomming imgui]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/4341c6860e65c29a133e430bc21191d7307e704d/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.35.64" author="Sexan" time="2025-08-06T11:46:04Z">
+        <changelog><![CDATA[Fix button width take 2]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/4f2809a81dff8d4e721eb03497221784e839aa23/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.35.65" author="Sexan" time="2025-08-12T11:06:09Z">
+        <changelog><![CDATA[Potential fix for icon font crash]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/d54adbe79dbdde2332ccdded3a21823a3f3ee071/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.35.66" author="Sexan" time="2025-08-13T10:04:50Z">
+        <changelog><![CDATA[Make sure animation values dont go to 0 for new imgui]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/7fa968fd0f7cf8f88dcc6369ee9b253983d8e6fc/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.36" author="Sexan" time="2025-08-13T16:14:30Z">
+        <changelog><![CDATA[Add alpha support for Modern style
+Fix one more case with font clamping for latest imgui]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/4db8dcdab63abf01f7445eb1c2145ba568fe813f/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.36.1" author="Sexan" time="2025-08-13T16:20:33Z">
+        <changelog><![CDATA[forgot to uncoment button actual color]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/41f130b9a0cf4e659884f745c3a910d43bffae45/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.36.2" author="Sexan" time="2025-08-13T18:58:27Z">
+        <changelog><![CDATA[Another round of font fixes]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/015d8e83d131b52b93e377bc9ae081914a837e12/Pie3000/Sexan_PieCleanFiles.lua</source>
+      </version>
+      <version name="0.36.3" author="Sexan" time="2025-08-14T12:34:25Z">
+        <changelog><![CDATA[Fix dropdown drawing]]></changelog>
+        <source main="main midi_editor">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/Sexan_Pie3000.lua</source>
+        <source main="main midi_editor" file="Sexan_Pie3000_Setup.lua">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/Sexan_Pie3000_Setup.lua</source>
+        <source main="main" file="Sexan_Pie3000_Tracker_BG.lua">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/Sexan_Pie3000_Tracker_BG.lua</source>
+        <source file="CustomImages/Readme.txt">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/CustomImages/Readme.txt</source>
+        <source file="easing.lua">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/easing.lua</source>
+        <source file="Common.lua">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/Common.lua</source>
+        <source file="PieUtils.lua">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/PieUtils.lua</source>
+        <source file="fontello1.ttf">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/fontello1.ttf</source>
+        <source file="Roboto-Medium.ttf">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/Roboto-Medium.ttf</source>
+        <source main="main" file="Sexan_PieCleanFiles.lua">https://github.com/GoranKovac/ReaScripts/raw/4a12479f304abfaa0ffa1ba4d61c2d68e6212032/Pie3000/Sexan_PieCleanFiles.lua</source>
       </version>
     </reapack>
   </category>

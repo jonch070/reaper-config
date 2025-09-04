@@ -959,10 +959,11 @@ local function DrawShortcut(pie, button_pos, selected)
         r.ImGui_DrawList_AddRectFilled(draw_list, xs, ys, xe, ye, LerpAlpha(0x1d1f27ff, CENTER_BTN_PROG), 5,
             r.ImGui_DrawFlags_RoundCornersAll())
         -- SHADOW
-        r.ImGui_DrawList_AddTextEx(draw_list, nil, GUI_FONT_SIZE * CENTER_BTN_PROG, txt_c - (key_w / 2) + 1,
+        r.ImGui_DrawList_AddTextEx(draw_list, nil, math.max(1, GUI_FONT_SIZE * CENTER_BTN_PROG), txt_c - (key_w / 2) + 1,
             button_pos.ky + 1, LerpAlpha(0xFF, CENTER_BTN_PROG), KEYS[pie.key])
         -- MAIN
-        r.ImGui_DrawList_AddTextEx(draw_list, nil, GUI_FONT_SIZE * CENTER_BTN_PROG, txt_c - (key_w / 2), button_pos.ky,
+        r.ImGui_DrawList_AddTextEx(draw_list, nil, math.max(1, GUI_FONT_SIZE * CENTER_BTN_PROG), txt_c - (key_w / 2),
+            button_pos.ky,
             LerpAlpha(0x8cc3ffff, CENTER_BTN_PROG), KEYS[pie.key])
     end
     r.ImGui_PopFont(ctx)
@@ -991,6 +992,7 @@ local function PieButtonDrawlist(pie, button_radius, selected, hovered, button_p
 
     -- USE DEFAULT BG BUTTON WHEN PNG IS USED
     if png then color = def_color end
+    color = (color & ~0xFF) | (pie.col & 0xFF)
     color = hovered and ALT and 0xff0000ff or color
 
     --local icon_col = LerpAlpha(0xffffffff, CENTER_BTN_PROG)
@@ -1024,22 +1026,27 @@ local function PieButtonDrawlist(pie, button_radius, selected, hovered, button_p
     r.ImGui_DrawListSplitter_SetCurrentChannel(SPLITTER, selected and 3 or 1)
 
     -- SHADOW
+    local shadow_col_a = ((dark_theme and 0x44 or 0x33) & ~0xFF) | (pie.col & 0xFF)
     r.ImGui_DrawList_AddCircleFilled(draw_list, button_center.x + 1, button_center.y + 1,
         (button_radius + 6) * CENTER_BTN_PROG,
-        LerpAlpha(dark_theme and 0x44 or 0x33, CENTER_BTN_PROG), 128)
+        LerpAlpha(shadow_col_a, CENTER_BTN_PROG), 128)
 
     -- OUTER RING
+    local ring_col_a = (ring_col & ~0xFF) | (pie.col & 0xFF)
     r.ImGui_DrawList_AddCircleFilled(draw_list, button_center.x, button_center.y, (button_radius + 4) * CENTER_BTN_PROG,
-        LerpAlpha(ring_col, CENTER_BTN_PROG), 128)
+        LerpAlpha(ring_col_a, CENTER_BTN_PROG), 128)
 
     -- MAIN
-
+    -- local color_a =(color & 0x000000ff)
+    -- local without_alpha = def_color & ~0xFF
+    local main_color = (def_color & ~0xFF) | (pie.col & 0xFF)
     r.ImGui_DrawList_AddCircleFilled(draw_list, button_center.x, button_center.y, (button_radius) * CENTER_BTN_PROG,
-        LerpAlpha(def_color, CENTER_BTN_PROG), 128)
+        LerpAlpha(main_color, CENTER_BTN_PROG), 128)
 
     if png then
+        local png_bg_col = (def_color & ~0xFF) | (pie.col & 0xFF)
         r.ImGui_DrawList_AddCircle(draw_list, button_center.x, button_center.y, (button_radius - 1.5) * CENTER_BTN_PROG,
-            LerpAlpha(pie.col == 0xff and def_color or pie.col, CENTER_BTN_PROG), 128, 2.5)
+            LerpAlpha(pie.col == 0xff and main_color or pie.col, CENTER_BTN_PROG), 128, 2.5)
     end
 
     -- COLOR BG
@@ -1105,9 +1112,11 @@ local function PieButtonDrawlist(pie, button_radius, selected, hovered, button_p
         local icon_w, icon_h = r.ImGui_CalcTextSize(ctx, icon)
         local i_x, i_y = button_center.x - icon_w / 2, button_center.y - icon_h / 2
         if not luma_high then
-            r.ImGui_DrawList_AddTextEx(draw_list, nil, icon_font_size * CENTER_BTN_PROG, i_x + 2, i_y + 2, 0xaa, icon)
+            r.ImGui_DrawList_AddTextEx(draw_list, nil, math.max(1, icon_font_size * CENTER_BTN_PROG), i_x + 2, i_y + 2,
+                0xaa, icon)
         end
-        r.ImGui_DrawList_AddTextEx(draw_list, nil, icon_font_size * CENTER_BTN_PROG, i_x, i_y, icon_col, icon)
+        r.ImGui_DrawList_AddTextEx(draw_list, nil, math.max(1, icon_font_size * CENTER_BTN_PROG), i_x, i_y, icon_col,
+            icon)
         r.ImGui_PopFont(ctx)
     end
 
@@ -1257,9 +1266,10 @@ local function DrawClassicButton(pie, selected, hovered)
         local icon_w, icon_h = r.ImGui_CalcTextSize(ctx, icon)
         local i_x, i_y = xs + (selected and 0 or 9), button_center.y - icon_h / 2
         if not is_luma_high then
-            r.ImGui_DrawList_AddTextEx(draw_list, nil, icon_font_size * CENTER_BTN_PROG, i_x + 2, i_y + 2, 0xaa, icon)
+            r.ImGui_DrawList_AddTextEx(draw_list, nil, math.max(1, icon_font_size * CENTER_BTN_PROG), i_x + 2, i_y + 2,
+                0xaa, icon)
         end
-        r.ImGui_DrawList_AddTextEx(draw_list, nil, icon_font_size * CENTER_BTN_PROG, i_x, i_y, txt_col, icon)
+        r.ImGui_DrawList_AddTextEx(draw_list, nil, math.max(1, icon_font_size * CENTER_BTN_PROG), i_x, i_y, txt_col, icon)
         r.ImGui_PopFont(ctx)
     end
 
@@ -1952,7 +1962,7 @@ local function OpenDropDownStyle(pie)
     if wnd_hovered then
         if LAST_ACTION then LAST_ACTION = nil end
     end
-    if r.ImGui_BeginChild(ctx, "DropDownSetup", max_w + 50, txt_separator_h + (#pie * font_size) + (wnd_padding * 2) + item_s_y * (#pie), true) then
+    if r.ImGui_BeginChild(ctx, "DropDownSetup", max_w + 50, txt_separator_h + (#pie * r.ImGui_GetTextLineHeight(ctx)) + (wnd_padding * 2) + item_s_y * (#pie), true) then
         local tracker_state = r.GetToggleCommandState(tracker_script_id)
         local prev_x, prev_y = r.ImGui_GetCursorPos(ctx)
         r.ImGui_PushStyleColor(ctx, r.ImGui_Col_Button(), tracker_state == 1 and 0x00ff00cc or 0xff0000cc)

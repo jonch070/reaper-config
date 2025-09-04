@@ -1,5 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Odedd ReaScripts" commit="0c09696260251e7aec2040509b4efabb5ba4cad5">
+<index version="1" name="Odedd ReaScripts" commit="4b9eebfaf9f882bc464897f815374c2cf46b947f">
+  <category name="FX/Scout">
+    <reapack name="Odedd_Scout.lua" type="script" desc="Scout">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Scout\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A powerful search and organization tool for Reaper assets, providing a unified interface to quickly find, tag, rate, add notes, hide, and favorite items.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Scout prioritizes speed and efficiency, helping you manage: FX, Actions, Projects, Project Templates, Track Templates, FX Chains, Tracks, Takes, Markers, Regions, Take Markers and QuickChain Presets - all without leaving the keyboard.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 While Scout is full of features, Scout+ has even more! Be sure to check them out at https://odedd.gumroad.com/l/scout-plus.\par}
+}
+]]></description>
+        <link rel="website" href="https://www.random.tools/l/scout-plus?utm_source=scout&amp;utm_medium=script&amp;utm_campaign=reapack">Product Page</link>
+        <link rel="donation">https://paypal.me/odedda</link>
+      </metadata>
+      <version name="1.0.0" author="Oded Davidov" time="2025-08-26T06:51:48Z">
+        <changelog><![CDATA[Initial Release]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/f21504757eaaaa420ca6b0bce13aa19163684878/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/f21504757eaaaa420ca6b0bce13aa19163684878/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/f21504757eaaaa420ca6b0bce13aa19163684878/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/f21504757eaaaa420ca6b0bce13aa19163684878/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/f21504757eaaaa420ca6b0bce13aa19163684878/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/f21504757eaaaa420ca6b0bce13aa19163684878/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.1" author="Oded Davidov" time="2025-08-27T13:16:40Z">
+        <changelog><![CDATA[Settings window centers around Scout's window and not the screen]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/70a1960b1648ad3b9ea802b047d9352ff9b014e4/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/70a1960b1648ad3b9ea802b047d9352ff9b014e4/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/70a1960b1648ad3b9ea802b047d9352ff9b014e4/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/70a1960b1648ad3b9ea802b047d9352ff9b014e4/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/70a1960b1648ad3b9ea802b047d9352ff9b014e4/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/70a1960b1648ad3b9ea802b047d9352ff9b014e4/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.2" author="Oded Davidov" time="2025-08-27T13:37:47Z">
+        <changelog><![CDATA[Bug fix]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/c20f75b44c34057e6371a816057e45a93a45a660/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/c20f75b44c34057e6371a816057e45a93a45a660/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/c20f75b44c34057e6371a816057e45a93a45a660/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/c20f75b44c34057e6371a816057e45a93a45a660/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/c20f75b44c34057e6371a816057e45a93a45a660/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/c20f75b44c34057e6371a816057e45a93a45a660/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.3" author="Oded Davidov" time="2025-08-27T15:21:40Z">
+        <changelog><![CDATA[Bug fix]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/f5a004e3d7e788e58a0184d2f43ac41c0a494135/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/f5a004e3d7e788e58a0184d2f43ac41c0a494135/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/f5a004e3d7e788e58a0184d2f43ac41c0a494135/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/f5a004e3d7e788e58a0184d2f43ac41c0a494135/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/f5a004e3d7e788e58a0184d2f43ac41c0a494135/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/f5a004e3d7e788e58a0184d2f43ac41c0a494135/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.4" author="Oded Davidov" time="2025-08-27T19:32:55Z">
+        <changelog><![CDATA[Fixed edge case where enter is ignored]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/4b24da6a203d0b5cf34e39e3b1464d8cec4ee5d9/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/4b24da6a203d0b5cf34e39e3b1464d8cec4ee5d9/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/4b24da6a203d0b5cf34e39e3b1464d8cec4ee5d9/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/4b24da6a203d0b5cf34e39e3b1464d8cec4ee5d9/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/4b24da6a203d0b5cf34e39e3b1464d8cec4ee5d9/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/4b24da6a203d0b5cf34e39e3b1464d8cec4ee5d9/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.5" author="Oded Davidov" time="2025-08-28T17:52:30Z">
+        <changelog><![CDATA[Fixed: Right clicking in filter search mode causes crash (no menu though)
+Fixed: Using random result shortcut produces two random results
+Fixed: After action: clear text search setting does not get saved after restart + hint is nil
+Option/Alt clicking tag + or - buttons or filter clears filter]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/a7da5de6962af85b7dcb44be2e3aaee984a3ccb1/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/a7da5de6962af85b7dcb44be2e3aaee984a3ccb1/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/a7da5de6962af85b7dcb44be2e3aaee984a3ccb1/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/a7da5de6962af85b7dcb44be2e3aaee984a3ccb1/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/a7da5de6962af85b7dcb44be2e3aaee984a3ccb1/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/a7da5de6962af85b7dcb44be2e3aaee984a3ccb1/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.6" author="Oded Davidov" time="2025-08-28T17:58:48Z">
+        <changelog><![CDATA[Prevent Cmd/Ctrl+C/V/X from being used as shortcuts]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/00c02f4acf58ea8ed26b48840f346763f1078953/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/00c02f4acf58ea8ed26b48840f346763f1078953/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/00c02f4acf58ea8ed26b48840f346763f1078953/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/00c02f4acf58ea8ed26b48840f346763f1078953/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/00c02f4acf58ea8ed26b48840f346763f1078953/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/00c02f4acf58ea8ed26b48840f346763f1078953/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.7" author="Oded Davidov" time="2025-08-28T18:06:25Z">
+        <changelog><![CDATA[Alt+click in filter search mode clear current filter]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/e97b8507dfac584d3d53915f8e7355708a2f5ae8/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/e97b8507dfac584d3d53915f8e7355708a2f5ae8/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/e97b8507dfac584d3d53915f8e7355708a2f5ae8/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/e97b8507dfac584d3d53915f8e7355708a2f5ae8/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/e97b8507dfac584d3d53915f8e7355708a2f5ae8/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/e97b8507dfac584d3d53915f8e7355708a2f5ae8/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.8" author="Oded Davidov" time="2025-08-28T20:04:43Z">
+        <changelog><![CDATA[Instruments/FX separated
+Added setting to select newly added tracks]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/9a108ed72be3e2c89e5bc820cbc4d1ab177d8c2a/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/9a108ed72be3e2c89e5bc820cbc4d1ab177d8c2a/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/9a108ed72be3e2c89e5bc820cbc4d1ab177d8c2a/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/9a108ed72be3e2c89e5bc820cbc4d1ab177d8c2a/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/9a108ed72be3e2c89e5bc820cbc4d1ab177d8c2a/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/9a108ed72be3e2c89e5bc820cbc4d1ab177d8c2a/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.10" author="Oded Davidov" time="2025-08-29T06:18:24Z">
+        <changelog><![CDATA[Color fix]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/9fbb59311179181e973c35f87ea0b59f9e0c7981/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/9fbb59311179181e973c35f87ea0b59f9e0c7981/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/9fbb59311179181e973c35f87ea0b59f9e0c7981/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/9fbb59311179181e973c35f87ea0b59f9e0c7981/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/9fbb59311179181e973c35f87ea0b59f9e0c7981/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/9fbb59311179181e973c35f87ea0b59f9e0c7981/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.11" author="Oded Davidov" time="2025-08-29T06:22:22Z">
+        <changelog><![CDATA[Small wording change in settings window]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/82900e5f21e300686a6d0eb05854ec83159edfd7/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/82900e5f21e300686a6d0eb05854ec83159edfd7/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/82900e5f21e300686a6d0eb05854ec83159edfd7/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/82900e5f21e300686a6d0eb05854ec83159edfd7/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/82900e5f21e300686a6d0eb05854ec83159edfd7/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/82900e5f21e300686a6d0eb05854ec83159edfd7/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.12" author="Oded Davidov" time="2025-08-29T10:19:42Z">
+        <changelog><![CDATA[Cmd/Ctrl+Click creates a new track with FX/FX Chain on it
+Instrument tracks now get named by the instrument name (if "Use instrument tracks" setting is checked)]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/08d4534142a8e9d60e6b66721fd236f51bd9f73e/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/08d4534142a8e9d60e6b66721fd236f51bd9f73e/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/08d4534142a8e9d60e6b66721fd236f51bd9f73e/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/08d4534142a8e9d60e6b66721fd236f51bd9f73e/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/08d4534142a8e9d60e6b66721fd236f51bd9f73e/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/08d4534142a8e9d60e6b66721fd236f51bd9f73e/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.13" author="Oded Davidov" time="2025-08-29T12:28:28Z">
+        <changelog><![CDATA[Colors fixed in windows]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/034b452a83a92ad9b2a72e8910ba04d5f40d6225/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/034b452a83a92ad9b2a72e8910ba04d5f40d6225/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/034b452a83a92ad9b2a72e8910ba04d5f40d6225/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/034b452a83a92ad9b2a72e8910ba04d5f40d6225/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/034b452a83a92ad9b2a72e8910ba04d5f40d6225/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/034b452a83a92ad9b2a72e8910ba04d5f40d6225/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.14" author="Oded Davidov" time="2025-08-29T12:33:47Z">
+        <changelog><![CDATA[When cmd/ctrl+clicking an item and creating a new track, deselect all other tracks (if setting to select newly added tracks is checked)]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/513d3ea45f507d7ae40802c4f355cd636f7883a3/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/513d3ea45f507d7ae40802c4f355cd636f7883a3/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/513d3ea45f507d7ae40802c4f355cd636f7883a3/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/513d3ea45f507d7ae40802c4f355cd636f7883a3/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/513d3ea45f507d7ae40802c4f355cd636f7883a3/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/513d3ea45f507d7ae40802c4f355cd636f7883a3/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.15" author="Oded Davidov" time="2025-08-31T07:54:38Z">
+        <changelog><![CDATA[Fixed crash when changing default tag color]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/dcc33745b14dac7a95cae0e3787db54522441651/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/dcc33745b14dac7a95cae0e3787db54522441651/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/dcc33745b14dac7a95cae0e3787db54522441651/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/dcc33745b14dac7a95cae0e3787db54522441651/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/dcc33745b14dac7a95cae0e3787db54522441651/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/dcc33745b14dac7a95cae0e3787db54522441651/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.16" author="Oded Davidov" time="2025-08-31T11:20:09Z">
+        <changelog><![CDATA[Fuzzy search implemented
+Ctrl+Alt+Shift+Click/Enter now replaces all FX in selected track(s) with the selected FX/FX Chain]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/cae51a65b7045eeb5f597dfba8227566fdc51ce1/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/cae51a65b7045eeb5f597dfba8227566fdc51ce1/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/cae51a65b7045eeb5f597dfba8227566fdc51ce1/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/cae51a65b7045eeb5f597dfba8227566fdc51ce1/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/cae51a65b7045eeb5f597dfba8227566fdc51ce1/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/cae51a65b7045eeb5f597dfba8227566fdc51ce1/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.17" author="Oded Davidov" time="2025-08-31T11:30:32Z">
+        <changelog><![CDATA[Fixed error when setting default preset without existing presets]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/d7fbc2880755d6f5c677ac57df6b92d7e74a334e/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/d7fbc2880755d6f5c677ac57df6b92d7e74a334e/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/d7fbc2880755d6f5c677ac57df6b92d7e74a334e/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/d7fbc2880755d6f5c677ac57df6b92d7e74a334e/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/d7fbc2880755d6f5c677ac57df6b92d7e74a334e/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/d7fbc2880755d6f5c677ac57df6b92d7e74a334e/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.18" author="Oded Davidov" time="2025-08-31T16:49:00Z">
+        <changelog><![CDATA[Much better fuzzy search algorithm (more relevant results show up first)]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/dbb6b811e87c674351b9856b4c750483b7516eef/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/dbb6b811e87c674351b9856b4c750483b7516eef/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/dbb6b811e87c674351b9856b4c750483b7516eef/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/dbb6b811e87c674351b9856b4c750483b7516eef/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/dbb6b811e87c674351b9856b4c750483b7516eef/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/dbb6b811e87c674351b9856b4c750483b7516eef/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.19" author="Oded Davidov" time="2025-08-31T17:06:50Z">
+        <changelog><![CDATA[Faster Fuzzy search
+Fix crash in filter search mode]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/add56ce71b0ce988e5f71840e6544fb3ad8d42c8/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/add56ce71b0ce988e5f71840e6544fb3ad8d42c8/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/add56ce71b0ce988e5f71840e6544fb3ad8d42c8/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/add56ce71b0ce988e5f71840e6544fb3ad8d42c8/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/add56ce71b0ce988e5f71840e6544fb3ad8d42c8/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/add56ce71b0ce988e5f71840e6544fb3ad8d42c8/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.20" author="Oded Davidov" time="2025-08-31T17:13:27Z">
+        <changelog><![CDATA[Fix crash when changing search modes]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/3d92ea1552f45c5ab118683a80e06459f14dda89/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/3d92ea1552f45c5ab118683a80e06459f14dda89/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/3d92ea1552f45c5ab118683a80e06459f14dda89/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/3d92ea1552f45c5ab118683a80e06459f14dda89/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/3d92ea1552f45c5ab118683a80e06459f14dda89/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/3d92ea1552f45c5ab118683a80e06459f14dda89/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.21" author="Oded Davidov" time="2025-08-31T17:44:13Z">
+        <changelog><![CDATA[Fix result highlighting when switching search modes]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/f8810d89b50413ccab6920fc8e84321cbc93dede/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/f8810d89b50413ccab6920fc8e84321cbc93dede/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/f8810d89b50413ccab6920fc8e84321cbc93dede/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/f8810d89b50413ccab6920fc8e84321cbc93dede/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/f8810d89b50413ccab6920fc8e84321cbc93dede/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/f8810d89b50413ccab6920fc8e84321cbc93dede/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.22" author="Oded Davidov" time="2025-08-31T18:09:27Z">
+        <changelog><![CDATA[Added setting to activate magic words with either tab or space]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/611d4902e2e0da2542da9a6b9c3f465ee34d58d2/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/611d4902e2e0da2542da9a6b9c3f465ee34d58d2/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/611d4902e2e0da2542da9a6b9c3f465ee34d58d2/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/611d4902e2e0da2542da9a6b9c3f465ee34d58d2/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/611d4902e2e0da2542da9a6b9c3f465ee34d58d2/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/611d4902e2e0da2542da9a6b9c3f465ee34d58d2/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.23" author="Oded Davidov" time="2025-08-31T18:30:44Z">
+        <changelog><![CDATA[Fixed crash after waking from sleep mode]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/0305912b581a3c590ee1d2142ebe858e3b957bc6/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/0305912b581a3c590ee1d2142ebe858e3b957bc6/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/0305912b581a3c590ee1d2142ebe858e3b957bc6/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/0305912b581a3c590ee1d2142ebe858e3b957bc6/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/0305912b581a3c590ee1d2142ebe858e3b957bc6/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/0305912b581a3c590ee1d2142ebe858e3b957bc6/FX/Scout/scout54.dat</source>
+      </version>
+      <version name="1.0.24" author="Oded Davidov" time="2025-09-01T12:18:28Z">
+        <changelog><![CDATA[New asset type: Project FX
+Fuzzy Search optimized]]></changelog>
+        <source main="main">https://github.com/odedd/ReaScripts/raw/4b9eebfaf9f882bc464897f815374c2cf46b947f/FX/Scout/Odedd_Scout.lua</source>
+        <source file="Resources/Fonts/Cousine-90deg.otf">https://github.com/odedd/ReaScripts/raw/4b9eebfaf9f882bc464897f815374c2cf46b947f/FX/Scout/Resources/Fonts/Cousine-90deg.otf</source>
+        <source file="Resources/Fonts/Cousine-Bold.ttf">https://github.com/odedd/ReaScripts/raw/4b9eebfaf9f882bc464897f815374c2cf46b947f/FX/Scout/Resources/Fonts/Cousine-Bold.ttf</source>
+        <source file="Resources/Fonts/Cousine-Regular.ttf">https://github.com/odedd/ReaScripts/raw/4b9eebfaf9f882bc464897f815374c2cf46b947f/FX/Scout/Resources/Fonts/Cousine-Regular.ttf</source>
+        <source file="Resources/Fonts/Icons-Regular.otf">https://github.com/odedd/ReaScripts/raw/4b9eebfaf9f882bc464897f815374c2cf46b947f/FX/Scout/Resources/Fonts/Icons-Regular.otf</source>
+        <source file="scout54.dat">https://github.com/odedd/ReaScripts/raw/4b9eebfaf9f882bc464897f815374c2cf46b947f/FX/Scout/scout54.dat</source>
+      </version>
+    </reapack>
+  </category>
   <category name="FX/Send Buddy">
     <reapack name="Odedd_Send Buddy.lua" type="script" desc="Send Buddy">
       <metadata>

@@ -1,4 +1,4 @@
-# Generated for ReaImGui v0.9.3.3
+# Generated for ReaImGui v0.10.0.1
 
 from reaper_python import *
 
@@ -41,20 +41,6 @@ def InvisibleButton(ctx, str_id, size_w, size_h, flagsInOptional = None):
   args = (c_void_p(ctx), rpr_packsc(str_id), c_double(size_w), c_double(size_h), c_int(flagsInOptional) if flagsInOptional != None else None)
   rval = InvisibleButton.func(args[0], args[1], args[2], args[3], byref(args[4]) if args[4] != None else None)
   return rval
-
-def PopButtonRepeat(ctx):
-  if not hasattr(PopButtonRepeat, 'func'):
-    proc = rpr_getfp('ImGui_PopButtonRepeat')
-    PopButtonRepeat.func = CFUNCTYPE(None, c_void_p)(proc)
-  args = (c_void_p(ctx),)
-  PopButtonRepeat.func(args[0])
-
-def PushButtonRepeat(ctx, repeat):
-  if not hasattr(PushButtonRepeat, 'func'):
-    proc = rpr_getfp('ImGui_PushButtonRepeat')
-    PushButtonRepeat.func = CFUNCTYPE(None, c_void_p, c_bool)(proc)
-  args = (c_void_p(ctx), c_bool(repeat))
-  PushButtonRepeat.func(args[0], args[1])
 
 def RadioButton(ctx, label, active):
   if not hasattr(RadioButton, 'func'):
@@ -119,6 +105,14 @@ def Dir_Up():
   if not hasattr(Dir_Up, 'cache'):
     Dir_Up.cache = Dir_Up.func()
   return Dir_Up.cache
+
+def ButtonFlags_EnableNav():
+  if not hasattr(ButtonFlags_EnableNav, 'func'):
+    proc = rpr_getfp('ImGui_ButtonFlags_EnableNav')
+    ButtonFlags_EnableNav.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ButtonFlags_EnableNav, 'cache'):
+    ButtonFlags_EnableNav.cache = ButtonFlags_EnableNav.func()
+  return ButtonFlags_EnableNav.cache
 
 def ButtonFlags_MouseButtonLeft():
   if not hasattr(ButtonFlags_MouseButtonLeft, 'func'):
@@ -287,21 +281,21 @@ def ColorEditFlags_None():
     ColorEditFlags_None.cache = ColorEditFlags_None.func()
   return ColorEditFlags_None.cache
 
-def ColorEditFlags_AlphaBar():
-  if not hasattr(ColorEditFlags_AlphaBar, 'func'):
-    proc = rpr_getfp('ImGui_ColorEditFlags_AlphaBar')
-    ColorEditFlags_AlphaBar.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(ColorEditFlags_AlphaBar, 'cache'):
-    ColorEditFlags_AlphaBar.cache = ColorEditFlags_AlphaBar.func()
-  return ColorEditFlags_AlphaBar.cache
+def ColorEditFlags_AlphaNoBg():
+  if not hasattr(ColorEditFlags_AlphaNoBg, 'func'):
+    proc = rpr_getfp('ImGui_ColorEditFlags_AlphaNoBg')
+    ColorEditFlags_AlphaNoBg.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ColorEditFlags_AlphaNoBg, 'cache'):
+    ColorEditFlags_AlphaNoBg.cache = ColorEditFlags_AlphaNoBg.func()
+  return ColorEditFlags_AlphaNoBg.cache
 
-def ColorEditFlags_AlphaPreview():
-  if not hasattr(ColorEditFlags_AlphaPreview, 'func'):
-    proc = rpr_getfp('ImGui_ColorEditFlags_AlphaPreview')
-    ColorEditFlags_AlphaPreview.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(ColorEditFlags_AlphaPreview, 'cache'):
-    ColorEditFlags_AlphaPreview.cache = ColorEditFlags_AlphaPreview.func()
-  return ColorEditFlags_AlphaPreview.cache
+def ColorEditFlags_AlphaOpaque():
+  if not hasattr(ColorEditFlags_AlphaOpaque, 'func'):
+    proc = rpr_getfp('ImGui_ColorEditFlags_AlphaOpaque')
+    ColorEditFlags_AlphaOpaque.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ColorEditFlags_AlphaOpaque, 'cache'):
+    ColorEditFlags_AlphaOpaque.cache = ColorEditFlags_AlphaOpaque.func()
+  return ColorEditFlags_AlphaOpaque.cache
 
 def ColorEditFlags_AlphaPreviewHalf():
   if not hasattr(ColorEditFlags_AlphaPreviewHalf, 'func'):
@@ -310,6 +304,14 @@ def ColorEditFlags_AlphaPreviewHalf():
   if not hasattr(ColorEditFlags_AlphaPreviewHalf, 'cache'):
     ColorEditFlags_AlphaPreviewHalf.cache = ColorEditFlags_AlphaPreviewHalf.func()
   return ColorEditFlags_AlphaPreviewHalf.cache
+
+def ColorEditFlags_AlphaBar():
+  if not hasattr(ColorEditFlags_AlphaBar, 'func'):
+    proc = rpr_getfp('ImGui_ColorEditFlags_AlphaBar')
+    ColorEditFlags_AlphaBar.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ColorEditFlags_AlphaBar, 'cache'):
+    ColorEditFlags_AlphaBar.cache = ColorEditFlags_AlphaBar.func()
+  return ColorEditFlags_AlphaBar.cache
 
 def ColorEditFlags_DisplayHSV():
   if not hasattr(ColorEditFlags_DisplayHSV, 'func'):
@@ -533,13 +535,21 @@ def SelectableFlags_Disabled():
     SelectableFlags_Disabled.cache = SelectableFlags_Disabled.func()
   return SelectableFlags_Disabled.cache
 
-def SelectableFlags_DontClosePopups():
-  if not hasattr(SelectableFlags_DontClosePopups, 'func'):
-    proc = rpr_getfp('ImGui_SelectableFlags_DontClosePopups')
-    SelectableFlags_DontClosePopups.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(SelectableFlags_DontClosePopups, 'cache'):
-    SelectableFlags_DontClosePopups.cache = SelectableFlags_DontClosePopups.func()
-  return SelectableFlags_DontClosePopups.cache
+def SelectableFlags_Highlight():
+  if not hasattr(SelectableFlags_Highlight, 'func'):
+    proc = rpr_getfp('ImGui_SelectableFlags_Highlight')
+    SelectableFlags_Highlight.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(SelectableFlags_Highlight, 'cache'):
+    SelectableFlags_Highlight.cache = SelectableFlags_Highlight.func()
+  return SelectableFlags_Highlight.cache
+
+def SelectableFlags_NoAutoClosePopups():
+  if not hasattr(SelectableFlags_NoAutoClosePopups, 'func'):
+    proc = rpr_getfp('ImGui_SelectableFlags_NoAutoClosePopups')
+    SelectableFlags_NoAutoClosePopups.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(SelectableFlags_NoAutoClosePopups, 'cache'):
+    SelectableFlags_NoAutoClosePopups.cache = SelectableFlags_NoAutoClosePopups.func()
+  return SelectableFlags_NoAutoClosePopups.cache
 
 def SelectableFlags_None():
   if not hasattr(SelectableFlags_None, 'func'):
@@ -627,22 +637,6 @@ def ConfigFlags_NavEnableKeyboard():
     ConfigFlags_NavEnableKeyboard.cache = ConfigFlags_NavEnableKeyboard.func()
   return ConfigFlags_NavEnableKeyboard.cache
 
-def ConfigFlags_NavEnableSetMousePos():
-  if not hasattr(ConfigFlags_NavEnableSetMousePos, 'func'):
-    proc = rpr_getfp('ImGui_ConfigFlags_NavEnableSetMousePos')
-    ConfigFlags_NavEnableSetMousePos.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(ConfigFlags_NavEnableSetMousePos, 'cache'):
-    ConfigFlags_NavEnableSetMousePos.cache = ConfigFlags_NavEnableSetMousePos.func()
-  return ConfigFlags_NavEnableSetMousePos.cache
-
-def ConfigFlags_NavNoCaptureKeyboard():
-  if not hasattr(ConfigFlags_NavNoCaptureKeyboard, 'func'):
-    proc = rpr_getfp('ImGui_ConfigFlags_NavNoCaptureKeyboard')
-    ConfigFlags_NavNoCaptureKeyboard.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(ConfigFlags_NavNoCaptureKeyboard, 'cache'):
-    ConfigFlags_NavNoCaptureKeyboard.cache = ConfigFlags_NavNoCaptureKeyboard.func()
-  return ConfigFlags_NavNoCaptureKeyboard.cache
-
 def ConfigFlags_NoKeyboard():
   if not hasattr(ConfigFlags_NoKeyboard, 'func'):
     proc = rpr_getfp('ImGui_ConfigFlags_NoKeyboard')
@@ -698,6 +692,14 @@ def ConfigVar_DebugBeginReturnValueOnce():
   if not hasattr(ConfigVar_DebugBeginReturnValueOnce, 'cache'):
     ConfigVar_DebugBeginReturnValueOnce.cache = ConfigVar_DebugBeginReturnValueOnce.func()
   return ConfigVar_DebugBeginReturnValueOnce.cache
+
+def ConfigVar_DebugHighlightIdConflicts():
+  if not hasattr(ConfigVar_DebugHighlightIdConflicts, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_DebugHighlightIdConflicts')
+    ConfigVar_DebugHighlightIdConflicts.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_DebugHighlightIdConflicts, 'cache'):
+    ConfigVar_DebugHighlightIdConflicts.cache = ConfigVar_DebugHighlightIdConflicts.func()
+  return ConfigVar_DebugHighlightIdConflicts.cache
 
 def ConfigVar_DockingNoSplit():
   if not hasattr(ConfigVar_DockingNoSplit, 'func'):
@@ -850,6 +852,62 @@ def ConfigVar_MouseDragThreshold():
   if not hasattr(ConfigVar_MouseDragThreshold, 'cache'):
     ConfigVar_MouseDragThreshold.cache = ConfigVar_MouseDragThreshold.func()
   return ConfigVar_MouseDragThreshold.cache
+
+def ConfigVar_NavCaptureKeyboard():
+  if not hasattr(ConfigVar_NavCaptureKeyboard, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_NavCaptureKeyboard')
+    ConfigVar_NavCaptureKeyboard.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_NavCaptureKeyboard, 'cache'):
+    ConfigVar_NavCaptureKeyboard.cache = ConfigVar_NavCaptureKeyboard.func()
+  return ConfigVar_NavCaptureKeyboard.cache
+
+def ConfigVar_NavCursorVisibleAlways():
+  if not hasattr(ConfigVar_NavCursorVisibleAlways, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_NavCursorVisibleAlways')
+    ConfigVar_NavCursorVisibleAlways.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_NavCursorVisibleAlways, 'cache'):
+    ConfigVar_NavCursorVisibleAlways.cache = ConfigVar_NavCursorVisibleAlways.func()
+  return ConfigVar_NavCursorVisibleAlways.cache
+
+def ConfigVar_NavCursorVisibleAuto():
+  if not hasattr(ConfigVar_NavCursorVisibleAuto, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_NavCursorVisibleAuto')
+    ConfigVar_NavCursorVisibleAuto.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_NavCursorVisibleAuto, 'cache'):
+    ConfigVar_NavCursorVisibleAuto.cache = ConfigVar_NavCursorVisibleAuto.func()
+  return ConfigVar_NavCursorVisibleAuto.cache
+
+def ConfigVar_NavEscapeClearFocusItem():
+  if not hasattr(ConfigVar_NavEscapeClearFocusItem, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_NavEscapeClearFocusItem')
+    ConfigVar_NavEscapeClearFocusItem.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_NavEscapeClearFocusItem, 'cache'):
+    ConfigVar_NavEscapeClearFocusItem.cache = ConfigVar_NavEscapeClearFocusItem.func()
+  return ConfigVar_NavEscapeClearFocusItem.cache
+
+def ConfigVar_NavEscapeClearFocusWindow():
+  if not hasattr(ConfigVar_NavEscapeClearFocusWindow, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_NavEscapeClearFocusWindow')
+    ConfigVar_NavEscapeClearFocusWindow.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_NavEscapeClearFocusWindow, 'cache'):
+    ConfigVar_NavEscapeClearFocusWindow.cache = ConfigVar_NavEscapeClearFocusWindow.func()
+  return ConfigVar_NavEscapeClearFocusWindow.cache
+
+def ConfigVar_NavMoveSetMousePos():
+  if not hasattr(ConfigVar_NavMoveSetMousePos, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_NavMoveSetMousePos')
+    ConfigVar_NavMoveSetMousePos.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_NavMoveSetMousePos, 'cache'):
+    ConfigVar_NavMoveSetMousePos.cache = ConfigVar_NavMoveSetMousePos.func()
+  return ConfigVar_NavMoveSetMousePos.cache
+
+def ConfigVar_ScrollbarScrollByPage():
+  if not hasattr(ConfigVar_ScrollbarScrollByPage, 'func'):
+    proc = rpr_getfp('ImGui_ConfigVar_ScrollbarScrollByPage')
+    ConfigVar_ScrollbarScrollByPage.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ConfigVar_ScrollbarScrollByPage, 'cache'):
+    ConfigVar_ScrollbarScrollByPage.cache = ConfigVar_ScrollbarScrollByPage.func()
+  return ConfigVar_ScrollbarScrollByPage.cache
 
 def ConfigVar_ViewportsNoDecoration():
   if not hasattr(ConfigVar_ViewportsNoDecoration, 'func'):
@@ -1160,6 +1218,22 @@ def SliderFlags_AlwaysClamp():
     SliderFlags_AlwaysClamp.cache = SliderFlags_AlwaysClamp.func()
   return SliderFlags_AlwaysClamp.cache
 
+def SliderFlags_ClampOnInput():
+  if not hasattr(SliderFlags_ClampOnInput, 'func'):
+    proc = rpr_getfp('ImGui_SliderFlags_ClampOnInput')
+    SliderFlags_ClampOnInput.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(SliderFlags_ClampOnInput, 'cache'):
+    SliderFlags_ClampOnInput.cache = SliderFlags_ClampOnInput.func()
+  return SliderFlags_ClampOnInput.cache
+
+def SliderFlags_ClampZeroRange():
+  if not hasattr(SliderFlags_ClampZeroRange, 'func'):
+    proc = rpr_getfp('ImGui_SliderFlags_ClampZeroRange')
+    SliderFlags_ClampZeroRange.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(SliderFlags_ClampZeroRange, 'cache'):
+    SliderFlags_ClampZeroRange.cache = SliderFlags_ClampZeroRange.func()
+  return SliderFlags_ClampZeroRange.cache
+
 def SliderFlags_Logarithmic():
   if not hasattr(SliderFlags_Logarithmic, 'func'):
     proc = rpr_getfp('ImGui_SliderFlags_Logarithmic')
@@ -1183,6 +1257,14 @@ def SliderFlags_NoRoundToFormat():
   if not hasattr(SliderFlags_NoRoundToFormat, 'cache'):
     SliderFlags_NoRoundToFormat.cache = SliderFlags_NoRoundToFormat.func()
   return SliderFlags_NoRoundToFormat.cache
+
+def SliderFlags_NoSpeedTweaks():
+  if not hasattr(SliderFlags_NoSpeedTweaks, 'func'):
+    proc = rpr_getfp('ImGui_SliderFlags_NoSpeedTweaks')
+    SliderFlags_NoSpeedTweaks.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(SliderFlags_NoSpeedTweaks, 'cache'):
+    SliderFlags_NoSpeedTweaks.cache = SliderFlags_NoSpeedTweaks.func()
+  return SliderFlags_NoSpeedTweaks.cache
 
 def SliderFlags_None():
   if not hasattr(SliderFlags_None, 'func'):
@@ -1718,20 +1800,28 @@ def DrawList_PathStroke(draw_list, col_rgba, flagsInOptional = None, thicknessIn
   args = (c_void_p(draw_list), c_int(col_rgba), c_int(flagsInOptional) if flagsInOptional != None else None, c_double(thicknessInOptional) if thicknessInOptional != None else None)
   DrawList_PathStroke.func(args[0], args[1], byref(args[2]) if args[2] != None else None, byref(args[3]) if args[3] != None else None)
 
-def CreateFont(family_or_file, size, flagsInOptional = None):
+def CreateFont(family, flagsInOptional = None):
   if not hasattr(CreateFont, 'func'):
     proc = rpr_getfp('ImGui_CreateFont')
-    CreateFont.func = CFUNCTYPE(c_void_p, c_char_p, c_int, c_void_p)(proc)
-  args = (rpr_packsc(family_or_file), c_int(size), c_int(flagsInOptional) if flagsInOptional != None else None)
-  rval = CreateFont.func(args[0], args[1], byref(args[2]) if args[2] != None else None)
+    CreateFont.func = CFUNCTYPE(c_void_p, c_char_p, c_void_p)(proc)
+  args = (rpr_packsc(family), c_int(flagsInOptional) if flagsInOptional != None else None)
+  rval = CreateFont.func(args[0], byref(args[1]) if args[1] != None else None)
   return rval
 
-def CreateFontFromMem(data, size, flagsInOptional = None):
+def CreateFontFromFile(file, indexInOptional = None, flagsInOptional = None):
+  if not hasattr(CreateFontFromFile, 'func'):
+    proc = rpr_getfp('ImGui_CreateFontFromFile')
+    CreateFontFromFile.func = CFUNCTYPE(c_void_p, c_char_p, c_void_p, c_void_p)(proc)
+  args = (rpr_packsc(file), c_int(indexInOptional) if indexInOptional != None else None, c_int(flagsInOptional) if flagsInOptional != None else None)
+  rval = CreateFontFromFile.func(args[0], byref(args[1]) if args[1] != None else None, byref(args[2]) if args[2] != None else None)
+  return rval
+
+def CreateFontFromMem(data, indexInOptional = None, flagsInOptional = None):
   if not hasattr(CreateFontFromMem, 'func'):
     proc = rpr_getfp('ImGui_CreateFontFromMem')
-    CreateFontFromMem.func = CFUNCTYPE(c_void_p, c_char_p, c_int, c_int, c_void_p)(proc)
-  args = (rpr_packsc(data), c_int(len(data)+1), c_int(size), c_int(flagsInOptional) if flagsInOptional != None else None)
-  rval = CreateFontFromMem.func(args[0], args[1], args[2], byref(args[3]) if args[3] != None else None)
+    CreateFontFromMem.func = CFUNCTYPE(c_void_p, c_char_p, c_int, c_void_p, c_void_p)(proc)
+  args = (rpr_packsc(data), c_int(len(data)+1), c_int(indexInOptional) if indexInOptional != None else None, c_int(flagsInOptional) if flagsInOptional != None else None)
+  rval = CreateFontFromMem.func(args[0], args[1], byref(args[2]) if args[2] != None else None, byref(args[3]) if args[3] != None else None)
   return rval
 
 def FontFlags_Bold():
@@ -1781,12 +1871,12 @@ def PopFont(ctx):
   args = (c_void_p(ctx),)
   PopFont.func(args[0])
 
-def PushFont(ctx, font):
+def PushFont(ctx, font, font_size_base_unscaled):
   if not hasattr(PushFont, 'func'):
     proc = rpr_getfp('ImGui_PushFont')
-    PushFont.func = CFUNCTYPE(None, c_void_p, c_void_p)(proc)
-  args = (c_void_p(ctx), c_void_p(font))
-  PushFont.func(args[0], args[1])
+    PushFont.func = CFUNCTYPE(None, c_void_p, c_void_p, c_double)(proc)
+  args = (c_void_p(ctx), c_void_p(font), c_double(font_size_base_unscaled))
+  PushFont.func(args[0], args[1], args[2])
 
 def CreateFunctionFromEEL(code):
   if not hasattr(CreateFunctionFromEEL, 'func'):
@@ -1871,12 +1961,20 @@ def CreateImageFromMem(data, flagsInOptional = None):
   rval = CreateImageFromMem.func(args[0], args[1], byref(args[2]) if args[2] != None else None)
   return rval
 
-def Image(ctx, image, image_size_w, image_size_h, uv0_xInOptional = None, uv0_yInOptional = None, uv1_xInOptional = None, uv1_yInOptional = None, tint_col_rgbaInOptional = None, border_col_rgbaInOptional = None):
+def CreateImageFromSize(width, height, flagsInOptional = None):
+  if not hasattr(CreateImageFromSize, 'func'):
+    proc = rpr_getfp('ImGui_CreateImageFromSize')
+    CreateImageFromSize.func = CFUNCTYPE(c_void_p, c_int, c_int, c_void_p)(proc)
+  args = (c_int(width), c_int(height), c_int(flagsInOptional) if flagsInOptional != None else None)
+  rval = CreateImageFromSize.func(args[0], args[1], byref(args[2]) if args[2] != None else None)
+  return rval
+
+def Image(ctx, image, image_size_w, image_size_h, uv0_xInOptional = None, uv0_yInOptional = None, uv1_xInOptional = None, uv1_yInOptional = None):
   if not hasattr(Image, 'func'):
     proc = rpr_getfp('ImGui_Image')
-    Image.func = CFUNCTYPE(None, c_void_p, c_void_p, c_double, c_double, c_void_p, c_void_p, c_void_p, c_void_p, c_void_p, c_void_p)(proc)
-  args = (c_void_p(ctx), c_void_p(image), c_double(image_size_w), c_double(image_size_h), c_double(uv0_xInOptional) if uv0_xInOptional != None else None, c_double(uv0_yInOptional) if uv0_yInOptional != None else None, c_double(uv1_xInOptional) if uv1_xInOptional != None else None, c_double(uv1_yInOptional) if uv1_yInOptional != None else None, c_int(tint_col_rgbaInOptional) if tint_col_rgbaInOptional != None else None, c_int(border_col_rgbaInOptional) if border_col_rgbaInOptional != None else None)
-  Image.func(args[0], args[1], args[2], args[3], byref(args[4]) if args[4] != None else None, byref(args[5]) if args[5] != None else None, byref(args[6]) if args[6] != None else None, byref(args[7]) if args[7] != None else None, byref(args[8]) if args[8] != None else None, byref(args[9]) if args[9] != None else None)
+    Image.func = CFUNCTYPE(None, c_void_p, c_void_p, c_double, c_double, c_void_p, c_void_p, c_void_p, c_void_p)(proc)
+  args = (c_void_p(ctx), c_void_p(image), c_double(image_size_w), c_double(image_size_h), c_double(uv0_xInOptional) if uv0_xInOptional != None else None, c_double(uv0_yInOptional) if uv0_yInOptional != None else None, c_double(uv1_xInOptional) if uv1_xInOptional != None else None, c_double(uv1_yInOptional) if uv1_yInOptional != None else None)
+  Image.func(args[0], args[1], args[2], args[3], byref(args[4]) if args[4] != None else None, byref(args[5]) if args[5] != None else None, byref(args[6]) if args[6] != None else None, byref(args[7]) if args[7] != None else None)
 
 def ImageButton(ctx, str_id, image, image_size_w, image_size_h, uv0_xInOptional = None, uv0_yInOptional = None, uv1_xInOptional = None, uv1_yInOptional = None, bg_col_rgbaInOptional = None, tint_col_rgbaInOptional = None):
   if not hasattr(ImageButton, 'func'):
@@ -1886,6 +1984,20 @@ def ImageButton(ctx, str_id, image, image_size_w, image_size_h, uv0_xInOptional 
   rval = ImageButton.func(args[0], args[1], args[2], args[3], args[4], byref(args[5]) if args[5] != None else None, byref(args[6]) if args[6] != None else None, byref(args[7]) if args[7] != None else None, byref(args[8]) if args[8] != None else None, byref(args[9]) if args[9] != None else None, byref(args[10]) if args[10] != None else None)
   return rval
 
+def ImageWithBg(ctx, image, image_size_w, image_size_h, uv0_xInOptional = None, uv0_yInOptional = None, uv1_xInOptional = None, uv1_yInOptional = None, bg_col_rgbaInOptional = None, tint_col_rgbaInOptional = None):
+  if not hasattr(ImageWithBg, 'func'):
+    proc = rpr_getfp('ImGui_ImageWithBg')
+    ImageWithBg.func = CFUNCTYPE(None, c_void_p, c_void_p, c_double, c_double, c_void_p, c_void_p, c_void_p, c_void_p, c_void_p, c_void_p)(proc)
+  args = (c_void_p(ctx), c_void_p(image), c_double(image_size_w), c_double(image_size_h), c_double(uv0_xInOptional) if uv0_xInOptional != None else None, c_double(uv0_yInOptional) if uv0_yInOptional != None else None, c_double(uv1_xInOptional) if uv1_xInOptional != None else None, c_double(uv1_yInOptional) if uv1_yInOptional != None else None, c_int(bg_col_rgbaInOptional) if bg_col_rgbaInOptional != None else None, c_int(tint_col_rgbaInOptional) if tint_col_rgbaInOptional != None else None)
+  ImageWithBg.func(args[0], args[1], args[2], args[3], byref(args[4]) if args[4] != None else None, byref(args[5]) if args[5] != None else None, byref(args[6]) if args[6] != None else None, byref(args[7]) if args[7] != None else None, byref(args[8]) if args[8] != None else None, byref(args[9]) if args[9] != None else None)
+
+def Image_GetPixels_Array(image, x, y, w, h, pixels, offsetInOptional = None, pitchInOptional = None):
+  if not hasattr(Image_GetPixels_Array, 'func'):
+    proc = rpr_getfp('ImGui_Image_GetPixels_Array')
+    Image_GetPixels_Array.func = CFUNCTYPE(None, c_void_p, c_int, c_int, c_int, c_int, c_void_p, c_void_p, c_void_p)(proc)
+  args = (c_void_p(image), c_int(x), c_int(y), c_int(w), c_int(h), c_void_p(pixels), c_int(offsetInOptional) if offsetInOptional != None else None, c_int(pitchInOptional) if pitchInOptional != None else None)
+  Image_GetPixels_Array.func(args[0], args[1], args[2], args[3], args[4], args[5], byref(args[6]) if args[6] != None else None, byref(args[7]) if args[7] != None else None)
+
 def Image_GetSize(image):
   if not hasattr(Image_GetSize, 'func'):
     proc = rpr_getfp('ImGui_Image_GetSize')
@@ -1894,12 +2006,35 @@ def Image_GetSize(image):
   Image_GetSize.func(args[0], byref(args[1]), byref(args[2]))
   return float(args[1].value), float(args[2].value)
 
+def Image_SetPixels_Array(image, x, y, w, h, pixels, offsetInOptional = None, pitchInOptional = None):
+  if not hasattr(Image_SetPixels_Array, 'func'):
+    proc = rpr_getfp('ImGui_Image_SetPixels_Array')
+    Image_SetPixels_Array.func = CFUNCTYPE(None, c_void_p, c_int, c_int, c_int, c_int, c_void_p, c_void_p, c_void_p)(proc)
+  args = (c_void_p(image), c_int(x), c_int(y), c_int(w), c_int(h), c_void_p(pixels), c_int(offsetInOptional) if offsetInOptional != None else None, c_int(pitchInOptional) if pitchInOptional != None else None)
+  Image_SetPixels_Array.func(args[0], args[1], args[2], args[3], args[4], args[5], byref(args[6]) if args[6] != None else None, byref(args[7]) if args[7] != None else None)
+
 def CreateImageSet():
   if not hasattr(CreateImageSet, 'func'):
     proc = rpr_getfp('ImGui_CreateImageSet')
     CreateImageSet.func = CFUNCTYPE(c_void_p)(proc)
   rval = CreateImageSet.func()
   return rval
+
+def ImageFlags_NoErrors():
+  if not hasattr(ImageFlags_NoErrors, 'func'):
+    proc = rpr_getfp('ImGui_ImageFlags_NoErrors')
+    ImageFlags_NoErrors.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ImageFlags_NoErrors, 'cache'):
+    ImageFlags_NoErrors.cache = ImageFlags_NoErrors.func()
+  return ImageFlags_NoErrors.cache
+
+def ImageFlags_None():
+  if not hasattr(ImageFlags_None, 'func'):
+    proc = rpr_getfp('ImGui_ImageFlags_None')
+    ImageFlags_None.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ImageFlags_None, 'cache'):
+    ImageFlags_None.cache = ImageFlags_None.func()
+  return ImageFlags_None.cache
 
 def ImageSet_Add(set, scale, image):
   if not hasattr(ImageSet_Add, 'func'):
@@ -1928,6 +2063,20 @@ def EndDisabled(ctx):
     EndDisabled.func = CFUNCTYPE(None, c_void_p)(proc)
   args = (c_void_p(ctx),)
   EndDisabled.func(args[0])
+
+def PopItemFlag(ctx):
+  if not hasattr(PopItemFlag, 'func'):
+    proc = rpr_getfp('ImGui_PopItemFlag')
+    PopItemFlag.func = CFUNCTYPE(None, c_void_p)(proc)
+  args = (c_void_p(ctx),)
+  PopItemFlag.func(args[0])
+
+def PushItemFlag(ctx, option, enabled):
+  if not hasattr(PushItemFlag, 'func'):
+    proc = rpr_getfp('ImGui_PushItemFlag')
+    PushItemFlag.func = CFUNCTYPE(None, c_void_p, c_int, c_bool)(proc)
+  args = (c_void_p(ctx), c_int(option), c_bool(enabled))
+  PushItemFlag.func(args[0], args[1], args[2])
 
 def SetNextItemAllowOverlap(ctx):
   if not hasattr(SetNextItemAllowOverlap, 'func'):
@@ -1989,20 +2138,6 @@ def SetNextItemWidth(ctx, item_width):
   args = (c_void_p(ctx), c_double(item_width))
   SetNextItemWidth.func(args[0], args[1])
 
-def PopTabStop(ctx):
-  if not hasattr(PopTabStop, 'func'):
-    proc = rpr_getfp('ImGui_PopTabStop')
-    PopTabStop.func = CFUNCTYPE(None, c_void_p)(proc)
-  args = (c_void_p(ctx),)
-  PopTabStop.func(args[0])
-
-def PushTabStop(ctx, tab_stop):
-  if not hasattr(PushTabStop, 'func'):
-    proc = rpr_getfp('ImGui_PushTabStop')
-    PushTabStop.func = CFUNCTYPE(None, c_void_p, c_bool)(proc)
-  args = (c_void_p(ctx), c_bool(tab_stop))
-  PushTabStop.func(args[0], args[1])
-
 def SetItemDefaultFocus(ctx):
   if not hasattr(SetItemDefaultFocus, 'func'):
     proc = rpr_getfp('ImGui_SetItemDefaultFocus')
@@ -2016,6 +2151,13 @@ def SetKeyboardFocusHere(ctx, offsetInOptional = None):
     SetKeyboardFocusHere.func = CFUNCTYPE(None, c_void_p, c_void_p)(proc)
   args = (c_void_p(ctx), c_int(offsetInOptional) if offsetInOptional != None else None)
   SetKeyboardFocusHere.func(args[0], byref(args[1]) if args[1] != None else None)
+
+def SetNavCursorVisible(ctx, visible):
+  if not hasattr(SetNavCursorVisible, 'func'):
+    proc = rpr_getfp('ImGui_SetNavCursorVisible')
+    SetNavCursorVisible.func = CFUNCTYPE(None, c_void_p, c_bool)(proc)
+  args = (c_void_p(ctx), c_bool(visible))
+  SetNavCursorVisible.func(args[0], args[1])
 
 def HoveredFlags_AllowWhenBlockedByActiveItem():
   if not hasattr(HoveredFlags_AllowWhenBlockedByActiveItem, 'func'):
@@ -2184,6 +2326,62 @@ def HoveredFlags_RootWindow():
   if not hasattr(HoveredFlags_RootWindow, 'cache'):
     HoveredFlags_RootWindow.cache = HoveredFlags_RootWindow.func()
   return HoveredFlags_RootWindow.cache
+
+def ItemFlags_AllowDuplicateId():
+  if not hasattr(ItemFlags_AllowDuplicateId, 'func'):
+    proc = rpr_getfp('ImGui_ItemFlags_AllowDuplicateId')
+    ItemFlags_AllowDuplicateId.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ItemFlags_AllowDuplicateId, 'cache'):
+    ItemFlags_AllowDuplicateId.cache = ItemFlags_AllowDuplicateId.func()
+  return ItemFlags_AllowDuplicateId.cache
+
+def ItemFlags_AutoClosePopups():
+  if not hasattr(ItemFlags_AutoClosePopups, 'func'):
+    proc = rpr_getfp('ImGui_ItemFlags_AutoClosePopups')
+    ItemFlags_AutoClosePopups.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ItemFlags_AutoClosePopups, 'cache'):
+    ItemFlags_AutoClosePopups.cache = ItemFlags_AutoClosePopups.func()
+  return ItemFlags_AutoClosePopups.cache
+
+def ItemFlags_ButtonRepeat():
+  if not hasattr(ItemFlags_ButtonRepeat, 'func'):
+    proc = rpr_getfp('ImGui_ItemFlags_ButtonRepeat')
+    ItemFlags_ButtonRepeat.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ItemFlags_ButtonRepeat, 'cache'):
+    ItemFlags_ButtonRepeat.cache = ItemFlags_ButtonRepeat.func()
+  return ItemFlags_ButtonRepeat.cache
+
+def ItemFlags_NoNav():
+  if not hasattr(ItemFlags_NoNav, 'func'):
+    proc = rpr_getfp('ImGui_ItemFlags_NoNav')
+    ItemFlags_NoNav.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ItemFlags_NoNav, 'cache'):
+    ItemFlags_NoNav.cache = ItemFlags_NoNav.func()
+  return ItemFlags_NoNav.cache
+
+def ItemFlags_NoNavDefaultFocus():
+  if not hasattr(ItemFlags_NoNavDefaultFocus, 'func'):
+    proc = rpr_getfp('ImGui_ItemFlags_NoNavDefaultFocus')
+    ItemFlags_NoNavDefaultFocus.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ItemFlags_NoNavDefaultFocus, 'cache'):
+    ItemFlags_NoNavDefaultFocus.cache = ItemFlags_NoNavDefaultFocus.func()
+  return ItemFlags_NoNavDefaultFocus.cache
+
+def ItemFlags_NoTabStop():
+  if not hasattr(ItemFlags_NoTabStop, 'func'):
+    proc = rpr_getfp('ImGui_ItemFlags_NoTabStop')
+    ItemFlags_NoTabStop.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ItemFlags_NoTabStop, 'cache'):
+    ItemFlags_NoTabStop.cache = ItemFlags_NoTabStop.func()
+  return ItemFlags_NoTabStop.cache
+
+def ItemFlags_None():
+  if not hasattr(ItemFlags_None, 'func'):
+    proc = rpr_getfp('ImGui_ItemFlags_None')
+    ItemFlags_None.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ItemFlags_None, 'cache'):
+    ItemFlags_None.cache = ItemFlags_None.func()
+  return ItemFlags_None.cache
 
 def IsAnyItemActive(ctx):
   if not hasattr(IsAnyItemActive, 'func'):
@@ -3072,6 +3270,14 @@ def Key_O():
     Key_O.cache = Key_O.func()
   return Key_O.cache
 
+def Key_Oem102():
+  if not hasattr(Key_Oem102, 'func'):
+    proc = rpr_getfp('ImGui_Key_Oem102')
+    Key_Oem102.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(Key_Oem102, 'cache'):
+    Key_Oem102.cache = Key_Oem102.func()
+  return Key_Oem102.cache
+
 def Key_P():
   if not hasattr(Key_P, 'func'):
     proc = rpr_getfp('ImGui_Key_P')
@@ -3520,6 +3726,14 @@ def IsMouseReleased(ctx, button):
   rval = IsMouseReleased.func(args[0], args[1])
   return rval
 
+def IsMouseReleasedWithDelay(ctx, button, delay):
+  if not hasattr(IsMouseReleasedWithDelay, 'func'):
+    proc = rpr_getfp('ImGui_IsMouseReleasedWithDelay')
+    IsMouseReleasedWithDelay.func = CFUNCTYPE(c_bool, c_void_p, c_int, c_double)(proc)
+  args = (c_void_p(ctx), c_int(button), c_double(delay))
+  rval = IsMouseReleasedWithDelay.func(args[0], args[1], args[2])
+  return rval
+
 def MouseButton_Left():
   if not hasattr(MouseButton_Left, 'func'):
     proc = rpr_getfp('ImGui_MouseButton_Left')
@@ -3591,6 +3805,14 @@ def MouseCursor_NotAllowed():
     MouseCursor_NotAllowed.cache = MouseCursor_NotAllowed.func()
   return MouseCursor_NotAllowed.cache
 
+def MouseCursor_Progress():
+  if not hasattr(MouseCursor_Progress, 'func'):
+    proc = rpr_getfp('ImGui_MouseCursor_Progress')
+    MouseCursor_Progress.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(MouseCursor_Progress, 'cache'):
+    MouseCursor_Progress.cache = MouseCursor_Progress.func()
+  return MouseCursor_Progress.cache
+
 def MouseCursor_ResizeAll():
   if not hasattr(MouseCursor_ResizeAll, 'func'):
     proc = rpr_getfp('ImGui_MouseCursor_ResizeAll')
@@ -3638,6 +3860,14 @@ def MouseCursor_TextInput():
   if not hasattr(MouseCursor_TextInput, 'cache'):
     MouseCursor_TextInput.cache = MouseCursor_TextInput.func()
   return MouseCursor_TextInput.cache
+
+def MouseCursor_Wait():
+  if not hasattr(MouseCursor_Wait, 'func'):
+    proc = rpr_getfp('ImGui_MouseCursor_Wait')
+    MouseCursor_Wait.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(MouseCursor_Wait, 'cache'):
+    MouseCursor_Wait.cache = MouseCursor_Wait.func()
+  return MouseCursor_Wait.cache
 
 def SetMouseCursor(ctx, cursor_type):
   if not hasattr(SetMouseCursor, 'func'):
@@ -3857,6 +4087,14 @@ def PushClipRect(ctx, clip_rect_min_x, clip_rect_min_y, clip_rect_max_x, clip_re
   args = (c_void_p(ctx), c_double(clip_rect_min_x), c_double(clip_rect_min_y), c_double(clip_rect_max_x), c_double(clip_rect_max_y), c_bool(intersect_with_current_clip_rect))
   PushClipRect.func(args[0], args[1], args[2], args[3], args[4], args[5])
 
+def GetContentRegionAvail(ctx):
+  if not hasattr(GetContentRegionAvail, 'func'):
+    proc = rpr_getfp('ImGui_GetContentRegionAvail')
+    GetContentRegionAvail.func = CFUNCTYPE(None, c_void_p, c_void_p, c_void_p)(proc)
+  args = (c_void_p(ctx), c_double(0), c_double(0))
+  GetContentRegionAvail.func(args[0], byref(args[1]), byref(args[2]))
+  return float(args[1].value), float(args[2].value)
+
 def GetCursorPos(ctx):
   if not hasattr(GetCursorPos, 'func'):
     proc = rpr_getfp('ImGui_GetCursorPos')
@@ -3968,6 +4206,13 @@ def ListClipper_IncludeItemsByIndex(clipper, item_begin, item_end):
     ListClipper_IncludeItemsByIndex.func = CFUNCTYPE(None, c_void_p, c_int, c_int)(proc)
   args = (c_void_p(clipper), c_int(item_begin), c_int(item_end))
   ListClipper_IncludeItemsByIndex.func(args[0], args[1], args[2])
+
+def ListClipper_SeekCursorForItem(clipper, items_count):
+  if not hasattr(ListClipper_SeekCursorForItem, 'func'):
+    proc = rpr_getfp('ImGui_ListClipper_SeekCursorForItem')
+    ListClipper_SeekCursorForItem.func = CFUNCTYPE(None, c_void_p, c_int)(proc)
+  args = (c_void_p(clipper), c_int(items_count))
+  ListClipper_SeekCursorForItem.func(args[0], args[1])
 
 def ListClipper_Step(clipper):
   if not hasattr(ListClipper_Step, 'func'):
@@ -4342,6 +4587,14 @@ def Col_HeaderHovered():
     Col_HeaderHovered.cache = Col_HeaderHovered.func()
   return Col_HeaderHovered.cache
 
+def Col_InputTextCursor():
+  if not hasattr(Col_InputTextCursor, 'func'):
+    proc = rpr_getfp('ImGui_Col_InputTextCursor')
+    Col_InputTextCursor.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(Col_InputTextCursor, 'cache'):
+    Col_InputTextCursor.cache = Col_InputTextCursor.func()
+  return Col_InputTextCursor.cache
+
 def Col_MenuBarBg():
   if not hasattr(Col_MenuBarBg, 'func'):
     proc = rpr_getfp('ImGui_Col_MenuBarBg')
@@ -4358,13 +4611,13 @@ def Col_ModalWindowDimBg():
     Col_ModalWindowDimBg.cache = Col_ModalWindowDimBg.func()
   return Col_ModalWindowDimBg.cache
 
-def Col_NavHighlight():
-  if not hasattr(Col_NavHighlight, 'func'):
-    proc = rpr_getfp('ImGui_Col_NavHighlight')
-    Col_NavHighlight.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(Col_NavHighlight, 'cache'):
-    Col_NavHighlight.cache = Col_NavHighlight.func()
-  return Col_NavHighlight.cache
+def Col_NavCursor():
+  if not hasattr(Col_NavCursor, 'func'):
+    proc = rpr_getfp('ImGui_Col_NavCursor')
+    Col_NavCursor.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(Col_NavCursor, 'cache'):
+    Col_NavCursor.cache = Col_NavCursor.func()
+  return Col_NavCursor.cache
 
 def Col_NavWindowingDimBg():
   if not hasattr(Col_NavWindowingDimBg, 'func'):
@@ -4630,6 +4883,14 @@ def Col_TextDisabled():
     Col_TextDisabled.cache = Col_TextDisabled.func()
   return Col_TextDisabled.cache
 
+def Col_TextLink():
+  if not hasattr(Col_TextLink, 'func'):
+    proc = rpr_getfp('ImGui_Col_TextLink')
+    Col_TextLink.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(Col_TextLink, 'cache'):
+    Col_TextLink.cache = Col_TextLink.func()
+  return Col_TextLink.cache
+
 def Col_TextSelectedBg():
   if not hasattr(Col_TextSelectedBg, 'func'):
     proc = rpr_getfp('ImGui_Col_TextSelectedBg')
@@ -4661,6 +4922,14 @@ def Col_TitleBgCollapsed():
   if not hasattr(Col_TitleBgCollapsed, 'cache'):
     Col_TitleBgCollapsed.cache = Col_TitleBgCollapsed.func()
   return Col_TitleBgCollapsed.cache
+
+def Col_TreeLines():
+  if not hasattr(Col_TreeLines, 'func'):
+    proc = rpr_getfp('ImGui_Col_TreeLines')
+    Col_TreeLines.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(Col_TreeLines, 'cache'):
+    Col_TreeLines.cache = Col_TreeLines.func()
+  return Col_TreeLines.cache
 
 def Col_WindowBg():
   if not hasattr(Col_WindowBg, 'func'):
@@ -4730,12 +4999,26 @@ def PopStyleVar(ctx, countInOptional = None):
   args = (c_void_p(ctx), c_int(countInOptional) if countInOptional != None else None)
   PopStyleVar.func(args[0], byref(args[1]) if args[1] != None else None)
 
-def PushStyleVar(ctx, var_idx, val1, val2InOptional = None):
+def PushStyleVar(ctx, idx, val1, val2InOptional = None):
   if not hasattr(PushStyleVar, 'func'):
     proc = rpr_getfp('ImGui_PushStyleVar')
     PushStyleVar.func = CFUNCTYPE(None, c_void_p, c_int, c_double, c_void_p)(proc)
-  args = (c_void_p(ctx), c_int(var_idx), c_double(val1), c_double(val2InOptional) if val2InOptional != None else None)
+  args = (c_void_p(ctx), c_int(idx), c_double(val1), c_double(val2InOptional) if val2InOptional != None else None)
   PushStyleVar.func(args[0], args[1], args[2], byref(args[3]) if args[3] != None else None)
+
+def PushStyleVarX(ctx, idx, val_x):
+  if not hasattr(PushStyleVarX, 'func'):
+    proc = rpr_getfp('ImGui_PushStyleVarX')
+    PushStyleVarX.func = CFUNCTYPE(None, c_void_p, c_int, c_double)(proc)
+  args = (c_void_p(ctx), c_int(idx), c_double(val_x))
+  PushStyleVarX.func(args[0], args[1], args[2])
+
+def PushStyleVarY(ctx, idx, val_y):
+  if not hasattr(PushStyleVarY, 'func'):
+    proc = rpr_getfp('ImGui_PushStyleVarY')
+    PushStyleVarY.func = CFUNCTYPE(None, c_void_p, c_int, c_double)(proc)
+  args = (c_void_p(ctx), c_int(idx), c_double(val_y))
+  PushStyleVarY.func(args[0], args[1], args[2])
 
 def StyleVar_Alpha():
   if not hasattr(StyleVar_Alpha, 'func'):
@@ -4824,6 +5107,14 @@ def StyleVar_GrabRounding():
   if not hasattr(StyleVar_GrabRounding, 'cache'):
     StyleVar_GrabRounding.cache = StyleVar_GrabRounding.func()
   return StyleVar_GrabRounding.cache
+
+def StyleVar_ImageBorderSize():
+  if not hasattr(StyleVar_ImageBorderSize, 'func'):
+    proc = rpr_getfp('ImGui_StyleVar_ImageBorderSize')
+    StyleVar_ImageBorderSize.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(StyleVar_ImageBorderSize, 'cache'):
+    StyleVar_ImageBorderSize.cache = StyleVar_ImageBorderSize.func()
+  return StyleVar_ImageBorderSize.cache
 
 def StyleVar_IndentSpacing():
   if not hasattr(StyleVar_IndentSpacing, 'func'):
@@ -4921,6 +5212,14 @@ def StyleVar_TabBarBorderSize():
     StyleVar_TabBarBorderSize.cache = StyleVar_TabBarBorderSize.func()
   return StyleVar_TabBarBorderSize.cache
 
+def StyleVar_TabBarOverlineSize():
+  if not hasattr(StyleVar_TabBarOverlineSize, 'func'):
+    proc = rpr_getfp('ImGui_StyleVar_TabBarOverlineSize')
+    StyleVar_TabBarOverlineSize.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(StyleVar_TabBarOverlineSize, 'cache'):
+    StyleVar_TabBarOverlineSize.cache = StyleVar_TabBarOverlineSize.func()
+  return StyleVar_TabBarOverlineSize.cache
+
 def StyleVar_TabBorderSize():
   if not hasattr(StyleVar_TabBorderSize, 'func'):
     proc = rpr_getfp('ImGui_StyleVar_TabBorderSize')
@@ -4952,6 +5251,22 @@ def StyleVar_TableAngledHeadersTextAlign():
   if not hasattr(StyleVar_TableAngledHeadersTextAlign, 'cache'):
     StyleVar_TableAngledHeadersTextAlign.cache = StyleVar_TableAngledHeadersTextAlign.func()
   return StyleVar_TableAngledHeadersTextAlign.cache
+
+def StyleVar_TreeLinesRounding():
+  if not hasattr(StyleVar_TreeLinesRounding, 'func'):
+    proc = rpr_getfp('ImGui_StyleVar_TreeLinesRounding')
+    StyleVar_TreeLinesRounding.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(StyleVar_TreeLinesRounding, 'cache'):
+    StyleVar_TreeLinesRounding.cache = StyleVar_TreeLinesRounding.func()
+  return StyleVar_TreeLinesRounding.cache
+
+def StyleVar_TreeLinesSize():
+  if not hasattr(StyleVar_TreeLinesSize, 'func'):
+    proc = rpr_getfp('ImGui_StyleVar_TreeLinesSize')
+    StyleVar_TreeLinesSize.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(StyleVar_TreeLinesSize, 'cache'):
+    StyleVar_TreeLinesSize.cache = StyleVar_TreeLinesSize.func()
+  return StyleVar_TreeLinesSize.cache
 
 def StyleVar_WindowBorderSize():
   if not hasattr(StyleVar_WindowBorderSize, 'func'):
@@ -5995,6 +6310,22 @@ def TextDisabled(ctx, text):
   args = (c_void_p(ctx), rpr_packsc(text))
   TextDisabled.func(args[0], args[1])
 
+def TextLink(ctx, label):
+  if not hasattr(TextLink, 'func'):
+    proc = rpr_getfp('ImGui_TextLink')
+    TextLink.func = CFUNCTYPE(c_bool, c_void_p, c_char_p)(proc)
+  args = (c_void_p(ctx), rpr_packsc(label))
+  rval = TextLink.func(args[0], args[1])
+  return rval
+
+def TextLinkOpenURL(ctx, label, urlInOptional = None):
+  if not hasattr(TextLinkOpenURL, 'func'):
+    proc = rpr_getfp('ImGui_TextLinkOpenURL')
+    TextLinkOpenURL.func = CFUNCTYPE(c_bool, c_void_p, c_char_p, c_char_p)(proc)
+  args = (c_void_p(ctx), rpr_packsc(label), rpr_packsc(urlInOptional) if urlInOptional != None else None)
+  rval = TextLinkOpenURL.func(args[0], args[1], args[2])
+  return rval
+
 def TextWrapped(ctx, text):
   if not hasattr(TextWrapped, 'func'):
     proc = rpr_getfp('ImGui_TextWrapped')
@@ -6242,6 +6573,14 @@ def InputTextFlags_DisplayEmptyRefVal():
     InputTextFlags_DisplayEmptyRefVal.cache = InputTextFlags_DisplayEmptyRefVal.func()
   return InputTextFlags_DisplayEmptyRefVal.cache
 
+def InputTextFlags_ElideLeft():
+  if not hasattr(InputTextFlags_ElideLeft, 'func'):
+    proc = rpr_getfp('ImGui_InputTextFlags_ElideLeft')
+    InputTextFlags_ElideLeft.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(InputTextFlags_ElideLeft, 'cache'):
+    InputTextFlags_ElideLeft.cache = InputTextFlags_ElideLeft.func()
+  return InputTextFlags_ElideLeft.cache
+
 def InputTextFlags_NoHorizontalScroll():
   if not hasattr(InputTextFlags_NoHorizontalScroll, 'func'):
     proc = rpr_getfp('ImGui_InputTextFlags_NoHorizontalScroll')
@@ -6429,6 +6768,30 @@ def TreeNodeFlags_DefaultOpen():
     TreeNodeFlags_DefaultOpen.cache = TreeNodeFlags_DefaultOpen.func()
   return TreeNodeFlags_DefaultOpen.cache
 
+def TreeNodeFlags_DrawLinesFull():
+  if not hasattr(TreeNodeFlags_DrawLinesFull, 'func'):
+    proc = rpr_getfp('ImGui_TreeNodeFlags_DrawLinesFull')
+    TreeNodeFlags_DrawLinesFull.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(TreeNodeFlags_DrawLinesFull, 'cache'):
+    TreeNodeFlags_DrawLinesFull.cache = TreeNodeFlags_DrawLinesFull.func()
+  return TreeNodeFlags_DrawLinesFull.cache
+
+def TreeNodeFlags_DrawLinesNone():
+  if not hasattr(TreeNodeFlags_DrawLinesNone, 'func'):
+    proc = rpr_getfp('ImGui_TreeNodeFlags_DrawLinesNone')
+    TreeNodeFlags_DrawLinesNone.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(TreeNodeFlags_DrawLinesNone, 'cache'):
+    TreeNodeFlags_DrawLinesNone.cache = TreeNodeFlags_DrawLinesNone.func()
+  return TreeNodeFlags_DrawLinesNone.cache
+
+def TreeNodeFlags_DrawLinesToNodes():
+  if not hasattr(TreeNodeFlags_DrawLinesToNodes, 'func'):
+    proc = rpr_getfp('ImGui_TreeNodeFlags_DrawLinesToNodes')
+    TreeNodeFlags_DrawLinesToNodes.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(TreeNodeFlags_DrawLinesToNodes, 'cache'):
+    TreeNodeFlags_DrawLinesToNodes.cache = TreeNodeFlags_DrawLinesToNodes.func()
+  return TreeNodeFlags_DrawLinesToNodes.cache
+
 def TreeNodeFlags_FramePadding():
   if not hasattr(TreeNodeFlags_FramePadding, 'func'):
     proc = rpr_getfp('ImGui_TreeNodeFlags_FramePadding')
@@ -6445,6 +6808,14 @@ def TreeNodeFlags_Framed():
     TreeNodeFlags_Framed.cache = TreeNodeFlags_Framed.func()
   return TreeNodeFlags_Framed.cache
 
+def TreeNodeFlags_LabelSpanAllColumns():
+  if not hasattr(TreeNodeFlags_LabelSpanAllColumns, 'func'):
+    proc = rpr_getfp('ImGui_TreeNodeFlags_LabelSpanAllColumns')
+    TreeNodeFlags_LabelSpanAllColumns.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(TreeNodeFlags_LabelSpanAllColumns, 'cache'):
+    TreeNodeFlags_LabelSpanAllColumns.cache = TreeNodeFlags_LabelSpanAllColumns.func()
+  return TreeNodeFlags_LabelSpanAllColumns.cache
+
 def TreeNodeFlags_Leaf():
   if not hasattr(TreeNodeFlags_Leaf, 'func'):
     proc = rpr_getfp('ImGui_TreeNodeFlags_Leaf')
@@ -6452,6 +6823,14 @@ def TreeNodeFlags_Leaf():
   if not hasattr(TreeNodeFlags_Leaf, 'cache'):
     TreeNodeFlags_Leaf.cache = TreeNodeFlags_Leaf.func()
   return TreeNodeFlags_Leaf.cache
+
+def TreeNodeFlags_NavLeftJumpsToParent():
+  if not hasattr(TreeNodeFlags_NavLeftJumpsToParent, 'func'):
+    proc = rpr_getfp('ImGui_TreeNodeFlags_NavLeftJumpsToParent')
+    TreeNodeFlags_NavLeftJumpsToParent.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(TreeNodeFlags_NavLeftJumpsToParent, 'cache'):
+    TreeNodeFlags_NavLeftJumpsToParent.cache = TreeNodeFlags_NavLeftJumpsToParent.func()
+  return TreeNodeFlags_NavLeftJumpsToParent.cache
 
 def TreeNodeFlags_NoAutoOpenOnLog():
   if not hasattr(TreeNodeFlags_NoAutoOpenOnLog, 'func'):
@@ -6525,13 +6904,13 @@ def TreeNodeFlags_SpanFullWidth():
     TreeNodeFlags_SpanFullWidth.cache = TreeNodeFlags_SpanFullWidth.func()
   return TreeNodeFlags_SpanFullWidth.cache
 
-def TreeNodeFlags_SpanTextWidth():
-  if not hasattr(TreeNodeFlags_SpanTextWidth, 'func'):
-    proc = rpr_getfp('ImGui_TreeNodeFlags_SpanTextWidth')
-    TreeNodeFlags_SpanTextWidth.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(TreeNodeFlags_SpanTextWidth, 'cache'):
-    TreeNodeFlags_SpanTextWidth.cache = TreeNodeFlags_SpanTextWidth.func()
-  return TreeNodeFlags_SpanTextWidth.cache
+def TreeNodeFlags_SpanLabelWidth():
+  if not hasattr(TreeNodeFlags_SpanLabelWidth, 'func'):
+    proc = rpr_getfp('ImGui_TreeNodeFlags_SpanLabelWidth')
+    TreeNodeFlags_SpanLabelWidth.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(TreeNodeFlags_SpanLabelWidth, 'cache'):
+    TreeNodeFlags_SpanLabelWidth.cache = TreeNodeFlags_SpanLabelWidth.func()
+  return TreeNodeFlags_SpanLabelWidth.cache
 
 def GetBuiltinPath():
   if not hasattr(GetBuiltinPath, 'func'):
@@ -6696,6 +7075,13 @@ def PushID(ctx, str_id):
   args = (c_void_p(ctx), rpr_packsc(str_id))
   PushID.func(args[0], args[1])
 
+def DebugLog(ctx, text):
+  if not hasattr(DebugLog, 'func'):
+    proc = rpr_getfp('ImGui_DebugLog')
+    DebugLog.func = CFUNCTYPE(None, c_void_p, c_char_p)(proc)
+  args = (c_void_p(ctx), rpr_packsc(text))
+  DebugLog.func(args[0], args[1])
+
 def LogFinish(ctx):
   if not hasattr(LogFinish, 'func'):
     proc = rpr_getfp('ImGui_LogFinish')
@@ -6857,13 +7243,13 @@ def ChildFlags_AutoResizeY():
     ChildFlags_AutoResizeY.cache = ChildFlags_AutoResizeY.func()
   return ChildFlags_AutoResizeY.cache
 
-def ChildFlags_Border():
-  if not hasattr(ChildFlags_Border, 'func'):
-    proc = rpr_getfp('ImGui_ChildFlags_Border')
-    ChildFlags_Border.func = CFUNCTYPE(c_int)(proc)
-  if not hasattr(ChildFlags_Border, 'cache'):
-    ChildFlags_Border.cache = ChildFlags_Border.func()
-  return ChildFlags_Border.cache
+def ChildFlags_Borders():
+  if not hasattr(ChildFlags_Borders, 'func'):
+    proc = rpr_getfp('ImGui_ChildFlags_Borders')
+    ChildFlags_Borders.func = CFUNCTYPE(c_int)(proc)
+  if not hasattr(ChildFlags_Borders, 'cache'):
+    ChildFlags_Borders.cache = ChildFlags_Borders.func()
+  return ChildFlags_Borders.cache
 
 def ChildFlags_FrameStyle():
   if not hasattr(ChildFlags_FrameStyle, 'func'):
@@ -6904,38 +7290,6 @@ def ChildFlags_ResizeY():
   if not hasattr(ChildFlags_ResizeY, 'cache'):
     ChildFlags_ResizeY.cache = ChildFlags_ResizeY.func()
   return ChildFlags_ResizeY.cache
-
-def GetContentRegionAvail(ctx):
-  if not hasattr(GetContentRegionAvail, 'func'):
-    proc = rpr_getfp('ImGui_GetContentRegionAvail')
-    GetContentRegionAvail.func = CFUNCTYPE(None, c_void_p, c_void_p, c_void_p)(proc)
-  args = (c_void_p(ctx), c_double(0), c_double(0))
-  GetContentRegionAvail.func(args[0], byref(args[1]), byref(args[2]))
-  return float(args[1].value), float(args[2].value)
-
-def GetContentRegionMax(ctx):
-  if not hasattr(GetContentRegionMax, 'func'):
-    proc = rpr_getfp('ImGui_GetContentRegionMax')
-    GetContentRegionMax.func = CFUNCTYPE(None, c_void_p, c_void_p, c_void_p)(proc)
-  args = (c_void_p(ctx), c_double(0), c_double(0))
-  GetContentRegionMax.func(args[0], byref(args[1]), byref(args[2]))
-  return float(args[1].value), float(args[2].value)
-
-def GetWindowContentRegionMax(ctx):
-  if not hasattr(GetWindowContentRegionMax, 'func'):
-    proc = rpr_getfp('ImGui_GetWindowContentRegionMax')
-    GetWindowContentRegionMax.func = CFUNCTYPE(None, c_void_p, c_void_p, c_void_p)(proc)
-  args = (c_void_p(ctx), c_double(0), c_double(0))
-  GetWindowContentRegionMax.func(args[0], byref(args[1]), byref(args[2]))
-  return float(args[1].value), float(args[2].value)
-
-def GetWindowContentRegionMin(ctx):
-  if not hasattr(GetWindowContentRegionMin, 'func'):
-    proc = rpr_getfp('ImGui_GetWindowContentRegionMin')
-    GetWindowContentRegionMin.func = CFUNCTYPE(None, c_void_p, c_void_p, c_void_p)(proc)
-  args = (c_void_p(ctx), c_double(0), c_double(0))
-  GetWindowContentRegionMin.func(args[0], byref(args[1]), byref(args[2]))
-  return float(args[1].value), float(args[2].value)
 
 def ShowAboutWindow(ctx, p_openInOutOptional = None):
   if not hasattr(ShowAboutWindow, 'func'):

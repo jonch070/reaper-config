@@ -1,9 +1,9 @@
 -- @description Sexan PieMenu 3000
 -- @author Sexan
 -- @license GPL v3
--- @version 0.35.62
+-- @version 0.36.3
 -- @changelog
---  Fix "Open Custom Image folder"
+--  Fix dropdown drawing
 -- @provides
 --   [main=main,midi_editor] .
 --   [main=main,midi_editor] Sexan_Pie3000_Setup.lua
@@ -250,7 +250,7 @@ if PIE_MENU.use_main then
 end
 
 local function ConvertAndSetCursor(x, y)
-    local mouse_x, mouse_y = r.ImGui_PointConvertNative(ctx, x, y, true)
+    local mouse_x, mouse_y = r.ImGui_PointConvertNative(ctx, x // 1, y // 1, true)
     r.JS_Mouse_SetPosition(mouse_x, mouse_y)
 end
 
@@ -384,8 +384,8 @@ local function AnimationProgress()
         CENTER_BTN_PROG = MAIN_PROG
         if MAIN_PROG < 0.1 then DONE = true end
     else
-        CENTER_BTN_PROG = EasingAnimation(0, 1, 0.3, easingFunctions.inOutCubic, SCRIPT_START_TIME)
-        MAIN_PROG = EasingAnimation(0, 1, 0.3, easingFunctions.outCubic, START_TIME)
+        CENTER_BTN_PROG = EasingAnimation(0.01, 1, 0.3, easingFunctions.inOutCubic, SCRIPT_START_TIME)
+        MAIN_PROG = EasingAnimation(0.01, 1, 0.3, easingFunctions.outCubic, START_TIME)
         if BUTTON_HOVER_TIME then
             BUTTON_PROG = EasingAnimation(0, 1, 0.15, easingFunctions.outCubic, BUTTON_HOVER_TIME)
         end
