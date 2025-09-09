@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "freeze track ",
+	SEARCH = "browse pac",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -75,6 +75,10 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
+			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+			type = "action"
+		},
+		{
 			id = "Script: HeDa_Track Inspector VIP_Freeze To New Version.lua (RS6ab30139e780b80ddcf28603e8cd733ff1f377a1) (Main)",
 			type = "action"
 		},
@@ -124,10 +128,6 @@ config = {
 		},
 		{
 			id = "Script: Yannick_Bounce selection (selected items on the track merge into one new item).lua (RSb636c1fd1a73689517d6bce5dda6fe4ea1f5a170) (Main)",
-			type = "action"
-		},
-		{
-			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
 			type = "action"
 		},
 		{
