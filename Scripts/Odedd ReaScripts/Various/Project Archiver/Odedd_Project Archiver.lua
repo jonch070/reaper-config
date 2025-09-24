@@ -1,6 +1,6 @@
 -- @description Project Archiver
 -- @author Oded Davidov
--- @version 0.8.3
+-- @version 0.8.6
 -- @donation https://paypal.me/odedda
 -- @link Forum Thread https://forum.cockos.com/showthread.php?t=280150
 -- @license GNU GPL v3
@@ -13,8 +13,8 @@
 --   [nomain] ../../Resources/Icons/* > Resources/Icons/
 --   [nomain] lib/**
 -- @changelog
---   Internal changes
---   Fixed a bug while checking for backup destination folder contents
+--   Bug fixes
+--   Minimizes files to minimal Channel Mode usage (eg. files that only use left channel in take stereo mode will get rid of right channel)
 
 ---------------------------------------
 -- SETUP ------------------------------
@@ -39,7 +39,7 @@ if OD_PrereqsOK({
         js_version = 1.310,    -- required for JS_Dialog_BrowseForFolder
         reaper_version = 6.76, -- required for APPLYFX_FORMAT and OPENCOPY_CFGIDX
         scripts = {
-            ['Reateam_RPP-Parser.lua'] = r.path .. "/Scripts/Reateam Scripts/Development/RPP-Parser/Reateam_RPP-Parser.lua"
+            ['Reateam_RPP-Parser.lua'] = r.path .. "/Scripts/ReaTeam Scripts/Development/RPP-Parser/Reateam_RPP-Parser.lua"
         }
     }) then
     dofile(p .. 'lib/Constants.lua')
@@ -738,7 +738,7 @@ if OD_PrereqsOK({
     -- START ------------------------------
     ---------------------------------------
 
-    dofile(r.path .. "/Scripts/Reateam Scripts/Development/RPP-Parser/Reateam_RPP-Parser.lua")
+    dofile(r.path .. "/Scripts/ReaTeam Scripts/Development/RPP-Parser/Reateam_RPP-Parser.lua")
     PA_Settings:load()
     r.defer(app.loop)
 end

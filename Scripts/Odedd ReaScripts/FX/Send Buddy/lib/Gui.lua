@@ -1,27 +1,31 @@
 -- @noindex
-package.path = r.ImGui_GetBuiltinPath() .. '/?.lua'
-ImGui = require 'imgui' '0.9.1'
-
 SM_Gui = OD_Gui:new({
 
 })
 
 SM_Gui.init = function(self, fonts)
-    OD_Gui.addFont(self, 'vertical', 'Resources/Fonts/Cousine-90deg.otf', 11)
+    -- OD_Gui.addFont(self, 'vertical', 'Resources/Fonts/Cousine-90deg.otf', 11)
 
-    local small = 16
-    local default = 18
-    local large = 22
-    self:createFonts({
-        default = { file = 'Resources/Fonts/Cousine-Regular.ttf', size = default },
-        small = { file = 'Resources/Fonts/Cousine-Regular.ttf', size = small },
-        large = { file = 'Resources/Fonts/Cousine-Regular.ttf', size = large },
-        large_bold = { file = 'Resources/Fonts/Cousine-Bold.ttf', size = large },
-        icons_small = { file = 'Resources/Fonts/Icons-Regular.otf', size = small },
-        icons_large = { file = 'Resources/Fonts/Icons-Regular.otf', size = large }
-    })
+    -- local small = 16
+    -- local default = 18
+    -- local large = 22
+    -- self:createFonts({
+    --     default = { file = 'Resources/Fonts/Cousine-Regular.ttf', size = default },
+    --     small = { file = 'Resources/Fonts/Cousine-Regular.ttf', size = small },
+    --     large = { file = 'Resources/Fonts/Cousine-Regular.ttf', size = large },
+    --     large_bold = { file = 'Resources/Fonts/Cousine-Bold.ttf', size = large },
+    --     icons_small = { file = 'Resources/Fonts/Icons-Regular.otf', size = small },
+    --     icons_large = { file = 'Resources/Fonts/Icons-Regular.otf', size = large }
+    -- })
 
-    OD_Gui.init(self, false)
+    self:createFontsImGui010({
+        default = { file = 'Resources/Fonts/Cousine-Regular.ttf' },
+        vertical = { file = 'Resources/Fonts/Cousine-90deg.otf' },
+        bold = { file = 'Resources/Fonts/Cousine-Regular.ttf', flags = ImGui.FontFlags_Bold },
+        icons = { file = 'Resources/Fonts/Icons-Regular.otf' },
+    }, { default = 18, small = 16, large = 22, tiny = 12 })
+
+    OD_Gui.init(self)
 
     self.st.basecolors = {
         darkestBG = 0x131313ff,
@@ -48,6 +52,8 @@ SM_Gui.init = function(self, fonts)
         mainBrightest = 0xd75869ff,
         textBright = 0xf7f7f7ff,
         textDark = 0x7c7c7cff,
+        textDarker = 0x4c4c4cff,
+        success = 0x04eb00ff,
     }
     self.st.colpresets = {
         darkButton = {
@@ -103,6 +109,8 @@ SM_Gui.init = function(self, fonts)
             },
             blank = {
                 [ImGui.Col_Button] = self.st.basecolors.darkestBG,
+                [ImGui.Col_ButtonHovered] = self.st.basecolors.darkestBG,
+                [ImGui.Col_ButtonActive] = self.st.basecolors.darkestBG,
             },
         },
         buttons = {
@@ -282,13 +290,17 @@ SM_Gui.init = function(self, fonts)
             [SEND_TYPE.RECV] = self.st.basecolors.mainDark, --0x371f37ff,
             [SEND_TYPE.HW] = self.st.basecolors.mainDark,   --0x35371fff,
         },
+        transparentFader = {
+            [ImGui.Col_FrameBg] = 0x00000000,
+            [ImGui.Col_FrameBgHovered] =  0x00000000,
+            [ImGui.Col_FrameBgActive] = 0x00000000,
+        },
         targetFader = {
             [ImGui.Col_FrameBg] = 0x1c2533ff,
             [ImGui.Col_FrameBgHovered] = 0x283b59ff,
             [ImGui.Col_FrameBgActive] = 0x2f4e80ff,
             [ImGui.Col_SliderGrab] = 0x4781deff,
             [ImGui.Col_SliderGrabActive] = 0x669cf2ff,
-
         },
         searchWindow = {
             [ImGui.Col_TableBorderStrong] = 0x00000000,
@@ -321,11 +333,12 @@ SM_Gui.init = function(self, fonts)
             }
         },
         main = {
+            [ImGui.Col_NavCursor] = 0x00000000,
             [ImGui.Col_Tab] = self.st.basecolors.darkHovered,
             [ImGui.Col_TabHovered] = self.st.basecolors.darkActive,
-            [ImGui.Col_TabActive] = self.st.basecolors.darkActive,
-            [ImGui.Col_TabUnfocused] = self.st.basecolors.darkBG,
-            [ImGui.Col_TabUnfocusedActive] = self.st.basecolors.darkBG,
+            [ImGui.Col_TabSelected] = self.st.basecolors.darkActive,
+            [ImGui.Col_TabDimmed] = self.st.basecolors.darkBG,
+            [ImGui.Col_TabDimmedSelected] = self.st.basecolors.darkBG,
             [ImGui.Col_FrameBg] = self.st.basecolors.darkBG,
             [ImGui.Col_FrameBgHovered] = self.st.basecolors.darkHovered,
             [ImGui.Col_FrameBgActive] = self.st.basecolors.darkActive,
@@ -375,8 +388,8 @@ SM_Gui.init = function(self, fonts)
                 [ImGui.StyleVar_WindowRounding] = { 10 * scale, nil },
                 [ImGui.StyleVar_WindowPadding] = { 8 * scale, 8 * scale },
                 [ImGui.StyleVar_ScrollbarSize] = { 10 * scale, nil },
-                [ImGui.StyleVar_FramePadding] = { 4 * scale, 3 * scale },
-                [ImGui.StyleVar_ItemInnerSpacing] = { 4 * scale, 4 * scale },
+                [ImGui.StyleVar_FramePadding] = { math.ceil(4 * scale), math.ceil(3 * scale) },
+                [ImGui.StyleVar_ItemInnerSpacing] = { math.ceil(4 * scale), math.ceil(4 * scale) },
                 [ImGui.StyleVar_SeparatorTextBorderSize] = { 1 * scale, nil },
             },
             searchWindow = {
@@ -401,14 +414,16 @@ SM_Gui.init = function(self, fonts)
     end
 
     self.updateCachedTextHeightsToScale = function(self)
-        ImGui.PushFont(self.ctx, self.st.fonts.vertical)
+        self:pushFont(self.st.fonts.vertical, 'tiny')
         self.VERTICAL_TEXT_BASE_WIDTH, self.VERTICAL_TEXT_BASE_HEIGHT = ImGui.CalcTextSize(self.ctx, 'A')
         self.VERTICAL_TEXT_BASE_HEIGHT_OFFSET = -2
         ImGui.PopFont(self.ctx)
+        OD_Gui.updateCachedTextHeightsToScale(self)
     end
 
     self.updateSizesToScale = function(self)
-        ImGui.PushFont(self.ctx, self.st.fonts.default) -- hint font! important!
+        self:pushFont(self.st.fonts.default)
+        -- local baseHeight = ImGui.GetTextLineHeightWithSpacing(self.ctx)
         self.st.sizes = {
             sendTypeSeparatorWidth = self.TEXT_BASE_HEIGHT,
             sendTypeSeparatorHeight = 95 * self.app.settings.current.uiScale,
@@ -425,14 +440,21 @@ SM_Gui.init = function(self, fonts)
             local change = scale / (self.scale or scale) -- return change to allow for scaling of other elements (eg. Resize window)
             self.scale = scale
 
-            self:reAddFonts()
-
+            -- self:reAddFonts()
+            self:updateFontsToScale()
             self:updateVarsToScale()
             self:pushStyles(self.st.vars.main)
-            OD_Gui.recalculateZoom(self, scale)
             self:updateCachedTextHeightsToScale()
             self:updateSizesToScale()
             self:popStyles(self.st.vars.main)
+
+
+            -- self:updateVarsToScale()
+            -- self:pushStyles(self.st.vars.main)
+            -- OD_Gui.recalculateZoom(self, scale)
+            -- self:updateCachedTextHeightsToScale()
+            -- self:updateSizesToScale()
+            -- self:popStyles(self.st.vars.main)
             return change
         end
         return 1
@@ -453,7 +475,7 @@ SM_Gui.init = function(self, fonts)
 
     self.drawVerticalText = function(self, drawList, text, x, y, color, yIsTop, xIsRight)
         local color = color or 0xffffffff
-        ImGui.PushFont(self.ctx, self.st.fonts.vertical)
+        self:pushFont(self.st.fonts.vertical, 'tiny')
         local letterspacing = (self.VERTICAL_TEXT_BASE_HEIGHT + self.VERTICAL_TEXT_BASE_HEIGHT_OFFSET)
         if yIsTop then
             y = y + letterspacing * #text
@@ -475,9 +497,9 @@ SM_Gui.init = function(self, fonts)
     self.setting = function(self, stType, text, hint, val, data, sameline)
         local ctx = self.ctx
         local w, h = ImGui.GetWindowSize(ctx)
-        local thirdWidth = w / 2.5
-        local itemWidth = thirdWidth * 1.5 - ImGui.GetStyleVar(ctx, ImGui.StyleVar_FramePadding) * 2
         local data = data or {}
+        local thirdWidth = w / (data.widgetWidthDivision or 2)
+        local itemWidth = thirdWidth * 1.5 - ImGui.GetStyleVar(ctx, ImGui.StyleVar_FramePadding) * 2
         local retval1, retval2
         local widgetWidth
         if not sameline then
@@ -485,6 +507,16 @@ SM_Gui.init = function(self, fonts)
             ImGui.AlignTextToFramePadding(ctx)
             ImGui.PushTextWrapPos(ctx, thirdWidth)
             ImGui.Text(ctx, text)
+            if data.help then
+                ImGui.SameLine(ctx)
+                ImGui.SetCursorPosX(ctx, ImGui.GetCursorPosX(ctx) + ImGui.GetStyleVar(ctx, ImGui.StyleVar_ItemSpacing))
+                self:pushFont(self.st.fonts.icons, 'tiny')
+                ImGui.TextColored(ctx, self.st.basecolors.textDarker, ICONS.QUESTION_CIRCLE)
+                ImGui.PopFont(ctx)
+                if ImGui.IsItemHovered(ctx) then
+                    ImGui.SetTooltip(ctx, data.help)
+                end
+            end
             ImGui.PopTextWrapPos(ctx)
             ImGui.SameLine(ctx)
             if stType == 'orderable_list' then
@@ -497,16 +529,29 @@ SM_Gui.init = function(self, fonts)
                 ImGui.SetCursorPos(ctx, x, y)
             end
             ImGui.SetCursorPosX(ctx, thirdWidth)
-            widgetWidth = itemWidth
+            widgetWidth = data.width or ImGui.GetContentRegionAvail(ctx) --itemWidth
         else
             ImGui.SameLine(ctx)
-            widgetWidth = itemWidth - ImGui.GetTextLineHeight(ctx) -
-                ImGui.GetStyleVar(ctx, ImGui.StyleVar_ItemSpacing) * 2
+            widgetWidth = ImGui.GetContentRegionAvail(ctx)
+            -- widgetWidth = itemWidth - ImGui.GetTextLineHeight(ctx) -
+            --     ImGui.GetStyleVar(ctx, ImGui.StyleVar_ItemSpacing) * 2
         end
-        ImGui.PushItemWidth(ctx, widgetWidth)
+        if data.divideWidth then
+            widgetWidth = widgetWidth / data.divideWidth -
+                ImGui.GetStyleVar(ctx, ImGui.StyleVar_ItemSpacing) * (data.divideWidth - 1)
+        end
+        ImGui.PushItemWidth(ctx, data.width or widgetWidth)
 
         if stType == 'combo' then
             _, retval1 = ImGui.Combo(ctx, '##' .. text, val, data.list)
+            -- elseif stType == 'widget_label' then
+            -- ImGui.Dummy(ctx, 0, 0)
+            -- ImGui.PushTextWrapPos(ctx, widgetWidth)
+            -- local _, h = ImGui.CalcTextSize(ctx, text)
+            -- if ImGui.BeginChild(ctx, '##' .. text .. 'label', widgetWidth, h) then
+            --     ImGui.TextWrapped(ctx, val)
+            --     ImGui.EndChild(ctx)
+            -- end
         elseif stType == 'checkbox' then
             _, retval1 = ImGui.Checkbox(ctx, '##' .. text, val)
         elseif stType == 'dragint' then
@@ -517,10 +562,11 @@ SM_Gui.init = function(self, fonts)
                 self.app.temp.tempSettingsVal[text] = self.app.temp.tempSettingsVal[text] or val
             end
             _, retval1 = ImGui.DragDouble(ctx, '##' .. text,
-                data.dontUnpdateWhileEnteringManually and self.app.temp.tempSettingsVal[text] or val, data.speed, data.min, data.max,
+                data.dontUnpdateWhileEnteringManually and self.app.temp.tempSettingsVal[text] or val, data.speed,
+                data.min, data.max,
                 data.format, data.flags or 0)
             if data.dontUnpdateWhileEnteringManually then
-                if ImGui.IsItemActive(ctx) and not ImGui.IsMouseDragging(ctx,ImGui.MouseButton_Left) then
+                if ImGui.IsItemActive(ctx) and not ImGui.IsMouseDragging(ctx, ImGui.MouseButton_Left) then
                     self.app.temp.tempSettingsVal[text] = retval1
                     retval1 = val
                 else
@@ -541,11 +587,65 @@ SM_Gui.init = function(self, fonts)
                 local rv, folder = r.JS_Dialog_BrowseForFolder(data.title or '', data.initialPath);
                 retval1 = rv == 1 and folder or nil
             end
+        elseif stType == 'color_palette' then
+            retval1 = val
+            local BGcolorToUse = val
+            local nativeBGColor = data.colorBG or (ImGui.ColorConvertNative(val) * 0x100 | 0xff)
+            ImGui.PushStyleColor(ctx, ImGui.Col_Button, nativeBGColor)
+            ImGui.PushStyleColor(ctx, ImGui.Col_ButtonHovered, OD_MultiplyHSLInRGB(nativeBGColor, 1, 1, 1.2))
+            ImGui.PushStyleColor(ctx, ImGui.Col_ButtonActive, OD_MultiplyHSLInRGB(nativeBGColor, 1, 1, 1.3))
+            local colorIsBright = OD_ColorIsBright(val)
+            if colorIsBright or data.color then
+                ImGui.PushStyleColor(ctx, ImGui.Col_Text, data.color or 0x000000ff)
+            end
+            if ImGui.Button(ctx, data.label or 'Click to select', widgetWidth) then
+                ImGui.OpenPopup(ctx, 'ColorPalettePopup##' .. text)
+            end
+            if ImGui.BeginPopup(ctx, 'ColorPalettePopup##' .. text) then
+                self.app.temp.ignoreEscapeRelease = true
+                local rv, color = self:colorPalette(ctx, 'ColorPalette##' .. text, val)
+                if rv then
+                    retval1 = color
+                end
+                ImGui.EndPopup(ctx)
+            end
+            ImGui.PopStyleColor(ctx, 3)
+            if data.colorBG or colorIsBright then
+                ImGui.PopStyleColor(ctx)
+            end
         elseif stType == 'text' then
             _, retval1 = ImGui.InputText(ctx, '##' .. text, val)
+        elseif stType == 'oneCharacter' then
+            if not ImGui.ValidatePtr(self.oneCharacterCallback, 'ImGui_Function*') then
+                self.oneCharacterCallback = ImGui.CreateFunctionFromEEL([[
+    buflen = strlen(#Buf);
+    c = str_getchar(#Buf, buflen-1);
+    // Only allow alphanumeric characters
+    ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')) ? (
+        // Valid character - convert to uppercase if needed and keep only this one
+        (c >= 'a' && c <= 'z') ? (
+            str_setchar(#first, 0, c ~ 32);
+        ) : (
+            str_setchar(#first, 0, c);
+        );
+        str_setlen(#first, 1);
+        InputTextCallback_DeleteChars(0, buflen);
+        InputTextCallback_InsertChars(0, #first);
+    ) : (
+        // Not alphanumeric, delete all characters (reject input)
+        InputTextCallback_DeleteChars(0, buflen);
+    );
+]])
+            end
+            _, retval1 = ImGui.InputText(ctx, '##' .. text, val, ImGui.InputTextFlags_CallbackEdit,
+                self.oneCharacterCallback)
         elseif stType == 'colorpicker' then
-            hint = data.default and (hint .. ' alt-click to reset to default.') or hint
+            hint = data.default and ((hint .. ' %s-click to reset to default.'):format(OD_IMGUI_KEY_NAMES[ImGui.Mod_Alt])) or hint
             retval1 = val
+            local colorIsBright = OD_ColorIsBright(val)
+            if colorIsBright or data.color then
+                ImGui.PushStyleColor(ctx, ImGui.Col_Text, data.color or 0x000000ff)
+            end
             if ImGui.ColorButton(ctx, '##' .. text, val, ImGui.ColorEditFlags_None, widgetWidth) then
                 if data.default and ImGui.IsKeyDown(ctx, ImGui.Mod_Alt) then
                     retval1 = data.default
@@ -553,13 +653,19 @@ SM_Gui.init = function(self, fonts)
                     ImGui.OpenPopup(ctx, '##ColorPicker' .. text)
                 end
             end
+            if colorIsBright or data.color then
+                ImGui.PopStyleColor(ctx)
+            end
             ImGui.SetNextWindowPos(ctx, ImGui.GetMousePos(ctx), select(2, ImGui.GetMousePos(ctx)), ImGui.Cond_Appearing,
                 0, 1)
             if ImGui.BeginPopup(ctx, '##ColorPicker' .. text) then
+                self.app.temp.ignoreEscapeRelease = true
                 local rv, tmp = ImGui.ColorPicker4(ctx, '##' .. text, val)
                 if rv then retval1 = tmp end
+                
                 ImGui.EndPopup(ctx)
             end
+
         elseif stType == 'text_with_hint' then
             _, retval1 = ImGui.InputTextWithHint(ctx, '##' .. text, data.hint, val)
         elseif stType == 'shortcut' then
@@ -623,11 +729,25 @@ SM_Gui.init = function(self, fonts)
             retval1 = newVal or val
         elseif stType == 'orderable_list' then
             -- ImGui.Dummy(ctx, widgetWidth, 20)
+            ImGui.BeginGroup(ctx)
+            if sameline and data.listTopLabel then
+                ImGui.PushTextWrapPos(ctx, widgetWidth)
+                local _, h = ImGui.CalcTextSize(ctx, data.listTopLabel)
+                if ImGui.BeginChild(ctx, '##' .. text .. 'label', widgetWidth, h) then
+                    ImGui.TextWrapped(ctx, data.listTopLabel)
+                    ImGui.EndChild(ctx)
+                end
+                ImGui.PopTextWrapPos(ctx)
+            end
             local orderList, enabledList = val[1], val[2]
-            if ImGui.BeginListBox(ctx, '##' .. text, widgetWidth, #orderList * self.TEXT_BASE_HEIGHT + select(1, ImGui.GetStyleVar(ctx, ImGui.StyleVar_FramePadding))) then
+            if ImGui.BeginListBox(ctx, '##' .. text, widgetWidth, #orderList * ImGui.GetTextLineHeightWithSpacing(ctx) + select(1, ImGui.GetStyleVar(ctx, ImGui.StyleVar_FramePadding))) then
                 for i, v in ipairs(orderList) do
                     self:pushColors(self.st.col.settings.selectable[enabledList[v]])
                     local label = T.SETTINGS.LISTS[text] and T.SETTINGS.LISTS[text][v] or v
+                    if data.formatter then
+                        local success, rv = pcall(data.formatter, label)
+                        if success then label = rv end
+                    end
                     if ImGui.Selectable(ctx, label, false) then
                         if ImGui.IsKeyDown(ctx, ImGui.Mod_Alt) then
                             enabledList[v] = not enabledList[v]
@@ -649,6 +769,7 @@ SM_Gui.init = function(self, fonts)
                 end
                 ImGui.EndListBox(ctx)
             end
+            ImGui.EndGroup(ctx)
             retval1 = orderList
             retval2 = enabledList
             -- _, retval1 = ImGui.InputTextWithHint(ctx, '##' .. text, data.hint, val)
@@ -656,7 +777,7 @@ SM_Gui.init = function(self, fonts)
         if not sameline then
             ImGui.EndGroup(ctx)
         end
-        self.app:setHoveredHint('settings', hint)
+        self.app:setHoveredHint(data.hintWindow or 'settings', hint)
         return retval1, retval2
     end
 end

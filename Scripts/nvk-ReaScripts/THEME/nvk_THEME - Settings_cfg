@@ -1,11 +1,11 @@
 config = {
 	MAINWIND = {
 		cursor_x = 8.0,
-		cursor_y = 1298.0,
-		h = 1298.0,
-		w = 443.0,
-		x = 2274.0,
-		y = 378.0
+		cursor_y = 1514.0,
+		h = 1434.0,
+		w = 535.0,
+		x = 60.0,
+		y = 87.0
 	},
 	always_on_top = false,
 	apply_theme_on_change = false,
@@ -69,6 +69,7 @@ config = {
 	},
 	new_instance_close = false,
 	scale = 1,
+	startup_actions_first_run = true,
 	style_vars = {
 		
 	},

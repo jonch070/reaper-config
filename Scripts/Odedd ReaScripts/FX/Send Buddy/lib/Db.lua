@@ -76,21 +76,24 @@ DB = {
     end,
     syncUIVol = function(self, vol) -- if the volume is automated, the volume in the track is updated
         if not self:_isTrackValid() then return end
-        if self.app.settings.current.volType == VOL_TYPE.UI then
-            for _, send in ipairs(self.sends) do
-                send:_refreshVolAndPan()
+        -- if self.app.settings.current.volType == VOL_TYPE.UI then
+        for _, send in ipairs(self.sends) do
+            if self.app.settings.current.volType == VOL_TYPE.UI or send.hasEnvelopes then
+                send:_refreshVolPanAndMute()
                 if send.type ~= SEND_TYPE.HW then
                     if r.ValidatePtr(send.destTrack.object, 'MediaTrack*') then
-                        send.destTrack:_refreshVolAndPan()
+                        send.destTrack:_refreshVolPanAndMute()
                     end
                     if r.ValidatePtr(send.srcTrack.object, 'MediaTrack*') then
-                        send.srcTrack:_refreshVolAndPan()
+                        send.srcTrack:_refreshVolPanAndMute()
                     end
                 end
             end
         end
+        -- end
     end,
-    sync = function(self, refresh)
+    sync = function(self, refresh, returnToMixer)
+        local returnToMixer = returnToMixer == nil and true or returnToMixer
         self.track, self.changedTrack = self:getSelectedTrack()
         self.refresh = refresh or false
         if self.changedTrack then
@@ -147,6 +150,12 @@ DB = {
                     local midiRouting = reaper.GetTrackSendInfo_Value(self.track.object, type, i,
                         'I_MIDIFLAGS')
 
+                    local volEnv = reaper.GetTrackSendInfo_Value(self.track.object, type, i, "P_ENV:<VOLENV")
+                    local panEnv = reaper.GetTrackSendInfo_Value(self.track.object, type, i, "P_ENV:<PANENV")
+                    local muteEnv = reaper.GetTrackSendInfo_Value(self.track.object, type, i, "P_ENV:<MUTEENV")
+                    local hasEnvelopes = (select(2, reaper.GetEnvelopeStateChunk(volEnv, '', false)):find('VIS 1')) or
+                        (select(2, reaper.GetEnvelopeStateChunk(panEnv, '', false)):find('VIS 1')) or
+                        (select(2, reaper.GetEnvelopeStateChunk(muteEnv, '', false)):find('VIS 1'))
                     local send = {
                         type = type,
                         order = overallOrder,
@@ -155,6 +164,7 @@ DB = {
                         name = sendName,
                         db = self,
                         track = self.track,
+                        hasEnvelopes = hasEnvelopes,
                         mute = reaper.GetTrackSendInfo_Value(self.track.object, type, i, 'B_MUTE') == 1.0,
                         -- vol = reaper.GetTrackSendInfo_Value(self.track.object, type, i, 'D_VOL'),
                         -- pan = reaper.GetTrackSendInfo_Value(self.track.object, type, i, 'D_PAN'),
@@ -175,21 +185,45 @@ DB = {
                         srcTrack = (type ~= SEND_TYPE.HW) and
                             self:_getTrack(reaper.GetTrackSendInfo_Value(self.track.object, type, i, 'P_SRCTRACK')) or
                             nil,
-                        _refreshVolAndPan = function(self)
+                        _refreshVolPanAndMute = function(self)
                             if self.track == -1 or self.track.object == nil then return end
-                            local volume, pan
+                            local volume, pan, mute, actualVolume, actualPan, actualMute
                             if self.db.app.settings.current.volType == VOL_TYPE.TRIM then
                                 volume = reaper.GetTrackSendInfo_Value(self.track.object, self.type, self.index, 'D_VOL')
                                 pan = reaper.GetTrackSendInfo_Value(self.track.object, self.type, self.index, 'D_PAN')
+                                mute = reaper.GetTrackSendInfo_Value(self.track.object, self.type, self.index, 'B_MUTE') == 1.0
                             else
                                 if self.type == SEND_TYPE.RECV then
                                     _, volume, pan = reaper.GetTrackReceiveUIVolPan(self.track.object, self.index) -- this SHOULD be index rather than UIIndex, since this is a receive specific function
+                                    _, mute = reaper.GetTrackReceiveUIMute(self.track.object, self.index)
                                 else
                                     _, volume, pan = reaper.GetTrackSendUIVolPan(self.track.object, self.UIIndex)
+                                    _, mute = reaper.GetTrackSendUIMute(self.track.object, self.UIIndex)
                                 end
                             end
+                            local oldAutoMode
+                            if self.autoMode ~= AUTO_MODE.READ then
+                                oldAutoMode = reaper.GetTrackSendInfo_Value(self.track.object, self.type, self.index, 'I_AUTOMODE')
+                                reaper.SetTrackSendInfo_Value(self.track.object, self.type, self.index, 'I_AUTOMODE',
+                                    AUTO_MODE.READ)
+                            end
+                            if self.type == SEND_TYPE.RECV then
+                                _, actualVolume, actualPan = reaper.GetTrackReceiveUIVolPan(self.track.object, self.index) -- this SHOULD be index rather than UIIndex, since this is a receive specific function
+                                _, actualMute = reaper.GetTrackReceiveUIMute(self.track.object, self.index)
+                            else
+                                _, actualVolume, actualPan = reaper.GetTrackSendUIVolPan(self.track.object, self.UIIndex)
+                                _, actualMute = reaper.GetTrackSendUIMute(self.track.object, self.UIIndex)
+                            end
+                            if self.autoMode ~= AUTO_MODE.READ then
+                                reaper.SetTrackSendInfo_Value(self.track.object, self.type, self.index, 'I_AUTOMODE',
+                                    oldAutoMode)
+                            end
+                            self.actualVol = actualVolume
+                            self.actualPan = actualPan
+                            self.actualMute = actualMute
                             self.vol = volume
                             self.pan = pan
+                            self.mute = mute
                         end,
                         delete = function(self)
                             self.db:beginUndoBlock()
@@ -215,7 +249,24 @@ DB = {
                             self.db:sync(true)
                             self.db:endUndoBlock('Delete send', 1)
                         end,
-                        setVolDB = function(self, dB, done)
+                        setVol = function(self, vol)
+                            if vol ~= self.vol then -- if it was called just to create an undo point
+                                if vol < OD_ValFromdB(self.db.app.settings.current.minSendVol) then
+                                    vol = OD_ValFromdB(self.db.app.settings.current.minSendVol)
+                                elseif vol > OD_ValFromdB(self.db.app.settings.current.maxSendVol) then
+                                    vol = OD_ValFromdB(self.db.app.settings.current.maxSendVol)
+                                end
+                                local vol = (vol <= OD_ValFromdB(self.db.app.settings.current.minSendVol) and 0 or vol)
+                                if self.db.app.settings.current.volType == VOL_TYPE.TRIM then
+                                    reaper.SetTrackSendInfo_Value(self.track.object, self.type, self.index, 'D_VOL', vol)
+                                else
+                                    reaper.SetTrackSendUIVol(self.track.object, self.UIIndex, vol, -1)
+                                end
+                                self.db:sync(true) -- otherwise the volume is not updated in the GUI
+                            end
+                            -- if done then r.Undo_OnStateChangeEx2(0, 'Set send volume', 1, -1) end
+                        end,
+                        setVolDB = function(self, dB, done, instant_edit)
                             done = (done == nil) and true or done
                             if dB ~= self.vol then -- if it was called just to create an undo point
                                 if dB < self.db.app.settings.current.minSendVol then
@@ -227,7 +278,7 @@ DB = {
                                 if self.db.app.settings.current.volType == VOL_TYPE.TRIM then
                                     reaper.SetTrackSendInfo_Value(self.track.object, self.type, self.index, 'D_VOL', vol)
                                 else
-                                    reaper.SetTrackSendUIVol(self.track.object, self.UIIndex, vol, done and 1 or 0)
+                                    reaper.SetTrackSendUIVol(self.track.object, self.UIIndex, vol, instant_edit and -1 or (done and 1 or 0))
                                 end
                                 self.db:sync(true) -- otherwise the volume is not updated in the GUI
                             end
@@ -445,24 +496,69 @@ DB = {
                                 end
                             end
                         end,
-                        addInsert = function(self, fxName) -- undo point is created by TrackFX_AddByName
+                        addInsert = function(self, fxName, finished) -- undo point is created by TrackFX_AddByName
                             local fxIndex = r.TrackFX_AddByName(self.destTrack.object, fxName, false, -1)
                             if fxIndex == -1 then
                                 self.db.app.logger:logError('Cannot add ' .. fxName .. ' to ' .. self.destTrack.name)
                                 return false
                             end
-                            self.db:sync(true)
-                            self.db.app.focusMainReaperWindow = false
+                            if finished then
+                                self.db:sync(true)
+                                self.db.app.focusMainReaperWindow = false
+                            end
                             return true
                         end,
                         toggleVolEnv = function(self, show)
+                            local envelopeBehavior = select(2, r.get_config_var_string('envtrimadjmode'))
+                            local trackSendAutoMode = reaper.GetTrackSendInfo_Value(self.track.object, self.type, self.index, 'I_AUTOMODE')
+                            local copyToEnv
+                            if envelopeBehavior == '0' then copyToEnv = true end
+                            if envelopeBehavior == '1' then
+                                if trackSendAutoMode == AUTO_MODE.TRACK then
+                                    local trackAutoMode = r.GetMediaTrackInfo_Value(self.track.object, 'I_AUTOMODE')
+                                    if trackAutoMode == AUTO_MODE.READ or trackAutoMode == AUTO_MODE.WRITE then
+                                        copyToEnv = true
+                                    end
+                                elseif trackSendAutoMode == AUTO_MODE.READ or trackSendAutoMode == AUTO_MODE.WRITE then
+                                    copyToEnv = true
+                                end
+                            end
                             local env = reaper.GetTrackSendInfo_Value(self.track.object, self.type, i, "P_ENV:<VOLENV")
-                            OD_ToggleShowEnvelope(env, show)
+                            local shown, oldVal, envelopeExists = OD_ToggleShowEnvelope(env, show, copyToEnv and self.vol or 1)
+
+                            local newVol
+                            if shown then
+                                newVol = (copyToEnv and not envelopeExists) and 1 or self.vol
+                            else
+                                newVol = ((oldVal or 1) * self.vol) or self.vol
+                            end
+                            self:setVol(newVol)
                             self.db:setUndoPoint('Show/hide send volume envelope', 1)
                         end,
                         togglePanEnv = function(self, show)
+                            local envelopeBehavior = select(2, r.get_config_var_string('envtrimadjmode'))
+                            local trackSendAutoMode = reaper.GetTrackSendInfo_Value(self.track.object, self.type, self.index, 'I_AUTOMODE')
+                            local copyToEnv
+                            if envelopeBehavior == '0' then copyToEnv = true end
+                            if envelopeBehavior == '1' then
+                                if trackSendAutoMode == AUTO_MODE.TRACK then
+                                    local trackAutoMode = r.GetMediaTrackInfo_Value(self.track.object, 'I_AUTOMODE')
+                                    if trackAutoMode == AUTO_MODE.READ or trackAutoMode == AUTO_MODE.WRITE then
+                                        copyToEnv = true
+                                    end
+                                elseif trackSendAutoMode == AUTO_MODE.READ or trackSendAutoMode == AUTO_MODE.WRITE then
+                                    copyToEnv = true
+                                end
+                            end
                             local env = reaper.GetTrackSendInfo_Value(self.track.object, self.type, i, "P_ENV:<PANENV")
-                            OD_ToggleShowEnvelope(env, show)
+                            local shown, oldVal, envelopeExists = OD_ToggleShowEnvelope(env, show, copyToEnv and -self.pan or 0)
+                            local newPan
+                            if shown then
+                                newPan = (copyToEnv and not envelopeExists) and 0 or self.pan
+                            else
+                                newPan = (math.min(1, math.max(-1, (oldVal and -oldVal or 0) + (self.pan)))) or self.pan
+                            end
+                            self:setPan(newPan)
                             self.db:setUndoPoint('Show/hide send pan envelope', 1)
                         end,
                         toggleMuteEnv = function(self, show)
@@ -474,15 +570,15 @@ DB = {
 
                     send.app = self.app
                     send.calculateShortName = function(self)
-                        ImGui.PushFont(self.app.gui.ctx, self.app.gui.st.fonts.small)
+                        self.app.gui:pushFont(self.app.gui.st.fonts.default, 'small')
 
                         self.shortName = self.app.minimizeText(send.name,
                             math.floor(self.app.settings.current.sendWidth * self.app.settings.current.uiScale) -
-                            r.ImGui_GetStyleVar(self.app.gui.ctx, r.ImGui_StyleVar_FramePadding())*4)
+                            r.ImGui_GetStyleVar(self.app.gui.ctx, r.ImGui_StyleVar_FramePadding()) * 4)
                         ImGui.PopFont(self.app.gui.ctx)
                     end
                     if send.type == SEND_TYPE.HW then send.name = send:_getChannelAlias() end
-                    send:_refreshVolAndPan()
+                    send:_refreshVolPanAndMute()
                     send:calculateShortName()
 
                     if send.destTrack then
@@ -545,19 +641,23 @@ DB = {
                     end
                 end
             end
-            self.app.setPage(APP_PAGE.MIXER)
+            if returnToMixer then
+                self.app.setPage(APP_PAGE.MIXER)
+            end
         end
     end
 }
 
 --- Sends
 
-DB.createNewSend = function(self, sendType, assetType, assetLoad, trackName)
+DB.createNewSend = function(self, sendType, assetType, assetLoad, trackName, finished)
     self:beginUndoBlock()
     if sendType == SEND_TYPE.HW then
         local sndIdx = reaper.CreateTrackSend(self.track.object, nil)
         reaper.SetTrackSendInfo_Value(self.track.object, sendType, sndIdx, 'I_DSTCHAN', assetType)
-        self:sync(true)
+        if finished then
+            self:sync(true)
+        end
         return
     end
     if assetType == ASSETS.TRACK_TEMPLATE then
@@ -630,7 +730,9 @@ DB.createNewSend = function(self, sendType, assetType, assetLoad, trackName)
 
         r.SetOnlyTrackSelected(self.track.object)
         r.Main_OnCommand(40913, 0)
-        self:sync(true)
+        if finished then
+            self:sync(true)
+        end
     elseif assetType == ASSETS.TRACK then
         -- local sendTrackIndex = asset.load
         local targetTrack = OD_GetTrackFromGuid(0, assetLoad)
@@ -641,7 +743,9 @@ DB.createNewSend = function(self, sendType, assetType, assetLoad, trackName)
                 reaper.CreateTrackSend(targetTrack, self.track.object)
             end
         end
-        self:sync(true)
+        if finished then
+            self:sync(true)
+        end
     elseif assetType == ASSETS.PLUGIN or assetType == ASSETS.FX_CHAIN then
         local newTrack = nil
         local numTracks = r.CountTracks(0)
@@ -671,11 +775,11 @@ DB.createNewSend = function(self, sendType, assetType, assetLoad, trackName)
             reaper.GetSetMediaTrackInfo_String(newTrack, "P_NAME", trackName, true)
             local rv = reaper.CreateTrackSend(self.track.object, newTrack)
             self:getTracks()
-            r.SetOnlyTrackSelected( self.track.object )
-            self:sync(true)
+            r.SetOnlyTrackSelected(self.track.object)
+            self:sync(true, false)
             for _, send in ipairs(self.sends) do
                 if send.destTrack ~= nil and (send.destTrack.object == newTrack) then
-                    send:addInsert(assetLoad)
+                    send:addInsert(assetLoad, finished)
                 end
             end
         end
@@ -723,6 +827,7 @@ DB.getTracks = function(self)
         local trackGuid = reaper.GetTrackGUID(track)
         local hasReceives = reaper.GetTrackNumSends(track, -1) > 0
         local numChannels = reaper.GetMediaTrackInfo_Value(track, 'I_NCHAN')
+        local autoMode = reaper.GetMediaTrackInfo_Value(track, 'I_AUTOMODE')
         local _, rawSsoloMatrix = r.GetSetMediaTrackInfo_String(track, "P_EXT:" .. Scr.ext_name ..
             '_SOLO_MATRIX', "", false)
         local _, rawOrigMuteMatrix = r.GetSetMediaTrackInfo_String(track, "P_EXT:" .. Scr.ext_name ..
@@ -745,12 +850,21 @@ DB.getTracks = function(self)
             hasReceives = hasReceives,
             soloMatrix = soloMatrix,
             origMuteMatrix = origMuteMatrix,
+            autoMode = autoMode,
             masterSendState = masterSendState,
             sendListen = sendListen,
             sendListenMode = sendListenMode,
             order = i,
             numInserts = 0,
             inserts = {},
+            rename = function(self, name, done)
+                done = (done == nil) and true or done
+                if name ~= self.name then -- if it was called just to create an undo point
+                    self.name = name
+                    reaper.GetSetMediaTrackInfo_String(self.object, 'P_NAME', self.name, true)
+                end
+                if done then r.Undo_OnStateChangeEx2(0, 'Rename track', 1, -1) end
+            end,
 
             setVolDB = function(self, dB, done)
                 -- done not implemented due to reaper bug: https://forums.cockos.com/showthread.php?t=291664
@@ -799,16 +913,33 @@ DB.getTracks = function(self)
                 end
                 if done then r.Undo_OnStateChangeEx2(0, 'Set target track pan', 1, -1) end
             end,
-            _refreshVolAndPan = function(self)
-                local volume, pan
+            _refreshVolPanAndMute = function(self)
+                local volume, pan, mute, actualVolume, actualPan, actualMute
                 if self.db.app.settings.current.volType == VOL_TYPE.TRIM then
                     volume = reaper.GetMediaTrackInfo_Value(self.object, 'D_VOL')
                     pan = reaper.GetMediaTrackInfo_Value(self.object, 'D_PAN')
+                    mute = reaper.GetMediaTrackInfo_Value(self.object, 'B_MUTE') == 1.0
                 else
                     _, volume, pan = reaper.GetTrackUIVolPan(self.object)
+                    _, mute = reaper.GetTrackUIMute(self.object)
                 end
+                local oldAutoMode
+                if self.autoMode ~= AUTO_MODE.READ then
+                    oldAutoMode = reaper.GetMediaTrackInfo_Value(self.object, 'I_AUTOMODE')
+                    reaper.SetMediaTrackInfo_Value(self.object, 'I_AUTOMODE', AUTO_MODE.READ)
+                end
+                _, actualVolume, actualPan = reaper.GetTrackUIVolPan(self.object)
+                _, actualMute = reaper.GetTrackUIMute(self.object)
+
+                if self.autoMode ~= AUTO_MODE.READ then
+                    reaper.SetMediaTrackInfo_Value(self.object, 'I_AUTOMODE', oldAutoMode)
+                end
+                self.actualVol = actualVolume
+                self.actualPan = actualPan
+                self.actualMute = actualMute
                 self.vol = volume
                 self.pan = pan
+                self.mute = mute
             end,
             _refreshColor = function(self)
                 local color = ImGui.ColorConvertNative(reaper.GetTrackColor(track)) * 0x100 | 0xff
@@ -839,11 +970,11 @@ DB.getTracks = function(self)
                         shortName = fxName,
                         shortened = false,
                         calculateShortName = function(self)
-                            ImGui.PushFont(self.db.app.gui.ctx, self.db.app.gui.st.fonts.small)
+                            self.db.app.gui:pushFont(self.db.app.gui.st.fonts.default, 'small')
                             self.shortName, self.shortened = self.db.app.minimizeText(
                                 self.name:gsub('.-%:', ''):gsub('%(.-%)$', ''):gsub("^%s+", ''):gsub("%s+$", ''),
                                 math.floor(self.db.app.settings.current.sendWidth * self.db.app.settings.current.uiScale) -
-                                r.ImGui_GetStyleVar(self.db.app.gui.ctx, r.ImGui_StyleVar_FramePadding())*4)
+                                r.ImGui_GetStyleVar(self.db.app.gui.ctx, r.ImGui_StyleVar_FramePadding()) * 4)
                             ImGui.PopFont(self.db.app.gui.ctx)
                         end,
                         offline = offline,
@@ -881,7 +1012,7 @@ DB.getTracks = function(self)
             end
         }
         track:_refreshName()
-        track:_refreshVolAndPan()
+        track:_refreshVolPanAndMute()
         track:_refreshColor()
         table.insert(self.tracks, track)
         -- end
@@ -1150,8 +1281,10 @@ DB.assembleAssets = function(self)
     end
     self.app.logger:logInfo('A total of ' .. count .. ' assets were added to the database')
 
-    self:markFavorites()
-    self:sortAssets()
+    if not self.app.settings.current.useScout then -- let scout handle that
+        self:markFavorites()
+        self:sortAssets()
+    end
 end
 
 DB.sortAssets = function(self)

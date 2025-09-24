@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="sockmonkey72 Scripts" commit="cf5158885e84ded3d904ca6c1bf624faa9ac4679">
+<index version="1" name="sockmonkey72 Scripts" commit="a664cd07b275f021e215ab95b65d5c7d4cac5cee">
   <category name="Envelopes">
     <reapack name="sockmonkey72_Add point for current value on visible armed envelopes of selected tracks at edit cursor.lua" type="script" desc="Add point for current value on visible armed envelopes of selected tracks at edit cursor">
       <metadata>
@@ -814,6 +814,11 @@ add ImGui implementation of config script]]></changelog>
         <changelog><![CDATA[- MIDIUtils update (looped items)]]></changelog>
         <source file="EventEditor/MIDIUtils.lua">https://raw.githubusercontent.com/jeremybernstein/ReaScripts/main/MIDI/MIDIUtils.lua</source>
         <source main="midi_inlineeditor midi_eventlisteditor midi_editor">https://github.com/jeremybernstein/ReaScripts/raw/ca6b149acc50ad12671a3a884982810af038607a/MIDI%20Editor/sockmonkey72_EventEditor.lua</source>
+      </version>
+      <version name="1.9-beta.1" author="sockmonkey72" time="2025-09-19T15:27:34Z">
+        <changelog><![CDATA[- Fix project measure offset]]></changelog>
+        <source file="EventEditor/MIDIUtils.lua">https://raw.githubusercontent.com/jeremybernstein/ReaScripts/main/MIDI/MIDIUtils.lua</source>
+        <source main="midi_inlineeditor midi_eventlisteditor midi_editor">https://github.com/jeremybernstein/ReaScripts/raw/12f03cf9cde85631db0f8fc2a1705a58b410dbe6/MIDI%20Editor/sockmonkey72_EventEditor.lua</source>
       </version>
     </reapack>
     <reapack name="sockmonkey72_ExtendMIDIItemToNearestBars.lua" type="script" desc="Extend MIDI Item to Nearest Bars">
@@ -24203,6 +24208,18 @@ Kenny Gioia's "Razor Edit - Fast Mode in REAPER"
 * add up/down-rank graphics
 * beta.3: fix MCP label-bottom trackidx color]]></changelog>
         <source file="Peace_MOD.ReaperThemeZip">https://github.com/jeremybernstein/REAPER_Peace/releases/download/v1.7.5-beta.3/Peace_MOD.ReaperThemeZip</source>
+      </version>
+      <version name="1.7.5" author="sockmonkey72" time="2025-09-19T15:56:01Z">
+        <changelog><![CDATA[Changes since 1.7.4:
+
+* color and font tweaks
+* cleanup of highlight/armed graphics
+* add up/down-rank graphics
+* trackidx refinements for color/font
+* fix trackidx colors for MCP label bottom layouts
+* initial addition of transport timebase elements (pre-release)
+* increase mcp trackidx width]]></changelog>
+        <source file="Peace_MOD.ReaperThemeZip">https://github.com/jeremybernstein/REAPER_Peace/releases/download/v1.7.5/Peace_MOD.ReaperThemeZip</source>
       </version>
     </reapack>
   </category>

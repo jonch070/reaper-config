@@ -1,5 +1,7 @@
 -- @noindex
 
+local scout_exists = OD_GetScriptDetails('Odedd_Scout') ~= nil
+
 SM_Settings = OD_Settings:new({
     default = {
         -- Settings window
@@ -7,7 +9,9 @@ SM_Settings = OD_Settings:new({
         followSelectedTrack = true,
         createInsideFolder = true,
         sendFolderName = 'FX Return Tracks',
+        useScout = scout_exists,
         volType = VOL_TYPE.UI,
+        -- globalShortcuts = true,
         textMinimizationStyle = MINIMIZATION_STYLE.PT,
         sendTypeVisibility = {
             [SEND_TYPE.SEND] = true,
@@ -24,6 +28,8 @@ SM_Settings = OD_Settings:new({
             [SEND_TYPE.RECV] = 0x371f23FF,
             [SEND_TYPE.HW] = 0x371f23FF
         },
+        showMeters = true,
+        metersColor = 0x3F9865FF, -- good gray option: 0x3d3d43ff
         shortcuts = {
             addSend = {
                 key = OD_KEYCODES.S,

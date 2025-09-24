@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "browse pac",
+	SEARCH = "lkc var",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -18,6 +18,7 @@ config = {
 	disable_filter_keys = false,
 	esc_always_closes_script = true,
 	fav_order = {
+		"Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
 		"Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
 		"Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)"
 	},
@@ -68,6 +69,7 @@ config = {
 		y = 136.0
 	},
 	persistent_mode = false,
+	pin = true,
 	prefs = false,
 	project_directories = {
 		
@@ -75,7 +77,151 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
+			id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: LKC - Lawrence randomizer.lua (RSe43a1f045dca83c475a170833a66ce544a2732cd) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: 916 create children from items and assign to random channels (one folder).lua (RSb09390e91bd14fea78114c5c6f6878d8e3b1baae) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Subproject Random Channels 916 (one folder) (f25794a6f09b42719deedaa32a04a9ef) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST:ReaSurroundPan (Cockos)",
+			type = "vst"
+		},
+		{
+			id = "VST:Little Plate (Soundtoys)",
+			type = "vst"
+		},
+		{
+			id = "Script: spk77_Pan active takes randomly.eel (RS7864a4d1a314a6f7f2740ff929f469f601c5f814) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Move tracks to new folder (42785) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: me2beats_Move selected items to new track in named folder.lua (RS5e9e561df38db0a75fb7d77893c784d365de649c) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_FOLDER_ITEMS - Create new folder from selected items or tracks.lua (RSb3f44c3fbf26ce6b97c4d382261dbff5f183d9ec) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:CVplugins-master/README.md",
+			type = "jsfx"
+		},
+		{
+			id = "Show action list (40605) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Subproject Random Channels (c5b9f5f8b0b54c0f900c8b1a5aeb8b45) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: subproject_random_channels.lua (RSa3067170b769a98f1aded80fab9eab0a7a02141b) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Move tracks to subproject (41997) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: daniellumertz_Clouds.lua (RSebbb21b4c0b5080cdde1d5968e47525bedc49217) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: daniellumertz_Clouds Generate for All Items.lua (RS567a7b67adddaa3792f25f3385dbf384ba1dd5a5) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:WigWare Multi-channel Peak VU Meter",
+			type = "jsfx"
+		},
+		{
+			id = "Item: Remove FX for item take (40640) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/S&M: Paste FX chain to selected items (S&M_COPYFXCHAIN8) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/S&M: Copy FX chain from selected item (S&M_COPYFXCHAIN1) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/S&M: Paste (replace) FX chain to selected items (S&M_COPYFXCHAIN3) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Random Channel Mapper via Chunk Parsing.lua (RS8e0734a0ad3495b7fe83d29a43a8ac92298fa64c) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Random_Channel_No_LFE.lua (RSf70b1bc9b5cd2731cbadae9377d0d96e3d27a23d) (Main)",
+			type = "action"
+		},
+		{
 			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:daniellumertz_Clouds",
+			type = "jsfx"
+		},
+		{
+			id = "SWS: Copy marker set to clipboard (SWSMARKERLIST5) (Main)",
+			type = "action"
+		},
+		{
+			id = "File: Export project MIDI... (40849) (Main)",
+			type = "action"
+		},
+		{
+			id = "Convert active take MIDI to in-project MIDI source data (40684) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Set track name from first selected item on track (SWS_NAMETKLIKEITEM) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: HeDa_Track Inspector 2 VIP_Master.lua (RS46ef68cefefd381d79a3389dbbc0c31e821d6a68) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:8x Mono to 1x Stereo Mixer",
+			type = "jsfx"
+		},
+		{
+			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_THEME - Settings.lua (RS5090bcf8eb35e73f381a07670564e93f184342d7) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_THEME.lua (RS6df49bbad1887335a192dde000526c3d4b62865d) (Main)",
 			type = "action"
 		},
 		{
@@ -144,10 +290,6 @@ config = {
 		},
 		{
 			id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
 			type = "action"
 		},
 		{
@@ -333,146 +475,6 @@ config = {
 		{
 			id = "Custom: Set track/item to random colors (6118dd6677009846b7fc81039147accf) (Main)",
 			type = "action"
-		},
-		{
-			id = "Script: spk77_Pan active takes randomly (normal distribution).eel (RSacf6463b9fe716eb5f2031526881f786d7902441) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:Solid Bus Comp (Native Instruments)",
-			type = "vst3"
-		},
-		{
-			id = "Track: Cycle folder collapsed state (1042) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/wol: Options - Set \"Horizontal zoom center\" to \"Edit cursor or play cursor (default)\" (WOL_SETHZOOMC_EDITPLAYCUR) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS: Set selected folder(s) collapsed (SWS_COLLAPSE) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Cycle track folder state (1041) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_THEME - Settings.lua (RS5090bcf8eb35e73f381a07670564e93f184342d7) (Main)",
-			type = "action"
-		},
-		{
-			id = "Theme development: Show theme tweak/configuration window (41930) (Main)",
-			type = "action"
-		},
-		{
-			id = "Custom: hide muted tracks and children (d1d0d5d74eab4ed098f8e72cdd1ef7ba) (Main)",
-			type = "action"
-		},
-		{
-			id = "Show action list (40605) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS: Select children of selected folder track(s) (SWS_SELCHILDREN2) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS: Select muted tracks (SWS_SELMUTEDTRACKS) (Main)",
-			type = "action"
-		},
-		{
-			id = "Edit metadata tag: Track Number (42072) (Media Explorer)",
-			type = "action"
-		},
-		{
-			id = "VST3:MultiEQ (IEM)",
-			type = "vst3"
-		},
-		{
-			id = "VST3:BinauralDecoder (IEM)",
-			type = "vst3"
-		},
-		{
-			id = "Item grouping: Group items (40032) (Main)",
-			type = "action"
-		},
-		{
-			id = "JS:WigWare Multi-channel Peak VU Meter",
-			type = "jsfx"
-		},
-		{
-			id = "Item: Render items to new take (41999) (Main)",
-			type = "action"
-		},
-		{
-			id = "Xenakios/SWS: Set item playrate based on item pitch (and reset pitch) (XENAKIOS_ITEMPITCH2PLAYRATE) (Main)",
-			type = "action"
-		},
-		{
-			id = "Transport: Increase playrate by ~0.6% (10 cents) (40524) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:MTuner (MeldaProduction)",
-			type = "vst3"
-		},
-		{
-			id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
-			type = "action"
-		},
-		{
-			id = "Xenakios/SWS: Select tracks with no items (XENAKIOS_SELTRAXNOITEMS) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/BR: Select all empty items (BR_SEL_ALL_ITEMS_EMPTY) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item edit: Nudge/Set... (41226) (Main)",
-			type = "action"
-		},
-		{
-			id = "Time selection: Nudge right (40040) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST:ReaSurroundPan (Cockos)",
-			type = "vst"
-		},
-		{
-			id = "Custom: Apply folder state to track (27c11710fd542a4ebe6dc1c6e81fad3b) (Main)",
-			type = "action"
-		},
-		{
-			id = "Show REAPER resource path in finder (40027) (Main)",
-			type = "action"
-		},
-		{
-			id = "File: Open render queue (40929) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:Ozone 9 (iZotope)",
-			type = "vst3"
-		},
-		{
-			id = "VST3:kHs Limiter (Kilohearts)",
-			type = "vst3"
-		},
-		{
-			id = "Media: Replace source in selected media items (42002) (Media Explorer)",
-			type = "action"
-		},
-		{
-			id = "Take: Explode takes of items across tracks (40224) (Main)",
-			type = "action"
-		},
-		{
-			id = "Helgobox/Playtime: Show/hide Playtime (HB_SHOW_HIDE_PLAYTIME) (Main)",
-			type = "action"
 		}
 	},
 	recent_results_amount = 30,
@@ -520,5 +522,6 @@ folders = {
 }
 fav = {
 	["Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)"]=true,
-	["Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)"]=true
+	["Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)"]=true,
+	["Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)"]=true
 }

@@ -14,9 +14,16 @@ T.SETTINGS = {
         LABEL = 'Folder name',
         HINT = 'If one does not exist, it will be created when adding sends.',
     },
+    USE_SCOUT = {
+        LABEL = 'Search using Scout',
+        HINT = 'Leverage the power of Scout to add sends and FX in Send Buddy',
+    },
+    UPDATE_SCOUT = {
+        HINT = 'Update Scout to enable Send Buddy integration'
+    },
     FOLLOW_SELECTED_TRACK = {
-        LABEL = 'Follow selected track',
-        HINT = ('Change track in %s when a new track is selected.'):format(Scr.name),
+        LABEL = 'Follow touched track',
+        HINT = ('Change track in %s when a new track is touched.'):format(Scr.name),
     },
     FX_TYPE_ORDER = {
         LABEL = 'FX type priority',
@@ -53,12 +60,20 @@ T.SETTINGS = {
         },
     },
     VOL_TYPE = {
-        LABEL = 'Volume and pan type',
-        HINT = 'Volume/Pan type. "Match MCP/TCP faders" allows writing automation.',
+        LABEL = 'Volume/pan/mute type',
+        HINT = 'Volume, pan and mute type. "Match MCP/TCP faders" allows writing automation.',
     },
     SEND_TYPE_COLOR = {
         LABEL = '%s group',
         HINT = '%s group separator color.',
+    },
+    SHOW_METERS = {
+        LABEL = 'Show meters',
+        HINT = 'Show level meters (hover over ? for details).',
+    },
+    METERS_COLOR = {
+        LABEL = 'Meters',
+        HINT = 'Meters color.',
     },
     UI_SCALE = {
         LABEL = 'Zoom',
@@ -88,6 +103,12 @@ T.SETTINGS.LISTS = {
     },
 }
 
+T.SCOUT_STATUS = {
+    [SCOUT_STATUS.OK] = 'Scout installation found',
+    [SCOUT_STATUS.MISSING] = 'Install Scout',
+    [SCOUT_STATUS.UPDATE] = 'Update Scout',
+}
+
 T.AUTO_MODE_DESCRIPTIONS = {
     [AUTO_MODE.TRACK] = { order = 0, label = 'Track', description = 'Follow track automation mode' },
     [AUTO_MODE.TRIM_READ] = { order = 1, label = 'Trim/Read', description = 'Envelopes are active but faders are all for trim' },
@@ -98,6 +119,8 @@ T.AUTO_MODE_DESCRIPTIONS = {
     [AUTO_MODE.WRITE] = { order = 6, label = 'Write', description = 'Record fader positions to armed envelopes' },
 }
 
+T.GLOBAL_SHORTCUTS_EXPLANATION = [[Global shortcuts work throughout Reaper regardless of focus.
+Choose shortcuts that won't conflict with other actions.]]
 T.ERROR = {
     NO_DOCK = ([[
 No previous dock found.
@@ -108,3 +131,18 @@ the window to the dock of your choice.
 After that, %s will remember
 the dock position.]]):format(Scr.name)
 }
+
+T.SHOW_METERS_EXPLANATION = [[Reaper does not report send levels directly.
+Instead, Send Buddy estimates send levels based
+on the source track's volume and pan, which may
+not always be accurate.
+
+Specifically, in pre-fader mode, if the source
+track volume is set to -inf, the meters will 
+show no level, even if audio is being sent.
+
+If you set Reaper to show pre-fader levels in 
+the meters (Settings -> Appearance -> Track 
+Meters -> Track meters display pre-fader levels)
+Send Buddy's meters will reflect pre-fader levels
+accurately.]]

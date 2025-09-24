@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="efdf392bc68c491b99fd4f85d767b11b79040d11" name="X-Raym Scripts">
+<index version="1" commit="94a22f1ca5531ae3dd35a2dfe6b9069de1e3c89e" name="X-Raym Scripts">
   <category name="Color">
     <reapack name="X-Raym_Display color of selected tracks items and takes in the console.eel" type="script">
       <version name="1.0" author="X-Raym" time="2015-03-03T13:52:58Z">
@@ -349,6 +349,9 @@
       <version name="1.0" author="X-Raym" time="2021-05-30T21:21:31Z">
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Envelopes/X-Raym_Set%20selected%20envelope%20points%20value%20from%20value%20at%20edit%20cursor.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2025-09-04T07:08:39Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/dae43f313fef5da23dc6c8f5d24436cad8902a11/Envelopes/X-Raym_Set%20selected%20envelope%20points%20value%20from%20value%20at%20edit%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Unselect envelope point at edit cursor.lua" type="script" desc="Unselect envelope point at edit cursor">
@@ -1553,6 +1556,14 @@
     <reapack name="X-Raym_Functions - console debug messages.eel" type="script">
       <version name="1.7" author="X-Raym" time="2015-12-24T16:57:47Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/b5a1cae8185f739e631c15ca844ec9a1c6460a13/Functions/X-Raym_Functions%20-%20console%20debug%20messages.eel</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Perform action until keyboard shortcut released_functions.lua" type="script" desc="Perform action until keyboard shortcut released (Functions)">
+      <version name="1.1" author="X-Raym" time="2025-09-11T15:48:02Z">
+        <changelog><![CDATA[+ Preset script support
+# Renamed from Continuous push shortcut
+# Released on X-Raym free repo]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/9a06b279bcbfe9afbefd12597c4b75482401ea37/Functions/X-Raym_Perform%20action%20until%20keyboard%20shortcut%20released_functions.lua</source>
       </version>
     </reapack>
   </category>
@@ -6161,6 +6172,10 @@
         <source>https://github.com/X-Raym/REAPER-ReaScripts/raw/66212d7b5eeb1c11e49ea2933a3bb66c50830e44/Templates/Script%20Preset/X-Raym_Parent%20script%20of%20preset%20script_template.lua</source>
         <source file="README.md">https://github.com/X-Raym/REAPER-ReaScripts/raw/66212d7b5eeb1c11e49ea2933a3bb66c50830e44/Templates/Script%20Preset/README.md</source>
       </version>
+      <version name="1.0.4" author="X-Raym" time="2025-09-17T18:24:04Z">
+        <source>https://github.com/X-Raym/REAPER-ReaScripts/raw/18e73ae3da1cef940cbf5b2f4c164025b3cebc0e/Templates/Script%20Preset/X-Raym_Parent%20script%20of%20preset%20script_template.lua</source>
+        <source file="README.md">https://github.com/X-Raym/REAPER-ReaScripts/raw/18e73ae3da1cef940cbf5b2f4c164025b3cebc0e/Templates/Script%20Preset/README.md</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Preset script_template.lua" type="script" desc="Preset Script">
       <metadata>
@@ -6168,12 +6183,15 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Edit the User Config Areas to make it work. Name above could typicallly be Original Script Name - Preset Name or Num, but it can be whatever you want.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Duplicate and Edit the User Config Areas of the duplicated file. Put it anywhere and rename it with the name of your choice. Then import it into action list.\par}
 }
 ]]></description>
       </metadata>
       <version name="1.0" author="X-Raym" time="2022-12-14T16:45:34Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/eef3980d2eaa2edca044f6d00a57784ea6cd4863/Templates/Script%20Preset/X-Raym_Preset%20script_template.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2025-09-17T18:30:35Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/94a22f1ca5531ae3dd35a2dfe6b9069de1e3c89e/Templates/Script%20Preset/X-Raym_Preset%20script_template.lua</source>
       </version>
     </reapack>
   </category>
@@ -9371,6 +9389,14 @@ List display improvements]]></changelog>
 Do not redraw UI when not needed]]></changelog>
         <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/42d11da86d9bebb0f6b1d9876f13a8e5a63fc5da/Web%20Interfaces/X-Raym_Lyrics.html</source>
       </version>
+      <version name="1.4.4" author="X-Raym" time="2025-09-10T18:01:36Z">
+        <changelog><![CDATA[fullheight URL query to have only one lyrics line per screen view]]></changelog>
+        <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/7f7447cbc8acba45bdb37c1bb9a35dd64c531a43/Web%20Interfaces/X-Raym_Lyrics.html</source>
+      </version>
+      <version name="1.4.5" author="X-Raym" time="2025-09-10T18:07:42Z">
+        <changelog><![CDATA[vignette remove playstate bar]]></changelog>
+        <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/e9d1107e2507e69ad11cb331184f9818df52e8fd/Web%20Interfaces/X-Raym_Lyrics.html</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Scrolling Lyrics.www" type="webinterface" desc="Scrolling Lyrics Web Interface">
       <metadata>
@@ -9400,6 +9426,11 @@ Clickable action name]]></changelog>
         <changelog><![CDATA[Action name correction
 Clickable action name]]></changelog>
         <source file="X-Raym_Scrolling Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/42d11da86d9bebb0f6b1d9876f13a8e5a63fc5da/Web%20Interfaces/X-Raym_Scrolling%20Lyrics.html</source>
+      </version>
+      <version name="1.0.6" author="X-Raym" time="2025-09-11T15:27:12Z">
+        <changelog><![CDATA[Add empty paragraph inbetween lines
+Add font URL query for custom font-family]]></changelog>
+        <source file="X-Raym_Scrolling Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/88a7ff4eea150580c6635b57e5271d8a02862cc6/Web%20Interfaces/X-Raym_Scrolling%20Lyrics.html</source>
       </version>
     </reapack>
   </category>
