@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "lkc var",
+	SEARCH = "browse pac",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -76,6 +76,22 @@ config = {
 	},
 	project_directories_sort = "Name",
 	recent = {
+		{
+			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Invert track polarity/phase (40282) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:ReEQ",
+			type = "jsfx"
+		},
+		{
+			id = "VST:ReaEQ (Cockos)",
+			type = "vst"
+		},
 		{
 			id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
 			type = "action"
@@ -170,10 +186,6 @@ config = {
 		},
 		{
 			id = "Script: Random_Channel_No_LFE.lua (RSf70b1bc9b5cd2731cbadae9377d0d96e3d27a23d) (Main)",
-			type = "action"
-		},
-		{
-			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
 			type = "action"
 		},
 		{
@@ -462,18 +474,6 @@ config = {
 		},
 		{
 			id = "Options: Solo in front (40745) (Main)",
-			type = "action"
-		},
-		{
-			id = "Adjust solo in front dim (MIDI CC/mousewheel only) (987) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Add/edit take marker at play position or edit cursor (42385) (Main)",
-			type = "action"
-		},
-		{
-			id = "Custom: Set track/item to random colors (6118dd6677009846b7fc81039147accf) (Main)",
 			type = "action"
 		}
 	},
