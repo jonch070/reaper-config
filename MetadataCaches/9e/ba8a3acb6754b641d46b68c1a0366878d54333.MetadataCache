@@ -1,37 +1,39 @@
-C10017 /Users/jonathankawchuk/Music/SOL_0.9_HQ/PluckedStrings/Harp/ordinario
+C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/PluckedStrings/Harp/ordinario
 F Hp-ord-A2-ff.wav 2215114 0 1415739142 0
-D s 44100 n 1 l 0:25.114 i 16
+F Hp-ord-B2-pp.wav 1752662 0 1415739154 0
+D s 44100 n 1 l 0:19.870 i 16
 F Hp-ord-C#6-mf.wav 709568 0 1415739174 0
-D s 44100 n 1 l 0:08.044 i 16
+F Hp-ord-C1-ff.wav 1312362 0 1415739176 0
+D s 44100 n 1 l 0:14.878 i 16
+F Hp-ord-C2-pp.wav 2299184 0 1415739180 0
+D s 44100 n 1 l 0:26.067 i 16
 F Hp-ord-D#3-pp.wav 1573828 0 1415739196 0
-D s 44100 n 1 l 0:17.843 i 16
+F Hp-ord-D#7-pp.wav 224326 0 1415739202 0
+D s 44100 n 1 l 0:02.542 i 16
 F Hp-ord-D2-mf.wav 1465636 0 1415739206 0
-D s 44100 n 1 l 0:16.616 i 16
+F Hp-ord-D6-pp.wav 242578 0 1415739214 0
+D s 44100 n 1 l 0:02.749 i 16
 F Hp-ord-E1-pp.wav 1864534 0 1415739218 0
-D s 44100 n 1 l 0:21.139 i 16
 F Hp-ord-E3-mf.wav 1286088 0 1415739222 0
-D s 44100 n 1 l 0:14.580 i 16
+F Hp-ord-E5-ff.wav 805714 0 1415739224 0
+D s 44100 n 1 l 0:09.134 i 16
+F Hp-ord-E5-mf.wav 731260 0 1415739226 0
+D s 44100 n 1 l 0:08.290 i 16
+F Hp-ord-E6-pp.wav 251386 0 1415739228 0
+D s 44100 n 1 l 0:02.849 i 16
 F Hp-ord-F#1-pp.wav 3212736 0 1415739232 0
-D s 44100 n 1 l 0:36.425 i 16
 F Hp-ord-F#2-pp.wav 1901302 0 1415739234 0
-D s 44100 n 1 l 0:21.556 i 16
 F Hp-ord-F#3-pp.wav 1517336 0 1415739236 0
-D s 44100 n 1 l 0:17.202 i 16
 F Hp-ord-F#5-ff.wav 698080 0 1415739238 0
-D s 44100 n 1 l 0:07.914 i 16
 F Hp-ord-F2-mf.wav 1645290 0 1415739248 0
-D s 44100 n 1 l 0:18.653 i 16
 F Hp-ord-F2-pp.wav 2136056 0 1415739248 0
-D s 44100 n 1 l 0:24.217 i 16
 F Hp-ord-F3-pp.wav 1440816 0 1415739250 0
-D s 44100 n 1 l 0:16.335 i 16
+F Hp-ord-F5-ff.wav 1015440 0 1415739252 0
+D s 44100 n 1 l 0:11.512 i 16
 F Hp-ord-F6-mf.wav 485048 0 1415739254 0
-D s 44100 n 1 l 0:05.498 i 16
 F Hp-ord-G#5-ff.wav 640654 0 1415739266 0
-D s 44100 n 1 l 0:07.263 i 16
+F Hp-ord-G#6-mf.wav 482636 0 1415739268 0
+D s 44100 n 1 l 0:05.471 i 16
 F Hp-ord-G2-pp.wav 1891454 0 1415739274 0
-D s 44100 n 1 l 0:21.444 i 16
 F Hp-ord-G3-pp.wav 1932166 0 1415739276 0
-D s 44100 n 1 l 0:21.906 i 16
 F Hp-ord-G4-mf.wav 830296 0 1415739276 0
-D s 44100 n 1 l 0:09.413 i 16

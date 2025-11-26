@@ -1,0 +1,409 @@
+C10018 /Users/jonathankawchuk/Downloads/philharmonia/oboe
+F oboe_A4_025_forte_normal.wav 42302 0 1763626690 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_A4_025_fortissimo_normal.wav 46910 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_A4_025_piano_normal.wav 33086 0 1763626696 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F oboe_A4_05_piano_normal.wav 74558 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.836
+D i 16
+F oboe_A4_15_forte_normal.wav 148286 0 1763626681 0
+D y 2025-11-20 s 44100 n 1 l 0:01.672
+D i 16
+F oboe_A4_15_fortissimo_normal.wav 148286 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:01.672
+D i 16
+F oboe_A4_1_fortissimo_normal.wav 111422 0 1763626679 0
+D y 2025-11-20 s 44100 n 1 l 0:01.254
+D i 16
+F oboe_A5_025_forte_normal.wav 39998 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_A5_025_fortissimo_normal.wav 39998 0 1763626691 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_A5_025_piano_normal.wav 37694 0 1763626689 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_A5_05_fortissimo_normal.wav 81470 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.915
+D i 16
+F oboe_A5_05_mezzo-forte_normal.wav 79166 0 1763626680 0
+D y 2025-11-20 s 44100 n 1 l 0:00.889
+D i 16
+F oboe_A5_05_piano_normal.wav 88382 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F oboe_A5_15_piano_normal.wav 113726 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:01.281
+D i 16
+F oboe_A5_1_forte_minor-trill.wav 210494 0 1763626683 0
+D y 2025-11-20 s 44100 n 1 l 0:02.378
+D i 16
+F oboe_A5_1_forte_normal.wav 111422 0 1763626694 0
+D y 2025-11-20 s 44100 n 1 l 0:01.254
+D i 16
+F oboe_As3_025_forte_normal.wav 42302 0 1763626690 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_As3_025_fortissimo_normal.wav 42302 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_As3_15_forte_normal.wav 155198 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:01.751
+D i 16
+F oboe_As3_1_forte_normal.wav 116030 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:01.307
+D i 16
+F oboe_As4_025_fortissimo_normal.wav 44606 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_As4_05_forte_normal.wav 69950 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
+F oboe_As5_025_forte_normal.wav 42302 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_As6_025_piano_normal.wav 46910 0 1763626696 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_As6_15_piano_normal.wav 90686 0 1763626683 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F oboe_B3_025_mezzo-forte_normal.wav 28478 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.314
+D i 16
+F oboe_B3_phrase_mezzo-forte_tenuto.wav 685118 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:07.759
+D i 16
+F oboe_B4_phrase_mezzo-forte_nonlegato.wav 648254 0 1763626683 0
+D y 2025-11-20 s 44100 n 1 l 0:07.341
+D i 16
+F oboe_B4_phrase_mezzo-forte_staccato.wav 694334 0 1763626683 0
+D y 2025-11-20 s 44100 n 1 l 0:07.863
+D i 16
+F oboe_B5_025_forte_normal.wav 37694 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_B5_025_fortissimo_normal.wav 39998 0 1763626680 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_B5_025_mezzo-forte_normal.wav 37694 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_B5_025_piano_normal.wav 37694 0 1763626681 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_B5_05_fortissimo_normal.wav 88382 0 1763626691 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F oboe_C4_025_forte_normal.wav 44606 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_C4_025_fortissimo_normal.wav 39998 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_C4_025_mezzo-forte_normal.wav 44606 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_C4_025_piano_normal.wav 35390 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F oboe_C4_05_forte_normal.wav 74558 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.836
+D i 16
+F oboe_C4_05_fortissimo_normal.wav 83774 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:00.941
+D i 16
+F oboe_C4_05_mezzo-forte_normal.wav 81470 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.915
+D i 16
+F oboe_C4_05_piano_normal.wav 83774 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.941
+D i 16
+F oboe_C4_15_fortissimo_normal.wav 152894 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:01.725
+D i 16
+F oboe_C4_15_mezzo-forte_normal.wav 136766 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:01.542
+D i 16
+F oboe_C4_15_piano_normal.wav 141374 0 1763626696 0
+D y 2025-11-20 s 44100 n 1 l 0:01.594
+D i 16
+F oboe_C4_1_forte_normal.wav 97598 0 1763626681 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F oboe_C4_1_piano_normal.wav 104510 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:01.176
+D i 16
+F oboe_C5_025_forte_normal.wav 44606 0 1763626691 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_C5_025_fortissimo_normal.wav 42302 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_C5_025_mezzo-forte_normal.wav 46910 0 1763626683 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_C5_15_mezzo-forte_normal.wav 134462 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:01.516
+D i 16
+F oboe_C5_1_forte_normal.wav 111422 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:01.254
+D i 16
+F oboe_C5_1_fortissimo_normal.wav 97598 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F oboe_C6_025_fortissimo_normal.wav 39998 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_C6_025_mezzo-forte_normal.wav 37694 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_C6_025_piano_normal.wav 37694 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_C6_05_fortissimo_normal.wav 86078 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.967
+D i 16
+F oboe_C6_1_mezzo-forte_normal.wav 88382 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F oboe_Cs4_025_forte_normal.wav 46910 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_Cs4_025_fortissimo_normal.wav 42302 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_Cs4_15_fortissimo_normal.wav 152894 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:01.725
+D i 16
+F oboe_Cs5_025_forte_normal.wav 44606 0 1763626680 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_Cs6_025_forte_normal.wav 39998 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_Cs6_025_fortissimo_normal.wav 37694 0 1763626689 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_Cs6_025_mezzo-forte_normal.wav 39998 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_Cs6_025_piano_normal.wav 39998 0 1763626690 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_Cs6_15_piano_normal.wav 125246 0 1763626681 0
+D y 2025-11-20 s 44100 n 1 l 0:01.411
+D i 16
+F oboe_D4_025_forte_normal.wav 46910 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_D4_025_fortissimo_normal.wav 44606 0 1763626690 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_D4_025_mezzo-forte_normal.wav 46910 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_D4_025_piano_normal.wav 30782 0 1763626683 0
+D y 2025-11-20 s 44100 n 1 l 0:00.340
+D i 16
+F oboe_D4_05_mezzo-forte_normal.wav 83774 0 1763626681 0
+D y 2025-11-20 s 44100 n 1 l 0:00.941
+D i 16
+F oboe_D4_15_fortissimo_normal.wav 155198 0 1763626680 0
+D y 2025-11-20 s 44100 n 1 l 0:01.751
+D i 16
+F oboe_D4_15_mezzo-forte_normal.wav 134462 0 1763626689 0
+D y 2025-11-20 s 44100 n 1 l 0:01.516
+D i 16
+F oboe_D5_025_mezzo-forte_normal.wav 46910 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_D5_05_mezzo-forte_normal.wav 67646 0 1763626694 0
+D y 2025-11-20 s 44100 n 1 l 0:00.758
+D i 16
+F oboe_D6_025_forte_normal.wav 37694 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_D6_025_mezzo-forte_normal.wav 33086 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F oboe_D6_025_piano_normal.wav 39998 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_D6_05_mezzo-forte_normal.wav 86078 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:00.967
+D i 16
+F oboe_D6_1_mezzo-forte_normal.wav 106814 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:01.202
+D i 16
+F oboe_Ds5_025_forte_normal.wav 39998 0 1763626681 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_E4_025_forte_normal.wav 37694 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_E4_025_fortissimo_normal.wav 44606 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_E4_025_mezzo-forte_normal.wav 46910 0 1763626690 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_E4_025_piano_normal.wav 33086 0 1763626689 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F oboe_E4_15_fortissimo_normal.wav 157502 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:01.777
+D i 16
+F oboe_E4_1_fortissimo_normal.wav 92990 0 1763626679 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F oboe_E4_1_piano_normal.wav 104510 0 1763626685 0
+D y 2025-11-20 s 44100 n 1 l 0:01.176
+D i 16
+F oboe_E4_phrase_mezzo-forte_staccato.wav 703550 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:07.968
+D i 16
+F oboe_E5_025_forte_normal.wav 39998 0 1763626690 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_E5_025_fortissimo_normal.wav 35390 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F oboe_E5_025_mezzo-forte_normal.wav 35390 0 1763626694 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F oboe_E5_025_piano_normal.wav 26174 0 1763626696 0
+D y 2025-11-20 s 44100 n 1 l 0:00.288
+D i 16
+F oboe_E5_05_mezzo-forte_normal.wav 79166 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.889
+D i 16
+F oboe_E5_15_fortissimo_normal.wav 152894 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:01.725
+D i 16
+F oboe_E5_1_forte_normal.wav 109118 0 1763626692 0
+D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F oboe_E5_1_fortissimo_normal.wav 97598 0 1763626690 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F oboe_E6_025_forte_normal.wav 39998 0 1763626683 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_E6_025_fortissimo_normal.wav 37694 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_E6_025_mezzo-forte_normal.wav 39998 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_E6_025_piano_normal.wav 39998 0 1763626678 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_E6_05_forte_normal.wav 90686 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F oboe_F4_15_fortissimo_normal.wav 159806 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:01.803
+D i 16
+F oboe_F4_1_fortissimo_normal.wav 97598 0 1763626691 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F oboe_F5_025_forte_normal.wav 39998 0 1763626678 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_F5_025_mezzo-forte_normal.wav 35390 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F oboe_F5_phrase_mezzo-forte_normal.wav 774974 0 1763626679 0
+D y 2025-11-20 s 44100 n 1 l 0:08.778
+D i 16
+F oboe_F6_15_forte_normal.wav 129854 0 1763626689 0
+D y 2025-11-20 s 44100 n 1 l 0:01.463
+D i 16
+F oboe_Fs4_05_mezzo-forte_normal.wav 95294 0 1763626684 0
+D y 2025-11-20 s 44100 n 1 l 0:01.072
+D i 16
+F oboe_Fs5_025_fortissimo_normal.wav 39998 0 1763626678 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_Fs5_phrase_mezzo-forte_tongued-slur.wav 668990 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:07.576
+D i 16
+F oboe_Fs6_025_mezzo-forte_normal.wav 37694 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_G4_025_forte_normal.wav 37694 0 1763626692 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_G4_025_mezzo-forte_normal.wav 46910 0 1763626681 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F oboe_G4_025_piano_normal.wav 28478 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.314
+D i 16
+F oboe_G4_05_piano_normal.wav 69950 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
+F oboe_G4_15_forte_normal.wav 143678 0 1763626694 0
+D y 2025-11-20 s 44100 n 1 l 0:01.620
+D i 16
+F oboe_G4_15_mezzo-forte_normal.wav 132158 0 1763626679 0
+D y 2025-11-20 s 44100 n 1 l 0:01.490
+D i 16
+F oboe_G4_15_piano_normal.wav 104510 0 1763626689 0
+D y 2025-11-20 s 44100 n 1 l 0:01.176
+D i 16
+F oboe_G4_1_fortissimo_normal.wav 39998 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_G5_025_forte_normal.wav 42302 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_G5_025_fortissimo_normal.wav 37694 0 1763626694 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_G5_025_mezzo-forte_normal.wav 33086 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F oboe_G5_025_piano_normal.wav 35390 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F oboe_G5_05_forte_normal.wav 88382 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F oboe_G5_15_mezzo-forte_normal.wav 129854 0 1763626695 0
+D y 2025-11-20 s 44100 n 1 l 0:01.463
+D i 16
+F oboe_G5_1_mezzo-forte_normal.wav 90686 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F oboe_G6_025_forte_normal.wav 39998 0 1763626686 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F oboe_G6_025_mezzo-forte_normal.wav 37694 0 1763626693 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_G6_025_piano_normal.wav 44606 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F oboe_Gs4_025_forte_normal.wav 42302 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F oboe_Gs4_phrase_mezzo-forte_normal.wav 922430 0 1763626687 0
+D y 2025-11-20 s 44100 n 1 l 0:10.450
+D i 16
+F oboe_Gs5_025_mezzo-forte_normal.wav 37694 0 1763626682 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F oboe_Gs5_1_mezzo-forte_normal.wav 97598 0 1763626680 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F oboe_Gs6_025_piano_normal.wav 44606 0 1763626688 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam JSFX" commit="c8ab0e4dce9b81436442e2ef26816ab832f4605e">
+<index version="1" name="ReaTeam JSFX" commit="ce70663a65b33ead55e9f365c01f992e9015a2d5">
   <category name="Development">
     <reapack name="philranger_GUI and Audio Library.jsfx" type="effect" desc="GUI and Audio Library">
       <metadata>
@@ -373,6 +373,20 @@ Yutani Bass
       </metadata>
       <version name="1.0" author="ALBtheALBatross" time="2025-09-06T16:30:43Z">
         <source>https://github.com/ReaTeam/JSFX/raw/9c17c1b123be711d71de0e60d905221b5dacbe7d/MIDI/albthealbatross_Multi-Channel%20MIDI%20Timing%20Randomizer.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_MIDI Keyboard Split Route Transpose.jsfx" type="effect" desc="MIDI Keyboard Splitter Bus Router Transpose">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Splits the keyboard to a lower and an upper range and the user can define a different Midi Bus and note transposition for each range.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-11-05T12:07:26Z">
+        <source>https://github.com/ReaTeam/JSFX/raw/aef689be3707685e7c8aa4ab016ecbac32243442/MIDI/amagalma_MIDI%20Keyboard%20Split%20Route%20Transpose.jsfx</source>
       </version>
     </reapack>
     <reapack name="bertbouwhuis_MIDI controller for S8 looper with fade in and out.jsfx" type="effect" desc="MIDI controller for S8 looper with fade in and out">
@@ -1235,6 +1249,49 @@ Moreover DAW-Parameters (hidden sliders) "x" and "Y" are provided for being dire
       <version name="2.0" author="mschnell" time="2020-07-08T20:41:03Z">
         <changelog><![CDATA[add x and y hidden gader]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/3d9293eb094edaa11ce24e125dc9832f3e1fac2d/MIDI/mschnell_XY%20Pad.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="mschnellsid_XY Pad X.jsfx" type="effect" desc="XY Pad X">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 XY Pad X\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Sends out high resolution CC messages when the circle is dragged.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Moreover DAW-Parameters (hidden sliders) "x" and "Y" are provided for being directly linked from other plugins.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 [+] menu in the Reaper provided plugin frame:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 show or hide faders\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 initial values (whenever loaded) for Wide/Narrow and Dragging modes.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Right click "color Key menu" on the left border or hit key to select modes:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A red: single CC -> single CC only vertical (to use multiple "thin" instances)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 B green: dual CCs by X/Y pad\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 C blue: "drag" mode (left click and drag)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 D dark gray: "auto mode 1a (see below)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 E light gray: "auto mode 1b (see below)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 F white: "auto mode 2" move by mouse over without clicking\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 auto mode 1:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 green circle: passive\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 click on pad: start dragging (circle turns white -> active)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 white circle: drag by mouse over\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 leave pad: circle turns green -> passive\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 right click: circle turns green -> passive\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel3 \b \fs24 auto mode 1b:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 also left click: circle turns green -> passive\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="mschnell &amp; SID" time="2025-10-20T10:45:40Z">
+        <changelog><![CDATA[Initial release (Based on XY Pad)]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/60fb85c40ba5892eedb920858713c0520b814064/MIDI/mschnellsid_XY%20Pad%20X.jsfx</source>
+      </version>
+      <version name="1.1" author="mschnell &amp; SID" time="2025-10-25T00:58:57Z">
+        <changelog><![CDATA[preserve slider settings when hiding sliders]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/ceca2b742cd905179d7425ff84c65db331e10993/MIDI/mschnellsid_XY%20Pad%20X.jsfx</source>
+      </version>
+      <version name="1.2" author="mschnell &amp; SID" time="2025-10-25T06:34:39Z">
+        <changelog><![CDATA[preserve slider settings when modifying  any [+] option]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/6ec56a68405ab3ff39da422a8665e9c2030b3086/MIDI/mschnellsid_XY%20Pad%20X.jsfx</source>
       </version>
     </reapack>
     <reapack name="polgo_MIDI Envelocity.jsfx" type="effect" desc="MIDI Envelocity">
@@ -2878,6 +2935,34 @@ Add value slider]]></changelog>
       </metadata>
       <version name="1.0.0" author="tomaszpio" time="2025-09-26T05:38:42Z">
         <source>https://github.com/ReaTeam/JSFX/raw/8d0fdc416983c49ef15a50daf94e1366ab2a28e2/MIDI/tomaszpio_APC%20Pad%20Blinker%20(Sync%20to%20Transport).jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="tomaszpio_MIDI hold notes range.jsfx" type="effect" desc="MIDI hold notes range">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This JSFX plugin implements a "note hold" function, active only within a specified MIDI note range. It is intended for live playing or MIDI processing where one key at a time is held, regardless of Note Off messages.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 HOW IT WORKS:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The plugin reacts only to Note On / Note Off messages.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab It works on: \u8226 ? a selected MIDI channel (1\u8211-16), or \u8226 ? all channels if Channel = 0 (omni mode).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab It is active only for notes within the [Low note .. High note] range.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab For any Note On with velocity > 0 in that range: \u8226 ? The previously held note is turned off (Note Off is sent). \u8226 ? The new note is turned on (Note On is sent) and stored as the currently held note.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Note Off messages and Note On with velocity = 0 in that range are ignored, so they do NOT release the held note.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab All other MIDI messages (outside the note range, or on other channels, or non-note messages) pass through unchanged.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 SLIDERS:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Channel (0=omni, 1\u8211-16 = specific MIDI channel) \u8226 ? 0 => process all channels \u8226 ? 1\u8211-16 => only process that MIDI channel\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Low note \u8211- lower bound of the active note range (0\u8211-127)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab High note \u8211- upper bound of the active note range (0\u8211-127) If Low note > High note, the plugin automatically swaps them.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 TYPICAL USE CASES:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Use a low octave on your keyboard as a "hold" controller area, while higher notes play normally.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Restrict hold behavior to a specific region (e.g., bass notes or keyswitches) without affecting the rest of the keyboard.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0" author="tomaszpio" time="2025-11-15T15:44:23Z">
+        <source>https://github.com/ReaTeam/JSFX/raw/ce70663a65b33ead55e9f365c01f992e9015a2d5/MIDI/tomaszpio_MIDI%20hold%20notes%20range.jsfx</source>
       </version>
     </reapack>
     <reapack name="urtzurd_MIDI Glissando.jsfx" type="effect" desc="MIDI Glissando">

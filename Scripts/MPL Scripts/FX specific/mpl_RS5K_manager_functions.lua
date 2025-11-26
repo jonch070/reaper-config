@@ -1317,6 +1317,8 @@ end
     if not DATA.seq_functionscall then 
       gmem_write(1030,1 ) -- DATA.upd refresh steseq 
       gmem_write(1028, 1) -- force step seq to refresh EXT
+     else
+      gmem_write(1030,1 ) -- DATA.upd refresh steseq 
     end
   end
   -------------------------------------------------------------------------------- 
@@ -1376,8 +1378,8 @@ end
   function DATA:CollectData()  
     DATA.proj, DATA.proj_fn = EnumProjects( -1 )
     DATA.projstr = tostring(DATA.proj)
-    DATA.SR = VF_GetProjectSampleRate()
-    
+    DATA.SR = VF_GetProjectSampleRate() 
+    DATA.wrong_parent_track_metadata = false
     
     
     
@@ -1427,7 +1429,6 @@ end
   function DATA:Auto_TCPMCP(force_show)
     if not (DATA.parent_track and DATA.parent_track.valid == true) then return end 
     local upd
-    --CONF_onadd_newchild_trackheightflags = 0, -- &1 folder collapsed &2 folder supercollapsed &4 hide tcp &8 hide mcp
     
     -- reset after settings change
       if force_show == true then 
@@ -1722,12 +1723,15 @@ end
   
     if actions == 6 then   -- lock active note database changes 
       if DATA.parent_track and DATA.parent_track.ext then
+        
         local note_layer_t = DATA:Sampler_GetActiveNoteLayer() 
-        note_layer_t.SET_useDB = note_layer_t.SET_useDB~2
-        DATA.upd = true
-        Undo_BeginBlock2(DATA.proj )
-        DATA:WriteData_Child(tr, {SET_useDB=note_layer_t.SET_useDB})
-        Undo_EndBlock2( DATA.proj , 'RS5k manager - lock sample from randomization', 0xFFFFFFFF )  
+        if note_layer_t and note_layer_t.TYPE_DEVICE~= true then 
+          Undo_BeginBlock2(DATA.proj )
+          DATA:WriteData_Child(note_layer_t.tr_ptr, {SET_useDB = note_layer_t.SET_useDB~2})  
+          Undo_EndBlock2( DATA.proj , 'RS5k manager - lock sample from randomization', 0xFFFFFFFF )
+          DATA.upd = true
+        end
+        
       end 
     end
     
@@ -1756,6 +1760,36 @@ end
         DATA:Sampler_RemovePad(DATA.parent_track.ext.PARENT_LASTACTIVENOTE)
       end
     end
+    
+    
+    -- 10 = sequencer
+    -- 11 = rack
+    
+    if actions == 12 then   --RS5k_manager_Database_LoadAllPads
+      DATA:Validate_MIDIbus_AND_ParentFolder() 
+      Undo_BeginBlock2(DATA.proj )
+      DATA:Database_Load() 
+      Undo_EndBlock2( DATA.proj , 'Load database to all rack', 0xFFFFFFFF )
+    end
+    
+    if actions == 13 then   --RS5k_manager_Database_LoadSelectedPads
+      DATA:Validate_MIDIbus_AND_ParentFolder() 
+      Undo_BeginBlock2(DATA.proj )
+      DATA:Database_Load(true)
+      Undo_EndBlock2( DATA.proj , 'Load database to selected pad only', 0xFFFFFFFF )
+    end    
+    
+    if actions == 14 then   --RS5k_manager_Database_PrevMap
+      EXT.UIdatabase_maps_current = EXT.UIdatabase_maps_current - 1
+      if EXT.UIdatabase_maps_current == 0 then EXT.UIdatabase_maps_current = DATA.allowed_db_maps_cnt end
+      EXT:save()
+    end 
+    
+    if actions == 15 then   --RS5k_manager_Database_NextMap
+      EXT.UIdatabase_maps_current = EXT.UIdatabase_maps_current + 1
+      if EXT.UIdatabase_maps_current > DATA.allowed_db_maps_cnt then EXT.UIdatabase_maps_current = 1 end
+      EXT:save()
+    end 
     
     gmem_write(1025,0 ) -- clear to prevent infinite update
     
@@ -1992,13 +2026,15 @@ end
   function DATA:Auto_MIDIrouting() 
     if not (DATA.parent_track and DATA.parent_track.valid == true) then return end 
     if not (DATA.MIDIbus.valid == true) then return end
-    local note_layer_tr = DATA.MIDIbus.tr_ptr
-    local cntsends = GetTrackNumSends( note_layer_tr, 0 )
+    local MIDItr = DATA.MIDIbus.tr_ptr
+    if not reaper.ValidatePtr2(DATA.proj, MIDItr, 'MediaTrack*') then return end
+    
+    local cntsends = GetTrackNumSends( MIDItr, 0 )
     local sends = {}
     for sendidx = 1, cntsends do
-      local I_SRCCHAN = GetTrackSendInfo_Value( note_layer_tr, 0, sendidx-1, 'I_SRCCHAN' )
-      local P_DESTTRACK = GetTrackSendInfo_Value( note_layer_tr, 0, sendidx-1, 'P_DESTTRACK' )
-      local I_MIDIFLAGS = GetTrackSendInfo_Value( note_layer_tr, 0, sendidx-1, 'I_MIDIFLAGS' )
+      local I_SRCCHAN = GetTrackSendInfo_Value( MIDItr, 0, sendidx-1, 'I_SRCCHAN' )
+      local P_DESTTRACK = GetTrackSendInfo_Value( MIDItr, 0, sendidx-1, 'P_DESTTRACK' )
+      local I_MIDIFLAGS = GetTrackSendInfo_Value( MIDItr, 0, sendidx-1, 'I_MIDIFLAGS' )
       local retval, P_DESTTRACK_GUID = reaper.GetSetMediaTrackInfo_String( P_DESTTRACK, 'GUID', '', false )
       if I_SRCCHAN == -1 then
         sends[P_DESTTRACK_GUID] = {
@@ -2011,19 +2047,19 @@ end
     -- validate links
       for note in pairs(DATA.children) do
         -- make sure there is no midi send to device  
-        if DATA.children[note].TYPE_DEVICE == true and DATA.children[note].TR_GUID and sends[DATA.children[note].TR_GUID] then RemoveTrackSend( note_layer_tr, 0, sends[DATA.children[note].TR_GUID].sendidx ) end
+        if DATA.children[note].TYPE_DEVICE == true and DATA.children[note].TR_GUID and sends[DATA.children[note].TR_GUID] then RemoveTrackSend( MIDItr, 0, sends[DATA.children[note].TR_GUID].sendidx ) end
         
-        -- check devicechilds/regular childs
+        -- check devicechilds/regular childs has receive from MIDI track
         if DATA.children[note].layers then
           for layer in pairs(DATA.children[note].layers) do
             if DATA.children[note].layers[layer] and DATA.children[note].layers[layer].TR_GUID then
               local destGUID = DATA.children[note].layers[layer].TR_GUID
               
               if not sends[destGUID] or (sends[destGUID] and sends[destGUID].I_MIDIFLAGS ~= DATA.parent_track.ext.PARENT_MIDIFLAGS) then   
-                local sendidx = CreateTrackSend( DATA.MIDIbus.tr_ptr, DATA.children[note].layers[layer].tr_ptr )
+                local sendidx = CreateTrackSend( MIDItr, DATA.children[note].layers[layer].tr_ptr )
                 if sendidx >=0 then
-                  SetTrackSendInfo_Value( DATA.MIDIbus.tr_ptr, 0, sendidx, 'I_SRCCHAN',-1 )
-                  SetTrackSendInfo_Value( DATA.MIDIbus.tr_ptr, 0, sendidx, 'I_MIDIFLAGS',DATA.parent_track.ext.PARENT_MIDIFLAGS )
+                  SetTrackSendInfo_Value( MIDItr, 0, sendidx, 'I_SRCCHAN',-1 )
+                  SetTrackSendInfo_Value( MIDItr, 0, sendidx, 'I_MIDIFLAGS',DATA.parent_track.ext.PARENT_MIDIFLAGS )
                 end
               end
               
@@ -2069,8 +2105,7 @@ end
        else
         -- get selected track
         parent_track = GetSelectedTrack(DATA.proj,0)
-      end
-    
+      end 
     
     -- catch parent by childen
       if parent_track then 
@@ -2133,6 +2168,11 @@ end
     -- v4
       
       local ret, GUIDINTERNAL = GetSetMediaTrackInfo_String ( parent_track, 'P_EXT:MPLRS5KMAN_GUIDINTERNAL', '', false)         if ret then DATA.parent_track.ext.PARENT_GUID_INTERNAL = GUIDINTERNAL end
+      local parent_track_GUID = reaper.GetTrackGUID(  parent_track )
+      if GUIDINTERNAL ~= '' and GUIDINTERNAL ~= parent_track_GUID then
+        DATA.wrong_parent_track_metadata = true
+      end
+      
       local ret, DRRACKSHIFT = GetSetMediaTrackInfo_String ( parent_track, 'P_EXT:MPLRS5KMAN_DRRACKSHIFT', 0, false)            if ret then DATA.parent_track.ext.PARENT_DRRACKSHIFT = tonumber(DRRACKSHIFT) end
       local ret, MACROCNT = GetSetMediaTrackInfo_String ( parent_track, 'P_EXT:MPLRS5KMAN_MACROCNT', 0, false)                  if ret then DATA.parent_track.ext.PARENT_MACROCNT = tonumber(MACROCNT) end
       local ret, LASTACTIVENOTE = GetSetMediaTrackInfo_String ( parent_track, 'P_EXT:MPLRS5KMAN_LASTACTIVENOTE', 0, false)      if ret then DATA.parent_track.ext.PARENT_LASTACTIVENOTE = tonumber(LASTACTIVENOTE) end
@@ -2565,6 +2605,7 @@ end
     
     local supported_params = {
         'instrument_volID',
+        'instrument_tuneID',
         'instrument_attackID',
         'instrument_decayID',
         'instrument_sustainID',
@@ -3088,7 +3129,12 @@ end
     end  
     
     -- set height
-    if EXT.CONF_onadd_newchild_trackheight > 0 then SetMediaTrackInfo_Value( new_tr, 'I_HEIGHTOVERRIDE', EXT.CONF_onadd_newchild_trackheight ) end 
+    if EXT.CONF_onadd_newchild_trackheight > 0 then 
+      SetMediaTrackInfo_Value( new_tr, 'I_HEIGHTOVERRIDE', EXT.CONF_onadd_newchild_trackheight ) 
+      if EXT.CONF_onadd_newchild_trackheight_lock == 1 then   
+        SetMediaTrackInfo_Value( new_tr, 'B_HEIGHTLOCK', 1)   
+      end
+    end 
     
     -- print timestamp
     GetSetMediaTrackInfo_String(  new_tr, 'P_EXT:MPLRS5KMAN_TSADD', os.time(), true) 
@@ -3258,7 +3304,7 @@ end
       if EXT.CONF_onadd_float == 0 then TrackFX_SetOpen( track, instrument_pos, false ) end
     
     -- store external data
-      local instrumentGUID = TrackFX_GetFXGUID( track, instrument_pos)
+      local instrumentGUID = TrackFX_GetFXGUID( track, instrument_pos+1)
       DATA:WriteData_Child(track, {
         SET_instrFXGUID = instrumentGUID,
         SET_noteID=note,
@@ -3994,27 +4040,10 @@ end
     end
   end
     -------------------------------------------------------------------------------- 
-  function UI.draw_3rdpartyimport_context(note,drop_data) 
-    --[[local retval, trackidx, itemidx, takeidx, fxidx, parm = GetTouchedOrFocusedFX( 0 )
-    local track = GetTrack(-1,trackidx) if  trackidx == -1 then track = GetMasterTrack(-1) end
-    local retval, fx_namesrc = reaper.TrackFX_GetNamedConfigParm( track, fxidx, 'fx_name' )
-    local is_instrument = (fx_namesrc:match('[%a]+i%:.*') or fx_namesrc:lower():match('synth')) and not (fx_namesrc: match('ReaSampl')or fx_namesrc:match('Macro'))
-    local fx_name = VF_ReduceFXname(fx_namesrc)
-    if retval and fx_name and is_instrument then
-      if ImGui.Button(ctx, fx_name,-1)then-- then--'Import ['..fx_name..'] as instrument'
-        DATA:DropFX(fx_namesrc, fx_name, fxidx, track, note, drop_data)
-        ImGui.CloseCurrentPopup(ctx) 
-      end   
-     else
-      ImGui.BeginDisabled(ctx,true) ImGui.Button(ctx, 'Import last touched FX as instrument',-1)ImGui.EndDisabled(ctx)
-    end]]
-    
+  function UI.draw_3rdpartyimport_context(note,drop_data)  
     ImGui.SetNextItemWidth( ctx,-100)
-    
-    
-    if ImGui.BeginMenu( ctx, 'Import 3rd party plugin', true ) then
-      
-      local cnt_com = #DATA.installed_plugins
+    if ImGui.BeginMenu( ctx, 'Import FXi', true ) then 
+      local cnt_com = #DATA.installed_plugins 
       
       -- by type
       reaper.ImGui_SeparatorText(ctx, 'By type')

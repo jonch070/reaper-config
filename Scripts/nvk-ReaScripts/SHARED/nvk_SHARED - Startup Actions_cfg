@@ -1,4 +1,12 @@
 config = {
+	MAINWIND = {
+		cursor_x = 8.0,
+		cursor_y = 330.0,
+		h = 330.0,
+		w = 350.0,
+		x = 1151.0,
+		y = 387.0
+	},
 	always_on_top = false,
 	colors = {
 		default = {
@@ -24,10 +32,12 @@ config = {
 	user_actions = {
 		"_RS33c36901779e76d0ef0542466abe875e36c6b57d",
 		"_RSc18de16721a3c34e4867889bd9bf02450163b2f8",
+		"_RSdbf64708ea8abea46b82a08cabc050148d65176c",
 		_RS33c36901779e76d0ef0542466abe875e36c6b57d = false,
-		_RSc18de16721a3c34e4867889bd9bf02450163b2f8 = false
+		_RSc18de16721a3c34e4867889bd9bf02450163b2f8 = false,
+		_RSdbf64708ea8abea46b82a08cabc050148d65176c = false
 	},
-	version = "3.2.1"
+	version = "3.7.0"
 }
 tabs = {
 	default = {

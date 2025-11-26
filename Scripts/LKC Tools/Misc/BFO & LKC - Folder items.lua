@@ -2,16 +2,18 @@
   ReaScript Name: Folder items
   Author: BFO, LKC
   REAPER: 5+
-  Version: 1.03
+  Version: 1.04
   Provides:
    [Main] LKC - Toggle faint peaks in folders.lua
-   [Main] LKC - Toggle tint items with track color.lua
   About:
-    # Simulates folder items behaviour from Cubase.
+    # Simulates data blocks behaviour from Cubase.
+    Watch video here: https://www.youtube.com/watch?v=faci3lX-czY
 ]]
 
 --[[
  * Changelog:
+ * v1.04 (2025-10-02)
+	+Updated faint peaks script to work on REAPER 7
  * v1.03 (2018-08-24)
 	+Provides fix
  * v1.02 (2018-08-24)

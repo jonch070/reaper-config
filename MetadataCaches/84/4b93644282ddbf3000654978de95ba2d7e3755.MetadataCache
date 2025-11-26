@@ -1,0 +1,4 @@
+C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Bass-Tuba-sordina/ordinario
+F BTb+S-ord-C3-f.aif 248876 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.845
+D i 24

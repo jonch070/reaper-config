@@ -1,0 +1,604 @@
+C10018 /Users/jonathankawchuk/Downloads/philharmonia/viola
+F viola_A3_025_fortissimo_arco-normal.wav 56126 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:00.628
+D i 16
+F viola_A3_025_mezzo-piano_arco-normal.wav 46910 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F viola_A3_025_piano_arco-normal.wav 49214 0 1763626858 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_A3_05_fortissimo_arco-normal.wav 83774 0 1763626858 0
+D y 2025-11-20 s 44100 n 1 l 0:00.941
+D i 16
+F viola_A3_05_mezzo-piano_arco-normal.wav 88382 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F viola_A3_05_piano_arco-normal.wav 92990 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F viola_A3_15_forte_arco-normal.wav 162110 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:01.829
+D i 16
+F viola_A3_15_fortissimo_arco-normal.wav 150590 0 1763626866 0
+D y 2025-11-20 s 44100 n 1 l 0:01.699
+D i 16
+F viola_A3_1_forte_arco-normal.wav 127550 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:01.437
+D i 16
+F viola_A3_1_fortissimo_arco-normal.wav 99902 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:01.124
+D i 16
+F viola_A3_1_mezzo-forte_molto-vibrato.wav 99902 0 1763626858 0
+D y 2025-11-20 s 44100 n 1 l 0:01.124
+D i 16
+F viola_A3_1_mezzo-piano_non-vibrato.wav 104510 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:01.176
+D i 16
+F viola_A4_025_fortissimo_arco-normal.wav 33086 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F viola_A4_025_piano_arco-normal.wav 39998 0 1763626855 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F viola_A4_05_forte_arco-normal.wav 102206 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:01.150
+D i 16
+F viola_A4_05_piano_arco-normal.wav 79166 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:00.889
+D i 16
+F viola_A5_025_forte_arco-normal.wav 37694 0 1763626851 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F viola_A5_025_fortissimo_arco-normal.wav 30782 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:00.340
+D i 16
+F viola_A5_05_fortissimo_arco-normal.wav 49214 0 1763626862 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_A5_05_pianissimo_arco-normal.wav 65342 0 1763626861 0
+D y 2025-11-20 s 44100 n 1 l 0:00.732
+D i 16
+F viola_A5_05_piano_arco-normal.wav 79166 0 1763626845 0
+D y 2025-11-20 s 44100 n 1 l 0:00.889
+D i 16
+F viola_A5_15_forte_arco-normal.wav 164414 0 1763626849 0
+D y 2025-11-20 s 44100 n 1 l 0:01.855
+D i 16
+F viola_A5_15_fortissimo_arco-normal.wav 139070 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:01.568
+D i 16
+F viola_A5_1_fortissimo_arco-normal.wav 90686 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F viola_A5_1_mezzo-forte_artificial-harmonic.wav 99902 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:01.124
+D i 16
+F viola_A5_1_pianissimo_arco-normal.wav 159806 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:01.803
+D i 16
+F viola_A6_025_forte_arco-normal.wav 33086 0 1763626862 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F viola_A6_05_fortissimo_arco-normal.wav 49214 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_A6_05_piano_arco-normal.wav 35390 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F viola_A6_1_fortissimo_arco-normal.wav 76862 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:00.863
+D i 16
+F viola_A6_1_pianissimo_arco-normal.wav 132158 0 1763626852 0
+D y 2025-11-20 s 44100 n 1 l 0:01.490
+D i 16
+F viola_As3_15_piano_arco-normal.wav 157502 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:01.777
+D i 16
+F viola_As4_05_fortissimo_arco-normal.wav 65342 0 1763626861 0
+D y 2025-11-20 s 44100 n 1 l 0:00.732
+D i 16
+F viola_As4_phrase_fortissimo_arco-tremolo.wav 738110 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:08.360
+D i 16
+F viola_As6_05_fortissimo_arco-normal.wav 53822 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:00.601
+D i 16
+F viola_B3_025_fortissimo_arco-normal.wav 53822 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:00.601
+D i 16
+F viola_B3_025_mezzo-piano_arco-normal.wav 42302 0 1763626855 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F viola_B3_025_piano_arco-normal.wav 49214 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_B3_1_fortissimo_pizz-normal.wav 86078 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:00.967
+D i 16
+F viola_B4_025_fortissimo_arco-normal.wav 49214 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_B4_025_pianissimo_arco-normal.wav 53822 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:00.601
+D i 16
+F viola_B4_05_fortissimo_arco-normal.wav 60734 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
+D i 16
+F viola_B4_15_fortissimo_arco-normal.wav 139070 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:01.568
+D i 16
+F viola_B4_1_fortissimo_arco-normal.wav 104510 0 1763626849 0
+D y 2025-11-20 s 44100 n 1 l 0:01.176
+D i 16
+F viola_B4_1_mezzo-forte_arco-minor-trill.wav 81470 0 1763626847 0
+D y 2025-11-20 s 44100 n 1 l 0:00.915
+D i 16
+F viola_B4_1_mezzo-piano_arco-normal.wav 132158 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:01.490
+D i 16
+F viola_B5_025_forte_arco-normal.wav 44606 0 1763626861 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F viola_B5_025_fortissimo_arco-normal.wav 28478 0 1763626864 0
+D y 2025-11-20 s 44100 n 1 l 0:00.314
+D i 16
+F viola_B5_025_piano_arco-normal.wav 37694 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F viola_B5_05_forte_arco-normal.wav 56126 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:00.628
+D i 16
+F viola_B5_05_fortissimo_arco-normal.wav 67646 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:00.758
+D i 16
+F viola_B5_05_pianissimo_arco-normal.wav 90686 0 1763626842 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F viola_B5_05_piano_arco-normal.wav 72254 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:00.810
+D i 16
+F viola_B5_15_fortissimo_arco-normal.wav 150590 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:01.699
+D i 16
+F viola_B5_15_mezzo-piano_arco-normal.wav 178238 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:02.012
+D i 16
+F viola_B5_1_forte_arco-normal.wav 97598 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F viola_B5_1_fortissimo_arco-normal.wav 90686 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F viola_B5_1_mezzo-forte_artificial-harmonic.wav 86078 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:00.967
+D i 16
+F viola_B5_long_mezzo-forte_natural-harmonic.wav 166718 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:01.881
+D i 16
+F viola_B6_05_forte_arco-normal.wav 49214 0 1763626845 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_B6_05_fortissimo_arco-normal.wav 49214 0 1763626864 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_B6_05_piano_arco-normal.wav 69950 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
+F viola_B6_15_fortissimo_arco-normal.wav 127550 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:01.437
+D i 16
+F viola_B6_1_forte_arco-normal.wav 88382 0 1763626858 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F viola_B6_1_piano_arco-normal.wav 109118 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F viola_C3_025_mezzo-piano_arco-normal.wav 49214 0 1763626845 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_C3_05_fortissimo_arco-normal.wav 60734 0 1763626847 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
+D i 16
+F viola_C3_05_piano_arco-normal.wav 37694 0 1763626858 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F viola_C3_15_piano_arco-normal.wav 152894 0 1763626861 0
+D y 2025-11-20 s 44100 n 1 l 0:01.725
+D i 16
+F viola_C3_1_mezzo-forte_arco-minor-trill.wav 109118 0 1763626861 0
+D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F viola_C4_025_fortissimo_arco-normal.wav 49214 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_C4_025_mezzo-piano_arco-normal.wav 44606 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F viola_C4_025_pianissimo_arco-normal.wav 49214 0 1763626851 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_C4_05_mezzo-piano_arco-normal.wav 44606 0 1763626866 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F viola_C4_05_piano_arco-normal.wav 90686 0 1763626841 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F viola_C4_15_pianissimo_arco-normal.wav 152894 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:01.725
+D i 16
+F viola_C4_1_fortissimo_pizz-normal.wav 90686 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F viola_C4_1_piano_arco-glissando.wav 162110 0 1763626851 0
+D y 2025-11-20 s 44100 n 1 l 0:01.829
+D i 16
+F viola_C5_025_fortissimo_arco-normal.wav 35390 0 1763626847 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F viola_C5_05_fortissimo_arco-normal.wav 69950 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
+F viola_C5_15_piano_arco-normal.wav 157502 0 1763626843 0
+D y 2025-11-20 s 44100 n 1 l 0:01.777
+D i 16
+F viola_C5_1_fortissimo_arco-normal.wav 125246 0 1763626866 0
+D y 2025-11-20 s 44100 n 1 l 0:01.411
+D i 16
+F viola_C5_1_mezzo-forte_artificial-harmonic.wav 116030 0 1763626852 0
+D y 2025-11-20 s 44100 n 1 l 0:01.307
+D i 16
+F viola_C5_1_pianissimo_arco-normal.wav 102206 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:01.150
+D i 16
+F viola_C6_025_piano_arco-normal.wav 35390 0 1763626844 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F viola_C6_05_forte_arco-normal.wav 63038 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:00.706
+D i 16
+F viola_C6_05_fortissimo_arco-normal.wav 69950 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
+F viola_C6_05_pianissimo_arco-normal.wav 58430 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:00.654
+D i 16
+F viola_C6_05_piano_arco-normal.wav 166718 0 1763626862 0
+D y 2025-11-20 s 44100 n 1 l 0:01.881
+D i 16
+F viola_C6_15_fortissimo_arco-normal.wav 141374 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:01.594
+D i 16
+F viola_C6_15_mezzo-piano_arco-normal.wav 134462 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:01.516
+D i 16
+F viola_C6_long_mezzo-forte_artificial-harmonic.wav 127550 0 1763626847 0
+D y 2025-11-20 s 44100 n 1 l 0:01.437
+D i 16
+F viola_C7_025_forte_arco-normal.wav 33086 0 1763626864 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F viola_C7_025_fortissimo_arco-normal.wav 30782 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:00.340
+D i 16
+F viola_C7_025_pianissimo_arco-normal.wav 39998 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F viola_C7_025_piano_arco-normal.wav 49214 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_C7_05_forte_arco-normal.wav 129854 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:01.463
+D i 16
+F viola_C7_05_piano_arco-normal.wav 86078 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:00.967
+D i 16
+F viola_C7_1_forte_arco-normal.wav 56126 0 1763626851 0
+D y 2025-11-20 s 44100 n 1 l 0:00.628
+D i 16
+F viola_Cs3_05_mezzo-piano_arco-normal.wav 88382 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F viola_Cs5_025_forte_arco-normal.wav 37694 0 1763626864 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F viola_Cs5_025_fortissimo_arco-normal.wav 33086 0 1763626842 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F viola_Cs6_025_mezzo-piano_arco-normal.wav 42302 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F viola_Cs6_05_fortissimo_arco-normal.wav 53822 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:00.601
+D i 16
+F viola_Cs6_05_pianissimo_arco-normal.wav 49214 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_Cs6_15_piano_arco-normal.wav 171326 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:01.934
+D i 16
+F viola_Cs6_1_mezzo-forte_arco-minor-trill.wav 81470 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:00.915
+D i 16
+F viola_Cs6_1_piano_arco-normal.wav 106814 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:01.202
+D i 16
+F viola_Cs7_05_pianissimo_arco-normal.wav 56126 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:00.628
+D i 16
+F viola_Cs7_05_piano_arco-normal.wav 49214 0 1763626849 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_D3_1_forte_arco-normal.wav 180542 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:02.038
+D i 16
+F viola_D3_1_pianissimo_arco-normal.wav 118334 0 1763626858 0
+D y 2025-11-20 s 44100 n 1 l 0:01.333
+D i 16
+F viola_D5_025_forte_arco-normal.wav 51518 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:00.575
+D i 16
+F viola_D5_05_piano_arco-normal.wav 109118 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F viola_D5_1_fortissimo_arco-normal.wav 99902 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:01.124
+D i 16
+F viola_D5_1_fortissimo_pizz-normal.wav 92990 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F viola_D5_1_mezzo-forte_arco-minor-trill.wav 90686 0 1763626847 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F viola_D5_1_mezzo-forte_molto-vibrato.wav 97598 0 1763626852 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F viola_D6_025_forte_arco-normal.wav 37694 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F viola_D6_025_pianissimo_arco-normal.wav 21566 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:00.236
+D i 16
+F viola_D6_025_piano_arco-normal.wav 63038 0 1763626845 0
+D y 2025-11-20 s 44100 n 1 l 0:00.706
+D i 16
+F viola_D6_15_forte_arco-normal.wav 134462 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:01.516
+D i 16
+F viola_Ds5_025_mezzo-piano_arco-normal.wav 42302 0 1763626862 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F viola_Ds5_05_fortissimo_arco-normal.wav 56126 0 1763626855 0
+D y 2025-11-20 s 44100 n 1 l 0:00.628
+D i 16
+F viola_Ds5_1_piano_pizz-normal.wav 92990 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F viola_Ds6_05_piano_arco-normal.wav 69950 0 1763626844 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
+F viola_Ds7_long_mezzo-forte_artificial-harmonic.wav 120638 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:01.359
+D i 16
+F viola_E3_05_pianissimo_arco-normal.wav 49214 0 1763626845 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_E3_1_fortissimo_arco-normal.wav 102206 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:01.150
+D i 16
+F viola_E4_025_fortissimo_arco-normal.wav 46910 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F viola_E4_1_mezzo-forte_arco-minor-trill.wav 97598 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:01.098
+D i 16
+F viola_E5_025_fortissimo_arco-normal.wav 33086 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16
+F viola_E5_025_pianissimo_arco-normal.wav 88382 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F viola_E5_025_piano_arco-normal.wav 37694 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F viola_E5_05_fortissimo_arco-normal.wav 69950 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
+F viola_E5_05_mezzo-piano_arco-normal.wav 63038 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:00.706
+D i 16
+F viola_E5_05_piano_arco-normal.wav 60734 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
+D i 16
+F viola_E5_15_mezzo-piano_arco-normal.wav 182846 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:02.064
+D i 16
+F viola_E5_1_mezzo-forte_arco-minor-trill.wav 88382 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F viola_E5_1_mezzo-forte_molto-vibrato.wav 109118 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F viola_E5_1_mezzo-piano_arco-normal.wav 106814 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:01.202
+D i 16
+F viola_E5_very-long_mezzo-forte_arco-normal.wav 685118 0 1763626848 0
+D y 2025-11-20 s 44100 n 1 l 0:07.759
+D i 16
+F viola_E6_05_piano_arco-normal.wav 157502 0 1763626842 0
+D y 2025-11-20 s 44100 n 1 l 0:01.777
+D i 16
+F viola_E6_15_piano_arco-normal.wav 129854 0 1763626852 0
+D y 2025-11-20 s 44100 n 1 l 0:01.463
+D i 16
+F viola_E6_1_fortissimo_arco-normal.wav 92990 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F viola_E6_1_mezzo-forte_artificial-harmonic.wav 99902 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:01.124
+D i 16
+F viola_E6_long_mezzo-forte_artificial-harmonic.wav 152894 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:01.725
+D i 16
+F viola_E7_1_mezzo-forte_artificial-harmonic.wav 106814 0 1763626849 0
+D y 2025-11-20 s 44100 n 1 l 0:01.202
+D i 16
+F viola_F4_025_pianissimo_arco-normal.wav 49214 0 1763626852 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
+F viola_F4_15_mezzo-piano_arco-normal.wav 118334 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:01.333
+D i 16
+F viola_F5_025_mezzo-piano_arco-normal.wav 42302 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F viola_F5_15_fortissimo_arco-normal.wav 141374 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:01.594
+D i 16
+F viola_F5_1_fortissimo_snap-pizz.wav 88382 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:00.993
+D i 16
+F viola_F5_1_mezzo-forte_arco-major-trill.wav 104510 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:01.176
+D i 16
+F viola_F6_025_mezzo-piano_arco-normal.wav 39998 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F viola_F6_025_pianissimo_arco-normal.wav 23870 0 1763626864 0
+D y 2025-11-20 s 44100 n 1 l 0:00.262
+D i 16
+F viola_F6_025_piano_arco-normal.wav 60734 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
+D i 16
+F viola_F6_05_forte_arco-normal.wav 83774 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:00.941
+D i 16
+F viola_F6_05_fortissimo_arco-normal.wav 58430 0 1763626852 0
+D y 2025-11-20 s 44100 n 1 l 0:00.654
+D i 16
+F viola_F6_05_piano_arco-normal.wav 92990 0 1763626858 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F viola_F6_1_piano_arco-normal.wav 166718 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:01.881
+D i 16
+F viola_Fs3_05_piano_arco-normal.wav 30782 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:00.340
+D i 16
+F viola_Fs3_1_fortissimo_pizz-normal.wav 92990 0 1763626861 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F viola_Fs3_1_mezzo-piano_non-vibrato.wav 152894 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:01.725
+D i 16
+F viola_Fs4_025_forte_arco-normal.wav 46910 0 1763626839 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F viola_Fs4_025_piano_arco-normal.wav 58430 0 1763626841 0
+D y 2025-11-20 s 44100 n 1 l 0:00.654
+D i 16
+F viola_Fs4_1_fortissimo_snap-pizz.wav 99902 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:01.124
+D i 16
+F viola_Fs5_1_piano_pizz-normal.wav 90686 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:01.019
+D i 16
+F viola_Fs6_05_piano_arco-normal.wav 60734 0 1763626862 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
+D i 16
+F viola_G3_025_fortissimo_arco-normal.wav 46910 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F viola_G4_025_fortissimo_arco-normal.wav 35390 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F viola_G4_05_fortissimo_arco-normal.wav 53822 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:00.601
+D i 16
+F viola_G4_1_mezzo-piano_non-vibrato.wav 109118 0 1763626852 0
+D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F viola_G5_025_forte_arco-normal.wav 42302 0 1763626847 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F viola_G5_025_fortissimo_arco-normal.wav 39998 0 1763626866 0
+D y 2025-11-20 s 44100 n 1 l 0:00.445
+D i 16
+F viola_G5_025_piano_arco-normal.wav 46910 0 1763626846 0
+D y 2025-11-20 s 44100 n 1 l 0:00.523
+D i 16
+F viola_G5_05_forte_arco-normal.wav 118334 0 1763626864 0
+D y 2025-11-20 s 44100 n 1 l 0:01.333
+D i 16
+F viola_G5_05_fortissimo_arco-normal.wav 56126 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:00.628
+D i 16
+F viola_G5_05_mezzo-piano_arco-normal.wav 65342 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:00.732
+D i 16
+F viola_G5_05_piano_arco-normal.wav 67646 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:00.758
+D i 16
+F viola_G5_15_piano_arco-normal.wav 145982 0 1763626856 0
+D y 2025-11-20 s 44100 n 1 l 0:01.646
+D i 16
+F viola_G5_1_forte_arco-normal.wav 157502 0 1763626857 0
+D y 2025-11-20 s 44100 n 1 l 0:01.777
+D i 16
+F viola_G5_1_mezzo-forte_artificial-harmonic.wav 109118 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F viola_G5_long_mezzo-forte_artificial-harmonic.wav 145982 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:01.646
+D i 16
+F viola_G5_long_mezzo-forte_natural-harmonic.wav 180542 0 1763626864 0
+D y 2025-11-20 s 44100 n 1 l 0:02.038
+D i 16
+F viola_G6_025_forte_arco-normal.wav 63038 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:00.706
+D i 16
+F viola_G6_025_pianissimo_arco-normal.wav 44606 0 1763626847 0
+D y 2025-11-20 s 44100 n 1 l 0:00.497
+D i 16
+F viola_G6_025_piano_arco-normal.wav 37694 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:00.419
+D i 16
+F viola_G6_05_forte_arco-normal.wav 63038 0 1763626850 0
+D y 2025-11-20 s 44100 n 1 l 0:00.706
+D i 16
+F viola_G6_05_pianissimo_arco-normal.wav 67646 0 1763626845 0
+D y 2025-11-20 s 44100 n 1 l 0:00.758
+D i 16
+F viola_Gs3_025_mezzo-piano_arco-normal.wav 56126 0 1763626863 0
+D y 2025-11-20 s 44100 n 1 l 0:00.628
+D i 16
+F viola_Gs3_025_piano_arco-normal.wav 51518 0 1763626851 0
+D y 2025-11-20 s 44100 n 1 l 0:00.575
+D i 16
+F viola_Gs3_1_fortissimo_pizz-normal.wav 92990 0 1763626853 0
+D y 2025-11-20 s 44100 n 1 l 0:01.045
+D i 16
+F viola_Gs3_1_mezzo-forte_arco-minor-trill.wav 106814 0 1763626854 0
+D y 2025-11-20 s 44100 n 1 l 0:01.202
+D i 16
+F viola_Gs3_1_mezzo-piano_arco-normal.wav 148286 0 1763626865 0
+D y 2025-11-20 s 44100 n 1 l 0:01.672
+D i 16
+F viola_Gs3_1_piano_arco-glissando.wav 261182 0 1763626840 0
+D y 2025-11-20 s 44100 n 1 l 0:02.952
+D i 16
+F viola_Gs3_1_piano_arco-normal.wav 143678 0 1763626859 0
+D y 2025-11-20 s 44100 n 1 l 0:01.620
+D i 16
+F viola_Gs3_1_piano_pizz-normal.wav 95294 0 1763626866 0
+D y 2025-11-20 s 44100 n 1 l 0:01.072
+D i 16
+F viola_Gs5_15_fortissimo_arco-normal.wav 134462 0 1763626860 0
+D y 2025-11-20 s 44100 n 1 l 0:01.516
+D i 16
+F viola_Gs6_025_piano_arco-normal.wav 42302 0 1763626843 0
+D y 2025-11-20 s 44100 n 1 l 0:00.471
+D i 16
+F viola_Gs6_15_forte_arco-normal.wav 33086 0 1763626861 0
+D y 2025-11-20 s 44100 n 1 l 0:00.366
+D i 16

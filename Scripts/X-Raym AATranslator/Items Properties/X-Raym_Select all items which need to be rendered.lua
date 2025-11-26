@@ -8,11 +8,13 @@
  * Repository: X-Raym Premium Scripts
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.5.9
+ * Version: 1.5.10
 --]]
 
 --[[
  * Changelog:
+ * v1.5.10 (2025-10-03)
+  # Fade shape parameter name fix
  * v1.5.9 (2024-09-23)
   # Fix for envelopes
  * v1.5.8 (2024-09-22)
@@ -338,9 +340,9 @@ function Main()
                 break
               end
             end
-          
+
           else -- select anyway
-            select = true 
+            select = true
             -- Msg(take_name .. " = take envelopes ~= Volume")
             Msg(take_name .. " = envelopes > 0")
           end
@@ -424,8 +426,8 @@ function IsTakeLooping( item, take )
   entry.item_properties.D_FADEOUTLEN = reaper.GetMediaItemInfo_Value(item, "D_FADEOUTLEN" )
   entry.item_properties.D_FADEINDIR = reaper.GetMediaItemInfo_Value(item, "D_FADEINDIR" )
   entry.item_properties.D_FADEOUTDIR = reaper.GetMediaItemInfo_Value(item, "D_FADEOUTDIR" )
-  entry.item_properties.D_FADEINSHAPE = reaper.GetMediaItemInfo_Value(item, "D_FADEINSHAPE" )
-  entry.item_properties.D_FADEOUTSHAPE = reaper.GetMediaItemInfo_Value(item, "D_FADEOUTSHAPE" )
+  entry.item_properties.C_FADEINSHAPE = reaper.GetMediaItemInfo_Value(item, "C_FADEINSHAPE" )
+  entry.item_properties.C_FADEOUTSHAPE = reaper.GetMediaItemInfo_Value(item, "C_FADEOUTSHAPE" )
   entry.item_properties.B_LOOPSRC = reaper.GetMediaItemInfo_Value(item, "B_LOOPSRC" )
   entry.item_properties.B_UISEL = reaper.GetMediaItemInfo_Value(item, "B_UISEL" )
 

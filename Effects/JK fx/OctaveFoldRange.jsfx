@@ -1,0 +1,71 @@
+desc: OctaveFoldRange
+author: JK
+version: 1.0
+about:
+  # OctaveFoldRange
+  Forces all incoming MIDI notes into a user-defined range by octave-folding.
+  Notes below the range are shifted up by octaves (+12).
+  Notes above the range are shifted down by octaves (-12).
+
+slider1:36<0,127,1>Minimum Note
+slider2:84<0,127,1>Maximum Note
+
+@init
+
+// MIDI message type masks
+NOTE_OFF = 0x80;
+NOTE_ON = 0x90;
+
+@slider
+
+min_note = slider1;
+max_note = slider2;
+
+// Ensure min <= max
+min_note > max_note ? (
+  temp = min_note;
+  min_note = max_note;
+  max_note = temp;
+  slider1 = min_note;
+  slider2 = max_note;
+  sliderchange(slider1);
+  sliderchange(slider2);
+);
+
+@block
+
+while (midirecv(offset, msg1, msg2, msg3)) (
+
+  // Extract status byte (upper 4 bits = message type, lower 4 bits = channel)
+  status = msg1 & 0xF0;
+  channel = msg1 & 0x0F;
+
+  // Check if this is a Note On or Note Off message
+  (status == NOTE_ON || status == NOTE_OFF) ? (
+
+    note = msg2;
+    velocity = msg3;
+
+    // Octave-fold the note into the range
+    // First shift up if below min_note
+    while (note < min_note) (
+      note += 12;
+    );
+
+    // Then shift down if above max_note
+    while (note > max_note) (
+      note -= 12;
+    );
+
+    // Final clamp in case range is smaller than an octave
+    note < min_note ? note = min_note;
+    note > max_note ? note = max_note;
+
+    // Send the modified note
+    midisend(offset, msg1, note, velocity);
+
+  ) : (
+    // Pass through all other MIDI messages unchanged
+    midisend(offset, msg1, msg2, msg3);
+  );
+);

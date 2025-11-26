@@ -3,7 +3,7 @@
  Author: LKC
  REAPER: 6
  Extensions: SWS
- Version: 1.09
+ Version: 1.10
  Provides:
   Data/Lokasenna_GUI/Class - Button.dat
   Data/Lokasenna_GUI/Class - Label.dat
@@ -42,6 +42,8 @@
 
 --[[
  * Changelog:
+    * v1.10 (2025-10-07)
+        + Fixed an issue with rendering in REAPER 7.46+
     * v1.09 (2025-01-14)
         + Fixed an issue with Minimal View being always active in MCP
     * v1.08 (2024-11-04)
