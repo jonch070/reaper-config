@@ -2,6 +2,40 @@
  Render LUFS VIP - Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v3.0.1 (2025-06-11)
+  # fixing windows resize issues
+  # changed default fonts for Windows: font 3 set to "Arial", font 4 set to "Impact"
+  # additional resize height setting for windows users "windows_titlesize". default to 30 pixels 
+
+* v3.0.0 (2025-06-09)
+  + Save parameter used for each track. Allow multiple tracks rendering.
+  + Custom LUFS-I or LUFS-SMax parameter per track. (Set for Track # button)
+  + option Render Regions Via Master.
+  + FX name is now a button to open the FX plugin
+  + Ctrl + Mouse Wheel to change font size.
+  + display target files one per line if multiple. "maxtargetlines" to specify maximum of lines displayed
+  + changes in redesigned UI
+  + internal changes, optimizations and bug fixes
+ 
+* v2.2.1 (2024-12-17)
+  # fix: broke dry-run with regions and render button in any mode. now it should work.
+  + option to overwrite previous rendered files without asking.
+  # more tweaks on the output information in the console
+  # theming clickable buttons in color
+
+* v2.2.0 (2024-12-15)
+  + Faster rendering when using DRY-RUN.
+  # fixes for recent versions of REAPER
+  # fix crash if user cancels while rendering.
+  # fix when not using add render to project and not using old SWS API
+  # accept render when difference is in negative tolerance range
+  # bigger font for the touched fx and parameter
+  # fix ReaLimit in default limiters supported
+  # hide "Use old SWS API" for loudness analysis from the UI.
+  + display the track name if the plugin is on a track.
+  + allow partial match for plugin name search so that if the plugin is renamed it should still find the parameter.
+  # minor tweaks
+
 * v2.1.2 (2024-08-17)
   # fix saving settings
 

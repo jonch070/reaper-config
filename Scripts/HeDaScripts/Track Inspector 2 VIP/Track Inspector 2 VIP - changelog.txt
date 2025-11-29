@@ -2,6 +2,256 @@
   Track Inspector 2 - Changelog     
 ---------------------------------------------------------------------------------------
 
+* v2.4.34 (2025-11-21)
+  # fix strange crash
+  # notify if it cannot open file for output when creating tag actions
+
+* v2.4.33 (2025-11-18)
+  # fix mouse wheel over pages scroll panels 
+  # improvements middle mouse button drag up and down to scroll panels. fix with Tracks and Tags panels
+  # fix addon refresh in some cases
+
+* v2.4.32 (2025-10-14)
+  + Meter: 1/2 button to use stereo 1/2 channels only for send to aux meter track (global setting for now)
+  # stabiliy fix Track Versions
+
+* v2.4.31 (2025-10-13)
+  # Fix show buttons in FX Chain panel
+  + Meters panel menu: Show Peaks Hold Max
+  + Meters panel menu: Show SL Max
+  # fix midi send destination channel number display
+  # fix tags not updating MCP visibility in linked TCP MCP visibility
+  # fix tags isolating TCP in linked TCP MCP visibility
+  # fix scroll into view after isolating tag visibility
+  # isolate button only affect TCP if MCP not linked to TCP
+  # fix zoom to fit after isolating (more or less)
+  # fix macos tag list buttons alignment?
+
+* v2.4.30 (2025-10-08)
+  # fix crash if removing all tracks
+  # some adjustments in some areas of the meter.  master MONO button relocated. margins...
+  # fix when removing "Tag Color to Use"
+  # improvements in setting "Tag Color to Use": assign to multiple selected tracks. use same 
+  left click button to set and to remove.
+
+* v2.4.29 (2025-09-29)
+  # fix master instance and locked tracks. thanks @kotsaris [p=2894206]
+
+* v2.4.28 (2025-09-28)
+  # fix in track history
+
+* v2.4.27 (2025-09-27)
+  # Go Back button scrolls into view new selected track
+  # Go to next track after deleting a track
+  + Tags Panel menu: Autotag untagged tracks. If tag is untagged, tag it with parents autotags
+
+* v2.4.26 (2025-09-18)
+  # fix scrolling issue in Tracks when using Tracks and Tags panel on same page.
+  # fix tag scrolling start
+  + draw rectangle highlighting track tags on tag list
+
+* v2.4.25 (2025-09-15)
+  # fix optimization on tag mcp isolation
+
+* v2.4.24 (2025-09-12)
+  # fix fixes on a better day
+  
+* v2.4.23 (2025-09-11)
+  # the final bug fix of the year. 
+
+* v2.4.22 (2025-09-11)
+  # stability fix (the real one) track change refresh not working when undo track is disabled in undo history. 
+
+* v2.4.21 (2025-09-10)
+  # stability bug fixes
+  # fix middle drag horizontally in tags list not working at first if pagination is set to 0
+  # fix macos detection (broken recently)
+
+* v2.4.20 (2025-09-05)
+  + Track navigation history: < button to go back previous track. Right click to go forward
+  + Settings: Show Go Back Button. Show/Hide the button to go back in track history
+  + List special tags button (to hide or show the list)
+  + Project's tag list maximum number of tags. scrollable with mouse wheel.  Rmb to disable paging.
+  + Project's tag list filter search button. Rmb to clear filter.
+  + Middle mouse button drag horizontally to scroll tags columns
+  # adjustments in track tags display, more margin and area border
+  + Set font number for track's tags
+  # adjustments in tags presets display
+  # tag toggle all do not affect always off tags
+  + Settings: Footer message when detect new version updated.
+  # footer notifications adjustments, progress bar. configurable time for each notification. settings Footer Notification( set 0 to disable footer notification)
+  # fixes in ItemsTS special tag, when stopped
+  # optimizations
+
+* v2.4.19 (2025-08-15)
+  # fix: bug when creating actions from TI. Needs to recreate Tag actions, FX group actions, Sends actions.
+  # fix: support state on/off for tag isolate actions
+  # fix: refresh addons after tag visibility actions
+  # stability fixes
+
+* v2.4.18 (2025-08-07)
+  + Tags Panel menu: Show Auto Refresh Enable button (for manual visibility refresh)
+  + Tags Auto refresh button to enable/disable auto refresh
+  + Tags Auto Refresh action: HeDa_TI_Tags Autorefresh
+  + Tags Manual refresh button
+  + Tags Manual Refresh action: HeDa_TI_Tags Refresh
+  # fix refresh add-ons when using external actions
+  # theme: Button opacity changed to button color Factor
+  # fix color button and button borders on add-ons buttons
+  # fix crash setting custombutton color sometimes
+
+* v2.4.17 (2025-07-28)
+  + Tags: Resizable tag name column. (drag from the column header separator) (right click to auto fit)
+  # Polished tags list, more compact. fix vertical alignment of some tag buttons
+  # Some Tag buttons changed to image buttons (avoid font problems with the special characters)
+  + Theme settings: Button border on hover.
+  # fix Autotag always tagging children without asking
+  # more small bug fixes
+
+* v2.4.16 (2025-07-20)
+  # fix: Maintain tags when Rendering to new version.
+  # fix. Clear versions (Reset to V1) when deleting versions and only one left
+  # improved footer message popups
+
+* v2.4.15 (2025-07-17)
+  # fixes when no archived suffix is set
+  # fix save tags data after merging tags from file
+
+* v2.4.14 (2025-07-12)
+  # fix page buttons size (Pages extra size theme setting)
+  # fix page button text to be centered
+  # fix in external refresh track action, to include refresh of add-ons.
+
+* v2.4.13 (2025-07-07)
+  # fix refreshing special tags when changing color for special tag
+  # fix inactive versions to always off by default
+
+* v2.4.12 (2025-07-03)
+  # fix '<bad string>' where the Change track VU mode button. Thanks @inthevoid [p=2867871]
+  # fix and improvements for add-ons on change track selection by selecting media items, and marquee media items
+  # some changes for next version of Tracks Addon
+
+* v2.4.11 (2025-06-15)
+  + Settings: Inactive version tag. Use this tag for the inactive versions. 
+  # fix: refresh color by tag when switching track versions
+
+* v2.4.10 (2025-06-14)
+  # fix bug related to storing Tag to use for Color in 2.4.9
+
+* v2.4.9 (2025-06-13)
+  # only ask once to autotag children when tagging multiple folders at the same time
+  # fix SHIFT+click to special tags to toggle all on/off
+  # update tracks panel when renaming tracks from TI
+  + Save Tag to use for Color inside Track EXT data.
+  # fix: TI send recreated when switching pages. thanks @BogdanS [p=2869450]
+  + Tag Presets menu. Set font number to use for presets buttons
+  # fix error when archiving add-on was not enabled and changes for latest version
+  # fix multichannel send to aux after track change
+  # fix Archive tag. Now it is normal tag, not special (Archived) tag
+
+* v2.4.8 (2025-05-26)
+  # fix: crash purging unused track versions when there are no track versions
+  # fix: refresh visibility of tracks by tag when importing track templates
+  # fix: Undo blocks on track versions actions
+
+* v2.4.7 (2025-05-21)
+  + Tags Panel menu: Delete All Unused Tags from List
+
+* v2.4.6 (2025-05-20)
+  + (RecArm) special tag for record armed tracks.
+  # fix focus arrange (broken in recent REAPER version)
+  # fix: automatically purge track versions that do not exist in project.
+  # internal update for add-ons
+
+* v2.4.5 (2025-05-06)
+  + Reorder tag preset (tag preset right click menu)
+  # show unused tags by default
+  # show unused tags after merging tags file
+  # fix in tag name column width to fit largest tag name
+  # fix in track version go to next and previous versions buttons < >
+  # support multiple tracks for next and previous versions buttons < >
+  # fixes in rendering new version
+  # fix settings button
+  # fix issue big number displayed in channel mode button with sends with audio channel set to None
+
+* v2.4.4 (2025-04-27)
+  + Freeze panel: Unfreeze to New version
+  + Setting: unfrozen suffix for unfreeze to new versions.
+  + Tag tracks with "Frozen" tag when freezing tracks manually or with TI freeze buttons.
+  + Setting: "Frozen" tag name.
+  + Tag tracks with "Rendered" tag for new version rendered tracks.
+  + Setting: "Rendered" tag name.
+  + TagPresets Menu: Option to set the number of Tag Presets per project
+  + TagPresets Menu: Option to show One tag preset buttons per line
+  + Tags: button to show/hide unused tags in the tag list
+  # Tag buttons width fit to entire column.
+  + Get Tag properties from Default.TItags if tag does not exist when importing tracks templates.
+  + ItemsTS also works now without time selection as a zone from play cursor to x seconds after.
+  + Setting: ItemsTS time after playcursor when no time selection 
+  # fixes and optimizations in Special Tags
+  # fix tags isolating visibility and untagged tracks
+  # fix bug in going to panel
+  + Theme Setting: button border opacity
+
+* v2.4.3 (2025-04-23)
+  # fix bug in track versions suffixes bug in track names.
+  # fix paste tags
+
+* v2.4.2 (2025-04-21)
+  + Shift+Rightclick on Tag, to add to selection of tracks with tag
+  + "remove_stemsuffix": removes " - stem" suffix in track names when rendering to new versions
+  # remove "Not Active version" suffix by default.
+  # various bug fixes in tags
+
+* v2.4.1 (2025-04-20)
+  + Tag archived tracks with special Archived tag
+  # fix isolate tag button on special tags
+  # Setting: Autotag from track suffixes
+  # fix go to panel and switch pages actions with multiple TI instances running
+  # AutoTag button now tags selected tracks only
+  # Tags bug fixes when pasting tracks or inserting templates
+
+* v2.4.0 (2025-04-15)
+  + Tags code rewrite. better performance, improvements, bug fixes, new tags load and saving format. 
+  Old tags format is automatically imported.
+  + Tags: automatically tag duplicated tracks.
+  + Tags: automatically tag pasted tracks.
+  + Tags: automatically tag inserted track templates.
+  + Tags: automatically tag new track inside folder with autotag.
+  + Tags: Setting to show tag preset names on the buttons instead of tag preset numbers.
+  + AutoTag button: also tag the tracks from EXT data. 
+  + confirmation prompt when removing tag from project: Remove this Tag from All Tracks?
+  + Tag Isolate button column
+  # Settings: Save tags in EXT data inside tracks: now enabled by default.
+  + Settings: Tag TCP and MCP customization of text in the tag buttons
+  + Auto-hide (screen edge docking)
+  + Frameless (no titlebar, no border) always on when using auto-hide.
+  + Meter: various adjustments in the meters. text of the LUFS-M or LUFS-S at the
+    meter level and LUFS-I at the bottom of the meter.
+  + Show Max peak hold number, and shade the headroom to 0
+  # Changed default meter scale to full scale
+  + Meter: show PLR (Peak to Loudness Ratio)
+  + Meter: thicker lines in histograms
+  + Meter scale minimum dB. made the setting also in settings page. It was only in
+    the meters menu.
+  # Bug fix sends for meter with multichannel tracks 
+  + Right click in Pan Direction to show pan law menu
+  + Right click in Pan Fader to show Pan mode menu
+  + Set Quantum per project. Automatically sets latency quantum if Project has specific
+    quantum set. (to change latency per project with Pipewire jack as audio device)
+  + Use new action "HeDa_Set Project Quantum.lua" to set the quantum latency override for a project
+  # Track number right click to go to Color panel.
+  # fix naming Track versions rendered suffixes
+  # optimizations and bug fixes
+
+* v2.3.17 (2025-01-02)
+  + Guide PDF, Guide Add-ons PDF
+  + Access to guide also from ? button at the bottom
+  # removing Previous common Track Inspector actions, renaming them to HeDa_TI_*******
+  # fix: actions generated by TI broken recently (fx group actions, tag actions etc...)
+  # fix: bug refreshtrack action missing
+  # fix: issue with track detection depending on some order of panels
+
 * v2.3.16 (2024-11-14)
   # Freeze: fix setting freeze n for all multiple selected tracks.
 

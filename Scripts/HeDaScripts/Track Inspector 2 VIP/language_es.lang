@@ -12,6 +12,7 @@ action_names={
 "Ajustar Selección de Pista (via Surface)",
 "Ajustar Selección de Pista (via Surface)",
 "Cambiar Media Selección de Item",
+"Marquesina Selección de Item",
 "Añadir Pista",
 "Insertar Nueva Pista de Instrumento Virtual",
 "Eliminar Selección de Pista", 
@@ -24,6 +25,7 @@ action_names={
 "Cambiar Lista de Pistas MIDI a Selección",
 "Cambiar Items MIDI Activos",
 "TT: Insert track template", -- dejar ingles
+"Congelar Pista",
 }
 
 action_update_names={

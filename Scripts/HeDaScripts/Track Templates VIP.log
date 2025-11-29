@@ -1,23 +1,31 @@
-1739299156.1417	Script path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP/
-1739299156.1419	HeDaScripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/
-1739299156.1419	Name script: Track Templates VIP
-1739299156.142	Version: 1.6.4
-1739299156.1421	Instance: 3
-1739299156.1421	Custom Instance: no
-1739299156.1422	Settings file: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP settings/TT_Settings_3.cfg
-1739299156.1422	Default Settings file: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP/Default Settings.cfg
-1739299156.1423	Load theme...
-1739299156.1424	loading theme.: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP/Default_6.0.TT_theme
-1739299156.1426	loading theme...: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP settings/Default_6.0.TT_theme
-1739299156.1429	Default_6.0 - theme loaded.
-1739299156.1429	Initializing...
-1739299156.1747	Reading templates directory...
-1739299156.1764	31 entries
-1739299156.1765	Run...
-1739299156.1766	--- 1
-1739299156.1766	--- 2
-1739299156.1777	--- 4
-1739299156.1777	--- draw items
-1739299156.1784	--- 6b
-1739299156.1784	--- draw menu
-1739299156.2418	Reading icons...
+1764202227.9129	Script path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP/
+1764202227.9142	HeDaScripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/
+1764202227.9142	Name script: Track Templates VIP
+1764202227.9143	Version: 1.8.1
+1764202227.9144	Instance: 3
+1764202227.9145	Custom Instance: no
+1764202227.9145	Settings file: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP settings/TT_Settings_3.cfg
+1764202227.9146	Default Settings file: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP/Default Settings.cfg
+1764202227.9147	Load theme...
+1764202227.9148	loading theme.: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP/Default_6.0.TT_theme
+1764202227.9154	loading theme...: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/Track Templates VIP settings/Default_6.0.TT_theme
+1764202227.9157	Default_6.0 - theme loaded.
+1764202227.9158	Initializing...
+1764202227.9522	Reading templates directory...
+1764202227.9527	31 entries
+1764202227.9528	Run...
+1764202227.9529	__- 1
+1764202227.9529	__- 2
+1764202227.9531	__- 4
+1764202227.9532	__- draw items
+1764202227.9537	__- 6b
+1764202227.9538	__- draw menu
+1764202227.9774	Reading icons...
+1764202227.9973	Reading icons...
+1764202228.0272	Reading icons...
+1764202244.5972	Saving settings...
+1764202244.5977	Exit
+1764202244.5991	Saving settings...
+1764202244.5995	Exit
+1764202244.5996	Saving settings...
+1764202244.5997	Exit

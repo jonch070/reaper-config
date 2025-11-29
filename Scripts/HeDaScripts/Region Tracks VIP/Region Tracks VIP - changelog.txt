@@ -2,6 +2,20 @@
   Region Tracks VIP - Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v2.2.6 (2025-06-17)
+  # fix crash when using SWS colors
+
+* v2.2.5 (2025-06-16)
+  # fix sometimes not updating regions when setting is to refresh "On Change" 
+  # preferences: Add Parent names as prefix by default
+  # preferences: Use Parent item name by default
+  # preferences: Add Track names as prefix by default
+  + CTRL mouse wheel to change font size factor.
+
+* v2.2.4 (2024-08-27)
+  # fix open url function on Linux
+  # change default mode to "On change"
+
 * v2.2.3 (2024-08-27)
   + Settings: Set Window Title...
 

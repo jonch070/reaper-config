@@ -1,7 +1,252 @@
 ﻿---------------------------------------------------------------------------------------
  Changelog (What's new)     
 ---------------------------------------------------------------------------------------
- 
+
+* v3.5.2 (2025-11-21)
+  # fix CTRL click to select multiple broken in 3.5.1
+  # fix some crashes
+  # improve double clicking
+  # fix CTRL+double click to isolate folder sometimes not working the first time.
+
+* v3.5.1 (2025-11-18)
+  + Track Icons support
+  + Right click Show track icons button: show track icons menu
+  + Track icons menu: Show empty track icons
+  + Track icons menu: Show border
+  + Mini map menu: Enable Zoom on Hover
+  + Mini map menu: Set Zoom Factor on Hover...
+  + Right click show mini map button: Show mini map menu too
+  + Filter archived tracks button on/off
+  + Filter archived tracks (right click show only archived tracks)
+  + Search filter by tags entering #tag in search box
+  + >> Button: Apply filtered visible tracks to TCP/MCP visibility
+  + >> Button: Right click to auto apply
+  # highlight fx button text if fx chain or instrument is visible
+  # improvements on tracks scrolling and TI panels scrolling/repositioning on track change
+  # fix middle mouse button drag to scroll TI
+  # fix map mouse wheel scroll speed using normal scroll speed
+  # changed some defaults settings
+  # removing alt+click on track to remove it until I figure out why it crashes sometimes
+
+* v3.4.1 (2025-10-15)
+  + Double Click Folder: Collapse/Uncollapse folders
+  + Display Settings: Text Color for Selected Tracks
+  + Display Settings: Border Color for Selected Tracks
+  + Display Settings: Background Color for Selected Tracks
+  + Show routing line to master track for top level tracks
+  # Changed Scrolling internal system (again)
+  # when enabling "Depth level Mininum" filter, align track to the left, not wasting space
+  # fix in Always show selected track (multiple tracks)
+  # change "Always show selected track" default to enabled
+  # "Open/Close folder" renamed to "Isolate/Unisolate folder"
+  # adjustment of identation in navigator map
+  # fixes in minimap navigator scroll indicator
+  # more small bug killing... no real bugs were harmed
+
+* v3.3.2 (2025-09-30)
+  + ALT+click on track to remove tracks.
+  # TI back button scrolls into view.
+  # pixel adjustments in fx buttons.
+
+* v3.3.1 (2025-09-19)
+  + Show Lines. displays tree parent routing lines.
+  + Click line to open track's routing window
+  + Enter/exit folder in track right click menu
+  + Ctrl+Double click track folder to enter/exit folder
+  + < button to close folder
+  # changed mouse hover Version buttons appearance
+  # fix in scrolling on right drag to select tracks
+  # fix crash at start if all tracks hidden
+  # do track pinning using 7.46 api functions.
+  # bug fixes
+  # optimize filtering
+
+* v3.2.6 (2025-09-12)
+  # fix fixes on a better day
+  # optimization while dragging mini map
+
+* v3.2.5 (2025-09-11)
+  # fix recentering again. needs TI v2.4.23
+
+* v3.2.4 (2025-09-10)
+  # small bug fix when there are no tracks and trying to scroll.
+  # improvments in archiving/unarchiving for archiving v0.5
+  + display Add-on version in panel menu. opens changelog txt.
+  # remove scroll to the middle of track list when track clicked in the track list.
+
+* v3.2.3 (2025-08-19)
+  # fix color issues on Windows OS.
+  # fix top margin before toolbar
+
+* v3.2.2 (2025-08-18)
+  # fix crash closing project sometimes
+  # fix crash setting custom buttons when there are not presets settings
+
+* v3.2.1 (2025-08-17)
+  # fix crash if start in empty project
+
+* v3.2.0 (2025-08-17)
+  + TI Custom Buttons support. Add custom buttons as in any other panel.
+  + Depth Filter Minimum
+  + Depth filter right click menu: Always Show Selected Track
+  + Depth filter right click menu: Always Show Selected Track Parents
+  + Depth filter right click menu: Hightlight Parents border
+  + Depth filter right click menu: Show Parents Depth number
+  + Depth filter right click menu: Show Depth number on all tracks
+  + Show Tracks list button. Toggleon/off the list of tracks. 
+  + Panel Menu: Buttons: "Show Tracks button"
+  + Panel menu: "Custom Buttons at the Top" to toggle position
+  + Panel menu: "Add Custom Button..."
+  + Panel Menu: Display Settings: "Text Color for Hidden Tracks..."
+  + Panel Menu: Display Settings: "Text Color for Muted Tracks..."
+  + Panel Menu: Display Settings: "Left Area Background Opacity..."
+  + Panel Menu: Display Settings: "Color: Pinned Area Background..."
+  + Panel Menu: Display Settings: "Color: Toolbar Background..."
+  + Panel Menu: Buttons: "Show ALL button"
+  + Panel Menu: Buttons: "Show TCP button"
+  + Panel Menu: Buttons: "Show MCP button"
+  + Panel Menu: Buttons: "Show ITEMS button"
+  + Map Right click menu: "Map Background Color..."
+  + Depth number indicator. 
+  + Panel Menu: Buttons: "Show depth button"
+  # fix issue opening and closing tracks with versions
+  # fix tags size in folder tracks.
+  # fix scroll track list selected track into view
+  # fix scroll issue when filtered list
+  # moved "show map on hover" option to map menu.
+  # internal improvements and stability
+
+* v3.1.1 (2025-08-05)
+  + Right click depth level filter to set specific number
+  + Display Settings: Archived Color...
+  + Display Settings: Archived External Color...
+  + Display Settings: Archived Global Color...
+  # Right dragging tracks, now it selects the tracks while still dragging
+  # fix bottom drag end of track list and then right click unselects them.
+  # fix crash unisolating pinned tracks in some cases
+  # fix filter buttons state in some cases
+  # removed panel size from settings menu (there is the bottom handle ro resize it)
+  # pixel adjustments
+
+* v3.1.0 (2025-08-02)
+  + Settings Presets: Save, Update and Delete Presets 
+  + Settings Presets: Reset Settings to default.
+  + Items button: Display little indicator if track has items 
+  + Items button: Right click Menu: Show number of items
+  + Track menu: Move Track to Folder...
+  + Track menu: Insert Track
+  + Track menu: Insert Virtual Instrument Track...
+  + Adjust Track list to Meter panel if needed.
+  + Double click after last track to insert track at end of track list.
+  # Background Track Color Opacity for Folders use track's color
+	+ Background Shade Opacity for folders. a gray overlay over background on folders
+  + Display Settings: Margin before track
+  + Map Menu: Show Scroll Area Position
+  # fix isolate pinset on mixer(MCP)
+  # on pinned tracks, do not use margins, spacers (for more compact pinned area)
+  # fix mouse over track with bottom margin
+  # fix glitch with minimap on hover only
+  # fix crash when on start and no tracks and no meters panel
+  # fix save zoom settings after zoom change
+  # fixes in solo/mute buttons
+  # fix: bug update last track
+  # fix: improve right dragging selection when mouse below last track
+
+* v3.0.6 (2025-07-17)
+  + Display settings: Track Bottom Margin. An additional margin atthe bottom of the tracks. 
+    The value is relative to the text height. 0.0 to disable
+	+ Display settings: Track Bottom Margin for Folders. 
+  # Color Size: now entering value of 0.0 to disable. And negative value to stretch until left margin.
+
+* v3.0.5 (2025-07-17)
+  # changed color of empty fx button
+  # fix refresh addons when clicking a track to change track selection
+
+* v3.0.4 (2025-07-12)
+  + Show minimap button
+  + Indicate if tag is Autotag with a border in the tag rectangle.
+  + Select Children. and grouped select functions in submenu
+  + ... shown if track name does not fit
+  # Default font changed to Open Sans Condensed
+  + Display Setting: Font vertical Margin for Folders (to adjust vertically the text on folders)
+  # fix crash search and press enter (broken in 3.0.1)
+  # fix CTRL click track not refreshing.
+  # fix crash showing tags sometimes
+  # fix track name overlap with tags, tag rectangle sizes
+  # fix colors in some icon buttons
+  # 1px thicker border for selected track
+
+* v3.0.3 (2025-07-08)
+  # fix size some buttons
+  # fix duplicate track only creating extra duplication
+  # fix duplicate tracks respecting autoarm mode
+  # fix rec armed tracks background red color on folders
+  # fix color of bypassed fx
+
+* v3.0.2 (2025-07-08)
+  # fix scroll track into view when selecting from track list (again)
+
+* v3.0.1 (2025-07-08)
+  + Pin to New Set: Directly pin to a new set asking for set name
+  # Pin to current set: diplay current set name in the menu
+  # fix: scrolling TCP and MCP into view when clicking hidden tracks now tries to scroll nearest visible track.
+  + Minimap right click menu: Scroll tracks into view while dragging on map
+
+* v3.0.0 (2025-07-07)
+  + Redesigned UI, toolbar icons
+  + Font and font size settings, for tracks and folder tracks
+  + Mute and Solo Buttons 
+  + Panel menu setting: show map on hover. if show map is enabled, but only show if mouse is over the map area.
+  + Track Versions support
+  + Improved Archive/Unarchive support
+  + Isolate and Pin 
+  + Improved Zoom button Left button click and hold, make font smaller, right button larger.
+  + Background track color opacity from 0 to 1.0 (0 to disable)
+  + Right click FXi button opens fx chain.
+  + Select Connected tracks and Connected Parents 
+  + Duplicate Track and Duplicate Track Only(witohut items/envelopes)
+  # fixes in pin presets buttons
+  # Unarchive buttons also unarchive connected parent tracks if they are archived
+  # Better drag to mute and solo consecutive tracks.
+  # more pixel perfect adjustments
+  # rearranged Tracks panel menu
+  # many bug fixes
+
+* v2.1.0 (2025-06-13)
+  # various bug fixes. needs TI v2.4.9
+  + Solo buttons, click or click and drag to solo tracks.
+  + Right click track menu: added Solo and Mute.
+  + Depth toggle button. now the "Dn" is a button to toggle the depth filter on/off without changing the 
+  depth level filter value.
+  + FX button to quickly toggle display all FX buttons
+  + Panel Settings: Smooth Scroll. from 0.1 to 0.9 for speed. 0 o disable.
+  # ArmRec as image button. click to unarm.
+  # fix unarchive button not working if it was clicked and track not selected
+  # fix some things in Archive External and Archive Global (when using Archiving add-on)
+  # pixel adjustments here and there, cosmetics
+
+* v2.0.0 (2025-05-28)
+  + Map mini navigator
+  + Improved multi selection
+  + Right mouse button Drag: to select multiple tracks while dragging
+  + CTRL + Right Drag: to add to selection multiple tracks while dragging
+  + Archiving addon support. Archive and unarchive work for external and global archived modes
+  + "All" button. To display all tracks including hidden ones
+  + Visual Spacers support, separation space and/or line separator
+  + Setting: Spacer size: set to a number as track height multiplier (set to 0 to disable spacers)
+  + Setting: Show Spacer line: draws a line in tracks with spacer
+  + Setting: Show Track line: draws a line in each track
+  + Setting: Indent size: size of children indent (set to 0 to disable)
+  + FX chain button (Click to float vst instrument or open chain, CTRL+click to open chain, SHIFT+click to bypass chain)
+  + Setting: Show FX  button
+  + Setting: Show empty FX button (show even if the fx chain is empty)
+  + Arm Recording indicator
+  + Mute and Solo indicators (as text color)
+  + Setting: Show track id number toggle
+  + changed the way tags are displayed, and list of tags in menu, and popup on hover
+  + Drag bottom edge of panel to resize panel to see more or less tracks
+  + Go to Panel Tracks action
+
 * v1.2.1 (2024-08-15)
   # fix glitch when typing in search box.
 

@@ -1,9 +1,9 @@
 return {
 -- Table: {1}
 {
-   ["margin_items_v"]=10,
+   ["margin_items_v"]=20,
    ["margin_items_v_list"]=2,
-   ["margin_items_h"]=10,
+   ["margin_items_h"]=30,
    ["margin2_icon_dir"]=0.1,
    ["margin2_icon_template"]=0,
    ["button_opacity"]=0.05,
@@ -13,9 +13,11 @@ return {
    ["text_color_red"]=255,
    ["text_color_green"]=255,
    ["text_color_blue"]=255,
-   ["text_color2_red"]=255,
-   ["text_color2_green"]=255,
-   ["text_color2_blue"]=120,
+
+   ["text_color2_red"]=100, -- color for folders background
+   ["text_color2_green"]=170,
+   ["text_color2_blue"]=160,
+
    ["text_color3_red"]=0,
    ["text_color3_green"]=255,
    ["text_color3_blue"]=0,
@@ -33,7 +35,8 @@ return {
    ["font_size1"]="14",
    ["font_size2"]="20",
    ["font_size3"]="24",
-   ["font_size4"]="30",
+   ["font_size4"]="20", -- size for toolbar 
+   ["font_size5"]="40", --  size for play button
    ["button_opacity"]=0.5,
 
    ["font1"]="Arial", -- font used for icons (smaller)
@@ -49,6 +52,7 @@ return {
    ["margin_icon_dir_h"] = 10, -- horizontal spacing for dirs panel
 
    ["tb_menu"] = " ≡ ",
+   ["tb_save"] = " Save ",
    ["tb_home"] = " ⌂ ",
    ["tb_prev"] = " .. ",
    ["tb_fx"] = " FX ",

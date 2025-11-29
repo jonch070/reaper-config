@@ -2,6 +2,26 @@
  HeDa Projects - Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v2.3.5 (2025-03-01)
+  + Select All Projects (CTRL+A)
+  + Shift+Click to select multiple projects (contiguous selection)
+  + Open Multiple selected projects
+  # Set Color, Reset Color: Allow for to change color for multiple selected projects
+  # Remove Projects: Allow removing multiple selected projects
+  # Draw white border in all selected projects
+  + Setting: Show thumbnails (for card and list view)
+  + Setting: Play button over thumbnail 
+  + Setting: Play button when mouse over
+  # fixes for playbutton positions and new options 
+  # change tags displayed in different color than project title (color 4)
+  # optimizations
+
+* v2.3.4 (2025-01-10)
+  + Use Spectacle by default now for screen capture on Linux. Better than using ffmpeg that only worked on X11
+
+* v2.3.3 (2025-01-03)
+  # fix project colors bug in previous version
+
 * v2.3.2 (2024-12-03)
   + Set Color.../ Remove Color: Sets and resets custom color for each project.
 

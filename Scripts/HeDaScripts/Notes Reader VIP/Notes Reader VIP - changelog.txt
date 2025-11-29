@@ -2,6 +2,13 @@
   Notes Reader - Changelog (What's new)   
 ---------------------------------------------------------------------------------------
 
+* v2.2.6 (2025-08-14)
+  # fix settings when using multiple instances
+  # fix window poistioning when using frameless and linux (wayland fix setting)
+  # fix dragging window when frameless 
+  + Opacity Window  (transparency effect for entire window from 0.3 to 1.0)
+  # optimization
+
 * v2.2.5 (2024-04-06)
   # fix crash right click if not track has been specified yet and auto set track does not find a good track. 
   # fix in autoread from track number

@@ -2,6 +2,11 @@
   HeDaMixer VIP - Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v2.1.3 (2025-09-30)
+  # fix bug fix track selection changing. Thanks @timzibrat
+  # fix bug adding selected track to tab
+  # some optimizations
+
 * v2.1.2 (2024-06-23)
   + Updated toolbar icons. Added 150 and 200 size icons
   # fix crash opening graph and no tabs

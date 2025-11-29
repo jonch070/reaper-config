@@ -2,6 +2,113 @@
   HeDa Panel - Changelog (What's new)
 ---------------------------------------------------------------------------------------
 
+* v0.9.18 (2025-09-15)
+  + cycle() special command. Cycles visibility of groups. enter groups to cycle separated by commas. 
+  for example cycle(A,B,group1,group2,group3)
+  # some small bug fixes
+
+* v0.9.17 (2025-09-02)
+  # Autohide various fixes and changes
+  # fix drag window to move it.
+  # fix zoom, changed name to Scale. set scale to blank to disable it. 
+  # fix load panel file list sort with mixed upper case and lower case
+  # fix autohide delay on edges other than top
+  # fix surface Size. thanks @Halma [p=2886527]
+  # fix load panel with file names starting with # being disabled in the menu. thanks @Halma [p=2887070]
+  # fix right click on group button with right click action showing menu. thanks @Halma [p=2887877]
+  # draw red cross on buttons when image is not found
+  + warn if image path is using the script directory.
+  + Editor: some options as menus (text alignment, autohide edge... )
+
+* v0.9.16 (2025-08-22)
+  + Restore Mouse Position after clicking button (for using it on tablets) needs testing.
+  + Add delay parameter (in milliseconds) to auto-hide window. Delays showing the window.
+  + Add delay parameter (in milliseconds) to special commands on hover. Set to -1 to use auto-hide window delay
+  # fix changes from the right click menu settings not being saved
+  # fix crashes removing corner and border in edit box. thanks @Halma [p=2883756]
+
+* v0.9.15 (2025-08-09)
+  # fix: crash when editing panel after save as.
+  # fix: toggleon() special command. it was affecting all buttons instead of the specified group.
+  # fix: toggleon() to only affect one button if no group specified
+  # fix: loading panel: remember toggled on buttons with toggleon() commands
+  # fix: improved special command tooltip
+
+* v0.9.14 (2025-07-08)
+  # fix crash saving/loading Panels
+
+* v0.9.13 (2025-06-16)
+  + "Show only when recording" option for buttons
+  + Crossfade Editor support.
+  # small bug fix reading preferences
+  # focus arrange new method. ["focusarrangemode"] = 1  for old method.
+  # fix: creating new panel does not clear current panel for the new editor.
+
+* v0.9.12 (2025-03-18)
+  # fix in focus arrange when autohide and opened new panel
+  # fix cancel button in Editor again.
+
+* v0.9.11 (2025-03-17)
+  + Panel setting: Window Front when unhidding.
+  # bug fixes crash in editor
+  # fix cancel button in Editor
+  # fix unhide focus
+
+* v0.9.10 (2025-03-15)
+  + Option to override set focus on arrange after clicking per button.
+  + ["exitonaction"] = 0, ["focusarrange"] = 1,  to set defaults for exit on action 
+  and focus arrange on action.
+  # fix focus arrange on right click action
+
+* v0.9.9 (2025-03-10)
+  + Panel Editor as a new window
+  + Add Panel action when Loading panel from file too. Not only when saving a panel
+  # fixes in autohide sometimes getting stuck unhidden.
+  # fix avoid resaving the panel file on exit, if it is not needed, if it was not edited
+  # fix unsaved panel temp file is saved in settings folder now
+  # fix focus on arrange after clicking
+  # fix bug with special command over making some buttons clicking
+
+* v0.9.8 (2025-02-09)
+  # fix crash editing some panels
+
+* v0.9.7 (2025-02-06)
+  + new special commands: width(number) height(number). allows to change the width
+and height to the number in pixels
+  + new special command: toggleon()  to set the button toggled on allows to indicate
+which button was the last used with special command for example.
+  + zoom lock: if manually entering a number in Zoom box, then that zoom value will
+be always be used in normal mode independently if you zoom while edit mode. enter
+blank in the zoom box to reset and use the edit zoom. 
+  + Width and Height setting when auto hidden. This allows a small area of the window
+visible to indicate it is there.
+  + Max Scrolling Horizontal and Vertical. now they can be different.
+  + Setting: Position > Lock position. does not allow to move or resize by dragging
+inside window.
+  + In edit mode, special commands are executed when selecting an object.
+  # max scrolling values now 0 is for no scrolling, positive values for the maximum
+scroll and -1 for no limit.
+  + list of image not found errors. click on them to select the button to fix the
+image path.
+  + setting to disable middle mouse button drag panning in normal mode.
+  # improvements in autohide window.
+  # fix waylandfix only for Linux
+  # ask to save changes if closing the edit window instead of saving or cancel buttons.
+  # fix crash resizing button that had image removed
+  + shows list of orphaned objects, click to show the object if it is hidden.
+
+
+* v0.9.6 (2025-01-15)
+  # fix: when auto show on edges, make the window foreground above other windows
+and focused
+
+* v0.9.5 (2025-01-05)
+  # small improvements when autohide
+  # fix. window sometimes not positioned correctly when using Wayland
+
+* v0.9.4 (2024-12-28)
+  + added setting to never close panel when floating window(not docked)
+
 * v0.9.3 (2024-09-04)
   # fix: dock when closing window in edit mode. thanks @lolol [p=2804825]
   # fix: restore window title to default if entering blank title.
@@ -9,12 +116,17 @@
 * v0.9.2 (2024-08-25)
   + Arrow keys to scroll page next and previous vertically or horizontally. 
   + Edit mode: PAGE UP and PAGE DOWN keys to scroll page the parameters panel.
-  + Edit mode: focus zone: click somewhere in edit area or somewhere in the parameters panel to set focus for keys
+  + Edit mode: focus zone: click somewhere in edit area or somewhere in the parameterspanel
+to set focus for keys
   + Arrow keys in edit mode: 
-    If focus is edit area it scrolls the edit area. If objects are selected, moves the object.  
-    If focus is on parameters zone, it scrolls up and down the parameters area.     
-  + Added special commands: scrollh(pixels), scrollv(pixels), scrollpageh(direction), scrollpagev(direction)
-  + Panel Setting Window Title to override the title of the window and docked tab. Changes are applied next time the script starts.
+    If focus is edit area it scrolls the edit area. If objects are selected, moves
+the object.  
+    If focus is on parameters zone, it scrolls up and down the parameters area. 
+   
+  + Added special commands: scrollh(pixels), scrollv(pixels), scrollpageh(direction),
+scrollpagev(direction)
+  + Panel Setting Window Title to override the title of the window and docked tab.
+Changes are applied next time the script starts.
 
 * v0.9.1 (2024-06-10)
   # fix buttons not working in About and Donate pages.
@@ -22,15 +134,17 @@
 * v0.9.0 (2024-06-09)
   + Style parameter: Objects that share a style name are updated automatically.
   + Action: Right click support for buttons
-  + Auto-Hide window option: When window is at an edge of the screen it hides the 
-    window instead of exiting. Shows it again when mouse is on edge. 
-    Works better with Frameless mode option.
-  + Scroll max value. stop scrolling when using mouse wheel afer this value has been reached.
-  + Display Scaling option. automatic scale objects based on display scaling in addition 
-    to the manual Zoom option
+  + Auto-Hide window option: When window is at an edge of the screen it hides the
+window instead of exiting. Shows it again when mouse is on edge. Works better with
+Frameless mode option.
+  + Scroll max value. stop scrolling when using mouse wheel afer this value has been
+reached.
+  + Display Scaling option. automatic scale objects based on display scaling in addition
+to the manual Zoom option
   # fix edit buttons sometimes don't work if dragged window
   # fix bordercolor(toggled on) not being loaded
-  # enabling "special command on mouse over" also works now as "action on mouse over" if no special command 
+  # enabling "special command on mouse over" also works now as "action on mouse over"
+if no special command 
     is defined.
   # small bugs and some adjustments and optimizations
 
@@ -39,8 +153,8 @@
   # fix in drawing grid and lines
 
 * v0.8.8 (2024-05-20)
-  # fix: selecting another button while a textbox is focused, caused the new selected 
-    button to get the textbox value. Thanks @Alez156 [p=2783521]
+  # fix: selecting another button while a textbox is focused, caused the new selected
+button to get the textbox value. Thanks @Alez156 [p=2783521]
   # fix: do not add image path as tooltip. Thanks @Alez156 [p=2783524]
   # fix: snap lines values not updating correctly
   # now you have to use SHIFT+click to show the overlapped selection menu, 
@@ -65,8 +179,8 @@
     original image pixels to maintain without stretching. 
     0 to disable and stretch all image.
   + Image Frame Scale
-  + Select menu when clicking on overlapped buttons. +CTRL to force menu to show 
-    when already having some selected
+  + Select menu when clicking on overlapped buttons. +CTRL to force menu to show
+when already having some selected
   # more changes in edit panel. 
   # fix image and toggled on, when not set to toolbar button
   # more bug fixes
@@ -96,8 +210,8 @@
   # more bug fixes when using frameless window
 
 * v0.8.2 (2024-04-11)
-  + Align Next Panel: Option to start the panel aligned at the bottom left of the 
-    button that runs it
+  + Align Next Panel: Option to start the panel aligned at the bottom left of the
+button that runs it
   # fix: bug in loading panel settings 
   # changed: when adding multiple actions, arrange them vertically by default, 
     not horizontally..
@@ -154,8 +268,8 @@
   + Text line spacing for multiline texts. 1.0 as default.
   + CTRL+C and CTRL+V to copy and paste in edit boxes
   # fixed text alignments (0,1,2, 4,5,6, 8,9,10), changed tooltip to be more clear.
-  # using arrow keys to change values supports different step values, for example 
-    for line spacing the step is 0.1
+  # using arrow keys to change values supports different step values, for example
+for line spacing the step is 0.1
   # Shift + Arrows up/down on edit boxes to change values by 10 times the step.
   # fix text band in multiline text drawing only one rectangle for all lines
   # fix setting incorrect values <=0 for width and height
@@ -225,22 +339,26 @@
   + Undo CTRL+Z
   + Duplicate Selected: CTRL + D. it duplicates in the direction to the mouse cursor.
   + Select All: CTRL + A
-  + Paste Size: SHIFT + CTRL+V to change size of selected object to the size of copied object.
+  + Paste Size: SHIFT + CTRL+V to change size of selected object to the size of copied
+object.
   + Button margin attribute. It doesn't change the size of the button but adds  
     visually an internal margin
   + Button tooltip attribute.
-  + Setting: Arrow keys move by. Specify the amount of pixels to move when using the arrow keys.
-  + Setting: SHIFT+Arrow keys move by. Specify the amount of pixels to move when using the SHiFT+arrow keys.
+  + Setting: Arrow keys move by. Specify the amount of pixels to move when using
+the arrow keys.
+  + Setting: SHIFT+Arrow keys move by. Specify the amount of pixels to move when
+using the SHiFT+arrow keys.
   + x gap and y gap if multiple selected to distribute positions with a gap
   + Menu: Open panels folder in file manager
-  # fix resetting some fields by right clicking on the edit box entering a blank value.
+  # fix resetting some fields by right clicking on the edit box entering a blank
+value.
   # improved snapping
   # many bug fixes here and there
 
 * v0.3.0 (2024-03-01)
-  + Many bug fixes and cleaning some glitches, ready for first pre-release to VIP  
-  + Add Toolbar button: browse icons in Data/toolbar-icons folder and click to insert 
-    them as a button
+  + Many bug fixes and cleaning some glitches, ready for first pre-release to VIP
+  + Add Toolbar button: browse icons in Data/toolbar-icons folder and click to insert
+them as a button
 
 * v0.2.0 (2024-02-27)
   + Settings: Frameless window.

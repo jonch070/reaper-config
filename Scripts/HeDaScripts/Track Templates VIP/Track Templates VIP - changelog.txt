@@ -2,6 +2,45 @@
   Track Templates - Changelog (What's new)     
 ---------------------------------------------------
 
+* v1.8.1 (2025-09-27)
+  # fix infinite inserting. Thanks @Reflected. 
+  + scroll selected tracks into view after inserting. 
+  # fix: stop audio preview playback before inserting.
+
+* v1.8.0 (2025-09-25)
+  + Faster Start in most cases (first loading current directory images only)
+  # fix in always hide labels in directory panel
+  # fix play button in single click mode.
+  # play button changes to stop icon when playing.
+  + make clear that the process of inserting the template has started, it can take a moment to finish depending on the template.
+  + "Filled highlight mouse hover" highlight hover item solid or only border
+  + "Sticker size" setting to define fixed sticker size in pixels. (0 to disable resizing)
+  # Adjustments in label and stickers
+  + "Label alignment..." enter number of alignemnt: 0: left, 1: center, 2: right
+  # optimizations
+
+* v1.7.2 (2025-09-21)
+  # fix drawing issue on directory panel
+  # fix large previews fit
+  # fix some fit image issues when item height larger than 1
+  # fix scrolling after changing directory
+
+* v1.7.1 (2025-09-15) 
+  # fix directories panel
+
+* v1.7.0 (2025-09-12)
+  + Item: Set Height Factor (set to 1.0 to disable custom sizing)
+  + Item: in New Line
+  + Support relative path to REAPER resources path for home directories. for example just set it to "TrackTemplatees" insteadof the full path.
+  + Toolbar: Save button
+  + Settings > Toolbar > Show Save toolbar button
+
+* v1.6.6 (2025-06-25)
+  # fix: better sanitize track names
+
+* v1.6.5 (2025-01-16)
+  + Use Spectacle to capture screen when using Linux. 
+
 * v1.6.4 (2024-05-22)
   + Settings/Use single click: to insert templates with a single click
   + Settings/Images and labels options/Show Large Previews on mouse over. 

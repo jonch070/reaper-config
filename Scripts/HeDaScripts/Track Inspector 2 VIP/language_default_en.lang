@@ -12,6 +12,7 @@ action_names={
 "Adjust track selection (via Surface)",
 "Adjust Track Selection (via Surface)",
 "Change media item selection",
+"Marquee item selection",
 "Add New Track",
 "Insert virtual instrument on new track",
 "Unselect All Tracks",
@@ -24,6 +25,7 @@ action_names={
 "Change MIDI track list selection",
 "Change active MIDI media item",
 "TT: Insert track template",
+"Freeze tracks",
 }
 
 action_update_names={
