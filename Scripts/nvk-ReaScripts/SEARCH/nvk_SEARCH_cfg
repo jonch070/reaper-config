@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "action",
+	SEARCH = "jump to time",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -77,20 +77,96 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
-			id = "Show action list (40605) (Main)",
+			id = "View: Jump (go) to time window (40069) (Main)",
 			type = "action"
 		},
 		{
-			id = "Track: Move tracks up (43647) (Main)",
+			id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
 			type = "action"
+		},
+		{
+			id = "Item: Glue items, ignoring time selection (40362) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: HeDa_Track Templates VIP 3.lua (RS467b12654ba1a556c82db2c3282622a7b0d3f20d) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Insert track from template... (46000) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3:MSaturator (MeldaProduction)",
+			type = "vst3"
 		},
 		{
 			id = "Item: Set snap offset to cursor (40541) (Main)",
 			type = "action"
 		},
 		{
+			id = "JS:MIDI Arpeggiator",
+			type = "jsfx"
+		},
+		{
+			id = "VST3i:Serum 2 (Xfer Records)",
+			type = "vst3i"
+		},
+		{
+			id = "AU:Serum 2 (Xfer Records)",
+			type = "aui"
+		},
+		{
+			id = "Options: Offset overlapping media items vertically (40507) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3:LoAir Mono (Waves)",
+			type = "vst3"
+		},
+		{
+			id = "AU:MTremolo (MeldaProduction)",
+			type = "au"
+		},
+		{
+			id = "VST3:MTremolo (MeldaProduction)",
+			type = "vst3"
+		},
+		{
+			id = "VST3:Air (Sound Particles)",
+			type = "vst3"
+		},
+		{
+			id = "Custom: Duplicate track without contents (098d275fab6f46cabc751dae4732d645) (Main)",
+			type = "action"
+		},
+		{
 			id = "VST3:Neutron 3 (iZotope)",
 			type = "vst3"
+		},
+		{
+			id = "Script: Odedd_Send Buddy.lua (RS39115aaa5f19081d275c9a8dbdf990de23d6d9fa) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST:Little Plate (Soundtoys)",
+			type = "vst"
+		},
+		{
+			id = "AU:Spectral Freezing (Michael Norris)",
+			type = "au"
+		},
+		{
+			id = "AU:MiniDust Trial (Sound Particles)",
+			type = "aui"
+		},
+		{
+			id = "Show action list (40605) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Move tracks up (43647) (Main)",
+			type = "action"
 		},
 		{
 			id = "SWS: Make folder from selected tracks (SWS_MAKEFOLDER) (Main)",
@@ -103,14 +179,6 @@ config = {
 		{
 			id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
 			type = "action"
-		},
-		{
-			id = "VST3:Air (Sound Particles)",
-			type = "vst3"
-		},
-		{
-			id = "AU:Spectral Freezing (Michael Norris)",
-			type = "au"
 		},
 		{
 			id = "Item: Snap stretch markers to grid (41846) (Main)",
@@ -165,10 +233,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
-			type = "action"
-		},
-		{
 			id = "SWS/AW: Insert click track (SWS_AWINSERTCLICKTRK) (Main)",
 			type = "action"
 		},
@@ -191,10 +255,6 @@ config = {
 		{
 			id = "Item properties: Loop item source (40636) (Main)",
 			type = "action"
-		},
-		{
-			id = "VST:Little Plate (Soundtoys)",
-			type = "vst"
 		},
 		{
 			id = "VST3:Co-Producer (Output)",
@@ -249,10 +309,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "AU:Serum 2 (Xfer Records)",
-			type = "aui"
-		},
-		{
 			id = "Item properties: Show media item/take properties (40009) (Main)",
 			type = "action"
 		},
@@ -262,10 +318,6 @@ config = {
 		},
 		{
 			id = "Open selected item source media in media explorer (41623) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDa_Track Templates VIP 3.lua (RS467b12654ba1a556c82db2c3282622a7b0d3f20d) (Main)",
 			type = "action"
 		},
 		{
@@ -417,64 +469,12 @@ config = {
 			type = "vst3"
 		},
 		{
-			id = "AU:MTremolo (MeldaProduction)",
-			type = "au"
-		},
-		{
 			id = "VST3:Tremolator (Soundtoys)",
 			type = "vst3"
 		},
 		{
 			id = "VST3:Density (Sound Particles)",
 			type = "vst3"
-		},
-		{
-			id = "AU:Spectral Blurring (Michael Norris)",
-			type = "au"
-		},
-		{
-			id = "Insert new MIDI item... (40214) (Main)",
-			type = "action"
-		},
-		{
-			id = "Options: Loop new automation items by default (42195) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/PADRE: Envelope LFO generator (PADRE_ENVLFO) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: js_Envelope LFO generator and shaper.lua (RS9f63e44f39e35280383c76dae910159f99e4d6bd) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_FOLDER_ITEMS - Create new folder from selected items or tracks.lua (RSb3f44c3fbf26ce6b97c4d382261dbff5f183d9ec) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:Divisimate 2 (Nextmidi)",
-			type = "aui"
-		},
-		{
-			id = "VST3i:Divisimate 2 (Nextmidi)",
-			type = "vst3i"
-		},
-		{
-			id = "View: Show routing matrix window (40251) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: BirdBird_Global Sampler.lua (RSdbf64708ea8abea46b82a08cabc050148d65176c) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/S&M: Set global startup action (S&M_SET_STARTUP_ACTION) (Main)",
-			type = "action"
-		},
-		{
-			id = "JS:Sustain pedal to note length",
-			type = "jsfx"
 		}
 	},
 	recent_results_amount = 30,

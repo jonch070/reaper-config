@@ -1,0 +1,409 @@
+return {
+-- Table: {1}
+{
+   ["settings"]={2},
+   ["stems"]={3},
+   ["version"]="1.8.4",
+},
+-- Table: {2}
+{
+   ["wait_time"]=5,
+   ["play_sound_when_done"]=false,
+   ["render_setting_groups"]={4},
+   ["renderaction"]=3,
+   ["show_hidden_tracks"]=false,
+   ["overwrite_without_asking"]=true,
+   ["syncmode"]=0,
+   ["reflect_on_add"]=0,
+},
+-- Table: {3}
+{
+   ["Video"]={5},
+   ["2MIX"]={6},
+},
+-- Table: {4}
+{
+   {7},
+   {8},
+   {9},
+   {10},
+   {11},
+   {12},
+   {13},
+   {14},
+   {15},
+},
+-- Table: {5}
+{
+   ["order"]=1,
+   ["render_setting_group"]=8,
+   ["sync"]=-1,
+},
+-- Table: {6}
+{
+   ["order"]=2,
+   ["render_setting_group"]=7,
+   ["sync"]=-1,
+},
+-- Table: {7}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=false,
+   ["override_filename"]=true,
+   ["selected_regions"]={16},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Mix",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={17},
+   ["filename"]="",
+   ["run_actions_after"]=false,
+   ["description"]="MIX",
+   ["actions_to_run"]={18},
+   ["actions_to_run_after"]={19},
+},
+-- Table: {8}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=false,
+   ["override_filename"]=true,
+   ["selected_regions"]={20},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Skinny Stems Dry",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={21},
+   ["filename"]="$project/skinny stems/skinny stems dry/$project - $starttc - Skinny - $stem",
+   ["run_actions_after"]=false,
+   ["description"]="skinny stems dry",
+   ["actions_to_run"]={22},
+   ["actions_to_run_after"]={23},
+},
+-- Table: {9}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=false,
+   ["override_filename"]=true,
+   ["selected_regions"]={24},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Skinny Stems Wet",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={25},
+   ["filename"]="$project/skinny stems/skinny stems wet/$project - $starttc - Skinny - $stem",
+   ["run_actions_after"]=false,
+   ["description"]="skinny stems wet",
+   ["actions_to_run"]={26},
+   ["actions_to_run_after"]={27},
+},
+-- Table: {10}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=false,
+   ["override_filename"]=false,
+   ["selected_regions"]={28},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM wide stems selected dry",
+   ["skip_empty_stems"]=true,
+   ["folder"]="$project/wide stems/wide stems dry",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={29},
+   ["filename"]="$project - $starttc - Wide - $track $stem",
+   ["run_actions_after"]=false,
+   ["description"]="selected stems dry",
+   ["actions_to_run"]={30},
+   ["actions_to_run_after"]={31},
+},
+-- Table: {11}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=false,
+   ["override_filename"]=false,
+   ["selected_regions"]={32},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM wide stems selected wet",
+   ["skip_empty_stems"]=true,
+   ["folder"]="$project/wide stems/wide stems wet",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={33},
+   ["filename"]="$project - $starttc - Wide - $track $stem",
+   ["run_actions_after"]=false,
+   ["description"]="selected stems wet",
+   ["actions_to_run"]={34},
+   ["actions_to_run_after"]={35},
+},
+-- Table: {12}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=false,
+   ["filename"]="",
+   ["selected_regions"]={36},
+   ["select_regions"]=false,
+   ["make_timeSel"]=false,
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={37},
+   ["actions_to_run_after"]={38},
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["actions_to_run"]={39},
+   ["override_filename"]=false,
+},
+-- Table: {13}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=true,
+   ["filename"]="",
+   ["selected_regions"]={40},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Audio Watch Folder",
+   ["skip_empty_stems"]=true,
+   ["folder"]="PFD DB Watch Folder",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={41},
+   ["actions_to_run_after"]={42},
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["actions_to_run"]={43},
+   ["override_filename"]=false,
+},
+-- Table: {14}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=true,
+   ["override_filename"]=false,
+   ["selected_regions"]={44},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Video Watch Folder",
+   ["skip_empty_stems"]=true,
+   ["folder"]="PFD DB Watch Folder",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={45},
+   ["filename"]="",
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["actions_to_run"]={46},
+   ["actions_to_run_after"]={47},
+},
+-- Table: {15}
+{
+   ["run_actions"]=false,
+   ["timeSelEnd"]=0,
+   ["put_in_folder"]=true,
+   ["filename"]="",
+   ["selected_regions"]={48},
+   ["select_regions"]=true,
+   ["make_timeSel"]=false,
+   ["render_preset"]="SM Audio Watch Folder",
+   ["skip_empty_stems"]=true,
+   ["folder"]="PFD DB Watch Folder",
+   ["select_markers"]=false,
+   ["ignore_warnings"]=false,
+   ["timeSelStart"]=0,
+   ["selected_markers"]={49},
+   ["actions_to_run_after"]={50},
+   ["run_actions_after"]=false,
+   ["description"]="",
+   ["actions_to_run"]={51},
+   ["override_filename"]=false,
+},
+-- Table: {16}
+{
+   {52},
+},
+-- Table: {17}
+{
+},
+-- Table: {18}
+{
+},
+-- Table: {19}
+{
+},
+-- Table: {20}
+{
+   {53},
+},
+-- Table: {21}
+{
+},
+-- Table: {22}
+{
+},
+-- Table: {23}
+{
+},
+-- Table: {24}
+{
+   {54},
+},
+-- Table: {25}
+{
+},
+-- Table: {26}
+{
+},
+-- Table: {27}
+{
+},
+-- Table: {28}
+{
+   {55},
+},
+-- Table: {29}
+{
+},
+-- Table: {30}
+{
+},
+-- Table: {31}
+{
+},
+-- Table: {32}
+{
+   {56},
+},
+-- Table: {33}
+{
+},
+-- Table: {34}
+{
+},
+-- Table: {35}
+{
+},
+-- Table: {36}
+{
+},
+-- Table: {37}
+{
+},
+-- Table: {38}
+{
+},
+-- Table: {39}
+{
+},
+-- Table: {40}
+{
+   {57},
+},
+-- Table: {41}
+{
+},
+-- Table: {42}
+{
+},
+-- Table: {43}
+{
+},
+-- Table: {44}
+{
+   {58},
+},
+-- Table: {45}
+{
+},
+-- Table: {46}
+{
+},
+-- Table: {47}
+{
+},
+-- Table: {48}
+{
+},
+-- Table: {49}
+{
+},
+-- Table: {50}
+{
+},
+-- Table: {51}
+{
+},
+-- Table: {52}
+{
+   ["selected"]=true,
+   ["name"]="",
+   ["id"]="R1",
+   ["is_rgn"]=true,
+},
+-- Table: {53}
+{
+   ["selected"]=true,
+   ["name"]="1m25 - Paleo Mind",
+   ["id"]="R22",
+   ["is_rgn"]=true,
+},
+-- Table: {54}
+{
+   ["selected"]=true,
+   ["name"]="1m25 - Paleo Mind",
+   ["id"]="R22",
+   ["is_rgn"]=true,
+},
+-- Table: {55}
+{
+   ["selected"]=true,
+   ["name"]="",
+   ["id"]="R1",
+   ["is_rgn"]=true,
+},
+-- Table: {56}
+{
+   ["selected"]=true,
+   ["name"]="",
+   ["id"]="R1",
+   ["is_rgn"]=true,
+},
+-- Table: {57}
+{
+   ["selected"]=true,
+   ["name"]="",
+   ["id"]="R1",
+   ["is_rgn"]=true,
+},
+-- Table: {58}
+{
+   ["selected"]=true,
+   ["name"]="",
+   ["id"]="R1",
+   ["is_rgn"]=true,
+},
+}
