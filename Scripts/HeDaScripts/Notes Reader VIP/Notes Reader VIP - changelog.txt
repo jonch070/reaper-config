@@ -2,6 +2,9 @@
   Notes Reader - Changelog (What's new)   
 ---------------------------------------------------------------------------------------
 
+* v2.2.7 (2025-11-27)
+  + Grab window to move as an option.
+  
 * v2.2.6 (2025-08-14)
   # fix settings when using multiple instances
   # fix window poistioning when using frameless and linux (wayland fix setting)

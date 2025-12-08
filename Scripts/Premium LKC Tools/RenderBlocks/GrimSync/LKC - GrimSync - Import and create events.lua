@@ -37,12 +37,22 @@ end
 
 
 -- RUN GrimSync ALL
-command = "\"" .. script_path .. "bin\\GrimSync.exe\" --all " .. CUR_SETTINGS.waapi_connection_link .. " " .. network_path
-os.execute(command)
+if platform == "Win32" or platform == "Win64" then
+    local command = "\"" .. script_path .. "bin/GrimSync.exe\" --all " .. CUR_SETTINGS.waapi_connection_link .. " " .. network_path
+    output = os.execute(command) --old
+    -- Msg("OUTPUT:"..command) --old
+else
+    --new
+    local command = "\"" .. script_path .. "bin/venv/bin/python\"  \"" .. script_path .. "bin/GrimSync.py\" --all " .. CUR_SETTINGS.waapi_connection_link .. " " .. network_path
+    local handle = io.popen(command) 
+    local result = handle:read("*a") 
+    handle:close()
+    -- Msg(result)
+end
 
 -- Msg("LINK BLOCKS:" .. tostring(CUR_SETTINGS.link_blocks))
 if CUR_SETTINGS.link_blocks == 1 then
-    log = io.open(script_path .. "bin\\grim_audio_guid_table.json", "r")
+    log = io.open(script_path .. "bin/grim_audio_guid_table.json", "r")
     output = log:read("*all")
 end
 
@@ -54,7 +64,7 @@ if output then
     -- end
 
     -- HANDLE ORIGINALS TABLE
-    local log = io.open(script_path .. "bin\\grim_originals_table.json", "r")
+    local log = io.open(script_path .. "bin/grim_originals_table.json", "r")
     local out = log:read("*all")
     if out then
         originals_table = json.decode(out)

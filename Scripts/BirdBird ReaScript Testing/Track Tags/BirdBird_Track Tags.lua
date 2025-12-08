@@ -1,11 +1,11 @@
 -- @description Track Tags
--- @version 0.6.1
+-- @version 0.6.2
 -- @author BirdBird
 -- @provides
 --    [nomain]libraries/functions.lua
 --    [nomain]libraries/json.lua
 --@changelog
---  + Improve performance
+--  + Fixed random scrollbar appearing in the tag list.
 
 function p(msg) reaper.ShowConsoleMsg(tostring(msg) .. '\n') end
 dofile(reaper.GetResourcePath() .. '/Scripts/ReaTeam Extensions/API/imgui.lua')('0.6')
@@ -31,6 +31,8 @@ local window_resize_flag = reaper.ImGui_Cond_Appearing()
 
 reaper.ImGui_AttachFont(ctx, font)
 reaper.ImGui_AttachFont(ctx, font_big)
+
+local flt_min, flt_max = reaper.ImGui_NumericLimits_Float()
 
 --SETTINGS
 local settings = get_settings()
@@ -344,7 +346,7 @@ function frame()
     local r_size = #tags * (sel_size + 4) + 2; r_size = math.min(max_size, r_size)
     reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_FrameBg(), 0x42424200)
     reaper.ImGui_PushFont(ctx, font_big)
-    if reaper.ImGui_BeginListBox(ctx, '##listbox_2', -1, r_size) then
+    if reaper.ImGui_BeginListBox(ctx, '##listbox_2', 0, -flt_min) then
         reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Separator(), 0xFFFFFF00)
         for i = 1, #tags do
             local tag = tags[i]
@@ -482,7 +484,7 @@ function custom_close_button()
     local max_y = min_y + reaper.ImGui_GetFontSize(ctx)
     reaper.ImGui_PushClipRect(ctx, min_x, min_y, max_x, max_y, false)
     local pos_x, pos_y = reaper.ImGui_GetCursorPos(ctx)
-    reaper.ImGui_SetCursorScreenPos(ctx, max_x - 14, min_y)
+    reaper.ImGui_SetCursorScreenPos(ctx, max_x - 14, min_y - 3)
     if reaper.ImGui_SmallButton(ctx, 'x') then open = false end
     reaper.ImGui_SetCursorPos(ctx, pos_x, pos_y)
     reaper.ImGui_PopClipRect(ctx)

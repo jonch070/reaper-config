@@ -8,7 +8,7 @@ json = loadfile(script_path .. "json_lua" .. separator .. "json.lua")() -- LOAD 
 function Main()
    
     -- LOAD JSON
-    log = io.open(script_path .. "bin\\grim_files_by_blocks.json", "r")
+    log = io.open(script_path .. "bin/grim_files_by_blocks.json", "r")
     if log then
         output = log:read("*all")
         if output then AUDIO_BY_BLOCKS = json.decode(output) end
@@ -42,7 +42,11 @@ function Main()
                         -- Msg('item:'..tostring(item))
                         reaper.SetMediaItemSelected(item, true)
 
-                        prog = prog .. [[del /q "]] .. audio_file .. [[" & ]]
+                        if platform == "Win32" or platform == "Win64" then
+                          prog = prog .. [[del /q "]] .. audio_file .. [[" & ]]
+                        else
+                            prog = prog .. [[rm -f "]] .. audio_file .. [[";]]
+                        end
                     end
                 end
 

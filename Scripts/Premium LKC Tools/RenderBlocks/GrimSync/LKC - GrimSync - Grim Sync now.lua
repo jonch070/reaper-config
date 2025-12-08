@@ -32,7 +32,7 @@ reaper.ClearConsole()
 -- timeout = 5
 function Main() 
     -- GUI.func = nil
-    os.remove(script_path .. [[bin\\GrimSync.log]])
+    os.remove(script_path .. [[bin/GrimSync.log]])
     
     UpdateInfo("SYNC STARTED!")
 
@@ -43,7 +43,7 @@ function Main()
     UpdateInfo("DONE\n\n")
     
     
-    import_list  = io.open(script_path .. [[bin\\grim_audio_to_import.json]], "r")
+    import_list  = io.open(script_path .. [[bin/grim_audio_to_import.json]], "r")
     if import_list then
         UpdateInfo("Starting render proces...")
         -- script_path = info.source:match[[^@?(.*[\/])[^\/]-$]]

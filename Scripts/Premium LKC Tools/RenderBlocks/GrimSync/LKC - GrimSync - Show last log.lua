@@ -9,7 +9,7 @@ script_path = info.source:match[[^@?(.*[\/])[^\/]-$]]
 function Msg(param)
     reaper.ShowConsoleMsg(tostring(param).."\n")
 end
-log = io.open(script_path .. "bin\\GrimSync.log", "r")
+log = io.open(script_path .. "bin/GrimSync.log", "r")
 if log then
 	-- text = GUI.Val("TextEditor1")
 	-- GUI.Val("TextEditor1", text.."\n"..log:read("*all"))

@@ -68,10 +68,22 @@ end
 -- EV_COLOR = reaper.ImGui_ColorConvertNative(EV_COLOR)
 
 -- RUN GrimSync GET
-command = "\"" .. script_path .. "bin\\GrimSync.exe\" --get " .. CUR_SETTINGS.waapi_connection_link
-os.execute(command)
+if platform == "Win32" or platform == "Win64" then
+    local command = "\"" .. script_path .. "bin/GrimSync.exe\" --get " .. CUR_SETTINGS.waapi_connection_link
+    output = os.execute(command) --old
+    -- Msg("OUTPUT:"..command) --old
+else
+    --new
+    local command = "\"" .. script_path .. "bin/venv/bin/python\"  \"" .. script_path .. "bin/GrimSync.py\" --get " .. CUR_SETTINGS.waapi_connection_link
+    local handle = io.popen(command) 
+    local result = handle:read("*a") 
+    handle:close()
+    -- Msg(result)
+end
 
-log = io.open(script_path .. "bin\\GrimSync.log", "r")
+
+
+log = io.open(script_path .. "bin/GrimSync.log", "r")
 output = log:read("*all")
 output = string.match(output, ">>>(.*)<<<")
 log:close()

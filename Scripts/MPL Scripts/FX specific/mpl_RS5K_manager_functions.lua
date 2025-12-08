@@ -422,8 +422,9 @@ if not UI then UI = {} end
     if not loop_t then return end
     local slicecnt = math.min(16,#loop_t)
     
-    DATA:_Seq_Insert()
+    DATA:_Seq_Insert(true)
     DATA:CollectData() -- to refresh note existing data
+    if not DATA.seq.ext then DATA.seq.ext = {} end 
     if not DATA.seq.ext.children then DATA.seq.ext.children = {} end 
     function __f_slice2pattern_modloopt() end
     
@@ -444,7 +445,7 @@ if not UI then UI = {} end
     DATA:_Seq_Print() 
   end  
   --------------------------------------------------------------------------------  
-  function DATA:_Seq_Insert() 
+  function DATA:_Seq_Insert(skip_seqcheck) 
     if not (DATA.MIDIbus and DATA.MIDIbus.tr_ptr and DATA.MIDIbus.valid) then return end
     local track = DATA.MIDIbus.tr_ptr
     local curpos = GetCursorPosition()
@@ -460,12 +461,14 @@ if not UI then UI = {} end
     SetMediaItemInfo_Value( item, 'B_LOOPSRC',1 )
     
     UpdateItemInProject(item)
-    DATA:CollectData_Seq() 
+    DATA:CollectData_Seq(skip_seqcheck) 
   end
   
   -------------------------------------------------------------------------------  
-  function DATA:CollectData_Seq() 
-    if DATA.seq_functionscall ~= true then return end 
+  function DATA:CollectData_Seq(skip_seqcheck) 
+    if skip_seqcheck~=true then
+      if DATA.seq_functionscall ~= true then return end 
+    end
     local retval, cur_projfn = reaper.EnumProjects( -1 ) 
     local last_valid_seq = CopyTable(DATA.seq)
     local item = GetSelectedMediaItem( -1, 0 )
@@ -549,19 +552,7 @@ if not UI then UI = {} end
     if not DATA.seq.ext.swing then DATA.seq.ext.swing = 0 end-- 4.42
     
     
-    -- fill / init
-    for note in spairs(DATA.children) do
-      if not DATA.seq.ext.children[note] then DATA.seq.ext.children[note] = {} end
-      if not DATA.seq.ext.children[note].steps then DATA.seq.ext.children[note].steps = {} end -- this is fixing wrong offset on misssing first step at DATA:_Seq_PrintMIDI(t) --{val=0} 
-      if not DATA.seq.ext.children[note].step_cnt then DATA.seq.ext.children[note].step_cnt = EXT.CONF_seq_defaultstepcnt end--DATA.seq.ext.patternlen end -- init 16 steps 
-      if not DATA.seq.ext.children[note].steplength then DATA.seq.ext.children[note].steplength = 0.25 end -- init 16 steps 
-      
-      for step = 1, DATA.seq.ext.children[note].step_cnt do
-        if not DATA.seq.ext.children[note].steps[step] then DATA.seq.ext.children[note].steps[step] = {} end
-        if not DATA.seq.ext.children[note].steps[step].val then DATA.seq.ext.children[note].steps[step].val = 0 end
-      end
-    end
-    
+    DATA:CollectData_SeqFillEmptySteps() 
     DATA:_Seq_RefreshHScroll()
     DATA:_Seq_CollectTrackEnv()
     
@@ -581,6 +572,19 @@ if not UI then UI = {} end
     end
     
     
+  end
+  -------------------------------------------------------------------------------  
+  function DATA:CollectData_SeqFillEmptySteps() 
+    for note in spairs(DATA.children) do
+      if not DATA.seq.ext.children[note] then DATA.seq.ext.children[note] = {} end
+      if not DATA.seq.ext.children[note].steps then DATA.seq.ext.children[note].steps = {} end -- this is fixing wrong offset on misssing first step at DATA:_Seq_PrintMIDI(t) --{val=0} 
+      if not DATA.seq.ext.children[note].step_cnt then DATA.seq.ext.children[note].step_cnt = EXT.CONF_seq_defaultstepcnt end--DATA.seq.ext.patternlen end -- init 16 steps 
+      if not DATA.seq.ext.children[note].steplength then DATA.seq.ext.children[note].steplength = 0.25 end -- init 16 steps  
+      for step = 1, DATA.seq.ext.children[note].step_cnt do
+        if not DATA.seq.ext.children[note].steps[step] then DATA.seq.ext.children[note].steps[step] = {} end
+        if not DATA.seq.ext.children[note].steps[step].val then DATA.seq.ext.children[note].steps[step].val = 0 end
+      end
+    end
   end
   --------------------------------------------------------------------------------  
   function DATA:_Seq_RefreshHScroll()
@@ -4906,6 +4910,8 @@ end
     local patternlen =DATA.seq.ext.patternlen or 16
     local beats, measures, cml, patstart_fullbeats, cdenom = TimeMap2_timeToBeats( DATA.proj, it_pos_compensated ) 
     local pat_progress = (((curpos_fullbeats-patstart_fullbeats)/patternsteplen)/patternlen)%1
+    
+    testpatternlen= (curpos_fullbeats-patstart_fullbeats)
     local pat_beats_com = patternlen*patternsteplen
     DATA.seq.active_pat_progress = pat_progress
     DATA.seq.active_pat_step = math.floor(pat_progress*patternlen)+1

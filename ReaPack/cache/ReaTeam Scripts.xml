@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9beb6e203f96fe9d1e0fd9fb220ece7fd546ebf8" name="ReaTeam Scripts">
+<index version="1" commit="614bd6912db20a74ed3af4c8403b619e8a102150" name="ReaTeam Scripts">
   <category name="Cursor">
     <reapack name="amagalma_Move edit cursor to closest item edge (among the selected items).lua" type="script" desc="Move edit cursor to closest item edge (among the selected items)">
       <metadata>
@@ -619,18 +619,18 @@
     </reapack>
     <reapack name="cfillion_Interactive ReaScript.lua" type="script" desc="Interactive ReaScript (iReaScript)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Interactive ReaScript (iReaScript)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Interactive ReaScript (iReaScript)\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 This script simulates a {\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop"}}{\fldrslt{\ul
 REPL
 }}}
  shell for Lua ReaScript inside of REAPER, for quickly experimenting code and API functions.\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Screenshot\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Screenshot\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 https://i.imgur.com/RrGfulR.gif\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Main Features\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Main Features\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Autocompletion\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Code history\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Colored output\par}
@@ -642,10 +642,10 @@ REPL
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Scrolling\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Text selection\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Text wrapping for long lines\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Known Issues/Limitations\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Known Issues/Limitations\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Some errors cannot be caught (see https://forum.cockos.com/showthread.php?t=177319)\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This tool cannot be used to open a new GFX window\sa180\par}
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Contributing\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Contributing\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Send patches at {\field{\*\fldinst{HYPERLINK "https://github.com/cfillion/reascripts"}}{\fldrslt{\ul
 https://github.com/cfillion/reascripts
 }}}
@@ -803,6 +803,10 @@ Print the command name when running actions (SWS v2.10+ only)]]></changelog>
         <changelog><![CDATA[Fix autocompletion after an opening parenthesis
 Fix display glitch when pasting tab characters]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/9d7b03cfa766987b637b781a4c3b6b63d1799ca3/Development/cfillion_Interactive%20ReaScript.lua</source>
+      </version>
+      <version name="0.8.5" author="cfillion" time="2025-12-03T20:15:30Z">
+        <changelog><![CDATA[Fix monospaced font selection on macOS ARM]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/0b67dbfe81d97f7d4988bf583142ab7cb33781e4/Development/cfillion_Interactive%20ReaScript.lua</source>
       </version>
     </reapack>
     <reapack name="cfillion_Joystick inspector.lua" type="script" desc="Joystick inspector">
@@ -2493,6 +2497,76 @@ Refactored/reorganized the code for readability]]></changelog>
         <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-text.lua">https://github.com/ReaTeam/ReaScripts/raw/9beb6e203f96fe9d1e0fd9fb220ece7fd546ebf8/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-text.lua</source>
         <source file="talagan_ReaImGui Markdown/reaimgui_markdown.lua">https://github.com/ReaTeam/ReaScripts/raw/9beb6e203f96fe9d1e0fd9fb220ece7fd546ebf8/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown.lua</source>
         <source main="main" file="./talagan_ReaImGui Markdown Demo.lua">https://github.com/ReaTeam/ReaScripts/raw/9beb6e203f96fe9d1e0fd9fb220ece7fd546ebf8/Development/talagan_ReaImGui%20Markdown/actions/talagan_ReaImGui%20Markdown%20Demo.lua</source>
+      </version>
+      <version name="0.1.10" author="Ben 'Talagan' Babut" time="2025-11-22T19:09:26Z">
+        <changelog><![CDATA[- [Optimization] Reduce split function cost (thanks @Arkadata!)]]></changelog>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/ext/imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/ext/imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-ast.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-ast.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-html.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-html.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-test.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-test.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-text.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-text.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown.lua</source>
+        <source main="main" file="./talagan_ReaImGui Markdown Demo.lua">https://github.com/ReaTeam/ReaScripts/raw/8183b6a81462bff3a4e762f988d068febdaec225/Development/talagan_ReaImGui%20Markdown/actions/talagan_ReaImGui%20Markdown%20Demo.lua</source>
+      </version>
+      <version name="0.1.11" author="Ben 'Talagan' Babut" time="2025-11-24T00:47:46Z">
+        <changelog><![CDATA[- [Bug Fix] Correcting offsets for inline elements, could lead to UTF-8 corruption on checkbox click]]></changelog>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/ext/imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/ext/imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-ast.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-ast.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-html.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-html.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-test.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-test.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-text.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-text.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown.lua</source>
+        <source main="main" file="./talagan_ReaImGui Markdown Demo.lua">https://github.com/ReaTeam/ReaScripts/raw/396bb8b421a465c740773d3f34a01cfc8f76323d/Development/talagan_ReaImGui%20Markdown/actions/talagan_ReaImGui%20Markdown%20Demo.lua</source>
+      </version>
+      <version name="0.1.12" author="Ben 'Talagan' Babut" time="2025-11-28T12:29:32Z">
+        <changelog><![CDATA[- [Bug Fix] Potential while(true) if using a space before a quote block]]></changelog>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/ext/imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/ext/imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-ast.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-ast.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-html.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-html.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-test.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-test.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-text.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-text.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown.lua</source>
+        <source main="main" file="./talagan_ReaImGui Markdown Demo.lua">https://github.com/ReaTeam/ReaScripts/raw/b543585069789ed1f2ced852e1b3b938d1d8fa97/Development/talagan_ReaImGui%20Markdown/actions/talagan_ReaImGui%20Markdown%20Demo.lua</source>
+      </version>
+      <version name="0.1.13" author="Ben 'Talagan' Babut" time="2025-11-30T04:51:47Z">
+        <changelog><![CDATA[- [Bug Fix] Fix potential style parameter gardening for dynamic styles (wrong deepCopy implementation)]]></changelog>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/ext/imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/ext/imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-ast.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-ast.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-html.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-html.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-test.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-test.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-text.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-text.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown.lua</source>
+        <source main="main" file="./talagan_ReaImGui Markdown Demo.lua">https://github.com/ReaTeam/ReaScripts/raw/083b857eb397284d09ffd7b75a25fb5da36148aa/Development/talagan_ReaImGui%20Markdown/actions/talagan_ReaImGui%20Markdown%20Demo.lua</source>
+      </version>
+      <version name="0.1.14" author="Ben 'Talagan' Babut" time="2025-12-02T22:22:58Z">
+        <changelog><![CDATA[- [Feature] Better handling of consecutive empty lines
+- [Rework] Reworked default style
+- [Bug Fix] List bullet not sized accordingly to list entry
+- [Bug Fix] Code block would always add empty line at the end]]></changelog>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/ext/imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/ext/imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-ast.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-ast.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-html.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-html.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-test.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-test.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-text.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-text.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown.lua</source>
+        <source main="main" file="./talagan_ReaImGui Markdown Demo.lua">https://github.com/ReaTeam/ReaScripts/raw/6e224790e86a9d3b6b9ca466b23bb7ecf97ad649/Development/talagan_ReaImGui%20Markdown/actions/talagan_ReaImGui%20Markdown%20Demo.lua</source>
+      </version>
+      <version name="0.1.15" author="Ben 'Talagan' Babut" time="2025-12-08T13:38:48Z">
+        <changelog><![CDATA[- [Feature] Text renderer can output with line feeds
+- [Optim] Factorize fonts with context scope instead of widget scope]]></changelog>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/ext/imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/ext/imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-ast.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-ast.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-html.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-html.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-imgui.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-test.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-test.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown/markdown-text.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown/markdown-text.lua</source>
+        <source file="talagan_ReaImGui Markdown/reaimgui_markdown.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/reaimgui_markdown.lua</source>
+        <source main="main" file="./talagan_ReaImGui Markdown Demo.lua">https://github.com/ReaTeam/ReaScripts/raw/614bd6912db20a74ed3af4c8403b619e8a102150/Development/talagan_ReaImGui%20Markdown/actions/talagan_ReaImGui%20Markdown%20Demo.lua</source>
       </version>
     </reapack>
     <reapack name="willdevelop_Read tags (for plugin tag system).lua" type="script" desc="Read tags (for plugin tag system)">
@@ -18462,6 +18536,146 @@ Made by Mordi, Jan 2016]]></changelog>
         <source type="data" file="toolbar_icons/toolbar_one_small_step.png">https://github.com/ReaTeam/ReaScripts/raw/6bd6f2cd905e73bc751fdc42ac860bc2b298884a/MIDI%20Editor/talagan_OneSmallStep/toolbar_icons/toolbar_one_small_step.png</source>
         <source type="data" file="toolbar_icons/toolbar_one_small_step_cleanup.png">https://github.com/ReaTeam/ReaScripts/raw/6bd6f2cd905e73bc751fdc42ac860bc2b298884a/MIDI%20Editor/talagan_OneSmallStep/toolbar_icons/toolbar_one_small_step_cleanup.png</source>
       </version>
+      <version name="0.9.22" author="Ben 'Talagan' Babut" time="2025-11-22T19:09:47Z">
+        <changelog><![CDATA[- [Feature] Note length "auto" mode (thanks, smandrap !)]]></changelog>
+        <source main="main midi_editor">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change input mode - (MIDI).lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20input%20mode%20-%20(MIDI).lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change input mode - KeyboardPress.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20input%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change input mode - KeyboardRelease.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20input%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change input mode - Punch.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20input%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change edit mode - (MIDI).lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20edit%20mode%20-%20(MIDI).lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change edit mode - Write.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20edit%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change edit mode - Navigate.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20edit%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change edit mode - Replace.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20edit%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change edit mode - Insert.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20edit%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change edit mode - Repitch.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20edit%20mode.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len param source - (MIDI).lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20param%20source%20-%20(MIDI).lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len param source - OSS.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20param%20source.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len param source - ItemConf.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20param%20source.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len param source - ProjectGrid.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20param%20source.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len param source - Auto.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20param%20source.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len modifier - (MIDI).lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20modifier%20-%20(MIDI).lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len modifier - Straight.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20modifier.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len modifier - Triplet.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20modifier.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len modifier - Dotted.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20modifier.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len modifier - Modified.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20modifier.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len modifier - Tuplet.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20modifier.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - (MIDI).lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len%20-%20(MIDI).lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - 1_64.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - 1_32.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - 1_16.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - 1_8.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - 1_4.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - 1_2.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Change note len - 1.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Change%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - Commit.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - CommitBack.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - Insert.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - InsertBack.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - Write.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - WriteBack.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - Replace.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - ReplaceBack.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - Navigate.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - NavigateBack.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - Repitch.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Edit Action - RepitchBack.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Edit%20Action.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Increase note len.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Increase%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Decrease note len.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Decrease%20note%20len.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Cleanup helper JSFXs.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Cleanup%20helper%20JSFXs.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Set or remove operation marker.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Set%20or%20remove%20operation%20marker.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Set or remove playback marker.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Set%20or%20remove%20playback%20marker.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Playback.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Playback.lua</source>
+        <source main="main midi_editor" file="talagan_OneSmallStep/actions/talagan_OneSmallStep Toggle armed.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Toggle%20armed.lua</source>
+        <source file="talagan_OneSmallStep/actions/talagan_OneSmallStep Toggle Debugger.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/actions/talagan_OneSmallStep%20Toggle%20Debugger.lua</source>
+        <source file="talagan_OneSmallStep/classes/engine_lib.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/engine_lib.lua</source>
+        <source file="talagan_OneSmallStep/classes/helper_lib.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/helper_lib.lua</source>
+        <source file="talagan_OneSmallStep/classes/input_managers/KeyActivityManager.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/input_managers/KeyActivityManager.lua</source>
+        <source file="talagan_OneSmallStep/classes/input_managers/KeyPressActivityManager.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/input_managers/KeyPressActivityManager.lua</source>
+        <source file="talagan_OneSmallStep/classes/input_managers/KeyReleaseActivityManager.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/input_managers/KeyReleaseActivityManager.lua</source>
+        <source file="talagan_OneSmallStep/classes/lib/MIDIUtils.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/lib/MIDIUtils.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/action_triggers.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/action_triggers.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/articulations.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/articulations.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/debugger.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/debugger.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/defines.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/defines.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/edition.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/edition.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/focus.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/focus.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/markers.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/markers.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/modifiers.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/modifiers.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/notes.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/notes.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/settings.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/settings.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/snap.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/snap.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/target.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/target.lua</source>
+        <source file="talagan_OneSmallStep/classes/modules/time.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/modules/time.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/generic.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/generic.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/insert.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/insert.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/navigate.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/navigate.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/repitch.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/repitch.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/replace.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/replace.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/stretch.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/stretch.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/stuff.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/stuff.lua</source>
+        <source file="talagan_OneSmallStep/classes/operations/write.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/classes/operations/write.lua</source>
+        <source file="talagan_OneSmallStep/images/edit_mode_insert.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/edit_mode_insert.lua</source>
+        <source file="talagan_OneSmallStep/images/edit_mode_navigate.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/edit_mode_navigate.lua</source>
+        <source file="talagan_OneSmallStep/images/edit_mode_repitch.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/edit_mode_repitch.lua</source>
+        <source file="talagan_OneSmallStep/images/edit_mode_replace.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/edit_mode_replace.lua</source>
+        <source file="talagan_OneSmallStep/images/edit_mode_write.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/edit_mode_write.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_1.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_1.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_1_16.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_1_16.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_1_2.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_1_2.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_1_4.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_1_4.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_1_8.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_1_8.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_1_n.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_1_n.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_2.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_2.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_2_3.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_2_3.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_3_2.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_3_2.lua</source>
+        <source file="talagan_OneSmallStep/images/frac_4.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/frac_4.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_compress.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_compress.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_insert_back.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_insert_back.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_insert_forward.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_insert_forward.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_navigate_back.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_navigate_back.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_navigate_forward.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_navigate_forward.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_repitch_back.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_repitch_back.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_repitch_forward.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_repitch_forward.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_replace_back.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_replace_back.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_replace_forward.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_replace_forward.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_stretch.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_stretch.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_stuff.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_stuff.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_unstuff.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_unstuff.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_write_back.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_write_back.lua</source>
+        <source file="talagan_OneSmallStep/images/indicator_write_forward.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/indicator_write_forward.lua</source>
+        <source file="talagan_OneSmallStep/images/input_mode_action.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/input_mode_action.lua</source>
+        <source file="talagan_OneSmallStep/images/input_mode_keyboard_press.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/input_mode_keyboard_press.lua</source>
+        <source file="talagan_OneSmallStep/images/input_mode_keyboard_release.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/input_mode_keyboard_release.lua</source>
+        <source file="talagan_OneSmallStep/images/input_mode_pedal.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/input_mode_pedal.lua</source>
+        <source file="talagan_OneSmallStep/images/marker.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/marker.lua</source>
+        <source file="talagan_OneSmallStep/images/note_1.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_1.lua</source>
+        <source file="talagan_OneSmallStep/images/note_1_16.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_1_16.lua</source>
+        <source file="talagan_OneSmallStep/images/note_1_2.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_1_2.lua</source>
+        <source file="talagan_OneSmallStep/images/note_1_32.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_1_32.lua</source>
+        <source file="talagan_OneSmallStep/images/note_1_4.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_1_4.lua</source>
+        <source file="talagan_OneSmallStep/images/note_1_64.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_1_64.lua</source>
+        <source file="talagan_OneSmallStep/images/note_1_8.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_1_8.lua</source>
+        <source file="talagan_OneSmallStep/images/note_dotted.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_dotted.lua</source>
+        <source file="talagan_OneSmallStep/images/note_highlighting.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_highlighting.lua</source>
+        <source file="talagan_OneSmallStep/images/note_len_mode_auto.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_len_mode_auto.lua</source>
+        <source file="talagan_OneSmallStep/images/note_len_mode_inote.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_len_mode_inote.lua</source>
+        <source file="talagan_OneSmallStep/images/note_len_mode_oss.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_len_mode_oss.lua</source>
+        <source file="talagan_OneSmallStep/images/note_len_mode_pgrid.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_len_mode_pgrid.lua</source>
+        <source file="talagan_OneSmallStep/images/note_modified.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_modified.lua</source>
+        <source file="talagan_OneSmallStep/images/note_triplet.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_triplet.lua</source>
+        <source file="talagan_OneSmallStep/images/note_tuplet.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/note_tuplet.lua</source>
+        <source file="talagan_OneSmallStep/images/playback.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/playback.lua</source>
+        <source file="talagan_OneSmallStep/images/settings.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/settings.lua</source>
+        <source file="talagan_OneSmallStep/images/snap.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/snap.lua</source>
+        <source file="talagan_OneSmallStep/images/snap_btn_ibounds.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/snap_btn_ibounds.lua</source>
+        <source file="talagan_OneSmallStep/images/snap_btn_igrid.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/snap_btn_igrid.lua</source>
+        <source file="talagan_OneSmallStep/images/snap_btn_note.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/snap_btn_note.lua</source>
+        <source file="talagan_OneSmallStep/images/snap_btn_pgrid.lua">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/images/snap_btn_pgrid.lua</source>
+        <source type="effect" file="talagan_OneSmallStep/One Small Step Helper.jsfx">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/One%20Small%20Step%20Helper.jsfx</source>
+        <source type="data" file="toolbar_icons/toolbar_one_small_step.png">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/toolbar_icons/toolbar_one_small_step.png</source>
+        <source type="data" file="toolbar_icons/toolbar_one_small_step_cleanup.png">https://github.com/ReaTeam/ReaScripts/raw/b12b669f0b231c25a0d6f64336cbb896a7ebbcce/MIDI%20Editor/talagan_OneSmallStep/toolbar_icons/toolbar_one_small_step_cleanup.png</source>
+      </version>
     </reapack>
     <reapack name="talagan_Scroll TCP to track currently edited in active MIDI editor.lua" type="script" desc="Scroll TCP to track currently edited in active MIDI editor">
       <metadata>
@@ -25019,34 +25233,6 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/0587d7eec84218a80733a07ff1e97442f7cd39db/Various/amagalma_Smart%20contextual%20zoom.lua</source>
       </version>
     </reapack>
-    <reapack name="amagalma_Smooth scroll view left.eel" type="script" desc="amagalma_Smooth scroll view left">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Scrolls smoothly the view to the left by user defined velocity and scroll percentage\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.0" author="amagalma" time="2017-04-13T18:38:36Z">
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/bab12e843c68a67c42fa7a954c082b719ec4b2d7/Various/amagalma_Smooth%20scroll%20view%20left.eel</source>
-      </version>
-    </reapack>
-    <reapack name="amagalma_Smooth scroll view right.eel" type="script" desc="amagalma_Smooth scroll view right">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Scrolls smoothly the view to the right by user defined velocity and scroll percentage\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.0" author="amagalma" time="2017-04-13T18:33:36Z">
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/96ad93b4cd2b6b364e9edc2443bdcf127da301b1/Various/amagalma_Smooth%20scroll%20view%20right.eel</source>
-      </version>
-    </reapack>
     <reapack name="amagalma_Spectral Edits Preset System.lua" type="script" desc="Spectral Edits Preset System">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -29957,6 +30143,39 @@ Fix SWS Startup / Lokasenna Radial Menu bug]]></changelog>
         <source file="talagan_Reannotate/widgets/sticker_picker.lua">https://github.com/ReaTeam/ReaScripts/raw/11235e05735271bfac500ac679dfccaab21cd273/Various/talagan_Reannotate/widgets/sticker_picker.lua</source>
         <source main="main" file="talagan_Reannotate Quick Preview.lua">https://github.com/ReaTeam/ReaScripts/raw/11235e05735271bfac500ac679dfccaab21cd273/Various/talagan_Reannotate/actions/talagan_Reannotate%20Quick%20Preview.lua</source>
       </version>
+      <version name="0.4.3" author="Ben 'Talagan' Babut" time="2025-12-03T12:38:14Z">
+        <changelog><![CDATA[- [Feature] The markdown stylesheet is now customizable
+- [Feature] UI Font size is now customizable
+- [Feature] Note editor's width is now remembered
+- [Bug Fix] Tooltips with vertical scrollbars could affect the layout of other tooltips shown immediately after
+- [Rework] Moved project notes to the transport zone instead of the time ruler (will be used for regions / markers ?)
+- [Rework] Optimizations]]></changelog>
+        <source file="talagan_Reannotate/ext/dependencies.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/ext/dependencies.lua</source>
+        <source file="talagan_Reannotate/ext/imgui.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/ext/imgui.lua</source>
+        <source file="talagan_Reannotate/ext/json.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/ext/json.lua</source>
+        <source file="talagan_Reannotate/classes/app_context.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/app_context.lua</source>
+        <source file="talagan_Reannotate/classes/arrange_view_watcher.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/arrange_view_watcher.lua</source>
+        <source file="talagan_Reannotate/classes/color.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/color.lua</source>
+        <source file="talagan_Reannotate/classes/launch_context.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/launch_context.lua</source>
+        <source file="talagan_Reannotate/classes/mem_cache.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/mem_cache.lua</source>
+        <source file="talagan_Reannotate/classes/mouse_observer.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/mouse_observer.lua</source>
+        <source file="talagan_Reannotate/classes/notes.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/notes.lua</source>
+        <source file="talagan_Reannotate/classes/sticker.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/classes/sticker.lua</source>
+        <source file="talagan_Reannotate/images/settings.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/images/settings.lua</source>
+        <source file="talagan_Reannotate/modules/checkbox_helper.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/modules/checkbox_helper.lua</source>
+        <source file="talagan_Reannotate/modules/debug.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/modules/debug.lua</source>
+        <source file="talagan_Reannotate/modules/defines.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/modules/defines.lua</source>
+        <source file="talagan_Reannotate/modules/reaper_ext.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/modules/reaper_ext.lua</source>
+        <source file="talagan_Reannotate/modules/settings.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/modules/settings.lua</source>
+        <source file="talagan_Reannotate/modules/unit_tests.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/modules/unit_tests.lua</source>
+        <source file="talagan_Reannotate/widgets/note_editor.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/widgets/note_editor.lua</source>
+        <source file="talagan_Reannotate/widgets/overlay_canvas.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/widgets/overlay_canvas.lua</source>
+        <source file="talagan_Reannotate/widgets/quick_preview_overlay.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/widgets/quick_preview_overlay.lua</source>
+        <source file="talagan_Reannotate/widgets/settings_editor.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/widgets/settings_editor.lua</source>
+        <source file="talagan_Reannotate/widgets/sticker_editor.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/widgets/sticker_editor.lua</source>
+        <source file="talagan_Reannotate/widgets/sticker_picker.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/widgets/sticker_picker.lua</source>
+        <source main="main" file="talagan_Reannotate Quick Preview.lua">https://github.com/ReaTeam/ReaScripts/raw/0503eb587ff55031a3c1bffea3ba550038dfaf40/Various/talagan_Reannotate/actions/talagan_Reannotate%20Quick%20Preview.lua</source>
+      </version>
     </reapack>
     <reapack name="talagan_Spectracular.lua" type="script" desc="Spectracular ! Spectrogram binocular for REAPER">
       <metadata>
@@ -30636,6 +30855,88 @@ Streamable link
     </reapack>
   </category>
   <category name="View">
+    <reapack name="amagalma_Scroll the arrange view to center the middle of the track lane or envelope under the mouse cursor.lua" type="script" desc="Scroll the arrange view to center the middle of the track lane or envelope under the mouse cursor">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-12-03T10:08:28Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/5b31e87b5944510344243cebd0306bfe03ebd497/View/amagalma_Scroll%20the%20arrange%20view%20to%20center%20the%20middle%20of%20the%20track%20lane%20or%20envelope%20under%20the%20mouse%20cursor.lua</source>
+      </version>
+      <version name="1.01" author="amagalma" time="2025-12-03T10:37:28Z">
+        <changelog><![CDATA[Fix for when only one lane is visible and has the maximum size]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/d9079508e639bbdcd3b50d5770ce887a6d980a09/View/amagalma_Scroll%20the%20arrange%20view%20to%20center%20the%20middle%20of%20the%20track%20lane%20or%20envelope%20under%20the%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Scroll the arrange view to the top of the track lane or envelope under the mouse cursor.lua" type="script" desc="Scroll the arrange view to the top of the track lane or envelope under the mouse cursor">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-12-03T09:38:40Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/a4639c7fd67cd4c7c163981649b21bc2defba461/View/amagalma_Scroll%20the%20arrange%20view%20to%20the%20top%20of%20the%20track%20lane%20or%20envelope%20under%20the%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Smooth scroll arrange view 1 measure left.lua" type="script" desc="Smooth scroll arrange view 1 measure left">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-12-04T21:38:11Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/56854caacdb218cc69a91d1bc6ca0ca39ecfeb8c/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20left.lua</source>
+        <source main="main" file="amagalma_Smooth scroll arrange view 2 measures left.lua">https://github.com/ReaTeam/ReaScripts/raw/56854caacdb218cc69a91d1bc6ca0ca39ecfeb8c/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20left.lua</source>
+        <source main="main" file="amagalma_Smooth scroll arrange view 4 measures left.lua">https://github.com/ReaTeam/ReaScripts/raw/56854caacdb218cc69a91d1bc6ca0ca39ecfeb8c/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20left.lua</source>
+        <source main="main" file="amagalma_Smooth scroll arrange view 8 measures left.lua">https://github.com/ReaTeam/ReaScripts/raw/56854caacdb218cc69a91d1bc6ca0ca39ecfeb8c/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20left.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Smooth scroll arrange view 1 measure right.lua" type="script" desc="Smooth scroll arrange view 1 measure right">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-12-04T21:39:12Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/658da5dfc9dabd79b3de4486bd21281b263a188d/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20right.lua</source>
+        <source main="main" file="amagalma_Smooth scroll arrange view 2 measures right.lua">https://github.com/ReaTeam/ReaScripts/raw/658da5dfc9dabd79b3de4486bd21281b263a188d/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20right.lua</source>
+        <source main="main" file="amagalma_Smooth scroll arrange view 4 measures right.lua">https://github.com/ReaTeam/ReaScripts/raw/658da5dfc9dabd79b3de4486bd21281b263a188d/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20right.lua</source>
+        <source main="main" file="amagalma_Smooth scroll arrange view 8 measures right.lua">https://github.com/ReaTeam/ReaScripts/raw/658da5dfc9dabd79b3de4486bd21281b263a188d/View/amagalma_Smooth%20scroll%20arrange%20view%201%20measure%20right.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Smooth scroll arrange view left.lua" type="script" desc="Smooth scroll arrange view left">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-12-03T11:51:39Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/02ecc36ae9c5b90acc27ab7c121da8def5d7ec6c/View/amagalma_Smooth%20scroll%20arrange%20view%20left.lua</source>
+      </version>
+      <version name="1.01" author="amagalma" time="2025-12-03T12:32:08Z">
+        <changelog><![CDATA[Auto-terminate and re-run script if shortcut key is held down]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/ea7260ebd1742c787b1b7bfbf5cf1075a7015b90/View/amagalma_Smooth%20scroll%20arrange%20view%20left.lua</source>
+      </version>
+      <version name="1.02" author="amagalma" time="2025-12-04T07:47:29Z">
+        <changelog><![CDATA[No undo point creation when the view is already at the start of the project]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/6d3defc583f2d83d9df8a5c81bc106730e45a92d/View/amagalma_Smooth%20scroll%20arrange%20view%20left.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Smooth scroll arrange view right.lua" type="script" desc="Smooth scroll arrange view right">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-12-03T12:07:24Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/e1c95458f0b03d5440933548186cf924eed6d658/View/amagalma_Smooth%20scroll%20arrange%20view%20right.lua</source>
+      </version>
+      <version name="1.01" author="amagalma" time="2025-12-03T12:33:03Z">
+        <changelog><![CDATA[Auto-terminate and re-run script if shortcut key is held down]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/2a85dfe2b0ed0ea44bd9bc1babaee0cf066d66a6/View/amagalma_Smooth%20scroll%20arrange%20view%20right.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Smooth scroll view Settings.lua" type="script" desc="Smooth scroll arrange view settings">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2025-12-03T12:14:55Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/99499dd0206f76a01a180fd6f6223940864e0557/View/amagalma_Smooth%20scroll%20view%20Settings.lua</source>
+      </version>
+      <version name="1.01" author="amagalma" time="2025-12-03T12:25:04Z">
+        <changelog><![CDATA[Do not accept a maximum duration that is less or equal to 31ms (one defer cycle)]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/dfec30e19f00cbce332554496771ff8205bc486e/View/amagalma_Smooth%20scroll%20view%20Settings.lua</source>
+      </version>
+    </reapack>
     <reapack name="amagalma_Zoom to current region (where edit cursor is).lua" type="script" desc="Zoom to current region (where edit cursor is)">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}

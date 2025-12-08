@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="zaibuyidao Scripts" commit="bee96edc1ba5bcfbe97bd48c180ae013aeb8ef1d">
+<index version="1" name="zaibuyidao Scripts" commit="176209a13c751e203772f05f4fc878dad89d1da7">
   <category name="Development">
     <reapack name="Lokasenna_GUI library.lua" type="script" desc="Get Lokasenna_GUI library">
       <metadata>
@@ -279,6 +279,67 @@
         <source file="Lokasenna_GUI Library/Classes/Class - Window.lua">https://github.com/zaibuyidao/ReaScripts/raw/30911a6cbcceb554142429666c0fbe5367a670f0/Development/Lokasenna_GUI%20Library/Classes/Class%20-%20Window.lua</source>
         <source file="Lokasenna_GUI Library/Core.lua">https://github.com/zaibuyidao/ReaScripts/raw/30911a6cbcceb554142429666c0fbe5367a670f0/Development/Lokasenna_GUI%20Library/Core.lua</source>
         <source file="Lokasenna_GUI Library/Modules/Window - GetUserInputs.lua">https://github.com/zaibuyidao/ReaScripts/raw/30911a6cbcceb554142429666c0fbe5367a670f0/Development/Lokasenna_GUI%20Library/Modules/Window%20-%20GetUserInputs.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Games">
+    <reapack name="Blocks DS.lua" type="script" desc="Blocks DS">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 A classic falling block puzzle game for REAPER. Style: DS / Classic mechanics. Requires JS_ReaScriptAPI & SWS Extension\par}
+}
+]]></description>
+        <link rel="website">https://www.soundengine.cn/u/zaibuyidao</link>
+        <link rel="website">https://github.com/zaibuyidao/ReaScripts</link>
+        <link rel="donation">http://www.paypal.me/zaibuyidao</link>
+      </metadata>
+      <version name="1.0" author="zaibuyidao" time="2025-11-30T16:57:24Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/f6c856113ed32c5444ee626f8bb2ebc2a3500cd7/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/f6c856113ed32c5444ee626f8bb2ebc2a3500cd7/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.1" author="zaibuyidao" time="2025-12-01T14:44:50Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/76df47e0919c9bfce523c4ee763323b81f7b2a56/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/76df47e0919c9bfce523c4ee763323b81f7b2a56/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.2" author="zaibuyidao" time="2025-12-01T15:00:32Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/6dc367840ae8631983e2797ca6ce4e889ab7e920/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/6dc367840ae8631983e2797ca6ce4e889ab7e920/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.3" author="zaibuyidao" time="2025-12-02T13:37:21Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/6f8ea12239ca33e3f9e3ac5f1e42ae79612759ec/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/6f8ea12239ca33e3f9e3ac5f1e42ae79612759ec/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-12-02T15:16:56Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/b0ce5c01bb6c9fd1dcd753ff15c9274b0c0ac401/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/b0ce5c01bb6c9fd1dcd753ff15c9274b0c0ac401/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.5" author="zaibuyidao" time="2025-12-03T13:32:16Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/8112a369b14336a6841057752cf5f4a17e874e34/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/8112a369b14336a6841057752cf5f4a17e874e34/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.6" author="zaibuyidao" time="2025-12-04T15:34:25Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/72e6f6f724ed74eda89484754c20a9e924b5fb15/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/72e6f6f724ed74eda89484754c20a9e924b5fb15/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.7" author="zaibuyidao" time="2025-12-04T15:51:56Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/d9e27c0356e2b222b2bba3af72238bbfe637331a/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/d9e27c0356e2b222b2bba3af72238bbfe637331a/Games/Blocks%20DS/lib/utils.lua</source>
+      </version>
+      <version name="1.0.8" author="zaibuyidao" time="2025-12-04T15:55:51Z">
+        <changelog><![CDATA[New Script]]></changelog>
+        <source main="main" file="Blocks DS/zaibuyidao_Blocks DS.lua">https://github.com/zaibuyidao/ReaScripts/raw/30d674d3bc6e92edcffa4c4b34a12a1120a0e03e/Games/Blocks%20DS/zaibuyidao_Blocks%20DS.lua</source>
+        <source file="Blocks DS/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/30d674d3bc6e92edcffa4c4b34a12a1120a0e03e/Games/Blocks%20DS/lib/utils.lua</source>
       </version>
     </reapack>
   </category>
@@ -7758,6 +7819,10 @@ Added mode selection:
         <changelog><![CDATA[Brand new REAPER: 7.52, SWS: 2.14.0.7]]></changelog>
         <source>https://github.com/zaibuyidao/ReaScripts/raw/cb40b6025d97acfd3b260db3d5e49aaeb606c8b8/Translations/Chinese%20(Simplified).ReaperLangPack</source>
       </version>
+      <version name="7.55" author="zaibuyidao" time="2025-12-03T03:11:07Z">
+        <changelog><![CDATA[Brand new REAPER: 7.55, SWS: 2.14.0.7]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/9bf14ea2f55329bb9f4aae29309bdaab5a371677/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
     </reapack>
     <reapack name="Chinese (Traditional).ReaperLangPack" type="langpack" desc="Chinese Traditional (繁體中文)">
       <metadata>
@@ -7842,6 +7907,10 @@ Added mode selection:
       <version name="7.52" author="zaibuyidao" time="2025-11-03T03:21:02Z">
         <changelog><![CDATA[Brand new REAPER: 7.52, SWS: 2.14.0.7]]></changelog>
         <source>https://github.com/zaibuyidao/ReaScripts/raw/cb40b6025d97acfd3b260db3d5e49aaeb606c8b8/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.55" author="zaibuyidao" time="2025-12-03T03:11:07Z">
+        <changelog><![CDATA[Brand new REAPER: 7.55, SWS: 2.14.0.7]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/9bf14ea2f55329bb9f4aae29309bdaab5a371677/Translations/Chinese%20(Traditional).ReaperLangPack</source>
       </version>
     </reapack>
   </category>
@@ -9241,6 +9310,39 @@ Other detailed improvements and bug fixes.]]></changelog>
         <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track.lua</source>
         <source file="Advanced Solo/lib/speaker.cur">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/lib/speaker.cur</source>
         <source file="Advanced Solo/lib/serpent.lua">https://github.com/zaibuyidao/ReaScripts/raw/d98dba3b95c568ce5ef99940bcd2c002861632f3/Various/Advanced%20Solo/lib/serpent.lua</source>
+      </version>
+      <version name="1.0.4" author="zaibuyidao" time="2025-11-23T14:38:06Z">
+        <changelog><![CDATA[# Other detailed improvements and bug fixes.]]></changelog>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from First Selected Item.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20First%20Selected%20Item.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Item Without Moving Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Item%20Without%20Moving%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo MIDI Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20MIDI%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo MIDI Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20MIDI%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo Note from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Note%20from%20Edit%20Cursor.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Hold to Solo Note from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Note%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Edit Cursor (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Edit%20Cursor%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Mouse Position (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Mouse%20Position%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track Without Moving Edit Cursor (Exclude Item Selection).lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20Without%20Moving%20Edit%20Cursor%20(Exclude%20Item%20Selection).lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Hold to Solo Track Without Moving Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Hold%20to%20Solo%20Track%20Without%20Moving%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from First Selected Item.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20First%20Selected%20Item.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo MIDI Item from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20MIDI%20Item%20from%20Edit%20Cursor.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo MIDI Item from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20MIDI%20Item%20from%20Mouse%20Position.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo Note from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Note%20from%20Edit%20Cursor.lua</source>
+        <source main="midi_editor" file="Advanced Solo/zaibuyidao_Instant Solo Note from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Note%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Track from Edit Cursor.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Track%20from%20Edit%20Cursor.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Instant Solo Track from Mouse Position.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Instant%20Solo%20Track%20from%20Mouse%20Position.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo Automatically for Selected Tracks.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20Automatically%20for%20Selected%20Tracks.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo for Selected Tracks or Track Under Mouse.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Selected%20Tracks%20or%20Track%20Under%20Mouse.lua</source>
+        <source main="main" file="Advanced Solo/zaibuyidao_Toggle Solo for Selected Tracks.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Selected%20Tracks.lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track (Settings).lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track%20(Settings).lua</source>
+        <source main="main midi_editor" file="Advanced Solo/zaibuyidao_Toggle Solo for Specific Track.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/zaibuyidao_Toggle%20Solo%20for%20Specific%20Track.lua</source>
+        <source file="Advanced Solo/lib/speaker.cur">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/lib/speaker.cur</source>
+        <source file="Advanced Solo/lib/serpent.lua">https://github.com/zaibuyidao/ReaScripts/raw/543073accda5f7b134da373abfec441a392f2fdb/Various/Advanced%20Solo/lib/serpent.lua</source>
       </version>
     </reapack>
     <reapack name="Articulation Map Bundle.lua" type="script" desc="Articulation Map Bundle">
@@ -15433,6 +15535,107 @@ Support reaper_soundmole-x64.dll v0.0.5]]></changelog>
         <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/bee96edc1ba5bcfbe97bd48c180ae013aeb8ef1d/Various/Soundmole/data/ucs.csv</source>
         <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/bee96edc1ba5bcfbe97bd48c180ae013aeb8ef1d/Various/Soundmole/data/icons.otf</source>
         <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/bee96edc1ba5bcfbe97bd48c180ae013aeb8ef1d/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.119" author="zaibuyidao" time="2025-11-30T09:06:18Z">
+        <changelog><![CDATA[Added support for dragging to reorder items.
+Support reaper_soundmole-x64.dll v0.0.5]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/8eb7375fa48c95fabc77528d7b3272cf2d2be14e/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.120" author="zaibuyidao" time="2025-11-30T10:56:03Z">
+        <changelog><![CDATA[Added previous and next navigation for search history.
+Support reaper_soundmole-x64.dll v0.0.5]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/5c1c8b80c08255d70b908e147667d9e1013c9d3e/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.121" author="zaibuyidao" time="2025-12-06T15:53:44Z">
+        <changelog><![CDATA[Fixed a bug where filenames containing special characters (e.g., ##) caused the file list text to disappear and waveforms to fail rendering.
+Disabled ImGui default keyboard navigation to resolve arrow key shortcut conflicts.
+Optimized PeekTree list interaction with new visual indicators during dragging.
+Optimized playback control with a new "Jump to Start" feature (restarts playback if playing, resets cursor if stopped).
+Optimized file browsing by automatically hiding system folders and the Recycle Bin.
+Support reaper_soundmole-x64.dll v0.0.6]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/2e763263390db07490cc2388100f633f3794ff74/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.122" author="zaibuyidao" time="2025-12-07T05:33:54Z">
+        <changelog><![CDATA[Added visual tooltips when adjusting Font Size (Ctrl+Wheel) and Row Height (Ctrl+Shift+Wheel).
+Zooming the preview waveform no longer incorrectly scales the waveforms in the file list.
+Support reaper_soundmole-x64.dll v0.0.6]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/e699d7766887df6eec149be8a56f9e3e6a8e03fc/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.123" author="zaibuyidao" time="2025-12-07T14:52:39Z">
+        <changelog><![CDATA[Optimized search logic to support Boolean operators, anchors, and quoted exact matching, while hiding syntax control words in the thesaurus display.
+Support reaper_soundmole-x64.dll v0.0.6]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/dd6b1759de0944fad502ce40e05351746d5ddce6/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.124" author="zaibuyidao" time="2025-12-07T16:57:09Z">
+        <changelog><![CDATA[Added waveform color mode options (Monochrome, Dynamic Alpha, Spectral Gradient).
+Support reaper_soundmole-x64.dll v0.0.6]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/038fbbf81ed286392ed5849ff5682d5c524d608b/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.125" author="zaibuyidao" time="2025-12-08T03:27:29Z">
+        <changelog><![CDATA[Added waveform color mode options (Monochrome, Dynamic Alpha, Spectral Gradient).
+Support reaper_soundmole-x64.dll v0.0.6]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/ddab72840c3d272eeb05f2f8377f8166e9fc192c/Various/Soundmole/data/odrf_upr_regular.otf</source>
+      </version>
+      <version name="1.0.126" author="zaibuyidao" time="2025-12-08T17:06:37Z">
+        <changelog><![CDATA[Added C++ based asynchronous database loading.
+Support reaper_soundmole-x64.dll v0.0.7]]></changelog>
+        <source main="main" file="Soundmole/zaibuyidao_Soundmole.lua">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/zaibuyidao_Soundmole.lua</source>
+        <source file="Soundmole/lib/core.lua">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/lib/core.lua</source>
+        <source file="Soundmole/lib/utils.lua">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/lib/utils.lua</source>
+        <source file="Soundmole/data/thesaurus.csv">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/data/thesaurus.csv</source>
+        <source file="Soundmole/data/ucs.csv">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/data/ucs.csv</source>
+        <source file="Soundmole/data/icons.otf">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/data/icons.otf</source>
+        <source file="Soundmole/data/icons-regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/data/icons-regular.otf</source>
+        <source file="Soundmole/data/odrf_upr_regular.otf">https://github.com/zaibuyidao/ReaScripts/raw/176209a13c751e203772f05f4fc878dad89d1da7/Various/Soundmole/data/odrf_upr_regular.otf</source>
       </version>
     </reapack>
     <reapack name="UCS Tag Search Rename Bundle.lua" type="script" desc="UCS Tag Search Rename Bundle">
