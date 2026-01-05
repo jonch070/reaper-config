@@ -1,12 +1,13 @@
 config = {
 	MAINWIND = {
 		cursor_x = 8.0,
-		cursor_y = 611.0,
-		h = 611.0,
-		w = 430.0,
-		x = 60.0,
-		y = 87.0
+		cursor_y = 1438.0,
+		h = 1434.0,
+		w = 800.0,
+		x = 151.0,
+		y = 130.0
 	},
+	always_add_new_instance = false,
 	always_on_top = false,
 	apply_theme_on_change = false,
 	auto_update_warning = true,
@@ -43,6 +44,7 @@ config = {
 	custom_track_names = {
 		"Movie"
 	},
+	dock_id = -3,
 	embedded_fx_ui = true,
 	font = "Verdana",
 	font_scales = {
@@ -74,7 +76,7 @@ config = {
 	},
 	new_instance_close = false,
 	scale = 1,
-	section_selected = "Color",
+	section_selected = "Track Panel",
 	startup_actions_first_run = true,
 	style_vars = {
 		
@@ -109,7 +111,7 @@ tabs = {
 					maxValue = 300,
 					minValue = 60,
 					name = "color_TextColorThresh_param",
-					value = 227
+					value = 238
 				},
 				{
 					defValue = 200,
@@ -661,7 +663,7 @@ tabs = {
 					maxValue = 200,
 					minValue = 40,
 					name = "tcp_layA_fx_section_width_param",
-					value = 96
+					value = 118
 				},
 				{
 					defValue = 96,
@@ -670,7 +672,7 @@ tabs = {
 					maxValue = 200,
 					minValue = 40,
 					name = "tcp_layA_sends_section_width_param",
-					value = 96
+					value = 121
 				},
 				{
 					defValue = 16,
@@ -733,7 +735,7 @@ tabs = {
 					maxValue = 1,
 					minValue = 0,
 					name = "tcp_layA_minimal_mode_param",
-					value = 0
+					value = 1
 				},
 				{
 					defValue = 0,
@@ -895,7 +897,7 @@ tabs = {
 					maxValue = 200,
 					minValue = 40,
 					name = "tcp_layB_fx_section_width_param",
-					value = 96
+					value = 40
 				},
 				{
 					defValue = 96,
@@ -904,7 +906,7 @@ tabs = {
 					maxValue = 200,
 					minValue = 40,
 					name = "tcp_layB_sends_section_width_param",
-					value = 96
+					value = 40
 				},
 				{
 					defValue = 16,
@@ -1776,6 +1778,7 @@ tabs = {
 				value = ""
 			}
 		},
+		tcp_edit_layout = "A",
 		track_colors = false
 	}
 }

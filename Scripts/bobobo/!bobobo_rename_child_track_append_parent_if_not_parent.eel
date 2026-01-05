@@ -1,0 +1,31 @@
+/*
+   * ReaScript Name: Rename selected tracks to Folder Parenttrack only if not Folder itself
+   * EEL script for Cockos REAPER
+   * dervied from script by  spk77
+
+   * Licence: GPL v3
+   * Version: 1.0
+   */
+  
+  // Rename selected tracks to Parent_child
+  
+function main() local (sel_track_count, t_i, tr, first_item)
+(
+  (sel_track_count = CountSelectedTracks(0)) ? (
+    t_i = 0;
+    Undo_BeginBlock();
+    loop(sel_track_count,
+      (tr = GetSelectedTrack(0, t_i)) ? (
+         GetTrackname(tr,#trackori);
+         GetTrackName(GetParentTrack(tr),#trackname);
+         GetMediaTrackInfo_Value(tr, "I_FOLDERDEPTH") !== 1 ?  GetSetMediaTrackInfo_String(tr, "P_NAME", strcat( strcat(#trackname,"_"),#trackori), 1);
+//         GetMediaTrackInfo_Value(tr, "I_FOLDERDEPTH") == 1 ?   GetSetMediaTrackInfo_String(tr, "P_NAME", strcat(#trackori,"_BS"), 1);
+      );
+      t_i += 1;
+    );
+    Undo_EndBlock("Rename tracks", -1);
+  ) : ShowConsoleMsg("Please select tracks");
+);
+
+main();
+

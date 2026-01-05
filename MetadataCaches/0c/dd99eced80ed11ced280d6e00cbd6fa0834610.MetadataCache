@@ -5,6 +5,10 @@ F "04-02-2019_1 hook.mp3" 566400 0 1549318324 0
 D s 48000 n 2 l 0:14.137 i 321k
 F "05-02-2019 Structure_2.mp3" 6092160 0 1553797565 0
 D s 48000 n 2 l 2:32.281 i 320k
+F "1 4 7 girl blue riff .mid" 3321 0 1762464529 0
+D p 120 n 1 l 0:55.317
+F "3 4 5 progression.mid" 872 0 1762465073 0
+D p 120 n 1 l 0:23.679
 F "35 second flute Anna Friederike Potengowski.wav" 6226488 0 1641428667 0
 D s 44100 n 1 l 0:35.297 i 32
 F "Air Cmaj7_Run3-glued.wav" 10263166 0 1694479948 0
@@ -15,6 +19,9 @@ D s 48000 n 2 l 1:52.922 i 237k
 F "ASIS Long Screms.wav" 32522518 0 1646429633 0
 D y 2022-03-04 s 48000 n 2 r 1:01:20.217
 D l 1:52.922 i 24
+F "ASIS Long Screms.wav.RPP" 274889 0 1646429590 0
+D d "Do instrumentation  Generate template  Generate sessions   Which solo strings are Hannah vs Roland     File names of temp  ****  Limestone rock stuff audio guide  **  Ask how close to temp  Hannah send?  Credits  Name and instrumentation last few cues  	" p 89 s 48000 n 4
+D l 1:59:10.125
 F "ASIS Long.mp3" 3246720 0 1646428913 0
 D s 48000 n 2 l 1:52.922 i 230k
 F "ASIS Long.wav" 32522518 0 1646428913 0
@@ -35,6 +42,11 @@ D l 0:59.554 i 24
 F "Dmitry Throat showreel.wav" 43760920 0 1712729927 0
 D y 2023-08-22 s 48000 n 2 l 2:31.885
 D i 24
+F FIT_MusicMix_1m25_StereoMix.mp3 6497689 0 1739474138 0
+D t "Paleo Mind" b "Frozen in TIme (Original Motion Picture Soundtrack)" y 2025-02-09 s 48000
+D n 2 l 2:42.356 i 320k m 20/26
+F "Kelp Reverberations binaural 12_07 has some great rhythm.mp3" 27344544 0 1762535041 0
+D s 48000 n 2 l 16:23.000 i 223k
 F ORG1_1m04_1_REBIRTH_01.08.05.12_FullMix.wav 50913220 0 1648582152 0
 D y 2022-03-29 s 48000 n 2 r 1:08:09.607
 D l 2:56.779 i 24
