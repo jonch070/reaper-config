@@ -1,0 +1,42 @@
+config = {
+	MAINWIND = {
+		cursor_x = 8.0,
+		cursor_y = 208.0,
+		h = 208.0,
+		w = 267.0,
+		x = 1675.0,
+		y = 355.0
+	},
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	font = "Verdana",
+	font_scales = {
+		results = 1,
+		search = 1
+	},
+	font_size = 12,
+	font_size_reinit = true,
+	fx_chain = {
+		
+	},
+	keys = {
+		
+	},
+	scale = 1,
+	style_vars = {
+		
+	},
+	tail = 0.0,
+	version = "2.11.0"
+}
+tabs = {
+	default = {
+		default = true,
+		guid = "default",
+		preset_name = "Default"
+	}
+}

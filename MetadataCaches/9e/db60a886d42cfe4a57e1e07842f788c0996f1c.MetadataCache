@@ -11,7 +11,125 @@ F Hp-bisbigliando_stick-A3-mf.wav 1077298 0 1415738524 0
 F Hp-bisbigliando_stick-A4-mf.wav 889808 0 1415738534 0
 F Hp-bisbigliando_stick-A5-mf.wav 549596 0 1415738544 0
 F Hp-bisbigliando_stick-A6-mf.wav 558594 0 1415738552 0
+F Hp-bisbigliando_stick-B1-mf.wav 1792022 0 1415738504 0
+D s 44100 n 1 l 0:20.317 i 16
+F Hp-bisbigliando_stick-B2-mf.wav 1200026 0 1415738514 0
+D s 44100 n 1 l 0:13.605 i 16
+F Hp-bisbigliando_stick-B3-mf.wav 1077298 0 1415738526 0
+D s 44100 n 1 l 0:12.213 i 16
+F Hp-bisbigliando_stick-B4-mf.wav 798946 0 1415738536 0
+D s 44100 n 1 l 0:09.057 i 16
+F Hp-bisbigliando_stick-B5-mf.wav 549596 0 1415738546 0
+D s 44100 n 1 l 0:06.230 i 16
+F Hp-bisbigliando_stick-B6-mf.wav 780822 0 1415738554 0
+D s 44100 n 1 l 0:08.852 i 16
+F Hp-bisbigliando_stick-C#2-mf.wav 1792022 0 1415738504 0
+D s 44100 n 1 l 0:20.317 i 16
+F Hp-bisbigliando_stick-C#3-mf.wav 1200026 0 1415738516 0
+D s 44100 n 1 l 0:13.605 i 16
+F Hp-bisbigliando_stick-C#4-mf.wav 964536 0 1415738528 0
+D s 44100 n 1 l 0:10.935 i 16
+F Hp-bisbigliando_stick-C#5-mf.wav 798946 0 1415738538 0
+D s 44100 n 1 l 0:09.057 i 16
+F Hp-bisbigliando_stick-C#6-mf.wav 549596 0 1415738548 0
+D s 44100 n 1 l 0:06.230 i 16
+F Hp-bisbigliando_stick-C#7-mf.wav 780822 0 1415738556 0
+D s 44100 n 1 l 0:08.852 i 16
+F Hp-bisbigliando_stick-C2-mf.wav 1792022 0 1415738482 0
+D s 44100 n 1 l 0:20.317 i 16
 F Hp-bisbigliando_stick-C3-mf.wav 1200026 0 1415738484 0
 D s 44100 n 1 l 0:13.605 i 16
 F Hp-bisbigliando_stick-C4-mf.wav 964536 0 1415738528 0
 D s 44100 n 1 l 0:10.935 i 16
+F Hp-bisbigliando_stick-C5-mf.wav 798946 0 1415738484 0
+D s 44100 n 1 l 0:09.057 i 16
+F Hp-bisbigliando_stick-C6-mf.wav 549596 0 1415738484 0
+D s 44100 n 1 l 0:06.230 i 16
+F Hp-bisbigliando_stick-C7-mf.wav 780822 0 1415738486 0
+D s 44100 n 1 l 0:08.852 i 16
+F Hp-bisbigliando_stick-D#2-mf.wav 1875014 0 1415738508 0
+D s 44100 n 1 l 0:21.258 i 16
+F Hp-bisbigliando_stick-D#3-mf.wav 1669990 0 1415738518 0
+D s 44100 n 1 l 0:18.933 i 16
+F Hp-bisbigliando_stick-D#4-mf.wav 964536 0 1415738530 0
+D s 44100 n 1 l 0:10.935 i 16
+F Hp-bisbigliando_stick-D#5-mf.wav 830434 0 1415738540 0
+D s 44100 n 1 l 0:09.414 i 16
+F Hp-bisbigliando_stick-D#6-mf.wav 635440 0 1415738550 0
+D s 44100 n 1 l 0:07.204 i 16
+F Hp-bisbigliando_stick-D#7-mf.wav 461794 0 1415738558 0
+D s 44100 n 1 l 0:05.235 i 16
+F Hp-bisbigliando_stick-D2-mf.wav 1792022 0 1415738506 0
+D s 44100 n 1 l 0:20.317 i 16
+F Hp-bisbigliando_stick-D3-mf.wav 1200026 0 1415738518 0
+D s 44100 n 1 l 0:13.605 i 16
+F Hp-bisbigliando_stick-D4-mf.wav 964536 0 1415738530 0
+D s 44100 n 1 l 0:10.935 i 16
+F Hp-bisbigliando_stick-D5-mf.wav 798946 0 1415738538 0
+D s 44100 n 1 l 0:09.057 i 16
+F Hp-bisbigliando_stick-D6-mf.wav 549596 0 1415738548 0
+D s 44100 n 1 l 0:06.230 i 16
+F Hp-bisbigliando_stick-D7-mf.wav 780822 0 1415738556 0
+D s 44100 n 1 l 0:08.852 i 16
+F Hp-bisbigliando_stick-E1-mf.wav 1580804 0 1415738486 0
+D s 44100 n 1 l 0:17.922 i 16
+F Hp-bisbigliando_stick-E2-mf.wav 1875014 0 1415738488 0
+D s 44100 n 1 l 0:21.258 i 16
+F Hp-bisbigliando_stick-E3-mf.wav 1669990 0 1415738488 0
+D s 44100 n 1 l 0:18.933 i 16
+F Hp-bisbigliando_stick-E4-mf.wav 964536 0 1415738488 0
+D s 44100 n 1 l 0:10.935 i 16
+F Hp-bisbigliando_stick-E5-mf.wav 830434 0 1415738490 0
+D s 44100 n 1 l 0:09.414 i 16
+F Hp-bisbigliando_stick-E6-mf.wav 635440 0 1415738490 0
+D s 44100 n 1 l 0:07.204 i 16
+F Hp-bisbigliando_stick-E7-mf.wav 461794 0 1415738490 0
+D s 44100 n 1 l 0:05.235 i 16
+F Hp-bisbigliando_stick-F#1-mf.wav 1580804 0 1415738498 0
+D s 44100 n 1 l 0:17.922 i 16
+F Hp-bisbigliando_stick-F#2-mf.wav 1875014 0 1415738510 0
+D s 44100 n 1 l 0:21.258 i 16
+F Hp-bisbigliando_stick-F#3-mf.wav 1669990 0 1415738522 0
+D s 44100 n 1 l 0:18.933 i 16
+F Hp-bisbigliando_stick-F#4-mf.wav 964536 0 1415738532 0
+D s 44100 n 1 l 0:10.935 i 16
+F Hp-bisbigliando_stick-F#5-mf.wav 830434 0 1415738542 0
+D s 44100 n 1 l 0:09.414 i 16
+F Hp-bisbigliando_stick-F#6-mf.wav 635440 0 1415738550 0
+D s 44100 n 1 l 0:07.204 i 16
+F Hp-bisbigliando_stick-F1-mf.wav 1580804 0 1415738496 0
+D s 44100 n 1 l 0:17.922 i 16
+F Hp-bisbigliando_stick-F2-mf.wav 1875014 0 1415738508 0
+D s 44100 n 1 l 0:21.258 i 16
+F Hp-bisbigliando_stick-F3-mf.wav 1669990 0 1415738520 0
+D s 44100 n 1 l 0:18.933 i 16
+F Hp-bisbigliando_stick-F4-mf.wav 964536 0 1415738532 0
+D s 44100 n 1 l 0:10.935 i 16
+F Hp-bisbigliando_stick-F5-mf.wav 830434 0 1415738540 0
+D s 44100 n 1 l 0:09.414 i 16
+F Hp-bisbigliando_stick-F6-mf.wav 635440 0 1415738550 0
+D s 44100 n 1 l 0:07.204 i 16
+F Hp-bisbigliando_stick-G#1-mf.wav 2025868 0 1415738492 0
+D s 44100 n 1 l 0:22.968 i 16
+F Hp-bisbigliando_stick-G#2-mf.wav 1239440 0 1415738492 0
+D s 44100 n 1 l 0:14.052 i 16
+F Hp-bisbigliando_stick-G#3-mf.wav 1077298 0 1415738494 0
+D s 44100 n 1 l 0:12.213 i 16
+F Hp-bisbigliando_stick-G#4-mf.wav 889808 0 1415738494 0
+D s 44100 n 1 l 0:10.088 i 16
+F Hp-bisbigliando_stick-G#5-mf.wav 549596 0 1415738544 0
+D s 44100 n 1 l 0:06.230 i 16
+F Hp-bisbigliando_stick-G#6-mf.wav 558594 0 1415738494 0
+D s 44100 n 1 l 0:06.332 i 16
+F Hp-bisbigliando_stick-G1-mf.wav 2025868 0 1415738500 0
+D s 44100 n 1 l 0:22.968 i 16
+F Hp-bisbigliando_stick-G2-mf.wav 1239440 0 1415738512 0
+D s 44100 n 1 l 0:14.052 i 16
+F Hp-bisbigliando_stick-G3-mf.wav 1077298 0 1415738522 0
+D s 44100 n 1 l 0:12.213 i 16
+F Hp-bisbigliando_stick-G4-mf.wav 889808 0 1415738534 0
+D s 44100 n 1 l 0:10.088 i 16
+F Hp-bisbigliando_stick-G5-mf.wav 830434 0 1415738542 0
+D s 44100 n 1 l 0:09.414 i 16
+F Hp-bisbigliando_stick-G6-mf.wav 558594 0 1415738552 0
+D s 44100 n 1 l 0:06.332 i 16

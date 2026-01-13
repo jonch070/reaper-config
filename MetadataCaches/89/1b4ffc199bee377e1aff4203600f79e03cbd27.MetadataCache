@@ -1,39 +1,619 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Strings/Viola/tremolo
+F Va-trem-A#3-ff-3c.wav 650514 0 1415743992 0
+D s 44100 n 1 l 0:07.374 i 16
+F Va-trem-A#3-ff-4c.wav 579712 0 1415743994 0
+D s 44100 n 1 l 0:06.572 i 16
+F Va-trem-A#3-mf-3c.wav 590238 0 1415743994 0
+D s 44100 n 1 l 0:06.691 i 16
+F Va-trem-A#3-mf-4c.wav 609832 0 1415743994 0
+D s 44100 n 1 l 0:06.913 i 16
+F Va-trem-A#3-pp-3c.wav 580364 0 1415743996 0
+D s 44100 n 1 l 0:06.579 i 16
+F Va-trem-A#3-pp-4c.wav 620296 0 1415743996 0
+D s 44100 n 1 l 0:07.032 i 16
+F Va-trem-A#4-ff-1c.wav 683826 0 1415743996 0
+D s 44100 n 1 l 0:07.752 i 16
+F Va-trem-A#4-ff-2c.wav 604022 0 1415743998 0
+D s 44100 n 1 l 0:06.847 i 16
+F Va-trem-A#4-ff-3c.wav 655902 0 1415743998 0
+D s 44100 n 1 l 0:07.436 i 16
+F Va-trem-A#4-ff-4c.wav 628276 0 1415743998 0
+D s 44100 n 1 l 0:07.122 i 16
+F Va-trem-A#4-mf-1c.wav 650518 0 1415744000 0
+D s 44100 n 1 l 0:07.374 i 16
+F Va-trem-A#4-mf-2c.wav 638430 0 1415744000 0
+D s 44100 n 1 l 0:07.237 i 16
+F Va-trem-A#4-mf-3c.wav 658446 0 1415744000 0
+D s 44100 n 1 l 0:07.464 i 16
+F Va-trem-A#4-mf-4c.wav 605108 0 1415744002 0
+D s 44100 n 1 l 0:06.860 i 16
+F Va-trem-A#4-pp-1c.wav 630062 0 1415744002 0
+D s 44100 n 1 l 0:07.143 i 16
+F Va-trem-A#4-pp-2c.wav 601820 0 1415744002 0
+D s 44100 n 1 l 0:06.822 i 16
+F Va-trem-A#4-pp-3c.wav 623078 0 1415744004 0
+D s 44100 n 1 l 0:07.063 i 16
+F Va-trem-A#4-pp-4c.wav 608712 0 1415744004 0
+D s 44100 n 1 l 0:06.900 i 16
+F Va-trem-A#5-ff-1c.wav 615172 0 1415744004 0
+D s 44100 n 1 l 0:06.974 i 16
+F Va-trem-A#5-ff-2c.wav 615318 0 1415744004 0
+D s 44100 n 1 l 0:06.975 i 16
+F Va-trem-A#5-mf-1c.wav 616134 0 1415744006 0
+D s 44100 n 1 l 0:06.985 i 16
+F Va-trem-A#5-mf-2c.wav 673792 0 1415744006 0
+D s 44100 n 1 l 0:07.638 i 16
+F Va-trem-A#5-pp-1c.wav 652218 0 1415744006 0
+D s 44100 n 1 l 0:07.394 i 16
+F Va-trem-A#5-pp-2c.wav 636506 0 1415744008 0
+D s 44100 n 1 l 0:07.216 i 16
+F Va-trem-A#6-ff-1c.wav 625594 0 1415744008 0
+D s 44100 n 1 l 0:07.092 i 16
+F Va-trem-A#6-mf-1c.wav 597358 0 1415744008 0
+D s 44100 n 1 l 0:06.772 i 16
+F Va-trem-A#6-pp-1c.wav 585000 0 1415744010 0
+D s 44100 n 1 l 0:06.632 i 16
+F Va-trem-A3-ff-3c.wav 629286 0 1415744010 0
+D s 44100 n 1 l 0:07.134 i 16
+F Va-trem-A3-ff-4c.wav 606012 0 1415744010 0
+D s 44100 n 1 l 0:06.870 i 16
+F Va-trem-A3-mf-3c.wav 645500 0 1415744012 0
+D s 44100 n 1 l 0:07.318 i 16
+F Va-trem-A3-mf-4c.wav 609988 0 1415744012 0
+D s 44100 n 1 l 0:06.915 i 16
+F Va-trem-A3-pp-3c.wav 600618 0 1415744012 0
+D s 44100 n 1 l 0:06.809 i 16
+F Va-trem-A3-pp-4c.wav 632270 0 1415744014 0
+D s 44100 n 1 l 0:07.168 i 16
+F Va-trem-A4-ff-1c.wav 701478 0 1415744014 0
+D s 44100 n 1 l 0:07.952 i 16
+F Va-trem-A4-ff-2c.wav 662930 0 1415744014 0
+D s 44100 n 1 l 0:07.515 i 16
+F Va-trem-A4-ff-3c.wav 664926 0 1415744016 0
+D s 44100 n 1 l 0:07.538 i 16
+F Va-trem-A4-ff-4c.wav 608290 0 1415744016 0
+D s 44100 n 1 l 0:06.896 i 16
+F Va-trem-A4-mf-1c.wav 619268 0 1415744016 0
+D s 44100 n 1 l 0:07.020 i 16
+F Va-trem-A4-mf-2c.wav 622516 0 1415744018 0
+D s 44100 n 1 l 0:07.057 i 16
+F Va-trem-A4-mf-3c.wav 639704 0 1415744018 0
+D s 44100 n 1 l 0:07.252 i 16
+F Va-trem-A4-mf-4c.wav 602700 0 1415744018 0
+D s 44100 n 1 l 0:06.832 i 16
 F Va-trem-A4-pp-1c.wav 670652 0 1415744020 0
 D s 44100 n 1 l 0:07.603 i 16
 F Va-trem-A4-pp-2c.wav 645796 0 1415744020 0
 D s 44100 n 1 l 0:07.321 i 16
+F Va-trem-A4-pp-3c.wav 610744 0 1415744020 0
+D s 44100 n 1 l 0:06.924 i 16
+F Va-trem-A4-pp-4c.wav 618668 0 1415744022 0
+D s 44100 n 1 l 0:07.013 i 16
+F Va-trem-A5-ff-1c.wav 660964 0 1415744022 0
+D s 44100 n 1 l 0:07.493 i 16
+F Va-trem-A5-ff-2c.wav 645854 0 1415744022 0
+D s 44100 n 1 l 0:07.322 i 16
+F Va-trem-A5-mf-1c.wav 626952 0 1415744024 0
+D s 44100 n 1 l 0:07.107 i 16
+F Va-trem-A5-mf-2c.wav 638918 0 1415744024 0
+D s 44100 n 1 l 0:07.243 i 16
 F Va-trem-A5-pp-1c.wav 632504 0 1415744024 0
 D s 44100 n 1 l 0:07.170 i 16
+F Va-trem-A5-pp-2c.wav 630222 0 1415744026 0
+D s 44100 n 1 l 0:07.144 i 16
+F Va-trem-A6-ff-1c.wav 638144 0 1415744026 0
+D s 44100 n 1 l 0:07.234 i 16
+F Va-trem-A6-mf-1c.wav 648398 0 1415744026 0
+D s 44100 n 1 l 0:07.350 i 16
+F Va-trem-A6-pp-1c.wav 605956 0 1415744028 0
+D s 44100 n 1 l 0:06.869 i 16
+F Va-trem-B3-ff-3c.wav 647388 0 1415744028 0
+D s 44100 n 1 l 0:07.339 i 16
+F Va-trem-B3-ff-4c.wav 576592 0 1415744028 0
+D s 44100 n 1 l 0:06.536 i 16
+F Va-trem-B3-mf-3c.wav 623890 0 1415744030 0
+D s 44100 n 1 l 0:07.073 i 16
+F Va-trem-B3-mf-4c.wav 620136 0 1415744030 0
+D s 44100 n 1 l 0:07.030 i 16
+F Va-trem-B3-pp-3c.wav 596028 0 1415744030 0
+D s 44100 n 1 l 0:06.757 i 16
+F Va-trem-B3-pp-4c.wav 577086 0 1415744032 0
+D s 44100 n 1 l 0:06.542 i 16
+F Va-trem-B4-ff-1c.wav 635572 0 1415744032 0
+D s 44100 n 1 l 0:07.205 i 16
+F Va-trem-B4-ff-2c.wav 601158 0 1415744032 0
+D s 44100 n 1 l 0:06.815 i 16
+F Va-trem-B4-ff-3c.wav 675400 0 1415744032 0
+D s 44100 n 1 l 0:07.657 i 16
+F Va-trem-B4-ff-4c.wav 636562 0 1415744034 0
+D s 44100 n 1 l 0:07.216 i 16
+F Va-trem-B4-mf-1c.wav 654574 0 1415744034 0
+D s 44100 n 1 l 0:07.420 i 16
+F Va-trem-B4-mf-2c.wav 612986 0 1415744034 0
+D s 44100 n 1 l 0:06.949 i 16
+F Va-trem-B4-mf-3c.wav 578252 0 1415744036 0
+D s 44100 n 1 l 0:06.555 i 16
+F Va-trem-B4-mf-4c.wav 640358 0 1415744036 0
+D s 44100 n 1 l 0:07.259 i 16
+F Va-trem-B4-pp-1c.wav 573444 0 1415744036 0
+D s 44100 n 1 l 0:06.501 i 16
+F Va-trem-B4-pp-2c.wav 591264 0 1415744038 0
+D s 44100 n 1 l 0:06.703 i 16
+F Va-trem-B4-pp-3c.wav 626434 0 1415744038 0
+D s 44100 n 1 l 0:07.101 i 16
+F Va-trem-B4-pp-4c.wav 599130 0 1415744038 0
+D s 44100 n 1 l 0:06.792 i 16
+F Va-trem-B5-ff-1c.wav 642908 0 1415744040 0
+D s 44100 n 1 l 0:07.288 i 16
+F Va-trem-B5-ff-2c.wav 616340 0 1415744040 0
+D s 44100 n 1 l 0:06.987 i 16
+F Va-trem-B5-mf-1c.wav 664688 0 1415744040 0
+D s 44100 n 1 l 0:07.535 i 16
 F Va-trem-B5-mf-2c.wav 647896 0 1415744042 0
 D s 44100 n 1 l 0:07.345 i 16
 F Va-trem-B5-pp-1c.wav 628288 0 1415744042 0
 D s 44100 n 1 l 0:07.122 i 16
+F Va-trem-B5-pp-2c.wav 623992 0 1415744042 0
+D s 44100 n 1 l 0:07.074 i 16
+F Va-trem-B6-ff-1c.wav 688892 0 1415744044 0
+D s 44100 n 1 l 0:07.810 i 16
+F Va-trem-B6-mf-1c.wav 621836 0 1415744044 0
+D s 44100 n 1 l 0:07.049 i 16
+F Va-trem-B6-pp-1c.wav 629508 0 1415744044 0
+D s 44100 n 1 l 0:07.136 i 16
+F Va-trem-C#3-ff-4c.wav 618154 0 1415744044 0
+D s 44100 n 1 l 0:07.008 i 16
+F Va-trem-C#3-mf-4c.wav 649398 0 1415744046 0
+D s 44100 n 1 l 0:07.362 i 16
+F Va-trem-C#3-pp-4c.wav 597502 0 1415744046 0
+D s 44100 n 1 l 0:06.773 i 16
+F Va-trem-C#4-ff-3c.wav 738494 0 1415744046 0
+D s 44100 n 1 l 0:08.372 i 16
+F Va-trem-C#4-ff-4c.wav 624678 0 1415744048 0
+D s 44100 n 1 l 0:07.082 i 16
+F Va-trem-C#4-mf-3c.wav 637094 0 1415744048 0
+D s 44100 n 1 l 0:07.222 i 16
+F Va-trem-C#4-mf-4c.wav 612766 0 1415744048 0
+D s 44100 n 1 l 0:06.946 i 16
+F Va-trem-C#4-pp-3c.wav 614672 0 1415744050 0
+D s 44100 n 1 l 0:06.968 i 16
+F Va-trem-C#4-pp-4c.wav 580986 0 1415744050 0
+D s 44100 n 1 l 0:06.586 i 16
+F Va-trem-C#5-ff-1c.wav 654902 0 1415744050 0
+D s 44100 n 1 l 0:07.424 i 16
+F Va-trem-C#5-ff-2c.wav 659218 0 1415744052 0
+D s 44100 n 1 l 0:07.473 i 16
+F Va-trem-C#5-ff-3c.wav 632616 0 1415744052 0
+D s 44100 n 1 l 0:07.172 i 16
+F Va-trem-C#5-mf-1c.wav 654264 0 1415744052 0
+D s 44100 n 1 l 0:07.417 i 16
+F Va-trem-C#5-mf-2c.wav 577528 0 1415744054 0
+D s 44100 n 1 l 0:06.547 i 16
+F Va-trem-C#5-mf-3c.wav 638646 0 1415744054 0
+D s 44100 n 1 l 0:07.240 i 16
+F Va-trem-C#5-pp-1c.wav 569774 0 1415744054 0
+D s 44100 n 1 l 0:06.459 i 16
+F Va-trem-C#5-pp-2c.wav 583674 0 1415744056 0
+D s 44100 n 1 l 0:06.617 i 16
+F Va-trem-C#5-pp-3c.wav 630368 0 1415744056 0
+D s 44100 n 1 l 0:07.146 i 16
+F Va-trem-C#6-ff-1c.wav 656648 0 1415744056 0
+D s 44100 n 1 l 0:07.444 i 16
+F Va-trem-C#6-ff-2c.wav 639866 0 1415744058 0
+D s 44100 n 1 l 0:07.254 i 16
+F Va-trem-C#6-mf-1c.wav 637034 0 1415744058 0
+D s 44100 n 1 l 0:07.222 i 16
+F Va-trem-C#6-mf-2c.wav 645248 0 1415744058 0
+D s 44100 n 1 l 0:07.315 i 16
+F Va-trem-C#6-pp-1c.wav 641494 0 1415744060 0
+D s 44100 n 1 l 0:07.272 i 16
+F Va-trem-C#6-pp-2c.wav 592712 0 1415744060 0
+D s 44100 n 1 l 0:06.719 i 16
+F Va-trem-C3-ff-4c.wav 749720 0 1415744060 0
+D s 44100 n 1 l 0:08.499 i 16
+F Va-trem-C3-mf-4c.wav 627220 0 1415744062 0
+D s 44100 n 1 l 0:07.110 i 16
+F Va-trem-C3-pp-4c.wav 665144 0 1415744062 0
+D s 44100 n 1 l 0:07.540 i 16
+F Va-trem-C4-ff-3c.wav 675290 0 1415744062 0
+D s 44100 n 1 l 0:07.655 i 16
 F Va-trem-C4-ff-4c.wav 602610 0 1415744064 0
 D s 44100 n 1 l 0:06.831 i 16
+F Va-trem-C4-mf-3c.wav 595240 0 1415744064 0
+D s 44100 n 1 l 0:06.748 i 16
+F Va-trem-C4-mf-4c.wav 601334 0 1415744064 0
+D s 44100 n 1 l 0:06.817 i 16
+F Va-trem-C4-pp-3c.wav 598704 0 1415744066 0
+D s 44100 n 1 l 0:06.787 i 16
+F Va-trem-C4-pp-4c.wav 547708 0 1415744066 0
+D s 44100 n 1 l 0:06.209 i 16
+F Va-trem-C5-ff-1c.wav 662790 0 1415744066 0
+D s 44100 n 1 l 0:07.514 i 16
 F Va-trem-C5-ff-2c.wav 661698 0 1415744068 0
 D s 44100 n 1 l 0:07.501 i 16
+F Va-trem-C5-ff-3c.wav 672394 0 1415744068 0
+D s 44100 n 1 l 0:07.623 i 16
 F Va-trem-C5-ff-4c.wav 637024 0 1415744068 0
 D s 44100 n 1 l 0:07.221 i 16
+F Va-trem-C5-mf-1c.wav 642154 0 1415744068 0
+D s 44100 n 1 l 0:07.280 i 16
 F Va-trem-C5-mf-2c.wav 592622 0 1415744070 0
 D s 44100 n 1 l 0:06.718 i 16
+F Va-trem-C5-mf-3c.wav 680886 0 1415744070 0
+D s 44100 n 1 l 0:07.719 i 16
+F Va-trem-C5-mf-4c.wav 620852 0 1415744070 0
+D s 44100 n 1 l 0:07.038 i 16
 F Va-trem-C5-pp-1c.wav 627296 0 1415744072 0
 D s 44100 n 1 l 0:07.111 i 16
+F Va-trem-C5-pp-2c.wav 615668 0 1415744072 0
+D s 44100 n 1 l 0:06.979 i 16
 F Va-trem-C5-pp-3c.wav 565542 0 1415744072 0
 D s 44100 n 1 l 0:06.411 i 16
+F Va-trem-C5-pp-4c.wav 605578 0 1415744074 0
+D s 44100 n 1 l 0:06.865 i 16
+F Va-trem-C6-ff-1c.wav 652958 0 1415744074 0
+D s 44100 n 1 l 0:07.402 i 16
+F Va-trem-C6-ff-2c.wav 615986 0 1415744074 0
+D s 44100 n 1 l 0:06.983 i 16
+F Va-trem-C6-mf-1c.wav 612924 0 1415744076 0
+D s 44100 n 1 l 0:06.948 i 16
+F Va-trem-C6-mf-2c.wav 671530 0 1415744076 0
+D s 44100 n 1 l 0:07.613 i 16
+F Va-trem-C6-pp-1c.wav 596418 0 1415744076 0
+D s 44100 n 1 l 0:06.761 i 16
+F Va-trem-C6-pp-2c.wav 591456 0 1415744078 0
+D s 44100 n 1 l 0:06.705 i 16
+F Va-trem-C7-ff-1c.wav 625256 0 1415744078 0
+D s 44100 n 1 l 0:07.088 i 16
+F Va-trem-C7-mf-1c.wav 621212 0 1415744078 0
+D s 44100 n 1 l 0:07.042 i 16
+F Va-trem-C7-pp-1c.wav 582450 0 1415744080 0
+D s 44100 n 1 l 0:06.603 i 16
+F Va-trem-D#3-ff-4c.wav 662988 0 1415744080 0
+D s 44100 n 1 l 0:07.516 i 16
+F Va-trem-D#3-mf-4c.wav 601034 0 1415744080 0
+D s 44100 n 1 l 0:06.813 i 16
+F Va-trem-D#3-pp-4c.wav 623448 0 1415744082 0
+D s 44100 n 1 l 0:07.068 i 16
+F Va-trem-D#4-ff-2c.wav 645880 0 1415744082 0
+D s 44100 n 1 l 0:07.322 i 16
+F Va-trem-D#4-ff-3c.wav 633688 0 1415744082 0
+D s 44100 n 1 l 0:07.184 i 16
+F Va-trem-D#4-ff-4c.wav 608880 0 1415744084 0
+D s 44100 n 1 l 0:06.902 i 16
+F Va-trem-D#4-mf-2c.wav 634172 0 1415744084 0
+D s 44100 n 1 l 0:07.189 i 16
+F Va-trem-D#4-mf-3c.wav 584264 0 1415744084 0
+D s 44100 n 1 l 0:06.623 i 16
+F Va-trem-D#4-mf-4c.wav 593370 0 1415744084 0
+D s 44100 n 1 l 0:06.727 i 16
+F Va-trem-D#4-pp-2c.wav 652734 0 1415744086 0
+D s 44100 n 1 l 0:07.400 i 16
+F Va-trem-D#4-pp-3c.wav 566830 0 1415744086 0
+D s 44100 n 1 l 0:06.426 i 16
+F Va-trem-D#4-pp-4c.wav 626598 0 1415744086 0
+D s 44100 n 1 l 0:07.103 i 16
+F Va-trem-D#5-ff-1c.wav 658208 0 1415744088 0
+D s 44100 n 1 l 0:07.462 i 16
+F Va-trem-D#5-ff-2c.wav 625290 0 1415744088 0
+D s 44100 n 1 l 0:07.088 i 16
+F Va-trem-D#5-ff-3c.wav 625900 0 1415744088 0
+D s 44100 n 1 l 0:07.095 i 16
+F Va-trem-D#5-mf-1c.wav 645390 0 1415744090 0
+D s 44100 n 1 l 0:07.316 i 16
+F Va-trem-D#5-mf-2c.wav 578480 0 1415744090 0
+D s 44100 n 1 l 0:06.558 i 16
+F Va-trem-D#5-mf-3c.wav 608780 0 1415744090 0
+D s 44100 n 1 l 0:06.901 i 16
+F Va-trem-D#5-pp-1c.wav 616940 0 1415744092 0
+D s 44100 n 1 l 0:06.994 i 16
+F Va-trem-D#5-pp-2c.wav 626900 0 1415744092 0
+D s 44100 n 1 l 0:07.107 i 16
 F Va-trem-D#5-pp-3c.wav 619580 0 1415744092 0
 D s 44100 n 1 l 0:07.024 i 16
+F Va-trem-D#6-ff-1c.wav 594494 0 1415744094 0
+D s 44100 n 1 l 0:06.739 i 16
+F Va-trem-D#6-mf-1c.wav 677604 0 1415744094 0
+D s 44100 n 1 l 0:07.682 i 16
+F Va-trem-D#6-pp-1c.wav 606682 0 1415744094 0
+D s 44100 n 1 l 0:06.877 i 16
 F Va-trem-D3-ff-4c.wav 660322 0 1415744096 0
 D s 44100 n 1 l 0:07.486 i 16
+F Va-trem-D3-mf-4c.wav 593358 0 1415744096 0
+D s 44100 n 1 l 0:06.726 i 16
+F Va-trem-D3-pp-4c.wav 620836 0 1415744096 0
+D s 44100 n 1 l 0:07.038 i 16
+F Va-trem-D4-ff-2c.wav 840342 0 1415744096 0
+D s 44100 n 1 l 0:09.527 i 16
+F Va-trem-D4-ff-3c.wav 651584 0 1415744098 0
+D s 44100 n 1 l 0:07.387 i 16
+F Va-trem-D4-ff-4c.wav 723242 0 1415744098 0
+D s 44100 n 1 l 0:08.199 i 16
+F Va-trem-D4-mf-2c.wav 713696 0 1415744098 0
+D s 44100 n 1 l 0:08.091 i 16
+F Va-trem-D4-mf-3c.wav 661084 0 1415744100 0
+D s 44100 n 1 l 0:07.494 i 16
+F Va-trem-D4-mf-4c.wav 710718 0 1415744100 0
+D s 44100 n 1 l 0:08.057 i 16
+F Va-trem-D4-pp-2c.wav 711676 0 1415744100 0
+D s 44100 n 1 l 0:08.068 i 16
+F Va-trem-D4-pp-3c.wav 614818 0 1415744102 0
+D s 44100 n 1 l 0:06.970 i 16
+F Va-trem-D4-pp-4c.wav 614986 0 1415744102 0
+D s 44100 n 1 l 0:06.972 i 16
+F Va-trem-D5-ff-1c.wav 647756 0 1415744102 0
+D s 44100 n 1 l 0:07.343 i 16
+F Va-trem-D5-ff-2c.wav 699038 0 1415744104 0
+D s 44100 n 1 l 0:07.925 i 16
+F Va-trem-D5-ff-3c.wav 641520 0 1415744104 0
+D s 44100 n 1 l 0:07.272 i 16
+F Va-trem-D5-mf-1c.wav 620342 0 1415744104 0
+D s 44100 n 1 l 0:07.032 i 16
+F Va-trem-D5-mf-2c.wav 633190 0 1415744106 0
+D s 44100 n 1 l 0:07.178 i 16
+F Va-trem-D5-mf-3c.wav 592826 0 1415744106 0
+D s 44100 n 1 l 0:06.720 i 16
+F Va-trem-D5-pp-1c.wav 724442 0 1415744106 0
+D s 44100 n 1 l 0:08.213 i 16
+F Va-trem-D5-pp-2c.wav 605018 0 1415744108 0
+D s 44100 n 1 l 0:06.859 i 16
+F Va-trem-D5-pp-3c.wav 613092 0 1415744108 0
+D s 44100 n 1 l 0:06.950 i 16
+F Va-trem-D6-ff-1c.wav 669508 0 1415744108 0
+D s 44100 n 1 l 0:07.590 i 16
 F Va-trem-D6-ff-2c.wav 635664 0 1415744110 0
 D s 44100 n 1 l 0:07.206 i 16
+F Va-trem-D6-mf-1c.wav 639108 0 1415744110 0
+D s 44100 n 1 l 0:07.245 i 16
+F Va-trem-D6-mf-2c.wav 711692 0 1415744110 0
+D s 44100 n 1 l 0:08.068 i 16
+F Va-trem-D6-pp-1c.wav 598530 0 1415744112 0
+D s 44100 n 1 l 0:06.785 i 16
+F Va-trem-D6-pp-2c.wav 646440 0 1415744112 0
+D s 44100 n 1 l 0:07.328 i 16
+F Va-trem-E3-ff-4c.wav 648740 0 1415744112 0
+D s 44100 n 1 l 0:07.354 i 16
+F Va-trem-E3-mf-4c.wav 579614 0 1415744114 0
+D s 44100 n 1 l 0:06.571 i 16
+F Va-trem-E3-pp-4c.wav 579586 0 1415744114 0
+D s 44100 n 1 l 0:06.570 i 16
+F Va-trem-E4-ff-2c.wav 687638 0 1415744114 0
+D s 44100 n 1 l 0:07.795 i 16
+F Va-trem-E4-ff-3c.wav 640366 0 1415744116 0
+D s 44100 n 1 l 0:07.259 i 16
+F Va-trem-E4-ff-4c.wav 674908 0 1415744116 0
+D s 44100 n 1 l 0:07.651 i 16
+F Va-trem-E4-mf-2c.wav 640072 0 1415744116 0
+D s 44100 n 1 l 0:07.256 i 16
+F Va-trem-E4-mf-3c.wav 572162 0 1415744118 0
+D s 44100 n 1 l 0:06.486 i 16
+F Va-trem-E4-mf-4c.wav 668502 0 1415744118 0
+D s 44100 n 1 l 0:07.578 i 16
+F Va-trem-E4-pp-2c.wav 564388 0 1415744118 0
+D s 44100 n 1 l 0:06.398 i 16
+F Va-trem-E4-pp-3c.wav 566046 0 1415744118 0
+D s 44100 n 1 l 0:06.417 i 16
+F Va-trem-E4-pp-4c.wav 590662 0 1415744120 0
+D s 44100 n 1 l 0:06.696 i 16
+F Va-trem-E5-ff-1c.wav 637544 0 1415744120 0
+D s 44100 n 1 l 0:07.227 i 16
+F Va-trem-E5-ff-2c.wav 683288 0 1415744120 0
+D s 44100 n 1 l 0:07.746 i 16
+F Va-trem-E5-ff-3c.wav 692662 0 1415744122 0
+D s 44100 n 1 l 0:07.852 i 16
+F Va-trem-E5-mf-1c.wav 606510 0 1415744122 0
+D s 44100 n 1 l 0:06.876 i 16
+F Va-trem-E5-mf-2c.wav 616406 0 1415744122 0
+D s 44100 n 1 l 0:06.988 i 16
+F Va-trem-E5-mf-3c.wav 666438 0 1415744124 0
+D s 44100 n 1 l 0:07.555 i 16
+F Va-trem-E5-pp-1c.wav 624110 0 1415744124 0
+D s 44100 n 1 l 0:07.075 i 16
+F Va-trem-E5-pp-2c.wav 600734 0 1415744124 0
+D s 44100 n 1 l 0:06.810 i 16
+F Va-trem-E5-pp-3c.wav 674090 0 1415744126 0
+D s 44100 n 1 l 0:07.642 i 16
+F Va-trem-E6-ff-1c.wav 672634 0 1415744126 0
+D s 44100 n 1 l 0:07.625 i 16
+F Va-trem-E6-mf-1c.wav 645792 0 1415744126 0
+D s 44100 n 1 l 0:07.321 i 16
 F Va-trem-E6-pp-1c.wav 621828 0 1415744128 0
 D s 44100 n 1 l 0:07.049 i 16
+F Va-trem-F#3-ff-4c.wav 587432 0 1415744128 0
+D s 44100 n 1 l 0:06.659 i 16
+F Va-trem-F#3-mf-4c.wav 613386 0 1415744128 0
+D s 44100 n 1 l 0:06.953 i 16
+F Va-trem-F#3-pp-4c.wav 598274 0 1415744130 0
+D s 44100 n 1 l 0:06.782 i 16
+F Va-trem-F#4-ff-2c.wav 667604 0 1415744130 0
+D s 44100 n 1 l 0:07.568 i 16
+F Va-trem-F#4-ff-3c.wav 655470 0 1415744130 0
+D s 44100 n 1 l 0:07.431 i 16
+F Va-trem-F#4-ff-4c.wav 632100 0 1415744132 0
+D s 44100 n 1 l 0:07.166 i 16
+F Va-trem-F#4-mf-2c.wav 622892 0 1415744132 0
+D s 44100 n 1 l 0:07.061 i 16
+F Va-trem-F#4-mf-3c.wav 611716 0 1415744132 0
+D s 44100 n 1 l 0:06.935 i 16
+F Va-trem-F#4-mf-4c.wav 590814 0 1415744134 0
+D s 44100 n 1 l 0:06.698 i 16
+F Va-trem-F#4-pp-2c.wav 612588 0 1415744134 0
+D s 44100 n 1 l 0:06.944 i 16
+F Va-trem-F#4-pp-3c.wav 605582 0 1415744134 0
+D s 44100 n 1 l 0:06.865 i 16
+F Va-trem-F#4-pp-4c.wav 583286 0 1415744136 0
+D s 44100 n 1 l 0:06.612 i 16
+F Va-trem-F#5-ff-1c.wav 602442 0 1415744136 0
+D s 44100 n 1 l 0:06.829 i 16
+F Va-trem-F#5-ff-2c.wav 620986 0 1415744136 0
+D s 44100 n 1 l 0:07.040 i 16
+F Va-trem-F#5-ff-3c.wav 705024 0 1415744138 0
+D s 44100 n 1 l 0:07.992 i 16
+F Va-trem-F#5-mf-1c.wav 658838 0 1415744138 0
+D s 44100 n 1 l 0:07.469 i 16
+F Va-trem-F#5-mf-2c.wav 657170 0 1415744138 0
+D s 44100 n 1 l 0:07.450 i 16
+F Va-trem-F#5-mf-3c.wav 628122 0 1415744140 0
+D s 44100 n 1 l 0:07.121 i 16
+F Va-trem-F#5-pp-1c.wav 681860 0 1415744140 0
+D s 44100 n 1 l 0:07.730 i 16
+F Va-trem-F#5-pp-2c.wav 647992 0 1415744140 0
+D s 44100 n 1 l 0:07.346 i 16
+F Va-trem-F#5-pp-3c.wav 604954 0 1415744142 0
+D s 44100 n 1 l 0:06.858 i 16
+F Va-trem-F#6-ff-1c.wav 680082 0 1415744142 0
+D s 44100 n 1 l 0:07.710 i 16
+F Va-trem-F#6-mf-1c.wav 666492 0 1415744142 0
+D s 44100 n 1 l 0:07.556 i 16
+F Va-trem-F#6-pp-1c.wav 660854 0 1415744142 0
+D s 44100 n 1 l 0:07.492 i 16
+F Va-trem-F3-ff-4c.wav 607894 0 1415744144 0
+D s 44100 n 1 l 0:06.891 i 16
+F Va-trem-F3-mf-4c.wav 620336 0 1415744144 0
+D s 44100 n 1 l 0:07.032 i 16
+F Va-trem-F3-pp-4c.wav 604396 0 1415744144 0
+D s 44100 n 1 l 0:06.852 i 16
+F Va-trem-F4-ff-2c.wav 651068 0 1415744146 0
+D s 44100 n 1 l 0:07.381 i 16
+F Va-trem-F4-ff-3c.wav 610470 0 1415744146 0
+D s 44100 n 1 l 0:06.920 i 16
+F Va-trem-F4-ff-4c.wav 598444 0 1415744146 0
+D s 44100 n 1 l 0:06.784 i 16
+F Va-trem-F4-mf-2c.wav 616674 0 1415744148 0
+D s 44100 n 1 l 0:06.991 i 16
+F Va-trem-F4-mf-3c.wav 622530 0 1415744148 0
+D s 44100 n 1 l 0:07.057 i 16
+F Va-trem-F4-mf-4c.wav 610452 0 1415744148 0
+D s 44100 n 1 l 0:06.920 i 16
+F Va-trem-F4-pp-2c.wav 667938 0 1415744150 0
+D s 44100 n 1 l 0:07.572 i 16
+F Va-trem-F4-pp-3c.wav 585788 0 1415744150 0
+D s 44100 n 1 l 0:06.641 i 16
+F Va-trem-F4-pp-4c.wav 602258 0 1415744150 0
+D s 44100 n 1 l 0:06.827 i 16
+F Va-trem-F5-ff-1c.wav 616196 0 1415744152 0
+D s 44100 n 1 l 0:06.985 i 16
+F Va-trem-F5-ff-2c.wav 533382 0 1415744152 0
+D s 44100 n 1 l 0:06.046 i 16
+F Va-trem-F5-ff-3c.wav 729806 0 1415744152 0
+D s 44100 n 1 l 0:08.273 i 16
+F Va-trem-F5-mf-1c.wav 630770 0 1415744154 0
+D s 44100 n 1 l 0:07.151 i 16
+F Va-trem-F5-mf-2c.wav 616380 0 1415744154 0
+D s 44100 n 1 l 0:06.987 i 16
+F Va-trem-F5-mf-3c.wav 633992 0 1415744154 0
+D s 44100 n 1 l 0:07.187 i 16
+F Va-trem-F5-pp-1c.wav 587890 0 1415744156 0
+D s 44100 n 1 l 0:06.664 i 16
+F Va-trem-F5-pp-2c.wav 613358 0 1415744156 0
+D s 44100 n 1 l 0:06.953 i 16
+F Va-trem-F5-pp-3c.wav 682248 0 1415744156 0
+D s 44100 n 1 l 0:07.734 i 16
+F Va-trem-F6-ff-1c.wav 672482 0 1415744158 0
+D s 44100 n 1 l 0:07.624 i 16
+F Va-trem-F6-mf-1c.wav 632016 0 1415744158 0
+D s 44100 n 1 l 0:07.165 i 16
+F Va-trem-F6-pp-1c.wav 616960 0 1415744158 0
+D s 44100 n 1 l 0:06.994 i 16
+F Va-trem-G#3-ff-3c.wav 628676 0 1415744158 0
+D s 44100 n 1 l 0:07.127 i 16
+F Va-trem-G#3-ff-4c.wav 593984 0 1415744160 0
+D s 44100 n 1 l 0:06.734 i 16
+F Va-trem-G#3-mf-3c.wav 648696 0 1415744160 0
+D s 44100 n 1 l 0:07.354 i 16
+F Va-trem-G#3-mf-4c.wav 668148 0 1415744160 0
+D s 44100 n 1 l 0:07.574 i 16
+F Va-trem-G#3-pp-3c.wav 572714 0 1415744162 0
+D s 44100 n 1 l 0:06.492 i 16
 F Va-trem-G#3-pp-4c.wav 592302 0 1415744162 0
 D s 44100 n 1 l 0:06.714 i 16
+F Va-trem-G#4-ff-2c.wav 653952 0 1415744162 0
+D s 44100 n 1 l 0:07.413 i 16
+F Va-trem-G#4-ff-3c.wav 683858 0 1415744164 0
+D s 44100 n 1 l 0:07.752 i 16
+F Va-trem-G#4-ff-4c.wav 689438 0 1415744164 0
+D s 44100 n 1 l 0:07.816 i 16
+F Va-trem-G#4-mf-2c.wav 649748 0 1415744164 0
+D s 44100 n 1 l 0:07.366 i 16
+F Va-trem-G#4-mf-3c.wav 637932 0 1415744166 0
+D s 44100 n 1 l 0:07.232 i 16
+F Va-trem-G#4-mf-4c.wav 592520 0 1415744166 0
+D s 44100 n 1 l 0:06.717 i 16
+F Va-trem-G#4-pp-2c.wav 643690 0 1415744166 0
+D s 44100 n 1 l 0:07.297 i 16
 F Va-trem-G#4-pp-3c.wav 679828 0 1415744168 0
 D s 44100 n 1 l 0:07.707 i 16
+F Va-trem-G#4-pp-4c.wav 644786 0 1415744168 0
+D s 44100 n 1 l 0:07.310 i 16
+F Va-trem-G#5-ff-1c.wav 633956 0 1415744168 0
+D s 44100 n 1 l 0:07.187 i 16
+F Va-trem-G#5-ff-2c.wav 630608 0 1415744170 0
+D s 44100 n 1 l 0:07.149 i 16
+F Va-trem-G#5-mf-1c.wav 623378 0 1415744170 0
+D s 44100 n 1 l 0:07.067 i 16
+F Va-trem-G#5-mf-2c.wav 637142 0 1415744170 0
+D s 44100 n 1 l 0:07.223 i 16
+F Va-trem-G#5-pp-1c.wav 640344 0 1415744172 0
+D s 44100 n 1 l 0:07.259 i 16
+F Va-trem-G#5-pp-2c.wav 602378 0 1415744172 0
+D s 44100 n 1 l 0:06.829 i 16
+F Va-trem-G#6-ff-1c.wav 605566 0 1415744172 0
+D s 44100 n 1 l 0:06.865 i 16
+F Va-trem-G#6-mf-1c.wav 622614 0 1415744174 0
+D s 44100 n 1 l 0:07.058 i 16
+F Va-trem-G#6-pp-1c.wav 605132 0 1415744174 0
+D s 44100 n 1 l 0:06.860 i 16
+F Va-trem-G3-ff-3c.wav 766746 0 1415744174 0
+D s 44100 n 1 l 0:08.692 i 16
+F Va-trem-G3-ff-4c.wav 609366 0 1415744174 0
+D s 44100 n 1 l 0:06.908 i 16
+F Va-trem-G3-mf-3c.wav 626940 0 1415744176 0
+D s 44100 n 1 l 0:07.107 i 16
+F Va-trem-G3-mf-4c.wav 590382 0 1415744176 0
+D s 44100 n 1 l 0:06.693 i 16
+F Va-trem-G3-pp-3c.wav 625476 0 1415744176 0
+D s 44100 n 1 l 0:07.091 i 16
+F Va-trem-G3-pp-4c.wav 646884 0 1415744178 0
+D s 44100 n 1 l 0:07.333 i 16
+F Va-trem-G4-ff-2c.wav 748956 0 1415744178 0
+D s 44100 n 1 l 0:08.491 i 16
+F Va-trem-G4-ff-3c.wav 686112 0 1415744178 0
+D s 44100 n 1 l 0:07.778 i 16
+F Va-trem-G4-ff-4c.wav 638494 0 1415744180 0
+D s 44100 n 1 l 0:07.238 i 16
+F Va-trem-G4-mf-2c.wav 725872 0 1415744180 0
+D s 44100 n 1 l 0:08.229 i 16
+F Va-trem-G4-mf-3c.wav 658194 0 1415744180 0
+D s 44100 n 1 l 0:07.462 i 16
+F Va-trem-G4-mf-4c.wav 599568 0 1415744182 0
+D s 44100 n 1 l 0:06.797 i 16
+F Va-trem-G4-pp-2c.wav 653954 0 1415744182 0
+D s 44100 n 1 l 0:07.413 i 16
+F Va-trem-G4-pp-3c.wav 600470 0 1415744182 0
+D s 44100 n 1 l 0:06.807 i 16
+F Va-trem-G4-pp-4c.wav 640678 0 1415744184 0
+D s 44100 n 1 l 0:07.263 i 16
+F Va-trem-G5-ff-1c.wav 673698 0 1415744184 0
+D s 44100 n 1 l 0:07.637 i 16
+F Va-trem-G5-ff-2c.wav 604408 0 1415744184 0
+D s 44100 n 1 l 0:06.852 i 16
+F Va-trem-G5-ff-3c.wav 647164 0 1415744186 0
+D s 44100 n 1 l 0:07.336 i 16
+F Va-trem-G5-mf-1c.wav 674624 0 1415744186 0
+D s 44100 n 1 l 0:07.648 i 16
+F Va-trem-G5-mf-2c.wav 631906 0 1415744186 0
+D s 44100 n 1 l 0:07.163 i 16
+F Va-trem-G5-mf-3c.wav 708666 0 1415744188 0
+D s 44100 n 1 l 0:08.034 i 16
 F Va-trem-G5-pp-1c.wav 651216 0 1415744188 0
 D s 44100 n 1 l 0:07.382 i 16
+F Va-trem-G5-pp-2c.wav 612634 0 1415744188 0
+D s 44100 n 1 l 0:06.945 i 16
 F Va-trem-G5-pp-3c.wav 614006 0 1415744188 0
 D s 44100 n 1 l 0:06.961 i 16
+F Va-trem-G6-ff-1c.wav 665192 0 1415744190 0
+D s 44100 n 1 l 0:07.541 i 16
+F Va-trem-G6-mf-1c.wav 638654 0 1415744190 0
+D s 44100 n 1 l 0:07.240 i 16
+F Va-trem-G6-pp-1c.wav 619510 0 1415744190 0
+D s 44100 n 1 l 0:07.023 i 16

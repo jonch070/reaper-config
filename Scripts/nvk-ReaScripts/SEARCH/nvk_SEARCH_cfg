@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "stem mana",
+	SEARCH = "nvk them",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -80,31 +80,67 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
-			id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
+			id = "Script: nvk_THEME - Settings.lua (RS5090bcf8eb35e73f381a07670564e93f184342d7) (Main)",
 			type = "action"
 		},
 		{
-			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
+			id = "Script: BirdBird_Global Sampler Theme Editor.lua (RSb653e5e588e4c2b002adc2190b306731682de08c) (Main)",
 			type = "action"
 		},
 		{
-			id = "SWS: Show all tracks (SWSTL_SHOWALL) (Main)",
+			id = "Item: Set snap offset to cursor (40541) (Main)",
 			type = "action"
 		},
 		{
-			id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
+			id = "Script: nvk_SUBPROJECT.lua (RS08549046b8a2a712ec9b44a5baab22289f036ea2) (Main)",
 			type = "action"
 		},
 		{
-			id = "Xenakios/SWS: Reposition selected items... (XENAKIOS_REPOSITION_ITEMS) (Main)",
+			id = "Script: 916 create children from items and assign to random channels (multiple folders).lua (RSc63b64377fbca3f896a499a837de1f83b76e305a) (Main)",
 			type = "action"
 		},
 		{
-			id = "Edit: Dynamic split items... (40760) (Main)",
+			id = "Script: nvk_ITEMS - Switch item source to next in folder.lua (RS5f85f847bdb04842c08221065af3f96e89800c5b) (Main)",
 			type = "action"
 		},
 		{
-			id = "File: Open render queue (40929) (Main)",
+			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_ITEMS - Align SMART.lua (RSd8df48eefbd297d7119bd357721215ae37e296f7) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_FOLDER_ITEMS - Create new folder from selected items or tracks.lua (RSb3f44c3fbf26ce6b97c4d382261dbff5f183d9ec) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_FOLDER_ITEMS - Select render items.lua (RSf739a4e174fb3d6272c381d8b653726f742a4c9f) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_FOLDER_ITEMS.lua (RSdb3313975d3fbc015c0333c914ec75f2a1b69c2b) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: mpl_Align takes.lua (RS1ec9ab1b4ff08bc6f116768e9e126fc3fe67a812) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_FOLDER_ITEMS - Reposition.lua (RSdceceb49f246d2d8b75630a1024117d87cd9ffa2) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_CREATE.lua (RS193b2afca78a22323adee152a43f53c519b79c4c) (Main)",
+			type = "action"
+		},
+		{
+			id = "Toggle Hide Tracks Without Items in Time Selection (S&M_CYCLACTION_9) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Copy tracks (40210) (Main)",
 			type = "action"
 		},
 		{
@@ -112,12 +148,220 @@ config = {
 			type = "action"
 		},
 		{
+			id = "Script: amagalma_gianfini_ReaNamer (track-item-region renaming utility).lua (RS1bc25f89fb200b6750d8af95acc55ab4b36bf3be) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Show all tracks (SWSTL_SHOWALL) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: select-tracks-with-selected-items.lua (RS0eba55ff1652b5e1c1c95adf2db23e0b52b8959a) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Select children of selected folder track(s) (SWS_SELCHILDREN2) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Select only children of selected folders (SWS_SELCHILDREN) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Select muted tracks (SWS_SELMUTEDTRACKS) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: hide muted tracks and children (d1d0d5d74eab4ed098f8e72cdd1ef7ba) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_SUBPROJECT - Update - Render (no reposition).lua (RSf7af7e3008e9d3cf2f351cea89387a51a8ea63e3) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Subproject Random Channels 916 (multiple folders) (0b93ef01514c44b8985e0afaf694d904) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_FOLDER_ITEMS - Rename.lua (RSe8733f58b84754de32c3dd2cdd466a1ac6231322) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: 916 create children from items and assign to random channels (one folder).lua (RSb09390e91bd14fea78114c5c6f6878d8e3b1baae) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: BFO & LKC - Folder items.lua (RS9001b897c7f216af4aa6541d7d30154e00f94781) (Main)",
+			type = "action"
+		},
+		{
+			id = "Show action list (40605) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Subproject Random Channels 916 (one folder) (f25794a6f09b42719deedaa32a04a9ef) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: 916 random item channel - randomize time selection to subproject (886f38d23f754b61b07cf1d40d7401a7) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: 916 random item channel - open fx (a05ead477ca543eeba093709761506fb) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_TAKES - Select random take SMART (no repeat).lua (RSc76cb4bdc67a915bb40c5a66fa9401ddfea2c9f6) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_TAKES - Select previous take.lua (RS5881bd829393098bbc27d3f3713750124aa926de) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Duplicate track without contents (098d275fab6f46cabc751dae4732d645) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_VARIATIONS.lua (RS27a8818a7d4eb2c7e02a8893c95d52ae96852382) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Odedd_Send Buddy.lua (RS39115aaa5f19081d275c9a8dbdf990de23d6d9fa) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST:ReaTune (Cockos)",
+			type = "vst"
+		},
+		{
+			id = "JS:Global Sampler",
+			type = "jsfx"
+		},
+		{
+			id = "Custom: Prepend Parent Name of Lowest Level Children (e234fec17f7f43f0a09265c0a9d45e5a) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:WigWare Multi-channel Peak VU Meter",
+			type = "jsfx"
+		},
+		{
+			id = "SWS/S&M: Paste FX chain to selected tracks (S&M_COPYFXCHAIN10) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: mpl_ImportSessionData.lua (RSe960e68555dfce225c9c5535ed2346fa34dd0209) (Main)",
+			type = "action"
+		},
+		{
+			id = "Xenakios/SWS: Choose new source file for selected takes... (XENAKIOS_CHANGESOURCEFILE) (Main)",
+			type = "action"
+		},
+		{
+			id = "Xenakios/SWS: Reposition selected items... (XENAKIOS_REPOSITION_ITEMS) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
+			type = "action"
+		},
+		{
+			id = "Edit: Dynamic split items... (40760) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Track Visibility - Show all tracks.lua (RS6e49675c75f0b7973b7891579f3b72aac6563d7c) (Main)",
+			type = "action"
+		},
+		{
+			id = "AU:Spectral Blurring (Michael Norris)",
+			type = "au"
+		},
+		{
+			id = "Toggle Hide Tracks Without Items with Folders (S&M_CYCLACTION_8) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: timtam_IntelliFreeze Freeze all selected tracks to stereo recursively.lua (RS19d824b9e2e3639c6d82ba3eb0ebeba8e232f24a) (Main)",
+			type = "action"
+		},
+		{
 			id = "Script: render_melodyne_remove_plugin.lua (RS4a5a00dcdbe94bcb9cd2932203142ebd1431a260) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: select_melodyne_tracks.lua (RS1db80df1e6483acf163d05f6c531bb25f8e6a8ac) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Lokasenna_Select tracks in selection with items.lua (RSedc76c03604e3f8b57410ab947dea2caf6fd0ced) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: select only tracks with items in time selection (1d6ecd724bee45aa9bfde2a888487400) (Main)",
 			type = "action"
 		},
 		{
 			id = "VST3:Melodyne (Celemony)",
 			type = "vst3"
+		},
+		{
+			id = "Script: amagalma_Insert a new track as the last child for each selected track (optionally enumerate and name).lua (RS9d37bd8de9351780f55221bd92b804e53252c1ae) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_TAKES - Toggle width fx or toggle track width envelope.lua (RSff2d9a7622ff16839dc552558f315794e97f5e8c) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: mpl_ImportSessionData preset - default.lua (RSf4bbc765dff3ff6b61e72d18adbf89de9f5f3df2) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: amagalma_Smart track layout picker (categories with sub-menus).lua (RS614e43aa1350fbb8849f50bf82eed5566f76afcf) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS/S&M: Toggle auto track layout enable (S&MAUTOLAYOUT_ENABLE) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_THEME - Load theme preset - 1.lua (RSd1b46baa2c42f2805654e0b3c22e20d46dfb8f2a) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_THEME - Load theme preset - 2.lua (RSf333ec8897d069443dc24bf910ba30743ec0f84b) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: nvk_THEME - TCP - Toggle.lua (RS35b2eda4fcb6e38b19d049c35b4e33143802a98f) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
+			type = "action"
+		},
+		{
+			id = "File: Open render queue (40929) (Main)",
+			type = "action"
 		},
 		{
 			id = "VST3:Pro-Q 4 (FabFilter)",
@@ -128,23 +372,11 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Script: select_melodyne_tracks.lua (RS1db80df1e6483acf163d05f6c531bb25f8e6a8ac) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: mpl_Render-in-place.lua (RS1e972f69823ad2ad86a54e23f9bb362361ec318a) (Main)",
 			type = "action"
 		},
 		{
 			id = "Script: deselect_melodyne_tracks.lua (RS44065bf0983878ed047d93c0511ae76c9714c736) (Main)",
-			type = "action"
-		},
-		{
-			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: timtam_IntelliFreeze Freeze all selected tracks to stereo recursively.lua (RS19d824b9e2e3639c6d82ba3eb0ebeba8e232f24a) (Main)",
 			type = "action"
 		},
 		{
@@ -169,10 +401,6 @@ config = {
 		},
 		{
 			id = "Script: Smart-freeze settings.lua (RS06a6ae097fa842dc926e725cd8af280acc7e7be2) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: mpl_ImportSessionData.lua (RSe960e68555dfce225c9c5535ed2346fa34dd0209) (Main)",
 			type = "action"
 		},
 		{
@@ -212,19 +440,11 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Track: Copy tracks (40210) (Main)",
-			type = "action"
-		},
-		{
 			id = "Item properties: Set item timebase to time (40433) (Main)",
 			type = "action"
 		},
 		{
 			id = "Item properties: Unlock (40689) (Main)",
-			type = "action"
-		},
-		{
-			id = "Custom: hide muted tracks and children (d1d0d5d74eab4ed098f8e72cdd1ef7ba) (Main)",
 			type = "action"
 		},
 		{
@@ -252,231 +472,11 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Show action list (40605) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: sr_Hide tracks without items and ignore folder tracks (TCP).lua (RS9b5ee74be92b35d9700aafab9abeb3644eef79a3) (Main)",
 			type = "action"
 		},
 		{
-			id = "Toggle Hide Tracks Without Items in Time Selection (S&M_CYCLACTION_9) (Main)",
-			type = "action"
-		},
-		{
-			id = "Toggle Hide Tracks Without Items with Folders (S&M_CYCLACTION_8) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: mordi_Sort selected tracks alphabetically.lua (RSaf882e4dbb627a78ab5148a3868a951597a3e810) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Render selected area of tracks to stereo stem tracks (and mute originals) (41719) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: Track Visibility - Save-restore - Save all tracks visibility, slot 01.lua (RSe4119a7d78217f6ca314a81b618090f80aaf8ead) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: Track Visibility - Show only tracks with selected items.lua (RSad1f4a72f011a45d2821c9cf2d7f725090596d5c) (Main)",
-			type = "action"
-		},
-		{
-			id = "Locking: Toggle item stretch marker locking mode (41854) (Main)",
-			type = "action"
-		},
-		{
-			id = "Locking: Clear item stretch marker locking mode (41853) (Main)",
-			type = "action"
-		},
-		{
-			id = "Locking: Set item stretch marker locking mode (41852) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/S&M: Paste sends to selected tracks (S&M_PASTSNDRCV3) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/S&M: Copy selected tracks sends (S&M_COPYSNDRCV3) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: !renchildtoparent.eel (RS6f0fd6b44d59634aaec245361247fdc1589b8110) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDa_Auto Solo Tracks of Selected Items.lua (RS81ea80e7852f40fc296587c1620a8d8dbdfae9f1) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: gen_Render selected item as new take, up to last VSTi.lua (RS2b3f993bc78cce070833b9e4864ce4800354e704) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: sr_Render VSTi item(s) without track FX and delete MIDI take(s).lua (RS7e93378d5a81bc21f46bbf0dffda523e0be44fc5) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: sr_Render VSTi item(s) without track FX.lua (RS6bcbe34cb8c3d3e100b5b2d8e377a7b61f9eba2e) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: X-Raym_Search and replace in selected tracks names.lua (RS58f567e0df9542d4b6f572f9dba00ba2d3192f15) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: amagalma_gianfini_ReaNamer (track-item-region renaming utility).lua (RS1bc25f89fb200b6750d8af95acc55ab4b36bf3be) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Hide tracks in TCP and mixer (41593) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDa_Track Inspector VIP_Render To New Version (selected area stereo stems).lua (RS652936f23550885d6133a43fc4c9055d2eecf00b) (Main)",
-			type = "action"
-		},
-		{
-			id = "Peaks: Rebuild peaks for selected items (40441) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Render tracks to stereo stem tracks (and mute originals) (40788) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: X-Raym_Sort all tracks alphabetically.lua (RS89e84a58c716af9a2dca5a1a403ef0d07efd722d) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_THEME - Settings.lua (RS5090bcf8eb35e73f381a07670564e93f184342d7) (Main)",
-			type = "action"
-		},
-		{
-			id = "Options: Show theme adjuster (42234) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Remove all stretch markers (41844) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Cycle track folder state (1041) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
-			type = "action"
-		},
-		{
-			id = "View: Show track manager window (40906) (Main)",
-			type = "action"
-		},
-		{
-			id = "Custom: select only tracks with items in time selection (1d6ecd724bee45aa9bfde2a888487400) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RSde7a9f90b4ca2e7307195f6ece40b14f1b9cd5d0) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS: Select muted tracks (SWS_SELMUTEDTRACKS) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_THEME - Load theme preset - 2.lua (RSf333ec8897d069443dc24bf910ba30743ec0f84b) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_THEME - TCP - Toggle.lua (RS35b2eda4fcb6e38b19d049c35b4e33143802a98f) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
-			type = "action"
-		},
-		{
-			id = "File: Spawn new instance of REAPER (40063) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:Spectral Blurring (Michael Norris)",
-			type = "au"
-		},
-		{
-			id = "Item: Implode items across tracks into items on one track (40644) (Main)",
-			type = "action"
-		},
-		{
-			id = "Track: Duplicate tracks (40062) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDaScripts Manager.lua (RS0eb437b72166d636edbfe514962ca0f49db7fa9a) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS: Move selected item(s) right edge to edit cursor (SWS_ITEMRIGHTTOCUR) (Main)",
-			type = "action"
-		},
-		{
-			id = "JS:Channel Time Delayer",
-			type = "jsfx"
-		},
-		{
-			id = "VST3:Air (Sound Particles)",
-			type = "vst3"
-		},
-		{
-			id = "Insert virtual instrument on new track... (40701) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: spk77_Pan active takes randomly (normal distribution).eel (RSacf6463b9fe716eb5f2031526881f786d7902441) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: daniellumertz_Clouds.lua (RSebbb21b4c0b5080cdde1d5968e47525bedc49217) (Main)",
-			type = "action"
-		},
-		{
-			id = "JS:daniellumertz_Clouds",
-			type = "jsfx"
-		},
-		{
-			id = "Script: nvk_THEME - Track Colors - Apply - Manual.lua (RS0a4fcdc750b810a7eabed6d24d882a6b4a7a5af3) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: ICio_Set color gradient to children tracks starting from parent color.lua (RS2fffbef80fe517327d0039cd40eff9597b032e04) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDa_TI_Go to panel Color.lua (RS6221c4444b477bedf8814996b038af071b12a3db) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDa_Track Inspector VIP_Refresh.lua (RS30b803a48f06a9360ddbde1d2a9f9715102b8b94) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: HeDa_Track Inspector 2 VIP Add-ons Manager.lua (RS95feeeea35c4140ef1c4f2b7504358872cb24ff2) (Main)",
 			type = "action"
 		}
 	},

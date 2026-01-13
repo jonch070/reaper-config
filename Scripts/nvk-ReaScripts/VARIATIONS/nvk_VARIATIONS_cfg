@@ -1,0 +1,58 @@
+config = {
+	MAINWIND = {
+		cursor_x = 8.0,
+		cursor_y = 503.0,
+		h = 503.0,
+		w = 604.0,
+		x = 2137.0,
+		y = 367.0
+	},
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	font = "Verdana",
+	font_scales = {
+		results = 1,
+		search = 1
+	},
+	font_size = 12,
+	font_size_reinit = true,
+	item = true,
+	keys = {
+		
+	},
+	nerd_numbers = true,
+	ripple = false,
+	ripple_mode = 0,
+	scale = 1,
+	style_vars = {
+		
+	},
+	version = "1.5.1"
+}
+tabs = {
+	default = {
+		default = true,
+		diffMax = 0.0,
+		guid = "default",
+		mute = 0.0,
+		offset = 0.0,
+		pan = 0.0,
+		pan_env = 0.0,
+		pitch = 0.0,
+		pitch_env = 0.0,
+		pitch_mode = 0,
+		preset_name = "Default",
+		reposition_time = 0.0,
+		tone = 0.0,
+		tone_env = 0.0,
+		track_shuffle = 0.0,
+		var_amt = 0.0,
+		var_mode = 0,
+		vol = 2.04,
+		vol_env = 0.0
+	}
+}

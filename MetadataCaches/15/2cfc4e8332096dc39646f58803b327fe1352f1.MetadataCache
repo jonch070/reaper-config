@@ -1,15 +1,421 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/PluckedStrings/Guitar/ordinario
+F Gtr-ord-A#2-ff-5c.wav 1253780 0 1415728286 0
+D s 44100 n 1 l 0:14.214 i 16
+F Gtr-ord-A#2-mf-5c.wav 1039602 0 1415728286 0
+D s 44100 n 1 l 0:11.786 i 16
+F Gtr-ord-A#2-mf-6c.wav 855968 0 1415728286 0
+D s 44100 n 1 l 0:09.704 i 16
+F Gtr-ord-A#2-pp-5c.wav 878940 0 1415728288 0
+D s 44100 n 1 l 0:09.964 i 16
+F Gtr-ord-A#3-ff-3c.wav 559632 0 1415728288 0
+D s 44100 n 1 l 0:06.344 i 16
+F Gtr-ord-A#3-mf-3c.wav 720226 0 1415728290 0
+D s 44100 n 1 l 0:08.165 i 16
+F Gtr-ord-A#3-mf-4c.wav 735770 0 1415728290 0
+D s 44100 n 1 l 0:08.341 i 16
+F Gtr-ord-A#3-mf-5c.wav 825042 0 1415728290 0
+D s 44100 n 1 l 0:09.353 i 16
+F Gtr-ord-A#3-mf-6c.wav 342200 0 1415728292 0
+D s 44100 n 1 l 0:03.879 i 16
+F Gtr-ord-A#3-pp-3c.wav 553666 0 1415728292 0
+D s 44100 n 1 l 0:06.276 i 16
+F Gtr-ord-A#4-ff-1c.wav 662962 0 1415728292 0
+D s 44100 n 1 l 0:07.516 i 16
+F Gtr-ord-A#4-mf-1c.wav 448066 0 1415728294 0
+D s 44100 n 1 l 0:05.079 i 16
+F Gtr-ord-A#4-mf-2c.wav 539288 0 1415728294 0
+D s 44100 n 1 l 0:06.113 i 16
 F Gtr-ord-A#4-mf-3c.wav 501930 0 1415728296 0
 D s 44100 n 1 l 0:05.690 i 16
+F Gtr-ord-A#4-pp-1c.wav 439640 0 1415728296 0
+D s 44100 n 1 l 0:04.984 i 16
+F Gtr-ord-A#5-ff-1c.wav 442718 0 1415728296 0
+D s 44100 n 1 l 0:05.018 i 16
+F Gtr-ord-A#5-mf-1c.wav 435810 0 1415728298 0
+D s 44100 n 1 l 0:04.940 i 16
+F Gtr-ord-A#5-pp-1c.wav 302924 0 1415728298 0
+D s 44100 n 1 l 0:03.434 i 16
+F Gtr-ord-A2-ff-5c.wav 1882036 0 1415728298 0
+D s 44100 n 1 l 0:21.337 i 16
+F Gtr-ord-A2-mf-5c.wav 1128980 0 1415728300 0
+D s 44100 n 1 l 0:12.799 i 16
+F Gtr-ord-A2-mf-6c.wav 1225690 0 1415728300 0
+D s 44100 n 1 l 0:13.896 i 16
+F Gtr-ord-A2-pp-5c.wav 720546 0 1415728302 0
+D s 44100 n 1 l 0:08.168 i 16
+F Gtr-ord-A3-ff-3c.wav 1410472 0 1415728302 0
+D s 44100 n 1 l 0:15.991 i 16
+F Gtr-ord-A3-mf-3c.wav 892386 0 1415728302 0
+D s 44100 n 1 l 0:10.117 i 16
+F Gtr-ord-A3-mf-4c.wav 1092578 0 1415728304 0
+D s 44100 n 1 l 0:12.387 i 16
+F Gtr-ord-A3-mf-5c.wav 865382 0 1415728304 0
+D s 44100 n 1 l 0:09.811 i 16
+F Gtr-ord-A3-mf-6c.wav 834344 0 1415728304 0
+D s 44100 n 1 l 0:09.459 i 16
+F Gtr-ord-A3-pp-3c.wav 1050818 0 1415728306 0
+D s 44100 n 1 l 0:11.913 i 16
+F Gtr-ord-A4-ff-1c.wav 1281656 0 1415728306 0
+D s 44100 n 1 l 0:14.530 i 16
+F Gtr-ord-A4-mf-1c.wav 999622 0 1415728308 0
+D s 44100 n 1 l 0:11.333 i 16
+F Gtr-ord-A4-mf-2c.wav 846790 0 1415728308 0
+D s 44100 n 1 l 0:09.600 i 16
+F Gtr-ord-A4-mf-3c.wav 861986 0 1415728308 0
+D s 44100 n 1 l 0:09.772 i 16
+F Gtr-ord-A4-mf-4c.wav 810752 0 1415728310 0
+D s 44100 n 1 l 0:09.191 i 16
+F Gtr-ord-A4-pp-1c.wav 646150 0 1415728310 0
+D s 44100 n 1 l 0:07.325 i 16
+F Gtr-ord-A5-ff-1c.wav 541546 0 1415728310 0
+D s 44100 n 1 l 0:06.139 i 16
+F Gtr-ord-A5-mf-1c.wav 581496 0 1415728312 0
+D s 44100 n 1 l 0:06.592 i 16
+F Gtr-ord-A5-pp-1c.wav 499326 0 1415728312 0
+D s 44100 n 1 l 0:05.660 i 16
+F Gtr-ord-B2-ff-5c.wav 1321424 0 1415728312 0
+D s 44100 n 1 l 0:14.981 i 16
+F Gtr-ord-B2-mf-5c.wav 1057672 0 1415728314 0
+D s 44100 n 1 l 0:11.991 i 16
+F Gtr-ord-B2-mf-6c.wav 1068212 0 1415728314 0
+D s 44100 n 1 l 0:12.110 i 16
+F Gtr-ord-B2-pp-5c.wav 1030582 0 1415728316 0
+D s 44100 n 1 l 0:11.684 i 16
+F Gtr-ord-B3-ff-2c.wav 975148 0 1415728316 0
+D s 44100 n 1 l 0:11.055 i 16
+F Gtr-ord-B3-mf-2c.wav 953750 0 1415728316 0
+D s 44100 n 1 l 0:10.812 i 16
+F Gtr-ord-B3-mf-3c.wav 1043148 0 1415728318 0
+D s 44100 n 1 l 0:11.826 i 16
+F Gtr-ord-B3-mf-4c.wav 1131000 0 1415728318 0
+D s 44100 n 1 l 0:12.822 i 16
+F Gtr-ord-B3-mf-5c.wav 1042638 0 1415728320 0
+D s 44100 n 1 l 0:11.820 i 16
+F Gtr-ord-B3-mf-6c.wav 425238 0 1415728320 0
+D s 44100 n 1 l 0:04.820 i 16
 F Gtr-ord-B3-pp-2c.wav 955338 0 1415728320 0
 D s 44100 n 1 l 0:10.830 i 16
+F Gtr-ord-B4-ff-1c.wav 935652 0 1415728322 0
+D s 44100 n 1 l 0:10.607 i 16
+F Gtr-ord-B4-mf-1c.wav 919194 0 1415728322 0
+D s 44100 n 1 l 0:10.421 i 16
+F Gtr-ord-B4-mf-2c.wav 926082 0 1415728322 0
+D s 44100 n 1 l 0:10.499 i 16
+F Gtr-ord-B4-mf-3c.wav 508502 0 1415728324 0
+D s 44100 n 1 l 0:05.764 i 16
+F Gtr-ord-B4-pp-1c.wav 601510 0 1415728324 0
+D s 44100 n 1 l 0:06.819 i 16
+F Gtr-ord-B5-ff-1c.wav 673098 0 1415728326 0
+D s 44100 n 1 l 0:07.630 i 16
+F Gtr-ord-B5-mf-1c.wav 714964 0 1415728326 0
+D s 44100 n 1 l 0:08.105 i 16
+F Gtr-ord-B5-pp-1c.wav 365656 0 1415728326 0
+D s 44100 n 1 l 0:04.145 i 16
+F Gtr-ord-C#3-ff-5c.wav 1415436 0 1415728328 0
+D s 44100 n 1 l 0:16.047 i 16
+F Gtr-ord-C#3-mf-5c.wav 1193758 0 1415728328 0
+D s 44100 n 1 l 0:13.534 i 16
+F Gtr-ord-C#3-mf-6c.wav 1206596 0 1415728330 0
+D s 44100 n 1 l 0:13.679 i 16
+F Gtr-ord-C#3-pp-5c.wav 1200454 0 1415728330 0
+D s 44100 n 1 l 0:13.610 i 16
+F Gtr-ord-C#4-ff-2c.wav 510138 0 1415728330 0
+D s 44100 n 1 l 0:05.783 i 16
+F Gtr-ord-C#4-mf-2c.wav 652888 0 1415728332 0
+D s 44100 n 1 l 0:07.401 i 16
 F Gtr-ord-C#4-mf-3c.wav 676928 0 1415728332 0
 D s 44100 n 1 l 0:07.674 i 16
+F Gtr-ord-C#4-mf-4c.wav 691820 0 1415728332 0
+D s 44100 n 1 l 0:07.843 i 16
+F Gtr-ord-C#4-mf-5c.wav 587190 0 1415728334 0
+D s 44100 n 1 l 0:06.656 i 16
+F Gtr-ord-C#4-pp-2c.wav 440652 0 1415728334 0
+D s 44100 n 1 l 0:04.995 i 16
+F Gtr-ord-C#5-ff-1c.wav 570722 0 1415728334 0
+D s 44100 n 1 l 0:06.470 i 16
+F Gtr-ord-C#5-mf-1c.wav 731326 0 1415728336 0
+D s 44100 n 1 l 0:08.291 i 16
+F Gtr-ord-C#5-mf-2c.wav 521642 0 1415728336 0
+D s 44100 n 1 l 0:05.913 i 16
+F Gtr-ord-C#5-mf-3c.wav 606106 0 1415728338 0
+D s 44100 n 1 l 0:06.871 i 16
+F Gtr-ord-C#5-pp-1c.wav 429212 0 1415728338 0
+D s 44100 n 1 l 0:04.865 i 16
+F Gtr-ord-C3-ff-5c.wav 1214846 0 1415728338 0
+D s 44100 n 1 l 0:13.773 i 16
+F Gtr-ord-C3-mf-5c.wav 1134946 0 1415728340 0
+D s 44100 n 1 l 0:12.867 i 16
+F Gtr-ord-C3-mf-6c.wav 1166948 0 1415728340 0
+D s 44100 n 1 l 0:13.230 i 16
+F Gtr-ord-C3-pp-5c.wav 1029664 0 1415728340 0
+D s 44100 n 1 l 0:11.673 i 16
 F Gtr-ord-C4-ff-2c.wav 539400 0 1415728342 0
 D s 44100 n 1 l 0:06.115 i 16
+F Gtr-ord-C4-mf-2c.wav 573536 0 1415728342 0
+D s 44100 n 1 l 0:06.502 i 16
+F Gtr-ord-C4-mf-3c.wav 676246 0 1415728344 0
+D s 44100 n 1 l 0:07.666 i 16
 F Gtr-ord-C4-mf-4c.wav 722152 0 1415728344 0
 D s 44100 n 1 l 0:08.187 i 16
+F Gtr-ord-C4-mf-5c.wav 626542 0 1415728344 0
+D s 44100 n 1 l 0:07.103 i 16
+F Gtr-ord-C4-pp-2c.wav 546484 0 1415728346 0
+D s 44100 n 1 l 0:06.195 i 16
+F Gtr-ord-C5-ff-1c.wav 560224 0 1415728346 0
+D s 44100 n 1 l 0:06.351 i 16
+F Gtr-ord-C5-mf-1c.wav 668596 0 1415728346 0
+D s 44100 n 1 l 0:07.579 i 16
+F Gtr-ord-C5-mf-2c.wav 461558 0 1415728348 0
+D s 44100 n 1 l 0:05.232 i 16
+F Gtr-ord-C5-mf-3c.wav 476106 0 1415728348 0
+D s 44100 n 1 l 0:05.397 i 16
+F Gtr-ord-C5-pp-1c.wav 410120 0 1415728348 0
+D s 44100 n 1 l 0:04.649 i 16
+F Gtr-ord-D#2-mf-6c.wav 1600932 0 1415728350 0
+D s 44100 n 1 l 0:18.150 i 16
+F Gtr-ord-D#3-ff-4c.wav 1184248 0 1415728350 0
+D s 44100 n 1 l 0:13.426 i 16
+F Gtr-ord-D#3-mf-4c.wav 901198 0 1415728352 0
+D s 44100 n 1 l 0:10.217 i 16
+F Gtr-ord-D#3-mf-5c.wav 1053826 0 1415728352 0
+D s 44100 n 1 l 0:11.947 i 16
+F Gtr-ord-D#3-mf-6c.wav 900292 0 1415728352 0
+D s 44100 n 1 l 0:10.206 i 16
+F Gtr-ord-D#3-pp-4c.wav 1036944 0 1415728354 0
+D s 44100 n 1 l 0:11.756 i 16
+F Gtr-ord-D#4-ff-2c.wav 938332 0 1415728354 0
+D s 44100 n 1 l 0:10.638 i 16
+F Gtr-ord-D#4-mf-2c.wav 622298 0 1415728354 0
+D s 44100 n 1 l 0:07.055 i 16
+F Gtr-ord-D#4-mf-3c.wav 523598 0 1415728356 0
+D s 44100 n 1 l 0:05.935 i 16
+F Gtr-ord-D#4-mf-4c.wav 591240 0 1415728356 0
+D s 44100 n 1 l 0:06.702 i 16
+F Gtr-ord-D#4-mf-5c.wav 489102 0 1415728356 0
+D s 44100 n 1 l 0:05.544 i 16
+F Gtr-ord-D#4-pp-2c.wav 458598 0 1415728358 0
+D s 44100 n 1 l 0:05.199 i 16
+F Gtr-ord-D#5-ff-1c.wav 590074 0 1415728358 0
+D s 44100 n 1 l 0:06.689 i 16
+F Gtr-ord-D#5-mf-1c.wav 506044 0 1415728358 0
+D s 44100 n 1 l 0:05.736 i 16
+F Gtr-ord-D#5-mf-2c.wav 524326 0 1415728360 0
+D s 44100 n 1 l 0:05.944 i 16
+F Gtr-ord-D#5-pp-1c.wav 386756 0 1415728360 0
+D s 44100 n 1 l 0:04.384 i 16
+F Gtr-ord-D2-mf-6c.wav 1838148 0 1415728362 0
+D s 44100 n 1 l 0:20.840 i 16
+F Gtr-ord-D3-ff-4c.wav 1442174 0 1415728362 0
+D s 44100 n 1 l 0:16.350 i 16
+F Gtr-ord-D3-mf-4c.wav 1206978 0 1415728362 0
+D s 44100 n 1 l 0:13.684 i 16
+F Gtr-ord-D3-mf-5c.wav 1016424 0 1415728364 0
+D s 44100 n 1 l 0:11.523 i 16
+F Gtr-ord-D3-mf-6c.wav 1342676 0 1415728364 0
+D s 44100 n 1 l 0:15.222 i 16
+F Gtr-ord-D3-pp-4c.wav 1070536 0 1415728364 0
+D s 44100 n 1 l 0:12.137 i 16
+F Gtr-ord-D4-ff-2c.wav 1003874 0 1415728366 0
+D s 44100 n 1 l 0:11.381 i 16
+F Gtr-ord-D4-mf-2c.wav 756348 0 1415728366 0
+D s 44100 n 1 l 0:08.574 i 16
+F Gtr-ord-D4-mf-3c.wav 728228 0 1415728368 0
+D s 44100 n 1 l 0:08.256 i 16
+F Gtr-ord-D4-mf-4c.wav 698132 0 1415728368 0
+D s 44100 n 1 l 0:07.914 i 16
+F Gtr-ord-D4-mf-5c.wav 487864 0 1415728368 0
+D s 44100 n 1 l 0:05.530 i 16
+F Gtr-ord-D4-pp-2c.wav 558472 0 1415728370 0
+D s 44100 n 1 l 0:06.331 i 16
+F Gtr-ord-D5-ff-1c.wav 892924 0 1415728370 0
+D s 44100 n 1 l 0:10.123 i 16
+F Gtr-ord-D5-mf-1c.wav 726938 0 1415728370 0
+D s 44100 n 1 l 0:08.241 i 16
+F Gtr-ord-D5-mf-2c.wav 673888 0 1415728372 0
+D s 44100 n 1 l 0:07.639 i 16
+F Gtr-ord-D5-mf-3c.wav 427432 0 1415728372 0
+D s 44100 n 1 l 0:04.845 i 16
+F Gtr-ord-D5-pp-1c.wav 504108 0 1415728372 0
+D s 44100 n 1 l 0:05.715 i 16
+F Gtr-ord-E2-ff-6c.wav 1573096 0 1415728374 0
+D s 44100 n 1 l 0:17.835 i 16
+F Gtr-ord-E2-mf-6c.wav 1258512 0 1415728374 0
+D s 44100 n 1 l 0:14.268 i 16
+F Gtr-ord-E2-pp-6c.wav 792700 0 1415728376 0
+D s 44100 n 1 l 0:08.987 i 16
+F Gtr-ord-E3-ff-4c.wav 1168314 0 1415728376 0
+D s 44100 n 1 l 0:13.245 i 16
+F Gtr-ord-E3-mf-4c.wav 869418 0 1415728376 0
+D s 44100 n 1 l 0:09.856 i 16
+F Gtr-ord-E3-mf-5c.wav 862466 0 1415728378 0
+D s 44100 n 1 l 0:09.778 i 16
+F Gtr-ord-E3-mf-6c.wav 1153370 0 1415728378 0
+D s 44100 n 1 l 0:13.076 i 16
+F Gtr-ord-E3-pp-4c.wav 1258790 0 1415728378 0
+D s 44100 n 1 l 0:14.271 i 16
+F Gtr-ord-E4-ff-1c.wav 1132030 0 1415728380 0
+D s 44100 n 1 l 0:12.834 i 16
+F Gtr-ord-E4-mf-1c.wav 1128276 0 1415728380 0
+D s 44100 n 1 l 0:12.791 i 16
+F Gtr-ord-E4-mf-2c.wav 1011326 0 1415728382 0
+D s 44100 n 1 l 0:11.465 i 16
+F Gtr-ord-E4-mf-3c.wav 777300 0 1415728382 0
+D s 44100 n 1 l 0:08.812 i 16
+F Gtr-ord-E4-mf-4c.wav 695978 0 1415728382 0
+D s 44100 n 1 l 0:07.890 i 16
+F Gtr-ord-E4-mf-5c.wav 615720 0 1415728384 0
+D s 44100 n 1 l 0:06.980 i 16
+F Gtr-ord-E4-pp-1c.wav 825574 0 1415728384 0
+D s 44100 n 1 l 0:09.359 i 16
+F Gtr-ord-E5-ff-1c.wav 724444 0 1415728384 0
+D s 44100 n 1 l 0:08.213 i 16
+F Gtr-ord-E5-mf-1c.wav 699968 0 1415728386 0
+D s 44100 n 1 l 0:07.935 i 16
+F Gtr-ord-E5-mf-2c.wav 751690 0 1415728386 0
+D s 44100 n 1 l 0:08.522 i 16
 F Gtr-ord-E5-pp-1c.wav 468210 0 1415728388 0
 D s 44100 n 1 l 0:05.308 i 16
+F Gtr-ord-F#2-ff-6c.wav 1243208 0 1415728388 0
+D s 44100 n 1 l 0:14.094 i 16
+F Gtr-ord-F#2-mf-6c.wav 1172434 0 1415728388 0
+D s 44100 n 1 l 0:13.292 i 16
+F Gtr-ord-F#2-pp-6c.wav 1069956 0 1415728390 0
+D s 44100 n 1 l 0:12.130 i 16
+F Gtr-ord-F#3-ff-4c.wav 964302 0 1415728390 0
+D s 44100 n 1 l 0:10.932 i 16
+F Gtr-ord-F#3-mf-4c.wav 799756 0 1415728390 0
+D s 44100 n 1 l 0:09.067 i 16
+F Gtr-ord-F#3-mf-5c.wav 808814 0 1415728392 0
+D s 44100 n 1 l 0:09.169 i 16
+F Gtr-ord-F#3-mf-6c.wav 549216 0 1415728392 0
+D s 44100 n 1 l 0:06.226 i 16
+F Gtr-ord-F#3-pp-4c.wav 760388 0 1415728392 0
+D s 44100 n 1 l 0:08.620 i 16
+F Gtr-ord-F#4-ff-1c.wav 784720 0 1415728394 0
+D s 44100 n 1 l 0:08.896 i 16
+F Gtr-ord-F#4-mf-1c.wav 770960 0 1415728394 0
+D s 44100 n 1 l 0:08.740 i 16
+F Gtr-ord-F#4-mf-2c.wav 817284 0 1415728396 0
+D s 44100 n 1 l 0:09.265 i 16
+F Gtr-ord-F#4-mf-3c.wav 602528 0 1415728396 0
+D s 44100 n 1 l 0:06.830 i 16
+F Gtr-ord-F#4-mf-4c.wav 518260 0 1415728396 0
+D s 44100 n 1 l 0:05.875 i 16
+F Gtr-ord-F#4-pp-1c.wav 525096 0 1415728398 0
+D s 44100 n 1 l 0:05.952 i 16
+F Gtr-ord-F#5-ff-1c.wav 808826 0 1415728398 0
+D s 44100 n 1 l 0:09.169 i 16
+F Gtr-ord-F#5-mf-1c.wav 757266 0 1415728398 0
+D s 44100 n 1 l 0:08.585 i 16
+F Gtr-ord-F#5-mf-2c.wav 630412 0 1415728400 0
+D s 44100 n 1 l 0:07.147 i 16
+F Gtr-ord-F#5-pp-1c.wav 517978 0 1415728400 0
+D s 44100 n 1 l 0:05.872 i 16
+F Gtr-ord-F2-ff-6c.wav 1113434 0 1415728400 0
+D s 44100 n 1 l 0:12.623 i 16
+F Gtr-ord-F2-mf-6c.wav 1120986 0 1415728402 0
+D s 44100 n 1 l 0:12.709 i 16
+F Gtr-ord-F2-pp-6c.wav 895262 0 1415728402 0
+D s 44100 n 1 l 0:10.149 i 16
+F Gtr-ord-F3-ff-4c.wav 590888 0 1415728404 0
+D s 44100 n 1 l 0:06.698 i 16
+F Gtr-ord-F3-mf-4c.wav 900682 0 1415728404 0
+D s 44100 n 1 l 0:10.211 i 16
+F Gtr-ord-F3-mf-5c.wav 912060 0 1415728404 0
+D s 44100 n 1 l 0:10.340 i 16
+F Gtr-ord-F3-mf-6c.wav 806140 0 1415728406 0
+D s 44100 n 1 l 0:09.139 i 16
+F Gtr-ord-F3-pp-4c.wav 743948 0 1415728406 0
+D s 44100 n 1 l 0:08.434 i 16
+F Gtr-ord-F4-ff-1c.wav 768896 0 1415728406 0
+D s 44100 n 1 l 0:08.717 i 16
+F Gtr-ord-F4-mf-1c.wav 655004 0 1415728408 0
+D s 44100 n 1 l 0:07.425 i 16
+F Gtr-ord-F4-mf-2c.wav 604408 0 1415728408 0
+D s 44100 n 1 l 0:06.852 i 16
+F Gtr-ord-F4-mf-3c.wav 598222 0 1415728410 0
+D s 44100 n 1 l 0:06.782 i 16
+F Gtr-ord-F4-mf-4c.wav 604634 0 1415728410 0
+D s 44100 n 1 l 0:06.854 i 16
+F Gtr-ord-F4-pp-1c.wav 689336 0 1415728410 0
+D s 44100 n 1 l 0:07.815 i 16
+F Gtr-ord-F5-ff-1c.wav 651432 0 1415728412 0
+D s 44100 n 1 l 0:07.385 i 16
+F Gtr-ord-F5-mf-1c.wav 752074 0 1415728412 0
+D s 44100 n 1 l 0:08.526 i 16
+F Gtr-ord-F5-mf-2c.wav 522524 0 1415728412 0
+D s 44100 n 1 l 0:05.923 i 16
+F Gtr-ord-F5-pp-1c.wav 399242 0 1415728414 0
+D s 44100 n 1 l 0:04.526 i 16
+F Gtr-ord-G#2-ff-6c.wav 1046602 0 1415728414 0
+D s 44100 n 1 l 0:11.865 i 16
+F Gtr-ord-G#2-mf-6c.wav 947330 0 1415728414 0
+D s 44100 n 1 l 0:10.740 i 16
+F Gtr-ord-G#2-pp-6c.wav 995306 0 1415728416 0
+D s 44100 n 1 l 0:11.284 i 16
+F Gtr-ord-G#3-ff-3c.wav 542860 0 1415728416 0
+D s 44100 n 1 l 0:06.154 i 16
+F Gtr-ord-G#3-mf-3c.wav 561224 0 1415728416 0
+D s 44100 n 1 l 0:06.362 i 16
+F Gtr-ord-G#3-mf-4c.wav 502904 0 1415728418 0
+D s 44100 n 1 l 0:05.701 i 16
+F Gtr-ord-G#3-mf-5c.wav 671992 0 1415728418 0
+D s 44100 n 1 l 0:07.618 i 16
+F Gtr-ord-G#3-mf-6c.wav 668104 0 1415728420 0
+D s 44100 n 1 l 0:07.574 i 16
+F Gtr-ord-G#3-pp-3c.wav 556054 0 1415728420 0
+D s 44100 n 1 l 0:06.303 i 16
+F Gtr-ord-G#4-ff-1c.wav 745936 0 1415728420 0
+D s 44100 n 1 l 0:08.456 i 16
+F Gtr-ord-G#4-mf-1c.wav 540430 0 1415728422 0
+D s 44100 n 1 l 0:06.126 i 16
+F Gtr-ord-G#4-mf-2c.wav 806022 0 1415728422 0
+D s 44100 n 1 l 0:09.138 i 16
+F Gtr-ord-G#4-mf-3c.wav 660666 0 1415728422 0
+D s 44100 n 1 l 0:07.490 i 16
+F Gtr-ord-G#4-mf-4c.wav 559524 0 1415728424 0
+D s 44100 n 1 l 0:06.343 i 16
+F Gtr-ord-G#4-pp-1c.wav 619762 0 1415728424 0
+D s 44100 n 1 l 0:07.026 i 16
+F Gtr-ord-G#5-ff-1c.wav 613240 0 1415728426 0
+D s 44100 n 1 l 0:06.952 i 16
+F Gtr-ord-G#5-mf-1c.wav 395192 0 1415728426 0
+D s 44100 n 1 l 0:04.480 i 16
+F Gtr-ord-G#5-pp-1c.wav 342212 0 1415728426 0
+D s 44100 n 1 l 0:03.879 i 16
+F Gtr-ord-G2-ff-6c.wav 1011282 0 1415728428 0
+D s 44100 n 1 l 0:11.465 i 16
+F Gtr-ord-G2-mf-6c.wav 964296 0 1415728428 0
+D s 44100 n 1 l 0:10.932 i 16
+F Gtr-ord-G2-pp-6c.wav 885070 0 1415728428 0
+D s 44100 n 1 l 0:10.034 i 16
+F Gtr-ord-G3-ff-3c.wav 570258 0 1415728430 0
+D s 44100 n 1 l 0:06.465 i 16
+F Gtr-ord-G3-mf-3c.wav 699076 0 1415728430 0
+D s 44100 n 1 l 0:07.925 i 16
+F Gtr-ord-G3-mf-4c.wav 804374 0 1415728430 0
+D s 44100 n 1 l 0:09.119 i 16
+F Gtr-ord-G3-mf-5c.wav 925424 0 1415728432 0
+D s 44100 n 1 l 0:10.491 i 16
+F Gtr-ord-G3-mf-6c.wav 750726 0 1415728432 0
+D s 44100 n 1 l 0:08.511 i 16
+F Gtr-ord-G3-pp-3c.wav 583898 0 1415728434 0
+D s 44100 n 1 l 0:06.619 i 16
+F Gtr-ord-G4-ff-1c.wav 984244 0 1415728434 0
+D s 44100 n 1 l 0:11.158 i 16
+F Gtr-ord-G4-mf-1c.wav 609880 0 1415728434 0
+D s 44100 n 1 l 0:06.914 i 16
+F Gtr-ord-G4-mf-2c.wav 664030 0 1415728436 0
+D s 44100 n 1 l 0:07.528 i 16
+F Gtr-ord-G4-mf-3c.wav 519504 0 1415728436 0
+D s 44100 n 1 l 0:05.889 i 16
+F Gtr-ord-G4-mf-4c.wav 480368 0 1415728436 0
+D s 44100 n 1 l 0:05.445 i 16
+F Gtr-ord-G4-pp-1c.wav 403968 0 1415728438 0
+D s 44100 n 1 l 0:04.579 i 16
+F Gtr-ord-G5-ff-1c.wav 687940 0 1415728438 0
+D s 44100 n 1 l 0:07.799 i 16
 F Gtr-ord-G5-mf-1c.wav 425598 0 1415728438 0
 D s 44100 n 1 l 0:04.824 i 16
+F Gtr-ord-G5-pp-1c.wav 431938 0 1415728440 0
+D s 44100 n 1 l 0:04.896 i 16

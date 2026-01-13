@@ -1,11 +1,223 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Horn/flatterzunge
+F Hn-flatt-A#2-ff.wav 698622 0 1415726220 0
+D s 44100 n 1 l 0:07.920 i 16
+F Hn-flatt-A#2-mf.wav 577300 0 1415726220 0
+D s 44100 n 1 l 0:06.544 i 16
+F Hn-flatt-A#2-pp.wav 544562 0 1415726222 0
+D s 44100 n 1 l 0:06.173 i 16
+F Hn-flatt-A#3-ff.wav 576466 0 1415726222 0
+D s 44100 n 1 l 0:06.535 i 16
+F Hn-flatt-A#3-mf.wav 575896 0 1415726222 0
+D s 44100 n 1 l 0:06.528 i 16
+F Hn-flatt-A#3-pp.wav 539104 0 1415726222 0
+D s 44100 n 1 l 0:06.111 i 16
+F Hn-flatt-A#4-ff.wav 558296 0 1415726224 0
+D s 44100 n 1 l 0:06.329 i 16
+F Hn-flatt-A#4-mf.wav 551190 0 1415726224 0
+D s 44100 n 1 l 0:06.248 i 16
+F Hn-flatt-A#4-pp.wav 505590 0 1415726224 0
+D s 44100 n 1 l 0:05.731 i 16
+F Hn-flatt-A2-ff.wav 559662 0 1415726226 0
+D s 44100 n 1 l 0:06.344 i 16
+F Hn-flatt-A2-mf.wav 597314 0 1415726226 0
+D s 44100 n 1 l 0:06.771 i 16
+F Hn-flatt-A2-pp.wav 570374 0 1415726226 0
+D s 44100 n 1 l 0:06.466 i 16
 F Hn-flatt-A3-ff.wav 564112 0 1415726228 0
 D s 44100 n 1 l 0:06.395 i 16
+F Hn-flatt-A3-mf.wav 555202 0 1415726228 0
+D s 44100 n 1 l 0:06.294 i 16
+F Hn-flatt-A3-pp.wav 539188 0 1415726228 0
+D s 44100 n 1 l 0:06.112 i 16
+F Hn-flatt-A4-ff.wav 536840 0 1415726230 0
+D s 44100 n 1 l 0:06.086 i 16
+F Hn-flatt-A4-mf.wav 576380 0 1415726230 0
+D s 44100 n 1 l 0:06.534 i 16
+F Hn-flatt-A4-pp.wav 529894 0 1415726230 0
+D s 44100 n 1 l 0:06.007 i 16
+F Hn-flatt-B2-ff.wav 555936 0 1415726232 0
+D s 44100 n 1 l 0:06.302 i 16
+F Hn-flatt-B2-mf.wav 569182 0 1415726232 0
+D s 44100 n 1 l 0:06.452 i 16
+F Hn-flatt-B2-pp.wav 534796 0 1415726232 0
+D s 44100 n 1 l 0:06.062 i 16
+F Hn-flatt-B3-ff.wav 519598 0 1415726232 0
+D s 44100 n 1 l 0:05.890 i 16
+F Hn-flatt-B3-mf.wav 561602 0 1415726234 0
+D s 44100 n 1 l 0:06.366 i 16
+F Hn-flatt-B3-pp.wav 528116 0 1415726234 0
+D s 44100 n 1 l 0:05.987 i 16
+F Hn-flatt-B4-ff.wav 537314 0 1415726234 0
+D s 44100 n 1 l 0:06.091 i 16
+F Hn-flatt-B4-mf.wav 523030 0 1415726236 0
+D s 44100 n 1 l 0:05.929 i 16
+F Hn-flatt-B4-pp.wav 570748 0 1415726236 0
+D s 44100 n 1 l 0:06.470 i 16
+F Hn-flatt-C#3-ff.wav 548184 0 1415726236 0
+D s 44100 n 1 l 0:06.214 i 16
+F Hn-flatt-C#3-mf.wav 569100 0 1415726238 0
+D s 44100 n 1 l 0:06.451 i 16
+F Hn-flatt-C#3-pp.wav 494862 0 1415726238 0
+D s 44100 n 1 l 0:05.610 i 16
+F Hn-flatt-C#4-ff.wav 562956 0 1415726238 0
+D s 44100 n 1 l 0:06.382 i 16
+F Hn-flatt-C#4-mf.wav 570700 0 1415726240 0
+D s 44100 n 1 l 0:06.470 i 16
+F Hn-flatt-C#4-pp.wav 554002 0 1415726240 0
+D s 44100 n 1 l 0:06.280 i 16
+F Hn-flatt-C#5-ff.wav 534844 0 1415726240 0
+D s 44100 n 1 l 0:06.063 i 16
+F Hn-flatt-C#5-mf.wav 520414 0 1415726240 0
+D s 44100 n 1 l 0:05.899 i 16
+F Hn-flatt-C#5-pp.wav 538384 0 1415726242 0
+D s 44100 n 1 l 0:06.103 i 16
 F Hn-flatt-C3-ff.wav 567330 0 1415726242 0
 D s 44100 n 1 l 0:06.431 i 16
+F Hn-flatt-C3-mf.wav 581700 0 1415726242 0
+D s 44100 n 1 l 0:06.594 i 16
+F Hn-flatt-C3-pp.wav 562848 0 1415726244 0
+D s 44100 n 1 l 0:06.380 i 16
 F Hn-flatt-C4-ff.wav 579394 0 1415726244 0
 D s 44100 n 1 l 0:06.568 i 16
+F Hn-flatt-C4-mf.wav 603842 0 1415726244 0
+D s 44100 n 1 l 0:06.845 i 16
+F Hn-flatt-C4-pp.wav 555142 0 1415726246 0
+D s 44100 n 1 l 0:06.293 i 16
+F Hn-flatt-C5-ff.wav 558510 0 1415726246 0
+D s 44100 n 1 l 0:06.331 i 16
+F Hn-flatt-C5-mf.wav 553078 0 1415726246 0
+D s 44100 n 1 l 0:06.270 i 16
+F Hn-flatt-C5-pp.wav 504060 0 1415726248 0
+D s 44100 n 1 l 0:05.714 i 16
+F Hn-flatt-D#3-ff.wav 595086 0 1415726248 0
+D s 44100 n 1 l 0:06.746 i 16
+F Hn-flatt-D#3-mf.wav 569338 0 1415726248 0
+D s 44100 n 1 l 0:06.454 i 16
+F Hn-flatt-D#3-pp.wav 579178 0 1415726250 0
+D s 44100 n 1 l 0:06.566 i 16
+F Hn-flatt-D#4-ff.wav 571342 0 1415726250 0
+D s 44100 n 1 l 0:06.477 i 16
+F Hn-flatt-D#4-mf.wav 518142 0 1415726250 0
+D s 44100 n 1 l 0:05.874 i 16
+F Hn-flatt-D#4-pp.wav 519744 0 1415726250 0
+D s 44100 n 1 l 0:05.892 i 16
+F Hn-flatt-D#5-ff.wav 524198 0 1415726252 0
+D s 44100 n 1 l 0:05.942 i 16
+F Hn-flatt-D#5-mf.wav 544960 0 1415726252 0
+D s 44100 n 1 l 0:06.178 i 16
+F Hn-flatt-D#5-pp.wav 502798 0 1415726252 0
+D s 44100 n 1 l 0:05.700 i 16
 F Hn-flatt-D3-ff.wav 600878 0 1415726254 0
 D s 44100 n 1 l 0:06.812 i 16
+F Hn-flatt-D3-mf.wav 578580 0 1415726254 0
+D s 44100 n 1 l 0:06.559 i 16
+F Hn-flatt-D3-pp.wav 489870 0 1415726254 0
+D s 44100 n 1 l 0:05.553 i 16
+F Hn-flatt-D4-ff.wav 580416 0 1415726256 0
+D s 44100 n 1 l 0:06.580 i 16
+F Hn-flatt-D4-mf.wav 564008 0 1415726256 0
+D s 44100 n 1 l 0:06.394 i 16
+F Hn-flatt-D4-pp.wav 554318 0 1415726256 0
+D s 44100 n 1 l 0:06.284 i 16
+F Hn-flatt-D5-ff.wav 539518 0 1415726258 0
+D s 44100 n 1 l 0:06.116 i 16
+F Hn-flatt-D5-mf.wav 517248 0 1415726258 0
+D s 44100 n 1 l 0:05.863 i 16
+F Hn-flatt-D5-pp.wav 517886 0 1415726258 0
+D s 44100 n 1 l 0:05.871 i 16
+F Hn-flatt-E3-ff.wav 567406 0 1415726258 0
+D s 44100 n 1 l 0:06.432 i 16
+F Hn-flatt-E3-mf.wav 547674 0 1415726260 0
+D s 44100 n 1 l 0:06.208 i 16
+F Hn-flatt-E3-pp.wav 469514 0 1415726260 0
+D s 44100 n 1 l 0:05.322 i 16
+F Hn-flatt-E4-ff.wav 566300 0 1415726260 0
+D s 44100 n 1 l 0:06.420 i 16
+F Hn-flatt-E4-mf.wav 587204 0 1415726262 0
+D s 44100 n 1 l 0:06.657 i 16
+F Hn-flatt-E4-pp.wav 540710 0 1415726262 0
+D s 44100 n 1 l 0:06.130 i 16
+F Hn-flatt-E5-ff.wav 458458 0 1415726262 0
+D s 44100 n 1 l 0:05.197 i 16
+F Hn-flatt-E5-mf.wav 471384 0 1415726264 0
+D s 44100 n 1 l 0:05.343 i 16
+F Hn-flatt-E5-pp.wav 486030 0 1415726264 0
+D s 44100 n 1 l 0:05.510 i 16
+F Hn-flatt-F#2-ff.wav 540682 0 1415726264 0
+D s 44100 n 1 l 0:06.129 i 16
+F Hn-flatt-F#2-mf.wav 514228 0 1415726266 0
+D s 44100 n 1 l 0:05.829 i 16
+F Hn-flatt-F#2-pp.wav 561404 0 1415726266 0
+D s 44100 n 1 l 0:06.364 i 16
+F Hn-flatt-F#3-ff.wav 463932 0 1415726266 0
+D s 44100 n 1 l 0:05.259 i 16
+F Hn-flatt-F#3-mf.wav 567226 0 1415726268 0
+D s 44100 n 1 l 0:06.430 i 16
+F Hn-flatt-F#3-pp.wav 481196 0 1415726268 0
+D s 44100 n 1 l 0:05.455 i 16
+F Hn-flatt-F#4-ff.wav 577010 0 1415726268 0
+D s 44100 n 1 l 0:06.541 i 16
+F Hn-flatt-F#4-mf.wav 587752 0 1415726268 0
+D s 44100 n 1 l 0:06.663 i 16
+F Hn-flatt-F#4-pp.wav 553926 0 1415726270 0
+D s 44100 n 1 l 0:06.279 i 16
+F Hn-flatt-F2-ff.wav 517604 0 1415726270 0
+D s 44100 n 1 l 0:05.868 i 16
+F Hn-flatt-F2-mf.wav 562444 0 1415726270 0
+D s 44100 n 1 l 0:06.376 i 16
+F Hn-flatt-F2-pp.wav 577632 0 1415726272 0
+D s 44100 n 1 l 0:06.548 i 16
+F Hn-flatt-F3-ff.wav 588720 0 1415726272 0
+D s 44100 n 1 l 0:06.674 i 16
+F Hn-flatt-F3-mf.wav 538938 0 1415726272 0
+D s 44100 n 1 l 0:06.109 i 16
+F Hn-flatt-F3-pp.wav 541194 0 1415726274 0
+D s 44100 n 1 l 0:06.135 i 16
+F Hn-flatt-F4-ff.wav 582864 0 1415726274 0
+D s 44100 n 1 l 0:06.607 i 16
+F Hn-flatt-F4-mf.wav 547084 0 1415726274 0
+D s 44100 n 1 l 0:06.202 i 16
+F Hn-flatt-F4-pp.wav 527190 0 1415726276 0
+D s 44100 n 1 l 0:05.976 i 16
+F Hn-flatt-F5-ff.wav 456676 0 1415726276 0
+D s 44100 n 1 l 0:05.177 i 16
+F Hn-flatt-F5-mf.wav 436448 0 1415726276 0
+D s 44100 n 1 l 0:04.947 i 16
+F Hn-flatt-F5-pp.wav 378758 0 1415726276 0
+D s 44100 n 1 l 0:04.293 i 16
+F Hn-flatt-G#2-ff.wav 582936 0 1415726278 0
+D s 44100 n 1 l 0:06.608 i 16
+F Hn-flatt-G#2-mf.wav 600524 0 1415726278 0
+D s 44100 n 1 l 0:06.808 i 16
+F Hn-flatt-G#2-pp.wav 591350 0 1415726278 0
+D s 44100 n 1 l 0:06.704 i 16
+F Hn-flatt-G#3-ff.wav 566706 0 1415726280 0
+D s 44100 n 1 l 0:06.424 i 16
+F Hn-flatt-G#3-mf.wav 550558 0 1415726280 0
+D s 44100 n 1 l 0:06.241 i 16
+F Hn-flatt-G#3-pp.wav 537098 0 1415726280 0
+D s 44100 n 1 l 0:06.089 i 16
+F Hn-flatt-G#4-ff.wav 546904 0 1415726282 0
+D s 44100 n 1 l 0:06.200 i 16
+F Hn-flatt-G#4-mf.wav 623990 0 1415726282 0
+D s 44100 n 1 l 0:07.074 i 16
+F Hn-flatt-G#4-pp.wav 533002 0 1415726282 0
+D s 44100 n 1 l 0:06.042 i 16
+F Hn-flatt-G2-ff.wav 542538 0 1415726284 0
+D s 44100 n 1 l 0:06.150 i 16
+F Hn-flatt-G2-mf.wav 586580 0 1415726284 0
+D s 44100 n 1 l 0:06.650 i 16
+F Hn-flatt-G2-pp.wav 533212 0 1415726284 0
+D s 44100 n 1 l 0:06.044 i 16
 F Hn-flatt-G3-ff.wav 584758 0 1415726284 0
 D s 44100 n 1 l 0:06.629 i 16
+F Hn-flatt-G3-mf.wav 505280 0 1415726286 0
+D s 44100 n 1 l 0:05.728 i 16
+F Hn-flatt-G3-pp.wav 546732 0 1415726286 0
+D s 44100 n 1 l 0:06.198 i 16
+F Hn-flatt-G4-ff.wav 579194 0 1415726286 0
+D s 44100 n 1 l 0:06.566 i 16
+F Hn-flatt-G4-mf.wav 550434 0 1415726288 0
+D s 44100 n 1 l 0:06.240 i 16
+F Hn-flatt-G4-pp.wav 535308 0 1415726288 0
+D s 44100 n 1 l 0:06.068 i 16

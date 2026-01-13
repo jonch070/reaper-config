@@ -1,0 +1,44 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Album 3/ABM03 Tools/nvk test/nvk test 02/media/media"
+F BADSOUND.wav 552408 0 1598896090 0
+D s 44100 n 2 l 0:03.131 i 16
+F BirdWhine2.wav 258476 0 1367256702 0
+D y 2013-04-29 s 44100 n 2 r 7:34:37.143
+D l 0:01.458 i 16
+F bouncy.wav 201416 0 1629244264 0
+D s 48000 n 1 l 0:01.048 i 32
+F bouncy_2.wav 286392 0 1629244126 0
+D s 48000 n 1 l 0:01.491 i 32
+F Caribou_Antlers_Mic_Choice__Regular_Hits_2_27.wav 767816 0 1604731528 0
+D y 2020-11-06 s 96000 n 2 r 1:15:32.990
+D l 0:00.998 i 32
+F Caribou_Antlers_Mic_Choice__Regular_Hits_2_29.wav 648216 0 1604731528 0
+D y 2020-11-06 s 96000 n 2 r 1:15:38.138
+D l 0:00.843 i 32
+F Caribou_Antlers_Mic_Choice__Regular_Hits_2_30.wav 707168 0 1604731528 0
+D y 2020-11-06 s 96000 n 2 r 1:15:41.062
+D l 0:00.919 i 32
+F Caribou_Antlers_Mic_Choice__Regular_Hits_2_31.wav 707168 0 1604731529 0
+D y 2020-11-06 s 96000 n 2 r 1:15:42.431
+D l 0:00.919 i 32
+F coldSHOLD_1.wav 183860 0 1629244318 0
+D s 48000 n 1 l 0:00.957 i 32
+F crazybass.wav 141808 0 1629244414 0
+D s 48000 n 1 l 0:00.980 i 24
+F Croaking1.wav 336156 0 1367256594 0
+D y 2013-04-29 s 44100 n 2 r 7:34:31.006
+D l 0:01.899 i 16
+F Croaking2.wav 253620 0 1367256638 0
+D y 2013-04-29 s 44100 n 2 r 7:34:33.318
+D l 0:01.431 i 16
+F GeophoneCorpi_01_1seconds_96000_24_nonnorm-002.wav 776674 0 1674343986 0
+D y 2023-01-21 s 96000 n 2 r 0:01.503
+D l 0:01.347 i 24
+F GeophoneCorpi_01_1seconds_96000_24_nonnorm-004.wav 877528 0 1674343987 0
+D y 2023-01-21 s 96000 n 2 r 0:29.989
+D l 0:01.522 i 24
+F GeophoneCorpi_01_1seconds_96000_24_nonnorm-005.wav 752992 0 1674343989 0
+D y 2023-01-21 s 96000 n 2 r 1:20.120
+D l 0:01.306 i 24
+F GeophoneCorpi_01_1seconds_96000_24_nonnorm-006.wav 1078456 0 1674343990 0
+D y 2023-01-21 s 96000 n 2 r 1:38.282
+D l 0:01.871 i 24

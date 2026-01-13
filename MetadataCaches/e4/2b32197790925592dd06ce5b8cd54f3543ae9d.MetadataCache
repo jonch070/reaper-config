@@ -1,7 +1,95 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Winds/Alto-Sax/multiphonics
+F ASax-mul-A3_A#3_E5+_A4+-mf.wav 610270 0 1415739896 0
+D s 44100 n 1 l 0:06.918 i 16
+F ASax-mul-A3_A3+_E5-mf.wav 709518 0 1415739896 0
+D s 44100 n 1 l 0:08.043 i 16
+F ASax-mul-A4_G#5_F#4-mf.wav 575216 0 1415739896 0
+D s 44100 n 1 l 0:06.521 i 16
+F ASax-mul-B3+_C#5+_G#5-mf.wav 771214 0 1415739898 0
+D s 44100 n 1 l 0:08.743 i 16
+F ASax-mul-C#4+_D4+_D5_A#5-mf.wav 545580 0 1415739898 0
+D s 44100 n 1 l 0:06.185 i 16
+F ASax-mul-C#4+_F4_D5-mf.wav 613780 0 1415739898 0
+D s 44100 n 1 l 0:06.958 i 16
+F ASax-mul-C#4_C#4+_A5-mf.wav 610732 0 1415739898 0
+D s 44100 n 1 l 0:06.923 i 16
+F ASax-mul-C#4_D#5_D#4_A#5-mf.wav 576178 0 1415739900 0
+D s 44100 n 1 l 0:06.532 i 16
+F ASax-mul-C#4_G#5_C4+_C#5-mf.wav 584886 0 1415739900 0
+D s 44100 n 1 l 0:06.630 i 16
+F ASax-mul-C4+_A5_C#4_D5+-mf.wav 630110 0 1415739900 0
+D s 44100 n 1 l 0:07.143 i 16
+F ASax-mul-C4+_C#4_C5_G#5+-mf.wav 590808 0 1415739902 0
+D s 44100 n 1 l 0:06.698 i 16
+F ASax-mul-C4+_D#5_A5_C4-mf.wav 637642 0 1415739902 0
+D s 44100 n 1 l 0:07.229 i 16
+F ASax-mul-C4_C#5_G#5-mf.wav 675638 0 1415739902 0
+D s 44100 n 1 l 0:07.659 i 16
+F ASax-mul-C4_D5_G#5-p.wav 695486 0 1415739904 0
+D s 44100 n 1 l 0:07.884 i 16
+F ASax-mul-D#4+_E4_B5-mf.wav 658432 0 1415739904 0
+D s 44100 n 1 l 0:07.464 i 16
+F ASax-mul-D#4+_F5+-mf.wav 705718 0 1415739904 0
+D s 44100 n 1 l 0:08.000 i 16
+F ASax-mul-D#4+_G4_F5+-mf.wav 633736 0 1415739904 0
+D s 44100 n 1 l 0:07.184 i 16
 F ASax-mul-D#4_D#5+_A#5+-mf.wav 786090 0 1415739906 0
 D s 44100 n 1 l 0:08.912 i 16
+F ASax-mul-D#4_E5+_B5-mf.wav 700966 0 1415739906 0
+D s 44100 n 1 l 0:07.946 i 16
+F ASax-mul-D#4_E5_F#4-p.wav 600606 0 1415739906 0
+D s 44100 n 1 l 0:06.809 i 16
+F ASax-mul-D4+_D#4_A#5-mf.wav 710990 0 1415739908 0
+D s 44100 n 1 l 0:08.060 i 16
+F ASax-mul-D4+_D#5+_A#5+-mf.wav 652720 0 1415739908 0
+D s 44100 n 1 l 0:07.399 i 16
 F ASax-mul-D4+_E5_A#5-mf.wav 696244 0 1415739908 0
 D s 44100 n 1 l 0:07.893 i 16
+F ASax-mul-D4+_F5_B5-mf.wav 733426 0 1415739910 0
+D s 44100 n 1 l 0:08.314 i 16
+F ASax-mul-D4_E5+-mf.wav 585234 0 1415739910 0
+D s 44100 n 1 l 0:06.634 i 16
+F ASax-mul-E3+_C#5_E4+_F5+-mf.wav 777756 0 1415739910 0
+D s 44100 n 1 l 0:08.817 i 16
+F ASax-mul-E4+_C#5_A5+-p.wav 641376 0 1415739910 0
+D s 44100 n 1 l 0:07.271 i 16
+F ASax-mul-E4+_F5_C6-mf.wav 751250 0 1415739912 0
+D s 44100 n 1 l 0:08.517 i 16
+F ASax-mul-E4_E4+_E5+-mf.wav 694840 0 1415739912 0
+D s 44100 n 1 l 0:07.877 i 16
+F ASax-mul-E4_F5+_G4-mf.wav 685760 0 1415739912 0
+D s 44100 n 1 l 0:07.774 i 16
+F ASax-mul-E4_G4_F#5+-mf.wav 536262 0 1415739914 0
+D s 44100 n 1 l 0:06.079 i 16
+F ASax-mul-E4_G4_F#5+-p.wav 718956 0 1415739914 0
+D s 44100 n 1 l 0:08.150 i 16
+F ASax-mul-F#3_C#5_F#4_F#5-mf.wav 683874 0 1415739914 0
+D s 44100 n 1 l 0:07.753 i 16
+F ASax-mul-F#4+_F#5-p.wav 679144 0 1415739916 0
+D s 44100 n 1 l 0:07.699 i 16
+F ASax-mul-F#4_D5_B5-mf.wav 579824 0 1415739916 0
+D s 44100 n 1 l 0:06.573 i 16
+F ASax-mul-F#4_G5+_A4-p.wav 672830 0 1415739916 0
+D s 44100 n 1 l 0:07.627 i 16
+F ASax-mul-F#4_G5_G#5+-p.wav 659844 0 1415739916 0
+D s 44100 n 1 l 0:07.480 i 16
 F ASax-mul-F3+_C#5_F#4_F#5-mf.wav 723648 0 1415739918 0
 D s 44100 n 1 l 0:08.204 i 16
+F ASax-mul-F3_F#5_G4+_A#5-mf.wav 570634 0 1415739918 0
+D s 44100 n 1 l 0:06.469 i 16
+F ASax-mul-G#3+_F#5+-mf.wav 753852 0 1415739918 0
+D s 44100 n 1 l 0:08.546 i 16
+F ASax-mul-G#3+_F5+_B5-mf.wav 694916 0 1415739920 0
+D s 44100 n 1 l 0:07.878 i 16
+F ASax-mul-G#3_D#5+_G#4-mf.wav 669378 0 1415739920 0
+D s 44100 n 1 l 0:07.588 i 16
+F ASax-mul-G#3_E5_B4_A5-mf.wav 600408 0 1415739920 0
+D s 44100 n 1 l 0:06.806 i 16
+F ASax-mul-G3+_D5+_G#3_G4+-p.wav 696732 0 1415739922 0
+D s 44100 n 1 l 0:07.898 i 16
+F ASax-mul-G3+_D5+_G#4+-mf.wav 787862 0 1415739922 0
+D s 44100 n 1 l 0:08.932 i 16
+F ASax-mul-G3_D#5_F#4+-mf.wav 747806 0 1415739922 0
+D s 44100 n 1 l 0:08.478 i 16
+F ASax-mul-G3_D5+_G#4-mf.wav 758692 0 1415739924 0
+D s 44100 n 1 l 0:08.601 i 16

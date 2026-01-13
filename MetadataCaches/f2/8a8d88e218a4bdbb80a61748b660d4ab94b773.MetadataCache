@@ -1,4 +1,67 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Trombone/pedal-tone
+F Tbn-pedal_tone-A#1-f.aif 417471 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-A#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-A#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.100
+D i 24
+F Tbn-pedal_tone-A#1-p.aif 524373 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-A#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-A#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.895
+D i 24
+F Tbn-pedal_tone-A1-f.aif 463672 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-A1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-A1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.443
+D i 24
+F Tbn-pedal_tone-A1-p.aif 556465 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-A1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-A1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.134
+D i 24
+F Tbn-pedal_tone-C#1-f.aif 364926 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-C#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-C#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.709
+D i 24
+F Tbn-pedal_tone-C#1-p.aif 516834 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-C#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-C#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.839
+D i 24
+F Tbn-pedal_tone-C1-f.aif 409411 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-C1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-C1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.040
+D i 24
+F Tbn-pedal_tone-C1-p.aif 421273 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-C1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-C1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.128
+D i 24
+F Tbn-pedal_tone-D#1-f.aif 424842 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-D#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-D#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.154
+D i 24
+F Tbn-pedal_tone-D#1-p.aif 522357 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-D#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-D#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.880
+D i 24
+F Tbn-pedal_tone-D1-f.aif 427732 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-D1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-D1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.176
+D i 24
+F Tbn-pedal_tone-D1-p.aif 489088 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-D1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-D1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.633
+D i 24
+F Tbn-pedal_tone-E1-f.aif 405853 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-E1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-E1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.013
+D i 24
+F Tbn-pedal_tone-E1-p.aif 486061 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-E1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-E1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.610
+D i 24
+F Tbn-pedal_tone-F#1-f.aif 447207 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-F#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-F#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.321
+D i 24
+F Tbn-pedal_tone-F#1-p.aif 503292 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-F#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-F#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.738
+D i 24
 F Tbn-pedal_tone-F1-f.aif 367981 0 1179238059 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-F1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-F1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.731
+D i 24
+F Tbn-pedal_tone-F1-p.aif 483235 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-F1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-F1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.589
+D i 24
+F Tbn-pedal_tone-G#1-f.aif 480912 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-G#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-G#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.572
+D i 24
+F Tbn-pedal_tone-G#1-p.aif 531030 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-G#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-G#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.945
+D i 24
+F Tbn-pedal_tone-G1-f.aif 484528 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-G1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-G1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.599
+D i 24
+F Tbn-pedal_tone-G1-p.aif 557596 0 1179238059 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/pedal-tone/Tbn-pdl-tone-G1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/pedal-tone/Tbn-pdl-tone-G1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.142
 D i 24

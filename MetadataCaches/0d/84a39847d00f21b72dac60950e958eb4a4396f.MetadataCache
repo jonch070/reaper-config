@@ -1,10 +1,94 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Trombone/brassy
+F Tbn-brassy-A#2-ff.aif 416954 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-A#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-A#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.096
+D i 24
+F Tbn-brassy-A#3-ff.aif 403076 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-A#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-A#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.993
+D i 24
+F Tbn-brassy-A#4-ff.aif 460385 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-A#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-A#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.419
+D i 24
+F Tbn-brassy-A2-ff.aif 356001 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-A2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-A2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.642
+D i 24
 F Tbn-brassy-A3-ff.aif 494598 0 1179238056 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-A3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-A3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.674
+D i 24
+F Tbn-brassy-A4-ff.aif 455115 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-A4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-A4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.380
+D i 24
+F Tbn-brassy-B2-ff.aif 411150 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-B2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-B2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.053
 D i 24
 F Tbn-brassy-B3-ff.aif 454203 0 1179238056 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-B3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-B3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.373
 D i 24
+F Tbn-brassy-C#3-ff.aif 450983 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-C#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-C#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.349
+D i 24
+F Tbn-brassy-C#4-ff.aif 481226 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-C#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-C#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.574
+D i 24
 F Tbn-brassy-C3-ff.aif 417969 0 1179238056 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-C3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-C3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.103
+D i 24
+F Tbn-brassy-C4-ff.aif 473790 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-C4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-C4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.519
+D i 24
+F Tbn-brassy-D#3-ff.aif 467630 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-D#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-D#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.473
+D i 24
+F Tbn-brassy-D#4-ff.aif 485975 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-D#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-D#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.610
+D i 24
+F Tbn-brassy-D3-ff.aif 461709 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-D3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-D3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.429
+D i 24
+F Tbn-brassy-D4-ff.aif 491484 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-D4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-D4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.651
+D i 24
+F Tbn-brassy-E2-ff.aif 345018 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-E2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-E2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.560
+D i 24
+F Tbn-brassy-E3-ff.aif 502101 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-E3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-E3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.730
+D i 24
+F Tbn-brassy-E4-ff.aif 446154 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-E4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-E4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.313
+D i 24
+F Tbn-brassy-F#2-ff.aif 378785 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-F#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-F#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.812
+D i 24
+F Tbn-brassy-F#3-ff.aif 509927 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-F#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-F#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.788
+D i 24
+F Tbn-brassy-F#4-ff.aif 495038 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-F#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-F#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.677
+D i 24
+F Tbn-brassy-F2-ff.aif 405150 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-F2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-F2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.008
+D i 24
+F Tbn-brassy-F3-ff.aif 506166 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-F3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-F3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.760
+D i 24
+F Tbn-brassy-F4-ff.aif 513840 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-F4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-F4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.817
+D i 24
+F Tbn-brassy-G#2-ff.aif 355628 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-G#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-G#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.639
+D i 24
+F Tbn-brassy-G#3-ff.aif 513347 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-G#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-G#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.813
+D i 24
+F Tbn-brassy-G#4-ff.aif 479723 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-G#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-G#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.563
+D i 24
+F Tbn-brassy-G2-ff.aif 390054 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-G2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-G2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.896
+D i 24
+F Tbn-brassy-G3-ff.aif 472827 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-G3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-G3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.512
+D i 24
+F Tbn-brassy-G4-ff.aif 519900 0 1179238056 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/brassy/Tbn-brassy-G4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/brassy/Tbn-brassy-G4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.862
 D i 24

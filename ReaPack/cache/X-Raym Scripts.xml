@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="97736d851bb6bde0dbd816b324e2fdf92c255d61" name="X-Raym Scripts">
+<index version="1" commit="3ac00a5f566d328380024ec132fac8290a977a6f" name="X-Raym Scripts">
   <category name="Color">
     <reapack name="X-Raym_Display color of selected tracks items and takes in the console.eel" type="script">
       <version name="1.0" author="X-Raym" time="2015-03-03T13:52:58Z">
@@ -4590,6 +4590,18 @@
         <source>https://github.com/X-Raym/REAPER-ReaScripts/raw/1cd15a11cf7f0a0129a3dd64ac3fab07dea5f3e4/JSFX/X-Raym_Mute%20on%20loop.jsfx</source>
       </version>
     </reapack>
+    <reapack name="X-Raym_Send MIDI text at playstate change.jsfx" type="effect" desc="Send MIDI text at playstate change">
+      <metadata>
+        <link rel="donation">http://www.extremraym.com/en/donation</link>
+      </metadata>
+      <version name="1.0.0" author="X-Raym" time="2025-12-13T11:18:15Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source>https://github.com/X-Raym/REAPER-ReaScripts/raw/b63280f9b01264059e8f64500ac2c60d2b352f23/JSFX/X-Raym_Send%20MIDI%20text%20at%20playstate%20change.jsfx</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2025-12-13T11:35:15Z">
+        <source>https://github.com/X-Raym/REAPER-ReaScripts/raw/661df9ef1669758e55ab895768174b771ff7e25d/JSFX/X-Raym_Send%20MIDI%20text%20at%20playstate%20change.jsfx</source>
+      </version>
+    </reapack>
     <reapack name="X-Raym_Silence meter.jsfx" type="effect" desc="Silence Meter">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -5374,6 +5386,10 @@
       <version name="1.0.4" author="X-Raym" time="2023-02-27T21:57:12Z">
         <changelog><![CDATA[+ Ignore out of items boundaries events]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/dba0fd8789d5ef38cfcd06959c5f605897bee58a/MIDI/X-Raym_MIDI%20Lyrics%20karaoke%20viewer%20for%20Ultrastar_GUI.lua</source>
+      </version>
+      <version name="1.1.0" author="X-Raym" time="2025-12-29T12:52:06Z">
+        <changelog><![CDATA[+ Display next line setting via right click]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/3ac00a5f566d328380024ec132fac8290a977a6f/MIDI/X-Raym_MIDI%20Lyrics%20karaoke%20viewer%20for%20Ultrastar_GUI.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Remove selected items MIDI CC events lanes where all events are equal to 0.lua" type="script" desc="Remove selected items MIDI CC events lanes where all events are equal to 0">
@@ -6818,6 +6834,10 @@
 # Remove newline character (this will be added in a preset script)]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/c7a51a9965ccef515361fced84fcf7c9da18084a/Text%20Items%20and%20Item%20Notes/Creation/X-Raym_Merge%20selected%20text%20items%20notes.lua</source>
       </version>
+      <version name="1.2.1" author="X-Raym" time="2025-12-12T10:59:31Z">
+        <changelog><![CDATA[+ Check track in Init function]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/a0364929f10a144c84baba4aef5ed34c75934fe6/Text%20Items%20and%20Item%20Notes/Creation/X-Raym_Merge%20selected%20text%20items%20notes.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Text Items and Item Notes/Formatting">
@@ -8253,6 +8273,26 @@
       </version>
       <version name="1.1" author="X-Raym" time="2021-03-14T10:24:48Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Transport/X-Raym_Play%20selected%20items%20once%20from%20first%20snap%20offset%20position.lua</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Play selected items once.lua" type="script" desc="Play selected items once from first snap offset position">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Just like the SWS action Xenakios/SWS: Play selected item, but without lag.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="X-Raym" time="2025-12-13T14:52:38Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/493378b8dda6f58e6183b5190d69a609c3ebfe25/Transport/X-Raym_Play%20selected%20items%20once.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2025-12-14T10:29:23Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/6a34ec4ee1df0cfbd6f0ef1921cff4268d581c54/Transport/X-Raym_Play%20selected%20items%20once.lua</source>
+      </version>
+      <version name="1.0.2" author="X-Raym" time="2025-12-16T17:08:33Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/b533568c918ca6c9f771c207d8d03f526abbf5a5/Transport/X-Raym_Play%20selected%20items%20once.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Record or stop and rename newly created items with clipboard content.lua" type="script" desc="Record or stop and rename newly created items with clipboard content">

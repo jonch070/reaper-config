@@ -1,9 +1,309 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/PluckedStrings/Harp/near-the-board
+F Hp-near_board-A#1-ff.wav 2267626 0 1415738912 0
+D s 44100 n 1 l 0:25.709 i 16
+F Hp-near_board-A#1-mf.wav 1858806 0 1415738850 0
+D s 44100 n 1 l 0:21.074 i 16
+F Hp-near_board-A#2-ff.wav 2405318 0 1415738932 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-A#2-mf.wav 1591842 0 1415738850 0
+D s 44100 n 1 l 0:18.047 i 16
+F Hp-near_board-A#3-ff.wav 1958926 0 1415738948 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-A#3-mf.wav 1387092 0 1415738850 0
+D s 44100 n 1 l 0:15.726 i 16
+F Hp-near_board-A#4-ff.wav 1199718 0 1415738960 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-A#4-mf.wav 1107238 0 1415738852 0
+D s 44100 n 1 l 0:12.553 i 16
+F Hp-near_board-A#5-ff.wav 959146 0 1415738972 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-A#5-mf.wav 805038 0 1415738852 0
+D s 44100 n 1 l 0:09.126 i 16
+F Hp-near_board-A#6-ff.wav 1072962 0 1415738984 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-A#6-mf.wav 635050 0 1415738852 0
+D s 44100 n 1 l 0:07.199 i 16
+F Hp-near_board-A1-ff.wav 2267626 0 1415738912 0
+D s 44100 n 1 l 0:25.709 i 16
+F Hp-near_board-A1-mf.wav 1880154 0 1415738854 0
+D s 44100 n 1 l 0:21.316 i 16
+F Hp-near_board-A2-ff.wav 2405318 0 1415738930 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-A2-mf.wav 1182284 0 1415738854 0
+D s 44100 n 1 l 0:13.404 i 16
 F Hp-near_board-A3-ff.wav 1958926 0 1415738946 0
 D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-A3-mf.wav 1160834 0 1415738854 0
+D s 44100 n 1 l 0:13.160 i 16
+F Hp-near_board-A4-ff.wav 1199718 0 1415738958 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-A4-mf.wav 709906 0 1415738856 0
+D s 44100 n 1 l 0:08.048 i 16
+F Hp-near_board-A5-ff.wav 959146 0 1415738970 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-A5-mf.wav 648450 0 1415738856 0
+D s 44100 n 1 l 0:07.351 i 16
+F Hp-near_board-A6-ff.wav 1072962 0 1415738984 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-A6-mf.wav 452220 0 1415738856 0
+D s 44100 n 1 l 0:05.126 i 16
+F Hp-near_board-B0-mf.wav 2387666 0 1415738856 0
+D s 44100 n 1 l 0:27.070 i 16
+F Hp-near_board-B1-ff.wav 2405318 0 1415738914 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-B1-mf.wav 1638790 0 1415738858 0
+D s 44100 n 1 l 0:18.579 i 16
+F Hp-near_board-B2-ff.wav 1958926 0 1415738932 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-B2-mf.wav 1228368 0 1415738858 0
+D s 44100 n 1 l 0:13.926 i 16
+F Hp-near_board-B3-ff.wav 1199718 0 1415738948 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-B3-mf.wav 1297440 0 1415738858 0
+D s 44100 n 1 l 0:14.709 i 16
+F Hp-near_board-B4-ff.wav 959146 0 1415738962 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-B4-mf.wav 798402 0 1415738860 0
+D s 44100 n 1 l 0:09.051 i 16
+F Hp-near_board-B5-ff.wav 1072962 0 1415738974 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-B5-mf.wav 888520 0 1415738860 0
+D s 44100 n 1 l 0:10.073 i 16
+F Hp-near_board-B6-ff.wav 735196 0 1415738986 0
+D s 44100 n 1 l 0:08.335 i 16
+F Hp-near_board-B6-mf.wav 379614 0 1415738860 0
+D s 44100 n 1 l 0:04.303 i 16
+F Hp-near_board-C#1-mf.wav 2983254 0 1415738862 0
+D s 44100 n 1 l 0:33.823 i 16
+F Hp-near_board-C#2-ff.wav 2405318 0 1415738918 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-C#2-mf.wav 1715540 0 1415738862 0
+D s 44100 n 1 l 0:19.450 i 16
+F Hp-near_board-C#3-ff.wav 1958926 0 1415738936 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-C#3-mf.wav 860588 0 1415738990 0
+D s 44100 n 1 l 0:09.756 i 16
+F Hp-near_board-C#4-ff.wav 1199718 0 1415738950 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-C#4-mf.wav 1358414 0 1415738862 0
+D s 44100 n 1 l 0:15.401 i 16
+F Hp-near_board-C#5-ff.wav 959146 0 1415738964 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-C#5-mf.wav 1078300 0 1415738864 0
+D s 44100 n 1 l 0:12.225 i 16
+F Hp-near_board-C#6-ff.wav 1072962 0 1415738976 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-C#6-mf.wav 833084 0 1415738864 0
+D s 44100 n 1 l 0:09.444 i 16
+F Hp-near_board-C#7-ff.wav 735196 0 1415738988 0
+D s 44100 n 1 l 0:08.335 i 16
+F Hp-near_board-C#7-mf.wav 531940 0 1415738864 0
+D s 44100 n 1 l 0:06.030 i 16
+F Hp-near_board-C1-mf.wav 1646632 0 1415738866 0
+D s 44100 n 1 l 0:18.668 i 16
 F Hp-near_board-C2-ff.wav 2405318 0 1415738916 0
 D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-C2-mf.wav 1808918 0 1415738866 0
+D s 44100 n 1 l 0:20.508 i 16
+F Hp-near_board-C3-ff.wav 1958926 0 1415738934 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-C3-mf.wav 860588 0 1415738866 0
+D s 44100 n 1 l 0:09.756 i 16
+F Hp-near_board-C4-ff.wav 1199718 0 1415738950 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-C4-mf.wav 992306 0 1415738866 0
+D s 44100 n 1 l 0:11.250 i 16
+F Hp-near_board-C5-ff.wav 959146 0 1415738962 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-C5-mf.wav 684754 0 1415738868 0
+D s 44100 n 1 l 0:07.763 i 16
+F Hp-near_board-C6-ff.wav 1072962 0 1415738974 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-C6-mf.wav 700734 0 1415738868 0
+D s 44100 n 1 l 0:07.944 i 16
+F Hp-near_board-C7-ff.wav 735196 0 1415738986 0
+D s 44100 n 1 l 0:08.335 i 16
+F Hp-near_board-C7-mf.wav 413656 0 1415738868 0
+D s 44100 n 1 l 0:04.689 i 16
+F Hp-near_board-D#1-mf.wav 2337674 0 1415738870 0
+D s 44100 n 1 l 0:26.503 i 16
+F Hp-near_board-D#2-ff.wav 2405318 0 1415738920 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-D#2-mf.wav 1649894 0 1415738870 0
+D s 44100 n 1 l 0:18.705 i 16
+F Hp-near_board-D#3-ff.wav 1958926 0 1415738938 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-D#3-mf.wav 1481424 0 1415738870 0
+D s 44100 n 1 l 0:16.795 i 16
+F Hp-near_board-D#4-ff.wav 1199718 0 1415738954 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-D#4-mf.wav 1389922 0 1415738872 0
+D s 44100 n 1 l 0:15.758 i 16
+F Hp-near_board-D#5-ff.wav 959146 0 1415738966 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-D#5-mf.wav 1085282 0 1415738872 0
+D s 44100 n 1 l 0:12.304 i 16
+F Hp-near_board-D#6-ff.wav 1072962 0 1415738978 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-D#6-mf.wav 704946 0 1415738872 0
+D s 44100 n 1 l 0:07.992 i 16
+F Hp-near_board-D#7-ff.wav 735196 0 1415738990 0
+D s 44100 n 1 l 0:08.335 i 16
+F Hp-near_board-D#7-mf.wav 555428 0 1415738874 0
+D s 44100 n 1 l 0:06.296 i 16
+F Hp-near_board-D1-mf.wav 2241686 0 1415738874 0
+D s 44100 n 1 l 0:25.415 i 16
+F Hp-near_board-D2-ff.wav 2405318 0 1415738920 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-D2-mf.wav 1447764 0 1415738874 0
+D s 44100 n 1 l 0:16.414 i 16
+F Hp-near_board-D3-ff.wav 1958926 0 1415738936 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-D3-mf.wav 981422 0 1415738876 0
+D s 44100 n 1 l 0:11.126 i 16
+F Hp-near_board-D4-ff.wav 1199718 0 1415738952 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-D4-mf.wav 776152 0 1415738876 0
+D s 44100 n 1 l 0:08.799 i 16
+F Hp-near_board-D5-ff.wav 959146 0 1415738964 0
+D s 44100 n 1 l 0:10.874 i 16
 F Hp-near_board-D5-mf.wav 858292 0 1415738876 0
 D s 44100 n 1 l 0:09.730 i 16
+F Hp-near_board-D6-ff.wav 1072962 0 1415738976 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-D6-mf.wav 704462 0 1415738876 0
+D s 44100 n 1 l 0:07.986 i 16
+F Hp-near_board-D7-ff.wav 735196 0 1415738988 0
+D s 44100 n 1 l 0:08.335 i 16
+F Hp-near_board-D7-mf.wav 412414 0 1415738878 0
+D s 44100 n 1 l 0:04.675 i 16
+F Hp-near_board-E1-ff.wav 2267626 0 1415738878 0
+D s 44100 n 1 l 0:25.709 i 16
+F Hp-near_board-E1-mf.wav 2185144 0 1415738878 0
+D s 44100 n 1 l 0:24.774 i 16
+F Hp-near_board-E2-ff.wav 2405318 0 1415738880 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-E2-mf.wav 1263042 0 1415738880 0
+D s 44100 n 1 l 0:14.319 i 16
+F Hp-near_board-E3-ff.wav 1958926 0 1415738880 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-E3-mf.wav 1191168 0 1415738882 0
+D s 44100 n 1 l 0:13.504 i 16
+F Hp-near_board-E4-ff.wav 1199718 0 1415738882 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-E4-mf.wav 874574 0 1415738882 0
+D s 44100 n 1 l 0:09.915 i 16
+F Hp-near_board-E5-ff.wav 959146 0 1415738884 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-E5-mf.wav 947398 0 1415738884 0
+D s 44100 n 1 l 0:10.740 i 16
+F Hp-near_board-E6-ff.wav 1072962 0 1415738884 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-E6-mf.wav 557414 0 1415738886 0
+D s 44100 n 1 l 0:06.319 i 16
+F Hp-near_board-E7-ff.wav 735196 0 1415738886 0
+D s 44100 n 1 l 0:08.335 i 16
+F Hp-near_board-E7-mf.wav 410088 0 1415738886 0
+D s 44100 n 1 l 0:04.649 i 16
+F Hp-near_board-F#1-ff.wav 2267626 0 1415738906 0
+D s 44100 n 1 l 0:25.709 i 16
+F Hp-near_board-F#1-mf.wav 2575978 0 1415738888 0
+D s 44100 n 1 l 0:29.205 i 16
+F Hp-near_board-F#2-ff.wav 2405318 0 1415738924 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-F#2-mf.wav 1170236 0 1415738888 0
+D s 44100 n 1 l 0:13.267 i 16
+F Hp-near_board-F#3-ff.wav 1958926 0 1415738942 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-F#3-mf.wav 1004802 0 1415738888 0
+D s 44100 n 1 l 0:11.391 i 16
+F Hp-near_board-F#4-ff.wav 1199718 0 1415738956 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-F#4-mf.wav 997346 0 1415738888 0
+D s 44100 n 1 l 0:11.307 i 16
+F Hp-near_board-F#5-ff.wav 959146 0 1415738968 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-F#5-mf.wav 755376 0 1415738890 0
+D s 44100 n 1 l 0:08.563 i 16
+F Hp-near_board-F#6-ff.wav 1072962 0 1415738980 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-F#6-mf.wav 572516 0 1415738890 0
+D s 44100 n 1 l 0:06.490 i 16
+F Hp-near_board-F#7-mf.wav 659318 0 1415738890 0
+D s 44100 n 1 l 0:07.474 i 16
+F Hp-near_board-F1-ff.wav 2267626 0 1415738904 0
+D s 44100 n 1 l 0:25.709 i 16
+F Hp-near_board-F1-mf.wav 1999210 0 1415738892 0
+D s 44100 n 1 l 0:22.666 i 16
+F Hp-near_board-F2-ff.wav 2405318 0 1415738922 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-F2-mf.wav 1360904 0 1415738892 0
+D s 44100 n 1 l 0:15.429 i 16
+F Hp-near_board-F3-ff.wav 1958926 0 1415738940 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-F3-mf.wav 848092 0 1415738892 0
+D s 44100 n 1 l 0:09.615 i 16
+F Hp-near_board-F4-ff.wav 1199718 0 1415738954 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-F4-mf.wav 705196 0 1415738894 0
+D s 44100 n 1 l 0:07.994 i 16
+F Hp-near_board-F5-ff.wav 959146 0 1415738966 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-F5-mf.wav 865970 0 1415738894 0
+D s 44100 n 1 l 0:09.817 i 16
+F Hp-near_board-F6-ff.wav 1072962 0 1415738978 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-F6-mf.wav 863496 0 1415738894 0
+D s 44100 n 1 l 0:09.789 i 16
+F Hp-near_board-F7-mf.wav 393942 0 1415738896 0
+D s 44100 n 1 l 0:04.465 i 16
+F Hp-near_board-G#1-ff.wav 2267626 0 1415738910 0
+D s 44100 n 1 l 0:25.709 i 16
+F Hp-near_board-G#1-mf.wav 2108006 0 1415738896 0
+D s 44100 n 1 l 0:23.899 i 16
+F Hp-near_board-G#2-ff.wav 2405318 0 1415738928 0
+D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-G#2-mf.wav 1196118 0 1415738896 0
+D s 44100 n 1 l 0:13.560 i 16
+F Hp-near_board-G#3-ff.wav 1958926 0 1415738944 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-G#3-mf.wav 1290316 0 1415738896 0
+D s 44100 n 1 l 0:14.628 i 16
+F Hp-near_board-G#4-ff.wav 1199718 0 1415738958 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-G#4-mf.wav 1043096 0 1415738898 0
+D s 44100 n 1 l 0:11.825 i 16
+F Hp-near_board-G#5-ff.wav 959146 0 1415738970 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-G#5-mf.wav 724362 0 1415738898 0
+D s 44100 n 1 l 0:08.212 i 16
+F Hp-near_board-G#6-ff.wav 1072962 0 1415738982 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-G#6-mf.wav 663274 0 1415738898 0
+D s 44100 n 1 l 0:07.519 i 16
+F Hp-near_board-G1-ff.wav 2267626 0 1415738908 0
+D s 44100 n 1 l 0:25.709 i 16
+F Hp-near_board-G1-mf.wav 1631048 0 1415738900 0
+D s 44100 n 1 l 0:18.492 i 16
 F Hp-near_board-G2-ff.wav 2405318 0 1415738926 0
 D s 44100 n 1 l 0:27.270 i 16
+F Hp-near_board-G2-mf.wav 1869354 0 1415738900 0
+D s 44100 n 1 l 0:21.193 i 16
+F Hp-near_board-G3-ff.wav 1958926 0 1415738942 0
+D s 44100 n 1 l 0:22.209 i 16
+F Hp-near_board-G3-mf.wav 857928 0 1415738900 0
+D s 44100 n 1 l 0:09.726 i 16
+F Hp-near_board-G4-ff.wav 1199718 0 1415738956 0
+D s 44100 n 1 l 0:13.601 i 16
+F Hp-near_board-G4-mf.wav 751392 0 1415738902 0
+D s 44100 n 1 l 0:08.518 i 16
+F Hp-near_board-G5-ff.wav 959146 0 1415738968 0
+D s 44100 n 1 l 0:10.874 i 16
+F Hp-near_board-G5-mf.wav 920278 0 1415738902 0
+D s 44100 n 1 l 0:10.433 i 16
+F Hp-near_board-G6-ff.wav 1072962 0 1415738980 0
+D s 44100 n 1 l 0:12.164 i 16
+F Hp-near_board-G6-mf.wav 635014 0 1415738902 0
+D s 44100 n 1 l 0:07.199 i 16
+F Hp-near_board-G7-mf.wav 319278 0 1415738904 0
+D s 44100 n 1 l 0:03.619 i 16

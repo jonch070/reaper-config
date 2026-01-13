@@ -1,4 +1,12 @@
 config = {
+	MAINWIND = {
+		cursor_x = 8.0,
+		cursor_y = 250.0,
+		h = 249.0,
+		w = 342.0,
+		x = 1176.0,
+		y = 547.0
+	},
 	colors = {
 		default = {
 			guid = "default",
@@ -6,7 +14,12 @@ config = {
 		}
 	},
 	font = "Verdana",
-	font_size = 14,
+	font_scales = {
+		results = 1,
+		search = 1
+	},
+	font_size = 12,
+	font_size_reinit = true,
 	item = true,
 	keys = {
 		
@@ -15,7 +28,7 @@ config = {
 	style_vars = {
 		
 	},
-	version = "2.10.2"
+	version = "2.15.5"
 }
 tabs = {
 	default = {
@@ -30,7 +43,7 @@ tabs = {
 		reposition_from = 0,
 		reposition_time = "",
 		scale = 100,
-		snap_offsets = false,
+		snap_offsets = true,
 		time_unit = 0
 	}
 }

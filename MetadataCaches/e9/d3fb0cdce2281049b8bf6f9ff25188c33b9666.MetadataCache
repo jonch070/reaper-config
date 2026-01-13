@@ -1,9 +1,139 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/PluckedStrings/Harp/xylophonic
+F Hp-xylophonic-A#1-p.wav 1064002 0 1415739404 0
+D s 44100 n 1 l 0:12.063 i 16
+F Hp-xylophonic-A#2-p.wav 995824 0 1415739404 0
+D s 44100 n 1 l 0:11.290 i 16
+F Hp-xylophonic-A#3-p.wav 1079968 0 1415739406 0
+D s 44100 n 1 l 0:12.244 i 16
+F Hp-xylophonic-A#4-p.wav 1002056 0 1415739406 0
+D s 44100 n 1 l 0:11.360 i 16
+F Hp-xylophonic-A#5-p.wav 824146 0 1415739406 0
+D s 44100 n 1 l 0:09.343 i 16
+F Hp-xylophonic-A#6-p.wav 367594 0 1415739408 0
+D s 44100 n 1 l 0:04.167 i 16
+F Hp-xylophonic-A1-p.wav 1064002 0 1415739422 0
+D s 44100 n 1 l 0:12.063 i 16
 F Hp-xylophonic-A2-p.wav 995824 0 1415739432 0
 D s 44100 n 1 l 0:11.290 i 16
 F Hp-xylophonic-A3-p.wav 1079968 0 1415739442 0
 D s 44100 n 1 l 0:12.244 i 16
+F Hp-xylophonic-A4-p.wav 1002056 0 1415739452 0
+D s 44100 n 1 l 0:11.360 i 16
+F Hp-xylophonic-A5-p.wav 824146 0 1415739462 0
+D s 44100 n 1 l 0:09.343 i 16
+F Hp-xylophonic-A6-p.wav 367594 0 1415739470 0
+D s 44100 n 1 l 0:04.167 i 16
+F Hp-xylophonic-B1-p.wav 1064002 0 1415739422 0
+D s 44100 n 1 l 0:12.063 i 16
+F Hp-xylophonic-B2-p.wav 995824 0 1415739434 0
+D s 44100 n 1 l 0:11.290 i 16
+F Hp-xylophonic-B3-p.wav 1079968 0 1415739444 0
+D s 44100 n 1 l 0:12.244 i 16
+F Hp-xylophonic-B4-p.wav 1002056 0 1415739454 0
+D s 44100 n 1 l 0:11.360 i 16
+F Hp-xylophonic-B5-p.wav 824146 0 1415739462 0
+D s 44100 n 1 l 0:09.343 i 16
+F Hp-xylophonic-C#2-p.wav 1232912 0 1415739426 0
+D s 44100 n 1 l 0:13.978 i 16
+F Hp-xylophonic-C#3-p.wav 1680946 0 1415739436 0
+D s 44100 n 1 l 0:19.057 i 16
+F Hp-xylophonic-C#4-p.wav 875968 0 1415739446 0
+D s 44100 n 1 l 0:09.931 i 16
+F Hp-xylophonic-C#5-p.wav 707442 0 1415739456 0
+D s 44100 n 1 l 0:08.020 i 16
+F Hp-xylophonic-C#6-p.wav 616452 0 1415739464 0
+D s 44100 n 1 l 0:06.988 i 16
+F Hp-xylophonic-C2-p.wav 1064002 0 1415739424 0
+D s 44100 n 1 l 0:12.063 i 16
 F Hp-xylophonic-C3-p.wav 995824 0 1415739434 0
 D s 44100 n 1 l 0:11.290 i 16
+F Hp-xylophonic-C4-p.wav 1079968 0 1415739446 0
+D s 44100 n 1 l 0:12.244 i 16
+F Hp-xylophonic-C5-p.wav 1002056 0 1415739454 0
+D s 44100 n 1 l 0:11.360 i 16
+F Hp-xylophonic-C6-p.wav 824146 0 1415739464 0
+D s 44100 n 1 l 0:09.343 i 16
+F Hp-xylophonic-D#1-p.wav 1493898 0 1415739416 0
+D s 44100 n 1 l 0:16.937 i 16
+F Hp-xylophonic-D#2-p.wav 1232912 0 1415739426 0
+D s 44100 n 1 l 0:13.978 i 16
+F Hp-xylophonic-D#3-p.wav 1680946 0 1415739436 0
+D s 44100 n 1 l 0:19.057 i 16
+F Hp-xylophonic-D#4-p.wav 875968 0 1415739448 0
+D s 44100 n 1 l 0:09.931 i 16
+F Hp-xylophonic-D#5-p.wav 707442 0 1415739456 0
+D s 44100 n 1 l 0:08.020 i 16
+F Hp-xylophonic-D#6-p.wav 616452 0 1415739466 0
+D s 44100 n 1 l 0:06.988 i 16
+F Hp-xylophonic-D1-p.wav 1493898 0 1415739408 0
+D s 44100 n 1 l 0:16.937 i 16
+F Hp-xylophonic-D2-p.wav 1232912 0 1415739408 0
+D s 44100 n 1 l 0:13.978 i 16
+F Hp-xylophonic-D3-p.wav 1680946 0 1415739410 0
+D s 44100 n 1 l 0:19.057 i 16
+F Hp-xylophonic-D4-p.wav 875968 0 1415739410 0
+D s 44100 n 1 l 0:09.931 i 16
+F Hp-xylophonic-D5-p.wav 707442 0 1415739410 0
+D s 44100 n 1 l 0:08.020 i 16
+F Hp-xylophonic-D6-p.wav 616452 0 1415739410 0
+D s 44100 n 1 l 0:06.988 i 16
+F Hp-xylophonic-E1-p.wav 1493898 0 1415739418 0
+D s 44100 n 1 l 0:16.937 i 16
+F Hp-xylophonic-E2-p.wav 1232912 0 1415739428 0
+D s 44100 n 1 l 0:13.978 i 16
+F Hp-xylophonic-E3-p.wav 1680946 0 1415739438 0
+D s 44100 n 1 l 0:19.057 i 16
+F Hp-xylophonic-E4-p.wav 875968 0 1415739448 0
+D s 44100 n 1 l 0:09.931 i 16
+F Hp-xylophonic-E5-p.wav 707442 0 1415739458 0
+D s 44100 n 1 l 0:08.020 i 16
+F Hp-xylophonic-E6-p.wav 616452 0 1415739466 0
+D s 44100 n 1 l 0:06.988 i 16
+F Hp-xylophonic-F#1-p.wav 1167438 0 1415739412 0
+D s 44100 n 1 l 0:13.235 i 16
+F Hp-xylophonic-F#2-p.wav 1528906 0 1415739412 0
+D s 44100 n 1 l 0:17.334 i 16
+F Hp-xylophonic-F#3-p.wav 1344394 0 1415739412 0
+D s 44100 n 1 l 0:15.242 i 16
+F Hp-xylophonic-F#4-p.wav 1128184 0 1415739414 0
+D s 44100 n 1 l 0:12.790 i 16
+F Hp-xylophonic-F#5-p.wav 680694 0 1415739414 0
+D s 44100 n 1 l 0:07.717 i 16
+F Hp-xylophonic-F#6-p.wav 649058 0 1415739414 0
+D s 44100 n 1 l 0:07.358 i 16
+F Hp-xylophonic-F1-p.wav 1167438 0 1415739418 0
+D s 44100 n 1 l 0:13.235 i 16
+F Hp-xylophonic-F2-p.wav 1528906 0 1415739428 0
+D s 44100 n 1 l 0:17.334 i 16
+F Hp-xylophonic-F3-p.wav 1344394 0 1415739440 0
+D s 44100 n 1 l 0:15.242 i 16
+F Hp-xylophonic-F4-p.wav 1128184 0 1415739450 0
+D s 44100 n 1 l 0:12.790 i 16
+F Hp-xylophonic-F5-p.wav 680694 0 1415739458 0
+D s 44100 n 1 l 0:07.717 i 16
+F Hp-xylophonic-F6-p.wav 649058 0 1415739468 0
+D s 44100 n 1 l 0:07.358 i 16
+F Hp-xylophonic-G#1-p.wav 1064002 0 1415739420 0
+D s 44100 n 1 l 0:12.063 i 16
+F Hp-xylophonic-G#2-p.wav 995824 0 1415739432 0
+D s 44100 n 1 l 0:11.290 i 16
+F Hp-xylophonic-G#3-p.wav 1079968 0 1415739442 0
+D s 44100 n 1 l 0:12.244 i 16
+F Hp-xylophonic-G#4-p.wav 1002056 0 1415739452 0
+D s 44100 n 1 l 0:11.360 i 16
+F Hp-xylophonic-G#5-p.wav 824146 0 1415739460 0
+D s 44100 n 1 l 0:09.343 i 16
+F Hp-xylophonic-G#6-p.wav 367594 0 1415739470 0
+D s 44100 n 1 l 0:04.167 i 16
+F Hp-xylophonic-G1-p.wav 1167438 0 1415739420 0
+D s 44100 n 1 l 0:13.235 i 16
+F Hp-xylophonic-G2-p.wav 1528906 0 1415739430 0
+D s 44100 n 1 l 0:17.334 i 16
+F Hp-xylophonic-G3-p.wav 1344394 0 1415739440 0
+D s 44100 n 1 l 0:15.242 i 16
 F Hp-xylophonic-G4-p.wav 1128184 0 1415739450 0
 D s 44100 n 1 l 0:12.790 i 16
+F Hp-xylophonic-G5-p.wav 680694 0 1415739460 0
+D s 44100 n 1 l 0:07.717 i 16
+F Hp-xylophonic-G6-p.wav 649058 0 1415739468 0
+D s 44100 n 1 l 0:07.358 i 16

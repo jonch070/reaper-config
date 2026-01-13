@@ -1,11 +1,147 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Keyboards/Accordion/fortepiano
+F Acc-fortepiano-A#1-fp.wav 325920 0 1415727330 0
+D s 44100 n 1 l 0:03.694 i 16
+F Acc-fortepiano-A#2-fp.wav 215954 0 1415727336 0
+D s 44100 n 1 l 0:02.447 i 16
+F Acc-fortepiano-A#3-fp.wav 245698 0 1415727344 0
+D s 44100 n 1 l 0:02.785 i 16
+F Acc-fortepiano-A#4-fp.wav 176040 0 1415727350 0
+D s 44100 n 1 l 0:01.995 i 16
+F Acc-fortepiano-A#5-fp.wav 84930 0 1415727356 0
+D s 44100 n 1 l 0:00.962 i 16
+F Acc-fortepiano-A#6-fp.wav 180834 0 1415727362 0
+D s 44100 n 1 l 0:02.049 i 16
+F Acc-fortepiano-A1-fp.wav 403266 0 1415727330 0
+D s 44100 n 1 l 0:04.571 i 16
+F Acc-fortepiano-A2-fp.wav 232166 0 1415727336 0
+D s 44100 n 1 l 0:02.631 i 16
+F Acc-fortepiano-A3-fp.wav 246460 0 1415727342 0
+D s 44100 n 1 l 0:02.793 i 16
+F Acc-fortepiano-A4-fp.wav 195344 0 1415727348 0
+D s 44100 n 1 l 0:02.214 i 16
+F Acc-fortepiano-A5-fp.wav 178754 0 1415727356 0
+D s 44100 n 1 l 0:02.026 i 16
+F Acc-fortepiano-A6-fp.wav 115386 0 1415727362 0
+D s 44100 n 1 l 0:01.307 i 16
+F Acc-fortepiano-B1-fp.wav 325920 0 1415727312 0
+D s 44100 n 1 l 0:03.694 i 16
+F Acc-fortepiano-B2-fp.wav 215954 0 1415727312 0
+D s 44100 n 1 l 0:02.447 i 16
+F Acc-fortepiano-B3-fp.wav 245698 0 1415727314 0
+D s 44100 n 1 l 0:02.785 i 16
+F Acc-fortepiano-B4-fp.wav 176040 0 1415727314 0
+D s 44100 n 1 l 0:01.995 i 16
 F Acc-fortepiano-B5-fp.wav 84930 0 1415727314 0
 D s 44100 n 1 l 0:00.962 i 16
 F Acc-fortepiano-B6-fp.wav 180834 0 1415727316 0
 D s 44100 n 1 l 0:02.049 i 16
+F Acc-fortepiano-C#2-fp.wav 542556 0 1415727332 0
+D s 44100 n 1 l 0:06.150 i 16
+F Acc-fortepiano-C#3-fp.wav 225750 0 1415727338 0
+D s 44100 n 1 l 0:02.559 i 16
+F Acc-fortepiano-C#4-fp.wav 270414 0 1415727344 0
+D s 44100 n 1 l 0:03.065 i 16
+F Acc-fortepiano-C#5-fp.wav 149910 0 1415727352 0
+D s 44100 n 1 l 0:01.699 i 16
+F Acc-fortepiano-C#6-fp.wav 136604 0 1415727358 0
+D s 44100 n 1 l 0:01.548 i 16
+F Acc-fortepiano-C#7-fp.wav 155688 0 1415727364 0
+D s 44100 n 1 l 0:01.764 i 16
+F Acc-fortepiano-C2-fp.wav 325920 0 1415727330 0
+D s 44100 n 1 l 0:03.694 i 16
+F Acc-fortepiano-C3-fp.wav 215954 0 1415727338 0
+D s 44100 n 1 l 0:02.447 i 16
+F Acc-fortepiano-C4-fp.wav 245698 0 1415727344 0
+D s 44100 n 1 l 0:02.785 i 16
+F Acc-fortepiano-C5-fp.wav 176040 0 1415727350 0
+D s 44100 n 1 l 0:01.995 i 16
+F Acc-fortepiano-C6-fp.wav 84930 0 1415727356 0
+D s 44100 n 1 l 0:00.962 i 16
+F Acc-fortepiano-C7-fp.wav 180834 0 1415727362 0
+D s 44100 n 1 l 0:02.049 i 16
+F Acc-fortepiano-D#2-fp.wav 542556 0 1415727332 0
+D s 44100 n 1 l 0:06.150 i 16
+F Acc-fortepiano-D#3-fp.wav 225750 0 1415727340 0
+D s 44100 n 1 l 0:02.559 i 16
+F Acc-fortepiano-D#4-fp.wav 270414 0 1415727346 0
+D s 44100 n 1 l 0:03.065 i 16
+F Acc-fortepiano-D#5-fp.wav 149910 0 1415727352 0
+D s 44100 n 1 l 0:01.699 i 16
+F Acc-fortepiano-D#6-fp.wav 136604 0 1415727358 0
+D s 44100 n 1 l 0:01.548 i 16
+F Acc-fortepiano-D#7-fp.wav 155688 0 1415727364 0
+D s 44100 n 1 l 0:01.764 i 16
+F Acc-fortepiano-D2-fp.wav 542556 0 1415727316 0
+D s 44100 n 1 l 0:06.150 i 16
+F Acc-fortepiano-D3-fp.wav 225750 0 1415727316 0
+D s 44100 n 1 l 0:02.559 i 16
+F Acc-fortepiano-D4-fp.wav 270414 0 1415727316 0
+D s 44100 n 1 l 0:03.065 i 16
+F Acc-fortepiano-D5-fp.wav 149910 0 1415727318 0
+D s 44100 n 1 l 0:01.699 i 16
+F Acc-fortepiano-D6-fp.wav 136604 0 1415727318 0
+D s 44100 n 1 l 0:01.548 i 16
+F Acc-fortepiano-D7-fp.wav 155688 0 1415727318 0
+D s 44100 n 1 l 0:01.764 i 16
+F Acc-fortepiano-E2-fp.wav 300888 0 1415727334 0
+D s 44100 n 1 l 0:03.410 i 16
+F Acc-fortepiano-E3-fp.wav 221616 0 1415727340 0
+D s 44100 n 1 l 0:02.512 i 16
+F Acc-fortepiano-E4-fp.wav 226040 0 1415727346 0
+D s 44100 n 1 l 0:02.562 i 16
+F Acc-fortepiano-E5-fp.wav 192938 0 1415727352 0
+D s 44100 n 1 l 0:02.187 i 16
 F Acc-fortepiano-E6-fp.wav 128916 0 1415727358 0
 D s 44100 n 1 l 0:01.461 i 16
+F Acc-fortepiano-E7-fp.wav 107396 0 1415727366 0
+D s 44100 n 1 l 0:01.217 i 16
+F Acc-fortepiano-F#1-fp.wav 353960 0 1415727328 0
+D s 44100 n 1 l 0:04.012 i 16
+F Acc-fortepiano-F#2-fp.wav 300888 0 1415727334 0
+D s 44100 n 1 l 0:03.410 i 16
+F Acc-fortepiano-F#3-fp.wav 221616 0 1415727340 0
+D s 44100 n 1 l 0:02.512 i 16
+F Acc-fortepiano-F#4-fp.wav 226040 0 1415727348 0
+D s 44100 n 1 l 0:02.562 i 16
+F Acc-fortepiano-F#5-fp.wav 192938 0 1415727354 0
+D s 44100 n 1 l 0:02.187 i 16
+F Acc-fortepiano-F#6-fp.wav 128916 0 1415727360 0
+D s 44100 n 1 l 0:01.461 i 16
+F Acc-fortepiano-F1-fp.wav 353960 0 1415727320 0
+D s 44100 n 1 l 0:04.012 i 16
+F Acc-fortepiano-F2-fp.wav 300888 0 1415727320 0
+D s 44100 n 1 l 0:03.410 i 16
 F Acc-fortepiano-F3-fp.wav 221616 0 1415727320 0
 D s 44100 n 1 l 0:02.512 i 16
+F Acc-fortepiano-F4-fp.wav 226040 0 1415727322 0
+D s 44100 n 1 l 0:02.562 i 16
+F Acc-fortepiano-F5-fp.wav 192938 0 1415727322 0
+D s 44100 n 1 l 0:02.187 i 16
+F Acc-fortepiano-F6-fp.wav 128916 0 1415727322 0
+D s 44100 n 1 l 0:01.461 i 16
+F Acc-fortepiano-F7-fp.wav 107396 0 1415727324 0
+D s 44100 n 1 l 0:01.217 i 16
+F Acc-fortepiano-G#1-fp.wav 403266 0 1415727324 0
+D s 44100 n 1 l 0:04.571 i 16
+F Acc-fortepiano-G#2-fp.wav 232166 0 1415727324 0
+D s 44100 n 1 l 0:02.631 i 16
+F Acc-fortepiano-G#3-fp.wav 246460 0 1415727324 0
+D s 44100 n 1 l 0:02.793 i 16
+F Acc-fortepiano-G#4-fp.wav 195344 0 1415727326 0
+D s 44100 n 1 l 0:02.214 i 16
+F Acc-fortepiano-G#5-fp.wav 178754 0 1415727326 0
+D s 44100 n 1 l 0:02.026 i 16
+F Acc-fortepiano-G#6-fp.wav 115386 0 1415727326 0
+D s 44100 n 1 l 0:01.307 i 16
 F Acc-fortepiano-G1-fp.wav 403266 0 1415727328 0
 D s 44100 n 1 l 0:04.571 i 16
+F Acc-fortepiano-G2-fp.wav 232166 0 1415727336 0
+D s 44100 n 1 l 0:02.631 i 16
+F Acc-fortepiano-G3-fp.wav 246460 0 1415727342 0
+D s 44100 n 1 l 0:02.793 i 16
+F Acc-fortepiano-G4-fp.wav 195344 0 1415727348 0
+D s 44100 n 1 l 0:02.214 i 16
+F Acc-fortepiano-G5-fp.wav 178754 0 1415727354 0
+D s 44100 n 1 l 0:02.026 i 16
+F Acc-fortepiano-G6-fp.wav 115386 0 1415727360 0
+D s 44100 n 1 l 0:01.307 i 16

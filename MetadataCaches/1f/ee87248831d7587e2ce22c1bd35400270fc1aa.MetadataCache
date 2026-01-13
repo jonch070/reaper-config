@@ -1,7 +1,147 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Keyboards/Accordion/backwards
+F Acc-backwards-A#1-ppff.wav 137336 0 1415726904 0
+D s 44100 n 1 l 0:01.556 i 16
+F Acc-backwards-A#2-ppff.wav 136256 0 1415726910 0
+D s 44100 n 1 l 0:01.544 i 16
+F Acc-backwards-A#3-ppff.wav 121256 0 1415726916 0
+D s 44100 n 1 l 0:01.374 i 16
+F Acc-backwards-A#4-ppff.wav 160044 0 1415726922 0
+D s 44100 n 1 l 0:01.814 i 16
+F Acc-backwards-A#5-ppff.wav 136240 0 1415726928 0
+D s 44100 n 1 l 0:01.544 i 16
+F Acc-backwards-A#6-ppff.wav 139664 0 1415726934 0
+D s 44100 n 1 l 0:01.582 i 16
 F Acc-backwards-A1-ppff.wav 137336 0 1415726886 0
 D s 44100 n 1 l 0:01.556 i 16
+F Acc-backwards-A2-ppff.wav 136256 0 1415726888 0
+D s 44100 n 1 l 0:01.544 i 16
+F Acc-backwards-A3-ppff.wav 121256 0 1415726888 0
+D s 44100 n 1 l 0:01.374 i 16
+F Acc-backwards-A4-ppff.wav 160044 0 1415726888 0
+D s 44100 n 1 l 0:01.814 i 16
+F Acc-backwards-A5-ppff.wav 136240 0 1415726888 0
+D s 44100 n 1 l 0:01.544 i 16
+F Acc-backwards-A6-ppff.wav 139664 0 1415726890 0
+D s 44100 n 1 l 0:01.582 i 16
+F Acc-backwards-B1-ppff.wav 158208 0 1415726904 0
+D s 44100 n 1 l 0:01.793 i 16
+F Acc-backwards-B2-ppff.wav 146326 0 1415726910 0
+D s 44100 n 1 l 0:01.658 i 16
+F Acc-backwards-B3-ppff.wav 131014 0 1415726916 0
+D s 44100 n 1 l 0:01.484 i 16
+F Acc-backwards-B4-ppff.wav 150100 0 1415726922 0
+D s 44100 n 1 l 0:01.701 i 16
 F Acc-backwards-B5-ppff.wav 142964 0 1415726928 0
 D s 44100 n 1 l 0:01.620 i 16
+F Acc-backwards-B6-ppff.wav 98832 0 1415726936 0
+D s 44100 n 1 l 0:01.120 i 16
+F Acc-backwards-C#2-ppff.wav 158208 0 1415726906 0
+D s 44100 n 1 l 0:01.793 i 16
+F Acc-backwards-C#3-ppff.wav 146326 0 1415726912 0
+D s 44100 n 1 l 0:01.658 i 16
+F Acc-backwards-C#4-ppff.wav 131014 0 1415726918 0
+D s 44100 n 1 l 0:01.484 i 16
+F Acc-backwards-C#5-ppff.wav 150100 0 1415726924 0
+D s 44100 n 1 l 0:01.701 i 16
+F Acc-backwards-C#6-ppff.wav 142964 0 1415726930 0
+D s 44100 n 1 l 0:01.620 i 16
+F Acc-backwards-C#7-ppff.wav 98832 0 1415726936 0
+D s 44100 n 1 l 0:01.120 i 16
+F Acc-backwards-C2-ppff.wav 158208 0 1415726890 0
+D s 44100 n 1 l 0:01.793 i 16
+F Acc-backwards-C3-ppff.wav 146326 0 1415726890 0
+D s 44100 n 1 l 0:01.658 i 16
+F Acc-backwards-C4-ppff.wav 131014 0 1415726892 0
+D s 44100 n 1 l 0:01.484 i 16
+F Acc-backwards-C5-ppff.wav 150100 0 1415726892 0
+D s 44100 n 1 l 0:01.701 i 16
 F Acc-backwards-C6-ppff.wav 142964 0 1415726892 0
 D s 44100 n 1 l 0:01.620 i 16
+F Acc-backwards-C7-ppff.wav 98832 0 1415726894 0
+D s 44100 n 1 l 0:01.120 i 16
+F Acc-backwards-D#2-ppff.wav 150388 0 1415726894 0
+D s 44100 n 1 l 0:01.704 i 16
+F Acc-backwards-D#3-ppff.wav 147550 0 1415726894 0
+D s 44100 n 1 l 0:01.672 i 16
+F Acc-backwards-D#4-ppff.wav 160886 0 1415726896 0
+D s 44100 n 1 l 0:01.823 i 16
+F Acc-backwards-D#5-ppff.wav 163426 0 1415726896 0
+D s 44100 n 1 l 0:01.852 i 16
+F Acc-backwards-D#6-ppff.wav 126310 0 1415726896 0
+D s 44100 n 1 l 0:01.431 i 16
+F Acc-backwards-D#7-ppff.wav 106408 0 1415726896 0
+D s 44100 n 1 l 0:01.205 i 16
+F Acc-backwards-D2-ppff.wav 150388 0 1415726906 0
+D s 44100 n 1 l 0:01.704 i 16
+F Acc-backwards-D3-ppff.wav 147550 0 1415726912 0
+D s 44100 n 1 l 0:01.672 i 16
+F Acc-backwards-D4-ppff.wav 160886 0 1415726918 0
+D s 44100 n 1 l 0:01.823 i 16
+F Acc-backwards-D5-ppff.wav 163426 0 1415726924 0
+D s 44100 n 1 l 0:01.852 i 16
+F Acc-backwards-D6-ppff.wav 126310 0 1415726930 0
+D s 44100 n 1 l 0:01.431 i 16
+F Acc-backwards-D7-ppff.wav 106408 0 1415726936 0
+D s 44100 n 1 l 0:01.205 i 16
+F Acc-backwards-E2-ppff.wav 150388 0 1415726906 0
+D s 44100 n 1 l 0:01.704 i 16
+F Acc-backwards-E3-ppff.wav 147550 0 1415726912 0
+D s 44100 n 1 l 0:01.672 i 16
+F Acc-backwards-E4-ppff.wav 160886 0 1415726918 0
+D s 44100 n 1 l 0:01.823 i 16
+F Acc-backwards-E5-ppff.wav 163426 0 1415726926 0
+D s 44100 n 1 l 0:01.852 i 16
+F Acc-backwards-E6-ppff.wav 126310 0 1415726932 0
+D s 44100 n 1 l 0:01.431 i 16
+F Acc-backwards-E7-ppff.wav 106408 0 1415726938 0
+D s 44100 n 1 l 0:01.205 i 16
+F Acc-backwards-F#1-ppff.wav 99946 0 1415726898 0
+D s 44100 n 1 l 0:01.132 i 16
+F Acc-backwards-F#2-ppff.wav 133012 0 1415726898 0
+D s 44100 n 1 l 0:01.507 i 16
+F Acc-backwards-F#3-ppff.wav 136420 0 1415726898 0
+D s 44100 n 1 l 0:01.546 i 16
+F Acc-backwards-F#4-ppff.wav 154822 0 1415726900 0
+D s 44100 n 1 l 0:01.754 i 16
+F Acc-backwards-F#5-ppff.wav 125100 0 1415726900 0
+D s 44100 n 1 l 0:01.417 i 16
+F Acc-backwards-F#6-ppff.wav 150830 0 1415726900 0
+D s 44100 n 1 l 0:01.709 i 16
+F Acc-backwards-F#7-ppff.wav 85634 0 1415726902 0
+D s 44100 n 1 l 0:00.970 i 16
+F Acc-backwards-F2-ppff.wav 133012 0 1415726908 0
+D s 44100 n 1 l 0:01.507 i 16
+F Acc-backwards-F3-ppff.wav 136420 0 1415726914 0
+D s 44100 n 1 l 0:01.546 i 16
+F Acc-backwards-F4-ppff.wav 154822 0 1415726920 0
+D s 44100 n 1 l 0:01.754 i 16
+F Acc-backwards-F5-ppff.wav 125100 0 1415726926 0
+D s 44100 n 1 l 0:01.417 i 16
+F Acc-backwards-F6-ppff.wav 150830 0 1415726932 0
+D s 44100 n 1 l 0:01.709 i 16
+F Acc-backwards-F7-ppff.wav 85634 0 1415726938 0
+D s 44100 n 1 l 0:00.970 i 16
+F Acc-backwards-G#1-ppff.wav 137336 0 1415726902 0
+D s 44100 n 1 l 0:01.556 i 16
+F Acc-backwards-G#2-ppff.wav 136256 0 1415726908 0
+D s 44100 n 1 l 0:01.544 i 16
+F Acc-backwards-G#3-ppff.wav 121256 0 1415726916 0
+D s 44100 n 1 l 0:01.374 i 16
+F Acc-backwards-G#4-ppff.wav 160044 0 1415726922 0
+D s 44100 n 1 l 0:01.814 i 16
+F Acc-backwards-G#5-ppff.wav 136240 0 1415726928 0
+D s 44100 n 1 l 0:01.544 i 16
+F Acc-backwards-G#6-ppff.wav 139664 0 1415726934 0
+D s 44100 n 1 l 0:01.582 i 16
+F Acc-backwards-G1-ppff.wav 99946 0 1415726902 0
+D s 44100 n 1 l 0:01.132 i 16
+F Acc-backwards-G2-ppff.wav 133012 0 1415726908 0
+D s 44100 n 1 l 0:01.507 i 16
+F Acc-backwards-G3-ppff.wav 136420 0 1415726914 0
+D s 44100 n 1 l 0:01.546 i 16
+F Acc-backwards-G4-ppff.wav 154822 0 1415726920 0
+D s 44100 n 1 l 0:01.754 i 16
+F Acc-backwards-G5-ppff.wav 125100 0 1415726926 0
+D s 44100 n 1 l 0:01.417 i 16
+F Acc-backwards-G6-ppff.wav 150830 0 1415726932 0
+D s 44100 n 1 l 0:01.709 i 16

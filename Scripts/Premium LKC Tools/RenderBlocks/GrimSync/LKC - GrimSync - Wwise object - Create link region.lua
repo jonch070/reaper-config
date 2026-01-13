@@ -70,7 +70,7 @@ end
 -- RUN GrimSync GET
 if platform == "Win32" or platform == "Win64" then
     local command = "\"" .. script_path .. "bin/GrimSync.exe\" --get " .. CUR_SETTINGS.waapi_connection_link
-    output = os.execute(command) --old
+    local output = os.execute(command) --old
     -- Msg("OUTPUT:"..command) --old
 else
     --new

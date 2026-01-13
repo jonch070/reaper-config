@@ -1,12 +1,20 @@
 --[[
  Noindex: true
 ]] -- OS INFO
+
+
 platform = reaper.GetOS()
 if platform == "OSX64" or platform == "OSX32" or platform == "OSX" or platform == "Other" then
     separator = [[/]]
 else
     separator = [[\]] -- win
 end
+
+
+bin="x64"
+if platform == "Win32" or platform == "OSX32" then bin="x86" end
+
+
 
 reaper.Undo_BeginBlock()
 
@@ -39,7 +47,7 @@ end
 -- RUN GrimSync ALL
 if platform == "Win32" or platform == "Win64" then
     local command = "\"" .. script_path .. "bin/GrimSync.exe\" --all " .. CUR_SETTINGS.waapi_connection_link .. " " .. network_path
-    output = os.execute(command) --old
+    output2 = os.execute(command) --old
     -- Msg("OUTPUT:"..command) --old
 else
     --new
@@ -50,15 +58,17 @@ else
     -- Msg(result)
 end
 
--- Msg("LINK BLOCKS:" .. tostring(CUR_SETTINGS.link_blocks))
+--Msg("LINK BLOCKS:" .. tostring(CUR_SETTINGS.link_blocks))
 if CUR_SETTINGS.link_blocks == 1 then
+    --Msg("BLOCKS ARE LINKED!!!")
     log = io.open(script_path .. "bin/grim_audio_guid_table.json", "r")
-    output = log:read("*all")
+    output_abc = log:read("*all")
 end
 
-if output then
+if output_abc then
+    --Msg("OUTPUT IS:".. tostring(output_abc))
 
-    guid_dictionary = json.decode(output)
+    guid_dictionary = json.decode(output_abc)
     -- for k,v in pairs(guid_dictionary) do
     --     Msg(k.." -- ".. v)
     -- end

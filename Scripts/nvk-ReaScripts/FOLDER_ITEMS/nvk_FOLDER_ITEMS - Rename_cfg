@@ -1,0 +1,70 @@
+config = {
+	MAINWIND = {
+		cursor_x = 8.0,
+		cursor_y = 118.0,
+		h = 118.0,
+		w = 834.0,
+		x = 1645.0,
+		y = 570.0
+	},
+	always_on_top = false,
+	append = "",
+	cat_locked = {
+		
+	},
+	categories = false,
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	disable_numbering_for_single_item = false,
+	font = "Verdana",
+	font_scales = {
+		results = 1,
+		search = 1
+	},
+	font_size = 12,
+	font_size_reinit = true,
+	force_resizeable_window = false,
+	item = true,
+	keys = {
+		
+	},
+	load_last_project_settings_on_startup = false,
+	new_instance_close = false,
+	persistent_mode = false,
+	prepend = "",
+	recent_wildcard_patterns = {
+		
+	},
+	remove_extensions = true,
+	rename_track = false,
+	scale = 1,
+	style_vars = {
+		
+	},
+	ucs = false,
+	userCategories = {
+		
+	},
+	version = "2.15.5"
+}
+tabs = {
+	default = {
+		adv = {
+			append_number_start = 1
+		},
+		capitalize = 0,
+		default = true,
+		guid = "default",
+		items = 4,
+		preset_name = "Default",
+		separator = 0,
+		spaces = 0,
+		ucs = {
+			
+		}
+	}
+}

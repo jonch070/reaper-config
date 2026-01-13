@@ -1,0 +1,76 @@
+C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Trombone/crescendo-to-decrescendo
+F Tbn-cresc_to_decr-A#1-ppmfpp.aif 956535 0 1179238057 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/crescendo-to-decrescendo/Tbn-cre_dec-A#1-ppmfpp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/crescendo-to-decrescendo/Tbn-cre_dec-A#1-ppmfpp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:07.111
+D i 24
+F Tbn-cresc_to_decr-A#2-ppmfpp.wav 694922 0 1413446636 0
+D s 44100 n 1 l 0:07.878 i 16
+F Tbn-cresc_to_decr-A#3-ppmfpp.wav 575196 0 1413446636 0
+D s 44100 n 1 l 0:06.520 i 16
+F Tbn-cresc_to_decr-A#4-ppmfpp.wav 502668 0 1413446638 0
+D s 44100 n 1 l 0:05.698 i 16
+F Tbn-cresc_to_decr-A2-ppmfpp.wav 694922 0 1413446666 0
+D s 44100 n 1 l 0:07.878 i 16
+F Tbn-cresc_to_decr-A3-ppmfpp.wav 575196 0 1413446674 0
+D s 44100 n 1 l 0:06.520 i 16
+F Tbn-cresc_to_decr-A4-ppmfpp.wav 502668 0 1413446682 0
+D s 44100 n 1 l 0:05.698 i 16
+F Tbn-cresc_to_decr-B1-ppmfpp.wav 627294 0 1413446658 0
+D s 44100 n 1 l 0:07.111 i 16
+F Tbn-cresc_to_decr-B2-ppmfpp.wav 694922 0 1413446666 0
+D s 44100 n 1 l 0:07.878 i 16
+F Tbn-cresc_to_decr-B3-ppmfpp.wav 575196 0 1413446674 0
+D s 44100 n 1 l 0:06.520 i 16
+F Tbn-cresc_to_decr-C#2-ppmfpp.wav 624104 0 1413446660 0
+D s 44100 n 1 l 0:07.075 i 16
+F Tbn-cresc_to_decr-C#3-ppmfpp.wav 676750 0 1413446668 0
+D s 44100 n 1 l 0:07.672 i 16
+F Tbn-cresc_to_decr-C#4-ppmfpp.wav 583846 0 1413446676 0
+D s 44100 n 1 l 0:06.619 i 16
+F Tbn-cresc_to_decr-C2-ppmfpp.wav 627294 0 1413446660 0
+D s 44100 n 1 l 0:07.111 i 16
+F Tbn-cresc_to_decr-C3-ppmfpp.wav 694922 0 1413446668 0
+D s 44100 n 1 l 0:07.878 i 16
+F Tbn-cresc_to_decr-C4-ppmfpp.wav 575196 0 1413446676 0
+D s 44100 n 1 l 0:06.520 i 16
+F Tbn-cresc_to_decr-D#2-ppmfpp.wav 624104 0 1413446662 0
+D s 44100 n 1 l 0:07.075 i 16
+F Tbn-cresc_to_decr-D#3-ppmfpp.wav 676750 0 1413446670 0
+D s 44100 n 1 l 0:07.672 i 16
+F Tbn-cresc_to_decr-D#4-ppmfpp.wav 583846 0 1413446678 0
+D s 44100 n 1 l 0:06.619 i 16
+F Tbn-cresc_to_decr-D2-ppmfpp.wav 624104 0 1413446638 0
+D s 44100 n 1 l 0:07.075 i 16
+F Tbn-cresc_to_decr-D3-ppmfpp.wav 676750 0 1413446638 0
+D s 44100 n 1 l 0:07.672 i 16
+F Tbn-cresc_to_decr-D4-ppmfpp.wav 583846 0 1413446640 0
+D s 44100 n 1 l 0:06.619 i 16
+F Tbn-cresc_to_decr-E2-ppmfpp.wav 624104 0 1413446662 0
+D s 44100 n 1 l 0:07.075 i 16
+F Tbn-cresc_to_decr-E3-ppmfpp.wav 676750 0 1413446670 0
+D s 44100 n 1 l 0:07.672 i 16
+F Tbn-cresc_to_decr-E4-ppmfpp.wav 583846 0 1413446678 0
+D s 44100 n 1 l 0:06.619 i 16
+F Tbn-cresc_to_decr-F#2-ppmfpp.wav 655754 0 1413446640 0
+D s 44100 n 1 l 0:07.434 i 16
+F Tbn-cresc_to_decr-F#3-ppmfpp.wav 576112 0 1413446640 0
+D s 44100 n 1 l 0:06.531 i 16
+F Tbn-cresc_to_decr-F#4-ppmfpp.wav 510086 0 1413446640 0
+D s 44100 n 1 l 0:05.782 i 16
+F Tbn-cresc_to_decr-F2-ppmfpp.wav 655754 0 1413446664 0
+D s 44100 n 1 l 0:07.434 i 16
+F Tbn-cresc_to_decr-F3-ppmfpp.wav 576112 0 1413446672 0
+D s 44100 n 1 l 0:06.531 i 16
+F Tbn-cresc_to_decr-F4-ppmfpp.wav 510086 0 1413446680 0
+D s 44100 n 1 l 0:05.782 i 16
+F Tbn-cresc_to_decr-G#2-ppmfpp.wav 694922 0 1413446666 0
+D s 44100 n 1 l 0:07.878 i 16
+F Tbn-cresc_to_decr-G#3-ppmfpp.wav 575196 0 1413446674 0
+D s 44100 n 1 l 0:06.520 i 16
+F Tbn-cresc_to_decr-G#4-ppmfpp.wav 502668 0 1413446680 0
+D s 44100 n 1 l 0:05.698 i 16
+F Tbn-cresc_to_decr-G2-ppmfpp.wav 655754 0 1413446664 0
+D s 44100 n 1 l 0:07.434 i 16
+F Tbn-cresc_to_decr-G3-ppmfpp.wav 576112 0 1413446672 0
+D s 44100 n 1 l 0:06.531 i 16
+F Tbn-cresc_to_decr-G4-ppmfpp.wav 510086 0 1413446680 0
+D s 44100 n 1 l 0:05.782 i 16

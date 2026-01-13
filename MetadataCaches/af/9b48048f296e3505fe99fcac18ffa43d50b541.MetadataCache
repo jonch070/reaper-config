@@ -1,9 +1,85 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Winds/Bassoon/glissando-with-throat
+F Bn-gliss_throat_fast_down-A3-mf.wav 96396 0 1415723596 0
+D s 44100 n 1 l 0:01.092 i 16
+F Bn-gliss_throat_fast_down-B4-mf.wav 107828 0 1415723596 0
+D s 44100 n 1 l 0:01.222 i 16
 F Bn-gliss_throat_fast_down-C2-mf.wav 135576 0 1415723596 0
 D s 44100 n 1 l 0:01.536 i 16
+F Bn-gliss_throat_fast_down-D#5-mf.wav 140880 0 1415723598 0
+D s 44100 n 1 l 0:01.596 i 16
+F Bn-gliss_throat_fast_down-D3-mf.wav 121066 0 1415723598 0
+D s 44100 n 1 l 0:01.372 i 16
+F Bn-gliss_throat_fast_down-E4-mf.wav 97288 0 1415723598 0
+D s 44100 n 1 l 0:01.102 i 16
+F Bn-gliss_throat_fast_down-G2-mf.wav 129736 0 1415723600 0
+D s 44100 n 1 l 0:01.470 i 16
+F Bn-gliss_throat_fast_up-A3-mf.wav 106830 0 1415723584 0
+D s 44100 n 1 l 0:01.210 i 16
+F Bn-gliss_throat_fast_up-B4-mf.wav 125134 0 1415723584 0
+D s 44100 n 1 l 0:01.418 i 16
 F Bn-gliss_throat_fast_up-C2-mf.wav 143740 0 1415723584 0
 D s 44100 n 1 l 0:01.629 i 16
+F Bn-gliss_throat_fast_up-D#5-mf.wav 127502 0 1415723586 0
+D s 44100 n 1 l 0:01.445 i 16
+F Bn-gliss_throat_fast_up-D3-mf.wav 145828 0 1415723586 0
+D s 44100 n 1 l 0:01.652 i 16
+F Bn-gliss_throat_fast_up-E4-mf.wav 124850 0 1415723586 0
+D s 44100 n 1 l 0:01.415 i 16
+F Bn-gliss_throat_fast_up-G2-mf.wav 120086 0 1415723586 0
+D s 44100 n 1 l 0:01.361 i 16
+F Bn-gliss_throat_med_down-A3-mf.wav 155620 0 1415723600 0
+D s 44100 n 1 l 0:01.763 i 16
+F Bn-gliss_throat_med_down-B4-mf.wav 177074 0 1415723600 0
+D s 44100 n 1 l 0:02.007 i 16
 F Bn-gliss_throat_med_down-C2-mf.wav 208362 0 1415723602 0
 D s 44100 n 1 l 0:02.361 i 16
+F Bn-gliss_throat_med_down-D#5-mf.wav 306040 0 1415723602 0
+D s 44100 n 1 l 0:03.469 i 16
+F Bn-gliss_throat_med_down-D3-mf.wav 248558 0 1415723602 0
+D s 44100 n 1 l 0:02.817 i 16
+F Bn-gliss_throat_med_down-E4-mf.wav 206758 0 1415723602 0
+D s 44100 n 1 l 0:02.343 i 16
+F Bn-gliss_throat_med_down-G2-mf.wav 292286 0 1415723604 0
+D s 44100 n 1 l 0:03.313 i 16
+F Bn-gliss_throat_med_up-A3-mf.wav 252006 0 1415723588 0
+D s 44100 n 1 l 0:02.856 i 16
+F Bn-gliss_throat_med_up-B4-mf.wav 277616 0 1415723588 0
+D s 44100 n 1 l 0:03.147 i 16
+F Bn-gliss_throat_med_up-C2-mf.wav 327350 0 1415723588 0
+D s 44100 n 1 l 0:03.710 i 16
+F Bn-gliss_throat_med_up-D#5-mf.wav 252828 0 1415723590 0
+D s 44100 n 1 l 0:02.866 i 16
+F Bn-gliss_throat_med_up-D3-mf.wav 274158 0 1415723590 0
+D s 44100 n 1 l 0:03.107 i 16
+F Bn-gliss_throat_med_up-E4-mf.wav 262032 0 1415723590 0
+D s 44100 n 1 l 0:02.970 i 16
+F Bn-gliss_throat_med_up-G2-mf.wav 293614 0 1415723590 0
+D s 44100 n 1 l 0:03.328 i 16
+F Bn-gliss_throat_slow_down-A3-mf.wav 339066 0 1415723604 0
+D s 44100 n 1 l 0:03.843 i 16
+F Bn-gliss_throat_slow_down-B4-mf.wav 297400 0 1415723604 0
+D s 44100 n 1 l 0:03.371 i 16
+F Bn-gliss_throat_slow_down-C2-mf.wav 365388 0 1415723606 0
+D s 44100 n 1 l 0:04.142 i 16
+F Bn-gliss_throat_slow_down-D#5-mf.wav 470240 0 1415723606 0
+D s 44100 n 1 l 0:05.331 i 16
+F Bn-gliss_throat_slow_down-D3-mf.wav 357492 0 1415723606 0
+D s 44100 n 1 l 0:04.052 i 16
+F Bn-gliss_throat_slow_down-E4-mf.wav 274504 0 1415723606 0
+D s 44100 n 1 l 0:03.111 i 16
+F Bn-gliss_throat_slow_down-G2-mf.wav 400422 0 1415723608 0
+D s 44100 n 1 l 0:04.539 i 16
 F Bn-gliss_throat_slow_up-A3-mf.wav 381238 0 1415723592 0
 D s 44100 n 1 l 0:04.321 i 16
+F Bn-gliss_throat_slow_up-B4-mf.wav 542016 0 1415723592 0
+D s 44100 n 1 l 0:06.144 i 16
+F Bn-gliss_throat_slow_up-C2-mf.wav 544708 0 1415723592 0
+D s 44100 n 1 l 0:06.175 i 16
+F Bn-gliss_throat_slow_up-D#5-mf.wav 346048 0 1415723594 0
+D s 44100 n 1 l 0:03.922 i 16
+F Bn-gliss_throat_slow_up-D3-mf.wav 472974 0 1415723594 0
+D s 44100 n 1 l 0:05.362 i 16
+F Bn-gliss_throat_slow_up-E4-mf.wav 451554 0 1415723594 0
+D s 44100 n 1 l 0:05.119 i 16
+F Bn-gliss_throat_slow_up-G2-mf.wav 505850 0 1415723596 0
+D s 44100 n 1 l 0:05.734 i 16

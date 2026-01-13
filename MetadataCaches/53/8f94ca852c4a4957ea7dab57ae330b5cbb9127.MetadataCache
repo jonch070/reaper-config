@@ -1,7 +1,19 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Trumpet-C/harmonics-glissando
+F TpC-harm_gliss_fast-A#3-mf.wav 194142 0 1415749636 0
+D s 44100 n 1 l 0:02.200 i 16
+F TpC-harm_gliss_fast-B3-mf.wav 110052 0 1415749638 0
+D s 44100 n 1 l 0:01.247 i 16
 F TpC-harm_gliss_fast-C4-mf.wav 100454 0 1415749638 0
 D s 44100 n 1 l 0:01.138 i 16
+F TpC-harm_gliss_med-A#3-mf.wav 357260 0 1415749638 0
+D s 44100 n 1 l 0:04.050 i 16
+F TpC-harm_gliss_med-B3-mf.wav 412438 0 1415749640 0
+D s 44100 n 1 l 0:04.675 i 16
 F TpC-harm_gliss_med-C4-mf.wav 331006 0 1415749640 0
 D s 44100 n 1 l 0:03.752 i 16
+F TpC-harm_gliss_slow-A#3-mf.wav 861694 0 1415749640 0
+D s 44100 n 1 l 0:09.769 i 16
+F TpC-harm_gliss_slow-B3-mf.wav 920552 0 1415749642 0
+D s 44100 n 1 l 0:10.436 i 16
 F TpC-harm_gliss_slow-C4-mf.wav 1021178 0 1415749642 0
 D s 44100 n 1 l 0:11.577 i 16

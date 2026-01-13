@@ -1,6 +1,116 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Keyboards/Accordion/ordinario
+F Acc-ord-A#1-ff.wav 603126 0 1415727156 0
+D s 44100 n 1 l 0:06.837 i 16
+F Acc-ord-A#1-mf.wav 573570 0 1415727158 0
+D s 44100 n 1 l 0:06.502 i 16
+F Acc-ord-A#1-pp.wav 599164 0 1415727158 0
+D s 44100 n 1 l 0:06.792 i 16
+F Acc-ord-A#2-ff.wav 542448 0 1415727158 0
+D s 44100 n 1 l 0:06.149 i 16
+F Acc-ord-A#2-mf.wav 591532 0 1415727160 0
+D s 44100 n 1 l 0:06.706 i 16
+F Acc-ord-A#2-pp.wav 575166 0 1415727160 0
+D s 44100 n 1 l 0:06.520 i 16
+F Acc-ord-A#3-ff.wav 740024 0 1415727160 0
+D s 44100 n 1 l 0:08.389 i 16
+F Acc-ord-A#3-mf.wav 572684 0 1415727160 0
+D s 44100 n 1 l 0:06.492 i 16
+F Acc-ord-A#3-pp.wav 577540 0 1415727162 0
+D s 44100 n 1 l 0:06.547 i 16
+F Acc-ord-A#4-ff.wav 743924 0 1415727162 0
+D s 44100 n 1 l 0:08.434 i 16
+F Acc-ord-A#4-mf.wav 521916 0 1415727162 0
+D s 44100 n 1 l 0:05.916 i 16
+F Acc-ord-A#4-pp.wav 524356 0 1415727164 0
+D s 44100 n 1 l 0:05.944 i 16
+F Acc-ord-A#5-ff.wav 539216 0 1415727164 0
+D s 44100 n 1 l 0:06.113 i 16
+F Acc-ord-A#5-mf.wav 736278 0 1415727164 0
+D s 44100 n 1 l 0:08.347 i 16
+F Acc-ord-A#5-pp.wav 707758 0 1415727166 0
+D s 44100 n 1 l 0:08.023 i 16
+F Acc-ord-A#6-ff.wav 757414 0 1415727166 0
+D s 44100 n 1 l 0:08.586 i 16
+F Acc-ord-A#6-mf.wav 736226 0 1415727166 0
+D s 44100 n 1 l 0:08.346 i 16
+F Acc-ord-A#6-p.wav 501004 0 1415727168 0
+D s 44100 n 1 l 0:05.679 i 16
+F Acc-ord-A#6-pp.wav 613182 0 1415727168 0
+D s 44100 n 1 l 0:06.951 i 16
+F Acc-ord-A#7-ff.wav 648702 0 1415727168 0
+D s 44100 n 1 l 0:07.354 i 16
+F Acc-ord-A#7-mf.wav 414976 0 1415727170 0
+D s 44100 n 1 l 0:04.704 i 16
+F Acc-ord-A#7-pp.wav 416780 0 1415727170 0
+D s 44100 n 1 l 0:04.724 i 16
+F Acc-ord-A1-ff.wav 596628 0 1415727170 0
+D s 44100 n 1 l 0:06.763 i 16
+F Acc-ord-A1-mf.wav 564622 0 1415727170 0
+D s 44100 n 1 l 0:06.401 i 16
+F Acc-ord-A1-pp.wav 668884 0 1415727172 0
+D s 44100 n 1 l 0:07.583 i 16
+F Acc-ord-A2-ff.wav 513434 0 1415727172 0
+D s 44100 n 1 l 0:05.820 i 16
+F Acc-ord-A2-mf.wav 519370 0 1415727172 0
+D s 44100 n 1 l 0:05.888 i 16
+F Acc-ord-A2-pp.wav 568180 0 1415727174 0
+D s 44100 n 1 l 0:06.441 i 16
+F Acc-ord-A3-ff.wav 497884 0 1415727174 0
+D s 44100 n 1 l 0:05.644 i 16
+F Acc-ord-A3-mf.wav 661742 0 1415727174 0
+D s 44100 n 1 l 0:07.502 i 16
+F Acc-ord-A3-pp.wav 618894 0 1415727176 0
+D s 44100 n 1 l 0:07.016 i 16
+F Acc-ord-A4-ff.wav 475076 0 1415727176 0
+D s 44100 n 1 l 0:05.385 i 16
+F Acc-ord-A4-mf.wav 577166 0 1415727176 0
+D s 44100 n 1 l 0:06.543 i 16
+F Acc-ord-A4-pp.wav 623386 0 1415727178 0
+D s 44100 n 1 l 0:07.067 i 16
+F Acc-ord-A5-ff.wav 540502 0 1415727178 0
+D s 44100 n 1 l 0:06.127 i 16
+F Acc-ord-A5-mf.wav 712040 0 1415727178 0
+D s 44100 n 1 l 0:08.072 i 16
+F Acc-ord-A5-pp.wav 583666 0 1415727178 0
+D s 44100 n 1 l 0:06.617 i 16
 F Acc-ord-A6-ff.wav 574732 0 1415727180 0
 D s 44100 n 1 l 0:06.515 i 16
+F Acc-ord-A6-mf.wav 720534 0 1415727180 0
+D s 44100 n 1 l 0:08.168 i 16
+F Acc-ord-A6-p.wav 527210 0 1415727180 0
+D s 44100 n 1 l 0:05.976 i 16
+F Acc-ord-A6-pp.wav 727856 0 1415727182 0
+D s 44100 n 1 l 0:08.251 i 16
+F Acc-ord-A7-ff.wav 602656 0 1415727182 0
+D s 44100 n 1 l 0:06.832 i 16
+F Acc-ord-A7-mf.wav 429868 0 1415727182 0
+D s 44100 n 1 l 0:04.873 i 16
+F Acc-ord-A7-pp.wav 524718 0 1415727184 0
+D s 44100 n 1 l 0:05.948 i 16
+F Acc-ord-B1-ff.wav 551692 0 1415727184 0
+D s 44100 n 1 l 0:06.254 i 16
+F Acc-ord-B1-mf.wav 599966 0 1415727184 0
+D s 44100 n 1 l 0:06.801 i 16
+F Acc-ord-B1-pp.wav 663786 0 1415727184 0
+D s 44100 n 1 l 0:07.525 i 16
+F Acc-ord-B2-ff.wav 534570 0 1415727186 0
+D s 44100 n 1 l 0:06.060 i 16
+F Acc-ord-B2-mf.wav 662250 0 1415727186 0
+D s 44100 n 1 l 0:07.508 i 16
+F Acc-ord-B2-pp.wav 532312 0 1415727186 0
+D s 44100 n 1 l 0:06.034 i 16
+F Acc-ord-B3-ff.wav 693116 0 1415727188 0
+D s 44100 n 1 l 0:07.857 i 16
+F Acc-ord-B3-mf.wav 497574 0 1415727188 0
+D s 44100 n 1 l 0:05.640 i 16
+F Acc-ord-B3-pp.wav 570980 0 1415727188 0
+D s 44100 n 1 l 0:06.473 i 16
+F Acc-ord-B4-ff.wav 566730 0 1415727190 0
+D s 44100 n 1 l 0:06.425 i 16
+F Acc-ord-B4-mf.wav 554110 0 1415727190 0
+D s 44100 n 1 l 0:06.281 i 16
+F Acc-ord-B4-pp.wav 575730 0 1415727190 0
+D s 44100 n 1 l 0:06.527 i 16
 F Acc-ord-B5-ff.wav 522812 0 1415727192 0
 D s 44100 n 1 l 0:05.927 i 16
 F Acc-ord-B5-mf.wav 542092 0 1415727192 0
@@ -13,31 +123,387 @@ F Acc-ord-B6-mf.wav 695474 0 1415727194 0
 D s 44100 n 1 l 0:07.884 i 16
 F Acc-ord-B6-p.wav 512420 0 1415727194 0
 D s 44100 n 1 l 0:05.809 i 16
+F Acc-ord-B6-pp.wav 624526 0 1415727194 0
+D s 44100 n 1 l 0:07.080 i 16
+F Acc-ord-B7-ff.wav 714444 0 1415727196 0
+D s 44100 n 1 l 0:08.099 i 16
+F Acc-ord-B7-mf.wav 360148 0 1415727196 0
+D s 44100 n 1 l 0:04.082 i 16
+F Acc-ord-B7-pp.wav 433602 0 1415727196 0
+D s 44100 n 1 l 0:04.915 i 16
+F Acc-ord-C#2-ff.wav 621918 0 1415727198 0
+D s 44100 n 1 l 0:07.050 i 16
+F Acc-ord-C#2-mf.wav 629146 0 1415727198 0
+D s 44100 n 1 l 0:07.132 i 16
 F Acc-ord-C#2-pp.wav 679376 0 1415727198 0
 D s 44100 n 1 l 0:07.702 i 16
+F Acc-ord-C#3-ff.wav 448208 0 1415727200 0
+D s 44100 n 1 l 0:05.081 i 16
+F Acc-ord-C#3-mf.wav 655958 0 1415727200 0
+D s 44100 n 1 l 0:07.436 i 16
+F Acc-ord-C#3-pp.wav 672432 0 1415727200 0
+D s 44100 n 1 l 0:07.623 i 16
+F Acc-ord-C#4-ff.wav 485452 0 1415727200 0
+D s 44100 n 1 l 0:05.503 i 16
+F Acc-ord-C#4-mf.wav 482070 0 1415727202 0
+D s 44100 n 1 l 0:05.465 i 16
+F Acc-ord-C#4-pp.wav 588928 0 1415727202 0
+D s 44100 n 1 l 0:06.676 i 16
+F Acc-ord-C#5-ff.wav 695560 0 1415727202 0
+D s 44100 n 1 l 0:07.885 i 16
+F Acc-ord-C#5-mf.wav 650510 0 1415727204 0
+D s 44100 n 1 l 0:07.374 i 16
+F Acc-ord-C#5-pp.wav 580636 0 1415727204 0
+D s 44100 n 1 l 0:06.582 i 16
+F Acc-ord-C#6-ff.wav 677560 0 1415727204 0
+D s 44100 n 1 l 0:07.681 i 16
+F Acc-ord-C#6-mf.wav 531530 0 1415727206 0
+D s 44100 n 1 l 0:06.025 i 16
+F Acc-ord-C#6-pp.wav 563452 0 1415727206 0
+D s 44100 n 1 l 0:06.387 i 16
+F Acc-ord-C#7-ff.wav 612080 0 1415727206 0
+D s 44100 n 1 l 0:06.939 i 16
+F Acc-ord-C#7-mf.wav 629034 0 1415727208 0
+D s 44100 n 1 l 0:07.131 i 16
+F Acc-ord-C#7-p.wav 579364 0 1415727208 0
+D s 44100 n 1 l 0:06.568 i 16
+F Acc-ord-C#7-pp.wav 618724 0 1415727208 0
+D s 44100 n 1 l 0:07.014 i 16
+F Acc-ord-C#8-ff.wav 554638 0 1415727208 0
+D s 44100 n 1 l 0:06.287 i 16
+F Acc-ord-C#8-mf.wav 504398 0 1415727210 0
+D s 44100 n 1 l 0:05.718 i 16
+F Acc-ord-C#8-pp.wav 517726 0 1415727210 0
+D s 44100 n 1 l 0:05.869 i 16
+F Acc-ord-C2-ff.wav 605450 0 1415727210 0
+D s 44100 n 1 l 0:06.864 i 16
+F Acc-ord-C2-mf.wav 568918 0 1415727212 0
+D s 44100 n 1 l 0:06.449 i 16
 F Acc-ord-C2-pp.wav 815060 0 1415727212 0
 D s 44100 n 1 l 0:09.240 i 16
+F Acc-ord-C3-ff.wav 609158 0 1415727212 0
+D s 44100 n 1 l 0:06.906 i 16
+F Acc-ord-C3-mf.wav 514810 0 1415727214 0
+D s 44100 n 1 l 0:05.836 i 16
+F Acc-ord-C3-pp.wav 537294 0 1415727214 0
+D s 44100 n 1 l 0:06.091 i 16
+F Acc-ord-C4-ff.wav 570390 0 1415727214 0
+D s 44100 n 1 l 0:06.466 i 16
+F Acc-ord-C4-mf.wav 493058 0 1415727214 0
+D s 44100 n 1 l 0:05.589 i 16
+F Acc-ord-C4-pp.wav 534084 0 1415727216 0
+D s 44100 n 1 l 0:06.054 i 16
 F Acc-ord-C5-ff.wav 639946 0 1415727216 0
 D s 44100 n 1 l 0:07.255 i 16
+F Acc-ord-C5-mf.wav 603708 0 1415727216 0
+D s 44100 n 1 l 0:06.844 i 16
 F Acc-ord-C5-pp.wav 476346 0 1415727218 0
 D s 44100 n 1 l 0:05.400 i 16
+F Acc-ord-C6-ff.wav 759122 0 1415727218 0
+D s 44100 n 1 l 0:08.606 i 16
 F Acc-ord-C6-mf.wav 621082 0 1415727218 0
 D s 44100 n 1 l 0:07.041 i 16
 F Acc-ord-C6-pp.wav 575366 0 1415727220 0
 D s 44100 n 1 l 0:06.522 i 16
+F Acc-ord-C7-ff.wav 730692 0 1415727220 0
+D s 44100 n 1 l 0:08.283 i 16
+F Acc-ord-C7-mf.wav 672954 0 1415727220 0
+D s 44100 n 1 l 0:07.629 i 16
+F Acc-ord-C7-p.wav 584820 0 1415727220 0
+D s 44100 n 1 l 0:06.630 i 16
+F Acc-ord-C7-pp.wav 497916 0 1415727222 0
+D s 44100 n 1 l 0:05.644 i 16
+F Acc-ord-C8-ff.wav 702820 0 1415727222 0
+D s 44100 n 1 l 0:07.967 i 16
+F Acc-ord-C8-mf.wav 535160 0 1415727222 0
+D s 44100 n 1 l 0:06.067 i 16
+F Acc-ord-C8-pp.wav 620002 0 1415727224 0
+D s 44100 n 1 l 0:07.029 i 16
+F Acc-ord-D#2-ff.wav 508128 0 1415727224 0
+D s 44100 n 1 l 0:05.760 i 16
+F Acc-ord-D#2-mf.wav 588232 0 1415727224 0
+D s 44100 n 1 l 0:06.668 i 16
+F Acc-ord-D#2-pp.wav 582206 0 1415727226 0
+D s 44100 n 1 l 0:06.600 i 16
+F Acc-ord-D#3-ff.wav 531822 0 1415727226 0
+D s 44100 n 1 l 0:06.029 i 16
+F Acc-ord-D#3-mf.wav 565660 0 1415727226 0
+D s 44100 n 1 l 0:06.412 i 16
+F Acc-ord-D#3-pp.wav 594176 0 1415727226 0
+D s 44100 n 1 l 0:06.736 i 16
+F Acc-ord-D#4-ff.wav 592560 0 1415727228 0
+D s 44100 n 1 l 0:06.717 i 16
+F Acc-ord-D#4-mf.wav 444650 0 1415727228 0
+D s 44100 n 1 l 0:05.040 i 16
+F Acc-ord-D#4-pp.wav 548216 0 1415727228 0
+D s 44100 n 1 l 0:06.215 i 16
+F Acc-ord-D#5-ff.wav 607308 0 1415727230 0
+D s 44100 n 1 l 0:06.885 i 16
+F Acc-ord-D#5-mf.wav 608878 0 1415727230 0
+D s 44100 n 1 l 0:06.902 i 16
+F Acc-ord-D#5-pp.wav 521184 0 1415727230 0
+D s 44100 n 1 l 0:05.908 i 16
+F Acc-ord-D#6-ff.wav 501140 0 1415727232 0
+D s 44100 n 1 l 0:05.681 i 16
+F Acc-ord-D#6-mf.wav 681422 0 1415727232 0
+D s 44100 n 1 l 0:07.725 i 16
+F Acc-ord-D#6-pp.wav 485738 0 1415727232 0
+D s 44100 n 1 l 0:05.506 i 16
+F Acc-ord-D#7-ff.wav 619770 0 1415727232 0
+D s 44100 n 1 l 0:07.026 i 16
+F Acc-ord-D#7-mf.wav 777874 0 1415727234 0
+D s 44100 n 1 l 0:08.818 i 16
+F Acc-ord-D#7-p.wav 487678 0 1415727234 0
+D s 44100 n 1 l 0:05.528 i 16
+F Acc-ord-D#7-pp.wav 513040 0 1415727234 0
+D s 44100 n 1 l 0:05.816 i 16
+F Acc-ord-D2-ff.wav 481420 0 1415727236 0
+D s 44100 n 1 l 0:05.457 i 16
+F Acc-ord-D2-mf.wav 551984 0 1415727236 0
+D s 44100 n 1 l 0:06.257 i 16
+F Acc-ord-D2-pp.wav 625404 0 1415727236 0
+D s 44100 n 1 l 0:07.090 i 16
+F Acc-ord-D3-ff.wav 634610 0 1415727238 0
+D s 44100 n 1 l 0:07.194 i 16
+F Acc-ord-D3-mf.wav 504272 0 1415727238 0
+D s 44100 n 1 l 0:05.716 i 16
+F Acc-ord-D3-pp.wav 581778 0 1415727238 0
+D s 44100 n 1 l 0:06.595 i 16
+F Acc-ord-D4-ff.wav 687840 0 1415727238 0
+D s 44100 n 1 l 0:07.798 i 16
+F Acc-ord-D4-mf.wav 635770 0 1415727240 0
+D s 44100 n 1 l 0:07.207 i 16
+F Acc-ord-D4-pp.wav 558984 0 1415727240 0
+D s 44100 n 1 l 0:06.337 i 16
+F Acc-ord-D5-ff.wav 696646 0 1415727240 0
+D s 44100 n 1 l 0:07.897 i 16
+F Acc-ord-D5-mf.wav 548948 0 1415727242 0
+D s 44100 n 1 l 0:06.223 i 16
+F Acc-ord-D5-pp.wav 655270 0 1415727242 0
+D s 44100 n 1 l 0:07.428 i 16
+F Acc-ord-D6-ff.wav 613124 0 1415727242 0
+D s 44100 n 1 l 0:06.951 i 16
 F Acc-ord-D6-mf.wav 476466 0 1415727244 0
 D s 44100 n 1 l 0:05.401 i 16
 F Acc-ord-D6-pp.wav 496240 0 1415727244 0
 D s 44100 n 1 l 0:05.625 i 16
+F Acc-ord-D7-ff.wav 591634 0 1415727244 0
+D s 44100 n 1 l 0:06.707 i 16
+F Acc-ord-D7-mf.wav 713170 0 1415727246 0
+D s 44100 n 1 l 0:08.085 i 16
+F Acc-ord-D7-p.wav 432136 0 1415727246 0
+D s 44100 n 1 l 0:04.899 i 16
+F Acc-ord-D7-pp.wav 754596 0 1415727246 0
+D s 44100 n 1 l 0:08.555 i 16
+F Acc-ord-E1-ff.wav 661210 0 1415727246 0
+D s 44100 n 1 l 0:07.496 i 16
+F Acc-ord-E1-mf.wav 604790 0 1415727248 0
+D s 44100 n 1 l 0:06.856 i 16
+F Acc-ord-E1-pp.wav 591848 0 1415727248 0
+D s 44100 n 1 l 0:06.709 i 16
 F Acc-ord-E2-ff.wav 502086 0 1415727248 0
 D s 44100 n 1 l 0:05.692 i 16
+F Acc-ord-E2-mf.wav 557998 0 1415727250 0
+D s 44100 n 1 l 0:06.326 i 16
+F Acc-ord-E2-pp.wav 493898 0 1415727250 0
+D s 44100 n 1 l 0:05.599 i 16
+F Acc-ord-E3-ff.wav 490390 0 1415727250 0
+D s 44100 n 1 l 0:05.559 i 16
+F Acc-ord-E3-mf.wav 630128 0 1415727252 0
+D s 44100 n 1 l 0:07.143 i 16
+F Acc-ord-E3-pp.wav 567210 0 1415727252 0
+D s 44100 n 1 l 0:06.430 i 16
+F Acc-ord-E4-ff.wav 578240 0 1415727252 0
+D s 44100 n 1 l 0:06.555 i 16
+F Acc-ord-E4-mf.wav 583846 0 1415727252 0
+D s 44100 n 1 l 0:06.619 i 16
+F Acc-ord-E4-pp.wav 640646 0 1415727254 0
+D s 44100 n 1 l 0:07.263 i 16
+F Acc-ord-E5-ff.wav 545110 0 1415727254 0
+D s 44100 n 1 l 0:06.179 i 16
+F Acc-ord-E5-mf.wav 569540 0 1415727254 0
+D s 44100 n 1 l 0:06.456 i 16
 F Acc-ord-E5-pp.wav 581498 0 1415727256 0
 D s 44100 n 1 l 0:06.592 i 16
+F Acc-ord-E6-ff.wav 494788 0 1415727256 0
+D s 44100 n 1 l 0:05.609 i 16
+F Acc-ord-E6-mf.wav 707460 0 1415727256 0
+D s 44100 n 1 l 0:08.020 i 16
 F Acc-ord-E6-pp.wav 564106 0 1415727258 0
 D s 44100 n 1 l 0:06.395 i 16
+F Acc-ord-E7-ff.wav 646058 0 1415727258 0
+D s 44100 n 1 l 0:07.324 i 16
+F Acc-ord-E7-mf.wav 548920 0 1415727258 0
+D s 44100 n 1 l 0:06.223 i 16
+F Acc-ord-E7-p.wav 437192 0 1415727258 0
+D s 44100 n 1 l 0:04.956 i 16
+F Acc-ord-E7-pp.wav 533762 0 1415727260 0
+D s 44100 n 1 l 0:06.051 i 16
+F Acc-ord-F#1-ff.wav 636752 0 1415727260 0
+D s 44100 n 1 l 0:07.218 i 16
+F Acc-ord-F#1-mf.wav 624968 0 1415727260 0
+D s 44100 n 1 l 0:07.085 i 16
+F Acc-ord-F#1-pp.wav 642758 0 1415727262 0
+D s 44100 n 1 l 0:07.287 i 16
 F Acc-ord-F#2-ff.wav 543866 0 1415727262 0
 D s 44100 n 1 l 0:06.165 i 16
+F Acc-ord-F#2-mf.wav 466472 0 1415727262 0
+D s 44100 n 1 l 0:05.288 i 16
+F Acc-ord-F#2-pp.wav 614756 0 1415727264 0
+D s 44100 n 1 l 0:06.969 i 16
+F Acc-ord-F#3-ff.wav 563174 0 1415727264 0
+D s 44100 n 1 l 0:06.384 i 16
+F Acc-ord-F#3-mf.wav 733052 0 1415727264 0
+D s 44100 n 1 l 0:08.310 i 16
+F Acc-ord-F#3-pp.wav 546570 0 1415727266 0
+D s 44100 n 1 l 0:06.196 i 16
+F Acc-ord-F#4-ff.wav 589526 0 1415727266 0
+D s 44100 n 1 l 0:06.683 i 16
+F Acc-ord-F#4-mf.wav 623320 0 1415727266 0
+D s 44100 n 1 l 0:07.066 i 16
+F Acc-ord-F#4-pp.wav 600706 0 1415727266 0
+D s 44100 n 1 l 0:06.810 i 16
+F Acc-ord-F#5-ff.wav 741146 0 1415727268 0
+D s 44100 n 1 l 0:08.402 i 16
+F Acc-ord-F#5-mf.wav 569804 0 1415727268 0
+D s 44100 n 1 l 0:06.459 i 16
+F Acc-ord-F#5-pp.wav 691008 0 1415727268 0
+D s 44100 n 1 l 0:07.834 i 16
+F Acc-ord-F#6-ff.wav 643246 0 1415727270 0
+D s 44100 n 1 l 0:07.292 i 16
+F Acc-ord-F#6-mf.wav 655814 0 1415727270 0
+D s 44100 n 1 l 0:07.435 i 16
+F Acc-ord-F#6-pp.wav 614812 0 1415727270 0
+D s 44100 n 1 l 0:06.970 i 16
+F Acc-ord-F#7-ff.wav 600818 0 1415727272 0
+D s 44100 n 1 l 0:06.811 i 16
+F Acc-ord-F#7-mf.wav 663612 0 1415727272 0
+D s 44100 n 1 l 0:07.523 i 16
+F Acc-ord-F#7-pp.wav 579324 0 1415727272 0
+D s 44100 n 1 l 0:06.567 i 16
+F Acc-ord-F1-ff.wav 630356 0 1415727274 0
+D s 44100 n 1 l 0:07.146 i 16
+F Acc-ord-F1-mf.wav 539232 0 1415727274 0
+D s 44100 n 1 l 0:06.113 i 16
+F Acc-ord-F1-pp.wav 591616 0 1415727274 0
+D s 44100 n 1 l 0:06.707 i 16
+F Acc-ord-F2-ff.wav 598890 0 1415727274 0
+D s 44100 n 1 l 0:06.789 i 16
+F Acc-ord-F2-mf.wav 474680 0 1415727276 0
+D s 44100 n 1 l 0:05.381 i 16
+F Acc-ord-F2-pp.wav 532376 0 1415727276 0
+D s 44100 n 1 l 0:06.035 i 16
+F Acc-ord-F3-ff.wav 556476 0 1415727276 0
+D s 44100 n 1 l 0:06.308 i 16
+F Acc-ord-F3-mf.wav 678272 0 1415727278 0
+D s 44100 n 1 l 0:07.689 i 16
+F Acc-ord-F3-pp.wav 522866 0 1415727278 0
+D s 44100 n 1 l 0:05.927 i 16
+F Acc-ord-F4-ff.wav 673538 0 1415727278 0
+D s 44100 n 1 l 0:07.635 i 16
+F Acc-ord-F4-mf.wav 952520 0 1415727280 0
+D s 44100 n 1 l 0:10.799 i 16
+F Acc-ord-F4-pp.wav 725178 0 1415727280 0
+D s 44100 n 1 l 0:08.221 i 16
+F Acc-ord-F5-ff.wav 858744 0 1415727280 0
+D s 44100 n 1 l 0:09.735 i 16
+F Acc-ord-F5-mf.wav 708708 0 1415727282 0
+D s 44100 n 1 l 0:08.034 i 16
+F Acc-ord-F5-pp.wav 639264 0 1415727282 0
+D s 44100 n 1 l 0:07.247 i 16
+F Acc-ord-F6-ff.wav 574868 0 1415727282 0
+D s 44100 n 1 l 0:06.517 i 16
+F Acc-ord-F6-mf.wav 498282 0 1415727284 0
+D s 44100 n 1 l 0:05.648 i 16
+F Acc-ord-F6-pp.wav 518066 0 1415727284 0
+D s 44100 n 1 l 0:05.873 i 16
+F Acc-ord-F7-ff.wav 675472 0 1415727284 0
+D s 44100 n 1 l 0:07.657 i 16
+F Acc-ord-F7-mf.wav 668970 0 1415727284 0
+D s 44100 n 1 l 0:07.584 i 16
+F Acc-ord-F7-pp.wav 604734 0 1415727286 0
+D s 44100 n 1 l 0:06.855 i 16
+F Acc-ord-G#1-ff.wav 643400 0 1415727286 0
+D s 44100 n 1 l 0:07.294 i 16
+F Acc-ord-G#1-mf.wav 537936 0 1415727286 0
+D s 44100 n 1 l 0:06.098 i 16
+F Acc-ord-G#1-pp.wav 550216 0 1415727288 0
+D s 44100 n 1 l 0:06.237 i 16
+F Acc-ord-G#2-ff.wav 638948 0 1415727288 0
+D s 44100 n 1 l 0:07.243 i 16
+F Acc-ord-G#2-mf.wav 442964 0 1415727288 0
+D s 44100 n 1 l 0:05.021 i 16
+F Acc-ord-G#2-pp.wav 591696 0 1415727290 0
+D s 44100 n 1 l 0:06.708 i 16
+F Acc-ord-G#3-ff.wav 666678 0 1415727290 0
+D s 44100 n 1 l 0:07.558 i 16
+F Acc-ord-G#3-mf.wav 608446 0 1415727290 0
+D s 44100 n 1 l 0:06.897 i 16
+F Acc-ord-G#3-pp.wav 660616 0 1415727292 0
+D s 44100 n 1 l 0:07.489 i 16
+F Acc-ord-G#4-ff.wav 835756 0 1415727292 0
+D s 44100 n 1 l 0:09.475 i 16
+F Acc-ord-G#4-mf.wav 571074 0 1415727292 0
+D s 44100 n 1 l 0:06.474 i 16
+F Acc-ord-G#4-pp.wav 631790 0 1415727292 0
+D s 44100 n 1 l 0:07.162 i 16
+F Acc-ord-G#5-ff.wav 474022 0 1415727294 0
+D s 44100 n 1 l 0:05.373 i 16
+F Acc-ord-G#5-mf.wav 703910 0 1415727294 0
+D s 44100 n 1 l 0:07.980 i 16
+F Acc-ord-G#5-pp.wav 639688 0 1415727294 0
+D s 44100 n 1 l 0:07.252 i 16
+F Acc-ord-G#6-ff.wav 571648 0 1415727296 0
+D s 44100 n 1 l 0:06.480 i 16
+F Acc-ord-G#6-mf.wav 481248 0 1415727296 0
+D s 44100 n 1 l 0:05.455 i 16
+F Acc-ord-G#6-pp.wav 592522 0 1415727296 0
+D s 44100 n 1 l 0:06.717 i 16
+F Acc-ord-G#7-ff.wav 675366 0 1415727298 0
+D s 44100 n 1 l 0:07.656 i 16
+F Acc-ord-G#7-mf.wav 499836 0 1415727298 0
+D s 44100 n 1 l 0:05.666 i 16
+F Acc-ord-G#7-pp.wav 578030 0 1415727298 0
+D s 44100 n 1 l 0:06.553 i 16
+F Acc-ord-G1-ff.wav 517600 0 1415727300 0
+D s 44100 n 1 l 0:05.867 i 16
+F Acc-ord-G1-mf.wav 672644 0 1415727300 0
+D s 44100 n 1 l 0:07.625 i 16
+F Acc-ord-G1-pp.wav 616722 0 1415727300 0
+D s 44100 n 1 l 0:06.991 i 16
+F Acc-ord-G2-ff.wav 616326 0 1415727300 0
+D s 44100 n 1 l 0:06.987 i 16
+F Acc-ord-G2-mf.wav 614064 0 1415727302 0
+D s 44100 n 1 l 0:06.961 i 16
+F Acc-ord-G2-pp.wav 512908 0 1415727302 0
+D s 44100 n 1 l 0:05.814 i 16
+F Acc-ord-G3-ff.wav 685268 0 1415727302 0
+D s 44100 n 1 l 0:07.768 i 16
+F Acc-ord-G3-mf.wav 634376 0 1415727304 0
+D s 44100 n 1 l 0:07.191 i 16
+F Acc-ord-G3-pp.wav 643514 0 1415727304 0
+D s 44100 n 1 l 0:07.295 i 16
 F Acc-ord-G4-ff.wav 641832 0 1415727304 0
 D s 44100 n 1 l 0:07.276 i 16
+F Acc-ord-G4-mf.wav 653272 0 1415727306 0
+D s 44100 n 1 l 0:07.406 i 16
+F Acc-ord-G4-pp.wav 642704 0 1415727306 0
+D s 44100 n 1 l 0:07.286 i 16
+F Acc-ord-G5-ff.wav 606886 0 1415727306 0
+D s 44100 n 1 l 0:06.880 i 16
 F Acc-ord-G5-mf.wav 659114 0 1415727308 0
 D s 44100 n 1 l 0:07.472 i 16
+F Acc-ord-G5-pp.wav 536084 0 1415727308 0
+D s 44100 n 1 l 0:06.077 i 16
+F Acc-ord-G6-ff.wav 662526 0 1415727308 0
+D s 44100 n 1 l 0:07.511 i 16
+F Acc-ord-G6-mf.wav 622422 0 1415727308 0
+D s 44100 n 1 l 0:07.056 i 16
+F Acc-ord-G6-pp.wav 590654 0 1415727310 0
+D s 44100 n 1 l 0:06.696 i 16
+F Acc-ord-G7-ff.wav 625876 0 1415727310 0
+D s 44100 n 1 l 0:07.095 i 16
+F Acc-ord-G7-mf.wav 538804 0 1415727310 0
+D s 44100 n 1 l 0:06.108 i 16
+F Acc-ord-G7-pp.wav 609304 0 1415727312 0
+D s 44100 n 1 l 0:06.907 i 16

@@ -1,4 +1,304 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Bass-Tuba-sordina/ordinario
+F BTb+S-ord-A#0-f.aif 270745 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#0-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#0-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.008
+D i 24
+F BTb+S-ord-A#0-p.aif 308278 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#0-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#0-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.287
+D i 24
+F BTb+S-ord-A#1-f.aif 226786 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.680
+D i 24
+F BTb+S-ord-A#1-p.aif 347965 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.582
+D i 24
+F BTb+S-ord-A#2-f.aif 218926 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.622
+D i 24
+F BTb+S-ord-A#2-p.aif 325015 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.412
+D i 24
+F BTb+S-ord-A#3-f.aif 248719 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.844
+D i 24
+F BTb+S-ord-A#3-p.aif 367681 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.729
+D i 24
+F BTb+S-ord-A#4-f.aif 226876 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.681
+D i 24
+F BTb+S-ord-A#4-p.aif 445936 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A#4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A#4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.311
+D i 24
+F BTb+S-ord-A0-f.aif 239267 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A0-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A0-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.773
+D i 24
+F BTb+S-ord-A0-p.aif 320282 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A0-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A0-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.376
+D i 24
+F BTb+S-ord-A1-f.aif 240755 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.784
+D i 24
+F BTb+S-ord-A1-p.aif 414203 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.075
+D i 24
+F BTb+S-ord-A2-f.aif 256958 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.905
+D i 24
+F BTb+S-ord-A2-p.aif 394718 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.930
+D i 24
+F BTb+S-ord-A3-f.aif 246638 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.828
+D i 24
+F BTb+S-ord-A3-p.aif 315443 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.340
+D i 24
+F BTb+S-ord-A4-f.aif 241244 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.788
+D i 24
+F BTb+S-ord-A4-p.aif 390179 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-A4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-A4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.896
+D i 24
+F BTb+S-ord-B0-p.aif 366764 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-B0-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-B0-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.722
+D i 24
+F BTb+S-ord-B1-f.aif 257360 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-B1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-B1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.908
+D i 24
+F BTb+S-ord-B1-p.aif 391424 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-B1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-B1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.906
+D i 24
+F BTb+S-ord-B2-f.aif 226520 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-B2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-B2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.679
+D i 24
+F BTb+S-ord-B2-p.aif 352880 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-B2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-B2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.619
+D i 24
+F BTb+S-ord-B3-f.aif 247028 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-B3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-B3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.831
+D i 24
+F BTb+S-ord-B3-p.aif 332444 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-B3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-B3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.467
+D i 24
+F BTb+S-ord-C#1-f.aif 270985 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.009
+D i 24
+F BTb+S-ord-C#1-p.aif 424090 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.149
+D i 24
+F BTb+S-ord-C#2-f.aif 234196 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.736
+D i 24
+F BTb+S-ord-C#2-p.aif 360727 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.677
+D i 24
+F BTb+S-ord-C#3-f.aif 236062 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.750
+D i 24
+F BTb+S-ord-C#3-p.aif 402508 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.988
+D i 24
+F BTb+S-ord-C#4-f.aif 263020 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.950
+D i 24
+F BTb+S-ord-C#4-p.aif 319393 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C#4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C#4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.370
+D i 24
+F BTb+S-ord-C1-f.aif 263948 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.957
+D i 24
+F BTb+S-ord-C1-p.aif 426074 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.164
+D i 24
+F BTb+S-ord-C2-f.aif 214037 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.586
+D i 24
+F BTb+S-ord-C2-p.aif 407093 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.022
+D i 24
 F BTb+S-ord-C3-f.aif 248876 0 1179238081 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.845
+D i 24
+F BTb+S-ord-C3-p.aif 384899 0 1179238081 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.857
+D i 24
+F BTb+S-ord-C4-f.aif 276551 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.051
+D i 24
+F BTb+S-ord-C4-p.aif 377747 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-C4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-C4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.804
+D i 24
+F BTb+S-ord-D#1-f.aif 267229 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.981
+D i 24
+F BTb+S-ord-D#1-p.aif 394924 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.932
+D i 24
+F BTb+S-ord-D#2-f.aif 277117 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.055
+D i 24
+F BTb+S-ord-D#2-p.aif 354325 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.630
+D i 24
+F BTb+S-ord-D#3-f.aif 230899 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.711
+D i 24
+F BTb+S-ord-D#3-p.aif 414139 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.075
+D i 24
+F BTb+S-ord-D#4-f.aif 233755 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.732
+D i 24
+F BTb+S-ord-D#4-p.aif 345157 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D#4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D#4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.561
+D i 24
+F BTb+S-ord-D1-f.aif 316838 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.351
+D i 24
+F BTb+S-ord-D1-p.aif 408377 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.032
+D i 24
+F BTb+S-ord-D2-f.aif 244439 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.812
+D i 24
+F BTb+S-ord-D2-p.aif 393431 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.921
+D i 24
+F BTb+S-ord-D3-f.aif 221858 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.644
+D i 24
+F BTb+S-ord-D3-p.aif 409265 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.039
+D i 24
+F BTb+S-ord-D4-f.aif 266138 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.973
+D i 24
+F BTb+S-ord-D4-p.aif 337457 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-D4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-D4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.504
+D i 24
+F BTb+S-ord-E1-f.aif 258992 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.920
+D i 24
+F BTb+S-ord-E1-p.aif 303419 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.251
+D i 24
+F BTb+S-ord-E2-f.aif 262817 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.949
+D i 24
+F BTb+S-ord-E2-p.aif 350570 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.602
+D i 24
+F BTb+S-ord-E3-f.aif 202469 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.500
+D i 24
+F BTb+S-ord-E3-p.aif 376649 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.796
+D i 24
+F BTb+S-ord-E4-f.aif 260072 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.928
+D i 24
+F BTb+S-ord-E4-p.aif 344393 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-E4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-E4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.556
+D i 24
+F BTb+S-ord-F#1-f.aif 266641 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.977
+D i 24
+F BTb+S-ord-F#1-p.aif 428152 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.179
+D i 24
+F BTb+S-ord-F#2-f.aif 258343 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.915
+D i 24
+F BTb+S-ord-F#2-p.aif 343396 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.548
+D i 24
+F BTb+S-ord-F#3-f.aif 236401 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.752
+D i 24
+F BTb+S-ord-F#3-p.aif 347365 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.578
+D i 24
+F BTb+S-ord-F#4-f.aif 250894 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.860
+D i 24
+F BTb+S-ord-F#4-p.aif 309517 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F#4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F#4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.296
+D i 24
+F BTb+S-ord-F1-f.aif 243965 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.808
+D i 24
+F BTb+S-ord-F1-p.aif 416513 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.093
+D i 24
+F BTb+S-ord-F2-f.aif 243098 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.802
+D i 24
+F BTb+S-ord-F2-p.aif 280730 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.082
+D i 24
+F BTb+S-ord-F3-f.aif 241469 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.790
+D i 24
+F BTb+S-ord-F3-p.aif 343694 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.551
+D i 24
+F BTb+S-ord-F4-f.aif 239492 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.775
+D i 24
+F BTb+S-ord-F4-p.aif 370913 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-F4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-F4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.753
+D i 24
+F BTb+S-ord-G#0-f.aif 242152 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#0-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#0-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.795
+D i 24
+F BTb+S-ord-G#0-p.aif 300283 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#0-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#0-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.228
+D i 24
+F BTb+S-ord-G#1-f.aif 242941 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.801
+D i 24
+F BTb+S-ord-G#1-p.aif 458899 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.408
+D i 24
+F BTb+S-ord-G#2-f.aif 252256 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.870
+D i 24
+F BTb+S-ord-G#2-p.aif 349879 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.597
+D i 24
+F BTb+S-ord-G#3-f.aif 213325 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.580
+D i 24
+F BTb+S-ord-G#3-p.aif 256708 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.903
+D i 24
+F BTb+S-ord-G#4-f.aif 238705 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.769
+D i 24
+F BTb+S-ord-G#4-p.aif 393211 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G#4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G#4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.919
+D i 24
+F BTb+S-ord-G1-f.aif 256601 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G1-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G1-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.902
+D i 24
+F BTb+S-ord-G1-p.aif 455627 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G1-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G1-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.384
+D i 24
+F BTb+S-ord-G2-f.aif 221825 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G2-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G2-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.644
+D i 24
+F BTb+S-ord-G2-p.aif 361091 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G2-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G2-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.680
+D i 24
+F BTb+S-ord-G3-f.aif 220937 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G3-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G3-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.637
+D i 24
+F BTb+S-ord-G3-p.aif 385289 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G3-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G3-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.860
+D i 24
+F BTb+S-ord-G4-f.aif 239942 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G4-f.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G4-f.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:01.778
+D i 24
+F BTb+S-ord-G4-p.aif 409619 0 1179238082 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//09!Tuba/sordina!ordinario/Tb+S-ord-G4-p.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//09!Tuba/sordina!ordinario/Tb+S-ord-G4-p.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.041
 D i 24

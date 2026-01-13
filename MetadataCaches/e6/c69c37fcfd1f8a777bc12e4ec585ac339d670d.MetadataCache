@@ -1,19 +1,839 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Winds/Clarinet-Bb/glissando
+F ClBb-gliss_fast-C#5_A#5-mf.wav 197560 0 1415724318 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-C#5_A#6-mf.wav 243540 0 1415724328 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C#5_A5-mf.wav 197560 0 1415724318 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-C#5_A6-mf.wav 243540 0 1415724328 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C#5_B5-mf.wav 197560 0 1415724320 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-C#5_C#6-mf.wav 212516 0 1415724320 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-C#5_C5-mf.wav 130870 0 1415724312 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-C#5_C6-mf.wav 212516 0 1415724320 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-C#5_D#5-mf.wav 143760 0 1415724312 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-C#5_D#6-mf.wav 212516 0 1415724322 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-C#5_D5-mf.wav 143760 0 1415724312 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-C#5_D6-mf.wav 212516 0 1415724322 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-C#5_E5-mf.wav 127844 0 1415724314 0
+D s 44100 n 1 l 0:01.448 i 16
+F ClBb-gliss_fast-C#5_E6-mf.wav 243540 0 1415724324 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C#5_F#5-mf.wav 128076 0 1415724316 0
+D s 44100 n 1 l 0:01.451 i 16
+F ClBb-gliss_fast-C#5_F#6-mf.wav 243540 0 1415724324 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C#5_F5-mf.wav 120622 0 1415724314 0
+D s 44100 n 1 l 0:01.367 i 16
+F ClBb-gliss_fast-C#5_F6-mf.wav 243540 0 1415724324 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C#5_G#5-mf.wav 180146 0 1415724316 0
+D s 44100 n 1 l 0:02.041 i 16
+F ClBb-gliss_fast-C#5_G#6-mf.wav 243540 0 1415724326 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C#5_G5-mf.wav 157632 0 1415724316 0
+D s 44100 n 1 l 0:01.786 i 16
+F ClBb-gliss_fast-C#5_G6-mf.wav 243540 0 1415724326 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_A#5-mf.wav 197560 0 1415724302 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-C5_A#6-mf.wav 243540 0 1415724272 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_A5-mf.wav 197560 0 1415724300 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-C5_A6-mf.wav 243540 0 1415724310 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_B5-mf.wav 197560 0 1415724302 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-C5_C#5-mf.wav 130870 0 1415724294 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-C5_C#6-mf.wav 212516 0 1415724304 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-C5_C6-mf.wav 212516 0 1415724304 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-C5_D#5-mf.wav 143760 0 1415724296 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-C5_D#6-mf.wav 243540 0 1415724306 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_D5-mf.wav 143760 0 1415724296 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-C5_D6-mf.wav 212516 0 1415724304 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-C5_E5-mf.wav 127844 0 1415724298 0
+D s 44100 n 1 l 0:01.448 i 16
+F ClBb-gliss_fast-C5_E6-mf.wav 243540 0 1415724306 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_F#5-mf.wav 128076 0 1415724298 0
+D s 44100 n 1 l 0:01.451 i 16
+F ClBb-gliss_fast-C5_F#6-mf.wav 243540 0 1415724308 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_F5-mf.wav 120622 0 1415724298 0
+D s 44100 n 1 l 0:01.367 i 16
+F ClBb-gliss_fast-C5_F6-mf.wav 243540 0 1415724308 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_G#5-mf.wav 180146 0 1415724300 0
+D s 44100 n 1 l 0:02.041 i 16
+F ClBb-gliss_fast-C5_G#6-mf.wav 243540 0 1415724310 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-C5_G5-mf.wav 157632 0 1415724300 0
+D s 44100 n 1 l 0:01.786 i 16
+F ClBb-gliss_fast-C5_G6-mf.wav 243540 0 1415724308 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D#5_A#5-mf.wav 197560 0 1415724354 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-D#5_A#6-mf.wav 243540 0 1415724364 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D#5_A5-mf.wav 197560 0 1415724352 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-D#5_A6-mf.wav 243540 0 1415724362 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D#5_B5-mf.wav 197560 0 1415724354 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-D#5_C#5-mf.wav 130870 0 1415724348 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-D#5_C#6-mf.wav 212516 0 1415724356 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D#5_C5-mf.wav 130870 0 1415724346 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-D#5_C6-mf.wav 212516 0 1415724356 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D#5_D#6-mf.wav 212516 0 1415724358 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D#5_D5-mf.wav 143760 0 1415724348 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-D#5_D6-mf.wav 212516 0 1415724356 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D#5_E5-mf.wav 127844 0 1415724348 0
+D s 44100 n 1 l 0:01.448 i 16
+F ClBb-gliss_fast-D#5_E6-mf.wav 212516 0 1415724358 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D#5_F#5-mf.wav 128076 0 1415724350 0
+D s 44100 n 1 l 0:01.451 i 16
+F ClBb-gliss_fast-D#5_F#6-mf.wav 243540 0 1415724360 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D#5_F5-mf.wav 120622 0 1415724350 0
+D s 44100 n 1 l 0:01.367 i 16
+F ClBb-gliss_fast-D#5_F6-mf.wav 212516 0 1415724360 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D#5_G#5-mf.wav 180146 0 1415724352 0
+D s 44100 n 1 l 0:02.041 i 16
+F ClBb-gliss_fast-D#5_G#6-mf.wav 243540 0 1415724362 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D#5_G5-mf.wav 157632 0 1415724352 0
+D s 44100 n 1 l 0:01.786 i 16
+F ClBb-gliss_fast-D#5_G6-mf.wav 243540 0 1415724360 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D5_A#5-mf.wav 197560 0 1415724336 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-D5_A#6-mf.wav 243540 0 1415724346 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D5_A5-mf.wav 197560 0 1415724336 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-D5_A6-mf.wav 243540 0 1415724344 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D5_B5-mf.wav 197560 0 1415724336 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-D5_C#5-mf.wav 130870 0 1415724330 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-D5_C#6-mf.wav 212516 0 1415724338 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D5_C5-mf.wav 130870 0 1415724328 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-D5_C6-mf.wav 212516 0 1415724338 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D5_D#5-mf.wav 143760 0 1415724330 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-D5_D#6-mf.wav 212516 0 1415724340 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D5_D6-mf.wav 212516 0 1415724340 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D5_E5-mf.wav 127844 0 1415724332 0
+D s 44100 n 1 l 0:01.448 i 16
+F ClBb-gliss_fast-D5_E6-mf.wav 212516 0 1415724340 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-D5_F#5-mf.wav 128076 0 1415724332 0
+D s 44100 n 1 l 0:01.451 i 16
+F ClBb-gliss_fast-D5_F#6-mf.wav 243540 0 1415724342 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D5_F5-mf.wav 120622 0 1415724332 0
+D s 44100 n 1 l 0:01.367 i 16
+F ClBb-gliss_fast-D5_F6-mf.wav 243540 0 1415724342 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D5_G#5-mf.wav 180146 0 1415724334 0
+D s 44100 n 1 l 0:02.041 i 16
+F ClBb-gliss_fast-D5_G#6-mf.wav 243540 0 1415724344 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-D5_G5-mf.wav 157632 0 1415724334 0
+D s 44100 n 1 l 0:01.786 i 16
+F ClBb-gliss_fast-D5_G6-mf.wav 243540 0 1415724344 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-E5_A#5-mf.wav 197560 0 1415724370 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-E5_A#6-mf.wav 243540 0 1415724382 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-E5_A5-mf.wav 197560 0 1415724370 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-E5_A6-mf.wav 243540 0 1415724380 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-E5_B5-mf.wav 197560 0 1415724372 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-E5_C#5-mf.wav 130870 0 1415724364 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-E5_C#6-mf.wav 212516 0 1415724374 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-E5_C5-mf.wav 130870 0 1415724364 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-E5_C6-mf.wav 212516 0 1415724372 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-E5_D#5-mf.wav 143760 0 1415724366 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-E5_D#6-mf.wav 212516 0 1415724374 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-E5_D5-mf.wav 143760 0 1415724366 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-E5_D6-mf.wav 212516 0 1415724374 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-E5_E6-mf.wav 212516 0 1415724376 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-E5_F#5-mf.wav 128076 0 1415724368 0
+D s 44100 n 1 l 0:01.451 i 16
+F ClBb-gliss_fast-E5_F#6-mf.wav 212516 0 1415724378 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-E5_F5-mf.wav 120622 0 1415724366 0
+D s 44100 n 1 l 0:01.367 i 16
+F ClBb-gliss_fast-E5_F6-mf.wav 212516 0 1415724376 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-E5_G#5-mf.wav 180146 0 1415724370 0
+D s 44100 n 1 l 0:02.041 i 16
+F ClBb-gliss_fast-E5_G#6-mf.wav 243540 0 1415724380 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-E5_G5-mf.wav 157632 0 1415724368 0
+D s 44100 n 1 l 0:01.786 i 16
+F ClBb-gliss_fast-E5_G6-mf.wav 243540 0 1415724378 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-F#5_A#5-mf.wav 197560 0 1415724272 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-F#5_A#6-mf.wav 243540 0 1415724410 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-F#5_A5-mf.wav 197560 0 1415724402 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-F#5_A6-mf.wav 243540 0 1415724410 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-F#5_B5-mf.wav 197560 0 1415724402 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-F#5_C#5-mf.wav 130870 0 1415724400 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-F#5_C#6-mf.wav 212516 0 1415724272 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_C5-mf.wav 130870 0 1415724274 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-F#5_C6-mf.wav 212516 0 1415724402 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_D#5-mf.wav 143760 0 1415724400 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-F#5_D#6-mf.wav 212516 0 1415724404 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_D5-mf.wav 143760 0 1415724274 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-F#5_D6-mf.wav 212516 0 1415724404 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_E5-mf.wav 127844 0 1415724274 0
+D s 44100 n 1 l 0:01.448 i 16
+F ClBb-gliss_fast-F#5_E6-mf.wav 212516 0 1415724406 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_F#5+-mf.wav 128076 0 1415724274 0
+D s 44100 n 1 l 0:01.451 i 16
+F ClBb-gliss_fast-F#5_F#6-mf.wav 212516 0 1415724406 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_F5+-mf.wav 120622 0 1415724276 0
+D s 44100 n 1 l 0:01.367 i 16
+F ClBb-gliss_fast-F#5_F5-mf.wav 133542 0 1415724276 0
+D s 44100 n 1 l 0:01.513 i 16
+F ClBb-gliss_fast-F#5_F6-mf.wav 212516 0 1415724406 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_G#5-mf.wav 180146 0 1415724276 0
+D s 44100 n 1 l 0:02.041 i 16
+F ClBb-gliss_fast-F#5_G#6-mf.wav 212516 0 1415724408 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F#5_G5-mf.wav 157632 0 1415724278 0
+D s 44100 n 1 l 0:01.786 i 16
+F ClBb-gliss_fast-F#5_G6-mf.wav 212516 0 1415724408 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_A#5-mf.wav 197560 0 1415724388 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-F5_A#6-mf.wav 243540 0 1415724398 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-F5_A5-mf.wav 197560 0 1415724388 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-F5_A6-mf.wav 243540 0 1415724398 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-F5_B5-mf.wav 197560 0 1415724390 0
+D s 44100 n 1 l 0:02.239 i 16
+F ClBb-gliss_fast-F5_C#5-mf.wav 130870 0 1415724382 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-F5_C#6-mf.wav 212516 0 1415724392 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_C5-mf.wav 130870 0 1415724382 0
+D s 44100 n 1 l 0:01.483 i 16
+F ClBb-gliss_fast-F5_C6-mf.wav 212516 0 1415724390 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_D#5-mf.wav 143760 0 1415724384 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-F5_D#6-mf.wav 212516 0 1415724394 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_D5-mf.wav 143760 0 1415724384 0
+D s 44100 n 1 l 0:01.629 i 16
+F ClBb-gliss_fast-F5_D6-mf.wav 212516 0 1415724392 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_E5-mf.wav 127844 0 1415724384 0
+D s 44100 n 1 l 0:01.448 i 16
+F ClBb-gliss_fast-F5_E6-mf.wav 212516 0 1415724394 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_F#5-mf.wav 128076 0 1415724386 0
+D s 44100 n 1 l 0:01.451 i 16
+F ClBb-gliss_fast-F5_F#6-mf.wav 212516 0 1415724396 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_F6-mf.wav 212516 0 1415724394 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_fast-F5_G#5-mf.wav 180146 0 1415724388 0
+D s 44100 n 1 l 0:02.041 i 16
+F ClBb-gliss_fast-F5_G#6-mf.wav 243540 0 1415724398 0
+D s 44100 n 1 l 0:02.760 i 16
+F ClBb-gliss_fast-F5_G5-mf.wav 157632 0 1415724386 0
+D s 44100 n 1 l 0:01.786 i 16
+F ClBb-gliss_fast-F5_G6-mf.wav 212516 0 1415724396 0
+D s 44100 n 1 l 0:02.408 i 16
+F ClBb-gliss_med-C#5_A#5-mf.wav 283208 0 1415724438 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-C#5_A#6-mf.wav 335264 0 1415724448 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C#5_A5-mf.wav 283208 0 1415724438 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-C#5_A6-mf.wav 335264 0 1415724448 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C#5_B4-mf.wav 224884 0 1415724430 0
+D s 44100 n 1 l 0:02.549 i 16
+F ClBb-gliss_med-C#5_B5-mf.wav 283208 0 1415724438 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-C#5_C#6-mf.wav 299586 0 1415724440 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-C#5_C5-mf.wav 313682 0 1415724430 0
+D s 44100 n 1 l 0:03.555 i 16
 F ClBb-gliss_med-C#5_C6-mf.wav 323958 0 1415724440 0
 D s 44100 n 1 l 0:03.672 i 16
+F ClBb-gliss_med-C#5_D#5-mf.wav 222850 0 1415724432 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-C#5_D#6-mf.wav 299586 0 1415724442 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-C#5_D5-mf.wav 222850 0 1415724432 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-C#5_D6-mf.wav 299586 0 1415724442 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-C#5_E5-mf.wav 178220 0 1415724434 0
+D s 44100 n 1 l 0:02.020 i 16
+F ClBb-gliss_med-C#5_E6-mf.wav 335264 0 1415724444 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C#5_F#5-mf.wav 256644 0 1415724434 0
+D s 44100 n 1 l 0:02.909 i 16
+F ClBb-gliss_med-C#5_F#6-mf.wav 335264 0 1415724444 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C#5_F5-mf.wav 225862 0 1415724434 0
+D s 44100 n 1 l 0:02.560 i 16
+F ClBb-gliss_med-C#5_F6-mf.wav 335264 0 1415724444 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C#5_G#5-mf.wav 234328 0 1415724436 0
+D s 44100 n 1 l 0:02.656 i 16
+F ClBb-gliss_med-C#5_G#6-mf.wav 335264 0 1415724446 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C#5_G5-mf.wav 264282 0 1415724436 0
+D s 44100 n 1 l 0:02.995 i 16
+F ClBb-gliss_med-C#5_G6-mf.wav 335264 0 1415724446 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_A#5-mf.wav 283208 0 1415724420 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-C5_A#6-mf.wav 335264 0 1415724278 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_A5-mf.wav 283208 0 1415724418 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-C5_A6-mf.wav 335264 0 1415724428 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_B4-mf.wav 224884 0 1415724410 0
+D s 44100 n 1 l 0:02.549 i 16
+F ClBb-gliss_med-C5_B5-mf.wav 283208 0 1415724420 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-C5_C#5-mf.wav 313682 0 1415724412 0
+D s 44100 n 1 l 0:03.555 i 16
+F ClBb-gliss_med-C5_C#6-mf.wav 299586 0 1415724422 0
+D s 44100 n 1 l 0:03.396 i 16
 F ClBb-gliss_med-C5_C6-mf.wav 323958 0 1415724420 0
 D s 44100 n 1 l 0:03.672 i 16
+F ClBb-gliss_med-C5_D#5-mf.wav 222850 0 1415724414 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-C5_D#6-mf.wav 335264 0 1415724424 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_D5-mf.wav 222850 0 1415724412 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-C5_D6-mf.wav 299586 0 1415724422 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-C5_E5-mf.wav 178220 0 1415724414 0
+D s 44100 n 1 l 0:02.020 i 16
+F ClBb-gliss_med-C5_E6-mf.wav 335264 0 1415724424 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_F#5-mf.wav 256644 0 1415724416 0
+D s 44100 n 1 l 0:02.909 i 16
+F ClBb-gliss_med-C5_F#6-mf.wav 335264 0 1415724426 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_F5-mf.wav 225862 0 1415724416 0
+D s 44100 n 1 l 0:02.560 i 16
+F ClBb-gliss_med-C5_F6-mf.wav 335264 0 1415724426 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_G#5-mf.wav 234328 0 1415724418 0
+D s 44100 n 1 l 0:02.656 i 16
+F ClBb-gliss_med-C5_G#6-mf.wav 335264 0 1415724428 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-C5_G5-mf.wav 264282 0 1415724416 0
+D s 44100 n 1 l 0:02.995 i 16
+F ClBb-gliss_med-C5_G6-mf.wav 335264 0 1415724428 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D#5_A#5-mf.wav 283208 0 1415724478 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-D#5_A#6-mf.wav 335264 0 1415724488 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D#5_A5-mf.wav 283208 0 1415724476 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-D#5_A6-mf.wav 335264 0 1415724486 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D#5_B4-mf.wav 224884 0 1415724468 0
+D s 44100 n 1 l 0:02.549 i 16
+F ClBb-gliss_med-D#5_B5-mf.wav 283208 0 1415724478 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-D#5_C#5-mf.wav 313682 0 1415724470 0
+D s 44100 n 1 l 0:03.555 i 16
+F ClBb-gliss_med-D#5_C#6-mf.wav 299586 0 1415724480 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D#5_C5-mf.wav 313682 0 1415724470 0
+D s 44100 n 1 l 0:03.555 i 16
 F ClBb-gliss_med-D#5_C6-mf.wav 323958 0 1415724478 0
 D s 44100 n 1 l 0:03.672 i 16
+F ClBb-gliss_med-D#5_D#6-mf.wav 299586 0 1415724482 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D#5_D5-mf.wav 222850 0 1415724472 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-D#5_D6-mf.wav 299586 0 1415724480 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D#5_E5-mf.wav 178220 0 1415724472 0
+D s 44100 n 1 l 0:02.020 i 16
+F ClBb-gliss_med-D#5_E6-mf.wav 299586 0 1415724482 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D#5_F#5-mf.wav 256644 0 1415724474 0
+D s 44100 n 1 l 0:02.909 i 16
+F ClBb-gliss_med-D#5_F#6-mf.wav 335264 0 1415724484 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D#5_F5-mf.wav 225862 0 1415724472 0
+D s 44100 n 1 l 0:02.560 i 16
+F ClBb-gliss_med-D#5_F6-mf.wav 299586 0 1415724482 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D#5_G#5-mf.wav 234328 0 1415724476 0
+D s 44100 n 1 l 0:02.656 i 16
+F ClBb-gliss_med-D#5_G#6-mf.wav 335264 0 1415724486 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D#5_G5-mf.wav 264282 0 1415724474 0
+D s 44100 n 1 l 0:02.995 i 16
+F ClBb-gliss_med-D#5_G6-mf.wav 335264 0 1415724484 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D5_A#5-mf.wav 283208 0 1415724458 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-D5_A#6-mf.wav 335264 0 1415724468 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D5_A5-mf.wav 283208 0 1415724456 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-D5_A6-mf.wav 335264 0 1415724468 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D5_B4-mf.wav 224884 0 1415724450 0
+D s 44100 n 1 l 0:02.549 i 16
+F ClBb-gliss_med-D5_B5-mf.wav 283208 0 1415724458 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-D5_C#5-mf.wav 313682 0 1415724450 0
+D s 44100 n 1 l 0:03.555 i 16
+F ClBb-gliss_med-D5_C#6-mf.wav 299586 0 1415724460 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D5_C5-mf.wav 313682 0 1415724450 0
+D s 44100 n 1 l 0:03.555 i 16
 F ClBb-gliss_med-D5_C6-mf.wav 323958 0 1415724460 0
 D s 44100 n 1 l 0:03.672 i 16
+F ClBb-gliss_med-D5_D#5-mf.wav 222850 0 1415724452 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-D5_D#6-mf.wav 299586 0 1415724462 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D5_D6-mf.wav 299586 0 1415724460 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D5_E5-mf.wav 178220 0 1415724452 0
+D s 44100 n 1 l 0:02.020 i 16
+F ClBb-gliss_med-D5_E6-mf.wav 299586 0 1415724462 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-D5_F#5-mf.wav 256644 0 1415724454 0
+D s 44100 n 1 l 0:02.909 i 16
+F ClBb-gliss_med-D5_F#6-mf.wav 335264 0 1415724464 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D5_F5-mf.wav 225862 0 1415724454 0
+D s 44100 n 1 l 0:02.560 i 16
+F ClBb-gliss_med-D5_F6-mf.wav 335264 0 1415724464 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D5_G#5-mf.wav 234328 0 1415724456 0
+D s 44100 n 1 l 0:02.656 i 16
+F ClBb-gliss_med-D5_G#6-mf.wav 335264 0 1415724466 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-D5_G5-mf.wav 264282 0 1415724456 0
+D s 44100 n 1 l 0:02.995 i 16
+F ClBb-gliss_med-D5_G6-mf.wav 335264 0 1415724466 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-E5_A#5-mf.wav 283208 0 1415724496 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-E5_A#6-mf.wav 335264 0 1415724506 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-E5_A5-mf.wav 283208 0 1415724496 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-E5_A6-mf.wav 335264 0 1415724506 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-E5_B4-mf.wav 224884 0 1415724488 0
+D s 44100 n 1 l 0:02.549 i 16
+F ClBb-gliss_med-E5_B5-mf.wav 283208 0 1415724498 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-E5_C#5-mf.wav 313682 0 1415724490 0
+D s 44100 n 1 l 0:03.555 i 16
+F ClBb-gliss_med-E5_C#6-mf.wav 299586 0 1415724498 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-E5_C5-mf.wav 313682 0 1415724488 0
+D s 44100 n 1 l 0:03.555 i 16
 F ClBb-gliss_med-E5_C6-mf.wav 323958 0 1415724498 0
 D s 44100 n 1 l 0:03.672 i 16
+F ClBb-gliss_med-E5_D#5-mf.wav 222850 0 1415724492 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-E5_D#6-mf.wav 299586 0 1415724500 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-E5_D5-mf.wav 222850 0 1415724490 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-E5_D6-mf.wav 299586 0 1415724500 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-E5_E6-mf.wav 299586 0 1415724502 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-E5_F#5-mf.wav 256644 0 1415724492 0
+D s 44100 n 1 l 0:02.909 i 16
+F ClBb-gliss_med-E5_F#6-mf.wav 299586 0 1415724502 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-E5_F5-mf.wav 225862 0 1415724492 0
+D s 44100 n 1 l 0:02.560 i 16
+F ClBb-gliss_med-E5_F6-mf.wav 299586 0 1415724502 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-E5_G#5-mf.wav 234328 0 1415724494 0
+D s 44100 n 1 l 0:02.656 i 16
+F ClBb-gliss_med-E5_G#6-mf.wav 335264 0 1415724504 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-E5_G5-mf.wav 264282 0 1415724494 0
+D s 44100 n 1 l 0:02.995 i 16
+F ClBb-gliss_med-E5_G6-mf.wav 335264 0 1415724504 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-F#5_A#5-mf.wav 283208 0 1415724278 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-F#5_A#6-mf.wav 335264 0 1415724536 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-F#5_A5-mf.wav 283208 0 1415724528 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-F#5_A6-mf.wav 335264 0 1415724536 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-F#5_B4-mf.wav 224884 0 1415724280 0
+D s 44100 n 1 l 0:02.549 i 16
+F ClBb-gliss_med-F#5_B5-mf.wav 283208 0 1415724528 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-F#5_C#5-mf.wav 313682 0 1415724526 0
+D s 44100 n 1 l 0:03.555 i 16
+F ClBb-gliss_med-F#5_C#6-mf.wav 299586 0 1415724280 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F#5_C5-mf.wav 313682 0 1415724280 0
+D s 44100 n 1 l 0:03.555 i 16
 F ClBb-gliss_med-F#5_C6-mf.wav 323958 0 1415724282 0
 D s 44100 n 1 l 0:03.672 i 16
+F ClBb-gliss_med-F#5_D#5-mf.wav 222850 0 1415724526 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-F#5_D#6-mf.wav 299586 0 1415724530 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F#5_D5-mf.wav 222850 0 1415724282 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-F#5_D6-mf.wav 299586 0 1415724530 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F#5_E5-mf.wav 178220 0 1415724282 0
+D s 44100 n 1 l 0:02.020 i 16
+F ClBb-gliss_med-F#5_E6-mf.wav 299586 0 1415724530 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F#5_F#5+-mf.wav 256644 0 1415724282 0
+D s 44100 n 1 l 0:02.909 i 16
+F ClBb-gliss_med-F#5_F#6-mf.wav 299586 0 1415724532 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F#5_F5+-mf.wav 225862 0 1415724284 0
+D s 44100 n 1 l 0:02.560 i 16
+F ClBb-gliss_med-F#5_F5-mf.wav 196206 0 1415724284 0
+D s 44100 n 1 l 0:02.224 i 16
+F ClBb-gliss_med-F#5_F6-mf.wav 299586 0 1415724532 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F#5_G#5-mf.wav 234328 0 1415724284 0
+D s 44100 n 1 l 0:02.656 i 16
+F ClBb-gliss_med-F#5_G#6-mf.wav 299586 0 1415724534 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F#5_G5-mf.wav 264282 0 1415724286 0
+D s 44100 n 1 l 0:02.995 i 16
+F ClBb-gliss_med-F#5_G6-mf.wav 299586 0 1415724534 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F5_A#5-mf.wav 283208 0 1415724516 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-F5_A#6-mf.wav 335264 0 1415724526 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-F5_A5-mf.wav 283208 0 1415724514 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-F5_A6-mf.wav 335264 0 1415724524 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-F5_B4-mf.wav 224884 0 1415724508 0
+D s 44100 n 1 l 0:02.549 i 16
+F ClBb-gliss_med-F5_B5-mf.wav 283208 0 1415724516 0
+D s 44100 n 1 l 0:03.210 i 16
+F ClBb-gliss_med-F5_C#5-mf.wav 313682 0 1415724508 0
+D s 44100 n 1 l 0:03.555 i 16
+F ClBb-gliss_med-F5_C#6-mf.wav 299586 0 1415724518 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F5_C5-mf.wav 313682 0 1415724508 0
+D s 44100 n 1 l 0:03.555 i 16
 F ClBb-gliss_med-F5_C6-mf.wav 323958 0 1415724516 0
 D s 44100 n 1 l 0:03.672 i 16
+F ClBb-gliss_med-F5_D#5-mf.wav 222850 0 1415724510 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-F5_D#6-mf.wav 299586 0 1415724520 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F5_D5-mf.wav 222850 0 1415724510 0
+D s 44100 n 1 l 0:02.526 i 16
+F ClBb-gliss_med-F5_D6-mf.wav 299586 0 1415724518 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F5_E5-mf.wav 178220 0 1415724512 0
+D s 44100 n 1 l 0:02.020 i 16
+F ClBb-gliss_med-F5_E6-mf.wav 299586 0 1415724520 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F5_F#5-mf.wav 256644 0 1415724512 0
+D s 44100 n 1 l 0:02.909 i 16
+F ClBb-gliss_med-F5_F#6-mf.wav 299586 0 1415724522 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F5_F6-mf.wav 299586 0 1415724522 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_med-F5_G#5-mf.wav 234328 0 1415724514 0
+D s 44100 n 1 l 0:02.656 i 16
+F ClBb-gliss_med-F5_G#6-mf.wav 335264 0 1415724524 0
+D s 44100 n 1 l 0:03.800 i 16
+F ClBb-gliss_med-F5_G5-mf.wav 264282 0 1415724512 0
+D s 44100 n 1 l 0:02.995 i 16
+F ClBb-gliss_med-F5_G6-mf.wav 299586 0 1415724522 0
+D s 44100 n 1 l 0:03.396 i 16
+F ClBb-gliss_slow-C#5_A#5-mf.wav 508698 0 1415724558 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C#5_A5-mf.wav 508698 0 1415724556 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C#5_B4-mf.wav 389770 0 1415724548 0
+D s 44100 n 1 l 0:04.418 i 16
+F ClBb-gliss_slow-C#5_B5-mf.wav 508698 0 1415724558 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C#5_C#6-mf.wav 508698 0 1415724560 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C#5_C5-mf.wav 461394 0 1415724550 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-C#5_C6-mf.wav 508698 0 1415724560 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C#5_D#5-mf.wav 519924 0 1415724552 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-C#5_D5-mf.wav 519924 0 1415724550 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-C#5_E5-mf.wav 605242 0 1415724552 0
+D s 44100 n 1 l 0:06.861 i 16
+F ClBb-gliss_slow-C#5_F#5-mf.wav 508698 0 1415724554 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C#5_F5-mf.wav 511446 0 1415724554 0
+D s 44100 n 1 l 0:05.798 i 16
+F ClBb-gliss_slow-C#5_G#5-mf.wav 508698 0 1415724556 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C#5_G5-mf.wav 508698 0 1415724554 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_A#5-mf.wav 508698 0 1415724286 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_A5-mf.wav 508698 0 1415724544 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_B4-mf.wav 389770 0 1415724536 0
+D s 44100 n 1 l 0:04.418 i 16
+F ClBb-gliss_slow-C5_B5-mf.wav 508698 0 1415724546 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_C#5-mf.wav 461394 0 1415724538 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-C5_C#6-mf.wav 508698 0 1415724548 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_C6-mf.wav 508698 0 1415724546 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_D#5-mf.wav 508698 0 1415724540 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_D5-mf.wav 519924 0 1415724538 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-C5_E5-mf.wav 508698 0 1415724540 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_F#5-mf.wav 508698 0 1415724542 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_F5-mf.wav 508698 0 1415724542 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_G#5-mf.wav 508698 0 1415724544 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-C5_G5-mf.wav 508698 0 1415724544 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D#5_A#5-mf.wav 508698 0 1415724584 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D#5_A5-mf.wav 508698 0 1415724582 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D#5_B4-mf.wav 389770 0 1415724574 0
+D s 44100 n 1 l 0:04.418 i 16
+F ClBb-gliss_slow-D#5_B5-mf.wav 508698 0 1415724584 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D#5_C#5-mf.wav 461394 0 1415724576 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-D#5_C#6-mf.wav 485146 0 1415724586 0
+D s 44100 n 1 l 0:05.500 i 16
+F ClBb-gliss_slow-D#5_C5-mf.wav 461394 0 1415724576 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-D#5_C6-mf.wav 477250 0 1415724586 0
+D s 44100 n 1 l 0:05.410 i 16
+F ClBb-gliss_slow-D#5_D5-mf.wav 519924 0 1415724576 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-D#5_E5-mf.wav 605242 0 1415724578 0
+D s 44100 n 1 l 0:06.861 i 16
+F ClBb-gliss_slow-D#5_F#5-mf.wav 480202 0 1415724580 0
+D s 44100 n 1 l 0:05.443 i 16
+F ClBb-gliss_slow-D#5_F5-mf.wav 511446 0 1415724578 0
+D s 44100 n 1 l 0:05.798 i 16
+F ClBb-gliss_slow-D#5_G#5-mf.wav 514090 0 1415724582 0
+D s 44100 n 1 l 0:05.828 i 16
+F ClBb-gliss_slow-D#5_G5-mf.wav 598054 0 1415724580 0
+D s 44100 n 1 l 0:06.780 i 16
+F ClBb-gliss_slow-D5_A#5-mf.wav 508698 0 1415724570 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D5_A5-mf.wav 508698 0 1415724570 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D5_B4-mf.wav 389770 0 1415724562 0
+D s 44100 n 1 l 0:04.418 i 16
+F ClBb-gliss_slow-D5_B5-mf.wav 508698 0 1415724572 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D5_C#5-mf.wav 461394 0 1415724564 0
+D s 44100 n 1 l 0:05.230 i 16
 F ClBb-gliss_slow-D5_C#6-mf.wav 485146 0 1415724574 0
 D s 44100 n 1 l 0:05.500 i 16
+F ClBb-gliss_slow-D5_C5-mf.wav 461394 0 1415724562 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-D5_C6-mf.wav 508698 0 1415724572 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D5_D#5-mf.wav 519924 0 1415724564 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-D5_E5-mf.wav 605242 0 1415724564 0
+D s 44100 n 1 l 0:06.861 i 16
+F ClBb-gliss_slow-D5_F#5-mf.wav 480202 0 1415724566 0
+D s 44100 n 1 l 0:05.443 i 16
+F ClBb-gliss_slow-D5_F5-mf.wav 511446 0 1415724566 0
+D s 44100 n 1 l 0:05.798 i 16
+F ClBb-gliss_slow-D5_G#5-mf.wav 508698 0 1415724568 0
+D s 44100 n 1 l 0:05.767 i 16
+F ClBb-gliss_slow-D5_G5-mf.wav 598054 0 1415724568 0
+D s 44100 n 1 l 0:06.780 i 16
+F ClBb-gliss_slow-E5_A#5-mf.wav 541090 0 1415724596 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-E5_A5-mf.wav 541090 0 1415724596 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-E5_B4-mf.wav 389770 0 1415724586 0
+D s 44100 n 1 l 0:04.418 i 16
+F ClBb-gliss_slow-E5_B5-mf.wav 541090 0 1415724598 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-E5_C#5-mf.wav 461394 0 1415724588 0
+D s 44100 n 1 l 0:05.230 i 16
 F ClBb-gliss_slow-E5_C#6-mf.wav 485146 0 1415724598 0
 D s 44100 n 1 l 0:05.500 i 16
+F ClBb-gliss_slow-E5_C5-mf.wav 461394 0 1415724588 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-E5_C6-mf.wav 477250 0 1415724598 0
+D s 44100 n 1 l 0:05.410 i 16
+F ClBb-gliss_slow-E5_D#5-mf.wav 519924 0 1415724590 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-E5_D5-mf.wav 519924 0 1415724590 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-E5_F#5-mf.wav 480202 0 1415724592 0
+D s 44100 n 1 l 0:05.443 i 16
+F ClBb-gliss_slow-E5_F5-mf.wav 511446 0 1415724592 0
+D s 44100 n 1 l 0:05.798 i 16
+F ClBb-gliss_slow-E5_G#5-mf.wav 514090 0 1415724594 0
+D s 44100 n 1 l 0:05.828 i 16
+F ClBb-gliss_slow-E5_G5-mf.wav 598054 0 1415724594 0
+D s 44100 n 1 l 0:06.780 i 16
+F ClBb-gliss_slow-F#5_A#5-mf.wav 541090 0 1415724286 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-F#5_A5-mf.wav 541090 0 1415724614 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-F#5_B4-mf.wav 389770 0 1415724288 0
+D s 44100 n 1 l 0:04.418 i 16
+F ClBb-gliss_slow-F#5_B5-mf.wav 541090 0 1415724616 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-F#5_C#5-mf.wav 461394 0 1415724612 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-F#5_C#6-mf.wav 485146 0 1415724288 0
+D s 44100 n 1 l 0:05.500 i 16
+F ClBb-gliss_slow-F#5_C5-mf.wav 461394 0 1415724288 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-F#5_C6-mf.wav 477250 0 1415724290 0
+D s 44100 n 1 l 0:05.410 i 16
+F ClBb-gliss_slow-F#5_D#5-mf.wav 519924 0 1415724614 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-F#5_D5-mf.wav 519924 0 1415724290 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-F#5_E5-mf.wav 605242 0 1415724290 0
+D s 44100 n 1 l 0:06.861 i 16
+F ClBb-gliss_slow-F#5_F#5+-mf.wav 480202 0 1415724292 0
+D s 44100 n 1 l 0:05.443 i 16
+F ClBb-gliss_slow-F#5_F5+-mf.wav 511446 0 1415724292 0
+D s 44100 n 1 l 0:05.798 i 16
+F ClBb-gliss_slow-F#5_F5-mf.wav 439432 0 1415724292 0
+D s 44100 n 1 l 0:04.981 i 16
+F ClBb-gliss_slow-F#5_G#5-mf.wav 514090 0 1415724294 0
+D s 44100 n 1 l 0:05.828 i 16
+F ClBb-gliss_slow-F#5_G5-mf.wav 598054 0 1415724294 0
+D s 44100 n 1 l 0:06.780 i 16
+F ClBb-gliss_slow-F5_A#5-mf.wav 541090 0 1415724610 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-F5_A5-mf.wav 541090 0 1415724608 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-F5_B4-mf.wav 389770 0 1415724600 0
+D s 44100 n 1 l 0:04.418 i 16
+F ClBb-gliss_slow-F5_B5-mf.wav 541090 0 1415724610 0
+D s 44100 n 1 l 0:06.134 i 16
+F ClBb-gliss_slow-F5_C#5-mf.wav 461394 0 1415724602 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-F5_C#6-mf.wav 485146 0 1415724612 0
+D s 44100 n 1 l 0:05.500 i 16
+F ClBb-gliss_slow-F5_C5-mf.wav 461394 0 1415724600 0
+D s 44100 n 1 l 0:05.230 i 16
+F ClBb-gliss_slow-F5_C6-mf.wav 477250 0 1415724610 0
+D s 44100 n 1 l 0:05.410 i 16
+F ClBb-gliss_slow-F5_D#5-mf.wav 519924 0 1415724604 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-F5_D5-mf.wav 519924 0 1415724602 0
+D s 44100 n 1 l 0:05.894 i 16
+F ClBb-gliss_slow-F5_E5-mf.wav 605242 0 1415724604 0
+D s 44100 n 1 l 0:06.861 i 16
+F ClBb-gliss_slow-F5_F#5-mf.wav 480202 0 1415724606 0
+D s 44100 n 1 l 0:05.443 i 16
+F ClBb-gliss_slow-F5_G#5-mf.wav 514090 0 1415724608 0
+D s 44100 n 1 l 0:05.828 i 16
+F ClBb-gliss_slow-F5_G5-mf.wav 598054 0 1415724606 0
+D s 44100 n 1 l 0:06.780 i 16

@@ -1,16 +1,356 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Brass/Trombone/ordinario
+F Tbn-ord-A#0-ff.wav 314476 0 1413447734 0
+D s 44100 n 1 l 0:03.564 i 16
+F Tbn-ord-A#0-pp.wav 748772 0 1413447736 0
+D s 44100 n 1 l 0:08.488 i 16
+F Tbn-ord-A#1-ff.aif 402455 0 1181656075 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#1-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#1-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:02.988
+D i 24
+F Tbn-ord-A#1-mf.aif 371042 0 1181656435 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#1-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#1-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.202
+D i 16
+F Tbn-ord-A#1-pp.aif 603020 0 1181656625 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#1-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#1-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.481
+D i 24
+F Tbn-ord-A#2-ff.aif 612497 0 1181656075 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.551
+D i 24
+F Tbn-ord-A#2-mf.aif 494948 0 1181656429 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.606
+D i 16
+F Tbn-ord-A#2-pp.aif 839066 0 1181656629 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.237
+D i 24
+F Tbn-ord-A#3-ff.aif 796457 0 1181656077 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.920
+D i 24
+F Tbn-ord-A#3-mf.aif 524034 0 1181656432 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.936
+D i 16
+F Tbn-ord-A#3-pp.aif 731795 0 1181656629 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.439
+D i 24
+F Tbn-ord-A#4-ff.aif 656744 0 1181656073 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.880
+D i 24
+F Tbn-ord-A#4-mf.aif 434392 0 1181656434 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.920
+D i 16
+F Tbn-ord-A#4-pp.aif 917609 0 1181656630 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A#4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A#4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.822
+D i 24
 F Tbn-ord-A2-ff.aif 587352 0 1181656071 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.364
+D i 24
+F Tbn-ord-A2-mf.aif 519426 0 1181656434 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.884
+D i 16
+F Tbn-ord-A2-pp.aif 737832 0 1181656625 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.484
 D i 24
 F Tbn-ord-A3-ff.aif 714870 0 1181656073 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.313
 D i 24
+F Tbn-ord-A3-mf.aif 516546 0 1181656431 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.851
+D i 16
+F Tbn-ord-A3-pp.aif 706200 0 1181656629 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.248
+D i 24
+F Tbn-ord-A4-ff.aif 686865 0 1181656076 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.105
+D i 24
+F Tbn-ord-A4-mf.aif 434048 0 1181656438 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.916
+D i 16
+F Tbn-ord-A4-pp.aif 871188 0 1181656630 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-A4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-A4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.476
+D i 24
+F Tbn-ord-B1-ff.aif 423306 0 1181656075 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B1-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B1-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.143
+D i 24
+F Tbn-ord-B1-mf.aif 505568 0 1181656431 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B1-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B1-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.727
+D i 16
+F Tbn-ord-B1-pp.aif 742716 0 1181656631 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B1-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B1-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.520
+D i 24
+F Tbn-ord-B2-ff.aif 600378 0 1181656072 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.461
+D i 24
+F Tbn-ord-B2-mf.aif 435588 0 1181656432 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.933
+D i 16
+F Tbn-ord-B2-pp.aif 825774 0 1181656626 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.138
+D i 24
+F Tbn-ord-B3-ff.aif 581472 0 1181656077 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.320
+D i 24
+F Tbn-ord-B3-mf.aif 392264 0 1181656434 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.442
+D i 16
+F Tbn-ord-B3-pp.aif 696270 0 1181656628 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.175
+D i 24
+F Tbn-ord-B4-ff.aif 713199 0 1181656071 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.301
+D i 24
+F Tbn-ord-B4-mf.aif 444492 0 1181656433 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.034
+D i 16
+F Tbn-ord-B4-pp.aif 659349 0 1181656625 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-B4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-B4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.900
+D i 24
 F Tbn-ord-C#2-ff.aif 430190 0 1181656072 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.194
+D i 24
+F Tbn-ord-C#2-mf.aif 389008 0 1181656436 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.405
+D i 16
+F Tbn-ord-C#2-pp.aif 646883 0 1181656625 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.807
+D i 24
+F Tbn-ord-C#3-ff.aif 588137 0 1181656077 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.370
 D i 24
 F Tbn-ord-C#3-mf.aif 505266 0 1181656432 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.723
 D i 16
+F Tbn-ord-C#3-pp.aif 805007 0 1181656631 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.984
+D i 24
+F Tbn-ord-C#4-ff.aif 578390 0 1181656071 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.297
+D i 24
+F Tbn-ord-C#4-mf.aif 464988 0 1181656430 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.267
+D i 16
+F Tbn-ord-C#4-pp.aif 690623 0 1181656624 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C#4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C#4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.133
+D i 24
+F Tbn-ord-C2-ff.aif 436347 0 1181656071 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.240
+D i 24
+F Tbn-ord-C2-mf.aif 445032 0 1181656432 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.041
+D i 16
+F Tbn-ord-C2-pp.aif 802866 0 1181656627 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.968
+D i 24
+F Tbn-ord-C3-ff.aif 592959 0 1181656074 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.406
+D i 24
+F Tbn-ord-C3-mf.aif 549252 0 1181656431 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.222
+D i 16
+F Tbn-ord-C3-pp.aif 811524 0 1181656626 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.032
+D i 24
 F Tbn-ord-C4-ff.aif 630825 0 1181656074 0
 D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.688
+D i 24
+F Tbn-ord-C4-mf.aif 415778 0 1181656437 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.709
+D i 16
+F Tbn-ord-C4-pp.aif 650976 0 1181656627 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.838
+D i 24
+F Tbn-ord-C5-ff.aif 529617 0 1181656070 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C5-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C5-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.934
+D i 24
+F Tbn-ord-C5-mf.aif 347210 0 1181656434 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C5-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C5-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.931
+D i 16
+F Tbn-ord-C5-pp.aif 724875 0 1181656626 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-C5-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-C5-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.387
+D i 24
+F Tbn-ord-D#2-ff.aif 448805 0 1181656070 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.333
+D i 24
+F Tbn-ord-D#2-mf.aif 395148 0 1181656438 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.475
+D i 16
+F Tbn-ord-D#2-pp.aif 771245 0 1181656627 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.733
+D i 24
+F Tbn-ord-D#3-ff.aif 783548 0 1181656071 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.824
+D i 24
+F Tbn-ord-D#3-mf.aif 507360 0 1181656433 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.747
+D i 16
+F Tbn-ord-D#3-pp.aif 836213 0 1181656630 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.216
+D i 24
+F Tbn-ord-D#4-ff.aif 619049 0 1181656078 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.600
+D i 24
+F Tbn-ord-D#4-mf.aif 416888 0 1181656437 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.721
+D i 16
+F Tbn-ord-D#4-pp.aif 651800 0 1181656628 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D#4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D#4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.844
+D i 24
+F Tbn-ord-D2-ff.aif 458304 0 1181656074 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.404
+D i 24
+F Tbn-ord-D2-mf.aif 406892 0 1181656429 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.608
+D i 16
+F Tbn-ord-D2-pp.aif 652524 0 1181656624 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.849
+D i 24
+F Tbn-ord-D3-ff.aif 708090 0 1181656075 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.263
+D i 24
+F Tbn-ord-D3-mf.aif 521222 0 1181656438 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.904
+D i 16
+F Tbn-ord-D3-pp.aif 827397 0 1181656627 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.150
+D i 24
+F Tbn-ord-D4-ff.aif 620871 0 1181656077 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.613
+D i 24
+F Tbn-ord-D4-mf.aif 440652 0 1181656438 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.991
+D i 16
+F Tbn-ord-D4-pp.aif 733209 0 1181656627 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-D4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-D4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.450
+D i 24
+F Tbn-ord-E2-ff.aif 418146 0 1181656071 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.105
+D i 24
+F Tbn-ord-E2-mf.aif 393002 0 1181656435 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.451
+D i 16
+F Tbn-ord-E2-pp.aif 786171 0 1181656626 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.844
+D i 24
+F Tbn-ord-E3-ff.aif 707247 0 1181656074 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.256
+D i 24
+F Tbn-ord-E3-mf.aif 481038 0 1181656435 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.449
+D i 16
+F Tbn-ord-E3-pp.aif 802350 0 1181656625 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.964
+D i 24
+F Tbn-ord-E4-ff.aif 602406 0 1181656076 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.476
+D i 24
+F Tbn-ord-E4-mf.aif 419024 0 1181656429 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.746
+D i 16
+F Tbn-ord-E4-pp.aif 528669 0 1181656628 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-E4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-E4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.927
+D i 24
+F Tbn-ord-F#2-ff.aif 513281 0 1181656075 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.813
+D i 24
+F Tbn-ord-F#2-mf.aif 474288 0 1181656428 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.372
+D i 16
+F Tbn-ord-F#2-pp.aif 746765 0 1181656625 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.550
+D i 24
+F Tbn-ord-F#3-ff.aif 676976 0 1181656073 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.031
+D i 24
+F Tbn-ord-F#3-mf.aif 519946 0 1181656429 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.890
+D i 16
+F Tbn-ord-F#3-pp.aif 738590 0 1181656629 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.490
+D i 24
+F Tbn-ord-F#4-ff.aif 626426 0 1181656073 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.655
+D i 24
+F Tbn-ord-F#4-mf.aif 414680 0 1181656430 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.696
+D i 16
+F Tbn-ord-F#4-pp.aif 665696 0 1181656628 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F#4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F#4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.947
+D i 24
+F Tbn-ord-F2-ff.aif 497259 0 1181656078 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:03.693
+D i 24
+F Tbn-ord-F2-mf.aif 459820 0 1181656430 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.208
+D i 16
+F Tbn-ord-F2-pp.aif 690978 0 1181656628 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.135
+D i 24
+F Tbn-ord-F3-ff.aif 828474 0 1181656076 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.159
+D i 24
+F Tbn-ord-F3-mf.aif 521656 0 1181656433 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.909
+D i 16
+F Tbn-ord-F3-pp.aif 761859 0 1181656624 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.663
+D i 24
+F Tbn-ord-F4-ff.aif 627792 0 1181656072 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.665
+D i 24
+F Tbn-ord-F4-mf.aif 417340 0 1181656435 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.727
+D i 16
+F Tbn-ord-F4-pp.aif 601656 0 1181656624 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-F4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-F4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.470
+D i 24
+F Tbn-ord-G#2-ff.aif 543452 0 1181656076 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.037
+D i 24
+F Tbn-ord-G#2-mf.aif 430524 0 1181656431 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.876
+D i 16
+F Tbn-ord-G#2-pp.aif 764933 0 1181656629 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.686
+D i 24
+F Tbn-ord-G#3-ff.aif 680804 0 1181656076 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.060
+D i 24
+F Tbn-ord-G#3-mf.aif 509970 0 1181656439 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.777
+D i 16
+F Tbn-ord-G#3-pp.aif 705848 0 1181656629 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.246
+D i 24
+F Tbn-ord-G#4-ff.aif 704795 0 1181656077 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.238
+D i 24
+F Tbn-ord-G#4-mf.aif 487870 0 1181656436 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.526
+D i 16
+F Tbn-ord-G#4-pp.aif 854177 0 1181656624 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G#4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G#4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.350
+D i 24
+F Tbn-ord-G2-ff.aif 553644 0 1181656078 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G2-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G2-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.113
+D i 24
+F Tbn-ord-G2-mf.aif 458704 0 1181657521 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G2-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G2-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.196
+D i 16
+F Tbn-ord-G2-pp.aif 812961 0 1181656627 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G2-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G2-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.043
+D i 24
+F Tbn-ord-G3-ff.aif 719058 0 1181656078 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G3-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G3-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.344
+D i 24
+F Tbn-ord-G3-mf.aif 491772 0 1181656436 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G3-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G3-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.570
+D i 16
+F Tbn-ord-G3-pp.aif 688932 0 1181656630 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G3-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G3-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.120
+D i 24
+F Tbn-ord-G4-ff.aif 811176 0 1181656074 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G4-ff.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G4-ff.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:06.030
+D i 24
+F Tbn-ord-G4-mf.aif 480768 0 1181656437 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G4-mf.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G4-mf.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:05.446
+D i 16
+F Tbn-ord-G4-pp.aif 607092 0 1181656630 0
+D d "Command:supervp -S/Volumes/data/damien/Solv3/Samples//08!Trombone/ordinario/Tbn-ord-G4-pp.aif -transnc ./trans.txt /Volumes/data/damien/Solv3/repitch1//08!Trombone/ordinario/Tbn-ord-G4-pp.aif ; Created by: SuperVP 2.90.29 (compiled by roebel for AudioSculpt on Jan 23 2007 17:11:53 ) (Float prec)" s 44100 n 1 l 0:04.511
 D i 24

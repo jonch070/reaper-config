@@ -1,13 +1,421 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Strings/Violin-sordina/ordinario
+F Vn+S-ord-A#3-ff-4c.wav 687350 0 1415746502 0
+D s 44100 n 1 l 0:07.792 i 16
+F Vn+S-ord-A#3-mf-4c.wav 686888 0 1415746504 0
+D s 44100 n 1 l 0:07.787 i 16
+F Vn+S-ord-A#3-pp-4c.wav 689544 0 1415746504 0
+D s 44100 n 1 l 0:07.817 i 16
+F Vn+S-ord-A#4-ff-2c.wav 821632 0 1415746504 0
+D s 44100 n 1 l 0:09.315 i 16
+F Vn+S-ord-A#4-ff-3c.wav 774034 0 1415746506 0
+D s 44100 n 1 l 0:08.775 i 16
+F Vn+S-ord-A#4-ff-4c.wav 812164 0 1415746506 0
+D s 44100 n 1 l 0:09.207 i 16
+F Vn+S-ord-A#4-mf-2c.wav 800538 0 1415746506 0
+D s 44100 n 1 l 0:09.075 i 16
+F Vn+S-ord-A#4-mf-3c.wav 776444 0 1415746508 0
+D s 44100 n 1 l 0:08.802 i 16
+F Vn+S-ord-A#4-mf-4c.wav 886854 0 1415746508 0
+D s 44100 n 1 l 0:10.054 i 16
+F Vn+S-ord-A#4-pp-2c.wav 723972 0 1415746508 0
+D s 44100 n 1 l 0:08.207 i 16
+F Vn+S-ord-A#4-pp-3c.wav 768104 0 1415746508 0
+D s 44100 n 1 l 0:08.708 i 16
+F Vn+S-ord-A#4-pp-4c.wav 893382 0 1415746510 0
+D s 44100 n 1 l 0:10.128 i 16
+F Vn+S-ord-A#5-ff-1c.wav 788116 0 1415746510 0
+D s 44100 n 1 l 0:08.935 i 16
+F Vn+S-ord-A#5-ff-2c.wav 783244 0 1415746510 0
+D s 44100 n 1 l 0:08.879 i 16
+F Vn+S-ord-A#5-mf-1c.wav 868004 0 1415746512 0
+D s 44100 n 1 l 0:09.840 i 16
+F Vn+S-ord-A#5-mf-2c.wav 781396 0 1415746512 0
+D s 44100 n 1 l 0:08.858 i 16
+F Vn+S-ord-A#5-pp-1c.wav 859360 0 1415746512 0
+D s 44100 n 1 l 0:09.742 i 16
+F Vn+S-ord-A#6-ff-1c.wav 647606 0 1415746514 0
+D s 44100 n 1 l 0:07.341 i 16
+F Vn+S-ord-A#6-mf-1c.wav 794138 0 1415746514 0
+D s 44100 n 1 l 0:09.003 i 16
+F Vn+S-ord-A#6-pp-1c.wav 840368 0 1415746514 0
+D s 44100 n 1 l 0:09.527 i 16
+F Vn+S-ord-A3-ff-4c.wav 703380 0 1415746516 0
+D s 44100 n 1 l 0:07.974 i 16
+F Vn+S-ord-A3-mf-4c.wav 637190 0 1415746516 0
+D s 44100 n 1 l 0:07.223 i 16
 F Vn+S-ord-A3-pp-4c.wav 648028 0 1415746516 0
 D s 44100 n 1 l 0:07.346 i 16
+F Vn+S-ord-A4-ff-2c.wav 967546 0 1415746516 0
+D s 44100 n 1 l 0:10.969 i 16
+F Vn+S-ord-A4-ff-3c.wav 781952 0 1415746518 0
+D s 44100 n 1 l 0:08.865 i 16
 F Vn+S-ord-A4-ff-4c.wav 805188 0 1415746518 0
 D s 44100 n 1 l 0:09.128 i 16
+F Vn+S-ord-A4-mf-2c.wav 878692 0 1415746518 0
+D s 44100 n 1 l 0:09.961 i 16
+F Vn+S-ord-A4-mf-3c.wav 924946 0 1415746520 0
+D s 44100 n 1 l 0:10.486 i 16
+F Vn+S-ord-A4-mf-4c.wav 833974 0 1415746520 0
+D s 44100 n 1 l 0:09.454 i 16
+F Vn+S-ord-A4-pp-2c.wav 865460 0 1415746520 0
+D s 44100 n 1 l 0:09.811 i 16
+F Vn+S-ord-A4-pp-3c.wav 879598 0 1415746522 0
+D s 44100 n 1 l 0:09.972 i 16
+F Vn+S-ord-A4-pp-4c.wav 884312 0 1415746522 0
+D s 44100 n 1 l 0:10.025 i 16
+F Vn+S-ord-A5-ff-1c.wav 795582 0 1415746522 0
+D s 44100 n 1 l 0:09.019 i 16
+F Vn+S-ord-A5-mf-1c.wav 879692 0 1415746524 0
+D s 44100 n 1 l 0:09.973 i 16
+F Vn+S-ord-A5-pp-1c.wav 879458 0 1415746524 0
+D s 44100 n 1 l 0:09.970 i 16
+F Vn+S-ord-A5-pp-2c.wav 756572 0 1415746524 0
+D s 44100 n 1 l 0:08.577 i 16
+F Vn+S-ord-A6-ff-1c.wav 638260 0 1415746524 0
+D s 44100 n 1 l 0:07.236 i 16
+F Vn+S-ord-A6-mf-1c.wav 658998 0 1415746526 0
+D s 44100 n 1 l 0:07.471 i 16
+F Vn+S-ord-A6-pp-1c.wav 811416 0 1415746526 0
+D s 44100 n 1 l 0:09.199 i 16
+F Vn+S-ord-B3-ff-4c.wav 672430 0 1415746526 0
+D s 44100 n 1 l 0:07.623 i 16
+F Vn+S-ord-B3-mf-4c.wav 715662 0 1415746528 0
+D s 44100 n 1 l 0:08.113 i 16
+F Vn+S-ord-B3-pp.wav 689544 0 1415746636 0
+D s 44100 n 1 l 0:07.817 i 16
+F Vn+S-ord-B4-ff-2c.wav 804484 0 1415746528 0
+D s 44100 n 1 l 0:09.120 i 16
+F Vn+S-ord-B4-ff-3c.wav 733280 0 1415746528 0
+D s 44100 n 1 l 0:08.313 i 16
+F Vn+S-ord-B4-ff-4c.wav 836996 0 1415746530 0
+D s 44100 n 1 l 0:09.489 i 16
+F Vn+S-ord-B4-mf-2c.wav 869970 0 1415746530 0
+D s 44100 n 1 l 0:09.863 i 16
+F Vn+S-ord-B4-mf-3c.wav 835110 0 1415746530 0
+D s 44100 n 1 l 0:09.467 i 16
+F Vn+S-ord-B4-mf-4c.wav 856278 0 1415746532 0
+D s 44100 n 1 l 0:09.707 i 16
+F Vn+S-ord-B4-pp-2c.wav 786932 0 1415746532 0
+D s 44100 n 1 l 0:08.921 i 16
+F Vn+S-ord-B4-pp-3c.wav 717502 0 1415746532 0
+D s 44100 n 1 l 0:08.134 i 16
+F Vn+S-ord-B4-pp-4c.wav 678326 0 1415746532 0
+D s 44100 n 1 l 0:07.690 i 16
+F Vn+S-ord-B5-ff-1c.wav 851736 0 1415746534 0
+D s 44100 n 1 l 0:09.656 i 16
+F Vn+S-ord-B5-ff-2c.wav 832452 0 1415746534 0
+D s 44100 n 1 l 0:09.437 i 16
+F Vn+S-ord-B5-mf-1c.wav 894842 0 1415746534 0
+D s 44100 n 1 l 0:10.145 i 16
 F Vn+S-ord-B5-mf-2c.wav 876362 0 1415746536 0
 D s 44100 n 1 l 0:09.935 i 16
+F Vn+S-ord-B5-pp-1c.wav 1012506 0 1415746536 0
+D s 44100 n 1 l 0:11.479 i 16
+F Vn+S-ord-B5-pp-2c.wav 853410 0 1415746536 0
+D s 44100 n 1 l 0:09.675 i 16
+F Vn+S-ord-B6-ff-1c.wav 641216 0 1415746538 0
+D s 44100 n 1 l 0:07.269 i 16
+F Vn+S-ord-B6-mf-1c.wav 755470 0 1415746538 0
+D s 44100 n 1 l 0:08.564 i 16
+F Vn+S-ord-B6-pp-1c.wav 738126 0 1415746538 0
+D s 44100 n 1 l 0:08.368 i 16
+F Vn+S-ord-C#4-ff-4c.wav 714386 0 1415746540 0
+D s 44100 n 1 l 0:08.099 i 16
+F Vn+S-ord-C#4-mf-4c.wav 732952 0 1415746540 0
+D s 44100 n 1 l 0:08.309 i 16
+F Vn+S-ord-C#4-pp-4c.wav 684102 0 1415746540 0
+D s 44100 n 1 l 0:07.755 i 16
+F Vn+S-ord-C#5-ff-2c.wav 761272 0 1415746542 0
+D s 44100 n 1 l 0:08.630 i 16
+F Vn+S-ord-C#5-ff-3c.wav 819636 0 1415746542 0
+D s 44100 n 1 l 0:09.292 i 16
+F Vn+S-ord-C#5-mf-2c.wav 837320 0 1415746542 0
+D s 44100 n 1 l 0:09.492 i 16
+F Vn+S-ord-C#5-mf-3c.wav 844678 0 1415746544 0
+D s 44100 n 1 l 0:09.576 i 16
+F Vn+S-ord-C#5-pp-2c.wav 730992 0 1415746544 0
+D s 44100 n 1 l 0:08.287 i 16
+F Vn+S-ord-C#5-pp-3c.wav 739754 0 1415746544 0
+D s 44100 n 1 l 0:08.386 i 16
+F Vn+S-ord-C#6-ff-1c.wav 763294 0 1415746546 0
+D s 44100 n 1 l 0:08.653 i 16
+F Vn+S-ord-C#6-ff-2c.wav 777888 0 1415746546 0
+D s 44100 n 1 l 0:08.819 i 16
+F Vn+S-ord-C#6-mf-1c.wav 793530 0 1415746546 0
+D s 44100 n 1 l 0:08.996 i 16
+F Vn+S-ord-C#6-mf-2c.wav 880602 0 1415746548 0
+D s 44100 n 1 l 0:09.983 i 16
+F Vn+S-ord-C#6-pp-1c.wav 899632 0 1415746548 0
+D s 44100 n 1 l 0:10.199 i 16
+F Vn+S-ord-C#6-pp-2c.wav 844266 0 1415746548 0
+D s 44100 n 1 l 0:09.571 i 16
+F Vn+S-ord-C4-ff-4c.wav 726162 0 1415746548 0
+D s 44100 n 1 l 0:08.232 i 16
+F Vn+S-ord-C4-mf-4c.wav 769526 0 1415746550 0
+D s 44100 n 1 l 0:08.724 i 16
+F Vn+S-ord-C4-pp-4c.wav 732774 0 1415746550 0
+D s 44100 n 1 l 0:08.307 i 16
+F Vn+S-ord-C5-ff-2c.wav 757070 0 1415746550 0
+D s 44100 n 1 l 0:08.583 i 16
+F Vn+S-ord-C5-ff-3c.wav 834518 0 1415746552 0
+D s 44100 n 1 l 0:09.461 i 16
+F Vn+S-ord-C5-ff-4c.wav 745400 0 1415746552 0
+D s 44100 n 1 l 0:08.450 i 16
+F Vn+S-ord-C5-mf-2c.wav 951290 0 1415746552 0
+D s 44100 n 1 l 0:10.785 i 16
+F Vn+S-ord-C5-mf-3c.wav 813728 0 1415746554 0
+D s 44100 n 1 l 0:09.225 i 16
+F Vn+S-ord-C5-mf-4c.wav 828120 0 1415746554 0
+D s 44100 n 1 l 0:09.388 i 16
+F Vn+S-ord-C5-pp-2c.wav 718584 0 1415746554 0
+D s 44100 n 1 l 0:08.146 i 16
+F Vn+S-ord-C5-pp-3c.wav 740268 0 1415746556 0
+D s 44100 n 1 l 0:08.392 i 16
+F Vn+S-ord-C5-pp-4c.wav 875126 0 1415746556 0
+D s 44100 n 1 l 0:09.921 i 16
+F Vn+S-ord-C6-ff-1c.wav 772018 0 1415746556 0
+D s 44100 n 1 l 0:08.752 i 16
+F Vn+S-ord-C6-ff-2c.wav 794904 0 1415746558 0
+D s 44100 n 1 l 0:09.012 i 16
+F Vn+S-ord-C6-mf-1c.wav 774394 0 1415746558 0
+D s 44100 n 1 l 0:08.779 i 16
+F Vn+S-ord-C6-mf-2c.wav 973878 0 1415746558 0
+D s 44100 n 1 l 0:11.041 i 16
+F Vn+S-ord-C6-pp-1c.wav 812790 0 1415746560 0
+D s 44100 n 1 l 0:09.214 i 16
+F Vn+S-ord-C6-pp-2c.wav 874356 0 1415746560 0
+D s 44100 n 1 l 0:09.912 i 16
+F Vn+S-ord-C7-mf-1c.wav 645902 0 1415746560 0
+D s 44100 n 1 l 0:07.322 i 16
+F Vn+S-ord-C7-pp-1c.wav 750224 0 1415746562 0
+D s 44100 n 1 l 0:08.505 i 16
+F Vn+S-ord-D#4-ff-3c.wav 784710 0 1415746562 0
+D s 44100 n 1 l 0:08.896 i 16
+F Vn+S-ord-D#4-ff-4c.wav 729804 0 1415746562 0
+D s 44100 n 1 l 0:08.273 i 16
+F Vn+S-ord-D#4-mf-3c.wav 849412 0 1415746564 0
+D s 44100 n 1 l 0:09.630 i 16
+F Vn+S-ord-D#4-mf-4c.wav 762452 0 1415746564 0
+D s 44100 n 1 l 0:08.644 i 16
+F Vn+S-ord-D#4-pp-3c.wav 795632 0 1415746564 0
+D s 44100 n 1 l 0:09.020 i 16
+F Vn+S-ord-D#4-pp-4c.wav 822294 0 1415746566 0
+D s 44100 n 1 l 0:09.322 i 16
+F Vn+S-ord-D#5-ff-2c.wav 824232 0 1415746566 0
+D s 44100 n 1 l 0:09.344 i 16
+F Vn+S-ord-D#5-ff-3c.wav 748650 0 1415746566 0
+D s 44100 n 1 l 0:08.487 i 16
+F Vn+S-ord-D#5-mf-2c.wav 892910 0 1415746568 0
+D s 44100 n 1 l 0:10.123 i 16
+F Vn+S-ord-D#5-mf-3c.wav 829284 0 1415746568 0
+D s 44100 n 1 l 0:09.401 i 16
+F Vn+S-ord-D#5-pp-2c.wav 746226 0 1415746568 0
+D s 44100 n 1 l 0:08.460 i 16
+F Vn+S-ord-D#5-pp-3c.wav 746574 0 1415746568 0
+D s 44100 n 1 l 0:08.464 i 16
+F Vn+S-ord-D#6-ff-1c.wav 782464 0 1415746570 0
+D s 44100 n 1 l 0:08.870 i 16
+F Vn+S-ord-D#6-mf-1c.wav 747532 0 1415746570 0
+D s 44100 n 1 l 0:08.474 i 16
+F Vn+S-ord-D#6-pp-1c.wav 813760 0 1415746570 0
+D s 44100 n 1 l 0:09.225 i 16
+F Vn+S-ord-D4-ff-4c.wav 842158 0 1415746572 0
+D s 44100 n 1 l 0:09.547 i 16
+F Vn+S-ord-D4-mf-4c.wav 909538 0 1415746572 0
+D s 44100 n 1 l 0:10.311 i 16
+F Vn+S-ord-D4-pp-4c.wav 812110 0 1415746572 0
+D s 44100 n 1 l 0:09.207 i 16
+F Vn+S-ord-D5-ff-2c.wav 761480 0 1415746574 0
+D s 44100 n 1 l 0:08.633 i 16
+F Vn+S-ord-D5-ff-3c.wav 804718 0 1415746574 0
+D s 44100 n 1 l 0:09.123 i 16
+F Vn+S-ord-D5-mf-2c.wav 946972 0 1415746574 0
+D s 44100 n 1 l 0:10.736 i 16
+F Vn+S-ord-D5-mf-3c.wav 827238 0 1415746576 0
+D s 44100 n 1 l 0:09.378 i 16
 F Vn+S-ord-D5-pp-2c.wav 770236 0 1415746576 0
 D s 44100 n 1 l 0:08.732 i 16
+F Vn+S-ord-D5-pp-3c.wav 762420 0 1415746576 0
+D s 44100 n 1 l 0:08.643 i 16
+F Vn+S-ord-D6-ff-1c.wav 727334 0 1415746578 0
+D s 44100 n 1 l 0:08.245 i 16
+F Vn+S-ord-D6-ff-2c.wav 792314 0 1415746578 0
+D s 44100 n 1 l 0:08.982 i 16
+F Vn+S-ord-D6-mf-1c.wav 842466 0 1415746578 0
+D s 44100 n 1 l 0:09.551 i 16
+F Vn+S-ord-D6-mf-2c.wav 766024 0 1415746580 0
+D s 44100 n 1 l 0:08.684 i 16
+F Vn+S-ord-D6-pp-1c.wav 917372 0 1415746580 0
+D s 44100 n 1 l 0:10.400 i 16
+F Vn+S-ord-D6-pp-2c.wav 888164 0 1415746580 0
+D s 44100 n 1 l 0:10.069 i 16
+F Vn+S-ord-E4-ff-3c.wav 743632 0 1415746582 0
+D s 44100 n 1 l 0:08.430 i 16
+F Vn+S-ord-E4-ff-4c.wav 842282 0 1415746582 0
+D s 44100 n 1 l 0:09.549 i 16
+F Vn+S-ord-E4-mf-3c.wav 899574 0 1415746582 0
+D s 44100 n 1 l 0:10.198 i 16
+F Vn+S-ord-E4-mf-4c.wav 834564 0 1415746584 0
+D s 44100 n 1 l 0:09.461 i 16
+F Vn+S-ord-E4-pp-3c.wav 909958 0 1415746584 0
+D s 44100 n 1 l 0:10.316 i 16
+F Vn+S-ord-E4-pp-4c.wav 730556 0 1415746584 0
+D s 44100 n 1 l 0:08.282 i 16
+F Vn+S-ord-E5-ff-1c.wav 760784 0 1415746586 0
+D s 44100 n 1 l 0:08.625 i 16
+F Vn+S-ord-E5-ff-2c.wav 769646 0 1415746586 0
+D s 44100 n 1 l 0:08.725 i 16
+F Vn+S-ord-E5-ff-3c.wav 741064 0 1415746586 0
+D s 44100 n 1 l 0:08.401 i 16
+F Vn+S-ord-E5-mf-1c.wav 737674 0 1415746588 0
+D s 44100 n 1 l 0:08.363 i 16
+F Vn+S-ord-E5-mf-2c.wav 844620 0 1415746588 0
+D s 44100 n 1 l 0:09.575 i 16
+F Vn+S-ord-E5-mf-3c.wav 842686 0 1415746588 0
+D s 44100 n 1 l 0:09.553 i 16
+F Vn+S-ord-E5-pp-1c.wav 666414 0 1415746590 0
+D s 44100 n 1 l 0:07.555 i 16
+F Vn+S-ord-E5-pp-2c.wav 734452 0 1415746590 0
+D s 44100 n 1 l 0:08.326 i 16
+F Vn+S-ord-E5-pp-3c.wav 857170 0 1415746590 0
+D s 44100 n 1 l 0:09.717 i 16
 F Vn+S-ord-E6-ff-1c.wav 757930 0 1415746590 0
 D s 44100 n 1 l 0:08.592 i 16
+F Vn+S-ord-E6-mf-1c.wav 668340 0 1415746592 0
+D s 44100 n 1 l 0:07.577 i 16
+F Vn+S-ord-E6-pp-1c.wav 930802 0 1415746592 0
+D s 44100 n 1 l 0:10.552 i 16
+F Vn+S-ord-F#4-ff-3c.wav 775186 0 1415746592 0
+D s 44100 n 1 l 0:08.788 i 16
+F Vn+S-ord-F#4-ff-4c.wav 828730 0 1415746594 0
+D s 44100 n 1 l 0:09.395 i 16
+F Vn+S-ord-F#4-mf-3c.wav 898478 0 1415746594 0
+D s 44100 n 1 l 0:10.186 i 16
+F Vn+S-ord-F#4-mf-4c.wav 881262 0 1415746594 0
+D s 44100 n 1 l 0:09.991 i 16
+F Vn+S-ord-F#4-pp-3c.wav 800310 0 1415746596 0
+D s 44100 n 1 l 0:09.073 i 16
+F Vn+S-ord-F#4-pp-4c.wav 739516 0 1415746596 0
+D s 44100 n 1 l 0:08.384 i 16
+F Vn+S-ord-F#5-ff-1c.wav 769630 0 1415746596 0
+D s 44100 n 1 l 0:08.725 i 16
+F Vn+S-ord-F#5-ff-2c.wav 745568 0 1415746598 0
+D s 44100 n 1 l 0:08.452 i 16
+F Vn+S-ord-F#5-mf-2c.wav 902820 0 1415746598 0
+D s 44100 n 1 l 0:10.235 i 16
+F Vn+S-ord-F#5-pp-1c.wav 760104 0 1415746598 0
+D s 44100 n 1 l 0:08.617 i 16
+F Vn+S-ord-F#5-pp-2c.wav 768288 0 1415746600 0
+D s 44100 n 1 l 0:08.710 i 16
+F Vn+S-ord-F#6-ff-1c.wav 728368 0 1415746600 0
+D s 44100 n 1 l 0:08.257 i 16
+F Vn+S-ord-F#6-mf-1c.wav 864182 0 1415746600 0
+D s 44100 n 1 l 0:09.797 i 16
 F Vn+S-ord-F#6-pp-1c.wav 875918 0 1415746602 0
 D s 44100 n 1 l 0:09.930 i 16
+F Vn+S-ord-F4-ff-3c.wav 705228 0 1415746602 0
+D s 44100 n 1 l 0:07.995 i 16
+F Vn+S-ord-F4-ff-4c.wav 829710 0 1415746602 0
+D s 44100 n 1 l 0:09.406 i 16
+F Vn+S-ord-F4-mf-3c.wav 936916 0 1415746604 0
+D s 44100 n 1 l 0:10.622 i 16
+F Vn+S-ord-F4-mf-4c.wav 875044 0 1415746604 0
+D s 44100 n 1 l 0:09.920 i 16
+F Vn+S-ord-F4-pp-3c.wav 899390 0 1415746604 0
+D s 44100 n 1 l 0:10.196 i 16
+F Vn+S-ord-F4-pp-4c.wav 757284 0 1415746606 0
+D s 44100 n 1 l 0:08.585 i 16
+F Vn+S-ord-F5-ff-1c.wav 757718 0 1415746606 0
+D s 44100 n 1 l 0:08.590 i 16
+F Vn+S-ord-F5-ff-2c.wav 740906 0 1415746606 0
+D s 44100 n 1 l 0:08.399 i 16
+F Vn+S-ord-F5-ff-3c.wav 685640 0 1415746606 0
+D s 44100 n 1 l 0:07.773 i 16
+F Vn+S-ord-F5-mf-1c.wav 867414 0 1415746608 0
+D s 44100 n 1 l 0:09.834 i 16
+F Vn+S-ord-F5-mf-2c.wav 847374 0 1415746608 0
+D s 44100 n 1 l 0:09.606 i 16
+F Vn+S-ord-F5-mf-3c.wav 835946 0 1415746608 0
+D s 44100 n 1 l 0:09.477 i 16
+F Vn+S-ord-F5-pp-1c.wav 750704 0 1415746610 0
+D s 44100 n 1 l 0:08.510 i 16
+F Vn+S-ord-F5-pp-2c.wav 763352 0 1415746610 0
+D s 44100 n 1 l 0:08.654 i 16
+F Vn+S-ord-F6-ff-1c.wav 709232 0 1415746610 0
+D s 44100 n 1 l 0:08.040 i 16
+F Vn+S-ord-F6-mf-1c.wav 735106 0 1415746612 0
+D s 44100 n 1 l 0:08.334 i 16
+F Vn+S-ord-F6-pp-1c.wav 742124 0 1415746612 0
+D s 44100 n 1 l 0:08.413 i 16
+F Vn+S-ord-G#3-ff-4c.wav 582454 0 1415746612 0
+D s 44100 n 1 l 0:06.603 i 16
+F Vn+S-ord-G#3-mf-4c.wav 638420 0 1415746614 0
+D s 44100 n 1 l 0:07.237 i 16
+F Vn+S-ord-G#3-pp-4c.wav 650800 0 1415746614 0
+D s 44100 n 1 l 0:07.378 i 16
+F Vn+S-ord-G#4-ff-3c.wav 820472 0 1415746614 0
+D s 44100 n 1 l 0:09.301 i 16
+F Vn+S-ord-G#4-ff-4c.wav 779810 0 1415746616 0
+D s 44100 n 1 l 0:08.840 i 16
+F Vn+S-ord-G#4-mf-3c.wav 864252 0 1415746616 0
+D s 44100 n 1 l 0:09.798 i 16
+F Vn+S-ord-G#4-mf-4c.wav 769500 0 1415746616 0
+D s 44100 n 1 l 0:08.723 i 16
+F Vn+S-ord-G#4-pp-3c.wav 810644 0 1415746618 0
+D s 44100 n 1 l 0:09.190 i 16
+F Vn+S-ord-G#4-pp-4c.wav 790744 0 1415746618 0
+D s 44100 n 1 l 0:08.964 i 16
+F Vn+S-ord-G#5-ff-1c.wav 818376 0 1415746618 0
+D s 44100 n 1 l 0:09.278 i 16
+F Vn+S-ord-G#5-ff-2c.wav 766952 0 1415746618 0
+D s 44100 n 1 l 0:08.695 i 16
+F Vn+S-ord-G#5-mf-1c.wav 803178 0 1415746620 0
+D s 44100 n 1 l 0:09.105 i 16
+F Vn+S-ord-G#5-mf-2c.wav 839892 0 1415746620 0
+D s 44100 n 1 l 0:09.522 i 16
+F Vn+S-ord-G#5-pp-1c.wav 947734 0 1415746620 0
+D s 44100 n 1 l 0:10.744 i 16
+F Vn+S-ord-G#5-pp-2c.wav 760106 0 1415746622 0
+D s 44100 n 1 l 0:08.617 i 16
+F Vn+S-ord-G#6-ff-1c.wav 662352 0 1415746622 0
+D s 44100 n 1 l 0:07.509 i 16
+F Vn+S-ord-G#6-mf-1c.wav 710510 0 1415746622 0
+D s 44100 n 1 l 0:08.055 i 16
+F Vn+S-ord-G#6-pp-1c.wav 771500 0 1415746624 0
+D s 44100 n 1 l 0:08.746 i 16
+F Vn+S-ord-G3-ff-4c.wav 874844 0 1415746624 0
+D s 44100 n 1 l 0:09.918 i 16
+F Vn+S-ord-G3-mf-4c.wav 668110 0 1415746624 0
+D s 44100 n 1 l 0:07.574 i 16
+F Vn+S-ord-G3-pp-4c.wav 704308 0 1415746626 0
+D s 44100 n 1 l 0:07.984 i 16
+F Vn+S-ord-G4-ff-3c.wav 847894 0 1415746626 0
+D s 44100 n 1 l 0:09.612 i 16
+F Vn+S-ord-G4-ff-4c.wav 799556 0 1415746626 0
+D s 44100 n 1 l 0:09.064 i 16
+F Vn+S-ord-G4-mf-3c.wav 844302 0 1415746626 0
+D s 44100 n 1 l 0:09.572 i 16
+F Vn+S-ord-G4-mf-4c.wav 838200 0 1415746628 0
+D s 44100 n 1 l 0:09.502 i 16
+F Vn+S-ord-G4-pp-3c.wav 863712 0 1415746628 0
+D s 44100 n 1 l 0:09.792 i 16
+F Vn+S-ord-G4-pp-4c.wav 810616 0 1415746628 0
+D s 44100 n 1 l 0:09.190 i 16
+F Vn+S-ord-G5-ff-1c.wav 727968 0 1415746630 0
+D s 44100 n 1 l 0:08.253 i 16
+F Vn+S-ord-G5-ff-2c.wav 835274 0 1415746630 0
+D s 44100 n 1 l 0:09.469 i 16
+F Vn+S-ord-G5-mf-1c.wav 853426 0 1415746630 0
+D s 44100 n 1 l 0:09.675 i 16
+F Vn+S-ord-G5-mf-2c.wav 884706 0 1415746632 0
+D s 44100 n 1 l 0:10.030 i 16
+F Vn+S-ord-G5-pp-1c.wav 822242 0 1415746632 0
+D s 44100 n 1 l 0:09.321 i 16
+F Vn+S-ord-G5-pp-2c.wav 791534 0 1415746632 0
+D s 44100 n 1 l 0:08.973 i 16
+F Vn+S-ord-G6-ff-1c.wav 718816 0 1415746634 0
+D s 44100 n 1 l 0:08.149 i 16
+F Vn+S-ord-G6-mf-1c.wav 800700 0 1415746634 0
+D s 44100 n 1 l 0:09.077 i 16
+F Vn+S-ord-G6-pp-1c.wav 844604 0 1415746634 0
+D s 44100 n 1 l 0:09.575 i 16

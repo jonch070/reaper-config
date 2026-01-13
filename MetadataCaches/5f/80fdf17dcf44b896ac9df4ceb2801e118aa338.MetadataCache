@@ -1,37 +1,153 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Keyboards/Accordion/staccato
+F Acc-stacc-A#1-mf.wav 23560 0 1415727366 0
+D s 44100 n 1 l 0:00.266 i 16
+F Acc-stacc-A#2-mf.wav 41550 0 1415727366 0
+D s 44100 n 1 l 0:00.470 i 16
 F Acc-stacc-A#3-mf.wav 34824 0 1415727366 0
 D s 44100 n 1 l 0:00.394 i 16
+F Acc-stacc-A#4-mf.wav 30174 0 1415727368 0
+D s 44100 n 1 l 0:00.341 i 16
+F Acc-stacc-A#5-mf.wav 21204 0 1415727368 0
+D s 44100 n 1 l 0:00.239 i 16
+F Acc-stacc-A#6-mf.wav 20752 0 1415727368 0
+D s 44100 n 1 l 0:00.234 i 16
+F Acc-stacc-A1-mf.wav 23560 0 1415727384 0
+D s 44100 n 1 l 0:00.266 i 16
+F Acc-stacc-A2-mf.wav 41550 0 1415727388 0
+D s 44100 n 1 l 0:00.470 i 16
 F Acc-stacc-A3-mf.wav 34824 0 1415727394 0
 D s 44100 n 1 l 0:00.394 i 16
+F Acc-stacc-A4-mf.wav 30174 0 1415727402 0
+D s 44100 n 1 l 0:00.341 i 16
+F Acc-stacc-A5-mf.wav 21204 0 1415727408 0
+D s 44100 n 1 l 0:00.239 i 16
 F Acc-stacc-A6-mf.wav 20752 0 1415727414 0
 D s 44100 n 1 l 0:00.234 i 16
+F Acc-stacc-B1-mf.wav 23560 0 1415727384 0
+D s 44100 n 1 l 0:00.266 i 16
+F Acc-stacc-B2-mf.wav 41550 0 1415727390 0
+D s 44100 n 1 l 0:00.470 i 16
+F Acc-stacc-B3-mf.wav 34824 0 1415727396 0
+D s 44100 n 1 l 0:00.394 i 16
+F Acc-stacc-B4-mf.wav 30174 0 1415727402 0
+D s 44100 n 1 l 0:00.341 i 16
 F Acc-stacc-B5-mf.wav 21204 0 1415727408 0
 D s 44100 n 1 l 0:00.239 i 16
 F Acc-stacc-B6-mf.wav 20752 0 1415727414 0
 D s 44100 n 1 l 0:00.234 i 16
+F Acc-stacc-C#2-mf.wav 39334 0 1415727370 0
+D s 44100 n 1 l 0:00.445 i 16
+F Acc-stacc-C#3-mf.wav 31804 0 1415727370 0
+D s 44100 n 1 l 0:00.360 i 16
 F Acc-stacc-C#4-mf.wav 34824 0 1415727398 0
 D s 44100 n 1 l 0:00.394 i 16
+F Acc-stacc-C#5-mf.wav 26180 0 1415727370 0
+D s 44100 n 1 l 0:00.296 i 16
+F Acc-stacc-C#6-mf.wav 29634 0 1415727372 0
+D s 44100 n 1 l 0:00.335 i 16
+F Acc-stacc-C#7-mf.wav 33018 0 1415727372 0
+D s 44100 n 1 l 0:00.373 i 16
+F Acc-stacc-C2-mf.wav 39334 0 1415727384 0
+D s 44100 n 1 l 0:00.445 i 16
 F Acc-stacc-C3-mf.wav 31804 0 1415727390 0
 D s 44100 n 1 l 0:00.360 i 16
+F Acc-stacc-C4-mf.wav 34824 0 1415727396 0
+D s 44100 n 1 l 0:00.394 i 16
+F Acc-stacc-C5-mf.wav 26180 0 1415727402 0
+D s 44100 n 1 l 0:00.296 i 16
 F Acc-stacc-C6-mf.wav 29634 0 1415727410 0
 D s 44100 n 1 l 0:00.335 i 16
+F Acc-stacc-C7-mf.wav 33018 0 1415727416 0
+D s 44100 n 1 l 0:00.373 i 16
+F Acc-stacc-D#2-mf.wav 31256 0 1415727386 0
+D s 44100 n 1 l 0:00.353 i 16
+F Acc-stacc-D#3-mf.wav 27918 0 1415727392 0
+D s 44100 n 1 l 0:00.316 i 16
+F Acc-stacc-D#4-mf.wav 31410 0 1415727398 0
+D s 44100 n 1 l 0:00.355 i 16
+F Acc-stacc-D#5-mf.wav 28190 0 1415727404 0
+D s 44100 n 1 l 0:00.319 i 16
+F Acc-stacc-D#6-mf.wav 26904 0 1415727410 0
+D s 44100 n 1 l 0:00.304 i 16
+F Acc-stacc-D#7-mf.wav 27300 0 1415727416 0
+D s 44100 n 1 l 0:00.309 i 16
+F Acc-stacc-D2-mf.wav 39334 0 1415727386 0
+D s 44100 n 1 l 0:00.445 i 16
 F Acc-stacc-D3-mf.wav 31804 0 1415727392 0
 D s 44100 n 1 l 0:00.360 i 16
+F Acc-stacc-D4-mf.wav 31410 0 1415727398 0
+D s 44100 n 1 l 0:00.355 i 16
 F Acc-stacc-D5-mf.wav 26180 0 1415727404 0
 D s 44100 n 1 l 0:00.296 i 16
+F Acc-stacc-D6-mf.wav 29634 0 1415727410 0
+D s 44100 n 1 l 0:00.335 i 16
+F Acc-stacc-D7-mf.wav 33018 0 1415727416 0
+D s 44100 n 1 l 0:00.373 i 16
+F Acc-stacc-E1-mf.wav 36400 0 1415727372 0
+D s 44100 n 1 l 0:00.412 i 16
+F Acc-stacc-E2-mf.wav 31256 0 1415727372 0
+D s 44100 n 1 l 0:00.353 i 16
 F Acc-stacc-E3-mf.wav 27918 0 1415727374 0
 D s 44100 n 1 l 0:00.316 i 16
+F Acc-stacc-E4-mf.wav 31410 0 1415727374 0
+D s 44100 n 1 l 0:00.355 i 16
 F Acc-stacc-E5-mf.wav 28190 0 1415727374 0
 D s 44100 n 1 l 0:00.319 i 16
 F Acc-stacc-E6-mf.wav 26904 0 1415727376 0
 D s 44100 n 1 l 0:00.304 i 16
+F Acc-stacc-E7-mf.wav 27300 0 1415727376 0
+D s 44100 n 1 l 0:00.309 i 16
+F Acc-stacc-F#1-mf.wav 39584 0 1415727382 0
+D s 44100 n 1 l 0:00.448 i 16
 F Acc-stacc-F#2-mf.wav 29898 0 1415727388 0
 D s 44100 n 1 l 0:00.338 i 16
+F Acc-stacc-F#3-mf.wav 32238 0 1415727394 0
+D s 44100 n 1 l 0:00.365 i 16
+F Acc-stacc-F#4-mf.wav 39336 0 1415727400 0
+D s 44100 n 1 l 0:00.445 i 16
 F Acc-stacc-F#5-mf.wav 33790 0 1415727406 0
 D s 44100 n 1 l 0:00.382 i 16
+F Acc-stacc-F#6-mf.wav 26828 0 1415727412 0
+D s 44100 n 1 l 0:00.303 i 16
+F Acc-stacc-F#7-mf.wav 24652 0 1415727418 0
+D s 44100 n 1 l 0:00.279 i 16
+F Acc-stacc-F1-mf.wav 36400 0 1415727380 0
+D s 44100 n 1 l 0:00.412 i 16
+F Acc-stacc-F2-mf.wav 31256 0 1415727386 0
+D s 44100 n 1 l 0:00.353 i 16
+F Acc-stacc-F3-mf.wav 27918 0 1415727392 0
+D s 44100 n 1 l 0:00.316 i 16
+F Acc-stacc-F4-mf.wav 31410 0 1415727400 0
+D s 44100 n 1 l 0:00.355 i 16
+F Acc-stacc-F5-mf.wav 28190 0 1415727406 0
+D s 44100 n 1 l 0:00.319 i 16
 F Acc-stacc-F6-mf.wav 26904 0 1415727412 0
 D s 44100 n 1 l 0:00.304 i 16
+F Acc-stacc-F7-mf.wav 27300 0 1415727418 0
+D s 44100 n 1 l 0:00.309 i 16
+F Acc-stacc-G#1-mf.wav 39584 0 1415727382 0
+D s 44100 n 1 l 0:00.448 i 16
+F Acc-stacc-G#2-mf.wav 29898 0 1415727388 0
+D s 44100 n 1 l 0:00.338 i 16
+F Acc-stacc-G#3-mf.wav 32238 0 1415727394 0
+D s 44100 n 1 l 0:00.365 i 16
+F Acc-stacc-G#4-mf.wav 39336 0 1415727400 0
+D s 44100 n 1 l 0:00.445 i 16
+F Acc-stacc-G#5-mf.wav 33790 0 1415727406 0
+D s 44100 n 1 l 0:00.382 i 16
+F Acc-stacc-G#6-mf.wav 26828 0 1415727412 0
+D s 44100 n 1 l 0:00.303 i 16
+F Acc-stacc-G1-mf.wav 39584 0 1415727376 0
+D s 44100 n 1 l 0:00.448 i 16
+F Acc-stacc-G2-mf.wav 29898 0 1415727378 0
+D s 44100 n 1 l 0:00.338 i 16
+F Acc-stacc-G3-mf.wav 32238 0 1415727378 0
+D s 44100 n 1 l 0:00.365 i 16
+F Acc-stacc-G4-mf.wav 39336 0 1415727378 0
+D s 44100 n 1 l 0:00.445 i 16
 F Acc-stacc-G5-mf.wav 33790 0 1415727378 0
 D s 44100 n 1 l 0:00.382 i 16
 F Acc-stacc-G6-mf.wav 26828 0 1415727380 0
 D s 44100 n 1 l 0:00.303 i 16
+F Acc-stacc-G7-mf.wav 24652 0 1415727380 0
+D s 44100 n 1 l 0:00.279 i 16

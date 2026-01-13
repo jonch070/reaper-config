@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="sockmonkey72 Scripts" commit="a664cd07b275f021e215ab95b65d5c7d4cac5cee">
+<index version="1" name="sockmonkey72 Scripts" commit="a515aa6db9641fe2a3f24a6a64a41b95ba94c011">
   <category name="Envelopes">
     <reapack name="sockmonkey72_Add point for current value on visible armed envelopes of selected tracks at edit cursor.lua" type="script" desc="Add point for current value on visible armed envelopes of selected tracks at edit cursor">
       <metadata>
@@ -1574,6 +1574,25 @@ add ImGui implementation of config script]]></changelog>
         <source main="main midi_editor">https://github.com/jeremybernstein/ReaScripts/raw/5de17e955a57192ac919eaeeabf6cd88718e0fff/MIDI%20Editor/sockmonkey72_MIDIRazorEdits.lua</source>
         <source main="main midi_editor" file="sockmonkey72_MIDIRazorEdits_SelectedNotes.lua">https://github.com/jeremybernstein/ReaScripts/raw/5de17e955a57192ac919eaeeabf6cd88718e0fff/MIDI%20Editor/sockmonkey72_MIDIRazorEdits_SelectedNotes.lua</source>
         <source main="main midi_editor" file="sockmonkey72_MIDIRazorEdits_Settings.lua">https://github.com/jeremybernstein/ReaScripts/raw/5de17e955a57192ac919eaeeabf6cd88718e0fff/MIDI%20Editor/sockmonkey72_MIDIRazorEdits_Settings.lua</source>
+      </version>
+      <version name="1.2.0-beta.1" author="sockmonkey72" time="2026-01-06T08:36:56Z">
+        <changelog><![CDATA[- add slicer mode & dedicated launcher script
+- misc minor bugfixes & cleanup]]></changelog>
+        <source file="RazorEdits/MIDIRazorEdits_Classes.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MIDIRazorEdits_Classes.lua</source>
+        <source file="RazorEdits/MIDIRazorEdits_Global.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MIDIRazorEdits_Global.lua</source>
+        <source file="RazorEdits/MIDIRazorEdits_Helper.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MIDIRazorEdits_Helper.lua</source>
+        <source file="RazorEdits/MIDIRazorEdits_Keys.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MIDIRazorEdits_Keys.lua</source>
+        <source file="RazorEdits/MIDIRazorEdits_LICE.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MIDIRazorEdits_LICE.lua</source>
+        <source file="RazorEdits/MIDIRazorEdits_Lib.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MIDIRazorEdits_Lib.lua</source>
+        <source file="RazorEdits/MIDIRazorEdits_Slicer.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MIDIRazorEdits_Slicer.lua</source>
+        <source file="RazorEdits/MRE.md">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MRE.md</source>
+        <source file="RazorEdits/MRE_CMD.pdf">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/MRE_CMD.pdf</source>
+        <source file="RazorEdits/slicer.cur">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/RazorEdits/slicer.cur</source>
+        <source file="RazorEdits/MIDIUtils.lua">https://raw.githubusercontent.com/jeremybernstein/ReaScripts/refs/heads/jb/extents_fixup/MIDI/MIDIUtils.lua</source>
+        <source main="main midi_editor">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/sockmonkey72_MIDIRazorEdits.lua</source>
+        <source main="main midi_editor" file="sockmonkey72_MIDIRazorEdits_SelectedNotes.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/sockmonkey72_MIDIRazorEdits_SelectedNotes.lua</source>
+        <source main="main midi_editor" file="sockmonkey72_MIDIRazorEdits_Slicer.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/sockmonkey72_MIDIRazorEdits_Slicer.lua</source>
+        <source main="main midi_editor" file="sockmonkey72_MIDIRazorEdits_Settings.lua">https://github.com/jeremybernstein/ReaScripts/raw/a515aa6db9641fe2a3f24a6a64a41b95ba94c011/MIDI%20Editor/sockmonkey72_MIDIRazorEdits_Settings.lua</source>
       </version>
     </reapack>
     <reapack name="sockmonkey72_NudgeMIDI.lua" type="script" desc="Nudge MIDI">
@@ -24220,6 +24239,12 @@ Kenny Gioia's "Razor Edit - Fast Mode in REAPER"
 * initial addition of transport timebase elements (pre-release)
 * increase mcp trackidx width]]></changelog>
         <source file="Peace_MOD.ReaperThemeZip">https://github.com/jeremybernstein/REAPER_Peace/releases/download/v1.7.5/Peace_MOD.ReaperThemeZip</source>
+      </version>
+      <version name="1.7.6" author="sockmonkey72" time="2025-12-29T13:24:00Z">
+        <changelog><![CDATA[Changes since 1.7.5:
+
+* Fix TCP context menu positioning when the REAPER window is not left-aligned with the screen. Contributed by @PhelixK (thank you)!]]></changelog>
+        <source file="Peace_MOD.ReaperThemeZip">https://github.com/jeremybernstein/REAPER_Peace/releases/download/v1.7.6/Peace_MOD.ReaperThemeZip</source>
       </version>
     </reapack>
   </category>

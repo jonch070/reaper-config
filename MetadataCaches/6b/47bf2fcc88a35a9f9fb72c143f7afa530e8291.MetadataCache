@@ -1,4 +1,12 @@
 C10018 /Users/jonathankawchuk/Music/SOL_0.9_HQ/Strings/Violin/note-lasting
+F Vn-lasting_half_sec-A#3-mf.wav 158018 0 1415745118 0
+D s 44100 n 1 l 0:01.791 i 16
+F Vn-lasting_half_sec-A#4-mf-2c.wav 135408 0 1415745100 0
+D s 44100 n 1 l 0:01.534 i 16
+F Vn-lasting_half_sec-A#5-mf-2c.wav 171062 0 1415745100 0
+D s 44100 n 1 l 0:01.938 i 16
+F Vn-lasting_half_sec-A3-mf.wav 171506 0 1415745118 0
+D s 44100 n 1 l 0:01.944 i 16
 F Vn-lasting_half_sec-A4-mf.wav 135408 0 1415745124 0
 D s 44100 n 1 l 0:01.534 i 16
 F Vn-lasting_half_sec-A5-mf-1c.wav 163846 0 1415745100 0
@@ -9,27 +17,137 @@ F Vn-lasting_half_sec-B3-mf.wav 158018 0 1415745120 0
 D s 44100 n 1 l 0:01.791 i 16
 F Vn-lasting_half_sec-B4-mf-3c.wav 150250 0 1415745102 0
 D s 44100 n 1 l 0:01.703 i 16
+F Vn-lasting_half_sec-B5-mf.wav 171062 0 1415745128 0
+D s 44100 n 1 l 0:01.938 i 16
+F Vn-lasting_half_sec-C#4-mf.wav 158018 0 1415745120 0
+D s 44100 n 1 l 0:01.791 i 16
+F Vn-lasting_half_sec-C#5-mf.wav 183866 0 1415745124 0
+D s 44100 n 1 l 0:02.084 i 16
+F Vn-lasting_half_sec-C#6-mf-1c.wav 226150 0 1415745102 0
+D s 44100 n 1 l 0:02.563 i 16
+F Vn-lasting_half_sec-C4-mf-4c.wav 158018 0 1415745102 0
+D s 44100 n 1 l 0:01.791 i 16
+F Vn-lasting_half_sec-C5-mf.wav 150250 0 1415745124 0
+D s 44100 n 1 l 0:01.703 i 16
+F Vn-lasting_half_sec-C6-mf.wav 226150 0 1415745128 0
+D s 44100 n 1 l 0:02.563 i 16
+F Vn-lasting_half_sec-D#4-mf-3c.wav 166366 0 1415745104 0
+D s 44100 n 1 l 0:01.885 i 16
+F Vn-lasting_half_sec-D#5-mf-3c.wav 176148 0 1415745104 0
+D s 44100 n 1 l 0:01.996 i 16
+F Vn-lasting_half_sec-D#6-mf.wav 226150 0 1415745130 0
+D s 44100 n 1 l 0:02.563 i 16
+F Vn-lasting_half_sec-D4-mf.wav 166366 0 1415745120 0
+D s 44100 n 1 l 0:01.885 i 16
+F Vn-lasting_half_sec-D5-mf-2c.wav 183866 0 1415745104 0
+D s 44100 n 1 l 0:02.084 i 16
+F Vn-lasting_half_sec-D6-mf.wav 226150 0 1415745130 0
+D s 44100 n 1 l 0:02.563 i 16
+F Vn-lasting_half_sec-E4-mf-4c.wav 167552 0 1415745106 0
+D s 44100 n 1 l 0:01.899 i 16
+F Vn-lasting_half_sec-E5-mf.wav 176148 0 1415745126 0
+D s 44100 n 1 l 0:01.996 i 16
 F Vn-lasting_half_sec-E6-mf.wav 175854 0 1415745132 0
 D s 44100 n 1 l 0:01.993 i 16
+F Vn-lasting_half_sec-F#4-mf.wav 201216 0 1415745122 0
+D s 44100 n 1 l 0:02.280 i 16
+F Vn-lasting_half_sec-F#5-mf-2c.wav 173704 0 1415745106 0
+D s 44100 n 1 l 0:01.968 i 16
 F Vn-lasting_half_sec-F#6-mf.wav 175854 0 1415745132 0
 D s 44100 n 1 l 0:01.993 i 16
+F Vn-lasting_half_sec-F4-mf.wav 167552 0 1415745122 0
+D s 44100 n 1 l 0:01.899 i 16
+F Vn-lasting_half_sec-F5-mf-1c.wav 141550 0 1415745106 0
+D s 44100 n 1 l 0:01.604 i 16
 F Vn-lasting_half_sec-F6-mf-1c.wav 175854 0 1415745106 0
 D s 44100 n 1 l 0:01.993 i 16
+F Vn-lasting_half_sec-G#3-mf-4c.wav 171506 0 1415745108 0
+D s 44100 n 1 l 0:01.944 i 16
+F Vn-lasting_half_sec-G#4-mf-4c.wav 150664 0 1415745108 0
+D s 44100 n 1 l 0:01.707 i 16
+F Vn-lasting_half_sec-G#5-mf.wav 163846 0 1415745128 0
+D s 44100 n 1 l 0:01.857 i 16
 F Vn-lasting_half_sec-G#6-mf.wav 166980 0 1415745134 0
 D s 44100 n 1 l 0:01.892 i 16
+F Vn-lasting_half_sec-G4-mf-3c.wav 201216 0 1415745108 0
+D s 44100 n 1 l 0:02.280 i 16
+F Vn-lasting_half_sec-G5-mf.wav 173704 0 1415745126 0
+D s 44100 n 1 l 0:01.968 i 16
 F Vn-lasting_half_sec-G6-mf.wav 166980 0 1415745132 0
 D s 44100 n 1 l 0:01.892 i 16
+F Vn-lasting_one_sec-A#3-mf.wav 313494 0 1415745134 0
+D s 44100 n 1 l 0:03.553 i 16
+F Vn-lasting_one_sec-A#4-mf.wav 218582 0 1415745142 0
+D s 44100 n 1 l 0:02.477 i 16
+F Vn-lasting_one_sec-A#5-mf-1c.wav 227674 0 1415745110 0
+D s 44100 n 1 l 0:02.580 i 16
+F Vn-lasting_one_sec-A#6-mf-1c.wav 247512 0 1415745110 0
+D s 44100 n 1 l 0:02.805 i 16
 F Vn-lasting_one_sec-A3-mf-4c.wav 313494 0 1415745110 0
+D s 44100 n 1 l 0:03.553 i 16
+F Vn-lasting_one_sec-A4-mf.wav 231474 0 1415745140 0
+D s 44100 n 1 l 0:02.623 i 16
+F Vn-lasting_one_sec-A5-mf.wav 227674 0 1415745146 0
+D s 44100 n 1 l 0:02.580 i 16
+F Vn-lasting_one_sec-A6-mf.wav 247512 0 1415745154 0
+D s 44100 n 1 l 0:02.805 i 16
+F Vn-lasting_one_sec-B3-mf.wav 313494 0 1415745136 0
 D s 44100 n 1 l 0:03.553 i 16
 F Vn-lasting_one_sec-B4-mf-2c.wav 218582 0 1415745110 0
 D s 44100 n 1 l 0:02.477 i 16
 F Vn-lasting_one_sec-B5-mf.wav 227674 0 1415745148 0
 D s 44100 n 1 l 0:02.580 i 16
+F Vn-lasting_one_sec-C#4-mf-4c.wav 275750 0 1415745112 0
+D s 44100 n 1 l 0:03.125 i 16
+F Vn-lasting_one_sec-C#5-mf.wav 206124 0 1415745142 0
+D s 44100 n 1 l 0:02.336 i 16
+F Vn-lasting_one_sec-C#6-mf.wav 267566 0 1415745148 0
+D s 44100 n 1 l 0:03.033 i 16
+F Vn-lasting_one_sec-C4-mf.wav 275750 0 1415745136 0
+D s 44100 n 1 l 0:03.125 i 16
 F Vn-lasting_one_sec-C5-mf-3c.wav 206124 0 1415745112 0
 D s 44100 n 1 l 0:02.336 i 16
 F Vn-lasting_one_sec-C6-mf.wav 227674 0 1415745148 0
 D s 44100 n 1 l 0:02.580 i 16
+F Vn-lasting_one_sec-D#4-mf.wav 206312 0 1415745138 0
+D s 44100 n 1 l 0:02.338 i 16
+F Vn-lasting_one_sec-D#5-mf-2c.wav 227402 0 1415745112 0
+D s 44100 n 1 l 0:02.577 i 16
+F Vn-lasting_one_sec-D#6-mf.wav 267566 0 1415745150 0
+D s 44100 n 1 l 0:03.033 i 16
+F Vn-lasting_one_sec-D4-mf.wav 275750 0 1415745138 0
+D s 44100 n 1 l 0:03.125 i 16
+F Vn-lasting_one_sec-D5-mf.wav 227402 0 1415745142 0
+D s 44100 n 1 l 0:02.577 i 16
+F Vn-lasting_one_sec-D6-mf-1c.wav 267566 0 1415745114 0
+D s 44100 n 1 l 0:03.033 i 16
+F Vn-lasting_one_sec-E4-mf-3c.wav 206312 0 1415745114 0
+D s 44100 n 1 l 0:02.338 i 16
+F Vn-lasting_one_sec-E5-mf.wav 227402 0 1415745144 0
+D s 44100 n 1 l 0:02.577 i 16
+F Vn-lasting_one_sec-E6-mf.wav 267566 0 1415745150 0
+D s 44100 n 1 l 0:03.033 i 16
+F Vn-lasting_one_sec-F#4-mf.wav 238580 0 1415745138 0
+D s 44100 n 1 l 0:02.704 i 16
+F Vn-lasting_one_sec-F#5-mf-1c.wav 220858 0 1415745114 0
+D s 44100 n 1 l 0:02.503 i 16
+F Vn-lasting_one_sec-F#6-mf-1c.wav 227306 0 1415745116 0
+D s 44100 n 1 l 0:02.576 i 16
+F Vn-lasting_one_sec-F4-mf-4c.wav 238580 0 1415745116 0
+D s 44100 n 1 l 0:02.704 i 16
 F Vn-lasting_one_sec-F5-mf.wav 220858 0 1415745144 0
 D s 44100 n 1 l 0:02.503 i 16
+F Vn-lasting_one_sec-F6-mf.wav 227306 0 1415745152 0
+D s 44100 n 1 l 0:02.576 i 16
+F Vn-lasting_one_sec-G#4-mf-3c.wav 231474 0 1415745116 0
+D s 44100 n 1 l 0:02.623 i 16
+F Vn-lasting_one_sec-G#5-mf.wav 245854 0 1415745146 0
+D s 44100 n 1 l 0:02.786 i 16
+F Vn-lasting_one_sec-G#6-mf.wav 247512 0 1415745152 0
+D s 44100 n 1 l 0:02.805 i 16
+F Vn-lasting_one_sec-G4-mf.wav 231474 0 1415745140 0
+D s 44100 n 1 l 0:02.623 i 16
+F Vn-lasting_one_sec-G5-mf-2c.wav 245854 0 1415745116 0
+D s 44100 n 1 l 0:02.786 i 16
 F Vn-lasting_one_sec-G6-mf.wav 227306 0 1415745152 0
 D s 44100 n 1 l 0:02.576 i 16
