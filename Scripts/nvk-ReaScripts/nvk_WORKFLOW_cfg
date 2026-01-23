@@ -1,0 +1,55 @@
+settings = {
+	default = {
+		experimental = {
+			
+		},
+		fade = {
+			child_latch = 0,
+			folder_envelope = false,
+			folder_items = 0,
+			items = 0,
+			minimum_fade_length = 0.01,
+			overshoot = false
+		},
+		folder_items = {
+			auto_select = true,
+			big_names = false,
+			enable = true,
+			folder_depth = 0,
+			include_muted_tracks = true,
+			leading_zeros = 1,
+			number_restart = 0,
+			number_start = 1
+		},
+		folder_tracks = {
+			collapse_after_creation = false,
+			color_after_creation = false,
+			excluded_words = "video renders unused",
+			rename = 0,
+			required_words = ""
+		},
+		guid = "default",
+		markers = {
+			color = 0,
+			custom_color = 8421504,
+			enable = 0,
+			ignore_subprojects_in_folders = false,
+			subprojects = false,
+			variations = false
+		},
+		mousewheel_pitch_shift = {
+			clear_preserve_pitch = true,
+			select_item_under_mouse = true
+		},
+		preset_name = "Default",
+		tracks = {
+			only_select_top_level_tracks = false,
+			selection_follows_item_selection = false
+		},
+		trim = {
+			preserve_fades = 0,
+			relative_fades = true
+		}
+	},
+	preset = "default"
+}

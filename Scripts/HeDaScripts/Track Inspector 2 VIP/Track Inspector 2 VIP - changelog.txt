@@ -2,6 +2,12 @@
   Track Inspector 2 - Changelog     
 ---------------------------------------------------------------------------------------
 
+* v2.4.36 (2025-12-13)
+  # fix opacity mouse over toogle buttons in settings
+  # fix reference line width
+  # fix dragging panels issue with tags panel
+  # fix issues in fxchain panel with some font sizes
+
 * v2.4.35 (2025-12-06)
   # improvements in some addon buttons
   # fix issue in "autotag using folder names"

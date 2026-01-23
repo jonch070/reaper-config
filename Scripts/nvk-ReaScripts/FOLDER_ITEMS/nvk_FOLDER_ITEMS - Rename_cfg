@@ -60,6 +60,7 @@ tabs = {
 		default = true,
 		guid = "default",
 		items = 4,
+		number = true,
 		preset_name = "Default",
 		separator = 0,
 		spaces = 0,

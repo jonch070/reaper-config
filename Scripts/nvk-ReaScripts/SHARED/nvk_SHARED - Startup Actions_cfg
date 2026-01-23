@@ -1,9 +1,9 @@
 config = {
 	MAINWIND = {
 		cursor_x = 8.0,
-		cursor_y = 330.0,
-		h = 330.0,
-		w = 350.0,
+		cursor_y = 332.0,
+		h = 332.0,
+		w = 301.0,
 		x = 1151.0,
 		y = 387.0
 	},
@@ -15,12 +15,18 @@ config = {
 		}
 	},
 	default_actions = {
+		_RS193b2afca78a22323adee152a43f53c519b79c4c = false,
 		_RS63d0ae0358ab71583bb03746ef94907166200505 = false,
 		_RSdb3313975d3fbc015c0333c914ec75f2a1b69c2b = false,
 		_RSe085574d2b4a331306da5e236b361d886ae0ef78 = false
 	},
 	font = "Verdana",
-	font_size = 14,
+	font_scales = {
+		results = 1,
+		search = 1
+	},
+	font_size = 12,
+	font_size_reinit = true,
 	keys = {
 		
 	},
@@ -37,7 +43,7 @@ config = {
 		_RSc18de16721a3c34e4867889bd9bf02450163b2f8 = false,
 		_RSdbf64708ea8abea46b82a08cabc050148d65176c = false
 	},
-	version = "3.7.0"
+	version = "4.3.0"
 }
 tabs = {
 	default = {

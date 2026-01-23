@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Nate Weiner">
+  <category name="Routing">
+    <reapack name="NateWeiner: Routing Doctor" type="script">
+      <metadata>
+        <description><![CDATA[NateWeiner: Routing Doctor
+
+## Installation
+All files will be installed automatically by ReaPack.
+]]></description>
+      </metadata>
+      <version name="1.0.3" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+        <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
+        <source file="NateWeiner - Routing Doctor - Check routing for errors.lua" main="main">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/NateWeiner%20-%20Routing%20Doctor%20-%20Check%20routing%20for%20errors.lua</source>
+        <source file="NateWeiner - Routing Doctor - Save routing analysis to disk.lua" main="main">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/NateWeiner%20-%20Routing%20Doctor%20-%20Save%20routing%20analysis%20to%20disk.lua</source>
+        <source file="utils/RoutingAnalysis.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/utils/RoutingAnalysis.lua</source>
+        <source file="utils/RoutingConfigLoader.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/utils/RoutingConfigLoader.lua</source>
+        <source file="utils/RoutingConfigHelpers.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/utils/RoutingConfigHelpers.lua</source>
+        <source file="RoutingConfig.template.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/RoutingConfig.template.lua</source>
+        <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/Shared/NWInit.lua</source>
+        <source file="Shared/ReaperTracksAndFolders.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/Shared/ReaperTracksAndFolders.lua</source>
+      </version>
+      <version name="1.0.2" author="Nate Weiner" time="2026-01-18T03:53:58.199Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source file="NateWeiner - Routing Doctor - Check routing for errors.lua" main="main">https://nateweiner.com/dist/reaper/main/RoutingDoctor/NateWeiner%20-%20Routing%20Doctor%20-%20Check%20routing%20for%20errors.lua</source>
+        <source file="NateWeiner - Routing Doctor - Save routing analysis to disk.lua" main="main">https://nateweiner.com/dist/reaper/main/RoutingDoctor/NateWeiner%20-%20Routing%20Doctor%20-%20Save%20routing%20analysis%20to%20disk.lua</source>
+        <source file="utils/RoutingAnalysis.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/utils/RoutingAnalysis.lua</source>
+        <source file="utils/RoutingConfigLoader.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/utils/RoutingConfigLoader.lua</source>
+        <source file="utils/RoutingConfigHelpers.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/utils/RoutingConfigHelpers.lua</source>
+        <source file="RoutingConfig.template.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/RoutingConfig.template.lua</source>
+        <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/Shared/NWInit.lua</source>
+        <source file="Shared/ReaperTracksAndFolders.lua">https://nateweiner.com/dist/reaper/main/RoutingDoctor/Shared/ReaperTracksAndFolders.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Cursor">
+    <reapack name="NateWeiner: Move edit cursor to next or previous video cut" type="script">
+      <metadata>
+        <description><![CDATA[NateWeiner: Move edit cursor to next or previous video cut
+
+## Requirements
+- REAPER 6.0+
+- Platforms: darwin, win32, win64
+
+## Installation
+All files will be installed automatically by ReaPack.
+]]></description>
+      </metadata>
+      <version name="0.5.8" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+        <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
+        <source file="NateWeiner - Move edit cursor to next video cut.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/NateWeiner%20-%20Move%20edit%20cursor%20to%20next%20video%20cut.lua</source>
+        <source file="NateWeiner - Move edit cursor to previous video cut.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/NateWeiner%20-%20Move%20edit%20cursor%20to%20previous%20video%20cut.lua</source>
+        <source file="utils/NateWeiner - VideoCutBackgroundProcessor.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/utils/NateWeiner%20-%20VideoCutBackgroundProcessor.lua</source>
+        <source file="config.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/config.lua</source>
+        <source file="utils/VideoCutScanner.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/utils/VideoCutScanner.lua</source>
+        <source file="utils/VideoCutCache.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/utils/VideoCutCache.lua</source>
+        <source file="utils/VideoCutJumpUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/utils/VideoCutJumpUtils.lua</source>
+        <source file="ffmpeg/FFmpegUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/ffmpeg/FFmpegUtils.lua</source>
+        <source file="ffmpeg/scene_detect.sh">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/ffmpeg/scene_detect.sh</source>
+        <source file="ffmpeg/scene_detect.bat">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/ffmpeg/scene_detect.bat</source>
+        <source file="Shared/TimeUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/Shared/TimeUtils.lua</source>
+        <source file="Shared/ReaperUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/Shared/ReaperUtils.lua</source>
+        <source file="Shared/FFmpegLib.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/Shared/FFmpegLib.lua</source>
+        <source file="Shared/VideoSelection.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/Shared/VideoSelection.lua</source>
+        <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/Shared/NWInit.lua</source>
+      </version>
+      <version name="0.5.7" author="Nate Weiner" time="2026-01-18T03:53:58.199Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source file="NateWeiner - Move edit cursor to next video cut.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/NateWeiner%20-%20Move%20edit%20cursor%20to%20next%20video%20cut.lua</source>
+        <source file="NateWeiner - Move edit cursor to previous video cut.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/NateWeiner%20-%20Move%20edit%20cursor%20to%20previous%20video%20cut.lua</source>
+        <source file="utils/NateWeiner - VideoCutBackgroundProcessor.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/utils/NateWeiner%20-%20VideoCutBackgroundProcessor.lua</source>
+        <source file="config.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/config.lua</source>
+        <source file="utils/VideoCutScanner.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/utils/VideoCutScanner.lua</source>
+        <source file="utils/VideoCutCache.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/utils/VideoCutCache.lua</source>
+        <source file="utils/VideoCutJumpUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/utils/VideoCutJumpUtils.lua</source>
+        <source file="ffmpeg/FFmpegUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/ffmpeg/FFmpegUtils.lua</source>
+        <source file="ffmpeg/scene_detect.sh">https://nateweiner.com/dist/reaper/main/CursorToCut/ffmpeg/scene_detect.sh</source>
+        <source file="ffmpeg/scene_detect.bat">https://nateweiner.com/dist/reaper/main/CursorToCut/ffmpeg/scene_detect.bat</source>
+        <source file="Shared/TimeUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/Shared/TimeUtils.lua</source>
+        <source file="Shared/ReaperUtils.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/Shared/ReaperUtils.lua</source>
+        <source file="Shared/FFmpegLib.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/Shared/FFmpegLib.lua</source>
+        <source file="Shared/VideoSelection.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/Shared/VideoSelection.lua</source>
+        <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/main/CursorToCut/Shared/NWInit.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Video">
+    <reapack name="NateWeiner: Set project frame rate from video" type="script">
+      <metadata>
+        <description><![CDATA[NateWeiner: Set project frame rate from video
+
+## Installation
+All files will be installed automatically by ReaPack.
+]]></description>
+      </metadata>
+      <version name="1.0.3" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+        <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
+        <source file="NateWeiner - Set project frame rate from video.lua" main="main">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/1.0.3/NateWeiner%20-%20Set%20project%20frame%20rate%20from%20video.lua</source>
+        <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/1.0.3/Shared/NWInit.lua</source>
+        <source file="Shared/VideoSelection.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/1.0.3/Shared/VideoSelection.lua</source>
+        <source file="Shared/ReaperUtils.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/1.0.3/Shared/ReaperUtils.lua</source>
+        <source file="Shared/FFmpegLib.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/1.0.3/Shared/FFmpegLib.lua</source>
+      </version>
+      <version name="1.0.2" author="Nate Weiner" time="2026-01-18T03:53:58.199Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source file="NateWeiner - Set project frame rate from video.lua" main="main">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/NateWeiner%20-%20Set%20project%20frame%20rate%20from%20video.lua</source>
+        <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/Shared/NWInit.lua</source>
+        <source file="Shared/VideoSelection.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/Shared/VideoSelection.lua</source>
+        <source file="Shared/ReaperUtils.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/Shared/ReaperUtils.lua</source>
+        <source file="Shared/FFmpegLib.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/Shared/FFmpegLib.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Utilities">
+    <reapack name="NateWeiner: Toggle Debug Logging for Nate Weiner scripts" type="script">
+      <metadata>
+        <description><![CDATA[NateWeiner: Toggle Debug Logging for Nate Weiner scripts
+
+## Installation
+All files will be installed automatically by ReaPack.
+]]></description>
+      </metadata>
+      <version name="1.0.2" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+        <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
+        <source file="NateWeiner - Toggle Debug Logging.lua" main="main">https://nateweiner.com/dist/reaper/main/ToggleDebugLogging/1.0.2/NateWeiner%20-%20Toggle%20Debug%20Logging.lua</source>
+      </version>
+      <version name="1.0.1" author="Nate Weiner" time="2026-01-18T03:53:58.199Z">
+        <changelog><![CDATA[Initial release - Toggle debug logging for all NW scripts]]></changelog>
+        <source file="NateWeiner - Toggle Debug Logging.lua" main="main">https://nateweiner.com/dist/reaper/main/ToggleDebugLogging/NateWeiner%20-%20Toggle%20Debug%20Logging.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>

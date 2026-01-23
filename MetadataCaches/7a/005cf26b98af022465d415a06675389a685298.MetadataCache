@@ -11,6 +11,9 @@ D i 16
 F cello_A3_1_mezzo-piano_arco-normal.wav 136766 0 1763626533 0
 D y 2025-11-20 s 44100 n 1 l 0:01.542
 D i 16
+F cello_A3_phrase_mezzo-forte_arco-legato.wav 1030718 0 1763626553 0
+D y 2025-11-20 s 44100 n 1 l 0:11.677
+D i 16
 F cello_A4_025_forte_arco-normal.wav 74558 0 1763626542 0
 D y 2025-11-20 s 44100 n 1 l 0:00.836
 D i 16
@@ -179,6 +182,9 @@ D i 16
 F cello_C3_1_mezzo-piano_arco-normal.wav 120638 0 1763626546 0
 D y 2025-11-20 s 44100 n 1 l 0:01.359
 D i 16
+F cello_C3_1_mezzo-piano_non-vibrato.wav 69950 0 1763626534 0
+D y 2025-11-20 s 44100 n 1 l 0:00.784
+D i 16
 F cello_C3_phrase_fortissimo_arco-tremolo.wav 1152830 0 1763626554 0
 D y 2025-11-20 s 44100 n 1 l 0:13.062
 D i 16
@@ -197,8 +203,14 @@ D i 16
 F cello_C4_15_fortissimo_arco-normal.wav 102206 0 1763626545 0
 D y 2025-11-20 s 44100 n 1 l 0:01.150
 D i 16
+F cello_C4_15_mezzo-piano_arco-normal.wav 228926 0 1763626546 0
+D y 2025-11-20 s 44100 n 1 l 0:02.587
+D i 16
 F cello_C4_15_pianissimo_arco-normal.wav 196670 0 1763626546 0
 D y 2025-11-20 s 44100 n 1 l 0:02.221
+D i 16
+F cello_C4_1_forte_arco-normal.wav 118334 0 1763626552 0
+D y 2025-11-20 s 44100 n 1 l 0:01.333
 D i 16
 F cello_C4_1_mezzo-piano_arco-normal.wav 113726 0 1763626549 0
 D y 2025-11-20 s 44100 n 1 l 0:01.281
@@ -287,6 +299,18 @@ D i 16
 F cello_D2_025_fortissimo_arco-normal.wav 60734 0 1763626540 0
 D y 2025-11-20 s 44100 n 1 l 0:00.680
 D i 16
+F cello_D4_025_fortissimo_arco-normal.wav 60734 0 1763626540 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
+D i 16
+F cello_D4_025_mezzo-piano_arco-normal.wav 74558 0 1763626549 0
+D y 2025-11-20 s 44100 n 1 l 0:00.836
+D i 16
+F cello_D4_05_mezzo-piano_arco-normal.wav 74558 0 1763626551 0
+D y 2025-11-20 s 44100 n 1 l 0:00.836
+D i 16
+F cello_D4_1_forte_arco-normal.wav 104510 0 1763626541 0
+D y 2025-11-20 s 44100 n 1 l 0:01.176
+D i 16
 F cello_D5_05_forte_arco-normal.wav 58430 0 1763626546 0
 D y 2025-11-20 s 44100 n 1 l 0:00.654
 D i 16
@@ -296,11 +320,17 @@ D i 16
 F cello_Ds2_025_pianissimo_arco-normal.wav 53822 0 1763626543 0
 D y 2025-11-20 s 44100 n 1 l 0:00.601
 D i 16
+F cello_Ds3_025_fortissimo_arco-normal.wav 49214 0 1763626536 0
+D y 2025-11-20 s 44100 n 1 l 0:00.549
+D i 16
 F cello_Ds5_025_mezzo-piano_arco-normal.wav 33086 0 1763626543 0
 D y 2025-11-20 s 44100 n 1 l 0:00.366
 D i 16
 F cello_E2_05_piano_arco-normal.wav 67646 0 1763626552 0
 D y 2025-11-20 s 44100 n 1 l 0:00.758
+D i 16
+F cello_E4_025_forte_arco-normal.wav 60734 0 1763626552 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
 D i 16
 F cello_E4_025_fortissimo_arco-normal.wav 63038 0 1763626545 0
 D y 2025-11-20 s 44100 n 1 l 0:00.706
@@ -380,14 +410,26 @@ D i 16
 F cello_F4_025_forte_arco-normal.wav 58430 0 1763626539 0
 D y 2025-11-20 s 44100 n 1 l 0:00.654
 D i 16
+F cello_F4_025_mezzo-piano_arco-normal.wav 60734 0 1763626541 0
+D y 2025-11-20 s 44100 n 1 l 0:00.680
+D i 16
 F cello_F4_025_pianissimo_arco-normal.wav 35390 0 1763626554 0
 D y 2025-11-20 s 44100 n 1 l 0:00.392
+D i 16
+F cello_F4_05_mezzo-piano_arco-normal.wav 76862 0 1763626542 0
+D y 2025-11-20 s 44100 n 1 l 0:00.863
 D i 16
 F cello_F4_05_pianissimo_arco-normal.wav 53822 0 1763626534 0
 D y 2025-11-20 s 44100 n 1 l 0:00.601
 D i 16
 F cello_F4_1_forte_arco-normal.wav 109118 0 1763626549 0
 D y 2025-11-20 s 44100 n 1 l 0:01.228
+D i 16
+F cello_F4_1_mezzo-piano_arco-normal.wav 125246 0 1763626542 0
+D y 2025-11-20 s 44100 n 1 l 0:01.411
+D i 16
+F cello_F4_1_mezzo-piano_non-vibrato.wav 65342 0 1763626552 0
+D y 2025-11-20 s 44100 n 1 l 0:00.732
 D i 16
 F cello_F5_15_mezzo-piano_arco-normal.wav 198974 0 1763626550 0
 D y 2025-11-20 s 44100 n 1 l 0:02.247
@@ -457,6 +499,9 @@ D y 2025-11-20 s 44100 n 1 l 0:00.758
 D i 16
 F cello_G4_15_forte_arco-normal.wav 196670 0 1763626537 0
 D y 2025-11-20 s 44100 n 1 l 0:02.221
+D i 16
+F cello_G4_15_pianissimo_arco-normal.wav 192062 0 1763626533 0
+D y 2025-11-20 s 44100 n 1 l 0:02.169
 D i 16
 F cello_G4_1_fortissimo_arco-normal.wav 90686 0 1763626538 0
 D y 2025-11-20 s 44100 n 1 l 0:01.019

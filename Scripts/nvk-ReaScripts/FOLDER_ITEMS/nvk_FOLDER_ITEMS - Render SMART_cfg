@@ -1,0 +1,76 @@
+config = {
+	MAINWIND = {
+		cursor_x = 8.0,
+		cursor_y = 604.0,
+		h = 600.0,
+		w = 863.0,
+		x = 2334.0,
+		y = 266.0
+	},
+	colors = {
+		default = {
+			guid = "default",
+			preset_name = "Default"
+		}
+	},
+	font = "Verdana",
+	font_scales = {
+		results = 1,
+		search = 1
+	},
+	font_size = 12,
+	font_size_reinit = true,
+	keys = {
+		
+	},
+	scale = 1,
+	show_full_path_in_render_list = false,
+	style_vars = {
+		
+	},
+	top_level_folder_items_only = false,
+	variant_render_paths = {
+		
+	},
+	version = "2.15.5"
+}
+tabs = {
+	default = {
+		add_to_project = true,
+		add_to_project_location = 0,
+		bitdepth = 24,
+		channels = 16,
+		default = true,
+		directory = "./exports",
+		disable_render = false,
+		embed_media_cues = true,
+		enable_copy_directories = false,
+		fade_in_enable = false,
+		fade_in_length = 0.0,
+		fade_in_shape = 1.0,
+		fade_out_enable = false,
+		fade_out_length = 0.0,
+		fade_out_shape = 1.0,
+		file_name = "$track",
+		guid = "default",
+		limit_enable = false,
+		limit_level = -0.5,
+		limit_tPeak = false,
+		loopmaker = false,
+		normalize_enable = false,
+		normalize_level = -24.0,
+		normalize_setting = 0.0,
+		preserve_metadata = false,
+		preset_name = "Default",
+		remove_appended_number = true,
+		render_directory = "",
+		render_format = "evaw",
+		render_variants = false,
+		render_via_master = false,
+		samplerate = 8,
+		sausage_file = false,
+		second_pass_render = false,
+		tail_enable = true,
+		tail_length = 0.0
+	}
+}
