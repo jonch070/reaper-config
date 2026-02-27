@@ -1,4 +1,11 @@
 C10018 /Applications/AudioGuide/test_output
+F cello_Ds2_single_note.wav 195716 0 1763243995 0
+D t 36 s 48000 n 1 l 0:02.037
+D i 16
+F csound_ref_a.wav 480044 0 1772144531 0
+D s 48000 n 1 l 0:05.000 i 16
+F csound_ref_c.wav 480044 0 1772144557 0
+D s 48000 n 1 l 0:05.000 i 16
 F sine_melody_c_major.wav 441044 0 1763850280 0
 D s 44100 n 1 l 0:05.000 i 16
 F test_chord_c_major.wav 144044 0 1763395660 0

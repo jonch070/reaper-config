@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="hsuanice Scripts" commit="e9f2af69589e9727da6e9b403ddadbf3f8b7ffb3">
+  <category name="Beta Testing">
+    <reapack name="hsuanice_AudioSweet ReaImGui.lua" type="script" desc="AudioSweet ReaImGui - AudioSuite Workflow (Pro Tools–Style)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 AudioSweet ReaImGui\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Complete AudioSweet control center with ImGui interface for managing FX chains and presets.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Quick Start\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Help \u8594 ? User Manual: Full documentation with workflows and tips\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Help \u8594 ? About: Reference and credits\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Reference\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Inspired by AudioSuite-like Script by Tim Chimes 'AudioSweet' is a name originally given by Tim Chimes. This project continues to use the name in reference to his original work.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Original: Renders selected plugin to selected media item Written for REAPER 5.1 with Lua v1.1 12/22/2015 - Added PreventUIRefresh http://timchimes.com/scripting-with-reaper-audiosuite/\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Development\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script was developed with the assistance of AI tools including ChatGPT and Claude AI.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Future Development\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Planned features and experimental ideas for future implementation:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Approved for Implementation\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Independent AudioSweet Run Scripts}: Create standalone action list scripts \u8226 ? Run (Stop mode): Standard execution reading all GUI ExtState settings \u8226 ? Run (Preview mode): Process items in item/time selection during preview\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Stop preview, preserve FX state/bypass\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Execute RGWH Core print/render with current FX configuration\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Return processed items to original track positions\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Resume preview workflow\sa180\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Independent Solo Script}: Unified solo logic extractable to action list \u8226 ? Priority: Focused FX/chain track \u8594 ? Default chain track \u8226 ? Can be assigned to keyboard shortcuts independently\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Right Handle Only Mode}: Extends existing audio content (different from tail) \u8226 ? Processes additional duration on right side only \u8226 ? Handle extends content that already exists in source\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Fixed-Length Tail Mode}: FX tail from non-handle content processing \u8226 ? Important: RIGHT HANDLE \u8800 ? TAIL MODE \u8226 ? Tail = reverb/delay tail printed from non-handle processed content \u8226 ? Fixed parameter: user-defined length (e.g., 3s, 5s) \u8226 ? Tail processes decay/reverb after main content, not extended source\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 Deferred Ideas for Research\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Live FX Switching During Preview}: Dynamic FX parameter changes \u8226 ? Challenge: Requires real-time FX state synchronization \u8226 ? Needs investigation of REAPER API capabilities\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Auto Tail Detection}: Intelligent tail length via audio analysis \u8226 ? Analyze processed audio amplitude/RMS to detect natural decay \u8226 ? Auto-determine tail length based on reverb/delay characteristics \u8226 ? Advanced feature requiring signal processing research\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+      <version name="0.1.2" author="hsuanice" time="2025-12-18T15:03:59Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/dd4d1dbb57e78401ce5bc57229f4dc4f84a2dc50/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+      <version name="0.1.14" author="hsuanice" time="2025-12-20T00:49:13Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/6d8626fb2e3f6fdd3080d7c18fbcd993dd7d8498/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.0" author="hsuanice" time="2025-12-23T15:12:47Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/f1b239fd450bf8d395bb440ec8f969276139355c/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.3" author="hsuanice" time="2026-02-05T03:57:14Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/aad556c0f9fda8ba2a0011ad65f4dbc98314bb33/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_RGWH Glue.lua" type="script" desc="RGWH Glue - Glue with Handles (ExtState Shortcut)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Keyboard shortcut wrapper for RGWH Glue operation. Reads ALL settings from RGWH ExtState (same settings as GUI).\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script acts as a quick-launch shortcut:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Bind to a keyboard shortcut for instant glue access\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Uses the same settings you configured in RGWH GUI\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab No need to open GUI - just press the shortcut\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Settings are read from:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Project ExtState namespace "RGWH" (set by RGWH GUI)\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.2.2" author="hsuanice" time="2026-02-07T08:18:23Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/946dcf865101f567b6cd0bd2c42ae7d37701e739/Beta%20Testing/hsuanice_RGWH%20Glue.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_RGWH Monitor.lua" type="script" desc="RGWH Monitor - Console Monitor for Items and Units">
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Beta%20Testing/hsuanice_RGWH%20Monitor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_RGWH ReaImGui.lua" type="script" desc="RGWH GUI - ImGui Interface for RGWH Core">
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
+      </version>
+      <version name="0.1.2" author="hsuanice" time="2025-12-18T14:53:29Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/9282cbe4b46b1bf32418a31301351d4373516223/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
+      </version>
+      <version name="0.1.3" author="hsuanice" time="2025-12-24T05:39:38Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/a1f560d0129f9757c989f8fdbc9a05ed06377575/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.3" author="hsuanice" time="2026-02-05T03:46:19Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/3fdae655911f608bb0e36a997acded408403c50c/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.4" author="hsuanice" time="2026-02-07T07:33:43Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/f2a91e3dc7d238a56514577df612dd2999220bb9/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_RGWH Render.lua" type="script" desc="RGWH Render - Render with Handles (ExtState Shortcut)">
+      <version name="0.2.2" author="hsuanice" time="2026-02-07T08:18:23Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/946dcf865101f567b6cd0bd2c42ae7d37701e739/Beta%20Testing/hsuanice_RGWH%20Render.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_RGWH Wrapper Template.lua" type="script" desc="RGWH Wrapper Template - Template for Custom RGWH Wrappers">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Thin wrapper for calling RGWH Core via a single entry {\f1 RGWH.core(args)}. Use this as a starting point to test and ship wrappers that render/glue with handles.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 NEW: ExtState Mode\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set USE_EXTSTATE = true to read ALL settings from RGWH ExtState (GUI settings)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set USE_EXTSTATE = false to use the hardcoded settings below\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This allows creating keyboard shortcuts that mirror GUI configuration\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Beta%20Testing/hsuanice_RGWH%20Wrapper%20Template.lua</source>
+      </version>
+      <version name="0.2.2" author="hsuanice" time="2026-02-07T07:42:36Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/079a7cea4de89996983dfe8e289423238928da0f/Beta%20Testing/hsuanice_RGWH%20Wrapper%20Template.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Library">
+    <reapack name="hsuanice_AS Preview Core.lua" type="script" desc="AudioSweet Preview Core">
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Library/hsuanice_AS%20Preview%20Core.lua</source>
+      </version>
+      <version name="0.2.0" author="hsuanice" time="2025-12-23T15:16:21Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/4e4d8c1d49f583d22bb16a61b1344a2570adf8eb/Library/hsuanice_AS%20Preview%20Core.lua</source>
+      </version>
+      <version name="0.2.0.0.1" author="hsuanice" time="2025-12-23T15:54:09Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/c61e38a20f8ca8c0e7d18cc8b33090b23885eb0c/Library/hsuanice_AS%20Preview%20Core.lua</source>
+      </version>
+      <version name="0.2.3" author="hsuanice" time="2026-02-10T03:40:27Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/f3c772c1cd7e673efc4633cce2dcccc1df306e7a/Library/hsuanice_AS%20Preview%20Core.lua</source>
+      </version>
+      <version name="0.2.7" author="hsuanice" time="2026-02-10T12:14:02Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/c38581abe8bd2051fe70b240cab9679520204722/Library/hsuanice_AS%20Preview%20Core.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_AudioSweet Core.lua" type="script" desc="AudioSweet Core - Focused Track FX render via RGWH Core">
+      <version name="0.2.0.0.1" author="hsuanice" time="2025-12-23T17:23:06Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/6a002f62332c853d6719f1eb42d6735884d32a01/Library/hsuanice_AudioSweet%20Core.lua</source>
+      </version>
+      <version name="0.3.2" author="hsuanice" time="2026-02-05T03:55:14Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/0e5e6eb281dd0161738449ff4afecfd4eba89cdf/Library/hsuanice_AudioSweet%20Core.lua</source>
+      </version>
+      <version name="0.3.3" author="hsuanice" time="2026-02-09T13:53:06Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/3332b54f8a9ff61988516e053843bd586a096386/Library/hsuanice_AudioSweet%20Core.lua</source>
+      </version>
+      <version name="0.3.4" author="hsuanice" time="2026-02-12T04:55:34Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/e9f2af69589e9727da6e9b403ddadbf3f8b7ffb3/Library/hsuanice_AudioSweet%20Core.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_Metadata Embed.lua" type="script" desc="Metadata Embed - BWF MetaEdit helpers">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Helpers to call BWF MetaEdit safely:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Shell quoting\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Normalize iXML sidecar newline\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Copy iXML/core, read/write TimeReference\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Post-embed refresh (offline->online, rebuild peaks)\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.3.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Library/hsuanice_Metadata%20Embed.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_Metadata Read.lua" type="script" desc="Metadata Read (reader / normalizer / tokens)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Read-only metadata utilities for REAPER items:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Unwrap SECTION to real parent source\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Read iXML TRACK_LIST (Wave Agent style)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Fallback parse sTRK#=Name from BWF/Description (EdiLoad split)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Interleave index \u8596 ? recorder channel mapping\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Token expansion for rename/export ($trk/$trkN/$trkall, $\{interleave\}, $\{chnum\}, ...)\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.3.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Library/hsuanice_Metadata%20Read.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_RGWH Core.lua" type="script" desc="RGWH Core - Render or Glue with Handles">
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Library/hsuanice_RGWH%20Core.lua</source>
+      </version>
+      <version name="0.2.0" author="hsuanice" time="2025-12-23T15:25:01Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/afd905f9ef7a0c1c0e123416f1047d83a0d93174/Library/hsuanice_RGWH%20Core.lua</source>
+      </version>
+      <version name="0.2.1" author="hsuanice" time="2025-12-24T05:26:18Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/a1b16fa0763575738521eab6a2bd29c18496dad9/Library/hsuanice_RGWH%20Core.lua</source>
+      </version>
+      <version name="0.3.5" author="hsuanice" time="2026-02-05T03:42:01Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/071650e63bfe540f1a0453100ce4ff515e9226b6/Library/hsuanice_RGWH%20Core.lua</source>
+      </version>
+      <version name="0.3.6" author="hsuanice" time="2026-02-07T09:31:23Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/d37fbf50a0243bc4ce5212328426c304c79bdc38/Library/hsuanice_RGWH%20Core.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Tools">
+    <reapack name="hsuanice_AudioSweet Preview Toggle.lua" type="script" desc="AudioSweet Preview Toggle - Auto Detect Focused/Chain">
+      <version name="0.2.0" author="Hsuanice" time="2025-12-23T16:53:50Z">
+        <changelog><![CDATA[0.2.0 (2025-12-23) [internal: v251223.2256]
+  - CHANGED: Version bump to 0.2.0 (public beta)
+
+0.1.0 (2025-12-21) [internal: v251221.1915]
+  - NEW: Unified preview script that auto-detects focused vs chain window
+  - Priority: Chain FX window → chain preview, Single FX floating → focused preview
+  - Fallback: No FX window → chain preview on preview target track
+  - Reads preview settings from AudioSweet GUI ExtState]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/786e7e65a9c91c682acb149bc88b9073308af10d/Tools/hsuanice_AudioSweet%20Preview%20Toggle.lua</source>
+      </version>
+      <version name="0.2.1" author="Hsuanice" time="2026-02-09T13:50:10Z">
+        <changelog><![CDATA[0.2.1 (2026-02-09) [internal: v260209.2130]
+  - FIXED: Cross-platform path resolution for Windows/Linux compatibility
+    • Replaced debug.getinfo() relative path with reaper.GetResourcePath() absolute path
+    • Fixes "attempt to concatenate a nil value (local 'SCRIPT_DIR')" on Windows
+
+0.2.0 (2025-12-23) [internal: v251223.2256]
+  - CHANGED: Version bump to 0.2.0 (public beta)
+
+0.1.0 (2025-12-21) [internal: v251221.1915]
+  - NEW: Unified preview script that auto-detects focused vs chain window
+  - Priority: Chain FX window → chain preview, Single FX floating → focused preview
+  - Fallback: No FX window → chain preview on preview target track
+  - Reads preview settings from AudioSweet GUI ExtState]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/11819d0a917633c140a03d36825999bd0da795cb/Tools/hsuanice_AudioSweet%20Preview%20Toggle.lua</source>
+      </version>
+      <version name="0.2.3" author="hsuanice" time="2026-02-10T03:42:52Z">
+        <changelog><![CDATA[0.2.3 (2026-02-10) [internal: v260210.1113]
+  - FIXED: Toggle now reliably stops on 2nd execution (was requiring 3 taps)
+    • Root cause: Core's stop-watcher raced with toggle — watcher auto-cleaned up,
+      clearing PREVIEW_RUN flag, so toggle fell through and restarted preview
+    • Fix: Toggle passes no_watcher=true to Core, disabling the deferred stop-watcher
+    • Toggle script now exclusively controls the preview lifecycle via stop_preview()
+    • Core's stop_preview() bootstraps state from placeholder + ExtState for full cleanup
+  - NEW: Core stores FX track GUID in ExtState (PREVIEW_FX_GUID) for cross-instance lookup
+  - NEW: Core.stop_preview() public method — stops transport, finds placeholder,
+    bootstraps state, and runs cleanup from a fresh Lua instance
+
+0.2.2 (2026-02-10) [internal: v260210]
+  - NEW: True toggle behavior — re-running while preview is active now stops preview
+    • Checks PREVIEW_RUN ExtState flag set by Preview Core
+    • If preview is running, calls Core.stop_preview() for full cleanup
+    • Previous behavior (mode switch on re-entry) replaced by clean stop/start toggle
+
+0.2.1 (2026-02-09) [internal: v260209.2130]
+  - FIXED: Cross-platform path resolution for Windows/Linux compatibility
+    • Replaced debug.getinfo() relative path with reaper.GetResourcePath() absolute path
+    • Fixes "attempt to concatenate a nil value (local 'SCRIPT_DIR')" on Windows
+
+0.2.0 (2025-12-23) [internal: v251223.2256]
+  - CHANGED: Version bump to 0.2.0 (public beta)
+
+0.1.0 (2025-12-21) [internal: v251221.1915]
+  - NEW: Unified preview script that auto-detects focused vs chain window
+  - Priority: Chain FX window → chain preview, Single FX floating → focused preview
+  - Fallback: No FX window → chain preview on preview target track
+  - Reads preview settings from AudioSweet GUI ExtState]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/fe59aae645f9d538504fe8f4222503ad9f790042/Tools/hsuanice_AudioSweet%20Preview%20Toggle.lua</source>
+      </version>
+      <version name="0.2.7" author="hsuanice" time="2026-02-10T12:12:34Z">
+        <changelog><![CDATA[0.2.7 (2026-02-10) [internal: v260210.1935]
+  - FIXED: Toggle now reliably stops preview on 2nd press
+    • Root cause: REAPER terminates the deferred script (watcher) on re-trigger,
+      never starting a new instance — 2nd press produced zero output
+    • Fix: Core now registers reaper.atexit() alongside watcher
+    • atexit fires on script termination with full L1 state — clean cleanup
+  - CHANGED: Removed temporary ShowConsoleMsg debug output
+  - CHANGED: Version synced with Preview Core 0.2.7
+
+0.2.6 (2026-02-10) [internal: v260210.1303]
+  - FIXED: Toggle stop now works reliably on 2nd execution
+    • Replaced cross-instance stop_preview() call with PREVIEW_STOP_REQ ExtState flag
+    • Watcher in original instance (with full state) handles cleanup — no state bootstrapping
+    • Toggle check moved before dofile() — stop path doesn't load Core at all
+  - CHANGED: Version synced with Preview Core 0.2.6
+
+0.2.5 (2026-02-10) [internal: v260210.1224]
+  - FIXED: Toggle self-toggle now works reliably (was failing on 2nd tap)
+    • Core fix: stop_preview() now sets moved_count for timesel count check
+    • Core fix: Watcher race replaced 3-frame debounce with 500ms startup grace period
+  - CHANGED: Version synced with Preview Core 0.2.5
+
+0.2.4 (2026-02-10) [internal: v260210.1212]
+  - FIXED: Manual stop (spacebar etc.) now auto-cleans up preview again
+    • Re-enabled Core's stop-watcher (was disabled in 0.2.3 to avoid race)
+    • Core watcher now uses 3-frame debounce to prevent false-positive race
+  - FIXED: stop_preview() now respects GUI restore_mode setting (GUID vs timesel)
+    • Reads preview_restore_mode from GUI ExtState before stopping
+    • timesel mode: moves back ALL items in placeholder span (including new items from Run)
+    • guid mode: moves back only the originally-moved items (safe when FX track has other items)
+  - CHANGED: Removed no_watcher=true from args — watcher re-enabled for manual stop support
+  - CHANGED: Version synced with Preview Core 0.2.4
+
+0.2.3 (2026-02-10) [internal: v260210.1113]
+  - FIXED: Toggle now reliably stops on 2nd execution (was requiring 3 taps)
+    • Root cause: Core's stop-watcher raced with toggle — watcher auto-cleaned up,
+      clearing PREVIEW_RUN flag, so toggle fell through and restarted preview
+    • Fix: Toggle passes no_watcher=true to Core, disabling the deferred stop-watcher
+    • Toggle script now exclusively controls the preview lifecycle via stop_preview()
+    • Core's stop_preview() bootstraps state from placeholder + ExtState for full cleanup
+  - NEW: Core stores FX track GUID in ExtState (PREVIEW_FX_GUID) for cross-instance lookup
+  - NEW: Core.stop_preview() public method — stops transport, finds placeholder,
+    bootstraps state, and runs cleanup from a fresh Lua instance
+
+0.2.2 (2026-02-10) [internal: v260210]
+  - NEW: True toggle behavior — re-running while preview is active now stops preview
+    • Checks PREVIEW_RUN ExtState flag set by Preview Core
+    • If preview is running, calls Core.stop_preview() for full cleanup
+    • Previous behavior (mode switch on re-entry) replaced by clean stop/start toggle
+
+0.2.1 (2026-02-09) [internal: v260209.2130]
+  - FIXED: Cross-platform path resolution for Windows/Linux compatibility
+    • Replaced debug.getinfo() relative path with reaper.GetResourcePath() absolute path
+    • Fixes "attempt to concatenate a nil value (local 'SCRIPT_DIR')" on Windows
+
+0.2.0 (2025-12-23) [internal: v251223.2256]
+  - CHANGED: Version bump to 0.2.0 (public beta)
+
+0.1.0 (2025-12-21) [internal: v251221.1915]
+  - NEW: Unified preview script that auto-detects focused vs chain window
+  - Priority: Chain FX window → chain preview, Single FX floating → focused preview
+  - Fallback: No FX window → chain preview on preview target track
+  - Reads preview settings from AudioSweet GUI ExtState]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/c4ee41107527c156091450906540f957f99ed96c/Tools/hsuanice_AudioSweet%20Preview%20Toggle.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_AudioSweet Run.lua" type="script" desc="AudioSweet Run">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 AudioSweet Run\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Intelligent AudioSweet execution with automatic mode detection.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Behavior\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Normal Mode} (no placeholder found): \u8226 ? Intelligent window detection:\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Priority 1: Chain FX window open \u8594 ? Chain mode (process full FX chain)\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Priority 2: Single FX floating window \u8594 ? Single FX mode (process one FX)\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab Priority 3: No FX window \u8594 ? Chain mode on preview target track (default) \u8226 ? Executes AudioSweet Core with auto-detected mode \u8226 ? Window state always overrides GUI settings \u8226 ? Reads all settings from GUI ExtState\sa180\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Preview Mode} (placeholder found): \u8226 ? Validates item selection on preview target track \u8226 ? Stops current preview (removes placeholder, unsolo) \u8226 ? Executes RGWH Core on selected items \u8226 ? Moves rendered results back to original source track \u8226 ? Stays in normal state (does not restore preview)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Preview Mode Requirements\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Must have item selection (otherwise shows warning)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Items must be on the preview target track\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Respects current FX state (does not modify FX chain)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Time selection: if present, RGWH determines scope automatically\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab No time selection: uses item units mode\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Debug Mode\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set DEBUG = true in script to enable detailed console logging:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Mode detection (Normal vs Preview)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Window state detection (chain/single/none)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab ExtState settings loaded\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Preview cleanup steps\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Item move operations\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Requirements\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab AudioSweet ReaImGui GUI for ExtState configuration\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab AudioSweet Core library\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab RGWH Core library (for Preview Mode)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Works independently - can be assigned to keyboard shortcuts\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.2.0" author="hsuanice" time="2025-12-23T16:53:50Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/786e7e65a9c91c682acb149bc88b9073308af10d/Tools/hsuanice_AudioSweet%20Run.lua</source>
+      </version>
+      <version name="0.2.1" author="hsuanice" time="2026-02-09T13:51:12Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/bfb0c953814e4a9bb79f9b8a17ca385a68e9b0f3/Tools/hsuanice_AudioSweet%20Run.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_AudioSweet Solo Toggle.lua" type="script" desc="AudioSweet Solo Toggle">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 AudioSweet Solo Toggle\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Toggles solo state for the AudioSweet target track.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Behavior\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Track Solo Mode (preview_solo_scope = 0)}: \u8226 ? Priority 1: If AudioSweet Preview is active (placeholder found) \u8594 ? Toggle the preview target track \u8226 ? Priority 2: If any track is currently soloed \u8594 ? Toggle that track's solo \u8226 ? Priority 3: No preview/solo \u8594 ? Toggle preview target track solo (from GUI settings)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Item Solo Mode (preview_solo_scope = 1)}: \u8226 ? Toggle solo for selected items (REAPER command 41561)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Note: Detects active preview via placeholder item, stays locked to preview target track\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Debug Mode\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Set DEBUG = true in script to enable detailed console logging:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab ExtState settings loaded\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Soloed track detection\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Target track resolution steps\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Final solo toggle action\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Requirements\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab AudioSweet ReaImGui GUI for ExtState configuration\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Works independently - can be assigned to keyboard shortcuts in action list\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.2.0" author="hsuanice" time="2025-12-23T16:53:50Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/786e7e65a9c91c682acb149bc88b9073308af10d/Tools/hsuanice_AudioSweet%20Solo%20Toggle.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_FX Alias Build.lua" type="script" desc="FX Alias Build - Build FX Alias JSON from Current Project">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Scan all tracks' Track FX in the current project and populate/merge Settings/fx_alias.json. Then you can export to TSV and edit aliases comfortably.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Part of AudioSweet ReaImGui Tools suite.\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:42:01Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/c62263e700daf50141af4a04c5fb4ae80bddd22e/Tools/hsuanice_FX%20Alias%20Build.lua</source>
+      </version>
+      <version name="0.1.1" author="hsuanice" time="2025-12-20T00:45:09Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/5fdb12bd57b0a3f02890c71e185c4b81236d21e5/Tools/hsuanice_FX%20Alias%20Build.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_FX Alias Export JSON to TSV.lua" type="script" desc="FX Alias Export - Convert FX Alias JSON to TSV">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Export Settings/fx_alias.json to Settings/fx_alias.tsv for easy editing in Excel/Numbers/Sheets.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Part of AudioSweet ReaImGui Tools suite.\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Tools/hsuanice_FX%20Alias%20Export%20JSON%20to%20TSV.lua</source>
+      </version>
+    </reapack>
+    <reapack name="hsuanice_FX Alias Update TSV to JSON.lua" type="script" desc="FX Alias Update - Update FX Alias JSON from TSV">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Read Settings/fx_alias.tsv and update Settings/fx_alias.json. Only rows that exist in TSV will be updated/added. Others are kept.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Part of AudioSweet ReaImGui Tools suite.\par}
+}
+]]></description>
+      </metadata>
+      <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Tools/hsuanice_FX%20Alias%20Update%20TSV%20to%20JSON.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 The URL to import in ReaPack is {\field{\*\fldinst{HYPERLINK "https://raw.githubusercontent.com/hsuanice/PublicBeta/master/index.xml"}}{\fldrslt{\ul
+https://github.com/hsuanice/PublicBeta/raw/master/index.xml
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 The scripts in this repository are created and maintained by hsuanice, with the assistance of AI tools such as ChatGPT and Claude.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 2025-12-16 \u8212- Beta release\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 RGWH\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Render or glue items with handles.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 AudioSweet\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab AudioSuite Workflow in REAPER (Pro Tools\u8211-Style)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Reference: Inspired by AudioSuite-like Script by Tim Chimes 'AudioSweet' is a name originally given by Tim Chimes.\line This project continues to use the name in reference to his original work.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Original: Renders selected plugin to selected media item Written for REAPER 5.1 with Lua v1.1 12/22/2015 - Added PreventUIRefresh http://timchimes.com/scripting-with-reaper-audiosuite/\par}
+}
+]]></description>
+  </metadata>
+</index>

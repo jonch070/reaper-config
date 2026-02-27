@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="tdspk" commit="b43686d790887696350fc8b3c660f3bd62701886">
+  <category name="Automation">
+    <reapack name="tdspk - Automation Tool.lua" type="script" desc="Automation Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Automation Tool\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="0.1pre1" author="Tadej Supukovic (tdspk)" time="2024-06-17T18:14:05Z">
+        <changelog><![CDATA[Implement envelopes for global and track settings]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/970133385c7f294a61005aa74947cd69fa5e7300/Automation/tdspk%20-%20Automation%20Tool.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Creative">
+    <reapack name="tdspk - Creative - ReaChopChop.lua" type="script" desc="ReaChopChop">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaChopChop\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Chop your items and randomize the leftovers\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS_ReaScriptAPI, SWS Extension, ReaImGui\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="1.0.1" author="Tadej Supukovic (tdspk)" time="2024-01-13T18:10:50Z">
+        <changelog><![CDATA[Added Randomize option
+First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/9c41b42aef39963bb9192486720d5c93e90e1625/Creative/tdspk%20-%20Creative%20-%20ReaChopChop.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Creative - ReaStretch.lua" type="script" desc="ReaStretch">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 ReaStretch\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Comprehensive GUI for Rrreeeaaa and ReaReaRea. Works for Media Items.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS_ReaScriptAPI, SWS Extension, ReaImGui\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-12-04T18:47:45Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/1838ff841189c1209ceddfd67d8f134f5286b04e/Creative/tdspk%20-%20Creative%20-%20ReaStretch.lua</source>
+      </version>
+      <version name="1.0.1" author="Tadej Supukovic (tdspk)" time="2023-12-12T20:06:11Z">
+        <changelog><![CDATA[Changed font to sans serif
+First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/757044e3ff854e65e05a3c3d3fcddcfb39f62141/Creative/tdspk%20-%20Creative%20-%20ReaStretch.lua</source>
+      </version>
+      <version name="1.0.2" author="Tadej Supukovic (tdspk)" time="2024-01-13T18:07:18Z">
+        <changelog><![CDATA[Removed stretch slider
+Changed font to sans serif
+First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/3ea3286f688a7d3911d0eb6be4571cd947c060a5/Creative/tdspk%20-%20Creative%20-%20ReaStretch.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Editing">
+    <reapack name="tdspk - Editing - Align item positions to first selected item.lua" type="script" desc="Align item position to first selected item">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-11-18T21:48:48Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/c87b56e889e59fc9e70ac77085c0c6e9b8ced632/Editing/tdspk%20-%20Editing%20-%20Align%20item%20positions%20to%20first%20selected%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Align item positions to project markers.lua" type="script" desc="Align item positions to project markers">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-11-18T21:48:48Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/c87b56e889e59fc9e70ac77085c0c6e9b8ced632/Editing/tdspk%20-%20Editing%20-%20Align%20item%20positions%20to%20project%20markers.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Batch-Undo last action.lua" type="script" desc="Batch-Undo last action">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2025-04-05T17:06:48Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/22f483a61570903e32f58f4384531f0721f4914e/Editing/tdspk%20-%20Editing%20-%20Batch-Undo%20last%20action.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Enclose Track Items with Razor Edit Area.lua" type="script" desc="Enclose Track Items with Razor Edit Area">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2024-01-15T11:20:08Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/fb81cdf51436a8f4a3b8622bfd5027ee43a633f8/Editing/tdspk%20-%20Editing%20-%20Enclose%20Track%20Items%20with%20Razor%20Edit%20Area.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Glue individual items.lua" type="script" desc="Glue individual items">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2024-11-05T14:01:34Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/5314968358cc68b8b6bde30e09d176d50a854524/Editing/tdspk%20-%20Editing%20-%20Glue%20individual%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Move next take marker to snap offset.lua" type="script" desc="Move next take marker to snap offset">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-11-20T18:20:08Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/40fe6dd43feba058fb2b777403729c6d80896d35/Editing/tdspk%20-%20Editing%20-%20Move%20next%20take%20marker%20to%20snap%20offset.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Move selected items to next available empty track.lua" type="script" desc="Move selected items to next available empty track">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2024-05-27T17:48:12Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/01ff1909fe97b12d8c322370d00e946bc4fda294/Editing/tdspk%20-%20Editing%20-%20Move%20selected%20items%20to%20next%20available%20empty%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Reset snap offset for selected items.lua" type="script" desc="Reset snap offset for selected items">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-11-18T21:48:48Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/c87b56e889e59fc9e70ac77085c0c6e9b8ced632/Editing/tdspk%20-%20Editing%20-%20Reset%20snap%20offset%20for%20selected%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Set item length of all selected item to first item length.lua" type="script" desc="Set item length of all selected item to first item length">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-11-18T21:48:48Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/c87b56e889e59fc9e70ac77085c0c6e9b8ced632/Editing/tdspk%20-%20Editing%20-%20Set%20item%20length%20of%20all%20selected%20item%20to%20first%20item%20length.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Set snap offset at first transient per selected item.lua" type="script" desc="Set snap offset at first transient per selected item">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-08-31T15:07:40Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/19279645d41defef525309aae35002c82fcfea4a/Editing/tdspk%20-%20Editing%20-%20Set%20snap%20offset%20at%20first%20transient%20per%20selected%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Set take marker per transient.lua" type="script" desc="Set take marker per transient">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-11-20T18:02:47Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/3e793419539d258d3a778c68a4921f9402ee3f01/Editing/tdspk%20-%20Editing%20-%20Set%20take%20marker%20per%20transient.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Split Item under cursor and trim shorter side.lua" type="script" desc="Split Item under cursor and trim shorter side">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-08-31T15:07:40Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/19279645d41defef525309aae35002c82fcfea4a/Editing/tdspk%20-%20Editing%20-%20Split%20Item%20under%20cursor%20and%20trim%20shorter%20side.lua</source>
+      </version>
+      <version name="1.0.1" author="Tadej Supukovic (tdspk)" time="2024-01-15T11:40:08Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/a454468775a9f93bf9680433fd2a55c360759578/Editing/tdspk%20-%20Editing%20-%20Split%20Item%20under%20cursor%20and%20trim%20shorter%20side.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Editing - Split selected items under cursor.lua" type="script" desc="Split selected items under cursor">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-08-31T15:07:40Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/19279645d41defef525309aae35002c82fcfea4a/Editing/tdspk%20-%20Editing%20-%20Split%20selected%20items%20under%20cursor.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Library Tools">
+    <reapack name="tdspk - Library Tools - Media Item Spacer.lua" type="script" desc="Media Item Spacer">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Media Item Spacer\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tool for creating space between Media Items in seconds. Useful for Sound Library creation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS_ReaScriptAPI, SWS Extension, ReaImGui\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-12-28T14:57:46Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/f4eb5836d7533dc7479723a930aa23e44760b9e7/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Media%20Item%20Spacer.lua</source>
+      </version>
+      <version name="1.1" author="Tadej Supukovic (tdspk)" time="2024-02-09T10:43:18Z">
+        <changelog><![CDATA[Increased max spacing and added new modes (absolute and additive)
+First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/05a293a08fc838bb854feb587f07285a222f66bf/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Media%20Item%20Spacer.lua</source>
+      </version>
+      <version name="1.2" author="Tadej Supukovic (tdspk)" time="2024-11-05T19:04:32Z">
+        <changelog><![CDATA[Added Padding parameter for left padding
+Increased max spacing and added new modes (absolute and additive)
+First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/8836556ff02171a59e257ee73c343a2e2b0816be/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Media%20Item%20Spacer.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Library Tools - UCS Toolkit.lua" type="script" desc="UCS Toolkit">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 UCS Tookit\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Tool for (re)naming tracks, items, markers, regions and Media Explorer files inside REAPER using the Universal Category System (UCS). This is a development build. Tested on Windows only. Please report bugs and FR at the provided links.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS_ReaScriptAPI, SWS Extension, ReaImGui\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=286234">Forum Thread</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="0.1" author="Tadej Supukovic (tdspk)" time="2023-12-28T14:39:54Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/ad149e0ffcddbfacc3ea91dddc115bb5d00173b8/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/ad149e0ffcddbfacc3ea91dddc115bb5d00173b8/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.1" author="Tadej Supukovic (tdspk)" time="2023-12-28T15:06:11Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/3cf53abc4198441d20e9d62152bffaa59345c019/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/3cf53abc4198441d20e9d62152bffaa59345c019/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.2" author="Tadej Supukovic (tdspk)" time="2023-12-28T17:43:34Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/4c48a1f93315268cc285d35fd2461d00f7a55e7c/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/4c48a1f93315268cc285d35fd2461d00f7a55e7c/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.3" author="Tadej Supukovic (tdspk)" time="2023-12-31T16:36:05Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/41ffa3d8a3ace5d11f7a2ed6c14250e77a819181/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/41ffa3d8a3ace5d11f7a2ed6c14250e77a819181/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.4" author="Tadej Supukovic (tdspk)" time="2023-12-31T16:59:51Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/68e84035de8b54bd735a265e69ad0653d3e0921b/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/68e84035de8b54bd735a265e69ad0653d3e0921b/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.5pre1" author="Tadej Supukovic (tdspk)" time="2024-01-05T12:34:28Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/6443fd5627576ad4381b148402c36dac9ec9b309/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/6443fd5627576ad4381b148402c36dac9ec9b309/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.5pre2" author="Tadej Supukovic (tdspk)" time="2024-01-10T19:12:34Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/2d442493e65dfabf6f203129bd8f614df1ace96f/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/2d442493e65dfabf6f203129bd8f614df1ace96f/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.5pre3" author="Tadej Supukovic (tdspk)" time="2024-01-11T10:48:54Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/53ac9010e60b3543ac0b3c029db11cfc25e1c54b/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/53ac9010e60b3543ac0b3c029db11cfc25e1c54b/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.5pre4" author="Tadej Supukovic (tdspk)" time="2024-01-12T12:57:43Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/a6298019c7012547981995d52738ac64ad14884a/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/a6298019c7012547981995d52738ac64ad14884a/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.5pre5" author="Tadej Supukovic (tdspk)" time="2024-01-12T13:16:21Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/520400b562d22ec6609d81e2aaa4f625ac846386/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/520400b562d22ec6609d81e2aaa4f625ac846386/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.1.5" author="Tadej Supukovic (tdspk)" time="2024-01-14T19:40:58Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/a36df2152724c7d81c95be0df9950b6296963421/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/a36df2152724c7d81c95be0df9950b6296963421/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre1" author="Tadej Supukovic (tdspk)" time="2024-01-15T20:07:51Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/e8f793c5aab6a2e28397e513d808b41df3dea1d9/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/e8f793c5aab6a2e28397e513d808b41df3dea1d9/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre2" author="Tadej Supukovic (tdspk)" time="2024-01-15T21:13:17Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/230fb62db2deceddbaafd223c7636571ed539db1/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/230fb62db2deceddbaafd223c7636571ed539db1/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre3" author="Tadej Supukovic (tdspk)" time="2024-01-16T16:27:06Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/43b986b86393a992a4cebadf1b0c211fba845205/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/43b986b86393a992a4cebadf1b0c211fba845205/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre4" author="Tadej Supukovic (tdspk)" time="2024-01-16T20:32:49Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/bc0a1ef9c96583883146d4ef864fdbd5f83a5fdc/Library%20Tools/data/ucs.csv</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/bc0a1ef9c96583883146d4ef864fdbd5f83a5fdc/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre5" author="Tadej Supukovic (tdspk)" time="2024-01-18T09:00:05Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/e63db268dfe85097d5efa992626b4053c8ea4a81/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/e63db268dfe85097d5efa992626b4053c8ea4a81/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/e63db268dfe85097d5efa992626b4053c8ea4a81/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre6" author="Tadej Supukovic (tdspk)" time="2024-01-22T18:58:05Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/b2277c44eabde96b3d04b3177cea5e98bcfdf1f0/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/b2277c44eabde96b3d04b3177cea5e98bcfdf1f0/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/b2277c44eabde96b3d04b3177cea5e98bcfdf1f0/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre7" author="Tadej Supukovic (tdspk)" time="2024-01-26T19:55:36Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/bd832007c8fd9a6d5f4bf331a030c96073427a30/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/bd832007c8fd9a6d5f4bf331a030c96073427a30/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/bd832007c8fd9a6d5f4bf331a030c96073427a30/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre8" author="Tadej Supukovic (tdspk)" time="2024-01-29T18:14:32Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/fd08162781b5349c6d092bcb454062ebf8fffa6b/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/fd08162781b5349c6d092bcb454062ebf8fffa6b/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/fd08162781b5349c6d092bcb454062ebf8fffa6b/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/fd08162781b5349c6d092bcb454062ebf8fffa6b/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre9" author="Tadej Supukovic (tdspk)" time="2024-03-25T11:55:58Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/f39e11a5305b0889c4c1c11c777c97116b35d3db/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/f39e11a5305b0889c4c1c11c777c97116b35d3db/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/f39e11a5305b0889c4c1c11c777c97116b35d3db/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/f39e11a5305b0889c4c1c11c777c97116b35d3db/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.2pre10" author="Tadej Supukovic (tdspk)" time="2024-05-08T12:40:18Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/d7a2d9f6701f27f91904b5071a95c4e2e343914a/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/d7a2d9f6701f27f91904b5071a95c4e2e343914a/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/d7a2d9f6701f27f91904b5071a95c4e2e343914a/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/d7a2d9f6701f27f91904b5071a95c4e2e343914a/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.3pre1" author="Tadej Supukovic (tdspk)" time="2024-05-14T15:00:29Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/38528cd6f80180a7376d1c4da328c3bbdf39ae3c/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/38528cd6f80180a7376d1c4da328c3bbdf39ae3c/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/38528cd6f80180a7376d1c4da328c3bbdf39ae3c/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/38528cd6f80180a7376d1c4da328c3bbdf39ae3c/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.3pre2" author="Tadej Supukovic (tdspk)" time="2024-05-23T13:35:23Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/3263cac3f2162b4829df9ac7a2a54e785afc7295/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/3263cac3f2162b4829df9ac7a2a54e785afc7295/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/3263cac3f2162b4829df9ac7a2a54e785afc7295/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/3263cac3f2162b4829df9ac7a2a54e785afc7295/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.3pre3" author="Tadej Supukovic (tdspk)" time="2024-05-27T10:30:57Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/8c3ba0a68df6e13012a96ec9ca9306ddd93e835a/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/8c3ba0a68df6e13012a96ec9ca9306ddd93e835a/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/8c3ba0a68df6e13012a96ec9ca9306ddd93e835a/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/8c3ba0a68df6e13012a96ec9ca9306ddd93e835a/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.3" author="Tadej Supukovic (tdspk)" time="2024-05-27T16:32:37Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/39214b91f278bb218faad44dfc678a5493ccb20e/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/39214b91f278bb218faad44dfc678a5493ccb20e/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/39214b91f278bb218faad44dfc678a5493ccb20e/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/39214b91f278bb218faad44dfc678a5493ccb20e/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="0.3.1" author="Tadej Supukovic (tdspk)" time="2024-06-09T12:11:43Z">
+        <changelog><![CDATA[First beta]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/14b63f48a78b83eb5edcca7b8f72c260224771e2/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/14b63f48a78b83eb5edcca7b8f72c260224771e2/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/14b63f48a78b83eb5edcca7b8f72c260224771e2/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/14b63f48a78b83eb5edcca7b8f72c260224771e2/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.0" author="Tadej Supukovic (tdspk)" time="2024-06-12T08:54:12Z">
+        <changelog><![CDATA[Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/706b5e051dffa52417855a217f60bbeb8ab2ffbf/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/706b5e051dffa52417855a217f60bbeb8ab2ffbf/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/706b5e051dffa52417855a217f60bbeb8ab2ffbf/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/706b5e051dffa52417855a217f60bbeb8ab2ffbf/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.1" author="Tadej Supukovic (tdspk)" time="2024-06-29T09:07:05Z">
+        <changelog><![CDATA[fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/3359fb4e30d89b654b7932939981fd7de18b01c1/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/3359fb4e30d89b654b7932939981fd7de18b01c1/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/3359fb4e30d89b654b7932939981fd7de18b01c1/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/3359fb4e30d89b654b7932939981fd7de18b01c1/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.2" author="Tadej Supukovic (tdspk)" time="2024-07-01T19:32:05Z">
+        <changelog><![CDATA[1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/e965ca2c79ccc8007bde6ec5d5d98ffbe7bdeba7/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/e965ca2c79ccc8007bde6ec5d5d98ffbe7bdeba7/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/e965ca2c79ccc8007bde6ec5d5d98ffbe7bdeba7/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/e965ca2c79ccc8007bde6ec5d5d98ffbe7bdeba7/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.2.1" author="Tadej Supukovic (tdspk)" time="2024-07-12T13:29:55Z">
+        <changelog><![CDATA[1.2 show UCS explanations and synonyms as tooltip in search box
+1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/d4b4fde22fe5ed8329cc03dc198a56cee42c0efc/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/d4b4fde22fe5ed8329cc03dc198a56cee42c0efc/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/d4b4fde22fe5ed8329cc03dc198a56cee42c0efc/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/d4b4fde22fe5ed8329cc03dc198a56cee42c0efc/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.2.2" author="Tadej Supukovic (tdspk)" time="2024-09-22T09:07:27Z">
+        <changelog><![CDATA[1.2.2 save FX when closing UCS Toolkit, introduce action to focus UCS toolkit and jump to the search box
+1.2 show UCS explanations and synonyms as tooltip in search box
+1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/5fef0e41761802e2987e72a0dcf9ad77e3ec6ec2/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/5fef0e41761802e2987e72a0dcf9ad77e3ec6ec2/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/5fef0e41761802e2987e72a0dcf9ad77e3ec6ec2/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/5fef0e41761802e2987e72a0dcf9ad77e3ec6ec2/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+        <source main="main" file="tdspk - Library Tools - Focus UCS Toolkit.lua">https://github.com/tdspk/ReaScripts/raw/5fef0e41761802e2987e72a0dcf9ad77e3ec6ec2/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Focus%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.2.3" author="Tadej Supukovic (tdspk)" time="2024-10-29T19:22:03Z">
+        <changelog><![CDATA[1.2.3 refresh Media Explorer after renaming files
+1.2.2 save FX when closing UCS Toolkit, introduce action to focus UCS toolkit and jump to the search box
+1.2 show UCS explanations and synonyms as tooltip in search box
+1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/9a202ad5f97cef0d6747542b384bff6376e27a00/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/9a202ad5f97cef0d6747542b384bff6376e27a00/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/9a202ad5f97cef0d6747542b384bff6376e27a00/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/9a202ad5f97cef0d6747542b384bff6376e27a00/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+        <source main="main" file="tdspk - Library Tools - Focus UCS Toolkit.lua">https://github.com/tdspk/ReaScripts/raw/9a202ad5f97cef0d6747542b384bff6376e27a00/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Focus%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.2.4" author="Tadej Supukovic (tdspk)" time="2025-04-15T14:06:10Z">
+        <changelog><![CDATA[1.2.4 new button: copy generated UCS names to clipboard, setting to ignore open Media Explorer while renaming
+1.2.3 refresh Media Explorer after renaming files
+1.2.2 save FX when closing UCS Toolkit, introduce action to focus UCS toolkit and jump to the search box
+1.2 show UCS explanations and synonyms as tooltip in search box
+1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/1def6643b237286bea710b2ec66d2affcabd6f18/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/1def6643b237286bea710b2ec66d2affcabd6f18/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/1def6643b237286bea710b2ec66d2affcabd6f18/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/1def6643b237286bea710b2ec66d2affcabd6f18/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+        <source main="main" file="tdspk - Library Tools - Focus UCS Toolkit.lua">https://github.com/tdspk/ReaScripts/raw/1def6643b237286bea710b2ec66d2affcabd6f18/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Focus%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.2.5" author="Tadej Supukovic (tdspk)" time="2025-08-20T08:51:27Z">
+        <changelog><![CDATA[1.2.5 require ImGui Version 0.9.3.3 to avoid PushFont errors
+1.2.4 new button: copy generated UCS names to clipboard, setting to ignore open Media Explorer while renaming
+1.2.3 refresh Media Explorer after renaming files
+1.2.2 save FX when closing UCS Toolkit, introduce action to focus UCS toolkit and jump to the search box
+1.2 show UCS explanations and synonyms as tooltip in search box
+1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/2917604e9637d4091bf9f6a28f161fe63d5632ea/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/2917604e9637d4091bf9f6a28f161fe63d5632ea/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/2917604e9637d4091bf9f6a28f161fe63d5632ea/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/2917604e9637d4091bf9f6a28f161fe63d5632ea/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+        <source main="main" file="tdspk - Library Tools - Focus UCS Toolkit.lua">https://github.com/tdspk/ReaScripts/raw/2917604e9637d4091bf9f6a28f161fe63d5632ea/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Focus%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.3" author="Tadej Supukovic (tdspk)" time="2025-12-04T13:02:15Z">
+        <changelog><![CDATA[1.3 UI support new font API, UI refactoring and improvements
+1.2.5 require ImGui Version 0.9.3.3 to avoid PushFont errors
+1.2.4 new button: copy generated UCS names to clipboard, setting to ignore open Media Explorer while renaming
+1.2.3 refresh Media Explorer after renaming files
+1.2.2 save FX when closing UCS Toolkit, introduce action to focus UCS toolkit and jump to the search box
+1.2 show UCS explanations and synonyms as tooltip in search box
+1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/722480b07e549bda1e89e264ce182c3bf5008815/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/722480b07e549bda1e89e264ce182c3bf5008815/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/722480b07e549bda1e89e264ce182c3bf5008815/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/722480b07e549bda1e89e264ce182c3bf5008815/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+        <source main="main" file="tdspk - Library Tools - Focus UCS Toolkit.lua">https://github.com/tdspk/ReaScripts/raw/722480b07e549bda1e89e264ce182c3bf5008815/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Focus%20UCS%20Toolkit.lua</source>
+      </version>
+      <version name="1.3.1" author="Tadej Supukovic (tdspk)" time="2025-12-04T13:15:48Z">
+        <changelog><![CDATA[1.3.1 fix crash when navigating targets with navigation buttons
+1.3 UI support new font API, UI refactoring and improvements
+1.2.5 require ImGui Version 0.9.3.3 to avoid PushFont errors
+1.2.4 new button: copy generated UCS names to clipboard, setting to ignore open Media Explorer while renaming
+1.2.3 refresh Media Explorer after renaming files
+1.2.2 save FX when closing UCS Toolkit, introduce action to focus UCS toolkit and jump to the search box
+1.2 show UCS explanations and synonyms as tooltip in search box
+1.1 fixed typo in title
+Initial Release (v1.0)]]></changelog>
+        <source file="data/ucs.csv">https://github.com/tdspk/ReaScripts/raw/b0314cf3e326736876daafac990146f5eb840eb8/Library%20Tools/data/ucs.csv</source>
+        <source file="data/OpenSans-Medium.ttf">https://github.com/tdspk/ReaScripts/raw/b0314cf3e326736876daafac990146f5eb840eb8/Library%20Tools/data/OpenSans-Medium.ttf</source>
+        <source file="data/soundly.png">https://github.com/tdspk/ReaScripts/raw/b0314cf3e326736876daafac990146f5eb840eb8/Library%20Tools/data/soundly.png</source>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/b0314cf3e326736876daafac990146f5eb840eb8/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20UCS%20Toolkit.lua</source>
+        <source main="main" file="tdspk - Library Tools - Focus UCS Toolkit.lua">https://github.com/tdspk/ReaScripts/raw/b0314cf3e326736876daafac990146f5eb840eb8/Library%20Tools/tdspk%20-%20Library%20Tools%20-%20Focus%20UCS%20Toolkit.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Media Explorer">
+    <reapack name="tdspk - Media Explorer - Query.lua" type="script" desc="Media Explorer - Query">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Media Explorer - Query\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A small script to save search queries in the Media Explorer on a per-project basis.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS_ReaScriptAPI, SWS Extension, ReaImGui\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="0.1" author="Tadej Supukovic (tdspk)" time="2025-04-17T13:03:41Z">
+        <changelog><![CDATA[TBA]]></changelog>
+        <source file="json/json.lua">https://github.com/tdspk/ReaScripts/raw/c04f714182b947b5206e7ec4f44edaa1da43f556/Media%20Explorer/json/json.lua</source>
+        <source main="mediaexplorer">https://github.com/tdspk/ReaScripts/raw/c04f714182b947b5206e7ec4f44edaa1da43f556/Media%20Explorer/tdspk%20-%20Media%20Explorer%20-%20Query.lua</source>
+      </version>
+      <version name="0.2" author="Tadej Supukovic (tdspk)" time="2025-04-18T07:52:16Z">
+        <changelog><![CDATA[TBA]]></changelog>
+        <source main="mediaexplorer">https://github.com/tdspk/ReaScripts/raw/4bab138561d7190ad318e109262567be40177baf/Media%20Explorer/tdspk%20-%20Media%20Explorer%20-%20Query.lua</source>
+        <source file="json/json.lua">https://github.com/tdspk/ReaScripts/raw/4bab138561d7190ad318e109262567be40177baf/Media%20Explorer/json/json.lua</source>
+      </version>
+      <version name="0.2pre1" author="Tadej Supukovic (tdspk)" time="2025-04-18T07:55:09Z">
+        <changelog><![CDATA[TBA]]></changelog>
+        <source file="json/json.lua">https://github.com/tdspk/ReaScripts/raw/7fa6ad386a774dfa91d92460b398029cc311a144/Media%20Explorer/json/json.lua</source>
+        <source main="mediaexplorer">https://github.com/tdspk/ReaScripts/raw/7fa6ad386a774dfa91d92460b398029cc311a144/Media%20Explorer/tdspk%20-%20Media%20Explorer%20-%20Query.lua</source>
+      </version>
+      <version name="0.3" author="Tadej Supukovic (tdspk)" time="2025-04-18T08:28:59Z">
+        <changelog><![CDATA[TBA]]></changelog>
+        <source file="json/json.lua">https://github.com/tdspk/ReaScripts/raw/a912c3f467a0c25fb473cc72d679be7c8ecabe17/Media%20Explorer/json/json.lua</source>
+        <source main="mediaexplorer">https://github.com/tdspk/ReaScripts/raw/a912c3f467a0c25fb473cc72d679be7c8ecabe17/Media%20Explorer/tdspk%20-%20Media%20Explorer%20-%20Query.lua</source>
+      </version>
+      <version name="0.4" author="Tadej Supukovic (tdspk)" time="2025-05-05T11:23:11Z">
+        <changelog><![CDATA[TBA]]></changelog>
+        <source file="json/json.lua">https://github.com/tdspk/ReaScripts/raw/a817f92a3a9701b6140a77c99b8c4d17750db1d1/Media%20Explorer/json/json.lua</source>
+        <source main="mediaexplorer">https://github.com/tdspk/ReaScripts/raw/a817f92a3a9701b6140a77c99b8c4d17750db1d1/Media%20Explorer/tdspk%20-%20Media%20Explorer%20-%20Query.lua</source>
+      </version>
+      <version name="0.41" author="Tadej Supukovic (tdspk)" time="2025-05-05T11:46:01Z">
+        <changelog><![CDATA[TBA]]></changelog>
+        <source file="json/json.lua">https://github.com/tdspk/ReaScripts/raw/997ae551f9c306c8f33ad1d842862bb81dfc10c9/Media%20Explorer/json/json.lua</source>
+        <source main="main mediaexplorer">https://github.com/tdspk/ReaScripts/raw/997ae551f9c306c8f33ad1d842862bb81dfc10c9/Media%20Explorer/tdspk%20-%20Media%20Explorer%20-%20Query.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Memes">
+    <reapack name="tdspk - Memes - ReaDad.lua" type="script" desc="ReaDad - Dad Jokes for REAPER">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-12-04T18:46:04Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/3e41b01b3b252f7585c1bbf7fa760dafc0f5ac93/Memes/tdspk%20-%20Memes%20-%20ReaDad.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Modulation Box">
+    <reapack name="tdspk - Modulation Box - GUI.lua" type="script" desc="Modulation Box - GUI">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Modulation Box\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Work in progress...\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS_ReaScriptAPI, SWS Extension, ReaImGui\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Forum Thread</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="0.1pre1" author="Tadej Supukovic (tdspk)" time="2024-05-02T16:17:53Z">
+        <changelog><![CDATA[first draft (0.1pre1)]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/719f631a90024d0c1be66a197ef46609bf052a8f/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20GUI.lua</source>
+      </version>
+      <version name="0.1pre2" author="Tadej Supukovic (tdspk)" time="2024-05-10T13:30:35Z">
+        <changelog><![CDATA[first draft (0.1pre1)]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/c3c24c44f5c9e3ce9eef26b12466e30483d5733e/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20GUI.lua</source>
+      </version>
+      <version name="0.1pre3" author="Tadej Supukovic (tdspk)" time="2024-05-15T17:33:26Z">
+        <changelog><![CDATA[first draft (0.1pre1)]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/a20e6ff2a7badc5fc4397161c15f62836e729f1f/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20GUI.lua</source>
+      </version>
+      <version name="0.1pre4" author="Tadej Supukovic (tdspk)" time="2024-05-23T14:09:56Z">
+        <changelog><![CDATA[first draft (0.1pre1)]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/7a3b76e60f512874ca8bdd2cb912a295fea7fb70/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20GUI.lua</source>
+      </version>
+      <version name="0.1pre5" author="Tadej Supukovic (tdspk)" time="2024-05-29T14:42:58Z">
+        <changelog><![CDATA[first draft (0.1pre1)]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/36eba4f5e4c449e9f99c693565fc44cd6ef05503/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20GUI.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Modulation Box.lua" type="script" desc="Modulation Box">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Modulation Box\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Scripts to accelerate the REAPER modulation workflow. These scripts use NamedConfigParms to quickly add, copy, and paste modulation data like ACS and LFO for FX parameters. Link parameters easily with two actions. These scripts are designed to be as modular as possible, so feel free to make shortcuts, add them to toolbars, use the scripts for your own scripts, etc.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 SWS Extension, JS_ReaScriptAPI\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="1.0.2" author="Tadej Supukovic (tdspk)" time="2023-11-18T21:48:48Z">
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/c87b56e889e59fc9e70ac77085c0c6e9b8ced632/Modulation%20Box/tdspk%20-%20Modulation%20Box.lua</source>
+      </version>
+      <version name="1.0.3" author="Tadej Supukovic (tdspk)" time="2023-11-18T22:03:43Z">
+        <changelog><![CDATA[Support for FX Containers
+Added support for tcp toggle
+First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box.lua</source>
+        <source file="tdspk - Modulation Box - Common Functions.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Common%20Functions.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Copy ACS settings from last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Copy%20ACS%20settings%20from%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Copy LFO Settings from last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Copy%20LFO%20Settings%20from%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Enable ACS for last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Enable%20ACS%20for%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Enable LFO for last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Enable%20LFO%20for%20last%20touched%20FX%20parameter.lua</source>
+        <source file="tdspk - Modulation Box - Info Panel.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Info%20Panel.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Link last touched FX parameter to link parent.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Link%20last%20touched%20FX%20parameter%20to%20link%20parent.lua</source>
+        <source file="tdspk - Modulation Box - List View.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20List%20View.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Paste ACS settings.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Paste%20ACS%20settings.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Paste LFO settings.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Paste%20LFO%20settings.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Set last touched FX parameter as link parent and auto-link following touched FX parameters (background).lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Set%20last%20touched%20FX%20parameter%20as%20link%20parent%20and%20auto-link%20following%20touched%20FX%20parameters%20(background).lua</source>
+        <source main="main" file="tdspk - Modulation Box - Set last touched FX parameter as link parent.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Set%20last%20touched%20FX%20parameter%20as%20link%20parent.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Show knobs for each modulated FX parameter in TCP.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Show%20knobs%20for%20each%20modulated%20FX%20parameter%20in%20TCP.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Toggle TCP Knob Visibility When Adding Modulators.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Toggle%20TCP%20Knob%20Visibility%20When%20Adding%20Modulators.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Unlink last touched parameter.lua">https://github.com/tdspk/ReaScripts/raw/8a8f82679c1be6ead4bedfac14b73c9116f1ba80/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Unlink%20last%20touched%20parameter.lua</source>
+      </version>
+      <version name="1.0.4" author="Tadej Supukovic (tdspk)" time="2023-11-20T17:54:46Z">
+        <changelog><![CDATA[Fixed cmd_idbug in Toggle TCP Knob Visibility When Adding Modulations.lua
+Support for FX Containers
+Added support for tcp toggle
+First version]]></changelog>
+        <source>https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box.lua</source>
+        <source file="tdspk - Modulation Box - Common Functions.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Common%20Functions.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Copy ACS settings from last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Copy%20ACS%20settings%20from%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Copy LFO Settings from last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Copy%20LFO%20Settings%20from%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Enable ACS for last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Enable%20ACS%20for%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Enable LFO for last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Enable%20LFO%20for%20last%20touched%20FX%20parameter.lua</source>
+        <source file="tdspk - Modulation Box - Info Panel.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Info%20Panel.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Link last touched FX parameter to link parent.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Link%20last%20touched%20FX%20parameter%20to%20link%20parent.lua</source>
+        <source file="tdspk - Modulation Box - List View.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20List%20View.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Paste ACS settings.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Paste%20ACS%20settings.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Paste LFO settings.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Paste%20LFO%20settings.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Set last touched FX parameter as link parent and auto-link following touched FX parameters (background).lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Set%20last%20touched%20FX%20parameter%20as%20link%20parent%20and%20auto-link%20following%20touched%20FX%20parameters%20(background).lua</source>
+        <source main="main" file="tdspk - Modulation Box - Set last touched FX parameter as link parent.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Set%20last%20touched%20FX%20parameter%20as%20link%20parent.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Show knobs for each modulated FX parameter in TCP.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Show%20knobs%20for%20each%20modulated%20FX%20parameter%20in%20TCP.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Toggle TCP Knob Visibility When Adding Modulators.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Toggle%20TCP%20Knob%20Visibility%20When%20Adding%20Modulators.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Unlink last touched parameter.lua">https://github.com/tdspk/ReaScripts/raw/363a865d6a273cc580300e89fe6b9dee49031914/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Unlink%20last%20touched%20parameter.lua</source>
+      </version>
+      <version name="1.1" author="Tadej Supukovic (tdspk)" time="2023-12-12T21:02:13Z">
+        <changelog><![CDATA[Implemented support for FX containers and media item FX
+Fixed cmd_idbug in Toggle TCP Knob Visibility When Adding Modulations.lua
+Support for FX Containers
+Added support for tcp toggle
+First version]]></changelog>
+        <source>https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box.lua</source>
+        <source file="tdspk - Modulation Box - Common Functions.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Common%20Functions.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Copy ACS settings from last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Copy%20ACS%20settings%20from%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Copy LFO Settings from last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Copy%20LFO%20Settings%20from%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Enable ACS for last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Enable%20ACS%20for%20last%20touched%20FX%20parameter.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Enable LFO for last touched FX parameter.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Enable%20LFO%20for%20last%20touched%20FX%20parameter.lua</source>
+        <source file="tdspk - Modulation Box - Info Panel.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Info%20Panel.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Link last touched FX parameter to link parent.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Link%20last%20touched%20FX%20parameter%20to%20link%20parent.lua</source>
+        <source file="tdspk - Modulation Box - List View.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20List%20View.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Paste ACS settings.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Paste%20ACS%20settings.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Paste LFO settings.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Paste%20LFO%20settings.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Set last touched FX parameter as link parent and auto-link following touched FX parameters (background).lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Set%20last%20touched%20FX%20parameter%20as%20link%20parent%20and%20auto-link%20following%20touched%20FX%20parameters%20(background).lua</source>
+        <source main="main" file="tdspk - Modulation Box - Set last touched FX parameter as link parent.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Set%20last%20touched%20FX%20parameter%20as%20link%20parent.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Show knobs for each modulated FX parameter in TCP.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Show%20knobs%20for%20each%20modulated%20FX%20parameter%20in%20TCP.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Toggle TCP Knob Visibility When Adding Modulators.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Toggle%20TCP%20Knob%20Visibility%20When%20Adding%20Modulators.lua</source>
+        <source main="main" file="tdspk - Modulation Box - Unlink last touched parameter.lua">https://github.com/tdspk/ReaScripts/raw/f77cee7da2f52c59229cb0769e7a635d30763eab/Modulation%20Box/tdspk%20-%20Modulation%20Box%20-%20Unlink%20last%20touched%20parameter.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Various">
+    <reapack name="tdspk - Toggle Global Sampler.lua" type="script" desc="Toggle Global Sampler on master">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2023-08-13T19:00:09Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/7ed948c4b90c830c58c82e8abf3e36a062781d9b/Various/tdspk%20-%20Toggle%20Global%20Sampler.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Various - Toggle solo for tracks of selected items.lua" type="script" desc="Toggle solo for tracks of selected items">
+      <version name="1.0.0" author="Tadej Supukovic (tdspk)" time="2024-04-30T07:29:34Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/de1d3d7906599f92dcd91221f60963be0148022f/Various/tdspk%20-%20Various%20-%20Toggle%20solo%20for%20tracks%20of%20selected%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="tdspk - Various - Yet Another Color Picker.lua" type="script" desc="Yet Another Color Picker">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Yet Another Color Picker\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A simple color picker with no fancy features. It uses the SWS custom color palette.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Requirements\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS_ReaScriptAPI, SWS Extension, ReaImGui\par}
+}
+]]></description>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="1.0" author="Tadej Supukovic (tdspk)" time="2025-12-22T20:06:13Z">
+        <changelog><![CDATA[1.0 Initial Release]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/749bed99d903f0997b89eac78fbac2211c6662a2/Various/tdspk%20-%20Various%20-%20Yet%20Another%20Color%20Picker.lua</source>
+      </version>
+      <version name="1.0.1" author="Tadej Supukovic (tdspk)" time="2025-12-22T20:44:12Z">
+        <changelog><![CDATA[1.0.1 Auto-Close window, add modifiers to reset color
+1.0 Initial Release]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/055bb985bf0955273816b89b999d131cd486b189/Various/tdspk%20-%20Various%20-%20Yet%20Another%20Color%20Picker.lua</source>
+      </version>
+      <version name="1.1" author="Tadej Supukovic (tdspk)" time="2025-12-23T09:03:49Z">
+        <changelog><![CDATA[1.1 Add action debug setting, auto-focus on open and hover
+1.0.1 Auto-Close window, add modifiers to reset color
+1.0 Initial Release]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/9f02839ab60c86b248fa632ac3ff22122caf8b5b/Various/tdspk%20-%20Various%20-%20Yet%20Another%20Color%20Picker.lua</source>
+      </version>
+      <version name="1.2dev1229.1" author="Tadej Supukovic (tdspk)" time="2025-12-29T18:59:54Z">
+        <changelog><![CDATA[1.1 Add action debug setting, auto-focus on open and hover
+1.0.1 Auto-Close window, add modifiers to reset color
+1.0 Initial Release]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/140f4755e98140272b11fb831c704f724d8b0548/Various/tdspk%20-%20Various%20-%20Yet%20Another%20Color%20Picker.lua</source>
+      </version>
+      <version name="1.2" author="Tadej Supukovic (tdspk)" time="2026-01-04T11:57:09Z">
+        <changelog><![CDATA[1.1 Add action debug setting, auto-focus on open and hover
+1.0.1 Auto-Close window, add modifiers to reset color
+1.0 Initial Release]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/fe0ade79b5db6355f0d4c09967191ed48bd17155/Various/tdspk%20-%20Various%20-%20Yet%20Another%20Color%20Picker.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Video Tools">
+    <reapack name="tdspk - Video Tools - Export Markers as YouTube Captions.lua" type="script" desc="Export Markers as YouTube Captions">
+      <metadata>
+        <link rel="website" href="https://www.tdspkaudio.com">Website</link>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=286234">Forum Thread</link>
+        <link rel="donation">https://ko-fi.com/tdspkaudio</link>
+        <link rel="donation">https://coindrop.to/tdspkaudio</link>
+      </metadata>
+      <version name="0.1" author="Tadej Supukovic (tdspk)" time="2024-01-13T18:14:59Z">
+        <changelog><![CDATA[First version]]></changelog>
+        <source main="main">https://github.com/tdspk/ReaScripts/raw/6d33fd7a3e59884b52daaf255bbaf7553ac49c09/Video%20Tools/tdspk%20-%20Video%20Tools%20-%20Export%20Markers%20as%20YouTube%20Captions.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>

@@ -205,15 +205,35 @@ local retval, user_input = reaper.GetUserInputs(
 
 if not retval then return end
 
--- Parse input
-local parts = {}
-for part in user_input:gmatch("([^,]*),?") do
-  table.insert(parts, part)
+-- Parse input - fields are comma-separated, but include/exclude can contain commas
+-- So we find the last two commas (field separators) and parse from there
+local comma_positions = {}
+local pos = 1
+while true do
+  local found = user_input:find(",", pos)
+  if not found then break end
+  table.insert(comma_positions, found)
+  pos = found + 1
 end
 
-local include_spec = parts[1] or ""
-local exclude_spec = parts[2] or ""
-local fill_first_input = (parts[3] or "y"):lower():gsub("%s+", "")
+local include_spec, exclude_spec, fill_first_input
+if #comma_positions >= 2 then
+  local second_last = comma_positions[#comma_positions - 1]
+  local last = comma_positions[#comma_positions]
+  include_spec = user_input:sub(1, second_last - 1)
+  exclude_spec = user_input:sub(second_last + 1, last - 1)
+  fill_first_input = user_input:sub(last + 1)
+elseif #comma_positions == 1 then
+  include_spec = user_input:sub(1, comma_positions[1] - 1)
+  exclude_spec = ""
+  fill_first_input = user_input:sub(comma_positions[1] + 1)
+else
+  include_spec = user_input
+  exclude_spec = ""
+  fill_first_input = "y"
+end
+
+fill_first_input = (fill_first_input or "y"):lower():gsub("%s+", "")
 local fill_first = (fill_first_input == "y" or fill_first_input == "yes" or fill_first_input == "1")
 
 local available_channels = build_available_channels(include_spec, exclude_spec)

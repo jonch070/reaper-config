@@ -1,0 +1,173 @@
+desc:Randomize Note Length
+tags: midi
+author: JK Scripts
+// Randomizes MIDI note lengths. Each note-on schedules a note-off at a random
+// time between Min and Max. The original note-off is always suppressed — notes
+// are cut at the scheduled time regardless of how long the key is held.
+//
+// Min/Max can each independently use milliseconds or a tempo-synced grid division.
+//
+// Legato mode: cuts all active notes when a new note-on arrives that is outside
+// the Chord Window. Notes arriving within the Chord Window of each other are
+// treated as a chord and do not cut each other off.
+
+slider1:50<1,4000,1>Min Length (ms)
+slider2:0<0,1,1{ms,Grid}>Min Mode
+slider3:4<0,7,1{1/1,1/2,1/4,1/8,1/16,1/32,1/64,1/128}>Min Grid Division
+slider4:300<1,4000,1>Max Length (ms)
+slider5:0<0,1,1{ms,Grid}>Max Mode
+slider6:5<0,7,1{1/1,1/2,1/4,1/8,1/16,1/32,1/64,1/128}>Max Grid Division
+slider7:0<0,1,1{Off,On}>Legato
+slider8:15<1,100,1>Chord Window (ms)
+
+@init
+srate_ms = srate / 1000;
+
+// Subdivision beat multipliers (relative to quarter note = 1 beat)
+SUBDIV = 8192;
+mem[SUBDIV+0] = 4.0;     // 1/1
+mem[SUBDIV+1] = 2.0;     // 1/2
+mem[SUBDIV+2] = 1.0;     // 1/4
+mem[SUBDIV+3] = 0.5;     // 1/8
+mem[SUBDIV+4] = 0.25;    // 1/16
+mem[SUBDIV+5] = 0.125;   // 1/32
+mem[SUBDIV+6] = 0.0625;  // 1/64
+mem[SUBDIV+7] = 0.03125; // 1/128
+
+// NOTE_SCHED[slot] = scheduled note-off sample time, or -1 if inactive
+// 16 channels * 128 notes = 2048 slots
+NOTE_SCHED = 0;
+i = 0; loop(2048, mem[i] = -1; i += 1;);
+
+// Pending output queue: each entry is STRIDE values
+//   [send_time, msg1, msg2, msg3, slot]
+// Free slots have send_time = -1
+QUEUE  = 2048;
+QSIZE  = 1024;
+STRIDE = 5;
+i = 0; loop(QSIZE, mem[QUEUE + i * STRIDE] = -1; i += 1;);
+
+total_samples   = 0;
+last_noteon_time = -999999;
+min_samps = 1;
+max_samps = 2;
+
+@slider
+min_mode          = slider2 | 0;
+min_grid_idx      = max(0, min(7, slider3 | 0));
+max_mode          = slider5 | 0;
+max_grid_idx      = max(0, min(7, slider6 | 0));
+legato_on         = slider7 | 0;
+chord_window_samps = slider8 * srate_ms;
+
+// Compute ms-based values now; grid values recalculated each block
+min_mode == 0 ? min_samps = max(1, slider1 * srate_ms);
+max_mode == 0 ? max_samps = max(1, slider4 * srate_ms);
+max_samps <= min_samps ? max_samps = min_samps + 1;
+
+@block
+// Recompute grid-synced durations using current tempo
+min_mode == 1 || max_mode == 1 ? (
+  beat_samps = 60.0 / tempo * srate;
+  min_mode == 1 ? min_samps = beat_samps * mem[SUBDIV + min_grid_idx];
+  max_mode == 1 ? max_samps = beat_samps * mem[SUBDIV + max_grid_idx];
+  max_samps <= min_samps ? max_samps = min_samps + 1;
+);
+
+// Flush due note-offs from queue
+i = 0;
+loop(QSIZE,
+  base = QUEUE + i * STRIDE;
+  mem[base] >= 0 && mem[base] < total_samples + samplesblock ? (
+    off = max(0, min((mem[base] - total_samples) | 0, samplesblock - 1));
+    midisend(off, mem[base+1], mem[base+2], mem[base+3]);
+    mem[NOTE_SCHED + mem[base+4]] = -1;
+    mem[base] = -1;
+  );
+  i += 1;
+);
+
+// Process incoming MIDI
+while(midirecv(offset, msg1, msg2, msg3)) (
+  type     = msg1 & 0xF0;
+  ch       = msg1 & 0x0F;
+  note_num = msg2;
+  vel      = msg3;
+  slot     = ch * 128 + note_num;
+
+  type == 0x90 && vel > 0 ? (
+
+    this_noteon_time = total_samples + offset;
+    is_new_phrase    = legato_on && (this_noteon_time - last_noteon_time) > chord_window_samps;
+    last_noteon_time = this_noteon_time;
+
+    is_new_phrase ? (
+      // New phrase: cut all currently active notes at this offset
+      lgt_i = 0;
+      loop(2048,
+        mem[NOTE_SCHED + lgt_i] >= 0 ? (
+          lgt_j = 0;
+          loop(QSIZE,
+            lgt_b = QUEUE + lgt_j * STRIDE;
+            mem[lgt_b] >= 0 && mem[lgt_b+4] == lgt_i ? mem[lgt_b] = -1;
+            lgt_j += 1;
+          );
+          midisend(offset, 0x80 | (lgt_i / 128 | 0), lgt_i % 128, 0);
+          mem[NOTE_SCHED + lgt_i] = -1;
+        );
+        lgt_i += 1;
+      );
+    ) : mem[NOTE_SCHED + slot] >= 0 ? (
+      // Same chord window or non-legato retrigger: cancel only this slot
+      j = 0;
+      loop(QSIZE,
+        base = QUEUE + j * STRIDE;
+        mem[base] >= 0 && mem[base+4] == slot ? mem[base] = -1;
+        j += 1;
+      );
+    );
+
+    // Schedule note-off at a random time between min and max
+    dur = min_samps + rand(max_samps - min_samps);
+    send_time = total_samples + offset + dur;
+    mem[NOTE_SCHED + slot] = send_time;
+
+    // Find a free queue slot and store the scheduled note-off
+    found = 0;
+    j = 0;
+    loop(QSIZE,
+      !found && mem[QUEUE + j * STRIDE] < 0 ? (
+        base = QUEUE + j * STRIDE;
+        mem[base]   = send_time;
+        mem[base+1] = 0x80 | ch;
+        mem[base+2] = note_num;
+        mem[base+3] = 0;
+        mem[base+4] = slot;
+        found = 1;
+      );
+      j += 1;
+    );
+
+    !found ? ( // Queue full fallback: fire note-off immediately
+      midisend(offset, 0x80 | ch, note_num, 0);
+      mem[NOTE_SCHED + slot] = -1;
+    );
+
+    midisend(offset, msg1, msg2, msg3); // Pass note-on through
+
+  ) : (type == 0x80 || (type == 0x90 && vel == 0)) ? (
+    // Suppress original note-off if we have a scheduled one pending
+    mem[NOTE_SCHED + slot] < 0 ? midisend(offset, msg1, msg2, msg3);
+
+  ) : type == 0xB0 && (msg2 == 120 || msg2 == 123) ? (
+    // All Sound Off / All Notes Off: flush queue and pass through
+    i = 0; loop(QSIZE, mem[QUEUE + i * STRIDE] = -1; i += 1;);
+    i = 0; loop(2048,  mem[NOTE_SCHED + i]      = -1; i += 1;);
+    midisend(offset, msg1, msg2, msg3);
+
+  ) : (
+    midisend(offset, msg1, msg2, msg3);
+  );
+);
+
+total_samples += samplesblock;

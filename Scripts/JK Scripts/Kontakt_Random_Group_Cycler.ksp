@@ -1,0 +1,208 @@
+{------------------------------------------------------------}
+{  RANDOM GROUP CYCLER                                       }
+{  for Native Instruments Kontakt (KSP)                      }
+{                                                            }
+{  Each note triggers a random group. The No Repeat knob     }
+{  controls how many different groups must play before the    }
+{  same group is allowed again.                              }
+{                                                            }
+{  Hold ms keeps a group reserved after note-off so it       }
+{  won't be reused while the release tail is still ringing.  }
+{                                                            }
+{  Groups knob defaults to auto-detected count. Lower it     }
+{  if some groups are not part of the round-robin cycle       }
+{  (e.g. release triggers, keyswitches, etc.).               }
+{------------------------------------------------------------}
+
+on init
+    message("")
+    set_script_title("Random Group Cycler")
+    make_perfview
+
+    declare const $MAX_GROUPS := 128
+
+    { --- Auto-detect group count --- }
+    declare $detected
+    $detected := $NUM_GROUPS
+
+    { --- UI --- }
+    declare ui_knob $Groups (1, 128, 1)
+    $Groups := $detected
+    set_text($Groups, "Groups")
+    set_knob_defval($Groups, $detected)
+
+    declare ui_knob $No_Repeat (0, 127, 1)
+    $No_Repeat := 1
+    set_text($No_Repeat, "No Repeat")
+    set_knob_defval($No_Repeat, 1)
+
+    declare ui_knob $Hold_ms (0, 30000, 1)
+    $Hold_ms := 0
+    set_text($Hold_ms, "Hold ms")
+    set_knob_defval($Hold_ms, 0)
+
+    declare ui_label $lbl_detected (3, 1)
+    set_text($lbl_detected, "Detected: " & $detected)
+
+    declare ui_label $lbl_status (3, 1)
+    set_text($lbl_status, "Ready")
+
+    { --- Per-voice polyphonic variables --- }
+    { Each voice keeps its own copy across wait() }
+    declare polyphonic $p_grp
+
+    { --- Voice count per group --- }
+    declare %grp_voices[128]
+
+    { --- History buffer --- }
+    declare %history[128]
+    declare $hist_len := 0
+
+    { --- Candidate pools --- }
+    declare %pool_a[128]
+    declare %pool_b[128]
+    declare %pool_c[128]
+
+    { --- Working variables --- }
+    declare $g
+    declare $h
+    declare $n_a
+    declare $n_b
+    declare $n_c
+    declare $in_hist
+    declare $chosen
+    declare $eff_nr
+    declare $active
+
+    { --- Init arrays --- }
+    $g := 0
+    while ($g < $MAX_GROUPS)
+        %grp_voices[$g] := 0
+        %history[$g] := -1
+        $g := $g + 1
+    end while
+end on
+
+
+on ui_control ($Groups)
+    if ($Groups > $detected)
+        $Groups := $detected
+    end if
+    if ($Groups < 1)
+        $Groups := 1
+    end if
+    if ($No_Repeat >= $Groups)
+        $No_Repeat := $Groups - 1
+    end if
+end on
+
+
+on ui_control ($No_Repeat)
+    if ($No_Repeat >= $Groups)
+        $No_Repeat := $Groups - 1
+    end if
+end on
+
+
+on note
+    disallow_group($ALL_GROUPS)
+
+    $active := $Groups
+    if ($active > $detected)
+        $active := $detected
+    end if
+
+    { Clamp no-repeat to valid range }
+    $eff_nr := $No_Repeat
+    if ($eff_nr >= $active)
+        $eff_nr := $active - 1
+    end if
+
+    { Build 3 candidate pools:                              }
+    {   A = not busy + not in history (ideal)               }
+    {   B = not busy + in history (fallback)                }
+    {   C = all eligible (last resort if everything busy)   }
+    $n_a := 0
+    $n_b := 0
+    $n_c := 0
+
+    $g := 0
+    while ($g < $active)
+        $in_hist := 0
+        if ($eff_nr > 0)
+            $h := 0
+            while ($h < $eff_nr)
+                if ($h < $hist_len)
+                    if (%history[$h] = $g)
+                        $in_hist := 1
+                        $h := $eff_nr
+                    end if
+                end if
+                $h := $h + 1
+            end while
+        end if
+
+        if (%grp_voices[$g] = 0)
+            if ($in_hist = 0)
+                %pool_a[$n_a] := $g
+                $n_a := $n_a + 1
+            else
+                %pool_b[$n_b] := $g
+                $n_b := $n_b + 1
+            end if
+        end if
+
+        %pool_c[$n_c] := $g
+        $n_c := $n_c + 1
+        $g := $g + 1
+    end while
+
+    { Pick: prefer A, then B, then C }
+    if ($n_a > 0)
+        $chosen := %pool_a[random(0, $n_a - 1)]
+    else
+        if ($n_b > 0)
+            $chosen := %pool_b[random(0, $n_b - 1)]
+        else
+            $chosen := %pool_c[random(0, $n_c - 1)]
+        end if
+    end if
+
+    { Push chosen into history (shift right, insert at front) }
+    if ($hist_len < $MAX_GROUPS)
+        $h := $hist_len
+    else
+        $h := $MAX_GROUPS - 1
+    end if
+    while ($h > 0)
+        %history[$h] := %history[$h - 1]
+        $h := $h - 1
+    end while
+    %history[0] := $chosen
+    if ($hist_len < $MAX_GROUPS)
+        $hist_len := $hist_len + 1
+    end if
+
+    { Enable only the chosen group }
+    allow_group($chosen)
+
+    { Mark group as busy, store in polyphonic var for release }
+    %grp_voices[$chosen] := %grp_voices[$chosen] + 1
+    $p_grp := $chosen
+
+    set_text($lbl_status, "Group " & $chosen & "  [" & $n_a & " free]")
+end on
+
+
+on release
+    { Hold the group reserved for the release tail }
+    if ($Hold_ms > 0)
+        wait($Hold_ms * 1000)
+    end if
+
+    { Free the group }
+    %grp_voices[$p_grp] := %grp_voices[$p_grp] - 1
+    if (%grp_voices[$p_grp] < 0)
+        %grp_voices[$p_grp] := 0
+    end if
+end on

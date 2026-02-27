@@ -1,11 +1,10 @@
 -- @description ImportSessionData
--- @version 3.12
+-- @version 3.15
 -- @author MPL
 -- @website http://forum.cockos.com/showthread.php?t=233358
 -- @about This script allow to import tracks, items, FX etc from defined RPP project file
 -- @changelog
---    + FX chain: clean envelopes
---    + FX chain: if clean envelopes, latch value to first point or current
+--    + Settings/Import/FX chain: add option to offline FX at import (can be more safe in some cases)
 
 
     
@@ -65,6 +64,7 @@
           CONF_tr_PAN = 1,
           CONF_tr_FX = 1, 
             -- &2 clear existed
+            -- &4 offline all imported FX
           CONF_tr_FXenv = 1,
             -- &1 clear envelopes
             -- &2 apply first point value to parameter
@@ -81,8 +81,8 @@
           CONF_tr_MAINSEND = 1,
           CONF_tr_CUSTOMCOLOR = 1,
           CONF_tr_LAYOUTS = 0,
-          CONF_tr_LAYOUTS = 0,
           CONF_tr_GROUPMEMBERSHIP = 0, -- &1 import &2 try to not replace current project groups
+          CONF_tr_MUTE = 0,
           CONF_sendlogic_flags2 = 0,
           CONF_sendlogic_desthasrec = 0,
           CONF_sendlogic_desthasnotrec = 0,
@@ -1139,6 +1139,7 @@
             if ImGui.Checkbox( ctx, 'If dest track name is empty##CONF_tr_name2',       EXT.CONF_tr_name&2 == 2 ) then EXT.CONF_tr_name =EXT.CONF_tr_name~2 EXT:save() end
             ImGui.Unindent(ctx, indent)
           end
+          
           if ImGui.Checkbox( ctx, 'Volume##CONF_tr_VOL',                              EXT.CONF_tr_VOL&1 == 1 ) then EXT.CONF_tr_VOL =EXT.CONF_tr_VOL~1 EXT:save() end
           if ImGui.Checkbox( ctx, 'Pan / Width / Pan Law / Pan mode##CONF_tr_PAN',    EXT.CONF_tr_PAN&1 == 1 ) then EXT.CONF_tr_PAN =EXT.CONF_tr_PAN~1 EXT:save() end
           if ImGui.Checkbox( ctx, 'Phase##CONF_tr_PHASE',                             EXT.CONF_tr_PHASE&1 == 1 ) then EXT.CONF_tr_PHASE =EXT.CONF_tr_PHASE~1 EXT:save() end
@@ -1152,6 +1153,7 @@
             if ImGui.Checkbox( ctx, 'Avoid using existing (experimental)##CONF_tr_GROUPMEMBERSHIP2',       EXT.CONF_tr_GROUPMEMBERSHIP&2 == 2 ) then EXT.CONF_tr_GROUPMEMBERSHIP =EXT.CONF_tr_GROUPMEMBERSHIP~2 EXT:save() end
             ImGui.Unindent(ctx, indent)
           end
+          if ImGui.Checkbox( ctx, 'Mute##CONF_tr_MUTE',                               EXT.CONF_tr_MUTE&1 == 1 ) then EXT.CONF_tr_MUTE =EXT.CONF_tr_MUTE~1 EXT:save() end
         ImGui.Unindent(ctx, indent)
       end
       
@@ -1187,6 +1189,7 @@
           if ImGui.Checkbox( ctx, 'Add track FX chain##CONF_tr_FX',                    EXT.CONF_tr_FX&1 == 1 ) then EXT.CONF_tr_FX =EXT.CONF_tr_FX~1 EXT:save() end
           if EXT.CONF_tr_FX&1 == 1 then 
             ImGui.Indent(ctx, indent)
+            if ImGui.Checkbox( ctx, 'Offline FX at import##CONF_tr_FX',                    EXT.CONF_tr_FX&2 == 2 ) then EXT.CONF_tr_FX =EXT.CONF_tr_FX~2 EXT:save() end
             if ImGui.Checkbox( ctx, 'Clean envelopes##CONF_tr_FXenv',                          EXT.CONF_tr_FXenv&1 ==1 ) then EXT.CONF_tr_FXenv =EXT.CONF_tr_FXenv~1 EXT:save() end
             if EXT.CONF_tr_FXenv&1 == 1 then 
               if ImGui.Checkbox( ctx, 'Latch value at first point, otherwise current##CONF_tr_FXenv2',                          EXT.CONF_tr_FXenv&2 ==2 ) then EXT.CONF_tr_FXenv =EXT.CONF_tr_FXenv~2 EXT:save() end
@@ -2447,9 +2450,9 @@
       if EXT.CONF_tr_match_casesens==1 then tr_name_prepared = tr_name:gsub('%s+','') end
       t = {tr_name_prepared}
      else
-      local pat_prepared = word:lower():gsub('%s+','')
-      if EXT.CONF_tr_match_casesens==1 then pat_prepared = word:gsub('%s+','') end
-      for word in tr_name:gmatch('[^%s]+') do t[#t+1] = literalize(pat_prepared) end  
+      for word in tr_name:gmatch('[^%s]+') do 
+        if EXT.CONF_tr_match_casesens==1 then t[#t+1] = literalize(word:gsub('%s+','')) else t[#t+1] = literalize(word:lower():gsub('%s+',''))  end 
+      end  
     end
     for trid = 1,  #DATA.destproj.TRACK do 
       local tr_name_CUR =  DATA.destproj.TRACK[trid].tr_name:lower()
@@ -2622,6 +2625,12 @@
     local gGUID = genGuid('' ) 
     new_chunk = new_chunk:gsub('TRACK[%s]+.-\n', 'TRACK '..gGUID..'\n')
     new_chunk = new_chunk:gsub('AUXRECV .-\n', '\n')
+    
+    if EXT.CONF_tr_FX&2 == 2 then 
+      new_chunk = new_chunk:gsub('BYPASS 0 0', 'BYPASS 0 1')
+      new_chunk = new_chunk:gsub('BYPASS 1 0', 'BYPASS 1 1')
+    end
+    
     SetTrackStateChunk( new_tr, new_chunk, false )
     
     return new_tr,gGUID
@@ -2638,6 +2647,7 @@
     end
     
     
+    if EXT.CONF_tr_MUTE == 1 then         DATA:Import_TransferTrackData_SetTrVal(src_tr, dest_tr, 'B_MUTE') end
     if EXT.CONF_tr_VOL == 1 then          DATA:Import_TransferTrackData_SetTrVal(src_tr, dest_tr, 'D_VOL') end
     if EXT.CONF_tr_PAN == 1 then 
                                                     DATA:Import_TransferTrackData_SetTrVal(src_tr, dest_tr, 'D_PAN') 
@@ -2751,8 +2761,15 @@
   -------------------------------------------------------------------- 
   function DATA:Import_TransferTrackData_FXEnvelopes(src_tr, src_fx) 
     if EXT.CONF_tr_FXenv&1~=1 then return end
-    for envidx = 1, reaper.CountTrackEnvelopes( src_tr ) do
+    -- collect env
+    local t = {}
+    for envidx = 1, CountTrackEnvelopes( src_tr ) do
       local env = reaper.GetTrackEnvelope( src_tr, envidx-1 )
+      t[#t+1] = env
+    end
+    -- apply
+    for i = 1, #t do
+      local env = t[i]
       local retval, fxindex, paramindex = reaper.Envelope_GetParentTrack( env )   
       if paramindex and fxindex == src_fx then
         local dest_env = reaper.GetFXEnvelope( src_tr, fxindex, paramindex, true )

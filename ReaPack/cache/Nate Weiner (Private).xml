@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Nate Weiner (Private)">
+  <category name="Project">
+    <reapack name="NateWeiner: Batch Create Cues from Regions" type="script">
+      <metadata>
+        <description><![CDATA[NateWeiner: Batch Create Cues from Regions
+
+## Installation
+All files will be installed automatically by ReaPack.
+]]></description>
+      </metadata>
+      <version name="1.0.6" author="Nate Weiner" time="2026-02-16T22:41:47.221Z">
+        <changelog><![CDATA[Rename Filename Suffix to Version Tag with live example preview using first region.]]></changelog>
+        <source file="NateWeiner - Batch Create Cues.lua" main="main">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/NateWeiner%20-%20Batch%20Create%20Cues.lua</source>
+        <source file="utils/UI.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/utils/UI.lua</source>
+        <source file="utils/RPPModifier.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/utils/RPPModifier.lua</source>
+        <source file="utils/CSVParser.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/utils/CSVParser.lua</source>
+        <source file="utils/CueCreator.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/utils/CueCreator.lua</source>
+        <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/Shared/NWInit.lua</source>
+        <source file="Shared/TimeUtils.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/Shared/TimeUtils.lua</source>
+        <source file="Shared/ReaperUtils.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/Shared/ReaperUtils.lua</source>
+        <source file="Shared/ReaperTracksAndFolders.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/Shared/ReaperTracksAndFolders.lua</source>
+        <source file="Shared/FileUtils.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/Shared/FileUtils.lua</source>
+        <source file="Shared/SpottingNotesParser.lua">https://nateweiner.com/dist/reaper/private-emr/BatchCreateCues/1.0.6/Shared/SpottingNotesParser.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>

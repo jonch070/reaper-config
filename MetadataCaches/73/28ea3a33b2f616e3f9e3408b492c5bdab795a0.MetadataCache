@@ -1,0 +1,53 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Album 3/AMB03 Testing/beatfader midi test/media"
+F "beatfader midi test_001_05_2026-02-09_15-01_009.wav" 4241796 0 1770674506 0
+D y 2026-02-09 s 96000 n 1 r 1:00:25.885
+D l 0:11.044 i 32
+F "beatfader midi test_003_03_jax_2026-02-11_17-16_015 copy 001.wav" 3061600 0 1770859446 0
+D s 96000 n 1 l 0:07.972 i 32
+F "beatfader midi test_003_03_jax_2026-02-11_17-16_015.wav" 5306056 0 1770859430 0
+D s 96000 n 1 l 0:13.817 i 32
+F "beatfader midi test_005_07_jonny_2026-02-12_14-07_020.wav" 5323140 0 1770930450 0
+D y 2026-02-12 s 96000 n 1 r 1:06:04.675
+D l 0:13.860 i 32
+F "beatfader midi test_007_03_Jonny_2026-02-12_17-19_018.wav" 2652548 0 1770941980 0
+D y 2026-02-12 s 96000 n 1 r 1:06:14.676
+D l 0:06.905 i 32
+F "beatfader midi test_007_03_Jonny_2026-02-12_17-20_020.wav" 1784196 0 1770942038 0
+D y 2026-02-12 s 96000 n 1 r 1:06:20.907
+D l 0:04.644 i 32
+F "beatfader midi test_007_03_Jonny_2026-02-12_17-21_021.wav" 932228 0 1770942066 0
+D y 2026-02-12 s 96000 n 1 r 1:06:23.907
+D l 0:02.425 i 32
+F "beatfader midi test_007_03_Jonny_2026-02-12_17-22_022.wav" 4200836 0 1770942181 0
+D y 2026-02-12 s 96000 n 1 r 1:06:27.253
+D l 0:10.937 i 32
+F "beatfader midi test_009_05_Jonny_2026-02-13_10-22_023.wav" 15571332 0 1771003412 0
+D y 2026-02-13 s 96000 n 1 r 1:05:34.061
+D l 0:40.548 i 32
+F "MixPre-013 [chan 1].wav" 38991516 0 1770940085 0
+D y 2026-02-12 s 96000 n 1 r 1:03:21.138
+D l 1:41.538 i 32
+F "MixPre-013 [chan 2].wav" 38991516 0 1770940085 0
+D y 2026-02-12 s 96000 n 1 r 1:03:21.138
+D l 1:41.538 i 32
+F "MixPre-013 [chan 3].wav" 38991516 0 1770940085 0
+D y 2026-02-12 s 96000 n 1 r 1:03:21.138
+D l 1:41.538 i 32
+F "MixPre-013 [chan 4].wav" 38991516 0 1770940085 0
+D y 2026-02-12 s 96000 n 1 r 1:03:21.138
+D l 1:41.538 i 32
+F "MixPre-013 [chan 5].wav" 38991516 0 1770940085 0
+D y 2026-02-12 s 96000 n 1 r 1:03:21.138
+D l 1:41.538 i 32
+F "MixPre-013 [chan 6].wav" 38991516 0 1770940085 0
+D y 2026-02-12 s 96000 n 1 r 1:03:21.138
+D l 1:41.538 i 32
+F "MixPre-013 [chan 7].wav" 38991516 0 1770940085 0
+D y 2026-02-12 s 96000 n 1 r 1:03:21.138
+D l 1:41.538 i 32
+F MixPre-013.WAV 624507392 0 1689369020 0
+D t 07-14-23 y 2023-07-14 d "sTAKE=013  sSWVER=8.00.5136  sSCENE=MixPre  sFILENAME=MixPre-013.WAV  sTAPE=230714  sCIRCLED=FALSE  sTRK1=MixL  sTRK2=MixR  sTRK3=Ch1  sTRK4=Ch2  sTRK5=Ch3  sTRK6=Ch4  sTRK7=Ch5  sNOTE=  " s 96000
+D n 7 l 3:52.329 i 32
+F "MixPre-013.WAV [chan 7]-glued.wav" 316952 0 1771545924 0
+D y 2026-02-19 s 96000 n 1 r 1:04:41.562
+D l 0:00.816 i 32

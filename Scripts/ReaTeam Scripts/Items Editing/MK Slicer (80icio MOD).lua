@@ -1,10 +1,7 @@
 -- @description MK Slicer (80icio MOD)
 -- @author 80icio
--- @version 1.03
--- @changelog
---   - fixed weird loop range behaviour 
---   - fixed  shift-drag behaviour for moving Trig Line position 
---   - Little design changes
+-- @version 1.10
+-- @changelog - Collect hitpoints bug fixed
 -- @link Forum Thread https://forum.cockos.com/showthread.php?p=2436358#post2436358
 -- @about
 --   This is a lua script based on MK SLICER 2 by @Cool for quick slicing, quantizing by grid, re-quantizing, triggering or sampling audio.
@@ -30,7 +27,7 @@
 --   - Added Mac Osx trackpad swipe gestures
 --   - Improved GUI with better Trig lines and better Grid lines
 --   - Grid Tolerance for light editing on large grid division settings 
---   - Better FFT filtering with smaller buffer for better transient precision
+--   - Allpass-based Low Pass and Hi Pass filters for perfect time accuracy
 
 --[[
 
@@ -77,7 +74,7 @@ local min  = math.min
 local max  = math.max
 local sqrt = math.sqrt
 local ceil  = math.ceil
-local floor = math.floor
+local floor = math.floor   
 local exp = math.exp
 local logx = math.log
 local huge = math.huge      
@@ -154,7 +151,7 @@ ZeroCrossings = tonumber(r.GetExtState(scriptname,'ZeroCrossings'))or 0;
 ItemFadesOverride = tonumber(r.GetExtState(scriptname,'ItemFadesOverride'))or 1;
 ObeyingTheSelection = tonumber(r.GetExtState(scriptname,'ObeyingTheSelection'))or 1;
 ObeyingItemSelection = tonumber(r.GetExtState(scriptname,'ObeyingItemSelection'))or 1;
-XFadeOff = tonumber(r.GetExtState(scriptname,'XFadeOff'))or 0;
+XFadeOff = 0 --tonumber(r.GetExtState(scriptname,'XFadeOff'))or 0;
 Guides_mode = tonumber(r.GetExtState(scriptname,'Guides.norm_val'))or 1;
 OutNote_State = tonumber(r.GetExtState(scriptname,'OutNote.norm_val'))or 1;
 Notes_On = tonumber(r.GetExtState(scriptname,'Notes_On'))or 1;
@@ -492,7 +489,7 @@ function  Check_selection()
         local startT = r.GetMediaItemInfo_Value(itemsel, "D_POSITION")
         
           if i>1 and startT~=startTstore then 
-          --reaper.ShowConsoleMsg(startT .. " " .. startTstore .. "\n")
+      
           Errorcheck = true
           gfx.quit()
           r.ShowMessageBox("Multiple items need to start and end on the same spot ;)", "Slicer", 0)
@@ -500,7 +497,7 @@ function  Check_selection()
           return
           end
           if i>1 and itemlstore~=iteml then
-         -- reaper.ShowConsoleMsg(itemlstore .. " " .. iteml .. "\n")
+      
           Errorcheck = true
           gfx.quit()
           r.ShowMessageBox("Multiple items need to start and end on the same spot ;)", "Slicer", 0)
@@ -510,11 +507,13 @@ function  Check_selection()
         
         startTstore = startT
         itemlstore = iteml
-        local startTqn = r.TimeMap2_timeToQN(0, startT)
-  
+        local startTqn = tonumber(tostring(r.TimeMap_timeToQN(startT)))
+        
        -- local endTqn = r.TimeMap2_timeToQN(0, endT)
-
-        if startTqn - floor(startTqn) < 0.000001 or startTqn - floor(startTqn) > 0.9999  then-- and endTqn - floor(endTqn) <= 0.000001 then
+      -- reaper.ClearConsole()
+       -- reaper.ShowConsoleMsg(startTqn .. ' - ' .. floor(startTqn)..'\n')
+        if floor(startTqn) == startTqn then
+        
         Errorcheck = false
         
         else
@@ -599,7 +598,7 @@ local itemgrpsel =  r.NamedCommandLookup( '_SWS_AWSELGROUPIFGROUP' )
     r.RefreshToolbar( 41156 )
   end
   if mode == 2 then
-  --reaper.ShowConsoleMsg(tostring(r.GetToggleCommandState( 41156 )))
+
      if r.GetToggleCommandState( 41156 ) == 1 then r.Main_OnCommand(41156, 0) end
    
        r.RefreshToolbar( 41156 )
@@ -2267,10 +2266,10 @@ function Loop_Slider:set_norm_val_m_wheel()
     Mult_S = 0.05 -- Set step
     end
     local Step = Mult_S
-    --[[if gfx.mouse_wheel == 0 then return false end  -- return if m_wheel = 0
+    if gfx.mouse_wheel == 0 then return false end  -- return if m_wheel = 0
     if gfx.mouse_wheel > 0 then self.norm_val2 = min(self.norm_val2+Step, 1) end
     if gfx.mouse_wheel < 0 then self.norm_val2 = max(self.norm_val2-Step, 0) end
-    if self.norm_val2 <= self.norm_val then self.norm_val2 = self.norm_val+0.05 end]]--
+    if self.norm_val2 <= self.norm_val then self.norm_val2 = self.norm_val+0.05 end
     return true
 end
 
@@ -3102,13 +3101,13 @@ end
 -- onUp function for Filter Freq sliders ---------icio
 --------------------------------------------------
 function Fltr_Sldrs_onUp()
-   --if Wave.AA then 
+   if Wave.AA then 
    Wave:Multi_Item_Sample_Sum()
       if Wave.State then
          Wave:Redraw() 
          Gate_Gl:Apply_toFiltered()
       end
-  -- end
+   end
 end
 ----------------
 HP_Freq.onUp   = Fltr_Sldrs_onUp
@@ -3140,7 +3139,7 @@ end
 local Gate_Thresh = T_Slider:new(210,380+corrY,160,18, 0.28,0.4,0.7,0.8, "Threshold","Arial",16, readrms )
 function Gate_Thresh:draw_val()
   self.form_val = (self.norm_val-1)*57-3
-  --reaper.ShowConsoleMsg(self.form_val ..'\n')
+
   local x,y,w,h  = self.x,self.y,self.w,self.h
   local val = string.format("%.1f", self.form_val).." dB"
   local val_w, val_h = gfx.measurestr(val)
@@ -3167,7 +3166,7 @@ end
 local Gate_Sensitivity = S_Slider:new(210,401+corrY,160,18, 0.28,0.4,0.7,0.8, "Sensitivity","Arial",16, Sens_Slider )
 function Gate_Sensitivity:draw_val()
   self.form_val = 2+(self.norm_val)*8       -- form_val
-  --reaper.ShowConsoleMsg(self.form_val ..'\n')
+
   local x,y,w,h  = self.x,self.y,self.w,self.h
   local val = string.format("%.1f", self.form_val).." dB"
   local val_w, val_h = gfx.measurestr(val)
@@ -3605,13 +3604,15 @@ qn_check = true
         
         startTstore = startT
         itemlstore = iteml
-        local startTqn = r.TimeMap2_timeToQN(0, startT)
+        local startTqn = tonumber(tostring(r.TimeMap2_timeToQN(0, startT)))
   
 
-        if startTqn - floor(startTqn) < 0.000001 or startTqn - floor(startTqn) > 0.9999  then-- and endTqn - floor(endTqn) <= 0.000001 then
+        if  floor(startTqn) == startTqn then
+        
         qn_check = true
         
         else
+ 
         qn_check = false
         end
      end
@@ -3867,6 +3868,7 @@ Init()
 end -- 
 
 --------------------------------------------------------------------------------------------
+
 if qn_check == false then ---------
 
 ------------------------------------------Error Message-----------------------------------------
@@ -4907,7 +4909,8 @@ local blockline = loop_start
         function beatc(beatpos)
            local retval, measures, cml, fullbeats, cdenom = r.TimeMap2_timeToBeats(0, beatpos)
            local _, division, _, _ = r.GetSetProjectGrid(0,false)
-           beatpos = r.TimeMap2_beatsToTime(0, fullbeats +(division*2))
+           ---beatpos = r.TimeMap2_beatsToTime(0, fullbeats +(division*2))
+           beatpos = r.TimeMap2_beatsToTime(0, fullbeats +(division*2*(cdenom/4)))
            return beatpos
         end
         blockline = beatc(blockline)
@@ -5120,7 +5123,6 @@ if not self.Res_Points then return end -- return if no lines
     reaper.JS_LICE_Clear(linetable[linetablec], RGB(red, green, blue))
     
     reaper.JS_Composite(trackview, ceil(line_x_MV), TrackY, 1, TrackH, linetable[linetablec], 0, 0, 1, 1, true)
-    ---reaper.ShowConsoleMsg(self.Xsc .. "\n")
     linetablec = linetablec+1
 
 end
@@ -5390,7 +5392,7 @@ function Gate_Gl:manual_Correction()
             self.Res_Points[self.cap_ln+1] = {newVelo, newVelo}   -- veloRMS, veloPeak from mouse y
 
         end
-        -- Move Line -----------------------------eccola icio
+        -- Move Line -----------------------------
         if Shift then 
             local curs_x = min(max(gfx.mouse_x, Wave.x), Wave.x + Wave.w) -- x coord
             local curs_y = min(max(gfx.mouse_y, Wave.y), self.Yop)        -- y coord
@@ -5404,7 +5406,7 @@ function Gate_Gl:manual_Correction()
 
         -- Delete Line ---------------------------
         if SButton == 0 and Wave:mouseR_Down() then gfx.x, gfx.y  = mouse_ox, mouse_oy
-            if mouseR_Up_status == 1 and not Wave:mouseDown() then
+            if mouseR_Up_status == 1 then --and not Wave:mouseDown() then
                table.remove(self.Res_Points,self.cap_ln) -- Del self.cap_ln - Элементы смещаются влево!
                table.remove(self.Res_Points,self.cap_ln) -- Поэтому, опять тот же индекс(а не self.cap_ln+1)
                     mouseR_Up_status = 0
@@ -5415,7 +5417,7 @@ function Gate_Gl:manual_Correction()
     
     -- Insert Line(on mouseR_Down) -------------------------
     if SButton == 0 and Guides.norm_val == 1 and not self.cap_ln and Wave:mouseR_Down() then gfx.x, gfx.y  = mouse_ox, mouse_oy
-        if mouseR_Up_status == 1 and not Wave:mouseDown() then
+        if mouseR_Up_status == 1 then --and not Wave:mouseDown() then
             local line_pos = self.start_smpl + (mouse_ox-Wave.x)/self.Xsc  -- Time point(in Samples!) from mouse_ox pos
             --------------------
             local newVelo = (self.Yop - mouse_oy)/(Wave.h*self.scale) -- velo from mouse y pos
@@ -5453,6 +5455,7 @@ function Wave:GetSet_MIDITake()
         return item, take
 end
 ------------------------------
+
 Collect = {}
 function Wave:Collect() -----icio
 local total = 0 + #Collect
@@ -6654,9 +6657,9 @@ function Wave:Create_Track_Accessor(itemn)
 
        
          self.buffer   = r.new_array(block_size)-- main block-buffer
-         self.buffer2   = r.new_array(block_size)
+         --self.buffer2   = r.new_array(block_size)
          self.buffer.clear()
-         self.buffer2.clear()
+         --self.buffer2.clear()
 
 end
 end
@@ -6669,7 +6672,7 @@ function Wave:Destroy_Track_Accessor()
 if getitem == 0 then
     if self.AA then r.DestroyAudioAccessor(self.AA) 
        self.buffer.clear()
-       self.buffer2.clear()
+       --self.buffer2.clear()
     end
  end
 end
@@ -6684,7 +6687,7 @@ Loading = Txt:new(680,450+corrY,260,25, 1, 1, 1, 1, "Loading...",    "Arial", 22
 -- Filter_FFT ----------------------------------------------
 -----------------------------------------------------------
 function Wave:Filter_FFT(lowband, hiband)
---reaper.ShowConsoleMsg(self.buffer[0] .. " - " .. block_size .. "\n")
+
 
 
   --local buf = self.buffer
@@ -6699,7 +6702,7 @@ function Wave:Filter_FFT(lowband, hiband)
       -- Clear lowband bins --
       self.buffer.clear(0, 1, lowband)                  -- clear low bins
       self.buffer2.clear(0, 1, lowband)
-      
+
       -- Clear hiband bins  --
       self.buffer.clear(0, hiband+1, block_size-hiband) -- clear hi bins
       self.buffer2.clear(0, hiband+1, block_size-hiband)
@@ -6718,16 +6721,21 @@ function Wave:Filter_FFT(lowband, hiband)
     
 end 
 
+--[[
 function Wave:Original_FFT()
 
+    for i = 1, #self.buffer do
+    self.buffer[i]= self.buffer[i]*block_size*2
+    end
 
+    --[[
     self.buffer.fft_real(block_size,true)       -- FFT
     self.buffer.ifft_real(block_size,true)      -- iFFT
     ----------------------------------------
-    
+
     
 end 
-
+]]--
 --------------------------------------------------------------------------------
 ---  Create MIDI  --------------------------------------------------------------
 --------------------------------------------------------------------------------
@@ -6781,13 +6789,13 @@ end
 function Wave:table_plus(size, tmp_buf)
 
   local buf=self.out_buf 
-  --reaper.ShowConsoleMsg(#buf.."\n")
+
   local j = 1
   for i = size+1, size + #tmp_buf, 1 do  
       buf[i] = tmp_buf[j]
       j=j+1 
   end
-  --reaper.ShowConsoleMsg(#buf)
+
 end
 
 function Wave:table_plus2(size, tmp_buf)
@@ -6851,20 +6859,84 @@ end
 --------------------------------------------------------------------------------
 ---  triangular crossfade window for FFT filtering artifacts ----------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+--[[
 triaglecrx = {} --------triangular window
 function trianglecrossfade()
   for i = 1, block_size/2 do
-  triaglecrx[i] = (2/block_size)*(i)
-  triaglecrx[i+block_size/2] = ((2/block_size)*((block_size/2)-i))
+    triaglecrx[i] = ((2/block_size)*(i))
+    triaglecrx[block_size-i+1] = triaglecrx[i]
   end
+  
 end
-trianglecrossfade()
+trianglecrossfade()]]--
+--------------------------allpass filter
+function a1_coefficient(break_frequency, sampling_rate)
+    local t = math.tan((math.pi * break_frequency) / sampling_rate)
+    return (t - 1) / (t + 1)
+end    
+
+local function allpass_filter(x)
+        y = a1 * x + dn_1
+        dn_1 = x - a1 * y
+    return y
+end
+
+
+function lowpass_filter(input_signal,cutfreq,srate)
+output_signal ={}
+ax1, ay1 = 0, 0
+dn_1 = 0
+a1= a1_coefficient(cutfreq, srate)
+    for i = 1, #input_signal do
+        output_signal[i] = allpass_filter(input_signal[i])
+        
+        output_signal[i] = (input_signal[i]+output_signal[i])*0.5
+    end
+  return output_signal
+end   
+
+
+function hipass_filter(input_signal,cutfreq,srate)
+output_signal ={}
+ax1, ay1 = 0, 0
+dn_1 = 0
+a1= a1_coefficient(cutfreq, srate)
+    for i = 1, #input_signal do
+        output_signal[i] = allpass_filter(input_signal[i])
+        
+        output_signal[i] = (input_signal[i]+(output_signal[i]*-1))*0.5
+    end
+  return output_signal
+end
+
+----------------------------------------------------------------------2ndorder allpass TEST
+--[[
+function secondorder_allpassfilter(input_signal,cutfreq,BW,sampling_rate)
+local c = math.tan((math.pi * BW) / sampling_rate)
+c = (c - 1) / (c + 1)
+d = -math.cos(2*math.pi*cutfreq/sampling_rate)
+v ={}
+
+for i = 1, #input_signal do
+v[i] = 0
+end
+
+output_signal = {}
+
+  for i = 3, #input_signal do
+  v[i] = input_signal[i]-d*(1-c)*v[i-1]+c*v[i-2]
+    --local v[i]=input_signal[i]-d*(1-c)*v[i-1]+c*v[i-2]
+  output_signal[i]= -c*v[i]+d*(1-c)*v[i-1]+v[i-2]
+  end
+return output_signal
+end
+]]--
 --------------------------------------------------------------------------------
 ---  Multi Item Accessor  ------------------------------------------------------icio accessor----------------------------------------------------------------------
 --------------------------------------------------------------------------------
 
 function Wave:Multi_Item_Sample_Sum()
-local Nofreqcut
+
 
          if not self.State then
               if not self:Set_Values() then return end -- set main values, coordinates etc   
@@ -6881,24 +6953,23 @@ local Nofreqcut
           -- Filter values --------------
           -------------------------------
           -- LP = HiFreq, HP = LowFreq --
-          local Low_Freq, Hi_Freq =  HP_Freq.form_val, LP_Freq.form_val
-          
+          Low_Freq, Hi_Freq =  HP_Freq.form_val, LP_Freq.form_val
+         --[[   
           if Low_Freq == 20 and Hi_Freq == 20000 then 
              Nofreqcut = true
           else
              Nofreqcut = false
           end
-        
-            local bin_freq = srate/(block_size*2)          -- freq step 
-            local lowband  = Low_Freq/bin_freq             -- low bin
+        ]]--
+           -- local bin_freq = srate/(block_size*2)          -- freq step 
+            --local lowband  = Low_Freq/bin_freq             -- low bin
            
             
-            local hiband   = Hi_Freq/bin_freq              -- hi bin
+           -- local hiband   = Hi_Freq/bin_freq              -- hi bin
       
-            lowband = floor(lowband/2)*2 --- hi band and lo band
-            hiband  = ceil(hiband/2)*2  
-           
-          
+            --lowband = floor(lowband/2)*2 --- hi band and lo band
+            --hiband  = ceil(hiband/2)*2  
+
           -------------------------------------------------------------------------
           -- Filtering >> samples to out_buf >> to table >> create peaks ----------
           -------------------------------------------------------------------------
@@ -6913,7 +6984,7 @@ local Nofreqcut
                                        
                  end
                  
-              if Nofreqcut == false then
+              --[[if Nofreqcut == false then
                  
                  tmp_buf = r.new_array(size)
                  tmp_buf2 = r.new_array(size)
@@ -6938,20 +7009,20 @@ local Nofreqcut
                          local emptysamples2 = emptysamples - self.Xblock/2
     
                            
-                         self.buffer.clear(0, emptysamples, self.Xblock-emptysamples)
+                         self.buffer.clear(0, emptysamples+1, self.Xblock-emptysamples)
                        
                          if emptysamples2<= 0 then
                            self.buffer2.clear()
                          else
 
-                           self.buffer2.clear(0, emptysamples2, self.Xblock-emptysamples2)
+                           self.buffer2.clear(0, emptysamples2+1, self.Xblock-emptysamples2)
                          end
                      end
                  
                  
     
                               
-                               self:Filter_FFT(lowband, hiband)-- Filter(note: don't use out of range freq!)
+                              -- self:Filter_FFT(lowband, hiband)-- Filter(note: don't use out of range freq!)
                   
                                
                      local bufpos = ((block-1)* self.Xblock)
@@ -6978,7 +7049,7 @@ local Nofreqcut
                    end
               tmp_buf2.clear()  
               
-              else -----------------if no filter 
+              else -----------------if no filter ]]--
               
               tmp_buf = r.new_array(size)
              
@@ -7000,13 +7071,13 @@ local Nofreqcut
                                                 local emptysamples = self.Xblock - ((self.Xblock*self.total_XBlocks)-self.selSamples)
                                   
                                               
-                                                  self.buffer.clear(0, emptysamples, self.Xblock-emptysamples)
+                                                  self.buffer.clear(0, emptysamples+1, self.Xblock-emptysamples)
                               end
                           
                         end
-                    
-          
-                                  self:Original_FFT()
+                        
+                        
+
                                   
                         
                       
@@ -7023,7 +7094,7 @@ local Nofreqcut
                            
                     end
           
-              end
+              --end
              
              
              
@@ -7063,9 +7134,27 @@ local Nofreqcut
   Wave:Destroy_Track_Accessor()
   end
   
+  if  Hi_Freq ~= 20000 then
+  
+    self.out_buf = lowpass_filter(self.out_buf, Hi_Freq, srate)
+    self.out_buf = lowpass_filter(self.out_buf, Hi_Freq, srate)
+    self.out_buf = lowpass_filter(self.out_buf, Hi_Freq, srate)
+  end
+  
+  if  Low_Freq ~= 20 then
+
+    self.out_buf = hipass_filter(self.out_buf, Low_Freq, srate)
+    self.out_buf = hipass_filter(self.out_buf, Low_Freq, srate)
+    self.out_buf = hipass_filter(self.out_buf, Low_Freq, srate)
+
+  end
+  
+  for i = 1, #self.out_buf do --------normalize to buffersize
+    self.out_buf[i]= self.out_buf[i]*block_size*2
+  end
+  
   self:Create_Peaks()
   self.State = true -- Change State
-
 
 end
  
@@ -7186,7 +7275,7 @@ function Wave:draw_waveform(r,g,b,a)
           end
         curr = ceil(next)
         local y, y2 = Y - min_peak *Ysc, Y - max_peak *Ysc
---reaper.ShowConsoleMsg(y-y2.." ")
+
     gfx.set(r,g,b+((y-y2)/1000),a)
         gfx.line(i,y, i,y2) -- здесь всегда x=i --- disegna icio
     end 
@@ -7281,7 +7370,7 @@ end
 
 --------------------------
 function Wave:Set_Cursor()
-  if SButton == 0 and self:mouseDown() and not(Ctrl or Shift) then  
+  if SButton == 0  and self:mouseDown() and ccntrLcheck == true and not(Ctrl or Shift) then  
     if self.insrc_mx then local New_Pos = self.sel_start + (self.insrc_mx/self.X_scale )/srate
        r.SetEditCurPos(New_Pos, false, true)    -- true-seekplay(false-no seekplay) 
     end
@@ -7313,7 +7402,7 @@ end
     self:Get_Cursor()
     self:Set_Cursor()   
     -----------------------------------------
-    --- Wave Zoom(horizontal) ---------------
+    --- Wave Zoom(horizontal) ---------------eccolo
     if self:mouseIN() and gfx.mouse_wheel~=0 and not(Ctrl or Shift) then 
     local M_Wheel = gfx.mouse_wheel
       -------------------
@@ -7355,7 +7444,7 @@ end
     end
     -----------------------------------------
     --- Wave Move ---------------------------
-    if gfx.mouse_cap ==1 then --------
+    if self:mouseDown() and gfx.mouse_cap ==1 then --------
       self.Pos = self.Pos + (last_x - gfx.mouse_x)/(self.Zoom*Z_w) --gfx.mouse_x
       self.Pos = max(self.Pos, 0)
       self.Pos = min(self.Pos, (self.w - self.w/self.Zoom)/Z_w )
@@ -7848,11 +7937,14 @@ function Info_Line()
   end
 
 end
-
+-------------------------------------
+ccntrLcheck = true
+ccntrLcheck_time = 0
 ---------------------------------------
 --   Mainloop   ------------------------
 ---------------------------------------
 function mainloop()
+
  exit()
     -- zoom level -- 
     Wnd_WZ = r.GetExtState(scriptname, "zoomWZ") or 1044
@@ -7867,9 +7959,14 @@ function mainloop()
   
     -- mouse and modkeys --
     if gfx.mouse_cap&2==0 then mouseR_Up_status = 1 end
+    if gfx.mouse_cap&3==3 then 
+    ccntrLcheck = false 
+    ccntrLcheck_time = reaper.time_precise()
+    end
     if gfx.mouse_cap&1==1   and last_mouse_cap&1==0  or   -- L mouse
        gfx.mouse_cap&2==2   and last_mouse_cap&2==0  or   -- R mouse
        gfx.mouse_cap&64==64 and last_mouse_cap&64==0 then -- M mouse
+       if reaper.time_precise()>ccntrLcheck_time + 0.1 then ccntrLcheck = true end
        mouse_ox, mouse_oy = gfx.mouse_x, gfx.mouse_y 
     end
     Ctrl  = gfx.mouse_cap&4==4   -- Ctrl  state
@@ -7878,6 +7975,7 @@ function mainloop()
     Alt   = gfx.mouse_cap&16==16 -- Alt state
 
     if gfx.mouse_cap&1==1 then 
+    
        mouse_oxz = gfx.mouse_x/Z_w
        mouse_oyz = gfx.mouse_y/Z_h
           if mouse_oxz <= 1034 and mouse_oyz <= 360 then
@@ -7961,6 +8059,8 @@ item2 = context_menu:add_item({label = "Donate to 80icio (PayPal)", toggleable =
 item2.command = function()
                      OpenURL('https://paypal.me/80icio')
 end
+
+
 item22 = context_menu:add_item({label = "Donate to Cool (PayPal)|", toggleable = false})
 item22.command = function()
                      OpenURL('https://paypal.me/MKokarev')
@@ -8171,6 +8271,7 @@ if ObeyingItemSelection == 1 then
            else
            item15 = context_menu:add_item({label = "Time Selection Require Item(s) Selection|", toggleable = true, selected = false, active = true})
 end
+
 item15.command = function()
                      if item15.selected == true then 
                      ObeyingItemSelection = 1
@@ -8182,10 +8283,10 @@ item15.command = function()
 end
 
 
-item16 = context_menu:add_item({label = ">User Settings (Advanced)"})
-item16.command = function()
+--item16 = context_menu:add_item({label = ">User Settings (Advanced)"})
+--item16.command = function()
 
-end
+--end
 
 
 item17 = context_menu:add_item({label = "Set User Defaults", toggleable = false})
@@ -8193,85 +8294,86 @@ item17.command = function()
 user_defaults()
 end
 
+  
+  item18 = context_menu:add_item({label = "Reset All Setted User Defaults", toggleable = false})
+  item18.command = function()
+  
+        r.SetExtState(scriptname,'DefaultXFadeTime',15,true);
+        r.SetExtState(scriptname,'DefaultLpadTime',0,true);
+        r.SetExtState(scriptname,'DefaultQStrength',100,true);
+        r.SetExtState(scriptname,'DefaultLP',1,true);
+        r.SetExtState(scriptname,'DefaultHP',0.001,true);
+        r.SetExtState(scriptname,'DefaultSens',0.375,true);
+        r.SetExtState(scriptname,'DefaultOffset',0.5,true);
+        r.SetExtState(scriptname,'MIDI_Base_Oct',2,true);
+        r.SetExtState(scriptname,'Trigger_Oct_Shift',0,true);
+  
+  end
 
-item18 = context_menu:add_item({label = "Reset All Setted User Defaults", toggleable = false})
-item18.command = function()
-
-      r.SetExtState(scriptname,'DefaultXFadeTime',15,true);
-      r.SetExtState(scriptname,'DefaultLpadTime',0,true);
-      r.SetExtState(scriptname,'DefaultQStrength',100,true);
-      r.SetExtState(scriptname,'DefaultLP',1,true);
-      r.SetExtState(scriptname,'DefaultHP',0.001,true);
-      r.SetExtState(scriptname,'DefaultSens',0.375,true);
-      r.SetExtState(scriptname,'DefaultOffset',0.5,true);
-      r.SetExtState(scriptname,'MIDI_Base_Oct',2,true);
-      r.SetExtState(scriptname,'Trigger_Oct_Shift',0,true);
-
-end
-
-
-item19 = context_menu:add_item({label = "|XFades and Fill Gaps On/Off (Experimental)", toggleable = false})
-item19.command = function()
- if XFadeOff == 1 then XFadeOff = 0
-elseif XFadeOff == 0 then XFadeOff = 1
-end
-      r.SetExtState(scriptname,'XFadeOff',XFadeOff,true);
-end
-
-
-item20 = context_menu:add_item({label = "|Reset Controls to User Defaults (Restart required)|<", toggleable = false})
-item20.command = function()
-Reset_to_def = 1
-  --sliders--
-      DefaultXFadeTime = tonumber(r.GetExtState(scriptname,'DefaultXFadeTime'))or 15;
-      DefaultLpadTime = tonumber(r.GetExtState(scriptname,'DefaultLpadTime'))or 0;
-      DefaultQStrength = tonumber(r.GetExtState(scriptname,'DefaultQStrength'))or 100;
-      DefaultHP = tonumber(r.GetExtState(scriptname,'DefaultHP'))or 0.001;
-      DefaultLP = tonumber(r.GetExtState(scriptname,'DefaultLP'))or 1;
-      DefaultSens = tonumber(r.GetExtState(scriptname,'DefaultSens'))or 0.375;
-      DefaultOffset = tonumber(r.GetExtState(scriptname,'DefaultOffset'))or 0.5;
-  --sheckboxes--
-     DefMIDI_Mode =  1;
-     DefSampler_preset_state =  1;
-     DefGuides_mode =  1;
-     DefOutNote_State =  1;
-     DefGate_VeloScale =  1;
-     DefGate_VeloScale2 =  1;
-     DefXFadeOff = 0
-
-  --sliders--
-      r.SetExtState(scriptname,'CrossfadeTime',DefaultXFadeTime,true);
-      r.SetExtState(scriptname,'LpadTime',DefaultLpadTime,true);
-      r.SetExtState(scriptname,'QuantizeStrength',DefaultQStrength,true);
-      r.SetExtState(scriptname,'Offs_Slider',DefaultOffset,true);
-      r.SetExtState(scriptname,'HF_Slider',DefaultHP,true);
-      r.SetExtState(scriptname,'LF_Slider',DefaultLP,true);
-      r.SetExtState(scriptname,'Sens_Slider',DefaultSens,true);
-  --sheckboxes--
-      r.SetExtState(scriptname,'Guides.norm_val',DefGuides_mode,true);
-      if Notes_On == 1 then OutNote.norm_val = OutNote2.norm_val end
-      r.SetExtState(scriptname,'OutNote.norm_val',DefOutNote_State,true);
-      r.SetExtState(scriptname,'Midi_Sampler.norm_val',DefMIDI_Mode,true);
-      r.SetExtState(scriptname,'Sampler_preset.norm_val',DefSampler_preset_state,true);
-      r.SetExtState(scriptname,'XFadeOff',DefXFadeOff,true);
-      r.SetExtState(scriptname,'Gate_VeloScale.norm_val',DefGate_VeloScale,true);
-      r.SetExtState(scriptname,'Gate_VeloScale.norm_val2',DefGate_VeloScale2,true);
-
-end
+--[[
+  item19 = context_menu:add_item({label = "|XFades and Fill Gaps On/Off (Experimental)", toggleable = false})
+  item19.command = function()
+  if XFadeOff == 1 then XFadeOff = 0
+  else
+  XFadeOff = 1 
+  end
+        r.SetExtState(scriptname,'XFadeOff',XFadeOff,true);
+  end
+]]--
+  
+  item20 = context_menu:add_item({label = "|Reset Controls to User Defaults (Restart required)|", toggleable = false})
+  item20.command = function()
+  Reset_to_def = 1
+    --sliders--
+        DefaultXFadeTime = tonumber(r.GetExtState(scriptname,'DefaultXFadeTime'))or 15;
+        DefaultLpadTime = tonumber(r.GetExtState(scriptname,'DefaultLpadTime'))or 0;
+        DefaultQStrength = tonumber(r.GetExtState(scriptname,'DefaultQStrength'))or 100;
+        DefaultHP = tonumber(r.GetExtState(scriptname,'DefaultHP'))or 0.001;
+        DefaultLP = tonumber(r.GetExtState(scriptname,'DefaultLP'))or 1;
+        DefaultSens = tonumber(r.GetExtState(scriptname,'DefaultSens'))or 0.375;
+        DefaultOffset = tonumber(r.GetExtState(scriptname,'DefaultOffset'))or 0.5;
+    --sheckboxes--
+       DefMIDI_Mode =  1;
+       DefSampler_preset_state =  1;
+       DefGuides_mode =  1;
+       DefOutNote_State =  1;
+       DefGate_VeloScale =  1;
+       DefGate_VeloScale2 =  1;
+       DefXFadeOff = 0
+  
+    --sliders--
+        r.SetExtState(scriptname,'CrossfadeTime',DefaultXFadeTime,true);
+        r.SetExtState(scriptname,'LpadTime',DefaultLpadTime,true);
+        r.SetExtState(scriptname,'QuantizeStrength',DefaultQStrength,true);
+        r.SetExtState(scriptname,'Offs_Slider',DefaultOffset,true);
+        r.SetExtState(scriptname,'HF_Slider',DefaultHP,true);
+        r.SetExtState(scriptname,'LF_Slider',DefaultLP,true);
+        r.SetExtState(scriptname,'Sens_Slider',DefaultSens,true);
+    --sheckboxes--
+        r.SetExtState(scriptname,'Guides.norm_val',DefGuides_mode,true);
+        if Notes_On == 1 then OutNote.norm_val = OutNote2.norm_val end
+        r.SetExtState(scriptname,'OutNote.norm_val',DefOutNote_State,true);
+        r.SetExtState(scriptname,'Midi_Sampler.norm_val',DefMIDI_Mode,true);
+        r.SetExtState(scriptname,'Sampler_preset.norm_val',DefSampler_preset_state,true);
+        r.SetExtState(scriptname,'XFadeOff',DefXFadeOff,true);
+        r.SetExtState(scriptname,'Gate_VeloScale.norm_val',DefGate_VeloScale,true);
+        r.SetExtState(scriptname,'Gate_VeloScale.norm_val2',DefGate_VeloScale2,true);
+  
+  end
 
 
-item21 = context_menu:add_item({label = "|Reset Window Size", toggleable = false})
-item21.command = function()
-store_window()
-           xpos = r.GetExtState(scriptname, "window_x") or 400
-           ypos = r.GetExtState(scriptname, "window_y") or 320
-    local Wnd_Dock, Wnd_X,Wnd_Y = dock_pos, xpos, ypos
-    Wnd_W,Wnd_H = 1044,490 -- global values(used for define zoom level)
-    -- Re-Init window ------
-    gfx.init( Wnd_Title, Wnd_W,Wnd_H, Wnd_Dock, Wnd_X,Wnd_Y )
-    gfx.update()
-
-end
+  item21 = context_menu:add_item({label = "|Reset Window Size", toggleable = false})
+  item21.command = function()
+  store_window()
+             xpos = r.GetExtState(scriptname, "window_x") or 400
+             ypos = r.GetExtState(scriptname, "window_y") or 320
+      local Wnd_Dock, Wnd_X,Wnd_Y = dock_pos, xpos, ypos
+      Wnd_W,Wnd_H = 1044,490 -- global values(used for define zoom level)
+      -- Re-Init window ------
+      gfx.init( Wnd_Title, Wnd_W,Wnd_H, Wnd_Dock, Wnd_X,Wnd_Y )
+      gfx.update()
+  
+  end
 end
 
 function getitem()

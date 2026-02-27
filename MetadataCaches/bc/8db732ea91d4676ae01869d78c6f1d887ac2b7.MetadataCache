@@ -1,0 +1,17 @@
+C10018 /Users/jonathankawchuk/Desktop/chord_test
+F sine_B5_987Hz.wav 432044 0 1771983165 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_C4_261Hz.wav 432044 0 1771983165 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_C5_523Hz.wav 432044 0 1771983165 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_E4_329Hz.wav 432044 0 1771983165 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_E5_659Hz.wav 432044 0 1771983165 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_G4_391Hz.wav 432044 0 1771983165 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_G5_783Hz.wav 432044 0 1771983165 0
+D s 48000 n 1 l 0:03.000 i 24
+F test_chord_c_major.wav 144044 0 1771983165 0
+D s 48000 n 1 l 0:01.000 i 24

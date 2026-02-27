@@ -1,0 +1,295 @@
+{------------------------------------------------------------}
+{  RANDOM DISCRETE OUTPUT ROUTER  v5                         }
+{  for Native Instruments Kontakt (KSP)                      }
+{------------------------------------------------------------}
+{                                                            }
+{  =================== SETUP (one-time) ===================  }
+{                                                            }
+{  This script REQUIRES 16 groups in your instrument.        }
+{  Each group must have the same sample(s) loaded.           }
+{  Each group must be routed to a different mono output.     }
+{                                                            }
+{  Steps:                                                    }
+{  1. Kontakt Output section: Presets -> Mono 16x            }
+{  2. Open your instrument's Group Editor                    }
+{  3. You should have Group 0 with your sample(s)            }
+{  4. Select all zones in Group 0 (Ctrl+A in mapping editor) }
+{  5. Edit -> Copy                                           }
+{  6. Click "+" to create Group 1, select it                 }
+{  7. Edit -> Paste                                          }
+{  8. Repeat steps 6-7 for Groups 2 through 15              }
+{     (you need 16 groups total: Group 0 - Group 15)         }
+{  9. Route each group to its output:                        }
+{     Group 0  -> Out 1     Group 8  -> Out 9                }
+{     Group 1  -> Out 2     Group 9  -> Out 10               }
+{     Group 2  -> Out 3     Group 10 -> Out 11               }
+{     Group 3  -> Out 4     Group 11 -> Out 12               }
+{     Group 4  -> Out 5     Group 12 -> Out 13               }
+{     Group 5  -> Out 6     Group 13 -> Out 14               }
+{     Group 6  -> Out 7     Group 14 -> Out 15               }
+{     Group 7  -> Out 8     Group 15 -> Out 16               }
+{  10. Paste this script into Script Editor, press Apply     }
+{  11. REAPER: right-click Kontakt FX -> Outputs ->          }
+{      add channels to match                                 }
+{                                                            }
+{  ==========================================================}
+
+on init
+    message("")
+    set_script_title("Discrete Output Router v5")
+    make_perfview
+
+    { === UI === }
+    declare ui_knob $Channels (2, 16, 1)
+    $Channels := 16
+    set_text($Channels, "Channels")
+    set_knob_defval($Channels, 16)
+
+    declare ui_knob $Skip_Ch (0, 16, 1)
+    $Skip_Ch := 4
+    set_text($Skip_Ch, "Skip")
+    set_knob_defval($Skip_Ch, 4)
+
+    declare ui_knob $NoRepeat (0, 15, 1)
+    $NoRepeat := 1
+    set_text($NoRepeat, "NoRepeat")
+    set_knob_defval($NoRepeat, 1)
+
+    declare ui_knob $Hold_ms (100, 30000, 1)
+    $Hold_ms := 5000
+    set_text($Hold_ms, "Hold ms")
+    set_knob_defval($Hold_ms, 5000)
+
+    declare ui_label $lbl_status (3, 1)
+    set_text($lbl_status, "Ready")
+
+    declare ui_label $lbl_info (6, 2)
+
+    { === Polyphonic per-voice vars === }
+    declare polyphonic $p_bus
+    declare polyphonic $p_slot
+
+    { === State === }
+    declare %ch_voices[16]
+    declare %evt_id[256]
+    declare %evt_ch[256]
+    declare %history[16]
+    declare $hist_len := 0
+    declare %pool[16]
+
+    { === Working vars === }
+    declare $i
+    declare $g
+    declare $chosen
+    declare $n_pool
+    declare $in_hist
+    declare $h
+    declare $eff_nr
+    declare $is_skip
+    declare $ch_num
+
+    { === Auto-detect sample length from zones === }
+    { If this section causes a compile error, delete from }
+    { here to "End auto-detect" and set Hold_ms manually  }
+    declare $z_idx
+    declare $z_id
+    declare $z_len
+    declare $longest := 0
+    declare $auto_ms := 0
+
+    $z_idx := 0
+    while ($z_idx < $NUM_ZONES)
+        $z_id := get_zone_id($z_idx)
+        $z_len := get_zone_par($z_id, $ZONE_PAR_SAMPLE_END) ...
+            - get_zone_par($z_id, $ZONE_PAR_SAMPLE_START)
+        if ($z_len > $longest)
+            $longest := $z_len
+        end if
+        $z_idx := $z_idx + 1
+    end while
+
+    if ($longest > 0)
+        { Try interpreting as samples at 48kHz: ms = samples / 48 }
+        $auto_ms := ($longest + 48) / 48
+
+        { If result is unreasonable, try as microseconds }
+        if ($auto_ms > 30000)
+            $auto_ms := ($longest + 1000) / 1000
+        end if
+        if ($auto_ms < 100)
+            $auto_ms := ($longest + 1000) / 1000
+        end if
+
+        { Apply if reasonable }
+        if ($auto_ms >= 100)
+            if ($auto_ms <= 30000)
+                $Hold_ms := $auto_ms
+            end if
+        end if
+    end if
+    { === End auto-detect === }
+
+    { === Init arrays === }
+    $i := 0
+    while ($i < 16)
+        %ch_voices[$i] := 0
+        %history[$i] := -1
+        $i := $i + 1
+    end while
+
+    $i := 0
+    while ($i < 256)
+        %evt_id[$i] := -1
+        %evt_ch[$i] := -1
+        $i := $i + 1
+    end while
+
+    set_text($lbl_info, "Hold: " & $Hold_ms & "ms  |  " ...
+        & "Groups: " & $NUM_GROUPS & "  |  " ...
+        & "Skip=" & $Skip_Ch & " NoRepeat=" & $NoRepeat)
+end on
+
+
+on note
+    disallow_group($ALL_GROUPS)
+
+    { Clamp NoRepeat }
+    $eff_nr := $NoRepeat
+    if ($eff_nr > $Channels - 2)
+        $eff_nr := $Channels - 2
+    end if
+    if ($eff_nr < 0)
+        $eff_nr := 0
+    end if
+
+    { === PASS 1: free + not in history (best) === }
+    $n_pool := 0
+    $g := 0
+    while ($g < $Channels)
+        $ch_num := $g + 1
+        $is_skip := 0
+        if ($Skip_Ch > 0)
+            if ($ch_num = $Skip_Ch)
+                $is_skip := 1
+            end if
+        end if
+
+        if ($is_skip = 0)
+            if (%ch_voices[$g] = 0)
+                $in_hist := 0
+                if ($eff_nr > 0)
+                    $h := 0
+                    while ($h < $eff_nr)
+                        if ($h < $hist_len)
+                            if (%history[$h] = $g)
+                                $in_hist := 1
+                                $h := $eff_nr
+                            end if
+                        end if
+                        $h := $h + 1
+                    end while
+                end if
+
+                if ($in_hist = 0)
+                    %pool[$n_pool] := $g
+                    $n_pool := $n_pool + 1
+                end if
+            end if
+        end if
+        $g := $g + 1
+    end while
+
+    { === PASS 2: free but in history (ok) === }
+    if ($n_pool = 0)
+        $g := 0
+        while ($g < $Channels)
+            $ch_num := $g + 1
+            $is_skip := 0
+            if ($Skip_Ch > 0)
+                if ($ch_num = $Skip_Ch)
+                    $is_skip := 1
+                end if
+            end if
+            if ($is_skip = 0)
+                if (%ch_voices[$g] = 0)
+                    %pool[$n_pool] := $g
+                    $n_pool := $n_pool + 1
+                end if
+            end if
+            $g := $g + 1
+        end while
+    end if
+
+    { === PASS 3: any eligible (last resort) === }
+    if ($n_pool = 0)
+        $g := 0
+        while ($g < $Channels)
+            $ch_num := $g + 1
+            $is_skip := 0
+            if ($Skip_Ch > 0)
+                if ($ch_num = $Skip_Ch)
+                    $is_skip := 1
+                end if
+            end if
+            if ($is_skip = 0)
+                %pool[$n_pool] := $g
+                $n_pool := $n_pool + 1
+            end if
+            $g := $g + 1
+        end while
+    end if
+
+    { === Pick random === }
+    $chosen := %pool[random(0, $n_pool - 1)]
+
+    { === Update history === }
+    if ($hist_len < 16)
+        $h := $hist_len
+    else
+        $h := 15
+    end if
+    while ($h > 0)
+        %history[$h] := %history[$h - 1]
+        $h := $h - 1
+    end while
+    %history[0] := $chosen
+    if ($hist_len < 16)
+        $hist_len := $hist_len + 1
+    end if
+
+    { === Route: enable ONLY the chosen group === }
+    allow_group($chosen)
+
+    { === Track with polyphonic vars === }
+    %ch_voices[$chosen] := %ch_voices[$chosen] + 1
+    $p_bus := $chosen
+
+    $i := 0
+    while ($i < 256)
+        if (%evt_id[$i] = -1)
+            %evt_id[$i] := $EVENT_ID
+            %evt_ch[$i] := $chosen
+            $p_slot := $i
+            $i := 256
+        end if
+        $i := $i + 1
+    end while
+
+    set_text($lbl_status, "-> Out " & ($chosen + 1) ...
+        & "  [" & $n_pool & " avail]")
+end on
+
+
+on release
+    { p_bus and p_slot are POLYPHONIC (per-voice). }
+    { Each voice keeps its own values across wait(). }
+    wait($Hold_ms * 1000)
+
+    %ch_voices[$p_bus] := %ch_voices[$p_bus] - 1
+    if (%ch_voices[$p_bus] < 0)
+        %ch_voices[$p_bus] := 0
+    end if
+
+    %evt_id[$p_slot] := -1
+    %evt_ch[$p_slot] := -1
+end on

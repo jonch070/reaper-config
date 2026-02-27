@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam JSFX" commit="6392c106cbec0a0283d223a01df79fa8297a0869">
+<index version="1" name="ReaTeam JSFX" commit="36b372806f6b0fe8448cf268e451dc20ca81bd11">
   <category name="Development">
     <reapack name="philranger_GUI and Audio Library.jsfx" type="effect" desc="GUI and Audio Library">
       <metadata>
@@ -3405,6 +3405,21 @@ E.g. at 44.1/48kHz audio interface sample rate the recommended buffer size is <=
       <version name="1.06" author="T.Rochebois" time="2016-08-08T20:46:50Z">
         <changelog><![CDATA[Initial release]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/4a33bbe6110bf1c5f37430bf245bbd058512148e/Modulation/TiaR_Ze%20Little%20Scanner%20Chorus.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="tilr_Albeton - Autopan.jsfx" type="effect" desc="Albeton - Autopan">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Albeton - Autopan\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 JS clone of Ableton auto-pan stock plug-in.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0.0" author="tilr" time="2026-01-26T16:01:06Z">
+        <source>https://github.com/ReaTeam/JSFX/raw/36b372806f6b0fe8448cf268e451dc20ca81bd11/Modulation/tilr_Albeton%20-%20Autopan.jsfx</source>
       </version>
     </reapack>
   </category>

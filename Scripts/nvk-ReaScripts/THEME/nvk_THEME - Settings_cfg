@@ -4,8 +4,8 @@ config = {
 		cursor_y = 611.0,
 		h = 611.0,
 		w = 430.0,
-		x = 2236.0,
-		y = 392.0
+		x = 1010.0,
+		y = 386.0
 	},
 	always_add_new_instance = false,
 	always_on_top = false,
@@ -16,18 +16,15 @@ config = {
 	child_gradient = false,
 	color_theme = {
 		colors = {
-			10378072,
-			9792582,
-			9341015,
-			5864276,
-			5405559,
-			5336979,
-			8026018,
-			8677265
+			5207853,
+			9480533,
+			15528862,
+			9206379,
+			5986368
 		},
 		default = true,
-		id = 1,
-		name = "nvk_RAINBOW"
+		id = 11,
+		name = "Forest"
 	},
 	color_themes = {
 		
@@ -54,6 +51,7 @@ config = {
 	},
 	font_size = 12,
 	font_size_reinit = true,
+	force_resizeable_window = false,
 	fx_custom = {
 		{
 			id = "{8C006C66-76B1-774F-89E8-8FFBF250D8C0}",
@@ -84,7 +82,7 @@ config = {
 	},
 	tab_active = 0,
 	track_color_depth = false,
-	track_color_preserve = false,
+	track_color_preserve = true,
 	track_color_project_confirm = true,
 	track_color_randomize_all = false,
 	track_color_randomize_starting = false,

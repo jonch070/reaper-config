@@ -1,0 +1,315 @@
+desc:Seldon Black
+tags: midi generator stochastic orchestral
+author: JK Scripts
+// Receives MIDI notes; scatters them across random octaves on random channels.
+// Pitch content comes from input notes, not random chromaticism.
+
+slider1:0<-4,4,1>Bottom Octave (offset from input)
+slider2:0<-4,4,1>Top Octave (offset from input)
+slider3:16<0.25,64,0.25>Rate
+slider4:70<0,100,0.1>Probability (%)
+slider5:10<1,100,0.1>Note Len Min (% of step)
+slider6:40<1,100,0.1>Note Len Max (% of step)
+slider7:16<1,16,1>Instruments (MIDI ch 1-N)
+slider8:90<1,127,1>Max Velocity
+slider9:30<1,127,1>Min Velocity
+slider10:60<0,127,1>Fallback Note (no MIDI input)
+slider11:0<0,200,1>Jitter Min (ms)
+slider12:50<0,200,1>Jitter Max (ms)
+slider13:0<0,1,1>Rate Mode (0=Sub/beat  1=Beats/note)
+slider14:0<0,1,1>Note Len Mode (0=% of step  1=ms)
+slider15:100<1,2000,1>Note Len Min (ms)
+slider16:500<1,2000,1>Note Len Max (ms)
+slider17:1<1,8,1>Voices per Trigger
+slider18:0<0,1,1>Mono Ch (0=poly  1=mono per channel)
+
+@init
+MAX_NOTES = 256;
+MAX_HELD  = 32;
+note_buf   = 0;
+note_count = 0;
+held_buf   = MAX_NOTES * 3;
+held_count = 0;
+last_playing = 0;
+flash = 0;
+
+@slider
+bot_oct       = floor(slider1);
+top_oct       = max(bot_oct, floor(slider2));
+rate_val      = max(0.25, slider3);
+rate_mode     = floor(slider13);
+prob          = slider4 * 0.01;
+note_len_min  = slider5 * 0.01;
+note_len_max  = max(note_len_min, slider6 * 0.01);
+num_ch        = max(1, min(16, floor(slider7)));
+max_vel       = max(1, min(127, floor(slider8)));
+min_vel       = max(1, min(max_vel, floor(slider9)));
+fallback      = max(0, min(127, floor(slider10)));
+min_jit_ms    = max(0, floor(slider11));
+max_jit_ms    = max(min_jit_ms, floor(slider12));
+note_len_mode = floor(slider14);
+nlen_min_ms   = max(1, slider15);
+nlen_max_ms   = max(nlen_min_ms, slider16);
+voices        = max(1, min(8, floor(slider17)));
+mono_ch       = floor(slider18);
+
+@block
+
+// --- MIDI input: track held notes, block note passthrough ---
+while (midirecv(moff, msg1, msg2, msg3)) (
+  st = msg1 & 0xF0;
+
+  (st == 0x90 && msg3 > 0) ? (
+    already = 0; jj = 0;
+    while (jj < held_count) (held_buf[jj] == msg2 ? already = 1; jj += 1;);
+    (!already && held_count < MAX_HELD) ? (
+      held_buf[held_count] = msg2;
+      held_count += 1;
+    );
+  );
+
+  (st == 0x80 || (st == 0x90 && msg3 == 0)) ? (
+    jj = 0;
+    while (jj < held_count) (
+      held_buf[jj] == msg2 ? (
+        held_count -= 1;
+        held_buf[jj] = held_buf[held_count];
+      ) : (jj += 1);
+    );
+  );
+
+  // Pass through non-note MIDI (CC, pitch bend, etc.) — not note-ons/offs.
+  (st != 0x90 && st != 0x80) ? midisend(moff, msg1, msg2, msg3);
+);
+
+// --- Transport ---
+playing = (play_state == 1 || play_state == 5);
+
+!playing ? (
+  last_playing ? (
+    jj = 0;
+    while (jj < note_count) (
+      midisend(0, 0x80 | floor(note_buf[jj*3+1]), floor(note_buf[jj*3]), 0);
+      jj += 1;
+    );
+    note_count = 0;
+  );
+  last_playing = 0;
+) : (
+  last_playing = 1;
+
+  rate_mode == 0 ? (
+    step = 4.0 / rate_val;  // Sub: rate_val steps per beat
+  ) : (
+    step = rate_val;         // Slow: rate_val beats between notes
+  );
+
+  bps = tempo / (60.0 * srate);
+  bs  = beat_position;
+  be  = bs + samplesblock * bps;
+
+  // Pending note-offs
+  i = 0;
+  while (i < note_count) (
+    eb = note_buf[i*3+2];
+    (eb >= bs && eb < be) ? (
+      off = max(0, min(samplesblock-1, floor((eb-bs)/bps)));
+      midisend(off, 0x80 | floor(note_buf[i*3+1]), floor(note_buf[i*3]), 0);
+      note_count -= 1;
+      i < note_count ? (
+        note_buf[i*3]   = note_buf[note_count*3];
+        note_buf[i*3+1] = note_buf[note_count*3+1];
+        note_buf[i*3+2] = note_buf[note_count*3+2];
+      );
+    ) : (i += 1);
+  );
+
+  // Step boundaries
+  fs = ceil(bs/step - 0.000000001);
+  ls = floor((be - 0.000000001)/step);
+
+  s = fs;
+  while (s <= ls) (
+    sb = s * step;
+    on = max(0, min(samplesblock-1, floor((sb-bs)/bps)));
+
+    // Fire each voice independently
+    vv = 0;
+    while (vv < voices) (
+      rand(1) < prob ? (
+        base = held_count > 0 ? held_buf[floor(rand(held_count))] : fallback;
+
+        pc       = floor(base) % 12;
+        base_oct = floor(base / 12);
+        oct_span = top_oct - bot_oct + 1;
+        oct      = base_oct + bot_oct + floor(rand(oct_span));
+        n        = max(0, min(127, oct * 12 + pc));
+
+        ch = floor(rand(num_ch));
+        v  = min_vel + floor(rand(max_vel - min_vel + 1));
+
+        jit  = floor((min_jit_ms + rand(max(0, max_jit_ms - min_jit_ms))) * srate / 1000.0);
+        on_j = max(0, min(samplesblock-1, on + jit));
+
+        // Mono Ch: release any existing note on this channel before firing
+        mono_ch ? (
+          ki = 0;
+          while (ki < note_count) (
+            floor(note_buf[ki*3+1]) == ch ? (
+              midisend(on_j, 0x80 | ch, floor(note_buf[ki*3]), 0);
+              note_count -= 1;
+              ki < note_count ? (
+                note_buf[ki*3]   = note_buf[note_count*3];
+                note_buf[ki*3+1] = note_buf[note_count*3+1];
+                note_buf[ki*3+2] = note_buf[note_count*3+2];
+              );
+            ) : (ki += 1);
+          );
+        );
+
+        midisend(on_j, 0x90 | ch, n, v);
+        flash = srate * 0.12;
+
+        // Note length: % of step or absolute ms
+        note_len_mode == 0 ? (
+          ne_len = note_len_min + rand(max(0, note_len_max - note_len_min));
+          ne = sb + step * ne_len;
+        ) : (
+          len_ms = nlen_min_ms + rand(max(0, nlen_max_ms - nlen_min_ms));
+          ne = sb + len_ms / 1000.0 * tempo / 60.0;
+        );
+
+        ne < be ? (
+          eo = max(on_j+1, min(samplesblock-1, floor((ne-bs)/bps)));
+          midisend(eo, 0x80 | ch, n, 0);
+        ) : (
+          note_count < MAX_NOTES ? (
+            note_buf[note_count*3]   = n;
+            note_buf[note_count*3+1] = ch;
+            note_buf[note_count*3+2] = ne;
+            note_count += 1;
+          );
+        );
+      );
+      vv += 1;
+    );
+
+    s += 1;
+  );
+
+  flash > 0 ? flash -= samplesblock;
+);
+
+@gfx 420 225
+gfx_clear = 0x0e0e1a;
+
+// Title + trigger dot
+gfx_setfont(1, "Arial", 15, 'b');
+flash > 0 ? gfx_set(0.25, 0.85, 1.0) : gfx_set(0.35, 0.45, 0.65);
+gfx_x = 14; gfx_y = 12;
+gfx_drawstr("SELDON BLACK");
+flash > 0 ? gfx_set(0.2, 0.8, 1.0, flash/(srate*0.12)) : gfx_set(0.08, 0.18, 0.28);
+gfx_circle(396, 22, 10, 1, 1);
+
+// Held notes
+gfx_setfont(1, "Arial", 10, 0);
+gfx_x = 14; gfx_y = 44;
+held_count > 0 ? (
+  gfx_set(0.35, 0.48, 0.68);
+  gfx_drawstr("HELD: ");
+  jj = 0;
+  while (jj < min(held_count, 12)) (
+    gfx_set(0.6, 0.85, 1.0);
+    sprintf(#t, "%d ", floor(held_buf[jj]));
+    gfx_drawstr(#t);
+    jj += 1;
+  );
+) : (
+  gfx_set(0.25, 0.32, 0.45);
+  sprintf(#t, "No input — fallback: %d", fallback);
+  gfx_drawstr(#t);
+);
+
+// Octave bar
+gfx_set(0.35, 0.48, 0.68);
+gfx_x = 14; gfx_y = 64;
+gfx_drawstr("OCTAVE OFFSET");
+
+bar_x = 14; bar_y = 78; bar_w = 392; bar_h = 14;
+gfx_set(0.08, 0.10, 0.18);
+gfx_rect(bar_x, bar_y, bar_w, bar_h);
+mid_x = bar_x + floor(bar_w / 2);
+gfx_set(0.18, 0.24, 0.38);
+gfx_line(mid_x, bar_y, mid_x, bar_y + bar_h - 1);
+lx = bar_x + floor((bot_oct + 4) / 8.0 * bar_w);
+hx = bar_x + floor((top_oct + 4) / 8.0 * bar_w);
+hx <= lx ? hx = lx + 4;
+gfx_set(0.15, 0.55, 1.0, 0.8);
+gfx_rect(lx, bar_y, hx - lx, bar_h);
+gfx_set(0.75, 0.88, 1.0);
+gfx_x = lx; gfx_y = bar_y + bar_h + 3;
+sprintf(#t, "%+d", bot_oct); gfx_drawstr(#t);
+gfx_x = max(hx - 14, lx + 16); gfx_y = bar_y + bar_h + 3;
+sprintf(#t, "%+d", top_oct); gfx_drawstr(#t);
+
+// Rate label
+disp_step = rate_mode == 0 ? 4.0 / rate_val : rate_val;
+disp_step >= 8 ? (
+  sprintf(#rstr, "%g bars", disp_step / 4);
+) : disp_step >= 1 ? (
+  sprintf(#rstr, "%g beat(s)", disp_step);
+) : (
+  sprintf(#rstr, "1/%g beat", 1.0 / disp_step);
+);
+rate_mode == 0 ? strcat(#rstr, " [Sub]") : strcat(#rstr, " [Slow]");
+
+// Note len label
+note_len_mode == 0 ? (
+  sprintf(#lstr, "%.0f-%.0f%% [step]", note_len_min*100, note_len_max*100);
+) : (
+  sprintf(#lstr, "%d-%dms", floor(nlen_min_ms), floor(nlen_max_ms));
+);
+
+// Parameters line 1
+gfx_set(0.45, 0.60, 0.82);
+gfx_x = 14; gfx_y = 112;
+sprintf(#t, "Rate: %s    Prob: %.0f%%    Jitter: %d-%dms", #rstr, prob*100, min_jit_ms, max_jit_ms);
+gfx_drawstr(#t);
+
+// Parameters line 2
+gfx_x = 14; gfx_y = 126;
+voices > 1 || mono_ch ? gfx_set(0.6, 0.82, 1.0) : gfx_set(0.45, 0.60, 0.82);
+sprintf(#t, "Len: %s    Voices: %d    Ch: 1-%d    %s",
+  #lstr, voices, num_ch, mono_ch ? "MONO" : "poly");
+gfx_drawstr(#t);
+
+// Channel boxes
+disp_ch = max(1, min(16, floor(slider7)));
+gfx_x = 14; gfx_y = 148;
+gfx_set(0.35, 0.48, 0.68);
+gfx_drawstr("CH:");
+
+ci = 0;
+while (ci < disp_ch && ci < 16) (
+  cx = 46 + ci * 22;
+  cy = 144;
+  act = 0; ni = 0;
+  while (ni < note_count) (note_buf[ni*3+1] == ci ? act = 1; ni += 1;);
+  act ? gfx_set(0.15, 0.65, 1.0) : gfx_set(0.08, 0.13, 0.22);
+  gfx_rect(cx, cy, 18, 18);
+  gfx_set(0.85, 0.92, 1.0);
+  gfx_x = cx + (ci < 9 ? 5 : 2); gfx_y = cy + 4;
+  sprintf(#t, "%d", ci+1);
+  gfx_drawstr(#t);
+  ci += 1;
+);
+
+// Status
+gfx_set(0.3, 0.42, 0.62);
+gfx_x = 14; gfx_y = 178;
+sprintf(#t, "Active: %d    Held: %d", note_count, held_count);
+gfx_drawstr(#t);
+
+gfx_set(0.2, 0.28, 0.42);
+gfx_x = 14; gfx_y = 197;
+gfx_drawstr("Route each MIDI channel to a different instrument track");

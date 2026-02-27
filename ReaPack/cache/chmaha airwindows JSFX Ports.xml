@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="chmaha airwindows JSFX Ports" commit="827025ff06877804e696c26a8d8426931912b402">
+<index version="1" name="chmaha airwindows JSFX Ports" commit="9fbaf9feecd4cef77171052a33ed83f04b38471a">
   <category name="Consoles">
     <reapack name="Analog-a-licious.jsfx" type="effect" desc="Analog-a-licious Console Colors (chmaha)">
       <metadata>
@@ -30,15 +30,18 @@
       </version>
     </reapack>
     <reapack name="CoraMeta.jsfx" type="effect" desc="Cora Analog Circuitry (chmaha)">
-      <version name="1.2" author="chmaha" time="2023-04-13T17:50:54Z">
-        <changelog><![CDATA[Fix desc in templates]]></changelog>
-        <source file="Cora.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/1befb663e2faf08e585b227d0c30549eaf23f2a4/Consoles/Cora.jsfx</source>
-        <source type="projecttpl" file="ReaClassical_Cora.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/1befb663e2faf08e585b227d0c30549eaf23f2a4/Consoles/ReaClassical_Cora.RPP</source>
-      </version>
-      <version name="1.3" author="chmaha" time="2023-04-14T12:05:59Z">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This jsfx analog circuitry emulation uses DSP from airwindows Interstage. Also included is the Cora project template with plugins already in place (requires ELSA and RCGain to be installed)\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.3" author="chmaha" time="2026-01-22T18:37:19Z">
         <changelog><![CDATA[Remove UINT32_MAX references]]></changelog>
-        <source file="Cora.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/Cora.jsfx</source>
-        <source type="projecttpl" file="ReaClassical_Cora.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/ReaClassical_Cora.RPP</source>
+        <source file="Cora.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/763dd48cfa693073d3b8bc658137819a0cff865b/Consoles/Cora.jsfx</source>
       </version>
     </reapack>
     <reapack name="desk-a-docious.jsfx" type="effect" desc="Desk-a-docious Console Colors (chmaha)">
@@ -118,6 +121,11 @@
         <source type="projecttpl" file="ReaClassical_Eurydice_A.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/ReaClassical_Eurydice_A.RPP</source>
         <source type="projecttpl" file="ReaClassical_Eurydice_B.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/ReaClassical_Eurydice_B.RPP</source>
       </version>
+      <version name="1.5" author="chmaha" time="2026-01-22T18:30:06Z">
+        <changelog><![CDATA[Remove UINT32_MAX references]]></changelog>
+        <source file="Eurydice_Bus.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Eurydice_Bus.jsfx</source>
+        <source file="Eurydice_Channel.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Eurydice_Channel.jsfx</source>
+      </version>
     </reapack>
     <reapack name="Genesis.jsfx" type="effect" desc="Genesis Console (chmaha)">
       <metadata>
@@ -163,6 +171,11 @@
         <source file="GenesisChannel.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/65568ec471d2cc83480a73e580ad33031855cd9a/Consoles/GenesisChannel.jsfx</source>
         <source type="projecttpl" file="ReaClassical_Genesis_A.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/65568ec471d2cc83480a73e580ad33031855cd9a/Consoles/ReaClassical_Genesis_A.RPP</source>
         <source type="projecttpl" file="ReaClassical_Genesis_B.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/65568ec471d2cc83480a73e580ad33031855cd9a/Consoles/ReaClassical_Genesis_B.RPP</source>
+      </version>
+      <version name="1.7" author="chmaha" time="2026-01-22T18:30:06Z">
+        <changelog><![CDATA[Use discrete slider values as in QuantumGain/Pan]]></changelog>
+        <source file="GenesisBus.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/GenesisBus.jsfx</source>
+        <source file="GenesisChannel.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/GenesisChannel.jsfx</source>
       </version>
     </reapack>
     <reapack name="Horizon.jsfx" type="effect" desc="Horizon Console (chmaha)">
@@ -267,6 +280,15 @@
         <source type="projecttpl" file="ReaClassical_Orpheus_A.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/ReaClassical_Orpheus_A.RPP</source>
         <source type="projecttpl" file="ReaClassical_Orpheus_B.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/ReaClassical_Orpheus_B.RPP</source>
       </version>
+      <version name="1.6" author="chmaha" time="2026-01-22T18:30:06Z">
+        <changelog><![CDATA[Remove UINT32_MAX references]]></changelog>
+        <source file="Orpheus_Bus_In.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Bus_In.jsfx</source>
+        <source file="Orpheus_Bus_Out.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Bus_Out.jsfx</source>
+        <source file="Orpheus_Channel_In.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Channel_In.jsfx</source>
+        <source file="Orpheus_Channel_Out.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Channel_Out.jsfx</source>
+        <source file="Orpheus_Sub_In.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Sub_In.jsfx</source>
+        <source file="Orpheus_Sub_Out.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Sub_Out.jsfx</source>
+      </version>
     </reapack>
     <reapack name="Orpheus_Lite.jsfx" type="effect" desc="Orpheus Lite Console (chmaha)">
       <metadata>
@@ -291,6 +313,11 @@
         <source file="Orpheus_Lite_Bus.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/Orpheus_Lite_Bus.jsfx</source>
         <source type="projecttpl" file="ReaClassical_Orpheus_Lite_A.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/ReaClassical_Orpheus_Lite_A.RPP</source>
         <source type="projecttpl" file="ReaClassical_Orpheus_Lite_B.RPP">https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Consoles/ReaClassical_Orpheus_Lite_B.RPP</source>
+      </version>
+      <version name="1.5" author="chmaha" time="2026-01-22T18:30:06Z">
+        <changelog><![CDATA[Remove UINT32_MAX references]]></changelog>
+        <source file="Orpheus_Lite_Channel.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Lite_Channel.jsfx</source>
+        <source file="Orpheus_Lite_Bus.jsfx">https://github.com/chmaha/airwindows-JSFX-ports/raw/da455440a441ce406c8c868555456f07924f5c63/Consoles/Orpheus_Lite_Bus.jsfx</source>
       </version>
     </reapack>
     <reapack name="Seattlety.jsfx" type="effect" desc="Seattlety (chmaha)">
@@ -632,26 +659,6 @@
       </version>
       <version name="1.3" author="chmaha" time="2023-04-14T12:05:59Z">
         <source>https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Reverbs/PhiVerb.jsfx</source>
-      </version>
-    </reapack>
-    <reapack name="SonataReverb.jsfx" type="effect" desc="Sonata Reverb (chmaha)">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Uses DSP from airwindows "kBeyond" by Chris Johnson https://github.com/airwindows/airwindows/tree/master/plugins/LinuxVST/src/kBeyond (MIT License) Extra tonal shaping, modulation, and phase DSP by chmaha JSFX version released under GPLv3 license\par}
-}
-]]></description>
-      </metadata>
-      <version name="1.0" author="chmaha" time="2025-07-11T19:59:01Z">
-        <source>https://github.com/chmaha/airwindows-JSFX-ports/raw/e7332b7191398b94ac7f5eb4f5d5c4b9a04a4b8a/Reverbs/SonataReverb.jsfx</source>
-      </version>
-      <version name="1.1" author="chmaha" time="2025-08-24T02:53:35Z">
-        <source>https://github.com/chmaha/airwindows-JSFX-ports/raw/63f0554f5ba7d573f9c4bc330c2b492af54b6639/Reverbs/SonataReverb.jsfx</source>
-      </version>
-      <version name="1.2" author="chmaha" time="2025-08-24T17:20:05Z">
-        <source>https://github.com/chmaha/airwindows-JSFX-ports/raw/860b95de34d7d4e866115279e005ac234337cd80/Reverbs/SonataReverb.jsfx</source>
       </version>
     </reapack>
   </category>
@@ -1636,6 +1643,23 @@
       </version>
       <version name="1.3" author="chmaha" time="2023-04-14T12:05:59Z">
         <source>https://github.com/chmaha/airwindows-JSFX-ports/raw/0a01e9723d498308910ba0723037f7e705f78c67/Various/Solar_Wind.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Spoolio.jsfx" type="effect" desc="Spoolio Tape Compression (chmaha)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Uses DSP from airwindows "TapeHack2" by Chris Johnson https://github.com/airwindows/airwindows/tree/master/plugins/LinuxVST/src/TapeHack2 (MIT License) JSFX version released under GPLv3 license\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="chmaha" time="2026-01-24T20:06:47Z">
+        <source>https://github.com/chmaha/airwindows-JSFX-ports/raw/10339815095e8ccee1e63625d0b4f05e36e61d3e/Various/Spoolio.jsfx</source>
+      </version>
+      <version name="1.1" author="chmaha" time="2026-01-24T20:24:03Z">
+        <source>https://github.com/chmaha/airwindows-JSFX-ports/raw/e7ce4db85ff233b54e4849a0011e88b36eecea3c/Various/Spoolio.jsfx</source>
       </version>
     </reapack>
     <reapack name="Squishmallow.jsfx" type="effect" desc="Squishmallow Compressor (chmaha)">

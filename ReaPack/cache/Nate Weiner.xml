@@ -9,7 +9,7 @@
 All files will be installed automatically by ReaPack.
 ]]></description>
       </metadata>
-      <version name="1.0.3" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+      <version name="1.0.3" author="Nate Weiner" time="2026-02-16T22:41:47.249Z">
         <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
         <source file="NateWeiner - Routing Doctor - Check routing for errors.lua" main="main">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/NateWeiner%20-%20Routing%20Doctor%20-%20Check%20routing%20for%20errors.lua</source>
         <source file="NateWeiner - Routing Doctor - Save routing analysis to disk.lua" main="main">https://nateweiner.com/dist/reaper/main/RoutingDoctor/1.0.3/NateWeiner%20-%20Routing%20Doctor%20-%20Save%20routing%20analysis%20to%20disk.lua</source>
@@ -46,7 +46,7 @@ All files will be installed automatically by ReaPack.
 All files will be installed automatically by ReaPack.
 ]]></description>
       </metadata>
-      <version name="0.5.8" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+      <version name="0.5.8" author="Nate Weiner" time="2026-02-16T22:41:47.249Z">
         <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
         <source file="NateWeiner - Move edit cursor to next video cut.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/NateWeiner%20-%20Move%20edit%20cursor%20to%20next%20video%20cut.lua</source>
         <source file="NateWeiner - Move edit cursor to previous video cut.lua" main="main">https://nateweiner.com/dist/reaper/main/CursorToCut/0.5.8/NateWeiner%20-%20Move%20edit%20cursor%20to%20previous%20video%20cut.lua</source>
@@ -93,7 +93,7 @@ All files will be installed automatically by ReaPack.
 All files will be installed automatically by ReaPack.
 ]]></description>
       </metadata>
-      <version name="1.0.3" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+      <version name="1.0.3" author="Nate Weiner" time="2026-02-16T22:41:47.249Z">
         <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
         <source file="NateWeiner - Set project frame rate from video.lua" main="main">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/1.0.3/NateWeiner%20-%20Set%20project%20frame%20rate%20from%20video.lua</source>
         <source file="Shared/NWInit.lua">https://nateweiner.com/dist/reaper/main/SetProjectFrameRateFromVideo/1.0.3/Shared/NWInit.lua</source>
@@ -120,7 +120,7 @@ All files will be installed automatically by ReaPack.
 All files will be installed automatically by ReaPack.
 ]]></description>
       </metadata>
-      <version name="1.0.2" author="Nate Weiner" time="2026-01-18T04:04:32.506Z">
+      <version name="1.0.2" author="Nate Weiner" time="2026-02-16T22:41:47.249Z">
         <changelog><![CDATA[Build system update - versioned URLs for better caching]]></changelog>
         <source file="NateWeiner - Toggle Debug Logging.lua" main="main">https://nateweiner.com/dist/reaper/main/ToggleDebugLogging/1.0.2/NateWeiner%20-%20Toggle%20Debug%20Logging.lua</source>
       </version>

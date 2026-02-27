@@ -3200,11 +3200,13 @@ end
         content = f:read('a')
         f:close()
       end
-      local GUID = GetTrackGUID( new_tr )
-      content = content:gsub('TRACK ', 'TRACK '..GUID)
-      SetTrackStateChunk( new_tr, content, false )
-      TrackFX_Show( new_tr, 0, 0 ) -- hide chain
-      for fxid = 1,  TrackFX_GetCount( new_tr ) do TrackFX_Show( new_tr,fxid-1, 2 ) end-- hide chain
+      if content then 
+        local GUID = GetTrackGUID( new_tr )
+        content = content:gsub('TRACK ', 'TRACK '..GUID)
+        SetTrackStateChunk( new_tr, content, false )
+        TrackFX_Show( new_tr, 0, 0 ) -- hide chain
+        for fxid = 1,  TrackFX_GetCount( new_tr ) do TrackFX_Show( new_tr,fxid-1, 2 ) end-- hide chain
+      end
     end  
     
     -- set height
@@ -3680,7 +3682,7 @@ end
             local ppq_pos = MIDIdata[note][i].ppq_pos
             offset = ppq_pos - ppq_pos_last
             local out_msg1 = MIDIdata[note][i].msg1
-            if options.modify_note then 
+            if options and options.modify_note then 
               local out_pitch=  options.modify_note
               out_msg1 = string.char(out_msg1:byte(1), out_pitch ,out_msg1:byte(3) )
             end

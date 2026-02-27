@@ -1,0 +1,15 @@
+C10018 /Users/jonathankawchuk/Desktop/song2_test
+F sine_A#2_116Hz.wav 432044 0 1772041048 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_A3_220Hz.wav 432044 0 1772041048 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_E3_164Hz.wav 432044 0 1772041048 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_F#2_92Hz.wav 432044 0 1772041048 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_F2_87Hz.wav 432044 0 1772041048 0
+D s 48000 n 1 l 0:03.000 i 24
+F sine_F3_174Hz.wav 432044 0 1772041048 0
+D s 48000 n 1 l 0:03.000 i 24
+F target.wav 4499178 0 1772041048 0
+D s 48000 n 1 l 0:31.243 i 24

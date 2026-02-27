@@ -1,0 +1,14 @@
+*.dat
+*.config
+*.conf
+*.swp
+*./swp
+*-kbs*
+*~
+/*~
+/*.conf
+/*.config
+/*.dat
+/*.vim
+*.vim
+
