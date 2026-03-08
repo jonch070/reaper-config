@@ -20,16 +20,23 @@ slider13:0<0,1,1>Rate Mode (0=Sub/beat  1=Beats/note)
 slider14:0<0,1,1>Note Len Mode (0=% of step  1=ms)
 slider15:100<1,2000,1>Note Len Min (ms)
 slider16:500<1,2000,1>Note Len Max (ms)
-slider17:1<1,8,1>Voices per Trigger
+slider17:1<1,8,1>Voices per Channel
 slider18:0<0,1,1>Mono Ch (0=poly  1=mono per channel)
+slider19:1<1,16,1>Channels per Trigger
+slider20:0<0,1,1>Unique Notes (0=off  1=unique per trigger)
+slider21:0<0,1,1>No Ch Repeat (0=off  1=avoid last step channels)
 
 @init
 MAX_NOTES = 256;
 MAX_HELD  = 32;
-note_buf   = 0;
-note_count = 0;
-held_buf   = MAX_NOTES * 3;
-held_count = 0;
+note_buf    = 0;              // [note, ch, end_beat] x MAX_NOTES
+note_count  = 0;
+held_buf    = MAX_NOTES * 3;  // held input note numbers
+held_count  = 0;
+chan_pool   = held_buf + MAX_HELD;    // 16 slots — channel selection pool
+last_ch_buf = chan_pool + 16;         // 16 slots — channels used last step
+note_pool   = last_ch_buf + 16;       // 16 slots — note assigned per triggered channel
+last_ch_count = 0;
 last_playing = 0;
 flash = 0;
 
@@ -52,6 +59,9 @@ nlen_min_ms   = max(1, slider15);
 nlen_max_ms   = max(nlen_min_ms, slider16);
 voices        = max(1, min(8, floor(slider17)));
 mono_ch       = floor(slider18);
+ch_per_trig   = max(1, min(16, floor(slider19)));
+unique_notes  = floor(slider20);
+no_ch_repeat  = floor(slider21);
 
 @block
 
@@ -78,7 +88,7 @@ while (midirecv(moff, msg1, msg2, msg3)) (
     );
   );
 
-  // Pass through non-note MIDI (CC, pitch bend, etc.) — not note-ons/offs.
+  // Pass through non-note MIDI (CC, pitch bend, etc.)
   (st != 0x90 && st != 0x80) ? midisend(moff, msg1, msg2, msg3);
 );
 
@@ -93,6 +103,7 @@ playing = (play_state == 1 || play_state == 5);
       jj += 1;
     );
     note_count = 0;
+    last_ch_count = 0;
   );
   last_playing = 0;
 ) : (
@@ -133,74 +144,145 @@ playing = (play_state == 1 || play_state == 5);
     sb = s * step;
     on = max(0, min(samplesblock-1, floor((sb-bs)/bps)));
 
-    // Fire each voice independently
-    vv = 0;
-    while (vv < voices) (
-      rand(1) < prob ? (
-        base = held_count > 0 ? held_buf[floor(rand(held_count))] : fallback;
+    // Probability applies per-step: whole event fires or doesn't
+    rand(1) < prob ? (
 
+      // 1. Build channel pool: available channels first, then last-used
+      //    Pass 1: channels NOT used last step
+      pool_size = 0;
+      ci = 0;
+      while (ci < num_ch) (
+        in_last = 0; li = 0;
+        while (no_ch_repeat && li < last_ch_count) (last_ch_buf[li] == ci ? in_last = 1; li += 1;);
+        !in_last ? (chan_pool[pool_size] = ci; pool_size += 1;);
+        ci += 1;
+      );
+      avail_count = pool_size;
+      //    Pass 2: channels that WERE used last step (fallback if needed)
+      ci = 0;
+      while (ci < num_ch) (
+        in_last = 0; li = 0;
+        while (no_ch_repeat && li < last_ch_count) (last_ch_buf[li] == ci ? in_last = 1; li += 1;);
+        in_last ? (chan_pool[pool_size] = ci; pool_size += 1;);
+        ci += 1;
+      );
+
+      // Shuffle available portion
+      ci = 0;
+      while (ci < avail_count) (
+        rr = ci + floor(rand(avail_count - ci));
+        tmp = chan_pool[ci]; chan_pool[ci] = chan_pool[rr]; chan_pool[rr] = tmp;
+        ci += 1;
+      );
+      actual_cpt = min(ch_per_trig, num_ch);
+      // If we need more channels than are available, also shuffle last-used portion
+      actual_cpt > avail_count ? (
+        ci = avail_count;
+        while (ci < num_ch) (
+          rr = ci + floor(rand(num_ch - ci));
+          tmp = chan_pool[ci]; chan_pool[ci] = chan_pool[rr]; chan_pool[rr] = tmp;
+          ci += 1;
+        );
+      );
+
+      // 2. Generate one note per triggered channel
+      ci = 0;
+      while (ci < actual_cpt) (
+        base     = held_count > 0 ? held_buf[floor(rand(held_count))] : fallback;
         pc       = floor(base) % 12;
         base_oct = floor(base / 12);
         oct_span = top_oct - bot_oct + 1;
         oct      = base_oct + bot_oct + floor(rand(oct_span));
         n        = max(0, min(127, oct * 12 + pc));
 
-        ch = floor(rand(num_ch));
-        v  = min_vel + floor(rand(max_vel - min_vel + 1));
-
-        jit  = floor((min_jit_ms + rand(max(0, max_jit_ms - min_jit_ms))) * srate / 1000.0);
-        on_j = max(0, min(samplesblock-1, on + jit));
-
-        // Mono Ch: release any existing note on this channel before firing
-        mono_ch ? (
-          ki = 0;
-          while (ki < note_count) (
-            floor(note_buf[ki*3+1]) == ch ? (
-              midisend(on_j, 0x80 | ch, floor(note_buf[ki*3]), 0);
-              note_count -= 1;
-              ki < note_count ? (
-                note_buf[ki*3]   = note_buf[note_count*3];
-                note_buf[ki*3+1] = note_buf[note_count*3+1];
-                note_buf[ki*3+2] = note_buf[note_count*3+2];
-              );
-            ) : (ki += 1);
+        // Unique notes: retry with different octave until note is distinct
+        unique_notes ? (
+          already_used = 0; ni = 0;
+          while (ni < ci) (note_pool[ni] == n ? already_used = 1; ni += 1;);
+          attempts = 0;
+          while (already_used && attempts < 20) (
+            oct = base_oct + bot_oct + floor(rand(oct_span));
+            n   = max(0, min(127, oct * 12 + pc));
+            already_used = 0; ni = 0;
+            while (ni < ci) (note_pool[ni] == n ? already_used = 1; ni += 1;);
+            attempts += 1;
           );
         );
-
-        midisend(on_j, 0x90 | ch, n, v);
-        flash = srate * 0.12;
-
-        // Note length: % of step or absolute ms
-        note_len_mode == 0 ? (
-          ne_len = note_len_min + rand(max(0, note_len_max - note_len_min));
-          ne = sb + step * ne_len;
-        ) : (
-          len_ms = nlen_min_ms + rand(max(0, nlen_max_ms - nlen_min_ms));
-          ne = sb + len_ms / 1000.0 * tempo / 60.0;
-        );
-
-        ne < be ? (
-          eo = max(on_j+1, min(samplesblock-1, floor((ne-bs)/bps)));
-          midisend(eo, 0x80 | ch, n, 0);
-        ) : (
-          note_count < MAX_NOTES ? (
-            note_buf[note_count*3]   = n;
-            note_buf[note_count*3+1] = ch;
-            note_buf[note_count*3+2] = ne;
-            note_count += 1;
-          );
-        );
+        note_pool[ci] = n;
+        ci += 1;
       );
-      vv += 1;
-    );
 
+      // 3. Fire: for each triggered channel, fire voices notes
+      ci = 0;
+      while (ci < actual_cpt) (
+        ch = chan_pool[ci];
+        n  = note_pool[ci];
+
+        vv = 0;
+        while (vv < voices) (
+          v    = min_vel + floor(rand(max_vel - min_vel + 1));
+          jit  = floor((min_jit_ms + rand(max(0, max_jit_ms - min_jit_ms))) * srate / 1000.0);
+          on_j = max(0, min(samplesblock-1, on + jit));
+
+          // Mono Ch: release any existing note on this channel before firing
+          mono_ch ? (
+            ki = 0;
+            while (ki < note_count) (
+              floor(note_buf[ki*3+1]) == ch ? (
+                midisend(on_j, 0x80 | ch, floor(note_buf[ki*3]), 0);
+                note_count -= 1;
+                ki < note_count ? (
+                  note_buf[ki*3]   = note_buf[note_count*3];
+                  note_buf[ki*3+1] = note_buf[note_count*3+1];
+                  note_buf[ki*3+2] = note_buf[note_count*3+2];
+                );
+              ) : (ki += 1);
+            );
+          );
+
+          midisend(on_j, 0x90 | ch, n, v);
+          flash = srate * 0.12;
+
+          // Note length
+          note_len_mode == 0 ? (
+            ne_len = note_len_min + rand(max(0, note_len_max - note_len_min));
+            ne = sb + step * ne_len;
+          ) : (
+            len_ms = nlen_min_ms + rand(max(0, nlen_max_ms - nlen_min_ms));
+            ne = sb + len_ms / 1000.0 * tempo / 60.0;
+          );
+
+          ne < be ? (
+            eo = max(on_j+1, min(samplesblock-1, floor((ne-bs)/bps)));
+            midisend(eo, 0x80 | ch, n, 0);
+          ) : (
+            note_count < MAX_NOTES ? (
+              note_buf[note_count*3]   = n;
+              note_buf[note_count*3+1] = ch;
+              note_buf[note_count*3+2] = ne;
+              note_count += 1;
+            );
+          );
+
+          vv += 1;
+        );
+        ci += 1;
+      );
+
+      // 4. Update last_ch_buf for no_ch_repeat
+      no_ch_repeat ? (
+        last_ch_count = actual_cpt;
+        ci = 0;
+        while (ci < actual_cpt) (last_ch_buf[ci] = chan_pool[ci]; ci += 1;);
+      );
+    );
     s += 1;
   );
 
   flash > 0 ? flash -= samplesblock;
 );
 
-@gfx 420 225
+@gfx 420 240
 gfx_clear = 0x0e0e1a;
 
 // Title + trigger dot
@@ -270,29 +352,43 @@ note_len_mode == 0 ? (
   sprintf(#lstr, "%d-%dms", floor(nlen_min_ms), floor(nlen_max_ms));
 );
 
+// Read new sliders directly to avoid @slider/@gfx thread lag
+disp_voices  = max(1, min(8,  floor(slider17)));
+disp_mono    = floor(slider18);
+disp_cpt     = max(1, min(16, floor(slider19)));
+disp_un      = floor(slider20);
+disp_ncr     = floor(slider21);
+
 // Parameters line 1
 gfx_set(0.45, 0.60, 0.82);
 gfx_x = 14; gfx_y = 112;
 sprintf(#t, "Rate: %s    Prob: %.0f%%    Jitter: %d-%dms", #rstr, prob*100, min_jit_ms, max_jit_ms);
 gfx_drawstr(#t);
 
-// Parameters line 2
+// Parameters line 2: channels, voices, mono
 gfx_x = 14; gfx_y = 126;
-voices > 1 || mono_ch ? gfx_set(0.6, 0.82, 1.0) : gfx_set(0.45, 0.60, 0.82);
-sprintf(#t, "Len: %s    Voices: %d    Ch: 1-%d    %s",
-  #lstr, voices, num_ch, mono_ch ? "MONO" : "poly");
+(disp_voices > 1 || disp_mono || disp_cpt > 1) ? gfx_set(0.6, 0.82, 1.0) : gfx_set(0.45, 0.60, 0.82);
+sprintf(#t, "Len: %s    Ch/step: %d    V/ch: %d    %s",
+  #lstr, disp_cpt, disp_voices, disp_mono ? "MONO" : "poly");
+gfx_drawstr(#t);
+
+// Parameters line 3: unique notes, no ch repeat
+gfx_x = 14; gfx_y = 140;
+(disp_un || disp_ncr) ? gfx_set(0.6, 0.82, 1.0) : gfx_set(0.35, 0.48, 0.68);
+sprintf(#t, "Unique notes: %s    No ch repeat: %s",
+  disp_un ? "ON" : "off", disp_ncr ? "ON" : "off");
 gfx_drawstr(#t);
 
 // Channel boxes
 disp_ch = max(1, min(16, floor(slider7)));
-gfx_x = 14; gfx_y = 148;
+gfx_x = 14; gfx_y = 164;
 gfx_set(0.35, 0.48, 0.68);
 gfx_drawstr("CH:");
 
 ci = 0;
 while (ci < disp_ch && ci < 16) (
   cx = 46 + ci * 22;
-  cy = 144;
+  cy = 160;
   act = 0; ni = 0;
   while (ni < note_count) (note_buf[ni*3+1] == ci ? act = 1; ni += 1;);
   act ? gfx_set(0.15, 0.65, 1.0) : gfx_set(0.08, 0.13, 0.22);
@@ -306,10 +402,10 @@ while (ci < disp_ch && ci < 16) (
 
 // Status
 gfx_set(0.3, 0.42, 0.62);
-gfx_x = 14; gfx_y = 178;
+gfx_x = 14; gfx_y = 194;
 sprintf(#t, "Active: %d    Held: %d", note_count, held_count);
 gfx_drawstr(#t);
 
 gfx_set(0.2, 0.28, 0.42);
-gfx_x = 14; gfx_y = 197;
+gfx_x = 14; gfx_y = 213;
 gfx_drawstr("Route each MIDI channel to a different instrument track");

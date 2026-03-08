@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="VF_ReaScripts" commit="a49c8e80b7ca709b9fc04ed22c4f9bd5513cf779">
+  <category name="ITEM">
+    <reapack name="VF - ITEM - Advanced items repositioning.lua" type="script">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Advanced items repositioning\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Use start or end of items to reposition\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab 3 modes: TRACK, QUEUE & TIMELINE\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Set interval between items in seconds, frames or beats (can be negative values)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Optionally add time offset between groups of items with the same name\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Non-linear factor to create rallentando & accelerando\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Toggle to preserve overlapping items\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Toggle to preserve adjacent items\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Toggle to auto-crossfade items\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Realtime mode\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Support moving envelope points with items\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Support NVK folder items\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Support ripple edit\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Option to save default values\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Can generate no GUI scripts using current values (useful to save presets or use in custom actions)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Dependencies\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requires ReaImGui\sa180\par}
+}
+]]></description>
+        <link rel="website">https://github.com/Infrabass/Reascripts</link>
+        <link rel="screenshot">https://imgur.com/vI4pc5B</link>
+      </metadata>
+      <version name="1.0" author="VF" time="2023-05-24T21:55:10Z">
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/10534ef5ebf7c2466a0138db73c1621b3cd7748e/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+      </version>
+      <version name="1.0.1" author="VF" time="2023-05-25T22:13:14Z">
+        <changelog><![CDATA[Fix wrong positions with adjacent folder items]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/464473798aedf1357427d7c16f85c260b1e2be51/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+      </version>
+      <version name="1.2" author="VF" time="2023-05-27T22:35:32Z">
+        <changelog><![CDATA[Time interval can now be set in seconds, frames or beats
+Add buttons to preserve overlapping & adjacent items 
+UI improvements]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/076caa6af4390d55dbe62666beff166b5a7bcc4e/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+      </version>
+      <version name="1.2.1" author="VF" time="2023-05-29T20:17:32Z">
+        <changelog><![CDATA[Add warning message if user starts the script with zero or one selected item
+Remove option to resize the window]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/4a4e645978a85f59452ad8a9d30dff5bd69e14e9/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+      </version>
+      <version name="1.2.2" author="VF" time="2023-06-01T18:16:08Z">
+        <changelog><![CDATA[Drastically improved repositioning speed, up to 100 times faster!]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/1bb508662c28ae3b0e284bebb4bc5a9b9e904774/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+      </version>
+      <version name="1.3" author="Vincent Fliniaux (Infrabass)" time="2023-06-06T19:11:32Z">
+        <changelog><![CDATA[Add a button in settings tab to automatically generate a script without GUI using the current values (useful to add in custom actions)
+Few other small improvements]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/a44295e0423699a2dd87610886cff15fe8f3932c/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source main="main" file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/a44295e0423699a2dd87610886cff15fe8f3932c/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+      </version>
+      <version name="1.3.1" author="Vincent Fliniaux (Infrabass)" time="2023-06-06T20:12:52Z">
+        <changelog><![CDATA[Fix the no GUI script feature]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/c969b9b3e29ada7bcbea783e4cf1120e247c08f0/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/c969b9b3e29ada7bcbea783e4cf1120e247c08f0/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning%20-%20last%20values%20without%20GUI.lua</source>
+      </version>
+      <version name="1.3.2" author="Vincent Fliniaux (Infrabass)" time="2023-06-12T21:32:12Z">
+        <changelog><![CDATA[Disable docking to avoid wrong size when undocked]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/7ca5db41f2fa4b171476f417cf075068ed2dcc33/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/7ca5db41f2fa4b171476f417cf075068ed2dcc33/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning%20-%20last%20values%20without%20GUI.lua</source>
+      </version>
+      <version name="1.3.3" author="Vincent Fliniaux (Infrabass)" time="2023-06-15T01:12:49Z">
+        <changelog><![CDATA[Group offset: add option to ignore suffix numbering and extension in item's name
+A bunch of small fixes]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/5fcb777f85b2e3c838ee078d9d4f3cdde1734a46/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/5fcb777f85b2e3c838ee078d9d4f3cdde1734a46/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning%20-%20last%20values%20without%20GUI.lua</source>
+      </version>
+      <version name="1.4.1" author="Vincent Fliniaux (Infrabass)" time="2023-06-27T03:50:53Z">
+        <changelog><![CDATA[Allow negative interval values (useful to consolidate and crossfade edited recordings)
+Add auto-crossfade button as this is now a critical parameter
+Replace option to disable auto-crossfade by option to disable auto-crossfade when using start mode
+Add a button in settings tab to save current values as default values
+Set keyboard focus to the interval parameter when script start		
+Change in behaviour induced by introduction of negative interval value feature, now the script reset the initial position of selected items before repositioning, so initial overlapping or adjacent items are always kept in memory
+Fix a few rare issues]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/0c30d8d03e2491df61fcb3772462a4b57edc280a/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/0c30d8d03e2491df61fcb3772462a4b57edc280a/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning%20-%20last%20values%20without%20GUI.lua</source>
+      </version>
+      <version name="1.4.3" author="Vincent Fliniaux (Infrabass)" time="2023-07-24T04:12:14Z">
+        <changelog><![CDATA[Fix saved settings not loaded correctly at startup]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/daeeb14f4826913194a94b33cdd397dde0e23b86/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/daeeb14f4826913194a94b33cdd397dde0e23b86/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning%20-%20last%20values%20without%20GUI.lua</source>
+      </version>
+      <version name="1.5" author="Vincent Fliniaux (Infrabass)" time="2025-11-26T09:15:54Z">
+        <changelog><![CDATA[Fix incorrect window size introduced by ReaImGui 0.10 changes
+Add support to change font size
+Add a button to reset values to the defaults established in the settings
+Update UI
+Slightly improve performances]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/d98dca167632126580fde30d3f73367ea5e97a3d/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/d98dca167632126580fde30d3f73367ea5e97a3d/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning%20-%20last%20values%20without%20GUI.lua</source>
+      </version>
+      <version name="1.5.1" author="Vincent Fliniaux (Infrabass)" time="2025-11-26T23:05:30Z">
+        <changelog><![CDATA[Fix the reset button]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/a49c8e80b7ca709b9fc04ed22c4f9bd5513cf779/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning.lua</source>
+        <source file="VF - ITEM - Advanced items repositioning - last values without GUI.lua">https://github.com/Infrabass/Reascripts/raw/a49c8e80b7ca709b9fc04ed22c4f9bd5513cf779/ITEM/VF%20-%20ITEM%20-%20Advanced%20items%20repositioning%20-%20last%20values%20without%20GUI.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="PROJECT">
+    <reapack name="VF - PROJECT - Switch project sample rate.lua" type="script">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Switch project sample rate\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Quickly switch project sample rate via a popup menu\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Pretty handy when added to the main toolbar\sa180\par}
+}
+]]></description>
+        <link rel="website">https://github.com/Infrabass/Reascripts</link>
+      </metadata>
+      <version name="1.0" author="VF" time="2023-05-25T04:49:51Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/061131bf6b601d75687134b101c4db84731d29a7/PROJECT/VF%20-%20PROJECT%20-%20Switch%20project%20sample%20rate.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="VARIOUS">
+    <reapack name="VF - VARIOUS - Quick Access - Fav FX.lua" type="script">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs36 Quick Access - Fav FX\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Popup menu for favorite FX\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Can also be used to trigger any other actions\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Open the script in a text editor to read the instructions and customize your popup menu\sa180\par}
+}
+]]></description>
+        <link rel="website">https://github.com/Infrabass/Reascripts</link>
+      </metadata>
+      <version name="1.0" author="VF" time="2023-05-25T04:02:41Z">
+        <changelog><![CDATA[Initial release]]></changelog>
+        <source main="main">https://github.com/Infrabass/Reascripts/raw/b6d5abb63765785418b6f1d28a1f9926513a9b25/VARIOUS/VF%20-%20VARIOUS%20-%20Quick%20Access%20-%20Fav%20FX.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 VF Reacripts & JSFX repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Collection of scripts and jsfx from Vincent Fliniaux\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in Extensions > ReaPack > Import a repository: https://github.com/Infrabass/Reascripts/raw/master/index.xml\par}
+}
+]]></description>
+  </metadata>
+</index>

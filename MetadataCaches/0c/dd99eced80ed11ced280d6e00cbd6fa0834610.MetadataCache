@@ -14,6 +14,12 @@ D s 44100 n 1 l 0:35.297 i 32
 F "Air Cmaj7_Run3-glued.wav" 10263166 0 1694479948 0
 D y 2023-09-11 s 48000 n 2 r 2:11:17.590
 D l 0:35.633 i 24
+F archaboilus_20ms_nor_period.wav 3756 0 1772577714 0
+D s 96000 n 1 l 0:00.019 i 16
+F archaboilus_6400to5400hz.wav 3756 0 1772580576 0
+D s 81000 n 1 l 0:00.022 i 16
+F archaboilus_minus1kHz.wav 3756 0 1772579135 0
+D s 80910 n 1 l 0:00.022 i 16
 F "ASIS Long Screms.mp3" 3340512 0 1646429633 0
 D s 48000 n 2 l 1:52.922 i 237k
 F "ASIS Long Screms.mp3.RPP" 274889 0 1646429590 0
@@ -51,6 +57,8 @@ D l 0:59.554 i 24
 F "Dmitry Throat showreel.wav" 43760920 0 1712729927 0
 D y 2023-08-22 s 48000 n 2 l 2:31.885
 D i 24
+F DNF_drum_loop_tom_fill_triplet_1_150.wav 462960 0 1772222026 0
+D s 48000 n 2 l 0:01.600 i 24
 F FIT_MusicMix_1m25_StereoMix.mp3 6497689 0 1739474138 0
 D t "Paleo Mind" b "Frozen in TIme (Original Motion Picture Soundtrack)" y 2025-02-09 s 48000
 D n 2 l 2:42.356 i 320k m 20/26

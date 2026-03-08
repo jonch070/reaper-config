@@ -1,0 +1,143 @@
+desc:Random Polyphony Filter
+tags: midi
+author: JK Scripts
+// Buffers incoming notes for Chord Window ms, then randomly selects
+// which notes pass through.
+//
+// Fixed mode: exactly Max notes from each chord pass through.
+// Random mode: a random count between Min and Max passes through each chord.
+
+slider1:1<1,16,1>Min Polyphony
+slider2:2<1,16,1>Max Polyphony
+slider3:0<0,1,1{Random,Fixed}>Mode
+slider4:15<1,200,1>Chord Window (ms)
+
+@init
+// Chord buffer: [note_num, ch, vel, _] per entry
+CHORD     = 0;
+CHORD_MAX = 32;
+CSTRIDE   = 4;
+
+// Index buffer for Fisher-Yates shuffle (one slot per chord entry)
+SHUF = CHORD_MAX * CSTRIDE;
+
+// Passthrough state: mem[PASSED + ch*128 + note] = 1 if note is live
+PASSED = SHUF + CHORD_MAX;
+
+i = 0; loop(2048, mem[PASSED + i] = 0; i += 1;);
+
+chord_count   = 0;
+chord_win_end = -1;
+total_samples = 0;
+
+// fc_ prefix = flush_chord working variables (global, avoids local() scoping issues)
+fc_k = 0; fc_i = 0; fc_j = 0; fc_tmp = 0;
+fc_idx = 0; fc_base = 0; fc_ch = 0; fc_note = 0; fc_vel = 0; fc_slot = 0;
+
+function flush_chord(fc_off) (
+  // How many notes pass through
+  fixed_mode ? (
+    fc_k = min(max_poly, chord_count);
+  ) : (
+    fc_range = max_poly - min_poly + 1;
+    fc_k = min_poly + floor(rand(fc_range));
+    fc_k = min(fc_k, chord_count);
+    fc_k = max(1, fc_k);
+  );
+
+  // Build index array [0, 1, 2, ... chord_count-1]
+  fc_i = 0; loop(chord_count, mem[SHUF + fc_i] = fc_i; fc_i += 1;);
+
+  // Partial Fisher-Yates: shuffle first fc_k positions
+  fc_i = 0;
+  loop(fc_k,
+    fc_j = fc_i + floor(rand(chord_count - fc_i));
+    fc_tmp = mem[SHUF + fc_i]; mem[SHUF + fc_i] = mem[SHUF + fc_j]; mem[SHUF + fc_j] = fc_tmp;
+    fc_i += 1;
+  );
+
+  // Clear PASSED state for all notes in this chord
+  fc_i = 0;
+  loop(chord_count,
+    fc_base = CHORD + fc_i * CSTRIDE;
+    fc_slot = (mem[fc_base+1] | 0) * 128 + (mem[fc_base] | 0);
+    mem[PASSED + fc_slot] = 0;
+    fc_i += 1;
+  );
+
+  // Send selected notes and mark as passed
+  fc_i = 0;
+  loop(fc_k,
+    fc_idx  = mem[SHUF + fc_i] | 0;
+    fc_base = CHORD + fc_idx * CSTRIDE;
+    fc_ch   = mem[fc_base+1] | 0;
+    fc_note = mem[fc_base]   | 0;
+    fc_vel  = mem[fc_base+2] | 0;
+    fc_slot = fc_ch * 128 + fc_note;
+    midisend(fc_off, 0x90 | fc_ch, fc_note, fc_vel);
+    mem[PASSED + fc_slot] = 1;
+    fc_i += 1;
+  );
+
+  chord_count   = 0;
+  chord_win_end = -1;
+);
+
+@slider
+min_poly        = max(1, min(16, slider1 | 0));
+max_poly        = max(min_poly, min(16, slider2 | 0));
+fixed_mode      = slider3 | 0;
+chord_win_samps = max(1, slider4) * srate / 1000;
+
+@block
+// Flush chord if its window closes within this block
+chord_count > 0 && chord_win_end >= 0 && chord_win_end < total_samples + samplesblock ? (
+  send_off = max(0, min(samplesblock - 1, (chord_win_end - total_samples) | 0));
+  flush_chord(send_off);
+);
+
+while(midirecv(offset, msg1, msg2, msg3)) (
+  type     = msg1 & 0xF0;
+  ch       = msg1 & 0x0F;
+  note_num = msg2;
+  vel      = msg3;
+  slot     = ch * 128 + note_num;
+
+  type == 0x90 && vel > 0 ? (
+    // If previous chord's window has already passed, flush it first
+    chord_count > 0 && (total_samples + offset) > chord_win_end ? (
+      flush_chord(offset);
+    );
+
+    // First note of a new chord: open the window
+    chord_count == 0 ? chord_win_end = total_samples + offset + chord_win_samps;
+
+    // Add to chord buffer
+    chord_count < CHORD_MAX ? (
+      base        = CHORD + chord_count * CSTRIDE;
+      mem[base]   = note_num;
+      mem[base+1] = ch;
+      mem[base+2] = vel;
+      chord_count += 1;
+    );
+
+  ) : (type == 0x80 || (type == 0x90 && vel == 0)) ? (
+    // Only pass note-off if we passed the note-on
+    mem[PASSED + slot] ? (
+      midisend(offset, msg1, msg2, msg3);
+      mem[PASSED + slot] = 0;
+    );
+
+  ) : type == 0xB0 && (msg2 == 120 || msg2 == 123) ? (
+    // All Sound Off / All Notes Off: flush everything
+    chord_count   = 0;
+    chord_win_end = -1;
+    i = 0; loop(2048, mem[PASSED + i] = 0; i += 1;);
+    midisend(offset, msg1, msg2, msg3);
+
+  ) : (
+    midisend(offset, msg1, msg2, msg3);
+  );
+);
+
+total_samples += samplesblock;

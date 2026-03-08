@@ -1,308 +1,314 @@
-desc: Humanized Non-Repeating Random MIDI Arpeggiator
-// Full-featured random arpeggiator with repetition lockout and humanization
-// by Assistant (2025)
+desc:Humanized Non-Repeating Random Arpeggiator
+tags: midi
+author: JK Scripts
+// Randomly arpeggiate held notes with humanization and note/channel lockout.
+// Beat-synced timing. Lockout prevents the same note or channel repeating
+// within a configurable history window.
 
-slider1:8<1,16,1>Arpeggio Speed (1/x notes)
-slider2:50<0,100,1>Gate Length (%)
-slider3:4<1,16,1>Note History Lockout (steps)
-slider4:4<1,16,1>Channel History Lockout (steps)
+slider1:11<0,20,1{Custom,1/32T,1/32,1/32.,1/16T,1/16,1/16.,1/8T,1/8,1/8.,1/4T,1/4,1/4.,1/2T,1/2,1/2.,1T,1,1.,2T,2}>Speed
+slider2:1<0.03125,8,0.03125>Custom Step (beats)
+slider3:80<1,100,1>Gate (%)
+slider4:0<0,50,1>Gate Randomize (±%)
 
-slider10:1<1,16,1>MIDI Channel Min
-slider11:8<1,16,1>MIDI Channel Max
+slider10:4<0,16,1>Note Lockout (steps)
+slider11:4<0,16,1>Channel Lockout (steps)
 
-slider20:80<0,127,1>Base Velocity
-slider21:20<0,100,1>Velocity Randomization (±%)
-slider22:10<0,100,1>Timing Jitter (ms)
+slider15:1<1,16,1>Channel Start
+slider16:1<1,16,1>Channel Count
+slider17:0<0,1,1{Off,On}>Randomize Channels
 
-slider30:0<0,1,1{Off,On}>Hold Mode (latch notes)
-slider31:0<0,1,1{Off,On}>Enable Channel Randomization
+slider20:100<1,127,1>Base Velocity
+slider21:20<0,50,1>Velocity Randomize (±%)
+slider22:5<0,50,1>Timing Jitter (ms)
+
+slider30:0<0,1,1{Off,On}>Hold Mode
 
 @init
+MAX_HIST = 32;
 
-// Constants
-MAX_NOTES = 128;
-MAX_HISTORY = 16;
-MAX_ARP_NOTES = 88;
-
-// Note buffer - stores currently held notes
+// Active note tracking
+NOTELIST = 0;    // [0..127]: 1 if note is held
+NOTEBUF  = 128;  // compact list of active note numbers for O(1) random pick
 note_count = 0;
-note_buffer = 1000; // Memory location for active notes
+i = 0; loop(128, mem[NOTELIST + i] = 0; i += 1;);
 
-// History buffers for lockout
-note_history = 2000;
-note_history_pos = 0;
-channel_history = 3000;
-channel_history_pos = 0;
+// History ring buffers (for lockout)
+NOTE_HIST = 256;  // 32 slots
+CHAN_HIST  = 288;  // 32 slots
+note_hist_pos = 0; note_hist_count = 0;
+chan_hist_pos = 0; chan_hist_count = 0;
 
-// Timing
-next_note_time = 0;
-current_note_off_time = 0;
-playing_note = -1;
-playing_channel = -1;
+playing_note  = -1;
+playing_ch    = 0;
+note_off_beat = -1;
+last_playing  = 0;
+flash         = 0;
 
-// Random seed
-rand_seed = 12345;
-
-// Function: Linear Congruential Generator for better randomness
-function lcg_rand() (
-  rand_seed = (rand_seed * 1103515245 + 12345) & 0x7FFFFFFF;
-  rand_seed / 0x7FFFFFFF;
-);
-
-// Function: Random int in range [min, max]
-function rand_range(min, max) (
-  min + floor(lcg_rand() * (max - min + 1));
-);
-
-// Function: Check if note is in history
-function note_in_history(note, lookback) local(i, idx) (
+function note_in_hist(n, lb) local(i, idx) (
   i = 0;
-  loop(min(lookback, note_history_count),
-    idx = (note_history_pos - 1 - i + MAX_HISTORY) % MAX_HISTORY;
-    note_history[idx] == note ? (
-      return 1;
-    );
+  loop(min(lb, note_hist_count),
+    idx = (note_hist_pos - 1 - i + MAX_HIST) % MAX_HIST;
+    mem[NOTE_HIST + idx] == n ? return 1;
     i += 1;
   );
   0;
 );
 
-// Function: Check if channel is in history
-function channel_in_history(chan, lookback) local(i, idx) (
+function chan_in_hist(c, lb) local(i, idx) (
   i = 0;
-  loop(min(lookback, channel_history_count),
-    idx = (channel_history_pos - 1 - i + MAX_HISTORY) % MAX_HISTORY;
-    channel_history[idx] == chan ? (
-      return 1;
-    );
+  loop(min(lb, chan_hist_count),
+    idx = (chan_hist_pos - 1 - i + MAX_HIST) % MAX_HIST;
+    mem[CHAN_HIST + idx] == c ? return 1;
     i += 1;
   );
   0;
 );
 
-// Function: Add note to history
-function add_note_to_history(note) (
-  note_history[note_history_pos] = note;
-  note_history_pos = (note_history_pos + 1) % MAX_HISTORY;
-  note_history_count = min(note_history_count + 1, MAX_HISTORY);
+function push_note_hist(n) (
+  mem[NOTE_HIST + note_hist_pos] = n;
+  note_hist_pos   = (note_hist_pos   + 1) % MAX_HIST;
+  note_hist_count = min(note_hist_count + 1, MAX_HIST);
 );
 
-// Function: Add channel to history
-function add_channel_to_history(chan) (
-  channel_history[channel_history_pos] = chan;
-  channel_history_pos = (channel_history_pos + 1) % MAX_HISTORY;
-  channel_history_count = min(channel_history_count + 1, MAX_HISTORY);
+function push_chan_hist(c) (
+  mem[CHAN_HIST + chan_hist_pos] = c;
+  chan_hist_pos   = (chan_hist_pos   + 1) % MAX_HIST;
+  chan_hist_count = min(chan_hist_count + 1, MAX_HIST);
 );
 
-// Function: Add note to buffer
-function add_note(note) local(i, found) (
-  found = 0;
-  i = 0;
-  loop(note_count,
-    note_buffer[i] == note ? found = 1;
-    i += 1;
-  );
-  !found && note_count < MAX_ARP_NOTES ? (
-    note_buffer[note_count] = note;
+function note_add(n) (
+  mem[NOTELIST + n] == 0 ? (
+    mem[NOTELIST + n] = 1;
+    mem[NOTEBUF + note_count] = n;
     note_count += 1;
   );
 );
 
-// Function: Remove note from buffer
-function remove_note(note) local(i, j) (
-  i = 0;
-  loop(note_count,
-    note_buffer[i] == note ? (
-      // Shift remaining notes down
-      j = i;
-      loop(note_count - i - 1,
-        note_buffer[j] = note_buffer[j + 1];
-        j += 1;
+function note_remove(n) local(i) (
+  mem[NOTELIST + n] == 1 ? (
+    mem[NOTELIST + n] = 0;
+    i = 0;
+    loop(note_count,
+      mem[NOTEBUF + i] == n ? (
+        note_count -= 1;
+        mem[NOTEBUF + i] = mem[NOTEBUF + note_count];
+        return;
       );
-      note_count -= 1;
-      return;
+      i += 1;
     );
+  );
+);
+
+function pick_note() local(n, i) (
+  note_count == 0 ? return -1;
+  // Try note_count*3 times to find a non-locked note
+  i = 0;
+  loop(note_count * 3,
+    n = mem[NOTEBUF + min(note_count - 1, floor(rand(note_count)))];
+    !note_in_hist(n, slider10) ? return n;
     i += 1;
   );
+  // Fallback: any note
+  mem[NOTEBUF + min(note_count - 1, floor(rand(note_count)))];
 );
 
-// Function: Select random note with lockout
-function select_random_note() local(attempts, idx, note, valid) (
-  note_count > 0 ? (
-    attempts = 0;
-    valid = 0;
-    
-    // Try up to 50 times to find a valid note
-    loop(50,
-      idx = rand_range(0, note_count - 1);
-      note = note_buffer[idx];
-      
-      !note_in_history(note, slider3) ? (
-        valid = 1;
-        return note;
-      );
-      attempts += 1;
-    );
-    
-    // If all notes are in lockout, just pick any note
-    !valid ? (
-      note_buffer[rand_range(0, note_count - 1)];
-    );
-  ) : -1;
+function pick_chan() local(c, i) (
+  slider17 < 0.5 ? return (slider15 - 1);
+  i = 0;
+  loop(50,
+    c = max(0, min(15, (slider15 - 1) + floor(rand(slider16))));
+    !chan_in_hist(c, slider11) ? return c;
+    i += 1;
+  );
+  max(0, min(15, (slider15 - 1) + floor(rand(slider16))));
 );
-
-// Function: Select random channel with lockout
-function select_random_channel() local(attempts, chan, valid) (
-  slider31 > 0.5 ? (
-    attempts = 0;
-    valid = 0;
-    
-    loop(50,
-      chan = rand_range(slider10, slider11);
-      
-      !channel_in_history(chan, slider4) ? (
-        valid = 1;
-        return chan;
-      );
-      attempts += 1;
-    );
-    
-    // If all channels in lockout, pick any
-    !valid ? rand_range(slider10, slider11);
-  ) : slider10; // Use channel min if randomization disabled
-);
-
-note_history_count = 0;
-channel_history_count = 0;
 
 @slider
-// Calculate note duration based on tempo and slider
-note_interval = (60000 / (tempo * slider1 / 4)); // ms per note
-gate_time = note_interval * (slider2 / 100);
+// Step sizes in quarter-note beats (beat_position counts quarter notes)
+slider1 == 0  ? step = max(0.03125, slider2) :
+slider1 == 1  ? step = 1/12   : // 1/32T
+slider1 == 2  ? step = 0.125  : // 1/32
+slider1 == 3  ? step = 3/16   : // 1/32.
+slider1 == 4  ? step = 1/6    : // 1/16T
+slider1 == 5  ? step = 0.25   : // 1/16
+slider1 == 6  ? step = 3/8    : // 1/16.
+slider1 == 7  ? step = 1/3    : // 1/8T
+slider1 == 8  ? step = 0.5    : // 1/8
+slider1 == 9  ? step = 0.75   : // 1/8.
+slider1 == 10 ? step = 2/3    : // 1/4T
+slider1 == 11 ? step = 1.0    : // 1/4
+slider1 == 12 ? step = 1.5    : // 1/4.
+slider1 == 13 ? step = 4/3    : // 1/2T
+slider1 == 14 ? step = 2.0    : // 1/2
+slider1 == 15 ? step = 3.0    : // 1/2.
+slider1 == 16 ? step = 8/3    : // 1T
+slider1 == 17 ? step = 4.0    : // 1
+slider1 == 18 ? step = 6.0    : // 1.
+slider1 == 19 ? step = 16/3   : // 2T
+(step = 8.0);                   // 2
+
+gate_frac = max(0.01, min(0.99, slider3 * 0.01));
+jit_samps = slider22 * srate * 0.001;
 
 @block
-// Update tempo
-tempo = tempo;
-
-@sample
-
-// Handle MIDI input
-while (midirecv(offset, msg1, msg2, msg3)) (
-  status = msg1 & 0xF0;
-  channel = msg1 & 0x0F;
-  
-  // Note On
-  status == 0x90 && msg3 > 0 ? (
-    add_note(msg2);
-  );
-  
-  // Note Off
-  status == 0x80 || (status == 0x90 && msg3 == 0) ? (
-    slider30 < 0.5 ? ( // Only remove if not in hold mode
-      remove_note(msg2);
+// --- MIDI input ---
+while (midirecv(ts, msg1, msg2, msg3)) (
+  st = msg1 & 0xF0;
+  st == 0x90 && msg3 > 0 ? (
+    note_add(msg2);
+  ) : st == 0x80 || (st == 0x90 && msg3 == 0) ? (
+    slider30 < 0.5 ? (
+      note_remove(msg2);
+      // If released note is currently playing, kill it now
+      msg2 == playing_note ? (
+        midisend(ts, 0x80 | playing_ch, playing_note, 0);
+        playing_note = -1;
+      );
     );
-  );
-  
-  // Pass through CC and other messages (except notes)
-  status != 0x90 && status != 0x80 ? (
-    midisend(offset, msg1, msg2, msg3);
-  );
-);
-
-// Arpeggiator engine
-current_time = (play_state & 1) ? beat_position * 60000 / tempo : time_precise() * 1000;
-
-// Turn off current note if gate time elapsed
-playing_note >= 0 && current_time >= current_note_off_time ? (
-  midisend(0, 0x80 | playing_channel, playing_note, 0);
-  playing_note = -1;
-);
-
-// Trigger next note if interval elapsed
-current_time >= next_note_time && note_count > 0 ? (
-  // Turn off previous note if still playing
-  playing_note >= 0 ? (
-    midisend(0, 0x80 | playing_channel, playing_note, 0);
-  );
-  
-  // Select new note and channel
-  new_note = select_random_note();
-  new_channel = select_random_channel();
-  
-  new_note >= 0 ? (
-    // Add to history
-    add_note_to_history(new_note);
-    add_channel_to_history(new_channel);
-    
-    // Calculate humanized velocity
-    vel_variation = (lcg_rand() - 0.5) * 2 * (slider21 / 100);
-    humanized_vel = slider20 * (1 + vel_variation);
-    humanized_vel = max(1, min(127, humanized_vel));
-    
-    // Calculate timing jitter
-    jitter = (lcg_rand() - 0.5) * 2 * slider22;
-    
-    // Send note on
-    midisend(0, 0x90 | new_channel, new_note, humanized_vel);
-    
-    playing_note = new_note;
-    playing_channel = new_channel;
-    
-    // Schedule note off and next note
-    current_note_off_time = current_time + gate_time + jitter;
-    next_note_time = current_time + note_interval + jitter;
-  );
-);
-
-@gfx 400 300
-
-gfx_clear = 1330597887; // Background color from reference
-
-gfx_setfont(1, "Arial", 16);
-gfx_x = 10; gfx_y = 10;
-gfx_r = 1; gfx_g = 1; gfx_b = 1;
-
-gfx_printf("Humanized Random Arpeggiator");
-
-gfx_setfont(1, "Arial", 12);
-gfx_x = 10; gfx_y = 40;
-gfx_printf("Active Notes: %d", note_count);
-
-gfx_x = 10; gfx_y = 60;
-gfx_printf("Playing: %s", playing_note >= 0 ? sprintf(#, "Note %d on Ch %d", playing_note, playing_channel + 1) : "---");
-
-gfx_x = 10; gfx_y = 90;
-gfx_printf("Note History Lockout: %d steps", slider3);
-
-gfx_x = 10; gfx_y = 110;
-gfx_printf("Channel History Lockout: %d steps", slider4);
-
-gfx_x = 10; gfx_y = 140;
-gfx_printf("Timing Jitter: ±%d ms", slider22);
-
-gfx_x = 10; gfx_y = 160;
-gfx_printf("Velocity: %d ±%d%%", slider20, slider21);
-
-gfx_x = 10; gfx_y = 190;
-gfx_printf("Channel Range: %d-%d %s", 
-  slider10, slider11, 
-  slider31 > 0.5 ? "(random)" : "(fixed)");
-
-// Visual note buffer display
-gfx_x = 10; gfx_y = 220;
-gfx_printf("Note Buffer:");
-gfx_y = 240;
-i = 0;
-loop(min(note_count, 20),
-  gfx_x = 10 + (i % 10) * 35;
-  gfx_y = 240 + floor(i / 10) * 20;
-  
-  note_buffer[i] == playing_note ? (
-    gfx_r = 0.3; gfx_g = 1; gfx_b = 0.3;
   ) : (
-    gfx_r = 0.7; gfx_g = 0.7; gfx_b = 0.7;
+    midisend(ts, msg1, msg2, msg3);
   );
-  
-  gfx_printf("%d", note_buffer[i]);
-  i += 1;
 );
+
+// --- Transport ---
+playing = (play_state == 1 || play_state == 5);
+
+!playing ? (
+  last_playing && playing_note >= 0 ? (
+    midisend(0, 0x80 | playing_ch, playing_note, 0);
+    playing_note = -1;
+  );
+  last_playing = 0;
+) : (
+  last_playing = 1;
+  bps = tempo / (60.0 * srate);
+  bs  = beat_position;
+  be  = bs + samplesblock * bps;
+
+  // Fire scheduled note-off if it falls in this block
+  playing_note >= 0 && note_off_beat >= bs && note_off_beat < be ? (
+    off = max(0, min(samplesblock - 1, floor((note_off_beat - bs) / bps)));
+    midisend(off, 0x80 | playing_ch, playing_note, 0);
+    playing_note = -1;
+  );
+
+  // Find all step boundaries within this block and fire notes
+  fs = ceil(bs / step - 0.000001);
+  ls = floor((be - 0.000001) / step);
+  s = fs;
+  while (s <= ls) (
+    note_count > 0 ? (
+      sb  = s * step;
+      on  = max(0, min(samplesblock - 1, floor((sb - bs) / bps)));
+
+      // Cut previous note at step boundary
+      playing_note >= 0 ? (
+        midisend(on, 0x80 | playing_ch, playing_note, 0);
+        playing_note = -1;
+      );
+
+      nn = pick_note();
+      nc = pick_chan();
+
+      nn >= 0 ? (
+        vel = max(1, min(127,
+          slider20 * (1 + (rand(1) - 0.5) * 2 * slider21 * 0.01))) | 0;
+
+        jit  = floor((rand(1) - 0.5) * 2 * jit_samps);
+        on_j = max(0, min(samplesblock - 1, on + jit));
+
+        gv = max(0.01, min(0.99,
+          gate_frac * (1 + (rand(1) - 0.5) * 2 * slider4 * 0.01)));
+
+        midisend(on_j, 0x90 | nc, nn, vel);
+
+        push_note_hist(nn);
+        push_chan_hist(nc);
+
+        playing_note  = nn;
+        playing_ch    = nc;
+        note_off_beat = sb + step * gv;
+        flash = srate * 0.1;
+      );
+    );
+    s += 1;
+  );
+);
+
+flash > 0 ? flash -= samplesblock;
+
+@gfx 420 200
+
+gfx_clear = 0x0e0e1a;
+
+gfx_setfont(1, "Arial", 15, 'b');
+flash > 0 ? gfx_set(0.25, 0.85, 1.0) : gfx_set(0.35, 0.45, 0.65);
+gfx_x = 14; gfx_y = 12;
+gfx_drawstr("HUMANIZED RANDOM ARPEGGIATOR");
+
+flash > 0 ? gfx_set(0.2, 0.8, 1.0, flash/(srate*0.1)) : gfx_set(0.08, 0.18, 0.28);
+gfx_circle(400, 22, 10, 1, 1);
+
+gfx_setfont(1, "Arial", 11, 0);
+
+gfx_set(0.45, 0.6, 0.82);
+gfx_x = 14; gfx_y = 44;
+sprintf(#s, "Active: %d  Tempo: %.1f BPM", note_count, tempo);
+gfx_drawstr(#s);
+
+gfx_x = 220; gfx_y = 44;
+playing_note >= 0 ? (
+  gfx_set(0.6, 0.85, 1.0);
+  sprintf(#s, "Playing: %d  Ch %d", playing_note, playing_ch + 1);
+) : (
+  gfx_set(0.25, 0.35, 0.5);
+  sprintf(#s, "Playing: ---");
+);
+gfx_drawstr(#s);
+
+gfx_set(0.45, 0.6, 0.82);
+gfx_x = 14; gfx_y = 62;
+sprintf(#s, "Step: %.4g beat  Gate: %d%%\xb1%d%%  Jitter: \xb1%dms",
+  step, slider3, slider4, slider22);
+gfx_drawstr(#s);
+
+gfx_x = 14; gfx_y = 80;
+sprintf(#s, "Vel: %d\xb1%d%%  Note lockout: %d  Ch lockout: %d  Hold: %s",
+  slider20, slider21, slider10, slider11, slider30 > 0.5 ? "ON" : "off");
+gfx_drawstr(#s);
+
+gfx_x = 14; gfx_y = 98;
+slider17 > 0.5 ? (
+  sprintf(#s, "Ch: %d\xe2\x80\x93%d [random]", slider15, min(slider15+slider16-1, 16));
+) : (
+  sprintf(#s, "Ch: %d [fixed]", slider15);
+);
+gfx_drawstr(#s);
+
+// Active note boxes
+gfx_set(0.35, 0.48, 0.68);
+gfx_x = 14; gfx_y = 122;
+gfx_drawstr("NOTES:");
+
+ni = 0; ci = 0;
+while (ni < 128 && ci < 13) (
+  mem[NOTELIST + ni] ? (
+    cx = 58 + ci * 26; cy = 118;
+    ni == playing_note ? gfx_set(0.15, 0.65, 1.0) : gfx_set(0.08, 0.13, 0.22);
+    gfx_rect(cx, cy, 22, 18);
+    gfx_set(0.85, 0.92, 1.0);
+    gfx_x = cx + 2; gfx_y = cy + 4;
+    sprintf(#s, "%d", ni); gfx_drawstr(#s);
+    ci += 1;
+  );
+  ni += 1;
+);
+note_count > 13 ? (
+  gfx_set(0.3, 0.42, 0.62);
+  gfx_x = 58 + 13*26; gfx_y = 122;
+  sprintf(#s, "+%d", note_count - 13); gfx_drawstr(#s);
+);
+
+gfx_set(0.2, 0.28, 0.42);
+gfx_x = 14; gfx_y = 178;
+gfx_drawstr("Route MIDI channels to separate instrument tracks");

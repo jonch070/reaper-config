@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9680ea6e619820c53eeaa0ecf426112e95d92bb5" name="X-Raym AATranslator">
+<index version="1" commit="82932c90c937bdc9ec61f7b9d41d7ea5860aa32a" name="X-Raym AATranslator">
   <category name="Items Properties">
 <reapack name="X-Raym_Select all items which need to be rendered.lua" type="script" desc="Select all items which need to be rendered">
       <metadata>

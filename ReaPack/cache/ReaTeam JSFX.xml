@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaTeam JSFX" commit="36b372806f6b0fe8448cf268e451dc20ca81bd11">
+<index version="1" name="ReaTeam JSFX" commit="442dad421aeec836b87be1489873f9c0d764b26f">
   <category name="Development">
     <reapack name="philranger_GUI and Audio Library.jsfx" type="effect" desc="GUI and Audio Library">
       <metadata>
@@ -5562,11 +5562,11 @@ add "Time Asymmetry" slider, bugfixes.]]></changelog>
     </reapack>
     <reapack name="zenomod_VU Meter (ZenoMOD).jsfx" type="effect" desc="VU Meter (ZenoMOD)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 VU Meter by ZenoMOD\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 VU Meter by ZenoMOD\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 {\b Requires add-on:} {\i VU Meter (ZenoMOD) - UserThemes}\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Features:\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Fully resizeable vector GUI\par}
@@ -5721,6 +5721,22 @@ fix: Channel mode labels are no longer grayed out when mouse cursor is in trigge
 - Fix idle bug. The meter now correctly detects if audio is present at the left input when the input signal is panned hard left [p=2683919]]]></changelog>
         <source>https://github.com/ReaTeam/JSFX/raw/05b16d02b387b543890d1c0f008dc128c409435c/Utility/zenomod_VU%20Meter%20(ZenoMOD).jsfx</source>
         <source file="zenomod_VU Meter (ZenoMOD)/Index.jsfx-inc">https://github.com/ReaTeam/JSFX/raw/05b16d02b387b543890d1c0f008dc128c409435c/Utility/zenomod_VU%20Meter%20(ZenoMOD)/Index.jsfx-inc</source>
+      </version>
+      <version name="1.8.0" author="ZenoMOD" time="2026-02-27T17:03:39Z">
+        <changelog><![CDATA[- Fix needle hold time being significantly shorter than configured
+- Fix inconsistent meter readings on transients [p=2923589]
+- Extend Calibration Level range to -60 dB [p=2762077]
+- Add embedded UI reference level display (show if size permits) [p=2762077]
+- Add embedded UI hitbox for reference level drag
+- Add embedded UI hitboxes for VU/Peak display reset
+- Fix DPI-independent drag speed for GUI sliders
+- Fix trackpad scroll speed normalization (hopefully also on macOS!) [p=2767438]
+- Redesign L||R Summed Mode: Needle now correctly displays the higher of the two audio channels 
+- Add Rise Time & Overshoot abstraction parameters (internally converted to momentum/damping) [p=2921657]
+- Replace VU regression curve with analytical function
+- Various performance optimizations]]></changelog>
+        <source>https://github.com/ReaTeam/JSFX/raw/442dad421aeec836b87be1489873f9c0d764b26f/Utility/zenomod_VU%20Meter%20(ZenoMOD).jsfx</source>
+        <source file="zenomod_VU Meter (ZenoMOD)/Index.jsfx-inc">https://github.com/ReaTeam/JSFX/raw/442dad421aeec836b87be1489873f9c0d764b26f/Utility/zenomod_VU%20Meter%20(ZenoMOD)/Index.jsfx-inc</source>
       </version>
     </reapack>
   </category>

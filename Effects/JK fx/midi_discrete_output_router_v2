@@ -1,0 +1,385 @@
+desc:MIDI Discrete Output Router v2
+//author: JK Scripts
+//tags: MIDI routing randomizer discrete output polyphony chord
+//
+// Buffers incoming notes for Chord Window ms, then:
+//   picks N channels (Fixed or Random between Min/Max Channels)
+//   picks P notes per channel (Fixed or Random between Min/Max Poly)
+// Routes each selected note to its assigned channel.
+// Note-offs are tracked back to all assigned channels.
+
+slider1:num_ch=16<2,16,1>Channels
+slider2:skip_ch=4<0,16,1>Skip (0=none, 4=LFE)
+slider3:no_repeat=1<0,15,1>No Repeat
+slider4:hold_ms=5000<100,30000,100>Hold (ms)
+slider5:ch_min=1<1,16,1>Min Channels
+slider6:ch_max=1<1,16,1>Max Channels
+slider7:ch_mode=0<0,1,1{Random,Fixed}>Channel Mode
+slider8:poly_min=1<1,8,1>Min Poly/ch
+slider9:poly_max=1<1,8,1>Max Poly/ch
+slider10:poly_mode=0<0,1,1{Random,Fixed}>Poly Mode
+slider11:chord_win_ms=15<1,200,1>Chord Window (ms)
+
+@init
+
+// Memory layout:
+// ch_note_count[0..15]      16 slots — live note count per channel
+// ch_free_at[16..31]        16 slots — hold timer per channel
+// note_ch_count[32..159]   128 slots — how many channels each note was dispatched to
+// note_ch_map[160..1183]  1024 slots — note*8+i: channel list per note
+// hist_buf[1184..1199]      16 slots — no-repeat history
+// pool_buf[1200..1215]      16 slots — channel candidate pool
+// last_ch_disp[1216..1223]   8 slots — GFX: channels from last dispatch
+// chord_buf[1224..1287]     64 slots — chord_buf[i*2]=note, [i*2+1]=vel
+// shuf_buf[1288..1319]      32 slots — index shuffle for chord
+
+ch_note_count = 0;
+ch_free_at    = 16;
+note_ch_count = 32;
+note_ch_map   = 160;
+hist_buf      = 1184;
+pool_buf      = 1200;
+last_ch_disp  = 1216;
+chord_buf     = 1224;
+shuf_buf      = 1288;
+
+CHORD_MAX = 32;
+
+hist_len      = 0;
+chord_count   = 0;
+chord_win_end = -1;
+total_samples = 0;
+last_copies   = 0;
+last_chord_n  = 0;
+
+i = 0; loop(16,  ch_note_count[i] = 0;  i += 1);
+i = 0; loop(16,  ch_free_at[i]    = 0;  i += 1);
+i = 0; loop(128, note_ch_count[i] = 0;  i += 1);
+i = 0; loop(16,  hist_buf[i]      = -1; i += 1);
+i = 0; loop(8,   last_ch_disp[i]  = -1; i += 1);
+
+// flush_chord working variables (global to avoid scoping issues in function)
+fc_n = 0; fc_pi = 0; fc_ci = 0; fc_gi = 0; fc_ch = 0;
+fc_note = 0; fc_vel = 0; fc_n_ch = 0; fc_actual_ch = 0;
+fc_ri = 0; fc_tmp = 0; fc_poly = 0; fc_ji = 0; fc_idx = 0;
+fc_eff_nr = 0; in_h = 0; hh = 0; dup = 0; pi2 = 0; sh = 0;
+fc_slot = 0; cnt_g = 0;
+
+function flush_chord(fc_off) (
+
+  // --- 1. Decide how many channels ---
+  fc_eff_nr = min(max(floor(no_repeat), 0), num_ch - 2);
+  ch_mode == 1 ? (
+    fc_n_ch = max(1, min(16, floor(ch_max)));
+  ) : (
+    fc_n_ch = floor(ch_min) + floor(rand(max(1, floor(ch_max) - floor(ch_min) + 1)));
+  );
+  usable_fc = num_ch - (skip_ch > 0 && skip_ch <= num_ch ? 1 : 0);
+  fc_n_ch = min(fc_n_ch, usable_fc);
+
+  // --- 2. Build channel pool (3-pass priority) ---
+  // Eligible: count < poly_max AND (has notes OR hold expired)
+  fc_poly_ceil = max(1, min(8, floor(poly_max)));
+  skip_idx_fc  = skip_ch - 1;
+
+  // Pass 1: eligible + not in history
+  fc_n = 0; fc_gi = 0;
+  loop(num_ch,
+    (skip_ch == 0 || fc_gi != skip_idx_fc) ? (
+      cnt_g = ch_note_count[fc_gi];
+      (cnt_g < fc_poly_ceil && (cnt_g > 0 || now >= ch_free_at[fc_gi])) ? (
+        in_h = 0; hh = 0;
+        loop(min(fc_eff_nr, hist_len),
+          hist_buf[hh] == fc_gi ? in_h = 1;
+          hh += 1;
+        );
+        !in_h ? (pool_buf[fc_n] = fc_gi; fc_n += 1;);
+      );
+    );
+    fc_gi += 1;
+  );
+  // Pass 2: eligible but in history
+  fc_gi = 0;
+  loop(num_ch,
+    (skip_ch == 0 || fc_gi != skip_idx_fc) ? (
+      cnt_g = ch_note_count[fc_gi];
+      (cnt_g < fc_poly_ceil && (cnt_g > 0 || now >= ch_free_at[fc_gi])) ? (
+        dup = 0; pi2 = 0;
+        loop(fc_n, pool_buf[pi2] == fc_gi ? dup = 1; pi2 += 1;);
+        !dup ? (pool_buf[fc_n] = fc_gi; fc_n += 1;);
+      );
+    );
+    fc_gi += 1;
+  );
+  // Pass 3: any not-skipped (last resort)
+  fc_gi = 0;
+  loop(num_ch,
+    (skip_ch == 0 || fc_gi != skip_idx_fc) ? (
+      dup = 0; pi2 = 0;
+      loop(fc_n, pool_buf[pi2] == fc_gi ? dup = 1; pi2 += 1;);
+      !dup ? (pool_buf[fc_n] = fc_gi; fc_n += 1;);
+    );
+    fc_gi += 1;
+  );
+
+  // Partial Fisher-Yates: select fc_n_ch channels
+  fc_actual_ch = min(fc_n_ch, fc_n);
+  fc_pi = 0;
+  loop(fc_actual_ch,
+    fc_ri = fc_pi + floor(rand(fc_n - fc_pi));
+    fc_tmp = pool_buf[fc_pi]; pool_buf[fc_pi] = pool_buf[fc_ri]; pool_buf[fc_ri] = fc_tmp;
+    fc_pi += 1;
+  );
+
+  // --- 3. For each chosen channel, pick notes and send ---
+  fc_poly_floor = max(1, min(8, floor(poly_min)));
+
+  fc_ci = 0;
+  loop(fc_actual_ch,
+    fc_ch = pool_buf[fc_ci];
+
+    // How many notes for this channel
+    poly_mode == 1 ? (
+      fc_poly = fc_poly_ceil;
+    ) : (
+      fc_poly = fc_poly_floor + floor(rand(max(1, fc_poly_ceil - fc_poly_floor + 1)));
+    );
+    // Cap at chord size and remaining channel capacity
+    fc_poly = min(fc_poly, chord_count);
+    fc_poly = min(fc_poly, max(0, fc_poly_ceil - ch_note_count[fc_ch]));
+    fc_poly = max(1, fc_poly);
+
+    // Build and shuffle chord index array
+    fc_ji = 0;
+    loop(chord_count, shuf_buf[fc_ji] = fc_ji; fc_ji += 1;);
+    fc_ji = 0;
+    loop(fc_poly,
+      fc_ri = fc_ji + floor(rand(chord_count - fc_ji));
+      fc_tmp = shuf_buf[fc_ji]; shuf_buf[fc_ji] = shuf_buf[fc_ri]; shuf_buf[fc_ri] = fc_tmp;
+      fc_ji += 1;
+    );
+
+    // Send selected notes to this channel
+    fc_ji = 0;
+    loop(fc_poly,
+      fc_idx  = shuf_buf[fc_ji];
+      fc_note = chord_buf[fc_idx * 2];
+      fc_vel  = chord_buf[fc_idx * 2 + 1];
+      fc_slot = note_ch_count[fc_note];
+      fc_slot < 8 ? (
+        note_ch_map[fc_note * 8 + fc_slot] = fc_ch;
+        note_ch_count[fc_note] = fc_slot + 1;
+        ch_note_count[fc_ch] += 1;
+        midisend(fc_off, 0x90 | fc_ch, fc_note, fc_vel);
+      );
+      fc_ji += 1;
+    );
+
+    fc_ci += 1;
+  );
+
+  // Update history with chosen channels
+  fc_pi = fc_actual_ch - 1;
+  loop(fc_actual_ch,
+    fc_ch = pool_buf[fc_pi];
+    sh = min(hist_len, 15);
+    while (sh > 0) (hist_buf[sh] = hist_buf[sh - 1]; sh -= 1;);
+    hist_buf[0] = fc_ch;
+    hist_len < 16 ? hist_len += 1;
+    fc_pi -= 1;
+  );
+
+  // GFX state
+  last_copies  = fc_actual_ch;
+  last_chord_n = chord_count;
+  fc_pi = 0;
+  loop(8, last_ch_disp[fc_pi] = fc_pi < fc_actual_ch ? pool_buf[fc_pi] : -1; fc_pi += 1;);
+
+  chord_count   = 0;
+  chord_win_end = -1;
+);
+
+@slider
+chord_win_samps = max(1, chord_win_ms) * srate / 1000;
+
+@block
+
+now      = time_precise();
+skip_idx = skip_ch - 1;
+
+// Flush if chord window closes within this block
+chord_count > 0 && chord_win_end >= 0 && chord_win_end < total_samples + samplesblock ? (
+  send_off = max(0, min(samplesblock - 1, (chord_win_end - total_samples) | 0));
+  flush_chord(send_off);
+);
+
+while (midirecv(offset, msg1, msg2, msg3)) (
+
+  status = msg1 & 0xF0;
+  note   = msg2;
+  vel    = msg3;
+
+  // ============ NOTE ON ============
+  (status == 0x90 && vel > 0) ? (
+
+    // If a previous chord's window already passed, flush it before starting new one
+    chord_count > 0 && (total_samples + offset) > chord_win_end ? (
+      flush_chord(offset);
+    );
+
+    // First note of a new chord: open window
+    chord_count == 0 ? chord_win_end = total_samples + offset + chord_win_samps;
+
+    // Add to chord buffer
+    chord_count < CHORD_MAX ? (
+      chord_buf[chord_count * 2]     = note;
+      chord_buf[chord_count * 2 + 1] = vel;
+      chord_count += 1;
+    );
+
+  // ============ NOTE OFF ============
+  ) : (status == 0x80 || (status == 0x90 && vel == 0)) ? (
+
+    // Remove from chord buffer if note hasn't been dispatched yet
+    found = 0; ji = 0;
+    while (ji < chord_count) (
+      chord_buf[ji * 2] == note ? (
+        chord_count -= 1;
+        chord_buf[ji * 2]     = chord_buf[chord_count * 2];
+        chord_buf[ji * 2 + 1] = chord_buf[chord_count * 2 + 1];
+        found = 1;
+      ) : (ji += 1);
+    );
+
+    // If already dispatched, route note-off to all assigned channels
+    !found ? (
+      cnt = note_ch_count[note];
+      cnt > 0 ? (
+        pi = 0;
+        loop(cnt,
+          ch = note_ch_map[note * 8 + pi];
+          ch_note_count[ch] -= 1;
+          ch_note_count[ch] < 0 ? ch_note_count[ch] = 0;
+          ch_note_count[ch] == 0 ? ch_free_at[ch] = now + hold_ms * 0.001;
+          status == 0x80 ? (
+            midisend(offset, 0x80 | ch, note, vel);
+          ) : (
+            midisend(offset, 0x90 | ch, note, 0);
+          );
+          pi += 1;
+        );
+        note_ch_count[note] = 0;
+      ) : (
+        midisend(offset, msg1, msg2, msg3);
+      );
+    );
+
+  // ============ OTHER MIDI ============
+  ) : (
+    (status == 0xB0 && (msg2 == 120 || msg2 == 123)) ? (
+      i = 0; loop(16, ch_note_count[i] = 0; ch_free_at[i] = 0; i += 1);
+      i = 0; loop(128, note_ch_count[i] = 0; i += 1);
+      chord_count = 0; chord_win_end = -1;
+    );
+    midisend(offset, msg1, msg2, msg3);
+  );
+
+);
+
+total_samples += samplesblock;
+
+
+@gfx 420 160
+
+gfx_clear = 0x111111;
+
+// Last dispatch summary
+gfx_setfont(1, "Arial", 15, 'b');
+gfx_set(1, 1, 1);
+gfx_x = 10; gfx_y = 10;
+last_copies > 0 ? (
+  sprintf(#s, "%d note(s) -> ", last_chord_n);
+  pi = 0;
+  loop(last_copies,
+    ch = last_ch_disp[pi];
+    ch >= 0 ? strcat(#s, sprintf(#t, " Ch%d", ch + 1));
+    pi += 1;
+  );
+  gfx_drawstr(#s);
+) : (
+  gfx_drawstr("Ready - play a chord");
+);
+
+// Chord buffer indicator
+chord_count > 0 ? (
+  gfx_setfont(1, "Arial", 11, 0);
+  gfx_set(1, 0.8, 0.2);
+  gfx_x = 10; gfx_y = 33;
+  gfx_drawstr(sprintf(#, "Buffering: %d note(s)...", chord_count));
+);
+
+// Channel boxes
+disp_ch       = max(2, min(16, floor(num_ch)));
+disp_poly_max = max(1, min(8, floor(poly_max)));
+
+gfx_setfont(1, "Arial", 10, 0);
+gfx_set(0.45, 0.58, 0.75);
+gfx_x = 10; gfx_y = 55;
+gfx_drawstr("CH:");
+
+ci = 0;
+while (ci < disp_ch) (
+  cx = 42 + ci * 23;
+  cy = 50;
+  cnt_g   = ch_note_count[ci];
+  is_skip = (skip_ch > 0 && ci == skip_idx);
+  is_skip ? (
+    gfx_set(0.18, 0.18, 0.18);
+  ) : cnt_g > 0 ? (
+    fill = cnt_g / max(1, disp_poly_max);
+    gfx_set(0.1 + 0.05*fill, 0.4 + 0.4*fill, 0.55 + 0.45*fill);
+  ) : (
+    gfx_set(0.07, 0.12, 0.20);
+  );
+  gfx_rect(cx, cy, 19, 18);
+  gfx_set(0.8, 0.92, 1.0);
+  gfx_x = cx + (ci < 9 ? 5 : 2); gfx_y = cy + 4;
+  gfx_drawstr(sprintf(#t, "%d", ci + 1));
+  ci += 1;
+);
+
+// Eligible count
+now_gfx = time_precise();
+free_n = 0; gg = 0;
+poly_ceil_gfx = max(1, min(8, floor(poly_max)));
+loop(num_ch,
+  (skip_ch == 0 || gg != skip_idx) ? (
+    cnt_g = ch_note_count[gg];
+    (cnt_g < poly_ceil_gfx && (cnt_g > 0 || now_gfx >= ch_free_at[gg])) ? free_n += 1;
+  );
+  gg += 1;
+);
+usable_gfx = num_ch - (skip_ch > 0 && skip_ch <= num_ch ? 1 : 0);
+
+gfx_setfont(1, "Arial", 12, 0);
+gfx_set(0.6, 1, 0.6);
+gfx_x = 10; gfx_y = 80;
+gfx_drawstr(sprintf(#, "Eligible: %d / %d", free_n, usable_gfx));
+
+gfx_set(0.65, 0.65, 0.65);
+gfx_x = 10; gfx_y = 98;
+ch_mode == 1 ? (
+  gfx_drawstr(sprintf(#, "Ch: Fixed %d  |  Poly/ch: %s %d-%d  |  Window: %dms",
+    floor(ch_max),
+    poly_mode == 1 ? "Fixed" : "Rand",
+    floor(poly_min), floor(poly_max), floor(chord_win_ms)));
+) : (
+  gfx_drawstr(sprintf(#, "Ch: Rand %d-%d  |  Poly/ch: %s %d-%d  |  Window: %dms",
+    floor(ch_min), floor(ch_max),
+    poly_mode == 1 ? "Fixed" : "Rand",
+    floor(poly_min), floor(poly_max), floor(chord_win_ms)));
+);
+
+gfx_x = 10; gfx_y = 116;
+gfx_drawstr(sprintf(#, "Hold: %dms  |  No Repeat: %d  |  Skip: ch%d",
+  hold_ms, no_repeat, skip_ch));

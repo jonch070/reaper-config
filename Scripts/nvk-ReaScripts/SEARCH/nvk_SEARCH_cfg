@@ -5,7 +5,7 @@ config = {
 		x = 212.0,
 		y = 71.0
 	},
-	SEARCH = "only arrange",
+	SEARCH = "multi midi",
 	active_filter_disables_filter_keys = false,
 	always_add_to_track = true,
 	always_on_top = false,
@@ -60,7 +60,7 @@ config = {
 	keys = {
 		
 	},
-	last_cursor_context = 1,
+	last_cursor_context = 0,
 	load_last_search_on_startup = true,
 	new_instance_close = true,
 	open_projects_in_new_tab = false,
@@ -80,15 +80,287 @@ config = {
 	project_directories_sort = "Name",
 	recent = {
 		{
+			id = "JS:MIDI Discrete Router — Multi Out",
+			type = "jsfx"
+		},
+		{
+			id = "JS:Random Polyphony Filter",
+			type = "jsfx"
+		},
+		{
+			id = "SWS/BR: Trim MIDI item to active content (BR_TRIM_MIDI_ITEM_ACT_CONTENT) (Main)",
+			type = "action"
+		},
+		{
+			id = "Tempo envelope: Insert tempo/time signature change marker at edit cursor... (40256) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:Seldon Black",
+			type = "jsfx"
+		},
+		{
+			id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Explode multichannel audio or MIDI to new one-channel items (40894) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:MIDI Velocity and Timing Humanizer",
+			type = "jsfx"
+		},
+		{
+			id = "Script: WT_GraphicalSends.lua (RSdc50177fbf7bc76307f0933a94faba56fee53844) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:Randomize Note Length",
+			type = "jsfx"
+		},
+		{
+			id = "JS:Channel Randomizer",
+			type = "jsfx"
+		},
+		{
+			id = "JS:MIDI Modal Randomness",
+			type = "jsfx"
+		},
+		{
+			id = "VST3i:Kontakt 7 (Native Instruments) (64 out)",
+			type = "vst3i"
+		},
+		{
+			id = "Xenakios/SWS: Randomize item positions... (XENAKIOS_RANDOMIZE_ITEMPOS) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3i:Serum 2 (Xfer Records)",
+			type = "vst3i"
+		},
+		{
+			id = "Peaks: Rebuild peaks for selected items (40441) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST:FabFilter Pro-Q 4 (FabFilter)",
+			type = "vst"
+		},
+		{
+			id = "JS:ReEQ",
+			type = "jsfx"
+		},
+		{
+			id = "VST3:Muteomatic (Sound Radix) (mono)",
+			type = "vst3"
+		},
+		{
 			id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
 			type = "action"
 		},
 		{
-			id = "SWS: Copy marker set to clipboard (SWSMARKERLIST5) (Main)",
+			id = "SWS/BR: Tempo help... (BR_TEMPO_HELP_WIKI) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Create Folder From Selected Tracks JK (9820642174eb4a7eb6ad675f10a4c712) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3:Neutron 3 (iZotope)",
+			type = "vst3"
+		},
+		{
+			id = "VST3:Drum Leveler (Sound Radix)",
+			type = "vst3"
+		},
+		{
+			id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
+			type = "action"
+		},
+		{
+			id = "AU:Spectral Freezing (Michael Norris)",
+			type = "au"
+		},
+		{
+			id = "Script: VF - ITEM - Advanced items repositioning.lua (RS14e606e134b3bbaf740f255ab65f309375e36b78) (Main)",
+			type = "action"
+		},
+		{
+			id = "ReaPack: Manage repositories... (REAPACK_MANAGE) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: zaibuyidao_Reposition Items.lua (RSe7c46c98e5e148f1146e16cc52bcbf70a3c66125) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Quantize item's start to grid (keep length) (SWS_QUANTITESTART2) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Set snap offset to nearest grid line (40542) (Main)",
+			type = "action"
+		},
+		{
+			id = "AU:ButterFLY (SIR Audio Tools)",
+			type = "au"
+		},
+		{
+			id = "VST3:ButterFLY (SIR Audio Tools) (10ch)",
+			type = "vst3"
+		},
+		{
+			id = "Script: 916 create children from tracks and assign to random channels with selection (one folder).lua (RS2a3c0cdf413b963c1ccb5a8c3560e58d741d11a2) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: mpl_Move selected items to selected track.lua (RS3d393f4868d9f1d1f2dbe216624fabf5c3d7b863) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: daniellumertz_Clouds.lua (RSebbb21b4c0b5080cdde1d5968e47525bedc49217) (Main)",
+			type = "action"
+		},
+		{
+			id = "SWS: Apply auto coloring (SWSAUTOCOLOR_APPLY) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Invert track polarity/phase (40282) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Item - Glue items, ignoring time selection (preserve stuff).lua (RS83ea6dcba55ae893a8d0978488a724b06b9bc443) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Glue items, ignoring time selection (40362) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: mpl_Rename items on selected tracks incrementally.lua (RSd8ce35b7bb02740185f0637912248ab6d0b796a7) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: spk77_Rename items to track name.eel (RS4fa0ff3424b6f0cfd8d1e7ec2c67e8980f5d022e) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3:Pro-Q 4 (FabFilter)",
+			type = "vst3"
+		},
+		{
+			id = "VST3:Pro-Q 3 (FabFilter)",
+			type = "vst3"
+		},
+		{
+			id = "SWS: Show all tracks (SWSTL_SHOWALL) (Main)",
+			type = "action"
+		},
+		{
+			id = "Project tabs: Synchronize any parent projects when playing back subproject (41994) (Main)",
+			type = "action"
+		},
+		{
+			id = "File: Save project and render RPP-PROX (42332) (Main)",
+			type = "action"
+		},
+		{
+			id = "Track: Pin tracks to top of arrange view (40000) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item properties: Normalize items (each item separately) to +0dB peak (40108) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item properties: Normalize items (to loudest item) to +0dB peak (40254) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3:Ozone 9 (iZotope)",
+			type = "vst3"
+		},
+		{
+			id = "Video processor",
+			type = "other"
+		},
+		{
+			id = "SWS/BR: Normalize loudness of selected items to 0 LU (BR_NORMALIZE_LOUDNESS_ITEMS_LU) (Main)",
 			type = "action"
 		},
 		{
 			id = "Script: NateWeiner - Set project frame rate from video.lua (RSffa88234af6d0278615a8b8b967c0dbb42a91461) (Main)",
+			type = "action"
+		},
+		{
+			id = "Ruler: Add ruler lane... (43540) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST3:Air (Sound Particles)",
+			type = "vst3"
+		},
+		{
+			id = "Track: Duplicate tracks (40062) (Main)",
+			type = "action"
+		},
+		{
+			id = "Custom: Duplicate track without contents (098d275fab6f46cabc751dae4732d645) (Main)",
+			type = "action"
+		},
+		{
+			id = "Script: Yannick_Set exclusive record arm for track or toggle folder collapse.lua (RS985b479d9c749b0953ab1ab22f20b5ed48b0f1b6) (Main)",
+			type = "action"
+		},
+		{
+			id = "VST:Little Plate (Soundtoys)",
+			type = "vst"
+		},
+		{
+			id = "Script: spk77_Pan active takes randomly (normal distribution).eel (RSacf6463b9fe716eb5f2031526881f786d7902441) (Main)",
+			type = "action"
+		},
+		{
+			id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:daniellumertz_Clouds",
+			type = "jsfx"
+		},
+		{
+			id = "VST:ReaTune (Cockos)",
+			type = "vst"
+		},
+		{
+			id = "VST3:RX 7 De-clip (iZotope, Inc.)",
+			type = "vst3"
+		},
+		{
+			id = "Script: gen_SampleEditor.lua (RS9566856a5d3fde83ed1d8db4f6f2234315b39eeb) (Main)",
+			type = "action"
+		},
+		{
+			id = "JS:MIDI Super Arpeggiator (GUI version)",
+			type = "jsfx"
+		},
+		{
+			id = "JS:MIDI Arpeggiator",
+			type = "jsfx"
+		},
+		{
+			id = "AU:dinosaurLarynx_v1.2.0-STABLE (dinosaurLarynx)",
+			type = "au"
+		},
+		{
+			id = "SWS: Copy marker set to clipboard (SWSMARKERLIST5) (Main)",
 			type = "action"
 		},
 		{
@@ -100,10 +372,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "SWS: Show all tracks (SWSTL_SHOWALL) (Main)",
-			type = "action"
-		},
-		{
 			id = "Item: Quantize item positions to grid... (40316) (Main)",
 			type = "action"
 		},
@@ -112,35 +380,11 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Peaks: Rebuild peaks for selected items (40441) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: 916 create children from tracks and assign to random channels with selection (one folder).lua (RS2a3c0cdf413b963c1ccb5a8c3560e58d741d11a2) (Main)",
-			type = "action"
-		},
-		{
 			id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
 			type = "action"
 		},
 		{
 			id = "Script: Item Sampler (Snap Offset Mod).lua (RS50b152607b4bb4d4ade2d56fa440ca88ea1a5668) (Main)",
-			type = "action"
-		},
-		{
-			id = "JS:Randomize Note Length",
-			type = "jsfx"
-		},
-		{
-			id = "AU:dinosaurLarynx_v1.2.0-STABLE (dinosaurLarynx)",
-			type = "au"
-		},
-		{
-			id = "Script: Yannick_Set exclusive record arm for track or toggle folder collapse.lua (RS985b479d9c749b0953ab1ab22f20b5ed48b0f1b6) (Main)",
 			type = "action"
 		},
 		{
@@ -160,27 +404,11 @@ config = {
 			type = "jsfx"
 		},
 		{
-			id = "JS:Seldon Black",
-			type = "jsfx"
-		},
-		{
-			id = "JS:MIDI Velocity and Timing Humanizer",
-			type = "jsfx"
-		},
-		{
 			id = "JS:MIDI Tool v2",
 			type = "jsfx"
 		},
 		{
-			id = "VST3i:Kontakt 7 (Native Instruments) (64 out)",
-			type = "vst3i"
-		},
-		{
 			id = "Script: zaibuyidao_Trim MIDI Item Edges.lua (RS7d3c_e60f31951fbf684628a2eb3b1972da23898ad4df) (MIDI Editor)",
-			type = "action"
-		},
-		{
-			id = "SWS/BR: Trim MIDI item to active content (BR_TRIM_MIDI_ITEM_ACT_CONTENT) (Main)",
 			type = "action"
 		},
 		{
@@ -200,14 +428,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Item: Explode multichannel audio or MIDI to new one-channel items (40894) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3i:Serum 2 (Xfer Records)",
-			type = "vst3i"
-		},
-		{
 			id = "VST3:Serum 2 FX (Xfer Records)",
 			type = "vst3"
 		},
@@ -220,19 +440,11 @@ config = {
 			type = "au"
 		},
 		{
-			id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
-			type = "action"
-		},
-		{
 			id = "AU:dinosaurLarynx METAL (dinosaurLarynx)",
 			type = "au"
 		},
 		{
 			id = "Script: select_leaf_tracks_whole_project.lua (RS6c19c9ab4619345a31130193b981186cdf5855fa) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
 			type = "action"
 		},
 		{
@@ -248,10 +460,6 @@ config = {
 			type = "action"
 		},
 		{
-			id = "File: Save project and render RPP-PROX (42332) (Main)",
-			type = "action"
-		},
-		{
 			id = "JS:Channel Time Delayer",
 			type = "jsfx"
 		},
@@ -264,219 +472,11 @@ config = {
 			type = "action"
 		},
 		{
-			id = "Custom: Create Folder From Selected Tracks JK (9820642174eb4a7eb6ad675f10a4c712) (Main)",
-			type = "action"
-		},
-		{
 			id = "Custom: hide muted tracks and children (d1d0d5d74eab4ed098f8e72cdd1ef7ba) (Main)",
 			type = "action"
 		},
 		{
 			id = "Script: ICio_Set color gradient to children tracks starting from parent color.lua (RS2fffbef80fe517327d0039cd40eff9597b032e04) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: nvk_THEME - Track Colors.lua (RS84ca01ae1d3da001ad9afdb3aeedec36fad60934) (Main)",
-			type = "action"
-		},
-		{
-			id = "Xenakios/SWS: Choose new source file for selected takes... (XENAKIOS_CHANGESOURCEFILE) (Main)",
-			type = "action"
-		},
-		{
-			id = "Media: Replace source in selected media items (42002) (Media Explorer)",
-			type = "action"
-		},
-		{
-			id = "Script: amagalma_gianfini_ReaNamer (track-item-region renaming utility).lua (RS1bc25f89fb200b6750d8af95acc55ab4b36bf3be) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST:Little Plate (Soundtoys)",
-			type = "vst"
-		},
-		{
-			id = "Item: Add stretch marker at cursor (41842) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Snap stretch markers to grid (41846) (Main)",
-			type = "action"
-		},
-		{
-			id = "Video processor",
-			type = "other"
-		},
-		{
-			id = "VST3:Air (Sound Particles)",
-			type = "vst3"
-		},
-		{
-			id = "SWS/BR: Normalize loudness of selected items to 0 LU (BR_NORMALIZE_LOUDNESS_ITEMS_LU) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS: Normalize item(s) to peak RMS (SWS_NORMPEAKRMS) (Main)",
-			type = "action"
-		},
-		{
-			id = "Project tabs: Synchronize any parent projects when playing back subproject (41994) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Move to media source preferred position (BWF start offset) (40299) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS/wol: Select all tracks except folder parents (WOL_SELTREXCFOLDPAR) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: me2beats_Select all tracks but children.lua (RS95e175dbe106774ee485d84eaa8e1e1b38f8d626) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: NateWeiner - Batch Create Cues.lua (RS65137b5938cfd0b97042eed04b824907fa257cee) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:LoAir Mono (Waves)",
-			type = "vst3"
-		},
-		{
-			id = "VST3:Ozone 9 (iZotope)",
-			type = "vst3"
-		},
-		{
-			id = "Track: Duplicate tracks (40062) (Main)",
-			type = "action"
-		},
-		{
-			id = "Xenakios/SWS: Rename selected tracks... (XENAKIOS_RENAMETRAXDLG) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: acendan_The Last Renamer.lua (RS3073edb5d40254ad0bc5bd7b03768c0c9236e251) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:Pi (Sound Radix)",
-			type = "vst3"
-		},
-		{
-			id = "VST3:Neutron 3 (iZotope)",
-			type = "vst3"
-		},
-		{
-			id = "VST3:Trackspacer 2.5 (Wavesfactory)",
-			type = "vst3"
-		},
-		{
-			id = "Track: Cycle track folder state (1041) (Main)",
-			type = "action"
-		},
-		{
-			id = "Folder Toggle (S&M_CYCLACTION_4) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST:RX 7 De-hum (x86_64) (iZotope, Inc.)",
-			type = "vst"
-		},
-		{
-			id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
-			type = "action"
-		},
-		{
-			id = "Markers/Regions: Export markers/regions to file (41758) (Main)",
-			type = "action"
-		},
-		{
-			id = "SWS: Export formatted marker list to clipboard (SWSMARKERLIST11) (Main)",
-			type = "action"
-		},
-		{
-			id = "VST3:Drum Leveler (Sound Radix)",
-			type = "vst3"
-		},
-		{
-			id = "VST3:Melodyne (Celemony)",
-			type = "vst3"
-		},
-		{
-			id = "VST3:RX 7 De-click (iZotope, Inc.)",
-			type = "vst3"
-		},
-		{
-			id = "JS:Automatic Gain (Vocal) Rider",
-			type = "jsfx"
-		},
-		{
-			id = "Options: New recording adds lanes (new lanes play exclusively) (43152) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: me2beats_Toggle exclusive solo for selected tracks.lua (RS7e9734a021c2c867f4abb43fad29e2b59e3d6731) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: acendan_Prompt to match project frame rate with first video item import.lua (RS74062617e0d7daf4991f49b1f703994a99d87bfa) (Main)",
-			type = "action"
-		},
-		{
-			id = "ReaPack: Import repositories... (REAPACK_IMPORT) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:dinosaurLarynx (dinoStable)",
-			type = "au"
-		},
-		{
-			id = "VST3:Co-Producer (Output)",
-			type = "vst3"
-		},
-		{
-			id = "Markers: Insert region from time selection (40174) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:Spectral Blurring (Michael Norris)",
-			type = "au"
-		},
-		{
-			id = "Item properties: Solo exclusive (41558) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Glue items, ignoring time selection (40362) (Main)",
-			type = "action"
-		},
-		{
-			id = "Move edit cursor to next zero crossing in items (40791) (Main)",
-			type = "action"
-		},
-		{
-			id = "Item: Set snap offset to cursor (40541) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
-			type = "action"
-		},
-		{
-			id = "AU:Spectral Freezing (Michael Norris)",
-			type = "au"
-		},
-		{
-			id = "Script: spk77_Pan active takes randomly.eel (RS7864a4d1a314a6f7f2740ff929f469f601c5f814) (Main)",
-			type = "action"
-		},
-		{
-			id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-			type = "action"
-		},
-		{
-			id = "Script: daniellumertz_Clouds.lua (RSebbb21b4c0b5080cdde1d5968e47525bedc49217) (Main)",
 			type = "action"
 		}
 	},

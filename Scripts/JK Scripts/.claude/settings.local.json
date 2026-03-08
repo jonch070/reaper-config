@@ -3,7 +3,9 @@
     "allow": [
       "WebFetch(domain:bearmccreary.com)",
       "WebSearch",
-      "WebFetch(domain:soundtrackfest.com)"
+      "WebFetch(domain:soundtrackfest.com)",
+      "WebFetch(domain:mtosmt.org)",
+      "WebFetch(domain:www.youtube.com)"
     ]
   }
 }
