@@ -19,17 +19,15 @@
 -- ============================================================
 -- CONFIG
 -- ============================================================
-local THRESHOLD_DB    = -60     -- dB below which audio is treated as silence
-                                -- Tip: run JK_RoomTone_Settings.lua to set a shared
-                                -- value, then replace this line with the ExtState read below.
+-- Threshold is shared with JK_RoomTone_DetectAndDelete.
+-- Run JK_RoomTone_Settings.lua to change it (persists across sessions).
+-- The fallback value below is used only if Settings has never been run.
+local _stored_db      = tonumber(reaper.GetExtState("JK_RoomTone", "threshold_db"))
+local THRESHOLD_DB    = _stored_db or -60   -- dB below which audio is silence
+
 local PAD_MS          = 10      -- ms of silence left at each trimmed edge (softens clicks)
 local COARSE_CHUNK_MS = 50      -- first-pass scan resolution
 local FINE_CHUNK_MS   = 2       -- boundary refinement resolution
-
--- To use the shared threshold from JK_RoomTone_Settings instead of the hardcoded
--- value above, comment out THRESHOLD_DB above and uncomment these two lines:
--- local _stored_db = tonumber(reaper.GetExtState("JK_RoomTone","threshold_db"))
--- local THRESHOLD_DB = _stored_db or -60
 
 -- ============================================================
 -- HELPERS
