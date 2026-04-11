@@ -1,9 +1,9 @@
 --[[
- ReaScript Name:Render Blocks - Content Navigator
+ ReaScript Name: Render Blocks - Content Navigator
  Author: LKC
  REAPER: 6
  Extensions: SWS
- Version: 1.11
+ Version: 1.17
  Provides:
   Data/Lokasenna_GUI/Class - Button.dat
   Data/Lokasenna_GUI/Class - Label.dat
@@ -35,81 +35,92 @@
   Data/54/x86/lkc_render2.dat
   Data/54/x86/lkc_render3.dat
   [data] LKC - Content Navigator.png > toolbar_icons/LKC - Content Navigator.png
+ Changelog:
+  + First version after beta that is properly indexed.
  About:
   # LKC CONTENT NAVIGATOR
-  
+
   ## Seamless and powerful project navigation, folder handling and track solo/mute tool.
+--]]
 
 --[[
- * Changelog:
-    * v1.11 (2026-02-14)
-        + Fixed issues with hiding natively pinned tracks
-        + Pinned track list updates on each view change
-    * v1.10 (2025-10-07)
-        + Fixed an issue with rendering in REAPER 7.46+
-    * v1.09 (2025-01-14)
-        + Fixed an issue with Minimal View being always active in MCP
-    * v1.08 (2024-11-04)
-        + Changed licensing model - LKC Content Navigator is now FREE for  both personal and commercial use
-        + Fixed (ALL) button affecting MPC when Affect MPC setting is disabled
-        + Added Help button
-    * v1.07 (2023-10-19)
-        + REAPER 7 support
-    * v1.07beta (2023-10-02)
-        + Fixed loading bug
-    * v1.06beta (2023-10-02)
-        + REAPER 7 and Lua 5.4 support
-    * v1.05 (2023-06-04)
-        + Font options
-        + Indentation options
-        + MCP options
-        + Quick hide button (^,v)
-    * v1.04 (2022-06-18)
-        + Fixed multi-unselection bug
-        + Refactored license management system
-        + Improved license key parsing
-    * v1.03 (2022-05-23)
-        + Improved anti-crash security for multi-selection
-        + Added support for coloring tracks using third-party scripts like ReaNoir or Colour Swatch
-        + License management improvement
-    * v1.03beta (2022-04-19)
-        + Fixed issue with folder selection when using CTRL+Left Click or SHIFT+Left Click
-    * v1.02 (2022-02-20)
-        + Fixed issue in search box with special characters like (^$()%.[]*+-?)
-    * v1.01 (2022-01-23)
-        + Added search box (premium feature) with multi term support (comma is a term separator)
-        + Added support for always hidden tracks (any track with ## in its name)
-        + Added support to rename tracks from Content Navigator (ALT + Double Click)
-        + Added 'Solo' in Navigation Options
-        + Improved stability of the tool (added crash safety)
-    * v1.0 (2022-01-15)
-        + Fixed right click jumping behaviour
-        + Added toolbar icon: LKC - Content Navigator.png
-    * v0.8beta (2022-01-12)
-        + Fixed expanding and collapsing when no selection
-        + Fixed deselection issues
-        + Fixed various unwanted ALT + Right Click results
-    * v0.7beta (2022-01-11)
-        + Standalone license support
-        + Added support for multi selection (using CTRL/SHIFT + Click)
-        + Added support for jump modifier (using ALT + Click)
-        + Added support for quick expand (using ALT + Right Click)
-        + Added support for quick collapse (using ALT + SHIFT + Right Click)
-        + Added support for FREE version (up to 3 depth levels and 20 list items)
-    * v0.6 (2020-07-09)
-        + Small changes and fixes
-    * v0.5 (2020-06-27)
-        + Added support for vertical zoom
-    * v0.4 (2020-06-25)
-        + Selection options
-        + Renamed some option labels for more clarity
-    * v0.3 (2020-06-21)
-        + (Un)Docking buton
-    * v0.2 (2020-05-24)
-        + A lot of improvements
-    * v0.1 (2020-05-24)
-        + Package created
-]]
+ Full Changelog History:
+ v1.17 (2026-03-13)
+    + First version after beta that is properly indexed.
+ v1.17beta (2026-03-13)
+    + Beta to test auto incrementing.
+ v1.16 (2026-03-13)
+    + New publish script testing
+    + Reformated metadata
+ v1.15 (2026-03-13)
+    + Version numbering unified with development branch
+ v1.11 (2026-03-11)
+    + Linux build fixes
+ v1.10 (2026-02-14)
+    + Fixed issues with hiding natively pinned tracks
+    + Pinned track list updates on each view change
+ v1.09 (2025-10-07)
+    + Fixed an issue with rendering in REAPER 7.46+
+ v1.08 (2025-01-14)
+    + Fixed an issue with Minimal View being always active in MCP
+ v1.07 (2024-10-17)
+    + Changed licensing model - LKC Content Navigator is now FREE for both personal and commercial use
+    + Fixed (ALL) button affecting MPC when Affect MPC setting is disabled
+    + Added Help button
+ v1.06 (2023-09-26)
+    + REAPER 7 and Lua 5.4 support
+ v1.05 (2023-06-04)
+    + Font options
+    + Indentation options
+    + MCP options
+    + Quick hide button (^,v)
+ v1.04 (2022-06-18)
+    + Fixed multi-unselection bug
+    + Refactored license management system
+    + Improved license key parsing
+ v1.03 (2022-05-23)
+    + Improved anti-crash security for multi-selection
+    + Added support for coloring tracks using third-party scripts like ReaNoir or Colour Swatch
+    + License management improvement
+ v1.03beta (2022-04-19)
+    + Fixed issue with folder selection when using CTRL+Left Click or SHIFT+Left Click
+ v1.02 (2022-02-20)
+    + Fixed issue in search box with special characters like (^$()%.[]*+-?)
+ v1.01 (2022-01-23)
+    + Added search box (premium feature) with multi term support (comma is a term separator)
+    + Added support for always hidden tracks (any track with ## in its name)
+    + Added support to rename tracks from Content Navigator (ALT + Double Click)
+    + Added 'Solo' in Navigation Options
+    + Improved stability of the tool (added crash safety)
+ v1.0 (2022-01-15)
+    + Fixed right click jumping behaviour
+    + Added toolbar icon: LKC - Content Navigator.png
+ v0.8beta (2022-01-12)
+    + Fixed expanding and collapsing when no selection
+    + Fixed deselection issues
+    + Fixed various unwanted ALT + Right Click results
+ v0.7beta (2022-01-11)
+    + Standalone license support
+    + Added support for multi selection (using CTRL/SHIFT + Click)
+    + Added support for jump modifier (using ALT + Click)
+    + Added support for quick expand (using ALT + Right Click)
+    + Added support for quick collapse (using ALT + SHIFT + Right Click)
+    + Added support for FREE version (up to 3 depth levels and 20 list items)
+ v0.6 (2020-07-09)
+    + Small changes and fixes
+ v0.5 (2020-06-27)
+    + Added support for vertical zoom
+ v0.4 (2020-06-25)
+    + Selection options
+    + Renamed some option labels for more clarity
+ v0.3 (2020-06-21)
+    + (Un)Docking buton
+ v0.2 (2020-05-24)
+    + A lot of improvements
+ v0.1 (2020-05-24)
+    + Package created
+--]]
+
 
 local sws = reaper.APIExists("CF_GetClipboardBig")
 if sws then

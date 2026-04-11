@@ -1,0 +1,35 @@
+[Floating toolbar 31]
+icon_0=lkc_grimsync_wwise_logo.png
+icon_1=lkc_grimsync_workunit.png
+icon_2=lkc_grimsync_folder.png
+icon_3=lkc_grimsync_actor_mixer.png
+icon_4=lkc_grimsync_random.png
+icon_5=lkc_grimsync_sequence.png
+icon_6=lkc_grimsync_blend.png
+icon_7=lkc_grimsync_switch.png
+icon_8=lkc_grimsync_music_switch.png
+icon_9=lkc_grimsync_music_playlist.png
+icon_10=lkc_grimsync_music_segment.png
+icon_11=lkc_grimsync_action_basic_name.png
+icon_12=lkc_grimsync_action_rename.png
+icon_13=lkc_grimsync_action_path_only.png
+icon_14=lkc_grimsync_action_ignore.png
+icon_15=lkc_grimsync_action_delete_clear.png
+item_0=41646 Toolbars: Switch to main toolbar
+item_1=_RS11ff2707292307a7a14b7ad5098ddc9a3685a971 Script: LKC - GrimSync - Track Structure - Object - Work Unit.lua
+item_2=_RS0b48c97fcbd2ca7d4ebc184105b7dc1dada94ac3 Script: LKC - GrimSync - Track Structure - Object - Virtual Folder.lua
+item_3=_RS42a5070e114a54d633c049c0d85ee2aba9666db2 Script: LKC - GrimSync - Track Structure - Object - Actor-Mixer.lua
+item_4=_RS2336fca61005e662df6db3198d8dffa096aff3a5 Script: LKC - GrimSync - Track Structure - Object - Random Container.lua
+item_5=_RS23c0004005a0b9706b044dbb394df8851a25095b Script: LKC - GrimSync - Track Structure - Object - Sequence Container.lua
+item_6=_RSb1fc03b02d422882b4594439edecb45a6cb55d5b Script: LKC - GrimSync - Track Structure - Object - Blend Container.lua
+item_7=_RS9edd396210629717bfb4aa809b68d520e1045304 Script: LKC - GrimSync - Track Structure - Object - Switch Container.lua
+item_8=_RSbc28da8fbc862b6ae8932f6ce644e9292722240f Script: LKC - GrimSync - Track Structure - Object - Music Switch Container.lua
+item_9=_RS2842cfe28481216d0eb4d2c6af35288827f14a3c Script: LKC - GrimSync - Track Structure - Object - Music Playlist Container.lua
+item_10=_RSe1db1c59a233563b16ab62eabb107ab763af1453 Script: LKC - GrimSync - Track Structure - Object - Music Segment.lua
+item_11=_RS73cfdf5b9442ce6e4d5d1161523a90319e037528 Script: LKC - GrimSync - Track Structure - Set basic track.lua
+item_12=_RS75726dbf83d8271891440920d4979a9ce3461bdb Script: LKC - GrimSync - Track Structure - Rename track.lua
+item_13=_RS4ed3755683259d4c78853ffa318d0b775e25b594 Script: LKC - GrimSync - Track Structure - Toggle track path only.lua
+item_14=_RS78e83f5889cfa30baab99c3ea04a1347d68b015a Script: LKC - GrimSync - Track Structure - Toggle track ignore.lua
+item_15=_RSc22f2343a1d6815a3e65856ac56876e04acb68a1 Script: LKC - GrimSync - Track Structure - Delete selected track name.lua
+title=LKC Grim Sync - Tracks Toolbar
+

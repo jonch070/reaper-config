@@ -12,23 +12,30 @@
 --
 -- marker_advance:
 --   1-9 → how many matching markers to skip each time AdvanceMarker runs
+--
+-- cursor_mode:
+--   "mouse"    → scan at the mouse cursor position (default)
+--   "playhead" → scan at the playhead / play position
+--   "edit"     → scan at the edit cursor position
 
 local EXT_NS = "JK_RoomTone"
 
 local function main()
-    local cur_threshold = reaper.GetExtState(EXT_NS, "threshold_db")
-    local cur_mode      = reaper.GetExtState(EXT_NS, "marker_mode")
-    local cur_advance   = reaper.GetExtState(EXT_NS, "marker_advance")
+    local cur_threshold   = reaper.GetExtState(EXT_NS, "threshold_db")
+    local cur_mode        = reaper.GetExtState(EXT_NS, "marker_mode")
+    local cur_advance     = reaper.GetExtState(EXT_NS, "marker_advance")
+    local cur_cursor_mode = reaper.GetExtState(EXT_NS, "cursor_mode")
 
-    if cur_threshold == "" then cur_threshold = "-60" end
-    if cur_mode      == "" then cur_mode      = "editing" end
-    if cur_advance   == "" then cur_advance   = "1" end
+    if cur_threshold   == "" then cur_threshold   = "-60" end
+    if cur_mode        == "" then cur_mode        = "editing" end
+    if cur_advance     == "" then cur_advance     = "1" end
+    if cur_cursor_mode == "" then cur_cursor_mode = "mouse" end
 
     local ok, values = reaper.GetUserInputs(
         "JK Room Tone — Settings",
-        3,
-        "Silence threshold (dB, e.g. -60),Marker mode  (editing / all),Markers to advance  (1 – 9),",
-        cur_threshold .. "," .. cur_mode .. "," .. cur_advance
+        4,
+        "Silence threshold (dB, e.g. -60),Marker mode  (editing / all),Markers to advance  (1 – 9),Action target  (mouse / playhead / edit),",
+        cur_threshold .. "," .. cur_mode .. "," .. cur_advance .. "," .. cur_cursor_mode
     )
     if not ok then return end
 
@@ -38,9 +45,10 @@ local function main()
         parts[#parts + 1] = part:match("^%s*(.-)%s*$")
     end
 
-    local new_threshold = parts[1] or cur_threshold
-    local new_mode      = parts[2] or cur_mode
-    local new_advance   = parts[3] or cur_advance
+    local new_threshold   = parts[1] or cur_threshold
+    local new_mode        = parts[2] or cur_mode
+    local new_advance     = parts[3] or cur_advance
+    local new_cursor_mode = parts[4] or cur_cursor_mode
 
     -- Validate threshold
     local db = tonumber(new_threshold)
@@ -68,14 +76,24 @@ local function main()
         return
     end
 
-    reaper.SetExtState(EXT_NS, "threshold_db",   tostring(db),   true)
-    reaper.SetExtState(EXT_NS, "marker_mode",    new_mode,       true)
-    reaper.SetExtState(EXT_NS, "marker_advance", tostring(n),    true)
+    -- Validate cursor mode
+    if new_cursor_mode ~= "mouse" and new_cursor_mode ~= "playhead" and new_cursor_mode ~= "edit" then
+        reaper.ShowMessageBox(
+            'Action target must be "mouse", "playhead", or "edit".\nGot: "' .. new_cursor_mode .. '"',
+            "JK RoomTone Settings", 0)
+        return
+    end
+
+    reaper.SetExtState(EXT_NS, "threshold_db",   tostring(db),     true)
+    reaper.SetExtState(EXT_NS, "marker_mode",    new_mode,         true)
+    reaper.SetExtState(EXT_NS, "marker_advance", tostring(n),      true)
+    reaper.SetExtState(EXT_NS, "cursor_mode",    new_cursor_mode,  true)
 
     reaper.ShowConsoleMsg(
         "[JK RoomTone] Settings saved — threshold: " .. db .. " dB" ..
         "  |  mode: " .. new_mode ..
-        "  |  advance: " .. n .. "\n")
+        "  |  advance: " .. n ..
+        "  |  target: " .. new_cursor_mode .. "\n")
 end
 
 main()

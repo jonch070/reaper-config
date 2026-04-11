@@ -36,7 +36,8 @@ ALLOWED_HIER_TYPES = {
     Folder = true,
     MusicSwitchContainer = true,
     MusicSegment = true,
-    MusicPlaylistContainer = true
+    MusicPlaylistContainer = true,
+    PropertyContainer= true,
 }
 
 local AM_COLOR = reaper.ColorToNative(64, 181, 206) | 0x1000000
@@ -116,6 +117,12 @@ function LinkWwiseObjectToTrack(track)
         elseif string.match(path, "^\\Interactive Music Hierarchy") ~= nil then
             -- Msg("MUSIC")
             color = IM_COLOR
+            region_name = "{CONTAINERS=" .. name .. "}:" .. path .. "," .. guid .. "," ..
+                              "[ORIGINALS=" .. originals .. "]" .. "," .. "[EVENTS_SUBPATH=" ..
+                              events_subpath .. "],[TYPE=" .. ttype .. "]"
+        elseif string.match(path, "^\\Containers") ~= nil then
+            -- Msg("NEW WWISE 2025")
+            color = AM_COLOR
             region_name = "{CONTAINERS=" .. name .. "}:" .. path .. "," .. guid .. "," ..
                               "[ORIGINALS=" .. originals .. "]" .. "," .. "[EVENTS_SUBPATH=" ..
                               events_subpath .. "],[TYPE=" .. ttype .. "]"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="hsuanice Scripts" commit="e9f2af69589e9727da6e9b403ddadbf3f8b7ffb3">
+<index version="1" name="hsuanice Scripts" commit="1a6b573215084e5e7e18c8be18d6071f678ac559">
   <category name="Beta Testing">
     <reapack name="hsuanice_AudioSweet ReaImGui.lua" type="script" desc="AudioSweet ReaImGui - AudioSuite Workflow (Pro Tools–Style)">
       <metadata>
@@ -33,6 +33,7 @@
 {\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab {\b Auto Tail Detection}: Intelligent tail length via audio analysis \u8226 ? Analyze processed audio amplitude/RMS to detect natural decay \u8226 ? Auto-determine tail length based on reverb/delay characteristics \u8226 ? Advanced feature requiring signal processing research\sa180\par}
 }
 ]]></description>
+        <link rel="website">https://forum.cockos.com/showthread.php?p=2910884#post2910884</link>
       </metadata>
       <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
@@ -48,6 +49,39 @@
       </version>
       <version name="0.2.3" author="hsuanice" time="2026-02-05T03:57:14Z">
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/aad556c0f9fda8ba2a0011ad65f4dbc98314bb33/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.4" author="hsuanice" time="2026-03-27T16:23:16Z">
+        <changelog><![CDATA[0.2.4 [260327.2345]
+  - ADDED: Independent Show/Hide checkboxes for Presets and History panels
+    • Split "Show Presets/History" into separate "Show Presets" and "Show History" checkboxes
+    • Layout: [Show Presets] ... [Show FX window on recall] ... [Show History]
+    • When only one panel is visible, it expands to use the full available width
+    • When both panels are visible, they share the width 50/50 as before
+  - ADDED: Drag-to-reorder for Saved FX Presets
+    • Drag handle (=) added to the left of each preset row
+    • Drop onto any row to insert the dragged item above it
+    • New order is persisted immediately via save_chains_to_extstate()]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/bf8508e56d684e038ace0e7adae6ccd5df104524/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.5" author="hsuanice" time="2026-03-28T12:25:34Z">
+        <changelog><![CDATA[0.2.5 [260328.0408]
+  - ADDED: Tail Seconds input field (requires RGWH Core ≥ 0.3.7)
+    • New "Tail" input next to the handle seconds field
+    • Extends the processed item into silence after the right handle
+    • Captures reverb/delay/echo decay; 0 = off (backward-compatible default)
+    • Written to RGWH ExtState (TAIL_SECONDS) on every Run/Apply
+
+0.2.4 [260327.2345]
+  - ADDED: Independent Show/Hide checkboxes for Presets and History panels
+    • Split "Show Presets/History" into separate "Show Presets" and "Show History" checkboxes
+    • Layout: [Show Presets] ... [Show FX window on recall] ... [Show History]
+    • When only one panel is visible, it expands to use the full available width
+    • When both panels are visible, they share the width 50/50 as before
+  - ADDED: Drag-to-reorder for Saved FX Presets
+    • Drag handle (=) added to the left of each preset row
+    • Drop onto any row to insert the dragged item above it
+    • New order is persisted immediately via save_chains_to_extstate()]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/1a6b573215084e5e7e18c8be18d6071f678ac559/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
       </version>
     </reapack>
     <reapack name="hsuanice_RGWH Glue.lua" type="script" desc="RGWH Glue - Glue with Handles (ExtState Shortcut)">
@@ -75,7 +109,17 @@
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Beta%20Testing/hsuanice_RGWH%20Monitor.lua</source>
       </version>
     </reapack>
-    <reapack name="hsuanice_RGWH ReaImGui.lua" type="script" desc="RGWH GUI - ImGui Interface for RGWH Core">
+    <reapack name="hsuanice_RGWH ReaImGui.lua" type="script" desc="RGWH ReaImGui - ImGui Interface for RGWH Core（Render or Glue with Handles）">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 ImGui-based GUI for configuring and running RGWH Core operations. Provides visual controls for all RGWH Wrapper Template parameters.\par}
+}
+]]></description>
+        <link rel="website">https://forum.cockos.com/showthread.php?t=305456</link>
+      </metadata>
       <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
       </version>
@@ -90,6 +134,16 @@
       </version>
       <version name="0.2.4" author="hsuanice" time="2026-02-07T07:33:43Z">
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/f2a91e3dc7d238a56514577df612dd2999220bb9/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.5" author="hsuanice" time="2026-03-28T12:24:16Z">
+        <changelog><![CDATA[0.2.5 [260328.0408] - ADDED: Tail Seconds — FX decay extension (requires RGWH Core ≥ 0.3.7)
+  - NEW: "Tail (s)" input field under Handle settings
+    • Extends item into silence after right handle to capture reverb/delay/echo decay
+    • 0 = disabled (backward-compatible default)
+  - tail_seconds persisted in gui state (persist_keys + serialize/parse)
+  - TAIL_SECONDS written to RGWH ExtState on every sync_to_extstate()
+  - Debug log includes Tail Seconds value]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/024e6891a4d9a1c22124e25459ee70fd140cf89b/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
       </version>
     </reapack>
     <reapack name="hsuanice_RGWH Render.lua" type="script" desc="RGWH Render - Render with Handles (ExtState Shortcut)">
@@ -188,7 +242,17 @@
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Library/hsuanice_Metadata%20Read.lua</source>
       </version>
     </reapack>
-    <reapack name="hsuanice_RGWH Core.lua" type="script" desc="RGWH Core - Render or Glue with Handles">
+    <reapack name="hsuanice_RGWH Core.lua" type="script" desc="RGWH Core - Core Library of Render or Glue with Handles">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Core library for handle-aware Render/Glue workflows with clear, single-entry API. Features: \u8226 ? Handle-aware windows with clamp-to-source. \u8226 ? Glue by Item Units (same-track grouping), with optional Glue Cues. \u8226 ? Render single items with apply policies and BWF TimeReference embed. \u8226 ? One-run overrides via ExtState snapshot/restore (non-destructive defaults). \u8226 ? Edge Cues (#in/#out) and Glue Cues (#Glue: ) for media cue workflows.\par}
+}
+]]></description>
+        <link rel="website">https://forum.cockos.com/showthread.php?t=305456</link>
+      </metadata>
       <version name="0.1.0" author="hsuanice" time="2025-12-16T10:34:51Z">
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/959c37339bbe980d3a3a9450421d76e4998f30d4/Library/hsuanice_RGWH%20Core.lua</source>
       </version>
@@ -203,6 +267,19 @@
       </version>
       <version name="0.3.6" author="hsuanice" time="2026-02-07T09:31:23Z">
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/d37fbf50a0243bc4ce5212328426c304c79bdc38/Library/hsuanice_RGWH%20Core.lua</source>
+      </version>
+      <version name="0.3.7" author="hsuanice" time="2026-03-28T12:22:35Z">
+        <changelog><![CDATA[0.3.7 [260328.0408] - ADDED: Tail Seconds — FX decay extension independent of handles
+  - NEW: TAIL_SECONDS setting (default 0.0): extends the processed item beyond the right handle,
+    into silence, to capture reverb/delay/echo decay naturally.
+  - Tail is NOT clamped to source length — item extends into silence (REAPER pads with zeros).
+  - Tail is always additive: finalR = gotR + TAIL (stacks on top of Right handle, not replacing it).
+  - Glue path only: UR window and final item length extended by TAIL on last member.
+    • Render intentionally ignores TAIL (tail is Glue-only by design).
+  - per_member_window_lr() now accepts tail param; returns finalR and tailH in result table.
+  - M.core() API: handle = { ..., tail=N } sets TAIL_SECONDS for a one-run override.
+  - DEFAULTS.TAIL_SECONDS = 0.0 (fully backward-compatible; no behaviour change when not set).]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/6bf1782682be3b98c2dbcd077d2deff05a6f5c1a/Library/hsuanice_RGWH%20Core.lua</source>
       </version>
     </reapack>
   </category>

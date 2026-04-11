@@ -1,83 +1,85 @@
---[[
-@description AudioSweet ReaImGui - AudioSuite Workflow (Pro Tools–Style)
-@author hsuanice
-@version 0.2.3
-@provides
-  [main] .
-@about
-  # AudioSweet ReaImGui
-
-  Complete AudioSweet control center with ImGui interface for managing FX chains and presets.
-
-  ## Quick Start
-  - Help → User Manual: Full documentation with workflows and tips
-  - Help → About: Reference and credits
-
-  ## Reference
-  Inspired by AudioSuite-like Script by Tim Chimes
-  'AudioSweet' is a name originally given by Tim Chimes.
-  This project continues to use the name in reference to his original work.
-
-  Original: Renders selected plugin to selected media item
-  Written for REAPER 5.1 with Lua
-  v1.1 12/22/2015 - Added PreventUIRefresh
-  http://timchimes.com/scripting-with-reaper-audiosuite/
-
-  ## Development
-  This script was developed with the assistance of AI tools
-  including ChatGPT and Claude AI.
-
-  ## Future Development
-  Planned features and experimental ideas for future implementation:
-
-  ### Approved for Implementation
-  - **Independent AudioSweet Run Scripts**: Create standalone action list scripts
-    • Run (Stop mode): Standard execution reading all GUI ExtState settings
-    • Run (Preview mode): Process items in item/time selection during preview
-      - Stop preview, preserve FX state/bypass
-      - Execute RGWH Core print/render with current FX configuration
-      - Return processed items to original track positions
-      - Resume preview workflow
-
-  - **Independent Solo Script**: Unified solo logic extractable to action list
-    • Priority: Focused FX/chain track → Default chain track
-    • Can be assigned to keyboard shortcuts independently
-
-  - **Right Handle Only Mode**: Extends existing audio content (different from tail)
-    • Processes additional duration on right side only
-    • Handle extends content that already exists in source
-
-  - **Fixed-Length Tail Mode**: FX tail from non-handle content processing
-    • Important: RIGHT HANDLE ≠ TAIL MODE
-    • Tail = reverb/delay tail printed from non-handle processed content
-    • Fixed parameter: user-defined length (e.g., 3s, 5s)
-    • Tail processes decay/reverb after main content, not extended source
-
-  ### Deferred Ideas for Research
-  - **Live FX Switching During Preview**: Dynamic FX parameter changes
-    • Challenge: Requires real-time FX state synchronization
-    • Needs investigation of REAPER API capabilities
-
-  - **Auto Tail Detection**: Intelligent tail length via audio analysis
-    • Analyze processed audio amplitude/RMS to detect natural decay
-    • Auto-determine tail length based on reverb/delay characteristics
-    • Advanced feature requiring signal processing research
-
-
-@changelog
-  0.2.3 [260205.1040]
-    - ADJUSTED: Main page layout alignment and spacing tweaks
-
-  0.2.2 [260205.1027]
-    - MOVED: Multi-Channel Policy from Settings tab to main page (two-row layout)
-      • Row 1: Channel mode (left) + Preview Target (right)
-      • Row 2: Policy radios — playback / track / target (left) + Whole File (right)
-      • Policy always visible (shows current selection even in Auto/Mono mode)
-      • Hover tooltips on each policy option
-    - REMOVED: Settings → Channel Mode tab (redundant, now on main page)
-    - UPDATED: Multi radio button tooltip simplified
-
-]]--
+-- @description AudioSweet ReaImGui - AudioSuite Workflow (Pro Tools–Style)
+-- @version 0.2.5
+-- @author hsuanice
+-- @link https://forum.cockos.com/showthread.php?p=2910884#post2910884
+-- @about
+--   # AudioSweet ReaImGui
+--
+--   Complete AudioSweet control center with ImGui interface for managing FX chains and presets.
+--
+--   ## Quick Start
+--   - Help → User Manual: Full documentation with workflows and tips
+--   - Help → About: Reference and credits
+--
+--   ## Reference
+--   Inspired by AudioSuite-like Script by Tim Chimes
+--   'AudioSweet' is a name originally given by Tim Chimes.
+--   This project continues to use the name in reference to his original work.
+--
+--   Original: Renders selected plugin to selected media item
+--   Written for REAPER 5.1 with Lua
+--   v1.1 12/22/2015 - Added PreventUIRefresh
+--   http://timchimes.com/scripting-with-reaper-audiosuite/
+--
+--   ## Development
+--   This script was developed with the assistance of AI tools
+--   including ChatGPT and Claude AI.
+--
+--   ## Future Development
+--   Planned features and experimental ideas for future implementation:
+--
+--   ### Approved for Implementation
+--   - **Independent AudioSweet Run Scripts**: Create standalone action list scripts
+--     • Run (Stop mode): Standard execution reading all GUI ExtState settings
+--     • Run (Preview mode): Process items in item/time selection during preview
+--       - Stop preview, preserve FX state/bypass
+--       - Execute RGWH Core print/render with current FX configuration
+--       - Return processed items to original track positions
+--       - Resume preview workflow
+--
+--   - **Independent Solo Script**: Unified solo logic extractable to action list
+--     • Priority: Focused FX/chain track → Default chain track
+--     • Can be assigned to keyboard shortcuts independently
+--
+--   - **Right Handle Only Mode**: Extends existing audio content (different from tail)
+--     • Processes additional duration on right side only
+--     • Handle extends content that already exists in source
+--
+--   - **Fixed-Length Tail Mode**: FX tail from non-handle content processing
+--     • Important: RIGHT HANDLE ≠ TAIL MODE
+--     • Tail = reverb/delay tail printed from non-handle processed content
+--     • Fixed parameter: user-defined length (e.g., 3s, 5s)
+--     • Tail processes decay/reverb after main content, not extended source
+--
+--   ### Deferred Ideas for Research
+--   - **Live FX Switching During Preview**: Dynamic FX parameter changes
+--     • Challenge: Requires real-time FX state synchronization
+--     • Needs investigation of REAPER API capabilities
+--
+--   - **Auto Tail Detection**: Intelligent tail length via audio analysis
+--     • Analyze processed audio amplitude/RMS to detect natural decay
+--     • Auto-determine tail length based on reverb/delay characteristics
+--     • Advanced feature requiring signal processing research
+--
+--
+-- @changelog
+--   0.2.5 [260328.0408]
+--     - ADDED: Tail Seconds input field (requires RGWH Core ≥ 0.3.7)
+--       • New "Tail" input next to the handle seconds field
+--       • Extends the processed item into silence after the right handle
+--       • Captures reverb/delay/echo decay; 0 = off (backward-compatible default)
+--       • Written to RGWH ExtState (TAIL_SECONDS) on every Run/Apply
+--
+--   0.2.4 [260327.2345]
+--     - ADDED: Independent Show/Hide checkboxes for Presets and History panels
+--       • Split "Show Presets/History" into separate "Show Presets" and "Show History" checkboxes
+--       • Layout: [Show Presets] ... [Show FX window on recall] ... [Show History]
+--       • When only one panel is visible, it expands to use the full available width
+--       • When both panels are visible, they share the width 50/50 as before
+--     - ADDED: Drag-to-reorder for Saved FX Presets
+--       • Drag handle (=) added to the left of each preset row
+--       • Drop onto any row to insert the dragged item above it
+--       • New order is persisted immediately via save_chains_to_extstate()
 
 ------------------------------------------------------------
 -- Dependencies
@@ -112,6 +114,7 @@ local gui = {
   multi_channel_policy = "source_playback",  -- "source_playback" | "source_track" | "target_track"
   handle_seconds = 5.0,
   use_whole_file = false, -- Use whole file length instead of handles
+  tail_seconds = 0.0,     -- FX tail capture (reverb/delay/echo decay), appended after right handle
   debug = false,
   max_history = 10,      -- Maximum number of history items to keep
   show_fx_on_recall = true,    -- Show FX window when executing SAVED CHAIN/HISTORY
@@ -181,7 +184,8 @@ local gui = {
   -- Feature flags
   enable_saved_chains = true,   -- Now working with OVERRIDE ExtState mechanism
   enable_history = true,        -- Now working with OVERRIDE ExtState mechanism
-  show_presets_history = true,  -- Show/Hide Saved Preset + History block
+  show_presets = true,   -- Show/Hide Saved Preset block
+  show_history = true,   -- Show/Hide History block
   -- UI settings
   enable_docking = false,       -- Allow window docking
   bwfmetaedit_custom_path = "",
@@ -231,6 +235,7 @@ local function save_gui_settings()
 
   r.SetExtState(SETTINGS_NAMESPACE, "handle_seconds", tostring(gui.handle_seconds), true)
   r.SetExtState(SETTINGS_NAMESPACE, "use_whole_file", gui.use_whole_file and "1" or "0", true)
+  r.SetExtState(SETTINGS_NAMESPACE, "tail_seconds", tostring(gui.tail_seconds), true)
   r.SetExtState(SETTINGS_NAMESPACE, "debug", gui.debug and "1" or "0", true)
   r.SetExtState(SETTINGS_NAMESPACE, "max_history", tostring(gui.max_history), true)
   r.SetExtState(SETTINGS_NAMESPACE, "show_fx_on_recall", gui.show_fx_on_recall and "1" or "0", true)
@@ -265,7 +270,8 @@ local function save_gui_settings()
   r.SetExtState(SETTINGS_NAMESPACE, "preview_restore_mode", tostring(gui.preview_restore_mode), true)
   -- UI settings
   r.SetExtState(SETTINGS_NAMESPACE, "enable_docking", gui.enable_docking and "1" or "0", true)
-  r.SetExtState(SETTINGS_NAMESPACE, "show_presets_history", gui.show_presets_history and "1" or "0", true)
+  r.SetExtState(SETTINGS_NAMESPACE, "show_presets", gui.show_presets and "1" or "0", true)
+  r.SetExtState(SETTINGS_NAMESPACE, "show_history", gui.show_history and "1" or "0", true)
   r.SetExtState(SETTINGS_NAMESPACE, "bwfmetaedit_custom_path", gui.bwfmetaedit_custom_path or "", true)
 
   -- Debug: Log key settings that were updated
@@ -321,6 +327,7 @@ local function load_gui_settings()
   gui.multi_channel_policy = get_string("multi_channel_policy", "source_playback")
   gui.handle_seconds = get_float("handle_seconds", 5.0)
   gui.use_whole_file = get_bool("use_whole_file", false)
+  gui.tail_seconds   = get_float("tail_seconds", 0.0)
   gui.debug = get_bool("debug", false)
   gui.max_history = get_int("max_history", 10)
   gui.show_fx_on_recall = get_bool("show_fx_on_recall", true)
@@ -360,7 +367,8 @@ local function load_gui_settings()
   gui.bwfmetaedit_custom_path = get_string("bwfmetaedit_custom_path", "")
   -- UI settings
   gui.enable_docking = get_bool("enable_docking", false)
-  gui.show_presets_history = get_bool("show_presets_history", true)
+  gui.show_presets = get_bool("show_presets", true)
+  gui.show_history = get_bool("show_history", true)
 
   -- Debug output on startup now handled by log_gui_settings() at entry point.
 end
@@ -1581,6 +1589,7 @@ local function set_extstate_from_gui(mode_override)
   -- Use whole file length if enabled, otherwise use configured handle seconds
   local handle_value = gui.use_whole_file and 999999 or gui.handle_seconds
   r.SetProjExtState(0, "RGWH", "HANDLE_SECONDS", tostring(handle_value))
+  r.SetProjExtState(0, "RGWH", "TAIL_SECONDS", tostring(gui.tail_seconds or 0.0))
 
   -- Set RGWH Core debug level (0 = silent, no console output)
   r.SetProjExtState(0, "RGWH", "DEBUG_LEVEL", gui.debug and "2" or "0")
@@ -2130,6 +2139,7 @@ local function run_saved_chain_apply_mode(tr, chain_name, item_count)
   -- Use whole file length if enabled, otherwise use configured handle seconds
   local handle_value = gui.use_whole_file and 999999 or gui.handle_seconds
   r.SetProjExtState(0, "RGWH", "HANDLE_SECONDS", tostring(handle_value))
+  r.SetProjExtState(0, "RGWH", "TAIL_SECONDS", tostring(gui.tail_seconds or 0.0))
   r.SetProjExtState(0, "RGWH", "DEBUG_LEVEL", gui.debug and "2" or "0")
 
   if gui.debug then
@@ -3862,7 +3872,7 @@ end
     end
 
     -- Whole File + handle input (right side of row 2)
-    ImGui.SameLine(ctx, 0, 130)
+    ImGui.SameLine(ctx, 0, 20)
     local rv_whole = ImGui.Checkbox(ctx, "Whole File", gui.use_whole_file)
     if rv_whole then
       gui.use_whole_file = not gui.use_whole_file
@@ -3872,14 +3882,26 @@ end
     if gui.use_whole_file then
       ImGui.BeginDisabled(ctx)
     end
-    ImGui.SetNextItemWidth(ctx, 93)
-    local rv, new_val = ImGui.InputDouble(ctx, "##handle_seconds", gui.handle_seconds, 0, 0, "%.1f")
+    ImGui.SetNextItemWidth(ctx, 85)
+    local rv, new_val = ImGui.InputDouble(ctx, "##handle_seconds", gui.handle_seconds, 0.5, 1.0, "%.1f")
     if rv then
       gui.handle_seconds = math.max(0, new_val)
       save_gui_settings()
     end
     if gui.use_whole_file then
       ImGui.EndDisabled(ctx)
+    end
+    ImGui.SameLine(ctx)
+    ImGui.Text(ctx, "Tail")
+    if ImGui.IsItemHovered(ctx) then
+      ImGui.SetTooltip(ctx, "FX tail capture: extends item into silence after the right handle\nCaptures reverb/delay/echo decay\n0 = off")
+    end
+    ImGui.SameLine(ctx)
+    ImGui.SetNextItemWidth(ctx, 85)
+    local rv_tail, new_tail = ImGui.InputDouble(ctx, "##tail_seconds", gui.tail_seconds, 0.5, 1.0, "%.1f")
+    if rv_tail then
+      gui.tail_seconds = math.max(0, new_tail)
+      save_gui_settings()
     end
   end
 
@@ -3990,31 +4012,44 @@ end
   if gui.enable_saved_chains or gui.enable_history then
     local changed
     local line_y = ImGui.GetCursorPosY(ctx)
-    changed, gui.show_presets_history = ImGui.Checkbox(ctx, "Show Presets/History", gui.show_presets_history)
+    local left_x = ImGui.GetCursorPosX(ctx)
+    local avail = ImGui.GetContentRegionAvail(ctx)
+    local right_edge = left_x + avail
+    local cb_frame_h = ImGui.GetFrameHeight(ctx)
+    local inner_x = ImGui.GetStyleVar(ctx, ImGui.StyleVar_ItemInnerSpacing)
+    local inner_spacing_x = type(inner_x) == "table" and (inner_x[1] or 0) or inner_x
+    local function cb_width(label)
+      return cb_frame_h + inner_spacing_x + ImGui.CalcTextSize(ctx, label)
+    end
+    local recall_label = "Show FX window on recall"
+    local history_label = "Show History"
+    local recall_w = cb_width(recall_label)
+    local history_w = cb_width(history_label)
+
+    -- Show Presets (left)
+    changed, gui.show_presets = ImGui.Checkbox(ctx, "Show Presets", gui.show_presets)
     if changed then save_gui_settings() end
 
-    local recall_label = "Show FX window on recall"
-    local label_w = ImGui.CalcTextSize(ctx, recall_label)
-    local inner_x = ImGui.GetStyleVar(ctx, ImGui.StyleVar_ItemInnerSpacing)
-    local inner_spacing_x = inner_x
-    if type(inner_x) == "number" then
-      inner_spacing_x = inner_x
-    elseif type(inner_x) == "table" then
-      inner_spacing_x = inner_x[1] or 0
-    end
-    local checkbox_w = ImGui.GetFrameHeight(ctx) + inner_spacing_x + label_w
-    local right_edge = ImGui.GetCursorPosX(ctx) + ImGui.GetContentRegionAvail(ctx)
+    -- Show FX window on recall (center)
     ImGui.SetCursorPosY(ctx, line_y)
-    ImGui.SetCursorPosX(ctx, right_edge - checkbox_w)
+    ImGui.SetCursorPosX(ctx, left_x + (avail - recall_w) * 0.5)
     changed, gui.show_fx_on_recall = ImGui.Checkbox(ctx, recall_label, gui.show_fx_on_recall)
     if changed then save_gui_settings() end
 
-    if gui.show_presets_history then
+    -- Show History (right)
+    ImGui.SetCursorPosY(ctx, line_y)
+    ImGui.SetCursorPosX(ctx, right_edge - history_w)
+    changed, gui.show_history = ImGui.Checkbox(ctx, history_label, gui.show_history)
+    if changed then save_gui_settings() end
 
-      -- Only show if at least one feature is enabled and has content
-      if (gui.enable_saved_chains and #gui.saved_chains > 0) or (gui.enable_history and #gui.history > 0) then
+    if gui.show_presets or gui.show_history then
+
+      -- Only show if at least one feature is enabled, has content, and is set to show
+      if (gui.enable_saved_chains and #gui.saved_chains > 0 and gui.show_presets) or (gui.enable_history and #gui.history > 0 and gui.show_history) then
         local avail_w = ImGui.GetContentRegionAvail(ctx)
-        local col1_w = avail_w * 0.5 - 5
+        local presets_visible = gui.enable_saved_chains and #gui.saved_chains > 0 and gui.show_presets
+        local history_visible = gui.enable_history and #gui.history > 0 and gui.show_history
+        local col1_w = (presets_visible and history_visible) and (avail_w * 0.5 - 5) or 0
 
         local function calc_list_height(item_count)
           local _, spacing_y = ImGui.GetStyleVar(ctx, ImGui.StyleVar_ItemSpacing)
@@ -4028,17 +4063,35 @@ end
         end
 
         -- Left: Saved FX Preset
-        if gui.enable_saved_chains and #gui.saved_chains > 0 then
+        if presets_visible then
           local saved_height = calc_list_height(#gui.saved_chains)
           if ImGui.BeginChild(ctx, "SavedCol", col1_w, saved_height) then
             ImGui.Text(ctx, "SAVED FX PRESET")
             ImGui.Separator(ctx)
             local to_delete = nil
+            local drag_src_idx, drag_dst_idx
             for i, chain in ipairs(gui.saved_chains) do
               ImGui.PushID(ctx, i)
 
               -- Get display info
               local display_name, track_info_line, fx_info, saved_fx_index = get_chain_display_info(chain)
+
+              -- Drag handle
+              ImGui.SmallButton(ctx, "=")
+              if ImGui.BeginDragDropSource(ctx) then
+                ImGui.SetDragDropPayload(ctx, "AS_PRESET_REORDER", tostring(i))
+                ImGui.Text(ctx, display_name)
+                ImGui.EndDragDropSource(ctx)
+              end
+              if ImGui.BeginDragDropTarget(ctx) then
+                local accepted, payload = ImGui.AcceptDragDropPayload(ctx, "AS_PRESET_REORDER")
+                if accepted then
+                  drag_src_idx = tonumber(payload)
+                  drag_dst_idx = i
+                end
+                ImGui.EndDragDropTarget(ctx)
+              end
+              ImGui.SameLine(ctx)
 
               -- "Open" button (small, on the left)
               if ImGui.SmallButton(ctx, "Open") then
@@ -4103,15 +4156,21 @@ end
               end
               ImGui.PopID(ctx)
             end
-            if to_delete then delete_saved_chain(to_delete) end
+            if to_delete then
+              delete_saved_chain(to_delete)
+            elseif drag_src_idx and drag_dst_idx and drag_src_idx ~= drag_dst_idx then
+              local entry = table.remove(gui.saved_chains, drag_src_idx)
+              table.insert(gui.saved_chains, drag_dst_idx, entry)
+              save_chains_to_extstate()
+            end
             ImGui.EndChild(ctx)
           end
 
-          ImGui.SameLine(ctx)
+          if history_visible then ImGui.SameLine(ctx) end
         end
 
         -- Right: History (auto-resizes based on content)
-        if gui.enable_history and #gui.history > 0 then
+        if history_visible then
           -- Calculate height based on number of history items (each item ~25px, header ~40px)
           local history_height = calc_list_height(#gui.history)
           if ImGui.BeginChild(ctx, "HistoryCol", 0, history_height) then

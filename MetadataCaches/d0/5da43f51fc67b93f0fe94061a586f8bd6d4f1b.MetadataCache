@@ -3,6 +3,8 @@ F "01 - Become Desert.flac" 1034680269 0 1730302214 0
 D t "Become Desert" a "Seattle Symphony" b "John Luther Adams: Become Desert" y 2019
 D g Classical s 48000 n 6 l 40:22.451
 D i 24 m 1
+F "04 their blessing weighs on me Edit 2 (1)_averaged.wav" 5292044 0 1773183645 0
+D s 44100 n 2 l 0:30.000 i 16
 F "2025-03-19 18-48-29.mp4" 124844095 0 1742431890 0
 D s 48000 n 2 l 2:36.400
 F "2025-03-19 18-53-15.mp4" 102033029 0 1742432144 0
@@ -56,6 +58,8 @@ D y 2025-01-12 s 48000 n 2 r 1:42:32.474
 D l 1:49.493 i 24
 F FOAFR_iRide_mainShow_proxy_logo_v02.mp4 368354359 0 1726176270 0
 D s 48000 n 2 l 9:59.300
+F "I-Thou Atmos Master Sept 19.wav" 2172040132 0 1774628156 0
+D s 48000 n 111 l 2:15.875 i 24
 F "Imax Test Interleave.wav" 91117406 0 1656353263 0
 F IMG_3979.mov 4055989 0 1667232126 0
 D s 44100 n 2 l 0:11.503
@@ -63,6 +67,12 @@ F IMG_3985.mov 24620146 0 1667232126 0
 D s 44100 n 2 l 0:22.465
 F item_0_jjd-final.wav 13540856 0 1664118357 0
 D s 44100 n 2 l 1:16.761 i 16
+F "Jonathan Kawchuk Atmos Master 48 24 7.1.4.wav" 154417466 1 1774676572 0
+D s 48000 n 12 r 9:59:57.000 l 42:54.875
+D i 24
+F "Jonathan Kawchuk Atmos Master 48 24 Oct 7.1.wav" 2966256738 0 1774676513 0
+D s 48000 n 8 r 9:59:57.000 l 42:54.875
+D i 24
 F "Jonathan_Kawchuk_Trailer musiveral.mp4" 388397286 0 1771602524 0
 D s 48000 n 2 l 1:11.893
 F "JP Auclair Street Segment (from Sherpas Cinemas' All.I.Can) (1080p_24fps_H264-128kbit_AAC).mp4" 78662212 0 1702485825 0

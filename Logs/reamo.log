@@ -1,0 +1,72 @@
+=== Reamo Extension Log ===
+[20:25:24.616] INFO  initTimerCallback() started
+[20:25:24.616] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[20:25:24.616] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[20:25:24.618] INFO  Tiered arenas initialized: 19MB total
+[20:25:24.618] INFO  Session token generated
+[20:25:24.618] INFO  CSurf registered for push-based callbacks
+[20:25:24.618] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[20:25:24.618] INFO  Loaded 0 playlists from project
+[20:25:24.618] INFO  Initialization complete, waiting for warmup
+[20:25:24.818] INFO  Initialization complete, starting processing timer
+[20:25:24.961] INFO  Project changed: (Unsaved)
+[20:25:24.961] INFO  Loaded 0 playlists from new project
+[20:25:25.678] INFO  Track skeleton changed: 1 tracks
+[20:25:25.707] INFO  Starting HTTP+WS server (deferred)...
+[20:25:25.709] INFO  HTTP+WS server started on port 9224
+[20:25:25.709] INFO  FastTimer: started at 10ms interval (native)
+[20:25:35.246] INFO  qr_window: creating dialog, parent_is_null=false
+[20:25:35.252] INFO  qr_window: window created ok
+[20:25:35.252] INFO  qr_window: position (490, 240)
+[20:25:35.253] INFO  qr_window: calling ShowWindow
+[20:25:35.256] INFO  qr_window: show complete
+[20:25:35.256] INFO  Network action: showing QR window with 2 networks
+[20:25:46.579] INFO  CLIENT ADD id=1 total=1
+[20:25:46.591] INFO  CLIENT REMOVE id=1 total=0
+[20:25:46.609] INFO  CLIENT ADD id=2 total=1
+[20:25:46.652] INFO  action/getActions: returning 21633 actions, 1865044 bytes
+[20:25:52.949] INFO  Track skeleton changed: 2 tracks
+[20:26:20.463] WARN  Track state drift detected without dirty flag (undo/selection/FX drag?)
+[20:26:24.615] INFO  CLIENT REMOVE id=2 total=0
+[20:26:24.630] WARN  Track state drift detected without dirty flag (undo/selection/FX drag?)
+[22:12:59.313] INFO  shutdown() called
+[22:12:59.314] INFO  FastTimer: stopped
+[22:12:59.314] INFO  timers stopped
+[22:12:59.314] INFO  cleaning up CSurf
+[22:12:59.314] INFO  CSurf cleaned up
+[22:12:59.314] INFO  cleaning up audio stream
+[22:12:59.314] INFO  audio stream cleaned up
+[22:12:59.314] INFO  menu: unregistered
+[22:12:59.314] INFO  stopping server
+[22:12:59.315] INFO  server stopped
+[22:12:59.315] INFO  cleaning up gesture state
+[22:12:59.315] INFO  gesture state cleaned up
+[22:12:59.315] INFO  cleaning up toggle subscriptions
+[22:12:59.315] INFO  toggle subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up notes subscriptions
+[22:12:59.315] INFO  notes subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up track subscriptions
+[22:12:59.315] INFO  track subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up peaks subscriptions
+[22:12:59.315] INFO  peaks subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up routing subscriptions
+[22:12:59.315] INFO  routing subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up track FX subscriptions
+[22:12:59.315] INFO  track FX subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up track FX param subscriptions
+[22:12:59.315] INFO  track FX param subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up tuner subscriptions
+[22:12:59.315] INFO  tuner subscriptions cleaned up
+[22:12:59.315] INFO  cleaning up tile cache
+[22:12:59.315] INFO  tile cache cleaned up
+[22:12:59.315] INFO  cleaning up GUID cache
+[22:12:59.315] INFO  GUID cache cleaned up
+[22:12:59.315] INFO  cleaning up item GUID cache
+[22:12:59.315] INFO  item GUID cache cleaned up
+[22:12:59.315] INFO  cleaning up shared state
+[22:12:59.315] INFO  shared state cleaned up
+[22:12:59.315] INFO  cleaning up tiered arenas
+[22:12:59.329] INFO  tiered arenas cleaned up
+[22:12:59.329] INFO  shutdown() complete
+=== Extension Unloaded ===
+

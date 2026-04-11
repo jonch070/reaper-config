@@ -24,6 +24,54 @@ D l 0:10.937 i 32
 F "beatfader midi test_009_05_Jonny_2026-02-13_10-22_023.wav" 15571332 0 1771003412 0
 D y 2026-02-13 s 96000 n 1 r 1:05:34.061
 D l 0:40.548 i 32
+F "beatfader midi test_015 live prep_002_freeze_metal dino.wav" 44390400 0 1773961386 0
+D y 2026-03-19 s 96000 n 2 r 1:04:53.446
+D l 0:57.799 i 32
+F "beatfader midi test_015 live prep_003_freeze_caribou or rocks_and l70 p0 -n.wav" 296374952 0 1773961928 0
+D y 2026-03-19 s 96000 n 16 r 1:05:57.951
+D l 0:48.237 i 32
+F "beatfader midi test_015 live prep_003_freeze_clicks and tops L.wav" 44337976 0 1773961650 0
+D y 2026-03-19 s 96000 n 2 r 1:05:54.138
+D l 0:57.730 i 32
+F "beatfader midi test_015 live prep_003_freeze_clicks and tops R.wav" 44468688 0 1773961663 0
+D y 2026-03-19 s 96000 n 2 r 1:05:54.023
+D l 0:57.900 i 32
+F "beatfader midi test_015 live prep_003_freeze_geophonec l70 p0 -n a.wav" 328109992 0 1773961911 0
+D y 2026-03-19 s 96000 n 16 r 1:05:53.841
+D l 0:53.403 i 32
+F "beatfader midi test_015 live prep_003_freeze_ink sub mix.wav" 599955560 0 1773961523 0
+D y 2026-03-19 s 96000 n 16 r 1:05:17.335
+D l 1:37.648 i 32
+F "beatfader midi test_015 live prep_003_freeze_Jax-001.wav" 6917488 0 1773961958 0
+D y 2026-03-19 s 96000 n 2 r 1:04:56.105
+D l 0:09.006 i 32
+F "beatfader midi test_015 live prep_003_freeze_Jax-002.wav" 9636256 0 1773961958 0
+D y 2026-03-19 s 96000 n 2 r 1:05:22.984
+D l 0:12.546 i 32
+F "beatfader midi test_015 live prep_003_freeze_kick.wav" 44557304 0 1773961894 0
+D y 2026-03-19 s 96000 n 2 r 1:05:53.907
+D l 0:58.016 i 32
+F "beatfader midi test_015 live prep_003_freeze_Kontakt 7 rocks.wav" 363542440 0 1773961678 0
+D y 2026-03-19 s 96000 n 16 r 1:05:52.753
+D l 0:59.170 i 32
+F "beatfader midi test_015 live prep_003_freeze_lap steel submix.wav" 96532440 0 1773961580 0
+D y 2026-03-19 s 96000 n 2 r 1:04:40.523
+D l 2:05.692 i 32
+F "beatfader midi test_015 live prep_003_freeze_melodyne sub.wav" 105553904 0 1773961636 0
+D y 2026-03-19 s 96000 n 2 r 1:04:46.061
+D l 2:17.439 i 32
+F "beatfader midi test_015 live prep_003_freeze_rocks_and or caribou l70 p0 -r -n b.wav" 291828328 0 1773961947 0
+D y 2026-03-19 s 96000 n 16 r 1:05:56.912
+D l 0:47.497 i 32
+F "beatfader midi test_015 live prep_003_freeze_TEST Dmitry_10_6seconds_96000_24_nonnorm-001.wav" 2312424 0 1773961539 0
+D y 2026-03-19 s 96000 n 2 r 1:05:52.753
+D l 0:03.010 i 32
+F "beatfader midi test_015 live prep_003_freeze_TEST Dmitry_10_6seconds_96000_24_nonnorm-002.wav" 4880472 0 1773961539 0
+D y 2026-03-19 s 96000 n 2 r 1:06:15.946
+D l 0:06.353 i 32
+F "beatfader midi test_015 live prep_003_freeze_Trombone.wav" 110356440 0 1773961559 0
+D y 2026-03-19 s 96000 n 2 r 1:04:52.523
+D l 2:23.692 i 32
 F "MixPre-013 [chan 1].wav" 38991516 0 1770940085 0
 D y 2026-02-12 s 96000 n 1 r 1:03:21.138
 D l 1:41.538 i 32

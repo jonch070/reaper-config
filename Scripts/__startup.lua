@@ -13,3 +13,9 @@ reaper.Main_OnCommand(reaper.NamedCommandLookup("_RSc18de16721a3c34e4867889bd9bf
 reaper.Main_OnCommand(reaper.NamedCommandLookup("_RS33c36901779e76d0ef0542466abe875e36c6b57d"), 0) -- Script: HeDa_Region Tracks VIP.lua
 reaper.Main_OnCommand(reaper.NamedCommandLookup("_RSdbf64708ea8abea46b82a08cabc050148d65176c"), 0) -- Script: BirdBird_Global Sampler.lua
 reaper.Main_OnCommand(reaper.NamedCommandLookup("_RSffa88234af6d0278615a8b8b967c0dbb42a91461"), 0) -- Script: NateWeiner - Set project frame rate from video.lua
+
+--HOVER EDITING
+hover_editing = tonumber(reaper.GetExtState("LKC_TOOLS","hover_editing_state"))
+if hover_editing == nil then hover_editing = 1 end
+command = reaper.NamedCommandLookup("_RS8277b238cd7341ba4a3c9ff870f30876ce76160b")
+reaper.SetToggleCommandState(0, command, hover_editing)

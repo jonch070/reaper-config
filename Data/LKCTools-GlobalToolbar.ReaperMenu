@@ -1,0 +1,34 @@
+[Floating toolbar 30]
+icon_0=LKC - Content Navigator.png
+icon_1=lkc_grimsync_logo.png
+icon_4=text_wide_tt
+icon_5=text_wide_tt
+icon_7=text_wide_tt
+icon_10=toolbar_color_take_lane.png
+icon_11=toolbar_audio_waveform_properties.png
+icon_14=text_wide_tt
+icon_15=text_wide_tt
+icon_17=toolbar_projprop.png
+icon_18=LKC - RenderBlocks.png
+item_0=_RSa75502a6bd6e746a5776d4c51d8a14f851f0c55f Script: LKC - RenderBlocks - Content Navigator.lua
+item_1=_RSac138d50197eb18d3123fbe84987d40fddd789dd Script: LKC - GrimSync - Grim Manager.lua
+item_2=-1
+item_3=-1
+item_4=_RS06c6146f233b1e6cfc1f654e2c9b671552502f37 PACK CLUSTERS
+item_5=_RSdf339410c59229e095c4f17daff30782d6f51458 AUTO NAME
+item_6=-1
+item_7=_RSf32da68248e18f77d376da6d25c8e4b1ecb00efa RENDER
+item_8=-1
+item_9=-1
+item_10=_RS908c25d03992f985c82df66f509943a56cd573c2 Script: LKC - RenderBlocks - Default item colors.lua
+item_11=_RSbbd99dcc46c56e17f168cf805ec1a5736c7642f0 Script: LKC - RenderBlocks - Toggle labels and item icons.lua
+item_12=-1
+item_13=-1
+item_14=_RSb835639b40cd391b1ec3664c2ecc255a79b6c0a9 PACK UNPACK
+item_15=_RS2db3e288d1a89aac13fe01dcec2fe438393befda DESTROY
+item_16=-1
+item_17=_RSf5562746f8a44bcaec498b8f33c9fb154bb79ae4 Script: LKC - RenderBlocks - AutoName settings.lua
+item_18=_RS2d95a289c8495b7081d24aa3fe4610f3e6f15a12 Script: LKC - RenderBlocks - Settings.lua
+item_19=-1
+title=LKC Tools - Global Toolbar
+

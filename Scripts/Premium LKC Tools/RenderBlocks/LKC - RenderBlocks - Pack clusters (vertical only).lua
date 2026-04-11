@@ -32,7 +32,6 @@ if sws then
     cluster_variant = 1
     create_regions = 0
     VERTICAL_ONLY = 1
-
     luac = "53"
     if string.sub(reaper.GetAppVersion(),1,1) == "7" then luac = "54" end
 

@@ -15,10 +15,10 @@
 -- Ripple mode: expects Ripple Edit (all tracks) ON. Works with ripple OFF but
 -- leaves a gap that the Insert script fills exactly only when ripple is ON.
 --
--- THRESHOLD: configure via JK_RoomTone_Settings.lua (persists across sessions).
+-- THRESHOLD / CURSOR MODE: configure via JK_RoomTone_Settings.lua (persists across sessions).
 -- Hardcoded defaults below are used only until Settings has been run once.
 --
--- Dependencies: SWS Extension (BR_GetMouseCursorContext)
+-- Dependencies: SWS Extension (BR_GetMouseCursorContext) — only required in mouse mode.
 
 -- ============================================================
 -- CONFIG DEFAULTS  (overridden by JK_RoomTone_Settings.lua values)
@@ -38,6 +38,26 @@ local function dbToLinear(db)
     return 10 ^ (db / 20)
 end
 
+-- Returns "mouse", "playhead", or "edit"
+local function getCursorMode()
+    local m = reaper.GetExtState(EXT_NS, "cursor_mode")
+    if m ~= "mouse" and m ~= "playhead" and m ~= "edit" then m = "mouse" end
+    return m
+end
+
+-- Returns the first item on track that contains time, plus its active take
+local function getItemAtTime(track, time)
+    for i = 0, reaper.CountTrackMediaItems(track) - 1 do
+        local it  = reaper.GetTrackMediaItem(track, i)
+        local pos = reaper.GetMediaItemInfo_Value(it, "D_POSITION")
+        local len = reaper.GetMediaItemInfo_Value(it, "D_LENGTH")
+        if time >= pos and time <= pos + len then
+            return it, reaper.GetActiveTake(it)
+        end
+    end
+    return nil, nil
+end
+
 local function getThreshold()
     local stored = reaper.GetExtState(EXT_NS, "threshold_db")
     local db = tonumber(stored)
@@ -45,7 +65,7 @@ local function getThreshold()
     return dbToLinear(db), db
 end
 
--- Returns peak amplitude across all channels for num_samples starting at start_sec (project time)
+-- Returns peak amplitude across all channels for num_samples starting at start_sec (source time)
 local function peakInRange(accessor, samplerate, nch, start_sec, num_samples)
     if num_samples <= 0 then return 0 end
     local buf = reaper.new_array(num_samples * nch)
@@ -190,24 +210,36 @@ end
 -- MAIN
 -- ============================================================
 local function main()
-    if not reaper.BR_GetMouseCursorContext then
-        reaper.ShowMessageBox(
-            "SWS Extension is required.\nGet it at: https://www.sws-extension.org",
-            "JK RoomTone", 0)
-        return
+    local cursor_mode = getCursorMode()
+    local cursor_time, track, item, take
+
+    if cursor_mode == "mouse" then
+        if not reaper.BR_GetMouseCursorContext then
+            reaper.ShowMessageBox(
+                "SWS Extension is required.\nGet it at: https://www.sws-extension.org",
+                "JK RoomTone", 0)
+            return
+        end
+        reaper.BR_GetMouseCursorContext()
+        local window = reaper.BR_GetMouseCursorContext()
+        if window ~= "arrange" then return end
+        item        = reaper.BR_GetMouseCursorContext_Item()
+        take        = reaper.BR_GetMouseCursorContext_Take()
+        cursor_time = reaper.BR_GetMouseCursorContext_Position()
+        track       = reaper.BR_GetMouseCursorContext_Track()
+    else
+        cursor_time = (cursor_mode == "playhead") and reaper.GetPlayPosition()
+                                                   or  reaper.GetCursorPosition()
+        track = reaper.GetSelectedTrack(0, 0)
+        if not track then
+            reaper.ShowConsoleMsg("[JK RoomTone] No track selected — select a track first.\n")
+            return
+        end
+        item, take = getItemAtTime(track, cursor_time)
     end
 
-    reaper.BR_GetMouseCursorContext()
-    local window = reaper.BR_GetMouseCursorContext()
-    if window ~= "arrange" then return end
-
-    local item        = reaper.BR_GetMouseCursorContext_Item()
-    local take        = reaper.BR_GetMouseCursorContext_Take()
-    local cursor_time = reaper.BR_GetMouseCursorContext_Position()
-
-    -- No item under cursor: try to handle as an inter-item gap
+    -- No item at target position: try to handle as an inter-item gap
     if not item or not take then
-        local track = reaper.BR_GetMouseCursorContext_Track()
         if track then handleGap(track, cursor_time) end
         return
     end
@@ -225,11 +257,19 @@ local function main()
     -- Clamp scan start to item interior
     local scan_pos = math.max(item_pos + 0.001, math.min(cursor_time, item_end - 0.001))
 
+    -- GetAudioAccessorSamples uses SOURCE-FILE time (0 = file start), not project time.
+    -- Convert between project time and source time so scans read the correct samples.
+    local src_offset = reaper.GetMediaItemTakeInfo_Value(take, "D_STARTOFFS")
+    local playrate   = reaper.GetMediaItemTakeInfo_Value(take, "D_PLAYRATE")
+    if playrate <= 0 then playrate = 1.0 end
+    local function toSrc(t) return src_offset + (t - item_pos) * playrate end
+    local function toPrj(s) return item_pos  + (s - src_offset) / playrate end
+
     local accessor = reaper.CreateTakeAudioAccessor(take)
 
-    -- Gate: is the cursor actually in a silence region?
+    -- Gate: is the target position actually in a silence region?
     local check_n     = math.max(1, math.floor(samplerate * FINE_CHUNK_MS / 1000))
-    local center_peak = peakInRange(accessor, samplerate, nch, scan_pos, check_n)
+    local center_peak = peakInRange(accessor, samplerate, nch, toSrc(scan_pos), check_n)
     if center_peak > threshold then
         reaper.DestroyAudioAccessor(accessor)
         reaper.ShowConsoleMsg(
@@ -237,9 +277,12 @@ local function main()
         return
     end
 
-    local left_bound  = scanLeft (accessor, samplerate, nch, scan_pos, item_pos, threshold)
-    local right_bound = scanRight(accessor, samplerate, nch, scan_pos, item_end, threshold)
+    local left_src  = scanLeft (accessor, samplerate, nch, toSrc(scan_pos), toSrc(item_pos), threshold)
+    local right_src = scanRight(accessor, samplerate, nch, toSrc(scan_pos), toSrc(item_end), threshold)
     reaper.DestroyAudioAccessor(accessor)
+
+    local left_bound  = toPrj(left_src)
+    local right_bound = toPrj(right_src)
 
     if right_bound - left_bound < 0.010 then
         reaper.ShowConsoleMsg("[JK RoomTone] Silence region too short (< 10 ms) — nothing done.\n")
@@ -257,13 +300,18 @@ local function main()
         right_split = mid + 0.001
     end
 
-    local track = reaper.GetMediaItemTrack(item)
+    track = reaper.GetMediaItemTrack(item)
 
     reaper.Undo_BeginBlock()
     reaper.PreventUIRefresh(1)
 
+    -- Disable snap so splits land at exact audio boundaries, not grid lines
+    local snap_on = reaper.GetToggleCommandState(1157) == 1
+    if snap_on then reaper.Main_OnCommand(1157, 0) end
+
     local temp = reaper.SplitMediaItem(item, left_split)
     if not temp then
+        if snap_on then reaper.Main_OnCommand(1157, 0) end
         reaper.PreventUIRefresh(-1)
         reaper.Undo_EndBlock("JK RoomTone DetectAndDelete (aborted)", -1)
         reaper.ShowConsoleMsg("[JK RoomTone] Split failed at left boundary.\n")
@@ -272,6 +320,9 @@ local function main()
 
     local right_item = reaper.SplitMediaItem(temp, right_split)
     reaper.DeleteTrackMediaItem(track, temp)
+
+    -- Restore snap
+    if snap_on then reaper.Main_OnCommand(1157, 0) end
 
     if crossfade_sec > 0 then
         reaper.SetMediaItemInfo_Value(item, "D_FADEOUTLEN", crossfade_sec)
