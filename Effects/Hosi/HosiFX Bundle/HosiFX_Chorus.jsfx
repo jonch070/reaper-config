@@ -1,0 +1,349 @@
+desc:HosiFX Chorus
+version: 1.0
+author: HosiFX
+about:
+  # HosiFX Chorus
+  A rich chorus effect with 20 presets for widening and thickening vocals and instruments.
+changelog:
+  + Initial modern release with expanded presets and new UI.
+// Copyright 2024 HosiFX. All rights reserved.
+
+// --- Sliders ---
+// "Amount" knob (Mix/Depth)
+slider1:50<0,100,0.1>-Amount (%)
+// Preset selector
+slider2:0<0,19,1{80s Choir,Ethereal Choir,Lead Vox Phaser,Sci-Fi,Vibrato Guitar,Vocals Thickener,Wide Synth Pad,Classic Flanger,Rotary Speaker,Acoustic Shimmer,Detune,Synth Doubler,Juno Chorus,Stereo Widen,Bass Chorus,Resonant Flange,Liquid Metal,Slow Phase,Underwater,Fast Leslie}>-Preset
+
+// --- I/O Pins ---
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+// --- Options ---
+options:gfx_hz=60
+options:no_meter
+options:gmem=chorus_buf,50000
+
+@init
+// --- General Init ---
+gfx_clear = -1;
+tau = 2 * $pi;
+dragging = 0;
+caller = 1;
+// Force reset to 50%
+slider1 = 50;
+
+// --- Chorus Init ---
+// IMPORTANT: Offset audio buffer to avoid overwriting preset names at index 0
+chorus_buf = 32768;
+max_delay_samps = srate * 0.05; // 50ms max delay
+
+buf_L = chorus_buf;
+buf_R = chorus_buf + max_delay_samps;
+wp = 0; 
+
+lfo_phase_L = 0;
+lfo_phase_R = 0.25; 
+
+// --- Preset Names (Memory Init) ---
+preset_names = 0;
+preset_names[0] = "80s Choir";
+preset_names[1] = "Ethereal Choir";
+preset_names[2] = "Lead Vox Phaser";
+preset_names[3] = "Sci-Fi";
+preset_names[4] = "Vibrato Guitar";
+preset_names[5] = "Vocals Thickener";
+preset_names[6] = "Wide Synth Pad";
+preset_names[7] = "Classic Flanger";
+preset_names[8] = "Rotary Speaker";
+preset_names[9] = "Acoustic Shimmer";
+preset_names[10] = "Detune";
+preset_names[11] = "Synth Doubler";
+preset_names[12] = "Juno Chorus";
+preset_names[13] = "Stereo Widen";
+preset_names[14] = "Bass Chorus";
+preset_names[15] = "Resonant Flange";
+preset_names[16] = "Liquid Metal";
+preset_names[17] = "Slow Phase";
+preset_names[18] = "Underwater";
+preset_names[19] = "Fast Leslie";
+num_presets = 20;
+
+// --- Parameters ---
+function update_parameters() (
+  amount = slider1 / 100;
+  wet = amount;
+  dry = 1 - amount;
+  preset = slider2|0;
+
+  rate_hz = 0.5; depth_ms = 5; delay_ms = 15; feedback = 0; stereo_width = 1;
+
+  preset == 0 ? ( rate_hz = 0.8; depth_ms = 7; delay_ms = 20; feedback = 0.2; )
+  : preset == 1 ? ( rate_hz = 0.3; depth_ms = 10; delay_ms = 25; feedback = 0.4; )
+  : preset == 2 ? ( rate_hz = 1.5; depth_ms = 2; delay_ms = 5; feedback = 0.7; )
+  : preset == 3 ? ( rate_hz = 4.0; depth_ms = 15; delay_ms = 10; feedback = 0.5; )
+  : preset == 4 ? ( rate_hz = 5.0; depth_ms = 3; delay_ms = 2; feedback = 0; wet=1; dry=0; )
+  : preset == 5 ? ( rate_hz = 0.2; depth_ms = 1.5; delay_ms = 12; feedback = 0; )
+  : preset == 6 ? ( rate_hz = 0.4; depth_ms = 8; delay_ms = 22; feedback = 0.3; stereo_width = 1.5; )
+  : preset == 7 ? ( rate_hz = 0.2; depth_ms = 4; delay_ms = 2; feedback = 0.8; )
+  : preset == 8 ? ( rate_hz = 6.0; depth_ms = 2; delay_ms = 1; feedback = 0.1; )
+  : preset == 9 ? ( rate_hz = 0.6; depth_ms = 2.5; delay_ms = 18; feedback = 0.1; )
+  : preset == 10 ? ( rate_hz = 0.05; depth_ms = 4; delay_ms = 15; feedback = 0; )
+  : preset == 11 ? ( rate_hz = 0.1; depth_ms = 6; delay_ms = 20; feedback = 0; stereo_width = 2.0; )
+  : preset == 12 ? ( rate_hz = 0.5; depth_ms = 4; delay_ms = 18; feedback = 0; )
+  : preset == 13 ? ( rate_hz = 0.1; depth_ms = 8; delay_ms = 25; feedback = 0; stereo_width = 3.0; ) // Widen
+  : preset == 14 ? ( rate_hz = 0.4; depth_ms = 3; delay_ms = 15; feedback = 0; ) // Bass (subtle)
+  : preset == 15 ? ( rate_hz = 0.2; depth_ms = 6; delay_ms = 3; feedback = 0.85; ) // Resonant
+  : preset == 16 ? ( rate_hz = 8.0; depth_ms = 1; delay_ms = 1; feedback = 0.9; ) // Liquid
+  : preset == 17 ? ( rate_hz = 0.1; depth_ms = 4; delay_ms = 2; feedback = 0.6; ) // Slow Phase
+  : preset == 18 ? ( rate_hz = 2.0; depth_ms = 10; delay_ms = 30; feedback = 0.4; ) // Underwater
+  : preset == 19 ? ( rate_hz = 7.0; depth_ms = 2; delay_ms = 5; feedback = 0; ); // Fast Leslie (Sim)
+  
+  lfo_inc = rate_hz / srate;
+  depth_samps = depth_ms * 0.001 * srate;
+  delay_samps = delay_ms * 0.001 * srate;
+  lfo_phase_R = 0.25 * stereo_width;
+);
+
+@slider
+caller = 1;
+
+@block
+caller == 1 ? update_parameters();
+
+@sample
+caller == 1 ? ( update_parameters(); caller = 0; );
+
+lfo_phase_L += lfo_inc; lfo_phase_L %= 1;
+lfo_phase_R += lfo_inc; lfo_phase_R %= 1;
+lfo_L = sin(lfo_phase_L * tau);
+lfo_R = sin(lfo_phase_R * tau);
+
+function get_delayed(buf, lfo_out, in_val) (
+  mod_delay = delay_samps + lfo_out * depth_samps;
+  rp_frac = wp - mod_delay;
+  rp1 = floor(rp_frac);
+  frac = rp_frac - rp1;
+  rp2 = rp1 + 1;
+  
+  rp1 = (rp1 + max_delay_samps) % max_delay_samps;
+  rp2 = (rp2 + max_delay_samps) % max_delay_samps;
+  
+  val1 = buf[rp1];
+  val2 = buf[rp2];
+  delayed_val = val1 + (val2 - val1) * frac;
+  
+  buf[wp] = in_val + delayed_val * feedback;
+  delayed_val;
+);
+
+delayed_L = get_delayed(buf_L, lfo_L, spl0);
+delayed_R = get_delayed(buf_R, lfo_R, spl1);
+
+wp = (wp + 1) % max_delay_samps;
+
+spl0 = spl0 * dry + delayed_L * wet;
+spl1 = spl1 * dry + delayed_R * wet;
+
+@gfx 500 420
+// --- Modern UI (Chorus / Electric Lime) ---
+
+// Colors
+c_bg_r=0.15; c_bg_g=0.16; c_bg_b=0.18;
+// Electric Lime Green for Chorus
+c_accent_r=0.6; c_accent_g=0.95; c_accent_b=0.2; 
+c_lcd_bg_r=0.05; c_lcd_bg_g=0.15; c_lcd_bg_b=0.05;
+
+w=gfx_w; h=gfx_h;
+size = min(w,h);
+cx = w/2; 
+cy = h * 0.55;
+
+// --- Background ---
+gfx_set(c_bg_r, c_bg_g, c_bg_b, 1);
+gfx_rect(0,0,w,h);
+
+// --- Header ---
+gfx_setfont(1, "Impact", size*0.06);
+gfx_set(1, 1, 1, 0.5); 
+gfx_measurestr("HOSIFX Chorus", lw, lh);
+gfx_x = cx - lw/2;
+gfx_y = h * 0.04;
+gfx_drawstr("HOSIFX Chorus");
+
+// --- LCD Screen ---
+lcd_w = w * 0.65;
+lcd_h = size * 0.12;
+lcd_x = (w - lcd_w) / 2;
+lcd_y = h * 0.15;
+
+// Glow
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 0.15);
+gfx_roundrect(lcd_x-3, lcd_y-3, lcd_w+6, lcd_h+6, 5);
+// BG
+gfx_set(c_lcd_bg_r, c_lcd_bg_g, c_lcd_bg_b, 1);
+gfx_roundrect(lcd_x, lcd_y, lcd_w, lcd_h, 4);
+
+// Text
+idx = slider2|0;
+idx < 0 ? idx=0; idx > 12 ? idx=12; 
+preset_ptr = preset_names[idx]; 
+
+gfx_setfont(2, "Verdana", size*0.05);
+gfx_measurestr(preset_ptr, pw, ph);
+// Text color matches accent
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 1); 
+gfx_x = cx - pw/2;
+gfx_y = lcd_y + (lcd_h - ph)/2;
+gfx_drawstr(preset_ptr);
+
+// Arrows
+gfx_set(1,1,1, 0.3);
+ts = size*0.025;
+gfx_triangle(lcd_x-ts*1.5, lcd_y+lcd_h/2, lcd_x-ts*0.5, lcd_y+lcd_h/2-ts, lcd_x-ts*0.5, lcd_y+lcd_h/2+ts);
+gfx_triangle(lcd_x+lcd_w+ts*1.5, lcd_y+lcd_h/2, lcd_x+lcd_w+ts*0.5, lcd_y+lcd_h/2-ts, lcd_x+lcd_w+ts*0.5, lcd_y+lcd_h/2+ts);
+
+// Label
+gfx_setfont(3, "Arial", size*0.025);
+gfx_set(0.6,0.6,0.6,1);
+gfx_measurestr("PRESET", tw, th);
+gfx_x = cx - tw/2; gfx_y = lcd_y - th - 3;
+gfx_drawstr("PRESET");
+
+// --- Unipolar Arc ---
+knob_r = size * 0.22;
+arc_r = knob_r + size*0.04;
+arc_w = size * 0.02;
+
+ang_min = 2.3562; 
+ang_max = 7.0686; 
+total_ang = ang_max - ang_min;
+
+norm_val = slider1 / 100;
+ang_curr = ang_min + norm_val * total_ang;
+
+function draw_thick_arc(c_x, c_y, radius, thick, a_start, a_end, r, g, b, a) (
+  gfx_set(r,g,b,a);
+  step_sz = 0.04; 
+  loop_r_start = radius - thick/2;
+  num_rings = 5; 
+  ring_stp = thick / num_rings;
+  i_ring = 0;
+  loop(num_rings,
+    cur_rad = loop_r_start + i_ring * ring_stp;
+    cur_a = a_start;
+    last_x = c_x + cos(cur_a) * cur_rad;
+    last_y = c_y + sin(cur_a) * cur_rad;
+    while(
+      cur_a += step_sz;
+      cur_a > a_end ? cur_a = a_end;
+      cur_x = c_x + cos(cur_a) * cur_rad;
+      cur_y = c_y + sin(cur_a) * cur_rad;
+      gfx_line(last_x, last_y, cur_x, cur_y);
+      last_x = cur_x; last_y = cur_y;
+      cur_a < a_end;
+    );
+    i_ring += 1;
+  );
+);
+
+// 1. BG
+draw_thick_arc(cx, cy, arc_r, arc_w, ang_min, ang_max, 0.2, 0.3, 0.1, 0.3);
+
+// 2. Active
+abs(ang_curr - ang_min) > 0.01 ? (
+  draw_thick_arc(cx, cy, arc_r, arc_w, ang_min, ang_curr, c_accent_r, c_accent_g, c_accent_b, 1.0);
+);
+
+// --- Knob Body ---
+gfx_set(0.12, 0.12, 0.12, 1);
+gfx_circle(cx, cy, knob_r, 1);
+gfx_set(0,0,0, 0.4);
+gfx_arc(cx, cy, knob_r, 0, $pi, 1);
+
+// Indicator Dot
+dot_r = knob_r * 0.75;
+dx = cx + cos(ang_curr) * dot_r;
+dy = cy + sin(ang_curr) * dot_r;
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 0.8);
+gfx_circle(dx, dy, size*0.03, 1);
+gfx_set(1,1,1,0.9);
+gfx_circle(dx, dy, size*0.012, 1);
+
+// --- Footer Values ---
+gfx_setfont(4, "Arial", size*0.08);
+sprintf(#sval, "%.1f %%", slider1);
+gfx_measurestr(#sval, vw, vh);
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 1);
+gfx_x = cx - vw/2;
+gfx_y = cy + knob_r + size*0.1;
+gfx_drawstr(#sval);
+
+// --- Interactions ---
+mouse_down = mouse_cap & 1;
+mouse_click = mouse_down && !(last_mouse_cap & 1);
+mouse_up = (last_mouse_cap & 1) && !mouse_down;
+
+// Preset Control
+// 1. Arrows (Cycle)
+mouse_y < h * 0.3 && mouse_click ? (
+  mouse_x < cx - lcd_w*0.3 ? ( // Left arrow area
+    slider2 -= 1; slider2 < 0 ? slider2 = 19;
+    caller = 1;
+  ) : mouse_x > cx + lcd_w*0.3 ? ( // Right arrow area
+    slider2 += 1; slider2 > 19 ? slider2 = 0;
+    caller = 1;
+  ) : (
+    // 2. Center Click (Popup Menu)
+    menu_str = #; 
+    strcpy(menu_str, ""); 
+    i=0;
+    loop(num_presets,
+      i == slider2 ? strcat(menu_str, "!") : strcat(menu_str, ""); 
+      strcat(menu_str, preset_names[i]);
+      i < num_presets-1 ? strcat(menu_str, "|");
+      i+=1;
+    );
+    
+    gfx_x = mouse_x; gfx_y = mouse_y;
+    selected = gfx_showmenu(menu_str);
+    selected > 0 ? (
+      slider2 = selected - 1;
+      caller = 1;
+    );
+  );
+);
+
+// Knob
+dist = sqrt((mouse_x-cx)^2 + (mouse_y-cy)^2);
+hover_knob = mouse_y > h*0.3 && dist < knob_r * 1.5;
+
+mouse_click && hover_knob ? (
+  time_precise() - last_click_time < 0.25 ? (
+    slider1 = 50; // Reset to 50%
+    caller = 1;
+    dragging = 0;
+  ) : (
+    dragging = 1;
+    drag_y = mouse_y;
+    drag_val = slider1;
+  );
+  last_click_time = time_precise();
+);
+
+dragging ? (
+  slider1 = drag_val + (drag_y - mouse_y) * 0.5;
+  slider1 = min(max(slider1, 0), 100);
+  caller = 1;
+);
+mouse_up ? dragging = 0;
+
+// Wheel
+mouse_wheel != 0 ? (
+  slider1 += (mouse_wheel/120)*5;
+  slider1 = min(max(slider1, 0), 100);
+  caller = 1;
+  mouse_wheel = 0;
+);
+last_mouse_cap = mouse_cap;

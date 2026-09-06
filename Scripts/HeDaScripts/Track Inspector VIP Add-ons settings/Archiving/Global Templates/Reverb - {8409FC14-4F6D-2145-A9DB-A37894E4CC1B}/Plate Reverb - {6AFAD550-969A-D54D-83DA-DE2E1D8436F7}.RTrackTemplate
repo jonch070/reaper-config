@@ -1,0 +1,38 @@
+<TRACK
+  NAME "Plate Reverb"
+  PEAKCOL 32899060
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 0 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 0 1 0 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {6AFAD550-969A-D54D-83DA-DE2E1D8436F7}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "Plate Reverb - {6AFAD550-969A-D54D-83DA-DE2E1D8436F7}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {8409FC14-4F6D-2145-A9DB-A37894E4CC1B}
+    Archived_parent_name Reverb
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 0
+    DOCKED 0
+  >
+>

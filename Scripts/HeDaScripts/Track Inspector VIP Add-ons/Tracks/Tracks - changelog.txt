@@ -2,6 +2,237 @@
  Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v3.15.1 (2026-08-04)
+  + Display Settings: Color: Track Name for Frozen Tracks...
+  + action: HeDa_TI_Tracks_Save Selected Tracks as Set.lua
+  + action: HeDa_TI_Tracks_Save Selected Tracks as Set (ask name).lua
+  + action: HeDa_TI_Tracks_Switch to Set n.lua
+  # Save as new Set automatically names as "Set-n" by default
+  + Set buttons: Shift+Lmb: to rename Set. added tooltips.
+  + Volume/pan toolbar button menu: Double click to Reset.
+  # fix do not show volume/pan knobs on archived tracks
+  + FX buttons: some improvements and Added Alt+Lmb to Remove FX chain.
+  # fix switch to other sets when set is pinned
+  # fix switch to other sets when set is isolated
+  # fixes in arm rec buttons
+
+* v3.15.0 (2026-07-30)
+  + Pan Knobs
+  + Pan Knob right click menu: options for panning, pan mode,and pan law
+  + Volume Knob right click menu: Reset Volume and Pan
+  + Volume Knob right click menu: Change Volume by +1 +2 +3  -1 -2 -3
+  + Volume/pan toolbar button menu: Pan value/knob/color options
+  + Volume/pan toolbar button menu: Show Values on Mouse Action when displaying knob only
+  + Volume/pan toolbar button menu: Pan Knob Drag Sensitivity
+  + Volume/pan toolbar button menu: Mouse Wheel to cycle knob display options
+  # fix track icons when changing active project
+  + Main menu: Display Settings: Font Selected Track Names
+  # some defaults settings tweaked, fonts for tracknames changed to Inter-Regular, and Inter-Medium
+
+* v3.14.0 (2026-07-23)
+  + Volume Knobs
+  + Volume/pan toolbar button menu: "Draw Volume Value"
+  + Volume/pan toolbar button menu: "Volume Value Color Pos/Neg"
+  + Volume/pan toolbar button menu: "Volume Color..."
+	+	Volume/pan toolbar button menu: "Draw Volume Knob"
+	+	Volume/pan toolbar button menu: "Volume Knob Color Pos/Neg"
+	+	Volume/pan toolbar button menu: "Volume Knob Color..."
+	+	Volume/pan toolbar button menu: "Prevent Change on Folders"
+	+	Volume/pan toolbar button menu: "Knob Drag Sensitivity..."
+	+	Volume/pan toolbar button menu: "Mouse Wheel Step for Volume..."
+	+	Volume/pan toolbar button menu: "Mouse Wheel Step for Volume (while holding Right mouse button)"
+  # Track Name: Abbreviate: abbreviate more if needed by using first letter of each word
+  # Track name: name does not fit: Mouse over "..." to show full track name tooltip
+  # bug fixes in tags, added track name in tag tooltip box, fix font size
+  # bug fixes in the Tracks panel header menu
+  # bug fix keep panel height constant when top pinned sets area change
+
+* v3.13.1 (2026-07-20)
+  # optimizations in meters
+  + Meters toolbar menu: Draw Meters in New Row
+  + Meters toolbar menu: Meter dB Scale (displayed when using Draw Meters in new row)
+  + Meters toolbar menu: Reference Lines (displayed when playing)
+  + Meters toolbar menu: Reference Line A...(dB)
+  + Meters toolbar menu: Reference Line B...(db)
+  # bug fixes
+
+* v3.13.0 (2026-07-19)
+  + Tooltips
+  + Isolate Connected button: Isolates tracks and its connected tracks (parents and sends)
+  + Isolate Connected button Right click menu: Use Selected Tracks
+  + Isolate Connected button Right click menu: Mute Others option
+  + Isolate Connected button Right click menu: Show connected
+  + Isolate Connected button Right click menu: Show connected in MCP only
+  + Added action: HeDa_TI_Tracks_Isolate Connected.lua
+  + Toolbar Track name button menu: Abbreviate (abbreviate track names if it doesn't fit)
+  + Filter Has Items button: right click menu: Always Show Folders
+  + Filter Has Signal button: right click menu: Always Show Folders
+  + Always Show folder tracks when diplaying Archived Tracks only
+  + CTRL+ALT exclusive solo: while holding CTRL+ALT, move mouse to exclusive solo on hover
+  # small bug fixes
+
+* v3.12.0 (2026-07-07)
+  # Isolate button: left click + Shift or Ctrl key to act as isolate selected tracks too.
+  + Pin button: right click to pin seelected track to TCP pinned area
+  + Pin button: left click + Shift or Ctrl key to pin seelected track to TCP pinned area
+  + Added action: HeDa_TI_Tracks_Isolate Set.lua
+  + Added action: HeDa_TI_Tracks_Pin Set.lua
+  + Added action: HeDa_TI_Tracks_Focus Change.lua (cycles between envelope focus modes)
+  + Added action: HeDa_TI_Tracks_Filter with Items.lua
+  + Added action: HeDa_TI_Tracks_Filter with Signal.lua
+  + Rec Toolbar Button menu: Show Red Border
+  + Rec Toolbar Button menu: Show Rec Button only on Selected Tracks
+  + Show id Toolbar Button menu: Use color background
+  + Show id Toolbar Button menu: Show Color Block when not showing id
+  + Show id Toolbar Button menu: Color Block Size
+  # Duplicate track: move tracks down after duplication if multiple tracks duplicated
+  # Fix solo button on archived tracks
+  # Do not show arm button on archived tracks
+  # Do not show envelopes button on archived tracks
+
+* v3.11.1 (2026-07-04)
+  + Right click isolate button: to isolate any selected tracks instead of pinned tracks.
+  # fix panel height when pinned sets are larger than panel
+  # fix buttons images
+
+* v3.11.0 (2026-06-29)
+  + Proj button: Option to Save Settings per Project. (If enabled, all settings are saved 
+  in project. Can toggle on/off to swtich from global to per project settings at any time)
+  needs TI 2.4.43
+  + Maximize tracks menu: Set Envelopes Visible when needed. (If Maximize focus is on 
+  envelopes and envelopes are hidden and active, make them visible when maximizing the track)
+  + Maximize tracks menu: Isolating Tracks. (It hides all other tracks when maximizing. Useful when filter 
+  is on "ALL", not on "TCP", to be able to switch to other tracks)
+  # fix: fix in toggle all tracks TCP envelopes
+  # fix: bug performance in minimap scrolling while dragging
+  # fix: some optimizations
+
+* v3.10.1 (2026-06-17)
+  + Maximize tracks menu: Do not Maximize Tracks with Locked Height
+  + Envelope Toolbar Button Menu: Only Volume 
+  + Envelope Toolbar Button Menu: Only Pre-FX Volume 
+  + Envelope Toolbar Button Menu: Only Pan
+  # disable/restore tags auto-visibility when changing TCP/MCP visibility
+  # Save/Restore track heights after unisolating pinned tracks
+  # fix: different method to open Envelopes window 
+  + Added action: HeDa_TI_Tracks_Enable Maximize.lua
+  + Added action: HeDa_TI_Tracks_Disable Maximize.lua
+
+* v3.10.0 (2026-06-14)
+  + Maximize Button: maximize vertical zoom of the selected tracks
+  + Maximize Focus Buttons: Focus to Track
+  + Maximize Focus Envelope Buttons: Focus to Track and One Envelope
+  + Maximize Focus Envelope Buttons: Focus to One Envelope 
+  + Maximize Focus Envelope Buttons: Focus to All Envelopes
+  + Envelope Buttons
+  + Envelope Buttons Left click: open envelopes window
+  + Envelope Buttons Right click: Set Automation mode for selected tracks
+  + Envelope Toolbar Button Menu: Toggle Button also Toggles TCP Envelopes on All Tracks
+  + Envelope Toolbar Button Menu: Show Number of Envelopes
+  + Display settings/Icons Size (30 pixels default)
+  # fix: improve filled option in depth lines
+  # fix: do not scroll in MCP if track is already visible in mixer
+  + Added action: HeDa_TI_Tracks_Focus One Envelope.lua
+  + Added action: HeDa_TI_Tracks_Focus All Envelopes.lua
+  + Added action: HeDa_TI_Tracks_Focus Track and Envelope.lua
+  + Added action: HeDa_TI_Tracks_Focus Track.lua
+  + Added action: HeDa_TI_Tracks_Toggle Maximize.lua
+  + Added action: HeDa_TI_Tracks_Toggle Quick Solo.lua
+
+* v3.9.2 (2026-05-21)
+  # fix a few crashes
+  # fix clickable track icon when there is no icon
+  # fix track icon border color
+  # some signal fixes, tweaks, optimizations
+  + track name icon "n" changes to "a" if alternative names are on.
+  + Meters menu: Draw Signals on Tracks
+
+* v3.9.1 (2026-05-12)
+  # fix recent crash when deleting tracks
+  # fix some improvements when signal filter enabled
+
+* v3.9.0 (2026-05-10)
+  + Signal filter. Show tracks with some audio signal.
+  + Signal button menu: Hold time
+  + Signal button menu: Show lost signal indicator
+  + Support different configuration for each TI instance
+  + QS button (Quick Solo mode): does exclusive solo on mouse hover the tracks. to disable you can click Qs button again, 
+  or on any track. To disable QS mode and keep solo on the track, click on the solo button of the track.
+  + Ctrl+Alt + Solo buttons: Exclusive Solo
+  + Track name button menu: Always show track name on tracks without parent.
+  + Track name button menu: Always show on archived tracks.
+  + Track name button menu: Always show on selected tracks.
+  + Track name button menu: Always show on track under mouse.
+  + Track name button menu: Use Alternative Names
+  + Track name button menu: Get from Parents Name if Alternative is Not Set
+  + Track name button menu: Including Virtual Instrument Suffix
+  + Meters menu: Use Track's color toggle
+  + Display Settings: Color: Track Name...
+  + Track right click menu: Select > Select Only children
+  + Individual sizes for track list and pinned track's list
+  + Tracks Font Size button. (Shift key) + (Left or right button) to change Pinned tracks size
+  + Track Icon button menu: Force square icon
+  # fix: improvements when dragging mute solo buttons
+  # fix: improvements in minimap zoom, hover
+  # improve icons
+
+* v3.8.2 (2026-04-27)
+  + Show Track Name button
+  + Track Name button right click menu: Always show folders names
+  # fix crash in menu
+  # some improvements in mini map
+
+* v3.8.1 (2026-04-24)
+  + Minimap menu: Show All Tracks Meters Signal (little dot to indicate some metering on track)
+  + Display Settings: Do Not Collapse Panel (to avoid accidental collapse clicking 
+  on the panel header)
+  # fix: TCP pinning issue when using pin to new set
+  # fix: updates in rec buttons 
+  # Meters: draw vu meter line and hold peak lines on top
+  + Toolbar Routing Lines Menu: filled color option
+  + Toolbar Routing Lines Menu: filled color opacity option
+  + Toolbar MuteSolo button: toggle always show mute and solo buttons, not only on mouse hover.
+  + Toolbar MuteSolo button: indicate any solo, and unsolo all tracks when clicked.
+  + Toolbar MuteSolo button right click menu: Toggle Dim not soloed tracks.
+  + Toolbar MuteSolo button right click menu: Dim Intensity (from 0.0 to 1.0 )
+  # various pixel adjustments fixes, search box, lines on spacers...
+  # fixes in main menu
+  # improved rec arm button images
+  # fix crash on projects that have missing track icons 
+  # changed some default settings
+
+* v3.7.1 (2026-02-23)
+  + Meters: Meters button to show/hide meters. Right click for meter options.
+  + Meters options: Full meter width
+  + Meters options: Meter height
+  + Meters options: Meter colors
+  + Meters options: Meter peaks
+  + Meters options: Meter hold peaks
+  + Meters options: Meter LUFS-S line
+  + Meters options: Show meter from channels 1/2 only
+  + Meters options: Meters min dB value
+
+* v3.6.1 (2026-02-01)
+  + search history (searchbox: enter to save preset, "..." button to access presets menus. Alt click to delete preset )
+  # search moved to filter toolbar
+  + Rec-arm toolbar button menu: Alt+click shows recording mode menu. otherwise just toggles between overdub mode and normal.
+  + Main buttons: Show Toolbar button (Displays button to toggle the display of Track List toolbar buttons)
+  + Main buttons: Show armed area button  (Displays button to toggle the displayof armed tracks at the top)
+  + Rec-arm toolbar button: toggles display of rec arm button on each track.
+  + Rec-arm toolbar button (Right click): menu with options for rec arm button
+  + Rec-arm buttons on tracks: Left click: exclusive arm 
+  + Rec-arm buttons on tracks: Right click: toggle arm 
+  + Rec-arm buttons on tracks: Alt click: toggle Overdub mode
+  + new rec button icon for overdub mode.
+  + Automatic pinning of armed tracks option
+  + Darken not soloed tracks
+  # fix various track pinning sets bugs
+  # change muted button color to match the default theme and default color text for muted tracks
+  # number of items in track before tags so tags are aligned the same in tracks with items.
+  # FX buttons: tracks with instruments renamed to VI. configurable name for FX andVI.
+  # pixel adjustments in track icons and fx buttons
+  # bug fixes and improvements
+
 * v3.5.2 (2025-11-21)
   # fix CTRL click to select multiple broken in 3.5.1
   # fix some crashes
@@ -27,7 +258,7 @@
   # fix map mouse wheel scroll speed using normal scroll speed
   # changed some defaults settings
   # removing alt+click on track to remove it until I figure out why it crashes sometimes
-
+  
 * v3.4.1 (2025-10-15)
   + Double Click Folder: Collapse/Uncollapse folders
   + Display Settings: Text Color for Selected Tracks

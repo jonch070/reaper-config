@@ -2,6 +2,54 @@
   Track Inspector 2 - Changelog     
 ---------------------------------------------------------------------------------------
 
+* v2.4.47 (2026-08-04)
+  # ask for name when saving tag presets via actions
+  # force visibility refresh when loading tag presets
+  # fix crash changing use special tags in some cases
+
+* v2.4.46 (2026-07-30)
+  # fix: addon settings per project: fix problem not parsing new settings when save settings per project
+  # maintenance updates for addons 
+
+* v2.4.45 (2026-07-19)
+  + Support Tooltips in add-ons panels
+
+* v2.4.44 (2026-07-04)
+  # small fix in middle button drag to scroll panels
+
+* v2.4.43 (2026-06-29)
+  + support for Tracks addon v3.11+ (save settings per project)
+  # avoid project set dirty when creating hidden postfader sends
+
+* v2.4.42 (2026-06-13)
+  + Receive Presets: Receives panel menu: Show Receive Presets Buttons
+  + Receive Presets: Show track names on buttons
+  + Receive Presets: Use Pre-Fader (Create receives from presets as pre-fader) 
+  + Receive Presets: Use Side-chain (otherwise SHIFT click to create receive as sidechain)
+  # changes for Tracks addon v3.10+
+  # bug fixes in sends autofind
+
+* v2.4.41 (2026-05-12)
+  # fix Do not collapse panel option on Tracks panel
+
+* v2.4.40 (2026-05-10)
+  # updates for addons instance configurations
+  # compatibility with Tracks v3.9 
+  # fix do not collapse option on panel header click
+  # Track native Notes support for 7.7dev versions.
+
+* v2.4.39 (2026-04-22)
+  # fix: scroll track into view when using show envelopes of selected track
+
+* v2.4.38 (2026-04-02)
+  # fix: improve +track send search
+  # fix native track notes support for dev version only for now
+
+* v2.4.37 (2026-02-01)
+  + Support for native Track notes in Notepad panel. 7.60dev+ (+note button)  (+text button is now the old TI text notes)
+  # improvement in addon buttons
+  # going back to previous track after removing tracks is now optional. it was causing problems. "gobackafterremovetracks" variable.
+
 * v2.4.36 (2025-12-13)
   # fix opacity mouse over toogle buttons in settings
   # fix reference line width

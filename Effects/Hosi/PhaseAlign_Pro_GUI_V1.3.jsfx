@@ -1,0 +1,569 @@
+desc: Hosi PhaseAlign Pro - GUI
+author: Hosi
+version: 1.3
+changelog:
++ v1.3 - Compact UI Layout (550x400).
++ v1.2 - Added Professional Goniometer (XY Scope).
++ v1.2 - Improved UI aesthetics with gradients and better layout.
++ v1.1 - Fixed Mid/High band crossover logic.
++ v1.1 - Implemented true scanning Auto-Learn algorithm.
++ v1.0 - Initial release.
+about:
+  # PhaseAlign Pro
+    - A professional utility for phase alignment with multiband controls.
+    - Features Auto-Learn scanning and real-time Goniometer.
+    - Compact and efficient interface.
+
+//tags: phase alignment utility
+
+// Slider definitions
+slider1:0<-1000,1000,1>-Sample Delay
+slider2:0<-50,50,0.1>-MS Delay (ms)
+slider3:0<0,360,1>-Phase Rotation (degrees)
+slider4:0<0,1,1{Normal,Inverted}>-Polarity
+slider5:0<0,1,1{Off,Auto Learn}>-Auto Learn
+slider6:0<0,1,1{Off,On}>-Bass Lock (<200Hz)
+slider7:0<0,1,1{Off,On}>-Mono Check
+slider8:0<0,4,1{Stereo,Mono,L Only,R Only,Difference}>-Monitor Mode
+slider9:0<0,360,1>-Bass Phase (degrees)
+slider10:0<0,360,1>-Mid Phase (degrees)
+slider11:0<0,360,1>-High Phase (degrees)
+slider12:0<0,1,1{Off,On}>-Bypass
+slider13:0<0,7,1{Custom,Drum OH,Snare,Kick,Bass DI+Amp,Guitar Multi,Vocal,Piano}>-Preset
+slider14:0<0,1,1{Off,On}>-Advanced Mode
+slider15:0<0,1,1{Off,On}>-Goniometer
+
+// Protected by NK RECORDING STUDIO
+@init
+PI = 3.14159265359;
+TWOPI = 2 * PI;
+SRATE_INV = 1 / srate;
+MAX_DELAY = 4096;
+SCOPE_SIZE = 1024;
+delay_buffer_l = 0;
+delay_buffer_r = MAX_DELAY;
+scope_buffer_l = delay_buffer_r + MAX_DELAY;
+scope_buffer_r = scope_buffer_l + SCOPE_SIZE;
+memset(delay_buffer_l, 0, MAX_DELAY);
+memset(delay_buffer_r, 0, MAX_DELAY);
+memset(scope_buffer_l, 0, SCOPE_SIZE);
+memset(scope_buffer_r, 0, SCOPE_SIZE);
+delay_pos = 0;
+scope_pos = 0;
+correlation = 0;
+correlation_smooth = 0;
+rms_l = 0;
+rms_r = 0;
+prev_learn = 0;
+function _0tQMV6(freq, sr, q) (
+omega = TWOPI * freq / sr;
+cos_omega = cos(omega);
+sin_omega = sin(omega);
+alpha = sin_omega / (2 * q);
+this.b0 = (1 - cos_omega) / 2;
+this.b1 = 1 - cos_omega;
+this.b2 = (1 - cos_omega) / 2;
+this.a0 = 1 + alpha;
+this.a1 = -2 * cos_omega;
+this.a2 = 1 - alpha;
+this.b0 /= this.a0;
+this.b1 /= this.a0;
+this.b2 /= this.a0;
+this.a1 /= this.a0;
+this.a2 /= this.a0;
+this.x1 = this.x2 = this.y1 = this.y2 = 0;
+);
+function _2b9baM(input) (
+output = this.b0 * input + this.b1 * this.x1 + this.b2 * this.x2 -
+this.a1 * this.y1 - this.a2 * this.y2;
+this.x2 = this.x1;
+this.x1 = input;
+this.y2 = this.y1;
+this.y1 = output;
+output;
+);
+function _hpskbV(x, y0, y1, y2, y3) (
+c0 = y1;
+c1 = 0.5 * (y2 - y0);
+c2 = y0 - 2.5 * y1 + 2.0 * y2 - 0.5 * y3;
+c3 = 0.5 * (y3 - y0) + 1.5 * (y1 - y2) + 0.5 * y3;
+((c3 * x + c2) * x + c1) * x + c0;
+);
+bass_lp_l._0tQMV6(200, srate, 0.707);
+bass_lp_r._0tQMV6(200, srate, 0.707);
+mid_lp_l._0tQMV6(2000, srate, 0.707);
+mid_lp_r._0tQMV6(2000, srate, 0.707);
+learn_state = 0;
+scan_delay_min = -500;
+scan_delay_max = 500;
+scan_step = 10;
+scan_duration_per_step = 256;
+current_scan_delay = 0;
+scan_timer = 0;
+timeout_counter = 0;
+best_correlation = -2;
+best_scan_delay = 0;
+preset_changed = 0;
+prev_preset = slider13;
+need_frequency_processing = 0;
+function _yBqGff() (
+slider1=0;
+slider2=0;
+slider3=0;
+slider4=0;
+slider5=0;
+slider6=0;
+slider7=0;
+slider8=0;
+slider9=0;
+slider10=0;
+slider11=0;
+slider12=0;
+slider13 == 1 ? ( slider3=180; );
+slider13 == 2 ? ( slider4=1; slider10=180; );
+slider13 == 3 ? ( slider6=1; );
+slider13 == 4 ? ( slider6=1; );
+slider13 == 5 ? ( slider11=180; );
+slider13 == 6 ? ( slider7=1; );
+slider13 == 7 ? ( slider6=1; slider10=90; );
+prev_preset = slider13;
+sliderchange(0xFFFF);
+);
+ui_w = 600; ui_h = 450;
+col_bg_r = 0.12; col_bg_g = 0.12; col_bg_b = 0.14;
+col_panel_r = 0.18; col_panel_g = 0.18; col_panel_b = 0.20;
+col_accent_r = 0.0; col_accent_g = 0.7; col_accent_b = 1.0;
+col_text_r = 0.9; col_text_g = 0.9; col_text_b = 0.95;
+col_text_dim_r = 0.5; col_text_dim_g = 0.5; col_text_dim_b = 0.55;
+mouse_cap_prev = 0;
+drag_id = -1;
+drag_start_y = 0;
+drag_val_start = 0;
+last_click_time = 0;
+last_click_id = -1;
+function _wg1Kwm(r, g, b, a) ( gfx_r=r; gfx_g=g; gfx_b=b; gfx_a=a; );
+function _J6V7Iu() ( _wg1Kwm(col_text_r, col_text_g, col_text_b, 1); );
+function _oMkVVn() ( _wg1Kwm(col_text_dim_r, col_text_dim_g, col_text_dim_b, 1); );
+function _uxn3DM() ( _wg1Kwm(col_accent_r, col_accent_g, col_accent_b, 1); );
+function _GoeVoV(px, py, x, y, w, h) (
+px >= x && px <= x+w && py >= y && py <= y+h;
+);
+@slider
+slider13 != prev_preset ? (
+_yBqGff();
+);
+user_delay_samples = slider1 + (slider2 * srate * 0.001);
+user_delay_samples = max(-MAX_DELAY, min(MAX_DELAY, user_delay_samples));
+phase_rot_rad = slider3 * PI / 180;
+bass_phase_rad = slider9 * PI / 180;
+mid_phase_rad = slider10 * PI / 180;
+high_phase_rad = slider11 * PI / 180;
+need_frequency_processing = (slider9 != 0 || slider10 != 0 || slider11 != 0 || slider6);
+need_frequency_processing = (slider9 != 0 || slider10 != 0 || slider11 != 0 || slider6);
+@sample
+slider5 > 0.5 && prev_learn < 0.5 ? ( learn_state = 1; );
+slider5 < 0.5 ? ( learn_state = 0; );
+prev_learn = slider5;
+slider12 ? ( spl0 = spl0; spl1 = spl1; ) : (
+learn_state == 1 ? (
+scan_delay_min = -500;
+scan_delay_max = 500;
+scan_step = 10;
+scan_duration_per_step = 256;
+current_scan_delay = scan_delay_min;
+scan_timer = 0;
+timeout_counter = 0;
+best_correlation = -2;
+best_scan_delay = 0;
+learn_state = 2;
+learn_rms_l = 0; learn_rms_r = 0; learn_prod = 0;
+);
+effective_delay = (learn_state == 2) ? current_scan_delay : user_delay_samples;
+orig_l = spl0; orig_r = spl1;
+delay_pos = (delay_pos + 1) % MAX_DELAY;
+delay_buffer_l[delay_pos] = spl0;
+delay_buffer_r[delay_pos] = spl1;
+abs(effective_delay) < MAX_DELAY ? (
+d_int = floor(abs(effective_delay));
+d_frac = abs(effective_delay) - d_int;
+effective_delay > 0 ? (
+r_idx = (delay_pos - d_int + MAX_DELAY) % MAX_DELAY;
+y1_idx = r_idx;
+y2_idx = (r_idx - 1 + MAX_DELAY) % MAX_DELAY;
+y3_idx = (r_idx - 2 + MAX_DELAY) % MAX_DELAY;
+y0_idx = (r_idx + 1) % MAX_DELAY;
+y0 = delay_buffer_r[y0_idx];
+y1 = delay_buffer_r[y1_idx];
+y2 = delay_buffer_r[y2_idx];
+y3 = delay_buffer_r[y3_idx];
+delayed_l = spl0;
+delayed_r = _hpskbV(d_frac, y0, y1, y2, y3);
+) : (
+l_idx = (delay_pos - d_int + MAX_DELAY) % MAX_DELAY;
+y1_idx = l_idx;
+y2_idx = (l_idx - 1 + MAX_DELAY) % MAX_DELAY;
+y3_idx = (l_idx - 2 + MAX_DELAY) % MAX_DELAY;
+y0_idx = (l_idx + 1) % MAX_DELAY;
+y0 = delay_buffer_l[y0_idx];
+y1 = delay_buffer_l[y1_idx];
+y2 = delay_buffer_l[y2_idx];
+y3 = delay_buffer_l[y3_idx];
+delayed_l = _hpskbV(d_frac, y0, y1, y2, y3);
+delayed_r = spl1;
+);
+) : ( delayed_l = spl0; delayed_r = spl1; );
+slider4 ? delayed_r = -delayed_r;
+need_frequency_processing ? (
+bass_l = bass_lp_l._2b9baM(delayed_l);
+bass_r = bass_lp_r._2b9baM(delayed_r);
+rest_l = delayed_l - bass_l;
+rest_r = delayed_r - bass_r;
+mid_l = mid_lp_l._2b9baM(rest_l);
+mid_r = mid_lp_r._2b9baM(rest_r);
+high_l = rest_l - mid_l;
+high_r = rest_r - mid_r;
+slider9 != 0 ? (
+cb = cos(bass_phase_rad); sb = sin(bass_phase_rad);
+tl = bass_l * cb - bass_r * sb; tr = bass_l * sb + bass_r * cb;
+bass_l = tl; bass_r = tr;
+);
+slider10 != 0 ? (
+cm = cos(mid_phase_rad); sm = sin(mid_phase_rad);
+tl = mid_l * cm - mid_r * sm; tr = mid_l * sm + mid_r * cm;
+mid_l = tl; mid_r = tr;
+);
+slider11 != 0 ? (
+ch = cos(high_phase_rad); sh = sin(high_phase_rad);
+tl = high_l * ch - high_r * sh; tr = high_l * sh + high_r * ch;
+high_l = tl; high_r = tr;
+);
+delayed_l = bass_l + mid_l + high_l;
+delayed_r = bass_r + mid_r + high_r;
+);
+slider3 != 0 ? (
+cp = cos(phase_rot_rad); sp = sin(phase_rot_rad);
+tl = delayed_l * cp - delayed_r * sp; tr = delayed_l * sp + delayed_r * cp;
+delayed_l = tl; delayed_r = tr;
+);
+slider6 ? (
+!need_frequency_processing ? (
+bass_l = bass_lp_l._2b9baM(delayed_l);
+bass_r = bass_lp_r._2b9baM(delayed_r);
+);
+bass_mono = (bass_l + bass_r) * 0.5;
+delayed_l = (delayed_l - bass_l) + bass_mono;
+delayed_r = (delayed_r - bass_r) + bass_mono;
+);
+slider8 == 1 ? ( spl0 = spl1 = (delayed_l + delayed_r) * 0.5; ) :
+slider8 == 2 ? ( spl0 = spl1 = delayed_l; ) :
+slider8 == 3 ? ( spl0 = spl1 = delayed_r; ) :
+slider8 == 4 ? ( spl0 = spl1 = delayed_l - delayed_r; ) :
+( spl0 = delayed_l; spl1 = delayed_r; );
+rms_l = rms_l * 0.999 + delayed_l * delayed_l * 0.001;
+rms_r = rms_r * 0.999 + delayed_r * delayed_r * 0.001;
+correlation_inst = (rms_l > 0.00001 && rms_r > 0.00001) ?
+(delayed_l * delayed_r) / sqrt(rms_l * rms_r) : 0;
+correlation_smooth = correlation_smooth * 0.99 + correlation_inst * 0.01;
+scope_pos = (scope_pos + 1) % SCOPE_SIZE;
+scope_buffer_l[scope_pos] = delayed_l;
+scope_buffer_r[scope_pos] = delayed_r;
+learn_state >= 2 ? (
+learn_rms_l += delayed_l * delayed_l;
+learn_rms_r += delayed_r * delayed_r;
+learn_prod  += delayed_l * delayed_r;
+scan_timer += 1;
+timeout_counter += 1;
+timeout_counter > 500000 ? (
+slider5 = 0;
+sliderchange(slider5);
+learn_state = 0;
+timeout_counter = 0;
+);
+scan_timer >= scan_duration_per_step ? (
+step_corr = (learn_rms_l > 0.001 && learn_rms_r > 0.001) ?
+learn_prod / sqrt(learn_rms_l * learn_rms_r) : -1;
+step_corr > best_correlation ? (
+best_correlation = step_corr;
+best_scan_delay = current_scan_delay;
+);
+current_scan_delay += scan_step;
+scan_timer = 0; learn_rms_l = 0; learn_rms_r = 0; learn_prod = 0;
+current_scan_delay > scan_delay_max ? (
+learn_state == 2 ? (
+learn_state = 3;
+scan_delay_min = best_scan_delay - 20;
+scan_delay_max = best_scan_delay + 20;
+scan_step = 0.5;
+scan_duration_per_step = 4096;
+current_scan_delay = scan_delay_min;
+best_correlation = -2;
+) : (
+slider1 = best_scan_delay;
+slider5 = 0;
+sliderchange(slider1); sliderchange(slider5);
+learn_state = 0;
+);
+);
+);
+);
+);
+@gfx 600 450
+gfx_clear = -1;
+mouse_click = (mouse_cap & 1) && !(mouse_cap_prev & 1);
+mouse_drag = (mouse_cap & 1) && (mouse_cap_prev & 1);
+mouse_release = !(mouse_cap & 1) && (mouse_cap_prev & 1);
+!mouse_drag ? drag_id = -1;
+function _v7K0yd() local(y, f) (
+y = 0;
+loop(gfx_h,
+f = 1 - (y / gfx_h) * 0.5;
+_wg1Kwm(col_bg_r * f, col_bg_g * f, col_bg_b * f, 1);
+gfx_line(0, y, gfx_w, y);
+y += 1;
+);
+);
+function _QN943s(x, y, w, h, title) (
+_wg1Kwm(col_panel_r, col_panel_g, col_panel_b, 1);
+gfx_rect(x, y, w, h);
+_wg1Kwm(0.3, 0.3, 0.35, 1);
+gfx_rect(x, y, w, 1);
+gfx_rect(x, y+h, w, 1);
+gfx_rect(x, y, 1, h);
+gfx_rect(x+w, y, 1, h);
+gfx_setfont(2, "Arial", 13, 'b');
+gfx_measurestr(title, tw, th);
+_J6V7Iu();
+gfx_x = x + 10; gfx_y = y - th/2 - 2;
+title_pad = 4;
+tx = gfx_x - title_pad; ty = y - 1; tw_bg = tw + title_pad*2; th_bg = 4;
+_wg1Kwm(col_bg_r, col_bg_g, col_bg_b, 1);
+gfx_rect(tx, ty, tw_bg, th_bg);
+_uxn3DM();
+gfx_drawstr(title);
+);
+function _rJ4cnf(x, y, r, val, min_val, max_val, title, unit, id)
+local(cx, cy, val_norm, ang_start, ang_end, ang_curr, val_str)
+(
+cx = x; cy = y;
+_GoeVoV(mouse_x, mouse_y, x-r, y-r, r*2, r*2) || drag_id == id ? (
+mouse_click ? (
+id == last_click_id && (time_precise() - last_click_time) < 0.25 ? (
+val = (min_val + max_val) * 0.5;
+id == 1 ? val = 0; id == 2 ? val = 0; id == 3 ? val = 0;
+id == 9 ? val = 0; id == 10 ? val = 0; id == 11 ? val = 0;
+slider(id) = val;
+sliderchange(slider(id));
+last_click_id = -1;
+last_click_time = 0;
+) : (
+last_click_id = id;
+last_click_time = time_precise();
+);
+drag_id = id;
+drag_start_y = mouse_y;
+drag_val_start = val;
+);
+drag_id == id && mouse_drag ? (
+delta = (drag_start_y - mouse_y) * 0.005 * (max_val - min_val);
+mouse_cap & 4 ? delta *= 0.1;
+val = min(max(drag_val_start + delta, min_val), max_val);
+slider(id) = val;
+sliderchange(slider(id));
+);
+);
+val_norm = (val - min_val) / (max_val - min_val);
+_wg1Kwm(0.25, 0.25, 0.28, 1);
+gfx_arc(cx, cy, r-2, 2.356, 7.068, 1);
+_uxn3DM();
+gfx_arc(cx, cy, r-2, 2.356, 2.356 + val_norm * 4.712, 1);
+_wg1Kwm(0.15, 0.15, 0.17, 1);
+gfx_circle(cx, cy, r-5, 1);
+_wg1Kwm(0.4, 0.4, 0.45, 1);
+gfx_circle(cx, cy, r-5, 0);
+marker_x = cx + cos(2.356 + val_norm * 4.712) * (r-8);
+marker_y = cy + sin(2.356 + val_norm * 4.712) * (r-8);
+_wg1Kwm(1, 1, 1, 0.9);
+gfx_circle(marker_x, marker_y, 2, 1);
+gfx_setfont(1, "Arial", 12);
+gfx_measurestr(title, tw, th);
+_J6V7Iu();
+gfx_x = cx - tw/2; gfx_y = cy + r + 5;
+gfx_drawstr(title);
+sprintf(val_str, (id == 2 ? "%.1f" : "%.0f"), val);
+gfx_measurestr(val_str, vw, vh);
+_uxn3DM();
+_J6V7Iu();
+gfx_x = cx - vw/2; gfx_y = cy - vh/2;
+gfx_setfont(1, "Arial", 13, 'b');
+gfx_drawstr(val_str);
+);
+function _iYIVwi(x, y, w, h, state, label, id) (
+_GoeVoV(mouse_x, mouse_y, x, y, w, h) && mouse_click ? (
+state = !state;
+slider(id) = state;
+sliderchange(slider(id));
+);
+state ? _uxn3DM() : _wg1Kwm(0.25, 0.25, 0.28, 1);
+gfx_rect(x, y, w, h);
+_wg1Kwm(0,0,0,0.5);
+gfx_rect(x, y, w, h, 0);
+state ? _wg1Kwm(0,0,0,0.9) : _J6V7Iu();
+gfx_setfont(1, "Arial", 12);
+gfx_measurestr(label, tw, th);
+gfx_x = x + (w-tw)/2; gfx_y = y + (h-th)/2;
+gfx_drawstr(label);
+);
+function _fzSvYH(x, y, w, h, label) (
+_wg1Kwm(0.25, 0.25, 0.28, 1);
+gfx_rect(x, y, w, h);
+_wg1Kwm(0,0,0,0.5);
+gfx_rect(x, y, w, h, 0);
+_J6V7Iu();
+gfx_setfont(1, "Arial", 12);
+gfx_measurestr(label, tw, th);
+gfx_x = x + (w-tw)/2; gfx_y = y + (h-th)/2;
+gfx_drawstr(label);
+);
+_v7K0yd();
+is_compact = gfx_h < 225;
+!is_compact ? (
+gfx_setfont(2, "Arial", 18, 'b');
+_uxn3DM();
+gfx_x = 20; gfx_y = 15;
+gfx_drawstr("PHASE ALIGN");
+_J6V7Iu();
+gfx_drawstr(" PRO");
+_oMkVVn();
+gfx_setfont(1, "Arial", 11);
+gfx_x = gfx_w - 60; gfx_drawstr("v1.3 GUI");
+col1_x = 20; col1_w = 270;
+col2_x = 310; col2_w = 270;
+_QN943s(col1_x, 50, col1_w, 140, "GLOBAL ALIGN");
+radius = 22; gap = 60;
+start_x = col1_x + 40; knobs_y = 90;
+_rJ4cnf(start_x, knobs_y, radius, slider1, -1000, 1000, "Samples", "", 1);
+_rJ4cnf(start_x + gap, knobs_y, radius, slider2, -50, 50, "Time", "ms", 2);
+_rJ4cnf(start_x + gap*2, knobs_y, radius, slider3, 0, 360, "Phase", "deg", 3);
+_iYIVwi(start_x + gap*3 - 20, knobs_y - 10, 40, 20, slider12, "BYPASS", 12);
+btn_y = 145; btn_w = 55; btn_h = 20; btn_gap = 65;
+bx = col1_x + 10;
+_iYIVwi(bx, btn_y, btn_w, btn_h, slider4, "Polarity", 4);
+_iYIVwi(bx + btn_gap, btn_y, btn_w, btn_h, slider6, "BasLock", 6);
+_iYIVwi(bx + btn_gap*2, btn_y, btn_w, btn_h, slider7, "M.Check", 7);
+btn_mon_x = bx + btn_gap*3;
+_fzSvYH(btn_mon_x, btn_y, btn_w, btn_h,
+(slider8 == 0 ? "Stereo" : slider8 == 1 ? "Mono" : slider8 == 2 ? "L Only" : slider8 == 3 ? "R Only" : "Diff"));
+_GoeVoV(mouse_x, mouse_y, btn_mon_x, btn_y, btn_w, btn_h) && mouse_click ? (
+slider8 = (slider8 + 1) % 5;
+sliderchange(slider8);
+);
+_QN943s(col1_x, 210, col1_w, 150, "MULTIBAND PHASE");
+mb_y = 250;
+_rJ4cnf(col1_x + 45, mb_y, radius, slider9, 0, 360, "Bass", "deg", 9);
+_rJ4cnf(col1_x + 45 + 90, mb_y, radius, slider10, 0, 360, "Mid", "deg", 10);
+_rJ4cnf(col1_x + 45 + 180, mb_y, radius, slider11, 0, 360, "High", "deg", 11);
+_J6V7Iu();
+gfx_setfont(1, "Arial", 12);
+gfx_x = col1_x + 20; gfx_y = 310;
+gfx_drawstr("Crossovers: 200Hz / 2000Hz");
+_QN943s(col2_x, 50, col2_w, 310, "ANALYZER");
+status_y = 410;
+_wg1Kwm(0.1, 0.1, 0.1, 1);
+gfx_rect(0, status_y, gfx_w, gfx_h - status_y);
+_wg1Kwm(0.3, 0.3, 0.3, 1);
+gfx_line(0, status_y, gfx_w, status_y);
+learn_btn_w = 120; learn_btn_x = gfx_w - learn_btn_w - 20;
+_iYIVwi(learn_btn_x, status_y + 8, learn_btn_w, 24, slider5, (learn_state > 0 ? "SCANNING..." : "AUTO LEARN"), 5);
+_uxn3DM();
+gfx_setfont(2, "Arial", 15, 'b');
+gfx_x = 20; gfx_y = status_y + 10;
+gfx_drawstr("Preset: ");
+_J6V7Iu();
+slider13 == 0 ? p_name="Custom" : slider13 == 1 ? p_name="Drum OH" : slider13 == 2 ? p_name="Snare" :
+slider13 == 3 ? p_name="Kick" : slider13 == 4 ? p_name="Bass" : slider13 == 5 ? p_name="Guitar" :
+slider13 == 6 ? p_name="Vocal" : p_name="Piano";
+gfx_drawstr(p_name);
+_GoeVoV(mouse_x, mouse_y, 20, status_y+5, 150, 30) && mouse_click ? (
+gfx_x = 20; gfx_y = status_y + 30;
+selected = gfx_showmenu("Custom|Drum OH|Snare|Kick|Bass DI+Amp|Guitar Multi|Vocal|Piano");
+selected > 0 ? (
+slider13 = selected - 1;
+_yBqGff();
+sliderchange(1 << 12);
+);
+);
+);
+is_compact ? (
+scope_cx = gfx_w / 2;
+scope_cy = gfx_h / 2;
+scope_rad = min(gfx_w, gfx_h) / 2 - 15;
+_wg1Kwm(0, 0, 0, 0.3);
+gfx_circle(scope_cx, scope_cy, scope_rad, 1);
+) : (
+col2_x = 310; col2_w = 270;
+scope_cx = col2_x + col2_w/2;
+scope_cy = 50 + (310/2) - 30;
+scope_rad = 100;
+);
+_wg1Kwm(0, 0, 0, 0.5);
+gfx_circle(scope_cx, scope_cy, scope_rad, 1);
+_wg1Kwm(0.3, 0.3, 0.35, 1);
+gfx_circle(scope_cx, scope_cy, scope_rad, 0);
+_wg1Kwm(1, 1, 1, 0.1);
+gfx_line(scope_cx - scope_rad, scope_cy, scope_cx + scope_rad, scope_cy);
+gfx_line(scope_cx, scope_cy - scope_rad, scope_cx, scope_cy + scope_rad);
+gfx_a = 0.8;
+_uxn3DM();
+i=0; prev_x=0; prev_y=0;
+loop(SCOPE_SIZE,
+idx = (scope_pos - i + SCOPE_SIZE) % SCOPE_SIZE;
+l = scope_buffer_l[idx]; r = scope_buffer_r[idx];
+mid = (l + r) * 0.707; side = (l - r) * 0.707;
+mag = sqrt(mid*mid + side*side);
+scale = 0.8;
+draw_mag = mag * scale;
+draw_mag > 1.0 ? (
+factor = 1.0 / mag;
+mid *= factor; side *= factor;
+) : (
+mid *= scale; side *= scale;
+);
+px = scope_cx + side * scope_rad;
+py = scope_cy - mid * scope_rad;
+i > 0 && i < 200 ? (
+gfx_line(px, py, prev_x, prev_y);
+);
+prev_x = px; prev_y = py;
+i += 2;
+);
+is_compact ? (
+bar_x = 20; bar_w = gfx_w - 40; bar_h = 6;
+corr_y = gfx_h - 12;
+_oMkVVn(); gfx_setfont(1, "Arial", 10);
+str_val = sprintf(#, "%.2f", correlation_smooth);
+gfx_measurestr(str_val, tw, th);
+gfx_x = gfx_w/2 - tw/2; gfx_y = gfx_h - 26;
+gfx_drawstr(str_val);
+) : (
+col2_x = 310;
+corr_y = 330;
+gfx_setfont(1, "Arial", 11);
+_oMkVVn();
+gfx_x = col2_x + 20; gfx_y = 310; gfx_drawstr("Correlation");
+gfx_x = col2_x + 220; gfx_y = 310; gfx_drawstr(sprintf(#, "%.2f", correlation_smooth));
+bar_x = col2_x + 20; bar_w = 230; bar_h = 10;
+);
+_wg1Kwm(0.1, 0.1, 0.1, 1);
+gfx_rect(bar_x, corr_y, bar_w, bar_h);
+c_clamped = max(-1, min(1, correlation_smooth));
+c_x = bar_x + bar_w/2;
+c_val = c_clamped * (bar_w/2);
+c_val > 0 ? (
+_wg1Kwm(0.2, 0.8, 1.0, 0.8);
+gfx_rect(c_x, corr_y, c_val, bar_h);
+) : (
+_wg1Kwm(1.0, 0.4, 0.4, 0.8);
+gfx_rect(c_x + c_val, corr_y, -c_val, bar_h);
+);
+gfx_rect(c_x, corr_y, 1, bar_h);
+mouse_cap_prev = mouse_cap;

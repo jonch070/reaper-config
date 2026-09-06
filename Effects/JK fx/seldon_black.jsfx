@@ -1,8 +1,15 @@
 desc:Seldon Black
 tags: midi generator stochastic orchestral
 author: JK Scripts
-// Receives MIDI notes; scatters them across random octaves on random channels.
-// Pitch content comes from input notes, not random chromaticism.
+about:
+  Stochastic orchestral note generator. Takes held MIDI notes as pitch material
+  and fires events at a tempo-synced rate, scattering each event across random
+  octaves and MIDI channels. Requires transport to be running.
+  Pitch derives from held input notes (not random chromaticism) — octave is
+  randomized within the Bottom/Top Octave offset range. Each step can fire
+  across multiple channels simultaneously (Channels per Trigger) with multiple
+  voices per channel. Probability controls whether each step fires at all.
+  Non-note MIDI (CC, pitch bend) passes through unchanged.
 
 slider1:0<-4,4,1>Bottom Octave (offset from input)
 slider2:0<-4,4,1>Top Octave (offset from input)

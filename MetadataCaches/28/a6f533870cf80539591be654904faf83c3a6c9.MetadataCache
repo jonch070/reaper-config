@@ -1,0 +1,13 @@
+C10018 "/Volumes/Media By Project/Sound Bytes JKNAS/Dino Dig 2026/DINO26/test for audiotag"
+F MixPre-001.WAV 91096656 0 1784151361 0
+D t DINO26 y 2026-07-15 d "Okay, this is my first test hitting doing an impulse response test size mixed style with just a sledgehammer. And we got shotgun and contact mic at the like position and the geophone receiving. It's right at the contact position, the contact and the shotgu" s 96000
+D n 3 r 14:48:11.266 l 1:19.071 i 32
+F MixPre-002.WAV 5865432 0 1783460976 0
+D t DINO26 y 2026-07-07 d "sSPEED=030.000-ND  sTAKE=002  sUBITS=$00000000  sSWVER=8.00.5136  sSCENE=MixPre  sFILENAME=MixPre-002.WAV  sTAPE=260707  sCIRCLED=FALSE  sTRK3=SHOT  sTRK4=CONTACT  sTRK5=GEO  sNOTE=  " s 96000
+D n 3 r 14:49:30.338 l 0:05.086 i 32
+F MixPre-003.WAV 2353152 0 1783460980 0
+D t DINO26 y 2026-07-07 d "sSPEED=030.000-ND  sTAKE=003  sUBITS=$00000000  sSWVER=8.00.5136  sSCENE=MixPre  sFILENAME=MixPre-003.WAV  sTAPE=260707  sCIRCLED=FALSE  sTRK3=SHOT  sTRK4=CONTACT  sTRK5=GEO  sNOTE=  " s 96000
+D n 3 r 14:49:35.424 l 0:02.037 i 32
+F "safety meeting 260707_01 PCM-M10.WAV" 262610944 0 1784151418 0
+D t 260707_01 a "My Recording" y 2026-07-15 d "soon you guys want to just get a guitar and then move around as if it's what actually is happening. Yeah, it's a bit of better sense if I'm going on that. But if you got your two holes I'm sure we can use all the ends we can get. So these are the best. Oka"
+D s 96000 n 2 l 7:35.914 i 24

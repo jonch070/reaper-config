@@ -1,15 +1,15 @@
 desc:Randomize Note Length
 tags: midi
 author: JK Scripts
-// Randomizes MIDI note lengths. Each note-on schedules a note-off at a random
-// time between Min and Max. The original note-off is always suppressed — notes
-// are cut at the scheduled time regardless of how long the key is held.
-//
-// Min/Max can each independently use milliseconds or a tempo-synced grid division.
-//
-// Legato mode: cuts all active notes when a new note-on arrives that is outside
-// the Chord Window. Notes arriving within the Chord Window of each other are
-// treated as a chord and do not cut each other off.
+about:
+  Intercepts note-ons and schedules a synthetic note-off at a random time
+  between Min and Max Length. The original note-off is always suppressed —
+  duration is entirely controlled by this plugin regardless of key hold time.
+  Min and Max can each be set independently in milliseconds or a tempo-synced
+  grid division (1/1 through 1/128).
+  Legato mode: when a new note arrives outside the Chord Window, all currently
+  active notes are cut immediately. Notes within the window are treated as a
+  chord and do not cut each other.
 
 slider1:50<1,4000,1>Min Length (ms)
 slider2:0<0,1,1{ms,Grid}>Min Mode

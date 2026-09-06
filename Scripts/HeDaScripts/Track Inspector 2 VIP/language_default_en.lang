@@ -8,6 +8,7 @@ action_names={
 "try again",
 "Change Track Selection",
 "Change track selection",
+"Change track order",
 "Paste tracks",
 "Adjust track selection (via Surface)",
 "Adjust Track Selection (via Surface)",
@@ -26,6 +27,8 @@ action_names={
 "Change active MIDI media item",
 "TT: Insert track template",
 "Freeze tracks",
+"Show only one fixed lane",
+"Toggle show bottom docker",
 }
 
 action_update_names={

@@ -1,0 +1,216 @@
+// EnsemblerFilter - CC/Velocity Transform Processing
+// Handles unpacking and application of transform data from ReaScript
+
+@init
+
+// =============================================================================
+// TRANSFORM DATA GMEM READING
+// =============================================================================
+// Transform data is now communicated via GMEM instead of bitpacked sliders.
+// Lua writes transform data to GMEM, JSFX reads it here.
+//
+// MUST match INFX.lua constants and GMEM layout documentation in EnsemblerFilter.jsfx
+
+// GMEM Transform Constants
+TRANSFORM_GMEM_BASE = 1000;
+TRANSFORM_SLOTS_PER_INSTRUMENT = 31;  // 1 count + (10 transforms × 3 slots)
+
+// Transform storage arrays (max 10 transforms)
+transform_param_ids = 1100;     // [10] - parameter IDs (0=velocity, 1-127=CC)
+transform_types = 1110;         // [10] - transform types (0-3)
+transform_values = 1120;        // [10] - transform values (direct floats)
+num_transforms = 0;             // Actual number of transforms loaded
+
+// Transform type constants (must match Lua TRANSFORM_TYPE)
+TRANSFORM_NONE = 0;
+TRANSFORM_SCALE = 1;
+TRANSFORM_FIXED = 2;
+TRANSFORM_IGNORE = 3;
+
+// Read all transform data from GMEM for this instrument
+// Called from @slider when instrument_slot_number changes
+function readTransformsFromGMEM()
+local(i, offset, my_transform_base)
+(
+    // Calculate GMEM base address for this instrument's transforms
+    // instrument_slot_number is set by Lua via slider24
+    my_transform_base = TRANSFORM_GMEM_BASE + (instrument_slot_number * TRANSFORM_SLOTS_PER_INSTRUMENT);
+
+    // Read transform count from GMEM
+    num_transforms = gmem[my_transform_base];
+
+    // Safety: Validate transform count
+    num_transforms < 0 || num_transforms > 10 ? (
+        num_transforms = 0;  // Invalid data, assume no transforms
+    );
+
+    // Read each transform directly from GMEM (3 slots per transform)
+    i = 0;
+    loop(num_transforms,
+        offset = my_transform_base + 1 + (i * 3);
+        transform_param_ids[i] = gmem[offset + 0];  // param_id (0=velocity, 1-127=CC)
+        transform_types[i] = gmem[offset + 1];      // type (0-3)
+        transform_values[i] = gmem[offset + 2];     // value (direct float)
+        i += 1;
+    );
+);
+
+// =============================================================================
+// TRANSFORM APPLICATION  
+// =============================================================================
+
+// Apply transforms to velocity for a given note
+// Parameters: original_velocity (0-127)
+// Returns: transformed velocity (0-127)
+function applyVelocityTransforms(original_velocity)
+local(i, param_id, transform_type, transform_value, result_velocity)
+(
+    result_velocity = original_velocity;
+    
+    // Process all transforms looking for velocity (param_id = 0)
+    i = 0;
+    loop(num_transforms,
+        param_id = transform_param_ids[i];
+        
+        param_id == 0 ? ( // Velocity parameter
+            transform_type = transform_types[i];
+            transform_value = transform_values[i];
+            
+            transform_type == TRANSFORM_SCALE ? (
+                result_velocity = result_velocity * transform_value;
+            ) : transform_type == TRANSFORM_FIXED ? (
+                result_velocity = transform_value;
+            ) : transform_type == TRANSFORM_IGNORE ? (
+                result_velocity = 0; // Ignore = set to 0
+            );
+            // TRANSFORM_NONE does nothing
+        );
+        
+        i += 1;
+    );
+    
+    // Clamp to valid MIDI range
+    result_velocity < 0 ? result_velocity = 0;
+    result_velocity > 127 ? result_velocity = 127;
+    result_velocity;
+);
+
+// Apply transforms to a CC value for a given CC number
+// Parameters: cc_number (1-127), original_value (0-127)  
+// Returns: transformed CC value (0-127)
+function applyCCTransforms(cc_number, original_value)
+local(i, param_id, transform_type, transform_value, result_value)
+(
+    result_value = original_value;
+    
+    
+    // Process all transforms looking for this CC (param_id = cc_number)
+    i = 0;
+    loop(num_transforms,
+        param_id = transform_param_ids[i];
+        
+        param_id == cc_number ? ( // This CC parameter
+            transform_type = transform_types[i];
+            transform_value = transform_values[i];
+            
+            
+            transform_type == TRANSFORM_SCALE ? (
+                result_value = result_value * transform_value;
+            ) : transform_type == TRANSFORM_FIXED ? (
+                result_value = transform_value;
+            ) : transform_type == TRANSFORM_IGNORE ? (
+                result_value = 0; // Ignore = set to 0
+            );
+            // TRANSFORM_NONE does nothing
+        );
+        
+        i += 1;
+    );
+    
+    // Clamp to valid MIDI range
+    result_value < 0 ? result_value = 0;
+    result_value > 127 ? result_value = 127;
+    
+    
+    result_value;
+);
+
+// Check if a CC should be ignored (has ignore transform)
+// Parameters: cc_number (1-127)
+// Returns: 1 if CC should be ignored, 0 if it should be processed
+function shouldIgnoreCC(cc_number)
+local(i, param_id, transform_type, found_ignore)
+(
+    found_ignore = 0;
+    i = 0;
+    loop(num_transforms,
+        param_id = transform_param_ids[i];
+        param_id == cc_number ? (
+            transform_type = transform_types[i];
+            transform_type == TRANSFORM_IGNORE ? (
+                found_ignore = 1; // Found ignore transform for this CC
+            );
+        );
+        i += 1;
+    );
+    found_ignore; // Return result
+);
+
+// NOTE: shouldIgnoreVelocity() removed - velocity cannot be ignored
+
+// =============================================================================
+// GRANULAR CC CHANGE DETECTION
+// =============================================================================
+
+// Calculate a simple hash for a CC's transform state (type + value)
+// This helps us detect when a specific CC's transform configuration changes
+function calculateCCTransformHash(cc_number)
+local(i, param_id, transform_type, transform_value, hash)
+(
+    hash = 0; // Default: no transform
+    
+    // Look through all transforms for this CC number
+    i = 0;
+    loop(num_transforms,
+        param_id = transform_param_ids[i];
+        param_id == cc_number ? (
+            transform_type = transform_types[i];
+            transform_value = transform_values[i];
+            
+            // Simple hash: type * 1000 + value (sufficient for change detection)
+            hash = transform_type * 1000 + transform_value;
+        );
+        i += 1;
+    );
+    
+    hash;
+);
+
+// Detect which specific CC numbers had their transforms changed
+// Builds a list of changed CCs in changed_cc_list[] and sets changed_cc_count
+// Should be called from @slider section after unpackAllTransforms()
+function detectChangedCCTransforms()
+local(cc_num, current_hash, previous_hash)
+(
+    // Reset changed CC list
+    changed_cc_count[0] = 0;
+    
+    // Check each possible CC number (1-127)
+    cc_num = 1;
+    loop(127,
+        current_hash = calculateCCTransformHash(cc_num);
+        previous_hash = previous_transform_hashes[cc_num - 1];
+        
+        // If hash changed, this CC's transform was modified
+        current_hash != previous_hash ? (
+            // Add to changed list
+            changed_cc_list[changed_cc_count[0]] = cc_num;
+            changed_cc_count[0] += 1;
+            
+            // Update stored hash for next comparison
+            previous_transform_hashes[cc_num - 1] = current_hash;
+        );
+        
+        cc_num += 1;
+    );
+);

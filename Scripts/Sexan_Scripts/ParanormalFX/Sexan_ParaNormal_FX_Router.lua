@@ -1,9 +1,9 @@
 -- @description Sexan ParaNormal FX Router
 -- @author Sexan
 -- @license GPL v3
--- @version 1.44
+-- @version 1.46
 -- @changelog
---  Load imgui shims for backward compatibility
+--  Add plugin type filter
 -- @provides
 --   Modules/*.lua
 --   Fonts/*.ttf

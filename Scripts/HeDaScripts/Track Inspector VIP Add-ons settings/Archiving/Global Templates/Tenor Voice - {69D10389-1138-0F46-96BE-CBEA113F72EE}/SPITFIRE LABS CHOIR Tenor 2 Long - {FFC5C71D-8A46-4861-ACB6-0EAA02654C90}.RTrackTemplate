@@ -1,0 +1,40 @@
+<TRACK
+  NAME "SPITFIRE LABS CHOIR Tenor 1 Long *** archived ***"
+  LOCK 1
+  PEAKCOL 25713305
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4224 1 7 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {A7C9E1CF-C2DC-483F-8435-50E057295254}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE LABS CHOIR Tenor 1 Long - {A7C9E1CF-C2DC-483F-8435-50E057295254}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {69D10389-1138-0F46-96BE-CBEA113F72EE}
+    Archived_parent_name "Tenor Voice"
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

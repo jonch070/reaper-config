@@ -1,33 +1,33 @@
-1768939854.9974  1.47
-1768939854.9975  nil
-1768939854.998  nil
-1768939854.998  nil
-1768939854.9981  (2023-09-08)
-1768939854.9991  ---- Starting Manager -----
-1768939854.9992  Script path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts Manager OSX/Scripts/HeDaScripts/HeDaScripts Manager/
-1768939854.9992  Scripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/
-1768939854.9992  Settings path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/
-1768939854.9992  _resources path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/
-1768939854.9993  HeDaScripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/
-1768939854.9993  Name script: HeDaScripts Manager
-1768939854.9993  Version: 1.47
-1768939855.0006  Is MacOS
-1768939855.0006  using system curl: /usr/bin/curl
-1768939855.0007  found 7zz at: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
-1768939855.0007  ______________ Testing curl: /usr/bin/curl --version
-1768939855.0634  0
+1786602590.9059  1.47
+1786602590.906  nil
+1786602590.906  nil
+1786602590.9061  nil
+1786602590.9061  (2023-09-08)
+1786602590.9063  ---- Starting Manager -----
+1786602590.9063  Script path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts Manager OSX/Scripts/HeDaScripts/HeDaScripts Manager/
+1786602590.9064  Scripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/
+1786602590.9064  Settings path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/
+1786602590.9064  _resources path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/
+1786602590.9065  HeDaScripts path: /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/
+1786602590.9065  Name script: HeDaScripts Manager
+1786602590.9065  Version: 1.47
+1786602590.9069  Is MacOS
+1786602590.9069  using system curl: /usr/bin/curl
+1786602590.907  found 7zz at: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
+1786602590.907  ______________ Testing curl: /usr/bin/curl --version
+1786602590.9331  0
 curl 8.7.1 (x86_64-apple-darwin24.0) libcurl/8.7.1 (SecureTransport) LibreSSL/3.3.6 zlib/1.2.12 nghttp2/1.64.0
 Release-Date: 2024-03-27
 Protocols: dict file ftp ftps gopher gophers http https imap imaps ipfs ipns ldap ldaps mqtt pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
 Features: alt-svc AsynchDNS GSS-API HSTS HTTP2 HTTPS-proxy IPv6 Kerberos Largefile libz MultiSSL NTLM SPNEGO SSL threadsafe UnixSockets
 
-1768939855.0634  40
-1768939855.0639  curl installed ok
-1768939855.0639  _________________ Testing 7z: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
-1768939855.147  0
+1786602590.9331  40
+1786602590.9332  curl installed ok
+1786602590.9332  _________________ Testing 7z: "/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/7z/7zz"
+1786602590.983  0
 
 7-Zip (z) 23.01 (arm64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
- 64-bit arm_v:8 locale=en_US.UTF-8 Threads:8 OPEN_MAX:10240, ASM
+ 64-bit arm_v:8 locale=en_US.UTF-8 Threads:8 OPEN_MAX:9223372036854775807, ASM
 
 Usage: 7zz <command> [<switches>...] <archive_name> [<file_names>...] [@listfile]
 
@@ -93,17 +93,17 @@ Usage: 7zz <command> [<switches>...] <archive_name> [<file_names>...] [@listfile
   -x[r[-|0]]{@listfile|!wildcard} : eXclude filenames
   -y : assume Yes on all queries
 
-1768939855.1471  6
-1768939855.1474  7z installed ok
-1768939855.1474  starting...
-1768939855.1479  Tue Jan 20 13:10:55 2026
-1768939855.2733  ok
-1768939855.6391  reading index updates
-1768939855.6394  1768939855.6394
-1768939855.6394  https://reaper.hector-corcin.com/hsmanager_downloads/index_updates.dat
-1768939856.7543  /usr/bin/curl
-1768939856.7544  
-1768939856.7545  found
-1768939856.7546  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/index_updates.dat
-1768939856.7549  index read ok
-1768939866.3316  exiting.
+1786602590.9831  6
+1786602590.9832  7z installed ok
+1786602590.9832  starting...
+1786602590.9833  Thu Aug 13 00:29:50 2026
+1786602591.0112  ok
+1786602591.1778  reading index updates
+1786602591.1779  1786602591.1779
+1786602591.1779  https://reaper.hector-corcin.com/hsmanager_downloads/index_updates.dat
+1786602591.7981  /usr/bin/curl
+1786602591.7983  
+1786602591.7984  found
+1786602591.7985  /Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/HeDaScripts/HeDaScripts Manager settings/_resources/index_updates.dat
+1786602591.7987  index read ok
+1786602601.0105  exiting.

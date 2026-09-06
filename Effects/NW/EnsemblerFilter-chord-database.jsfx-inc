@@ -1,0 +1,239 @@
+// EnsemblerFilter - Chord Database
+// Contains chord patterns and names
+//
+// Chord detection approach inspired by "Lil ChordBox" by Ilias-Timon Poulakis
+// Original: https://github.com/iliaspoulakis/Reaper-Tools/blob/master/MIDI%20editor/Lil%20Chordbox.lua
+// Licensed under MIT License
+//
+// This implementation uses interval pattern matching converted to numeric hashes
+// for better JSFX performance, combined with expanded chord patterns and fallback 
+// detection for Ensembler's voice assignment needs.
+
+@init
+
+// Note names for debug display
+function get_note_name(note_num)
+(
+  note_num == 0 ? "C" :
+  note_num == 1 ? "C#" :
+  note_num == 2 ? "D" :
+  note_num == 3 ? "D#" :
+  note_num == 4 ? "E" :
+  note_num == 5 ? "F" :
+  note_num == 6 ? "F#" :
+  note_num == 7 ? "G" :
+  note_num == 8 ? "G#" :
+  note_num == 9 ? "A" :
+  note_num == 10 ? "A#" :
+  note_num == 11 ? "B" : "?"
+);
+
+// Chord quality names for display
+function get_chord_name(quality)
+(
+  quality == 1 ? "maj" :
+  quality == 2 ? "min" :
+  quality == 3 ? "sus2" :
+  quality == 4 ? "sus4" :
+  quality == 5 ? "maj7" :
+  quality == 6 ? "min7" :
+  quality == 7 ? "7" :
+  quality == 8 ? "dim" :
+  quality == 9 ? "aug" :
+  quality == 10 ? "6" :
+  quality == 11 ? "m6" :
+  quality == 12 ? "maj9" :
+  quality == 13 ? "min9" :
+  quality == 14 ? "9" :
+  quality == 15 ? "add9" :
+  quality == 16 ? "m(add9)" :
+  quality == 17 ? "7sus4" :
+  quality == 18 ? "maj7sus4" :
+  quality == 19 ? "dim7" :
+  quality == 20 ? "m7b5" :
+  quality == 21 ? "m(maj7)" :
+  quality == 22 ? "aug7" :
+  quality == 23 ? "7b5" :
+  quality == 24 ? "7#5" :
+  quality == 25 ? "maj7#5" :
+  quality == 26 ? "6/9" :
+  quality == 27 ? "m6/9" :
+  quality == 28 ? "11" :
+  quality == 29 ? "m11" :
+  quality == 30 ? "maj11" :
+  quality == 31 ? "13" :
+  quality == 32 ? "m13" :
+  quality == 33 ? "maj13" :
+  quality == 34 ? "7#11" :
+  quality == 35 ? "maj7#11" :
+  quality == 36 ? "7b9" :
+  quality == 37 ? "7#9" :
+  quality == 38 ? "maj9#11" :
+  quality == 39 ? "m9b5" :
+  quality == 40 ? "5" :
+  quality == 41 ? "7sus2" :
+  
+  // NEW: Omitted note patterns
+  quality == 42 ? "maj7(no3)" :    // C-G-B case
+  quality == 43 ? "7(no3)" :
+  quality == 44 ? "maj7(no5)" :
+  quality == 45 ? "min7(no5)" :
+  quality == 46 ? "9(no3)" :
+  quality == 47 ? "maj9(no3)" :
+  quality == 48 ? "maj(no5)" :
+  quality == 49 ? "min(no5)" :
+  
+  // NEW: Tension patterns  
+  quality == 50 ? "maj(#11)" :     // C-E-F#-G case
+  quality == 51 ? "add9" :         // Different from maj9 (no 7th)
+  quality == 52 ? "m(add9)" :
+  quality == 53 ? "7(#11)" :
+  quality == 54 ? "add#11" :
+  quality == 55 ? "m(add#11)" :
+  
+  // Fallback core triads (when complex lookup fails)
+  quality == 60 ? "maj(+tensions)" :
+  quality == 61 ? "min(+tensions)" :
+  quality == 62 ? "dim(+tensions)" :
+  quality == 63 ? "aug(+tensions)" :
+  
+  "unknown"
+);
+
+// Build interval hash from voiced notes (notes assigned to voices)
+// Each interval gets a bit: 0=root, 1=b2, 2=2, 3=b3, 4=3, 5=4, 6=b5, 7=5, 8=#5, 9=6, 10=b7, 11=7
+function build_interval_hash(root)
+local(voice_num, note, interval, hash)
+(
+  hash = 1; // Root always present (bit 0)
+  
+  // Check each voice assignment instead of held notes
+  voice_num = 0;
+  loop(total_voices_config,
+    note = voice_assignments[voice_num];
+    note >= 0 ? (
+      interval = (note - root + 12) % 12;
+      interval > 0 && interval <= 11 ? (
+        hash |= (1 << interval); // Set bit for this interval
+      );
+    );
+    voice_num += 1;
+  );
+  
+  hash;
+);
+
+// Helper function to check if specific interval exists from root in voiced notes
+function check_interval_present(root, target_interval)
+local(voice_num, note, interval, found)
+(
+  found = 0;
+  voice_num = 0;
+  loop(total_voices_config,
+    note = voice_assignments[voice_num];
+    note >= 0 ? (
+      interval = (note - root + 12) % 12;
+      interval == target_interval ? (
+        found = 1;
+      );
+    );
+    voice_num += 1;
+  );
+  found;
+);
+
+// Fallback: Detect core triad structure ignoring extra notes
+function detect_core_triad(root)
+local(has_maj3, has_min3, has_5th, has_dim5, has_aug5)
+(
+  // Check for essential chord tones
+  has_maj3 = check_interval_present(root, 4);  // Major 3rd (E in C)
+  has_min3 = check_interval_present(root, 3);  // Minor 3rd (Eb in C)
+  has_5th = check_interval_present(root, 7);   // Perfect 5th (G in C)
+  has_dim5 = check_interval_present(root, 6);  // Diminished 5th (Gb in C)
+  has_aug5 = check_interval_present(root, 8);  // Augmented 5th (G# in C)
+  
+  // Priority order: complete triads first, then incomplete
+  has_maj3 && has_5th ? 60 :         // Major + tensions
+  has_min3 && has_5th ? 61 :         // Minor + tensions  
+  has_min3 && has_dim5 ? 62 :        // Diminished + tensions
+  has_maj3 && has_aug5 ? 63 :        // Augmented + tensions
+  has_5th && !has_maj3 && !has_min3 ? 40 : // Power chord (no 3rd)
+  0  // Can't determine basic structure
+);
+
+// Main chord pattern matching function using interval hash lookup
+function lookup_chord_quality(hash)
+(
+  // BASIC TRIADS
+  hash == 145 ? 1 :      // maj: intervals 0,4,7 → bits 0,4,7 → 1+16+128 = 145
+  hash == 137 ? 2 :      // min: intervals 0,3,7 → bits 0,3,7 → 1+8+128 = 137
+  hash == 133 ? 3 :      // sus2: intervals 0,2,7 → bits 0,2,7 → 1+4+128 = 133
+  hash == 161 ? 4 :      // sus4: intervals 0,5,7 → bits 0,5,7 → 1+32+128 = 161
+  hash == 129 ? 40 :     // 5: intervals 0,7 → bits 0,7 → 1+128 = 129
+  
+  // DIMINISHED AND AUGMENTED
+  hash == 73 ? 8 :       // dim: intervals 0,3,6 → bits 0,3,6 → 1+8+64 = 73
+  hash == 273 ? 9 :      // aug: intervals 0,4,8 → bits 0,4,8 → 1+16+256 = 273
+  
+  // SEVENTH CHORDS  
+  hash == 2193 ? 5 :     // maj7: intervals 0,4,7,11 → bits 0,4,7,11 → 1+16+128+2048 = 2193
+  hash == 1161 ? 6 :     // min7: intervals 0,3,7,10 → bits 0,3,7,10 → 1+8+128+1024 = 1161
+  hash == 1169 ? 7 :     // dom7: intervals 0,4,7,10 → bits 0,4,7,10 → 1+16+128+1024 = 1169
+  hash == 585 ? 19 :     // dim7: intervals 0,3,6,9 → bits 0,3,6,9 → 1+8+64+512 = 585
+  hash == 1097 ? 20 :    // m7b5: intervals 0,3,6,10 → bits 0,3,6,10 → 1+8+64+1024 = 1097
+  hash == 2137 ? 21 :    // m(maj7): intervals 0,3,7,11 → bits 0,3,7,11 → 1+8+128+2048 = 2137
+  hash == 1297 ? 22 :    // aug7: intervals 0,4,8,10 → bits 0,4,8,10 → 1+16+256+1024 = 1297
+  
+  // SUSPENDED SEVENTHS
+  hash == 1185 ? 17 :    // 7sus4: intervals 0,5,7,10 → bits 0,5,7,10 → 1+32+128+1024 = 1185
+  hash == 2209 ? 18 :    // maj7sus4: intervals 0,5,7,11 → bits 0,5,7,11 → 1+32+128+2048 = 2209
+  hash == 1157 ? 41 :    // 7sus2: intervals 0,2,7,10 → bits 0,2,7,10 → 1+4+128+1024 = 1157
+  
+  // SIXTH CHORDS
+  hash == 657 ? 10 :     // 6: intervals 0,4,7,9 → bits 0,4,7,9 → 1+16+128+512 = 657
+  hash == 649 ? 11 :     // m6: intervals 0,3,7,9 → bits 0,3,7,9 → 1+8+128+512 = 649
+  hash == 661 ? 26 :     // 6/9: intervals 0,2,4,7,9 → bits 0,2,4,7,9 → 1+4+16+128+512 = 661
+  hash == 653 ? 27 :     // m6/9: intervals 0,2,3,7,9 → bits 0,2,3,7,9 → 1+4+8+128+512 = 653
+  
+  // OMITTED NOTE PATTERNS (NEW!)
+  hash == 2177 ? 42 :    // maj7(no3): intervals 0,7,11 → bits 0,7,11 → 1+128+2048 = 2177 ← YOUR C-G-B CASE!
+  hash == 1153 ? 43 :    // 7(no3): intervals 0,7,10 → bits 0,7,10 → 1+128+1024 = 1153
+  hash == 2065 ? 44 :    // maj7(no5): intervals 0,4,11 → bits 0,4,11 → 1+16+2048 = 2065
+  hash == 1033 ? 45 :    // min7(no5): intervals 0,3,10 → bits 0,3,10 → 1+8+1024 = 1033
+  hash == 17 ? 48 :      // maj(no5): intervals 0,4 → bits 0,4 → 1+16 = 17
+  hash == 9 ? 49 :       // min(no5): intervals 0,3 → bits 0,3 → 1+8 = 9
+  
+  // TENSION PATTERNS (NEW!)
+  hash == 209 ? 50 :     // maj(#11): intervals 0,4,6,7 → bits 0,4,6,7 → 1+16+64+128 = 209 ← YOUR C-E-F#-G CASE!
+  hash == 149 ? 51 :     // add9: intervals 0,2,4,7 → bits 0,2,4,7 → 1+4+16+128 = 149
+  hash == 141 ? 52 :     // m(add9): intervals 0,2,3,7 → bits 0,2,3,7 → 1+4+8+128 = 141
+  hash == 1233 ? 53 :    // 7(#11): intervals 0,4,6,7,10 → bits 0,4,6,7,10 → 1+16+64+128+1024 = 1233
+  hash == 81 ? 54 :      // add#11: intervals 0,4,6 → bits 0,4,6 → 1+16+64 = 81
+  
+  // NINTH CHORDS
+  hash == 2197 ? 12 :    // maj9: intervals 0,2,4,7,11 → bits 0,2,4,7,11 → 1+4+16+128+2048 = 2197
+  hash == 1165 ? 13 :    // min9: intervals 0,2,3,7,10 → bits 0,2,3,7,10 → 1+4+8+128+1024 = 1165
+  hash == 1173 ? 14 :    // dom9: intervals 0,2,4,7,10 → bits 0,2,4,7,10 → 1+4+16+128+1024 = 1173
+  
+  // NOTE: If we get conflicts between dim and m(add#11) (both hash == 73),
+  // we can handle this by checking note count or adding priority logic
+  
+  0  // unknown - fallback will catch this
+);
+
+// Main chord analysis function with three-tier approach
+function match_chord_pattern(root)
+local(hash, quality)
+(
+  // Step 1: Build interval hash and try exact lookup
+  hash = build_interval_hash(root);
+  quality = lookup_chord_quality(hash);
+  
+  // Step 2: If no exact match, try core triad detection
+  quality <= 0 ? (
+    quality = detect_core_triad(root);
+  );
+  
+  quality;
+);

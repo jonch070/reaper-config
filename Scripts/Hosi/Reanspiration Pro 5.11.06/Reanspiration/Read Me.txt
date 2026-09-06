@@ -1,0 +1,7 @@
+Delete all old files, copy the script to the folder.
+C:\Users\PC\AppData\Roaming\REAPER\Scripts\Hosi\Reanspiration
+
+Copy the Track Template to the folder.
+C:\Users\PC\AppData\Roaming\REAPER\TrackTemplates\Reanspiration
+
+Done

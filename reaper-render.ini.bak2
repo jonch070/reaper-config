@@ -1,0 +1,104 @@
+<RENDERPRESET "mp3 Normalized" 0 0 0 0 10 0 0
+  bDNwbUABAAAAAAAACgAAAP////8EAAAAQAEAAAAAAAA=
+>
+RENDERPRESET_EXT "mp3 Normalized" 1 0.063096 1 0 0 1 1 0 0 0 0
+<RENDERPRESET "MP4 Streaming Normalized" 0 0 0 0 10 0 0
+  RlZBWAAAAAAAAAAAAAgAAAAAAACAAAAAgAcAADgEAAAK179BAQAAAF8AAAAAAA==
+>
+RENDERPRESET_EXT "MP4 Streaming Normalized" 65 0.063096 1 0 0 1 1 0 0 0 0
+<RENDERPRESET "SM Mix" 96000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM Mix" 65 0.063096 1 0 0 1 1 0 0 0 0
+<RENDERPRESET "SM Mix" 48000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+<RENDERPRESET2 "SM Mix"
+  bDNwbUABAAAAAAAACgAAAP////8EAAAAQAEAAAAAAAA=
+>
+RENDERPRESET_EXT "SM Mix" 65 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Mix" 5 2142.223 2223.012 0 0 "$project/$project - $starttc - $stem" 0 ./exports 0 0 "" 0
+<RENDERPRESET "ABM Quick - mp3" 96000 2 0 1 10 0 0
+  bDNwbUABAAAAAAAACgAAAP////8EAAAAQAEAAAAAAAA=
+>
+RENDERPRESET_EXT "ABM Quick - mp3" 65 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "ABM Quick - mp3" 2 0 46 0 0 "$project - snippet" 0 "/Users/jonathankawchuk/Documents/Projects/In Progress/Album 3/Album 3 Grab Bag/ABM Sketches Jam Pad" 0 0 "" 0
+<RENDERPRESET "ABM Quick - WAV" 96000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "ABM Quick - WAV" 65 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "ABM Quick - WAV" 2 0 46 0 0 "$project/$project - snippet" 0 ./exports 0 0 "" 0
+<RENDERPRESET "Audiobooks Spotify" 44100 1 0 1 10 0 0
+  bDNwbUABAAAAAAAAAgAAAP////8EAAAAQAEAAAAAAAA=
+>
+RENDERPRESET_EXT "Audiobooks Spotify" 262209 0.063096 0.944061 0 0 1 1 0.000001 0.000001 0 0
+RENDERPRESET_OUTPUT "Audiobooks Spotify" 3 0 13.64 0 0 $region 0 "/Users/jonathankawchuk/Documents/Projects/Audiobook Editing/Spotify/Current Audiobook Project/External Editing/Edited Audio" 0 0 "" 0
+<RENDERPRESET Corpus 96000 2 0 1 10 0 16
+  ZXZhdxgAAA==
+>
+RENDERPRESET_OUTPUT Corpus 4 426.115 429.376 32 0 $project_$Itemnumber_$lengthsecondsseconds_$samplerate_$bitdepth_nonnorm 1 "/Users/jonathankawchuk/Documents/Projects/In Progress/Album 3/Corpi/" 1000 0 "" 0
+<RENDERPRESET "Film Master" 96000 2 0 1 10 3 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "Film Master" 65 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "Film Master" 5 90 186.537 0 0 "$project/$project - $starttc - $track" 0 ./exports 0 0 "" 0
+<RENDERPRESET "Film Multitrack Dry" 96000 2 0 1 10 3 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "Film Multitrack Dry" 262144 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "Film Multitrack Dry" 5 90 186.537 128 0 "$project/multitrack/multitrack dry/$folder[_]_$track dry - $project - $starttc" 0 ./exports 0 0 "" 0
+<RENDERPRESET "Film Multitrack Wet" 96000 2 0 1 10 3 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "Film Multitrack Wet" 262144 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "Film Multitrack Wet" 5 90 186.537 128 0 "$project/multitrack/multitrack wet/$folder[_]_$track wet - $project - $starttc" 0 ./exports 0 0 "" 0
+<RENDERPRESET "Film Reel STE" 48000 2 0 1 10 0 34816
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "Film Reel STE" 65 0.063096 0.944061 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "Film Reel STE" 4 9.781 78 64 0 "$item - Reel" 0 "" 0 0 "" 0
+<RENDERPRESET "SM Mix 96" 96000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM Mix 96" 65 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Mix 96" 5 2142.223 2223.012 0 0 "$project/$project - $starttc - $stem" 0 ./exports 0 0 "" 0
+<RENDERPRESET "SM Skinny Stems Dry 96" 96000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM Skinny Stems Dry 96" 0 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Skinny Stems Dry 96" 5 2142.223 2223.012 0 0 "$project/skinny stems/skinny stems dry/$project - $starttc - $stem dry" 0 ./exports 0 0 "" 0
+<RENDERPRESET "SM Skinny Stems Wet 96" 96000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM Skinny Stems Wet 96" 0 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Skinny Stems Wet 96" 5 2142.223 2223.012 0 0 "$project/skinny stems/skinny stems wet/$project - $starttc - $stem wet" 0 ./exports 0 0 "" 0
+<RENDERPRESET "SM Skinny Stems Wet 96 5.1" 96000 6 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM Skinny Stems Wet 96 5.1" 0 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Skinny Stems Wet 96 5.1" 5 0 320.865 0 0 "$project/skinny stems/skinny stems dry/$project - $starttc - $stem dry" 0 ./exports 0 0 "" 0
+<RENDERPRESET "SM Stem Default" 48000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM Stem Default" 0 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Stem Default" 5 10 272.696 0 0 "$project/$project - $starttc - $stem" 0 ./exports 0 0 "" 0
+<RENDERPRESET "SM Video Proxy" 48000 2 0 1 10 0 0
+  RlZBWAAAAAAAAAAAAAgAAAAAAACAAAAAgAcAADgEAAAK179BAQAAAF8AAAAAAA==
+>
+RENDERPRESET_EXT "SM Video Proxy" 65 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Video Proxy" 5 0 18 0 0 "$project/$project - $starttc - $stem" 0 ./exports 0 0 "" 0
+<RENDERPRESET "SM Video Watch Folder" 48000 2 0 1 10 0 0
+  RlZBWAAAAAAAAAAAAAgAAAAAAACAAAAAgAcAADgEAAAK179BAQAAAF8AAAAAAA==
+>
+RENDERPRESET_EXT "SM Video Watch Folder" 65 0.063096 0.944061 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM Video Watch Folder" 5 0 18 0 0 "$project - $starttc - $stem" 0 "/Users/jonathankawchuk/Dropbox/Watch Folder" 0 0 "" 0
+<RENDERPRESET "SM wide stems selected dry" 48000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM wide stems selected dry" 0 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM wide stems selected dry" 5 0 18 3 0 "$project/wide stems/wide stems dry/$project - $starttc - Wide - $track $stem" 0 ./exports 0 0 "" 0
+<RENDERPRESET "SM wide stems selected wet" 48000 2 0 1 10 0 0
+  ZXZhdxgAAA==
+>
+RENDERPRESET_EXT "SM wide stems selected wet" 0 0.063096 1 0 0 1 1 0 0 0 0
+RENDERPRESET_OUTPUT "SM wide stems selected wet" 5 0 18 128 0 "$project/wide stems/wide stems wet/$project - $starttc - Wide - $track $stem" 0 ./exports 0 0 "" 0

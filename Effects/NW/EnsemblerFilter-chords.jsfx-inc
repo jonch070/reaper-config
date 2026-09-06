@@ -1,0 +1,228 @@
+// EnsemblerFilter - Chord Detection and Chord Tone Logic
+// Import chord database
+import EnsemblerFilter-chord-database.jsfx-inc
+
+@init
+
+// =============================================================================
+// CHORD DETECTION STATE VARIABLES
+// =============================================================================
+
+// Chord detection results (shared with main script)
+detected_chord_root = -1;      // MIDI note number of detected root
+detected_chord_quality = 0;    // 0=unknown, 1=maj, 2=min, 3=sus2, 4=sus4, etc.
+detected_chord_hash = 0;       // For debugging: the interval hash that was detected
+
+// =============================================================================
+// CHORD DETECTION FUNCTIONS
+// =============================================================================
+
+// Find lowest voiced note (lowest note assigned to a voice)
+function findBassNote()
+local(voice_num, note, result)
+(
+  result = -1;
+  voice_num = 0;
+  loop(total_voices_config,
+    note = voice_assignments[voice_num];
+    note >= 0 && (result < 0 || note < result) ? (
+      result = note;
+    );
+    voice_num += 1;
+  );
+  result;
+);
+
+// Try different voiced notes as potential roots (inversion detection)
+function tryInversions()
+local(voice_num, test_root, quality, best_quality, best_root)
+(
+  best_quality = 0;
+  best_root = -1;
+  
+  // Try each voiced note as potential root
+  voice_num = 0;
+  loop(total_voices_config,
+    test_root = voice_assignments[voice_num];
+    test_root >= 0 && best_quality == 0 ? (
+      quality = match_chord_pattern(test_root);
+      
+      quality > 0 ? (
+        best_quality = quality;
+        best_root = test_root;
+        detected_chord_root = best_root; // Set detected root
+        detected_chord_hash = build_interval_hash(best_root); // Store hash for debugging
+      );
+    );
+    voice_num += 1;
+  );
+  
+  best_quality;
+);
+
+// Main chord analysis function
+function analyzeCurrentChord()
+local(voiced_note_count, voice_num, bass_note, quality)
+(
+  // Count voiced notes (notes assigned to voices)
+  voiced_note_count = 0;
+  voice_num = 0;
+  loop(total_voices_config,
+    voice_assignments[voice_num] >= 0 ? voiced_note_count += 1;
+    voice_num += 1;
+  );
+  
+  // Only analyze if we have 2+ voiced notes
+  voiced_note_count >= 2 ? (
+    // Find bass note (lowest voiced note)
+    bass_note = findBassNote();
+    detected_chord_root = bass_note; // Default to bass note
+    
+    // Try bass note as root first
+    quality = match_chord_pattern(bass_note);
+    detected_chord_hash = build_interval_hash(bass_note); // Store hash for debugging
+    
+    // If no match, try inversions
+    quality <= 0 ? (
+      quality = tryInversions();
+    );
+    
+    detected_chord_quality = quality;
+  ) : (
+    // Less than 2 voiced notes - clear chord detection
+    voiced_note_count == 0 ? (
+      detected_chord_root = -1;
+      detected_chord_quality = 0;
+      detected_chord_hash = 0;
+    );
+  );
+);
+
+// =============================================================================
+// CHORD TONE CALCULATION FUNCTIONS
+// =============================================================================
+
+// Calculate chord tone note with octave targeting based on detected chord
+// Parameters: detected_quality, detected_root, chord_tone_assignment (1-7), anchor_note (0-127)
+// Returns: MIDI note number of calculated chord tone, or -1 if cannot calculate
+function getChordToneNote(detectedQuality, detectedRoot, chordToneAssignment, anchorNote)
+local(chord_tone_interval, chord_tone_note_class, best_note, best_distance, test_note, distance, octave)
+(
+  // Return -1 if no chord tone assignment or no anchor
+  chordToneAssignment <= 0 || anchorNote <= 0 ? (
+    return -1;
+  );
+  
+  // Chord tone assignment is now directly in semitones from root
+  chord_tone_interval = chordToneAssignment; // Direct semitone value (0=Root, 4=3rd, 7=5th, 10=7th)
+  
+  // Calculate the note class (0-11) of the chord tone
+  chord_tone_note_class = (detectedRoot + chord_tone_interval) % 12;
+  
+  // Find the octave of this note class that's closest to anchor
+  best_note = -1;
+  best_distance = 999;
+  
+  // Check all octaves (0-10, covering MIDI range 0-127)
+  octave = 0;
+  loop(11,
+    test_note = chord_tone_note_class + (octave * 12);
+    test_note >= 0 && test_note <= 127 ? (
+      distance = abs(test_note - anchorNote);
+      distance < best_distance ? (
+        best_distance = distance;
+        best_note = test_note;
+      );
+    );
+    octave += 1;
+  );
+  
+  best_note;
+);
+
+// Calculate appropriate velocity for chord tone based on currently voiced notes
+// Parameters: chord_tone_note - the MIDI note number of the chord tone
+// Returns: velocity value (0-127) calculated from voiced notes
+function getChordToneVelocity(chordToneNote)
+local(voice_num, note, exact_match_velocity, closest_note, closest_distance, distance, closest_velocity)
+(
+  exact_match_velocity = -1;
+  closest_note = -1;
+  closest_distance = 999;
+  closest_velocity = 100; // Default fallback
+  
+  // Check all voiced notes
+  voice_num = 0;
+  loop(total_voices_config,
+    note = voice_assignments[voice_num];
+    note >= 0 ? (
+      // Check for exact note class match (same note, any octave)
+      (note % 12) == (chordToneNote % 12) ? (
+        exact_match_velocity = note_velocity[note];
+      );
+      
+      // Track closest note by pitch distance
+      distance = abs(note - chordToneNote);
+      distance < closest_distance ? (
+        closest_distance = distance;
+        closest_note = note;
+        closest_velocity = note_velocity[note];
+      );
+    );
+    voice_num += 1;
+  );
+  
+  // Return exact match velocity if found, otherwise closest note velocity
+  exact_match_velocity >= 0 ? exact_match_velocity : closest_velocity;
+);
+
+// =============================================================================
+// CHORD TONE PROCESSING FUNCTIONS
+// =============================================================================
+
+// Process chord tone assignment and handle MIDI output for chord tones
+// Should be called after voice redistribution and chord detection
+// Returns: 1 if chord tone state changed, 0 otherwise  
+function processChordToneAssignment()
+local(new_chord_tone_note, chord_tone_velocity, transposed_note, state_changed)
+(
+  state_changed = 0;
+  
+  // Only process if chord tone assignment is enabled  
+  my_chord_tone >= 0 && my_chord_tone_anchor > 0 ? (
+    new_chord_tone_note = -1;
+    chord_tone_velocity = 100; // Default velocity
+    
+    // Calculate chord tone note if we have a detected chord
+    detected_chord_quality > 0 && detected_chord_root >= 0 ? (
+      new_chord_tone_note = getChordToneNote(detected_chord_quality, detected_chord_root, my_chord_tone, my_chord_tone_anchor);
+      
+      // Calculate appropriate velocity for chord tone
+      new_chord_tone_note >= 0 ? (
+        chord_tone_velocity = getChordToneVelocity(new_chord_tone_note);
+      );
+    );
+    
+    // Handle chord tone note changes
+    new_chord_tone_note != current_chord_tone_note ? (
+      // Send note-off for old chord tone
+      current_chord_tone_note >= 0 ? (
+        transposed_note = transposeNote(current_chord_tone_note, my_transposition);
+        sendMidiToTrackAndRetroBuffer(0, 0x80, transposed_note, 0);
+      );
+
+      // Send note-on for new chord tone with calculated velocity
+      new_chord_tone_note >= 0 ? (
+        transposed_note = transposeNote(new_chord_tone_note, my_transposition);
+        sendMidiToTrackAndRetroBuffer(0, 0x90, transposed_note, applyVelocityTransforms(chord_tone_velocity));
+      );
+      
+      // Update current state
+      current_chord_tone_note = new_chord_tone_note;
+      
+      state_changed = 1; // State changed
+    );
+  );
+  
+  state_changed; // Return value
+);

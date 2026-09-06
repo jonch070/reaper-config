@@ -1,0 +1,50 @@
+desc: randomize_velocity
+
+@init
+noteOffStatus = $x80;
+noteOnStatus = $x90;
+outVelMin = 1;
+outVelMax = 127;
+
+////////////////////////////////////////////////////////////////////////////////////////////
+@block
+while
+(
+  midirecv(offset, msg1, msg23) ?
+  (
+    
+    // Extract message type and channel
+    status = msg1 & $xF0;
+    channel = msg1 & $x0F;
+
+    // Is it a note event?
+    (status == noteOnStatus || status == noteOffStatus) ?
+    (
+      // Extract note number and velocity
+      note = msg23 & $x7F;
+      velocity = msg23 >> 8;
+
+      // Do velocity but leave fake note-off (zero velocity) events alone
+      velocity > 0 ?
+      (                          
+
+        velocity = rand(128) | 0;
+      
+        // Clamp output velocity
+        velocity = min(max(velocity, outVelMin), outVelMax);
+      );
+      
+      // Pass on modified MIDI message
+      midisend(offset, status + channel, note | (velocity << 8));  
+
+    ):(
+      
+      // Not a note event
+      midisend(offset, msg1, msg23);
+    );
+    
+    1; // Force loop to continue until all messages have been processed
+  );
+);
+
+

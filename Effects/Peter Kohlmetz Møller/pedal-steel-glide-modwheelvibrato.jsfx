@@ -1,0 +1,328 @@
+desc:Pedal Steel Glide (MPE)
+// =============================================================
+// PEDAL STEEL GLIDE - REAPER JSFX MIDI FX
+// Ported from a Logic Pro Scripter MIDI FX of the same name.
+// =============================================================
+// Legato playing glides between close notes instead of retriggering.
+// Global pitch wheel bends every voice at once, and the mod wheel
+// (CC1) drives vibrato across all voices - each voice gets its own
+// randomized depth (within a safe range) and rate, so a held chord
+// doesn't wobble in perfect unison.
+//
+// Everything you'd normally want to adjust lives in the settings
+// block inside @init. The code below it shouldn't need to be touched.
+//
+// Set up in REAPER: insert as a MIDI FX (not an instrument) ahead of
+// your synth on the track/take FX chain. Your synth must be in
+// MPE / MIDI Mono Mode with its own "base channel" set to match
+// MASTER_CHANNEL below, and its Pitch Bend Up/Down range set to
+// exactly BEND_RANGE_SEMITONES, or notes will land out of tune.
+// =============================================================
+
+in_pin:none
+out_pin:none
+
+slider1:cc7_passthrough=1<0,1,1{Off,On}>CC7 Volume Passthrough
+// Unchecking this stops volume-fader (CC7) messages from reaching
+// the instrument, without affecting anything else.
+
+@init
+
+function alloc(n) local(p) (
+  p = mem_ptr;
+  mem_ptr += n;
+  p;
+);
+
+// --- SETTINGS -------------------------------------------------
+
+// VOICES / CHANNELS
+NUM_CHANNELS = 6;          // How many notes can sound at once (polyphony)
+FIRST_MPE_CHANNEL = 2;     // First MIDI channel (1-based) used for individual voices
+MASTER_CHANNEL = 1;        // Shared channel: wheel, mod wheel, sustain, CC7
+                            // all arrive here and affect every voice at once.
+                            // Must match your instrument's own "base channel"
+                            // setting (MIDI Mono Mode / MPE).
+
+// LEGATO / GLIDE
+THRESHOLD_SEMITONES = 2;   // A new note this close (or closer) to the currently
+                            // held note glides instead of retriggering.
+                            // 2 = glides on half-steps and whole-steps.
+
+MIN_GLIDE_MS = 40;         // Fastest glide time (hardest velocity), in milliseconds
+MAX_GLIDE_MS = 1200;       // Slowest glide time (softest velocity), in milliseconds
+GLIDE_CURVE_EXPONENT = 2;  // How velocity maps to glide speed.
+                            // 1 = evenly spread between fast/slow.
+                            // Higher = most playing stays snappy; only very
+                            // soft velocities reach the slow end.
+
+// PITCH BEND RANGE
+BEND_RANGE_SEMITONES = 48; // MUST exactly match the receiving instrument's own
+                            // Pitch Bend Up/Down setting, or notes will land
+                            // out of tune. This is the technical ceiling glides
+                            // and vibrato are measured against - not a musical
+                            // setting to "feel out," just keep it matched.
+
+// HARDWARE PITCH WHEEL
+MASTER_WHEEL_RANGE_SEMITONES = 2;  // How far the physical wheel can bend
+                                    // ALL notes at once, in semitones each
+                                    // direction. Independent of BEND_RANGE_SEMITONES
+                                    // above - this is the musical range, not
+                                    // a technical setting.
+
+// MOD WHEEL VIBRATO
+VIBRATO_RATE_HZ = 3.0;             // Vibrato speed. Higher = faster wobble.
+VIBRATO_MAX_DEPTH_SEMITONES = 0.30; // Vibrato depth ceiling, at full mod wheel and
+                                     // a voice's own depth multiplier of 1.0, in
+                                     // semitones. Small values (0.1-0.3) stay
+                                     // subtle; above ~0.5 gets very audible.
+VIBRATO_RATE_RANDOMNESS = 0.15;     // Each voice's rate varies by up to this
+                                     // fraction, so chords don't vibrato in
+                                     // perfect unison. 0 = all voices identical.
+VIBRATO_DEPTH_MIN_MULT = 0.5;       // Each new voice gets a random depth multiplier
+VIBRATO_DEPTH_MAX_MULT = 1.0;       // drawn from this safe range (applied on top of
+                                     // VIBRATO_MAX_DEPTH_SEMITONES above), so some
+                                     // notes in a chord vibrato more than others.
+                                     // Keep MAX at or below 1.0 to stay within the
+                                     // depth ceiling above.
+
+// =============================================================
+// IMPLEMENTATION - shouldn't need changes below this line
+// =============================================================
+
+mem_ptr = 0;
+
+channelSoundingNote        = alloc(NUM_CHANNELS); // -1 = nothing sounding
+channelHeldCount           = alloc(NUM_CHANNELS); // # of physical keys keeping this voice alive
+channelGlideStartBend      = alloc(NUM_CHANNELS);
+channelGlideTargetBend     = alloc(NUM_CHANNELS);
+channelGlideStartTime      = alloc(NUM_CHANNELS);
+channelGlideDurationMs     = alloc(NUM_CHANNELS);
+channelVibratoPhaseOffset  = alloc(NUM_CHANNELS);
+channelVibratoRateHz       = alloc(NUM_CHANNELS);
+channelVibratoDepthMultiplier = alloc(NUM_CHANNELS);
+key_to_channel             = alloc(128);           // pitch -> internal channel idx, -1 = none
+
+now_ms = 0;
+global_bend_semitones = 0;
+vibrato_amount = 0;
+next_voice_index = 0;
+
+i = 0;
+while (i < NUM_CHANNELS) (
+  channelSoundingNote[i] = -1;
+  channelHeldCount[i] = 0;
+  channelGlideStartBend[i] = 0;
+  channelGlideTargetBend[i] = 0;
+  channelGlideStartTime[i] = 0;
+  channelGlideDurationMs[i] = 0;
+  channelVibratoPhaseOffset[i] = rand(2*$pi);
+  channelVibratoRateHz[i] = VIBRATO_RATE_HZ;
+  channelVibratoDepthMultiplier[i] = VIBRATO_DEPTH_MIN_MULT + rand(VIBRATO_DEPTH_MAX_MULT - VIBRATO_DEPTH_MIN_MULT);
+  i += 1;
+);
+
+k = 0;
+while (k < 128) (
+  key_to_channel[k] = -1;
+  k += 1;
+);
+
+function get_current_note_bend(c) local(duration, elapsed, t, eased, from, to) (
+  duration = channelGlideDurationMs[c];
+  duration <= 0 ? (
+    channelGlideTargetBend[c];
+  ) : (
+    elapsed = now_ms - channelGlideStartTime[c];
+    elapsed >= duration ? (
+      channelGlideTargetBend[c];
+    ) : (
+      t = elapsed / duration;
+      eased = 0.5 - 0.5 * cos($pi * t);
+      from = channelGlideStartBend[c];
+      to = channelGlideTargetBend[c];
+      from + (to - from) * eased;
+    );
+  );
+);
+
+function get_current_vibrato_bend(c) local(elapsed_sec, rate, phase, wave, depth) (
+  vibrato_amount <= 0 ? (
+    0;
+  ) : (
+    elapsed_sec = now_ms / 1000;
+    rate = channelVibratoRateHz[c];
+    phase = 2 * $pi * rate * elapsed_sec + channelVibratoPhaseOffset[c];
+    wave = sin(phase);
+    depth = VIBRATO_MAX_DEPTH_SEMITONES * channelVibratoDepthMultiplier[c];
+    vibrato_amount * depth * wave;
+  );
+);
+
+function semitone_to_pb14(semitones) local(v) (
+  v = floor((semitones / BEND_RANGE_SEMITONES) * 8191 + 0.5);
+  v > 8191 ? v = 8191;
+  v < -8192 ? v = -8192;
+  v;
+);
+
+function velocity_to_glide_ms(V) local(softness, curved) (
+  softness = 1.0 - (V / 127);
+  curved = pow(softness, GLIDE_CURVE_EXPONENT);
+  MIN_GLIDE_MS + curved * (MAX_GLIDE_MS - MIN_GLIDE_MS);
+);
+
+function start_glide(c, fromSemi, toSemi, durMs) (
+  channelGlideStartBend[c] = fromSemi;
+  channelGlideTargetBend[c] = toSemi;
+  channelGlideStartTime[c] = now_ms;
+  channelGlideDurationMs[c] = durMs;
+);
+
+// sends a 14-bit-centered pitch bend value (-8192..8191) on a 1-based MIDI channel
+function send_pb(offs, ch1based, raw14) local(raw14u, lsb, msb, status) (
+  raw14u = raw14 + 8192;
+  lsb = raw14u & 127;
+  msb = (raw14u >> 7) & 127;
+  status = 0xE0 | (ch1based - 1);
+  midisend(offs, status, lsb, msb);
+);
+
+@block
+
+now_ms += (samplesblock / srate) * 1000;
+
+while (midirecv(offset, msg1, msg2, msg3)) (
+
+  status_hi = msg1 & 0xF0;
+  chan1 = (msg1 & 0x0F) + 1;
+
+  is_note_on  = (status_hi == 0x90) && (msg3 > 0);
+  is_note_off = (status_hi == 0x80) || ((status_hi == 0x90) && (msg3 == 0));
+
+  is_note_on ? (
+
+    N = msg2;
+    V = msg3;
+    match_channel = -1;
+
+    i = 0;
+    while (i < NUM_CHANNELS && match_channel < 0) (
+      channelSoundingNote[i] >= 0 ? (
+        effective_pitch = channelSoundingNote[i] + get_current_note_bend(i);
+        abs(N - effective_pitch) <= THRESHOLD_SEMITONES ? (
+          match_channel = i;
+        );
+      );
+      i += 1;
+    );
+
+    match_channel >= 0 ? (
+
+      // --- glide the matched voice to the new note ---
+      c = match_channel;
+      current_bend = get_current_note_bend(c);
+      target_bend = N - channelSoundingNote[c];
+      glide_ms = velocity_to_glide_ms(V);
+      start_glide(c, current_bend, target_bend, glide_ms);
+      channelHeldCount[c] += 1;
+      key_to_channel[N] = c;
+
+    ) : (
+
+      // --- allocate a fresh voice, round robin ---
+      c = -1;
+      i = 0;
+      while (i < NUM_CHANNELS && c < 0) (
+        candidate = (next_voice_index + i) % NUM_CHANNELS;
+        channelSoundingNote[candidate] < 0 ? ( c = candidate; );
+        i += 1;
+      );
+      c < 0 ? ( c = next_voice_index; );
+      next_voice_index = (c + 1) % NUM_CHANNELS;
+
+      channelSoundingNote[c] >= 0 ? (
+        midisend(offset, 0x80 | (FIRST_MPE_CHANNEL + c - 1), channelSoundingNote[c], 0);
+        channelHeldCount[c] = 0;
+      );
+
+      channelSoundingNote[c] = N;
+      channelGlideStartBend[c] = 0;
+      channelGlideTargetBend[c] = 0;
+      channelGlideStartTime[c] = now_ms;
+      channelGlideDurationMs[c] = 0;
+      channelHeldCount[c] = 1;
+      key_to_channel[N] = c;
+
+      channelVibratoPhaseOffset[c] = rand(2*$pi);
+      channelVibratoRateHz[c] = VIBRATO_RATE_HZ * (1 + (rand(2*VIBRATO_RATE_RANDOMNESS) - VIBRATO_RATE_RANDOMNESS));
+      channelVibratoDepthMultiplier[c] = VIBRATO_DEPTH_MIN_MULT + rand(VIBRATO_DEPTH_MAX_MULT - VIBRATO_DEPTH_MIN_MULT);
+
+      pb0 = semitone_to_pb14(global_bend_semitones + get_current_vibrato_bend(c));
+      send_pb(offset, FIRST_MPE_CHANNEL + c, pb0);
+
+      midisend(offset, 0x90 | (FIRST_MPE_CHANNEL + c - 1), N, V);
+    );
+
+  ) : is_note_off ? (
+
+    key = msg2;
+    c = key_to_channel[key];
+
+    c >= 0 ? (
+      channelHeldCount[c] -= 1;
+      key_to_channel[key] = -1;
+
+      channelHeldCount[c] <= 0 ? (
+        midisend(offset, 0x80 | (FIRST_MPE_CHANNEL + c - 1), channelSoundingNote[c], 0);
+        channelSoundingNote[c] = -1;
+        channelGlideTargetBend[c] = 0;
+        channelGlideDurationMs[c] = 0;
+        channelHeldCount[c] = 0;
+      );
+    );
+
+  ) : (status_hi == 0xE0) ? (
+
+    // hardware pitch wheel - only MASTER_CHANNEL affects all voices;
+    // never passed through as raw MIDI, on any channel.
+    chan1 == MASTER_CHANNEL ? (
+      raw14 = msg2 + (msg3 << 7);
+      global_bend_semitones = ((raw14 - 8192) / 8191) * MASTER_WHEEL_RANGE_SEMITONES;
+    );
+
+  ) : (status_hi == 0xB0) && (msg2 == 1) ? (
+
+    // mod wheel - only MASTER_CHANNEL drives vibrato for all voices;
+    // consumed here rather than passed through, since it's repurposed
+    // as the vibrato control instead of the synth's own mod wheel target.
+    chan1 == MASTER_CHANNEL ? (
+      vibrato_amount = msg3 / 127;
+    );
+
+  ) : (status_hi == 0xB0) && (msg2 == 7) ? (
+
+    cc7_passthrough > 0 ? (
+      midisend(offset, msg1, msg2, msg3);
+    );
+
+  ) : (
+
+    // everything else passes straight through
+    midisend(offset, msg1, msg2, msg3);
+
+  );
+);
+
+// --- continuous per-block pitch bend update (glide + wheel + vibrato) ---
+i = 0;
+while (i < NUM_CHANNELS) (
+  channelSoundingNote[i] >= 0 ? (
+    note_bend = get_current_note_bend(i);
+    vibrato_bend = get_current_vibrato_bend(i);
+    combined = note_bend + global_bend_semitones + vibrato_bend;
+    pbv = semitone_to_pb14(combined);
+    send_pb(0, FIRST_MPE_CHANNEL + i, pbv);
+  );
+  i += 1;
+);

@@ -1,0 +1,129 @@
+// EnsemblerFilter - Retroactive Recording
+// Captures MIDI output to GMEM for retrospective MIDI recording support
+
+@init
+
+// =============================================================================
+// RETROACTIVE RECORDING CONFIGURATION
+// =============================================================================
+
+// Buffer configuration
+RETRO_MAX_INSTRUMENTS = 100;           // Maximum instruments supported
+RETRO_MAX_EVENTS = 500;                // Events per instrument (~2 seconds of dense playing)
+RETRO_SLOTS_PER_EVENT = 6;             // Slots needed per event (time, type, data)
+
+// GMEM memory range: 100,000 - 499,999 (400k slots reserved)
+RETRO_GMEM_BASE = 100000;              // Start of retroactive recording zone
+RETRO_SLOTS_PER_INSTRUMENT = 2 + (RETRO_MAX_EVENTS * RETRO_SLOTS_PER_EVENT); // 3002 slots
+
+// =============================================================================
+// GMEM LAYOUT - RETROACTIVE RECORDING ZONE (100,000 - 499,999)
+// =============================================================================
+// Reserved range: 400,000 slots for retroactive recording
+//
+// Per-instrument buffer layout (base = 100,000 + instrument_slot_number * 3,002):
+//   gmem[base + 0]: write_head - current write position (ever-incrementing)
+//   gmem[base + 1]: event_count - total events written (capped at RETRO_MAX_EVENTS)
+//   gmem[base + 2+]: event data - circular buffer of MIDI events
+//
+// Each event uses 6 slots:
+//   [0] projectTime - project-relative position in seconds (play_position - project_time_offset), -1 if playback stopped
+//   [1] preciseTime - high-precision timestamp from time_precise() (for relative timing)
+//   [2] eventType - 0=noteOff, 1=noteOn, 2=CC
+//   [3] data1 - note number (for notes) or CC number (for CCs)
+//   [4] data2 - velocity (for notes) or CC value (for CCs)
+//   [5] data3 - MIDI channel (0-15)
+//
+// Memory usage:
+//   - Per instrument: 3,002 slots
+//   - 100 instruments: 300,200 slots (75% of reserved range)
+//   - Remaining: 99,800 slots for future expansion
+//
+// Buffer behavior:
+//   - Circular: When full, oldest events are overwritten
+//   - write_head continuously increments (no overflow concern for ~417 million days)
+//   - Lua polls by tracking last read write_head position
+// =============================================================================
+
+// Retroactive recording state variables
+instrument_slot_number = 0;               // Instrument memory slot number (set by Lua via slider24)
+previous_instrument_slot_number = -1;     // Track changes to slot number
+project_time_offset = 0;                  // Project timecode offset in seconds (set by Lua via slider25)
+retro_buffer_base = 0;                    // GMEM base address for this instrument's buffer
+retro_write_head_addr = 0;                // Address of write_head
+retro_event_count_addr = 0;               // Address of event_count
+retro_events_start = 0;                   // Start address of event data
+
+// =============================================================================
+// RETROACTIVE RECORDING FUNCTIONS
+// =============================================================================
+
+// Initialize retroactive recording buffer for current instrument
+// Called when instrument_slot_number changes (in @slider)
+function initializeRetroBuffer()
+(
+    // Calculate buffer addresses based on instrument slot number
+    retro_buffer_base = RETRO_GMEM_BASE + (instrument_slot_number * RETRO_SLOTS_PER_INSTRUMENT);
+    retro_write_head_addr = retro_buffer_base + 0;
+    retro_event_count_addr = retro_buffer_base + 1;
+    retro_events_start = retro_buffer_base + 2;
+
+    // Clear buffer state
+    gmem[retro_write_head_addr] = 0;
+    gmem[retro_event_count_addr] = 0;
+);
+
+// Save MIDI output event to retroactive recording buffer
+// Called after every midisend() via sendMidiToTrackAndRetroBuffer()
+// Parameters:
+//   event_type: 0=noteOff, 1=noteOn, 2=CC
+//   data1: note/CC number
+//   data2: velocity/CC value
+//   data3: MIDI channel (0-15)
+function saveToRetroBuffer(event_type, data1, data2, data3)
+local(write_pos, slot_base, current_count, current_project_time, current_precise_time)
+(
+    // Calculate timing information
+    // Convert play_position (timecode-based) to project-relative time by subtracting offset
+    current_project_time = (play_state & 1) ? (play_position - project_time_offset) : -1;
+    current_precise_time = time_precise();
+
+    // Get current buffer state
+    current_count = gmem[retro_event_count_addr];
+    write_pos = gmem[retro_write_head_addr];
+
+    // Calculate slot position (circular - wraps around when buffer full)
+    slot_base = retro_events_start + ((write_pos % RETRO_MAX_EVENTS) * RETRO_SLOTS_PER_EVENT);
+
+    // Write 6-slot event
+    gmem[slot_base + 0] = current_project_time;
+    gmem[slot_base + 1] = current_precise_time;
+    gmem[slot_base + 2] = event_type;
+    gmem[slot_base + 3] = data1;
+    gmem[slot_base + 4] = data2;
+    gmem[slot_base + 5] = data3;
+
+    // Advance pointers
+    gmem[retro_write_head_addr] = write_pos + 1;
+    gmem[retro_event_count_addr] = min(current_count + 1, RETRO_MAX_EVENTS);
+);
+
+function sendMidiEventToRetroBuffer(offset, msg1, msg2, msg3)
+local(status, channel)
+(
+    // Extract status and channel from msg1
+    status = msg1 & 0xF0;
+    channel = msg1 & 0x0F;
+
+    // Save to retroactive buffer based on message type
+    status == 0x90 && msg3 > 0 ? (
+        // Note On
+        saveToRetroBuffer(1, msg2, msg3, channel);
+    ) : status == 0x80 || (status == 0x90 && msg3 == 0) ? (
+        // Note Off
+        saveToRetroBuffer(0, msg2, 0, channel);
+    ) : status == 0xB0 ? (
+        // CC
+        saveToRetroBuffer(2, msg2, msg3, channel);
+    );
+);

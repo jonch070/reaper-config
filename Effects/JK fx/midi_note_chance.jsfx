@@ -1,0 +1,43 @@
+desc:Note Chance
+tags: midi
+author: JK Scripts
+about:
+  Each incoming note-on has a percentage chance to pass through; otherwise it's
+  dropped along with its matching note-off. Pitch, channel, and velocity of
+  passing notes are unchanged. Non-note MIDI passes through unchanged.
+
+slider1:50<0,100,0.1>Chance (%)
+
+@init
+PASSED = 0;
+i = 0; loop(2048, mem[PASSED + i] = 0; i += 1;);
+
+@slider
+chance = slider1;
+
+@block
+while(midirecv(offset, msg1, msg2, msg3)) (
+  type = msg1 & 0xF0;
+  ch   = msg1 & 0x0F;
+  slot = ch * 128 + msg2;
+
+  type == 0x90 && msg3 > 0 ? (
+    rand(100) < chance ? (
+      midisend(offset, msg1, msg2, msg3);
+      mem[PASSED + slot] = 1;
+    );
+
+  ) : (type == 0x80 || (type == 0x90 && msg3 == 0)) ? (
+    mem[PASSED + slot] ? (
+      midisend(offset, msg1, msg2, msg3);
+      mem[PASSED + slot] = 0;
+    );
+
+  ) : type == 0xB0 && (msg2 == 120 || msg2 == 123) ? (
+    i = 0; loop(2048, mem[PASSED + i] = 0; i += 1;);
+    midisend(offset, msg1, msg2, msg3);
+
+  ) : (
+    midisend(offset, msg1, msg2, msg3);
+  );
+);

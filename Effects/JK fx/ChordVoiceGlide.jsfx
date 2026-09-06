@@ -1,0 +1,508 @@
+desc:JK Chord Voice Glide (MPE)
+author:Jonathan Kawchuk
+version:1.0
+tags:MIDI processing MPE portamento glide voice-leading pedal steel
+about:
+  # JK Chord Voice Glide (MPE)
+
+  Play a chord. Play the next chord. Every voice of the old chord glides to a
+  tone of the new chord, matched by voice leading rather than by voice-steal
+  order. Pedal steel behaviour, polyphonic, automatic.
+
+  ## Signal path
+
+  Put this BEFORE an MPE-capable synth in the same FX chain (Serum 2, Surge XT,
+  Vital, Pigments, Diva, Omnisphere 2.6+). Input notes arrive on any channel.
+  Output is MPE: one voice per member channel, each with its own pitch bend.
+
+  ## Setup
+
+  1. Set the synth to MPE mode.
+  2. Set the synth's per-note bend range to match "Synth bend range" below.
+     48 semitones is the MPE default and gives the most headroom.
+  3. Turn the synth's own portamento OFF. This plugin does the gliding.
+  4. Leave "First voice channel" at 2 (MPE lower zone: master ch 1, members 2+).
+
+  ## How the matching works
+
+  Both chords are sorted by pitch and matched in order. For points on a line
+  that is provably the minimum-total-distance pairing, and it can never produce
+  voice crossings, so it is both the optimal and the musical answer. No
+  permutation search needed. Unequal chord sizes are handled by an alignment DP
+  that can also release a voice or articulate a new one mid-sequence.
+
+  ## Max glide interval is the important knob
+
+  It is not a limiter, it is the slide-versus-rearticulate control. A voice
+  glides when the move is smaller than this, otherwise it is released and the
+  new tone starts fresh. Low values hold common tones and rearticulate the
+  voice that actually moves. High values slide the whole chord in parallel.
+
+    C major -> A minor
+      3   hold C and E, release G, new A          (classical voice leading)
+      12  C->A, E->C, G->E                        (parallel slide, pedal steel)
+
+    Cmaj7 -> Fmaj7
+      7   hold C and E, release G and B, new F,A
+      24  everything slides down a fifth
+
+  ## Notes
+
+  - Playing the same chord twice does nothing audible. This is a glide device,
+    it does not retrigger.
+  - Chords commit after the detect window expires, so there is latency equal to
+    that window. Lower it if you play tight, raise it if you spread.
+  - New tones past the voice count are dropped silently.
+
+options:no_meter
+
+in_pin:none
+out_pin:none
+
+slider1:s_mode=1<0,1,1{Legato (follow held keys),Latch (hold until next chord)}>Voice mode
+slider2:s_sync=0<0,1,1{Milliseconds,Tempo synced}>Glide timing
+slider3:s_ms=180<5,4000,1>Glide time (ms)
+slider4:s_div=4<0,7,1{1/32,1/16T,1/16,1/8T,1/8,1/4T,1/4,1/2}>Glide time (synced)
+slider5:s_curve=1<0,3,1{Linear,Smooth S-curve,Ease out,Ease in}>Glide shape
+slider6:s_win=40<5,150,1>Chord detect window (ms)
+slider7:s_maxint=12<1,48,1>Max glide interval (semitones)
+slider8:s_range=48<1,96,1>Synth bend range (semitones)
+slider9:s_ch1=2<1,16,1>First voice channel
+slider10:s_nv=8<1,15,1>Voice count
+slider11:s_cfg=1<0,1,1{No,Yes}>Send MPE config
+slider12:s_thru=1<0,1,1{No,Yes}>Pass CC / wheel to master ch
+slider13:s_panic=0<0,1,1{-,KILL}>Panic
+
+@init
+
+  MAXV = 16;
+  MAXN = 16;
+  DPS  = 18;
+
+  // ---- memory layout -------------------------------------------------------
+  v_act   = 0;      // voice active flag
+  v_ch    = 16;     // voice MIDI channel, 1-16
+  v_base  = 32;     // note number actually sent as note-on
+  v_cur   = 48;     // current sounding pitch, float semitones
+  v_from  = 64;     // ramp start pitch
+  v_to    = 80;     // ramp end pitch
+  v_pos   = 96;     // ramp progress 0..1
+  v_inc   = 112;    // ramp increment per sample
+  v_vel   = 128;
+  v_lb    = 144;    // last bend actually sent, semitones
+  p_tgt   = 160;    // per-voice assignment target, -1 = release
+
+  o_p     = 180;    // sorted old voice pitches
+  o_i     = 200;    // voice index for each sorted old pitch
+  n_p     = 220;    // sorted new chord pitches
+  n_v     = 240;    // velocities, carried alongside
+  a_flag  = 260;    // new tone needs a fresh voice
+
+  cb_p    = 280;    // pending chord collection buffer
+  cb_v    = 300;
+
+  dp_c    = 400;    // cost matrix, stride DPS
+  dp_b    = 800;    // backtrack matrix
+  keyheld = 1200;   // 128 input key states
+
+  // ---- functions -----------------------------------------------------------
+
+  function bendmsg(ofs, ch, semis) local(b, v) (
+    b = semis / max(0.001, s_range);
+    b = max(-1, min(1, b));
+    v = floor(8192 + b * 8191 + 0.5);
+    v = max(0, min(16383, v));
+    midisend(ofs, $xE0 + (ch - 1), v & 127, floor(v / 128));
+  );
+
+  function rpn(ch, msb, lsb, dmsb, dlsb) local(st) (
+    st = $xB0 + (ch - 1);
+    midisend(0, st, 101, msb);
+    midisend(0, st, 100, lsb);
+    midisend(0, st, 6,   dmsb);
+    midisend(0, st, 38,  dlsb);
+    midisend(0, st, 101, 127);
+    midisend(0, st, 100, 127);
+  );
+
+  function send_mpe_config() local(master) (
+    master = max(1, s_ch1 - 1);
+    rpn(master, 0, 6, nvoices, 0);   // MPE Configuration Message, n member channels
+    rpn(s_ch1,  0, 0, s_range, 0);   // per-note bend range for the member zone
+    rpn(master, 0, 0, 2, 0);         // master channel bend range
+  );
+
+  // insertion sort, pa ascending, carrying ia alongside
+  function sort2(pa, ia, n) local(i, j, kp, ki) (
+    i = 1;
+    while (i < n) (
+      kp = pa[i]; ki = ia[i];
+      j = i - 1;
+      while (j >= 0 ? pa[j] > kp : 0) (
+        pa[j+1] = pa[j]; ia[j+1] = ia[j];
+        j -= 1;
+      );
+      pa[j+1] = kp; ia[j+1] = ki;
+      i += 1;
+    );
+  );
+
+  // round robin so a channel is not reused the instant it is freed
+  function alloc_voice() local(k, i, res) (
+    res = -1;
+    k = 0;
+    while (res < 0 ? k < nvoices : 0) (
+      i = rr + k;
+      i >= nvoices ? ( i -= nvoices; );
+      v_act[i] == 0 ? (
+        res = i;
+        rr = i + 1;
+        rr >= nvoices ? ( rr = 0; );
+      );
+      k += 1;
+    );
+    res;
+  );
+
+  function all_voices_off() local(i) (
+    i = 0;
+    while (i < MAXV) (
+      v_act[i] ? (
+        midisend(0, $x80 + (v_ch[i] - 1), v_base[i], 0);
+        v_act[i] = 0;
+        v_pos[i] = 1;
+      );
+      i += 1;
+    );
+  );
+
+  function shape(x) (
+    s_curve == 0 ? x :
+    s_curve == 1 ? x * x * (3 - 2 * x) :
+    s_curve == 2 ? 1 - (1 - x) * (1 - x) :
+                   x * x;
+  );
+
+  function commit_chord()
+    local(nold, nnew, i, j, k, dup, vi, P, INF, pc, ca, cb, cc, best, w, note) (
+
+    // ---- gather and sort the currently sounding voices ----------------------
+    nold = 0;
+    i = 0;
+    while (i < MAXV) (
+      v_act[i] ? (
+        o_p[nold] = v_cur[i];
+        o_i[nold] = i;
+        nold += 1;
+      );
+      i += 1;
+    );
+    sort2(o_p, o_i, nold);
+
+    // ---- gather and sort the new chord, dropping duplicates -----------------
+    nnew = 0;
+    i = 0;
+    while (i < pend_n) (
+      dup = 0;
+      k = 0;
+      while (k < nnew) (
+        n_p[k] == cb_p[i] ? ( dup = 1; );
+        k += 1;
+      );
+      dup == 0 ? (
+        n_p[nnew] = cb_p[i];
+        n_v[nnew] = cb_v[i];
+        nnew += 1;
+      );
+      i += 1;
+    );
+    sort2(n_p, n_v, nnew);
+
+    // ---- alignment DP -------------------------------------------------------
+    // Both sequences are sorted, so an order preserving alignment is the
+    // minimum total distance matching. P is half the cost of breaking a voice
+    // and starting a new one, set so that a glide wins exactly when the
+    // interval is smaller than s_maxint.
+    P   = s_maxint * 0.5;
+    INF = 1000000;
+
+    dp_c[0] = 0;
+    i = 1;
+    while (i <= nold) ( dp_c[i * DPS] = i * P; dp_b[i * DPS] = 2; i += 1; );
+    j = 1;
+    while (j <= nnew) ( dp_c[j] = j * P; dp_b[j] = 3; j += 1; );
+
+    i = 1;
+    while (i <= nold) (
+      j = 1;
+      while (j <= nnew) (
+        vi = o_i[i-1];
+        pc = abs(o_p[i-1] - n_p[j-1]);
+        // reject the pairing if it exceeds the glide limit, or if the resulting
+        // bend would run past what the synth can reach from this voice's root
+        (pc > s_maxint || abs(n_p[j-1] - v_base[vi]) > s_range - 0.5) ? ( pc = INF; );
+
+        ca = dp_c[(i-1) * DPS + (j-1)] + pc;   // glide old i-1 to new j-1
+        cb = dp_c[(i-1) * DPS +  j   ] + P;    // release old i-1
+        cc = dp_c[ i    * DPS + (j-1)] + P;    // articulate new j-1 fresh
+
+        best = ca; w = 1;
+        cb < best ? ( best = cb; w = 2; );
+        cc < best ? ( best = cc; w = 3; );
+        dp_c[i * DPS + j] = best;
+        dp_b[i * DPS + j] = w;
+        j += 1;
+      );
+      i += 1;
+    );
+
+    // ---- backtrack ----------------------------------------------------------
+    i = 0; while (i < MAXV) ( p_tgt[i]  = -1; i += 1; );
+    j = 0; while (j < MAXN) ( a_flag[j] =  0; j += 1; );
+
+    i = nold; j = nnew;
+    while (i > 0 || j > 0) (
+      w = i > 0 ? (j > 0 ? dp_b[i * DPS + j] : 2) : 3;
+      w == 1 ? (
+        p_tgt[o_i[i-1]] = n_p[j-1];
+        i -= 1; j -= 1;
+      ) : w == 2 ? (
+        i -= 1;
+      ) : (
+        a_flag[j-1] = 1;
+        j -= 1;
+      );
+    );
+
+    // ---- apply: release and glide -------------------------------------------
+    i = 0;
+    while (i < MAXV) (
+      v_act[i] ? (
+        p_tgt[i] < 0 ? (
+          midisend(0, $x80 + (v_ch[i] - 1), v_base[i], 0);
+          v_act[i] = 0;
+          v_pos[i] = 1;
+        ) : (
+          v_from[i] = v_cur[i];
+          v_to[i]   = p_tgt[i];
+          v_pos[i]  = 0;
+          v_inc[i]  = glide_inc;
+        );
+      );
+      i += 1;
+    );
+
+    // ---- apply: fresh voices ------------------------------------------------
+    j = 0;
+    while (j < nnew) (
+      a_flag[j] ? (
+        vi = alloc_voice();
+        vi >= 0 ? (
+          note = floor(n_p[j] + 0.5);
+          v_act[vi]  = 1;
+          v_base[vi] = note;
+          v_cur[vi]  = note;
+          v_from[vi] = note;
+          v_to[vi]   = note;
+          v_pos[vi]  = 1;
+          v_vel[vi]  = n_v[j];
+          v_lb[vi]   = 0;
+          bendmsg(0, v_ch[vi], 0);                                 // centre first
+          midisend(0, $x90 + (v_ch[vi] - 1), note, max(1, n_v[j]));
+        );
+      );
+      j += 1;
+    );
+  );
+
+  // ---- state ---------------------------------------------------------------
+  nvoices    = max(1, min(MAXV, min(s_nv, 17 - s_ch1)));
+  i = 0; while (i < MAXV) ( v_ch[i] = s_ch1 + i; i += 1; );
+
+  rr         = 0;
+  pend_n     = 0;
+  pend_t     = 0;
+  nheld      = 0;
+  sustaining = 0;
+  need_cfg   = s_cfg ? 1 : 0;
+  need_reset = 0;
+  last_play  = 0;
+  last_panic = 0;
+  p_ch1 = s_ch1; p_nv = s_nv; p_range = s_range;
+
+@slider
+
+  nvoices = max(1, min(MAXV, min(s_nv, 17 - s_ch1)));
+
+  (s_ch1 != p_ch1 || s_nv != p_nv) ? ( need_reset = 1; );
+  (s_cfg && (s_ch1 != p_ch1 || s_nv != p_nv || s_range != p_range)) ? ( need_cfg = 1; );
+  p_ch1 = s_ch1; p_nv = s_nv; p_range = s_range;
+
+@block
+
+  // ---- housekeeping --------------------------------------------------------
+  // all_voices_off must run on the OLD channel map, so remap after it
+  need_reset ? (
+    all_voices_off();
+    i = 0; while (i < MAXV) ( v_ch[i] = s_ch1 + i; i += 1; );
+    pend_n = 0; rr = 0; need_reset = 0;
+  );
+
+  need_cfg ? ( send_mpe_config(); need_cfg = 0; );
+
+  (s_panic && last_panic == 0) ? (
+    all_voices_off();
+    pend_n = 0; nheld = 0; sustaining = 0;
+    i = 0; while (i < 128) ( keyheld[i] = 0; i += 1; );
+  );
+  last_panic = s_panic;
+
+  // transport stop should never leave a voice hanging
+  (last_play && (play_state & 1) == 0) ? ( all_voices_off(); pend_n = 0; );
+  last_play = play_state & 1;
+
+  // ---- glide time ----------------------------------------------------------
+  s_sync ? (
+    beatsec = 60 / max(1, tempo);
+    gbeats =
+      s_div == 0 ? 0.125 :
+      s_div == 1 ? 1/6   :
+      s_div == 2 ? 0.25  :
+      s_div == 3 ? 1/3   :
+      s_div == 4 ? 0.5   :
+      s_div == 5 ? 2/3   :
+      s_div == 6 ? 1     : 2;
+    gsec = beatsec * gbeats;
+  ) : (
+    gsec = s_ms * 0.001;
+  );
+  glide_inc = 1 / max(1, gsec * srate);
+
+  master_ch = max(1, s_ch1 - 1);
+
+  // ---- input ---------------------------------------------------------------
+  while (midirecv(mofs, msg1, msg2, msg3)) (
+    st = msg1 & $xF0;
+
+    (st == $x90 && msg3 > 0) ? (
+      keyheld[msg2] == 0 ? ( keyheld[msg2] = 1; nheld += 1; );
+      pend_n < MAXN ? (
+        pend_n == 0 ? ( pend_t = max(1, floor(s_win * 0.001 * srate)); );
+        cb_p[pend_n] = msg2;
+        cb_v[pend_n] = msg3;
+        pend_n += 1;
+      );
+
+    ) : (st == $x80 || (st == $x90 && msg3 == 0)) ? (
+      keyheld[msg2] == 1 ? ( keyheld[msg2] = 0; nheld = max(0, nheld - 1); );
+
+    ) : (st == $xB0) ? (
+      msg2 == 64 ? (
+        msg3 >= 64 ? ( sustaining = 1; ) : (
+          sustaining = 0;
+          s_mode == 1 ? ( all_voices_off(); );
+        );
+      ) : (msg2 == 120 || msg2 == 123) ? (
+        all_voices_off();
+        pend_n = 0; nheld = 0; sustaining = 0;
+        i = 0; while (i < 128) ( keyheld[i] = 0; i += 1; );
+      ) : (
+        s_thru ? ( midisend(mofs, $xB0 + (master_ch - 1), msg2, msg3); );
+      );
+
+    ) : (st == $xE0 || st == $xD0) ? (
+      // the player's own wheel and channel pressure go to the MPE master channel
+      s_thru ? ( midisend(mofs, st + (master_ch - 1), msg2, msg3); );
+
+    ) : (
+      midisend(mofs, msg1, msg2, msg3);
+    );
+  );
+
+  // ---- chord detect window -------------------------------------------------
+  pend_n > 0 ? (
+    pend_t -= samplesblock;
+    pend_t <= 0 ? ( commit_chord(); pend_n = 0; );
+  );
+
+  // ---- legato release ------------------------------------------------------
+  (s_mode == 0 && nheld <= 0 && sustaining == 0 && pend_n == 0) ? ( all_voices_off(); );
+
+  // ---- advance the glides --------------------------------------------------
+  // sub-step at roughly 1 ms so the bend stream is smooth without flooding
+  steps = max(1, min(16, floor(samplesblock / (srate * 0.001))));
+  sps   = samplesblock / steps;
+
+  k = 0;
+  while (k < steps) (
+    ofs2 = floor(k * sps);
+    i = 0;
+    while (i < MAXV) (
+      (v_act[i] && v_pos[i] < 1) ? (
+        v_pos[i] = min(1, v_pos[i] + v_inc[i] * sps);
+        v_cur[i] = v_from[i] + (v_to[i] - v_from[i]) * shape(v_pos[i]);
+        bs = v_cur[i] - v_base[i];
+        // 0.003 semitones is about half of one 14 bit step at +/-48
+        abs(bs - v_lb[i]) > 0.003 ? ( bendmsg(ofs2, v_ch[i], bs); v_lb[i] = bs; );
+      );
+      i += 1;
+    );
+    k += 1;
+  );
+
+@gfx 470 200
+
+  gfx_set(0.09, 0.09, 0.11, 1);
+  gfx_rect(0, 0, gfx_w, gfx_h);
+  gfx_setfont(1, "Arial", 14);
+
+  gfx_set(0.55, 0.57, 0.64, 1);
+  gfx_x = 10; gfx_y = 8;
+  gfx_drawstr("ch");
+  gfx_x = 46;  gfx_drawstr("root");
+  gfx_x = 100; gfx_drawstr("bend");
+  gfx_x = 176; gfx_drawstr("to");
+  gfx_x = 250; gfx_drawstr("glide");
+
+  gfx_set(0.20, 0.21, 0.25, 1);
+  gfx_line(10, 26, gfx_w - 10, 26);
+
+  gv = 0; row = 0;
+  while (gv < nvoices) (
+    v_act[gv] ? (
+      yy = 34 + row * 18;
+      moving = v_pos[gv] < 1;
+      moving ? gfx_set(0.35, 0.80, 0.95, 1) : gfx_set(0.52, 0.54, 0.60, 1);
+
+      gfx_x = 10;  gfx_y = yy; gfx_drawnumber(v_ch[gv], 0);
+      gfx_x = 46;  gfx_y = yy; gfx_drawnumber(v_base[gv], 0);
+      gfx_x = 100; gfx_y = yy; gfx_drawnumber(v_cur[gv] - v_base[gv], 2);
+      gfx_x = 176; gfx_y = yy; gfx_drawnumber(v_to[gv], 0);
+
+      gfx_set(0.17, 0.18, 0.22, 1);
+      gfx_rect(250, yy + 3, 150, 8);
+      moving ? gfx_set(0.35, 0.80, 0.95, 1) : gfx_set(0.28, 0.31, 0.36, 1);
+      gfx_rect(250, yy + 3, 150 * v_pos[gv], 8);
+
+      row += 1;
+    );
+    gv += 1;
+  );
+
+  row == 0 ? (
+    gfx_set(0.33, 0.34, 0.40, 1);
+    gfx_x = 10; gfx_y = 40;
+    gfx_drawstr("no voices sounding");
+  );
+
+  gfx_set(0.38, 0.40, 0.46, 1);
+  gfx_x = 10; gfx_y = gfx_h - 20;
+  gfx_drawstr("master ch ");
+  gfx_drawnumber(max(1, s_ch1 - 1), 0);
+  gfx_drawstr("    members ");
+  gfx_drawnumber(s_ch1, 0);
+  gfx_drawstr("-");
+  gfx_drawnumber(s_ch1 + nvoices - 1, 0);
+  gfx_drawstr("    range +/-");
+  gfx_drawnumber(s_range, 0);
+  gfx_drawstr(" st");

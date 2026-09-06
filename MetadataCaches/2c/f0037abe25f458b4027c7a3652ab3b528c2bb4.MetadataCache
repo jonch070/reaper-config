@@ -1,0 +1,11 @@
+C10018 /Users/jonathankawchuk/Downloads/audioguide-1.78/examples
+F bone.aiff 542532 0 1730197766 0
+D t "Bone Alphabet" a "Steve Schick" b "The Percussionist's Art" g Classical
+D c 8+954157F320D8110503351D9202DFF7BF+7747746 d 8+954157F320D8110503351D9202DFF7BF+7747746 s 44100 n 1
+D l 0:06.147 i 16 m 6/8
+F cage.aiff 1005838 0 1730197766 0
+D s 44100 n 1 l 0:11.403 i 16
+F "heat sink.aiff" 1235506 0 1730197766 0
+D s 44100 n 1 l 0:14.007 i 16
+F lachenmann.aiff 5701764 0 1730197766 0
+D s 44100 n 1 l 1:04.645 i 16

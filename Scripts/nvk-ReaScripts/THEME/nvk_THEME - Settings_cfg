@@ -4,8 +4,8 @@ config = {
 		cursor_y = 611.0,
 		h = 611.0,
 		w = 430.0,
-		x = 1008.0,
-		y = 386.0
+		x = 942.0,
+		y = 259.0
 	},
 	always_add_new_instance = false,
 	always_on_top = false,
@@ -16,15 +16,15 @@ config = {
 	child_gradient = false,
 	color_theme = {
 		colors = {
-			10385753,
-			12299413,
-			9406337,
-			6052181,
-			4013114
+			5207853,
+			9480533,
+			15528862,
+			9206379,
+			5986368
 		},
 		default = true,
-		id = 14,
-		name = "Sepia"
+		id = 11,
+		name = "Forest"
 	},
 	color_themes = {
 		
@@ -75,7 +75,7 @@ config = {
 	},
 	new_instance_close = false,
 	scale = 1,
-	section_selected = "Master Track Panel",
+	section_selected = "track_colors",
 	startup_actions_first_run = true,
 	style_vars = {
 		
@@ -91,7 +91,7 @@ config = {
 		excluded_words = "video renders unused",
 		named = true,
 		parent = true,
-		unnamed = false
+		unnamed = true
 	},
 	track_color_top_level = true,
 	version = "1.5.2"

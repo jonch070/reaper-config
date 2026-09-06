@@ -1,0 +1,203 @@
+// EnsemblerFilter - Voice Processing and Assignment
+// Handles voice redistribution algorithm and MIDI output
+
+@init
+
+// =============================================================================
+// MIDI OUTPUT WRAPPER - Calls both midisend() and retroactive recording
+// =============================================================================
+
+// Send MIDI message to track and save to retroactive buffer
+// Wrapper around midisend() that automatically saves output for retroactive recording
+// Use this instead of midisend() everywhere to enable retroactive recording
+function sendMidiToTrackAndRetroBuffer(offset, msg1, msg2, msg3)
+(
+    // Send MIDI message to track
+    midisend(offset, msg1, msg2, msg3);
+
+    sendMidiEventToRetroBuffer(offset, msg1, msg2, msg3);
+);
+
+// =============================================================================
+// VOICE PROCESSING FUNCTIONS
+// =============================================================================
+
+// Process all pending note changes in chronological order
+// Handles note-on/off events and maintains note state
+function processPendingChanges()
+local(i, note, type, vel, transposed_note, old_voice)
+(
+  i = 0;
+  loop(pending_changes_count,
+    note = pending_changes_note[i];
+    type = pending_changes_type[i];
+    vel = pending_changes_velocity[i];
+    
+    type == 1 ? (
+      // Note-on: Add to current chord
+      note_held[note] = 1;
+      note_velocity[note] = vel;
+    ) : (
+      // Note-off: Remove from chord + send note-off if we own this note
+      note_held[note] = 0;
+      note_voice[note] == my_voice ? (
+        // Apply transposition when sending note-off
+        transposed_note = transposeNote(note, my_transposition);
+        sendMidiToTrackAndRetroBuffer(0, 0x80, transposed_note, 0);
+      );
+      // Clear voice assignment for this note (regardless of which voice owns it)
+      old_voice = note_voice[note];
+      old_voice >= 0 ? (
+        voice_assignments[old_voice] = -1;
+      );
+      note_voice[note] = -1;
+    );
+    i += 1;
+  );
+);
+
+// Collect all currently held notes (assigned + unassigned) into temp array
+// Returns: count of held notes
+function collectAllHeldNotes()
+local(all_held_notes_count, i)
+(
+  all_held_notes_count = 0;
+  memset(700, 0, 128); // Clear temp array
+  
+  i = 0;
+  loop(128,
+    note_held[i] ? (
+      all_held_notes[all_held_notes_count] = i;
+      all_held_notes_count += 1;
+    );
+    i += 1;
+  );
+  
+  all_held_notes_count;
+);
+
+// Sort held notes for bottom-up assignment using bubble sort
+function sortHeldNotes(noteCount)
+local(i, j, temp)
+(
+  noteCount > 1 ? (
+    i = 0;
+    loop(noteCount - 1,
+      j = 0;
+      loop(noteCount - 1 - i,
+        all_held_notes[j] > all_held_notes[j + 1] ? (
+          temp = all_held_notes[j];
+          all_held_notes[j] = all_held_notes[j + 1];
+          all_held_notes[j + 1] = temp;
+        );
+        j += 1;
+      );
+      i += 1;
+    );
+  );
+);
+
+// Redistribute voices with transition handling
+// Assigns notes to voices and sends appropriate MIDI messages
+function redistributeVoices(heldNotesCount)
+local(voice_num, old_note, new_note, transposed_note)
+(
+  voice_num = 0;
+  loop(total_voices_config,
+    old_note = voice_assignments[voice_num];
+    new_note = voice_num < heldNotesCount ? all_held_notes[voice_num] : -1;
+    
+    // Check if voice assignment changed
+    old_note != new_note ? (
+      // Handle transition: note-off first, then note-on
+      old_note >= 0 && voice_num == my_voice ? (
+        // Send note-off for old note if this is our voice
+        transposed_note = transposeNote(old_note, my_transposition);
+        sendMidiToTrackAndRetroBuffer(0, 0x80, transposed_note, 0);
+      );
+
+      new_note >= 0 && voice_num == my_voice ? (
+        // Send note-on for new note if this is our voice
+        transposed_note = transposeNote(new_note, my_transposition);
+        sendMidiToTrackAndRetroBuffer(0, 0x90, transposed_note, applyVelocityTransforms(note_velocity[new_note]));
+      );
+      
+      // Update voice assignments
+      voice_assignments[voice_num] = new_note;
+      new_note >= 0 ? (
+        note_voice[new_note] = voice_num;
+      );
+    ) : (
+      // No change needed, but ensure note_voice is set for new notes
+      new_note >= 0 && note_voice[new_note] < 0 ? (
+        note_voice[new_note] = voice_num;
+        // Send note-on if this is our voice and it's a new assignment
+        voice_num == my_voice ? (
+          transposed_note = transposeNote(new_note, my_transposition);
+          sendMidiToTrackAndRetroBuffer(0, 0x90, transposed_note, applyVelocityTransforms(note_velocity[new_note]));
+        );
+      );
+    );
+    
+    voice_num += 1;
+  );
+);
+
+// Clear any voices beyond the number of held notes
+function clearExtraVoices(heldNotesCount)
+local(voice_num, old_note, transposed_note)
+(
+  voice_num = heldNotesCount;
+  loop(total_voices_config - heldNotesCount,
+    voice_assignments[voice_num] >= 0 ? (
+      // This voice had a note but shouldn't anymore
+      old_note = voice_assignments[voice_num];
+      voice_num == my_voice ? (
+        transposed_note = transposeNote(old_note, my_transposition);
+        sendMidiToTrackAndRetroBuffer(0, 0x80, transposed_note, 0);
+      );
+      voice_assignments[voice_num] = -1;
+    );
+    voice_num += 1;
+  );
+);
+
+// Main voice processing function - handles complete voice redistribution algorithm
+// Should be called when analysis timer expires and pending changes exist
+function processVoiceAssignments()
+local(unassigned_notes_count, i, all_held_notes_count)
+(
+  // First, process all pending changes in chronological order
+  processPendingChanges();
+  
+  // Check if we have any unassigned notes (indicates new note-ons arrived)
+  unassigned_notes_count = 0;
+  i = 0;
+  loop(128,
+    note_held[i] && note_voice[i] < 0 ? (
+      unassigned_notes[unassigned_notes_count] = i;
+      unassigned_notes_count += 1;
+    );
+    i += 1;
+  );
+  
+  // Only redistribute voices if new notes arrived AND we don't exceed voice capacity
+  unassigned_notes_count > 0 ? (
+    // FULL VOICE REDISTRIBUTION ALGORITHM to prevent crossing
+    
+    // 1. Collect ALL currently held notes (assigned + unassigned)
+    all_held_notes_count = collectAllHeldNotes();
+    
+    // Only proceed with redistribution if we don't exceed voice capacity
+    all_held_notes_count <= total_voices_config ? (
+      // 2. Sort all held notes for bottom-up assignment
+      sortHeldNotes(all_held_notes_count);
+      
+      // 3. Redistribute voices with transition handling
+      redistributeVoices(all_held_notes_count);
+      
+      // 4. Clear any voices beyond the number of held notes
+      clearExtraVoices(all_held_notes_count);
+    );
+  );
+);

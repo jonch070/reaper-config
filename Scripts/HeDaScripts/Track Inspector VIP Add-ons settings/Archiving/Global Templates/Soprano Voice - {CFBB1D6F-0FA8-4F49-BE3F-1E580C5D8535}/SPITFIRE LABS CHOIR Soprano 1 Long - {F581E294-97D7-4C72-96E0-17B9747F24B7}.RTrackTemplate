@@ -1,0 +1,41 @@
+<TRACK
+  NAME "LABS Piano RH *** archived ***"
+  LOCK 1
+  PEAKCOL 26765383
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1.0115794542599 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -2
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4320 1 7 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {9E27A950-E725-E141-BF9A-C2823C57C2E6}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "LABS Piano RH - {9E27A950-E725-E141-BF9A-C2823C57C2E6}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {EAFCBC47-7B51-45E2-98AB-CF96FE394616}
+    Archived_parent_name Pianos
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    WNDRECT 1385 845 574 671
+    SHOW 0
+    LASTSEL 0
+    DOCKED 0
+  >
+>

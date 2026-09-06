@@ -44,6 +44,8 @@ D d "Do instrumentation  Generate template  Generate sessions   Which solo strin
 D l 1:59:10.125
 F "Dinosaur Choir_ Adult Corythosaurus_UHD_4K_DOWNLOAD.m4a" 424406 0 1694893836 0
 D s 48000 n 2 l 0:17.791
+F "Dinosaur Choir_ Adult Corythosaurus_UHD_4K_DOWNLOAD.wav" 3399758 0 1780162407 0
+D s 48000 n 2 l 0:17.706 i 16
 F dinosaur.mp3 511237 0 1639777472 0
 D a "Sandia National Laboratories" b "Sandia National Laboratories" y 2003 g Other
 D c "00000354 00000354 000021EE 00" s 44100 n 1 l 0:31.269
@@ -62,6 +64,10 @@ D s 48000 n 2 l 0:01.600 i 24
 F FIT_MusicMix_1m25_StereoMix.mp3 6497689 0 1739474138 0
 D t "Paleo Mind" b "Frozen in TIme (Original Motion Picture Soundtrack)" y 2025-02-09 s 48000
 D n 2 l 2:42.356 i 320k m 20/26
+F "Haskell completed permostridulus speculative sound 2x speed.wav" 244188 0 1772644182 0
+D s 44100 n 1 l 0:01.384 i 32
+F "Haskell completed permostridulus speculative sound.wav" 488332 0 1772644180 0
+D s 44100 n 1 l 0:02.768 i 32
 F "Kelp Reverberations binaural 12_07 has some great rhythm.mp3" 27344544 0 1762535041 0
 D s 48000 n 2 l 16:23.000 i 223k
 F ORG1_1m04_1_REBIRTH_01.08.05.12_FullMix.wav 50913220 0 1648582152 0
@@ -70,6 +76,8 @@ D l 2:56.779 i 24
 F "Permostridulus Chorus Reaper Normal Distrubution 7.1 Impulse-3.wav" 19008736 0 1640115372 0
 D y 2021-12-21 s 48000 n 2 l 1:06.000
 D i 24
+F "Post Rock Electric Guitar Distorted Progression 01_G Min_210-Wavetick.wav" 6451304 0 1771549265 0
+D s 44100 n 2 l 0:36.571 i 16
 F "recovered jasper 3 with end stuff 8 new ableton ending 3 rough beginning 3.mp3" 9078108 0 1640243764 0
 D s 44100 n 2 l 4:43.651 i 256k
 F "Slow Eternal_1 14-01-2023 00 Master.mp3" 2234448 0 1673745389 0

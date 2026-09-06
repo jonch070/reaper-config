@@ -1,0 +1,40 @@
+<TRACK
+  NAME "SPITFIRE LABS CHOIR Soprano 1 Long *** archived ***"
+  LOCK 1
+  PEAKCOL 25713305
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4128 1 7 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {F581E294-97D7-4C72-96E0-17B9747F24B7}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE LABS CHOIR Soprano 1 Long - {F581E294-97D7-4C72-96E0-17B9747F24B7}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {CFBB1D6F-0FA8-4F49-BE3F-1E580C5D8535}
+    Archived_parent_name "Soprano Voice"
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

@@ -1,0 +1,42 @@
+<TRACK
+  NAME "NOVELLA Ens Violin I Long *** archived ***"
+  LOCK 1
+  PEAKCOL 21462169
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4128 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 1 1
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {0A6419EB-BA6A-9543-8DAD-E251738994E7}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "NOVELLA Ens Violin I Long - {0A6419EB-BA6A-9543-8DAD-E251738994E7}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {13259FCC-A592-4813-BE86-A77D4E35C9BA}
+    Archived_parent_name "Violin I"
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    WNDRECT 2193 520 1490 795
+    SHOW 0
+    LASTSEL 6
+    DOCKED 0
+  >
+>

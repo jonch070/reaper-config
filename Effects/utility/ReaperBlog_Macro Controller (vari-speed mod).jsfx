@@ -1,0 +1,36 @@
+/**
+* JSFX Name: Macro controller
+* About:
+* Dummy controls to use with Parameter link/modulation
+* Author: The REAPER Blog
+* Licence: GPL v3
+* REAPER: 5.0
+* Version: 1.0
+*/
+
+/**
+* Changelog:
+* v1.0 (2018-03-14)
++ Initial Release
+*/
+
+/*
+To be used with the script:
+'BuyOne_Create pitch-rate (vari-speed) take envelope and render to new take.lua'
+available via ReaPack
+If you have this file, the script either is or was installed on your machine
+If using the script settings you change pitch range and/or step to other than default, the start, end and step slider values
+(those between smaller/greater <> signs below) will change
+*/
+
+desc:Macro Controller (vari-speed mod)
+
+// Controls ReaControlMIDI 'Pitch Wheel' parameter
+slider1:0<-12, 12, 0.01>Pitch wheel
+// Controls ReaSamplomatic5000 'Pitch offset' parameter
+slider2:0<-80, 80, 1>Pitch offset
+
+//slider3:50<0, 100, 1>Macro 3
+//slider4:50<0, 100, 1>Macro 4
+//slider5:50<0, 100, 1>Macro 5
+

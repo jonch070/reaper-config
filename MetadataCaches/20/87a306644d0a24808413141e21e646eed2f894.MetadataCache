@@ -1,0 +1,13 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Halogen Halo/HH Reaper Projects/boulder tape/media"
+F 260715_02.WAV 11272192 0 1784165974 0
+D t 260715_02 a "My Recording" s 96000 n 2
+D l 0:19.562 i 24
+F 260717_02-glued.wav 5089596 0 1784330214 0
+D t 260717_02 a "My Recording" y 2026-07-17 s 96000
+D n 2 r 1:01:13.848 l 0:08.829 i 24
+F 260717_04-glued.wav 3627264 0 1784330237 0
+D t 260717_04 a "My Recording" y 2026-07-17 s 96000
+D n 2 r 1:00:33.519 l 0:06.291 i 24
+F "boulder tape_02_audrey_2026-07-14_17-14_001.wav" 77806096 0 1784071096 0
+D y 2026-07-14 s 44100 n 2 r 1:00:03.600
+D l 3:40.536 i 32

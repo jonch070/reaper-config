@@ -64,7 +64,7 @@ end
 function tprint (tbl, indent)
     if not indent then indent = 0 end
     for k, v in pairs(tbl) do
-      formatting = string.rep("  ", indent) .. tostring(k) .. ": "
+      local formatting = string.rep("  ", indent) .. tostring(k) .. ": "
       if type(v) == "table" then
         print(formatting)
         tprint(v, indent+1)
@@ -179,7 +179,7 @@ end
 
 
 
-function TrimItem(pasted_item, item, idx_note, notecnt, item_take, endppqpos )
+function TrimItem(Settings, pasted_item, item, idx_note, notecnt, item_take, endppqpos )
     if Settings.Is_trim_ItemEnd == true  or Settings.Is_trim_StartNextNote == true or Settings.Is_trim_EndNote == true then
         local pasted_start = reaper.GetMediaItemInfo_Value(pasted_item, "D_POSITION")
         local pasted_len = reaper.GetMediaItemInfo_Value(pasted_item, "D_LENGTH")
@@ -229,6 +229,13 @@ end
 
 function scale(val,min1,max1,min2,max2)
     return (((max2 - min2)*(val - min1))/(max1 - min1))+min2
+end
+
+function scale_log(val, min1, max1, min2, max2)
+    -- val is linear in [min1, max1]
+    -- output is exponential in [min2, max2]
+    local t = (val - min1) / (max1 - min1)  -- normalize to 0..1
+    return min2 * ((max2 / min2) ^ t)
 end
 
 function NumberToNote(number, is_sharp, is_octave, center_c_octave) -- Number, boolean(optional), boolean(optional), number(optional)
@@ -307,11 +314,11 @@ function IsStringNote(string)
 end
 
 function GetProjectPath()
-    return reaper.GetProjectPath(0 , '' ):gsub("(.*)\\.*$","%1")  .. "\\"
+    return reaper.GetProjectPath():gsub("(.*)\\.*$","%1")  .. "\\"
 end
 
 function GetFullProjectPath() -- with projct Name. with .rpp at the end
-    return reaper.GetProjectPath(0 , '' ):gsub("(.*)\\.*$","%1")  .. reaper.GetProjectName(0)
+    return reaper.GetProjectPath():gsub("(.*)\\.*$","%1")  .. reaper.GetProjectName(0)
 end
 
 function table_copy(obj, seen)
@@ -337,8 +344,8 @@ function PostKey(hwnd, vk_code)
 end
 
 
-function CheckRequirements()
-    local wind_name = ScriptName..' '..ScriptVersion
+function CheckRequirements(script_name, script_version)
+    local wind_name = script_name..' '..script_version
     if not reaper.APIExists('ImGui_GetVersion') then
         reaper.ShowMessageBox('Please Install ReaImGui at ReaPack', wind_name, 0)
         return false
@@ -372,7 +379,7 @@ function CheckRequirements()
         return bol == 6
     end ]]
 
-    --print(reaper.ImGui_GetVersion())
+    --print(ImGui.GetVersion())
     --print(reaper.JS_ReaScriptAPI_Version())
     --print(reaper.CF_GetSWSVersion())
     return true 

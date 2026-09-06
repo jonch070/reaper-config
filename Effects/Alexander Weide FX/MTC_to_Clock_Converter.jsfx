@@ -1,0 +1,67 @@
+desc:MTC to MIDI Clock 
+author: Gemini+ AlexW
+
+slider1:1<0,1,1{Off,On}>Active
+
+@init
+STAT_CLOCK = $xF8; STAT_START = $xFA; STAT_STOP = $xFC; STAT_SPP = $xF2;
+run = 0; t = 0; ticks = 0;
+
+@block
+s_per_tick = ((60 / tempo) * srate) / 24;
+
+while (midirecv(off, m1, m23)) (
+  status = m1 & $xFF;
+  (status == $xF1) ? (
+    run == 0 ? (
+      midisend(0, STAT_SPP, 0); 
+      midisend(0, STAT_START, 0);
+      run = 1; t = 0; ticks = 0;
+    );
+    last_mtc = time_precise();
+  );
+);
+
+run && (time_precise() - last_mtc > 0.5) ? (
+  midisend(0, STAT_STOP, 0);
+  run = 0;
+);
+
+@sample
+(run && slider1) ? (
+  t += 1;
+  (t >= s_per_tick) ? (
+    midisend(0, STAT_CLOCK, 0);
+    t -= s_per_tick;
+    ticks += 1;
+  );
+);
+
+@gfx 400 200
+gfx_r=0.1; gfx_g=0.1; gfx_b=0.1; gfx_rect(0,0,gfx_w,gfx_h);
+gfx_r=1; gfx_g=1; gfx_b=1; gfx_x=20; gfx_y=20;
+gfx_drawstr("--- DEBUG MONITOR ---");
+
+gfx_y += 40; gfx_x = 20;
+run ? (
+  gfx_r=0; gfx_g=1; gfx_b=0; 
+  gfx_drawstr("STATUS: SENDING CLOCK");
+) : (
+  gfx_r=1; gfx_g=0.5; gfx_b=0;
+  gfx_drawstr("STATUS: WAITING FOR MTC");
+);
+
+gfx_y += 40; gfx_x = 20; gfx_r=1; gfx_g=1; gfx_b=1;
+gfx_drawstr("TICKS SENT: ");
+gfx_drawnumber(ticks, 0);
+
+// REPARIERTE ZEILE: Benutzt jetzt gfx_rect
+gfx_y += 40; gfx_x = 20;
+gfx_drawstr("SIGNAL: ");
+(run && (ticks % 24 < 12)) ? (
+  gfx_r=1; gfx_g=1; gfx_b=0;
+  gfx_rect(gfx_x+70, gfx_y, 20, 20, 1); // Die '1' am Ende füllt das Rechteck
+) : (
+  gfx_r=0.2; gfx_g=0.2; gfx_b=0.2;
+  gfx_rect(gfx_x+70, gfx_y, 20, 20, 1);
+);

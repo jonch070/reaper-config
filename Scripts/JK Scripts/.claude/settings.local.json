@@ -5,7 +5,8 @@
       "WebSearch",
       "WebFetch(domain:soundtrackfest.com)",
       "WebFetch(domain:mtosmt.org)",
-      "WebFetch(domain:www.youtube.com)"
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(luac -p \"/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/JK Scripts/jk_Conform stems to edited track.lua\")"
     ]
   }
 }

@@ -1,0 +1,89 @@
+desc: Alex Ultimate Arpeggiator(30+ Styles)
+
+slider1:0<0,31,1{Up,Down,Up/Down,Random,Converge,Zimmer 4/4 Drive,Zimmer 3/4 Waltz,Zimmer Galopp,Zimmer Syncopated,Zimmer 7/8 Action,Williams Shark (2/4),Williams Heroic (Triplets),Elfman Twisted (3/4),Elfman Gothic,Glass Minimal 1,Glass Minimal 2,Silvestri Avengers,Silvestri Pulsar,Holst Mars (5/4),Morricone Western,Joppa 007 (Suspense),Powell Bourne (6/8),Shore Middle Earth,Horner Titanic Drive,Newton Howard Mystery,Giacchino Retro Spy,Vangelis Blade,Daft Punk Tron,Hisaishi Anime Arp,Djadi Game-Core,Aggressive 15/16,Polyrhythm 3vs4}>Style
+slider2:6<0,11,1{1/2,1/2t,1/4,1/4t,1/8,1/8t,1/16,1/16t,1/32,1/32t,1/64,1/64t}>Rate
+slider3:0<0,4,1>Octave Steps
+slider4:12<-24,24,1>Octave Distance
+slider5:80<1,100,1>Gate (%)
+slider6:100<0,127,1>Velocity
+
+@init
+notes = 0; num_notes = 0;
+current_idx = -1; current_step = 0;
+last_note = -1; sample_cnt = 0;
+r_pos = 0;
+
+@block
+while (midirecv(ts, msg1, msg2, msg3)) (
+  status = msg1 & $xF0;
+  (status == $x90 && msg3 > 0) ? (
+    notes[num_notes] = msg2; num_notes += 1;
+    i=0; loop(num_notes, j=i+1; loop(num_notes-i-1, notes[i]>notes[j]?(t=notes[i];notes[i]=notes[j];notes[j]=t;); j+=1;); i+=1;);
+  ) : (status == $x80 || (status == $x90 && msg3 == 0)) ? (
+    i=0; f=-1; loop(num_notes, notes[i]==msg2?f=i; i+=1;);
+    f>=0 ? (memcpy(notes+f, notes+f+1, num_notes-f-1); num_notes-=1;);
+  );
+);
+
+// Timing Logic
+r = slider2;
+r==0?div=2:r==1?div=1.33:r==2?div=1:r==3?div=0.66:r==4?div=0.5:r==5?div=0.33:r==6?div=0.25:r==7?div=0.16:r==8?div=0.125:r==10?div=0.0625;
+samples_per_note = (srate * 60 / tempo) * div;
+sample_cnt += samplesblock;
+
+sample_cnt >= samples_per_note ? (
+  sample_cnt -= samples_per_note;
+  num_notes > 0 ? (
+    last_note >= 0 ? midisend(0, $x80, last_note, 0);
+
+    v_a = slider6; v_s = slider6 * 0.5; vel = v_a; 
+    p = slider1; m_p = 8; // Default Pattern Length
+
+    // --- DIE GROSSE PATTERN-DATENBANK ---
+    p == 5 ? ( r_pos%4==0?vel=v_a:vel=v_s; m_p=4; ) : // Zimmer 4/4
+    p == 6 ? ( r_pos%3==0?vel=v_a:vel=v_s; m_p=3; ) : // Zimmer 3/4
+    p == 7 ? ( r_pos%3==2?vel=0:(r_pos%3==0?vel=v_a:vel=v_s); m_p=3; ) : // Galopp
+    p == 8 ? ( (r_pos==0||r_pos==2||r_pos==5)?vel=v_a:vel=v_s; m_p=8; ) : // Syncopated
+    p == 9 ? ( (r_pos==0||r_pos==2||r_pos==4)?vel=v_a:vel=v_s; m_p=7; ) : // 7/8
+    p == 10? ( r_pos%2==0?vel=v_a:vel=v_s; m_p=2; ) : // Williams Shark
+    p == 11? ( (r_pos%3==0)?vel=v_a:vel=v_s; m_p=3; ) : // Williams Heroic
+    p == 12? ( r_pos%3==2?vel=v_a:vel=v_s; m_p=3; ) : // Elfman 3/4
+    p == 13? ( (r_pos==0||r_pos==3||r_pos==6)?vel=v_a:vel=v_s; m_p=8; ) : // Elfman Gothic
+    p == 14? ( vel=v_a*0.9; m_p=6; ) : // Glass 1
+    p == 15? ( vel=v_a*0.8; m_p=4; ) : // Glass 2
+    p == 16? ( (r_pos==0||r_pos==3)?vel=v_a:vel=v_s; m_p=6; ) : // Silvestri Avengers
+    p == 17? ( (r_pos==0||r_pos==1)?vel=v_a:vel=0; m_p=4; ) : // Silvestri Pulsar
+    p == 18? ( (r_pos==0||r_pos==3||r_pos==4)?vel=v_a:vel=v_s; m_p=5; ) : // Holst Mars
+    p == 19? ( (r_pos==0||r_pos==1)?vel=v_a:vel=0; m_p=3; ) : // Morricone
+    p == 20? ( (r_pos==0||r_pos==2)?vel=v_a:vel=v_s; m_p=4; ) : // Joppa 007
+    p == 21? ( (r_pos==0||r_pos==2||r_pos==4)?vel=v_a:vel=v_s; m_p=6; ) : // Powell 6/8
+    p == 22? ( (r_pos==0||r_pos==4)?vel=v_a:vel=v_s; m_p=8; ) : // Shore
+    p == 23? ( (r_pos%4==0||r_pos%4==2)?vel=v_a:vel=v_s; m_p=8; ) : // Horner
+    p == 24? ( (r_pos==0||r_pos==3||r_pos==5)?vel=v_a:vel=v_s; m_p=8; ) : // JNH Mystery
+    p == 25? ( (r_pos==0||r_pos==1||r_pos==2)?vel=v_a:vel=0; m_p=4; ) : // Giacchino
+    p == 26? ( r_pos%8==0?vel=v_a:vel=v_s*0.5; m_p=16; ) : // Vangelis
+    p == 27? ( r_pos%2==0?vel=v_a:vel=v_a*0.8; m_p=4; ) : // Daft Punk
+    p == 28? ( (r_pos==0||r_pos==3)?vel=v_a:vel=v_s; m_p=6; ) : // Hisaishi
+    p == 29? ( (r_pos%2==0)?vel=v_a:vel=0; m_p=2; ) : // Djadi
+    p == 30? ( (r_pos==0||r_pos==3||r_pos==6||r_pos==9||r_pos==12)?vel=v_a:vel=v_s; m_p=15; ) : // 15/16
+    p == 31? ( (r_pos==0||r_pos==3||r_pos==6)?vel=v_a:vel=v_s; m_p=12; ); // 3vs4
+
+    r_pos += 1; r_pos >= m_p ? r_pos = 0;
+
+    // Note Selection Logic
+    (p <= 4 || p >= 5) ? ( // Fast alle nutzen Up-Logic
+       current_idx += 1;
+       current_idx >= num_notes ? (current_idx = 0; current_step += 1;);
+    );
+    p == 1 ? ( current_idx -= 2; ); // Down Korrektur
+    
+    current_step > slider3 ? current_step = 0;
+    out_note = notes[current_idx|0] + (current_step * slider4);
+    
+    vel > 0 ? (
+      midisend(0, $x90, out_note, vel);
+      midisend(samples_per_note * (slider5/100), $x80, out_note, 0);
+      last_note = out_note;
+    );
+  );
+);

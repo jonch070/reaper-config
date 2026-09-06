@@ -29,3 +29,65 @@ D l 0:32.928 i 24
 F "16-REC Tennessee Fiddle Dixie Lick 22_Bb Maj_98-consolidated.wav" 13002464 0 1765429284 0
 D y 2025-12-11 s 48000 n 2 r 1:00:19.398
 D l 0:45.136 i 24
+F "PFD - 1m01 - export tests-consolidated-consolidated.rpp" 0 0 0 0
+D p 120 s 96000 n 4 l 4:16.976
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_001.wav" 50516712 0 1765429696 0
+D y 2025-12-11 s 96000 n 2 r 1:00:19.398
+D l 1:05.776 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_002.wav" 30413544 0 1765429696 0
+D y 2025-12-11 s 96000 n 2 r 1:01:46.646
+D l 0:39.600 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_003.wav" 50516712 0 1765429737 0
+D y 2025-12-11 s 96000 n 2 r 1:00:19.398
+D l 1:05.776 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_004.wav" 30413544 0 1765429737 0
+D y 2025-12-11 s 96000 n 2 r 1:01:46.646
+D l 0:39.600 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_005.wav" 50516712 0 1765429775 0
+D y 2025-12-11 s 96000 n 2 r 1:00:19.398
+D l 1:05.776 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_006.wav" 30413544 0 1765429775 0
+D y 2025-12-11 s 96000 n 2 r 1:01:46.646
+D l 0:39.600 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_007.wav" 50516712 0 1765429803 0
+D y 2025-12-11 s 96000 n 2 r 1:00:19.398
+D l 1:05.776 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Intimate Violin Slightly Rhythmic 09_Bb Maj_98_008.wav" 30413544 0 1765429803 0
+D y 2025-12-11 s 96000 n 2 r 1:01:46.646
+D l 0:39.600 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Music Sub Mix_001.wav" 107766504 0 1765429696 0
+D y 2025-12-11 s 96000 n 2 r 1:00:05.926
+D l 2:20.320 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Music Sub Mix_002.wav" 17609448 0 1765429696 0
+D y 2025-12-11 s 96000 n 2 r 1:02:47.558
+D l 0:22.928 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Music Sub Mix_003.wav" 107766504 0 1765429737 0
+D y 2025-12-11 s 96000 n 2 r 1:00:05.926
+D l 2:20.320 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_Music Sub Mix_004.wav" 17609448 0 1765429737 0
+D y 2025-12-11 s 96000 n 2 r 1:02:47.558
+D l 0:22.928 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_REC Solo Contrabass.wav" 83092216 0 1765429696 0
+D y 2025-12-11 s 96000 n 2 r 1:00:05.926
+D l 1:48.192 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_REC Solo Contrabass_001.wav" 83092216 0 1765429737 0
+D y 2025-12-11 s 96000 n 2 r 1:00:05.926
+D l 1:48.192 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_REC Solo Contrabass_002.wav" 83092216 0 1765429775 0
+D y 2025-12-11 s 96000 n 2 r 1:00:05.926
+D l 1:48.192 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_REC Solo Contrabass_003.wav" 83092216 0 1765429803 0
+D y 2025-12-11 s 96000 n 2 r 1:00:05.926
+D l 1:48.192 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_wanderlust.wav" 34886392 0 1765429696 0
+D y 2025-12-11 s 96000 n 2 r 1:00:39.606
+D l 0:45.424 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_wanderlust_001.wav" 34886392 0 1765429737 0
+D y 2025-12-11 s 96000 n 2 r 1:00:39.606
+D l 0:45.424 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_wanderlust_002.wav" 34886392 0 1765429775 0
+D y 2025-12-11 s 96000 n 2 r 1:00:39.606
+D l 0:45.424 i 32
+F "PFD - 1m01 - export tests-consolidated_freeze_wanderlust_003.wav" 34886392 0 1765429803 0
+D y 2025-12-11 s 96000 n 2 r 1:00:39.606
+D l 0:45.424 i 32

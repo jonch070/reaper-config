@@ -1,0 +1,40 @@
+<TRACK
+  NAME "SPITFIRE BBC Triangle *** archived ***"
+  LOCK 1
+  PEAKCOL 26645854
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -1
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 5088 1 7 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {F5E0491D-168C-400F-8A42-89C3A5011A96}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Triangle - {F5E0491D-168C-400F-8A42-89C3A5011A96}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {743EBB4D-3264-C24B-A328-45B64C1ACB1D}
+    Archived_parent_name Triangles
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

@@ -155,66 +155,20 @@ palette = {
 
 textPadding = 6
 
-if OS:find("Win") ~= nil then
-
-  gfx.setfont(1, "Calibri", 13)
-  gfx.setfont(2, "Calibri", 15)
-  gfx.setfont(3, "Calibri", 18)
-  gfx.setfont(4, "Calibri", 22)
+  gfx.setfont(1, "Inter", 11)
+  gfx.setfont(2, "Inter", 13)
+  gfx.setfont(3, "Inter", 14)
+  gfx.setfont(4, "Inter", 18)
   
-  gfx.setfont(5, "Calibri", 19)
-  gfx.setfont(6, "Calibri", 22)
-  gfx.setfont(7, "Calibri", 27)
-  gfx.setfont(8, "Calibri", 33)
+  gfx.setfont(5, "Inter", 16)
+  gfx.setfont(6, "Inter", 18)
+  gfx.setfont(7, "Inter", 23)
+  gfx.setfont(8, "Inter", 28)
   
-  gfx.setfont(9, "Calibri", 26)
-  gfx.setfont(10, "Calibri", 30)
-  gfx.setfont(11, "Calibri", 36)
-  gfx.setfont(12, "Calibri", 44)
-  
-  baselineShift = {}
-
-elseif OS == 'Other' then
-
-  gfx.setfont(1, "Ubuntu", 10)
-  gfx.setfont(2, "Ubuntu", 12)
-  gfx.setfont(3, "Ubuntu", 14)
-  gfx.setfont(4, "Ubuntu", 17)
-  
-  gfx.setfont(5, "Ubuntu", 13)
-  gfx.setfont(6, "Ubuntu", 15)
-  gfx.setfont(7, "Ubuntu", 20)
-  gfx.setfont(8, "Ubuntu", 24)
-  
-  gfx.setfont(9, "Ubuntu", 19)
-  gfx.setfont(10, "Ubuntu", 23)
-  gfx.setfont(11, "Ubuntu", 28)
-  gfx.setfont(12, "Ubuntu", 32)
-  
-  baselineShift = {}
-
-else
-
-  gfx.setfont(1, "Helvetica", 9)
-  gfx.setfont(2, "Helvetica", 11)
-  gfx.setfont(3, "Helvetica", 14)
-  gfx.setfont(4, "Helvetica", 16)
-  
-  gfx.setfont(5, "Helvetica", 13)
-  gfx.setfont(6, "Helvetica", 15)
-  gfx.setfont(7, "Helvetica", 18)
-  gfx.setfont(8, "Helvetica", 22)
-  
-  gfx.setfont(9, "Helvetica", 18)
-  gfx.setfont(10, "Helvetica", 20)
-  gfx.setfont(11, "Helvetica", 26)
-  gfx.setfont(12, "Helvetica", 30)
-  
-  baselineShift = {2,2,2,3,
-                   1,3,4,4,
-                   3,2,3,3}
-  
-end
+  gfx.setfont(9, "Inter", 22)
+  gfx.setfont(10, "Inter", 26)
+  gfx.setfont(11, "Inter", 28)
+  gfx.setfont(12, "Inter", 36)
 
 function translate(str)
   if type(str) == "string" and str ~= "" then
@@ -1397,7 +1351,7 @@ function ccControls:new(o)
   
   if o.label~=false then Label:new({parent=o, x=0, y=2, z=2, w=60, h=20, target=o.target, 
     text={str=o.target.desc, style=2, align=0, col=labelColMA, padding=0, resizeToFit=true, mouseOverCol=labelColMO } }) end
-  local readoutY = 0
+  local readoutY = 2
   if o.spinner ~= false then 
     SpinnerH:new({parent=o, x=4, y=-4, z=2, h=20, w=36, col={0,100,100,0}, flow=true, target=o.target}) 
   else readoutY = -4
@@ -1414,7 +1368,7 @@ function ccControls:new(o)
     end
     })
     
-  MiscAgent:new({parent=o, x=1, y=0, w=60, h=20, z=2, flow=true, target=o.target, text={str=o.target.units, style=1, align=8, col=readoutUnitCol, padding=0, resizeToFit=true},
+  MiscAgent:new({parent=o, x=1, y=0, w=60, h=16, z=2, flow=true, target=o.target, text={str=o.target.units, style=1, align=8, col=readoutUnitCol, padding=0, resizeToFit=true},
     onNewValue = function(k)
       local p = nil
       if k.target.valueAlias then
@@ -2516,8 +2470,7 @@ function El:draw(offsX,offsY, clipR, clipB)
     if self.text.resizeToFit==true then p=0 end
     local tx,tw = x + p, w - 2*p
     local style = (self.text.style + textScaleOffs) or 1
-    local thisBaselineShift = baselineShift[style] or 0
-    text(self.text.str,tx,y+thisBaselineShift,tw,h,self.text.align,self.text.col,style,self.text.lineSpacing,self.text.vCenter,self.text.wrap)
+    text(self.text.str,tx,y,tw,h,self.text.align,self.text.col,style,self.text.lineSpacing,self.text.vCenter,self.text.wrap)
   end
  
   if self.drawImg ~= nil and self.w ~= 0 then

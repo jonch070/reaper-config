@@ -1,0 +1,497 @@
+desc:Tintinnabulator
+author: JK Scripts
+tags: midi tintinnabuli arvo-part harmony
+about:
+  Tintinnabulator v2
+
+  Derives a tintinnabuli (T) voice from your played melody (M voice), after Arvo
+  Part's technique: the T voice only plays notes of a fixed triad, always landing
+  on the nearest chord tone(s) to the M voice.
+
+  Mode (T-voice position):
+    2 Below / 1 Below / 1 Above / 2 Above   (the original's 2inf/1inf/1sup/2sup)
+    Orbit  = alternate 1 Above / 1 Below per note (the device's +/- button)
+    Random = random position among the four per note (the device's ? button)
+
+  Root: only the pitch class matters. The tone set is built in every octave that
+  falls inside T Range Low..T Range High.
+
+  T Range Low / High: the ambitus the T voice is allowed to occupy. Default
+  21..108 (A0..C8, the piano). When the melody runs past an end of the range the
+  T voice stays on the outermost chord tone instead of following.
+    Low = Root, High = Root + 79  reproduces the Max device's span exactly
+                                  (21 chord tones; with Root A that is 21..100).
+    Low = 0,    High = 127        lets the T voice always sit next to the melody.
+    Narrow it to one or two octaves for a Part-like fixed-register T voice, where
+    the melody moves away from the T voice instead of dragging it along.
+
+  Delay: the T voice is emitted this many beats behind the melody, tempo synced.
+
+  Manual T: playing keys becomes the T voice directly (no generation, no M
+  passthrough), so you can play the T voice by hand.
+
+  T Input Channel (sidechain): notes arriving on that channel become the T voice
+  directly, while other channels drive the melody generator. 0 = off.
+
+  Keyswitches (set Keyswitch Lo to a note number, e.g. 48 = C3):
+    Every note BELOW Keyswitch Lo is a control key and is swallowed. The three
+    octaves directly below Keyswitch Lo carry the controls, bottom to top:
+      octave 1 (ks_lo-36 .. ks_lo-25) root pitch class C..B
+      octave 2 (ks_lo-24 .. ks_lo-13) 0-3 mode, 4 minor, 5 major,
+                                      6/7 Manual-T on/off, 8/9 M-mute on/off,
+                                      10 Orbit, 11 Random
+      octave 3 (ks_lo-12 .. ks_lo-1)  delay {0,.25,.375,.5,.75,1,1.5,2,3,4,6,8}
+    With Keyswitch Lo = 48 (C3): root on C0..B0, options on C1..B1, delay on
+    C2..B2. Notes further down are swallowed with no effect.
+    Keyswitches are ignored on the T Input Channel.
+
+  Output is reference counted: exactly one note-on per sounding channel+pitch,
+  and the note-off is withheld until the last voice using that pitch releases.
+  That stops chords, T-pitch collisions and mid-note mute changes from stranding
+  notes. Every outgoing message is emitted in ascending sample-offset order.
+
+  All Notes Off / All Sound Off flush pending T-voice notes, on the T channel too.
+
+slider1:2<0,5,1{2 Below,1 Below,1 Above,2 Above,Orbit,Random}>Mode
+slider2:0<0,1,1{Minor,Major}>Chord
+slider3:21<0,127,1>Root (pitch class)
+slider4:0<0,16,1{Follow,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}>T Channel
+slider5:1<0,8,0.125>Delay (beats)
+slider6:0<0,1,1{Off,On}>M-Voice Mute
+slider7:0<0,1,1{Off,On}>Manual T
+slider8:0<0,115,1>Keyswitch Lo (0=off)
+slider9:0<0,1,1{Off,On}>T-Voice Mute
+slider10:0<0,16,1{Off,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16}>T Input Channel
+slider11:21<0,127,1>T Range Low
+slider12:108<0,127,1>T Range High
+
+@init
+// ---------------------------------------------------------------- memory map
+TSET   = 0;       // 256    tone set, ascending
+T_P0   = 256;     // 2048   generated T pitch per input slot (-1 = inactive)
+T_V0   = 2304;    // 2048   T velocity
+T_C0   = 4352;    // 2048   T output channel
+QSIZE  = 1024;
+STRIDE = 6;       // [fire_time, msg1, msg2, msg3, tag, seq]
+QUEUE  = 6400;    // 6144   6400..12543
+SORTB  = 12544;   // 1024   scratch: queue base address
+SORTT  = 13568;   // 1024   scratch: fire time
+SORTS  = 14592;   // 1024   scratch: sequence number
+DLY    = 15616;   // 16     keyswitch delay table
+TREF   = 15632;   // 2048   sounding-note refcount per (out_ch*128 + pitch)
+
+i = 0; loop(256,  mem[TSET + i] = 0; i += 1;);
+i = 0; loop(2048, mem[T_P0 + i] = -1; mem[T_V0 + i] = 0; mem[T_C0 + i] = 0;
+                  mem[TREF + i] = 0; i += 1;);
+i = 0; loop(QSIZE, mem[QUEUE + i * STRIDE] = -1; i += 1;);
+
+mem[DLY + 0]  = 0;    mem[DLY + 1]  = 0.25; mem[DLY + 2]  = 0.375; mem[DLY + 3]  = 0.5;
+mem[DLY + 4]  = 0.75; mem[DLY + 5]  = 1;    mem[DLY + 6]  = 1.5;   mem[DLY + 7]  = 2;
+mem[DLY + 8]  = 3;    mem[DLY + 9]  = 4;    mem[DLY + 10] = 6;     mem[DLY + 11] = 8;
+
+prev_root = -1; prev_chord = -1; prev_lo = -1; prev_hi = -1;
+tset_n = 0;
+total_samples = 0;
+last_m = -1; last_t = -1;
+orbit_flip = 0;
+q_seq = 0;
+q_drops = 0;
+
+// ------------------------------------------------------------- tone set
+// r, r+a, r+b with a<b<12 and k ascending produces a strictly ascending list,
+// so no sort or dedupe pass is needed.
+function build_tset() local(k, n, r, a, b, cnt, lo, hi, best, bestd, pc) (
+  r = root_i % 12;
+  chord_i == 0 ? (a = 3; b = 7;) : (a = 4; b = 7;);
+  lo = min(t_lo, t_hi);
+  hi = max(t_lo, t_hi);
+  cnt = 0;
+  k = 0;
+  while (k < 11) (
+    n = r     + 12 * k; n >= lo && n <= hi && n <= 127 ? (mem[TSET + cnt] = n; cnt += 1;);
+    n = r + a + 12 * k; n >= lo && n <= hi && n <= 127 ? (mem[TSET + cnt] = n; cnt += 1;);
+    n = r + b + 12 * k; n >= lo && n <= hi && n <= 127 ? (mem[TSET + cnt] = n; cnt += 1;);
+    k += 1;
+  );
+  // range narrower than the gaps in the triad: fall back to the single chord
+  // tone nearest the window so the set is never empty
+  cnt < 1 ? (
+    best = r; bestd = 9999;
+    n = 0;
+    while (n < 128) (
+      pc = n % 12;
+      pc == r || pc == (r + a) % 12 || pc == (r + b) % 12 ? (
+        abs(n - lo) < bestd ? (bestd = abs(n - lo); best = n;);
+      );
+      n += 1;
+    );
+    mem[TSET] = best; cnt = 1;
+  );
+  tset_n = cnt;
+);
+
+function t_note(m) local(i, n, b1, b2, a1, a2, pos) (
+  b1 = -1; b2 = -1; a1 = -1; a2 = -1;
+  i = 0;
+  loop(tset_n,
+    n = mem[TSET + i];
+    n < m ? ( b2 = b1; b1 = n; ) :
+    n > m ? ( a1 < 0 ? ( a1 = n; ) : a2 < 0 ? ( a2 = n; ) );
+    i += 1;
+  );
+  a1 < 0 ? ( a1 = b1; a2 = b2; );
+  a2 < 0 ? ( a2 = a1; );
+  b1 < 0 ? ( b1 = a1; b2 = a2; );
+  b2 < 0 ? ( b2 = b1; );
+  mode_i == 4 ? (
+    pos = orbit_flip ? 1 : 2;
+    orbit_flip = 1 - orbit_flip;
+  ) : mode_i == 5 ? (
+    pos = min(3, rand(4) | 0);
+  ) : pos = mode_i;
+  pos == 0 ? b2 : pos == 1 ? b1 : pos == 2 ? a1 : a2
+);
+
+// ------------------------------------------------------------- event queue
+// Every outgoing message goes through here. flush_queue emits them in
+// (fire_time, sequence) order at the end of the block, so downstream always
+// sees ascending sample offsets and correctly ordered note pairs.
+function enqueue(at, m1, m2, m3, tg) local(i, base, done) (
+  i = 0; done = 0;
+  while (!done && i < QSIZE) (
+    base = QUEUE + i * STRIDE;
+    mem[base] < 0 ? (
+      mem[base]     = at;
+      mem[base + 1] = m1;
+      mem[base + 2] = m2;
+      mem[base + 3] = m3;
+      mem[base + 4] = tg;
+      mem[base + 5] = q_seq;
+      q_seq += 1;
+      done = 1;
+    ) : ( i += 1; );
+  );
+  done ? 0 : (q_drops += 1);
+  done
+);
+
+function flush_queue() local(i, j, n, base, off, endt, tmp, st, vel, key, send) (
+  endt = total_samples + samplesblock;
+  n = 0;
+  i = 0;
+  loop(QSIZE,
+    base = QUEUE + i * STRIDE;
+    mem[base] >= 0 && mem[base] < endt ? (
+      mem[SORTB + n] = base;
+      mem[SORTT + n] = mem[base];
+      mem[SORTS + n] = mem[base + 5];
+      n += 1;
+    );
+    i += 1;
+  );
+  i = 1;
+  loop(max(0, n - 1),
+    j = i;
+    while (j > 0 && (mem[SORTT + j - 1] > mem[SORTT + j] ||
+                    (mem[SORTT + j - 1] == mem[SORTT + j] &&
+                     mem[SORTS + j - 1] > mem[SORTS + j]))) (
+      tmp = mem[SORTB + j - 1]; mem[SORTB + j - 1] = mem[SORTB + j]; mem[SORTB + j] = tmp;
+      tmp = mem[SORTT + j - 1]; mem[SORTT + j - 1] = mem[SORTT + j]; mem[SORTT + j] = tmp;
+      tmp = mem[SORTS + j - 1]; mem[SORTS + j - 1] = mem[SORTS + j]; mem[SORTS + j] = tmp;
+      j -= 1;
+    );
+    i += 1;
+  );
+  i = 0;
+  loop(n,
+    base = mem[SORTB + i];
+    off  = max(0, min(samplesblock - 1, (mem[base] - total_samples) | 0));
+    st   = mem[base + 1] & 0xF0;
+    vel  = mem[base + 3];
+    key  = (mem[base + 1] & 0x0F) * 128 + mem[base + 2];
+    send = 1;
+    st == 0x90 && vel > 0 ? (
+      mem[TREF + key] += 1;
+      mem[TREF + key] > 1 ? send = 0;
+    ) : st == 0x80 || (st == 0x90 && vel == 0) ? (
+      mem[TREF + key] > 0 ? (
+        mem[TREF + key] -= 1;
+        mem[TREF + key] > 0 ? send = 0;
+      ) : send = 0;
+    );
+    send ? midisend(off, mem[base + 1], mem[base + 2], mem[base + 3]);
+    mem[base] = -1;
+    i += 1;
+  );
+);
+
+// drop every queued note event and forget all held state (All Notes Off)
+function panic_notes() local(i, base, st) (
+  i = 0;
+  loop(QSIZE,
+    base = QUEUE + i * STRIDE;
+    mem[base] >= 0 ? (
+      st = mem[base + 1] & 0xF0;
+      st == 0x80 || st == 0x90 ? mem[base] = -1;
+    );
+    i += 1;
+  );
+  i = 0; loop(2048, mem[T_P0 + i] = -1; mem[TREF + i] = 0; i += 1;);
+);
+
+function note_name(n) local(pc, oc) (
+  pc = n % 12;
+  oc = (n / 12 | 0) - 1;
+  pc == 0  ? strcpy(#nn, "C");
+  pc == 1  ? strcpy(#nn, "C#");
+  pc == 2  ? strcpy(#nn, "D");
+  pc == 3  ? strcpy(#nn, "Eb");
+  pc == 4  ? strcpy(#nn, "E");
+  pc == 5  ? strcpy(#nn, "F");
+  pc == 6  ? strcpy(#nn, "F#");
+  pc == 7  ? strcpy(#nn, "G");
+  pc == 8  ? strcpy(#nn, "Ab");
+  pc == 9  ? strcpy(#nn, "A");
+  pc == 10 ? strcpy(#nn, "Bb");
+  pc == 11 ? strcpy(#nn, "B");
+  strcat(#nn, sprintf(#, "%d", oc));
+);
+
+// Controls sit in the three octaves directly below Keyswitch Lo, so they stay
+// reachable on a real controller no matter where the split is placed.
+function handle_keyswitch(n) local(g, r0, rel, ks_base) (
+  ks_base = max(0, ks_lo - 36);
+  rel = n - ks_base;
+  rel >= 0 ? (
+    // sliderchange() masks are 2^(N-1): s1=1 s2=2 s3=4 s5=16 s6=32 s7=64
+    g  = rel / 12 | 0;
+    r0 = rel % 12;
+    g == 0 ? (
+      root_i = r0;
+      slider3 = root_i; sliderchange(4);
+      build_tset();
+      prev_root = root_i; prev_chord = chord_i; prev_lo = t_lo; prev_hi = t_hi;
+    ) :
+    g == 1 ? (
+      r0 == 0  ? (mode_i = 0; slider1 = 0; sliderchange(1););
+      r0 == 1  ? (mode_i = 1; slider1 = 1; sliderchange(1););
+      r0 == 2  ? (mode_i = 2; slider1 = 2; sliderchange(1););
+      r0 == 3  ? (mode_i = 3; slider1 = 3; sliderchange(1););
+      r0 == 4  ? (chord_i = 0; slider2 = 0; sliderchange(2);
+                  build_tset(); prev_chord = 0;);
+      r0 == 5  ? (chord_i = 1; slider2 = 1; sliderchange(2);
+                  build_tset(); prev_chord = 1;);
+      r0 == 6  ? (manual_t = 1; slider7 = 1; sliderchange(64););
+      r0 == 7  ? (manual_t = 0; slider7 = 0; sliderchange(64););
+      r0 == 8  ? (m_mute = 1; slider6 = 1; sliderchange(32););
+      r0 == 9  ? (m_mute = 0; slider6 = 0; sliderchange(32););
+      r0 == 10 ? (mode_i = 4; slider1 = 4; sliderchange(1););
+      r0 == 11 ? (mode_i = 5; slider1 = 5; sliderchange(1););
+    ) :
+    g == 2 ? (
+      delay_beats = mem[DLY + r0];
+      slider5 = delay_beats; sliderchange(16);
+    );
+  );
+);
+
+@slider
+mode_i      = slider1 | 0;
+chord_i     = slider2 | 0;
+root_i      = slider3 | 0;
+t_ch_i      = slider4 | 0;
+delay_beats = slider5;
+m_mute      = slider6 | 0;
+manual_t    = slider7 | 0;
+ks_lo       = slider8 | 0;
+t_mute      = slider9 | 0;
+t_inch      = slider10 | 0;
+t_lo        = slider11 | 0;
+t_hi        = slider12 | 0;
+t_inch = max(0, min(16, t_inch));
+t_lo   = max(0, min(127, t_lo));
+t_hi   = max(0, min(127, t_hi));
+root_i != prev_root || chord_i != prev_chord || t_lo != prev_lo || t_hi != prev_hi ? (
+  build_tset();
+  prev_root = root_i; prev_chord = chord_i; prev_lo = t_lo; prev_hi = t_hi;
+);
+
+@block
+beat_samps  = tempo > 0 ? (60.0 / tempo) * srate : 0;
+delay_samps = max(0, floor(delay_beats * beat_samps));
+root_i != prev_root || chord_i != prev_chord || t_lo != prev_lo || t_hi != prev_hi ? (
+  build_tset();
+  prev_root = root_i; prev_chord = chord_i; prev_lo = t_lo; prev_hi = t_hi;
+);
+
+while (midirecv(offset, msg1, msg2, msg3)) (
+  type = msg1 & 0xF0;
+  ch   = msg1 & 0x0F;
+  note = msg2;
+  vel  = msg3;
+  tag  = ch * 128 + note;
+  is_on  = type == 0x90 && vel > 0;
+  is_off = type == 0x80 || (type == 0x90 && vel == 0);
+  t_in   = t_inch > 0 && ch == t_inch - 1;
+  now    = total_samples + offset;
+  t_at   = now + delay_samps;
+
+  // keyswitch zone: notes only. msg2 on a CC is the controller number and on a
+  // pitch bend it is the LSB, so non-note messages must never reach this branch.
+  ks_lo > 0 && (is_on || is_off) && note < ks_lo && !t_in ? (
+    is_on ? handle_keyswitch(note);
+  ) : (
+
+    is_on ? (
+      // implicit note-off if this key is somehow still active
+      mem[T_P0 + tag] >= 0 ? (
+        enqueue(t_at, 0x80 | mem[T_C0 + tag], mem[T_P0 + tag], 0, tag);
+        mem[T_P0 + tag] = -1;
+      );
+      t_in || manual_t ? (
+        tnote = note;
+      ) : (
+        tnote = t_note(note);
+        m_mute ? 0 : enqueue(now, msg1, msg2, msg3, -1);
+      );
+      mem[T_P0 + tag] = tnote;
+      mem[T_V0 + tag] = vel;
+      mem[T_C0 + tag] = t_ch_i > 0 ? t_ch_i - 1 : ch;
+      last_m = note;
+      last_t = tnote;
+      t_mute ? 0 : enqueue(t_at, 0x90 | mem[T_C0 + tag], tnote, vel, tag);
+
+    ) : is_off ? (
+      // the T note-off is never gated on t_mute: an off for something that is
+      // not sounding is absorbed by the refcount in flush_queue
+      mem[T_P0 + tag] >= 0 ? (
+        enqueue(t_at, 0x80 | mem[T_C0 + tag], mem[T_P0 + tag], 0, tag);
+        mem[T_P0 + tag] = -1;
+      );
+      t_in || manual_t ? 0 : enqueue(now, msg1, msg2, msg3, -1);
+
+    ) : type == 0xB0 && (msg2 == 120 || msg2 == 123) ? (
+      panic_notes();
+      enqueue(now, msg1, msg2, msg3, -1);
+      t_ch_i > 0 && t_ch_i - 1 != ch ? enqueue(now, 0xB0 | (t_ch_i - 1), msg2, msg3, -1);
+
+    ) : (
+      enqueue(now, msg1, msg2, msg3, -1);
+    );
+  );
+);
+
+flush_queue();
+total_samples += samplesblock;
+
+@gfx 480 250
+gfx_clear = 0x141414;
+gfx_set(0.92, 0.92, 0.92);
+gfx_setfont(1, "Arial", 16, 'b');
+gfx_x = 10; gfx_y = 8;
+gfx_drawstr("Tintinnabulator");
+
+gfx_setfont(1, "Arial", 11, 0);
+gfx_set(0.75, 0.85, 1);
+gfx_x = 10; gfx_y = 30;
+mode_i == 0 ? strcpy(#md, "2 Below") : mode_i == 1 ? strcpy(#md, "1 Below") :
+mode_i == 2 ? strcpy(#md, "1 Above") : mode_i == 3 ? strcpy(#md, "2 Above") :
+mode_i == 4 ? strcpy(#md, "Orbit")   : strcpy(#md, "Random");
+chord_i == 0 ? strcpy(#chord, "Minor") : strcpy(#chord, "Major");
+root_i % 12 == 0  ? strcpy(#rootname, "C");
+root_i % 12 == 1  ? strcpy(#rootname, "C#");
+root_i % 12 == 2  ? strcpy(#rootname, "D");
+root_i % 12 == 3  ? strcpy(#rootname, "Eb");
+root_i % 12 == 4  ? strcpy(#rootname, "E");
+root_i % 12 == 5  ? strcpy(#rootname, "F");
+root_i % 12 == 6  ? strcpy(#rootname, "F#");
+root_i % 12 == 7  ? strcpy(#rootname, "G");
+root_i % 12 == 8  ? strcpy(#rootname, "Ab");
+root_i % 12 == 9  ? strcpy(#rootname, "A");
+root_i % 12 == 10 ? strcpy(#rootname, "Bb");
+root_i % 12 == 11 ? strcpy(#rootname, "B");
+t_ch_i == 0 ? strcpy(#tcs, "Follow") : sprintf(#tcs, "%d", t_ch_i);
+t_inch > 0 ? sprintf(#tin, "   T-in: ch %d", t_inch) : strcpy(#tin, "");
+gfx_drawstr(sprintf(#s, "T-voice: %s   Chord: %s %s   Delay: %g beats   T ch: %s%s",
+                    #md, #rootname, #chord, delay_beats, #tcs, #tin));
+
+gfx_set(1, 0.7, 0.35);
+gfx_x = 10; gfx_y = 50;
+last_m >= 0 ? (
+  note_name(last_m); strcpy(#mstr, #nn);
+  note_name(last_t);
+  gfx_drawstr(sprintf(#s2, "M %s  ->  T %s", #mstr, #nn));
+) : (
+  gfx_drawstr("Play a melody...");
+);
+
+tset_n > 0 ? (
+  g_tmin = mem[TSET + 0];
+  g_tmax = mem[TSET + tset_n - 1];
+  g_mref = last_m >= 0 ? last_m : g_tmin;
+  g_rlo  = min(t_lo, t_hi);
+  g_rhi  = max(t_lo, t_hi);
+  g_lo   = min(min(g_tmin, g_mref), g_rlo);
+  g_hi   = max(max(g_tmax, g_mref), g_rhi);
+  g_span = max(1, g_hi - g_lo);
+  g_w    = gfx_w - 20;
+
+  // T range band
+  gfx_set(0.18, 0.18, 0.18);
+  gfx_rect(10 + (g_rlo - g_lo) * g_w / g_span, 74,
+           max(2, (g_rhi - g_rlo) * g_w / g_span), 34);
+
+  g_i = 0;
+  loop(tset_n,
+    g_n  = mem[TSET + g_i];
+    g_px = 10 + (g_n - g_lo) * g_w / g_span;
+    g_bw = max(3, g_w / tset_n * 0.7);
+    g_n == last_t ? gfx_set(1, 0.6, 0.15) : gfx_set(0.35, 0.75, 0.35);
+    gfx_rect(g_px, 78, g_bw, 26);
+    g_i += 1;
+  );
+  // M-voice marker, drawn by pitch whether or not it is a chord tone
+  last_m >= 0 ? (
+    gfx_set(0.25, 0.5, 1);
+    gfx_rect(10 + (last_m - g_lo) * g_w / g_span, 70, 3, 42);
+  );
+
+  gfx_setfont(1, "Arial", 9, 0);
+  gfx_set(0.6, 0.6, 0.6);
+  gfx_x = 10; gfx_y = 114;
+  note_name(g_tmin); strcpy(#lo, #nn);
+  note_name(g_tmax); strcpy(#hi, #nn);
+  note_name(g_rlo); strcpy(#rlo, #nn);
+  note_name(g_rhi); strcpy(#rhi, #nn);
+  gfx_drawstr(sprintf(#tstr,
+    "Tone set: %d notes, %s..%s   |   T range %s..%s   |   blue = M voice, orange = T voice",
+    tset_n, #lo, #hi, #rlo, #rhi));
+);
+
+ks_lo > 0 ? (
+  gfx_setfont(1, "Arial", 10, 0);
+  gfx_set(0.95, 0.85, 0.4);
+  gfx_x = 10; gfx_y = 136;
+  note_name(max(0, ks_lo - 36)); strcpy(#kb, #nn);
+  note_name(ks_lo - 1);
+  gfx_drawstr(sprintf(#k1, "Keyswitch zone: %s..%s (everything below note %d is swallowed)",
+                      #kb, #nn, ks_lo));
+  gfx_set(0.7, 0.7, 0.7);
+  gfx_x = 10; gfx_y = 152;
+  gfx_drawstr("  low octave: root   mid octave: 0-3 mode, 4/5 chord, 6/7 manual-T, 8/9 M-mute, 10 orbit, 11 random");
+  gfx_x = 10; gfx_y = 166;
+  gfx_drawstr("  high octave: delay   (all channels except the T input channel)");
+);
+
+gfx_setfont(1, "Arial", 10, 0);
+gfx_set(0.8, 0.3, 0.3);
+gfx_x = 10; gfx_y = 192;
+m_mute   ? gfx_drawstr("M voice: MUTED") :
+manual_t ? gfx_drawstr("Manual T: playing keys are the T voice") :
+           gfx_drawstr("M voice: playing");
+t_mute ? (gfx_x = 200; gfx_drawstr("| T voice: MUTED"););
+q_drops > 0 ? (
+  gfx_set(1, 0.4, 0.2);
+  gfx_x = 10; gfx_y = 210;
+  gfx_drawstr(sprintf(#qd, "event queue overflowed %d times", q_drops));
+);

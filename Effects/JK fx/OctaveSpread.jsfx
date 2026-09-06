@@ -1,0 +1,249 @@
+desc:Octave Spread
+author: JK
+tags: midi chord spread voice-leading
+about:
+  Opposite of octave folding. Spreads an incoming chord across a defined note
+  range by choosing the octave for each voice that minimises movement from the
+  previous chord (voice leading).
+  On the first chord, voices are distributed evenly across the range.
+  On subsequent chords, each voice moves to the nearest available octave of its
+  pitch class — smooth voice leading emerges naturally across chord changes.
+  Original note-ons are suppressed; note-offs are remapped to the dispatched pitch.
+  The range should span at least one octave so all pitch classes are reachable.
+  Sending All Notes Off resets voice leading history.
+
+slider1:36<0,127,1>Min Note
+slider2:96<0,127,1>Max Note
+slider3:15<1,200,1>Chord Window (ms)
+
+@init
+
+CHORD_MAX = 32;
+
+// Memory layout
+chord_note = 0;   // [0..31]   buffered note numbers
+chord_vel  = 32;  // [32..63]  buffered velocities
+chord_ch   = 64;  // [64..95]  buffered channels
+prev_note  = 96;  // [96..127] last dispatched notes (sorted low->high)
+disp_note  = 128; // [128..159] current chord dispatch scratch
+note_map   = 160; // [160..287] orig_note -> dispatched (-1 = none)
+
+i = 0; loop(128, note_map[i] = -1; i += 1;);
+i = 0; loop(32,  prev_note[i] = -1; i += 1;);
+
+chord_count   = 0;
+chord_win_end = -1;
+total_samples = 0;
+prev_count    = 0;
+prev_has      = 0;
+
+function flush_chord(foff)
+local(n, i, j, tmp, pc, target, pos, best, best_dist, dist, note, vel, ch) (
+  n = chord_count;
+  n <= 0 ? (chord_count = 0; chord_win_end = -1;);
+  n > 0 ? (
+
+    // Insertion sort by note number (ascending) for consistent voice pairing
+    i = 1;
+    loop(n - 1,
+      j = i;
+      while (j > 0 && chord_note[j-1] > chord_note[j]) (
+        tmp = chord_note[j-1]; chord_note[j-1] = chord_note[j]; chord_note[j] = tmp;
+        tmp = chord_vel[j-1];  chord_vel[j-1]  = chord_vel[j];  chord_vel[j]  = tmp;
+        tmp = chord_ch[j-1];   chord_ch[j-1]   = chord_ch[j];   chord_ch[j]   = tmp;
+        j -= 1;
+      );
+      i += 1;
+    );
+
+    // Assign octave for each voice
+    i = 0;
+    loop(n,
+      note = chord_note[i];
+      vel  = chord_vel[i];
+      ch   = chord_ch[i];
+      pc   = note % 12;
+
+      prev_has ? (
+        // Voice lead: pair with corresponding sorted prev voice (clamp if sizes differ)
+        target = prev_note[min(i, prev_count - 1)];
+      ) : (
+        // First chord: spread evenly across range
+        n > 1 ? (
+          target = min_note + (max_note - min_note) * i / (n - 1);
+        ) : (
+          target = (min_note + max_note) / 2;
+        );
+      );
+
+      // Find octave of this pitch class in [min_note, max_note] closest to target
+      best = -1; best_dist = 999999;
+      pos = pc;
+      while (pos <= max_note) (
+        pos >= min_note ? (
+          dist = abs(pos - target);
+          dist < best_dist ? (best = pos; best_dist = dist;);
+        );
+        pos += 12;
+      );
+      // Fallback if pitch class is unreachable (range smaller than an octave)
+      best < 0 ? best = max(min_note, min(max_note, note));
+
+      disp_note[i]   = best;
+      note_map[note] = best;
+      midisend(foff, 0x90 | ch, best, vel);
+      i += 1;
+    );
+
+    // Store dispatched notes as next chord's voice-leading reference
+    prev_count = n;
+    i = 0; loop(n, prev_note[i] = disp_note[i]; i += 1;);
+    prev_has = 1;
+
+    chord_count   = 0;
+    chord_win_end = -1;
+  );
+);
+
+@slider
+min_note        = max(0, min(115, floor(slider1)));
+max_note        = max(min_note + 12, min(127, floor(slider2)));
+chord_win_samps = max(1, slider3) * srate / 1000;
+
+@block
+
+chord_count > 0 && chord_win_end >= 0 && chord_win_end < total_samples + samplesblock ? (
+  send_off = max(0, min(samplesblock - 1, (chord_win_end - total_samples) | 0));
+  flush_chord(send_off);
+);
+
+while (midirecv(offset, msg1, msg2, msg3)) (
+  status = msg1 & 0xF0;
+  ch     = msg1 & 0x0F;
+  note   = msg2;
+  vel    = msg3;
+
+  // Note On: buffer, suppress original
+  status == 0x90 && vel > 0 ? (
+
+    chord_count > 0 && (total_samples + offset) > chord_win_end ? flush_chord(offset);
+    chord_count == 0 ? chord_win_end = total_samples + offset + chord_win_samps;
+
+    chord_count < CHORD_MAX ? (
+      chord_note[chord_count] = note;
+      chord_vel[chord_count]  = vel;
+      chord_ch[chord_count]   = ch;
+      chord_count += 1;
+    );
+
+  // Note Off: remap to dispatched pitch
+  ) : (status == 0x80 || (status == 0x90 && vel == 0)) ? (
+
+    // Remove from buffer if not yet dispatched
+    found = 0; j = 0;
+    while (!found && j < chord_count) (
+      chord_note[j] == note ? (
+        chord_count -= 1;
+        chord_note[j] = chord_note[chord_count];
+        chord_vel[j]  = chord_vel[chord_count];
+        chord_ch[j]   = chord_ch[chord_count];
+        found = 1;
+      ) : (j += 1;);
+    );
+
+    // Forward note-off to dispatched pitch
+    !found && note_map[note] >= 0 ? (
+      disp = note_map[note];
+      midisend(offset, (status == 0x80 ? 0x80 : 0x90) | ch, disp, vel);
+      note_map[note] = -1;
+    );
+
+  // All Sound Off / All Notes Off: clear state and reset voice leading
+  ) : status == 0xB0 && (msg2 == 120 || msg2 == 123) ? (
+    i = 0; loop(128, note_map[i] = -1; i += 1;);
+    chord_count = 0; chord_win_end = -1;
+    prev_has = 0;
+    midisend(offset, msg1, msg2, msg3);
+
+  ) : (
+    midisend(offset, msg1, msg2, msg3);
+  );
+);
+
+total_samples += samplesblock;
+
+
+@gfx 420 110
+
+gfx_clear = 0x111111;
+
+// Last dispatched chord
+gfx_setfont(1, "Arial", 14, 'b');
+gfx_set(1, 1, 1);
+gfx_x = 10; gfx_y = 10;
+
+prev_has && prev_count > 0 ? (
+  sprintf(#s, "Last: ");
+  i = 0;
+  loop(prev_count,
+    n_d = prev_note[i];
+    pc_d  = n_d % 12;
+    oct_d = (n_d / 12 | 0) - 1;
+    pc_d == 0  ? strcpy(#nn, "C");
+    pc_d == 1  ? strcpy(#nn, "C#");
+    pc_d == 2  ? strcpy(#nn, "D");
+    pc_d == 3  ? strcpy(#nn, "D#");
+    pc_d == 4  ? strcpy(#nn, "E");
+    pc_d == 5  ? strcpy(#nn, "F");
+    pc_d == 6  ? strcpy(#nn, "F#");
+    pc_d == 7  ? strcpy(#nn, "G");
+    pc_d == 8  ? strcpy(#nn, "G#");
+    pc_d == 9  ? strcpy(#nn, "A");
+    pc_d == 10 ? strcpy(#nn, "A#");
+    pc_d == 11 ? strcpy(#nn, "B");
+    strcat(#s, sprintf(#t, "%s%d ", #nn, oct_d));
+    i += 1;
+  );
+  gfx_drawstr(#s);
+) : (
+  gfx_drawstr("Play a chord...");
+);
+
+// Range + window (with note names)
+gfx_setfont(1, "Arial", 12, 0);
+gfx_set(0.6, 1, 0.6);
+gfx_x = 10; gfx_y = 36;
+
+pc_d = min_note % 12; oct_d = (min_note / 12 | 0) - 1;
+pc_d == 0  ? strcpy(#lo, "C");  pc_d == 1  ? strcpy(#lo, "C#");
+pc_d == 2  ? strcpy(#lo, "D");  pc_d == 3  ? strcpy(#lo, "D#");
+pc_d == 4  ? strcpy(#lo, "E");  pc_d == 5  ? strcpy(#lo, "F");
+pc_d == 6  ? strcpy(#lo, "F#"); pc_d == 7  ? strcpy(#lo, "G");
+pc_d == 8  ? strcpy(#lo, "G#"); pc_d == 9  ? strcpy(#lo, "A");
+pc_d == 10 ? strcpy(#lo, "A#"); pc_d == 11 ? strcpy(#lo, "B");
+sprintf(#lo_str, "%s%d", #lo, oct_d);
+
+pc_d = max_note % 12; oct_d = (max_note / 12 | 0) - 1;
+pc_d == 0  ? strcpy(#hi, "C");  pc_d == 1  ? strcpy(#hi, "C#");
+pc_d == 2  ? strcpy(#hi, "D");  pc_d == 3  ? strcpy(#hi, "D#");
+pc_d == 4  ? strcpy(#hi, "E");  pc_d == 5  ? strcpy(#hi, "F");
+pc_d == 6  ? strcpy(#hi, "F#"); pc_d == 7  ? strcpy(#hi, "G");
+pc_d == 8  ? strcpy(#hi, "G#"); pc_d == 9  ? strcpy(#hi, "A");
+pc_d == 10 ? strcpy(#hi, "A#"); pc_d == 11 ? strcpy(#hi, "B");
+sprintf(#hi_str, "%s%d", #hi, oct_d);
+
+gfx_drawstr(sprintf(#, "Range: %s – %s   Window: %dms   Voices: %d",
+  #lo_str, #hi_str, floor(slider3), prev_has ? prev_count : 0));
+
+// Chord buffer indicator
+chord_count > 0 ? (
+  gfx_setfont(1, "Arial", 11, 0);
+  gfx_set(1, 0.8, 0.2);
+  gfx_x = 10; gfx_y = 60;
+  gfx_drawstr(sprintf(#, "Buffering: %d note(s)...", chord_count));
+);
+
+gfx_set(0.3, 0.42, 0.62);
+gfx_x = 10; gfx_y = 88;
+gfx_setfont(1, "Arial", 10, 0);
+gfx_drawstr("All Notes Off resets voice leading history");

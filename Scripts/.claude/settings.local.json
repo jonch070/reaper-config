@@ -9,7 +9,17 @@
       "Bash(git -C \"/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts\" commit -m \"$\\(cat <<''EOF''\nAdd Item Sampler fork with snap offset support\n\nFork of Daniel Lumertz''s Item Sampler v1.3.6. Adds UseSnapOffset option\nthat positions items so their snap offset aligns with MIDI note times.\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git -C \"/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts\" push origin main)",
       "Bash(gh -C \"/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts\" api repos/jonch070/reaper-config/commits/d70f61d5 --jq '.html_url')",
-      "Bash(gh api:*)"
+      "Bash(gh api:*)",
+      "Bash(xargs -0 -I{} echo {})",
+      "Bash(xargs -I{} basename {})",
+      "Bash(grep -iE \"^.*name.*\\(track|item\\).*\\\\.\\(lua|eel\\)$\")",
+      "Bash(python3 *)",
+      "Bash(lua -v)",
+      "Bash(lua5.1 -v)",
+      "Bash(lua test_harness.lua)",
+      "Bash(lua test_harness_paste.lua)",
+      "Read(//Users/jonathankawchuk/Documents/Projects/Film/Perfectly Human Sizzle/PHS Templating/PHS Template 2026-07-09/**)",
+      "Bash(grep -n \"Cues A\\\\|Cues B\\\\|\\\\\"Notes\\\\\"\\\\|Notes -\\\\| Notes$\\\\|Notes track\\\\|Notes item\" \"/Users/jonathankawchuk/Library/Application Support/REAPER/Scripts/JK Scripts/JK - Import Notes to Project from SpotNotes.lua\")"
     ]
   }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="2ad1e79052a93d190dacb045627d57721c47a9a3" name="X-Raym Scripts">
+<index version="1" commit="6944b307eed6b33c38f3b51421fc807e6149387d" name="X-Raym Scripts">
   <category name="Color">
     <reapack name="X-Raym_Display color of selected tracks items and takes in the console.eel" type="script">
       <version name="1.0" author="X-Raym" time="2015-03-03T13:52:58Z">
@@ -232,6 +232,10 @@
         <changelog><![CDATA[# Optimization]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/b5a1cae8185f739e631c15ca844ec9a1c6460a13/Envelopes/X-Raym_Fade%20out%20master%20envelope%20at%20each%20selected%20items%20end.lua</source>
       </version>
+      <version name="1.1.1" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/X-Raym_Fade%20out%20master%20envelope%20at%20each%20selected%20items%20end.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Move edit cursor to next envelope point.lua" type="script" desc="Move edit cursor to next envelope point">
       <metadata>
@@ -355,6 +359,10 @@
         <changelog><![CDATA[# Playrate envelope unit]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/3eaf3a75f84d92ef7d0219cda4399f74387d3e89/Envelopes/X-Raym_Set%20or%20Offset%20selected%20envelope%20points%20value.lua</source>
       </version>
+      <version name="2.0.4" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/X-Raym_Set%20or%20Offset%20selected%20envelope%20points%20value.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Set selected envelope points value from value at edit cursor.lua" type="script" desc="Set selected envelope points value from value at edit cursor">
       <version name="1.0" author="X-Raym" time="2021-05-30T21:21:31Z">
@@ -391,6 +399,10 @@
       <version name="1.2" author="X-Raym" time="2015-12-24T16:57:47Z">
         <changelog><![CDATA[# Propper send support]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/b5a1cae8185f739e631c15ca844ec9a1c6460a13/Envelopes/Across%20Tracks/X-Raym_Copy%20visible%20armed%20envelope%20of%20last%20touched%20track%20and%20paste%20to%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.2.1" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/Across%20Tracks/X-Raym_Copy%20visible%20armed%20envelope%20of%20last%20touched%20track%20and%20paste%20to%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Copy visible armed envelope points in time selection of last touched track and insert in selected tracks.lua" type="script" desc="Copy visible armed envelope points in time selection of last touched track and insert in selected tracks">
@@ -430,6 +442,10 @@
       <version name="1.1.1" author="X-Raym" time="2025-10-15T09:45:11Z">
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/Across%20Tracks/X-Raym_Merge%20visible%20armed%20envelopes%20of%20selected%20track%20to%20selected%20tracks%20VCA%20like).lua</source>
+      </version>
+      <version name="1.1.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/Across%20Tracks/X-Raym_Merge%20visible%20armed%20envelopes%20of%20selected%20track%20to%20selected%20tracks%20VCA%20like).lua</source>
       </version>
     </reapack>
   </category>
@@ -851,6 +867,10 @@
 # Clear console]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20X%20to%20Y%20preserving%20edges%20on%20choosen%20envelopes.lua</source>
       </version>
+      <version name="1.6.5" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20X%20to%20Y%20preserving%20edges%20on%20choosen%20envelopes.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Add envelope points at time selection edges from XdB to XdB preserving edges on Volume envelope.lua" type="script" desc="Add envelope points at time selection edges from XdB to XdB preserving edges on Volume envelope">
       <metadata>
@@ -873,6 +893,10 @@
       <version name="1.0.2" author="X-Raym" time="2025-10-15T09:45:11Z">
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20XdB%20to%20XdB%20preserving%20edges%20on%20Volume%20envelope.lua</source>
+      </version>
+      <version name="1.0.3" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Add%20envelope%20points%20at%20time%20selection%20edges%20from%20XdB%20to%20XdB%20preserving%20edges%20on%20Volume%20envelope.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Add point on envelopes at edit cursor with center value.lua" type="script" desc="Add point on envelopes at edit cursor with center value">
@@ -1192,6 +1216,10 @@
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Invert%20envelope%20points%20values%20preserving%20edges%20if%20time%20selection.lua</source>
       </version>
+      <version name="1.5.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Invert%20envelope%20points%20values%20preserving%20edges%20if%20time%20selection.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Invert envelope points values.lua" type="script" desc="Invert envelope points values">
       <metadata>
@@ -1215,6 +1243,10 @@
       <version name="1.4.1" author="X-Raym" time="2025-10-15T09:45:11Z">
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Invert%20envelope%20points%20values.lua</source>
+      </version>
+      <version name="1.4.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Invert%20envelope%20points%20values.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Quantize envelope points.lua" type="script" desc="Quantize envelope points">
@@ -1381,6 +1413,10 @@
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Set%20flat%20points%20value%20in%20time%20selection%20preserving%20edges%20if%20time%20selection.lua</source>
       </version>
+      <version name="1.6.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Set%20flat%20points%20value%20in%20time%20selection%20preserving%20edges%20if%20time%20selection.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Set flat points value in time selection.lua" type="script" desc="Set flat points value in time selection">
       <metadata>
@@ -1399,6 +1435,10 @@
       <version name="1.6.1" author="X-Raym" time="2025-10-15T09:45:11Z">
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Set%20flat%20points%20value%20in%20time%20selection.lua</source>
+      </version>
+      <version name="1.6.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Set%20flat%20points%20value%20in%20time%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Set or Offset envelope points preserving edges if time selection.lua" type="script" desc="Set or Offset envelope points preserving edges if time selection">
@@ -1419,6 +1459,10 @@
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Set%20or%20Offset%20envelope%20points%20preserving%20edges%20if%20time%20selection.lua</source>
       </version>
+      <version name="1.6.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Set%20or%20Offset%20envelope%20points%20preserving%20edges%20if%20time%20selection.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Set or Offset envelope points value.lua" type="script" desc="Set or Offset envelope points value">
       <metadata>
@@ -1437,6 +1481,10 @@
       <version name="1.6.1" author="X-Raym" time="2025-10-15T09:45:11Z">
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Set%20or%20Offset%20envelope%20points%20value.lua</source>
+      </version>
+      <version name="1.6.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Set%20or%20Offset%20envelope%20points%20value.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Set selected tracks parameters values with envelopes values at edit cursor.lua" type="script" desc="Set selected tracks parameters values with envelopes values at edit cursor">
@@ -1461,6 +1509,10 @@
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Set%20selected%20tracks%20parameters%20values%20with%20envelopes%20values%20at%20edit%20cursor.lua</source>
       </version>
+      <version name="1.2.3" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Set%20selected%20tracks%20parameters%20values%20with%20envelopes%20values%20at%20edit%20cursor.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Toggle certain envelopes properties.lua" type="script" desc="Toggle certain envelopes properties">
       <metadata>
@@ -1475,6 +1527,10 @@
       <version name="1.0" author="X-Raym" time="2016-05-04T14:20:21Z">
         <changelog><![CDATA[+ Initial release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/b5a1cae8185f739e631c15ca844ec9a1c6460a13/Envelopes/On%20Tracks/X-Raym_Toggle%20certain%20envelopes%20properties.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Toggle%20certain%20envelopes%20properties.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Toggle envelope fader scaling.lua" type="script" desc="Toggle envelope fader scaling">
@@ -1516,6 +1572,10 @@
         <changelog><![CDATA[# Better dB calculation]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/145811b445e303c3a8d432d8fb29171c13e46ac2/Envelopes/On%20Tracks/X-Raym_Trim%20selected%20tracks%20parameters%20values%20with%20envelopes%20values%20at%20edit%20cursor.lua</source>
       </version>
+      <version name="1.2.2" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/On%20Tracks/X-Raym_Trim%20selected%20tracks%20parameters%20values%20with%20envelopes%20values%20at%20edit%20cursor.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Envelopes/Takes">
@@ -1541,6 +1601,10 @@
       <version name="1.0" author="X-Raym" time="2021-02-09T10:32:06Z">
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Envelopes/Takes/X-Raym_Apply%20selected%20items%20pitch%20offset%20to%20their%20pitch%20envelope%20and%20reset.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/Takes/X-Raym_Apply%20selected%20items%20pitch%20offset%20to%20their%20pitch%20envelope%20and%20reset.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Create take pitch envelope (random points - with GUI).eel" type="script">
@@ -1569,6 +1633,10 @@
       <version name="1.1.2" author="X-Raym" time="2022-07-19T17:47:04Z">
         <changelog><![CDATA[+ Selected points mode]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Envelopes/Takes/X-Raym_Offset%20selected%20items%20pitch%20envelope.lua</source>
+      </version>
+      <version name="1.1.3" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Envelopes/Takes/X-Raym_Offset%20selected%20items%20pitch%20envelope.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Pan active takes randomly (normal distribution) with GUI - OneSeed.eel" type="script">
@@ -1688,6 +1756,13 @@
         <changelog><![CDATA[# Window resize border color
 # Moving window with click and drag titlebar only]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/5dcf640b073b34b1aa28e1f064bd59848e5bf51d/FX/X-Raym_List%20installed%20FX%20according%20to%20their%20installation%20order_ReaImGui.lua</source>
+      </version>
+      <version name="0.3.0" author="X-Raym" time="2026-06-13T11:37:05Z">
+        <changelog><![CDATA[# Replace input text by buttons
++ Click button copy its value
++ File name column
+# Fix input search]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/b028d704e62ba08c65e95284393ab4d92c5d22d0/FX/X-Raym_List%20installed%20FX%20according%20to%20their%20installation%20order_ReaImGui.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Propagate last focused FX parameters values but bypass to similarly named FX on child tracks (real-time).lua" type="script" desc="Propagate last focused FX parameters values but bypass to similarly named FX on child tracks (real-time)">
@@ -1913,6 +1988,10 @@
         <changelog><![CDATA[+ Preserve grouping if groups active. Treat first selected item (in position) in each group as group leader (other are ignored during the alignement).]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Items%20Editing/X-Raym_Align%20selected%20items%20across%20tracks.lua</source>
       </version>
+      <version name="1.2.1" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetTrackFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Editing/X-Raym_Align%20selected%20items%20across%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Convert selected looped items into independent items.eel" type="script" desc="Convert selected looped items into independent items">
       <version name="1.0" author="X-Raym" time="2015-12-24T16:57:47Z">
@@ -1949,6 +2028,10 @@
       <version name="1.2" author="X-Raym" time="2021-12-15T23:44:05Z">
         <changelog><![CDATA[# Select new items after copy]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Items%20Editing/X-Raym_Copy%20selected%20items%20and%20paste%20at%20mouse%20position.lua</source>
+      </version>
+      <version name="1.2.1" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetThingFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Editing/X-Raym_Copy%20selected%20items%20and%20paste%20at%20mouse%20position.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Create empty items on selected tracks from selected midi takes notes.lua" type="script" desc="Create empty items on selected tracks from selected midi takes notes">
@@ -2155,6 +2238,12 @@
       <version name="1.0.1" author="X-Raym" time="2020-04-09T10:25:26Z">
         <changelog><![CDATA[+ Auto fade]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Items%20Editing/X-Raym_Implode%20selected%20items%20on%20same%20track%20into%20takes%20preserving%20position.lua</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Move cusor to item under mouse and delete it.lua" type="script" desc="Move cusor to item under mouse and delete it">
+      <version name="1.0.0" author="X-Raym" time="2026-06-13T11:37:08Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7fc4e0e33438d31bd1e314c37685e99145bcd4c6/Items%20Editing/X-Raym_Move%20cusor%20to%20item%20under%20mouse%20and%20delete%20it.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Move item position of item under mouse to edit cursor according to ripple state preserving end.eel" type="script" desc="Move item position of item under mouse to edit cursor according to ripple state">
@@ -2944,6 +3033,10 @@
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Items%20Editing/X-Raym_Trim%20left%20edge%20of%20item%20under%20mouse%20or%20the%20next%20one%20to%20mouse%20cursor%20without%20changing%20fade-in%20end.lua</source>
       </version>
+      <version name="1.0.1" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetThingFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Editing/X-Raym_Trim%20left%20edge%20of%20item%20under%20mouse%20or%20the%20next%20one%20to%20mouse%20cursor%20without%20changing%20fade-in%20end.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Trim left edge of item under mouse or the next one to mouse cursor.lua" type="script" desc="Trim left edge of item under mouse or the next one to mouse cursor">
       <metadata>
@@ -2952,6 +3045,14 @@
       <version name="1.0" author="X-Raym" time="2022-12-09T01:04:08Z">
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Items%20Editing/X-Raym_Trim%20left%20edge%20of%20item%20under%20mouse%20or%20the%20next%20one%20to%20mouse%20cursor.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2026-05-20T10:55:50Z">
+        <changelog><![CDATA[# Use GetThingFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/e197c0a20c652ac1a6fe69b0290e4c20a17cd156/Items%20Editing/X-Raym_Trim%20left%20edge%20of%20item%20under%20mouse%20or%20the%20next%20one%20to%20mouse%20cursor.lua</source>
+      </version>
+      <version name="1.0.2" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetTrackFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Editing/X-Raym_Trim%20left%20edge%20of%20item%20under%20mouse%20or%20the%20next%20one%20to%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Trim left edge of item under mouse or the next one without changing fade-in end.lua" type="script" desc="Trim left edge of item under mouse or the next one without changing fade-in end">
@@ -2982,6 +3083,10 @@
       </version>
       <version name="2.0.1" author="X-Raym" time="2021-03-11T08:33:11Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Items%20Editing/X-Raym_Trim%20left%20edge%20of%20item%20under%20mouse%20or%20the%20next%20one%20without%20changing%20fade-in%20end.lua</source>
+      </version>
+      <version name="2.0.2" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetThingFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Editing/X-Raym_Trim%20left%20edge%20of%20item%20under%20mouse%20or%20the%20next%20one%20without%20changing%20fade-in%20end.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Trim left edge of item under mouse to edit cursor without changing fade-in end.eel" type="script" desc="Trim left edge of item under mouse to edit cursor without changing fade-in end">
@@ -3021,6 +3126,9 @@
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Items%20Editing/X-Raym_Trim%20right%20edge%20of%20item%20under%20mouse%20or%20the%20previous%20one%20to%20mouse%20cursor%20without%20changing%20fade-out%20start.lua</source>
       </version>
+      <version name="1.0.2" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Editing/X-Raym_Trim%20right%20edge%20of%20item%20under%20mouse%20or%20the%20previous%20one%20to%20mouse%20cursor%20without%20changing%20fade-out%20start.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Trim right edge of item under mouse or the previous one to mouse cursor.lua" type="script" desc="Trim right edge of item under mouse or the previous one to mouse cursor">
       <metadata>
@@ -3029,6 +3137,13 @@
       <version name="1.0" author="X-Raym" time="2022-12-09T01:04:08Z">
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Items%20Editing/X-Raym_Trim%20right%20edge%20of%20item%20under%20mouse%20or%20the%20previous%20one%20to%20mouse%20cursor.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2026-05-20T10:55:50Z">
+        <changelog><![CDATA[# Use GetThingFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/e197c0a20c652ac1a6fe69b0290e4c20a17cd156/Items%20Editing/X-Raym_Trim%20right%20edge%20of%20item%20under%20mouse%20or%20the%20previous%20one%20to%20mouse%20cursor.lua</source>
+      </version>
+      <version name="1.0.2" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Editing/X-Raym_Trim%20right%20edge%20of%20item%20under%20mouse%20or%20the%20previous%20one%20to%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Trim right edge of item under mouse to edit cursor without changing fade-out start.eel" type="script" desc="Trim right edge of item under mouse to edit cursor without changing fade-out start">
@@ -4343,6 +4458,10 @@
       </version>
       <version name="2.0.1" author="X-Raym" time="2021-02-14T11:40:54Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/fe19da18bed7c81b32eca95926a6ede6ffc950fb/Items%20Properties/X-Raym_Set%20selected%20items%20take%20names%20by%20columns%20according%20to%20track%20under%20mouse%20or%20first%20track%20with%20selected%20items.lua</source>
+      </version>
+      <version name="2.0.2" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetTrackFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Items%20Properties/X-Raym_Set%20selected%20items%20take%20names%20by%20columns%20according%20to%20track%20under%20mouse%20or%20first%20track%20with%20selected%20items.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Set selected takes volume from -x to +x.eel" type="script" desc="Set selected takes volume from -x to +x">
@@ -5829,6 +5948,12 @@
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69f87ac77ef38871823be9125f7970106be16634/Project/X-Raym_Save%20all%20open%20project%20tabs.lua</source>
       </version>
     </reapack>
+    <reapack name="X-Raym_Save current project only if marked as dirty.lua" type="script" desc="Save current project only if marked as dirty">
+      <version name="1.0.0" author="X-Raym" time="2026-06-24T09:10:07Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/f571718ae3f4f83a5b1aa42a27efad4389eea527/Project/X-Raym_Save%20current%20project%20only%20if%20marked%20as%20dirty.lua</source>
+      </version>
+    </reapack>
     <reapack name="X-Raym_Save project and keep only X backups.lua" type="script" desc="Save project and keep only X backups">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -6434,6 +6559,10 @@
       <version name="1.0" author="X-Raym" time="2017-07-17T18:08:48Z">
         <changelog><![CDATA[+ Initial Release]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Tempo%20and%20Time%20Signature/X-Raym_Set%20selected%20tempo%20envelope%20points%20value.lua</source>
+      </version>
+      <version name="1.0.1" author="X-Raym" time="2026-06-04T15:36:01Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/cacd00e0641f7c6ad9ce204aed24aa2d4c90c99e/Tempo%20and%20Time%20Signature/X-Raym_Set%20selected%20tempo%20envelope%20points%20value.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Tap tempo.lua" type="script" desc="Tap Tempo">
@@ -7924,10 +8053,18 @@
       <version name="2.0" author="X-Raym" time="2019-06-23T14:52:26Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Track%20Properties/X-Raym_Select%20track%20under%20mouse%20parent%20track.lua</source>
       </version>
+      <version name="2.0.1" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetTrackFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Track%20Properties/X-Raym_Select%20track%20under%20mouse%20parent%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Select track under mouse top level parent track.lua" type="script" desc="Select track under mouse top level parent track">
       <version name="2.0" author="X-Raym" time="2019-06-23T14:52:26Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Track%20Properties/X-Raym_Select%20track%20under%20mouse%20top%20level%20parent%20track.lua</source>
+      </version>
+      <version name="2.0.1" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetTrackFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Track%20Properties/X-Raym_Select%20track%20under%20mouse%20top%20level%20parent%20track.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Select tracks with certain words in their SWS notes.lua" type="script" desc="Select tracks with certain words in their SWS notes">
@@ -8051,6 +8188,10 @@
     <reapack name="X-Raym_Set track under mouse as last touched.lua" type="script" desc="Set track under mouse as last touched">
       <version name="2.0" author="X-Raym" time="2021-03-10T11:02:52Z">
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/69e766a7098f62f3b320f2e23a6328613e95b8d2/Track%20Properties/X-Raym_Set%20track%20under%20mouse%20as%20last%20touched.lua</source>
+      </version>
+      <version name="2.0.1" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetTrackFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Track%20Properties/X-Raym_Set%20track%20under%20mouse%20as%20last%20touched.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Set visible only tracks with items under play or edit cursor_background.lua" type="script" desc="Set visible only tracks with items under play or edit cursor">
@@ -8329,6 +8470,9 @@
         <changelog><![CDATA[# Use GetThingFromPoiunt to get track]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8f5dd0dd70f7222523381d0ea68f7d438977e23/Transport/X-Raym_Play%20from%20mouse%20cursor%20position%20and%20solo%20track%20under%20mouse%20parent%20and%20select%20track.lua</source>
       </version>
+      <version name="1.3.1" author="X-Raym" time="2026-06-24T09:40:05Z">
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/857155b6ef7e0257b9eb972459d1a9b1aa6c373d/Transport/X-Raym_Play%20from%20mouse%20cursor%20position%20and%20solo%20track%20under%20mouse%20parent%20and%20select%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Play selected items once from first snap offset position.lua" type="script" desc="Play selected items once from first snap offset position">
       <metadata>
@@ -8492,6 +8636,10 @@
 # no SWS dependency]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7deae8e307427101dead266967b1e416c91da8bb/Transport/X-Raym_Solo%20in%20place%20exclusive%20track%20under%20mouse%20and%20play.lua</source>
       </version>
+      <version name="1.2.1" author="X-Raym" time="2026-05-20T11:38:53Z">
+        <changelog><![CDATA[# Use GetTrackFromPoint for pinned track support]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/af53090308a6fc1bd99bda5347e0c29fe7492ade/Transport/X-Raym_Solo%20in%20place%20exclusive%20track%20under%20mouse%20and%20play.lua</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Toggle play from mouse cursor position and solo track under mouse for the duration - and select track.lua" type="script" desc="Toggle play from mouse cursor position and solo track under mouse for the duration - and select track">
       <metadata>
@@ -8509,6 +8657,11 @@
       <version name="1.0.2" author="X-Raym" time="2026-03-21T18:23:29Z">
         <changelog><![CDATA[# no SWS dependency]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/d8f5dd0dd70f7222523381d0ea68f7d438977e23/Transport/X-Raym_Toggle%20play%20from%20mouse%20cursor%20position%20and%20solo%20track%20under%20mouse%20for%20the%20duration%20-%20and%20select%20track.lua</source>
+      </version>
+      <version name="1.1.0" author="X-Raym" time="2026-06-25T10:02:51Z">
+        <changelog><![CDATA[# remove SWS action Call
++ user preset variables]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7055d69ae00ed4c41dd742e751a14b5c2602d337/Transport/X-Raym_Toggle%20play%20from%20mouse%20cursor%20position%20and%20solo%20track%20under%20mouse%20for%20the%20duration%20-%20and%20select%20track.lua</source>
       </version>
     </reapack>
   </category>
@@ -8587,6 +8740,12 @@
       <version name="2.1.2" author="X-Raym" time="2021-11-17T19:19:45Z">
         <changelog><![CDATA[# Select project instance nil issue fix attempt]]></changelog>
         <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Various/X-Raym_Change%20last%20touched%20track%20layout_background.lua</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Change loop theme element background color according to loop state.lua" type="script" desc="Change transport theme element background color according to ripple state">
+      <version name="1.0.0" author="X-Raym" time="2026-07-21T17:16:20Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/6d6ea63d282c0e692d1b74297eb6fdd89015f2bf/Various/X-Raym_Change%20loop%20theme%20element%20background%20color%20according%20to%20loop%20state.lua</source>
       </version>
     </reapack>
     <reapack name="X-Raym_Change transport theme element background color according to ripple state.lua" type="script" desc="Change transport theme element background color according to ripple state">
@@ -9668,6 +9827,13 @@ Do not redraw UI when not needed]]></changelog>
         <changelog><![CDATA[vignette remove playstate bar]]></changelog>
         <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Web%20Interfaces/X-Raym_Lyrics.html</source>
       </version>
+      <version name="1.5.0" author="X-Raym" time="2026-07-24T14:23:16Z">
+        <changelog><![CDATA[+ Full screen with F or Touch
++ Space Bar for Play/stop
++ Arrow Keys for navigation
+# Resize Text if Window Size changed]]></changelog>
+        <source file="X-Raym_Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/7538767f68372bd743c1b254136946497f0606e4/Web%20Interfaces/X-Raym_Lyrics.html</source>
+      </version>
     </reapack>
     <reapack name="X-Raym_Scrolling Lyrics.www" type="webinterface" desc="Scrolling Lyrics Web Interface">
       <metadata>
@@ -9702,6 +9868,15 @@ Clickable action name]]></changelog>
         <changelog><![CDATA[Add empty paragraph inbetween lines
 Add font URL query for custom font-family]]></changelog>
         <source file="X-Raym_Scrolling Lyrics.html">https://github.com/X-Raym/REAPER-ReaScripts/raw/7baac3497d177b97c56e2aa5d57e37d9b6f18391/Web%20Interfaces/X-Raym_Scrolling%20Lyrics.html</source>
+      </version>
+    </reapack>
+    <reapack name="X-Raym_Send SWS extra project notes to Lyrics web interface.lua" type="script" desc="Send SWS extra project notes to Lyrics web interface">
+      <metadata>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?p=2127630#post2127630">Forum</link>
+      </metadata>
+      <version name="1.0.0" author="X-Raym" time="2026-07-26T11:50:52Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="main">https://github.com/X-Raym/REAPER-ReaScripts/raw/6944b307eed6b33c38f3b51421fc807e6149387d/Web%20Interfaces/X-Raym_Send%20SWS%20extra%20project%20notes%20to%20Lyrics%20web%20interface.lua</source>
       </version>
     </reapack>
   </category>

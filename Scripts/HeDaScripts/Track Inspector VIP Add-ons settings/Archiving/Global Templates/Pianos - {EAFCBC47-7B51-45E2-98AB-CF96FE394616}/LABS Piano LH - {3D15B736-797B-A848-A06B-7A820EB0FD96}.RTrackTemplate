@@ -1,0 +1,40 @@
+<TRACK
+  NAME "SPITFIRE BBC Marimba 1 *** archived ***"
+  LOCK 1
+  PEAKCOL 26765383
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -2
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4320 1 7 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {FAAC28B2-CFF1-49F1-A780-A5D48ED35B9E}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Marimba 1 - {FAAC28B2-CFF1-49F1-A780-A5D48ED35B9E}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {64B98C20-4B0E-384D-9BEF-E841844B52A4}
+    Archived_parent_name Marimbas
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

@@ -1,0 +1,42 @@
+<TRACK
+  NAME "SPITFIRE BBC Ens Clarinets Long *** archived ***"
+  LOCK 1
+  PEAKCOL 26760814
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4960 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 1 1
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {4D99D152-09BC-0E43-9B1F-D119D9B2E828}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Ens Clarinets Long - {4D99D152-09BC-0E43-9B1F-D119D9B2E828}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {0A715AFD-DD4F-1B4A-8FDB-B4247FA41F96}
+    Archived_parent_name Clarinets
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    WNDRECT 1385 454 1154 1062
+    SHOW 0
+    LASTSEL 0
+    DOCKED 0
+  >
+>

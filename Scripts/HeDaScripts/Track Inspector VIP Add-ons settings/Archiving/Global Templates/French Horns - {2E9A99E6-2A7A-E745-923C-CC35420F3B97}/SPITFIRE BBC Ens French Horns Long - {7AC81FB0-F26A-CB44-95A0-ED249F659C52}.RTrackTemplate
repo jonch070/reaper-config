@@ -1,0 +1,42 @@
+<TRACK
+  NAME "SPITFIRE BBC Ens French Horns Short *** archived ***"
+  LOCK 1
+  PEAKCOL 22975554
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 5728 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 2 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {97C90A3E-396E-714F-9727-6E6790A70BFC}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Ens French Horns Short - {97C90A3E-396E-714F-9727-6E6790A70BFC}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {2E9A99E6-2A7A-E745-923C-CC35420F3B97}
+    Archived_parent_name "French Horns"
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    WNDRECT 1385 454 1154 1062
+    SHOW 0
+    LASTSEL 0
+    DOCKED 0
+  >
+>

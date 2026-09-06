@@ -1,0 +1,5 @@
+C10018 "/Users/jonathankawchuk/Downloads/region silence before"
+F "region silence after.RPP" 0 0 0 0
+D p 120 s 44100 n 16 l 8:06:25.791
+F "region silence before.RPP" 0 0 0 0
+D p 120 s 44100 n 16 l 8:04:37.500

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="6d122b8e33b33374ad6b3209f463c0ab55213c99" name="X-Raym AATranslator">
+<index version="1" commit="1a88d2c60f23111f307f594f89767740e514e4da" name="X-Raym AATranslator">
   <category name="Items Properties">
 <reapack name="X-Raym_Select all items which need to be rendered.lua" type="script" desc="Select all items which need to be rendered">
       <metadata>
@@ -108,6 +108,10 @@
       <version name="1.5.10" author="X-Raym" time="2025-10-03T10:12:11Z">
         <changelog><![CDATA[# Fade shape parameter name fix]]></changelog>
         <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=130a9057c20f6cab72d77d5f6c5856fafa555bca&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
+      </version>
+      <version name="1.5.11" author="X-Raym" time="2026-06-04T16:42:06Z">
+        <changelog><![CDATA[# Localize envelope name]]></changelog>
+        <source main="main">https://www.extremraym.com/cloud/reascripts-premium/get.php?c=02f2a9b72be2da50ab7a5e23cf5478bf268b7484&amp;f=Items%20Properties/X-Raym_Select%20all%20items%20which%20need%20to%20be%20rendered.lua&amp;license=f5672bed1179ca6729c41b0f0b49b9ff&amp;item=6280</source>
       </version>
     </reapack>
 <reapack name="X-Raym_Select all items with active take pan offset and unselect the others.lua" type="script" desc="Select all items with active take pan offset and unselect the others">

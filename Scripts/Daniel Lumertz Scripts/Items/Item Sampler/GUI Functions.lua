@@ -1,54 +1,72 @@
 -- @noindex
-function PassThorugh() -- Might be a little tough on resource. Also set Ctrl Shift Alt global variables
+DL = DL or {}
+DL.imgui = DL.imgui or {}
 
-    --Get keys pressed
-    local keycodes = KeyCodeList()
-    local active_keys = {}
-    for key_name, key_val in pairs(keycodes) do
-        --if FilterPassThorugh(key_name) then goto continue end 
-        if reaper.ImGui_IsKeyPressed(ctx, key_val, true) then -- true so holding will perform many times
-            active_keys[#active_keys+1] = key_val
+---Stores key-related configuration for ImGui interactions, including keys to bypass from standard processing.
+DL.imgui.keys = {
+    --table with all keys to bypass from SWSPassKeys. Store the key code as indexes at this table, like this: DL.imgui.keys.bypass[	0x56] = true. https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes
+    bypass = {
+
+    }
+} 
+
+local held_keys = {}
+if reaper.JS_VKeys_GetState then -- add held notes at script start to the table
+    local keys = reaper.JS_VKeys_GetState(0)
+    for k = 1, #keys do
+        if  keys:byte(k) ~= 0 then
+            held_keys[k] = true
         end
-        --::continue::
     end
-    
-    -- mods
-    local mods = reaper.ImGui_GetKeyMods(ctx)
-    if reaper.ImGui_IsKeyDown(ctx, reaper.ImGui_Key_ModCtrl()) then 
-        active_keys[#active_keys+1] = 17 
-    end -- ctrl
-    if reaper.ImGui_IsKeyDown(ctx, reaper.ImGui_Key_ModShift()) then
-        active_keys[#active_keys+1] = 16 
-    end -- Shift
-    if reaper.ImGui_IsKeyDown(ctx, reaper.ImGui_Key_ModAlt()) then
-        active_keys[#active_keys+1] = 18
-    end -- Alt
+end
+---Pass some key  to reaper
+---@param ctx any
+---@param is_midieditor any
+function DL.imgui.SWSPassKeys(ctx, is_midieditor)
+    if not reaper.CF_SendActionShortcut or not reaper.JS_VKeys_GetState then return end
+    if (not ImGui.IsWindowFocused(ctx, ImGui.FocusedFlags_AnyWindow)) or ImGui.IsAnyItemActive(ctx) then return end -- Only when Script haves the focus
 
+    local sel_window, section 
+    if is_midieditor then
+        local midi = reaper.MIDIEditor_GetActive()
+        if midi then 
+            sel_window = midi 
+            section = 32060
+        end
+    end
 
-    --Send Message
-    if LastWindowFocus then 
-        if #active_keys > 0  then
-            for k, key_val in pairs(active_keys) do
-                PostKey(LastWindowFocus, key_val)
+    if not sel_window then -- Send to Main Window or Midi Editor closed
+        sel_window = reaper.GetMainHwnd()
+        section = 0
+    end
+
+    local keys = reaper.JS_VKeys_GetState(0)
+    for k = 1, #keys do
+        local is_key = keys:byte(k) ~= 0
+        if k ~= 0xD and is_key and not held_keys[k] then
+            if not DL.imgui.keys.bypass[k] then
+                reaper.CF_SendActionShortcut(sel_window, section, k)
             end
+            held_keys[k] = true
+        elseif not is_key and held_keys[k] then
+            held_keys[k] = nil
         end
     end
 
-    -- Get focus window (if not == Script Title)
-    local win_focus = reaper.JS_Window_GetFocus()
-    local win_name = reaper.JS_Window_GetTitle( win_focus )
-
-    if LastWindowFocus ~= win_focus and (win_name == 'trackview' or win_name == 'midiview')  then -- focused win title is different from script title? INSERT HERE HOW YOU NAME THE SCRIPT
-        LastWindowFocus = win_focus
-    end    
+    if ImGui.IsKeyPressed(ctx, ImGui.Key_Enter) then
+        reaper.CF_SendActionShortcut(sel_window, section, 0xD)
+    end
+    if ImGui.IsKeyPressed(ctx, ImGui.Key_KeypadEnter) then
+        reaper.CF_SendActionShortcut(sel_window, section, 0x800D)
+    end  
 end
 
 function GetModKeys()
     -- mods
-    local mods = reaper.ImGui_GetKeyMods(ctx)
-    Ctrl =  reaper.ImGui_IsKeyDown(ctx, reaper.ImGui_Key_ModCtrl())
-    Shift = reaper.ImGui_IsKeyDown(ctx, reaper.ImGui_Key_ModShift())
-    Alt =   reaper.ImGui_IsKeyDown(ctx, reaper.ImGui_Key_ModAlt())
+    local mods = ImGui.GetKeyMods(ctx)
+    Ctrl =  ImGui.IsKeyDown(ctx, ImGui.Mod_Ctrl)
+    Shift = ImGui.IsKeyDown(ctx, ImGui.Mod_Shift)
+    Alt =   ImGui.IsKeyDown(ctx, ImGui.Mod_Alt)
     return Ctrl, Shift, Alt
 end
 
@@ -84,211 +102,102 @@ function GetSourceKey(name, preventpasskey)
                 key_used = key
                 break
             end 
-        end
+        end 
     end
     return key_used
 end
 
 
 
-function MenuBar()
-    if reaper.ImGui_BeginMenuBar(ctx) then
-        if reaper.ImGui_BeginMenu(ctx, 'Extra') then
-
-            if reaper.ImGui_MenuItem(ctx, 'Show Tool Tips',"",Settings.Tips) then
-                Settings.Tips = not Settings.Tips
+function MenuBar(ctx, UserSettings, GUI, config, version, Pro)
+    if ImGui.BeginMenuBar(ctx) then
+        if ImGui.BeginMenu(ctx, 'Options') then
+            if ImGui.MenuItem(ctx, 'Show Tool Tips', nil, UserSettings.tips) then
+                UserSettings.tips = not UserSettings.tips
+                GUI.is_save_us.check = true
             end
 
-            reaper.ImGui_EndMenu(ctx)
-
-        end
-        reaper.ImGui_EndMenuBar(ctx)
-    end
-
-    if reaper.ImGui_BeginMenuBar(ctx) then
-        if reaper.ImGui_BeginMenu(ctx, 'Project Presets') then
-            -- Save
-
-            if reaper.ImGui_Button(ctx, 'Save Preset') then
-                --PreventPassKeys = true
-                PreventPassKeys2 = CheckPreventPassThrough(true, 'save preset', PreventPassKeys2)
-                reaper.ImGui_OpenPopup(ctx, 'Save Preset')
+            if ImGui.MenuItem(ctx, 'Reset Settings') then
+                UserSettings = config.default(version)
+                GUI.is_save_us.check = true
             end
 
-            local center = {reaper.ImGui_Viewport_GetCenter(reaper.ImGui_GetMainViewport(ctx))}
-            reaper.ImGui_SetNextWindowPos(ctx, center[1], center[2], reaper.ImGui_Cond_Appearing(), 0.5, 0.5)
+            if ImGui.MenuItem(ctx, 'Activated Sequencer Follows Selection', nil, UserSettings.activate.follow_selection) then
+                UserSettings.activate.follow_selection = not UserSettings.activate.follow_selection 
+                GUI.is_save_us.check = true
+            end
 
-            if reaper.ImGui_BeginPopupModal(ctx, 'Save Preset', nil, reaper.ImGui_WindowFlags_AlwaysAutoResize()) then
-                PreventPassKeys = true
-                _, GUI_String_save = reaper.ImGui_InputText( ctx, 'Preset Name', GUI_String_save)
-                reaper.ImGui_Separator(ctx)
+            if ImGui.MenuItem(ctx, 'MIDI Note Names Follow Group Names', nil, UserSettings.activate.follow_selection) then
+                UserSettings.sequencers.rename_note_names = not UserSettings.sequencers.rename_note_names
+                -- Cleans or update the note names
+                if UserSettings.sequencers.rename_note_names then
+                end
+                GUI.is_save_us.check = true    
+            end
 
-                if reaper.ImGui_Button(ctx, 'Save', 120, 0) then
-                    if GUI_String_save == '' then
-                        GUI_String_save = 'Preset Nº '..(TableLen2(GlobalPresets)+1)
-                    end
-                    UserPresets[GUI_String_save] = {
-                        Setting = table_copy(Settings),
-                        Groups = table_copy(Groups)
+
+            ImGui.Separator(ctx)
+
+            if ImGui.MenuItem(ctx, 'Draw Over Items/Tracks',"",UserSettings.gui.draw.active.is_draw) then
+                UserSettings.gui.draw.active.is_draw = not UserSettings.gui.draw.active.is_draw
+                GUI.is_save_us.check = true
+            end
+            if UserSettings.gui.draw.active.is_draw then
+                if ImGui.BeginMenu(ctx, 'Draw Options') then
+                    local dmenu = {
+                        {
+                            text = 'Focused Sequencers:',
+                            configs = UserSettings.gui.draw.focused
+                        },
+                        {
+                            text = 'Active Sequencers:',
+                            configs = UserSettings.gui.draw.active
+                        },
+                        {
+                            text = 'Target Tracks:',
+                            configs = UserSettings.gui.draw.target_tracks
+                        },
+                        {
+                            text = 'Sources:',
+                            configs = UserSettings.gui.draw.sources
+                        },
                     }
-                    PreventPassKeys2 = CheckPreventPassThrough(false, 'save preset', PreventPassKeys2)
-                    reaper.ImGui_CloseCurrentPopup(ctx)
+                    for k, menu in ipairs(dmenu) do          
+                        ImGui.Text(ctx, menu.text)
+                        local change
+                        if not menu.configs.is_multicolor then
+                            GUI.is_save_us.check, menu.configs.color = ImGui.ColorEdit4(ctx, '##color'..k, menu.configs.color, ImGui.ColorEditFlags_NoInputs)
+                        end
+                        ImGui.SameLine(ctx)
+                        --change, menu.configs.is_multicolor = ImGui.Checkbox(ctx, 'Use Multi-Color##'..k, menu.configs.is_multicolor)
+                        ImGui.SetNextItemWidth(ctx, 150)
+                        GUI.is_save_us.check, menu.configs.thick = ImGui.SliderInt(ctx, '##Thickness##'..k, menu.configs.thick, 1, 10)
+                        if k ~= #dmenu then 
+                            ImGui.Separator(ctx)
+                        end
+                    end
+                    ImGui.EndMenu(ctx)
                 end
-                reaper.ImGui_SameLine(ctx)
-                if reaper.ImGui_Button(ctx, 'Cancel', 120, 0) then
-                    --PreventPassKeys = false
-                    PreventPassKeys2 = CheckPreventPassThrough(false, 'save preset', PreventPassKeys2)
-                    reaper.ImGui_CloseCurrentPopup(ctx)
-                end
-                reaper.ImGui_EndPopup(ctx)
             end
-
-            -- Load
-            if reaper.ImGui_BeginMenu(ctx, 'Load') then
-
-                for key, value in pairs(UserPresets) do
-                    if key == 'Settings' then 
-                        goto gui_continue 
-                    end
-                    if key == 'Groups' then 
-                        goto gui_continue 
-                    end
-                    if reaper.ImGui_MenuItem( ctx,  key) then
-                       Settings = UserPresets[key].Setting
-                       Groups = UserPresets[key].Groups
-                    end
-
-                   ::gui_continue::
-                end
-                reaper.ImGui_EndMenu(ctx)
-            end
-
-            --Remove
-            if reaper.ImGui_BeginMenu(ctx, 'Remove') then
-
-                for key, value in pairs(UserPresets) do
-                    if key == 'Settings' then 
-                        goto gui_continue 
-                    end
-                    if key == 'Groups' then 
-                        goto gui_continue 
-                    end
-
-                   if reaper.ImGui_MenuItem( ctx,  key) then
-                        UserPresets[key] = nil
-                   end
-
-                   ::gui_continue::
-                end
-                reaper.ImGui_EndMenu(ctx)
-            end
-            
-            reaper.ImGui_EndMenu(ctx)
+            ImGui.EndMenu(ctx)
         end
-        reaper.ImGui_EndMenuBar(ctx)
-    end
-    if Settings.Tips then ToolTip("Save/Load Presets in the Project. Store Groups, Item Selection and Settings") end
-
-
-    if reaper.ImGui_BeginMenuBar(ctx) then
-        if reaper.ImGui_BeginMenu(ctx, 'Presets') then
-            -- Save
-
-            if reaper.ImGui_Button(ctx, 'Save Preset') then
-                --PreventPassKeys = true
-                PreventPassKeys2 = CheckPreventPassThrough(true, 'save preset', PreventPassKeys2)
-                reaper.ImGui_OpenPopup(ctx, 'Save Preset')
-            end
-
-            local center = {reaper.ImGui_Viewport_GetCenter(reaper.ImGui_GetMainViewport(ctx))}
-            reaper.ImGui_SetNextWindowPos(ctx, center[1], center[2], reaper.ImGui_Cond_Appearing(), 0.5, 0.5)
-
-            if reaper.ImGui_BeginPopupModal(ctx, 'Save Preset', nil, reaper.ImGui_WindowFlags_AlwaysAutoResize()) then
-                _, GUI_String_save = reaper.ImGui_InputText( ctx, 'Preset Name', GUI_String_save)
-                reaper.ImGui_Separator(ctx)
-
-                if reaper.ImGui_Button(ctx, 'Save', 120, 0) then
-                    if GUI_String_save == '' then
-                        GUI_String_save = 'Preset Nº '..(TableLen2(GlobalPresets)+1)
-                    end
-
-                    --PreventPassKeys = false
-                    PreventPassKeys2 = CheckPreventPassThrough(false, 'save preset', PreventPassKeys2)
-                    GlobalPresets[GUI_String_save] = {
-                        Settings = table_copy(Settings),
-                        Groups = table_copy(Groups)
-                    }
-                    -- Dont Save Project Userdata
-                    for k , v in pairs(GlobalPresets[GUI_String_save].Groups) do 
-                        GlobalPresets[GUI_String_save].Groups[k].list_sequence = nil
-                    end
-
-                    GlobalPresets[GUI_String_save].Settings.ListMidi = nil -- ????? PRECISA
-                    save_json(script_path, 'user_presets_complete', GlobalPresets)
-
-                    reaper.ImGui_CloseCurrentPopup(ctx)
-                end
-                reaper.ImGui_SameLine(ctx)
-                if reaper.ImGui_Button(ctx, 'Cancel', 120, 0) then
-                    --PreventPassKeys = false
-                    PreventPassKeys2 = CheckPreventPassThrough(false, 'save preset', PreventPassKeys2)
-                    reaper.ImGui_CloseCurrentPopup(ctx) 
-                end
-                reaper.ImGui_EndPopup(ctx)
-            end
-
-            -- Load
-            if reaper.ImGui_BeginMenu(ctx, 'Load') then
-
-                for key, value in pairs(GlobalPresets) do
-                    if reaper.ImGui_MenuItem( ctx,  key) then
-                        Settings = table_copy(GlobalPresets[key].Settings)
-                        Groups = table_copy(GlobalPresets[key].Groups)
-                    end
-                end
-                reaper.ImGui_EndMenu(ctx)
-            end
-
-            --Remove
-            if reaper.ImGui_BeginMenu(ctx, 'Remove') then
-
-                for key, value in pairs(GlobalPresets) do
-                    if key == 'Settings' then 
-                        goto gui_continue 
-                    end
-                    if key == 'Groups' then 
-                        goto gui_continue 
-                    end
-
-                   if reaper.ImGui_MenuItem( ctx,  key) then
-                        GlobalPresets[key] = nil
-                        save_json(script_path, 'user_presets_complete', GlobalPresets)
-                   end
-
-                   ::gui_continue::
-                end
-                reaper.ImGui_EndMenu(ctx)
-            end
-            
-            reaper.ImGui_EndMenu(ctx)
-        end
-        if Settings.Tips then ToolTip("Save/Load Presets Globally. Store Groups and Settings") end
-
+        
+        if UserSettings.Tips then ToolTip("Save/Load Presets Globally. Store Groups and Settings") end
 
         -- Dock
-        local reval_dock =  reaper.ImGui_IsWindowDocked(ctx)
+        local reval_dock =  ImGui.IsWindowDocked(ctx)
         local dock_text =  reval_dock and  'Undock' or 'Dock'
 
-        if reaper.ImGui_MenuItem(ctx,dock_text ) then
+        if ImGui.MenuItem(ctx,dock_text) then
             if reval_dock then -- Already Docked
                 SetDock = 0
             else -- Not docked
                 SetDock = -3 -- Dock to the right 
             end
         end
-        reaper.ImGui_EndMenuBar(ctx)
+        ImGui.EndMenuBar(ctx)
     end
-    
+    return UserSettings
 end
 
 function CheckRequirements()
@@ -326,115 +235,98 @@ function CheckRequirements()
         return bol == 6
     end ]]
 
-    --print(reaper.ImGui_GetVersion())
+    --print(ImGui.GetVersion())
     --print(reaper.JS_ReaScriptAPI_Version())
     --print(reaper.CF_GetSWSVersion())
     return true 
 end
 
-function CheckProjChange() 
-    local current_proj = reaper.EnumProjects(-1)
-    local current_path = GetFullProjectPath()
-    if OldProj or OldPath  then  -- Not First run
-        if OldProj ~= current_proj or OldPath ~= current_path then -- Changed the path (can be caused by a new save or dif project but it doesnt matter as it will just reload Snapshot and Configs)
-            salvar(OldProj)
-            ProjectPath = GetProjectPath()
-            LoadInitialPreseetGroups()
-        end
-    end 
-    OldPath = current_path
-    OldProj = current_proj        
-end
-
-function PushStyle()
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_Alpha(),               1)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_DisabledAlpha(),       0.62)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_WindowPadding(),       8, 8)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_WindowRounding(),      0)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_WindowBorderSize(),    1)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_WindowMinSize(),       32, 32)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_WindowTitleAlign(),    0, 0.5)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_ChildRounding(),       0)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_ChildBorderSize(),     1)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_PopupRounding(),       0)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_PopupBorderSize(),     1)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_FramePadding(),        4, 3)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_FrameRounding(),       3)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_FrameBorderSize(),     1)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_ItemSpacing(),         8, 4)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_ItemInnerSpacing(),    4, 4)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_IndentSpacing(),       21)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_CellPadding(),         4, 2)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_ScrollbarSize(),       14)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_ScrollbarRounding(),   9)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_GrabMinSize(),         10)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_GrabRounding(),        3)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_TabRounding(),         4)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_ButtonTextAlign(),     0.5, 0.5)
-    reaper.ImGui_PushStyleVar(ctx, reaper.ImGui_StyleVar_SelectableTextAlign(), 0, 0)
 
 
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Text(),                  0xFFFFFFFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TextDisabled(),          0x808080FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_WindowBg(),              0x000000FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ChildBg(),               0x00000000)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_PopupBg(),               0x141414F0)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Border(),                0x6E6E8080)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_BorderShadow(),          0x00000000)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_FrameBg(),               0x5C5C5C8A)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_FrameBgHovered(),        0x42FA8366)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_FrameBgActive(),         0x44FA42AB)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TitleBg(),               0x0A0A0AFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TitleBgActive(),         0x294A7AFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TitleBgCollapsed(),      0x00000082)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_MenuBarBg(),             0x242424FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ScrollbarBg(),           0x05050587)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ScrollbarGrab(),         0x4F4F4FFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ScrollbarGrabHovered(),  0x696969FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ScrollbarGrabActive(),   0x828282FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_CheckMark(),             0x00FE49FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_SliderGrab(),            0x79BB6BFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_SliderGrabActive(),      0xFFFFFFFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Button(),                0x5A5A5A66)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ButtonHovered(),         0xD7D8D6FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ButtonActive(),          0x74BBFFFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Header(),                0xB9F8C347)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_HeaderHovered(),         0xFFFFFF72)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_HeaderActive(),          0xFFFFFFC0)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Separator(),             0x6E6E8080)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_SeparatorHovered(),      0x1A66BFC7)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_SeparatorActive(),       0x1A66BFFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ResizeGrip(),            0x4296FA33)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ResizeGripHovered(),     0x4296FAAB)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ResizeGripActive(),      0x4296FAF2)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_Tab(),                   0x2E5994DC)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TabHovered(),            0x4296FACC)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TabActive(),             0x3369ADFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TabUnfocused(),          0x111A26F8)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TabUnfocusedActive(),    0x23436CFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_DockingPreview(),        0x4296FAB3)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_DockingEmptyBg(),        0x333333FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_PlotLines(),             0x9C9C9CFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_PlotLinesHovered(),      0xFF6E59FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_PlotHistogram(),         0xE6B300FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_PlotHistogramHovered(),  0xFF9900FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TableHeaderBg(),         0x303033FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TableBorderStrong(),     0x4F4F59FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TableBorderLight(),      0x3B3B40FF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TableRowBg(),            0x00000000)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TableRowBgAlt(),         0xFFFFFF0F)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_TextSelectedBg(),        0x4AFA4259)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_DragDropTarget(),        0xFFFF00E6)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_NavHighlight(),          0x4296FAFF)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_NavWindowingHighlight(), 0xFFFFFFB3)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_NavWindowingDimBg(),     0xCCCCCC33)
-    reaper.ImGui_PushStyleColor(ctx, reaper.ImGui_Col_ModalWindowDimBg(),      0xCCCCCC59)
+function PushStyle(ctx)
+    ImGui.PushStyleColor(ctx, ImGui.Col_Text,                      0xFFFFFFFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TextDisabled,              0x808080FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_WindowBg,                  0x2C2C2CFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ChildBg,                   0x212121FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_PopupBg,                   0x232323FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_Border,                    0x6E6E8080)
+    ImGui.PushStyleColor(ctx, ImGui.Col_BorderShadow,              0x00000000)
+    ImGui.PushStyleColor(ctx, ImGui.Col_FrameBg,                   0x6969698A)
+    ImGui.PushStyleColor(ctx, ImGui.Col_FrameBgHovered,            0x87C28E66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_FrameBgActive,             0x6DF17D66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TitleBg,                   0x383838DC)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TitleBgActive,             0x4E4E4EDC)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TitleBgCollapsed,          0x00000082)
+    ImGui.PushStyleColor(ctx, ImGui.Col_MenuBarBg,                 0x242424FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ScrollbarBg,               0x24242487)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ScrollbarGrab,             0x4F4F4FFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ScrollbarGrabHovered,      0x696969FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ScrollbarGrabActive,       0x828282FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_CheckMark,                 0x79BA8BFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_SliderGrab,                0x79BA8BFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_SliderGrabActive,          0x6BDC8AFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_Button,                    0x6969698A)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ButtonHovered,             0x87C28E66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ButtonActive,              0x6DF17D66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_Header,                    0x42FA514F)
+    ImGui.PushStyleColor(ctx, ImGui.Col_HeaderHovered,             0x87C28E66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_HeaderActive,              0x6DF17D66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_Separator,                 0xD8D8D880)
+    ImGui.PushStyleColor(ctx, ImGui.Col_SeparatorHovered,          0xD8D8D880)
+    ImGui.PushStyleColor(ctx, ImGui.Col_SeparatorActive,           0xD8D8D880)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ResizeGrip,                0x8EC19466)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ResizeGripHovered,         0x6DE67C66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ResizeGripActive,          0x47F35A66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_InputTextCursor,           0xFFFFFFFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TabHovered,                0x87C28E66)
+    ImGui.PushStyleColor(ctx, ImGui.Col_Tab,                       0x6969698A)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TabSelected,               0xFFFFFF40)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TabSelectedOverline,       0x4296FAFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TabDimmed,                 0x111A26F8)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TabDimmedSelected,         0x23436CFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TabDimmedSelectedOverline, 0x80808000)
+    ImGui.PushStyleColor(ctx, ImGui.Col_DockingPreview,            0x42FA68B3)
+    ImGui.PushStyleColor(ctx, ImGui.Col_DockingEmptyBg,            0x333333FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_PlotLines,                 0x9C9C9CFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_PlotLinesHovered,          0xFF6E59FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_PlotHistogram,             0xE6B300FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_PlotHistogramHovered,      0xFF9900FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TableHeaderBg,             0x303033FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TableBorderStrong,         0x4F4F59FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TableBorderLight,          0x9F9F9FFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TableRowBg,                0x00000000)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TableRowBgAlt,             0xFFFFFF0F)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TextLink,                  0x4296FAFF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TextSelectedBg,            0x42FA6859)
+    ImGui.PushStyleColor(ctx, ImGui.Col_TreeLines,                 0x6E6E8080)
+    ImGui.PushStyleColor(ctx, ImGui.Col_DragDropTarget,            0xFFFF00E6)
+    ImGui.PushStyleColor(ctx, ImGui.Col_NavCursor,                 0x42FA89FF)
+    ImGui.PushStyleColor(ctx, ImGui.Col_NavWindowingHighlight,     0xFFFFFFB3)
+    ImGui.PushStyleColor(ctx, ImGui.Col_NavWindowingDimBg,         0xCCCCCC33)
+    ImGui.PushStyleColor(ctx, ImGui.Col_ModalWindowDimBg,          0xCCCCCC59)
+
+
+
+
+
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_WindowRounding,   6)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_ChildRounding,    3)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_FramePadding,     7, 2)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_FrameRounding,    3)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_FrameBorderSize,  1)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_TabRounding,      0)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_TabBorderSize,    1)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_TabBarBorderSize, 2)
+    ImGui.PushStyleVar(ctx, ImGui.StyleVar_TreeLinesSize,    2)
+
+
+
 end
 
 function PopStyle()
-    reaper.ImGui_PopStyleVar(ctx, 25)
+    ImGui.PopStyleVar(ctx, 9)
     
-    reaper.ImGui_PopStyleColor(ctx, 55)
+    ImGui.PopStyleColor(ctx, 60)
     
 end
 

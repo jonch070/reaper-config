@@ -1,0 +1,199 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Varispeed Pitch Drift Tune/daxo_in"
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-001.wav" 59992 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:39.756
+D l 0:00.102 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-002.wav" 300544 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:49.079
+D l 0:00.520 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-003.wav" 74794 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:29.132
+D l 0:00.128 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-004.wav" 84826 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:31.483
+D l 0:00.145 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-005.wav" 385390 0 1780336485 0
+D y 2026-06-01 s 96000 n 2 r 1:03:25.068
+D l 0:00.667 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-006.wav" 484162 0 1780336488 0
+D y 2026-06-01 s 96000 n 2 r 1:04:45.575
+D l 0:00.839 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-007.wav" 385468 0 1780336488 0
+D y 2026-06-01 s 96000 n 2 r 1:05:00.100
+D l 0:00.667 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-008.wav" 399640 0 1780336489 0
+D y 2026-06-01 s 96000 n 2 r 1:05:20.574
+D l 0:00.692 i 24
+F "dax corpus sine stacker recording test_0seconds_96000_24_nonnorm-009.wav" 140242 0 1780336489 0
+D y 2026-06-01 s 96000 n 2 r 1:05:39.603
+D l 0:00.242 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-001.wav" 976936 0 1780336478 0
+D y 2026-06-01 s 96000 n 2 r 1:00:13.386
+D l 0:01.694 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-002.wav" 952090 0 1780336478 0
+D y 2026-06-01 s 96000 n 2 r 1:00:16.161
+D l 0:01.651 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-003.wav" 942556 0 1780336478 0
+D y 2026-06-01 s 96000 n 2 r 1:00:18.831
+D l 0:01.635 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-004.wav" 1033228 0 1780336478 0
+D y 2026-06-01 s 96000 n 2 r 1:00:21.609
+D l 0:01.792 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-005.wav" 1061638 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:33.773
+D l 0:01.841 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-006.wav" 1129240 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:36.718
+D l 0:01.959 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-007.wav" 978724 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:39.848
+D l 0:01.697 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-008.wav" 802288 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:42.603
+D l 0:01.391 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-009.wav" 866386 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:45.202
+D l 0:01.502 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-010.wav" 695290 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:47.883
+D l 0:01.205 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-011.wav" 1094770 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:51.600
+D l 0:01.899 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-012.wav" 973954 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:54.512
+D l 0:01.689 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-013.wav" 920626 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:00:57.359
+D l 0:01.597 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-014.wav" 803362 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:01:00.437
+D l 0:01.393 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-015.wav" 775540 0 1780336479 0
+D y 2026-06-01 s 96000 n 2 r 1:01:03.122
+D l 0:01.345 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-016.wav" 715354 0 1780336480 0
+D y 2026-06-01 s 96000 n 2 r 1:01:09.542
+D l 0:01.240 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-017.wav" 743494 0 1780336480 0
+D y 2026-06-01 s 96000 n 2 r 1:01:16.299
+D l 0:01.289 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-018.wav" 742102 0 1780336480 0
+D y 2026-06-01 s 96000 n 2 r 1:01:18.633
+D l 0:01.287 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-019.wav" 1109908 0 1780336480 0
+D y 2026-06-01 s 96000 n 2 r 1:01:23.184
+D l 0:01.925 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-020.wav" 722044 0 1780336480 0
+D y 2026-06-01 s 96000 n 2 r 1:01:25.099
+D l 0:01.252 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-021.wav" 742102 0 1780336480 0
+D y 2026-06-01 s 96000 n 2 r 1:01:26.341
+D l 0:01.287 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-022.wav" 882538 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:27.619
+D l 0:01.530 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-023.wav" 748792 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:29.139
+D l 0:01.298 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-024.wav" 722044 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:30.428
+D l 0:01.252 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-025.wav" 909286 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:31.670
+D l 0:01.577 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-026.wav" 768856 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:33.238
+D l 0:01.333 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-027.wav" 862474 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:34.561
+D l 0:01.496 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-028.wav" 606754 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:36.047
+D l 0:01.052 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-029.wav" 962788 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:40.135
+D l 0:01.670 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-030.wav" 1083160 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:41.796
+D l 0:01.879 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-031.wav" 1068568 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:43.665
+D l 0:01.853 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-032.wav" 1036348 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:46.530
+D l 0:01.797 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-033.wav" 995914 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:48.318
+D l 0:01.727 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-034.wav" 835702 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:51.043
+D l 0:01.449 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-035.wav" 989536 0 1780336481 0
+D y 2026-06-01 s 96000 n 2 r 1:01:53.532
+D l 0:01.716 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-036.wav" 1022974 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:01:55.239
+D l 0:01.774 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-037.wav" 1096534 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:01:59.558
+D l 0:01.902 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-038.wav" 924922 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:04.990
+D l 0:01.604 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-039.wav" 789832 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:07.593
+D l 0:01.369 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-040.wav" 845302 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:09.961
+D l 0:01.466 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-041.wav" 704842 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:12.425
+D l 0:01.222 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-042.wav" 915976 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:14.795
+D l 0:01.588 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-043.wav" 1140580 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:16.374
+D l 0:01.978 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-044.wav" 577888 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:19.421
+D l 0:01.002 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-045.wav" 829042 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:21.703
+D l 0:01.438 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-046.wav" 782230 0 1780336482 0
+D y 2026-06-01 s 96000 n 2 r 1:02:23.131
+D l 0:01.356 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-047.wav" 716080 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:25.594
+D l 0:01.241 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-048.wav" 695290 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:27.937
+D l 0:01.205 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-049.wav" 675232 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:30.322
+D l 0:01.171 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-050.wav" 781762 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:32.634
+D l 0:01.355 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-051.wav" 795604 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:34.994
+D l 0:01.379 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-052.wav" 681916 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:37.544
+D l 0:01.182 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-053.wav" 808978 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:39.815
+D l 0:01.403 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-054.wav" 708670 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:41.208
+D l 0:01.229 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-055.wav" 1029658 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:42.427
+D l 0:01.786 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-056.wav" 1123282 0 1780336483 0
+D y 2026-06-01 s 96000 n 2 r 1:02:44.203
+D l 0:01.948 i 24
+F "dax corpus sine stacker recording test_1seconds_96000_24_nonnorm-057.wav" 1096534 0 1780336484 0
+D y 2026-06-01 s 96000 n 2 r 1:02:57.199
+D l 0:01.902 i 24

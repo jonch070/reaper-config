@@ -1,0 +1,146 @@
+Ensembler - Manual Install Instructions
+========================================
+
+Ensembler is an orchestral MIDI divisi system for REAPER. This bundle has
+everything you need to run it without using ReaPack.
+
+
+WHAT'S IN THIS BUNDLE
+---------------------
+Scripts/NW/Ensembler/   - The Lua application (UI, logic, presets, config)
+Effects/NW/             - The JSFX plugin (real-time MIDI processing engine)
+
+
+WHAT YOU NEED
+-------------
+1. REAPER 6.0 or newer.
+2. The ReaImGui extension (the script will refuse to start without it).
+   Install via REAPER's ReaPack:
+     Extensions -> ReaPack -> Browse packages -> search "ReaImGui"
+   You need version 0.8 or newer. If you don't have ReaPack itself yet,
+   grab it from https://reapack.com/ first.
+
+
+STEP 1 - FIND YOUR REAPER RESOURCE FOLDER
+-----------------------------------------
+In REAPER:  Options -> Show REAPER resource path in explorer/finder
+
+That opens the folder where REAPER keeps Scripts/, Effects/, etc.
+Everything below is relative to that folder.
+
+
+STEP 2 - COPY THE FILES
+-----------------------
+This bundle's folder layout mirrors REAPER's resource folder, so you can
+just drag-merge the two top-level folders into it:
+
+  This bundle               ->  REAPER resource folder
+  -------------------------     -----------------------------
+  Scripts/NW/Ensembler/     ->  Scripts/NW/Ensembler/
+  Effects/NW/               ->  Effects/NW/
+
+Notes:
+- The path "Scripts/NW/Ensembler/" matters - the script hardcodes that
+  location when looking for its presets and config. Do not rename or
+  flatten it.
+- The JSFX folder name ("Effects/NW/") is not strictly required - REAPER
+  searches Effects/ recursively and finds the plugin by description.
+  But keeping it at "Effects/NW/" matches Nate's setup, which keeps
+  things consistent if he ever shares a REAPER project file with you.
+- The 9 JSFX files (EnsemblerFilter.jsfx + 8 .jsfx-inc files) must all
+  sit in the same folder as each other - the main file imports the
+  others by relative name.
+
+
+STEP 3 - REGISTER THE ACTION IN REAPER
+--------------------------------------
+1. Open the action list:  Actions -> Show action list
+2. Click "ReaScript: Load..."  (button near the top right)
+3. Navigate to and select:
+     Scripts/NW/Ensembler/Ensembler.lua
+4. It will now appear in the action list as:
+     Script: Ensembler.lua
+5. From there you can:
+   - Assign a keyboard shortcut
+   - Drag it to a toolbar
+   - Rename it (right-click -> Rename)
+
+That single action launches the whole app. There are no other actions to
+register. The script handles adding/removing the JSFX onto tracks itself.
+
+
+STEP 4 - FIRST LAUNCH
+---------------------
+Run the action. If ReaImGui is installed correctly, the Ensembler window
+opens. From there you build sections, assign instruments to voices, and
+play through it.
+
+
+THINGS TO KNOW BEFORE YOU DIVE IN
+---------------------------------
+
+Quick Builder won't work for you out of the box.
+  The Quick Builder tab uses a config file that maps generic instrument
+  names (Fl, Hrn, Vln1, etc.) to specific REAPER track names. The
+  shipped config is hardwired to Nate's template (Audio Imperia, Spitfire,
+  etc.). To make it work for your template you have two options:
+    a) Hand-edit the file:
+         Scripts/NW/Ensembler/config/quick_builder_instruments.lua
+       Replace each "tracks" entry with the actual track names from
+       your project.
+    b) Ignore Quick Builder entirely and use the advanced grid editor +
+       saved presets - those are independent of that config file.
+
+Retroactive record is partially enabled.
+  Ensembler hooks into REAPER's normal retroactive MIDI record actions
+  and corrects them to produce per-voice output instead of the raw chord
+  on every track. You don't need to do anything special - just keep
+  using REAPER's standard retro record keybinding.
+  Caveat: only the "recent" variant is enabled. The "all available"
+  variant is currently disabled because of known bugs.
+
+The shipped presets are tied to specific tracks.
+  Files under Scripts/NW/Ensembler/presets/ reference real REAPER track
+  names from Nate's template. Loading one against a different template
+  will leave the slots blank. Use them as structural references or
+  build your own.
+
+Current version is v0.3.0-alpha.
+  This is pre-beta. Expect some rough edges, especially around Quick
+  Builder voicings and retroactive record. The core divisi engine
+  (sections, voice assignment, transforms, presets) is the most mature
+  piece and is what's worth exploring first.
+
+
+UNINSTALL
+---------
+1. Remove the action: Action list -> select it -> Delete
+2. Delete these folders from your REAPER resource folder:
+     Scripts/NW/Ensembler/
+     Effects/NW/EnsemblerFilter*.jsfx*   (or the whole Effects/NW/ folder
+                                          if you have nothing else in it)
+3. If you used the JSFX on any track, the FX slot will show as missing
+   after removal - just delete the empty FX from each affected track.
+
+
+TROUBLESHOOTING
+---------------
+
+"Missing dependency: ReaImGui extension"
+  Install ReaImGui via ReaPack (see WHAT YOU NEED above).
+
+"Failed to add EnsemblerFilter FX" / FX slot shows missing
+  The Lua script can't find the JSFX. Check that:
+    - All 9 EnsemblerFilter*.jsfx* files are in REAPER/Effects/NW/
+      (or anywhere under REAPER/Effects/ - it searches recursively).
+    - They're all in the SAME folder as each other.
+  Then in REAPER:  Options -> Refresh FX list  and try again.
+
+No presets visible in the preset browser
+  Confirm the install path is exactly Scripts/NW/Ensembler/ (not
+  Scripts/Ensembler/). If you put it somewhere else, the script can't
+  find the presets folder.
+
+Quick Builder buttons do nothing / wrong tracks load
+  Expected - see "Quick Builder won't work for you out of the box"
+  above. Edit quick_builder_instruments.lua to match your template.

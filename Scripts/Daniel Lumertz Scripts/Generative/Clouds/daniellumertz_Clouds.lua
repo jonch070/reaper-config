@@ -1,4 +1,4 @@
--- @version 1.3.0
+-- @version 1.3.1
 -- @author Daniel Lumertz
 -- @provides
 --    [main] daniellumertz_Clouds Generate for All Items.lua
@@ -13,7 +13,7 @@
 --    [nomain] User Settings/.gitkeep
 --    [effect] FX/daniellumertz_Clouds.jsfx
 -- @changelog
---    + It is free from now on. MIT Lincense 
+--    + Fix for ImGui Font
 -- @license 
 --[[
     MIT
@@ -29,7 +29,7 @@ reaper.defer = profiler.defer ]]
 
 -- Constants:
 SCRIPT_NAME = 'Clouds'
-SCRIPT_V  = '1.3.0' -- version should always be three digits! leters, for beta versions, are acceptable.
+SCRIPT_V  = '1.3.1' -- version should always be three digits! leters, for beta versions, are acceptable.
 EXT_NAME = 'daniellumertz_Clouds'     -- keys: settings (for clouds), is_item (for generated items)
 FX_NAME = 'daniellumertz_Clouds'
 Proj = 0

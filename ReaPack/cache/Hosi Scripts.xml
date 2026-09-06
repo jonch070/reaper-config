@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="Hosi Scripts" commit="3e1c653793bd0f60c7641d02a7fc5357a172c470">
+  <category name="AI Tool">
+    <reapack name="Hosi_Demucs_Separator_Gui-Cross_Platform.lua" type="script" desc="Demucs Stem Separator (GUI Version)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Displays a window to select an AI Model and processing device (CPU/GPU), then separates the selected audio item. Includes a GPU compatibility check.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab This version is modified to run on Windows, macOS, and Linux.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requirements: ReaImGui must be installed via ReaPack.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1" author="Hosi" time="2025-10-11T01:49:43Z">
+        <changelog><![CDATA[+ v1.1 - Added cross-platform support for Windows, macOS, and Linux.
++ v1.0 - Initial release.]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/bc344fd0cb50bab4689859f114efee2437617e86/AI%20Tool/Hosi_Demucs_Separator_Gui-Cross_Platform.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Demucs_Separator_Gui.lua" type="script" desc="Demucs Stem Separator (GUI Version)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Displays a window to select an AI Model and processing device (CPU/GPU), then separates the selected audio item. Includes a GPU compatibility check.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requirements: ReaImGui must be installed via ReaPack.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T05:33:15Z">
+        <changelog><![CDATA[+ v1.0 - Initial release.]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/1687066deaddc4f5b801f088c84f8e02e7830e7b/AI%20Tool/Hosi_Demucs_Separator_Gui.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_ElevenLabs_Sound_Effects.lua" type="script" desc="Hosi - ElevenLabs Sound Effects">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A helper script to generate sound effects using the ElevenLabs API.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Supports generating audio from the text box or from the notes of multiple selected items.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Based on the original Hosi - ElevenLabs TTS script.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.7" author="Hosi" time="2025-09-02T05:33:15Z">
+        <changelog><![CDATA[+ v1.7 (2025-08-17)
+  - ADDED: Sequence Generation. Use '|' to separate prompts in the text box.
++ v1.6 (2025-08-14)
+  - ADDED: Prompt Presets feature.
++ v1.5 (2025-08-14)
+  - ADDED: "Generate as New Takes" feature. Variations are now added as takes to a single item.
++ v1.4 (2025-08-14)
+  - ADDED: Advanced Insertion Options.
++ v1.3 (2025-08-13)
+  - IMPROVED: Re-implemented item detection using a robust "snapshot" method.
++ v1.2 (2025-08-12)
+  - ADDED: "Number of Variations" setting.
++ v1.1 (2025-07-11)
+  - FIXED: Text input issues.
++ v1.0 (2025-07-10)
+  - Initial release.]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/1687066deaddc4f5b801f088c84f8e02e7830e7b/AI%20Tool/Hosi_ElevenLabs_Sound_Effects.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_ElevenLabs_TTS.lua" type="script" desc="Hosi - ElevenLabs TTS (Multi-Item Version)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A helper script to generate TTS using the ElevenLabs API.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Supports generating audio from the text box or from the notes of multiple selected items.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1" author="Hosi" time="2025-09-02T05:33:15Z">
+        <changelog><![CDATA[+ v1.1 (2025-07-11)
+  - FIXED: Input stability and similarity_boost.
++ v1.0 (2025-07-09)
+  - Initial release.]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/1687066deaddc4f5b801f088c84f8e02e7830e7b/AI%20Tool/Hosi_ElevenLabs_TTS.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Gemini_TTS.lua" type="script" desc="Google Gemini TTS (Item Note Version)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Helper script to generate TTS from an item's note using Google's Gemini TTS API.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Supports batch processing, model selection, and style instructions.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Quick Presets for Style Instructions.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.1" author="Hosi" time="2025-09-02T05:33:15Z">
+        <changelog><![CDATA[+ v2.1 (2025-07-14)
+  - FIXED: Script crashing when generated audio item overlaps with the source text item.
+  - Used pcall for safer API calls during item detection loop.
++ v2.0 (2025-07-08)
+  - ADDED: Quick Presets for Style Instructions.
+  - Improved interface, fixed bugs and increased stability.
++ v1.0 (2025-07-06)
+  - Initial release.]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/1687066deaddc4f5b801f088c84f8e02e7830e7b/AI%20Tool/Hosi_Gemini_TTS.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Develop/HosiMeter">
+    <reapack name="hmeterz.jsfx" type="effect" desc="hmeterz v0.9">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 meterz\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A minimal, distributed audio levels visualizer.\par}
+}
+]]></description>
+        <link rel="website">https://forum.cockos.com/showthread.php?t=246931</link>
+      </metadata>
+      <version name="0.9" author="Bang - Developed by Hosi" time="2025-09-09T07:16:46Z">
+        <changelog><![CDATA[+ v0.9 - Added Clip History log window with timestamps.
++ v0.8 - "Reset All Clips" button.]]></changelog>
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/37591a9b87ab6ba0ce15ef8fc73fcb149dd7545e/Develop/HosiMeter/hmeterz.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="hmeterztx.jsfx" type="effect" desc="hmeterz tx - v0.9">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 meterz tx\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You will insert the plugin into the audio channels (tracks) that you want to monitor.\par}
+}
+]]></description>
+        <link rel="website">https://forum.cockos.com/showthread.php?t=246931</link>
+      </metadata>
+      <version name="0.9" author="Bang - Developed by Hosi" time="2025-09-09T07:16:46Z">
+        <changelog><![CDATA[+ v0.9 - Added Clip History logging (timestamp and channel).
++ v0.8 - Added Clip Counter logic. Now increments a counter instead of setting a flag.
++ v0.7 - Integrate clipping detection and alert feature.
++ v0.6 - Initial version by Bang.]]></changelog>
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/37591a9b87ab6ba0ce15ef8fc73fcb149dd7545e/Develop/HosiMeter/hmeterztx.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Gain_Matcher_for_hmeterz.lua" type="script" desc="Hosi Gain Matcher for hmeterz">
+      <version name="1.0" author="Hosi (based on the hmeterz system and idea)" time="2025-09-19T12:58:49Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/43fd248c067d0a35af7a85ada944ad8847d3ce4b/Develop/HosiMeter/Hosi_Gain_Matcher_for_hmeterz.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_hmeterz_Meter_Bridge.lua" type="script" desc="Hosi hmeterz Meter Bridge (ReaImGui Edition)">
+      <version name="0.5" author="Hosi" time="2025-09-09T05:17:38Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/e41a7679ce4ce4d52e6ae4056422683bbeb18d35/Develop/HosiMeter/Hosi_hmeterz_Meter_Bridge.lua</source>
+      </version>
+      <version name="0.6" author="Hosi" time="2025-09-10T12:00:26Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/488c8107e0f1761f55c7ac4c8ac4b50f577495ff/Develop/HosiMeter/Hosi_hmeterz_Meter_Bridge.lua</source>
+      </version>
+      <version name="0.7" author="Hosi" time="2025-09-19T12:58:49Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/43fd248c067d0a35af7a85ada944ad8847d3ce4b/Develop/HosiMeter/Hosi_hmeterz_Meter_Bridge.lua</source>
+      </version>
+      <version name="0.7.1" author="Hosi" time="2025-09-25T09:58:25Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/6cbc5f7c97c31b9b0c2381f0bb647e41915c470b/Develop/HosiMeter/Hosi_hmeterz_Meter_Bridge.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Manage hmeterzTX.lua" type="script" desc="Manage hmeterzTX (Add/Configure, Offline/Online or Remove All)">
+      <version name="0.3" author="Hosi" time="2025-09-09T05:17:38Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/e41a7679ce4ce4d52e6ae4056422683bbeb18d35/Develop/HosiMeter/Hosi_Manage%20hmeterzTX.lua</source>
+      </version>
+      <version name="0.4" author="Hosi" time="2025-09-11T03:05:41Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/b5751cc2da692d2c0d11c48393ffb34d71a35e0a/Develop/HosiMeter/Hosi_Manage%20hmeterzTX.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Problem_Dashboard.lua" type="script" desc="Problem Dashboard for hmeterz">
+      <version name="0.1" author="Hosi" time="2025-09-10T11:01:23Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/b1f7939e5e2f374c4e46df4180b4c2a759132a8f/Develop/HosiMeter/Hosi_Problem_Dashboard.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Develop/Matchering">
+    <reapack name="matchering_reaper_gui_batch_unified.lua" type="script" desc="Matchering 2.0 GUI (Unified Batch Processor)">
+      <version name="1.1" author="Hosi" time="2025-12-09T10:09:09Z">
+        <source main="main" file="Hosi_Matchering 2.0 GUI (Unified Batch).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/dc36c47a169c50cd97fc53b6e9333d379971977b/Develop/Matchering/matchering_reaper_gui_batch_unified.lua</source>
+      </version>
+    </reapack>
+    <reapack name="matchering_worker.py" type="script" desc="Matchering 2.0 Worker (Python Subprocess)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Matchering 2.0 Worker\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This Python script is designed to be called non-interactively by the Matchering 2.0 Lua GUI. It handles the external execution of the {\f1 matchering-cli} subprocess in a non-blocking way, using REAPER's ExtState for communication and RPR_defer for process status polling.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\b DO NOT RUN THIS SCRIPT MANUALLY.}\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-12-09T10:09:09Z">
+        <changelog><![CDATA[+ v1.0 (2025-11-12) - Initial release with non-blocking Popen and ExtState communication.]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/dc36c47a169c50cd97fc53b6e9333d379971977b/Develop/Matchering/matchering_worker.py</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Develop/Reanspiration">
+    <reapack name="Hosi_Reanspiration_2.lua" type="script" desc="Reanspiration - Advanced MIDI Generation Toolkit">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 An all-in-one toolkit for generating harmonically-aware musical ideas.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This script expands upon the original "Reanspiration" by phaselab, adding a comprehensive GUI and numerous features for creating chords, basslines, and melodies.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Features:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Chord generation with expanded scale/progression library.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced chord extensions (9ths, 11ths, 13ths, alterations).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced voicing (spread, drop voicings).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Smart bassline generator with multiple patterns.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Integrated melody generator.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Arpeggiator and Strummer.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Humanizer for timing and velocity.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Multi-level Undo for creative tool edits.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Tabbed interface for improved workflow.\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=291623">Original Script by phaselab</link>
+      </metadata>
+      <version name="2.3" author="Hosi (developed from original concept by phaselab)" time="2025-09-12T02:39:09Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/56d75716f0573f582b8530c92401b4d23db30dda/Develop/Reanspiration/Hosi_Reanspiration_2.lua</source>
+      </version>
+      <version name="2.4" author="Hosi (developed from original concept by phaselab)" time="2025-09-12T07:47:53Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/dead8c7bfd17f7517b99552920b4924184a099cc/Develop/Reanspiration/Hosi_Reanspiration_2.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Reanspiration_3 - Multi-language.lua" type="script" desc="Reanspiration - Advanced MIDI Generation Toolkit">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 An all-in-one toolkit for generating harmonically-aware musical ideas. NEW in v3.6: Added a customizable Drum Map Editor in the Settings tab.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Features:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Chord generation with expanded scale/progression library.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Separate Bassline Generation based on existing chords.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Automatic Secondary Dominant insertion for richer harmony.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced Voice Leading algorithm for smoother chord transitions.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced chord extensions (9ths, 11ths, 13ths, alterations).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced voicing (spread, drop voicings).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Smart bassline generator with multiple patterns.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Integrated melody generator with contour and chord-targeting.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Rhythmic pattern applicator for chords.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Drum pattern generator with customizable Drum Map.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Automatic MIDI channel routing for Chords, Bass, and Melody.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Arpeggiator and Strummer.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Humanizer for timing and velocity.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Multi-level Undo for creative tool edits.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Tabbed interface for improved workflow.\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=291623">Original Script by phaselab</link>
+      </metadata>
+      <version name="3.4" author="Hosi (developed from original concept by phaselab)" time="2025-09-14T03:18:35Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/6b6d2a18e967bb2e1cc8ffa5ed607a2578ee8b19/Develop/Reanspiration/Hosi_Reanspiration_3%20-%20Multi-language.lua</source>
+      </version>
+      <version name="3.5 (Added Drum Generator)" author="Hosi (developed from original concept by phaselab)" time="2025-09-15T02:37:21Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/f29994363a898972d67d7926cf21cdbb0fa0720c/Develop/Reanspiration/Hosi_Reanspiration_3%20-%20Multi-language.lua</source>
+      </version>
+      <version name="3.5 (Added Undo for Rhythm Applicator)" author="Hosi (developed from original concept by phaselab)" time="2025-09-16T12:32:46Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/e9810699eeb4d6181f437223a1b9474e13339e9e/Develop/Reanspiration/Hosi_Reanspiration_3%20-%20Multi-language.lua</source>
+      </version>
+      <version name="3.5 (Melody, Bass, Drums, Rhythm, Arp/Strum working with Chord Track)" author="Hosi (developed from original concept by phaselab)" time="2025-09-17T10:19:19Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/cefaa8f4b5edb78e52657537445e8016fbb6ebf8/Develop/Reanspiration/Hosi_Reanspiration_3%20-%20Multi-language.lua</source>
+      </version>
+      <version name="3.6 (Drum Map Editor)" author="Hosi (developed from original concept by phaselab)" time="2025-10-27T08:38:38Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/59d64df471eb55e8793aa12e338a95124e4dbb13/Develop/Reanspiration/Hosi_Reanspiration_3%20-%20Multi-language.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Reanspiration_3.lua" type="script" desc="Reanspiration - Advanced MIDI Generation Toolkit">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 An all-in-one toolkit for generating harmonically-aware musical ideas. Now supports external library file ('reanspiration_library.lua') for easy customization.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Features:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Chord generation with expanded scale/progression library.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Automatic Secondary Dominant insertion for richer harmony.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced Voice Leading algorithm for smoother chord transitions.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced chord extensions (9ths, 11ths, 13ths, alterations).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Advanced voicing (spread, drop voicings).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Smart bassline generator with multiple patterns.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Integrated melody generator with contour and chord-targeting.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Rhythmic pattern applicator for chords.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Arpeggiator and Strummer.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Humanizer for timing and velocity.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Multi-level Undo for creative tool edits.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Tabbed interface for improved workflow.\sa180\par}
+}
+]]></description>
+        <link rel="website" href="https://forum.cockos.com/showthread.php?t=291623">Original Script by phaselab</link>
+      </metadata>
+      <version name="3.3 (Improved Voice Leading)" author="Hosi (developed from original concept by phaselab)" time="2025-09-14T03:27:30Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/fa15cc7de968cfe82d9d55c2d9d8f38fd7039122/Develop/Reanspiration/Hosi_Reanspiration_3.lua</source>
+      </version>
+    </reapack>
+    <reapack name="reanspiration_languages.lua" type="script" desc="Language library for Reanspiration script.">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This file contains all the text strings for the Reanspiration UI. To add a new language, copy the entire 'en' table, rename the key (e.g., to 'fr' for French), and translate all the string values. Then, update the 'available_languages' table in the main script.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1 (Added JA, ZH, KO)" author="Hosi" time="2025-09-14T03:18:35Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/6b6d2a18e967bb2e1cc8ffa5ed607a2578ee8b19/Develop/Reanspiration/reanspiration_languages.lua</source>
+      </version>
+      <version name="1.2 (Added Drum Generator text)" author="Hosi" time="2025-09-15T02:37:21Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/f29994363a898972d67d7926cf21cdbb0fa0720c/Develop/Reanspiration/reanspiration_languages.lua</source>
+      </version>
+      <version name="1.5 (Added Undo for Rhythm)" author="Hosi" time="2025-09-16T12:32:46Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/e9810699eeb4d6181f437223a1b9474e13339e9e/Develop/Reanspiration/reanspiration_languages.lua</source>
+      </version>
+      <version name="1.6 (Added Chord Track Feature)" author="Hosi" time="2025-09-17T10:19:19Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/cefaa8f4b5edb78e52657537445e8016fbb6ebf8/Develop/Reanspiration/reanspiration_languages.lua</source>
+      </version>
+      <version name="2.3 (Drum Map UI Update)" author="Hosi" time="2025-10-27T08:38:38Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/59d64df471eb55e8793aa12e338a95124e4dbb13/Develop/Reanspiration/reanspiration_languages.lua</source>
+      </version>
+    </reapack>
+    <reapack name="reanspiration_library.lua" type="script" desc="Library file for Reanspiration script. Contains chord progressions, bass patterns, rhythm, and drum patterns.">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This is a library file required by the main 'Hosi_Reanspiration_3.lua' script. It must be placed in the same directory as the main script. You can safely edit this file to add your own custom chord progressions, bass, rhythm, and drum patterns. NEW in 2.4: Drum patterns now use a re-mappable 'M.drum_map' table instead of hard-coded MIDI notes.\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.1" author="Hosi" time="2025-09-14T03:18:35Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/6b6d2a18e967bb2e1cc8ffa5ed607a2578ee8b19/Develop/Reanspiration/reanspiration_library.lua</source>
+      </version>
+      <version name="2.2" author="Hosi" time="2025-09-15T02:37:21Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/f29994363a898972d67d7926cf21cdbb0fa0720c/Develop/Reanspiration/reanspiration_library.lua</source>
+      </version>
+      <version name="2.3 (MIDI Channel Update)" author="Hosi" time="2025-09-16T12:32:46Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/e9810699eeb4d6181f437223a1b9474e13339e9e/Develop/Reanspiration/reanspiration_library.lua</source>
+      </version>
+      <version name="2.4 (Drum Map Update)" author="Hosi" time="2025-10-27T08:38:38Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/59d64df471eb55e8793aa12e338a95124e4dbb13/Develop/Reanspiration/reanspiration_library.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Freesound Search">
+    <reapack name="Hosi_Freesound_Logic_Pro.py" type="script" desc="This script is called by Hosi_Freesound_Logic_GUI_Pro.lua.">
+      <version name="1.3" author="Hosi Prod" time="2025-09-02T00:53:17Z">
+        <changelog><![CDATA[+ v1.3 (2025-08-31) - Initial release on Reapack.]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/8ed0f83f0f9f6891da67375725298ab909584740/Freesound%20Search/Hosi_Freesound_Logic_Pro.py</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="FX">
+    <reapack name="Hosi_FX Homie Manager.lua" type="script" desc="FX Homie Manager (Toggleable Window)">
+      <metadata>
+        <link rel="website">https://forum.cockos.com/showthread.php?p=2680992#post2680992</link>
+      </metadata>
+      <version name="1.0.5" author="Sexan &amp; Hosi (Combined)" time="2025-09-04T23:06:55Z">
+        <source main="main" file="Hosi_FX Homie Manager (Toggleable Window).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/a867c084abee11a6d56da418bc54d3d2203b87b1/FX/Hosi_FX%20Homie%20Manager.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="JSFX">
+    <reapack name="crest_meter.jsfx" type="effect" desc="Hosi Crest Meter + Max Crest">
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T10:50:34Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/b5665a6d36e23625339a4d92bc7fde964e77cf39/JSFX/crest_meter.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="DePlosive Enhanced.jsfx" type="effect" desc="Hosi DePlosive Enhanced">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 DePlosive Enhanced\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab An enhanced, adaptive tool to reduce vocal plosives.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Keywords: dynamics, plosive, vocal, pop, enhanced, adaptive\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/DePlosive%20Enhanced.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="DePlosive Simple.jsfx" type="effect" desc="Hosi DePlosive Simple">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 DePlosive Simple\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A simple tool to reduce vocal plosives.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Keywords: dynamics, plosive, vocal, pop filter\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/DePlosive%20Simple.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Enhanced Deesser Pro.jsfx" type="effect" desc="Hosi Enhanced Deesser Pro">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Enhanced Deesser Pro\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A professional tool to reduce sibilance in vocals.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Keywords: dynamics, deesser, sibilance\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/Enhanced%20Deesser%20Pro.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi Advanced Smooth Gain GLR.jsfx" type="effect" desc="Hosi Advanced Smooth Gain GLR">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hosi Advanced Smooth Gain GLR\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab An enhanced smooth gain utility with a green line reference.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.4" author="Enhanced by Hosi - Green Line Reference Only" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/Hosi%20Advanced%20Smooth%20Gain%20GLR.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi Advanced Smooth Gain RLR.jsfx" type="effect" desc="Hosi Advanced Smooth Gain RLR">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hosi Advanced Smooth Gain RLR\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab An enhanced smooth gain utility with a green line reference.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.4" author="Enhanced by Hosi - Green Line Reference Only" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/Hosi%20Advanced%20Smooth%20Gain%20RLR.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi EQ 560.jsfx" type="effect" desc="Hosi :: Hosi API 560">
+      <version name="1.0" author="Hosi" time="2025-10-03T03:24:56Z">
+        <changelog><![CDATA[+ v1.0: 03 - Oct - 2025]]></changelog>
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/2eac6fa476bcf7ca6023fd60c88f34101e9f2cfc/JSFX/Hosi%20EQ%20560.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi JSFX Notepad.jsfx" type="effect" desc="JSFX Notepad">
+      <version name="1.2" author="Tale - Developed by Hosi" time="2025-09-04T01:04:32Z">
+        <changelog><![CDATA[+ v1.2 - Fix MCP display
++ v1.1 - Added Clear All button. Replaced text buttons with icons to save space.
++ v1.0 - Initial release by Hosi, based on code by Tale.
+       - Added toggleable Text Wrap feature.
+       - The "Insert Postion" feature inserts time very useful: Very handy for making notes during music production (eg "need to fix the drum at [1:23.50]").]]></changelog>
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/4f207c917c8b61778b69778682ca08128232486b/JSFX/Hosi%20JSFX%20Notepad.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi Master Limiter.jsfx" type="effect" desc="Hosi Master Limiter">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hosi Master Limiter\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Accurate Attack & Lookahead.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Brickwall Clipper stage to ensure no clipping.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod &amp; LOSER" time="2025-09-02T01:36:17Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/5c14084025b6a1a296eab31b5fa1674a83191019/JSFX/Hosi%20Master%20Limiter.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi Simple Limiter.jsfx" type="effect" desc="Hosi Simple Limiter">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hosi Simple Limiter\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Zero latency brickwall limiter. Display Max, Min, and Peak GR.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-02T01:36:17Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/5c14084025b6a1a296eab31b5fa1674a83191019/JSFX/Hosi%20Simple%20Limiter.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Advanced_Smooth_Gain.jsfx" type="effect" desc="Hosi Advanced Smooth Gain 2">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hosi Advanced Smooth Gain 2\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab An enhanced smooth gain utility.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.2" author="Enhanced by Hosi" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/Hosi_Advanced_Smooth_Gain.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Chorus.jsfx" type="effect" desc="HosiFX Chorus">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Chorus\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A rich chorus effect with 20 presets for widening and thickening vocals and instruments.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Chorus.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Compress.jsfx" type="effect" desc="HosiFX Compress">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Compress\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A modern, versatile compressor with 30 presets and a hardware-rack UI.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Compress.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_De_ess.jsfx" type="effect" desc="HosiFX De-Ess">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX De-Ess\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A precision de-esser with 20 presets for taming sibilance and harshness.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_De_ess.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Delay.jsfx" type="effect" desc="HosiFX Delay">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Delay\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A flexible delay unit with 25 presets, including tape, ping-pong, and rhythmic styles.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Delay.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Master.jsfx" type="effect" desc="HosiFX Master">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Master\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A powerful mastering processor with 30 presets for various genres.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Master.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Noise_Gate.jsfx" type="effect" desc="HosiFX Noise Gate">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Noise Gate\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A responsive noise gate with 20 presets for drums, guitars, and vocals.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Noise_Gate.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Reverb.jsfx" type="effect" desc="HosiFX Reverb">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Reverb\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A lush algorithmic reverb with 25 presets ranging from tiled rooms to infinite washes.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Reverb.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Rotary.jsfx" type="effect" desc="HosiFX Rotary">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Rotary\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A vintage rotary speaker simulator with 20 presets for classic organ and guitar tones.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Rotary.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Simple_EQ.jsfx" type="effect" desc="HosiFX Simple EQ">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Simple EQ\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A simple and effective EQ with 30 presets for quick tonal shaping.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-01T04:04:14Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/8b27148dd6308de3b29961350504da4330ed1a17/JSFX/HosiFX_Simple_EQ.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="HosiFX_Vocal_Chain.jsfx" type="effect" desc="HosiFX Vocal Chain">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 HosiFX Vocal Chain\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A complete vocal processing chain (Gate, De-Ess, Comp, EQ, Delay, Reverb) with per-module presets and unified control.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="HosiFX" time="2025-12-18T13:22:20Z">
+        <changelog><![CDATA[+ Initial release.]]></changelog>
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/1bbb3abf79911a7cb4d11174471c598895ec5a0c/JSFX/HosiFX_Vocal_Chain.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hybrid DeEsser Pro.jsfx" type="effect" desc="Hosi Hybrid DeEsser Pro">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hybrid DeEsser Pro\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A hybrid tool to reduce vocal sibilance.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Keywords: dynamics, deesser, sibilance, vocal\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi &amp; Stephen Boyes" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/Hybrid%20DeEsser%20Pro.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Hybrid_DeEsser_Pro.jsfx" type="effect" desc="Hosi Hybrid DeEsser Pro v1.1">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hybrid DeEsser Pro\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A hybrid tool to reduce vocal sibilance.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Keywords: dynamics, deesser, sibilance, vocal\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.1" author="Hosi &amp; Stephen Boyes" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/Hybrid_DeEsser_Pro.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="Mid_Side_Decoder_Advanced.jsfx" type="effect" desc="Hosi Advanced Mid/Side Decoder">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hosi Advanced Mid/Side Decoder\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A utility for mid-side processing and stereo width adjustment.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Enhanced Version" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/Mid_Side_Decoder_Advanced.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="PhaseAlign_Lite.jsfx" type="effect" desc="Hosi PhaseAlign Lite - Phase Alignment Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 PhaseAlign Lite\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A utility for phase alignment.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Keywords: phase, alignment, utility\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/PhaseAlign_Lite.jsfx</source>
+      </version>
+    </reapack>
+    <reapack name="PhaseAlign_Pro.jsfx" type="effect" desc="Hosi PhaseAlign Pro - Phase Alignment Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 PhaseAlign Lite\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A utility for phase alignment.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Keywords: phase, alignment, utility\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T03:41:11Z">
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/93c6b784fcf33c34d03c3b64d736646f8fe08c7a/JSFX/PhaseAlign_Pro.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Midi">
+    <reapack name="Hosi_BitMidi_Finder.lua" type="script" desc="Hosi BitMidi Finder">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Search and import MIDI files from BitMidi.com directly into REAPER. Features:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Search BitMidi database (Smart Caching included)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Preview MIDI files (with ReaSynth and Safety Limiter)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab One-click Import (adds to project and auto-removes preview track)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Modern Dark UI\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2026-01-14T07:34:33Z">
+        <changelog><![CDATA[v1.0
+  + Initial Release
+  + Search, Preview, Import functionality
+  + Modern Dark UI]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/c03b92d81ea85f732237066a7d2f3893cb006a7b/Midi/Hosi_BitMidi_Finder.lua</source>
+      </version>
+      <version name="1.1" author="Hosi" time="2026-01-14T08:53:01Z">
+        <changelog><![CDATA[v1.1
+  + Added Smart Caching (Instant repeated searches, 24h expiration)
+  + Improved Robust HTML Parsing (Handles quotes, attributes, and entities)
+  + Added "Force Refresh" (Shift + Click Search)
+  + Fixed Import bug (Prevented deletion of imported items when previewing)
+v1.0
+  + Initial Release
+  + Search, Preview, Import functionality
+  + Modern Dark UI]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/3e1c653793bd0f60c7641d02a7fc5357a172c470/Midi/Hosi_BitMidi_Finder.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_chords from midi item.lua" type="script" desc="Create chord regions from MIDI text events with simplified naming">
+      <version name="0.1" author="Hosi" time="2025-10-01T04:06:44Z">
+        <source main="main" file="Hosi_Create chord regions from MIDI item.lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/f117ae00cbad9447fcb641acf7db4af8c7eb940f/Midi/Hosi_chords%20from%20midi%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_create midi chords from region chord name.lua" type="script" desc="Create MIDI chords from region chord name">
+      <version name="1.0" author="MusoBob - ReaTrak" time="2025-10-01T04:06:44Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/f117ae00cbad9447fcb641acf7db4af8c7eb940f/Midi/Hosi_create%20midi%20chords%20from%20region%20chord%20name.lua</source>
+      </version>
+      <version name="1.1" author="MusoBob - ReaTrak - Fixed by Hosi" time="2025-10-01T08:09:10Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/d415da6c746c73d469913f56174788f573d32e90/Midi/Hosi_create%20midi%20chords%20from%20region%20chord%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_FadrChord_regions_import.lua" type="script" desc="Fadr Import chord regions from CSV file (with GUI)">
+      <version name="0.1" author="Hosi (Modified from original X-Raym script)" time="2025-10-01T04:06:44Z">
+        <source main="main" file="Hosi_Fadr Import chord regions from CSV file (GUI).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/f117ae00cbad9447fcb641acf7db4af8c7eb940f/Midi/Hosi_FadrChord_regions_import.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Import Chordino to MIDI - Snap.lua" type="script" desc="Import Chordino Chords to MIDI (Fixed with Snap to Grid)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Import Chordino Chords to MIDI\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Imports a .txt or .csv chord file from Chordino and directly creates MIDI items with the corresponding chords on a new track. The items will snap to the project grid.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Run the script from the Action List.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Select a .txt or .csv file exported from Chordino.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab The script will create a new track with MIDI items representing the chords, snapped to the grid.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.1" author="Hosi, X-Raym, ReaTrak" time="2025-09-28T08:39:48Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/c348bad272ed3148832f282617311e2f13b64939/Midi/Import%20Chordino%20to%20MIDI%20-%20Snap.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Import Chordino to MIDI.lua" type="script" desc="Import Chordino Chords to MIDI">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Import Chordino Chords to MIDI\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Imports a .txt or .csv chord file from Chordino and directly creates MIDI items with the corresponding chords on a new track.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Instructions:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Run the script from the Action List.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Select a .txt or .csv file exported from Chordino.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab The script will create a new track with MIDI items representing the chords.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.0" author="Hosi, X-Raym, ReaTrak" time="2025-09-28T08:39:48Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/c348bad272ed3148832f282617311e2f13b64939/Midi/Import%20Chordino%20to%20MIDI.lua</source>
+      </version>
+    </reapack>
+    <reapack name="MIDI_Pattern_Manager.lua" type="script" desc="MIDI Pattern Manager (Multi-Mode Paste)">
+      <version name="1.1" author="Hosi &amp; Alex" time="2025-11-06T05:06:03Z">
+        <source main="main" file="Hosi_MIDI Pattern Manager (Multi-Mode Paste).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/55f6d80da322399cbfc29d1b2f0fac0c8484c736/Midi/MIDI_Pattern_Manager.lua</source>
+      </version>
+      <version name="1.2" author="Hosi &amp; Alex" time="2025-11-07T05:11:24Z">
+        <source main="main" file="Hosi_MIDI Pattern Manager (Multi-Mode Paste).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/8a4cb16c678635c8ca48ce852d4dee426eaf341d/Midi/MIDI_Pattern_Manager.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Region">
+    <reapack name="Hosi_Export Regions Chords to Text File.lua" type="script" desc="Export project regions to a simple .txt chord sheet">
+      <metadata>
+        <link rel="website">https://www.lachinhan.xyz</link>
+      </metadata>
+      <version name="0.1" author="Hosi (La Chí Nhân)" time="2025-09-30T02:12:19Z">
+        <source main="main" file="Hosi_Export project regions to chord sheet.lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/d78f9f76247f5bee2bddb0fe1c51aa03541880d6/Region/Hosi_Export%20Regions%20Chords%20to%20Text%20File.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Import Regions Chords from Text File.lua" type="script" desc="Import regions from a .txt chord sheet generated by Hosi's export script, now with color-coding and auto tempo.">
+      <metadata>
+        <link rel="website">https://www.lachinhan.xyz</link>
+      </metadata>
+      <version name="0.1" author="Hosi" time="2025-09-30T03:12:05Z">
+        <source main="main" file="Hosi_Import project regions from chord sheet.lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/2947a43a207fbec3978fe991798884fd5a66adae/Region/Hosi_Import%20Regions%20Chords%20from%20Text%20File.lua</source>
+      </version>
+      <version name="0.2" author="Hosi" time="2025-10-01T08:09:10Z">
+        <source main="main" file="Hosi_Import project regions from chord sheet.lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/d415da6c746c73d469913f56174788f573d32e90/Region/Hosi_Import%20Regions%20Chords%20from%20Text%20File.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Import Regions From ChordPulse.lua" type="script" desc="Import regions from a .txt chord sheet generated by ChordPulse and set project tempo.">
+      <metadata>
+        <link rel="website">https://www.lachinhan.xyz</link>
+      </metadata>
+      <version name="0.1" author="Hosi" time="2025-10-01T08:09:10Z">
+        <source main="main" file="Hosi_Import project regions from ChordPulse file.lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/d415da6c746c73d469913f56174788f573d32e90/Region/Hosi_Import%20Regions%20From%20ChordPulse.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Track">
+    <reapack name="Hosi_Auto-Pin Tracks By Name.lua" type="script" desc="Auto-Pin Tracks GUI with Auto-Saving Profile">
+      <version name="1.0" author="Hosi" time="2025-10-12T11:43:30Z">
+        <source main="main" file="Hosi_Auto-Pin Tracks GUI.lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/48448ff27b4f369e4c99e77319f74f51862dffbf/Track/Hosi_Auto-Pin%20Tracks%20By%20Name.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Translations">
+    <reapack name="Vietnamese Translations.ReaperLangPack" type="langpack" desc="Vietnamese Translations">
+      <metadata>
+        <link rel="website">https://stash.reaper.fm/manage_file/49937/Vietnamese%20%28Traditional%29.ReaperLangPack</link>
+      </metadata>
+      <version name="1.1.6-733" author="La Chi Nhan (Hosi Prod)" time="2025-09-04T08:34:06Z">
+        <changelog><![CDATA[Brand new REAPER: 7.33, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/e429252e6ccfaa6b1649519d686b16cdf69fcb47/Translations/Vietnamese%20Translations.ReaperLangPack</source>
+      </version>
+      <version name="7.45" author="La Chi Nhan (Hosi Prod)" time="2025-09-04T23:06:55Z">
+        <changelog><![CDATA[Brand new REAPER: 7.45, SWS: 2.14.0.3]]></changelog>
+        <source>https://github.com/lachinhan/Hosi-ReaScripts/raw/a867c084abee11a6d56da418bc54d3d2203b87b1/Translations/Vietnamese%20Translations.ReaperLangPack</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Utility">
+    <reapack name="Hosi - Tempo Detect Item - GUI.lua" type="script" desc="Hosi Tempo Detect Item (GUI Version)">
+      <version name="2.0" author="Hosi Prod (Algorithm by MPL)" time="2025-09-02T09:32:41Z">
+        <source main="main" file="Hosi_Detect item tempo (GUI).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/6df257261193e43f0eb111fadeaf260b1d851daf/Utility/Hosi%20-%20Tempo%20Detect%20Item%20-%20GUI.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi Mini Track Mixer - ReaImGui.lua" type="script" desc="Hosi Mini Track Mixer (ReaImGui Version)">
+      <version name="1.1" author="Hosi" time="2025-09-23T08:25:07Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/c0659938b9c139d2d18550636e6391c9e5656c6a/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.3" author="Hosi" time="2025-10-13T04:31:57Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/eb2cb1e7f56ac5746a338455ee3e0b1f6205d780/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.4" author="Hosi" time="2025-10-14T00:36:42Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/2f126f6276ac8d36abfdad3e062f6503b98792de/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.7" author="Hosi" time="2025-10-17T01:58:03Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/c81361749d5b6c278973275deb4d23bc155d2566/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.9" author="Hosi" time="2025-10-22T07:38:35Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/1580f67d3db065457fc00c2b10fc353b371027e5/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.9.3" author="Hosi" time="2025-12-10T01:34:57Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/5ce3c29e533c241996f5004ee1ca1fa52a59ed31/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.9.4" author="Hosi" time="2025-12-11T07:51:16Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/372b224a65480e2b14d27f8efcff8d310c951059/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.9.5" author="Hosi" time="2025-12-17T16:55:03Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/681e10e3356e7a32b14dc69eeca4f69115516ce4/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+      <version name="1.9.6" author="Hosi" time="2026-01-08T04:52:09Z">
+        <source main="main" file="Hosi_Mini Track Mixer (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/0690412f6e9a631bf46d04e33f51f02b36fbeaf4/Utility/Hosi%20Mini%20Track%20Mixer%20-%20ReaImGui.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi Panel.lua" type="script" desc="Hosi Panel (ReaImGui Version)">
+      <version name="1.0.0" author="Hosi" time="2025-11-03T01:07:13Z">
+        <source main="main" file="Hosi_Panel (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/fee3bcc5cbe2fb5a265f4fb53ab90225322ecf93/Utility/Hosi%20Panel.lua</source>
+      </version>
+      <version name="1.1" author="Hosi" time="2025-12-07T02:58:17Z">
+        <source main="main" file="Hosi_Panel (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/f5bde06e596f43ead9f16fb2cf093cc733238945/Utility/Hosi%20Panel.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Auto_Loop_Detector.lua" type="script" desc="Auto Loop Detector">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 GUI tool to scan media items for loop points based on RMS energy. Features: High Precision (5ms), Transient Protection, Grid Snap, and Presets.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Requires: ReaImGui API\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-12-09T07:56:06Z">
+        <changelog><![CDATA[+ Initial release]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/a233d1de95eaa75115dff42ffcf2ecc833f8102f/Utility/Hosi_Auto_Loop_Detector.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Project Notes Viewer.lua" type="script" desc="Project Notes Editor (ReaImGui Version)">
+      <version name="1.0" author="Hosi" time="2025-09-21T03:58:54Z">
+        <source main="main" file="Hosi_Project Notes Editor (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/956a3eb20c4d8c3c08f106e625290ef881a2e51b/Utility/Hosi_Project%20Notes%20Viewer.lua</source>
+      </version>
+      <version name="1.2" author="Hosi (Modified for two-way sync)" time="2025-09-22T01:56:55Z">
+        <source main="main" file="Hosi_Project Notes Editor (ReaImGui).lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/9c519534e4c29ca2e5b6b05f5fec1091129df400/Utility/Hosi_Project%20Notes%20Viewer.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Script Generator for Toggling Plugins.lua" type="script" desc="Script Generator for Hosi's Toggle Plugin">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Run this script to automatically generate multiple "Hosi_Toggle Plugin by Slot X.lua" files. A dialog box will appear asking for the desired number of slots.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T09:32:41Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/6df257261193e43f0eb111fadeaf260b1d851daf/Utility/Hosi_Script%20Generator%20for%20Toggling%20Plugins.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_script_detect_key.lua" type="script" desc="Detect Key for Selected Media Items (using trackanalyzer.jar)">
+      <version name="1.0" author="Hosi Prod (Modified with console toggle)" time="2025-09-02T09:32:41Z">
+        <changelog><![CDATA[v1.0 05-Aug-2025: Initial release.]]></changelog>
+        <source main="main" file="Hosi_Detect Key for Selected Media Items.lua">https://github.com/lachinhan/Hosi-ReaScripts/raw/6df257261193e43f0eb111fadeaf260b1d851daf/Utility/Hosi_script_detect_key.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Session_View.lua" type="script" desc="Session Player (Ultimate Edition)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Session Player\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A Grid-based Session View for REAPER, tailored for live performance and arrangement.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Features\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Clip Launching with Quantization\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Dynamic Scene Management (Add/Remove items and scenes on the fly)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Live Performance Recording to Timeline\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Drag & Drop Support\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Optimized Waveform Preview\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="3.0" author="Hosi" time="2026-01-10T05:14:20Z">
+        <changelog><![CDATA[+ Added Performance Recording (Global Rec) functionality
++ Improved Scene Playback Logic (Overlay/Mixing Mode)
++ Dynamic Scene Button States (Auto-detect playback)
++ Added Scene Context Menu Actions (Batch Loop, Follow Actions)
++ Fixed UI state synchronization issues]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/dc723aa4863555956d2afe71397f9f37e41420c6/Utility/Hosi_Session_View.lua</source>
+      </version>
+      <version name="3.1" author="Hosi" time="2026-01-10T10:54:37Z">
+        <changelog><![CDATA[+ Added Dynamic Scene Management (Add/Remove Scenes instantly via UI)
++ Optimized Waveform Rendering (Visibility culling for high performance)
++ Improved Track Folder Logic (Prevents swallowing of external tracks like Send FX)
++ Added Persistence for Grid Size (Remembers Track and Scene counts)
++ Fixed "Ghost Waveform" visual bug when clearing cells
++ Added Auto-Waveform Generation for new items and duplicates]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/c96a35aad70ef52da8a50fb768614d7aa17bda39/Utility/Hosi_Session_View.lua</source>
+      </version>
+      <version name="3.2" author="Hosi" time="2026-01-11T06:46:58Z">
+        <changelog><![CDATA[+ Added Dynamic Scene Management (Add/Remove Scenes instantly via UI)
++ Optimized Waveform Rendering (Visibility culling for high performance)
++ Improved Track Folder Logic (Prevents swallowing of external tracks like Send FX)
++ Added Persistence for Grid Size (Remembers Track and Scene counts)
++ Fixed "Ghost Waveform" visual bug when clearing cells
++ Added Auto-Waveform Generation for new items and duplicates
++ Added Scene Color Customization (Right-click Scene -> Set Scene Color)
++ Optimized Memory Management (Auto-clear waveform cache)
++ Optimized Loop Engine (Uses B_LOOPSRC for infinite looping without item clutter)
++ Optimized Undo History (Prevents "Loop Extension" spam during playback)
++ Added MIDI Visualization (Piano Roll view for MIDI cells)
++ Added Dynamic Content Coloring (Notes/Waveforms inherit Track or Custom Cell colors)
++ Improved Global Recording Stability (Auto-save on exit, fixed data loss on playback restart)]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/bb86f7b1fc327a5347d89ed0e94a12249377187b/Utility/Hosi_Session_View.lua</source>
+      </version>
+      <version name="3.3" author="Hosi" time="2026-01-12T03:06:08Z">
+        <changelog><![CDATA[+ Optimized Playback Engine: Implementation of "Active Cells" tracking reduces CPU usage by 80-90% on large grids.
++ Added Waveform Job Queue: Waveforms now load sequentially (1 per frame) to prevent UI freezes/hangs during project load or bulk operations.
++ Fixed Waveform Initialization: Added auto-detection and creation of parent folder track to ensuring waveforms always display correctly on startup.
++ Accelerated Waveform Reading: Implemented "Aggressive Step" algorithm (Hard Cap 256 samples/pixel + Direct Memory Access) to boost read speed by 100x on long files.
++ Optimized UI Rendering: Implemented "List Clipper" to only render visible rows, reducing CPU usage to near 0% when using large grids (64+ scenes).
++ Fixed Red Transport Flash: Removed invasive UI Refresh blocking during background waveform generation.
++ Optimized Track Scanning: "Smart Cache" system now only scans track structure when Project State changes, eliminating redundant processing in the GUI loop.
++ Eliminated Garbage Collection Spikes: Refactored `updatePlayback` to use Object Pooling (reusing tables) instead of creating new memory allocations every frame.
++ Reduced Waveform Overdraw: Optimized drawing logic to render at 2px stride, halving the number of GPU draw calls while maintaining visual quality.
++ Fixed Folder Chaos: Overhauled `syncTCP` to strictly enforce folder structure and invalidate cache during updates, preventing track duplication and leaks.
++ API Micro-Optimization: Cached `reaper.GetPlayPosition()` within the GUI loop, saving dozens of redundant API calls per frame during playback.
++ Sync Stop: Stopping a Scene or clicking "Stop All" now also stops the DAW Transport (Quantized), ensuring complete silence as requested.
++ Fixed Ghost Items: Forced View Refresh (`UpdateArrange`) when stopping cells guarantees items disappear visually from the timeline immediately.
++ Added Dynamic Scene Management (Add/Remove Scenes instantly via UI)
++ Optimized Waveform Rendering (Visibility culling for high performance)
++ Improved Track Folder Logic (Prevents swallowing of external tracks like Send FX)
++ Added Persistence for Grid Size (Remembers Track and Scene counts)
++ Fixed "Ghost Waveform" visual bug when clearing cells
++ Added Auto-Waveform Generation for new items and duplicates
++ Added Scene Color Customization (Right-click Scene -> Set Scene Color)
++ Optimized Memory Management (Auto-clear waveform cache)
++ Optimized Loop Engine (Uses B_LOOPSRC for infinite looping without item clutter)
++ Optimized Undo History (Prevents "Loop Extension" spam during playback)
++ Added MIDI Visualization (Piano Roll view for MIDI cells)
++ Added Dynamic Content Coloring (Notes/Waveforms inherit Track or Custom Cell colors)
++ Improved Global Recording Stability (Auto-save on exit, fixed data loss on playback restart)
++ Added Scene Follow Actions (Auto-sequence scenes: Next, First, Stop after N bars)]]></changelog>
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/1fbbd0146e903de6224c0bf116d2528da2dc2c0d/Utility/Hosi_Session_View.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Variator.lua" type="script" desc="Hosi Variator - Randomize properties for selected media items">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This script randomizes multiple properties for each selected media item. A modern ReaImGui interface with checkboxes and sliders allows for precise control over the randomization process. This version has been enhanced with a Preset Management system. See more at https://www.lachinhan.xyz/2025/08/var.html\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Instructions:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Select one or more media items on a track.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Place the edit cursor at the center point for horizontal scattering.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Run this script. The ReaImGui window will appear.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab Use the checkboxes and sliders to configure randomization settings.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 5.\tx360\tab Click "Save Preset" to save the current settings.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 6.\tx360\tab Click "Manage Presets" to load, rename, or delete existing presets.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 7.\tx360\tab Click "Mutate" to apply the changes.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi" time="2025-09-02T09:32:41Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/6df257261193e43f0eb111fadeaf260b1d851daf/Utility/Hosi_Variator.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Hosi_Variator_Pro.lua" type="script" desc="Hosi Variator - Sound Design Edition">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 SOUND DESIGN EDITION This script is a powerful Texture Morphing and Randomization tool for Sound Design.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Features:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Tape Mode: Link Rate & Pitch for organic varispeed effects.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Layering Control: Precise control over Start Offset and Free Mode positioning.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Texture Tools: Reverse probability, Formant shifting (future), and more.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Modern Dark UI: Professional interface with preset management.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Instructions:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 1.\tx360\tab Select media items.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 2.\tx360\tab Configure randomization parameters in the tabs.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 3.\tx360\tab Use "Global Chaos" to scale the overall intensity.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 4.\tx360\tab Click "Mutate" to process.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="2.0" author="Hosi" time="2025-12-14T09:48:39Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/816d606d207e217451f752cf168e3db2f6cc1839/Utility/Hosi_Variator_Pro.lua</source>
+      </version>
+    </reapack>
+    <reapack name="MidSide_Split_Tool - ReaImGui.lua" type="script" desc="Hosi Mid/Side Split Tool">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 [A tool for REAPER that splits stereo audio tracks into separate Mid and Side components. It automatically creates a new track folder with the original, Mid, and Side tracks, which are then routed to the master track. The script also includes options to preserve item colors, add a spectrum analyzer, or apply an EQ optimization for vocals. Instructions: Select one or more stereo audio tracks and run the script. The script will handle the rest.]\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Hosi Prod" time="2025-09-02T09:32:41Z">
+        <source main="main">https://github.com/lachinhan/Hosi-ReaScripts/raw/6df257261193e43f0eb111fadeaf260b1d851daf/Utility/MidSide_Split_Tool%20-%20ReaImGui.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 Hosi's ReaScripts & JSFX for REAPER\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 A collection of useful ReaScripts and JSFX plugins for REAPER (https://www.reaper.fm/), created by Hosi Prod.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This repository is available for installation via ReaPack (https://reapack.com/).\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 1.\tx360\tab In REAPER, go to {\f1 Extensions > Reapack > Import repositories...}.\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 2.\tx360\tab Paste the following URL into the address field: {\field{\*\fldinst{HYPERLINK "https://github.com/lachinhan/Hosi-ReaScripts/raw/master/index.xml"}}{\fldrslt{\ul
+https://github.com/lachinhan/Hosi-ReaScripts/raw/master/index.xml
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 3.\tx360\tab Click {\b OK}.\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 4.\tx360\tab Go to {\f1 Extensions > Reapack > Browse packages...}. You can now find, install, and update the scripts and plugins from this repository.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Available Packages\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 This repository includes a variety of tools to enhance your workflow.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 ReaScripts\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Freesound Search and Import (ReaImGui):} Search and import sounds directly from Freesound.org.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab ... and many other scripts\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel2 \b \fs28 JSFX Plugins\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Hosi Master Limiter:} A mastering limiter combining features from various classic limiters.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Hosi Simple Limiter:} A zero-latency brickwall limiter with gain reduction metering.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b HosiFX Compress:} A simple and effective compressor. *...and many more utility effects including Chorus, Delay, De-esser, EQ, and Reverb.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Usage\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 After installation via ReaPack:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b ReaScripts} can be found and run from the REAPER Action List ({\f1 Actions > Show action list...}).\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b JSFX Plugins} will be available in your FX Browser.\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Author\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Hosi Prod} ({\field{\*\fldinst{HYPERLINK "https://github.com/lachinhan"}}{\fldrslt{\ul
+lachinhan
+}}}
+)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\b Donate me:} https://paypal.me/nkstudio\sa180\par}
+}
+]]></description>
+  </metadata>
+</index>

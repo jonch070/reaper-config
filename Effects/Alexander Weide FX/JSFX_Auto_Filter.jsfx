@@ -1,0 +1,104 @@
+desc:JSFX Auto Filter
+author:Gemini AI + AlexW
+
+slider1:10000<20,20000,1:log>Frequency (Hz)
+slider3:0<0,100,1>LFO Amount
+slider4:0<0,11,1{Hz,1/1,1/2,1/4,1/4t,1/8,1/8t,1/16,1/16t,1/32,1/64}>LFO Rate
+slider5:1<0.1,20,0.1>LFO Speed (Hz) - Manual
+slider6:0<0,100,1>Envelope Amount
+slider7:0<0,2,1{Lowpass,Highpass,Bandpass}>Type
+slider8:12<12,48,1>Slope (dB/oct)
+slider9:0<0,24,0.1>Drive (dB)
+slider10:-0.1<-12,0,0.1>Limit Ceiling (dB)
+
+@init
+lp1l=bp1l=lp2l=bp2l=lp3l=bp3l=lp4l=bp4l=0;
+lp1r=bp1r=lp2r=bp2r=lp3r=bp3r=lp4r=bp4r=0;
+lfo_phase = 0; env_val = 0;
+smooth_cutoff = slider1;
+
+@sample
+// 1. MODULATION & SMOOTHING
+beats_per_sec = tempo / 60;
+rate_val = (slider4 == 0) ? slider5 : (
+  slider4 == 1 ? beats_per_sec / 4 : slider4 == 2 ? beats_per_sec / 2 :
+  slider4 == 3 ? beats_per_sec : slider4 == 4 ? beats_per_sec * 1.5 :
+  slider4 == 5 ? beats_per_sec * 2 : slider4 == 6 ? beats_per_sec * 3 :
+  slider4 == 7 ? beats_per_sec * 4 : slider4 == 8 ? beats_per_sec * 6 :
+  slider4 == 9 ? beats_per_sec * 8 : beats_per_sec * 16
+);
+
+input_level = abs(spl0 + spl1) * 0.5;
+env_val = (input_level > env_val) ? (env_val * 0.1 + input_level * 0.9) : (env_val * 0.999);
+lfo_val = sin(lfo_phase);
+lfo_phase += 2 * $pi * rate_val / srate;
+lfo_phase > 2 * $pi ? lfo_phase -= 2 * $pi;
+
+target_cutoff = min(max(slider1 * pow(2, (lfo_val * slider3/100 + env_val * slider6/100 * 3) * 2), 20), 18000);
+smooth_cutoff = smooth_cutoff + (target_cutoff - smooth_cutoff) * 0.1;
+
+// 2. STABILISIERTE KOEFFIZIENTEN
+// f wird hier streng limitiert, um die Explosion bei 10kHz+ zu verhindern
+f = 2 * sin($pi * smooth_cutoff / (srate * 2)); // Internes Oversampling (srate * 2)
+f = min(max(f, 0), 0.95); // Sicherheitslimit weit unter der "Explosionsgrenze" von 2
+q = 1.2; // Stabiler Q-Wert
+drive_gain = pow(10, slider9 / 20);
+
+// 3. DOPPELTE BERECHNUNG (2x Iteration für Stabilität)
+loop_idx = 0;
+while(loop_idx < 2)(
+  s0 = (loop_idx == 0) ? spl0 * drive_gain : out_l;
+  s1 = (loop_idx == 0) ? spl1 * drive_gain : out_r;
+
+  // Stufe 1
+  hp1l = s0 - lp1l - q*bp1l; bp1l = f*hp1l + bp1l; lp1l = f*bp1l + lp1l;
+  hp1r = s1 - lp1r - q*bp1r; bp1r = f*hp1r + bp1r; lp1r = f*bp1r + lp1r;
+  // Stufe 2-4
+  hp2l = lp1l - lp2l - q*bp2l; bp2l = f*hp2l + bp2l; lp2l = f*bp2l + lp2l;
+  hp2r = lp1r - lp2r - q*bp2r; bp2r = f*hp2r + bp2r; lp2r = f*bp2r + lp2r;
+  hp3l = lp2l - lp3l - q*bp3l; bp3l = f*hp3l + bp3l; lp3l = f*bp3l + lp3l;
+  hp3r = lp2r - lp3r - q*bp3r; bp3r = f*hp3r + bp3r; lp3r = f*bp3r + lp3r;
+  hp4l = lp3l - lp4l - q*bp4l; bp4l = f*hp4l + bp4l; lp4l = f*bp4l + lp4l;
+  hp4r = lp3r - lp4r - q*bp4r; bp4r = f*hp4r + bp4r; lp4r = f*bp4r + lp4r;
+
+  slope_idx = (slider8 - 12) / 12;
+  slider7 == 0 ? ( // LP
+    slope_idx < 1 ? ( m=slope_idx; out_l=lp1l*(1-m)+lp2l*m; out_r=lp1r*(1-m)+lp2r*m; ) :
+    slope_idx < 2 ? ( m=slope_idx-1; out_l=lp2l*(1-m)+lp3l*m; out_r=lp2r*(1-m)+lp3r*m; ) :
+    ( m=slope_idx-2; out_l=lp3l*(1-m)+lp4l*m; out_r=lp3r*(1-m)+lp4r*m; );
+  ) : slider7 == 1 ? ( // HP
+    m = min(slope_idx, 1); out_l=(s0-lp1l)*(1-m)+(s0-lp2l)*m; out_r=(s1-lp1r)*(1-m)+(s1-lp2r)*m;
+  ) : ( out_l=bp1l; out_r=bp1r; ); // BP
+
+  loop_idx += 1;
+);
+
+// 4. SATURATION & LIMITER
+out_l = atan(out_l); out_r = atan(out_r);
+ceiling = pow(10, slider10 / 20); thresh = ceiling * 0.9;
+abs(out_l) > thresh ? ( out_l = sign(out_l) * (thresh + (ceiling - thresh) * (1 - exp(-(abs(out_l) - thresh) / (ceiling - thresh)))); );
+abs(out_r) > thresh ? ( out_r = sign(out_r) * (thresh + (ceiling - thresh) * (1 - exp(-(abs(out_r) - thresh) / (ceiling - thresh)))); );
+
+spl0 = out_l; spl1 = out_r;
+
+// Denormal Fix
+abs(lp1l) < 0.000000000001 ? (lp1l=bp1l=lp2l=bp2l=lp3l=bp3l=lp4l=bp4l=0;);
+abs(lp1r) < 0.000000000001 ? (lp1r=bp1r=lp2r=bp2r=lp3r=bp3r=lp4r=bp4r=0;);
+
+@gfx 400 250
+gfx_clear = 2236962;
+mouse_cap == 1 ? ( slider1 = 20 * pow(900, mouse_x / gfx_w); slider_automate(slider1); );
+gfx_r=0.2; gfx_g=0.8; gfx_b=1; gfx_a=1;
+tx = (log10(smooth_cutoff/20) / log10(900)) * gfx_w;
+visual_slope = slider8 / 3;
+ix = 0;
+while(ix < gfx_w)(
+  c_fx = 20 * pow(1000, ix / gfx_w); d_rat = c_fx / smooth_cutoff;
+  slider7 == 0 ? ( gn = 1 / sqrt(1 + pow(d_rat, visual_slope)); ) : 
+  slider7 == 1 ? ( gn = 1 / sqrt(1 + pow(d_rat, -visual_slope)); ) : 
+  ( gn = exp(-pow(log(d_rat) * 4, 2)); );
+  cy = (gfx_h * 0.25) + (1-gn) * (gfx_h * 0.5);
+  ix > 0 ? ( gfx_line(ix-1, last_y, ix, cy); );
+  last_y = cy; ix == floor(tx) ? dy = cy; ix += 1;
+);
+gfx_r=1; gfx_g=1; gfx_b=0; gfx_circle(tx, dy, 5, 1);

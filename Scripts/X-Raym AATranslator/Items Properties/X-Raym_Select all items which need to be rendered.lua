@@ -1,18 +1,20 @@
 --[[
  * ReaScript Name: Select all items which need to be rendered
  * Instructions: Run.
- * Screenshot: https://i.imgur.com/K4sDKWb.gifv
+ * Screenshot: https://cloud.extremraym.com/sharex/reascripts/K4sDKWb.mp4
  * About: A way to select all items which may need to be rendered, for AATranslator workflow for eg.
  * Author: X-Raym
  * Author URI: https://www.extremraym.com
  * Repository: X-Raym Premium Scripts
  * Licence: GPL v3
  * REAPER: 5.0
- * Version: 1.5.10
+ * Version: 1.5.11
 --]]
 
 --[[
  * Changelog:
+ * v1.5.11 (2026-06-04)
+  # Localize envelope name
  * v1.5.10 (2025-10-03)
   # Fade shape parameter name fix
  * v1.5.9 (2024-09-23)
@@ -327,14 +329,14 @@ function Main()
         --for j = 0, count_env - 1 do
           --local env = reaper.GetTakeEnvelope( take, j )
           --local retval, env_name = reaper.GetEnvelopeName(env, '')
-          --if env_name ~= 'Volume' then
+          --if env_name ~= reaper.LocalizeString( "Volume", "envname" ) then
         if count_env > 0 then
           if reaper.GetSetEnvelopeInfo_String then -- check if active
             for envidx = 0, count_env - 1 do
               local env = reaper.GetTakeEnvelope( take, envidx )
               local retval, env_name = reaper.GetEnvelopeName( env )
               local retval, str = reaper.GetSetEnvelopeInfo_String( env, "ACTIVE", "", false )
-              if str == '1' and (env_name ~= "Volume" or vars.vol_env) then
+              if str == '1' and (env_name ~= reaper.LocalizeString( "Volume", "envname" ) or vars.vol_env) then
                 select = true
                 Msg(take_name .. " = envelopes > 0")
                 break

@@ -1,0 +1,41 @@
+<TRACK
+  NAME "SPITFIRE BBC Ens Viola Pizzicato *** archived ***"
+  LOCK 1
+  PEAKCOL 21462169
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4192 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 4 4
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {9C55B725-9E07-4DCD-B3D6-2FA6A1263115}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Ens Viola Pizzicato - {9C55B725-9E07-4DCD-B3D6-2FA6A1263115}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {FD97FCD3-BB60-4429-9BC8-0661894A7126}
+    Archived_parent_name Viola
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

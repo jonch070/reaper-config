@@ -1,0 +1,41 @@
+<TRACK
+  NAME "SPITFIRE LABS Ens Violin II Tremolo *** archived ***"
+  LOCK 1
+  PEAKCOL 21462169
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -1
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4160 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 8 8
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {446C1A25-2D0D-DA4A-8D1B-81CF63B3C883}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE LABS Ens Violin II Tremolo - {446C1A25-2D0D-DA4A-8D1B-81CF63B3C883}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {E4CC7BF7-63F2-457A-B7E5-D0D2621643B7}
+    Archived_parent_name "Violin II"
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

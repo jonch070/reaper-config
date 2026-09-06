@@ -19,3 +19,5 @@ hover_editing = tonumber(reaper.GetExtState("LKC_TOOLS","hover_editing_state"))
 if hover_editing == nil then hover_editing = 1 end
 command = reaper.NamedCommandLookup("_RS8277b238cd7341ba4a3c9ff870f30876ce76160b")
 reaper.SetToggleCommandState(0, command, hover_editing)
+reaper.Main_OnCommand(reaper.NamedCommandLookup("_RS02de4a63cf12c72510b6da7254c3f3df05dba45c"), 0) -- Script: Gridbox.lua
+reaper.Main_OnCommand(reaper.NamedCommandLookup("_RSfe34dfbd5236dcdf35a97e171bb7a4ab757a9a4d"), 0) -- Script: Chordbox.lua

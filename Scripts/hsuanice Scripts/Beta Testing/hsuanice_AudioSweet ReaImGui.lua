@@ -1,5 +1,5 @@
 -- @description AudioSweet ReaImGui - AudioSuite Workflow (Pro Tools–Style)
--- @version 0.2.5
+-- @version 0.2.8
 -- @author hsuanice
 -- @link https://forum.cockos.com/showthread.php?p=2910884#post2910884
 -- @about
@@ -63,23 +63,12 @@
 --
 --
 -- @changelog
---   0.2.5 [260328.0408]
---     - ADDED: Tail Seconds input field (requires RGWH Core ≥ 0.3.7)
---       • New "Tail" input next to the handle seconds field
---       • Extends the processed item into silence after the right handle
---       • Captures reverb/delay/echo decay; 0 = off (backward-compatible default)
---       • Written to RGWH ExtState (TAIL_SECONDS) on every Run/Apply
---
---   0.2.4 [260327.2345]
---     - ADDED: Independent Show/Hide checkboxes for Presets and History panels
---       • Split "Show Presets/History" into separate "Show Presets" and "Show History" checkboxes
---       • Layout: [Show Presets] ... [Show FX window on recall] ... [Show History]
---       • When only one panel is visible, it expands to use the full available width
---       • When both panels are visible, they share the width 50/50 as before
---     - ADDED: Drag-to-reorder for Saved FX Presets
---       • Drag handle (=) added to the left of each preset row
---       • Drop onto any row to insert the dragged item above it
---       • New order is persisted immediately via save_chains_to_extstate()
+--  [260708.1252]
+--     - ADDED: Load Track FX now imports all single-FX presets from the selected REAPER track
+--     - ADDED: Load Chain now loads presets from all selected tracks in REAPER
+--     - IMPROVED: Preset panel UI now uses shorter labels and hover hints for clearer loading actions
+--     - IMPROVED: Preset section title simplified to "SAVED PRESET"
+--     - FIXED: Track-name parsing no longer misidentifies ordinary names like "8ChTrack" as track-number selectors
 
 ------------------------------------------------------------
 -- Dependencies
@@ -748,11 +737,11 @@ local function check_bwfmetaedit(force)
   local path_env = os.getenv(IS_WINDOWS and "Path" or "PATH") or ""
   if not found_path and path_env ~= "" then
     local pattern = string.format("([^%s]+)", PATH_SEPARATOR)
-    for dir in path_env:gmatch(pattern) do
-      dir = trim(dir:gsub('"', ''))
-      if dir ~= "" then
+    for path_dir in path_env:gmatch(pattern) do
+      local cleaned_dir = trim(path_dir:gsub('"', ''))
+      if cleaned_dir ~= "" then
         for _, name in ipairs(binary_names) do
-          try_candidate(join_path(dir, name), "PATH: " .. dir)
+          try_candidate(join_path(cleaned_dir, name), "PATH: " .. cleaned_dir)
           if found_path then break end
         end
       end
@@ -954,6 +943,47 @@ end
 ------------------------------------------------------------
 -- Track FX Chain Helpers
 ------------------------------------------------------------
+local CHAIN_NAMESPACE = "hsuanice_AS_SavedChains"
+local add_saved_chain
+local find_track_by_guid
+
+local function save_chains_to_extstate()
+  local idx = 0
+  while true do
+    local ok = r.GetProjExtState(0, CHAIN_NAMESPACE, "chain_" .. idx)
+    if ok == 0 then break end
+    r.SetProjExtState(0, CHAIN_NAMESPACE, "chain_" .. idx, "")
+    idx = idx + 1
+  end
+  for i, chain in ipairs(gui.saved_chains) do
+    local data = string.format("%s|%s|%s|%s|%s|%s",
+      chain.name,
+      chain.track_guid,
+      chain.track_name,
+      chain.custom_name or "",
+      chain.mode or "chain",
+      tostring(chain.fx_index or ""))
+    r.SetProjExtState(0, CHAIN_NAMESPACE, "chain_" .. (i - 1), data)
+  end
+end
+
+local function add_saved_chain(name, track_guid, track_name, custom_name, mode, fx_index)
+  gui.saved_chains = gui.saved_chains or {}
+  gui.saved_chains[#gui.saved_chains + 1] = {
+    name = name,
+    track_guid = track_guid,
+    track_name = track_name,
+    custom_name = custom_name,
+    mode = mode or "chain",
+    fx_index = fx_index,
+  }
+  if gui.debug then
+    r.ShowConsoleMsg(string.format("[AudioSweet] Save preset: name='%s', mode='%s', fx_index=%s\n",
+      name or "nil", mode or "chain", tostring(fx_index or "nil")))
+  end
+  save_chains_to_extstate()
+end
+
 local function get_track_guid(tr)
   if not tr then return nil end
   return r.GetTrackGUID(tr)
@@ -980,6 +1010,234 @@ local function get_track_fx_chain(tr)
     }
   end
   return fx_list
+end
+
+local function get_track_number(tr)
+  if not tr then return nil end
+  local track_num = r.GetMediaTrackInfo_Value(tr, "IP_TRACKNUMBER")
+  if not track_num then return nil end
+  return math.floor(track_num + 0.5)
+end
+
+local function parse_track_selector(selector)
+  local raw = trim(selector or "")
+  if raw == "" then return nil, nil end
+
+  if raw:sub(1, 1) == "#" then
+    local num = raw:match("^#(%d+)")
+    if num then
+      return tonumber(num), nil
+    end
+
+    local num2, name = raw:match("^#(%d+)%s*[-:%s]+%s*(.+)$")
+    if num2 and name and trim(name) ~= "" then
+      return tonumber(num2), trim(name)
+    end
+  end
+
+  return nil, raw
+end
+
+local function find_track_by_name(track_name)
+  local target = trim(track_name or "")
+  if target == "" then return nil end
+  local lowered = target:lower()
+  for i = 0, r.CountTracks(0) - 1 do
+    local tr = r.GetTrack(0, i)
+    local _, name = r.GetTrackName(tr, "")
+    if name and name:lower() == lowered then
+      return tr
+    end
+  end
+  return nil
+end
+
+local function find_track_by_selector(selector)
+  local track_num, track_name = parse_track_selector(selector)
+  if track_num then
+    local tr = r.GetTrack(0, track_num - 1)
+    if tr and r.ValidatePtr2(0, tr, "MediaTrack*") then
+      return tr
+    end
+  end
+
+  if track_name then
+    local tr = find_track_by_name(track_name)
+    if tr then return tr end
+  end
+
+  return nil
+end
+
+local function find_auto_load_track()
+  local target_name = trim(gui.auto_load_track_name or "")
+  if target_name ~= "" then
+    local tr = find_track_by_selector(target_name)
+    if tr then return tr end
+  end
+  return nil
+end
+
+local function find_track_by_guid(guid)
+  if not guid then return nil end
+  for i = 0, r.CountTracks(0) - 1 do
+    local tr = r.GetTrack(0, i)
+    if tr and r.GetTrackGUID(tr) == guid then
+      return tr
+    end
+  end
+  return nil
+end
+
+local function preset_chain_already_exists(track_guid, fx_list)
+  if not track_guid or not fx_list then return false end
+  for _, chain in ipairs(gui.saved_chains) do
+    if chain.track_guid == track_guid and chain.mode == "chain" then
+      local saved_track = find_track_by_guid(chain.track_guid)
+      if saved_track then
+        local saved_fx_list = get_track_fx_chain(saved_track)
+        if #saved_fx_list == #fx_list then
+          local matches = true
+          for i = 1, #saved_fx_list do
+            if saved_fx_list[i].name ~= fx_list[i].name then
+              matches = false
+              break
+            end
+          end
+          if matches then
+            return true
+          end
+        end
+      end
+    end
+  end
+  return false
+end
+
+local function preset_focused_already_exists(track_guid, fx_index)
+  if not track_guid or fx_index == nil then return false end
+  for _, chain in ipairs(gui.saved_chains) do
+    if chain.track_guid == track_guid and chain.mode == "focused" and chain.fx_index == fx_index then
+      return true
+    end
+  end
+  return false
+end
+
+local function load_preset_from_track(tr)
+  if not tr or not r.ValidatePtr2(0, tr, "MediaTrack*") then
+    gui.last_result = "Error: No valid track selected"
+    return false
+  end
+
+  local track_name, track_num = get_track_name_and_number(tr)
+  if track_name == "" then
+    gui.last_result = "Error: Selected track has no name"
+    return false
+  end
+
+  local fx_list = get_track_fx_chain(tr)
+  if #fx_list == 0 then
+    gui.last_result = "Error: Selected track has no FX to load"
+    return false
+  end
+
+  local track_guid = get_track_guid(tr)
+  local added = 0
+  for _, fx in ipairs(fx_list) do
+    if not preset_focused_already_exists(track_guid, fx.index) then
+      add_saved_chain(fx.name, track_guid, track_name, nil, "focused", fx.index)
+      added = added + 1
+    end
+  end
+
+  if added > 0 then
+    gui.last_result = string.format("Success: Loaded %d single-FX presets from track '%s'", added, track_name)
+    return true
+  end
+
+  gui.last_result = "Info: All single-FX presets already exist for this track"
+  return false
+end
+
+local function load_preset_from_selected_or_named_track()
+  local selected_track = r.GetSelectedTrack(0, 0)
+  if selected_track and r.ValidatePtr2(0, selected_track, "MediaTrack*") then
+    return load_preset_from_track(selected_track)
+  end
+
+  gui.last_result = "Error: Select a track in REAPER first"
+  return false
+end
+
+local function get_selected_track_list()
+  local tracks = {}
+  local count = r.CountSelectedTracks(0)
+  for i = 0, count - 1 do
+    local tr = r.GetSelectedTrack(0, i)
+    if tr and r.ValidatePtr2(0, tr, "MediaTrack*") then
+      tracks[#tracks + 1] = tr
+    end
+  end
+  return tracks
+end
+
+local function load_chain_preset_from_track(tr)
+  if not tr or not r.ValidatePtr2(0, tr, "MediaTrack*") then
+    gui.last_result = "Error: No valid track selected"
+    return false
+  end
+
+  local track_name, _ = get_track_name_and_number(tr)
+  if track_name == "" then
+    gui.last_result = "Error: Selected track has no name"
+    return false
+  end
+
+  local fx_list = get_track_fx_chain(tr)
+  if #fx_list == 0 then
+    gui.last_result = "Error: Selected track has no FX to load"
+    return false
+  end
+
+  local track_guid = get_track_guid(tr)
+  if preset_chain_already_exists(track_guid, fx_list) then
+    gui.last_result = "Info: This chain preset already exists"
+    return false
+  end
+
+  add_saved_chain(track_name, track_guid, track_name, nil, "chain", nil)
+  gui.last_result = string.format("Success: Chain preset loaded from track '%s'", track_name)
+  return true
+end
+
+local function load_chain_presets_from_selected_tracks()
+  local tracks = get_selected_track_list()
+  if #tracks == 0 then
+    gui.last_result = "Error: Select one or more tracks in REAPER first"
+    return false
+  end
+
+  local loaded = 0
+  local skipped = 0
+  for _, tr in ipairs(tracks) do
+    local ok = load_chain_preset_from_track(tr)
+    if ok then
+      loaded = loaded + 1
+    else
+      skipped = skipped + 1
+    end
+  end
+
+  if loaded > 0 then
+    gui.last_result = string.format("Success: Loaded chain presets from %d selected track(s)", loaded)
+    return true
+  end
+
+  if skipped > 0 then
+    gui.last_result = "Info: Selected tracks already had chain presets"
+  end
+  return false
 end
 
 ------------------------------------------------------------
@@ -1601,6 +1859,64 @@ local function set_extstate_from_gui(mode_override)
 end
 
 ------------------------------------------------------------
+-- Track FX Chain Online/Offline Helpers (for preview/run)
+------------------------------------------------------------
+-- REAPER represents "FX chain offline" via two mechanisms:
+--   1. I_FXEN = 0  (chain-level bypass / offline flag)
+--   2. TrackFX_SetOffline per-FX  (unloads individual plugins)
+-- Both are saved and restored here so all scenarios are covered.
+-- Only offline/chain-bypass state is touched; individual FX enabled (bypass)
+-- state is intentionally left alone so AudioSweet Core's behaviour is unaffected.
+--
+-- Returns a saved-state table, or nil if the chain was already fully online.
+local function save_and_enable_track_fx_chain(tr)
+  if not tr or not r.ValidatePtr2(0, tr, "MediaTrack*") then return nil end
+
+  local saved = {}
+  local any_change = false
+
+  -- (1) Chain-level: I_FXEN
+  local fxen = math.floor(r.GetMediaTrackInfo_Value(tr, "I_FXEN") + 0.5)
+  saved.fxen = fxen
+  if fxen == 0 then
+    r.SetMediaTrackInfo_Value(tr, "I_FXEN", 1)
+    any_change = true
+  end
+
+  -- (2) Per-FX offline bits
+  local fx_count = r.TrackFX_GetCount(tr)
+  saved.offline = {}
+  for i = 0, fx_count - 1 do
+    local is_offline = r.TrackFX_GetOffline(tr, i)
+    saved.offline[i] = is_offline
+    if is_offline then
+      r.TrackFX_SetOffline(tr, i, false)
+      any_change = true
+    end
+  end
+
+  return any_change and saved or nil
+end
+
+-- Restore the state saved by save_and_enable_track_fx_chain.
+local function restore_track_fx_chain_state(tr, saved)
+  if not tr or not saved then return end
+  if not r.ValidatePtr2(0, tr, "MediaTrack*") then return end
+
+  -- (1) Restore I_FXEN
+  if saved.fxen ~= nil then
+    r.SetMediaTrackInfo_Value(tr, "I_FXEN", saved.fxen)
+  end
+
+  -- (2) Restore per-FX offline bits
+  if saved.offline then
+    for i, was_offline in pairs(saved.offline) do
+      if was_offline then r.TrackFX_SetOffline(tr, i, true) end
+    end
+  end
+end
+
+------------------------------------------------------------
 -- Preview & Solo Functions
 ------------------------------------------------------------
 local function toggle_preview()
@@ -1611,6 +1927,9 @@ local function toggle_preview()
   -- If transport is playing (GUI preview or Tools script preview), stop it
   if gui.is_previewing or is_playing then
     r.Main_OnCommand(40044, 0)  -- Transport: Stop
+    restore_track_fx_chain_state(gui.preview_fxchain_track, gui.preview_fxchain_saved)
+    gui.preview_fxchain_track = nil
+    gui.preview_fxchain_saved = nil
     gui.is_previewing = false
     gui.last_result = "Preview stopped"
     return
@@ -1711,6 +2030,28 @@ local function toggle_preview()
     restore_mode = restore_mode_names[gui.preview_restore_mode + 1],
   }
 
+  -- Bring FX chain track online so AudioSweet can process correctly.
+  -- Resolve the FX track with the same fallback chain used by run_audiosweet:
+  --   1. target_track_obj (set for chain mode if focused or found by GUID)
+  --   2. gui.focused_track (focused mode, or chain mode with focused FX window)
+  --   3. GUID lookup from preview target settings
+  --   4. Name lookup from preview target settings
+  local fx_track_for_preview = target_track_obj or gui.focused_track
+  if not fx_track_for_preview then
+    if gui.preview_target_track_guid and gui.preview_target_track_guid ~= "" then
+      fx_track_for_preview = find_track_by_guid(gui.preview_target_track_guid)
+    end
+    if not fx_track_for_preview and target_track_name and target_track_name ~= "" then
+      for i = 0, r.CountTracks(0) - 1 do
+        local tr = r.GetTrack(0, i)
+        local _, tn = r.GetSetMediaTrackInfo_String(tr, "P_NAME", "", false)
+        if tn == target_track_name then fx_track_for_preview = tr; break end
+      end
+    end
+  end
+  gui.preview_fxchain_track = fx_track_for_preview
+  gui.preview_fxchain_saved = save_and_enable_track_fx_chain(fx_track_for_preview)
+
   -- Run preview
   local preview_ok, preview_err = pcall(ASP.preview, args)
 
@@ -1718,6 +2059,10 @@ local function toggle_preview()
     gui.last_result = "Preview: Success"
     gui.is_previewing = true
   else
+    -- Preview failed: restore offline state immediately
+    restore_track_fx_chain_state(gui.preview_fxchain_track, gui.preview_fxchain_saved)
+    gui.preview_fxchain_track = nil
+    gui.preview_fxchain_saved = nil
     gui.last_result = "Preview Error: " .. tostring(preview_err)
     gui.is_previewing = false
   end
@@ -1853,6 +2198,9 @@ local function run_audiosweet(override_track)
     return
   end
 
+  -- Bring FX chain track online so AudioSweet can process correctly
+  local saved_fxchain = save_and_enable_track_fx_chain(target_track)
+
   gui.is_running = true
   gui.last_result = "Running..."
 
@@ -1939,6 +2287,7 @@ local function run_audiosweet(override_track)
   r.SetExtState("hsuanice_AS", "EXTERNAL_UNDO_CONTROL", "", false)
 
   gui.is_running = false
+  restore_track_fx_chain_state(target_track, saved_fxchain)
 end
 
 local function run_focused_fx_copy_mode(tr, fx_name, fx_idx, item_count)
@@ -2168,6 +2517,70 @@ local function run_saved_chain_apply_mode(tr, chain_name, item_count)
   gui.is_running = false
 end
 
+-- Capture current selection state (items, time, razor, tracks).
+-- Used to preserve the user's selection before opening FX windows, because
+-- SetOnlyTrackSelected() combined with REAPER's "item/time link to track"
+-- preference would otherwise clobber it.
+local function capture_selection_state()
+  local state = { items = {}, tracks = {}, razors = {} }
+
+  for i = 0, r.CountSelectedMediaItems(0) - 1 do
+    state.items[#state.items + 1] = r.GetSelectedMediaItem(0, i)
+  end
+
+  local ts_start, ts_end = r.GetSet_LoopTimeRange(false, false, 0, 0, false)
+  state.ts_start, state.ts_end = ts_start, ts_end
+
+  for i = 0, r.CountTracks(0) - 1 do
+    local tr = r.GetTrack(0, i)
+    if r.IsTrackSelected(tr) then
+      state.tracks[#state.tracks + 1] = tr
+    end
+    local _, razor = r.GetSetMediaTrackInfo_String(tr, "P_RAZOREDITS", "", false)
+    if razor and razor ~= "" then
+      state.razors[#state.razors + 1] = { track = tr, data = razor }
+    end
+  end
+
+  return state
+end
+
+local function restore_selection_state(state)
+  if not state then return end
+
+  -- Restore track selection first so that REAPER's link behavior settles
+  -- before we override items/time/razor below.
+  for i = 0, r.CountTracks(0) - 1 do
+    r.SetTrackSelected(r.GetTrack(0, i), false)
+  end
+  for _, tr in ipairs(state.tracks) do
+    if r.ValidatePtr2(0, tr, "MediaTrack*") then
+      r.SetTrackSelected(tr, true)
+    end
+  end
+
+  r.SelectAllMediaItems(0, false)
+  for _, it in ipairs(state.items) do
+    if r.ValidatePtr2(0, it, "MediaItem*") then
+      r.SetMediaItemSelected(it, true)
+    end
+  end
+
+  r.GetSet_LoopTimeRange(true, false, state.ts_start or 0, state.ts_end or 0, false)
+
+  -- Clear razor on every track, then re-apply saved areas
+  for i = 0, r.CountTracks(0) - 1 do
+    r.GetSetMediaTrackInfo_String(r.GetTrack(0, i), "P_RAZOREDITS", "", true)
+  end
+  for _, rz in ipairs(state.razors) do
+    if r.ValidatePtr2(0, rz.track, "MediaTrack*") then
+      r.GetSetMediaTrackInfo_String(rz.track, "P_RAZOREDITS", rz.data, true)
+    end
+  end
+
+  r.UpdateArrange()
+end
+
 local function open_saved_chain_fx(chain_idx)
   local chain = gui.saved_chains[chain_idx]
   if not chain then return end
@@ -2178,6 +2591,9 @@ local function open_saved_chain_fx(chain_idx)
     return
   end
 
+  -- Preserve user's pre-open selection (item/time/razor link-to-track resets it).
+  local saved_sel = capture_selection_state()
+
   -- Select track and set as last touched
   r.SetOnlyTrackSelected(tr)
   r.SetMixerScroll(tr)
@@ -2185,6 +2601,7 @@ local function open_saved_chain_fx(chain_idx)
   local fx_count = r.TrackFX_GetCount(tr)
   if fx_count == 0 then
     gui.last_result = string.format("Error: No FX on track '%s'", chain.track_name)
+    restore_selection_state(saved_sel)
     return
   end
 
@@ -2195,6 +2612,7 @@ local function open_saved_chain_fx(chain_idx)
 
     if not fx_idx then
       gui.last_result = string.format("Error: FX '%s' not found on track", chain.name)
+      restore_selection_state(saved_sel)
       return
     end
 
@@ -2230,6 +2648,8 @@ local function open_saved_chain_fx(chain_idx)
     end
     gui.last_result = string.format("Toggled FX chain: %s", chain.name)
   end
+
+  restore_selection_state(saved_sel)
 end
 
 local function open_history_fx(hist_idx)
@@ -2241,6 +2661,9 @@ local function open_history_fx(hist_idx)
     gui.last_result = string.format("Error: Track '%s' not found", hist_item.track_name)
     return
   end
+
+  -- Preserve user's pre-open selection (item/time/razor link-to-track resets it).
+  local saved_sel = capture_selection_state()
 
   -- Select track and set as last touched
   r.SetOnlyTrackSelected(tr)
@@ -2254,6 +2677,7 @@ local function open_history_fx(hist_idx)
 
     if fx_idx >= fx_count then
       gui.last_result = string.format("Error: FX #%d not found (track has %d FX)", fx_idx + 1, fx_count)
+      restore_selection_state(saved_sel)
       return
     end
 
@@ -2284,6 +2708,8 @@ local function open_history_fx(hist_idx)
     end
     gui.last_result = string.format("Toggled FX chain: %s", hist_item.name)
   end
+
+  restore_selection_state(saved_sel)
 end
 
 local function run_history_focused_apply(tr, fx_name, fx_idx, item_count)
@@ -2392,6 +2818,9 @@ local function run_saved_chain(chain_idx)
 
   if gui.is_running then return end
 
+  -- Bring FX chain track online so AudioSweet can process correctly
+  local saved_fxchain = save_and_enable_track_fx_chain(tr)
+
   gui.is_running = true
   gui.last_result = "Running..."
 
@@ -2426,6 +2855,7 @@ local function run_saved_chain(chain_idx)
 
   -- Clear external undo control flag after execution
   r.SetExtState("hsuanice_AS", "EXTERNAL_UNDO_CONTROL", "", false)
+  restore_track_fx_chain_state(tr, saved_fxchain)
 end
 
 local function run_history_item(hist_idx)
@@ -2445,6 +2875,9 @@ local function run_history_item(hist_idx)
   end
 
   if gui.is_running then return end
+
+  -- Bring FX chain track online so AudioSweet can process correctly
+  local saved_fxchain = save_and_enable_track_fx_chain(tr)
 
   gui.is_running = true
   gui.last_result = "Running..."
@@ -2479,6 +2912,7 @@ local function run_history_item(hist_idx)
 
   -- Clear external undo control flag after execution
   r.SetExtState("hsuanice_AS", "EXTERNAL_UNDO_CONTROL", "", false)
+  restore_track_fx_chain_state(tr, saved_fxchain)
 end
 
 ------------------------------------------------------------
@@ -2489,6 +2923,9 @@ local function draw_gui()
   if gui.is_previewing then
     local play_state = r.GetPlayState()
     if play_state == 0 then  -- 0 = stopped
+      restore_track_fx_chain_state(gui.preview_fxchain_track, gui.preview_fxchain_saved)
+      gui.preview_fxchain_track = nil
+      gui.preview_fxchain_saved = nil
       gui.is_previewing = false
       if gui.last_result == "Preview: Success" or gui.last_result == "Preview stopped" then
         gui.last_result = "Preview stopped (auto-detected)"
@@ -2613,7 +3050,7 @@ local function draw_gui()
           "=================================================\n" ..
           "AudioSweet ReaImGui - ImGui Interface for AudioSweet\n" ..
           "=================================================\n" ..
-          "Version: 0.2.0.0.1 (251223.2328)\n" ..
+          "Version: 0.2.8 (260708.1143)\n" ..
           "Author: hsuanice\n\n" ..
 
           "Reference:\n" ..
@@ -4045,10 +4482,10 @@ end
     if gui.show_presets or gui.show_history then
 
       -- Only show if at least one feature is enabled, has content, and is set to show
-      if (gui.enable_saved_chains and #gui.saved_chains > 0 and gui.show_presets) or (gui.enable_history and #gui.history > 0 and gui.show_history) then
+      if (gui.enable_saved_chains and gui.show_presets) or (gui.enable_history and gui.show_history) then
         local avail_w = ImGui.GetContentRegionAvail(ctx)
-        local presets_visible = gui.enable_saved_chains and #gui.saved_chains > 0 and gui.show_presets
-        local history_visible = gui.enable_history and #gui.history > 0 and gui.show_history
+        local presets_visible = gui.enable_saved_chains and gui.show_presets
+        local history_visible = gui.enable_history and gui.show_history
         local col1_w = (presets_visible and history_visible) and (avail_w * 0.5 - 5) or 0
 
         local function calc_list_height(item_count)
@@ -4064,13 +4501,34 @@ end
 
         -- Left: Saved FX Preset
         if presets_visible then
-          local saved_height = calc_list_height(#gui.saved_chains)
+          local saved_height = calc_list_height(math.max(#gui.saved_chains, 1))
           if ImGui.BeginChild(ctx, "SavedCol", col1_w, saved_height) then
-            ImGui.Text(ctx, "SAVED FX PRESET")
+            ImGui.Text(ctx, "SAVED PRESET")
+            ImGui.SameLine(ctx)
+            if ImGui.SmallButton(ctx, "Load Track FX") then
+              load_preset_from_selected_or_named_track()
+            end
+            if ImGui.IsItemHovered(ctx) then
+              ImGui.BeginTooltip(ctx)
+              ImGui.Text(ctx, "Load selected track FX as single-FX presets")
+              ImGui.EndTooltip(ctx)
+            end
+            ImGui.SameLine(ctx)
+            if ImGui.SmallButton(ctx, "Load Chain") then
+              load_chain_presets_from_selected_tracks()
+            end
+            if ImGui.IsItemHovered(ctx) then
+              ImGui.BeginTooltip(ctx)
+              ImGui.Text(ctx, "Load selected FX chain tracks")
+              ImGui.EndTooltip(ctx)
+            end
             ImGui.Separator(ctx)
-            local to_delete = nil
-            local drag_src_idx, drag_dst_idx
-            for i, chain in ipairs(gui.saved_chains) do
+            if #gui.saved_chains == 0 then
+              ImGui.TextDisabled(ctx, "No presets yet")
+            else
+              local to_delete = nil
+              local drag_src_idx, drag_dst_idx
+              for i, chain in ipairs(gui.saved_chains) do
               ImGui.PushID(ctx, i)
 
               -- Get display info
@@ -4156,12 +4614,13 @@ end
               end
               ImGui.PopID(ctx)
             end
-            if to_delete then
-              delete_saved_chain(to_delete)
-            elseif drag_src_idx and drag_dst_idx and drag_src_idx ~= drag_dst_idx then
-              local entry = table.remove(gui.saved_chains, drag_src_idx)
-              table.insert(gui.saved_chains, drag_dst_idx, entry)
-              save_chains_to_extstate()
+              if to_delete then
+                delete_saved_chain(to_delete)
+              elseif drag_src_idx and drag_dst_idx and drag_src_idx ~= drag_dst_idx then
+                local entry = table.remove(gui.saved_chains, drag_src_idx)
+                table.insert(gui.saved_chains, drag_dst_idx, entry)
+                save_chains_to_extstate()
+              end
             end
             ImGui.EndChild(ctx)
           end

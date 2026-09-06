@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="f3005e2f39cb1ae1627ba1c32018a35f0ab08b08" name="ReaTeam Scripts">
+<index version="1" commit="ad0bf7e29dece3660633a52db61fe4f408784c2e" name="ReaTeam Scripts">
   <category name="Cursor">
     <reapack name="amagalma_Move edit cursor to closest item edge (among the selected items).lua" type="script" desc="Move edit cursor to closest item edge (among the selected items)">
       <metadata>
@@ -17,35 +17,26 @@
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/5923bba3d5e8fda76b59f6c799a1f8609e47b386/Cursor/amagalma_Move%20edit%20cursor%20to%20closest%20item%20edge%20in%20project.lua</source>
       </version>
     </reapack>
-    <reapack name="amagalma_Move edit cursor to next possible bad or missing items crossfade on selected tracks.lua" type="script" desc="Move edit cursor to next possible bad or missing items crossfade on selected tracks">
+    <reapack name="amagalma_Move edit cursor to next dubious or missing items crossfade on selected tracks.lua" type="script" desc="Move edit cursor to next dubious or missing items crossfade on selected tracks">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Moves the edit cursor to the next possible bad or missing crossfade between two items on the selected tracks.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A possible bad crossfade is considered one whose duration is not the same as the overlap between the two items.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Moves the edit cursor to the next dubious or missing crossfade between two items on the selected tracks.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Dubious crossfade is considered one whose duration is not the same as the overlap between the two items.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A crossfade is considered missing if two items are adjacent or there is a very small gap between them and they do not crossfade.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab All playing fixed item lanes are taken into consideration\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The two items are automatically selected\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab You can set inside the script the maximum gap duration between two "adjacent" items for them to be considered as requiring a crossfade. Default value is 100ms.\sa180\par}
 }
 ]]></description>
         <link rel="website">https://forum.cockos.com/showthread.php?t=241010</link>
         <link rel="donation">https://www.paypal.com/paypalme/amagalma</link>
       </metadata>
-      <version name="1.00" author="amagalma" time="2020-08-10T19:31:47Z">
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/98feb92e5d90189d8c80e72f1ea7c8cf191cf977/Cursor/amagalma_Move%20edit%20cursor%20to%20next%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
-      </version>
-      <version name="1.01" author="amagalma" time="2020-08-11T12:14:40Z">
-        <changelog><![CDATA[Added messages when there is no track selected, or not enough items, or no problematic/missing crossfades.]]></changelog>
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/1eddf04e843419602fde0810c496704f4ccd7833/Cursor/amagalma_Move%20edit%20cursor%20to%20next%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
-      </version>
-      <version name="1.05" author="amagalma" time="2020-08-11T12:51:20Z">
-        <changelog><![CDATA[Fixed: correctly taking into account automatic crossfades.]]></changelog>
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/9a01508376836ceb3365162e545fcc4b490eb003/Cursor/amagalma_Move%20edit%20cursor%20to%20next%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
-      </version>
-      <version name="1.06" author="amagalma" time="2020-08-11T13:23:55Z">
-        <changelog><![CDATA[Automatic crossfades should get priority over manual ones]]></changelog>
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/d103c6907cf0c87314864c3b9ebdc65a3e03b16b/Cursor/amagalma_Move%20edit%20cursor%20to%20next%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
+      <version name="2.00" author="amagalma" time="2026-08-20T13:55:18Z">
+        <changelog><![CDATA[Complete re-write for better speed and fixed lanes support]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/ad0bf7e29dece3660633a52db61fe4f408784c2e/Cursor/amagalma_Move%20edit%20cursor%20to%20next%20dubious%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Move edit cursor to next visible grid line.lua" type="script" desc="Move edit cursor to next visible grid line">
@@ -86,35 +77,26 @@
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/fd9eaacc6d60584480cf08d3350264509e56d809/Cursor/amagalma_Move%20edit%20cursor%20to%20next%20visible%20grid%20line.lua</source>
       </version>
     </reapack>
-    <reapack name="amagalma_Move edit cursor to previous possible bad or missing items crossfade on selected tracks.lua" type="script" desc="Move edit cursor to previous possible bad or missing items crossfade on selected tracks">
+    <reapack name="amagalma_Move edit cursor to previous dubious or missing items crossfade on selected tracks.lua" type="script" desc="Move edit cursor to previous dubious or missing items crossfade on selected tracks">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Moves the edit cursor to the previous possible bad or missing crossfade between two items on the selected tracks.\par}
-{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A possible bad crossfade is considered one whose duration is not the same as the overlap between the two items.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Moves the edit cursor to the previous dubious or missing crossfade between two items on the selected tracks.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Dubious crossfade is considered one whose duration is not the same as the overlap between the two items.\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A crossfade is considered missing if two items are adjacent or there is a very small gap between them and they do not crossfade.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab All playing fixed item lanes are taken into consideration\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab The two items are automatically selected\par}
 {\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab You can set inside the script the maximum gap duration between two "adjacent" items for them to be considered as requiring a crossfade. Default value is 100ms.\sa180\par}
 }
 ]]></description>
         <link rel="website">https://forum.cockos.com/showthread.php?t=241010</link>
         <link rel="donation">https://www.paypal.com/paypalme/amagalma</link>
       </metadata>
-      <version name="1.00" author="amagalma" time="2020-08-10T19:37:19Z">
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/b58535dc985c35316e9385df3eb24223f86b4741/Cursor/amagalma_Move%20edit%20cursor%20to%20previous%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
-      </version>
-      <version name="1.01" author="amagalma" time="2020-08-11T12:27:17Z">
-        <changelog><![CDATA[Added messages when there is no track selected, or not enough items, or no problematic/missing crossfades.]]></changelog>
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f4a5ad44c050eda505d556e6ad1f16bb199d8f4f/Cursor/amagalma_Move%20edit%20cursor%20to%20previous%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
-      </version>
-      <version name="1.05" author="amagalma" time="2020-08-11T13:11:19Z">
-        <changelog><![CDATA[Fixed: correctly taking into account automatic crossfades.]]></changelog>
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/9e2f37ede08e262a44d651d8fb646b8a42acdc44/Cursor/amagalma_Move%20edit%20cursor%20to%20previous%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
-      </version>
-      <version name="1.06" author="amagalma" time="2020-08-11T13:50:43Z">
-        <changelog><![CDATA[Automatic crossfades should get priority over manual ones]]></changelog>
-        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/1423e0007c25bf597ff849409ab5cec61c4c964f/Cursor/amagalma_Move%20edit%20cursor%20to%20previous%20possible%20bad%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
+      <version name="2.00" author="amagalma" time="2026-08-20T13:55:18Z">
+        <changelog><![CDATA[Complete re-write for better speed and fixed item lanes support]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/ad0bf7e29dece3660633a52db61fe4f408784c2e/Cursor/amagalma_Move%20edit%20cursor%20to%20previous%20dubious%20or%20missing%20items%20crossfade%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Move edit cursor to previous visible grid line.lua" type="script" desc="Move edit cursor to previous visible grid line">
@@ -161,6 +143,22 @@
       <version name="1.09" author="amagalma" time="2024-05-10T12:26:57Z">
         <changelog><![CDATA[If grid not visible, then move by 1 pixel]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/080bd03c5b579f913231ca02e7dee9dfd326d0eb/Cursor/amagalma_Move%20edit%20cursor%20to%20previous%20visible%20grid%20line.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Select and move to next similarly named item on the same track.lua" type="script" desc="Select and move to next similarly named item on the same track">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-18T13:45:12Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/c889823f78ef56500c1289527805c902c03a7935/Cursor/amagalma_Select%20and%20move%20to%20next%20similarly%20named%20item%20on%20the%20same%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Select and move to previous similarly named item on the same track.lua" type="script" desc="Select and move to previous similarly named item on the same track">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-18T13:55:43Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/4281939f189f58c0daa461a6ad2c984f503aa5f8/Cursor/amagalma_Select%20and%20move%20to%20previous%20similarly%20named%20item%20on%20the%20same%20track.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Transport Play from start of arrange view - Stop at play cursor (editing).lua" type="script" desc="Transport Play from start of arrange view / Stop at play cursor (editing)">
@@ -870,6 +868,10 @@ forum thread
       <version name="1.1.5" author="cfillion" time="2025-04-12T18:42:38Z">
         <changelog><![CDATA[• Fix tree display mode when there are over 999 children]]></changelog>
         <source>https://github.com/ReaTeam/ReaScripts/raw/594ce3a5416b77632b483fbf02a09decb4a8504d/Development/cfillion_Lua%20profiler.lua</source>
+      </version>
+      <version name="1.1.6" author="cfillion" time="2026-07-27T20:36:53Z">
+        <changelog><![CDATA[• Fix infinite recursion when a table contains its own metatable]]></changelog>
+        <source>https://github.com/ReaTeam/ReaScripts/raw/88619bb17bea8b02b5f256267728825199209181/Development/cfillion_Lua%20profiler.lua</source>
       </version>
     </reapack>
     <reapack name="cfillion_Search action by command ID or name.lua" type="script" desc="Search action by command ID or name">
@@ -4182,6 +4184,10 @@ Fix a potential infinite loop]]></changelog>
         <changelog><![CDATA[- Complete re-write in order to support containers]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/803411bb0f81f242363104a62324d201136b9ea8/FX/amagalma_Calculate%20difference%20in%20LUFS%20for%20selected%20or%20all%20FX%20of%20focused%20FX%20chain.lua</source>
       </version>
+      <version name="2.01" author="amagalma" time="2026-08-14T12:08:28Z">
+        <changelog><![CDATA[- Added stereo-only or multichannel calculation]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f02d4550b3fefba2cbc8dde78c6837d56cba05af/FX/amagalma_Calculate%20difference%20in%20LUFS%20for%20selected%20or%20all%20FX%20of%20focused%20FX%20chain.lua</source>
+      </version>
     </reapack>
     <reapack name="amagalma_Center in screen the floating FX or FX Chain.lua" type="script" desc="Center in screen the floating FX or FX Chain">
       <metadata>
@@ -6683,6 +6689,17 @@ website
         <source file="az_Conform project using metadata (post-production tools)/az_Conform project_Core.lua">https://github.com/ReaTeam/ReaScripts/raw/9c19e785d73f6b106f7a20e70fa55bf8e696448f/Items%20Editing/az_Conform%20project%20using%20metadata%20(post-production%20tools)/az_Conform%20project_Core.lua</source>
         <source main="main" file="az_Conform project using metadata (post-production tools)/az_Rename takes with last used settings (post-production tools).lua">https://github.com/ReaTeam/ReaScripts/raw/9c19e785d73f6b106f7a20e70fa55bf8e696448f/Items%20Editing/az_Conform%20project%20using%20metadata%20(post-production%20tools)/az_Rename%20takes%20with%20last%20used%20settings%20(post-production%20tools).lua</source>
       </version>
+      <version name="0.8" author="AZ" time="2026-07-16T08:25:47Z">
+        <changelog><![CDATA[- Fix some crush bugs
+- Simplify UI and UX for linking section
+- New option to group linked tracks above
+- New option to ignore duplicated items
+- Improve performance for linking process
+- Add export EDl feature]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/6bed75eabc3b3f14088f0276d465a3a65c70591a/Items%20Editing/az_Conform%20project%20using%20metadata%20(post-production%20tools).lua</source>
+        <source file="az_Conform project using metadata (post-production tools)/az_Conform project_Core.lua">https://github.com/ReaTeam/ReaScripts/raw/6bed75eabc3b3f14088f0276d465a3a65c70591a/Items%20Editing/az_Conform%20project%20using%20metadata%20(post-production%20tools)/az_Conform%20project_Core.lua</source>
+        <source main="main" file="az_Conform project using metadata (post-production tools)/az_Rename takes with last used settings (post-production tools).lua">https://github.com/ReaTeam/ReaScripts/raw/6bed75eabc3b3f14088f0276d465a3a65c70591a/Items%20Editing/az_Conform%20project%20using%20metadata%20(post-production%20tools)/az_Rename%20takes%20with%20last%20used%20settings%20(post-production%20tools).lua</source>
+      </version>
     </reapack>
     <reapack name="az_Crop items on selected tracks by reference selected items (useful for ambiences).lua" type="script" desc="Crop items on selected tracks by reference selected items (useful for ambiences)">
       <metadata>
@@ -6899,6 +6916,24 @@ website
         <source file="az_Fade tool (work on context of mouse, razor or time selection)/az_Options window for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/99a569437bdbc2daa1846b07990668e74663fdad/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Options%20window%20for%20az_Fade%20tool.lua</source>
         <source main="main" file="az_Fade tool (work on context of mouse, razor or time selection)/az_Open options for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/99a569437bdbc2daa1846b07990668e74663fdad/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Open%20options%20for%20az_Fade%20tool.lua</source>
       </version>
+      <version name="2.4.3" author="AZ" time="2026-05-02T22:45:00Z">
+        <changelog><![CDATA[- Fix behavior with combinations of item selection, track media grouping and item grouping
+- Fix bugs with option to ignore locked items and other corner cases with locking
+- Fix bug to run butch process properly for option allows it without time or razor selection
+- New option to ignore project locking
+- New option to seek playback on fade change]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/6a3c8ef919b5b93e29642c27f5ea69cb92ac146a/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection).lua</source>
+        <source file="az_Fade tool (work on context of mouse, razor or time selection)/az_Options window for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/6a3c8ef919b5b93e29642c27f5ea69cb92ac146a/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Options%20window%20for%20az_Fade%20tool.lua</source>
+        <source main="main" file="az_Fade tool (work on context of mouse, razor or time selection)/az_Open options for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/6a3c8ef919b5b93e29642c27f5ea69cb92ac146a/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Open%20options%20for%20az_Fade%20tool.lua</source>
+      </version>
+      <version name="2.4.4" author="AZ" time="2026-05-12T15:16:04Z">
+        <changelog><![CDATA[- Support for new folder/child track grouping for media editing
+- Fix behavior on hidden tracks
+- Fix Apply button position if Options open via dedicated action]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/46c31f76f6ba4ba4217c360bae5636b54c4e791e/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection).lua</source>
+        <source file="az_Fade tool (work on context of mouse, razor or time selection)/az_Options window for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/46c31f76f6ba4ba4217c360bae5636b54c4e791e/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Options%20window%20for%20az_Fade%20tool.lua</source>
+        <source main="main" file="az_Fade tool (work on context of mouse, razor or time selection)/az_Open options for az_Fade tool.lua">https://github.com/ReaTeam/ReaScripts/raw/46c31f76f6ba4ba4217c360bae5636b54c4e791e/Items%20Editing/az_Fade%20tool%20(work%20on%20context%20of%20mouse,%20razor%20or%20time%20selection)/az_Open%20options%20for%20az_Fade%20tool.lua</source>
+      </version>
     </reapack>
     <reapack name="az_Open item copy in primary external editor with handles.lua" type="script" desc="Open item copy in primary external editor with handles">
       <metadata>
@@ -7022,6 +7057,14 @@ Added experimental fixed lanes support]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/6bc1502a9716eecd491d905d24839016283dffc5/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
         <source main="main" file="az_Smart split items by mouse cursor/az_Open options for az_Smart split items by mouse cursor.lua">https://github.com/ReaTeam/ReaScripts/raw/6bc1502a9716eecd491d905d24839016283dffc5/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor/az_Open%20options%20for%20az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
       </version>
+      <version name="3.43" author="AZ" time="2026-05-12T15:16:33Z">
+        <changelog><![CDATA[- Support for track folder/child media edits grouping
+- Add option to use mouse for split or not
+- Respect full items lock
+- Minor improvements]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/543152a08af3a7c11e8d257baf8984a8c6f9c3c6/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
+        <source main="main" file="az_Smart split items by mouse cursor/az_Open options for az_Smart split items by mouse cursor.lua">https://github.com/ReaTeam/ReaScripts/raw/543152a08af3a7c11e8d257baf8984a8c6f9c3c6/Items%20Editing/az_Smart%20split%20items%20by%20mouse%20cursor/az_Open%20options%20for%20az_Smart%20split%20items%20by%20mouse%20cursor.lua</source>
+      </version>
     </reapack>
     <reapack name="az_Trim left, right or both item edges via mouse and razor.lua" type="script" desc="Trim left, right or both item edges via mouse and razor">
       <metadata>
@@ -7078,6 +7121,14 @@ Added experimental fixed lanes support]]></changelog>
 - New option for trim tails of selected items using edit cursor if mouse is not over items]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/bd9cfe4dbc9892e8b06b86b34ac2ba23bfd1d11c/Items%20Editing/az_Trim%20left,%20right%20or%20both%20item%20edges%20via%20mouse%20and%20razor.lua</source>
         <source main="main" file="az_Trim left, right or both item edges via mouse and razor/az_Open options for az_Trim left, right or both item edges via mouse and razor.lua">https://github.com/ReaTeam/ReaScripts/raw/bd9cfe4dbc9892e8b06b86b34ac2ba23bfd1d11c/Items%20Editing/az_Trim%20left,%20right%20or%20both%20item%20edges%20via%20mouse%20and%20razor/az_Open%20options%20for%20az_Trim%20left,%20right%20or%20both%20item%20edges%20via%20mouse%20and%20razor.lua</source>
+      </version>
+      <version name="1.7" author="AZ" time="2026-05-13T18:44:45Z">
+        <changelog><![CDATA[- Fix behavior with locked items
+- Prevent editing if items fully locked in project
+- Fix trim at edit cursor when grouping is off
+- Add support for new parent/child grouping]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/8969a0c1411a0ea09dcb07320ef69e39b443239b/Items%20Editing/az_Trim%20left,%20right%20or%20both%20item%20edges%20via%20mouse%20and%20razor.lua</source>
+        <source main="main" file="az_Trim left, right or both item edges via mouse and razor/az_Open options for az_Trim left, right or both item edges via mouse and razor.lua">https://github.com/ReaTeam/ReaScripts/raw/8969a0c1411a0ea09dcb07320ef69e39b443239b/Items%20Editing/az_Trim%20left,%20right%20or%20both%20item%20edges%20via%20mouse%20and%20razor/az_Open%20options%20for%20az_Trim%20left,%20right%20or%20both%20item%20edges%20via%20mouse%20and%20razor.lua</source>
       </version>
     </reapack>
     <reapack name="beaunus_Name item takes by last marker to cut item.lua" type="script" desc="Name item takes by last marker to cut item">
@@ -9638,6 +9689,21 @@ Fix bug on Windows]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/1e4398de31f8896fa495d606529c1a470eb8156d/Items%20Properties/amagalma_Paste%20text%20from%20clipboard%20to%20selected%20items'%20notes%20(one%20line%20per%20item).lua</source>
       </version>
     </reapack>
+    <reapack name="amagalma_Reset gain to +0dB (un-normalize) for all the takes of the selected items.lua" type="script" desc="Reset gain to +0dB (un-normalize) for all the takes of the selected items">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Like the native action "Item properties: Reset item take gain to +0dB (un-normalize)" but works for all the takes\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-12T10:24:22Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f186a33426f65226515f2ac878a01c3e445c7bf8/Items%20Properties/amagalma_Reset%20gain%20to%20+0dB%20(un-normalize)%20for%20all%20the%20takes%20of%20the%20selected%20items.lua</source>
+      </version>
+    </reapack>
     <reapack name="amagalma_Select all items in track that have exactly the same video processors as the selected item (unselect original item).lua" type="script" desc="Select all items in track that have exactly the same video processors as the selected item (unselect original item)">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -9674,6 +9740,14 @@ Fix bug on Windows]]></changelog>
       <version name="1.01" author="amagalma" time="2024-04-28T09:34:13Z">
         <changelog><![CDATA[Support dedicated video processor items]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/035c55cc6d1b28fb5581564651274ba263a9aa20/Items%20Properties/amagalma_Select%20all%20items%20in%20track%20that%20have%20exactly%20the%20same%20video%20processors%20as%20the%20selected%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Select all items on track with the same name as the selected item.lua" type="script" desc="Select all items on track with the same name as the selected item">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-25T12:09:49Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f44a2dcf79fb0481f90a84615342d83ae70426b9/Items%20Properties/amagalma_Select%20all%20items%20on%20track%20with%20the%20same%20name%20as%20the%20selected%20item.lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Select next item with take FX.lua" type="script" desc="Select next item with take FX">
@@ -10988,11 +11062,11 @@ Renumber markers and regions when pasting]]></changelog>
     </reapack>
     <reapack name="cfillion_Step sequencing (replace mode).lua" type="script" desc="Step sequencing (replace mode)">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Step sequencing (replace mode)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel1 \b \fs32 Step sequencing (replace mode)\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 This script is an alternative to the native step recording feature. Existing notes under the edit cursor are replaced (lowest first). The MIDI editor's active note row is updated as new notes are played.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 An options action is provided to individually toggle replacing channel/pitch/velocity and skipping unselected notes.\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 Note that this script automatically inserts and removes an helper JSFX in the active track's input FX chain in order to receive live MIDI input.\par}
@@ -11057,6 +11131,12 @@ Use ReaImGui for displaying the options menu (if installed)]]></changelog>
         <source main="midi_editor">https://github.com/ReaTeam/ReaScripts/raw/9a18d6e0740cd6b54d5f80585f4db23f86ce0e64/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
         <source main="midi_editor" file="cfillion_Step sequencing (options).lua">https://github.com/ReaTeam/ReaScripts/raw/9a18d6e0740cd6b54d5f80585f4db23f86ce0e64/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
         <source type="effect" file="cfillion_Step sequencing (replace mode).jsfx">https://github.com/ReaTeam/ReaScripts/raw/9a18d6e0740cd6b54d5f80585f4db23f86ce0e64/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).jsfx</source>
+      </version>
+      <version name="1.1.5" author="cfillion" time="2026-07-16T08:31:52Z">
+        <changelog><![CDATA[Fix incorrect font size with ReaImGui 0.10+ and improve gfx fallback on ARM macOS]]></changelog>
+        <source main="midi_editor">https://github.com/ReaTeam/ReaScripts/raw/fb619210c6dcf2370b8839afa47712cfd6ffa0b9/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
+        <source main="midi_editor" file="cfillion_Step sequencing (options).lua">https://github.com/ReaTeam/ReaScripts/raw/fb619210c6dcf2370b8839afa47712cfd6ffa0b9/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).lua</source>
+        <source type="effect" file="cfillion_Step sequencing (replace mode).jsfx">https://github.com/ReaTeam/ReaScripts/raw/fb619210c6dcf2370b8839afa47712cfd6ffa0b9/MIDI%20Editor/cfillion_Step%20sequencing%20(replace%20mode).jsfx</source>
       </version>
     </reapack>
     <reapack name="cfillion_Toggle MIDI preview on transport change.lua" type="script" desc="Toggle MIDI preview on transport change">
@@ -11132,15 +11212,29 @@ Use ReaImGui for displaying the options menu (if installed)]]></changelog>
       </version>
     </reapack>
     <reapack name="Flaneurette_GuitarChorder.py" type="script" desc="GuitarChorder">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 GuitarChorder gives you access to all guitarchords. With it, you can draw MIDI guitar chords, with many attack styles from fingerpicking to strumming.\par}
+}
+]]></description>
+      </metadata>
       <version name="2.0" author="Flaneurette" time="2021-10-21T22:22:03Z">
         <changelog><![CDATA[update]]></changelog>
         <source main="midi_inlineeditor midi_editor" platform="windows">https://github.com/ReaTeam/ReaScripts/raw/f5ca90df7867e8e5cb65638e943061c4883f1477/MIDI%20Editor/Flaneurette_GuitarChorder.py</source>
         <source main="midi_inlineeditor midi_editor" platform="linux">https://github.com/ReaTeam/ReaScripts/raw/f5ca90df7867e8e5cb65638e943061c4883f1477/MIDI%20Editor/Flaneurette_GuitarChorder.py</source>
       </version>
+      <version name="2.1" author="Flaneurette" time="2026-07-22T15:03:15Z">
+        <changelog><![CDATA[de-duplicated per-letter GUI/logic code]]></changelog>
+        <source main="midi_inlineeditor midi_editor" platform="windows">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_GuitarChorder.py</source>
+        <source main="midi_inlineeditor midi_editor" platform="linux">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_GuitarChorder.py</source>
+      </version>
     </reapack>
     <reapack name="Flaneurette_ReaChorder.py" type="script" desc="ReaChorder">
       <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
@@ -11206,6 +11300,157 @@ Use ReaImGui for displaying the options menu (if installed)]]></changelog>
         <source platform="windows" file="Flaneurette_ReaChorder/screenshot.png">https://github.com/ReaTeam/ReaScripts/raw/6004b5a3f041145e66e2c23ea66a32eaf049e221/MIDI%20Editor/Flaneurette_ReaChorder/screenshot.png</source>
         <source platform="linux" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/6004b5a3f041145e66e2c23ea66a32eaf049e221/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
         <source platform="windows" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/6004b5a3f041145e66e2c23ea66a32eaf049e221/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
+      </version>
+      <version name="2.1" author="Flaneurette" time="2026-07-21T20:13:39Z">
+        <changelog><![CDATA[+ Fixed the listing of drum patterns
++ Fixed the freezing on Linux (only drew upon closure)
++ By default the chord section is now always checked, unless manually unchecked.
+- removed one copyrighted drum pattern (was from a unknown? song)
+- no longer supporting the windows binary .exe installer.]]></changelog>
+        <source main="midi_editor" platform="linux">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder.py</source>
+        <source main="midi_editor" platform="windows">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderBassSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderBassSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderBassSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderBassSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderChordSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderChordSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderChordSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderChordSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderDrumSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderDrumSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderDrumSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderDrumSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderGuitarSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderGuitarSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderGuitarSection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderGuitarSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderMain.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMain.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderMain.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMain.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderMelodySection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMelodySection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderMelodySection.ini">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMelodySection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/drumpatterns.json">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/drumpatterns.json</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/drumpatterns.json">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/drumpatterns.json</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/_getdirectory_.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/_getdirectory_.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/_getdirectory_.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/_getdirectory_.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/bass_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/bass_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/bass_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/bass_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/chord_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/chord_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/chord_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/chord_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/debug.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/debug.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/debug.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/debug.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/drum_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/drum_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/drum_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/drum_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/guitar_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/guitar_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/guitar_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/guitar_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/melody_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/melody_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/melody_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/melody_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/reaper_track.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/reaper_track.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/reaper_track.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/reaper_track.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/rs_midi.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/rs_midi.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/rs_midi.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/rs_midi.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/rs_statemanager.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/rs_statemanager.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/rs_statemanager.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/rs_statemanager.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/scales.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/scales.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/scales.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/scales.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/wizard_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/wizard_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/wizard_section.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/wizard_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/LICENSE.txt">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/LICENSE.txt</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/LICENSE.txt">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/LICENSE.txt</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/screenshot.png">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/screenshot.png</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/screenshot.png">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/screenshot.png</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/f3f72b90cb9066ac2ac760d09692f4c484a666cc/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
+      </version>
+      <version name="2.2" author="Flaneurette" time="2026-07-21T21:37:32Z">
+        <changelog><![CDATA[+ Fixed the listing of drum patterns paths discoveries...]]></changelog>
+        <source main="midi_editor" platform="linux">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder.py</source>
+        <source main="midi_editor" platform="windows">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderBassSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderBassSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderBassSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderBassSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderChordSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderChordSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderChordSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderChordSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderDrumSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderDrumSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderDrumSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderDrumSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderGuitarSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderGuitarSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderGuitarSection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderGuitarSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderMain.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMain.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderMain.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMain.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderMelodySection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMelodySection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderMelodySection.ini">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMelodySection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/drumpatterns.json">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/drumpatterns.json</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/drumpatterns.json">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/drumpatterns.json</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/_getdirectory_.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/_getdirectory_.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/_getdirectory_.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/_getdirectory_.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/bass_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/bass_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/bass_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/bass_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/chord_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/chord_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/chord_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/chord_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/debug.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/debug.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/debug.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/debug.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/drum_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/drum_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/drum_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/drum_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/guitar_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/guitar_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/guitar_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/guitar_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/melody_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/melody_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/melody_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/melody_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/reaper_track.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/reaper_track.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/reaper_track.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/reaper_track.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/rs_midi.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/rs_midi.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/rs_midi.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/rs_midi.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/rs_statemanager.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/rs_statemanager.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/rs_statemanager.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/rs_statemanager.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/scales.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/scales.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/scales.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/scales.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/wizard_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/wizard_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/wizard_section.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/wizard_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/LICENSE.txt">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/LICENSE.txt</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/LICENSE.txt">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/LICENSE.txt</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/screenshot.png">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/screenshot.png</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/screenshot.png">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/screenshot.png</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/dac5619ddee9d643729aa74a33660c2eb681e5ec/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
+      </version>
+      <version name="2.3" author="Flaneurette" time="2026-07-22T15:03:15Z">
+        <changelog><![CDATA[+ New chord progressions, 60 in total.]]></changelog>
+        <source main="midi_editor" platform="linux">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder.py</source>
+        <source main="midi_editor" platform="windows">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderBassSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderBassSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderBassSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderBassSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderChordSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderChordSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderChordSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderChordSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderDrumSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderDrumSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderDrumSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderDrumSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderGuitarSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderGuitarSection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderGuitarSection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderGuitarSection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderMain.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMain.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderMain.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMain.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/ReaChorderMelodySection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMelodySection.ini</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/ReaChorderMelodySection.ini">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/ReaChorderMelodySection.ini</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/drumpatterns.json">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/drumpatterns.json</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/drumpatterns.json">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/drumpatterns.json</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/_getdirectory_.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/_getdirectory_.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/_getdirectory_.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/_getdirectory_.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/bass_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/bass_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/bass_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/bass_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/chord_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/chord_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/chord_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/chord_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/debug.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/debug.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/debug.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/debug.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/drum_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/drum_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/drum_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/drum_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/guitar_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/guitar_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/guitar_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/guitar_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/melody_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/melody_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/melody_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/melody_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/reaper_track.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/reaper_track.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/reaper_track.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/reaper_track.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/rs_midi.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/rs_midi.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/rs_midi.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/rs_midi.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/rs_statemanager.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/rs_statemanager.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/rs_statemanager.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/rs_statemanager.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/scales.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/scales.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/scales.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/scales.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/wizard_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/wizard_section.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/wizard_section.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/wizard_section.py</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/LICENSE.txt">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/LICENSE.txt</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/LICENSE.txt">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/LICENSE.txt</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/screenshot.png">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/screenshot.png</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/screenshot.png">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/screenshot.png</source>
+        <source platform="linux" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
+        <source platform="windows" file="Flaneurette_ReaChorder/reaChord_data.py">https://github.com/ReaTeam/ReaScripts/raw/fee4cab4bf597864535c50349675ce95982e98cb/MIDI%20Editor/Flaneurette_ReaChorder/reaChord_data.py</source>
       </version>
     </reapack>
     <reapack name="FnA_Join selected overlapping and consecutive notes with spacing below threshold - input and no input versions.lua" type="script" desc="Join selected overlapping and consecutive notes with spacing below threshold - input and no input versions">
@@ -20983,6 +21228,11 @@ Update post-processing display to match REAPER v7.39]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/93d09cae4a363fd297723729d83c16134ff87688/Rendering/cfillion_Apply%20render%20preset.lua</source>
         <source main="main" file="cfillion_Apply render preset (create action).lua">https://github.com/ReaTeam/ReaScripts/raw/93d09cae4a363fd297723729d83c16134ff87688/Rendering/cfillion_Apply%20render%20preset.lua</source>
       </version>
+      <version name="2.1.11" author="cfillion" time="2026-07-16T08:25:08Z">
+        <changelog><![CDATA[Repair gfx fallback path when ReaImGui is not present]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/2f3dfd01d2c2d20827a2b55f3f1cf732e8229f87/Rendering/cfillion_Apply%20render%20preset.lua</source>
+        <source main="main" file="cfillion_Apply render preset (create action).lua">https://github.com/ReaTeam/ReaScripts/raw/2f3dfd01d2c2d20827a2b55f3f1cf732e8229f87/Rendering/cfillion_Apply%20render%20preset.lua</source>
+      </version>
     </reapack>
     <reapack name="DSG_Render time selection to new track.lua" type="script" desc="Render time selection to new track">
       <metadata>
@@ -21173,6 +21423,94 @@ Updated to only list stretch markers within item time and format time as standar
     </reapack>
   </category>
   <category name="Takes Properties">
+    <reapack name="amagalma_Normalize all takes in selected items to match the volume of the active take.lua" type="script" desc="Normalize all takes in selected items to match the volume of the active take">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Useful for bringing the rest of the takes to the same volume as the current take, when comping\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-12T11:44:01Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/e31b72bd6ccb360b7504ccec3cc9b6db46464d52/Takes%20Properties/amagalma_Normalize%20all%20takes%20in%20selected%20items%20to%20match%20the%20volume%20of%20the%20active%20take.lua</source>
+      </version>
+      <version name="1.02" author="amagalma" time="2026-06-14T13:03:11Z">
+        <changelog><![CDATA[- Improved working with many items
+- Track volume and TrackFX are not taken into account]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/1363297f9d5f879b1f5d3ffd23d027bc2b7bb5eb/Takes%20Properties/amagalma_Normalize%20all%20takes%20in%20selected%20items%20to%20match%20the%20volume%20of%20the%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Normalize all takes volume in selected items to LUFSI value set by user.lua" type="script" desc="Normalize all takes volume in selected items to LUFSI value set by user">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-12T12:39:33Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/138e3988803282933fc5f36760a5c523645e2fa5/Takes%20Properties/amagalma_Normalize%20all%20takes%20volume%20in%20selected%20items%20to%20LUFSI%20value%20set%20by%20user.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Phase align two selected items by moving item's contents (using CFE), depending on mouse position.lua" type="script" desc="Phase align two selected items by moving item's contents (using CFE), depending on mouse position">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requires JS_ReaScriptAPI\sa180\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-08-15T23:28:10Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/c472785746b759dd969b974e36024206ed321d99/Takes%20Properties/amagalma_Phase%20align%20two%20selected%20items%20by%20moving%20item's%20contents%20(using%20CFE),%20depending%20on%20mouse%20position.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Phase align two selected items by moving left item's contents (using CFE).lua" type="script" desc="Phase align two selected items by moving left item's contents (using CFE)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requires JS_ReaScriptAPI\sa180\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-18T11:04:38Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/2663ca480360d8d8f1f35e56fe67b043bf22fd17/Takes%20Properties/amagalma_Phase%20align%20two%20selected%20items%20by%20moving%20left%20item's%20contents%20(using%20CFE).lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Phase align two selected items by moving one item's contents (choose item from menu).lua" type="script" desc="Phase align two selected items by moving one item's contents (choose item from menu)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requires JS_ReaScriptAPI\sa180\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-18T11:22:38Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f0534f3958fdbdf6fc08485e20e0f3df56f400ac/Takes%20Properties/amagalma_Phase%20align%20two%20selected%20items%20by%20moving%20one%20item's%20contents%20(choose%20item%20from%20menu).lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Phase align two selected items by moving right item's contents (using CFE).lua" type="script" desc="Phase align two selected items by moving right item's contents (using CFE)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Requires JS_ReaScriptAPI\sa180\par}
+}
+]]></description>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-06-18T11:02:42Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/b80c4e76c30f85323185cb562819ec6d94457cf6/Takes%20Properties/amagalma_Phase%20align%20two%20selected%20items%20by%20moving%20right%20item's%20contents%20(using%20CFE).lua</source>
+      </version>
+    </reapack>
     <reapack name="amagalma_Set all take markers' color for selected items in time selection.lua" type="script" desc="Set all take markers' color for selected items in time selection">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -22059,6 +22397,25 @@ Allow user to move window with mouse]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/9a9e73d39709e6dd0fcff89840e03ffb54734edd/Tracks/kaddaok_Import%20UVR%20separations%20into%20comping%20lane%20structure.lua</source>
       </version>
     </reapack>
+    <reapack name="marcosteinebach_AutoDuck.lua" type="script" desc="AutoDuck">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 This Script is especially useful to make voice Overs, like Podcasts, Trailers, etc. You Need at least two tracks in your current Project. One Music track and one speech track. Split the speech track into separate items. Every time an item on the speech track beginns, the Music track will be ducked, its volume is faded down, as Long as the item Plays. After the item is finished, the Music track's volume is restored to its original volume.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Internally, a volume envelope is created, with Automation Points arround each item.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 You can specify\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab how much (in DB) the Music track should be ducked,\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab the outer fade down and fade up time\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab the inner fade down and fade up time.\line This is the time the track is still ducked, though the item has began to Play.\line This gives a more natural Fading effect.\sa180\par}
+}
+]]></description>
+      </metadata>
+      <version name="26.01" author="Marco Steinebach" time="2026-06-29T15:50:55Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f91f66890c00d94a6e9b73e9aeb4d2628d55907f/Tracks/marcosteinebach_AutoDuck.lua</source>
+      </version>
+    </reapack>
     <reapack name="neftovsky_Floating solo toolbar.lua" type="script" desc="Floating solo toolbar">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -22369,6 +22726,11 @@ Removed first run warning message.]]></changelog>
 - Removed CSV export
 - Improve ReaConsole output]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f009af5aabe82059c643a1bde07dbb2f06662acd/Tracks%20Properties/amagalma_Normalize%20selected%20tracks%20-%20calculate%20only%20for%20the%20time%20selection,%20if%20present%20(peakRMSLUFS)....lua</source>
+      </version>
+      <version name="1.09" author="amagalma" time="2026-08-14T13:58:29Z">
+        <changelog><![CDATA[- Added new v7.79 stereo actions
+- Improved working with unnamed tracks]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/ae96600662e29918adde074a05a256dce233f061/Tracks%20Properties/amagalma_Normalize%20selected%20tracks%20-%20calculate%20only%20for%20the%20time%20selection,%20if%20present%20(peakRMSLUFS)....lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Route selected tracks to new Channel Selector track above them.lua" type="script" desc="Route selected tracks to new Channel Selector track above them">
@@ -24261,6 +24623,33 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/bc89ace078c76c3d10ef88b7aeb274f726fddf30/Various/amagalma_Calculate%20difference%20in%20LUFS%20when%20take%20and%20track%20FX%20are%20applied%20to%20selected%20item%20via%20dry%20run.lua</source>
       </version>
     </reapack>
+    <reapack name="amagalma_Calculate Peak to Loudness Ratio (PLR - new Crest Factor) of selected items source media.lua" type="script" desc="Calculate Peak to Loudness Ratio (PLR - new Crest Factor) of selected items source media">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-07-29T10:16:24Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/3a2a33db48f275468cbb36254f87147ec6658ab4/Various/amagalma_Calculate%20Peak%20to%20Loudness%20Ratio%20(PLR%20-%20new%20Crest%20Factor)%20of%20selected%20items%20source%20media.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Calculate Peak to Loudness Ratio (PLR - new Crest Factor) of selected items, including take and track FX and settings.lua" type="script" desc="Calculate Peak to Loudness Ratio (PLR - new Crest Factor) of selected items, including take and track FX and settings">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-07-29T10:10:08Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/54df70f3481fc603296011684a1ee9db86b2f0d4/Various/amagalma_Calculate%20Peak%20to%20Loudness%20Ratio%20(PLR%20-%20new%20Crest%20Factor)%20of%20selected%20items,%20including%20take%20and%20track%20FX%20and%20settings.lua</source>
+      </version>
+    </reapack>
+    <reapack name="amagalma_Calculate Peak to Loudness Ratio (PLR - new Crest Factor) of selected tracks (within time selection , if it exists).lua" type="script" desc="Calculate Peak to Loudness Ratio (PLR - new Crest Factor) of selected tracks (within time selection , if it exists)">
+      <metadata>
+        <link rel="donation">https://www.paypal.me/amagalma</link>
+      </metadata>
+      <version name="1.00" author="amagalma" time="2026-07-31T14:02:22Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/32570b3629e3eb48a6027708270ba73a1db098eb/Various/amagalma_Calculate%20Peak%20to%20Loudness%20Ratio%20(PLR%20-%20new%20Crest%20Factor)%20of%20selected%20tracks%20(within%20time%20selection%20,%20if%20it%20exists).lua</source>
+      </version>
+      <version name="1.03" author="amagalma" time="2026-08-14T15:51:12Z">
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/ced78cf4bd3cd9ef7e8d8b8d46736f591bceab13/Various/amagalma_Calculate%20Peak%20to%20Loudness%20Ratio%20(PLR%20-%20new%20Crest%20Factor)%20of%20selected%20tracks%20(within%20time%20selection%20,%20if%20it%20exists).lua</source>
+      </version>
+    </reapack>
     <reapack name="amagalma_Chunk ViewerEditor.lua" type="script" desc="Chunk Viewer/Editor">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -25132,6 +25521,10 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
         <changelog><![CDATA[No JS_ReaScriptAPI dependency]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/3272dbf8025552435edcd5d5f816e536324c6475/Various/amagalma_Show%20menu%20for%20dry%20run%20(calculate%20loudness)%20actions.lua</source>
       </version>
+      <version name="1.04" author="amagalma" time="2026-08-14T11:53:02Z">
+        <changelog><![CDATA[Added new v7.79 stereo actions]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/ff379a73cbebde6e03e5962d9b0086c245705d8a/Various/amagalma_Show%20menu%20for%20dry%20run%20(calculate%20loudness)%20actions.lua</source>
+      </version>
     </reapack>
     <reapack name="amagalma_Show offscreen item selection as a tooltip.lua" type="script" desc="Show offscreen item selection as a tooltip">
       <metadata>
@@ -25165,6 +25558,7 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
 {\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab Render path\par}
 {\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab First selected script's path in the Actions List\par}
 {\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab Current theme path\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab Touched or Focused FX\par}
 {\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab Requires JS_ReaScriptAPI and SWS extensions\sa180\par}
 }
 ]]></description>
@@ -25190,6 +25584,18 @@ Changed slider behavior: clicking on the slider does not move the handle any mor
       <version name="1.13" author="amagalma" time="2025-04-08T23:22:53Z">
         <changelog><![CDATA[- Added current theme path]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f6adc08532b2b2bf7b74bbdc80b31750834b1da6/Various/amagalma_Show%20path%20from%20list%20menu%20(Resource,%20Selected%20Item,%20Project%20File,%20Record,%20Secondary%20Record,%20Render).lua</source>
+      </version>
+      <version name="1.14" author="amagalma" time="2026-05-22T17:59:49Z">
+        <changelog><![CDATA[- "Added touched or focused FX"]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/d1cafa4ff94b1d31ef94c305c984b35c6a922522/Various/amagalma_Show%20path%20from%20list%20menu%20(Resource,%20Selected%20Item,%20Project%20File,%20Record,%20Secondary%20Record,%20Render).lua</source>
+      </version>
+      <version name="1.15" author="amagalma" time="2026-07-22T12:23:19Z">
+        <changelog><![CDATA[- Fixed navigating to the path of the selected script in the Actions list, for versions of Reaper that show the path as "(scripts)"]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/d080000962fd6025dd18c20befe10600581e24dc/Various/amagalma_Show%20path%20from%20list%20menu%20(Resource,%20Selected%20Item,%20Project%20File,%20Record,%20Secondary%20Record,%20Render).lua</source>
+      </version>
+      <version name="1.16" author="amagalma" time="2026-07-23T10:12:43Z">
+        <changelog><![CDATA[- Added Browse Loaded IR in focused ReaVerb]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/b4f0a650ecbc67a99cb366e0e856231118f959bc/Various/amagalma_Show%20path%20from%20list%20menu%20(Resource,%20Selected%20Item,%20Project%20File,%20Record,%20Secondary%20Record,%20Render).lua</source>
       </version>
     </reapack>
     <reapack name="amagalma_Simulate tempo with playrate.lua" type="script" desc="amagalma_Simulate tempo with playrate">
@@ -25711,6 +26117,12 @@ v1.0
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f9ff77d7f952bf57bbb4d888eb7de24b0b811cf4/Various/az_Simple%20project%20reconform.lua</source>
         <source file="az_Simple project reconform/az_Common reconform functions.lua">https://github.com/ReaTeam/ReaScripts/raw/f9ff77d7f952bf57bbb4d888eb7de24b0b811cf4/Various/az_Simple%20project%20reconform/az_Common%20reconform%20functions.lua</source>
         <source main="main" file="az_Simple project reconform/az_Comparison assistant for az_Simple project reconform.lua">https://github.com/ReaTeam/ReaScripts/raw/f9ff77d7f952bf57bbb4d888eb7de24b0b811cf4/Various/az_Simple%20project%20reconform/az_Comparison%20assistant%20for%20az_Simple%20project%20reconform.lua</source>
+      </version>
+      <version name="1.1" author="AZ" time="2026-05-12T09:48:40Z">
+        <changelog><![CDATA[- Support for marker/region lanes]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/d0dc4cb11c2c43952828c3fd8607adef3457313b/Various/az_Simple%20project%20reconform.lua</source>
+        <source file="az_Simple project reconform/az_Common reconform functions.lua">https://github.com/ReaTeam/ReaScripts/raw/d0dc4cb11c2c43952828c3fd8607adef3457313b/Various/az_Simple%20project%20reconform/az_Common%20reconform%20functions.lua</source>
+        <source main="main" file="az_Simple project reconform/az_Comparison assistant for az_Simple project reconform.lua">https://github.com/ReaTeam/ReaScripts/raw/d0dc4cb11c2c43952828c3fd8607adef3457313b/Various/az_Simple%20project%20reconform/az_Comparison%20assistant%20for%20az_Simple%20project%20reconform.lua</source>
       </version>
     </reapack>
     <reapack name="beaunus_Import_clip_splicer_specification_json.py" type="script" desc="Import Clip Splicer JSON file">
@@ -29550,6 +29962,96 @@ Fix SWS Startup / Lokasenna Radial Menu bug]]></changelog>
         <source main="main">https://github.com/ReaTeam/ReaScripts/raw/d6adaa5ef60369701c7f3d399b228645ed9577a7/Various/rodilab_Smart%20select%20all%20(depending%20on%20focus,%20tracks%20selected%20and%20time%20selection).lua</source>
       </version>
     </reapack>
+    <reapack name="rxfx_ReaPad.eel" type="script" desc="ReaPad">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Hotplug-enabled gamepad controller script for Reaper. Requires SWS extension.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Controls:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A - redo\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab B - undo\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab X - record\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Y - play/stop\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Bumpers - skip the cursor between markers\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Triggers - scrub the playhead\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Main/guide button - all notes off + reset midi controllers\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad vertical - switch track between mute/normal/solo (hold Main to pull all tracks)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad horizontal - select track (hold Main to skip to first or last)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Right stick - edit track volume and pan\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Left stick - edit FX wet and designated parameters\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 To reset a track's pan or volume, hold down the right stick button and press the axis you want to reset on the d-pad - vertical for volume, horizontal for pan.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 SELECT button plus:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A - new track\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab B - delete selected track\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab X - record-arm mode\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Y (or RB) - tap tempo\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad down - smooth delete\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad up - smooth copy\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 When in record-arm mode:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A - arm selected track on input 1\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab X - arm selected track on input 2\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Y - disarm track\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab B - cancel\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab MAIN - disarm all tracks\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad up - arm smooth copy\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad down - arm smooth delete\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Smooth edits are your way of copying and deleting sections of the project. Smooth delete is simple: with a track selected, hold SELECT + DOWN on the D-pad while the project is playing. Everything that tries to play on the selected track while the button is down will be deleted. You can also arm smooth-delete by pressing down on the D-pad while in record-arm mode. Then, when you press play, smooth delete will begin immediately. To stop it, you can stop the playback, or you can hold AND THEN RELEASE select + down again. (This may take a bit of getting used to - remember that smooth edits normally happen only with the buttons held down, so pressing them here is simply picking up the slack.) Smooth copy is much the same as smooth delete, except that you must first select a focus point (a place to copy from - a specific time on a specific track) before you begin. You can set the focus point with MAIN + Y. Smooth copy copies elements relatively, from the focus point to your start point. This means you can set the focus point at the beginning of a chorus, then play from the start of the next chorus and just copy the whole thing down. (Unfortunately, due to technical limitations, previewing smooth copy edits is probably impossible.)\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 START button plus:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A - new marker at playhead (snapped to grid)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab B - delete closest marker\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab X - time-select mode\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Y - toggle repeat\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab MAIN - snap cursor to grid\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Bumpers - skip to start or end of project\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad horizontal - enable/disable pre-roll before record (left means on - "start playback earlier")\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad vertical - enable/disable metronome (up means on)\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 When in time-select mode, you can marker-skip or scrub to one of your endpoints using the bumpers and triggers, then press A to confirm it. Use the same controls to select and confirm your second point, or press B to cancel anytime. Your previous edit position will restore.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 MAIN (aka GUIDE or MODE) button plus:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Right bumper - graft in selection time (extend project)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Left bumper - chop out selection time (shorten project)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab X - begin quick edit\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A - do last quick edit again (on newly selected track)\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab B - invert last quick edit\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Quick edit is the main editing control you get here. It allows you to move a section of the project from its original point (the point in the project at which you pressed quick edit) to any other point in time (the one at which you press A to confirm the edit). The project contents will then move either earlier or later to match the new "corrected" point, and the space in between the points will either be chopped (fully removed) or grafted (filled with emptiness) to match. Works the same as MAIN + bumpers. Modify the confirmation with START (that is, MAIN + X, then START + A) to affect only markers (regions not supported), or SELECT to affect only items on selected tracks. But what if you only needed to nudge one transient? Well, you've already moved everything once, so just scrub to the other side and press MAIN + B to "invert" the edit you just made - which will pull everything after it, back to where it was before.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 LEFT STICK button plus:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Bumpers - cycle between configured FX on selected tracks\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab A - add new effect layer to selected tracks\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab B - delete current effect on selected tracks\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab X - copy FX chain from selected track\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Y - paste FX chain\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab D-pad vertical - switch between controlling FX layers\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaPad version 1.4 introduces FX control, which allows you to switch between a favored few effects and have two-axis control of each using the left analog stick - the horizontal axis controls a single parameter of your choice, and the vertical axis controls the wet mix. It comes preconfigured with a few stock effects, stored in the ExtState configuration file (reaper-extstate.ini, at least on my computer), and it's encouraged you edit the list with your favorites. You must restart Reaper to save any manual changes. The format is EffectName|parameter,Effect2|parameter, etc. Hold down the MAIN button while moving the stick for finer control over the two axes.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 More:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Start + Select + Main - save\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Main + Start + B - empty out time selection\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Main + Start + Y - duplicate time selection at edit cursor\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaPad can normally only save the project if it's already been saved (i.e. has a known filename). However, if you also use my Turing-Complete web interface, ReaPad will auto-name a new project and save it the way TC expects.\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.4" author="Rek's Effeks" time="2026-05-02T22:49:03Z">
+        <changelog><![CDATA[Added FX controls. Minor edits elsewhere.]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/c0c111126a498bc307888adb4e5ee2043e050e5e/Various/rxfx_ReaPad.eel</source>
+      </version>
+      <version name="1.5" author="Rek's Effeks" time="2026-05-03T04:17:24Z">
+        <changelog><![CDATA[Added smooth-copy and smooth-delete.]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/f38e7684e01b0641a2682a407c2fca153d1a2fc6/Various/rxfx_ReaPad.eel</source>
+      </version>
+      <version name="1.5.01" author="Rek's Effeks" time="2026-05-03T07:54:36Z">
+        <changelog><![CDATA[Added smooth-copy and smooth-delete.]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/a14afd43d381ec8af0411e6622155d4a87050020/Various/rxfx_ReaPad.eel</source>
+      </version>
+      <version name="1.5.6" author="Rek's Effeks" time="2026-05-05T06:27:23Z">
+        <changelog><![CDATA[Time selection copy and empty controls, save button, remove "reset midi controllers"]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Various/rxfx_ReaPad.eel</source>
+      </version>
+      <version name="1.5.71" author="Rek's Effeks" time="2026-05-12T15:19:16Z">
+        <changelog><![CDATA[fix Turing-Complete FX display after project load]]></changelog>
+        <source main="main">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Various/rxfx_ReaPad.eel</source>
+      </version>
+    </reapack>
     <reapack name="SampleSamurai.lua" type="script" desc="SampleSamurai">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -31256,6 +31758,83 @@ ProjectFolder=/path/to/folder/\par}
         <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time signature.lua">https://github.com/ReaTeam/ReaScripts/raw/f3005e2f39cb1ae1627ba1c32018a35f0ab08b08/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20signature.lua</source>
         <source file="rxfx_turing_complete.html">https://github.com/ReaTeam/ReaScripts/raw/f3005e2f39cb1ae1627ba1c32018a35f0ab08b08/Web%20Interfaces/rxfx_Turing-complete/rxfx_turing_complete.html</source>
         <source file="rxfx_turing_complete/OpenSans-VariableFont_wdth,wght.ttf">https://github.com/ReaTeam/ReaScripts/raw/f3005e2f39cb1ae1627ba1c32018a35f0ab08b08/Web%20Interfaces/rxfx_Turing-complete/OpenSans-VariableFont_wdth,wght.ttf</source>
+      </version>
+      <version name="0.1beta" author="Rek's Effeks" time="2026-04-20T06:19:02Z">
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Cycle track record arm.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Cycle%20track%20record%20arm.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time selection from markers.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20selection%20from%20markers.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - New project.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20New%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Open selected project.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Open%20selected%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Read current project.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Read%20current%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Rename track from ExtState.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Rename%20track%20from%20ExtState.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project as.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project%20as.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send project list.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20project%20list.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send tempo.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20tempo.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time signature.lua">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20signature.lua</source>
+        <source file="rxfx_turing_complete.html">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/rxfx_turing_complete.html</source>
+        <source file="rxfx_turing_complete/OpenSans-VariableFont_wdth,wght.ttf">https://github.com/ReaTeam/ReaScripts/raw/ded47fb3f746f54a7d74f265c2ce17bd1d6bbe06/Web%20Interfaces/rxfx_Turing-complete/OpenSans-VariableFont_wdth,wght.ttf</source>
+      </version>
+      <version name="0.1beta.1" author="Rek's Effeks" time="2026-04-20T18:53:51Z">
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Cycle track record arm.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Cycle%20track%20record%20arm.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time selection from markers.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20selection%20from%20markers.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - New project.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20New%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Open selected project.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Open%20selected%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Read current project.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Read%20current%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Rename track from ExtState.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Rename%20track%20from%20ExtState.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project as.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project%20as.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send project list.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20project%20list.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send tempo.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20tempo.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time signature.lua">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20signature.lua</source>
+        <source file="rxfx_turing_complete.html">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/rxfx_turing_complete.html</source>
+        <source file="rxfx_turing_complete/OpenSans-VariableFont_wdth,wght.ttf">https://github.com/ReaTeam/ReaScripts/raw/65c9f06bd7b5549ad3c4ebfcf0cd81b1cae91b7f/Web%20Interfaces/rxfx_Turing-complete/OpenSans-VariableFont_wdth,wght.ttf</source>
+      </version>
+      <version name="0.1beta.2" author="Rek's Effeks" time="2026-05-05T06:27:23Z">
+        <changelog><![CDATA[Added project save script for ReaPad integration]]></changelog>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Cycle track record arm.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Cycle%20track%20record%20arm.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time selection from markers.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20selection%20from%20markers.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - New project.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20New%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Open selected project.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Open%20selected%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Read current project.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Read%20current%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Rename track from ExtState.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Rename%20track%20from%20ExtState.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project as.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project%20as.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send project list.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20project%20list.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send tempo.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20tempo.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time signature.lua">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20signature.lua</source>
+        <source file="rxfx_turing_complete.html">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/rxfx_turing_complete.html</source>
+        <source file="rxfx_turing_complete/OpenSans-VariableFont_wdth,wght.ttf">https://github.com/ReaTeam/ReaScripts/raw/521d0e4cba41dc85c07cb6dbb0d8958350c97e9f/Web%20Interfaces/rxfx_Turing-complete/OpenSans-VariableFont_wdth,wght.ttf</source>
+      </version>
+      <version name="0.1beta.3" author="Rek's Effeks" time="2026-05-09T04:40:09Z">
+        <changelog><![CDATA[Fixed tempo/time sig editing to be compatible with tap tempo.]]></changelog>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Cycle track record arm.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Cycle%20track%20record%20arm.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time selection from markers.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20selection%20from%20markers.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - New project.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20New%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Open selected project.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Open%20selected%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Read current project.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Read%20current%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Rename track from ExtState.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Rename%20track%20from%20ExtState.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project as.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project%20as.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send project list.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20project%20list.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send tempo.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20tempo.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time signature.lua">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20signature.lua</source>
+        <source file="rxfx_turing_complete.html">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/rxfx_turing_complete.html</source>
+        <source file="rxfx_turing_complete/OpenSans-VariableFont_wdth,wght.ttf">https://github.com/ReaTeam/ReaScripts/raw/e83b103b4f00855d572dec1823e1bcc556624284/Web%20Interfaces/rxfx_Turing-complete/OpenSans-VariableFont_wdth,wght.ttf</source>
+      </version>
+      <version name="0.2.2" author="Rek's Effeks" time="2026-05-12T15:19:16Z">
+        <changelog><![CDATA[ReaPad integration and bug fixes.]]></changelog>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Cycle track record arm.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Cycle%20track%20record%20arm.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time selection from markers.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20selection%20from%20markers.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - New project.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20New%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Open selected project.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Open%20selected%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Read current project.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Read%20current%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Rename track from ExtState.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Rename%20track%20from%20ExtState.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Save project as.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Save%20project%20as.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send project list.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20project%20list.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Send tempo.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Send%20tempo.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Set time signature.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Set%20time%20signature.lua</source>
+        <source main="main" type="script" file="rxfx_Turing-complete/rxfx_Turing-complete - Update track selections.lua">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_Turing-complete%20-%20Update%20track%20selections.lua</source>
+        <source file="rxfx_turing_complete.html">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/rxfx_turing_complete.html</source>
+        <source file="rxfx_turing_complete/OpenSans-VariableFont_wdth,wght.ttf">https://github.com/ReaTeam/ReaScripts/raw/60762d76b53a1f2bb2ef5ded3c5a0bdf2a1aee48/Web%20Interfaces/rxfx_Turing-complete/OpenSans-VariableFont_wdth,wght.ttf</source>
       </version>
     </reapack>
   </category>

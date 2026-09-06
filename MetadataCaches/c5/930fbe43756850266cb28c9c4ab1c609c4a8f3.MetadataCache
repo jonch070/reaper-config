@@ -1,0 +1,7 @@
+C10018 "/Users/jonathankawchuk/Downloads/shifted test/Scripts/reaper-keys/tests"
+F create-track.RPP 0 0 0 0
+D p 120 n 2
+F midi-sequence.RPP 0 0 0 0
+D p 120 n 2 l 0:02.500
+F run-action-from-binding-win.RPP 0 0 0 0
+D p 120 n 2 l 0:02.000

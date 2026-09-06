@@ -1,0 +1,347 @@
+return {
+-- Table: {1}
+{
+   ["version"]="1.8.4",
+   ["stems"]={2},
+   ["settings"]={3},
+},
+-- Table: {2}
+{
+   ["wav"]={4},
+   ["mp3"]={5},
+},
+-- Table: {3}
+{
+   ["show_hidden_tracks"]=false,
+   ["syncmode"]=0,
+   ["reflect_on_add"]=0,
+   ["renderaction"]=3,
+   ["wait_time"]=5,
+   ["render_setting_groups"]={6},
+   ["overwrite_without_asking"]=false,
+   ["play_sound_when_done"]=false,
+},
+-- Table: {4}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=1,
+   ["order"]=1,
+},
+-- Table: {5}
+{
+   ["sync"]=-1,
+   ["render_setting_group"]=2,
+   ["order"]=2,
+},
+-- Table: {6}
+{
+   {7},
+   {8},
+   {9},
+   {10},
+   {11},
+   {12},
+   {13},
+   {14},
+   {15},
+},
+-- Table: {7}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["render_preset"]="ABM Quick - WAV",
+   ["skip_empty_stems"]=false,
+   ["folder"]="",
+   ["ignore_warnings"]=false,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={16},
+   ["timeSelStart"]=0,
+   ["override_filename"]=false,
+   ["description"]="wav",
+   ["selected_regions"]={17},
+   ["actions_to_run_after"]={18},
+   ["actions_to_run"]={19},
+   ["run_actions_after"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {8}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["render_preset"]="ABM Quick - mp3",
+   ["skip_empty_stems"]=false,
+   ["folder"]="",
+   ["ignore_warnings"]=false,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={20},
+   ["timeSelStart"]=0,
+   ["override_filename"]=false,
+   ["description"]="mp3",
+   ["selected_regions"]={21},
+   ["actions_to_run_after"]={22},
+   ["actions_to_run"]={23},
+   ["run_actions_after"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {9}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["timeSelStart"]=0,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={24},
+   ["run_actions_after"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["selected_regions"]={25},
+   ["actions_to_run_after"]={26},
+   ["actions_to_run"]={27},
+   ["ignore_warnings"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {10}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["timeSelStart"]=0,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={28},
+   ["run_actions_after"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["selected_regions"]={29},
+   ["actions_to_run_after"]={30},
+   ["actions_to_run"]={31},
+   ["ignore_warnings"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {11}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["timeSelStart"]=0,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={32},
+   ["run_actions_after"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["selected_regions"]={33},
+   ["actions_to_run_after"]={34},
+   ["actions_to_run"]={35},
+   ["ignore_warnings"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {12}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["timeSelStart"]=0,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={36},
+   ["run_actions_after"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["selected_regions"]={37},
+   ["actions_to_run_after"]={38},
+   ["actions_to_run"]={39},
+   ["ignore_warnings"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {13}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["timeSelStart"]=0,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={40},
+   ["run_actions_after"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["selected_regions"]={41},
+   ["actions_to_run_after"]={42},
+   ["actions_to_run"]={43},
+   ["ignore_warnings"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {14}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["timeSelStart"]=0,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={44},
+   ["run_actions_after"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["selected_regions"]={45},
+   ["actions_to_run_after"]={46},
+   ["actions_to_run"]={47},
+   ["ignore_warnings"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {15}
+{
+   ["make_timeSel"]=false,
+   ["select_markers"]=false,
+   ["filename"]="",
+   ["skip_empty_stems"]=true,
+   ["folder"]="",
+   ["timeSelStart"]=0,
+   ["timeSelEnd"]=0,
+   ["select_regions"]=false,
+   ["selected_markers"]={48},
+   ["run_actions_after"]=false,
+   ["override_filename"]=false,
+   ["description"]="",
+   ["selected_regions"]={49},
+   ["actions_to_run_after"]={50},
+   ["actions_to_run"]={51},
+   ["ignore_warnings"]=false,
+   ["run_actions"]=false,
+   ["put_in_folder"]=false,
+},
+-- Table: {16}
+{
+},
+-- Table: {17}
+{
+},
+-- Table: {18}
+{
+},
+-- Table: {19}
+{
+},
+-- Table: {20}
+{
+},
+-- Table: {21}
+{
+},
+-- Table: {22}
+{
+},
+-- Table: {23}
+{
+},
+-- Table: {24}
+{
+},
+-- Table: {25}
+{
+},
+-- Table: {26}
+{
+},
+-- Table: {27}
+{
+},
+-- Table: {28}
+{
+},
+-- Table: {29}
+{
+},
+-- Table: {30}
+{
+},
+-- Table: {31}
+{
+},
+-- Table: {32}
+{
+},
+-- Table: {33}
+{
+},
+-- Table: {34}
+{
+},
+-- Table: {35}
+{
+},
+-- Table: {36}
+{
+},
+-- Table: {37}
+{
+},
+-- Table: {38}
+{
+},
+-- Table: {39}
+{
+},
+-- Table: {40}
+{
+},
+-- Table: {41}
+{
+},
+-- Table: {42}
+{
+},
+-- Table: {43}
+{
+},
+-- Table: {44}
+{
+},
+-- Table: {45}
+{
+},
+-- Table: {46}
+{
+},
+-- Table: {47}
+{
+},
+-- Table: {48}
+{
+},
+-- Table: {49}
+{
+},
+-- Table: {50}
+{
+},
+-- Table: {51}
+{
+},
+}

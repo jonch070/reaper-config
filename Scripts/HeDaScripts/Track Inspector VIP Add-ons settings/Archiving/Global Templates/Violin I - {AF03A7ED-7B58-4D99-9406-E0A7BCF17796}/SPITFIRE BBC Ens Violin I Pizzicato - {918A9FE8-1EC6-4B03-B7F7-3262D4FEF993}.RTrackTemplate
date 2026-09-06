@@ -1,0 +1,41 @@
+<TRACK
+  NAME "SPITFIRE LABS Ens Contrabass Long *** archived ***"
+  LOCK 1
+  PEAKCOL 21462169
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -2
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4352 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 1 1
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {E4A9A81A-A63C-44FC-9CC8-ABFEF65A4B91}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE LABS Ens Contrabass Long - {E4A9A81A-A63C-44FC-9CC8-ABFEF65A4B91}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {5BD8F954-D974-40D9-8592-DB1AD3C3E9E1}
+    Archived_parent_name Contrabass
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

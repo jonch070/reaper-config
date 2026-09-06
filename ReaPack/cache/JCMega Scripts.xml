@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<index version="1" name="JCMega Scripts" desc="REAPER scripts by JC / MegaTrazher">
+  <metadata>
+    <link rel="website" href="https://github.com/megatrazher-gitrep/JCMega_Scripts">GitHub Repository</link>
+  </metadata>
+  <category name="JCMega Scripts">
+    <reapack name="JCMega_GradienTracks.lua" type="script" desc="Apply gradient-style track coloring for faster visual organization in REAPER.">
+      <version name="1.0.0" author="JC / MegaTrazher" time="2026-06-11T00:00:00Z">
+        <changelog><![CDATA[Added GradienTracks script and updated package index.]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/megatrazher-gitrep/JCMega_Scripts/main/Scripts/JCMega_GradienTracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="JCMega_Hand Scroll.lua" type="script" desc="Hand-scroll style navigation utility for moving through the REAPER arrange view.">
+      <version name="1.0.0" author="JC / MegaTrazher" time="2026-06-11T00:00:00Z">
+        <changelog><![CDATA[Added Hand Scroll script to the package index.]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/megatrazher-gitrep/JCMega_Scripts/main/Scripts/JCMega_Hand%20Scroll.lua</source>
+      </version>
+    </reapack>
+    <reapack name="JCMega_Snapshot Manager.lua" type="script" desc="Snapshot manager for saving, loading, replacing, deleting, and reordering project snapshots.">
+      <version name="1.0.0" author="JC / MegaTrazher" time="2026-06-11T00:00:00Z">
+        <changelog><![CDATA[Added Snapshot Manager script to the package index.]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/megatrazher-gitrep/JCMega_Scripts/main/Scripts/JCMega_Snapshot%20Manager.lua</source>
+      </version>
+    </reapack>
+    <reapack name="JCMega_Template Constructor.lua" type="script" desc="Template construction utility for building reusable REAPER project setups.">
+      <version name="1.0.0" author="JC / MegaTrazher" time="2026-06-11T00:00:00Z">
+        <changelog><![CDATA[Added Template Constructor script to the package index.]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/megatrazher-gitrep/JCMega_Scripts/main/Scripts/JCMega_Template%20Constructor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="JCMega_Theme Switcher.lua" type="script" desc="Theme switcher for quickly browsing and changing installed REAPER themes.">
+      <version name="1.0.0" author="JC / MegaTrazher" time="2026-06-11T00:00:00Z">
+        <changelog><![CDATA[Added Theme Switcher script to the package index.]]></changelog>
+        <source main="main">https://raw.githubusercontent.com/megatrazher-gitrep/JCMega_Scripts/main/Scripts/JCMega_Theme%20Switcher.lua</source>
+      </version>
+    </reapack>
+  </category>
+</index>

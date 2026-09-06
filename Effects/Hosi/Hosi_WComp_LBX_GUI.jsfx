@@ -1,0 +1,698 @@
+desc: W_Comp_Hosi_GUI
+/*
+  W_Comp_Hosi
+  Modern GUI Edition - SSL Vertical Layout.
+  
+  CRITICAL FIXES APPLIED:
+  1. Memory Allocation: SC_FiltL/R located at 500,000 to prevent buffer collision.
+  2. DSP Logic: update_dsp correctly calls SC_Filt.calc_filter.
+  3. Optimization: Low CPU Meter drawing (5 circles).
+  4. Presets: Full 15-preset list.
+*/
+
+// Add '-' to hide from standard UI
+slider1:0<-60,0,0.1>-Threshold (dB)
+slider2:2<1,100,0.1>-Ratio
+slider3:12<0,24,0.1>-Knee (dB)
+slider4:3<0.1,200,0.1>-Attack (ms)
+slider5:100<1,1000,1>-Release (ms)
+slider6:0<-20,20,0.1>-OUTPUT (dB)
+slider7:0<0,3,1{1+2,1+2 Filter,3+4,3+4 Filter}>-Feed
+slider8:6000<20,20000,1>-Filter Freq (Hz)
+slider9:0<0,2,1{Bandpass,Highpass,Lowpass}>-Filter Type
+slider10:1<0.1,10,0.1>-Bandwidth (Q)
+slider11:100<0,100,1>-Mix (%)
+slider12:0<0,4,1{Normal,Delta,SC Listen,Filt Listen,Filt Delta}>-Listen
+slider13:1<0,1,1{Off,On}>-Auto Make-up
+slider14:0<0,100,1>-RMS Size (ms)
+slider15:0<0,30,1>-Lookahead (ms)
+slider16:0<0,1,1{Off,On}>-Analog Mode
+slider17:0<0,2,1{Off,2x,4x}>-Oversampling
+slider18:0<0,16,1{User,Modern Pop Vocal,Smooth Ballad,Rap/Rock Vocal,De-esser,Sidechain Ducking,Drum Bus Glue,Snare Sustain,Levelling Bass,Acoustic Guitar,Mix Bus Safety,Parallel Compression,Voice Over,Electric Guitar,Piano,Mastering Glue,Factory Default}>-Presets
+
+slider61:50<10,100,1>-Env Decay (ms)
+slider62:0.0<-60.0,0.0,0.1>-L (dBFS)
+slider63:0.0<-60.0,0.0,0.1>-R (dBFS)
+slider64:<-24,0>-GR
+slider65:300<0,2000,1>-Meter Decay (ms)
+
+in_pin:L in
+in_pin:R in
+in_pin:L Sidechain
+in_pin:R Sidechain
+out_pin:L out
+out_pin:R out
+
+import rbj_filter.jsfx-inc
+
+// Protected by NK RECORDING STUDIO
+@init
+ext_tail_size = -1;
+last_char = 0;
+log2dB = 8.6858896380650365530225783783321;
+db2log = 0.11512925464970228420089957273422;
+gr_meter = 1;
+env = 0;
+rms_sq = 0;
+current_gain = 1;
+target_gain = 1;
+mem_ptr = 500000;
+SC_FiltL = mem_ptr; mem_ptr += 100;
+SC_FiltR = mem_ptr; mem_ptr += 100;
+SC_FiltL.a0=1; SC_FiltL.a1=0; SC_FiltL.a2=0; SC_FiltL.b0=1; SC_FiltL.b1=0; SC_FiltL.b2=0;
+SC_FiltL.x1=0; SC_FiltL.x2=0; SC_FiltL.y1=0; SC_FiltL.y2=0;
+SC_FiltR.a0=1; SC_FiltR.a1=0; SC_FiltR.a2=0; SC_FiltR.b0=1; SC_FiltR.b1=0; SC_FiltR.b2=0;
+SC_FiltR.x1=0; SC_FiltR.x2=0; SC_FiltR.y1=0; SC_FiltR.y2=0;
+MAX_DELAY_MS = 100;
+buf_size = srate * MAX_DELAY_MS / 1000;
+bufL = 65536;
+bufR = bufL + buf_size;
+write_pos = 0;
+MET_MINTIME = 0.1;
+amp_LO = 0.000001;
+dB_LO = -120.0;
+peak_L = peak_R = 0.0;
+os_factor = 1;
+os_idx = 0;
+drag_active = 0;
+active_id = -1;
+last_click_id = -1;
+last_click_time = 0;
+function _qcVl9U(freq, q, type)
+(
+w0 = 2 * $pi * min(freq, 0.49 * srate) / srate;
+alpha = sin(w0) / (2 * q);
+type == 0 ? (
+this.b0 = alpha; this.b1 = 0; this.b2 = -alpha;
+this.a0 = 1 + alpha; this.a1 = -2 * cos(w0); this.a2 = 1 - alpha;
+) : type == 1 ? (
+cosw0 = cos(w0);
+this.b0 = (1 + cosw0) / 2; this.b1 = -(1 + cosw0); this.b2 = (1 + cosw0) / 2;
+this.a0 = 1 + alpha; this.a1 = -2 * cosw0; this.a2 = 1 - alpha;
+) : (
+cosw0 = cos(w0);
+this.b0 = (1 - cosw0) / 2; this.b1 = 1 - cosw0; this.b2 = (1 - cosw0) / 2;
+this.a0 = 1 + alpha; this.a1 = -2 * cosw0; this.a2 = 1 - alpha;
+);
+this.a1 /= this.a0; this.a2 /= this.a0;
+this.b0 /= this.a0; this.b1 /= this.a0; this.b2 /= this.a0;
+);
+function _32VrSh(in)
+(
+this.x2 = this.x1; this.x1 = this.x0; this.x0 = in;
+this.y2 = this.y1; this.y1 = this.y0;
+this.y0 = this.b0*this.x0 + this.b1*this.x1 + this.b2*this.x2 - this.a1*this.y1 - this.a2*this.y2;
+this.y0;
+);
+function _BZ3j6y(in)
+(
+in *= 1.4;
+in / (1 + 0.5 * abs(in));
+);
+function _JNHyia(inL, inR)
+local(scL_loc, scR_loc, rawL_loc, rawR_loc, det_in_loc, env_dB_loc, gain_dB_loc, ld_loc, r_pos_loc, tmpL_loc, tmpR_loc)
+(
+feed_mode == 0 ? ( scL_loc = inL; scR_loc = inR; );
+feed_mode == 1 ? ( scL_loc = inL; scR_loc = inR; );
+feed_mode == 2 ? ( scL_loc = in3; scR_loc = in4; );
+feed_mode == 3 ? ( scL_loc = in3; scR_loc = in4; );
+(feed_mode == 1 || feed_mode == 3) ? (
+scL_loc = SC_FiltL._32VrSh(scL_loc);
+scR_loc = SC_FiltR._32VrSh(scR_loc);
+);
+scL = scL_loc; scR = scR_loc;
+(rms_ms > 0) ? (
+pwr = max(scL_loc*scL_loc, scR_loc*scR_loc);
+rms_sq += rms_coeff * (pwr - rms_sq);
+abs(rms_sq) < dn_thresh ? rms_sq = 0;
+det_in_loc = sqrt(rms_sq);
+) : (
+det_in_loc = max(abs(scL_loc), abs(scR_loc));
+rms_sq = det_in_loc * det_in_loc;
+);
+env = det_in_loc >= env ? det_in_loc : det_in_loc + env_decay_coeff * (env - det_in_loc);
+env < dn_thresh ? env = 0;
+env_dB_loc = (env > amp_LO) ? 20 * log10(env) : dB_LO;
+gain_dB_loc = 0;
+(env_dB_loc > knee_low) ? (
+(knee_dB > 0 && env_dB_loc < knee_high) ? (
+ld_loc = env_dB_loc - knee_low;
+gain_dB_loc = (1/ratio - 1) * (ld_loc * ld_loc) / (2 * knee_dB);
+) : (
+gain_dB_loc = (1/ratio - 1) * (env_dB_loc - thresh_dB);
+);
+);
+target_gain = exp(gain_dB_loc * db2log);
+current_gain = (target_gain < current_gain) ?
+target_gain + attack_coeff * (current_gain - target_gain) :
+target_gain + release_coeff * (current_gain - target_gain);
+bufL[write_pos] = inL;
+bufR[write_pos] = inR;
+r_pos_loc = write_pos - lookahead_samples;
+r_pos_loc < 0 ? r_pos_loc += buf_size;
+tmpL_loc = bufL[r_pos_loc];
+tmpR_loc = bufR[r_pos_loc];
+write_pos += 1;
+write_pos >= buf_size ? write_pos = 0;
+(lookahead_samples <= 0) ? ( tmpL_loc = inL; tmpR_loc = inR; );
+compL = tmpL_loc * current_gain;
+compR = tmpR_loc * current_gain;
+analog_mode ? (
+compL = _BZ3j6y(compL);
+compR = _BZ3j6y(compR);
+compL *= 1.1; compR *= 1.1;
+);
+compL;
+);
+function _uf8GqF()
+(
+thresh_dB = slider1;
+ratio = slider2;
+knee_dB = slider3;
+att_ms = slider4;
+rel_ms = slider5;
+out_dB = slider6;
+feed_mode = slider7;
+filt_freq = slider8;
+filt_type = slider9;
+filt_bw = slider10;
+mix_pct = slider11;
+listen_mode = slider12;
+auto_makeup = slider13;
+rms_ms = slider14;
+lookahead_ms = slider15;
+analog_mode = slider16;
+os_mode = slider17;
+os_mode < 0.5 ? os_factor = 1 : os_mode < 1.5 ? os_factor = 2 : os_factor = 4;
+os_mode > 0.5 ? (
+os_cutoff = (srate * 0.5) / os_factor;
+os_ups_L.rbj_lp(os_cutoff, 0.707);
+os_ups_R.rbj_lp(os_cutoff, 0.707);
+os_dns_L.rbj_lp(os_cutoff, 0.707);
+os_dns_R.rbj_lp(os_cutoff, 0.707);
+);
+env_decay_ms = slider61;
+met_decay_ms = slider65;
+attack_coeff = exp(-1/(att_ms/1000*srate*os_factor));
+release_coeff = exp(-1/(rel_ms/1000*srate*os_factor));
+env_decay_coeff = exp(-1/(env_decay_ms/1000*srate*os_factor));
+met_decay_coeff = exp(-1/(met_decay_ms/1000*srate*os_factor));
+rms_ms > 0 ? rms_coeff = 1 - exp(-1 / (rms_ms/1000 * srate * os_factor)) : rms_coeff = 0;
+dn_thresh = 10^(-24);
+lookahead_samples = floor(lookahead_ms * srate * os_factor / 1000);
+lookahead_samples > 0 ? ( pdc_delay = lookahead_samples; pdc_bot_ch = 0; pdc_top_ch = 2; ) : ( pdc_delay = 0; pdc_bot_ch = 0; pdc_top_ch = 0; );
+SC_FiltL._qcVl9U(filt_freq, filt_bw * 1.2, filt_type);
+SC_FiltR._qcVl9U(filt_freq, filt_bw * 1.2, filt_type);
+auto_makeup ? ( autogain_dB = (abs(thresh_dB) - (abs(thresh_dB)/ratio)); ) : ( autogain_dB = 0; );
+makeup_gain = exp((out_dB + autogain_dB) * db2log);
+mix_wet = mix_pct / 100;
+mix_dry = 1 - mix_wet;
+knee_low = thresh_dB - knee_dB/2;
+knee_high = thresh_dB + knee_dB/2;
+);
+function _uOem0N()
+(
+preset = slider18;
+(preset != last_preset) ? (
+preset == 1 ? ( slider2=4; slider4=8; slider5=150; slider7=0; slider8=135; slider9=1; slider16=1; );
+preset == 2 ? ( slider14=30; slider2=2; slider4=20; slider5=300; slider3=15; );
+preset == 3 ? ( slider2=8; slider4=0.1; slider5=50; slider15=2; slider11=70; );
+preset == 4 ? ( slider7=1; slider9=0; slider8=7000; slider2=10; slider4=0.1; slider5=10; );
+preset == 5 ? ( slider7=2; slider2=6; slider4=0.1; slider5=120; );
+preset == 6 ? ( slider4=30; slider5=100; slider2=2; slider7=1; slider8=90; slider9=1; );
+preset == 7 ? ( slider4=0.1; slider5=150; slider2=6; slider6=3; );
+preset == 8 ? ( slider14=40; slider2=4; slider3=12; );
+preset == 9 ? ( slider15=3; slider4=0.1; slider2=8; );
+preset == 10 ? ( slider2=1.5; slider4=40; slider7=1; slider8=100; slider16=1; );
+preset == 11 ? ( slider2=20; slider11=40; );
+preset == 12 ? ( slider2=4; slider4=5; slider5=150; slider3=12; slider8=120; slider16=1; );
+preset == 13 ? ( slider2=8; slider4=10; slider5=500; slider3=6; );
+preset == 14 ? ( slider2=3; slider4=20; slider5=400; slider14=30; );
+preset == 15 ? ( slider2=2; slider4=30; slider5=100; slider7=1; slider9=1; slider8=100; );
+preset == 16 ? ( slider1=0; slider2=2; slider3=12; slider4=3; slider5=100; slider6=0; slider7=0; slider8=6000; slider9=0; slider10=1; slider11=100; slider12=0; slider13=1; slider14=0; slider15=0; slider16=0; slider17=0; );
+last_preset = preset;
+_uf8GqF();
+);
+);
+_uf8GqF();
+@slider
+_uOem0N();
+_uf8GqF();
+@block
+slider62 = (peak_L <= amp_LO) ? dB_LO : 20*log10(peak_L);
+slider63 = (peak_R <= amp_LO) ? dB_LO : 20*log10(peak_R);
+slider64 = log10(gr_meter)*20;
+@sample
+inL = spl0; inR = spl1;
+in3 = spl2; in4 = spl3;
+peak_L = max(peak_L, abs(inL));
+peak_R = max(peak_R, abs(inR));
+peak_L *= met_decay_coeff;
+peak_R *= met_decay_coeff;
+os_mode < 0.5 ? (
+feed_mode == 0 ? ( scL = inL; scR = inR; );
+feed_mode == 1 ? ( scL = inL; scR = inR; );
+feed_mode == 2 ? ( scL = in3; scR = in4; );
+feed_mode == 3 ? ( scL = in3; scR = in4; );
+(feed_mode == 1 || feed_mode == 3) ? (
+scL = SC_FiltL._32VrSh(scL);
+scR = SC_FiltR._32VrSh(scR);
+);
+(rms_ms > 0) ? (
+pwr = max(scL*scL, scR*scR);
+rms_sq += rms_coeff * (pwr - rms_sq);
+abs(rms_sq) < dn_thresh ? rms_sq = 0;
+det_in = sqrt(rms_sq);
+) : (
+det_in = max(abs(scL), abs(scR));
+rms_sq = det_in * det_in;
+);
+env = det_in >= env ? det_in : det_in + env_decay_coeff * (env - det_in);
+env < dn_thresh ? env = 0;
+env_dB = (env > amp_LO) ? 20 * log10(env) : dB_LO;
+gain_dB = 0;
+(env_dB > knee_low) ? (
+(knee_dB > 0 && env_dB < knee_high) ? (
+ld = env_dB - knee_low;
+gain_dB = (1/ratio - 1) * (ld * ld) / (2 * knee_dB);
+) : (
+gain_dB = (1/ratio - 1) * (env_dB - thresh_dB);
+);
+);
+target_gain = exp(gain_dB * db2log);
+current_gain = (target_gain < current_gain) ?
+target_gain + attack_coeff * (current_gain - target_gain) :
+target_gain + release_coeff * (current_gain - target_gain);
+bufL[write_pos] = inL;
+bufR[write_pos] = inR;
+r_pos = write_pos - lookahead_samples;
+r_pos < 0 ? r_pos += buf_size;
+outL_fin = bufL[r_pos] * current_gain;
+outR_fin = bufR[r_pos] * current_gain;
+write_pos += 1;
+write_pos >= buf_size ? write_pos = 0;
+(lookahead_samples <= 0) ? ( outL_fin = inL * current_gain; outR_fin = inR * current_gain; );
+analog_mode ? (
+outL_fin = _BZ3j6y(outL_fin);
+outR_fin = _BZ3j6y(outR_fin);
+outL_fin *= 1.1; outR_fin *= 1.1;
+);
+) : (
+cnt = 0;
+loop(os_factor,
+(cnt == 0) ? ( os_inL = inL * os_factor; os_inR = inR * os_factor; )
+: ( os_inL = 0; os_inR = 0; );
+os_inL = os_ups_L.rbj_df1(os_inL);
+os_inR = os_ups_R.rbj_df1(os_inR);
+_JNHyia(os_inL, os_inR);
+procLm = compL;
+procRm = compR;
+procLm = os_dns_L.rbj_df1(procLm);
+procRm = os_dns_R.rbj_df1(procRm);
+(cnt == 0) ? ( outL_fin = procLm; outR_fin = procRm; );
+cnt += 1;
+);
+);
+outL_fin *= makeup_gain;
+outR_fin *= makeup_gain;
+compL = outL_fin; compR = outR_fin;
+listen_mode == 0 ? ( spl0 = inL * mix_dry + outL_fin * mix_wet; spl1 = inR * mix_dry + outR_fin * mix_wet; );
+listen_mode == 1 ? ( spl0 = (outL_fin - inL); spl1 = (outR_fin - inR); );
+listen_mode == 2 ? ( spl0 = scL * makeup_gain; spl1 = scR * makeup_gain; );
+listen_mode == 3 ? ( spl0 = scL * makeup_gain; spl1 = scR * makeup_gain; );
+listen_mode == 4 ? (
+rawL = (feed_mode == 2 || feed_mode == 3) ? in3 : inL;
+rawR = (feed_mode == 2 || feed_mode == 3) ? in4 : inR;
+spl0 = (scL - rawL) * makeup_gain;
+spl1 = (scR - rawR) * makeup_gain;
+);
+gr_display = current_gain;
+(gr_display < gr_meter) ? gr_meter = gr_display : gr_meter += (1 - met_decay_coeff) * (gr_display - gr_meter);
+@gfx 576 480
+function _RGymQt(c) (
+c==0 ? gfx_set(0.12, 0.12, 0.12, 1);
+c==1 ? gfx_set(0.35, 0.35, 0.35, 1);
+c==2 ? gfx_set(0.9, 0.9, 0.9, 1);
+c==3 ? gfx_set(0.2, 0.6, 1.0, 1);
+c==4 ? gfx_set(0.20, 0.22, 0.25, 1);
+c==5 ? gfx_set(1, 0.3, 0.3, 0.9);
+c==6 ? gfx_set(0.1, 0.1, 0.1, 1);
+c==7 ? gfx_set(1, 0.6, 0.2, 0.9);
+c==8 ? gfx_set(1, 1, 0.8, 0.9);
+c==9 ? gfx_set(1.0, 0.2, 0.2, 0.9);
+);
+function _8b0jFj(val, minv, maxv, cx, cy, r, title, id_num, default_val)
+local(ang, val_n, drag_scale, click)
+(
+click = mouse_cap&1;
+(click && !last_click && mouse_x > cx-r && mouse_x < cx+r && mouse_y > cy-r && mouse_y < cy+r) ? (
+(time_precise() - last_click_time < 0.25 && last_click_id == id_num) ? (
+val = default_val;
+drag_active = 0;
+active_id = -1;
+slider18 = 0; last_preset = 0;
+) : (
+drag_active = 1;
+active_id = id_num;
+last_my = mouse_y;
+last_click_time = time_precise();
+last_click_id = id_num;
+);
+);
+(drag_active && active_id == id_num) ? (
+!click ? ( drag_active = 0; active_id = -1; );
+change = (last_my - mouse_y);
+last_my = mouse_y;
+scale = (maxv - minv) * 0.005;
+(mouse_cap&4) ? scale *= 0.1;
+(change != 0) ? (
+val += change * scale;
+val = max(minv, min(maxv, val));
+slider18 = 0; last_preset = 0;
+);
+);
+val_n = (val - minv) / (maxv - minv);
+gfx_set(0,0,0,0.5); gfx_circle(cx+2, cy+2, r, 1);
+_RGymQt(4); gfx_circle(cx, cy, r, 1);
+_RGymQt(6); gfx_circle(cx, cy, r*0.8, 1);
+_RGymQt(4); gfx_circle(cx, cy, r*0.7, 1);
+_RGymQt(3);
+ang = -2.356 + val_n * 4.712;
+gfx_line(cx + sin(ang)*r*0.4, cy - cos(ang)*r*0.4, cx + sin(ang)*r*0.9, cy - cos(ang)*r*0.9);
+_RGymQt(2);
+gfx_setfont(1, "Arial", 12);
+gfx_measurestr(title, tw, th);
+gfx_x = cx - tw/2; gfx_y = cy + r + 8;
+gfx_drawstr(title);
+_RGymQt(2); gfx_a=0.7;
+sprintf(#fs, "%.1f", val);
+gfx_measurestr(#fs, vw, vh);
+gfx_x = cx - vw/2; gfx_y = cy + r + th + 10;
+gfx_drawstr(#fs); gfx_a=1;
+val;
+);
+function _seg0K6(val, cx, cy, sz, title, id_num)
+local(state)
+(
+(mouse_cap&1) && !click_wait && (mouse_x > cx && mouse_x < cx+sz && mouse_y > cy && mouse_y < cy+sz) ? (
+click_wait = 1; val = !val;
+);
+gfx_set(0.1, 0.1, 0.1, 1); gfx_rect(cx, cy, sz, sz);
+gfx_set(0.3, 0.3, 0.3, 1); gfx_rect(cx+1, cy+1, sz-2, sz-2);
+val ? _RGymQt(7) : gfx_set(0.15, 0.15, 0.15, 1);
+gfx_rect(cx + 4, cy + 4, sz - 8, sz - 8);
+_RGymQt(2);
+gfx_measurestr(title, tw, th);
+gfx_x = cx + sz/2 - tw/2; gfx_y = cy + sz + 6;
+gfx_drawstr(title);
+val;
+);
+function _0eeISP(val, cx, cy, sz, title, id_num)
+local(state)
+(
+(mouse_cap&1) && !click_wait && (mouse_x > cx && mouse_x < cx+sz && mouse_y > cy && mouse_y < cy+sz) ? (
+click_wait = 1; val = !val;
+);
+gfx_set(0.1, 0.1, 0.1, 1); gfx_rect(cx, cy, sz, sz);
+gfx_set(0.3, 0.3, 0.3, 1); gfx_rect(cx+1, cy+1, sz-2, sz-2);
+val ? _RGymQt(9) : gfx_set(0.15, 0.15, 0.15, 1);
+gfx_rect(cx + 4, cy + 4, sz - 8, sz - 8);
+_RGymQt(2);
+gfx_measurestr(title, tw, th);
+gfx_x = cx + sz/2 - tw/2; gfx_y = cy + sz + 6;
+gfx_drawstr(title);
+val;
+);
+function _Tbn8qC(val, minv, maxv, cx, cy, w, h, title, labels_idx, id_num)
+local(txt)
+(
+gfx_set(0.2, 0.2, 0.2, 1);
+(mouse_x >= cx && mouse_x <= cx+w && mouse_y >= cy && mouse_y <= cy+h) ? (
+gfx_set(0.3, 0.3, 0.3, 1);
+mouse_cap&1 && !click_wait ? (
+click_wait = 1; val += 1; val > maxv ? val = minv;
+);
+);
+gfx_rect(cx, cy, w, h);
+_RGymQt(2); gfx_a=0.7;
+gfx_measurestr(title, tw, th);
+gfx_x = cx; gfx_y = cy - th - 3;
+gfx_drawstr(title); gfx_a=1;
+labels_idx == 1 ? ( val == 0 ? txt="Int 1/2" : val == 1 ? txt="Int Filt" : val == 2 ? txt="Ext 3/4" : txt="Ext Filt"; );
+labels_idx == 2 ? ( val == 0 ? txt="Bandpass" : val == 1 ? txt="Highpass" : txt="Lowpass"; );
+labels_idx == 3 ? ( val == 0 ? txt="Normal" : val == 1 ? txt="Delta" : val == 2 ? txt="Sidechain" : val == 3 ? txt="Filt Listen" : txt="Filt Delta"; );
+labels_idx == 4 ? ( val == 0 ? txt="Off" : val == 1 ? txt="2x" : txt="4x"; );
+labels_idx == 5 ? (
+val == 0 ? txt="User Preset" :
+val == 1 ? txt="Pop Vocal" :
+val == 2 ? txt="Smooth Ballad" :
+val == 3 ? txt="Rap/Rock Vox" :
+val == 4 ? txt="De-esser" :
+val == 5 ? txt="SC Ducking" :
+val == 6 ? txt="Drum Glue" :
+val == 7 ? txt="Snare Sustain" :
+val == 8 ? txt="Bass Level" :
+val == 9 ? txt="Ac. Guitar" :
+val == 10 ? txt="Mix Bus Safe" :
+txt="Parallel Comp";
+);
+_RGymQt(3);
+gfx_measurestr(txt, sw, sh);
+gfx_x = cx + 5; gfx_y = cy + h/2 - sh/2;
+gfx_drawstr(txt);
+gfx_x = cx + w - 12; gfx_y = cy + h/2 - 4;
+gfx_drawstr("v");
+val;
+);
+function _HZE8zg(gr, cx, cy, w, h)
+local(ang, mag, i, _i, r_glow, dB_val, p1x, p1y, p2x, p2y, tip_x, tip_y, r_arc, center_x, center_y, sw, sh, lbx, lby, gcw, gch, dyn_alpha)
+(
+gfx_set(0.0, 0.0, 0.0, 1);
+gfx_rect(cx - w/2 - 6, cy - h/2 - 6, w + 12, h + 12);
+gfx_set(0.1, 0.1, 0.1, 1);
+gfx_circle(cx - w/2 - 3, cy - h/2 - 3, 2, 1);
+gfx_circle(cx + w/2 + 3, cy - h/2 - 3, 2, 1);
+gfx_circle(cx - w/2 - 3, cy + h/2 + 3, 2, 1);
+gfx_circle(cx + w/2 + 3, cy + h/2 + 3, 2, 1);
+gfx_set(0.3, 0.3, 0.35, 1);
+gfx_rect(cx - w/2 - 1, cy - h/2 - 1, w + 2, h + 2, 0);
+dyn_alpha = (1.0 - gr) * 0.5;
+gfx_set(0.05, 0.08, 0.12, 1);
+gfx_rect(cx - w/2, cy - h/2, w, h);
+gfx_set(0.2 + dyn_alpha, 0.5, 0.9, 0.15 + dyn_alpha*0.1);
+_i=0;
+loop(5,
+r_glow = h * 1.0 - _i * (h/5);
+gfx_circle(cx, cy + h*0.7, r_glow, 1);
+_i += 1;
+);
+gfx_setfont(1, "Arial", 10, 'i');
+gfx_measurestr("HOSI DYNAMICS", bw, bh);
+gfx_x = cx - bw/2; gfx_y = cy - h/4;
+gfx_set(1, 1, 1, 0.15);
+gfx_drawstr("HOSI DYNAMICS");
+r_arc = h * 0.85;
+center_x = cx;
+center_y = cy + h * 0.6;
+i = 0;
+loop(6,
+dB_val = i * 4;
+ang = 0.5 - (i * 0.2);
+p1x = center_x + sin(ang)*r_arc;
+p1y = center_y - cos(ang)*r_arc;
+p2x = center_x + sin(ang)*(r_arc-12);
+p2y = center_y - cos(ang)*(r_arc-12);
+gfx_set(0.9, 0.95, 1.0, 0.9);
+gfx_line(p1x, p1y, p2x, p2y);
+gfx_line(p1x+1, p1y, p2x+1, p2y);
+sprintf(#s, "%d", dB_val);
+gfx_measurestr(#s, sw, sh);
+lbx = center_x + sin(ang)*(r_arc-28);
+lby = center_y - cos(ang)*(r_arc-28);
+gfx_x = lbx - sw/2; gfx_y = lby - sh/2;
+gfx_set(0.8, 0.9, 1.0, 1);
+gfx_drawstr(#s);
+(i < 5) ? (
+sub_ang = ang - 0.1;
+s1x = center_x + sin(sub_ang)*r_arc;
+s1y = center_y - cos(sub_ang)*r_arc;
+s2x = center_x + sin(sub_ang)*(r_arc-6);
+s2y = center_y - cos(sub_ang)*(r_arc-6);
+gfx_set(0.6, 0.7, 0.8, 0.6);
+gfx_line(s1x, s1y, s2x, s2y);
+);
+i+=1;
+);
+mag = 20*log10(gr); mag = max(-24, min(0, mag));
+ang = 0.5 + (mag / 20.0);
+tip_x = center_x + sin(ang)*(r_arc-2);
+tip_y = center_y - cos(ang)*(r_arc-2);
+gfx_set(0, 0, 0, 0.6);
+gfx_line(center_x+3, center_y+3, tip_x+3, tip_y+3);
+gfx_set(1, 0.4, 0.1, 1);
+gfx_line(center_x, center_y, tip_x, tip_y);
+gfx_line(center_x+1, center_y, tip_x+1, tip_y);
+gfx_set(0.1, 0.1, 0.1, 1);
+gfx_circle(center_x, center_y, 8, 1);
+gfx_set(0.4, 0.4, 0.45, 1);
+gfx_circle(center_x, center_y, 5, 0);
+(mag < -12) ? (
+gfx_set(1, 0, 0, 0.9);
+gfx_mode = 1;
+gfx_circle(cx + w/2 - 15, cy - h/2 + 15, 4, 1);
+gfx_set(1, 0, 0, 0.5);
+gfx_circle(cx + w/2 - 15, cy - h/2 + 15, 8, 1);
+gfx_mode = 0;
+) : (
+gfx_set(0.3, 0, 0, 1);
+gfx_circle(cx + w/2 - 15, cy - h/2 + 15, 3, 1);
+);
+gfx_setfont(1, "Arial", 11);
+gfx_measurestr("GAIN REDUCTION", gcw, gch);
+gfx_x = cx - gcw/2; gfx_y = cy + h/3;
+gfx_set(0.4, 0.7, 0.9, 0.7);
+gfx_drawstr("GAIN REDUCTION");
+);
+function _pVT9dZ(val, cx, cy, title, id_num, default_val)
+local(click, hover)
+(
+click = mouse_cap&1;
+hover = (mouse_x > cx-20 && mouse_x < cx+20 && mouse_y > cy-10 && mouse_y < cy+25);
+(click && !last_click && hover) ? (
+val = !val;
+last_click_id = id_num;
+last_click_time = time_precise();
+);
+hover ? (
+gfx_setfont(1, "Arial", 11);
+gfx_measurestr(title, tw, th);
+gfx_set(0.1, 0.1, 0.1, 0.9);
+gfx_rect(mouse_x + 10, mouse_y - 20, tw + 8, th + 4);
+gfx_set(0.6, 0.6, 0.6, 0.8);
+gfx_rect(mouse_x + 10, mouse_y - 20, tw + 8, th + 4, 0);
+_RGymQt(2);
+gfx_x = mouse_x + 14; gfx_y = mouse_y - 18;
+gfx_drawstr(title);
+gfx_setfont(1, "Arial", 12);
+);
+gfx_set(0.1, 0.1, 0.1, 1);
+gfx_roundrect(cx-15, cy, 30, 12, 6);
+val ? (
+gfx_set(1.0, 0.3, 0.2, 1);
+gfx_circle(cx + 8, cy + 6, 5, 1);
+gfx_set(1.0, 0.5, 0.4, 0.5);
+gfx_circle(cx + 8, cy + 6, 8, 1);
+) : (
+gfx_set(0.4, 0.4, 0.4, 1);
+gfx_circle(cx - 8, cy + 6, 5, 1);
+);
+val;
+);
+gfx_ext_flags > 0 ? (
+gfx_r=1; gfx_g=gfx_b=0; gfx_a=0.8;
+meter_bot=21;
+meter_h=min(gfx_h,gfx_h-4);
+xscale = gfx_w / meter_bot;
+gfx_y=0;
+gfx_x = max(0, gfx_w + (20*log10(gr_meter) * xscale));
+gfx_rectto(gfx_w,meter_h);
+gfx_r=gfx_g=gfx_b=1.0; gfx_a=0.6;
+i = 0;
+while(
+i <= meter_bot;
+val_dB = -i;
+gfx_x = gfx_w + val_dB * xscale;
+gfx_x >= 0 ?
+(
+gfx_y=0;
+gfx_lineto(gfx_x,meter_h,0);
+gfx_y=meter_h-gfx_texth;
+gfx_x+=2;
+gfx_drawnumber(val_dB,0);
+);
+i += 3;
+);
+val_disp = 20*log10(gr_meter);
+val_disp > -0.1 ? val_disp = 0.0;
+gfx_r=gfx_g=gfx_b=1.0;
+gfx_x=2; gfx_y=meter_h/2 - gfx_texth/2;
+gfx_drawnumber(val_disp,1);
+) : (
+!mouse_cap ? click_wait=0;
+!(mouse_cap&1) ? drag_active = 0;
+_RGymQt(0); gfx_rect(0, 0, gfx_w, gfx_h);
+panel_w = 240;
+_RGymQt(1); gfx_rect(20, 20, panel_w, gfx_h - 40);
+col1 = 20 + panel_w/4;
+col2 = 20 + panel_w*3/4;
+row1 = 80; row_h = 100;
+slider1 = _8b0jFj(slider1, -60, 0, col1, row1, 25, "THRESHOLD", 1, 0);
+slider6 = _8b0jFj(slider6, -20, 20, col2, row1, 25, "OUTPUT", 6, 0);
+slider4 = _8b0jFj(slider4, 0.1, 200, col1, row1 + row_h, 25, "ATTACK", 4, 3);
+slider5 = _8b0jFj(slider5, 1, 1000, col2, row1 + row_h, 25, "RELEASE", 5, 100.0);
+slider2 = _8b0jFj(slider2, 1, 20, col1, row1 + row_h*2, 25, "RATIO", 2, 2.0);
+slider13 = _seg0K6(slider13, col2 - 15, row1 + row_h*2 - 15, 30, "AUTO MAKEUP", 13);
+slider8 = _8b0jFj(slider8, 20, 20000, col1, row1 + row_h*3, 25, "SC HPF", 8, 6000.0);
+slider11 = _8b0jFj(slider11, 0, 100, col2, row1 + row_h*3, 25, "MIX", 11, 100.0);
+rx = 270;
+ry = 20;
+rw = gfx_w - rx - 20;
+rh = gfx_h - 40;
+_HZE8zg(gr_meter, rx + rw/2, 95, 280, 150);
+gfx_set(0.3, 0.3, 0.3, 1);
+gfx_line(rx + 20, 195, rx + rw - 20, 195);
+cx_start = rx + 30;
+cy_start = 235;
+slider3 = _8b0jFj(slider3, 0, 24, cx_start, cy_start, 20, "KNEE", 3, 12.0);
+slider14 = _8b0jFj(slider14, 0, 100, cx_start + 70, cy_start, 20, "RMS", 14, 0.0);
+slider15 = _8b0jFj(slider15, 0, 30, cx_start + 140, cy_start, 20, "AHEAD", 15, 0.0);
+slider10 = _8b0jFj(slider10, 0.1, 10, cx_start + 210, cy_start, 20, "Q", 10, 1.0);
+slider16 = _pVT9dZ(slider16, rx + rw/2, 295, "Analog Mode", 16, 0);
+d_y = 330; col_w = 110;
+slider7 = _Tbn8qC(slider7, 0, 3, rx + 20, d_y, col_w, 20, "SIDECHAIN FEED", 1, 7);
+slider9 = _Tbn8qC(slider9, 0, 2, rx + 140, d_y, col_w, 20, "FILTER TYPE", 2, 9);
+slider12 = _Tbn8qC(slider12, 0, 4, rx + 15, d_y + 50, col_w, 20, "LISTEN MODE", 3, 12);
+slider17 = _Tbn8qC(slider17, 0, 2, rx + 140, d_y + 50, col_w, 20, "OVERSAMPLE", 4, 17);
+preset_x = rx + rw/2 - 60; preset_y = 435; preset_w = 120; preset_h = 18;
+gfx_set(0.2, 0.2, 0.2, 1);
+gfx_rect(preset_x, preset_y, preset_w, preset_h);
+gfx_set(0.6, 0.6, 0.6, 1);
+gfx_rect(preset_x, preset_y, preset_w, preset_h, 0);
+gfx_set(0.9, 0.9, 0.9, 1); gfx_setfont(1, "Arial", 12);
+gfx_x = preset_x + 5; gfx_y = preset_y + 2;
+slider18 == 0 ? txt="User Preset" :
+slider18 == 1 ? txt="Pop Vocal" :
+slider18 == 2 ? txt="Smooth Ballad" :
+slider18 == 3 ? txt="Rap/Rock Vox" :
+slider18 == 4 ? txt="De-esser" :
+slider18 == 5 ? txt="SC Ducking" :
+slider18 == 6 ? txt="Drum Glue" :
+slider18 == 7 ? txt="Snare Sustain" :
+slider18 == 8 ? txt="Bass Level" :
+slider18 == 9 ? txt="Ac. Guitar" :
+slider18 == 10 ? txt="Mix Bus Safe" :
+slider18 == 11 ? txt="Parallel Comp" :
+slider18 == 12 ? txt="Voice Over" :
+slider18 == 13 ? txt="Electric Guitar" :
+slider18 == 14 ? txt="Piano (Ballad)" :
+slider18 == 15 ? txt="Mastering Glue" :
+txt="User Preset";
+gfx_drawstr("PRESET: "); gfx_drawstr(txt);
+gfx_x = preset_x + preset_w - 12; gfx_drawstr("v");
+(mouse_cap&1 && !click_wait && mouse_x >= preset_x && mouse_x <= preset_x+preset_w && mouse_y >= preset_y && mouse_y <= preset_y+preset_h) ? (
+click_wait = 1;
+gfx_x = mouse_x; gfx_y = mouse_y;
+selected = gfx_showmenu("User Preset|Modern Pop Vocal|Smooth Ballad|Rap/Rock Vocal|De-esser|Sidechain Ducking|Drum Bus Glue|Snare Sustain|Levelling Bass|Acoustic Guitar|Mix Bus Safety|Parallel Compression|Voice Over|Electric Guitar|Piano (Ballad)|Mastering Glue|Factory Default");
+selected > 0 ? (
+slider18 = selected - 1;
+_uOem0N();
+);
+);
+gfx_setfont(1, "Arial", 12);
+gfx_a = 1;
+);
+(slider1!=o1 || slider2!=o2 || slider3!=o3 || slider4!=o4 || slider5!=o5 || slider6!=o6 || slider7!=o7 || slider8!=o8 || slider9!=o9 || slider10!=o10 || slider11!=o11 || slider12!=o12 || slider13!=o13 || slider14!=o14 || slider15!=o15 || slider16!=o16 || slider17!=o17) ? (
+_uf8GqF();
+o1=slider1; o2=slider2; o3=slider3; o4=slider4; o5=slider5; o6=slider6; o7=slider7; o8=slider8; o9=slider9; o10=slider10; o11=slider11; o12=slider12; o13=slider13; o14=slider14; o15=slider15; o16=slider16; o17=slider17;
+);
+mouse_cap&1 ? last_click=1 : last_click=0;

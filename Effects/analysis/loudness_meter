@@ -21,6 +21,7 @@ slider12:cfg_mono=0<0,1,1{off,on}>-Force mono analysis
 slider13:cfg_textsize=0<-2,8,1>-Text size
 slider14:cfg_yscale=1.8<0.5,4,0.1>-Y axis scaling
 slider15:cfg_out_auto=0<0,16,1{off,all,all (inverted),Peak,Peak (inverted),RMS-M,RMS-M (inverted),RMS-I,RMS-I (inverted),LUFS-M,LUFS-M (inverted),LUFS-S,LUFS-S (inverted),LUFS-I,LUFS-I (inverted),LRA,LRA (inverted)}>-Output loudness values as automation
+slider16:cfg_reset=0<0,1,1{-,reset now}>-Reset
 
 slider30:outparm_peak=-150<-150,20,1>-Peak/True peak dB (output)
 slider31:outparm_rms_m=-100<-100,0,1>-RMS-M (output)
@@ -77,7 +78,7 @@ PEAK_METER_DECAY=0.150;
 LOUD_METER_UPDATE=0.100; // default 100ms, must be divisible into both 0.4 and 3.0
 LOUD_METER_SPEED=0.075;
 
-UI_SLIDER_MASK=(1<<15)-1;
+UI_SLIDER_MASK=(1<<16)-1;
 
 ext_noinit=1;
 ext_nodenorm=1;
@@ -251,6 +252,12 @@ function init_lufs_filters()
 
 function Reset()
 (
+  cfg_reset ?
+  (
+    cfg_reset=0;
+    sliderchange(cfg_reset);
+  );
+
   init_lufs_filters();
 
   alloc.top=0;
@@ -312,6 +319,7 @@ Reset();
 @block
 
 want_reset =
+  cfg_reset ||
   (num_ch > 0 && num_ch != last_nch) ||
   srate != last_sr;
 last_nch=num_ch;
@@ -469,7 +477,7 @@ rval=lval=0;
 );
 
 
-@gfx 300 400
+@gfx 300 424
 
 <? do_all_channels("ch%d.copypks(); ");?>;
 

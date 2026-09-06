@@ -1,0 +1,40 @@
+<TRACK
+  NAME "SPITFIRE BBC Ens Piccolos Long"
+  PEAKCOL 26760814
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1.0115794542599 0 -1 -1 1
+  MUTESOLO 0 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 0 0
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4640 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 1 1
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {FE37A116-C951-824E-8F45-40A7B9E2C0C3}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Ens Piccolos Long - {FE37A116-C951-824E-8F45-40A7B9E2C0C3}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {FF3118BF-C4E2-4F44-B372-2C44351B12BD}
+    Archived_parent_name Flutes
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    WNDRECT 1385 845 574 671
+    SHOW 0
+    LASTSEL 0
+    DOCKED 0
+  >
+>

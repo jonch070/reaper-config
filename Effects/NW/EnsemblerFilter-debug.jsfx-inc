@@ -1,0 +1,107 @@
+// EnsemblerFilter - Debug Display
+// Contains all debug visualization and status display functionality
+
+@init
+
+// =============================================================================
+// DEBUG DISPLAY CONFIGURATION
+// =============================================================================
+
+debug_window_width = 450;
+debug_window_height = 170;
+
+// =============================================================================
+// DEBUG DISPLAY FUNCTIONS
+// =============================================================================
+
+// Renders the complete debug display showing voice assignments, chord detection, and system status
+// Called from @gfx section in main file
+function renderDebugDisplay()
+local(chord_tone_name, display_voice, note_name, octave, note, chord_name, root_name, i)
+(
+  // Set up display canvas
+  gfx_set(1, 1, 1); // White text
+  
+  // Line 1: Voice/Mode info with transposition
+  gfx_x = 10; gfx_y = 10;
+  my_chord_tone >= 0 ? (
+    chord_tone_name = my_chord_tone == 0 ? "Root" :
+                      my_chord_tone == 4 ? "3rd" :
+                      my_chord_tone == 7 ? "5th" :
+                      my_chord_tone == 10 ? "7th" : "Off";
+    gfx_printf("CHORD TONE: %s | Anchor: %d | Transpose: %+d", 
+      chord_tone_name, my_chord_tone_anchor, my_transposition);
+  ) : (
+    display_voice = my_voice >= 0 ? my_voice + 1 : my_voice;
+    gfx_printf("Voice %d of %d | Transpose: %+d", display_voice, total_voices_config, my_transposition);
+  );
+
+  // Line 2: Current assignment/output
+  gfx_x = 10; gfx_y = 30;
+  my_chord_tone >= 0 ? (
+    current_chord_tone_note >= 0 ? (
+      note_name = get_note_name(current_chord_tone_note % 12);
+      octave = (current_chord_tone_note / 12)|0 - 1;
+      gfx_printf("Current Output: %s%d (MIDI %d)", note_name, octave, current_chord_tone_note);
+    ) : (
+      gfx_printf("Current Output: None");
+    );
+  ) : (
+    my_voice >= 0 ? (
+      voice_assignments[my_voice] >= 0 ? (
+        note = voice_assignments[my_voice];
+        note_name = get_note_name(note % 12);
+        octave = (note / 12)|0 - 1;
+        gfx_printf("My Voice Assignment: %s%d (MIDI %d)", note_name, octave, note);
+      ) : (
+        gfx_printf("My Voice Assignment: None");
+      );
+    ) : (
+      gfx_printf("No voice assignment");
+    );
+  );
+
+  // Line 3: Held Notes
+  gfx_x = 10; gfx_y = 50;
+  gfx_printf("Held Notes: ");
+  i = 0;
+  loop(128,
+    note_held[i] ? (
+      gfx_printf("%d ", i);
+    );
+    i += 1;
+  );
+
+  // Line 4: Voiced Notes  
+  gfx_x = 10; gfx_y = 70;
+  gfx_printf("Voiced Notes: ");
+  i = 0;
+  loop(total_voices_config,
+    voice_assignments[i] >= 0 ? (
+      gfx_printf("V%d:%d ", i + 1, voice_assignments[i]);
+    ) : (
+      gfx_printf("V%d:- ", i + 1);
+    );
+    i += 1;
+  );
+
+  // Line 5: Detected Chord
+  gfx_x = 10; gfx_y = 90;
+  detected_chord_quality > 0 ? (
+    chord_name = get_chord_name(detected_chord_quality);
+    root_name = get_note_name(detected_chord_root % 12);
+    gfx_printf("Detected Chord: %s%s", root_name, chord_name);
+  ) : (
+    gfx_printf("Detected Chord: None");
+  );
+
+  // Line 6: Immediate Trigger Debug Info
+  gfx_x = 10; gfx_y = 110;
+  gfx_printf("Sim Count: %d | Start Count: %d", 
+      simulated_voiced_count, current_held_count);
+
+  // Line 7: Raw Slider Values (for debugging ReaScript communication)
+  gfx_x = 10; gfx_y = 130;
+  gfx_printf("DEBUG - slider10 (my_voiced_note): %.1f | slider11 (is_master): %.1f", 
+      slider10, slider11);
+);

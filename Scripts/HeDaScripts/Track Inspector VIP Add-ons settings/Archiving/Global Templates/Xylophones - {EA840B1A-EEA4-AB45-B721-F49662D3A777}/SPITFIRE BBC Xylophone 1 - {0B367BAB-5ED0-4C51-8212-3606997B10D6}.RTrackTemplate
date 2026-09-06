@@ -1,0 +1,40 @@
+<TRACK
+  NAME "SPITFIRE BBC Timpani 1 *** archived ***"
+  LOCK 1
+  PEAKCOL 26765383
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -1
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 6112 1 7 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {7115CC26-41C4-4C2B-9A2E-62B8592ADABB}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Timpani 1 - {7115CC26-41C4-4C2B-9A2E-62B8592ADABB}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {1D36FDFC-4815-6D46-973F-1BE8726226F3}
+    Archived_parent_name Timpani
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

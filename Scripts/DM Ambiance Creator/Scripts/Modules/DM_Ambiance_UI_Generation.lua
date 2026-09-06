@@ -1,0 +1,135 @@
+--[[
+@version 1.3
+@noindex
+--]]
+
+local UI_Generation = {}
+local globals = {}
+local Utils = require("DM_Ambiance_Utils")
+local Items = require("DM_Ambiance_Items")
+
+-- Initialize the module with global variables from the main script
+function UI_Generation.initModule(g)
+    globals = g
+end
+
+-- Function to draw the main generation button with styling
+function UI_Generation.drawMainGenerationButton()
+    -- Apply styling for the main generation button
+    globals.imgui.PushStyleColor(globals.ctx, globals.imgui.Col_Button, 0xFF4CAF50) -- Green button
+    globals.imgui.PushStyleColor(globals.ctx, globals.imgui.Col_ButtonHovered, 0xFF66BB6A) -- Lighter green when hovered
+    globals.imgui.PushStyleColor(globals.ctx, globals.imgui.Col_ButtonActive, 0xFF43A047) -- Darker green when clicked
+
+    local buttonPressed = globals.UI.Button(globals.ctx, "Create Ambiance", 150, 30)
+
+    -- Pop styling colors to return to default
+    globals.imgui.PopStyleColor(globals.ctx, 3)
+
+    -- Execute generation if button was pressed
+    if buttonPressed then
+        globals.Generation.generateGroups()
+    end
+
+    return buttonPressed
+end
+
+function UI_Generation.drawKeepExistingTracksButton()
+    local changed, newValue = globals.UndoWrappers.Checkbox(globals.ctx, "Keep existing tracks and content", globals.keepExistingTracks)
+    
+    if changed then
+        globals.keepExistingTracks = newValue
+    end
+
+    globals.Utils.HelpMarker("Determines clearing behavior before generation:\n" ..
+                    "- Enabled (Keep):\n" ..
+                    "Preserve tracks and content outside time selection, only replace content within selection\n\n" ..
+                    "- Disabled (Clear All):\n" ..
+                    "Clear all existing tracks and content from tracks before generating new content")
+
+    return changed
+end
+
+-- Function to display time selection information
+function UI_Generation.drawTimeSelectionInfo()
+    if globals.Utils.checkTimeSelection() then
+        globals.imgui.Text(globals.ctx, "Time Selection: " .. globals.Utils.formatTime(globals.startTime) .. 
+                                       " - " .. globals.Utils.formatTime(globals.endTime) .. 
+                                       " | Length: " .. globals.Utils.formatTime(globals.endTime - globals.startTime))
+    else
+        globals.imgui.TextColored(globals.ctx, 0xFF0000FF, "No time selection! Please create one.")
+    end
+end
+
+-- Function to draw regenerate button for a group
+function UI_Generation.drawGroupRegenerateButton(groupIndex)
+    local groupId = "group" .. groupIndex
+    if globals.Icons.createRegenButton(globals.ctx, groupId, "Regenerate group") then
+        globals.Generation.generateSingleGroup(groupIndex)
+        return true
+    end
+    return false
+end
+
+-- Function to draw regenerate button for a container
+function UI_Generation.drawContainerRegenerateButton(groupIndex, containerIndex)
+    local groupId = "group" .. groupIndex
+    local containerId = groupId .. "_container" .. containerIndex
+    if globals.Icons.createRegenButton(globals.ctx, containerId, "Regenerate container") then
+        globals.Generation.generateSingleContainer(groupIndex, containerIndex)
+        return true
+    end
+    return false
+end
+
+-- Function to draw regenerate button for multiple selected containers
+function UI_Generation.drawMultiRegenerateButton(width)
+    -- Get list of all selected containers
+    local selectedContainers = {}
+    for key in pairs(globals.selectedContainers) do
+        local t, c = key:match("(%d+)_(%d+)")
+        table.insert(selectedContainers, {groupIndex = tonumber(t), containerIndex = tonumber(c)})
+    end
+
+    if globals.imgui.Button(globals.ctx, "Regenerate All", width * 0.5, globals.UI.scaleSize(30)) then
+        for _, c in ipairs(selectedContainers) do
+            globals.Generation.generateSingleContainer(c.groupIndex, c.containerIndex)
+        end
+        return true
+    end
+    return false
+end
+
+-- Function to display UI controls for global generation settings
+function UI_Generation.drawGlobalGenerationSettings()
+    if not globals.imgui.CollapsingHeader(globals.ctx, "Generation Settings") then
+        return
+    end
+    
+    globals.imgui.Indent(globals.ctx, 10)
+    
+    -- Global cross-fade settings
+    local rv, newCrossfadeEnabled = globals.UndoWrappers.Checkbox(globals.ctx, "Enable automatic crossfades", globals.enableCrossfades)
+    if rv then globals.enableCrossfades = newCrossfadeEnabled end
+    
+    if globals.enableCrossfades then
+        globals.imgui.PushItemWidth(globals.ctx, 200)
+        local crossfadeShapes = "Linear\0Slow start/end\0Fast start\0Fast end\0Sharp\0"
+        local rv, newShape = globals.UndoWrappers.Combo(globals.ctx, "Crossfade shape", globals.crossfadeShape, crossfadeShapes)
+        if rv then globals.crossfadeShape = newShape end
+    end
+    
+    -- Random seed control
+    globals.imgui.Separator(globals.ctx)
+    local rv, newUseSeed = globals.UndoWrappers.Checkbox(globals.ctx, "Use fixed seed", globals.useRandomSeed)
+    if rv then globals.useRandomSeed = newUseSeed end
+    
+    if globals.useRandomSeed then
+        globals.imgui.PushItemWidth(globals.ctx, 200)
+        local rv, newSeed = globals.UndoWrappers.InputInt(globals.ctx, "Random seed", globals.randomSeed)
+        if rv then globals.randomSeed = newSeed end
+    end
+    
+    globals.imgui.Unindent(globals.ctx, 10)
+end
+
+return UI_Generation

@@ -5,6 +5,7 @@ AppController = {}
 -- Local references for performance
 local ctx = nil
 local ImGui = reaper.ImGui_CreateContext and reaper or nil
+local was_window_focused = false
 
 -- Configuration
 local WINDOW_WIDTH = 500
@@ -91,12 +92,20 @@ function AppController.loop()
         end
     end
     
-    -- Check for external track selection changes (monitoring for deactivation)
-    if State.ensemble.is_active and not ReaperTracks.doesReaperSelectedTracksMatchEnsemble() then
-        -- User changed selection outside of our control - deactivate ensemble
-        AppController.deactivateEnsemble()
-        return
+    -- NOTE: previously auto-deactivated the ensemble (closing this window) whenever
+    -- REAPER's track selection stopped matching the active ensemble's tracks - e.g.
+    -- clicking anywhere in the arrange view. Removed so the window persists across
+    -- normal REAPER navigation; it now only closes via the X button or an explicit
+    -- deactivate.
+
+    -- Restore REAPER's track selection to match the active ensemble when this window
+    -- regains focus (e.g. clicking back onto it after being in the arrange view).
+    -- Edge-triggered on focus gained, not held every frame, so it doesn't fight manual
+    -- selection changes while the window is actually focused and in use.
+    if State.ensemble.is_active and State.ui.window_focused and not was_window_focused then
+        ReaperTracks.sync_track_selection()
     end
+    was_window_focused = State.ui.window_focused or false
 
     -- Continue loop if ensemble is still active
     if State.ensemble.is_active then

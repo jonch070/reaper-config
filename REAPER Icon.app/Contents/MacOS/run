@@ -1,0 +1,2 @@
+#!/bin/bash
+osascript -e 'do shell script "cp \"/Users/jonathankawchuk/Library/Application Support/REAPER/main-mac.icns\" \"/Applications/REAPER.app/Contents/Resources/main-mac.icns\" && touch \"/Applications/REAPER.app\" && sudo rm -rf /Library/Caches/com.apple.iconservices.store && sudo killall iconservicesd" with administrator privileges'

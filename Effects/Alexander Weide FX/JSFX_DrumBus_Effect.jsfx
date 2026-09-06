@@ -1,0 +1,71 @@
+desc:JSFX Drum-Bus-Effect
+author:Gemini AI + AlexW
+
+// Interface-Regler
+slider1:100<0,100,1>Mix (%)
+slider2:0<0,100,1>Drive (%)
+slider3:0<0,100,1>Crunch (%)
+slider4:0<-1,1,0.01>Transients
+slider5:0<30,80,1>Boom Freq (Hz)
+slider6:0<0,100,1>Boom (%)
+slider7:0<-24,0,0.1>Gain Comp (dB)
+slider8:0<-24,24,0.1>Final Output (dB)
+
+@init
+env_fast = 0;
+env_slow = 0;
+b1_lp = 0;
+b2_lp = 0;
+b_out = 0;
+
+@slider
+mix_dry = (100 - slider1) / 100;
+mix_wet = slider1 / 100;
+
+drive_gain = 1 + (slider2 / 20);
+crunch_gain = slider3 / 50;
+trans_mod = slider4 * 2;
+boom_amount = slider6 / 10;
+
+// Umrechnung der dB-Werte in Faktoren
+comp_gain = 10^(slider7 / 20); 
+out_gain = 10^(slider8 / 20);
+
+@sample
+// 0. ORIGINAL SICHERN
+dry0 = spl0;
+dry1 = spl1;
+
+// 1. DRIVE (Saturator)
+s0 = spl0 * drive_gain;
+s1 = spl1 * drive_gain;
+wet0 = atan(s0);
+wet1 = atan(s1);
+
+// 2. CRUNCH
+hp0 = wet0 - (b1_lp += 0.2 * (wet0 - b1_lp));
+wet0 += hp0 * crunch_gain;
+hp1 = wet1 - (b2_lp += 0.2 * (wet1 - b2_lp));
+wet1 += hp1 * crunch_gain;
+
+// 3. TRANSIENTS
+abs_val = (abs(wet0) + abs(wet1)) * 0.5;
+env_fast = env_fast + 0.5 * (abs_val - env_fast);
+env_slow = env_slow + 0.005 * (abs_val - env_slow);
+trans_gain = 1.0 + (env_fast - env_slow) * trans_mod;
+wet0 *= trans_gain;
+wet1 *= trans_gain;
+
+// 4. BOOM
+boom_sig = (wet0 + wet1) * 0.5;
+b_out = b_out + 0.1 * (boom_sig - b_out);
+wet0 += b_out * boom_amount;
+wet1 += b_out * boom_amount;
+
+// 5. GAIN COMPENSATION (Nur auf das Wet-Signal angewendet)
+wet0 *= comp_gain;
+wet1 *= comp_gain;
+
+// 6. MIX & FINAL OUTPUT
+spl0 = (dry0 * mix_dry + wet0 * mix_wet) * out_gain;
+spl1 = (dry1 * mix_dry + wet1 * mix_wet) * out_gain;

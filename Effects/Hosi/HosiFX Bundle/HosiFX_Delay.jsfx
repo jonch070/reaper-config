@@ -1,0 +1,370 @@
+desc:HosiFX Delay
+version: 1.0
+author: HosiFX
+about:
+  # HosiFX Delay
+  A flexible delay unit with 25 presets, including tape, ping-pong, and rhythmic styles.
+changelog:
+  + Initial modern release with expanded presets and new UI.
+// Copyright 2024 HosiFX. All rights reserved.
+
+// --- Sliders ---
+// "Mix" knob (Wet/Dry) - Unipolar
+slider1:50<0,100,0.1>-Mix (%)
+// Preset selector
+slider2:5<0,24,1{Acoustic Air,Analog Slapback,Bumble Beat,Guitar Solo,Mix Exciter,Spacey Vocals,Stereo Arpeggio,Triplet Delay,Vintage Doubler,Ambient Wash,Dub Echo,Rhythmic Gate,Filtered Sweep,Lo-Fi Tape,Infinite Repeats,Dot-Eighth Rhythmic,Quarter Note Tap,Ping Pong Wide,Filtered Dub,Tape Slapback,Space Echo-ish,Multi-Tap Clatter,Chorus Delay,Tight Doubler,Slow Volume Swell}>-Preset
+// Hidden syncing options
+slider3:0<0,1,1>-Sync
+slider4:0<0,1,1>-Ping-Pong
+
+// --- I/O Pins ---
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+// --- Options ---
+options:gfx_hz=60
+options:no_meter
+options:gmem=delay_buf,200000
+
+@init
+// --- General Init ---
+gfx_clear = -1;
+tau = 2 * $pi;
+dragging = 0;
+caller = 1;
+// Force reset to 50%
+slider1 = 50;
+
+// --- Delay Init ---
+// IMPORTANT: Offset audio buffer to avoid overwriting preset names at index 0
+delay_buf_offset = 32768; 
+buf_size = srate * 2; // 2s buffer
+
+buf_L = delay_buf_offset;
+buf_R = delay_buf_offset + buf_size;
+wp = 0; 
+
+lp_L = 0; lp_R = 0;
+hp_L = 0; hp_R = 0;
+
+// --- Preset Names (Memory Init) ---
+preset_names = 0;
+preset_names[0] = "Acoustic Air";
+preset_names[1] = "Analog Slapback";
+preset_names[2] = "Bumble Beat";
+preset_names[3] = "Guitar Solo";
+preset_names[4] = "Mix Exciter";
+preset_names[5] = "Spacey Vocals";
+preset_names[6] = "Stereo Arpeggio";
+preset_names[7] = "Triplet Delay";
+preset_names[8] = "Vintage Doubler";
+preset_names[9] = "Ambient Wash";
+preset_names[10] = "Dub Echo";
+preset_names[11] = "Rhythmic Gate";
+preset_names[12] = "Filtered Sweep";
+preset_names[13] = "Lo-Fi Tape";
+preset_names[14] = "Infinite Repeats";
+preset_names[15] = "Dot-Eighth Rhythmic";
+preset_names[16] = "Quarter Note Tap";
+preset_names[17] = "Ping Pong Wide";
+preset_names[18] = "Filtered Dub";
+preset_names[19] = "Tape Slapback";
+preset_names[20] = "Space Echo-ish";
+preset_names[21] = "Multi-Tap Clatter";
+preset_names[22] = "Chorus Delay";
+preset_names[23] = "Tight Doubler";
+preset_names[24] = "Slow Volume Swell";
+num_presets = 25;
+
+// --- Parameters ---
+function update_parameters() (
+  wet = slider1 / 100;
+  dry = 1 - wet;
+  
+  sync_on = slider3;
+  pingpong_on = slider4;
+
+  preset = slider2|0;
+
+  delay_ms = 300; delay_beats = 0.5; feedback = 0.3; lp_freq = 4000; hp_freq = 100;
+
+  preset == 0 ? ( delay_ms = 400; feedback = 0.4; lp_freq = 6000; hp_freq = 200; )
+  : preset == 1 ? ( delay_ms = 120; feedback = 0.2; lp_freq = 2500; hp_freq = 150; )
+  : preset == 2 ? ( delay_beats = 1/16; feedback = 0.5; lp_freq = 8000; hp_freq = 50; )
+  : preset == 3 ? ( delay_beats = 1/4; feedback = 0.45; lp_freq = 3500; hp_freq = 120; )
+  : preset == 4 ? ( delay_ms = 20; feedback = 0.1; lp_freq = 10000; hp_freq = 300; )
+  : preset == 5 ? ( delay_beats = 0.5; feedback = 0.55; lp_freq = 5000; hp_freq = 250; )
+  : preset == 6 ? ( delay_beats = 1/8; feedback = 0.3; lp_freq = 7000; hp_freq = 100; pingpong_on = 1; )
+  : preset == 7 ? ( delay_beats = 1/3; feedback = 0.4; lp_freq = 4500; hp_freq = 150; )
+  : preset == 8 ? ( delay_ms = 35; feedback = 0; lp_freq = 6000; hp_freq = 100; )
+  : preset == 9 ? ( delay_beats = 1; feedback = 0.7; lp_freq = 2000; hp_freq = 300; )
+  : preset == 10 ? ( delay_beats = 0.75; feedback = 0.8; lp_freq = 1500; hp_freq = 400; )
+  : preset == 11 ? ( delay_beats = 0.375; feedback = 0.2; lp_freq = 5000; hp_freq = 100; )
+  : preset == 12 ? ( delay_beats = 0.5; feedback = 0.6; lp_freq = 1500; hp_freq = 500; )
+  : preset == 13 ? ( delay_ms = 450; feedback = 0.4; lp_freq = 1200; hp_freq = 200; )
+  : preset == 14 ? ( delay_beats = 1; feedback = 0.98; lp_freq = 3000; hp_freq = 150; )
+  : preset == 15 ? ( delay_beats = 0.75; feedback = 0.4; lp_freq = 5000; hp_freq = 200; sync_on = 1; ) // Dot-Eighth
+  : preset == 16 ? ( delay_beats = 1; feedback = 0.3; lp_freq = 4000; hp_freq = 100; sync_on = 1; ) // Quarter
+  : preset == 17 ? ( delay_beats = 0.5; feedback = 0.5; lp_freq = 7000; hp_freq = 200; pingpong_on = 1; ) // PingPong
+  : preset == 18 ? ( delay_beats = 0.75; feedback = 0.8; lp_freq = 800; hp_freq = 400; ) // Filtered Dub
+  : preset == 19 ? ( delay_ms = 90; feedback = 0.2; lp_freq = 2500; hp_freq = 300; ) // Slapback
+  : preset == 20 ? ( delay_beats = 0.5; feedback = 0.6; lp_freq = 3000; hp_freq = 200; ) // Space Echo
+  : preset == 21 ? ( delay_ms = 330; feedback = 0.5; lp_freq = 9000; hp_freq = 500; ) // Multi Clatter
+  : preset == 22 ? ( delay_ms = 25; feedback = 0.4; lp_freq = 5000; hp_freq = 100; ) // Chorus-y
+  : preset == 23 ? ( delay_ms = 40; feedback = 0.1; lp_freq = 10000; hp_freq = 50; ) // Doubler
+  : preset == 24 ? ( delay_ms = 600; feedback = 0.8; lp_freq = 400; hp_freq = 300; ); // Slow Swell (very filtered)
+  
+  sync_on ? (
+    delay_samps = delay_beats * 60 / tempo * srate;
+  ) : (
+    delay_samps = delay_ms * srate / 1000;
+  );
+  
+  lp_alpha = 1 - exp(-tau * lp_freq / srate);
+  hp_alpha = 1 - exp(-tau * hp_freq / srate);
+);
+
+@slider
+caller = 1;
+
+@block
+caller == 1 ? update_parameters();
+
+@sample
+caller == 1 ? ( update_parameters(); caller = 0; );
+
+rp = wp - delay_samps;
+rp_int = floor(rp);
+rp_frac = rp - rp_int;
+
+rp1 = (rp_int + buf_size) % buf_size;
+rp2 = (rp_int + 1 + buf_size) % buf_size;
+
+delayed_L = buf_L[rp1] + (buf_L[rp2] - buf_L[rp1]) * rp_frac;
+delayed_R = buf_R[rp1] + (buf_R[rp2] - buf_R[rp1]) * rp_frac;
+
+lp_L += (delayed_L - lp_L) * lp_alpha;
+lp_R += (delayed_R - lp_R) * lp_alpha;
+hp_L += (lp_L - hp_L) * hp_alpha;
+hp_R += (lp_R - hp_R) * hp_alpha;
+filtered_L = hp_L;
+filtered_R = hp_R;
+
+pingpong_on ? (
+  feedback_L = filtered_R * feedback;
+  feedback_R = filtered_L * feedback;
+) : (
+  feedback_L = filtered_L * feedback;
+  feedback_R = filtered_R * feedback;
+);
+
+buf_L[wp] = spl0 + feedback_L;
+buf_R[wp] = spl1 + feedback_R;
+wp = (wp + 1) % buf_size;
+
+spl0 = spl0 * dry + filtered_L * wet;
+spl1 = spl1 * dry + filtered_R * wet;
+
+@gfx 500 420
+// --- Modern UI (Delay / Cobalt Blue) ---
+
+// Colors
+c_bg_r=0.15; c_bg_g=0.16; c_bg_b=0.18;
+// Cobalt Blue for Delay
+c_accent_r=0.2; c_accent_g=0.4; c_accent_b=0.9; 
+c_lcd_bg_r=0.05; c_lcd_bg_g=0.08; c_lcd_bg_b=0.15;
+
+w=gfx_w; h=gfx_h;
+size = min(w,h);
+cx = w/2; 
+cy = h * 0.55;
+
+// --- Background ---
+gfx_set(c_bg_r, c_bg_g, c_bg_b, 1);
+gfx_rect(0,0,w,h);
+
+// --- Header ---
+gfx_setfont(1, "Impact", size*0.06);
+gfx_set(1, 1, 1, 0.5); 
+gfx_measurestr("HOSIFX Delay", lw, lh);
+gfx_x = cx - lw/2;
+gfx_y = h * 0.04;
+gfx_drawstr("HOSIFX Delay");
+
+// --- LCD Screen ---
+lcd_w = w * 0.65;
+lcd_h = size * 0.12;
+lcd_x = (w - lcd_w) / 2;
+lcd_y = h * 0.15;
+
+// Glow
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 0.15);
+gfx_roundrect(lcd_x-3, lcd_y-3, lcd_w+6, lcd_h+6, 5);
+// BG
+gfx_set(c_lcd_bg_r, c_lcd_bg_g, c_lcd_bg_b, 1);
+gfx_roundrect(lcd_x, lcd_y, lcd_w, lcd_h, 4);
+
+// Text
+idx = slider2|0;
+idx < 0 ? idx=0; idx > 14 ? idx=14; 
+preset_ptr = preset_names[idx]; 
+
+gfx_setfont(2, "Verdana", size*0.05);
+gfx_measurestr(preset_ptr, pw, ph);
+// Text color matches accent
+gfx_set(c_accent_r+0.2, c_accent_g+0.4, c_accent_b+0.1, 1); 
+gfx_x = cx - pw/2;
+gfx_y = lcd_y + (lcd_h - ph)/2;
+gfx_drawstr(preset_ptr);
+
+// Arrows
+gfx_set(1,1,1, 0.3);
+ts = size*0.025;
+gfx_triangle(lcd_x-ts*1.5, lcd_y+lcd_h/2, lcd_x-ts*0.5, lcd_y+lcd_h/2-ts, lcd_x-ts*0.5, lcd_y+lcd_h/2+ts);
+gfx_triangle(lcd_x+lcd_w+ts*1.5, lcd_y+lcd_h/2, lcd_x+lcd_w+ts*0.5, lcd_y+lcd_h/2-ts, lcd_x+lcd_w+ts*0.5, lcd_y+lcd_h/2+ts);
+
+// Label
+gfx_setfont(3, "Arial", size*0.025);
+gfx_set(0.6,0.6,0.6,1);
+gfx_measurestr("PRESET", tw, th);
+gfx_x = cx - tw/2; gfx_y = lcd_y - th - 3;
+gfx_drawstr("PRESET");
+
+// --- Unipolar Arc ---
+knob_r = size * 0.22;
+arc_r = knob_r + size*0.04;
+arc_w = size * 0.02;
+
+ang_min = 2.3562; 
+ang_max = 7.0686; 
+total_ang = ang_max - ang_min;
+
+norm_val = slider1 / 100;
+ang_curr = ang_min + norm_val * total_ang;
+
+function draw_thick_arc(c_x, c_y, radius, thick, a_start, a_end, r, g, b, a) (
+  gfx_set(r,g,b,a);
+  step_sz = 0.04; 
+  loop_r_start = radius - thick/2;
+  num_rings = 5; 
+  ring_stp = thick / num_rings;
+  i_ring = 0;
+  loop(num_rings,
+    cur_rad = loop_r_start + i_ring * ring_stp;
+    cur_a = a_start;
+    last_x = c_x + cos(cur_a) * cur_rad;
+    last_y = c_y + sin(cur_a) * cur_rad;
+    while(
+      cur_a += step_sz;
+      cur_a > a_end ? cur_a = a_end;
+      cur_x = c_x + cos(cur_a) * cur_rad;
+      cur_y = c_y + sin(cur_a) * cur_rad;
+      gfx_line(last_x, last_y, cur_x, cur_y);
+      last_x = cur_x; last_y = cur_y;
+      cur_a < a_end;
+    );
+    i_ring += 1;
+  );
+);
+
+// 1. BG
+draw_thick_arc(cx, cy, arc_r, arc_w, ang_min, ang_max, 0.1, 0.2, 0.3, 0.3);
+
+// 2. Active
+abs(ang_curr - ang_min) > 0.01 ? (
+  draw_thick_arc(cx, cy, arc_r, arc_w, ang_min, ang_curr, c_accent_r, c_accent_g, c_accent_b, 1.0);
+);
+
+// --- Knob Body ---
+gfx_set(0.12, 0.12, 0.12, 1);
+gfx_circle(cx, cy, knob_r, 1);
+gfx_set(0,0,0, 0.4);
+gfx_arc(cx, cy, knob_r, 0, $pi, 1);
+
+// Indicator Dot
+dot_r = knob_r * 0.75;
+dx = cx + cos(ang_curr) * dot_r;
+dy = cy + sin(ang_curr) * dot_r;
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 0.8);
+gfx_circle(dx, dy, size*0.03, 1);
+gfx_set(1,1,1,0.9);
+gfx_circle(dx, dy, size*0.012, 1);
+
+// --- Footer Values ---
+gfx_setfont(4, "Arial", size*0.08);
+sprintf(#sval, "%.1f %%", slider1);
+gfx_measurestr(#sval, vw, vh);
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 1);
+gfx_x = cx - vw/2;
+gfx_y = cy + knob_r + size*0.1;
+gfx_drawstr(#sval);
+
+// --- Interactions ---
+mouse_down = mouse_cap & 1;
+mouse_click = mouse_down && !(last_mouse_cap & 1);
+mouse_up = (last_mouse_cap & 1) && !mouse_down;
+
+// Preset Control
+// 1. Arrows (Cycle)
+mouse_y < h * 0.3 && mouse_click ? (
+  mouse_x < cx - lcd_w*0.3 ? ( // Left arrow area
+    slider2 -= 1; slider2 < 0 ? slider2 = 24;
+    caller = 1;
+  ) : mouse_x > cx + lcd_w*0.3 ? ( // Right arrow area
+    slider2 += 1; slider2 > 24 ? slider2 = 0;
+    caller = 1;
+  ) : (
+    // 2. Center Click (Popup Menu)
+    menu_str = #; 
+    strcpy(menu_str, ""); 
+    i=0;
+    loop(num_presets,
+      i == slider2 ? strcat(menu_str, "!") : strcat(menu_str, ""); 
+      strcat(menu_str, preset_names[i]);
+      i < num_presets-1 ? strcat(menu_str, "|");
+      i+=1;
+    );
+    
+    gfx_x = mouse_x; gfx_y = mouse_y;
+    selected = gfx_showmenu(menu_str);
+    selected > 0 ? (
+      slider2 = selected - 1;
+      caller = 1;
+    );
+  );
+);
+
+// Knob
+dist = sqrt((mouse_x-cx)^2 + (mouse_y-cy)^2);
+hover_knob = mouse_y > h*0.3 && dist < knob_r * 1.5;
+
+mouse_click && hover_knob ? (
+  time_precise() - last_click_time < 0.25 ? (
+    slider1 = 50; // Reset to 50%
+    caller = 1;
+    dragging = 0;
+  ) : (
+    dragging = 1;
+    drag_y = mouse_y;
+    drag_val = slider1;
+  );
+  last_click_time = time_precise();
+);
+
+dragging ? (
+  slider1 = drag_val + (drag_y - mouse_y) * 0.4;
+  slider1 = min(max(slider1, 0), 100);
+  caller = 1;
+);
+mouse_up ? dragging = 0;
+
+// Wheel
+mouse_wheel != 0 ? (
+  slider1 += (mouse_wheel/120)*5;
+  slider1 = min(max(slider1, 0), 100);
+  caller = 1;
+  mouse_wheel = 0;
+);
+last_mouse_cap = mouse_cap;

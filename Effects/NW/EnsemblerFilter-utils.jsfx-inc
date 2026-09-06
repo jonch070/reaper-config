@@ -1,0 +1,49 @@
+// EnsemblerFilter - Utility Functions
+// Common helper functions used throughout the filter
+//
+
+@init
+
+// =============================================================================
+// NOTE AND VOICE UTILITY FUNCTIONS  
+// =============================================================================
+
+// Transposes a MIDI note by the specified amount and clamps to valid MIDI range (0-127)
+// Parameters: note (MIDI note 0-127), transposeAmount (semitones, can be negative)
+// Returns: transposed note clamped to 0-127 range
+function transposeNote(note, transposeAmount)
+(
+  transposed = note + transposeAmount;
+  // Clamp to valid MIDI range (0-127)
+  transposed < 0 ? transposed = 0;
+  transposed > 127 ? transposed = 127;
+  transposed;
+);
+
+// Counts the number of notes currently held (marked as 1 in note_held array)
+// Returns: integer count of held notes
+function countCurrentlyHeldNotes()
+local(count, i)
+(
+  count = 0;
+  i = 0;
+  loop(128,
+    note_held[i] ? count += 1;
+    i += 1;
+  );
+  count;
+);
+
+// Counts the number of currently active voices (voices with assigned notes)
+// Returns: integer count of active voices (0 to total_voices_config)
+function countActiveVoices()
+local(count, i)
+(
+  count = 0;
+  i = 0;
+  loop(total_voices_config,
+    voice_assignments[i] >= 0 ? count += 1;
+    i += 1;
+  );
+  count;
+);

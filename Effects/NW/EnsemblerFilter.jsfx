@@ -1,0 +1,355 @@
+desc:Ensembler Filter - MIDI Chord Splitter with Enhanced Chord Detection
+author:Your Name
+version:2.2
+changelog:Added immediate trigger optimization for shorts (processes immediately when note count matches voice count)
+// MIDI-only FX optimization
+in_pin:none
+out_pin:none
+// Shared memory for Lua communication
+options:gmem=ensembler
+
+// Import functionality modules
+import EnsemblerFilter-utils.jsfx-inc
+import EnsemblerFilter-transforms.jsfx-inc
+import EnsemblerFilter-retroactive.jsfx-inc
+import EnsemblerFilter-voice-processing.jsfx-inc
+import EnsemblerFilter-chords.jsfx-inc
+import EnsemblerFilter-midi-input.jsfx-inc
+import EnsemblerFilter-debug.jsfx-inc
+
+// Configuration sliders (ReaScript control - indices 0-8)
+slider1:0<-1,9,1>Voice Number (-1=chord tone, 0-9=voice)
+slider2:3<1,10,1>Total Voices
+slider3:0<0,2,1>Divisi Mode (0=bottom-up, 1=top-down, 2=fill)
+slider4:0<-84,84,1>Transposition (semitones, -84 to +84)
+slider5:1<0,1,1>Debug Mode
+slider6:0<0,999999,1>Note On Counter (read-only)
+slider7:0<0,999999,1>Note Off Counter (read-only)
+slider8:-1<-1,12,1>Chord Tone (-1=voice mode, semitones: 0=root, 4=3rd, 7=5th, 10=7th, 12=octave)
+slider9:0<0,127,1>Chord Tone Anchor Note (0=not set)
+
+// Read-only status sliders (ReaScript readable - indices 9-16)
+slider10:-1<-1,127,1>Currently assigned note (read-only)
+slider11:0<0,1,1>Reports global data (set by ReaScript)
+slider12:-1<-1,127,1>Detected chord root (read-only)
+slider13:0<0,100,1>Detected chord quality (read-only)
+slider14:0<0,4294967295,1>Unassigned notes bits 0-31 (read-only)
+slider15:0<0,4294967295,1>Unassigned notes bits 32-63 (read-only)
+slider16:0<0,4294967295,1>Unassigned notes bits 64-95 (read-only)
+slider17:0<0,4294967295,1>Unassigned notes bits 96-127 (read-only)
+
+// GMEM coordination sliders (ReaScript control - indices 17-19)
+slider18:0<0,200,1>Instrument Memory Slot Number (set by Lua)
+slider19:0<-86400,86400,0.001>Project Time Offset (set by Lua)
+slider20:0<0,1000,1>Transform Update Trigger (set by Lua)
+
+@init
+// =============================================================================
+// CONFIGURATION CONSTANTS
+// =============================================================================
+
+// Analysis timing configuration (in milliseconds)
+normal_analysis_time_ms = 25;          // Normal analysis delay
+extended_analysis_time_ms = 25;//100;       // Extended delay when voices incomplete
+
+// Initialize voice configuration from sliders (set defaults first)
+my_voice = 0;               // Default voice 0
+total_voices_config = 3;    // Default 3 voices
+my_transposition = 0;       // Default no transposition
+my_chord_tone = -1;         // Default no chord tone assignment
+my_chord_tone_anchor = 0;   // Default no anchor
+
+// =============================================================================
+// MEMORY LAYOUT DOCUMENTATION
+// =============================================================================
+// Important! Update this if you add or modify any memory zones to avoid conflicts!
+//
+// ZONE 0-999: Core Note Processing & Voice Management
+//   0-127:     note_held[128] - what's currently held (0/1)
+//   128-255:   note_velocity[128] - original velocity for each note
+//   256-383:   note_voice[128] - which voice each note is assigned to (-1 = unassigned)
+//   384-393:   voice_assignments[10] - which note is on each voice (-1 = empty)
+//   400-463:   pending_changes_note[64] - queued note changes
+//   464-527:   pending_changes_type[64] - queued change types (1=on, 0=off)
+//   528-591:   pending_changes_velocity[64] - queued velocities
+//   592-655:   pending_changes_offset[64] - queued timing offsets
+//   700-827:   all_held_notes[128] - temp array for analysis
+//   828-955:   unassigned_notes[128] - temp array for unassigned notes
+//   956-1083:  temp_note_held[128] - simulation array for immediate trigger logic
+//
+// ZONE 1000-1999: Transform System (see EnsemblerFilter-transforms.jsfx-inc)
+//   1100-1109: transform_param_ids[10] - parameter IDs (0=velocity, 1-127=CC)
+//   1110-1119: transform_types[10] - transform types (0-3)
+//   1120-1129: transform_values[10] - unpacked transform values
+//
+// ZONE 2000-2999: CC Preview System
+//   2000-2126: last_cc_values[127] - stores ORIGINAL CC values for preview
+//   2127-2253: last_cc_channels[127] - stores ORIGINAL MIDI channels for CCs
+//   2254-2380: previous_transform_hashes[127] - tracks transform state per CC for change detection
+//   2381-2507: changed_cc_list[127] - list of CC numbers that changed this update
+//   2508:       changed_cc_count - number of CCs that changed
+//
+// ZONE 3000+: Available for future features
+// =============================================================================
+
+// =============================================================================
+// GMEM LAYOUT DOCUMENTATION (Shared Memory)
+// =============================================================================
+// Shared memory accessible from both JSFX and Lua via gmem[index]
+//
+// ZONE 0-999: Reserved for future use
+//
+// ZONE 1000-7199: Transform System (200 instruments max)
+//   Per instrument (31 slots, sequential):
+//     Instrument N base = 1000 + (instrumentMemorySlot × 31)
+//     gmem[base + 0]:     transform_count (0-10)
+//     gmem[base + 1-30]:  transform data (3 slots per transform)
+//       gmem[base + 1 + (i×3) + 0]: param_id (0=velocity, 1-127=CC)
+//       gmem[base + 1 + (i×3) + 1]: type (0=none, 1=scale, 2=fixed, 3=ignore)
+//       gmem[base + 1 + (i×3) + 2]: value (0.0-2.0 for scale, 0-127 for fixed)
+//   Capacity: 200 instruments × 31 slots = 6,200 slots
+//   To increase: Allocate more GMEM zones and update MAX_INSTRUMENTS_GMEM in Lua
+//
+// ZONE 7200-99,999: Reserved for future features
+//
+// ZONE 100,000-499,999: Retroactive Recording (see EnsemblerFilter-retroactive.jsfx-inc)
+//   Per instrument (3,002 slots, sequential)
+// =============================================================================
+
+// Initialize note state arrays (indexed by note number 0-127)
+memset(0, 0, 128);      // note_held[128] - what's currently held (0/1)
+memset(128, 0, 128);    // note_velocity[128] - original velocity for each note
+memset(256, 0, 128);    // note_voice[128] - which voice each note is assigned to (-1 = unassigned)
+
+note_held = 0;
+note_velocity = 128;  
+note_voice = 256;
+
+// Debug vars (for development/testing)
+did_this_run_a = 0;
+did_this_run_b = 0;
+debug_A = 0;
+debug_B = 0;
+debug_C = 0;
+debug_D = 0;
+debug_E = 0;
+debug_F = 0;
+debug_G = 0;
+debug_H = 0;
+debug_I = 0;
+
+// Initialize voice assignments (indexed by voice number 0-9, but only using 0-2)
+memset(384, -1, 10);    // voice_assignments[10] - which note is on each voice (-1 = empty)
+voice_assignments = 384;
+
+// =============================================================================
+// CC PREVIEW SYSTEM - Real-time feedback when adjusting transform knobs
+// =============================================================================
+// Problem: When users adjust CC transform knobs (scale/fixed), they can't hear
+// the effect until they send new CC data through their controller.
+//
+// Solution: Store original CC values and automatically resend them with new
+// transforms when knobs are adjusted, providing immediate audio feedback.
+
+// Storage for original CC values and channels (indexed by CC number 1-127, stored at index cc_number-1)
+// ZONE 2000-2999: CC Preview System (safe from memory conflicts)
+memset(2000, -1, 127);   // last_cc_values[127] - stores ORIGINAL (pre-transform) values (-1 = never received)
+memset(2127, -1, 127);   // last_cc_channels[127] - stores MIDI channel for each CC (-1 = never received)
+memset(2254, 0, 127);    // previous_transform_hashes[127] - previous transform state for change detection
+memset(2381, 0, 127);    // changed_cc_list[127] - list of CC numbers that changed
+last_cc_values = 2000;
+last_cc_channels = 2127;
+previous_transform_hashes = 2254;
+changed_cc_list = 2381;
+changed_cc_count = 2508;
+
+// Transform change detection for CC preview
+// detectChangedCCTransforms() compares current vs previous transform hashes
+
+// Initialize pending changes queue
+pending_changes_count = 0;
+memset(400, 0, 64);     // pending_changes_note[64]
+memset(464, 0, 64);     // pending_changes_type[64] - 1=on, 0=off
+memset(528, 0, 64);     // pending_changes_velocity[64]
+memset(592, 0, 64);     // pending_changes_offset[64]
+
+pending_changes_note = 400;
+pending_changes_type = 464;
+pending_changes_velocity = 528;
+pending_changes_offset = 592;
+
+// Temporary arrays for analysis
+memset(700, 0, 128);    // all_held_notes[128] - temp array for all held notes
+memset(828, 0, 128);    // unassigned_notes[128] - temp array for unassigned notes only
+all_held_notes = 700;
+unassigned_notes = 828;
+
+// Immediate trigger optimization arrays and variables
+memset(956, 0, 128);    // temp_note_held[128] - simulation array for immediate trigger logic
+temp_note_held = 956;
+
+// Chord tone state variables
+current_chord_tone_note = -1;   // Currently playing chord tone note (-1 = none)
+
+// Analysis timer variables
+analysis_timer = 0;
+
+// Immediate trigger state variables
+current_held_count = 0;           // How many notes were held at start of block
+simulated_voiced_count = 0;       // Simulated final note count after pending changes
+received_note_on_this_block = 0;  // Flag to track if any note-ons happened this block
+
+// Initialize note_voice array to -1 (unassigned)
+i = 0;
+loop(128,
+  note_voice[i] = -1;
+  i += 1;
+);
+
+@slider
+// Update parameters when sliders change
+my_voice = slider1;               // voice_number
+total_voices_config = slider2;    // total_voices
+my_transposition = slider4;       // transposition
+my_chord_tone = slider8;          // chord_tone
+my_chord_tone_anchor = slider9;   // chord_tone_anchor_note
+
+// Initialize buffer when instrument slot number is set/changed
+instrument_slot_number = slider18;
+instrument_slot_number != previous_instrument_slot_number ? (
+    initializeRetroBuffer();
+    previous_instrument_slot_number = instrument_slot_number;
+);
+
+// Update project time offset for retroactive timing
+project_time_offset = slider19;
+
+// Read transform data from GMEM when instrument slot number changes
+readTransformsFromGMEM();
+
+// CC PREVIEW: Detect which specific CC transforms changed (granular change detection)
+// Instead of detecting "any transform changed", we detect exactly which CCs changed
+// This allows us to only resend the specific CCs that had their transforms modified
+detectChangedCCTransforms();
+
+// Calculate delay samples when srate is available (moved from @init due to srate bug)
+srate > 0 ? (
+  analysis_delay_samples = srate * (normal_analysis_time_ms / 1000);
+  extended_analysis_delay_samples = srate * (extended_analysis_time_ms / 1000);
+);
+
+@block
+
+// Recalculate delay samples if not done yet (srate bug workaround)
+srate > 0 && analysis_delay_samples <= 0 ? (
+  analysis_delay_samples = srate * (normal_analysis_time_ms / 1000);
+  extended_analysis_delay_samples = srate * (extended_analysis_time_ms / 1000);
+);
+
+// Process MIDI input and set analysis timer if events received
+processMidiInput() ? (
+  setupAnalysisTimer();
+);
+
+// Handle analysis timer - process pending changes when timer expires
+analysis_timer >= 0 ? (
+  analysis_timer -= samplesblock;
+  analysis_timer <= 0 ? (
+    // Process voice assignments and redistribute as needed
+    processVoiceAssignments();
+    
+    // ENHANCED CHORD DETECTION - Analyze current chord after voice redistribution
+    analyzeCurrentChord();
+    
+    // CHORD TONE PROCESSING - Handle chord tone assignment if enabled
+    processChordToneAssignment();
+
+    // All JSFX report their current voiced note (UPDATED: slider10 with correct bitmask)
+    my_chord_tone >= 0 ? (
+    // For chord tone lanes, report the current chord tone note
+        slider10 = current_chord_tone_note >= 0 ? 
+            transposeNote(current_chord_tone_note, my_transposition) : -1;
+    ) : (
+        // For regular voice lanes, report the voice assignment  
+        slider10 = voice_assignments[my_voice] >= 0 ? 
+            transposeNote(voice_assignments[my_voice], my_transposition) : -1;
+    );
+    sliderchange(2^9);  // 2^9 = slider10 bitmask
+    
+    // Only master reporter provides global data (UPDATED: correct bitmasks)
+    slider11 ? (  // is_master_reporter (now slider11 instead of variable)
+        // Report chord detection
+        slider12 = detected_chord_root;
+        slider13 = detected_chord_quality;
+        sliderchange(2^11 + 2^12);  // slider12 + slider13 bitmasks
+        
+        // Build bitmask of unassigned held notes
+        unassigned_notes_low = 0;
+        unassigned_notes_high = 0;
+        unassigned_notes_high2 = 0;
+        unassigned_notes_high3 = 0;
+        
+        i = 0;
+        loop(128,
+            note_held[i] && note_voice[i] < 0 ? ( // Held but not assigned to voice
+                i < 32 ? unassigned_notes_low |= (1 << i) :
+                i < 64 ? unassigned_notes_high |= (1 << (i-32)) :
+                i < 96 ? unassigned_notes_high2 |= (1 << (i-64)) :
+                unassigned_notes_high3 |= (1 << (i-96));
+            );
+            i += 1;
+        );
+
+        slider14 = unassigned_notes_low;
+        slider15 = unassigned_notes_high;
+        slider16 = unassigned_notes_high2;
+        slider17 = unassigned_notes_high3;
+        sliderchange(2^13 + 2^14 + 2^15 + 2^16);  // All unassigned note bitmasks
+    );
+    
+    // Clear pending changes
+    pending_changes_count = 0;
+  );
+);
+
+// =============================================================================
+// CC PREVIEW RESEND - Provides immediate audio feedback when transform knobs are adjusted
+// =============================================================================
+// When user adjusts CC transform knobs in the UI (scale/fixed/ignore), this automatically
+// resends stored CC values with the new transforms applied, so users can immediately hear
+// the effect without having to move their MIDI controller again.
+//
+// TIMING: Runs at very end of @block after all normal MIDI processing to prevent race conditions.
+// SAFETY: Only resends CCs that were previously received, respects ignore transforms.
+// OPTIMIZATION: Only processes CCs that actually had their transforms changed (granular detection).
+
+changed_cc_count[0] > 0 ? ( 
+  
+  // Only process CCs that actually changed their transform settings
+  change_index = 0;
+  loop(changed_cc_count[0],
+    cc_num = changed_cc_list[change_index];
+    stored_value = last_cc_values[cc_num - 1];     // Get stored ORIGINAL value
+    stored_channel = last_cc_channels[cc_num - 1]; // Get stored ORIGINAL channel
+    
+    // Only process CCs that have been received before (both value and channel must be valid)
+    stored_value >= 0 && stored_channel >= 0 ? (
+      
+      // Skip ignored CCs (user doesn't want to hear them)
+      !shouldIgnoreCC(cc_num) ? (
+        // Apply current transforms to original value and resend on ORIGINAL channel
+        preview_value = applyCCTransforms(cc_num, stored_value);
+        sendMidiToTrackAndRetroBuffer(0, stored_channel, cc_num, preview_value);  // Use stored channel, not hardcoded 0xB0!
+        did_this_run_b = 1;
+      );
+    );
+    change_index += 1;
+  );
+  
+  // CRITICAL: Clear the changed CC list to prevent infinite resending
+  changed_cc_count[0] = 0;
+);
+
+@gfx debug_window_width debug_window_height
+// Render debug display
+renderDebugDisplay();

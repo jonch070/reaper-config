@@ -1,12 +1,15 @@
 desc:MIDI Discrete Output Router v2
-//author: JK Scripts
-//tags: MIDI routing randomizer discrete output polyphony chord
-//
-// Buffers incoming notes for Chord Window ms, then:
-//   picks N channels (Fixed or Random between Min/Max Channels)
-//   picks P notes per channel (Fixed or Random between Min/Max Poly)
-// Routes each selected note to its assigned channel.
-// Note-offs are tracked back to all assigned channels.
+author: JK Scripts
+tags: MIDI routing randomizer discrete output polyphony chord
+about:
+  Buffers notes arriving within a Chord Window, then routes the chord across
+  multiple MIDI channels at once. Controls both how many channels receive the
+  chord (Min/Max Channels) and how many notes each channel gets (Min/Max Poly).
+  Both dimensions can be fixed or randomized independently.
+  Channel selection uses a 3-pass priority: free channels not in recent history
+  first, then free channels in history, then busy channels as a last resort.
+  A Skip channel (e.g. ch 4 for LFE) is always excluded.
+  Note-offs are tracked back to all channels a note was sent to.
 
 slider1:num_ch=16<2,16,1>Channels
 slider2:skip_ch=4<0,16,1>Skip (0=none, 4=LFE)

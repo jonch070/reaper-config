@@ -1,0 +1,334 @@
+desc:HosiFX Noise Gate
+version: 1.0
+author: HosiFX
+about:
+  # HosiFX Noise Gate
+  A responsive noise gate with 20 presets for drums, guitars, and vocals.
+changelog:
+  + Initial modern release with expanded presets and new UI.
+// Copyright 2024 HosiFX. All rights reserved.
+
+// --- Sliders ---
+// "Threshold" knob
+slider1:50<0,100,0.1>-Threshold (%)
+// Preset selector
+slider2:0<0,19,1{Amp Noise,El Guitar DI,Funky Bass,Gated Drums,Speech,Vocal Booth,Tight Kick,Snare Gate,Tom Gate,Cymbal Bleed,Room Mic Crush,Aggressive Gate,Guitar Solos,Chug Bass,Tight Snare,Kick Decay,Click Track Gate,Ambient Decay,Noise Floor Kill,Fast Choke}>-Preset
+
+// --- I/O Pins ---
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+// --- Options ---
+options:gfx_hz=60
+options:no_meter
+
+@init
+// --- General Init ---
+gfx_clear = -1;
+tau = 2 * $pi;
+dragging = 0;
+caller = 1;
+// Force reset to 50% to clear any cached/lingering values from previous session
+slider1 = 50;
+
+// --- Gate Init ---
+env_db = -120;
+gate_gain = 1;
+
+// --- Preset Names (Memory Init) ---
+preset_names = 0;
+preset_names[0] = "Amp Noise";
+preset_names[1] = "El Guitar DI";
+preset_names[2] = "Funky Bass";
+preset_names[3] = "Gated Drums";
+preset_names[4] = "Speech";
+preset_names[5] = "Vocal Booth";
+preset_names[6] = "Tight Kick";
+preset_names[7] = "Snare Gate";
+preset_names[8] = "Tom Gate";
+preset_names[9] = "Cymbal Bleed";
+preset_names[10] = "Room Mic Crush";
+preset_names[11] = "Aggressive Gate";
+preset_names[12] = "Guitar Solos";
+preset_names[13] = "Chug Bass";
+preset_names[14] = "Tight Snare";
+preset_names[15] = "Kick Decay";
+preset_names[16] = "Click Track Gate";
+preset_names[17] = "Ambient Decay";
+preset_names[18] = "Noise Floor Kill";
+preset_names[19] = "Fast Choke";
+num_presets = 20;
+
+// --- Utils ---
+function DB_TO_LINEAR(db) ( 10^(db/20); );
+function LINEAR_TO_DB(lin) ( lin > 0 ? 20*log10(lin) : -120; );
+
+// --- Parameters ---
+function update_parameters() (
+  amount = slider1 / 100;
+  preset = slider2|0;
+
+  base_thresh_db = -40;
+  attack_ms = 5;
+  hold_ms = 10;
+  release_ms = 100;
+  range_db = -96;
+
+  preset == 0 ? ( base_thresh_db = -50; attack_ms = 2; release_ms = 80; )
+  : preset == 1 ? ( base_thresh_db = -45; attack_ms = 1; release_ms = 150; )
+  : preset == 2 ? ( base_thresh_db = -35; attack_ms = 0.5; release_ms = 90; )
+  : preset == 3 ? ( base_thresh_db = -25; attack_ms = 0.1; hold_ms = 50; release_ms = 200; )
+  : preset == 4 ? ( base_thresh_db = -40; attack_ms = 5; release_ms = 250; )
+  : preset == 5 ? ( base_thresh_db = -55; attack_ms = 3; release_ms = 180; )
+  : preset == 6 ? ( base_thresh_db = -30; attack_ms = 0.5; hold_ms = 20; release_ms = 120; )
+  : preset == 7 ? ( base_thresh_db = -32; attack_ms = 0.2; hold_ms = 80; release_ms = 220; )
+  : preset == 8 ? ( base_thresh_db = -28; attack_ms = 1; hold_ms = 150; release_ms = 300; )
+  : preset == 9 ? ( base_thresh_db = -48; attack_ms = 10; release_ms = 50; )
+  : preset == 10 ? ( base_thresh_db = -20; attack_ms = 0.1; hold_ms = 10; release_ms = 50; )
+  : preset == 11 ? ( base_thresh_db = -22; attack_ms = 0.05; hold_ms = 5; release_ms = 80; )
+  : preset == 12 ? ( base_thresh_db = -45; attack_ms = 5; release_ms = 300; ) // Gtr Solos
+  : preset == 13 ? ( base_thresh_db = -35; attack_ms = 2; release_ms = 100; ) // Chug Bass
+  : preset == 14 ? ( base_thresh_db = -26; attack_ms = 0.5; hold_ms = 50; release_ms = 150; ) // Tight Snare
+  : preset == 15 ? ( base_thresh_db = -28; attack_ms = 1; hold_ms = 20; release_ms = 100; ) // Kick Decay
+  : preset == 16 ? ( base_thresh_db = -50; attack_ms = 0.1; release_ms = 10; ) // Click Track
+  : preset == 17 ? ( base_thresh_db = -55; attack_ms = 10; release_ms = 500; ) // Ambient
+  : preset == 18 ? ( base_thresh_db = -60; attack_ms = 1; release_ms = 50; ) // Noise Floor
+  : preset == 19 ? ( base_thresh_db = -18; attack_ms = 0.1; hold_ms = 0; release_ms = 20; ); // Fast Choke
+
+  // Threshold scaled by Amount knob (-60dB to 0dB range logic from original)
+  current_thresh_db = -60 + (base_thresh_db + 60) * amount;
+
+  attack_coeff = exp(-1 / (attack_ms * srate * 0.001));
+  release_coeff = exp(-1 / (release_ms * srate * 0.001));
+  gate_range_linear = DB_TO_LINEAR(range_db);
+);
+
+@slider
+caller = 1;
+
+@block
+caller == 1 ? update_parameters();
+
+@sample
+caller == 1 ? ( update_parameters(); caller = 0; );
+
+peak_in = max(abs(spl0), abs(spl1));
+peak_in_db = LINEAR_TO_DB(peak_in);
+
+env_db = peak_in_db > env_db ?
+  peak_in_db + attack_coeff * (env_db - peak_in_db) :
+  peak_in_db + release_coeff * (env_db - peak_in_db);
+
+gate_open = env_db >= current_thresh_db;
+target_gain = gate_open ? 1 : gate_range_linear;
+gate_gain += (target_gain - gate_gain) * (gate_open ? 0.5 : 0.1);
+
+spl0 *= gate_gain;
+spl1 *= gate_gain;
+
+@gfx 500 420
+// --- Modern UI (Noise Gate / Red) ---
+
+// Colors
+c_bg_r=0.15; c_bg_g=0.16; c_bg_b=0.18;
+// Crimson Red for Gate
+c_accent_r=0.9; c_accent_g=0.2; c_accent_b=0.3; 
+c_lcd_bg_r=0.1; c_lcd_bg_g=0.05; c_lcd_bg_b=0.05; // Dark Red bg
+
+w=gfx_w; h=gfx_h;
+size = min(w,h);
+cx = w/2; 
+cy = h * 0.55;
+
+// --- Background ---
+gfx_set(c_bg_r, c_bg_g, c_bg_b, 1);
+gfx_rect(0,0,w,h);
+
+// --- Header ---
+gfx_setfont(1, "Impact", size*0.06);
+gfx_set(1, 1, 1, 0.5); 
+gfx_measurestr("HOSIFX Noise Gate", lw, lh);
+gfx_x = cx - lw/2;
+gfx_y = h * 0.04;
+gfx_drawstr("HOSIFX Noise Gate");
+
+// --- LCD Screen ---
+lcd_w = w * 0.65;
+lcd_h = size * 0.12;
+lcd_x = (w - lcd_w) / 2;
+lcd_y = h * 0.15;
+
+// Glow
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 0.15);
+gfx_roundrect(lcd_x-3, lcd_y-3, lcd_w+6, lcd_h+6, 5);
+// BG
+gfx_set(c_lcd_bg_r, c_lcd_bg_g, c_lcd_bg_b, 1);
+gfx_roundrect(lcd_x, lcd_y, lcd_w, lcd_h, 4);
+
+// Text
+idx = slider2|0;
+idx < 0 ? idx=0; idx > 11 ? idx=11; 
+preset_ptr = preset_names[idx]; 
+
+gfx_setfont(2, "Verdana", size*0.05);
+gfx_measurestr(preset_ptr, pw, ph);
+// Match text color to accent
+gfx_set(c_accent_r+0.1, c_accent_g+0.3, c_accent_b+0.3, 1); 
+gfx_x = cx - pw/2;
+gfx_y = lcd_y + (lcd_h - ph)/2;
+gfx_drawstr(preset_ptr);
+
+// Arrows
+gfx_set(1,1,1, 0.3);
+ts = size*0.025;
+gfx_triangle(lcd_x-ts*1.5, lcd_y+lcd_h/2, lcd_x-ts*0.5, lcd_y+lcd_h/2-ts, lcd_x-ts*0.5, lcd_y+lcd_h/2+ts);
+gfx_triangle(lcd_x+lcd_w+ts*1.5, lcd_y+lcd_h/2, lcd_x+lcd_w+ts*0.5, lcd_y+lcd_h/2-ts, lcd_x+lcd_w+ts*0.5, lcd_y+lcd_h/2+ts);
+
+// Label
+gfx_setfont(3, "Arial", size*0.025);
+gfx_set(0.6,0.6,0.6,1);
+gfx_measurestr("PRESET", tw, th);
+gfx_x = cx - tw/2; gfx_y = lcd_y - th - 3;
+gfx_drawstr("PRESET");
+
+// --- Unipolar Arc Drawing ---
+knob_r = size * 0.22;
+arc_r = knob_r + size*0.04;
+arc_w = size * 0.02;
+
+ang_min = 2.3562; // 7 oclock
+ang_max = 7.0686; // 5 oclock
+total_ang = ang_max - ang_min;
+
+norm_val = slider1 / 100;
+ang_curr = ang_min + norm_val * total_ang;
+
+// Thick Arc Helper
+function draw_thick_arc(c_x, c_y, radius, thick, a_start, a_end, r, g, b, a) (
+  gfx_set(r,g,b,a);
+  step_sz = 0.04; 
+  loop_r_start = radius - thick/2;
+  num_rings = 5; 
+  ring_stp = thick / num_rings;
+  i_ring = 0;
+  loop(num_rings,
+    cur_rad = loop_r_start + i_ring * ring_stp;
+    cur_a = a_start;
+    last_x = c_x + cos(cur_a) * cur_rad;
+    last_y = c_y + sin(cur_a) * cur_rad;
+    while(
+      cur_a += step_sz;
+      cur_a > a_end ? cur_a = a_end;
+      cur_x = c_x + cos(cur_a) * cur_rad;
+      cur_y = c_y + sin(cur_a) * cur_rad;
+      gfx_line(last_x, last_y, cur_x, cur_y);
+      last_x = cur_x; last_y = cur_y;
+      cur_a < a_end;
+    );
+    i_ring += 1;
+  );
+);
+
+// 1. Draw Background
+draw_thick_arc(cx, cy, arc_r, arc_w, ang_min, ang_max, 0.3, 0.1, 0.1, 0.4);
+
+// 2. Draw Active
+abs(ang_curr - ang_min) > 0.01 ? (
+  draw_thick_arc(cx, cy, arc_r, arc_w, ang_min, ang_curr, c_accent_r, c_accent_g, c_accent_b, 1.0);
+);
+
+// --- Knob Body ---
+gfx_set(0.12, 0.12, 0.12, 1);
+gfx_circle(cx, cy, knob_r, 1);
+// Shading
+gfx_set(0,0,0, 0.4);
+gfx_arc(cx, cy, knob_r, 0, $pi, 1);
+
+// Indicator Dot
+dot_r = knob_r * 0.75;
+dx = cx + cos(ang_curr) * dot_r;
+dy = cy + sin(ang_curr) * dot_r;
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 0.8);
+gfx_circle(dx, dy, size*0.03, 1);
+gfx_set(1,1,1,0.9);
+gfx_circle(dx, dy, size*0.012, 1);
+
+// --- Footer Values ---
+gfx_setfont(4, "Arial", size*0.08);
+sprintf(#sval, "%.1f %%", slider1); // Show Percentage to match other plugins
+gfx_measurestr(#sval, vw, vh);
+gfx_set(c_accent_r, c_accent_g, c_accent_b, 1);
+gfx_x = cx - vw/2;
+gfx_y = cy + knob_r + size*0.1;
+gfx_drawstr(#sval);
+
+// --- Interactions ---
+mouse_down = mouse_cap & 1;
+mouse_click = mouse_down && !(last_mouse_cap & 1);
+mouse_up = (last_mouse_cap & 1) && !mouse_down;
+
+// Preset Control
+// 1. Arrows (Cycle)
+mouse_y < h * 0.3 && mouse_click ? (
+  mouse_x < cx - lcd_w*0.3 ? ( // Left arrow area
+    slider2 -= 1; slider2 < 0 ? slider2 = 19;
+    caller = 1;
+  ) : mouse_x > cx + lcd_w*0.3 ? ( // Right arrow area
+    slider2 += 1; slider2 > 19 ? slider2 = 0;
+    caller = 1;
+  ) : (
+    // 2. Center Click (Popup Menu)
+    menu_str = #; 
+    strcpy(menu_str, ""); 
+    i=0;
+    loop(num_presets,
+      i == slider2 ? strcat(menu_str, "!") : strcat(menu_str, ""); 
+      strcat(menu_str, preset_names[i]);
+      i < num_presets-1 ? strcat(menu_str, "|");
+      i+=1;
+    );
+    
+    gfx_x = mouse_x; gfx_y = mouse_y;
+    selected = gfx_showmenu(menu_str);
+    selected > 0 ? (
+      slider2 = selected - 1;
+      caller = 1;
+    );
+  );
+);
+
+// Knob
+dist = sqrt((mouse_x-cx)^2 + (mouse_y-cy)^2);
+hover_knob = mouse_y > h*0.3 && dist < knob_r * 1.5;
+
+mouse_click && hover_knob ? (
+  // Double Click -> Reset to 50
+  time_precise() - last_click_time < 0.25 ? (
+    slider1 = 50;
+    caller = 1;
+    dragging = 0;
+  ) : (
+    dragging = 1;
+    drag_y = mouse_y;
+    drag_val = slider1;
+  );
+  last_click_time = time_precise();
+);
+
+dragging ? (
+  slider1 = drag_val + (drag_y - mouse_y) * 0.5;
+  slider1 = min(max(slider1, 0), 100);
+  caller = 1;
+);
+mouse_up ? dragging = 0;
+
+// Wheel
+mouse_wheel != 0 ? (
+  slider1 += (mouse_wheel/120)*5;
+  slider1 = min(max(slider1, 0), 100);
+  caller = 1;
+  mouse_wheel = 0;
+);
+last_mouse_cap = mouse_cap;

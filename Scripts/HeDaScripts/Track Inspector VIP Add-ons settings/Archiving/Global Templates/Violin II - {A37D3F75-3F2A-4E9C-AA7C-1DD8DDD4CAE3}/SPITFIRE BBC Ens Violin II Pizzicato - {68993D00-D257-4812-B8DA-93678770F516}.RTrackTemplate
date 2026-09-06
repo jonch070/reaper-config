@@ -1,0 +1,42 @@
+<TRACK
+  NAME "SPITFIRE BBC Ens Violin I Spiccato *** archived ***"
+  LOCK 1
+  PEAKCOL 21462169
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -1
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 4128 1 7 0 0 0 0
+  VU 2
+  GROUP_FLAGS 0 0 0 0 0 0 0 0 2 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {C91FBE7B-9A54-48A0-8EBD-5159EBA8AEE1}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "SPITFIRE BBC Ens Violin I Spiccato - {C91FBE7B-9A54-48A0-8EBD-5159EBA8AEE1}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {AF03A7ED-7B58-4D99-9406-E0A7BCF17796}
+    Archived_parent_name "Violin I"
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -32 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    WNDRECT 782 334 1154 1062
+    SHOW 0
+    LASTSEL 0
+    DOCKED 0
+  >
+>

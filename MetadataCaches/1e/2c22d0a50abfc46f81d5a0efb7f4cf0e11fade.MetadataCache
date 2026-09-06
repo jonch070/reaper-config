@@ -1,4 +1,7 @@
 C10018 "/Users/jonathankawchuk/Downloads/Shakuhachi/Samples/High velocity"
+F "shakuhachi high velocity 01 d.wav" 744920 0 1636170510 0
+D y 2021-10-29 s 44100 n 2 r 1:00:00.000
+D l 0:04.208 i 16
 F "shakuhachi high velocity 02 d.wav" 622122 0 1636170510 0
 D y 2021-10-29 s 44100 n 2 r 1:00:06.236
 D l 0:03.514 i 16
@@ -17,6 +20,9 @@ D l 0:02.909 i 16
 F "shakuhachi high velocity 07 d.wav" 500142 0 1636170510 0
 D y 2021-10-29 s 44100 n 2 r 1:00:43.403
 D l 0:02.823 i 16
+F "shakuhachi high velocity 08 f.wav" 509168 0 1636170512 0
+D y 2021-10-29 s 44100 n 2 r 1:01:00.023
+D l 0:02.874 i 16
 F "shakuhachi high velocity 09 f.wav" 450340 0 1636170512 0
 D y 2021-10-29 s 44100 n 2 r 1:01:03.455
 D l 0:02.542 i 16
@@ -47,6 +53,15 @@ D l 0:02.979 i 16
 F "shakuhachi high velocity 18 d.wav" 369976 0 1636170512 0
 D y 2021-10-29 s 44100 n 2 r 1:02:29.479
 D l 0:02.087 i 16
+F "shakuhachi high velocity 19 d.wav" 330020 0 1636170512 0
+D y 2021-10-29 s 44100 n 2 r 1:02:31.842
+D l 0:01.860 i 16
+F "shakuhachi high velocity 20 d.wav" 318422 0 1636170512 0
+D y 2021-10-29 s 44100 n 2 r 1:02:34.428
+D l 0:01.795 i 16
+F "shakuhachi high velocity 21 g.wav" 516620 0 1636170512 0
+D y 2021-10-29 s 44100 n 2 r 1:03:01.940
+D l 0:02.916 i 16
 F "shakuhachi high velocity 22 a.wav" 466820 0 1636170512 0
 D y 2021-10-29 s 44100 n 2 r 1:03:15.774
 D l 0:02.635 i 16

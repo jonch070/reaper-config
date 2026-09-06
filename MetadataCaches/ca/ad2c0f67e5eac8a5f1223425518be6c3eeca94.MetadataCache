@@ -1,0 +1,25 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Album 3/AMB03 Testing/dax geophone recording test /media"
+F "dax geophone recording test _02_geophone_2026-05-27_18-52_001.wav" 12746364 0 1779929607 0
+D y 2026-05-27 s 44100 n 1 r 1:00:07.600
+D l 1:12.254 i 32
+F "dax geophone recording test _02_geophone_2026-05-27_19-01_002.wav" 18378364 0 1779930190 0
+D y 2026-05-27 s 44100 n 1 r 1:01:27.600
+D l 1:44.181 i 32
+F "dax geophone recording test _03_internal piezo_2026-05-27_18-52_001.wav" 12746364 0 1779929607 0
+D y 2026-05-27 s 44100 n 1 r 1:00:07.600
+D l 1:12.254 i 32
+F "dax geophone recording test _03_internal piezo_2026-05-27_19-01_002.wav" 18378364 0 1779930190 0
+D y 2026-05-27 s 44100 n 1 r 1:01:27.600
+D l 1:44.181 i 32
+F "dax geophone recording test transducer test _02_geophone_2026-05-27_19-25_003.wav" 6381180 0 1779931556 0
+D y 2026-05-27 s 44100 n 1 r 1:03:17.600
+D l 0:36.170 i 32
+F "dax geophone recording test transducer test _02_geophone_2026-05-27_19-55_004.wav" 34430588 0 1779933536 0
+D y 2026-05-27 s 44100 n 1 r 1:04:08.600
+D l 3:15.180 i 32
+F "dax geophone recording test transducer test _03_internal piezo_2026-05-27_19-25_003.wav" 6381180 0 1779931556 0
+D y 2026-05-27 s 44100 n 1 r 1:03:17.600
+D l 0:36.170 i 32
+F "dax geophone recording test transducer test _03_internal piezo_2026-05-27_19-55_004.wav" 34430588 0 1779933536 0
+D y 2026-05-27 s 44100 n 1 r 1:04:08.600
+D l 3:15.180 i 32

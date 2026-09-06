@@ -98,8 +98,6 @@ local function main()
     local videoItem, videoPath, _, selectionMethod = NW.VideoSelection.getVideoItem()
 
     if not videoItem or not videoPath then
-        local errorMsg = selectionMethod or "No video found in project"
-        reaper.ShowMessageBox(errorMsg, "No Video Found", 0)
         return
     end
 
@@ -138,11 +136,6 @@ local function main()
     -- Check if already matching
     local currentFps = getCurrentProjectFps()
     if math.abs(currentFps - frameRateEntry.fps) < 0.01 then
-        reaper.ShowMessageBox(
-            string.format("Project frame rate already matches video (%s)", frameRateEntry.label),
-            "Already Matched",
-            0
-        )
         return
     end
 

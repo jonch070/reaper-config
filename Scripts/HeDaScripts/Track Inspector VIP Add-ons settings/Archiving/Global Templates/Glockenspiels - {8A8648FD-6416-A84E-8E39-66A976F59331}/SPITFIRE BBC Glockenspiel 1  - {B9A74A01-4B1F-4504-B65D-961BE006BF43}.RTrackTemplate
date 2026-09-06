@@ -1,0 +1,40 @@
+<TRACK
+  NAME "UVI DRUM DES Bass Drum *** archived ***"
+  LOCK 1
+  PEAKCOL 26645854
+  BEAT -1
+  AUTOMODE 0
+  VOLPAN 1 0 -1 -1 1
+  MUTESOLO 1 0 0
+  IPHASE 0
+  PLAYOFFS 0 1
+  ISBUS 2 -3
+  BUSCOMP 0 0 0 0 0
+  SHOWINMIX 0 0.6667 0.5 0 0.5 0 0 0 0
+  LANEREC -1 -1 -1 0
+  REC 0 5088 1 7 0 0 0 0
+  VU 2
+  TRACKHEIGHT 0 0 0 0 0 0 0
+  INQ 0 0 0 0.5 100 0 0 100
+  NCHAN 2
+  FX 1
+  TRACKID {AEC7E65A-D4FC-4AC7-9941-A4BB61F03C1E}
+  PERF 0
+  <EXT
+    Archived 1
+    Archived_File "UVI DRUM DES Bass Drum - {AEC7E65A-D4FC-4AC7-9941-A4BB61F03C1E}.RfxChain"
+    Archived_global 1
+    Archived_global_folder "Global Templates"
+    Archived_parent {03E2D9BE-5B3E-C34C-BCF9-EBA8AE158B12}
+    Archived_parent_name "Bass Drums"
+    TrackTags Archived
+  >
+  UNDO_HAS_TRACKENV
+  MIDIOUT -1 -1
+  MAINSEND 1 0
+  <FXCHAIN
+    SHOW 0
+    LASTSEL 1
+    DOCKED 0
+  >
+>

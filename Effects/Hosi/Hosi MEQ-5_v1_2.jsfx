@@ -1,0 +1,360 @@
+desc: Hosi MEQ-5
+version: 1.2.0
+author: Hosi
+changelog:
+  - Added Real-time Frequency Response Graph (100Hz - 10kHz).
+  - Added Embedded UI Support (Graph only view for TCP/MCP).
+  - Cleaned up Layout (Aligned Text + Side-by-Side Graph).
+  - Added High Quality Mode (2x Oversampling) to fix aliasing and EQ cramping.
+  - Implemented Coefficient Smoothing to prevent zipper noise.
+  - Tuned Anti-Aliasing filter close to 24kHz for flat response.
+  - Optimized Saturator stability.
+about:
+  # Hosi MEQ-5
+  Pultec Style Mid-Range Equalizer
+  
+  A faithful recreation of the classic mid-range equalizer, featuring passive circuit behaviors and non-linear tube saturation.
+  
+  ### Features:
+  - **3 Bands**: Low-Mid (Peak), Mid (Dip), High-Mid (Peak).
+  - **Tube Drive**: Adds harmonic saturation.
+  - **Live Frequency Graph**: Visualizes the EQ curve in real-time.
+  - **Embedded UI**: Shows a compact graph view when embedded in Track/Mixer panels.
+  - **High Quality Mode**: Runs the entire processing chain (Saturation + EQ) at 2x Oversampling.
+    - Eliminates digital aliasing (cramping) at high frequencies.
+    - Ensures perfectly symmetrical bell curves even at 7kHz.
+  - **Smooth Automation**: Coefficient interpolation prevents zipper noise.
+  
+  ### Usage:
+  - Use Low-Mid to add body (200-1000Hz).
+  - Use Dip to cut "mud" or boxiness (200-7000Hz).
+  - Use High-Mid to add presence or attack (1.5-5kHz).
+  - Enable "High Quality" for critical tracks (Vocals, Master Bus).
+// --- Slider Definitions ---
+
+// Low-Mid Peak Section
+slider1:2<0,4,1{200 Hz,300 Hz,500 Hz,700 Hz,1000 Hz}>Low-Mid Freq
+slider2:0<0,10,0.1>Low-Mid Boost (dB)
+
+// Dip Section (Mid Cut)
+slider3:5<0,10,1{200 Hz,300 Hz,500 Hz,700 Hz,1000 Hz,1.5 kHz,2 kHz,3 kHz,4 kHz,5 kHz,7 kHz}>Dip Freq
+slider4:0<0,10,0.1>Dip Atten (dB)
+
+// High-Mid Peak Section
+slider5:2<0,4,1{1.5 kHz,2 kHz,3 kHz,4 kHz,5 kHz}>High-Mid Freq
+slider6:0<0,10,0.1>High-Mid Boost (dB)
+
+// Output Section
+slider7:0<0,100,1>Tube Drive (%)
+slider8:0<-18,18,0.1>Output Gain (dB)
+slider9:1<0,1,1{Off,On}>High Quality (2x)
+
+in_pin:left input
+in_pin:right input
+out_pin:left output
+out_pin:right output
+
+// Protected by NK RECORDING STUDIO
+@init
+ext_noinit = 1;
+c_pi = 3.14159265359;
+base_srate_inv = 1 / srate;
+mem_freqs_lm = 0;
+mem_freqs_dip = 10;
+mem_freqs_hm = 30;
+mem_freqs_lm[0] = 200; mem_freqs_lm[1] = 300; mem_freqs_lm[2] = 500;
+mem_freqs_lm[3] = 700; mem_freqs_lm[4] = 1000;
+mem_freqs_dip[0] = 200;  mem_freqs_dip[1] = 300;  mem_freqs_dip[2] = 500;
+mem_freqs_dip[3] = 700;  mem_freqs_dip[4] = 1000; mem_freqs_dip[5] = 1500;
+mem_freqs_dip[6] = 2000; mem_freqs_dip[7] = 3000; mem_freqs_dip[8] = 4000;
+mem_freqs_dip[9] = 5000; mem_freqs_dip[10] = 7000;
+mem_freqs_hm[0] = 1500; mem_freqs_hm[1] = 2000; mem_freqs_hm[2] = 3000;
+mem_freqs_hm[3] = 4000; mem_freqs_hm[4] = 5000;
+current_coeffs = 100;
+target_coeffs = 200;
+delta_coeffs = 300;
+function _2FGNaI(cutoff, Q, a_coeffs_out)
+local(w0, alpha, cos_w0, b0, b1, b2, a0, a1, a2)
+(
+w0 = 2 * c_pi * cutoff;
+cos_w0 = cos(w0);
+alpha = sin(w0) / (2 * Q);
+b0 = (1 - cos_w0) / 2;
+b1 = 1 - cos_w0;
+b2 = (1 - cos_w0) / 2;
+a0 = 1 + alpha;
+a1 = -2 * cos_w0;
+a2 = 1 - alpha;
+a_coeffs_out[0] = b0/a0;
+a_coeffs_out[1] = b1/a0;
+a_coeffs_out[2] = b2/a0;
+a_coeffs_out[3] = a1/a0;
+a_coeffs_out[4] = a2/a0;
+);
+function _mSVupB(xn, coeffs, state_idx)
+local(yn)
+(
+yn = coeffs[0]*xn + coeffs[1]*mem[state_idx+0] + coeffs[2]*mem[state_idx+1]
+- coeffs[3]*mem[state_idx+2] - coeffs[4]*mem[state_idx+3];
+mem[state_idx+1] = mem[state_idx+0]; mem[state_idx+0] = xn;
+mem[state_idx+3] = mem[state_idx+2]; mem[state_idx+2] = yn;
+yn;
+);
+os_lp_coeffs = 400;
+mem_os_state = 410;
+function _ym8cZn(in_val)
+local(biased)
+(
+biased = in_val + 0.05;
+biased / (1 + abs(biased) * 0.15) - 0.05;
+);
+function _Mm8BNh(x0)
+local(y0_lm, y0_dip, y0_hm)
+(
+y0_lm = (current_coeffs[0]*x0) + (current_coeffs[1]*x1_lm_L) + (current_coeffs[2]*x2_lm_L)
+- (current_coeffs[3]*y1_lm_L) - (current_coeffs[4]*y2_lm_L);
+x2_lm_L = x1_lm_L; x1_lm_L = x0;
+y2_lm_L = y1_lm_L; y1_lm_L = y0_lm;
+y0_dip = (current_coeffs[5]*y0_lm) + (current_coeffs[6]*x1_dip_L) + (current_coeffs[7]*x2_dip_L)
+- (current_coeffs[8]*y1_dip_L) - (current_coeffs[9]*y2_dip_L);
+x2_dip_L = x1_dip_L; x1_dip_L = y0_lm;
+y2_dip_L = y1_dip_L; y1_dip_L = y0_dip;
+y0_hm = (current_coeffs[10]*y0_dip) + (current_coeffs[11]*x1_hm_L) + (current_coeffs[12]*x2_hm_L)
+- (current_coeffs[13]*y1_hm_L) - (current_coeffs[14]*y2_hm_L);
+x2_hm_L = x1_hm_L; x1_hm_L = y0_dip;
+y2_hm_L = y1_hm_L; y1_hm_L = y0_hm;
+y0_hm;
+);
+function _9GPJrE(x0)
+local(y0_lm, y0_dip, y0_hm)
+(
+y0_lm = (current_coeffs[0]*x0) + (current_coeffs[1]*x1_lm_R) + (current_coeffs[2]*x2_lm_R)
+- (current_coeffs[3]*y1_lm_R) - (current_coeffs[4]*y2_lm_R);
+x2_lm_R = x1_lm_R; x1_lm_R = x0;
+y2_lm_R = y1_lm_R; y1_lm_R = y0_lm;
+y0_dip = (current_coeffs[5]*y0_lm) + (current_coeffs[6]*x1_dip_R) + (current_coeffs[7]*x2_dip_R)
+- (current_coeffs[8]*y1_dip_R) - (current_coeffs[9]*y2_dip_R);
+x2_dip_R = x1_dip_R; x1_dip_R = y0_lm;
+y2_dip_R = y1_dip_R; y1_dip_R = y0_dip;
+y0_hm = (current_coeffs[10]*y0_dip) + (current_coeffs[11]*x1_hm_R) + (current_coeffs[12]*x2_hm_R)
+- (current_coeffs[13]*y1_hm_R) - (current_coeffs[14]*y2_hm_R);
+x2_hm_R = x1_hm_R; x1_hm_R = y0_dip;
+y2_hm_R = y1_hm_R; y1_hm_R = y0_hm;
+y0_hm;
+);
+function _vZ7pQw(freq, db_gain, q_base, instance_idx)
+local(A, w0, alpha, q_eff, b0, b1, b2, a0, a1, a2, offset)
+(
+A = 10^(db_gain / 40);
+w0 = 2 * c_pi * freq * proc_srate_inv;
+q_eff = q_base + (abs(db_gain) * 0.15);
+alpha = sin(w0) / (2 * q_eff);
+a0 = 1 + alpha / A;
+a1 = -2 * cos(w0);
+a2 = 1 - alpha / A;
+b0 = 1 + alpha * A;
+b1 = a1;
+b2 = 1 - alpha * A;
+offset = instance_idx * 5;
+target_coeffs[offset + 0] = b0 / a0;
+target_coeffs[offset + 1] = b1 / a0;
+target_coeffs[offset + 2] = b2 / a0;
+target_coeffs[offset + 3] = a1 / a0;
+target_coeffs[offset + 4] = a2 / a0;
+);
+@slider
+do_hq = slider9;
+(!do_hq) ? (
+proc_srate_inv = base_srate_inv;
+) : (
+proc_srate_inv = base_srate_inv * 0.5;
+);
+f_lm = mem_freqs_lm[slider1];
+f_dip = mem_freqs_dip[slider3];
+f_hm = mem_freqs_hm[slider5];
+_vZ7pQw(f_lm, slider2, 0.5, 0);
+_vZ7pQw(f_dip, -slider4, 0.7, 1);
+_vZ7pQw(f_hm, slider6, 0.5, 2);
+target_drive_gain = 10^((slider7 * 0.2) / 20);
+target_output_comp = 10^(slider8 / 20);
+slider9 != last_hq_state ? (
+memset(mem_os_state, 0, 40);
+last_hq_state = slider9;
+);
+os_cutoff_norm = 24000 / (srate * 2);
+(os_cutoff_norm > 0.45) ? os_cutoff_norm = 0.45;
+_2FGNaI(os_cutoff_norm, 0.707, os_lp_coeffs);
+@block
+samples_inv = 1 / samplesblock;
+d_drive = (target_drive_gain - current_drive_gain) * samples_inv;
+d_out = (target_output_comp - current_output_comp) * samples_inv;
+i = 0;
+loop(15,
+delta_coeffs[i] = (target_coeffs[i] - current_coeffs[i]) * samples_inv;
+i += 1;
+);
+@sample
+current_drive_gain += d_drive;
+current_output_comp += d_out;
+i = 0;
+loop(15,
+current_coeffs[i] += delta_coeffs[i];
+i += 1;
+);
+in_L = spl0 * current_drive_gain;
+in_R = spl1 * current_drive_gain;
+(!do_hq) ? (
+sat_L = _ym8cZn(in_L);
+sat_R = _ym8cZn(in_R);
+out_L = _Mm8BNh(sat_L);
+out_R = _9GPJrE(sat_R);
+) : (
+up_x1 = in_L * 2;
+up_y1 = _mSVupB(up_x1, os_lp_coeffs, 410);
+sat_y1 = _ym8cZn(up_y1);
+eq_y1 = _Mm8BNh(sat_y1);
+out_y1 = _mSVupB(eq_y1, os_lp_coeffs, 414);
+up_x2 = 0;
+up_y2 = _mSVupB(up_x2, os_lp_coeffs, 410);
+sat_y2 = _ym8cZn(up_y2);
+eq_y2 = _Mm8BNh(sat_y2);
+out_y2 = _mSVupB(eq_y2, os_lp_coeffs, 414);
+out_L = out_y1;
+up_x1_R = in_R * 2;
+up_y1_R = _mSVupB(up_x1_R, os_lp_coeffs, 418);
+sat_y1_R = _ym8cZn(up_y1_R);
+eq_y1_R = _9GPJrE(sat_y1_R);
+out_y1_R = _mSVupB(eq_y1_R, os_lp_coeffs, 422);
+up_x2_R = 0;
+up_y2_R = _mSVupB(up_x2_R, os_lp_coeffs, 418);
+sat_y2_R = _ym8cZn(up_y2_R);
+eq_y2_R = _9GPJrE(sat_y2_R);
+out_y2_R = _mSVupB(eq_y2_R, os_lp_coeffs, 422);
+out_R = out_y1_R;
+);
+spl0 = out_L * current_output_comp / current_drive_gain;
+spl1 = out_R * current_output_comp / current_drive_gain;
+@gfx 500 160
+gfx_clear = 0;
+is_embedded = gfx_ext_flags & 1;
+(!is_embedded) ? (
+text_x = 10;
+text_y = 15;
+text_line_h = 18;
+val_col_x = 85;
+graph_x = 177;
+graph_y = 10;
+graph_w = gfx_w - graph_x - 10;
+graph_h = 140;
+) : (
+graph_x = 0;
+graph_y = 0;
+graph_w = gfx_w;
+graph_h = gfx_h;
+);
+graph_bot = graph_y + graph_h;
+min_freq = 100;
+max_freq = 10000;
+log_min = log(min_freq);
+log_max = log(max_freq);
+log_range = log_max - log_min;
+db_range = 24;
+px_per_db = graph_h / db_range;
+function _TNCPVY(f) (
+(log(f) - log_min) / log_range * graph_w + graph_x;
+);
+gfx_set(0.1, 0.1, 0.1, 1);
+gfx_rect(graph_x, graph_y, graph_w, graph_h);
+gfx_set(0.3, 0.3, 0.3, 1);
+y_0db = graph_y + graph_h / 2;
+gfx_line(graph_x, y_0db, graph_x + graph_w, y_0db);
+function _mTm7BJ(f, str) (
+gx = _TNCPVY(f);
+(gx >= graph_x && gx <= graph_x + graph_w) ? (
+gfx_line(gx, graph_y, gx, graph_bot);
+(is_embedded && gfx_h < 60) ? 0 : (
+gfx_x = gx + 3; gfx_y = graph_bot - 12;
+gfx_setfont(1, "Arial", 10);
+gfx_set(0.5, 0.5, 0.5, 1);
+gfx_drawstr(str);
+);
+gfx_set(0.3, 0.3, 0.3, 1);
+);
+);
+_mTm7BJ(200, "200");
+_mTm7BJ(500, "500");
+_mTm7BJ(1000, "1k");
+_mTm7BJ(2000, "2k");
+_mTm7BJ(5000, "5k");
+gfx_set(0, 1, 1, 1);
+last_x = -1;
+last_y = -1;
+x_step = 1;
+gx_local = 0;
+loop((graph_w / x_step) + 1,
+frac = gx_local / graph_w;
+f = exp(log_min + frac * log_range);
+w = 2 * c_pi * f * proc_srate_inv;
+cw = cos(w); sw = sin(w);
+cw2 = cos(2*w); sw2 = sin(2*w);
+mag_sq_total = 1;
+gfx_i = 0;
+loop(3,
+off = gfx_i * 5;
+b0 = target_coeffs[off+0];
+b1 = target_coeffs[off+1];
+b2 = target_coeffs[off+2];
+a1 = target_coeffs[off+3];
+a2 = target_coeffs[off+4];
+re_top = b0 + b1*cw + b2*cw2;
+im_top = -b1*sw - b2*sw2;
+mag_top = re_top*re_top + im_top*im_top;
+re_bot = 1 + a1*cw + a2*cw2;
+im_bot = -a1*sw - a2*sw2;
+mag_bot = re_bot*re_bot + im_bot*im_bot;
+mag_sq_total *= (mag_top / mag_bot);
+gfx_i += 1;
+);
+db = 10 * log10(mag_sq_total);
+gy = y_0db - (db * px_per_db);
+gx_screen = graph_x + gx_local;
+(last_x >= 0) ? (
+gfx_line(last_x, last_y, gx_screen, gy);
+);
+last_x = gx_screen;
+last_y = gy;
+gx_local += x_step;
+);
+(!is_embedded) ? (
+gfx_set(0.9, 0.9, 0.9, 1);
+gfx_setfont(1, "Arial", 16, 'b');
+gfx_x = text_x; gfx_y = text_y;
+gfx_drawstr("Hosi MEQ-5");
+gfx_setfont(1, "Arial", 14);
+gfx_set(0.5, 1, 0.5, 1);
+gfx_x = text_x; gfx_y += 25;
+gfx_drawstr("Low-Mid:");
+gfx_x = val_col_x;
+gfx_printf("%d Hz | +%.1f dB", mem_freqs_lm[slider1], slider2);
+gfx_set(1, 0.5, 0.5, 1);
+gfx_x = text_x; gfx_y += text_line_h;
+gfx_drawstr("Dip:");
+gfx_x = val_col_x;
+gfx_printf("%d Hz | -%.1f dB", mem_freqs_dip[slider3], slider4);
+gfx_set(0.5, 0.5, 1, 1);
+gfx_x = text_x; gfx_y += text_line_h;
+gfx_drawstr("High-Mid:");
+gfx_x = val_col_x;
+gfx_printf("%d Hz | +%.1f dB", mem_freqs_hm[slider5], slider6);
+gfx_y += 8;
+gfx_set(1, 1, 0.5, 0.8);
+gfx_x = text_x; gfx_y += text_line_h;
+gfx_drawstr("Drive:");
+gfx_x = val_col_x;
+gfx_printf("%d%%", slider7);
+gfx_set(0.7, 0.7, 0.7, 1);
+gfx_x = text_x; gfx_y += text_line_h;
+gfx_drawstr("Mode:");
+gfx_x = val_col_x;
+gfx_printf("%s", slider9 ? "HQ (2x)" : "Normal");
+);

@@ -1,0 +1,7 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Halogen Halo/HH Reaper Projects/boulder tape/IRs"
+F "Ortona Balloon Pop test 260715_01 IR.wav" 3054672 0 1784134062 0
+D t 260715_01 a "My Recording" y 2026-07-15 s 96000
+D n 2 r 1:02:05.600 l 0:05.296 i 24
+F "Ortona Balloon Pop test 260715_01 raw.WAV" 33501184 0 1784161346 0
+D t 260715_01 a "My Recording" s 96000 n 2
+D l 0:58.154 i 24

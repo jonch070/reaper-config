@@ -2,14 +2,32 @@ C10018 "/Users/jonathankawchuk/Documents/Projects/In Progress/Daily Writing/Resi
 F "24-REVERB PLATE-240811_2110-jsfx-01.wav" 15616744 0 1723432211 0
 D y 2024-08-11 s 48000 n 2 l 0:40.667
 D i 32
+F "24-REVERB PLATE-240811_2110-jsfx.wav" 14336744 0 1723432203 0
+D y 2024-08-11 s 48000 n 2 l 0:37.333
+D i 32
+F "28-drone spectral-260518_1058-jsfx.wav" 1721784 0 1779123510 0
+D y 2026-05-18 s 44100 n 2 l 0:04.878
+D i 32
 F "DC - Resin Jamming Liam_013 - 00.00.00.00 - Master.wav" 152078296 0 1764659999 0
 D s 48000 n 1 l 17:36.070 i 24
+F "Resin Jamming Liam_011_01_directors commentary_2025-10-17_19-27_006.wav" 2528 0 1760750850 0
+D y 2025-10-17 s 48000 n 1 r 10:18.000
+D l 0:00.009 i 32
 F "Resin Jamming Liam_011_01_directors commentary_2025-10-17_19-27_007.wav" 3607008 0 1760750871 0
 D y 2025-10-17 s 48000 n 1 r 10:18.000
 D l 0:18.782 i 32
+F "Resin Jamming Liam_014_29_2026-05-18_11-00_006.wav" 574184 0 1779123641 0
+D y 2026-05-18 s 44100 n 2 r 0:39.000
+D l 0:01.625 i 32
+F "Resin Jamming Liam_016_freeze.wav" 20266752 0 1779134016 0
+D y 2026-05-18 s 96000 n 2 r 2:50.406
+D l 0:26.388 i 32
 F "Resin Jamming Liam_1_stems_pluck test-001.wav" 150480416 0 1723405312 0
 D y 2024-08-11 s 96000 n 2 r 11:19.990
 D l 3:15.937 i 32
+F "Resin Jamming Liam_1_stems_pluck test.wav" 86016744 0 1723405211 0
+D y 2024-08-11 s 96000 n 2 r 11:20.000
+D l 1:52.000 i 32
 F "Resin Jamming Liam_2_02_Drone 01_2024-08-11_14-30_003.wav" 66621492 0 1723408599 0
 D y 2024-08-11 s 48000 n 1 r 26:04.976
 D l 5:46.983 i 32

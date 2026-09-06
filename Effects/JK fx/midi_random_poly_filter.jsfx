@@ -1,11 +1,12 @@
 desc:Random Polyphony Filter
 tags: midi
 author: JK Scripts
-// Buffers incoming notes for Chord Window ms, then randomly selects
-// which notes pass through.
-//
-// Fixed mode: exactly Max notes from each chord pass through.
-// Random mode: a random count between Min and Max passes through each chord.
+about:
+  Buffers notes arriving within a Chord Window, then randomly selects a subset
+  to pass through. Notes not selected are silently dropped — their note-offs are
+  suppressed too. Pitch, channel, and velocity of passing notes are unchanged.
+  Fixed mode: exactly Max Polyphony notes pass each chord.
+  Random mode: a random count between Min and Max Polyphony passes.
 
 slider1:1<1,16,1>Min Polyphony
 slider2:2<1,16,1>Max Polyphony

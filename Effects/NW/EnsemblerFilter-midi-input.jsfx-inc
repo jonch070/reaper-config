@@ -1,0 +1,176 @@
+// EnsemblerFilter - MIDI Input Processing
+// Handles collection and queuing of incoming MIDI events
+
+@init
+
+// =============================================================================
+// MIDI INPUT PROCESSING FUNCTIONS
+// =============================================================================
+
+// Process all incoming MIDI messages and queue note events for later analysis
+// Also handles simulation state setup for immediate trigger logic
+// Non-note messages (CC, pitch bend, etc.) are passed through immediately
+// Returns: 1 if any MIDI events were received, 0 otherwise
+function processMidiInput()
+local(midi_events_received, offset, msg1, msg2, msg3, status, channel, note_number, velocity)
+(
+  // Set up simulation state (but only when pending changes has been cleared or isn't setup)
+  // TODO: This still isn't ideal since it runs on empty blocks?
+  pending_changes_count == 0 ? (
+    memcpy(temp_note_held, note_held, 128);
+    simulated_voiced_count = countCurrentlyHeldNotes();
+    current_held_count = simulated_voiced_count;
+  );
+
+  midi_events_received = 0;
+  
+  // Process all MIDI messages in this block - COLLECT FIRST, DECIDE TIMING AFTER
+  while (midirecv(offset, msg1, msg2, msg3)) (
+    
+    // Extract message type and channel
+    status = msg1 & 0xF0;
+    channel = msg1 & 0x0F;
+    
+    // Check if this is a note message
+    (status == 0x90 || status == 0x80) ? (
+      note_number = msg2;
+      velocity = msg3;
+      
+      // Note On (0x90 with velocity > 0)
+      (status == 0x90 && velocity > 0) ? (
+        // Add to pending changes queue
+        pending_changes_note[pending_changes_count] = note_number;
+        pending_changes_type[pending_changes_count] = 1; // Note on
+        pending_changes_velocity[pending_changes_count] = velocity;
+        pending_changes_offset[pending_changes_count] = offset;
+        pending_changes_count += 1;
+        
+        // Update simulation state immediately for immediate trigger logic
+        !temp_note_held[note_number] ? (
+          temp_note_held[note_number] = 1;
+          simulated_voiced_count += 1;
+        );
+        
+        // Mark that we received a note-on this block
+        received_note_on_this_block = 1;
+        
+        // Update debug counters if enabled
+        debug_mode ? (
+          slider6 += 1;  // note_on_count
+        );
+        
+        // Flag we got an event this block
+        midi_events_received = 1;
+      );
+      
+      // Note Off (0x80 or 0x90 with velocity 0)
+      (status == 0x80 || (status == 0x90 && velocity == 0)) ? (
+        // Add to pending changes queue
+        pending_changes_note[pending_changes_count] = note_number;
+        pending_changes_type[pending_changes_count] = 0; // Note off
+        pending_changes_velocity[pending_changes_count] = velocity;
+        pending_changes_offset[pending_changes_count] = offset;
+        pending_changes_count += 1;
+        
+        // Update simulation state immediately
+        temp_note_held[note_number] ? (
+          temp_note_held[note_number] = 0;
+          simulated_voiced_count -= 1;
+        );
+        
+        // Update debug counters if enabled
+        debug_mode ? (
+          slider7 += 1;  // note_off_count
+        );
+        
+        // Flag we got an event this block
+        midi_events_received = 1;
+      );
+    ) : (
+      // Handle non-note MIDI messages (CC, pitch bend, etc.)
+      // Check if this is a CC message (0xB0-0xBF)
+      (status == 0xB0) ? (
+        cc_number = msg2;
+        cc_value = msg3;
+        
+        // CC PREVIEW: Store ORIGINAL CC value AND channel before any transforms are applied
+        // This enables real-time preview when users adjust transform knobs in the UI
+        // (CC numbers 1-127, stored at array index cc_number-1)
+        cc_number >= 1 && cc_number <= 127 ? (
+          last_cc_values[cc_number - 1] = cc_value;     // Store original value, NOT transformed
+          last_cc_channels[cc_number - 1] = status;     // Store original MIDI channel (0xB0-0xBF)
+        );
+        
+        // Check if this CC should be ignored
+        shouldIgnoreCC(cc_number) ? (
+          // Ignore this CC - don't send it
+          1; // No-op but syntactically required
+        ) : (
+          // Apply CC transforms
+          transformed_cc_value = applyCCTransforms(cc_number, cc_value);
+          sendMidiToTrackAndRetroBuffer(offset, msg1, msg2, transformed_cc_value);
+        );
+      ) : (
+        // Pass through other non-CC messages unchanged (pitch bend, etc.)
+        sendMidiToTrackAndRetroBuffer(offset, msg1, msg2, msg3);
+      );
+    );
+  );
+  
+  midi_events_received;
+);
+
+// Gets appropriate analysis delay based on current voice occupancy
+// Uses extended delay when voices are incomplete to allow for more chord input
+// Returns: delay in samples (calculated from srate and timing constants)
+function getAnalysisDelay()
+local(active_voices, delay_ms)
+(
+  active_voices = countActiveVoices();
+  
+  // Use extended delay if we haven't filled all available voices
+  delay_ms = active_voices < total_voices_config ? 
+    extended_analysis_time_ms : 
+    normal_analysis_time_ms;
+  
+  // Convert milliseconds to samples
+  srate * (delay_ms / 1000);
+);
+
+// Determine if analysis should be triggered immediately based on current state
+// Returns: 1 if should trigger immediately, 0 if should use normal delay
+function shouldTriggerImmediateAnalysis()
+local(should_trigger)
+(
+  should_trigger = 0;
+  
+  // Scenario 1: All notes are released
+  simulated_voiced_count == 0 ? (
+    should_trigger = 1;
+  );
+
+  // Scenario 2a: Held notes equal or exceed max voices, but only if we weren't holding anything before
+  (simulated_voiced_count >= total_voices_config) && (current_held_count == 0) ? (
+    should_trigger = 1;
+  );
+
+  // Scenario 2b: Held notes exactly match max voices
+  (simulated_voiced_count == total_voices_config) ? (
+    should_trigger = 1;
+  );
+  
+  should_trigger;
+);
+
+// Set up analysis timer after MIDI processing
+// Should be called after processMidiInput() returns 1
+function setupAnalysisTimer()
+(
+  shouldTriggerImmediateAnalysis() ? (
+    // Trigger processing immediately for quick scenarios
+    analysis_timer = 1; // Will trigger on next sample
+  ) : (
+    // Use normal delay - don't extend timer if it's already set
+    analysis_timer = analysis_timer > 0 ? analysis_timer : getAnalysisDelay();
+  );
+);

@@ -1,0 +1,7 @@
+C10018 "/Users/jonathankawchuk/Downloads/Dataknot to RPP/output"
+F "export test.RPP" 0 0 0 0
+D p 120 s 96000 n 4 l 0:30.813
+F export.rpp 0 0 0 0
+D p 0 l 0:17.572
+F export_multitrack.rpp 0 0 0 0
+D p 0 l 0:06.381

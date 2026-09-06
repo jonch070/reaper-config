@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="hsuanice Scripts" commit="1a6b573215084e5e7e18c8be18d6071f678ac559">
+<index version="1" name="hsuanice Scripts" commit="477fdac0b7fc45df9f0dcb407257684ba85f7262">
   <category name="Beta Testing">
     <reapack name="hsuanice_AudioSweet ReaImGui.lua" type="script" desc="AudioSweet ReaImGui - AudioSuite Workflow (Pro Tools–Style)">
       <metadata>
@@ -83,6 +83,39 @@
     • New order is persisted immediately via save_chains_to_extstate()]]></changelog>
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/1a6b573215084e5e7e18c8be18d6071f678ac559/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
       </version>
+      <version name="0.2.7" author="hsuanice" time="2026-05-21T03:53:02Z">
+        <changelog><![CDATA[0.2.7 [260517.1748]
+  - FIXED: Open button on Saved Presets / History no longer clobbers item/time/razor selection
+    • Previously: with REAPER's "item+time selection link to track" enabled,
+      clicking Open re-selected the FX-host track and the link wiped your
+      pre-open item / time / razor selection
+    • Now: open_saved_chain_fx() and open_history_fx() snapshot selection
+      state (items, time selection, razor edits, track selection) before
+      SetOnlyTrackSelected(), then restore it after TrackFX_Show — including
+      on every early-return error path
+    • Workflow: select items → click Open to adjust FX → press Execute,
+      all without re-selecting items
+
+0.2.6 [260330.1458]
+  - ADDED: Auto track FX chain online/offline restore on preview/run
+    • Saves and restores both I_FXEN (chain bypass) and per-FX offline bits
+      so all forms of "FX chain offline" in REAPER are covered
+    • Before preview or run: chain is brought online if offline; nothing changes if already online
+    • After preview/run (or transport auto-stops): original state is restored
+    • Applies to both Single FX (focused) mode and Chain mode
+    • Preview FX track resolution now has full fallback (focused → GUID → name),
+      matching the same logic used by Run]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/a8a21f53f0d75c0eb777159254ddb0ce81de58c5/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.8" author="hsuanice" time="2026-07-08T04:56:27Z">
+        <changelog><![CDATA[[260708.1252]
+   - ADDED: Load Track FX now imports all single-FX presets from the selected REAPER track
+   - ADDED: Load Chain now loads presets from all selected tracks in REAPER
+   - IMPROVED: Preset panel UI now uses shorter labels and hover hints for clearer loading actions
+   - IMPROVED: Preset section title simplified to "SAVED PRESET"
+   - FIXED: Track-name parsing no longer misidentifies ordinary names like "8ChTrack" as track-number selectors]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/33a441af68bcfb33ccdcfad9feaae8a7c32a9c8b/Beta%20Testing/hsuanice_AudioSweet%20ReaImGui.lua</source>
+      </version>
     </reapack>
     <reapack name="hsuanice_RGWH Glue.lua" type="script" desc="RGWH Glue - Glue with Handles (ExtState Shortcut)">
       <metadata>
@@ -144,6 +177,27 @@
   - TAIL_SECONDS written to RGWH ExtState on every sync_to_extstate()
   - Debug log includes Tail Seconds value]]></changelog>
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/024e6891a4d9a1c22124e25459ee70fd140cf89b/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
+      </version>
+      <version name="0.2.8" author="hsuanice" time="2026-07-10T07:59:33Z">
+        <changelog><![CDATA[0.2.8 [260710.1556] - FIX: ImGui window stability + Settings collapse lock
+  - FIXED: Removed extra End() calls on non-visible Begin() paths (prevents "ImGui_End: Calling End() too many times!")
+  - FIXED: BWF install modal now uses NoDocking to avoid docking-related stack issues
+  - UI: Disabled Settings window collapse arrow (NoCollapse) to prevent accidental fold/collapse
+
+0.2.7 [260330.1415] - MOVED: "Keep MUTED as separate unit" to main panel alongside "Split at crossfades"
+  - Both unit grouping checkboxes now appear on the same row below Handle/Tail in the main panel
+  - REMOVED: "GLUE UNIT BEHAVIOUR" section from Settings tab (no longer needed)
+  - FIX (Core): muted items now group with other muted items — only muted/non-muted boundary breaks the chain
+
+0.2.6 [260330.1354] - ADDED: Glue unit grouping options (requires RGWH Core ≥ 0.3.8)
+  - NEW: "Split at crossfades" checkbox — main panel, below Tail, right side (default OFF)
+    • When ON: crossfading items are not grouped into the same unit; each becomes its own unit
+  - NEW: "Keep MUTED as separate unit" checkbox — main panel, below Handle/Tail (default ON)
+    • Muted items group only with other muted items; breaks at muted/non-muted boundary
+  - REMOVED: "HANDLE (Pre/Post Roll)" section header — "Handle (s)" label already self-explanatory
+  - Both settings persisted in GUI state, synced to RGWH ExtState on every change
+  - Both options are no-ops when a Time Selection is active (TS-Window path bypasses unit detection)]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/58edb15a0a2f88af38b77d247aea3f6932461fa9/Beta%20Testing/hsuanice_RGWH%20ReaImGui.lua</source>
       </version>
     </reapack>
     <reapack name="hsuanice_RGWH Render.lua" type="script" desc="RGWH Render - Render with Handles (ExtState Shortcut)">
@@ -280,6 +334,24 @@
   - M.core() API: handle = { ..., tail=N } sets TAIL_SECONDS for a one-run override.
   - DEFAULTS.TAIL_SECONDS = 0.0 (fully backward-compatible; no behaviour change when not set).]]></changelog>
         <source main="main">https://github.com/hsuanice/PublicBeta/raw/6bf1782682be3b98c2dbcd077d2deff05a6f5c1a/Library/hsuanice_RGWH%20Core.lua</source>
+      </version>
+      <version name="0.3.9" author="hsuanice" time="2026-07-10T08:20:10Z">
+        <changelog><![CDATA[0.3.9 [260330.1415] - FIX: GLUE_MUTED_SEPARATE — muted items now group with other muted items
+  - BUG: muted items were always forced to SINGLE units, even when adjacent to other muted items
+  - FIX: detect_units_same_track() now breaks only at muted/non-muted boundaries, not at every muted item
+    • Muted items can now form TOUCH/CROSSFADE/MIXED units with other muted items
+    • The unit chain only breaks when mute state changes between adjacent items
+
+0.3.8 [260330.1354] - ADDED: Glue unit grouping options — muted_separate and split_at_crossfades
+  - NEW: GLUE_MUTED_SEPARATE (default: true) — muted items always form their own SINGLE unit;
+    a muted item breaks the chain on both sides (items before/after are separate units).
+  - NEW: GLUE_SPLIT_AT_CROSSFADES (default: false) — crossfading items are not grouped into the
+    same unit; only touching items share a unit.
+  - detect_units_same_track() now accepts optional opts table: {split_at_crossfades, muted_separate}
+  - Both flags are read from ExtState and exposed via GUI (RGWH ReaImGui >= 0.2.6).
+  - Both flags affect Glue and Auto paths only; Render path is unaffected.
+  - When a Time Selection is active, the TS-Window path is used instead and opts have no effect.]]></changelog>
+        <source main="main">https://github.com/hsuanice/PublicBeta/raw/477fdac0b7fc45df9f0dcb407257684ba85f7262/Library/hsuanice_RGWH%20Core.lua</source>
       </version>
     </reapack>
   </category>

@@ -1,1 +1,26 @@
 HeDa_TI_Go to panel Tracks.lua
+HeDa_TI_Tracks_Toggle Maximize.lua
+HeDa_TI_Tracks_Enable Maximize.lua
+HeDa_TI_Tracks_Disable Maximize.lua
+HeDa_TI_Tracks_Focus Track.lua
+HeDa_TI_Tracks_Focus Track and Envelope.lua
+HeDa_TI_Tracks_Focus One Envelope.lua
+HeDa_TI_Tracks_Focus All Envelopes.lua
+HeDa_TI_Tracks_Focus Change.lua
+HeDa_TI_Tracks_Toggle Quick Solo.lua
+HeDa_TI_Tracks_Isolate Set.lua
+HeDa_TI_Tracks_Isolate Connected.lua
+HeDa_TI_Tracks_Pin Set.lua
+HeDa_TI_Tracks_Save Selected Tracks as Set.lua
+HeDa_TI_Tracks_Save Selected Tracks as Set (ask name).lua
+HeDa_TI_Tracks_Switch to Set 1.lua
+HeDa_TI_Tracks_Switch to Set 2.lua
+HeDa_TI_Tracks_Switch to Set 3.lua
+HeDa_TI_Tracks_Switch to Set 4.lua
+HeDa_TI_Tracks_Switch to Set 5.lua
+HeDa_TI_Tracks_Switch to Set 6.lua
+HeDa_TI_Tracks_Switch to Set 7.lua
+HeDa_TI_Tracks_Switch to Set 8.lua
+HeDa_TI_Tracks_Switch to Set 9.lua
+HeDa_TI_Tracks_Filter with Signal.lua
+HeDa_TI_Tracks_Filter with Items.lua
