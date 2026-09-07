@@ -1,5 +1,7 @@
 -- Hide, across the whole project, tracks that are empty or muted and their folders.
--- End state: only tracks that have items AND are unmuted remain visible.
+-- End state: only tracks that (have items OR an active receive) AND are unmuted remain visible.
+-- A track with no items but an unmuted, non-zero-volume receive (e.g. a reverb/aux bus
+-- fed only by sends) counts as active and stays visible.
 -- A muted folder track is hidden along with its entire subtree.
 -- An empty folder track is hidden unless it still contains a visible descendant.
 --
@@ -57,6 +59,20 @@ local function has_items(track)
   return reaper.CountTrackMediaItems(track) > 0
 end
 
+-- True if the track has at least one receive that is unmuted and has non-zero
+-- volume (e.g. a reverb/aux bus fed only by sends, with no items of its own).
+local function has_active_receive(track)
+  local recv_count = reaper.GetTrackNumSends(track, -1)
+  for i = 0, recv_count - 1 do
+    local muted = reaper.GetTrackSendInfo_Value(track, -1, i, "B_MUTE") == 1
+    local vol = reaper.GetTrackSendInfo_Value(track, -1, i, "D_VOL")
+    if not muted and vol > 0 then
+      return true
+    end
+  end
+  return false
+end
+
 reaper.Undo_BeginBlock()
 reaper.PreventUIRefresh(1)
 
@@ -78,6 +94,7 @@ for i = 0, track_count - 1 do
     track = track,
     fd = fd,
     has_items = has_items(track),
+    has_active_receive = has_active_receive(track),
     hidden_by_mute = hidden_by_mute,
     sub_end = nil,
     visible = false,
@@ -109,8 +126,8 @@ end
 
 for i = track_count, 1, -1 do -- bottom-up so inner folders resolve before their parents
   local e = info[i]
-  if e.fd ~= 1 then -- non-folder track: visible only if unmuted and has items
-    e.visible = not e.hidden_by_mute and e.has_items
+  if e.fd ~= 1 then -- non-folder track: visible only if unmuted and has items or an active receive
+    e.visible = not e.hidden_by_mute and (e.has_items or e.has_active_receive)
   elseif not e.hidden_by_mute then -- folder: visible only if it has a visible descendant
     local any = false
     local last = e.sub_end or i
