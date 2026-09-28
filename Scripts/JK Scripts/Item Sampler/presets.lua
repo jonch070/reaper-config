@@ -334,6 +334,10 @@ function LoadInitialPreseetGroups()
         Groups = load_table.Groups
         Settings = load_table.Settings
         UserPresets = load_table
+
+        for _, group in pairs(Groups) do -- Backfill settings added after this project last saved
+            group.Settings = FillMissingSettings(group.Settings)
+        end
     else
         UserPresets ={}
         Settings = {}
