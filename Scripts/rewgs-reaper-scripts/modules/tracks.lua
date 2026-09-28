@@ -597,17 +597,59 @@ function set_track_color(media_track, rgb)
     end
 end
 
+-- Marks are stored as leading whole-word tokens ("REC IM Piano"), so only those count;
+-- a track named "Climb" or "Recorder" is not marked.
+local function get_mark_order()
+    return { track_marks.record, track_marks.transcribe, track_marks.improve }
+end
+local orig_color_key = "P_EXT:rewgs_mark_orig_color"
+
+local function parse_marks(name)
+    local mark_order = get_mark_order()
+    local marks = {}
+    while true do
+        local token, rest = name:match("^(%u+) (.*)$")
+        local known = false
+        for _, m in ipairs(mark_order) do
+            if token == m then known = true end
+        end
+        if not known then break end
+        marks[token] = true
+        name = rest
+    end
+    return marks, name
+end
+
 function toggle_mark_track(mark)
+    local mark_order = get_mark_order()
     for _, track in ipairs(get_all_tracks_as_objects()) do
         if track.is_selected == true and track.depth < 1 then
-            local new_name
-            if is_marked(track.name, mark) then
-                new_name = track.name:gsub(mark .. " ", "")
-            else
-                new_name = mark .. ' ' .. track.name
+            local marks, base_name = parse_marks(track.name)
+            marks[mark] = not marks[mark] or nil
+
+            local new_name = base_name
+            local active_color
+            for i = #mark_order, 1, -1 do
+                local m = mark_order[i]
+                if marks[m] then
+                    new_name = m .. ' ' .. new_name
+                    active_color = track_mark_colors[m]
+                end
             end
             reaper.GetSetMediaTrackInfo_String(track.media_track, "P_NAME", new_name, true)
-            set_track_color(track.media_track, get_active_mark_color(new_name))
+
+            local _, saved = reaper.GetSetMediaTrackInfo_String(track.media_track, orig_color_key, "", false)
+            if active_color then
+                -- remember the pre-mark color once, so unmarking can restore it
+                if saved == "" then
+                    local orig = reaper.GetMediaTrackInfo_Value(track.media_track, "I_CUSTOMCOLOR")
+                    reaper.GetSetMediaTrackInfo_String(track.media_track, orig_color_key, tostring(math.floor(orig)), true)
+                end
+                set_track_color(track.media_track, active_color)
+            else
+                reaper.SetMediaTrackInfo_Value(track.media_track, "I_CUSTOMCOLOR", tonumber(saved) or 0)
+                reaper.GetSetMediaTrackInfo_String(track.media_track, orig_color_key, "", true)
+            end
         end
     end
 end
