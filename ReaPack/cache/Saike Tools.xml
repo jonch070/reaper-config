@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Saike Tools" commit="7f1c1ae5f3f74a468112b9af20c38e42ff1aaad7">
+<index version="1" name="Saike Tools" commit="38e0d1d2432df1ad70aaab4787f0750f41f6cda8">
   <category name="Abyss">
     <reapack name="saike_abyss.jsfx" type="effect" desc="Abyss Reverb (Saike) [BETA]">
       <version name="0.01" author="Joep Vanlier" time="2021-06-13T15:05:07Z">
@@ -3795,6 +3795,38 @@ major bugfix extrapolation]]></changelog>
         <source file="modizer_dependencies/saike_modizer_font.png">https://github.com/JoepVanlier/JSFX/raw/34d6b72aa6784b40a10342ca69bbef518ca0f566/Modizer/modizer_dependencies/saike_modizer_font.png</source>
         <source file="modizer_dependencies/saike_modizer_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/34d6b72aa6784b40a10342ca69bbef518ca0f566/Modizer/modizer_dependencies/saike_modizer_midi.jsfx-inc</source>
         <source file="modizer_dependencies/saike_modizer_widgets.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/34d6b72aa6784b40a10342ca69bbef518ca0f566/Modizer/modizer_dependencies/saike_modizer_widgets.jsfx-inc</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Neverb">
+    <reapack name="neverb.jsfx" type="effect" desc="Neverb (ALPHA)">
+      <version name="0.01" author="Joep Vanlier" time="2026-09-26T21:29:34Z">
+        <changelog><![CDATA[pre-release]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/neverb.jsfx</source>
+        <source file="Neverb_Dependencies/font_coz.png">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/font_coz.png</source>
+        <source file="Neverb_Dependencies/highlights.png">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/highlights.png</source>
+        <source file="Neverb_Dependencies/saike_neverb_eqs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/saike_neverb_eqs.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_neverb_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/saike_neverb_gfx.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_neverb_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/saike_neverb_midi.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_nonlinear_fx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/saike_nonlinear_fx.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_shimmer_fdn.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/saike_shimmer_fdn.jsfx-inc</source>
+        <source file="Neverb_Dependencies/stacked.png">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/stacked.png</source>
+        <source file="Neverb_Dependencies/ui_overlay.png">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/Neverb_Dependencies/ui_overlay.png</source>
+        <source file="neverb.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/896b76fc566e1deb886e8572f4ad65921dd46dde/Neverb/neverb.jsfx.rpl</source>
+      </version>
+      <version name="0.04" author="Joep Vanlier" time="2026-09-26T21:29:34Z">
+        <changelog><![CDATA[add more shimmer modes, add ducker, some small touches]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/neverb.jsfx</source>
+        <source file="Neverb_Dependencies/font_coz.png">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/font_coz.png</source>
+        <source file="Neverb_Dependencies/highlights.png">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/highlights.png</source>
+        <source file="Neverb_Dependencies/saike_neverb_eqs.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/saike_neverb_eqs.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_neverb_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/saike_neverb_gfx.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_neverb_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/saike_neverb_midi.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_nonlinear_fx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/saike_nonlinear_fx.jsfx-inc</source>
+        <source file="Neverb_Dependencies/saike_shimmer_fdn.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/saike_shimmer_fdn.jsfx-inc</source>
+        <source file="Neverb_Dependencies/stacked.png">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/stacked.png</source>
+        <source file="Neverb_Dependencies/ui_overlay.png">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/Neverb_Dependencies/ui_overlay.png</source>
+        <source file="neverb.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/38e0d1d2432df1ad70aaab4787f0750f41f6cda8/Neverb/neverb.jsfx.rpl</source>
       </version>
     </reapack>
   </category>
@@ -7602,6 +7634,18 @@ here
         <source file="saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc</source>
         <source file="saikedrums.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/c1393ad62a7d1390f82afa75a5783b32bab2d37c/saikedrums/saikedrums.jsfx.rpl</source>
       </version>
+      <version name="0.19" author="Joep Vanlier" time="2026-09-25T23:11:52Z">
+        <changelog><![CDATA[Fixed velocity-dependent gain transitions to prevent loud attack transients on softer hits, and correct per-voice mute handling (thanks Symen Timmermans!)]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums.jsfx</source>
+        <source file="saikedrums_dependencies/font.png">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums_dependencies/font.png</source>
+        <source file="saikedrums_dependencies/saikedrums_basic_filters.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums_dependencies/saikedrums_basic_filters.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_drum_elements.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums_dependencies/saikedrums_drum_elements.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_freq_shift.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums_dependencies/saikedrums_freq_shift.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums_dependencies/saikedrums_pixel_gfx.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_sample_playback.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums_dependencies/saikedrums_sample_playback.jsfx-inc</source>
+        <source file="saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums_dependencies/saikedrums_triggered_midi.jsfx-inc</source>
+        <source file="saikedrums.jsfx.rpl">https://github.com/JoepVanlier/JSFX/raw/6c2725eea7c959edd5fffb86f3c24f67682d3ad6/saikedrums/saikedrums.jsfx.rpl</source>
+      </version>
     </reapack>
   </category>
   <category name="SatanVerb">
@@ -9319,6 +9363,11 @@ here
         <changelog><![CDATA[Store number of custom tracks that are open.]]></changelog>
         <source>https://github.com/JoepVanlier/JSFX/raw/5e2ee6c42068b9086ab865c7fa4f482c2049f215/SpectrumAnalyzer/SaikeMultiSpectralAnalyzer.jsfx</source>
         <source file="colormaps.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/5e2ee6c42068b9086ab865c7fa4f482c2049f215/SpectrumAnalyzer/colormaps.jsfx-inc</source>
+      </version>
+      <version name="5.0.42" author="Joep Vanlier, Trond-Viggo Melssen, Cockos, Feed The Cat" time="2026-09-14T20:20:57Z">
+        <changelog><![CDATA[Fix excessive bottom spacing in TCP/MCP mode. Reduce unnecessary memory scaling. Fix slider ranges.]]></changelog>
+        <source>https://github.com/JoepVanlier/JSFX/raw/f5df283bda993cd1f99aa420b27adc3f19b322a5/SpectrumAnalyzer/SaikeMultiSpectralAnalyzer.jsfx</source>
+        <source file="colormaps.jsfx-inc">https://github.com/JoepVanlier/JSFX/raw/f5df283bda993cd1f99aa420b27adc3f19b322a5/SpectrumAnalyzer/colormaps.jsfx-inc</source>
       </version>
     </reapack>
     <reapack name="SaikeMultiSpectralAnalyzer_MK2.jsfx" type="effect" desc="Saike Spectral Analyzer (Alternative)">

@@ -2,6 +2,10 @@
   Track Inspector 2 - Changelog     
 ---------------------------------------------------------------------------------------
 
+* v2.4.48 (2026-08-17)
+  # Maintenance updates
+  # fix: Don't crash if SWS is not installed.
+
 * v2.4.47 (2026-08-04)
   # ask for name when saving tag presets via actions
   # force visibility refresh when loading tag presets

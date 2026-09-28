@@ -1,0 +1,493 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/Film/Life Story of an Orca/LSO Theme Writing/LSO Whale Call Theme/media"
+F "cello 1 copy 003.wav" 115992044 0 1790275141 0
+D s 96000 n 1 l 6:42.750 i 24
+F "cello 2 copy 002.wav" 115992044 0 1790275203 0
+D s 96000 n 1 l 6:42.750 i 24
+F "cello 3 pattern track copy 001.wav" 115170942 0 1790275280 0
+D s 96000 n 1 l 6:39.898 i 24
+F "cello 3 pattern track-glued.wav" 30174182 0 1790268704 0
+D t "LSO Orcas" y 2026-09-24 s 96000 n 1
+D r 1:04:58.000 l 1:44.750 i 24
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-012.wav" 31872744 0 1790101219 0
+D y 2026-09-22 s 96000 n 2 r 1:00:21.611
+D l 0:41.500 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-013.wav" 16394808 0 1790101219 0
+D y 2026-09-22 s 96000 n 2 r 1:01:16.450
+D l 0:21.346 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-014.wav" 44400992 0 1790101221 0
+D y 2026-09-22 s 96000 n 2 r 1:01:44.243
+D l 0:57.812 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-015.wav" 99914800 0 1790101224 0
+D y 2026-09-22 s 96000 n 2 r 1:02:47.190
+D l 2:10.096 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-016.wav" 76401528 0 1790101227 0
+D y 2026-09-22 s 96000 n 2 r 1:05:05.969
+D l 1:39.480 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-017.wav" 60988928 0 1790101229 0
+D y 2026-09-22 s 96000 n 2 r 1:07:23.326
+D l 1:19.411 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-018.wav" 18023880 0 1790101233 0
+D y 2026-09-22 s 96000 n 2 r 1:00:03.363
+D l 0:23.467 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-019.wav" 76954568 0 1790101301 0
+D y 2026-09-22 s 96000 n 4 r 1:00:13.372
+D l 0:50.100 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-020.wav" 193537816 0 1790101306 0
+D y 2026-09-22 s 96000 n 4 r 1:01:13.366
+D l 2:06.000 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-021.wav" 34202728 0 1790101308 0
+D y 2026-09-22 s 96000 n 4 r 1:03:29.839
+D l 0:22.266 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-022.wav" 287329880 0 1790101317 0
+D y 2026-09-22 s 96000 n 4 r 1:04:01.078
+D l 3:07.063 i 32
+F "LSO Whale Call Theme_011_freeze_tuned freeze (V2)-023.wav" 52002488 0 1790101319 0
+D y 2026-09-22 s 96000 n 4 r 1:07:37.730
+D l 0:33.855 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-011.wav" 68499288 0 1790101240 0
+D y 2026-09-22 s 96000 n 4 r 1:00:12.562
+D l 0:44.595 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-012.wav" 97462600 0 1790101247 0
+D y 2026-09-22 s 96000 n 4 r 1:01:33.905
+D l 1:03.451 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-013.wav" 178028744 0 1790101263 0
+D y 2026-09-22 s 96000 n 4 r 1:02:46.307
+D l 1:55.903 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-014.wav" 323084344 0 1790101289 0
+D y 2026-09-22 s 96000 n 4 r 1:05:00.792
+D l 3:30.340 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-016.wav" 61336024 0 1790101327 0
+D y 2026-09-22 s 96000 n 4 r 1:00:24.568
+D l 0:39.931 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-017.wav" 73857528 0 1790101334 0
+D y 2026-09-22 s 96000 n 4 r 1:01:15.566
+D l 0:48.083 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-018.wav" 338777864 0 1790101362 0
+D y 2026-09-22 s 96000 n 4 r 1:02:42.955
+D l 3:40.558 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-019.wav" 59404040 0 1790101366 0
+D y 2026-09-22 s 96000 n 4 r 1:06:36.750
+D l 0:38.674 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-020.wav" 91811976 0 1790101374 0
+D y 2026-09-22 s 96000 n 4 r 1:07:22.246
+D l 0:59.772 i 32
+F "LSO Whale Call Theme_011_freeze_tuned swell (V2)-021.wav" 35242312 0 1790101379 0
+D y 2026-09-22 s 96000 n 4 r 1:00:00.827
+D l 0:22.943 i 32
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-001.wav" 23904736 0 1790103307 0
+D y 2026-09-22 s 96000 n 2 r 1:00:21.611
+D l 0:41.500 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-002.wav" 12296284 0 1790103308 0
+D y 2026-09-22 s 96000 n 2 r 1:01:23.111
+D l 0:21.346 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-003.wav" 12408130 0 1790103308 0
+D y 2026-09-22 s 96000 n 2 r 1:02:04.457
+D l 0:21.540 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-004.wav" 12921394 0 1790103309 0
+D y 2026-09-22 s 96000 n 2 r 1:02:45.998
+D l 0:22.431 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-005.wav" 11969236 0 1790103310 0
+D y 2026-09-22 s 96000 n 2 r 1:03:28.430
+D l 0:20.778 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-006.wav" 12173608 0 1790103310 0
+D y 2026-09-22 s 96000 n 2 r 1:04:09.208
+D l 0:21.133 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-007.wav" 13631734 0 1790103311 0
+D y 2026-09-22 s 96000 n 2 r 1:04:50.342
+D l 0:23.664 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-008.wav" 12360256 0 1790103311 0
+D y 2026-09-22 s 96000 n 2 r 1:05:34.007
+D l 0:21.457 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-009.wav" 12414616 0 1790103312 0
+D y 2026-09-22 s 96000 n 2 r 1:06:15.464
+D l 0:21.551 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-010.wav" 12390496 0 1790103312 0
+D y 2026-09-22 s 96000 n 2 r 1:06:57.016
+D l 0:21.510 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-011.wav" 12210496 0 1790103313 0
+D y 2026-09-22 s 96000 n 2 r 1:07:38.526
+D l 0:21.197 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-012.wav" 12659164 0 1790103313 0
+D y 2026-09-22 s 96000 n 2 r 1:08:19.724
+D l 0:21.976 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-013.wav" 12487312 0 1790103314 0
+D y 2026-09-22 s 96000 n 2 r 1:09:01.700
+D l 0:21.678 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-014.wav" 12184192 0 1790103315 0
+D y 2026-09-22 s 96000 n 2 r 1:09:43.378
+D l 0:21.151 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-015.wav" 13804246 0 1790103315 0
+D y 2026-09-22 s 96000 n 2 r 1:10:24.530
+D l 0:23.964 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-016.wav" 11938840 0 1790103316 0
+D y 2026-09-22 s 96000 n 2 r 1:11:08.494
+D l 0:20.725 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-017.wav" 12424588 0 1790103316 0
+D y 2026-09-22 s 96000 n 2 r 1:11:49.220
+D l 0:21.569 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-018.wav" 12656002 0 1790103317 0
+D y 2026-09-22 s 96000 n 2 r 1:12:30.790
+D l 0:21.970 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-019.wav" 14031466 0 1790103318 0
+D y 2026-09-22 s 96000 n 2 r 1:13:12.761
+D l 0:24.358 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-020.wav" 12606496 0 1790103319 0
+D y 2026-09-22 s 96000 n 2 r 1:13:57.119
+D l 0:21.885 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-021.wav" 11895286 0 1790103320 0
+D y 2026-09-22 s 96000 n 2 r 1:14:39.004
+D l 0:20.650 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-022.wav" 12994690 0 1790103320 0
+D y 2026-09-22 s 96000 n 2 r 1:15:19.655
+D l 0:22.558 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-023.wav" 13552048 0 1790103321 0
+D y 2026-09-22 s 96000 n 2 r 1:16:02.214
+D l 0:23.526 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-024.wav" 13020976 0 1790103322 0
+D y 2026-09-22 s 96000 n 2 r 1:16:45.740
+D l 0:22.604 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-025.wav" 12636934 0 1790103323 0
+D y 2026-09-22 s 96000 n 2 r 1:17:28.345
+D l 0:21.937 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-026.wav" 12525430 0 1790103324 0
+D y 2026-09-22 s 96000 n 2 r 1:18:10.283
+D l 0:21.744 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-027.wav" 12138652 0 1790103324 0
+D y 2026-09-22 s 96000 n 2 r 1:18:52.027
+D l 0:21.072 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-028.wav" 12288256 0 1790103325 0
+D y 2026-09-22 s 96000 n 2 r 1:19:33.100
+D l 0:21.332 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-029.wav" 14178970 0 1790103325 0
+D y 2026-09-22 s 96000 n 2 r 1:20:14.432
+D l 0:24.614 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-030.wav" 12493612 0 1790103326 0
+D y 2026-09-22 s 96000 n 2 r 1:20:59.047
+D l 0:21.689 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-031.wav" 12493558 0 1790103328 0
+D y 2026-09-22 s 96000 n 2 r 1:21:40.736
+D l 0:21.688 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-032.wav" 12669976 0 1790103329 0
+D y 2026-09-22 s 96000 n 2 r 1:22:22.425
+D l 0:21.995 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-033.wav" 13121746 0 1790103330 0
+D y 2026-09-22 s 96000 n 2 r 1:23:04.420
+D l 0:22.779 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-034.wav" 12724012 0 1790103330 0
+D y 2026-09-22 s 96000 n 2 r 1:23:47.200
+D l 0:22.089 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-035.wav" 12854380 0 1790103331 0
+D y 2026-09-22 s 96000 n 2 r 1:24:29.289
+D l 0:22.315 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-036.wav" 28858420 0 1790103437 0
+D y 2026-09-22 s 96000 n 2 r 1:00:13.372
+D l 0:50.100 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-037.wav" 15583360 0 1790103438 0
+D y 2026-09-22 s 96000 n 2 r 1:01:23.472
+D l 0:27.053 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-038.wav" 13199776 0 1790103439 0
+D y 2026-09-22 s 96000 n 2 r 1:02:10.525
+D l 0:22.915 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-039.wav" 12756568 0 1790103440 0
+D y 2026-09-22 s 96000 n 2 r 1:02:53.440
+D l 0:22.145 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-040.wav" 16087756 0 1790103441 0
+D y 2026-09-22 s 96000 n 2 r 1:03:35.586
+D l 0:27.928 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-041.wav" 13466488 0 1790103442 0
+D y 2026-09-22 s 96000 n 2 r 1:04:23.514
+D l 0:23.378 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-042.wav" 15742732 0 1790103443 0
+D y 2026-09-22 s 96000 n 2 r 1:05:06.892
+D l 0:27.329 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-043.wav" 13530124 0 1790103444 0
+D y 2026-09-22 s 96000 n 2 r 1:05:54.222
+D l 0:23.488 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-044.wav" 13295524 0 1790103445 0
+D y 2026-09-22 s 96000 n 2 r 1:06:37.711
+D l 0:23.081 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-045.wav" 13791268 0 1790103446 0
+D y 2026-09-22 s 96000 n 2 r 1:07:20.792
+D l 0:23.941 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-046.wav" 14325964 0 1790103447 0
+D y 2026-09-22 s 96000 n 2 r 1:08:04.734
+D l 0:24.870 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-047.wav" 13692256 0 1790103448 0
+D y 2026-09-22 s 96000 n 2 r 1:08:49.604
+D l 0:23.770 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-048.wav" 12417736 0 1790103449 0
+D y 2026-09-22 s 96000 n 2 r 1:09:33.374
+D l 0:21.557 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-049.wav" 12826480 0 1790103450 0
+D y 2026-09-22 s 96000 n 2 r 1:10:14.931
+D l 0:22.266 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-050.wav" 13308496 0 1790103451 0
+D y 2026-09-22 s 96000 n 2 r 1:10:57.198
+D l 0:23.103 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-051.wav" 13260256 0 1790103452 0
+D y 2026-09-22 s 96000 n 2 r 1:11:40.302
+D l 0:23.020 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-052.wav" 13753132 0 1790103453 0
+D y 2026-09-22 s 96000 n 2 r 1:12:23.322
+D l 0:23.875 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-053.wav" 16542196 0 1790103454 0
+D y 2026-09-22 s 96000 n 2 r 1:13:07.198
+D l 0:28.717 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-054.wav" 13466380 0 1790103455 0
+D y 2026-09-22 s 96000 n 2 r 1:13:55.916
+D l 0:23.377 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-055.wav" 14521216 0 1790103456 0
+D y 2026-09-22 s 96000 n 2 r 1:14:39.293
+D l 0:25.209 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-056.wav" 12269836 0 1790103456 0
+D y 2026-09-22 s 96000 n 2 r 1:15:24.503
+D l 0:21.300 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-057.wav" 13071832 0 1790103457 0
+D y 2026-09-22 s 96000 n 2 r 1:16:05.803
+D l 0:22.692 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-058.wav" 13797592 0 1790103458 0
+D y 2026-09-22 s 96000 n 2 r 1:16:48.496
+D l 0:23.952 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-059.wav" 13819216 0 1790103459 0
+D y 2026-09-22 s 96000 n 2 r 1:17:32.449
+D l 0:23.990 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-060.wav" 13328440 0 1790103460 0
+D y 2026-09-22 s 96000 n 2 r 1:18:16.439
+D l 0:23.138 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-061.wav" 13453888 0 1790103461 0
+D y 2026-09-22 s 96000 n 2 r 1:18:59.578
+D l 0:23.356 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-062.wav" 15852256 0 1790103461 0
+D y 2026-09-22 s 96000 n 2 r 1:19:42.934
+D l 0:27.520 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-063.wav" 12356944 0 1790103462 0
+D y 2026-09-22 s 96000 n 2 r 1:20:30.454
+D l 0:21.451 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-064.wav" 13055776 0 1790103463 0
+D y 2026-09-22 s 96000 n 2 r 1:21:11.906
+D l 0:22.665 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-065.wav" 13927288 0 1790103464 0
+D y 2026-09-22 s 96000 n 2 r 1:21:54.571
+D l 0:24.178 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4)-066.wav" 14722756 0 1790103465 0
+D y 2026-09-22 s 96000 n 2 r 1:22:38.749
+D l 0:25.559 i 24
+F "LSO Whale Call Theme_012_freeze_tuned freeze (V4).wav" 13518088 0 1790103333 0
+D y 2026-09-22 s 96000 n 2 r 1:00:03.363
+D l 0:23.467 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-001.wav" 25687690 0 1790103340 0
+D y 2026-09-22 s 96000 n 2 r 1:00:12.562
+D l 0:44.595 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-002.wav" 12994690 0 1790103343 0
+D y 2026-09-22 s 96000 n 2 r 1:01:17.157
+D l 0:22.558 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-003.wav" 11938840 0 1790103345 0
+D y 2026-09-22 s 96000 n 2 r 1:01:59.716
+D l 0:20.725 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-004.wav" 12390496 0 1790103348 0
+D y 2026-09-22 s 96000 n 2 r 1:02:40.442
+D l 0:21.510 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-005.wav" 12493612 0 1790103350 0
+D y 2026-09-22 s 96000 n 2 r 1:03:21.952
+D l 0:21.689 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-006.wav" 12424588 0 1790103353 0
+D y 2026-09-22 s 96000 n 2 r 1:04:03.641
+D l 0:21.569 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-007.wav" 12659164 0 1790103355 0
+D y 2026-09-22 s 96000 n 2 r 1:04:45.210
+D l 0:21.976 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-008.wav" 12923350 0 1790103358 0
+D y 2026-09-22 s 96000 n 2 r 1:05:27.187
+D l 0:22.435 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-009.wav" 12360256 0 1790103360 0
+D y 2026-09-22 s 96000 n 2 r 1:06:09.622
+D l 0:21.457 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-010.wav" 13020976 0 1790103363 0
+D y 2026-09-22 s 96000 n 2 r 1:06:51.079
+D l 0:22.604 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-011.wav" 14031466 0 1790103365 0
+D y 2026-09-22 s 96000 n 2 r 1:07:33.684
+D l 0:24.358 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-012.wav" 13631734 0 1790103368 0
+D y 2026-09-22 s 96000 n 2 r 1:08:18.043
+D l 0:23.664 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-013.wav" 11895286 0 1790103370 0
+D y 2026-09-22 s 96000 n 2 r 1:09:01.708
+D l 0:20.650 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-014.wav" 12173608 0 1790103373 0
+D y 2026-09-22 s 96000 n 2 r 1:09:42.358
+D l 0:21.133 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-015.wav" 12210496 0 1790103375 0
+D y 2026-09-22 s 96000 n 2 r 1:10:23.492
+D l 0:21.197 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-016.wav" 12408130 0 1790103378 0
+D y 2026-09-22 s 96000 n 2 r 1:11:04.689
+D l 0:21.540 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-017.wav" 12487312 0 1790103381 0
+D y 2026-09-22 s 96000 n 2 r 1:11:46.230
+D l 0:21.678 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-018.wav" 12724012 0 1790103383 0
+D y 2026-09-22 s 96000 n 2 r 1:12:27.908
+D l 0:22.089 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-019.wav" 12656002 0 1790103386 0
+D y 2026-09-22 s 96000 n 2 r 1:13:09.997
+D l 0:21.970 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-020.wav" 12493558 0 1790103388 0
+D y 2026-09-22 s 96000 n 2 r 1:13:51.968
+D l 0:21.688 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-021.wav" 12921394 0 1790103391 0
+D y 2026-09-22 s 96000 n 2 r 1:14:33.657
+D l 0:22.431 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-022.wav" 12296284 0 1790103393 0
+D y 2026-09-22 s 96000 n 2 r 1:15:16.088
+D l 0:21.346 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-023.wav" 12854380 0 1790103396 0
+D y 2026-09-22 s 96000 n 2 r 1:15:57.435
+D l 0:22.315 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-024.wav" 12606496 0 1790103398 0
+D y 2026-09-22 s 96000 n 2 r 1:16:39.750
+D l 0:21.885 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-025.wav" 13686496 0 1790103401 0
+D y 2026-09-22 s 96000 n 2 r 1:17:21.635
+D l 0:23.760 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-026.wav" 13552048 0 1790103404 0
+D y 2026-09-22 s 96000 n 2 r 1:18:05.395
+D l 0:23.526 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-027.wav" 12414616 0 1790103406 0
+D y 2026-09-22 s 96000 n 2 r 1:18:48.922
+D l 0:21.551 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-028.wav" 12184192 0 1790103409 0
+D y 2026-09-22 s 96000 n 2 r 1:19:30.474
+D l 0:21.151 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-029.wav" 11969236 0 1790103412 0
+D y 2026-09-22 s 96000 n 2 r 1:20:11.625
+D l 0:20.778 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-030.wav" 12525430 0 1790103414 0
+D y 2026-09-22 s 96000 n 2 r 1:20:52.404
+D l 0:21.744 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-031.wav" 12288256 0 1790103417 0
+D y 2026-09-22 s 96000 n 2 r 1:21:34.148
+D l 0:21.332 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-032.wav" 13804246 0 1790103420 0
+D y 2026-09-22 s 96000 n 2 r 1:22:15.481
+D l 0:23.964 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-033.wav" 12636934 0 1790103422 0
+D y 2026-09-22 s 96000 n 2 r 1:22:59.445
+D l 0:21.937 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-034.wav" 14178970 0 1790103425 0
+D y 2026-09-22 s 96000 n 2 r 1:23:41.383
+D l 0:24.614 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-035.wav" 20168236 0 1790103473 0
+D y 2026-09-22 s 96000 n 2 r 1:00:24.568
+D l 0:35.013 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-036.wav" 12356944 0 1790103475 0
+D y 2026-09-22 s 96000 n 2 r 1:01:19.581
+D l 0:21.451 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-037.wav" 12826480 0 1790103478 0
+D y 2026-09-22 s 96000 n 2 r 1:02:01.033
+D l 0:22.266 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-038.wav" 15852256 0 1790103481 0
+D y 2026-09-22 s 96000 n 2 r 1:02:43.300
+D l 0:27.520 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-039.wav" 16542196 0 1790103485 0
+D y 2026-09-22 s 96000 n 2 r 1:03:30.820
+D l 0:28.717 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-040.wav" 13308496 0 1790103488 0
+D y 2026-09-22 s 96000 n 2 r 1:04:19.538
+D l 0:23.103 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-041.wav" 13791268 0 1790103490 0
+D y 2026-09-22 s 96000 n 2 r 1:05:02.642
+D l 0:23.941 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-042.wav" 14468644 0 1790103493 0
+D y 2026-09-22 s 96000 n 2 r 1:05:46.584
+D l 0:25.117 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-043.wav" 14188024 0 1790103496 0
+D y 2026-09-22 s 96000 n 2 r 1:06:31.701
+D l 0:24.630 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-044.wav" 15583360 0 1790103499 0
+D y 2026-09-22 s 96000 n 2 r 1:07:16.332
+D l 0:27.053 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-045.wav" 16087756 0 1790103503 0
+D y 2026-09-22 s 96000 n 2 r 1:08:03.385
+D l 0:27.928 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-046.wav" 16837204 0 1790103506 0
+D y 2026-09-22 s 96000 n 2 r 1:08:51.314
+D l 0:29.229 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-047.wav" 12900256 0 1790103509 0
+D y 2026-09-22 s 96000 n 2 r 1:09:40.544
+D l 0:22.395 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-048.wav" 13328440 0 1790103512 0
+D y 2026-09-22 s 96000 n 2 r 1:10:22.939
+D l 0:23.138 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-049.wav" 13466488 0 1790103515 0
+D y 2026-09-22 s 96000 n 2 r 1:11:06.078
+D l 0:23.378 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-050.wav" 13692256 0 1790103518 0
+D y 2026-09-22 s 96000 n 2 r 1:11:49.456
+D l 0:23.770 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-051.wav" 12756568 0 1790103520 0
+D y 2026-09-22 s 96000 n 2 r 1:12:33.226
+D l 0:22.145 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-052.wav" 13453888 0 1790103523 0
+D y 2026-09-22 s 96000 n 2 r 1:13:15.371
+D l 0:23.356 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-053.wav" 13260256 0 1790103525 0
+D y 2026-09-22 s 96000 n 2 r 1:13:58.727
+D l 0:23.020 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-054.wav" 12269836 0 1790103528 0
+D y 2026-09-22 s 96000 n 2 r 1:14:41.747
+D l 0:21.300 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-055.wav" 14521216 0 1790103531 0
+D y 2026-09-22 s 96000 n 2 r 1:15:23.048
+D l 0:25.209 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-056.wav" 13199776 0 1790103533 0
+D y 2026-09-22 s 96000 n 2 r 1:16:08.257
+D l 0:22.915 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-057.wav" 14322052 0 1790103536 0
+D y 2026-09-22 s 96000 n 2 r 1:16:51.172
+D l 0:24.863 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-058.wav" 13295524 0 1790103539 0
+D y 2026-09-22 s 96000 n 2 r 1:17:36.035
+D l 0:23.081 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-059.wav" 13753132 0 1790103541 0
+D y 2026-09-22 s 96000 n 2 r 1:18:19.117
+D l 0:23.875 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-060.wav" 15742732 0 1790103545 0
+D y 2026-09-22 s 96000 n 2 r 1:19:02.992
+D l 0:27.329 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-061.wav" 13466380 0 1790103547 0
+D y 2026-09-22 s 96000 n 2 r 1:19:50.322
+D l 0:23.377 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-062.wav" 14722756 0 1790103550 0
+D y 2026-09-22 s 96000 n 2 r 1:20:33.700
+D l 0:25.559 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-063.wav" 13055776 0 1790103553 0
+D y 2026-09-22 s 96000 n 2 r 1:21:19.259
+D l 0:22.665 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-064.wav" 13797592 0 1790103555 0
+D y 2026-09-22 s 96000 n 2 r 1:22:01.924
+D l 0:23.952 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-065.wav" 13819216 0 1790103558 0
+D y 2026-09-22 s 96000 n 2 r 1:22:45.877
+D l 0:23.990 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-066.wav" 13071832 0 1790103561 0
+D y 2026-09-22 s 96000 n 2 r 1:23:29.867
+D l 0:22.692 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-067.wav" 12847648 0 1790103563 0
+D y 2026-09-22 s 96000 n 2 r 1:24:12.560
+D l 0:22.303 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-068.wav" 13530124 0 1790103566 0
+D y 2026-09-22 s 96000 n 2 r 1:24:54.864
+D l 0:23.488 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-069.wav" 13927288 0 1790103569 0
+D y 2026-09-22 s 96000 n 2 r 1:25:38.352
+D l 0:24.178 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-070.wav" 12417736 0 1790103571 0
+D y 2026-09-22 s 96000 n 2 r 1:26:22.530
+D l 0:21.557 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4)-071.wav" 13216324 0 1790103575 0
+D y 2026-09-22 s 96000 n 2 r 1:00:00.827
+D l 0:22.943 i 24
+F "LSO Whale Call Theme_012_freeze_tuned swell (V4).wav" 15304156 0 1790103432 0
+D y 2026-09-22 s 96000 n 2 r 1:00:05.454
+D l 0:26.568 i 24

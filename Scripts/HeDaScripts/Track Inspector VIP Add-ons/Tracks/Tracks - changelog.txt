@@ -2,6 +2,34 @@
  Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v3.16.1 (2026-08-30)
+  + Note filter. Show only tracks with notes
+  + Track Note button Right click: Mark Note as Checked
+  + Track Note button Right click: Delete Note
+  + Track Note button Right click: Set Note Color...
+  + Track Note button Ctrl + click: Mark/unmark Note as checked.
+  + Track Note button Alt + click: Delete Note/Checked
+  + Note filter right click menu: Always Show Folders that have tracks with notes
+  + Note filter right click menu: Show Checked Notes
+  # fix settings not being saved when changing some filters
+  # allow hiding volume and pan knobs while showing values
+  # adjustments in pan control text
+  + Track Name toolbar button menu: Shadow
+  # reorganized some menus
+
+* v3.16.0 (2026-08-17)
+  + Track Notes
+  + Track Note button: Click to Edit Note. Alt Click to Remove note.
+  + Track Right click menu: Track Note...
+  + Track Notes Toolbar icon menu: Show Note Icons
+  + Track Notes Toolbar icon menu: Show Note Icons Only if Track has Note
+  + Track Notes Toolbar icon menu: Note Background Color
+  + Track Notes Toolbar icon menu: Note Text Color
+  + Track Notes Toolbar icon menu: Maximum Number of Lines in Track List
+  + Track Notes Toolbar icon menu: Show Note on Mouse Hover
+  + Track Notes Toolbar icon menu: Use Selected Track Font
+  # FX toolbar button menu: Track Selection Follows FX Selection
+
 * v3.15.1 (2026-08-04)
   + Display Settings: Color: Track Name for Frozen Tracks...
   + action: HeDa_TI_Tracks_Save Selected Tracks as Set.lua

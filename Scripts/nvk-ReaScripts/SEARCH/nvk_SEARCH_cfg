@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "browse pack",
+		SEARCH = "",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -21,6 +21,7 @@ return {
 		disable_multiadd_confirmation = false,
 		esc_always_closes_script = true,
 		fav_order = {
+			"Script: Saxmand_FX Modulator Linking.lua (RS0459c20bd2f786f027d3f24fad53a5963fac78d4) (Main)",
 			"Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
 			"Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
 			"Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)"
@@ -82,283 +83,55 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				id = "Script: jk_Move selected items to tracks with same name as items (create tracks).lua (RSceef681170fcae867d8152a6703c34b5db23dae7) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: NateWeiner - Batch Create Cues.lua (RS65137b5938cfd0b97042eed04b824907fa257cee) (Main)",
+				id = "Script: Key Item Inserter.lua (RSf762ac18bb694a61372a40241898d306019b8c83) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: NateWeiner - Batch Create Cues jk.lua (RS3449c16195cc9a50212d5dca98c07631ca95a0b4) (Main)",
+				id = "Script: Item Sampler (Snap Offset Mod).lua (RS50b152607b4bb4d4ade2d56fa440ca88ea1a5668) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: mpl_ImportSessionData.lua (RSe960e68555dfce225c9c5535ed2346fa34dd0209) (Main)",
+				id = "Script: Track Reorder by Note Range.lua (RSf30cf50e52dd7c71ee11684e9c8d6ba335136df5) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: JK - Import Notes to Project from SpotNotes.lua (RS8db8e22ebcc5fafd4209354ec4b67e642b2282cb) (Main)",
+				id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
 				type = "action"
 			},
 			{
-				id = "SWS: Show all tracks (SWSTL_SHOWALL) (Main)",
+				id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
 				type = "action"
 			},
 			{
-				id = "SWS/S&M: Open/close Cycle Action editor (S&M_CYCLEDITOR) (Main)",
+				id = "SWS: Normalize items to RMS (entire item) (SWS_NORMRMS) (Main)",
 				type = "action"
 			},
 			{
-				id = "Custom: hide muted tracks and children (d1d0d5d74eab4ed098f8e72cdd1ef7ba) (Main)",
+				id = "Script: daniellumertz_Clouds.lua (RSebbb21b4c0b5080cdde1d5968e47525bedc49217) (Main)",
 				type = "action"
 			},
 			{
-				id = "AU:Spectral Freezing (Michael Norris)",
-				type = "au"
+				id = "ReaScript: Show ReaScript console (42663) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Item Sampler.lua (RSe01b3df7a5491b2ef63fe79968c8a505143360e3) (Main)",
+				type = "action"
 			},
 			{
 				id = "JS:ReEQ",
 				type = "jsfx"
 			},
 			{
-				id = "Custom: Create Folder From Selected Tracks JK (9820642174eb4a7eb6ad675f10a4c712) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3:Air (Sound Particles)",
+				id = "VST3:Neutron 3 (iZotope)",
 				type = "vst3"
 			},
 			{
-				id = "/Users/jonathankawchuk/Library/Application Support/REAPER/TrackTemplates/Film Score Instrument Default 2.1.RTrackTemplate",
-				type = "track template"
-			},
-			{
-				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: DM_AssetVideoOverlay.lua (RSac10d9074eb45712b94a59a5e84d3bf3db31b649) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Create regions from items by source name.lua (RSc5e5e8dd0cafb22fdca5fd846ae355e3dfa497d8) (Main)",
-				type = "action"
-			},
-			{
-				id = "Insert click source (40013) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Open project path in explorer/finder (S&M_OPEN_PRJ_PATH) (Main)",
-				type = "action"
-			},
-			{
-				id = "Insert empty item (40142) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: cfillion_Set timecode at edit cursor (frames).lua (RS8789116fc79c36d5ebe5390e1e7451498121cefb) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Move selected items to tracks with same name as items (create tracks).lua (RSceef681170fcae867d8152a6703c34b5db23dae7) (Main)",
-				type = "action"
-			},
-			{
-				id = "Browser: Refresh (40018) (Media Explorer)",
-				type = "action"
-			},
-			{
-				id = "Item properties: Normalize items (each item separately) to +0dB peak (40108) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: neutronic_Quick Adder 2.lua (RS490460a16d7e7bb0285ccb1891b67f8f59593a61) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JCMega_Theme Switcher.lua (RS1397b286dfb69f86e752b6569a0f4fd88a34d6af) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JCMega_Snapshot Manager.lua (RSa7dba7e1f5dfb12720b5e822500776fd7eadabf4) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JCMega_Template Constructor.lua (RSb3c8621accdddc5a64c559b8c4c0495ba0752426) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS: Move cursor to item peak sample (SWS_FINDITEMPEAK) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: CS_Place Markers at clipping points.lua (RS1e7eed05fc62569a8de0a2211184abc8d785314f) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Region Playlist - Crop project to playlist (S&M_CROP_RGN_PLAYLIST1) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Region Playlist - Play (S&M_PLAY_RGN_PLAYLIST) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: TK_SMART.lua (RSaf44f800c791410c0eef3adead86ae63c72f58c2) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Open/close Region Playlist window (S&M_SHOW_RGN_PLAYLIST) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: daniellumertz_Alternator.lua (RSab29542ccd11a958e7c127b67c8cd591c8567ca0) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: daniellumertz_ReaGoTo.lua (RS2d017b4e4974b8156553c3c31ba1ae52ceed21d1) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: cfillion_Set timecode at edit cursor.lua (RS3a2747d2324fb60fe601f09ee153859d0b2395e8) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: NateWeiner - Set project frame rate from video.lua (RSffa88234af6d0278615a8b8b967c0dbb42a91461) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Duplicate subprojects to new version.lua (RSbfe6672d73688c0af81a6d71649faa7cd4a3c42d) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: DM_SubprojectManager.lua (RSb2d0bccea0cfe66bbe8a7b8585180e292f24d520) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Subproject Hub.lua (RSe30ca92ed9455c7af0695c1f9ae1fc3b83f5bc4b) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: schapps_The Last Renamer.lua (RS1ba43eace819d3ec36e2c06f936093a134e4a5f5) (Main)",
-				type = "action"
-			},
-			{
-				id = "ReaPack: Manage repositories... (REAPACK_MANAGE) (Main)",
-				type = "action"
-			},
-			{
-				id = "Custom: Mute/Unmute Dialogue (512e2cfd1b85473787a647eb354e7eba) (Main)",
-				type = "action"
-			},
-			{
-				id = "Action: Momentarily send next action to project tab 1 (3002) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Track Templates VIP 3.lua (RS467b12654ba1a556c82db2c3282622a7b0d3f20d) (Main)",
-				type = "action"
-			},
-			{
-				id = "DrivenByMoss: Open the configuration window. (DBM_OPEN_WINDOW_ACTION) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Inherit MIDI input and routing from parent.lua (RS9e1cbd2d1ad7e0c8ee3240d69413eb5d0d028ed7) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: LKC - RenderBlocks - Content Navigator.lua (RSa75502a6bd6e746a5776d4c51d8a14f851f0c55f) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS: Select muted tracks (SWS_SELMUTEDTRACKS) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: me2beats_Select tracks with no items and no fx (except tracks with sends, receives and hardware outputs).lua (RSd90aac72c7e1bfd9414c178ce85005bd82298981) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Track Templates VIP_Save As Track Template.lua (RS2e0fb9bfd6aac545eccd81bc237e8fa1b38d4fad) (Main)",
-				type = "action"
-			},
-			{
-				id = "Track: Save tracks as track template... (40392) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3i:Vienna Synchron Player (VSL) (22 out)",
-				type = "vst3i"
-			},
-			{
-				id = "Script: HeDa_Track Templates VIP_Refresh.lua (RSd79889bf7f53937be0faa6d3ed5447f0528802fc) (Main)",
-				type = "action"
-			},
-			{
-				id = "File: Open render queue (40929) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS: Move selected item(s) left edge to edit cursor (SWS_ITEMLEFTTOCUR) (Main)",
-				type = "action"
-			},
-			{
-				id = "Options: Show FX inserts in TCP (when size permits) (40302) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3:MConvolutionEZ (MeldaProduction)",
-				type = "vst3"
-			},
-			{
-				id = "JS:MIDI Tool v2",
-				type = "jsfx"
-			},
-			{
-				id = "Track: Move tracks to folder... (42786) (Main)",
-				type = "action"
-			},
-			{
-				id = "DrivenByMoss: Restart all controllers. (RESTART_CONTROLLERS_ACTION) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: pandabot_Select every N items within selection.eel (RSc106bdefc16f0cf31505cf99d249b4ccb45e501c) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Set snap offset to cursor (40541) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST:ReaEQ (Cockos)",
-				type = "vst"
-			},
-			{
-				id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3i:Serum 2 (Xfer Records)",
-				type = "vst3i"
-			},
-			{
-				id = "JS:Gaussian Humanization",
-				type = "jsfx"
-			},
-			{
-				id = "SWS/S&M: Remove all envelopes for selected tracks (S&M_REMOVE_ALLENVS) (Main)",
+				id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
 				type = "action"
 			},
 			{
@@ -366,35 +139,63 @@ return {
 				type = "action"
 			},
 			{
-				id = "VST3i:Kontakt 7 (Native Instruments) (64 out)",
-				type = "vst3i"
-			},
-			{
-				id = "Item properties: Loop item source (40636) (Main)",
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
 				type = "action"
 			},
 			{
-				id = "Item: Glue items within time selection (42432) (Main)",
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
 				type = "action"
 			},
 			{
-				id = "Item: Glue items, ignoring time selection (40362) (Main)",
+				id = "File: Export project MIDI... (40849) (Main)",
 				type = "action"
 			},
 			{
-				id = "VST3:NeuralNote (Dr. Audio)",
-				type = "vst3"
+				id = "VST:Little Plate (Soundtoys)",
+				type = "vst"
 			},
 			{
-				id = "JS:Saike Reflectosaurus (beta)",
+				id = "JS:Gaussian Humanization",
 				type = "jsfx"
 			},
 			{
-				id = "VST3i:Pendulate (Newfangled Audio)",
+				id = "SWS/FNG: Transpose selected MIDI items up an octave (FNG_MIDI_UP_OCT) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:Partials (Saike)",
+				type = "jsfx"
+			},
+			{
+				id = "Custom: MIDI Merge Items Across Tracks (1da1b25fcd05447fb15c1c3ffe88b01a) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/FNG: Transpose selected MIDI items down an octave (FNG_MIDI_DN_OCT) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST3i:SINE Player (Orchestral Tools) (32 out)",
 				type = "vst3i"
 			},
 			{
-				id = "Xenakios/SWS: Reset item length and media offset (XENAKIOS_RESETITEMLENMEDOFFS) (Main)",
+				id = "Item: Close item inline editors (41887) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Open item inline editors (40847) (Main)",
+				type = "action"
+			},
+			{
+				id = "Take: Paste as takes in items (40603) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Track Select from Note Range.lua (RS04fd7a2ebf6909f3ef42f2a7b15c0f884069b758) (Main)",
 				type = "action"
 			},
 			{
@@ -402,84 +203,284 @@ return {
 				type = "vst3"
 			},
 			{
-				id = "JS:MIDI Snap To Key",
+				id = "VST3:Air (Sound Particles)",
+				type = "vst3"
+			},
+			{
+				id = "JS:daniellumertz_Clouds",
 				type = "jsfx"
 			},
 			{
-				id = "JS:MIDI Note Filter",
-				type = "jsfx"
+				id = "SWS: Show all tracks (SWSTL_SHOWALL) (Main)",
+				type = "action"
 			},
 			{
-				id = "AU:MTremolo (MeldaProduction)",
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item properties: Show media item/take properties (40009) (Main)",
+				type = "action"
+			},
+			{
+				id = "AU:Spectral Freezing (Michael Norris)",
 				type = "au"
 			},
 			{
-				id = "SWS: Normalize items to overall peak RMS (SWS_NORMPEAKRMSALL) (Main)",
+				id = "Item properties: Pitch item up one octave (40515) (Main)",
 				type = "action"
 			},
 			{
-				id = "SWS: Normalize item(s) to peak RMS (SWS_NORMPEAKRMS) (Main)",
+				id = "Media: Insert in selected media items as new take (41003) (Media Explorer)",
 				type = "action"
 			},
 			{
-				id = "VST3:Dodo MIDI (Dodo Bird)",
-				type = "vst3"
+				id = "Script: REAPER Update Utility.lua (RS852f0872789b997921f7f9d40e6f997553bd5147) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:MIDI Tool v2",
+				type = "jsfx"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Show Connection QR Code... (REAMO_SHOW_QR_CODE) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Copy FX chain from selected track (S&M_COPYFXCHAIN5) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Hide all FX envelopes for selected tracks (BR_HIDE_FX_ENV_SEL_TRACK) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item properties: Loop item source (40636) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Open items in primary external editor (40109) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Open item copies in primary external editor (40132) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Glue items, ignoring time selection (40362) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item properties: Pitch item down one octave (40516) (Main)",
+				type = "action"
+			},
+			{
+				id = "/Users/jonathankawchuk/Library/Application Support/REAPER/TrackTemplates/Film Score Instrument Default 2.1.RTrackTemplate",
+				type = "track template"
+			},
+			{
+				id = "Script: Track Visibility - Show all tracks.lua (RS6e49675c75f0b7973b7891579f3b72aac6563d7c) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Toggle show all send envelopes for selected tracks (BR_T_SHOW_SEND_ENV_ALL_SEL_TRACK) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Show all FX envelopes for selected tracks (BR_SHOW_FX_ENV_SEL_TRACK) (Main)",
+				type = "action"
+			},
+			{
+				id = "Envelope: Show all envelopes for all tracks (41149) (Main)",
+				type = "action"
+			},
+			{
+				id = "Envelope: Show all envelopes for tracks (41148) (Main)",
+				type = "action"
+			},
+			{
+				id = "Envelope: Hide all envelopes for all tracks (41150) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Snap stretch markers to grid (41846) (Main)",
+				type = "action"
+			},
+			{
+				id = "Edit: Dynamic split items... (40760) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
+				type = "action"
 			},
 			{
 				id = "FX: Set all FX online one at a time (43689) (Main)",
 				type = "action"
 			},
 			{
-				id = "View: Show routing matrix window (40251) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_TI_Archiving_Archive Global.lua (RS4a7fdb0b4d90a0fdcad6842bb6bc874b1378dbf3) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_TI_Archiving_Archive Global.lua (RS37e7f7fb9759820c1b92de28db0879e32e0e1ec3) (Main)",
-				type = "action"
-			},
-			{
-				id = "AU:Divisimate Micro (Nextmidi)",
-				type = "aui"
-			},
-			{
-				id = "VST3i:Divisimate Micro (Nextmidi)",
-				type = "vst3i"
-			},
-			{
-				id = "AU:Quantum Delay (GS DSP)",
-				type = "au"
-			},
-			{
-				id = "VST3:Portal (Output)",
-				type = "vst3"
-			},
-			{
-				id = "VST3:Movement (Output)",
-				type = "vst3"
-			},
-			{
-				id = "AU:Pendulate (Newfangled Audio)",
-				type = "aui"
-			},
-			{
-				id = "JS:Partials (Saike)",
-				type = "jsfx"
-			},
-			{
-				id = "VST3:MCompressor (MeldaProduction)",
-				type = "vst3"
-			},
-			{
 				id = "Script: select_leaf_tracks_from_selected.lua (RSb0e889e75c066086ce5330912dfd20c324dcf2fd) (Main)",
 				type = "action"
 			},
 			{
-				id = "ReaScript: Run ReaScript (EEL2, Lua, or python)... (41060) (Main)",
+				id = "JS:Seawater Absorption",
+				type = "jsfx"
+			},
+			{
+				id = "Script: HeDa_Auto Solo Tracks of Selected Items.lua (RS81ea80e7852f40fc296587c1620a8d8dbdfae9f1) (Main)",
 				type = "action"
+			},
+			{
+				id = "Script: jk_Snap region edges to adjacent items.lua (RS7a1ec1106ed7421c05fe6a6229c0390465e2b294) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: VF - ITEM - Advanced items repositioning - no GUI 0.0 secs_end_track_xfade.lua (RS6bfa296ddb4bfff597e9d0d94b48ed805a97c623) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: jk_Create regions from items by source name.lua (RSc5e5e8dd0cafb22fdca5fd846ae355e3dfa497d8) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: acendan_Import region names from text file.lua (RS31df483216d5dd08ada2b8c4ceef6f2659099c8f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: jk_Reassemble tracks to regions.lua (RSc00c476ead8d59d6e1644ed9243d903d934b3998) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: ek_Edge silence cropper.lua (RSc3809e389f25d6fe893751ab9ebed190a1e10414) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: jk_Explode regions to tracks.lua (RS187a6a9095dba488fdfada3f01121f0b912a967a) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: DM_RENAMER_Main.lua (RSe347ac6272e029fae1128e0028cc47a4f81eb67a) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Open/close Region Playlist window (S&M_SHOW_RGN_PLAYLIST) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: X-Raym_Import markers and regions from tab-delimited CSV file.lua (RS3f135ac0f4b505a69d294097dc09e568345d5173) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Subproject Hub.lua (RSe30ca92ed9455c7af0695c1f9ae1fc3b83f5bc4b) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: DM_SubprojectManager.lua (RSb2d0bccea0cfe66bbe8a7b8585180e292f24d520) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Choose new source file for selected takes... (XENAKIOS_CHANGESOURCEFILE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: DM_AssetVideoOverlay.lua (RSac10d9074eb45712b94a59a5e84d3bf3db31b649) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST3:Concatenator (DataMind Audio)",
+				type = "vst3"
+			},
+			{
+				id = "Media: Insert on a new track (41001) (Media Explorer)",
+				type = "action"
+			},
+			{
+				id = "Options: Insert media on new track (40054) (Media Explorer)",
+				type = "action"
+			},
+			{
+				id = "Script: New Subproject Version - External.lua (RS0db17ae36f8d2e7056238a1d3fed94184c910839) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: New Subproject Version - Internal.lua (RSdd3b0a42d035cea21ed272d3c3f817be78566376) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:Seawater Absorption (fast path)",
+				type = "jsfx"
+			},
+			{
+				id = "Script: me2beats_Trim sel items edges to nearest grid divisions (increase items length).lua (RS82db1a28c06f866afb11f71d996b7ce46654b547) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: me2beats_Trim sel items edges to nearest grid divisions.lua (RSeca73c1eaff5e5d2534f871e3ed56672295326bc) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Archie_Item; Nudge right edge of selected items to left one grid unit.lua (RS017c96d38ff3e16690f122b3cf7fb878eaaa6b73) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS: Quantize item's edges to grid (change length) (SWS_QUANTITEEDGES) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: X-Raym_Quantize selected items edges at grid unit inside them if possible.lua (RS0be07e9e9b9bb9a23c89163e0147a77d06a3e33d) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_SUBPROJECT - Settings.lua (RS38d7671e79b80b4b8e319bb984eb1781ad8dbaee) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Reorder adjacent items randomly (41638) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/FNG: Clean selected overlapping media items on same track (FNG_CLEAN_OVERLAP) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Reposition selected items... (XENAKIOS_REPOSITION_ITEMS) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: zaibuyidao_Reposition Items.lua (RSe7c46c98e5e148f1146e16cc52bcbf70a3c66125) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_Toggle Solo Tracks of Selected Items.lua (RS53d4d4f877116bdf643b7a5d3a3b99b009894e8f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Randomize item positions... (XENAKIOS_RANDOMIZE_ITEMPOS) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Open/close Notes window (S&M_SHOW_NOTES_VIEW) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:Randomize Note Length",
+				type = "jsfx"
 			}
 		},
 		recent_results_amount = 30,
@@ -524,6 +525,7 @@ return {
 	fav = {
 		["Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)"]=true,
 		["Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)"]=true,
+		["Script: Saxmand_FX Modulator Linking.lua (RS0459c20bd2f786f027d3f24fad53a5963fac78d4) (Main)"]=true,
 		["Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)"]=true
 	},
 	folders = {

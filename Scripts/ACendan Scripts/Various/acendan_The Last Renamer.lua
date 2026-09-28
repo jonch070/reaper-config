@@ -1,6 +1,6 @@
 -- @description The Last Renamer
 -- @author Aaron Cendan
--- @version 2.32
+-- @version 2.41
 -- @metapackage
 -- @provides
 --   [main] .
@@ -11,7 +11,7 @@
 -- @about
 --   # The Last Renamer
 -- @changelog
---   # Cleaned up some of the example schemes to be more clear about their purpose.
+--   # Add UCS CategoryFull metadata when applicable
 
 local acendan_LuaUtils = reaper.GetResourcePath() .. '/Scripts/ACendan Scripts/Development/acendan_Lua Utilities.lua'
 if reaper.file_exists(acendan_LuaUtils) then
@@ -34,7 +34,7 @@ else
   return
 end
 local VSDEBUG = os.getenv("VSCODE_DBG_UUID") == "df3e118e-8874-49f7-ab62-ceb166401fb9" and
-    dofile('C:/Users/aaron/.vscode/extensions/antoinebalaine.reascript-docs-0.1.14/debugger/LoadDebug.lua') or nil
+    dofile('C:/Users/aaron/.vscode/extensions/antoinebalaine.reascript-docs-0.1.16/debugger/LoadDebug.lua') or nil
 
 -- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -- ~~~~~~~~~~~~ CONSTANTS ~~~~~~~~~~~
@@ -73,6 +73,7 @@ function Init()
   wgt.dragdrop = {}                                       -- Drag-dropped files
   wgt.serialize = {}                                      -- Serialized fields
   wgt.values = {}                                         -- Values for duplicate checking
+  wgt.notes = {}                                          -- Notes for fields
 
   wgt.targets = {}
   wgt.targets.Regions = { "Selected", "All", "Time Selection", "Edit Cursor" }
@@ -193,6 +194,15 @@ function LoadField(field)
     acendan.ImGui_HelpMarker(field.help)
   elseif wildcard_help ~= "" then
     acendan.ImGui_HelpMarker("Wildcards\n" .. wildcard_help)
+  end
+
+  -- Notes
+  if wgt.data.notesmode and field.note and field.note ~= "" then
+    if value ~= "" then
+      wgt.notes[#wgt.notes + 1] = field.field .. " - " .. value .. "\n" .. field.note
+    else
+      wgt.notes[#wgt.notes + 1] = field.field .. "\n" .. field.note
+    end
   end
 end
 
@@ -482,6 +492,7 @@ function TabNaming()
   wgt.name = ""
   wgt.required = ""
   wgt.values = {}
+  wgt.notes = {}
 
   ----------------- Naming -----------------------
   reaper.ImGui_Text(ctx, wgt.data.title)
@@ -540,6 +551,22 @@ function TabNaming()
     ClearFields(wgt.data.title, wgt.data.fields)
     SetScheme(wgt.scheme)
   end, "Clears out all fields, restoring them to their default state.", 0)
+
+  --------------------- Notes -----------------------
+  if wgt.data.notesmode then
+    reaper.ImGui_Spacing(ctx)
+    reaper.ImGui_SeparatorText(ctx, "Notes")
+    if #wgt.notes > 0 then
+      if wgt.data.notesmode:lower() == "all" then
+        -- Display all notes, separated by a line break
+        local combined_notes = table.concat(wgt.notes, "\n\n")
+        reaper.ImGui_TextWrapped(ctx, combined_notes)
+      else
+        -- Display most recent note
+        reaper.ImGui_TextWrapped(ctx, wgt.notes[#wgt.notes])
+      end
+    end
+  end
 end
 
 function ClearFields(title, fields)
@@ -1703,6 +1730,16 @@ function GenerateMetadataMarker()
         local find_field = FindField(refs, field_name)
         if find_field then
           marker = SetRenderMetadata(marker, field.meta, field.field,  GetFieldValue(find_field, field.short))
+
+          -- If valid UCS Subcategory found, add CategoryFull metadata
+          if field.field == "Subcategory" and field.id == "Subcategory:Category" then
+            local category_field = FindField(refs, "Category")
+            if category_field then
+              local subcategory_value = GetFieldValue(find_field, field.short)
+              local category_value = GetFieldValue(category_field)
+              marker = SetRenderMetadata(marker, { "IXML:USER:CategoryFull" }, "CategoryFull", category_value:upper() .. "-" .. subcategory_value:upper())
+            end
+          end
         end
       end
     end

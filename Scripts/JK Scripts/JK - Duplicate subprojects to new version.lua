@@ -1,6 +1,6 @@
 -- @description JK - Duplicate subprojects to new version (prompted)
 -- @author Jonathan Kawchuk
--- @version 1.1
+-- @version 1.2
 -- @about
 --   Select subproject item(s) and run: duplicates each unique source .rpp to
 --   a new version file, prompting for the new name (pre-filled with a smart
@@ -185,8 +185,7 @@ local function main()
         reaper.SetMediaItemTake_Source(newTake, newSrc)
         reaper.SetMediaItemTakeInfo_Value(newTake, "D_STARTOFFS",
           reaper.GetMediaItemTakeInfo_Value(take, "D_STARTOFFS"))
-        local ok, tname = reaper.GetSetMediaItemTakeInfo_String(take, "P_NAME", "", false)
-        if ok then reaper.GetSetMediaItemTakeInfo_String(newTake, "P_NAME", tname, true) end
+        reaper.GetSetMediaItemTakeInfo_String(newTake, "P_NAME", p.newBase, true)
         reaper.SetMediaItemInfo_Value(item, "I_CURTAKE", reaper.CountTakes(item) - 1)
         touched[#touched + 1] = item
       end

@@ -20,12 +20,18 @@ D i 328k
 F "001_Jasmine Trots Ahead_Opening Credits.mp3" 500686 0 1785424633 0
 D g Blues s 44100 n 1 l 0:12.355
 D i 329k
+F "001_Lily and the Lost Boy_Opening Credits.mp3" 534293 0 1787942409 0
+D g Blues s 44100 n 1 l 0:13.191
+D i 325k
 F "001_Maurice's Room_Opening Credits.mp3" 364850 0 1785521032 0
 D g Blues s 44100 n 1 l 0:08.960
 D i 358k
 F "001_May Rides a New Pony_Opening Credits.mp3" 604446 0 1785429090 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 0:14.942 i 342k
+F "001_Serial Killer Wanted_Opening Credits@narrator1.mp3" 811710 0 1789405892 0
+D g Blues s 44100 n 1 l 0:20.062
+D i 321k
 F "001_The Guest Book_Opening Credits@narrator1.mp3" 555766 0 1778619636 0
 D g Blues s 44100 n 1 l 0:13.663
 D i 322k
@@ -62,6 +68,9 @@ D l 0:07.954 i 323k
 F "002_Jasmine Trots Ahead_Dedication.mp3" 354401 0 1785424633 0
 D g Blues s 44100 n 1 l 0:08.698
 D i 348k
+F "002_Lily and the Lost Boy_Dedication.mp3" 336807 0 1787942408 0
+D g Blues s 44100 n 1 l 0:08.254
+D i 330k
 F "002_Maurice's Room_Dedication.mp3" 84817 0 1785521044 0
 D g Blues s 44100 n 1 l 0:01.959
 D i 627k
@@ -97,6 +106,9 @@ D y 2026 g Blues s 44100 n 1
 D l 0:32.991 i 321k
 F "003_Jasmine Trots Ahead_Chapter 1.mp3" 11255821 0 1785424633 0
 D g Blues s 44100 n 1 l 4:41.234
+D i 320k
+F "003_Lily and the Lost Boy_Chapter 1.mp3" 33185265 0 1787942414 0
+D g Blues s 44100 n 1 l 13:49.466
 D i 320k
 F "003_Maurice's Room_Chapter 1.mp3" 11191037 0 1785521043 0
 D g Blues s 44100 n 1 l 4:39.614
@@ -146,8 +158,14 @@ D l 19:25.190 i 320k
 F "004_Jasmine Trots Ahead_Chapter 2.mp3" 10233911 0 1785424633 0
 D g Blues s 44100 n 1 l 4:15.686
 D i 321k
+F "004_Lily and the Lost Boy_Chapter 2.mp3" 53724824 0 1787942409 0
+D g Blues s 44100 n 1 l 22:22.955
+D i 320k
 F "004_Maurice's Room_Chapter 2.mp3" 6602891 0 1785521027 0
 D g Blues s 44100 n 1 l 2:44.911
+D i 322k
+F "004_Serial Killer Wanted_I saw my first dead body in Walmart@narrator1.mp3" 2910931 0 1789405893 0
+D g Blues s 44100 n 1 l 1:12.542
 D i 322k
 F "004_The Magical Game_Chapter 1.mp3" 98280346 0 1778513674 0
 D g Blues s 44100 n 1 l 40:56.788
@@ -182,6 +200,9 @@ D l 28:39.972 i 320k
 F "005_Jasmine Trots Ahead_Chapter 3.mp3" 12186825 0 1785424633 0
 D g Blues s 44100 n 1 l 5:04.509
 D i 321k
+F "005_Lily and the Lost Boy_Chapter 3.mp3" 46438750 0 1787942408 0
+D g Blues s 44100 n 1 l 19:20.803
+D i 320k
 F "005_Maurice's Room_Chapter 3.mp3" 9703103 0 1785521039 0
 D g Blues s 44100 n 1 l 4:02.416
 D i 321k
@@ -224,12 +245,18 @@ D i 320k
 F "006_Jasmine Trots Ahead_Chapter 4.mp3" 23381862 0 1785424633 0
 D g Blues s 44100 n 1 l 9:44.385
 D i 320k
+F "006_Lily and the Lost Boy_Chapter 4.mp3" 51261999 0 1787942408 0
+D g Blues s 44100 n 1 l 21:21.384
+D i 320k
 F "006_Maurice's Room_Chapter 4.mp3" 14328866 0 1785521041 0
 D g Blues s 44100 n 1 l 5:58.060
 D i 320k
 F "006_May Rides A New Pony_Chapter 4.mp3" 38188381 0 1785429089 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 15:54.540 i 320k
+F "006_Serial Killer Wanted_Chapter 1@narrator1.mp3" 39632806 0 1789405908 0
+D g Blues s 44100 n 1 l 16:30.589
+D i 320k
 F "006_The Magical Game_Chapter 3.mp3" 118053995 0 1778513673 0
 D g Blues s 44100 n 1 l 49:11.123
 D i 320k
@@ -257,12 +284,18 @@ D i 320k
 F "007_Jasmine Trots Ahead_Chapter 5.mp3" 31689846 0 1785424633 0
 D g Blues s 44100 n 1 l 13:12.084
 D i 320k
+F "007_Lily and the Lost Boy_Chapter 5.mp3" 83547256 0 1787942423 0
+D g Blues s 44100 n 1 l 34:48.515
+D i 320k
 F "007_Maurice's Room_Chapter 5.mp3" 12374907 0 1785521031 0
 D g Blues s 44100 n 1 l 5:09.211
 D i 320k
 F "007_May Rides a New Pony_Chapter 5.mp3" 20149263 0 1785429090 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 8:23.562 i 320k
+F "007_Serial Killer Wanted_Chapter 2@narrator1.mp3" 7489648 0 1789405896 0
+D g Blues s 44100 n 1 l 3:07.010
+D i 320k
 F "007_The Guest Book_Chapter 5@narrator1.mp3" 87739708 0 1778619644 0
 D g Blues s 44100 n 1 l 36:33.263
 D i 320k
@@ -302,6 +335,9 @@ D l 0:17.249 i 321k
 F "008_Jasmine Trots Ahead_Chapter 6.mp3" 14721748 0 1785424633 0
 D g Blues s 44100 n 1 l 6:07.882
 D i 321k
+F "008_Lily and the Lost Boy_Chapter 6.mp3" 91903305 0 1787942424 0
+D g Blues s 44100 n 1 l 38:17.417
+D i 320k
 F "008_Maurice's Room_Chapter 6.mp3" 6506760 0 1785521040 0
 D g Blues s 44100 n 1 l 2:42.507
 D i 321k
@@ -341,12 +377,18 @@ D l 8:35.793 i 320k
 F "009_Jasmine Trots Ahead_Chapter 7.mp3" 20120735 0 1785424633 0
 D g Blues s 44100 n 1 l 8:22.857
 D i 321k
+F "009_Lily and the Lost Boy_Chapter 7.mp3" 57690212 0 1787942416 0
+D g Blues s 44100 n 1 l 24:02.089
+D i 320k
 F "009_Maurice's Room_Chapter 7.mp3" 15087462 0 1785521029 0
 D g Blues s 44100 n 1 l 6:17.025
 D i 320k
 F "009_May Rides a New Pony_Chapter 7.mp3" 13004250 0 1785429090 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 5:24.937 i 321k
+F "009_Serial Killer Wanted_Chapter 4@narrator1.mp3" 44296186 0 1789405900 0
+D g Blues s 44100 n 1 l 18:27.173
+D i 320k
 F "009_The Guest Book_Chapter 7@narrator1.mp3" 74088671 0 1778619636 0
 D g Blues s 44100 n 1 l 30:51.982
 D i 320k
@@ -380,6 +422,9 @@ D i 320k
 F "010_Jasmine Trots Ahead_Chapter 8.mp3" 12035315 0 1785424633 0
 D g Blues s 44100 n 1 l 5:00.721
 D i 321k
+F "010_Lily and the Lost Boy_Chapter 8.mp3" 68587452 0 1787942414 0
+D g Blues s 44100 n 1 l 28:34.520
+D i 320k
 F "010_Maurice's Room_Chapter 8.mp3" 12920344 0 1785521033 0
 D g Blues s 44100 n 1 l 5:22.847
 D i 321k
@@ -416,12 +461,18 @@ D i 320k
 F "011_Jasmine Trots Ahead_Chapter 9.mp3" 9523380 0 1785424633 0
 D g Blues s 44100 n 1 l 3:57.923
 D i 321k
+F "011_Lily and the Lost Boy_Chapter 9.mp3" 30058930 0 1787942405 0
+D g Blues s 44100 n 1 l 12:31.307
+D i 320k
 F "011_Maurice's Room_Chapter 9.mp3" 8024997 0 1785521037 0
 D g Blues s 44100 n 1 l 3:20.463
 D i 321k
 F "011_May Rides a New Pony_Chapter 9.mp3" 37189459 0 1785429089 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 15:29.567 i 320k
+F "011_Serial Killer Wanted_Chapter 6@narrator1.mp3" 28383435 0 1789405895 0
+D g Blues s 44100 n 1 l 11:49.355
+D i 320k
 F "011_The Guest Book_Chapter 9@narrator1.mp3" 61772459 0 1778619644 0
 D g Blues s 44100 n 1 l 25:44.096
 D i 320k
@@ -452,12 +503,18 @@ D l 0:45.021 i 320k
 F "012_Jasmine Trots Ahead_Chapter 10.mp3" 19949372 0 1785424633 0
 D g Blues s 44100 n 1 l 8:18.573
 D i 320k
+F "012_Lily and the Lost Boy_Chapter 10.mp3" 45305036 0 1787942408 0
+D g Blues s 44100 n 1 l 18:52.460
+D i 320k
 F "012_Maurice's Room_Chapter 10.mp3" 12096964 0 1785521038 0
 D g Blues s 44100 n 1 l 5:02.262
 D i 320k
 F "012_May Rides a New Pony_Chapter 10.mp3" 23362324 0 1785429090 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 9:43.888 i 320k
+F "012_Serial Killer Wanted_Chapter 7@narrator1.mp3" 5452097 0 1789405893 0
+D g Blues s 44100 n 1 l 2:16.071
+D i 320k
 F "012_The Magical Game_Chapter 9.mp3" 117148068 0 1778513674 0
 D g Blues s 44100 n 1 l 48:48.476
 D i 320k
@@ -488,12 +545,18 @@ D l 10:40.924 i 320k
 F "013_Jasmine Trots Ahead_Chapter 11.mp3" 14864899 0 1785424633 0
 D g Blues s 44100 n 1 l 6:11.461
 D i 320k
+F "013_Lily and the Lost Boy_About the Author.mp3" 4927044 0 1787942409 0
+D g Blues s 44100 n 1 l 2:03.010
+D i 320k
 F "013_Maurice's Room_About the Author.mp3" 4340686 0 1785521036 0
 D g Blues s 44100 n 1 l 1:48.355
 D i 321k
 F "013_May Rides a New Pony_May’s Pony Training Tips.mp3" 13649997 0 1785429090 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 5:41.080 i 320k
+F "013_Serial Killer Wanted_Chapter 8@narrator1.mp3" 7712211 0 1789405904 0
+D g Blues s 44100 n 1 l 3:12.574
+D i 321k
 F "013_The Guest Book_Chapter 11@narrator1.mp3" 70017749 0 1778619640 0
 D g Blues s 44100 n 1 l 29:10.213
 D i 320k
@@ -527,6 +590,9 @@ D l 7:59.453 i 320k
 F "014_Jasmine Trots Ahead_Jasmine's Tips On Horses' Colors.mp3" 8952866 0 1785424633 0
 D g Blues s 44100 n 1 l 3:43.660
 D i 321k
+F "014_Lily and the Lost Boy_Closing Credits.mp3" 1153918 0 1787942408 0
+D g Blues s 44100 n 1 l 0:28.682
+D i 328k
 F "014_Maurice's Room_Closing Credits.mp3" 942678 0 1785521026 0
 D g Blues s 44100 n 1 l 0:23.405
 D i 326k
@@ -572,6 +638,9 @@ D i 320k
 F "015_May Rides a New Pony_Closing Credits.mp3" 1435140 0 1785429090 0
 D a " " y 2026 g Blues s 44100
 D n 1 l 0:35.709 i 326k
+F "015_Serial Killer Wanted_Chapter 10@narrator1.mp3" 37312089 0 1789405907 0
+D g Blues s 44100 n 1 l 15:32.571
+D i 320k
 F "015_The Guest Book_Chapter 13@narrator1.mp3" 81780655 0 1778619636 0
 D g Blues s 44100 n 1 l 34:04.269
 D i 320k
@@ -644,6 +713,9 @@ D i 320k
 F "018_Fatally Yours_September 11th, Dear Shannon@narrator1.mp3" 1925584 0 1774467210 0
 D y 2026 g Blues s 44100 n 1
 D l 0:47.862 i 320k
+F "018_Serial Killer Wanted_Chapter 13@narrator1.mp3" 9938891 0 1789405900 0
+D g Blues s 44100 n 1 l 4:08.241
+D i 320k
 F "018_Voted Most Likely to Murder_Chapter 16.mp3" 50939126 0 1778531674 0
 D g Blues s 44100 n 1 l 21:13.253
 D i 320k
@@ -665,6 +737,9 @@ D i 321k
 F "019_Fatally Yours_Chapter 10@narrator1.mp3" 44335348 0 1774467216 0
 D y 2026 g Blues s 44100 n 1
 D l 18:28.112 i 320k
+F "019_Serial Killer Wanted_Chapter 14@narrator1.mp3" 2732229 0 1789405900 0
+D g Blues s 44100 n 1 l 1:08.075
+D i 320k
 F "019_The Guest Book_Chapter 17@narrator1.mp3" 84720508 0 1778619636 0
 D g Blues s 44100 n 1 l 35:17.775
 D i 320k
@@ -695,6 +770,9 @@ D i 320k
 F "020_Fatally Yours_Chapter 11@narrator1.mp3" 34787590 0 1774466627 0
 D y 2026 g Blues s 44100 n 1
 D l 14:29.416 i 320k
+F "020_Serial Killer Wanted_Chapter 15@narrator1.mp3" 32351958 0 1789405903 0
+D g Blues s 44100 n 1 l 13:28.568
+D i 320k
 F "020_Voted Most Likely to Murder_Chapter 18.mp3" 36927044 0 1778531673 0
 D g Blues s 44100 n 1 l 15:22.943
 D i 320k
@@ -719,6 +797,9 @@ D i 320k
 F "021_Fatally Yours_Chapter 12@narrator1.mp3" 46164439 0 1774466620 0
 D y 2026 g Blues s 44100 n 1
 D l 19:13.829 i 320k
+F "021_Serial Killer Wanted_Chapter 16@narrator1.mp3" 9273291 0 1789405901 0
+D g Blues s 44100 n 1 l 3:51.601
+D i 321k
 F "021_Voted Most Likely to Murder_Chapter 19.mp3" 31246424 0 1778531673 0
 D g Blues s 44100 n 1 l 13:00.906
 D i 320k
@@ -812,6 +893,9 @@ D i 320k
 F "026_Fatally Yours_September 24th, Dear Shannon@narrator1.mp3" 2114711 0 1774467213 0
 D y 2026 g Blues s 44100 n 1
 D l 0:52.597 i 320k
+F "026_Serial Killer Wanted_Chapter 21@narrator1.mp3" 15291909 0 1789405901 0
+D g Blues s 44100 n 1 l 6:22.066
+D i 320k
 F "026_The Guest Book_About the Author.mp3" 1572493 0 1778619637 0
 D y 2026 g Blues s 44100 n 1
 D l 0:39.003 i 321k
@@ -830,6 +914,9 @@ D i 320k
 F "027_Fatally Yours_Chapter 16@narrator1.mp3" 43781027 0 1774466622 0
 D y 2026 g Blues s 44100 n 1
 D l 18:14.258 i 320k
+F "027_Serial Killer Wanted_Chapter 22@narrator1.mp3" 1711363 0 1789405900 0
+D g Blues s 44100 n 1 l 0:42.553
+D i 324k
 F "027_The Guest Book_Closing Credits@narrator1.mp3" 1400345 0 1778619636 0
 D g Blues s 44100 n 1 l 0:34.772
 D i 321k
@@ -878,6 +965,9 @@ D i 320k
 F "031_Fatally Yours_Chapter 18@narrator1.mp3" 52180962 0 1774466626 0
 D y 2026 g Blues s 44100 n 1
 D l 21:44.249 i 320k
+F "031_Serial Killer Wanted_Chapter 26@narrator1.mp3" 26659354 0 1789405904 0
+D g Blues s 44100 n 1 l 11:06.253
+D i 320k
 F "032_Carry Me to My Grave_Chapter 30@Narrator1.mp3" 18698629 0 1781833876 0
 D g Blues s 44100 n 1 l 7:47.304
 D i 320k
@@ -896,8 +986,14 @@ D i 320k
 F "033_Daughters of Naples_Chapter 30.mp3" 33033789 0 1781629135 0
 D g Blues s 44100 n 1 l 13:45.678
 D i 320k
+F "033_Serial Killer Wanted_Chapter 28@narrator1.mp3" 25334424 0 1789405904 0
+D g Blues s 44100 n 1 l 10:33.129
+D i 320k
 F "034_Daughters of Naples_Chapter 31.mp3" 21184647 0 1781629135 0
 D g Blues s 44100 n 1 l 8:49.449
+D i 320k
+F "034_Serial Killer Wanted_Chapter 29@narrator1.mp3" 38142783 0 1789405899 0
+D g Blues s 44100 n 1 l 15:53.338
 D i 320k
 F "035_Carry Me to My Grave_Chapter 33@Narrator1.mp3" 40798221 0 1781833876 0
 D g Blues s 44100 n 1 l 16:59.794
@@ -908,6 +1004,9 @@ D i 320k
 F "035_Fatally Yours_September 26th (Part 2), Dear Shannon@narrator1.mp3" 766793 0 1774467212 0
 D y 2026 g Blues s 44100 n 1
 D l 0:18.904 i 321k
+F "035_Serial Killer Wanted_Chapter 30@narrator1.mp3" 46062803 0 1789405900 0
+D g Blues s 44100 n 1 l 19:11.320
+D i 320k
 F "036_Daughters of Naples_Chapter 33.mp3" 13111765 0 1781629136 0
 D g Blues s 44100 n 1 l 5:27.627
 D i 321k
@@ -923,12 +1022,18 @@ D i 321k
 F "037_Fatally Yours_Chapter 22@narrator1.mp3" 47323231 0 1774466625 0
 D y 2026 g Blues s 44100 n 1
 D l 19:42.809 i 320k
+F "037_Serial Killer Wanted_Chapter 32@narrator1.mp3" 73981738 0 1789405900 0
+D g Blues s 44100 n 1 l 30:49.312
+D i 320k
 F "038_Daughters of Naples_Chapter 35.mp3" 20374851 0 1781629136 0
 D g Blues s 44100 n 1 l 8:29.204
 D i 320k
 F "038_Fatally Yours_Chapter 23@narrator1.mp3" 41792586 0 1774466618 0
 D y 2026 g Blues s 44100 n 1
 D l 17:24.536 i 320k
+F "038_Serial Killer Wanted_Chapter 33@narrator1.mp3" 27518260 0 1789405903 0
+D g Blues s 44100 n 1 l 11:27.725
+D i 320k
 F "039_Carry Me to My Grave_Chapter 37@Narrator1.mp3" 10740686 0 1781833876 0
 D g Blues s 44100 n 1 l 4:28.355
 D i 320k
@@ -944,6 +1049,9 @@ D i 321k
 F "040_Fatally Yours_December 16th, Dear Shannon@narrator1.mp3" 3445876 0 1774466614 0
 D y 2026 g Blues s 44100 n 1
 D l 1:25.865 i 320k
+F "040_Serial Killer Wanted_Chapter 35@narrator1.mp3" 34886881 0 1789405904 0
+D g Blues s 44100 n 1 l 14:31.941
+D i 320k
 F "041_Carry Me to My Grave_Chapter 39@Narrator1.mp3" 54466531 0 1781833876 0
 D g Blues s 44100 n 1 l 22:41.502
 D i 320k
@@ -953,21 +1061,33 @@ D i 320k
 F "041_Fatally Yours_Chapter 25@narrator1.mp3" 37519998 0 1774466618 0
 D y 2026 g Blues s 44100 n 1
 D l 15:37.740 i 320k
+F "041_Serial Killer Wanted_Chapter 36@narrator1.mp3" 40675615 0 1789405904 0
+D g Blues s 44100 n 1 l 16:56.659
+D i 320k
 F "042_Daughters of Naples_Chapter 39.mp3" 15642508 0 1781629135 0
 D g Blues s 44100 n 1 l 6:30.896
 D i 321k
 F "042_Fatally Yours_Chapter 26@narrator1.mp3" 33721829 0 1774467212 0
 D y 2026 g Blues s 44100 n 1
 D l 14:02.763 i 320k
+F "042_Serial Killer Wanted_Chapter 37@narrator1.mp3" 16307550 0 1789405894 0
+D g Blues s 44100 n 1 l 6:47.457
+D i 320k
 F "043_Carry Me to My Grave_Chapter 41@Narrator1.mp3" 27673258 0 1781833875 0
 D g Blues s 44100 n 1 l 11:31.670
 D i 320k
 F "043_Daughters of Naples_Chapter 40.mp3" 29213642 0 1781629136 0
 D g Blues s 44100 n 1 l 12:10.174
 D i 320k
+F "043_Serial Killer Wanted_Chapter 38@narrator1.mp3" 1527461 0 1789405892 0
+D g Blues s 44100 n 1 l 0:37.955
+D i 328k
 F "044_Daughters of Naples_Chapter 41.mp3" 10444141 0 1781629136 0
 D g Blues s 44100 n 1 l 4:20.937
 D i 321k
+F "044_Serial Killer Wanted_Chapter 39@narrator1.mp3" 22413934 0 1789405895 0
+D g Blues s 44100 n 1 l 9:20.117
+D i 320k
 F "045_Daughters of Naples_Chapter 42.mp3" 24161562 0 1781629136 0
 D g Blues s 44100 n 1 l 10:03.872
 D i 320k
@@ -986,20 +1106,32 @@ D l 15:56.898 i 320k
 F "047_Daughters of Naples_Chapter 44.mp3" 19560876 0 1781629135 0
 D g Blues s 44100 n 1 l 8:08.855
 D i 321k
+F "047_Serial Killer Wanted_Chapter 42@narrator1.mp3" 21843419 0 1789405895 0
+D g Blues s 44100 n 1 l 9:05.854
+D i 321k
 F "048_Carry Me to My Grave_Chapter 46@Narrator1.mp3" 25717209 0 1781833876 0
 D g Blues s 44100 n 1 l 10:42.768
 D i 320k
 F "048_Daughters of Naples_Chapter 45.mp3" 16647701 0 1781629136 0
 D g Blues s 44100 n 1 l 6:56.026
 D i 320k
+F "048_Serial Killer Wanted_Chapter 43@narrator1.mp3" 21567566 0 1789405895 0
+D g Blues s 44100 n 1 l 8:58.958
+D i 321k
 F "049_Daughters of Naples_Chapter 46.mp3" 26678721 0 1781629136 0
 D g Blues s 44100 n 1 l 11:06.801
+D i 320k
+F "049_Serial Killer Wanted_Chapter 44@narrator1.mp3" 51178930 0 1789405899 0
+D g Blues s 44100 n 1 l 21:19.242
 D i 320k
 F "04_Sunlight Slayings_Ch03.mp3" 34217739 0 1785379869 0
 D g Blues s 44100 n 1 l 14:15.275
 D i 320k
 F "050_Daughters of Naples_Chapter 47.mp3" 27834378 0 1781629136 0
 D g Blues s 44100 n 1 l 11:35.693
+D i 320k
+F "050_Serial Killer Wanted_Chapter 45@narrator1.mp3" 17876988 0 1789405898 0
+D g Blues s 44100 n 1 l 7:26.693
 D i 320k
 F "051_Carry Me to My Grave_Chapter 49@Narrator1.mp3" 3946760 0 1781833875 0
 D g Blues s 44100 n 1 l 1:38.507
@@ -1031,12 +1163,18 @@ D i 320k
 F "055_Daughters of Naples_Chapter 52.mp3" 14624778 0 1781629136 0
 D g Blues s 44100 n 1 l 6:05.453
 D i 320k
+F "055_Serial Killer Wanted_Acknowledgments@narrator1.mp3" 18611549 0 1789405900 0
+D g Blues s 44100 n 1 l 7:45.057
+D i 320k
 F "056_Daughters of Naples_Chapter 53.mp3" 12545431 0 1781629136 0
 D g Blues s 44100 n 1 l 5:13.469
 D i 320k
 F "056_Fatally Yours_August 10th, Dear Shannon@narrator1.mp3" 1172213 0 1774467208 0
 D y 2026 g Blues s 44100 n 1
 D l 0:29.032 i 321k
+F "056_Serial Killer Wanted_Closing Credits@narrator1.mp3" 1762568 0 1789405899 0
+D g Blues s 44100 n 1 l 0:43.833
+D i 326k
 F "057_Carry Me to My Grave_Chapter 55@Narrator1.mp3" 11425095 0 1781833876 0
 D g Blues s 44100 n 1 l 4:45.466
 D i 321k

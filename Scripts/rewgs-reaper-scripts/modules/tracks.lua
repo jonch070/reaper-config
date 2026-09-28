@@ -577,16 +577,37 @@ function is_marked(subject, pattern)
     end
 end
 
+function get_active_mark_color(track_name)
+    -- Returns the RGB color for the highest-priority mark present in `track_name`, or nil
+    -- if no mark is present. Priority (highest to lowest): record, transcribe, improve.
+    local priority = { track_marks.record, track_marks.transcribe, track_marks.improve }
+    for _, mark in ipairs(priority) do
+        if is_marked(track_name, mark) then
+            return track_mark_colors[mark]
+        end
+    end
+    return nil
+end
+
+function set_track_color(media_track, rgb)
+    if rgb then
+        reaper.SetMediaTrackInfo_Value(media_track, "I_CUSTOMCOLOR", reaper.ColorToNative(rgb[1], rgb[2], rgb[3]) | 0x1000000)
+    else
+        reaper.SetMediaTrackInfo_Value(media_track, "I_CUSTOMCOLOR", 0)
+    end
+end
+
 function toggle_mark_track(mark)
     for _, track in ipairs(get_all_tracks_as_objects()) do
         if track.is_selected == true and track.depth < 1 then
+            local new_name
             if is_marked(track.name, mark) then
-                local new_name = track.name:gsub(mark .. " ", "")
-                reaper.GetSetMediaTrackInfo_String(track.media_track, "P_NAME", new_name, true)
+                new_name = track.name:gsub(mark .. " ", "")
             else
-                local new_name = mark .. ' ' .. track.name
-                reaper.GetSetMediaTrackInfo_String(track.media_track, "P_NAME", new_name, true)
+                new_name = mark .. ' ' .. track.name
             end
+            reaper.GetSetMediaTrackInfo_String(track.media_track, "P_NAME", new_name, true)
+            set_track_color(track.media_track, get_active_mark_color(new_name))
         end
     end
 end

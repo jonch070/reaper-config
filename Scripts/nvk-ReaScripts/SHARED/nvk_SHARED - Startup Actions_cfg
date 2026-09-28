@@ -43,7 +43,7 @@ config = {
 		_RSc18de16721a3c34e4867889bd9bf02450163b2f8 = false,
 		_RSdbf64708ea8abea46b82a08cabc050148d65176c = false
 	},
-	version = "4.3.0"
+	version = "4.4.1"
 }
 tabs = {
 	default = {

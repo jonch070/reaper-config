@@ -1,0 +1,35 @@
+desc:JK slider-reset-test
+
+// Isolation test (2026-09-23): does REAPER reset slider values on
+// playback start/pause by itself? This FX has NO @serialize, NO @init
+// logic touching sliders, nothing but named sliders + passthrough.
+// Set the 5 sliders to distinctive values, play/pause a few times.
+// If they bounce back -> REAPER/host behavior, not the Seawater plugin.
+// If they hold -> the Seawater plugin's own logic is the suspect.
+
+slider1:v_gain=-6<-18,0,0.5>Trim Gain
+slider2:v_cut=4000<100,20000,10>Cut Freq
+slider3:v_mix=37<0,100,1>Mix
+slider4:v_toggle=1<0,1,1{Off,On}>Toggle
+slider5:v_trim=0<-24,24,1>Trim
+
+@init
+// record what @init sees on each invocation (incl. playback start)
+saw_gain = slider1;
+saw_cut = slider2;
+saw_mix = slider3;
+saw_toggle = slider4;
+saw_trim = slider5;
+
+@slider
+// snapshot the values the host hands us per change
+sl_gain = slider1;
+sl_cut = slider2;
+sl_mix = slider3;
+sl_toggle = slider4;
+sl_trim = slider5;
+
+@sample
+// pure passthrough; globals only (no memory arrays), so nothing to clobber
+spl0 = spl0 * 10^(-v_trim/20);
+spl1 = spl1 * 10^(-v_trim/20);

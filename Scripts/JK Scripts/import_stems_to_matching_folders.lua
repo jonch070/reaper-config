@@ -20,9 +20,9 @@ local function parseTrackChunk(chunkLines)
       if nm then name = nm end
       local g = l:match('^%s*GUID%s+(%b{})')
       if g then guid = g end
-      local m = l:match('^%s*MUTE%s+(%d+)')
+      local m = l:match('^%s*MUTESOLO%s+(%d+)')
       if m then mute = tonumber(m) end
-      local fd = l:match('^%s*I_FOLDERDEPTH%s+(%-?%d+)')
+      local fd = l:match('^%s*ISBUS%s+%-?%d+%s+(%-?%d+)')
       if fd then folderdepth = tonumber(fd) end
     end
     if l:match('AUXRECV') then recvCount = recvCount + 1 end
@@ -39,7 +39,7 @@ local function parseAllTracks(lines)
   local n = #lines
   local i = 1
   while i <= n do
-    if lines[i]:match('^%s*<TRACK%s*$') then
+    if lines[i]:match('^%s*<TRACK') then
       local startIdx = i
       local level = 1
       i = i + 1
@@ -184,7 +184,7 @@ local function importTrack(t, mountTr, ctx)
   reaper.InsertTrackAtIndex(insertIdx, false)
   local newTr = reaper.GetTrack(0, insertIdx)
   local chunk = buildDestChunk(t, ctx.sourceDir)
-  reaper.GetSetObjectState(newTr, chunk)
+  reaper.SetTrackStateChunk(newTr, chunk, false)
 
   if mountTr == nil then
     reaper.SetMediaTrackInfo_Value(newTr, 'I_FOLDERDEPTH', 0)

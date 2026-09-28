@@ -1,0 +1,496 @@
+// SPDX-License-Identifier: MIT
+// Seawater Absorption — distance-based spectral attenuation for sound
+// travelling through seawater. The underwater signature: lows survive for
+// km, highs die within a km. See also README.md in the project repo.
+//
+// *** 2026-09-24: Spreading/Prop delay stayed at Sph/On (2026-09-23 memory-
+// *** layout fix -- see the @init memory layout block + @serialize section --
+// *** resolved the total-silence + T/S/depth/pH-snap bugs: unassigned array
+// *** bases were all aliasing memory slot 0). Filter Engine reverted back to
+// *** Fast: user reported much more attenuation than physics predicts (e.g.
+// *** "very quiet at 4m", where Sph spreading alone should be only -12dB) on
+// *** Accurate. That engine has never been confirmed correct against real
+// *** REAPER playback -- its one unverified assumption from day one is
+// *** whether fft_real/fft_permute pack bins the way stft_frame() assumes
+// *** (see that function's comment). This symptom is consistent with gains
+// *** landing on the wrong bins. Do not re-enable Accurate as default until
+// *** that's actually confirmed correct by ear (transparent at 1m, no excess
+// *** attenuation at short distances) -- Fast is the well-verified fallback.
+// *** Separately, a still-open report exists of Distance being the only
+// *** slider that "holds" during playback, with Model/Spreading/Wet/Prop
+// *** delay/Filter Engine not holding -- this script's code never writes to
+// *** sliders 2 or 7-12 at all (grep confirms only slider1 and slider3-6 are
+// *** ever assigned), so that symptom, if still present, is not this
+// *** plugin's logic. Check for a leftover automation envelope on those
+// *** specific parameters (not just the automation mode selector), or test
+// *** in a blank project to rule out project-state corruption.
+//
+// Install: copy into <REAPER resource>/Effects/ (or drag onto an FX chain), rescan FX browser.
+// Recommended flow: Sound Particles output bus -> this plugin -> automate Distance to follow the scene source.
+//
+// --- Controls ---
+//  World Preset    Sets Temperature/Salinity/Depth/pH to a real (or, for
+//                  "Mesozoic AB", speculative) location in one click:
+//                    N.Atl Ice   6.0C / 34.7ppt / 10m  / pH8.1  cold N. Atlantic surface, Iceland waters
+//                    Arctic Ice -1.5C / 33.0ppt / 10m  / pH8.1  under polar ice, near-freezing
+//                    SOFAR       3.6C / 35.0ppt / 1000m/ pH7.8  deep sound channel; sound travels enormous distances here
+//                    Mediterr   19.0C / 38.2ppt / 50m  / pH8.1  warm and unusually salty
+//                    Coastal    12.0C / 34.5ppt / 5m   / pH8.0  generic shallow coastal water
+//                    Freshwater 18.0C / 0.1ppt  / 3m   / pH8.0  a lake -- salinity ~0 kills the MgSO4 absorption term
+//                    Drumheller 21.0C / 0.35ppt / 3m   / pH8.2  Red Deer River, Drumheller AB, summer (real reference point)
+//                    Mesozoic AB25.0C / 33.0ppt / 60m  / pH8.0  SPECULATIVE: Cretaceous Western Interior Seaway, ~80Mya
+//                  Manually moving Temperature/Salinity/Depth/pH afterwards
+//                  snaps this back to "User". Does NOT touch Distance, Model,
+//                  Spreading, Extra dB, Wet, Prop delay, or Filter Engine --
+//                  those are always yours to set independently.
+//  Distance (m)    How far the sound has travelled underwater. Drives the
+//                  absorption curve and, if enabled, Prop delay and Spreading.
+//                  Default is 10m (deliberately close): absorption coloration
+//                  and spreading loss operate on very different distance
+//                  scales -- spreading is already -60dB by 1km while
+//                  absorption is still subtle even at several km (see
+//                  HANDOFF.md 2026-09-23 entry for the numbers). There is no
+//                  single distance where both are dramatically audible at
+//                  once; that's real physics, not a bug. 10m keeps the
+//                  plugin listenable out of the box (spreading ~-20dB,
+//                  absorption negligible, as it should be that close).
+//                  Automate Distance up for real use -- it'll get darker AND
+//                  much quieter together, which is the actual point. Swings
+//                  to the 100km slider max: at 100km spherical spreading is
+//                  ~-100dB and even mid-band absorption is crushing, so the
+//                  output attenuates essentially to silence -- by design, so
+//                  you can ride the full distance dial all the way down
+//                  (a post gain/trim is the normal pairing). Add a
+//                  gain/trim plugin after this one if you need to compensate
+//                  loudness while riding Distance out to hundreds/thousands
+//                  of meters.
+//  Temperature/    Feed the speed-of-sound (Mackenzie) and, in Francois-
+//  Salinity/Depth/ Garrison mode, the absorption curve itself. Salinity in
+//  pH              particular controls the "MgSO4" absorption term -- this
+//                  is why ocean water and a freshwater lake sound different.
+//  Absorption      Thorp (1967): simple, fixed dB/km-vs-frequency curve,
+//  model           ignores Temperature/Salinity/Depth/pH entirely, valid to
+//                  ~50kHz. Francois-Garrison (1982, default): sums three
+//                  physical loss mechanisms (boric acid = lows, magnesium
+//                  sulfate = mids, pure water viscosity = highs) and
+//                  actually responds to the sliders above -- more
+//                  physically accurate, and the recommended default.
+//  Spreading       Geometric spreading loss (sound spreading over an ever-
+//                  bigger sphere/cylinder), separate from absorption --
+//                  same effect in air or water. Sph (6dB/doubling, default)
+//                  is the physically correct open-water case; Cyl (3dB/
+//                  doubling) approximates a duct/channel; Off disables it
+//                  (distance then only changes tone, not volume -- useful if
+//                  an upstream tool, e.g. Sound Particles, already applies
+//                  its own distance attenuation and you don't want it
+//                  double-applied here).
+//  Extra dB/       Manual attenuation added on top of Spreading, for
+//  doubling        creative control beyond the physical model.
+//  Wet (%)         Standard dry/processed blend.
+//  Prop delay      Real propagation delay = Distance / speed-of-sound, so
+//                  far sounds arrive later (like thunder trailing lightning).
+//                  On by default; turn off if an upstream tool already
+//                  applies its own arrival-time delay.
+//  Filter Engine   Fast (5-band, default): the absorption curve applied as
+//                  gains across a 5-way crossover (300/1k/3k/9k) -- cheap,
+//                  audibly correct, and the only engine confirmed correct
+//                  in live REAPER so far. Accurate (FFT): 2048-pt STFT
+//                  applies the exact curve per ~23Hz bin instead of 4
+//                  crossover points, in principle more accurate, but its
+//                  fft_real/fft_permute bin-packing has never been
+//                  confirmed correct live -- a 2026-09-24 report of much
+//                  more attenuation than physics predicts is consistent
+//                  with gains landing on the wrong bins. Try it, but treat
+//                  it as unverified until confirmed transparent at 1m with
+//                  no excess loss at short distances. ~43ms extra latency
+//                  when active (reported to the
+//                  host via pdc_delay, auto-compensated in REAPER).
+//
+// --- Physics (verified against sources, see HANDOFF.md) ---
+//  Speed of sound : Mackenzie (1981)         valid 2-30C, 25-40ppt, 0-8000m
+//  Absorption     : Francois-Garrison (1982)  valid ~10-500kHz, -2..22C, 30-35ppt, 0-3.5km (R `sonar` pkg / NPL guide / NOAA paper)
+//                  boric-acid A1 uses 8.86/c (NOT 8.686/c) per F&G 1982 + Ainslie-McColm cross-check
+//  Fallback       : Thorp (1967) extended,    dB/km, valid < ~50 kHz, independent of T/S/depth
+//
+// --- Filter engines ---
+// Fast: each crossover stage is a 4th-order complementary pair (LP =
+// Butterworth-2 x 2, HP forced to '1 - LP') so the band sum telescopes to
+// unity with zero droop.
+// Accurate: STFT overlap-add, 512-sample hop (75% overlap), Hann window;
+// per-bin gain 10^(-alpha(f_bin)*dist_km/20). See HANDOFF.md for the
+// verification story (and one important caveat: Hann^2 @ 75% overlap sums
+// to 1.5, not 1 -- both this file's window and the Python reference divide
+// by sqrt(1.5) to correct for it).
+//
+// Relevant reference implementation: Epi_Doppler
+//   https://github.com/ThanasisEpitideios/Epi_Doppler  (distance delay + smoothed params in JSFX)
+// Behaviour reference (air medium): TDR Proximity (local copy in "scope and context/proximity_v1_0_1-mac reference")
+
+desc:Seawater Absorption
+options:maxmem=64000000
+
+slider1:preset=0<0,8,1{User,N.Atl Ice,Arctic Ice,SOFAR,Mediterr,Coastal,Freshwater,Drumheller,Mesozoic AB}>World Preset
+slider2:sea_dist=10<1,100000,1>Distance (m)
+slider3:sea_temp=10<-2,30,0.1>Temperature (C)
+slider4:sea_sal=35<0,40,0.1>Salinity (ppt)
+slider5:sea_depth=10<0,8000,1>Depth (m)
+slider6:sea_ph=8.0<7.5,8.5,0.01>pH
+slider7:sea_model=1<0,1,1{Thorp,Francois-G}>Absorption model
+slider8:sea_spread=6<0,6,1{Off,,,Cyl (3dB),,,Sph (6dB)}>Spreading
+slider9:sea_atten=0<-18,18,0.5>Extra dB/doubling
+slider10:sea_mix=100<0,100,1>Wet (%)
+slider11:sea_delay=1<0,1,1{Off,On}>Prop delay
+slider12:sea_engine=0<0,1,1{Fast (5-band),Accurate (FFT)}>Filter Engine
+
+@init
+// All functions are defined first, as the very first thing inside @init,
+// so every call site (including init_xover() further down in this same
+// section) resolves. Two things learned live, the hard way:
+//  1. REAPER's JSFX compiler does NOT forward-reference a function defined
+//     later in the same section -- it must be defined above its first use.
+//  2. Code placed *before* the first @section header (@init/@slider/@sample)
+//     is NOT compiled at all -- REAPER silently drops it. (Tried putting the
+//     functions there first; got the identical 'init_xover' undefined error,
+//     which is what revealed this.) Functions must live inside a section.
+
+// speed of sound (Mackenzie 1981), m/s
+// Note: written as plain decimals, not 5.304e-2-style scientific notation --
+// REAPER's JSFX/EEL2 compiler does not accept that literal syntax (confirmed
+// live: 'syntax error' right at the 'e-2' in 5.304e-2).
+function sea_mack(t, s, z) (
+  1448.96 + 4.591*t - 0.05304*t*t + 0.0002374*t^3
+    + 1.340*(s-35) + 0.01630*z + 0.0000001675*z*z
+    - 0.01025*t*(s-35) - 0.0000000000007139*t*z^3
+);
+
+// absorption in dB/km, f in kHz, t/s/z/ph/c = temp/salinity/depth/pH/speed-of-sound
+//  model 0 = Thorp (extended), model 1 = Francois-Garrison
+// Takes t/s/z/ph/c explicitly (rather than reading sea_temp/etc. globals)
+// so the FFT engine can evaluate it against its own smoothed parameters
+// without disturbing the fast-path globals.
+function sea_alpha(f, t, s, z, ph, c) local(a1a, f1a, a2a, p2a, f2a, a3a, p3a) global(sea_model) (
+  sea_model == 0 ?
+    ( 0.11*f*f/(1+f*f) + 44*f*f/(4100+f*f) + 0.000275*f*f + 0.003 )
+  : (
+    // boric acid (dominates lows)  A1 per F&G 1982 = 8.86/c
+    a1a = (8.86/c) * (10^(0.78*ph - 5));
+    f1a = 2.8*sqrt(max(s,0.001)/35) * (10^(4 - 1245/(t+273)));
+
+    // magnesium sulfate (mids)
+    a2a = 21.44*(s/c)*(1 + 0.025*t);
+    p2a = 1 - 0.000137*z + 0.0000000062*z*z;
+    f2a = (8.17*(10^(8 - 1990/(t+273)))) / (1 + 0.0018*(s-35));
+
+    // pure water viscosity (highs)
+    a3a = (t <= 20) ?
+        (0.0004937 - 0.0000259*t + 0.000000911*t*t - 0.000000015*t^3)
+      : (0.0003964 - 0.00001146*t + 0.000000145*t*t - 0.00000000065*t^3);
+    p3a = 1 - 0.0000383*z + 0.00000000049*z*z;
+
+    a1a*f1a*f*f/(f1a*f1a + f*f) + a2a*p2a*f2a*f*f/(f2a*f2a + f*f) + a3a*p3a*f*f
+  )
+);
+
+// ---- crossover: 4th-order complementary pairs (LP + HP == 1 exactly) ----
+// stages at 300/1k/3k/9k: LP = 2 cascaded Butterworth 2nd-order sections (4th
+// order); HP is forced to the exact z-complement '1 - LP' so the multi-stage
+// band sum telescopes to unity with zero droop (verified vs impulse test).
+function set_stage4(idx, fc) local(w0, cw, sw, al, n, bs0, bs1, bs2, as1, as2, n0, n1, n2, n3, n4, d1, d2, d3, d4) global(fb0, fb1, fb2, fb3, fb4, fa1, fa2, fa3, fa4, srate) (
+  w0 = 2 * $pi * fc / srate;
+  cw = cos(w0); sw = sin(w0);
+  al = sw * 0.707106781186548;
+  n = 1 + al;
+  bs0 = (1-cw)*0.5/n; bs1 = (1-cw)/n; bs2 = (1-cw)*0.5/n;
+  as1 = (-2*cw)/n;    as2 = (1-al)/n;
+  // 4th order: N = B*B (LP numerator), D = A*A (denominator)
+  n0 = bs0*bs0;            n1 = 2*bs0*bs1;
+  n2 = bs1*bs1 + 2*bs0*bs2;
+  n3 = 2*bs1*bs2;          n4 = bs2*bs2;
+  d1 = 2*as1;              d2 = as1*as1 + 2*as2;
+  d3 = 2*as1*as2;          d4 = as2*as2;
+  // lowpass
+  fb0[idx] = n0; fb1[idx] = n1; fb2[idx] = n2; fb3[idx] = n3; fb4[idx] = n4;
+  fa1[idx] = d1; fa2[idx] = d2; fa3[idx] = d3; fa4[idx] = d4;
+  // highpass = (D - N)/D
+  fb0[idx+1] = 1 - n0; fb1[idx+1] = d1 - n1; fb2[idx+1] = d2 - n2; fb3[idx+1] = d3 - n3; fb4[idx+1] = d4 - n4;
+  fa1[idx+1] = d1; fa2[idx+1] = d2; fa3[idx+1] = d3; fa4[idx+1] = d4
+);
+
+function init_xover() (
+  set_stage4(0, 300);
+  set_stage4(2, 1000);
+  set_stage4(4, 3000);
+  set_stage4(6, 9000)
+);
+
+// one 4th-order DF1 section
+function sec4(idx, x) local(y) global(fb0, fb1, fb2, fb3, fb4, fa1, fa2, fa3, fa4, xs1, xs2, xs3, xs4, ys1, ys2, ys3, ys4) (
+  y = fb0[idx]*x + fb1[idx]*xs1[idx] + fb2[idx]*xs2[idx] + fb3[idx]*xs3[idx] + fb4[idx]*xs4[idx]
+      - fa1[idx]*ys1[idx] - fa2[idx]*ys2[idx] - fa3[idx]*ys3[idx] - fa4[idx]*ys4[idx];
+  xs4[idx] = xs3[idx]; xs3[idx] = xs2[idx]; xs2[idx] = xs1[idx]; xs1[idx] = x;
+  ys4[idx] = ys3[idx]; ys3[idx] = ys2[idx]; ys2[idx] = ys1[idx]; ys1[idx] = y;
+  y
+);
+
+// ---- STFT overlap-add filter: window -> fft_real -> per-bin gain -> ifft_real -> window ----
+// inb/outb are buffer base offsets (inbufL/outbufL or inbufR/outbufR), so this
+// runs once per channel per hop. `wp` marks the newest sample in the ring;
+// wp+1 (wrapped) is the oldest, i.e. the chronological start of the frame.
+// fft_real/ifft_real packing per REAPER JSFX docs: size real in -> size/2
+// complex out, first pair is (DC, Nyquist), rest are (real,imag) bin pairs;
+// normally paired with fft_permute/fft_ipermute; no automatic 1/size scaling.
+function stft_frame(inb, outb) local(i, k, g, idx) global(wp, FFTN, half, winbuf, scblk, gainb) (
+  idx = wp + 1; (idx >= FFTN) ? idx -= FFTN;
+  i = 0;
+  while (i < FFTN) (
+    scblk[i] = inb[idx] * winbuf[i];
+    idx += 1; (idx >= FFTN) ? idx -= FFTN;
+    i += 1;
+  );
+  fft_real(scblk, FFTN);
+  fft_permute(scblk, half);
+  scblk[0] *= gainb[0];        // DC
+  scblk[1] *= gainb[half];     // Nyquist
+  k = 1;
+  while (k < half) (
+    g = gainb[k];
+    scblk[2*k]   *= g;
+    scblk[2*k+1] *= g;
+    k += 1;
+  );
+  fft_ipermute(scblk, half);
+  ifft_real(scblk, FFTN);
+  idx = wp + 1; (idx >= FFTN) ? idx -= FFTN;
+  i = 0;
+  while (i < FFTN) (
+    outb[idx] += (scblk[i] / FFTN) * winbuf[i];
+    idx += 1; (idx >= FFTN) ? idx -= FFTN;
+    i += 1;
+  );
+);
+
+// ---- memory layout & buffer bases -----------------------------------
+// REAPER JSFX memory is a single buffer indexed in *items* (4-byte floats,
+// default pool ~8M items; see advfunc.php). Root cause of the 2026-09-23
+// no-output + slider-snap bug: none of the array bases were ever assigned.
+// fb0..fb4/fa1..fa4/xs1..xs4/ys1..ys4 and dlbL/dlbR all sat at 0, winbuf was
+// 0, so every "array" aliased slot 0 and the crossover memsets + init_xover()
+// + delay memset + Hann-window build clobbered each other; sec4() then
+// solved y = prev_y * x -> output collapsed to ~zero.
+// All bases are now distinct, non-overlapping, and assigned before any use.
+// Layout (items):
+//   crossover  17 x 16-stride arrays   65536 .. 65807
+//   STFT       win/in/out/scblk/gain    131072 .. ~144384
+//   delay      L=196608, R=196608+dlsize  (dlsize = 75*srate)
+// scblk (and the FFT's working span) stays fully inside the 65536-item
+// block [131072, 196608), so it never crosses a 65,536-item boundary
+// (fft_real/ifft_real requirement, advfunc.php).
+FFTN = 2048; HOP = 512; half = FFTN/2;
+dlsize = srate * 75;             // ~75s buffer: physical prop delay up to the
+                                 // 100km slider max (100km / 1400 m/s = 71s);
+                                 // needs options:maxmem above (8M default too small at >48k).
+
+fb0 = 65536; fb1 = 65552; fb2 = 65568; fb3 = 65584; fb4 = 65600;
+fa1 = 65616; fa2 = 65632; fa3 = 65648; fa4 = 65664;
+xs1 = 65680; xs2 = 65696; xs3 = 65712; xs4 = 65728;
+ys1 = 65744; ys2 = 65760; ys3 = 65776; ys4 = 65792;
+winbuf  = 131072;
+inbufL  = winbuf  + FFTN;
+outbufL = inbufL  + FFTN;
+inbufR  = outbufL + FFTN;
+outbufR = inbufR  + FFTN;
+scblk   = outbufR + FFTN;
+gainb   = scblk   + FFTN;
+dlbL = 196608;
+dlbR = dlbL + dlsize;
+
+// ---- fast-path crossover filter design ----
+memset(fb0, 0, 8); memset(fb1, 0, 8); memset(fb2, 0, 8); memset(fb3, 0, 8); memset(fb4, 0, 8);
+memset(fa1, 0, 8); memset(fa2, 0, 8); memset(fa3, 0, 8); memset(fa4, 0, 8);
+memset(xs1, 0, 8); memset(xs2, 0, 8); memset(xs3, 0, 8); memset(xs4, 0, 8);
+memset(ys1, 0, 8); memset(ys2, 0, 8); memset(ys3, 0, 8); memset(ys4, 0, 8);
+init_xover();
+memset(dlbL, 0, dlsize); memset(dlbR, 0, dlsize);
+
+// ---- accurate-path STFT engine (2048/512, 75% overlap, causal single-ring-
+// buffer OLA -- see seawater_absorption.py StftEngine, verified there to
+// <0.05dB freq-response error and exact-sample reconstruction/latency) ----
+memset(inbufL, 0, FFTN); memset(outbufL, 0, FFTN);
+memset(inbufR, 0, FFTN); memset(outbufR, 0, FFTN);
+memset(gainb, 0, half + 1);
+freembuf(dlbR + dlsize);
+// Hann window, pre-scaled by 1/sqrt(1.5) so analysis+synthesis (applied
+// twice) overlap-added at 75% reconstructs exact unity gain -- Hann^2 @
+// 75% overlap sums to 1.5, not 1; confirmed numerically (1.11e-15 spread)
+// in the Python reference. Do not drop this factor.
+wi = 0;
+while (wi < FFTN) (
+  winbuf[wi] = (0.5 - 0.5*cos(2*$pi*wi/FFTN)) / sqrt(1.5);
+  wi += 1;
+);
+wp = 0; hcount = 0;
+sm_temp = slider3; sm_sal = slider4; sm_depth = slider5; sm_ph = slider6;
+sm_distkm = max(slider2, 1) / 1000;
+
+// ---- state ----
+dlw = 0;
+dl_cur = 0;
+last_pres = preset;              // don't re-apply the startup preset
+last_temp = slider3; last_sal = slider4; last_depth = slider5; last_ph = slider6;
+
+gs0 = 1; gs1 = 1; gs2 = 1; gs3 = 1; gs4 = 1;
+gsv = 1;
+
+@slider
+// ---- world presets (move the T/S/depth/pH sliders) ----
+preset != last_pres ? (
+  last_pres = preset;
+  preset == 1 ? ( slider3 = 6.0;  slider4 = 34.7; slider5 = 10;    slider6 = 8.1; );  // N. Atlantic surface (Iceland waters)
+  preset == 2 ? ( slider3 = -1.5; slider4 = 33.0; slider5 = 10;    slider6 = 8.1; );  // Arctic under-ice
+  preset == 3 ? ( slider3 = 3.6;  slider4 = 35.0; slider5 = 1000;  slider6 = 7.8; );  // deep SOFAR channel
+  preset == 4 ? ( slider3 = 19.0; slider4 = 38.2; slider5 = 50;    slider6 = 8.1; );  // Mediterranean
+  preset == 5 ? ( slider3 = 12.0; slider4 = 34.5; slider5 = 5;     slider6 = 8.0; );  // coastal shallow
+  preset == 6 ? ( slider3 = 18.0; slider4 = 0.1;  slider5 = 3;     slider6 = 8.0; );  // freshwater lake
+  preset == 7 ? ( slider3 = 21.0; slider4 = 0.35; slider5 = 3;     slider6 = 8.2; );  // Red Deer River, Drumheller AB, summer
+  preset == 8 ? ( slider3 = 25.0; slider4 = 33.0; slider5 = 60;    slider6 = 8.0; );  // Cretaceous Western Interior Seaway (Mesozoic AB, speculative)
+  last_temp = slider3; last_sal = slider4; last_depth = slider5; last_ph = slider6;
+) : (
+  // a manual tweak of T/S/depth/pH invalidates the preset -> snap dropdown to "User"
+  // Epsilon compare, not != : exact float equality is unsafe here -- values
+  // like 34.7/8.1 aren't exactly binary-representable, and if REAPER
+  // re-asserts a slider's value through its own rounding during playback
+  // (can happen every block, not just on real user changes), a 1-ULP
+  // mismatch against our own last-set value would read as "manually
+  // changed" and reset the preset to User on every single block. Confirmed
+  // live: this was resetting to baseline continuously during playback.
+  (abs(slider3-last_temp) > 0.0001 || abs(slider4-last_sal) > 0.0001 || abs(slider5-last_depth) > 0.0001 || abs(slider6-last_ph) > 0.0001) ? (
+    preset != 0 ? ( preset = 0; slider1 = 0; slider_automate(slider1); last_pres = 0; );
+    last_temp = slider3; last_sal = slider4; last_depth = slider5; last_ph = slider6;
+  );
+);
+sea_temp = slider3;
+sea_sal = slider4;
+sea_depth = slider5;
+sea_ph = slider6;
+sea_engine = slider12;
+
+sea_c = sea_mack(sea_temp, sea_sal, sea_depth);
+dist_km = max(sea_dist, 1) / 1000;
+
+// per-band absorption gains (band-centre freqs in kHz)
+g0 = 10^(-sea_alpha(0.20, sea_temp, sea_sal, sea_depth, sea_ph, sea_c)*dist_km/20);
+g1 = 10^(-sea_alpha(0.55, sea_temp, sea_sal, sea_depth, sea_ph, sea_c)*dist_km/20);
+g2 = 10^(-sea_alpha(1.70, sea_temp, sea_sal, sea_depth, sea_ph, sea_c)*dist_km/20);
+g3 = 10^(-sea_alpha(5.20, sea_temp, sea_sal, sea_depth, sea_ph, sea_c)*dist_km/20);
+g4 = 10^(-sea_alpha(15.0, sea_temp, sea_sal, sea_depth, sea_ph, sea_c)*dist_km/20);
+
+// broadband: geometric spreading (6 or 3 dB/doubling) + manual dB/doubling
+(sea_dist > 1) ? ( sea_db = (sea_spread + sea_atten) * log(sea_dist)/log(2); ) : ( sea_db = 0; );
+sea_db < 0 ? sea_db = 0;
+glv = 10^(-sea_db/20);
+
+// propagation delay ~ distance / c, smoothed in @sample
+dlt = (sea_dist/sea_c) * srate;
+(dlt > dlsize - 2) ? dlt = dlsize - 2;
+(dlt < 0) ? dlt = 0;
+
+mix = sea_mix/100;
+delay_on = (sea_delay == 1);
+
+// one-pole smoothing coefficients (~30ms / ~60ms time constants)
+gk = 1 - exp(-1/(0.03*srate));
+dlk = 1 - exp(-1/(0.06*srate));
+
+@sample
+pdc_delay = (sea_engine == 1) ? FFTN : 0;    // report STFT latency for delay compensation
+
+gsv += (glv - gsv) * gk;
+
+sea_engine == 1 ? (
+  // ---- accurate path: STFT overlap-add, exact per-bin absorption ----
+  // smooth the underlying scalars (not the gain curve itself -- the curve
+  // is only recomputed once per hop, ~10.7ms @48k, which is already smooth
+  // enough given these move at Distance-automation rates, not per-sample)
+  sm_distkm += (dist_km - sm_distkm) * gk;
+  sm_temp   += (sea_temp  - sm_temp)  * gk;
+  sm_sal    += (sea_sal   - sm_sal)   * gk;
+  sm_depth  += (sea_depth - sm_depth) * gk;
+  sm_ph     += (sea_ph    - sm_ph)    * gk;
+
+  inbufL[wp] = spl0;
+  inbufR[wp] = spl1;
+  wetL = outbufL[wp]; outbufL[wp] = 0;
+  wetR = outbufR[wp]; outbufR[wp] = 0;
+
+  hcount += 1;
+  (hcount >= HOP) ? (
+    hcount = 0;
+    smc = sea_mack(sm_temp, sm_sal, sm_depth);
+    k = 0;
+    while (k <= half) (
+      fkhz = (k * srate / FFTN) * 0.001;
+      gainb[k] = 10^(-sea_alpha(fkhz, sm_temp, sm_sal, sm_depth, sm_ph, smc) * sm_distkm / 20);
+      k += 1;
+    );
+    stft_frame(inbufL, outbufL);
+    stft_frame(inbufR, outbufR);
+  );
+
+  wp += 1; (wp >= FFTN) ? wp = 0;
+) : (
+  // ---- fast path: smoothed 5-band gains to avoid zipper on automation ----
+  gs0 += (g0 - gs0) * gk;
+  gs1 += (g1 - gs1) * gk;
+  gs2 += (g2 - gs2) * gk;
+  gs3 += (g3 - gs3) * gk;
+  gs4 += (g4 - gs4) * gk;
+
+  // 5-band crossover, left
+  b0 = sec4(0, spl0);  hp0 = sec4(1, spl0);   // band1 (LP@300) / stage B in (HP@300)
+  b1 = sec4(2, hp0);   hp1 = sec4(3, hp0);    // band2 (300..1k) / stage C in
+  b2 = sec4(4, hp1);   hp2 = sec4(5, hp1);    // band3 (1k..3k) / stage D in
+  b3 = sec4(6, hp2);   hp3 = sec4(7, hp2);    // band4 (3k..9k) / band5 (HP@9k)
+  wetL = gs0*b0 + gs1*b1 + gs2*b2 + gs3*b3 + gs4*hp3;
+
+  // same, right
+  b0 = sec4(0, spl1);  hp0 = sec4(1, spl1);
+  b1 = sec4(2, hp0);   hp1 = sec4(3, hp0);
+  b2 = sec4(4, hp1);   hp2 = sec4(5, hp1);
+  b3 = sec4(6, hp2);   hp3 = sec4(7, hp2);
+  wetR = gs0*b0 + gs1*b1 + gs2*b2 + gs3*b3 + gs4*hp3;
+);
+
+// ---- propagation delay (smoothed, linear-interpolated circular buffer) ----
+(delay_on) ? (
+  dlw += 1;
+  (dlw >= dlsize) ? dlw = 0;
+  dlbL[dlw] = wetL;
+  dlbR[dlw] = wetR;
+  dl_cur += (dlt - dl_cur) * dlk;
+  rp = dlw - dl_cur;
+  (rp < 0) ? rp += dlsize;
+  (rp >= dlsize) ? rp -= dlsize;
+  i0 = floor(rp);
+  fr = rp - i0;
+  i1 = i0 + 1;
+  (i1 >= dlsize) ? i1 = 0;
+  dL = dlbL[i0] + (dlbL[i1] - dlbL[i0]) * fr;
+  dR = dlbR[i0] + (dlbR[i1] - dlbR[i0]) * fr;
+) : (
+  dL = wetL;
+  dR = wetR;
+);
+
+// broadband spreading gain + wet/dry
+spl0 = spl0*(1-mix) + dL*gsv*mix;
+spl1 = spl1*(1-mix) + dR*gsv*mix;
+
+@serialize
+// Deliberately trivial -- its mere presence is the fix: a non-empty
+// @serialize section tells REAPER NOT to re-zero memory/variables before
+// @init, and @init re-runs on playback start and samplerate change (js.php).
+// Without this, last_pres/last_temp/last_sal/last_depth/last_ph were wiped
+// each time playback started, so the preset-apply / manual-tweak detection
+// in @slider fired spuriously and snapped sliders back to file defaults
+// (2026-09-23 slider-snap bug). Keep this section non-empty.
+nop = 0;

@@ -95,6 +95,12 @@ function parse_project_name()
         end
         previous_part = part
     end
+
+    parsed_project_name.project_code = parsed_project_name.project_code or ""
+    parsed_project_name.cue_number = parsed_project_name.cue_number or ""
+    parsed_project_name.cue_name = parsed_project_name.cue_name or ""
+    parsed_project_name.cue_version = parsed_project_name.cue_version or ""
+
     parsed_project_name.exports_folder_name = parsed_project_name.project_code .. names.delimiter ..
         parsed_project_name.cue_number .. names.delimiter ..
         parsed_project_name.cue_name .. names.delimiter ..
