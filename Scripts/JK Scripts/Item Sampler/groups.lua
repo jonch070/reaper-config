@@ -19,6 +19,7 @@ function BlankGroup.NewDefaultSettings()
         MatchByName = false,
         MatchByName_OctaveSearch = 2,
         MatchByName_Fallback = true,
+        MatchByName_NoReuse = false,
         NoteRange = {
             Min = 0,
             Max = 127

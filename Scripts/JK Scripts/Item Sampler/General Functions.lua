@@ -357,6 +357,29 @@ function FindPitchCandidates(pitch_map, pitch, octave_search)
     return nil
 end
 
+-- Draws one index out of `candidates` (a list from a pitch_map, also usable
+-- as its own identity key), exhausting every entry once before any repeats -
+-- cycling in order when is_random is false (matches the existing plain
+-- sequence-cycle behavior), or drawing randomly-without-repeats otherwise.
+-- `pools` is a table private to one Place_Sequence call, keyed by the
+-- `candidates` list itself so requests that resolve to the same underlying
+-- item group (e.g. via octave search) always share one pool.
+-- When no_reuse is true, an exhausted pool is never refilled and this
+-- returns nil instead - the caller should treat that the same as "no match".
+function PickFromPool(pools, candidates, no_reuse, is_random)
+    local pool = pools[candidates]
+    if not pool or #pool == 0 then
+        if pool and no_reuse then return nil end
+        pool = {}
+        for i = 1, #candidates do pool[i] = candidates[i] end
+        pools[candidates] = pool
+    end
+    local pick_at = is_random and math.random(#pool) or 1
+    local list_idx = pool[pick_at]
+    table.remove(pool, pick_at)
+    return list_idx
+end
+
 function IsStringNote(string)
     local is = false
     local note_names_sharp = {'C','C#','D','D#','E','F','F#','G','G#','A','A#','B'}

@@ -1,4 +1,4 @@
--- @version 1.3.6-mod2
+-- @version 1.3.6-mod3
 -- @author Daniel Lumertz
 -- @modifier Jonathan Kawchuk
 -- @description Item Sampler (Snap Offset Mod)
@@ -15,12 +15,15 @@
 --    [nomain] REAPER Functions.lua
 --    [nomain] utils/*.lua
 -- @changelog
+--    + Match Pitch By Item Name ties now always round-robin (every match used once before any
+--      repeat), for both Place in Sequence and Place Random, plus a "Don't Reuse Samples" option
+--    + Fixed a crash loading a project saved before newer group settings existed (nil settings)
 --    + Added Match Pitch By Item Name mode (MatchByName): picks the item whose take/file name
 --      already matches the MIDI note instead of repitching, with octave-search and fallback settings
 --    + Added UseSnapOffset setting (checkbox in Trim section)
 --    + Items placed at (midi_note_time - snap_offset) when enabled
 
-local version = '1.3.6-mod2'
+local version = '1.3.6-mod3'
 local info = debug.getinfo(1, 'S');
 script_path = info.source:match[[^@?(.*[\/])[^\/]-$]]
 
@@ -273,10 +276,10 @@ function Place_Sequence(is_random,sequence_reverse,isrand_sequence)
     end ]]
 
     -- Paste
-    local pitch_map, pitch_counters
+    local pitch_map, pitch_pools
     if Settings.MatchByName == true then
         pitch_map = BuildPitchIndex(list_sequence)
-        pitch_counters = {}
+        pitch_pools = {}
     end
 
     local not_used
@@ -313,16 +316,11 @@ function Place_Sequence(is_random,sequence_reverse,isrand_sequence)
             if Settings.MatchByName == true then
                 local candidates = FindPitchCandidates(pitch_map, pitch, Settings.MatchByName_OctaveSearch)
                 if candidates then
-                    matched_by_name = true
-                    if is_random == true then
-                        list_idx = candidates[math.random(#candidates)]
-                    else -- cycle through the items that match this pitch
-                        local c = pitch_counters[pitch] or 0
-                        list_idx = candidates[(c % #candidates) + 1]
-                        pitch_counters[pitch] = c + 1
-                    end
-                elseif Settings.MatchByName_Fallback ~= true then
-                    goto continue -- No item name matches this MIDI note's pitch and fallback is disabled
+                    list_idx = PickFromPool(pitch_pools, candidates, Settings.MatchByName_NoReuse, is_random)
+                    matched_by_name = (list_idx ~= nil)
+                end
+                if not matched_by_name and Settings.MatchByName_Fallback ~= true then
+                    goto continue -- No (unused) item name matches this MIDI note's pitch and fallback is disabled
                 end
             end
 
@@ -684,7 +682,7 @@ function loop()
                     if reaper.ImGui_Checkbox(ctx, 'Match MIDI Note to Item Name (no repitch)',Groups[i].Settings.MatchByName) then
                         Groups[i].Settings.MatchByName = not Groups[i].Settings.MatchByName
                     end
-                    if Settings.Tips then ToolTip("Instead of changing an item's pitch, picks the item whose take name or filename\nalready contains that MIDI note (e.g. \"Violin_C3.wav\", \"Kick_A#1_v2.wav\").\nAlso recognizes an explicit tag like \"midi60\", \"key60\" or \"#60\".\nIf several items match, cycles/randomizes between them the same as\nPlace in Sequence / Place Random.") end
+                    if Settings.Tips then ToolTip("Instead of changing an item's pitch, picks the item whose take name or filename\nalready contains that MIDI note (e.g. \"Violin_C3.wav\", \"Kick_A#1_v2.wav\").\nAlso recognizes an explicit tag like \"midi60\", \"key60\" or \"#60\".\nIf several items match the same note, they're used round-robin (every one\nis used once before any repeats) whether placing in sequence or at random.") end
 
                     reaper.ImGui_PushItemWidth( ctx,  -100)
                     _, Groups[i].Settings.MatchByName_OctaveSearch = reaper.ImGui_SliderInt(ctx, 'Octave Search Range', Groups[i].Settings.MatchByName_OctaveSearch, 0, 5)
@@ -695,6 +693,11 @@ function loop()
                         Groups[i].Settings.MatchByName_Fallback = not Groups[i].Settings.MatchByName_Fallback
                     end
                     if Settings.Tips then ToolTip("If no item name matches a MIDI note (even after the octave search),\nfall back to the normal sequence/random order for that note.\nIf off, that MIDI note is simply skipped.") end
+
+                    if reaper.ImGui_Checkbox(ctx, "Don't Reuse Samples",Groups[i].Settings.MatchByName_NoReuse) then
+                        Groups[i].Settings.MatchByName_NoReuse = not Groups[i].Settings.MatchByName_NoReuse
+                    end
+                    if Settings.Tips then ToolTip("Off (default): once every item matching a note has been used once, start\nreusing them again in the same round-robin order rather than repeating early.\nOn: never reuse an item at all once it's been placed. Once a note's matches\nrun out they stay out for the rest of this placement (respecting Fallback above).") end
 
                 reaper.ImGui_TreePop(ctx)
                 end
