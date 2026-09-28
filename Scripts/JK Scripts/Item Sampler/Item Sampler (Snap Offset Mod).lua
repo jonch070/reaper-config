@@ -1,4 +1,4 @@
--- @version 1.3.6-mod1
+-- @version 1.3.6-mod2
 -- @author Daniel Lumertz
 -- @modifier Jonathan Kawchuk
 -- @description Item Sampler (Snap Offset Mod)
@@ -6,6 +6,7 @@
 --    Fork of Daniel Lumertz's Item Sampler v1.3.6
 --    Added option to respect item snap offset when placing items at MIDI note positions.
 --    When enabled, items are positioned so their snap offset aligns with the MIDI note time.
+--    Added option to match MIDI notes to items by note name/number in the item name, without repitching.
 -- @provides
 --    [nomain] General Functions.lua
 --    [nomain] presets.lua
@@ -14,10 +15,12 @@
 --    [nomain] REAPER Functions.lua
 --    [nomain] utils/*.lua
 -- @changelog
+--    + Added Match Pitch By Item Name mode (MatchByName): picks the item whose take/file name
+--      already matches the MIDI note instead of repitching, with octave-search and fallback settings
 --    + Added UseSnapOffset setting (checkbox in Trim section)
 --    + Items placed at (midi_note_time - snap_offset) when enabled
 
-local version = '1.3.6-mod1'
+local version = '1.3.6-mod2'
 local info = debug.getinfo(1, 'S');
 script_path = info.source:match[[^@?(.*[\/])[^\/]-$]]
 
@@ -270,6 +273,12 @@ function Place_Sequence(is_random,sequence_reverse,isrand_sequence)
     end ]]
 
     -- Paste
+    local pitch_map, pitch_counters
+    if Settings.MatchByName == true then
+        pitch_map = BuildPitchIndex(list_sequence)
+        pitch_counters = {}
+    end
+
     local not_used
     if is_random == true and isrand_sequence == true then
         not_used = {}
@@ -299,26 +308,45 @@ function Place_Sequence(is_random,sequence_reverse,isrand_sequence)
             -- Filter if note start is out of item bounds (before and after)
 
             -- Choose Item
-            local list_idx = 0
-            if is_random == true then
-                if not isrand_sequence then -- Choose random can repeat 
-                    list_idx = math.random(#list_sequence)
-                else -- Choose random whitout repeating till start again
-                    local rand_num = math.random(#list_sequence-(#list_sequence-#not_used))
-                    list_idx = not_used[rand_num]
-                    table.remove(not_used, rand_num) 
-                    if #not_used == 0 then  --reset not_used list when full
-                        for i = 1, #list_sequence do
-                            not_used[i] = i
+            local list_idx
+            local matched_by_name = false
+            if Settings.MatchByName == true then
+                local candidates = FindPitchCandidates(pitch_map, pitch, Settings.MatchByName_OctaveSearch)
+                if candidates then
+                    matched_by_name = true
+                    if is_random == true then
+                        list_idx = candidates[math.random(#candidates)]
+                    else -- cycle through the items that match this pitch
+                        local c = pitch_counters[pitch] or 0
+                        list_idx = candidates[(c % #candidates) + 1]
+                        pitch_counters[pitch] = c + 1
+                    end
+                elseif Settings.MatchByName_Fallback ~= true then
+                    goto continue -- No item name matches this MIDI note's pitch and fallback is disabled
+                end
+            end
+
+            if not matched_by_name then
+                if is_random == true then
+                    if not isrand_sequence then -- Choose random can repeat
+                        list_idx = math.random(#list_sequence)
+                    else -- Choose random whitout repeating till start again
+                        local rand_num = math.random(#list_sequence-(#list_sequence-#not_used))
+                        list_idx = not_used[rand_num]
+                        table.remove(not_used, rand_num)
+                        if #not_used == 0 then  --reset not_used list when full
+                            for i = 1, #list_sequence do
+                                not_used[i] = i
+                            end
                         end
                     end
-                end
-            else
-            -- Get item list idx
-                if sequence_reverse == false then
-                    list_idx = (counter%#list_sequence)+1
                 else
-                    list_idx = #list_sequence - (counter%#list_sequence)
+                -- Get item list idx
+                    if sequence_reverse == false then
+                        list_idx = (counter%#list_sequence)+1
+                    else
+                        list_idx = #list_sequence - (counter%#list_sequence)
+                    end
                 end
             end
 
@@ -335,10 +363,10 @@ function Place_Sequence(is_random,sequence_reverse,isrand_sequence)
                 ChangeVolume(pasted_item, vel, Settings.Vel_OriginalVal,Settings.Vel_Min,Settings.Vel_Max)
             end
             
-            -- Set Pitch 
-            if Settings.Pitch == true then
+            -- Set Pitch (skipped when the item was matched by name, since it's already the right pitch)
+            if Settings.Pitch == true and not matched_by_name then
                 ChangePitch(pasted_item, pitch, Settings.Pitch_Original)
-            end            
+            end
             
 
             -- Trim Item
@@ -646,6 +674,27 @@ function loop()
                     reaper.ImGui_PushItemWidth( ctx,  -100)
                     _, Groups[i].Settings.Pitch_Original = reaper.ImGui_SliderInt(ctx, 'Original Pitch\nat MIDI Note', Groups[i].Settings.Pitch_Original, 0, 127, NumberToNote(Groups[i].Settings.Pitch_Original, true))
                     reaper.ImGui_PopItemWidth(ctx)
+
+                reaper.ImGui_TreePop(ctx)
+                end
+
+                --Match Pitch By Name
+                if reaper.ImGui_TreeNode(ctx, 'Match Pitch By Item Name') then
+
+                    if reaper.ImGui_Checkbox(ctx, 'Match MIDI Note to Item Name (no repitch)',Groups[i].Settings.MatchByName) then
+                        Groups[i].Settings.MatchByName = not Groups[i].Settings.MatchByName
+                    end
+                    if Settings.Tips then ToolTip("Instead of changing an item's pitch, picks the item whose take name or filename\nalready contains that MIDI note (e.g. \"Violin_C3.wav\", \"Kick_A#1_v2.wav\").\nAlso recognizes an explicit tag like \"midi60\", \"key60\" or \"#60\".\nIf several items match, cycles/randomizes between them the same as\nPlace in Sequence / Place Random.") end
+
+                    reaper.ImGui_PushItemWidth( ctx,  -100)
+                    _, Groups[i].Settings.MatchByName_OctaveSearch = reaper.ImGui_SliderInt(ctx, 'Octave Search Range', Groups[i].Settings.MatchByName_OctaveSearch, 0, 5)
+                    reaper.ImGui_PopItemWidth(ctx)
+                    if Settings.Tips then ToolTip("If no item matches the exact octave, look this many octaves up/down\n(nearest octave first) for a same-named note before giving up.") end
+
+                    if reaper.ImGui_Checkbox(ctx, 'Fallback to Normal Sequence if No Match',Groups[i].Settings.MatchByName_Fallback) then
+                        Groups[i].Settings.MatchByName_Fallback = not Groups[i].Settings.MatchByName_Fallback
+                    end
+                    if Settings.Tips then ToolTip("If no item name matches a MIDI note (even after the octave search),\nfall back to the normal sequence/random order for that note.\nIf off, that MIDI note is simply skipped.") end
 
                 reaper.ImGui_TreePop(ctx)
                 end

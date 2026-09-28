@@ -282,6 +282,81 @@ function NoteToNumber(note,center_c_octave) -- Number, number(optional)
     return number
 end
 
+-- Pulls a note name (e.g. "C#3", "Bb2") or an explicitly tagged MIDI number
+-- (e.g. "midi60", "key60", "#60") out of an arbitrary filename/take name.
+-- Returns a MIDI pitch number (0-127) or nil if nothing recognizable was found.
+-- Note-name matches require a non-alphanumeric boundary on both sides (so
+-- "Violin_C3.wav" matches "C3" but "ADC3" does not match "C3").
+function ExtractNoteNumberFromString(str)
+    if not str or str == '' then return nil end
+
+    local note_str = string.match(str, '%f[%w][A-Ga-g][#b]?%-?%d+%f[%W]')
+    if note_str then
+        local pitch_class = MakeUpperCaseFirstLetter(string.match(note_str, '[%a#]*'))
+        local octave = string.match(note_str, '[%-%d]+')
+        local clean_note = pitch_class..octave
+        if IsStringNote(clean_note) then
+            return NoteToNumber(clean_note, 4)
+        end
+    end
+
+    local tagged = string.match(str, '[Mm][Ii][Dd][Ii](%d+)')
+        or string.match(str, '[Nn][Oo][Tt][Ee](%d+)')
+        or string.match(str, '[Kk][Ee][Yy](%d+)')
+        or string.match(str, '#(%d+)')
+    if tagged then
+        local number = tonumber(tagged)
+        if number and number >= 0 and number <= 127 then
+            return number
+        end
+    end
+
+    return nil
+end
+
+-- Reads the take name and source filename of an item, in that priority order,
+-- looking for an embedded note name/number. Returns nil if neither has one.
+function GetItemPitchFromName(item)
+    local take = reaper.GetActiveTake(item)
+    if not take then return nil end
+
+    local _, take_name = reaper.GetSetMediaItemTakeInfo_String(take, 'P_NAME', '', false)
+    local from_take_name = ExtractNoteNumberFromString(take_name)
+    if from_take_name then return from_take_name end
+
+    local source = reaper.GetMediaItemTake_Source(take)
+    if not source then return nil end
+    local filename = reaper.GetMediaSourceFileName(source, '')
+    local base_name = filename:match('([^/\\]+)$') or filename
+    return ExtractNoteNumberFromString(base_name)
+end
+
+-- Builds { [pitch_number] = {list_sequence indices} } for every item whose
+-- name/filename resolves to a recognizable note.
+function BuildPitchIndex(list_sequence)
+    local map = {}
+    for idx, item in ipairs(list_sequence) do
+        local note = GetItemPitchFromName(item)
+        if note then
+            map[note] = map[note] or {}
+            table.insert(map[note], idx)
+        end
+    end
+    return map
+end
+
+-- Finds the closest octave (0 = exact match, then +/-1 octave, +/-2, ...) that
+-- has at least one item indexed. Returns the candidate list, or nil if none
+-- was found within octave_search octaves.
+function FindPitchCandidates(pitch_map, pitch, octave_search)
+    if pitch_map[pitch] then return pitch_map[pitch] end
+    for oct = 1, (octave_search or 0) do
+        if pitch_map[pitch - (12*oct)] then return pitch_map[pitch - (12*oct)] end
+        if pitch_map[pitch + (12*oct)] then return pitch_map[pitch + (12*oct)] end
+    end
+    return nil
+end
+
 function IsStringNote(string)
     local is = false
     local note_names_sharp = {'C','C#','D','D#','E','F','F#','G','G#','A','A#','B'}

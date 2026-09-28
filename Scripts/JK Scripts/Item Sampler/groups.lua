@@ -17,6 +17,9 @@ function BlankGroup:Create(name)
             Vel_Max = 6,
             Pitch = false,
             Pitch_Original = 60,
+            MatchByName = false,
+            MatchByName_OctaveSearch = 2,
+            MatchByName_Fallback = true,
             NoteRange = {
                 Min = 0,
                 Max = 127
