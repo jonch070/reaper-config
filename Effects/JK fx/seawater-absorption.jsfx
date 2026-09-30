@@ -220,7 +220,12 @@ function init_xover() (
   set_stage4(0, 300);
   set_stage4(2, 1000);
   set_stage4(4, 3000);
-  set_stage4(6, 9000)
+  set_stage4(6, 9000);
+  // right channel gets its own filter state (idx+8) so L/R don't share history
+  set_stage4(8, 300);
+  set_stage4(10, 1000);
+  set_stage4(12, 3000);
+  set_stage4(14, 9000)
 );
 
 // one 4th-order DF1 section
@@ -305,10 +310,10 @@ dlbL = 196608;
 dlbR = dlbL + dlsize;
 
 // ---- fast-path crossover filter design ----
-memset(fb0, 0, 8); memset(fb1, 0, 8); memset(fb2, 0, 8); memset(fb3, 0, 8); memset(fb4, 0, 8);
-memset(fa1, 0, 8); memset(fa2, 0, 8); memset(fa3, 0, 8); memset(fa4, 0, 8);
-memset(xs1, 0, 8); memset(xs2, 0, 8); memset(xs3, 0, 8); memset(xs4, 0, 8);
-memset(ys1, 0, 8); memset(ys2, 0, 8); memset(ys3, 0, 8); memset(ys4, 0, 8);
+memset(fb0, 0, 16); memset(fb1, 0, 16); memset(fb2, 0, 16); memset(fb3, 0, 16); memset(fb4, 0, 16);
+memset(fa1, 0, 16); memset(fa2, 0, 16); memset(fa3, 0, 16); memset(fa4, 0, 16);
+memset(xs1, 0, 16); memset(xs2, 0, 16); memset(xs3, 0, 16); memset(xs4, 0, 16);
+memset(ys1, 0, 16); memset(ys2, 0, 16); memset(ys3, 0, 16); memset(ys4, 0, 16);
 init_xover();
 memset(dlbL, 0, dlsize); memset(dlbR, 0, dlsize);
 
@@ -452,11 +457,11 @@ sea_engine == 1 ? (
   b3 = sec4(6, hp2);   hp3 = sec4(7, hp2);    // band4 (3k..9k) / band5 (HP@9k)
   wetL = gs0*b0 + gs1*b1 + gs2*b2 + gs3*b3 + gs4*hp3;
 
-  // same, right
-  b0 = sec4(0, spl1);  hp0 = sec4(1, spl1);
-  b1 = sec4(2, hp0);   hp1 = sec4(3, hp0);
-  b2 = sec4(4, hp1);   hp2 = sec4(5, hp1);
-  b3 = sec4(6, hp2);   hp3 = sec4(7, hp2);
+  // same, right (separate filter state at idx 8..15)
+  b0 = sec4(8, spl1);  hp0 = sec4(9, spl1);
+  b1 = sec4(10, hp0);  hp1 = sec4(11, hp0);
+  b2 = sec4(12, hp1);  hp2 = sec4(13, hp1);
+  b3 = sec4(14, hp2);  hp3 = sec4(15, hp2);
   wetR = gs0*b0 + gs1*b1 + gs2*b2 + gs3*b3 + gs4*hp3;
 );
 
