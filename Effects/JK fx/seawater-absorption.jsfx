@@ -3,7 +3,7 @@
 // travelling through seawater. The underwater signature: lows survive for
 // km, highs die within a km. See also README.md in the project repo.
 //
-// *** 2026-09-24: Spreading/Prop delay stayed at Sph/On (2026-09-23 memory-
+// *** 2026-09-24: Spreading/Prop delay stayed at Sph/Off (2026-09-23 memory-
 // *** layout fix -- see the @init memory layout block + @serialize section --
 // *** resolved the total-silence + T/S/depth/pH-snap bugs: unassigned array
 // *** bases were all aliasing memory slot 0). Filter Engine reverted back to
@@ -89,7 +89,7 @@
 //  Wet (%)         Standard dry/processed blend.
 //  Prop delay      Real propagation delay = Distance / speed-of-sound, so
 //                  far sounds arrive later (like thunder trailing lightning).
-//                  On by default; turn off if an upstream tool already
+//                  Off by default; turn on if no upstream tool already
 //                  applies its own arrival-time delay.
 //  Filter Engine   Fast (5-band, default): the absorption curve applied as
 //                  gains across a 5-way crossover (300/1k/3k/9k) -- cheap,
@@ -139,7 +139,7 @@ slider7:sea_model=1<0,1,1{Thorp,Francois-G}>Absorption model
 slider8:sea_spread=6<0,6,1{Off,,,Cyl (3dB),,,Sph (6dB)}>Spreading
 slider9:sea_atten=0<-18,18,0.5>Extra dB/doubling
 slider10:sea_mix=100<0,100,1>Wet (%)
-slider11:sea_delay=1<0,1,1{Off,On}>Prop delay
+slider11:sea_delay=0<0,1,1{Off,On}>Prop delay
 slider12:sea_engine=0<0,1,1{Fast (5-band),Accurate (FFT)}>Filter Engine
 
 @init
