@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "toolbar",
+		SEARCH = "mouse modifier and action",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,16 +83,20 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "Help: Mouse modifier keys and action shortcuts (40308) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
 				id = "Toolbar: Open/close toolbar 1 (41679) (Main)",
 				type = "action"
 			},
 			{
 				id = "VST3:Air (Sound Particles)",
 				type = "vst3"
-			},
-			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-				type = "action"
 			},
 			{
 				id = "VST3i:UVIWorkstation (UVI) (34 out)",
@@ -476,10 +480,6 @@ return {
 			},
 			{
 				id = "Item properties: Pitch item up one octave (40515) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Copy FX chain from selected track (S&M_COPYFXCHAIN5) (Main)",
 				type = "action"
 			}
 		},

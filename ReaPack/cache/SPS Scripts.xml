@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="SPS Scripts" commit="be061e37e510f866871137b628a4ef4e3131a501">
+<index version="1" name="SPS Scripts" commit="b006c4d80f163a46cda4aa8b1d5ab857726b71fe">
   <category name="Common">
     <reapack name="ReaImGuiTheme.lua" type="script" desc="Schapps ReaImGUI Theme">
       <metadata>
@@ -734,6 +734,30 @@
     </reapack>
   </category>
   <category name="Items">
+    <reapack name="Arrange Items by Name.lua" type="script" desc="Arrange Items by Name">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaImGUI dialog that groups the selected media items by similarities in their take names, previews the proposed track groups, and (on Apply) creates one new track per group and moves that group's items onto it. Useful for organizing large batches of imported recordings (e.g. Foley surface/action variants) onto their own tracks by naming convention.\par}
+}
+]]></description>
+        <link rel="website">https://www.stephenschappler.com</link>
+      </metadata>
+      <version name="0.1" author="Stephen Schappler" time="2026-09-24T19:45:53Z">
+        <changelog><![CDATA[2026-09-24 v0.1 - Testing]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/0e0d9bf53138c73e40a0e57e88533521061ccb4e/Items/Arrange%20Items%20by%20Name.lua</source>
+      </version>
+      <version name="0.2" author="Stephen Schappler" time="2026-09-24T21:37:11Z">
+        <changelog><![CDATA[2026-09-24 v0.2 - Working prototype]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/3e655ca4e416189e91d344f14304420316e1d942/Items/Arrange%20Items%20by%20Name.lua</source>
+      </version>
+      <version name="0.3" author="Stephen Schappler" time="2026-09-24T22:39:28Z">
+        <changelog><![CDATA[2026-09-24 v0.3 - More features]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/14a0df3bf2cd34d8ba1f95dc7a47a108a583bca5/Items/Arrange%20Items%20by%20Name.lua</source>
+      </version>
+    </reapack>
     <reapack name="Copy FIlename of Selected Item and Focus Media Explorer Search.lua" type="script" desc="Copy Filename of Selected Item and Focus Media Explorer Search">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -1064,6 +1088,38 @@
         <source main="main">https://github.com/schapps/ReaperScripts/raw/9ce3634f506e3f30c1e27dc32f6098ecba0d525e/Items/Select%20Next%20Item%20Edge%20to%20the%20Right%20and%20Extend%20Time%20Selection.lua</source>
       </version>
     </reapack>
+    <reapack name="Selected Items Counter (compact).lua" type="script" desc="Selected Items Counter (compact)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 One-row version of Selected Items Counter, sized to fit beside a REAPER toolbar: the whole window is 30pt tall, which ReaImGui scales with the UI the same way toolbar buttons scale (30/45/60px at 100/150/200%). Shows the live selected item count, and with a Target set, the count out of the target plus a small progress bar; the count turns green once the target is met. The Target is shared with Selected Items Counter. Right-click the counter to set the Target, dock/undock it, or close it. Requires: Schapps Script Resources (install from this repository first).\par}
+}
+]]></description>
+        <link rel="website">https://www.stephenschappler.com</link>
+      </metadata>
+      <version name="1.0" author="Stephen Schappler" time="2026-10-02T16:38:51Z">
+        <changelog><![CDATA[10/02/26 - v1.0 Initial release]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/8912ce2fdaa766830a438d574727e9cbfadf9351/Items/Selected%20Items%20Counter%20(compact).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Selected Items Counter.lua" type="script" desc="Selected Items Counter">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 ReaImGUI status window that shows how many items are selected, updating live as the selection changes. Keep it open (or docked) while working. Set an optional Target to track progress toward a minimum count, e.g. 20 variations per action; the count turns green once the target is met. Requires: Schapps Script Resources (install from this repository first).\par}
+}
+]]></description>
+        <link rel="website">https://www.stephenschappler.com</link>
+      </metadata>
+      <version name="1.0" author="Stephen Schappler" time="2026-09-28T19:33:34Z">
+        <changelog><![CDATA[09/28/26 - v1.0 Initial release]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/62669a7eaf0176241f2f6068a27bcc3169f1ac12/Items/Selected%20Items%20Counter.lua</source>
+      </version>
+    </reapack>
     <reapack name="Set Stereo Width On Item and Show Envelope.lua" type="script" desc="Set Stereo Width On Item and Show Envelope">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -1287,23 +1343,6 @@
         <source main="main">https://github.com/schapps/ReaperScripts/raw/60627a084b4e834d0f0049b95c00f2118d08c67c/Items/Smart%20Export%20Selected%20Items%20(GUI).lua</source>
       </version>
     </reapack>
-    <reapack name="Smart Export Selected Items - Configure.lua" type="script" desc="Smart Export Selected Items - Configure">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Opens the export-destination setup dialog for "Smart Export Selected Items" at any time, so the output directory/filename pattern can be changed without hand-editing the sidecar config file. Does not export anything itself.\par}
-}
-]]></description>
-        <link rel="website">https://www.stephenschappler.com</link>
-      </metadata>
-      <version name="1.0" author="Stephen Schappler" time="2026-08-12T00:38:16Z">
-        <changelog><![CDATA[08/11/26 v1.0 - Initial release]]></changelog>
-        <source main="main">https://github.com/schapps/ReaperScripts/raw/abede4a5b5a3f73c0f167186af372ab874bf2657/Items/Smart%20Export%20Selected%20Items%20-%20Configure.lua</source>
-        <source file="Common/SmartExportSetupDialog.lua">https://github.com/schapps/ReaperScripts/raw/abede4a5b5a3f73c0f167186af372ab874bf2657/Common/SmartExportSetupDialog.lua</source>
-      </version>
-    </reapack>
     <reapack name="Smart Export Selected Items.lua" type="script" desc="Smart Export Selected Items">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
@@ -1311,6 +1350,7 @@
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 A script to easily export selected items of many different channel counts all at once. SWS extension is required. No render preset setup needed.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Optional sidecar config keys (Smart Export Selected Items - User Config.lua): mono_downmix_enabled = true -- auto-downmix highly-correlated stereo items to mono before export mono_downmix_threshold = 0.9 -- L/R correlation (-1..1) required to trigger the downmix\par}
 }
 ]]></description>
         <link rel="website">https://www.stephenschappler.com</link>
@@ -1390,6 +1430,33 @@
 05/26/25 v2.0 - Move user settings to a separate config file safe from ReaPack updates
 05/26/25 v2.1 - First-run ReaImGUI setup dialog with folder browse]]></changelog>
         <source main="main">https://github.com/schapps/ReaperScripts/raw/5d857f9a93594002018a54e0e1db1bef0b4094d1/Items/Smart%20Export%20Selected%20Items.lua</source>
+      </version>
+      <version name="2.5" author="Stephen Schappler" time="2026-09-27T02:17:32Z">
+        <changelog><![CDATA[11/21/24 v1.0 - Creating the script
+11/21/24 v1.3 - Added handling of overlapping items with the same name
+11/21/24 v1.4 - Fixed error with restoring item selection after glue and undo
+11/21/24 v1.5 - Changing how Config Area works
+12/20/24 v1.6 - Fixed bug when exporting multiple overlapping looping items at once
+02/07/25 v1.7 - Switch to Smart Export Simplified preset and add multichannel track mismatch warning
+05/21/25 v1.8 - Hardcode render settings directly; remove cfillion/ReaPack dependency
+05/26/25 v1.9 - Splitting up export directory path
+05/26/25 v2.0 - Move user settings to a separate config file safe from ReaPack updates
+05/26/25 v2.1 - First-run ReaImGUI setup dialog with folder browse
+08/11/26 v2.2 - Auto-downmix highly-correlated stereo items to mono before export
+08/11/26 v2.3 - Stop silently inheriting output dir/pattern from the GUI script's
+                last-used template via ExtState; this script now only ever uses
+                its own sidecar config file / hardcoded defaults. Restored the
+                first-run setup dialog (removed by mistake when the GUI script was
+                added) via a new shared Common/SmartExportSetupDialog.lua, and
+                added a "Smart Export Selected Items - Configure" action to reopen
+                it any time without hand-editing the config file. @provides bundles
+                Common/SmartExportSetupDialog.lua so ReaPack installs it automatically.
+08/12/26 v2.4 - Correlated stereo downmix now uses mono (left) take channel mode
+                instead of mono (mixdown), so only the left channel is kept.
+09/26/26 v2.5 - "Smart Export Selected Items - Configure" is now bundled with this package]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/b9c5943f96c50e75a94df673575490ee80584da8/Items/Smart%20Export%20Selected%20Items.lua</source>
+        <source main="main" file="Smart Export Selected Items - Configure.lua">https://github.com/schapps/ReaperScripts/raw/b9c5943f96c50e75a94df673575490ee80584da8/Items/Smart%20Export%20Selected%20Items%20-%20Configure.lua</source>
+        <source file="Common/SmartExportSetupDialog.lua">https://github.com/schapps/ReaperScripts/raw/b9c5943f96c50e75a94df673575490ee80584da8/Common/SmartExportSetupDialog.lua</source>
       </version>
     </reapack>
     <reapack name="Solo Play Selected Item(s).lua" type="script" desc="Solo Selected Media Items, Set Time Selection, and Play, Unsolo on Stop">
@@ -8940,6 +9007,16 @@ Moved resources path to inside UserPlugins directory.]]></changelog>
         <source type="extension" file="ReaStart/GeistMono-Regular.ttf">https://github.com/schapps/ReaperScripts/raw/de99c411d71f02bbcbc5a4808c019415538f9271/ReaStartDashboard/GeistMono-Regular.ttf</source>
         <source type="extension" file="ReaStart/ReaStartDashboardLogo.png">https://github.com/schapps/ReaperScripts/raw/de99c411d71f02bbcbc5a4808c019415538f9271/ReaStartDashboard/ReaStartDashboardLogo.png</source>
       </version>
+      <version name="1.1.4" author="Stephen Schappler" time="2026-09-26T20:47:12Z">
+        <changelog><![CDATA[v1.1.4 - Bringing track templates up to parity with projects]]></changelog>
+        <source platform="windows" type="extension" file="reaper_reastart.dll">https://github.com/schapps/ReaperScripts/raw/7df4df58b79ff0f3c14bccc0b23f8fb572c694e6/ReaStartDashboard/reaper_reastart.dll</source>
+        <source platform="darwin" type="extension" file="reaper_reastart.dylib">https://github.com/schapps/ReaperScripts/raw/7df4df58b79ff0f3c14bccc0b23f8fb572c694e6/ReaStartDashboard/reaper_reastart.dylib</source>
+        <source type="extension" file="ReaStart/fa-solid-900.ttf">https://github.com/schapps/ReaperScripts/raw/7df4df58b79ff0f3c14bccc0b23f8fb572c694e6/ReaStartDashboard/fa-solid-900.ttf</source>
+        <source type="extension" file="ReaStart/Geist-Bold.ttf">https://github.com/schapps/ReaperScripts/raw/7df4df58b79ff0f3c14bccc0b23f8fb572c694e6/ReaStartDashboard/Geist-Bold.ttf</source>
+        <source type="extension" file="ReaStart/Geist-Regular.ttf">https://github.com/schapps/ReaperScripts/raw/7df4df58b79ff0f3c14bccc0b23f8fb572c694e6/ReaStartDashboard/Geist-Regular.ttf</source>
+        <source type="extension" file="ReaStart/GeistMono-Regular.ttf">https://github.com/schapps/ReaperScripts/raw/7df4df58b79ff0f3c14bccc0b23f8fb572c694e6/ReaStartDashboard/GeistMono-Regular.ttf</source>
+        <source type="extension" file="ReaStart/ReaStartDashboardLogo.png">https://github.com/schapps/ReaperScripts/raw/7df4df58b79ff0f3c14bccc0b23f8fb572c694e6/ReaStartDashboard/ReaStartDashboardLogo.png</source>
+      </version>
     </reapack>
   </category>
   <category name="Renamer">
@@ -9204,6 +9281,73 @@ v1.5 Visual Editor: drag and drop support]]></changelog>
         <source file="Lib/SchemeVisualizer.lua">https://github.com/schapps/ReaperScripts/raw/60627a084b4e834d0f0049b95c00f2118d08c67c/Renamer/Lib/SchemeVisualizer.lua</source>
         <source file="Lib/yaml.lua">https://github.com/schapps/ReaperScripts/raw/60627a084b4e834d0f0049b95c00f2118d08c67c/Renamer/Lib/yaml.lua</source>
       </version>
+      <version name="1.16" author="Aaron Cendan, modified by Stephen Schappler" time="2026-09-25T22:07:56Z">
+        <changelog><![CDATA[v1.16 Fixing bug with Capture Name and enumeration
+v1.15 Export button (both naming modes) now uses theme.SecondaryButton
+      instead of a one-off hardcoded color (ReaImGuiTheme.lua v1.30).
+v1.14 DrawTabAccent now delegates to the shared theme.DrawTabAccent
+      (ReaImGuiTheme.lua v1.29) instead of its own duplicate.
+v1.13 Fixed unresolved merge conflict markers in SchemeStructureEditor.lua that broke script loading
+v1.12 Visual pass to match the other Schapps ReaImGui scripts'
+      shared theme (Common/ReaImGuiTheme.lua), on both naming
+      modes
+v1.11 UI/UX improvements
+v1.10 Adding P4 support to check out the yaml file if it is in a p4 managed directory
+v1.9 Fixing bug for entry display when dropdown lists are super long
+v1.8 Visual Editor: the create/edit field form can now use an existing $wildcard directly for a new dropdown ("Use an existing $wildcard" checkbox), instead of creating a literal field and linking it afterward
+v1.7 Visual Editor: new "Link to $wildcard..." right-click action points a field's own dropdown value at an already-existing shared wildcard (the inverse of "Extract to $wildcard...")
+v1.6 Visual Editor: dropdown options in the create/edit field form can now be reordered with Up/Down buttons
+v1.5 Visual Editor: drag and drop support]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/schapps_The%20Last%20Renamer.lua</source>
+        <source file="Schemes/Example Game.yaml">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Schemes/Example%20Game.yaml</source>
+        <source file="Schemes/Example Minimal.yaml">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Schemes/Example%20Minimal.yaml</source>
+        <source file="Schemes/Example.yaml">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Schemes/Example.yaml</source>
+        <source file="Schemes/UCS.yaml">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Schemes/UCS.yaml</source>
+        <source file="Meta/meta.yaml">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Meta/meta.yaml</source>
+        <source file="Lib/NamePredictor.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/NamePredictor.lua</source>
+        <source file="Lib/P4Integration.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/P4Integration.lua</source>
+        <source file="Lib/QuickNamingGui.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/QuickNamingGui.lua</source>
+        <source file="Lib/SchemeEditor.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/SchemeEditor.lua</source>
+        <source file="Lib/SchemeEditorGui.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/SchemeEditorGui.lua</source>
+        <source file="Lib/SchemeStructureEditor.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/SchemeStructureEditor.lua</source>
+        <source file="Lib/SchemeStructureEditorGui.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/SchemeStructureEditorGui.lua</source>
+        <source file="Lib/SchemeVisualizer.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/SchemeVisualizer.lua</source>
+        <source file="Lib/yaml.lua">https://github.com/schapps/ReaperScripts/raw/f3b81b4530e7b26692680382a1b66b86d09ab629/Renamer/Lib/yaml.lua</source>
+      </version>
+      <version name="1.17" author="Aaron Cendan, modified by Stephen Schappler" time="2026-09-23T02:17:30Z">
+        <changelog><![CDATA[v1.17 Right-clicking a dropdown now offers "Rename Selected..." to rename the selected option (and its short code) in place
+v1.16 Respect Overlaps now numbers each overlapping item group separately (01, 02, 03...)
+v1.15 Export button (both naming modes) now uses theme.SecondaryButton
+      instead of a one-off hardcoded color (ReaImGuiTheme.lua v1.30).
+v1.14 DrawTabAccent now delegates to the shared theme.DrawTabAccent
+      (ReaImGuiTheme.lua v1.29) instead of its own duplicate.
+v1.13 Fixed unresolved merge conflict markers in SchemeStructureEditor.lua that broke script loading
+v1.12 Visual pass to match the other Schapps ReaImGui scripts'
+      shared theme (Common/ReaImGuiTheme.lua), on both naming
+      modes
+v1.11 UI/UX improvements
+v1.10 Adding P4 support to check out the yaml file if it is in a p4 managed directory
+v1.9 Fixing bug for entry display when dropdown lists are super long
+v1.8 Visual Editor: the create/edit field form can now use an existing $wildcard directly for a new dropdown ("Use an existing $wildcard" checkbox), instead of creating a literal field and linking it afterward
+v1.7 Visual Editor: new "Link to $wildcard..." right-click action points a field's own dropdown value at an already-existing shared wildcard (the inverse of "Extract to $wildcard...")
+v1.6 Visual Editor: dropdown options in the create/edit field form can now be reordered with Up/Down buttons
+v1.5 Visual Editor: drag and drop support]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/schapps_The%20Last%20Renamer.lua</source>
+        <source file="Schemes/Example Game.yaml">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Schemes/Example%20Game.yaml</source>
+        <source file="Schemes/Example Minimal.yaml">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Schemes/Example%20Minimal.yaml</source>
+        <source file="Schemes/Example.yaml">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Schemes/Example.yaml</source>
+        <source file="Schemes/UCS.yaml">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Schemes/UCS.yaml</source>
+        <source file="Meta/meta.yaml">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Meta/meta.yaml</source>
+        <source file="Lib/NamePredictor.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/NamePredictor.lua</source>
+        <source file="Lib/P4Integration.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/P4Integration.lua</source>
+        <source file="Lib/QuickNamingGui.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/QuickNamingGui.lua</source>
+        <source file="Lib/SchemeEditor.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/SchemeEditor.lua</source>
+        <source file="Lib/SchemeEditorGui.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/SchemeEditorGui.lua</source>
+        <source file="Lib/SchemeStructureEditor.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/SchemeStructureEditor.lua</source>
+        <source file="Lib/SchemeStructureEditorGui.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/SchemeStructureEditorGui.lua</source>
+        <source file="Lib/SchemeVisualizer.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/SchemeVisualizer.lua</source>
+        <source file="Lib/yaml.lua">https://github.com/schapps/ReaperScripts/raw/eb0d0fd6d5f1c26aae7e019876559fbcec176532/Renamer/Lib/yaml.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Subprojects">
@@ -9333,26 +9477,20 @@ v1.5 Visual Editor: drag and drop support]]></changelog>
 3/28/26 - v1.0 Initial release with ReaImGUI dialog]]></changelog>
         <source main="main">https://github.com/schapps/ReaperScripts/raw/de99c411d71f02bbcbc5a4808c019415538f9271/Subprojects/Create%20Subproject%20from%20Selected%20Track(s)%20(GUI).lua</source>
       </version>
-    </reapack>
-    <reapack name="Create Subproject from Selected Track(s).lua" type="script" desc="Create Subproject from Selected Track(s)">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 This is a simple script to create subprojects with our Sony Subproject Workflow.\par}
-}
-]]></description>
-        <link rel="website">https://www.stephenschappler.com</link>
-      </metadata>
-      <version name="1.2" author="Stephen Schappler" time="2024-07-30T04:04:23Z">
-        <changelog><![CDATA[7/29/24 Creating the script]]></changelog>
-        <source main="main">https://github.com/schapps/ReaperScripts/raw/ae4b3b59e1cdfda36a1a594afe6d80ffe301a4fb/Subprojects/Create%20Subproject%20from%20Selected%20Track(s).lua</source>
+      <version name="1.11" author="Stephen Schappler" time="2026-09-16T07:14:21Z">
+        <changelog><![CDATA[09/15/26 - v1.11 Tweaking language in tooltips and gui]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/c066e61a23a28d169bf4f5cbdd6e7581376eb604/Subprojects/Create%20Subproject%20from%20Selected%20Track(s)%20(GUI).lua</source>
       </version>
-      <version name="1.3" author="Stephen Schappler" time="2024-09-10T16:50:00Z">
-        <changelog><![CDATA[7/29/24 - v1.0 Creating the script
-9/10/24 - v1.3 Script will automatically set the track's channel count to match rendered subproject item channel count]]></changelog>
-        <source main="main">https://github.com/schapps/ReaperScripts/raw/c83e5efab27922c2c7abb5a3293dbeeb82e931ae/Subprojects/Create%20Subproject%20from%20Selected%20Track(s).lua</source>
+      <version name="1.12" author="Stephen Schappler" time="2026-09-28T19:10:45Z">
+        <changelog><![CDATA[09/28/26 - v1.12 Auto channels now sets the subproject's master track channel count to the selected track's channel count (the widest, if several are selected) before saving and rendering, so the rendered subproject item always matches its source track.
+09/15/26 - v1.11 Tweaking language in tooltips and gui]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/57f242ec97da98617833dc6965fa91601d38fe81/Subprojects/Create%20Subproject%20from%20Selected%20Track(s)%20(GUI).lua</source>
+      </version>
+      <version name="1.13" author="Stephen Schappler" time="2026-10-02T17:24:29Z">
+        <changelog><![CDATA[10/02/26 - v1.13 After rendering, a 2-channel subproject item whose L/R correlation is 0.9 or higher (effectively mono content) has its take channel mode set to Mono (downmix). Fixed the post-render channel count adjustment (and this new check) acting on the last item in the project instead of the subproject item when tracks below the subproject had items.
+09/28/26 - v1.12 Auto channels now sets the subproject's master track channel count to the selected track's channel count (the widest, if several are selected) before saving and rendering, so the rendered subproject item always matches its source track.
+09/15/26 - v1.11 Tweaking language in tooltips and gui]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/b006c4d80f163a46cda4aa8b1d5ab857726b71fe/Subprojects/Create%20Subproject%20from%20Selected%20Track(s)%20(GUI).lua</source>
       </version>
     </reapack>
     <reapack name="Duplicate Subproject Items to New Take, Copying RPP to New Version.lua" type="script" desc="Duplicate Subproject Items to New Take, Copying RPP to New Version">
@@ -9478,40 +9616,6 @@ v1.5 Visual Editor: drag and drop support]]></changelog>
 4/16/25 - v1.02 - Making it so that the subproject's parent project is activated after saving.
 10/3/25 - v1.03 - Disabling the return to parent project function until I can debug it better, as it will fail often.]]></changelog>
         <source main="main">https://github.com/schapps/ReaperScripts/raw/bfb1c770dd18fdba7a57416a4d414b914e367d1b/Subprojects/Save%20and%20Render%20RPP-Prox,%20Disabling%20Video%20Track%20First.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Subproject Hub.lua" type="script" desc="Subproject Hub">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Unified hub combining Subproject Manager and The Last Renamer (schapps fork). Three collapsible sections: Create Subproject, Naming, Subproject Items. Requires: Schapps Script Resources (install from this repository first).\par}
-}
-]]></description>
-        <link rel="website">https://www.stephenschappler.com</link>
-      </metadata>
-      <version name="0.7" author="Stephen Schappler" time="2026-05-02T21:47:02Z">
-        <changelog><![CDATA[05/02/26 - v0.7 Added Explode Subprojects button
-05/01/26 - v0.6 Fixes and optimziations
-04/30/26 - v0.2 Initial alpha release]]></changelog>
-        <source main="main">https://github.com/schapps/ReaperScripts/raw/62ff893c3dceb8310ad648c75cbf1dc08da13d36/Subprojects/Subproject%20Hub.lua</source>
-        <source file="Common/line-md--play-filled.png">https://github.com/schapps/ReaperScripts/raw/62ff893c3dceb8310ad648c75cbf1dc08da13d36/Common/line-md--play-filled.png</source>
-      </version>
-      <version name="0.8" author="Stephen Schappler, Aaron Cendan" time="2026-05-02T23:06:45Z">
-        <changelog><![CDATA[05/02/26 - v0.8 Test updates
-05/02/26 - v0.7 Added Explode Subprojects button
-05/01/26 - v0.6 Fixes and optimziations
-04/30/26 - v0.2 Initial alpha release]]></changelog>
-        <source main="main">https://github.com/schapps/ReaperScripts/raw/5b212c0af01653377e126e478148d08deb1bddd2/Subprojects/Subproject%20Hub.lua</source>
-      </version>
-      <version name="0.9" author="Stephen Schappler, Aaron Cendan" time="2026-05-06T22:53:26Z">
-        <changelog><![CDATA[05/06/26 - v0.9 Fixing Export Script Setting Persistence Bug
-05/02/26 - v0.8 Test updates, cleaning up subproject hub options
-05/02/26 - v0.7 Added Explode Subprojects button
-05/01/26 - v0.6 Fixes and optimziations
-04/30/26 - v0.2 Initial alpha release]]></changelog>
-        <source main="main">https://github.com/schapps/ReaperScripts/raw/c472183b82ad0056943f6ea2df7b6f0109db176f/Subprojects/Subproject%20Hub.lua</source>
       </version>
     </reapack>
     <reapack name="Subproject Manager.lua" type="script" desc="Subproject Manager">
@@ -10336,6 +10440,25 @@ v1.5 Visual Editor: drag and drop support]]></changelog>
         <source main="main">https://github.com/schapps/ReaperScripts/raw/29de9554ea65327aca6660a730ffbf319eb46c71/Tracks/Add%20Track%20Icons%20Based%20on%20Channel%20Count.lua</source>
       </version>
     </reapack>
+    <reapack name="Create Folder Track from Selected Tracks (GUI).lua" type="script" desc="Create Folder Track from Selected Tracks (GUI)">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Wraps the selected tracks in a new folder track. The folder is inserted where the first selected track sits and every selected track is moved into it as a child. Options:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Folder Name: optional name for the new folder track.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Name folder after first selected track: used when Folder Name is left empty.\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab Clear child track names: blanks the names of the moved tracks. Requires: ReaImGUI, Schapps Script Resources (Common/ReaImGuiTheme.lua).\sa180\par}
+}
+]]></description>
+        <link rel="website">https://www.stephenschappler.com</link>
+      </metadata>
+      <version name="1.0" author="Stephen Schappler" time="2026-09-29T17:27:05Z">
+        <changelog><![CDATA[09/29/26 v1.0 - Initial release]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/f1f955bbe8ad7b0eacb5608fb4f7aec82db1f90a/Tracks/Create%20Folder%20Track%20from%20Selected%20Tracks%20(GUI).lua</source>
+      </version>
+    </reapack>
     <reapack name="Create New Tracks with Parent Folder Track.lua" type="script" desc="Create New Tracks with Parent Folder Track">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
@@ -10418,6 +10541,10 @@ v1.5 Visual Editor: drag and drop support]]></changelog>
       <version name="1.0" author="Stephen Schappler" time="2026-09-22T01:20:23Z">
         <changelog><![CDATA[09/21/26 v1.0 - Initial release]]></changelog>
         <source main="main">https://github.com/schapps/ReaperScripts/raw/5c24a88d4dba134f59caa7e3456d61186f007f3d/Tracks/Rename%20Selected%20Tracks.lua</source>
+      </version>
+      <version name="1.1" author="Stephen Schappler" time="2026-09-24T19:48:51Z">
+        <changelog><![CDATA[09/21/26 v1.1 - GUI Update]]></changelog>
+        <source main="main">https://github.com/schapps/ReaperScripts/raw/209b2834362544aa30deea0ab6e0203c7007c80f/Tracks/Rename%20Selected%20Tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Send Source Track to Selected Tracks.lua" type="script" desc="Send Source Track to Selected Tracks">
