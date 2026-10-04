@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "mouse modifier and action",
+		SEARCH = "transpose octave",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -62,7 +62,7 @@ return {
 		keys = {
 			
 		},
-		last_cursor_context = 0,
+		last_cursor_context = 1,
 		load_last_search_on_startup = false,
 		new_instance_close = true,
 		open_projects_in_new_tab = false,
@@ -83,11 +83,39 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "Help: Mouse modifier keys and action shortcuts (40308) (Main)",
+				id = "Notation: Identify chords on editor grid (41281) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
 				type = "action"
 			},
 			{
 				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST3i:Serum 2 (Xfer Records)",
+				type = "vst3i"
+			},
+			{
+				id = "JS:Pedal Steel Glide (MPE)",
+				type = "jsfx"
+			},
+			{
+				id = "JS:Gaussian Humanization",
+				type = "jsfx"
+			},
+			{
+				id = "JS:MIDI Arpeggiator (Tukan)",
+				type = "jsfx"
+			},
+			{
+				id = "JS:Partials (Saike)",
+				type = "jsfx"
+			},
+			{
+				id = "Help: Mouse modifier keys and action shortcuts (40308) (Main)",
 				type = "action"
 			},
 			{
@@ -177,10 +205,6 @@ return {
 			{
 				id = "JS:MIDI Tool v2",
 				type = "jsfx"
-			},
-			{
-				id = "VST3i:Serum 2 (Xfer Records)",
-				type = "vst3i"
 			},
 			{
 				id = "Script: jk_Conform stems to edited track.lua (RSa8626a339b14a8c0f6585ca04a91dcfd9bd5bde8) (Main)",
@@ -367,14 +391,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "JS:Gaussian Humanization",
-				type = "jsfx"
-			},
-			{
-				id = "JS:MIDI Arpeggiator (Tukan)",
-				type = "jsfx"
-			},
-			{
 				id = "VST3:Serum 2 FX (Xfer Records)",
 				type = "vst3"
 			},
@@ -435,10 +451,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "JS:Partials (Saike)",
-				type = "jsfx"
-			},
-			{
 				id = "Custom: MIDI Merge Items Across Tracks (1da1b25fcd05447fb15c1c3ffe88b01a) (Main)",
 				type = "action"
 			},
@@ -469,18 +481,6 @@ return {
 			{
 				id = "VST3:Trackspacer 2.5 (Wavesfactory)",
 				type = "vst3"
-			},
-			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item properties: Show media item/take properties (40009) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item properties: Pitch item up one octave (40515) (Main)",
-				type = "action"
 			}
 		},
 		recent_results_amount = 30,
