@@ -24,7 +24,22 @@
 --        OUT: 10:02:11:04
 --        ...
 --
---      Blocks are separated by a line containing only "--". The first block is the
+--   3. Pasted review comments (e.g. copied from a Frame.io-style review page). No "--"
+--      blocks needed; each comment is an author/age line, a timecode line, then the
+--      comment text:
+--
+--        Blake2h ago
+--        01:00:23:06
+--         I think this is too early to have the more uplifting music come in...
+--        B                      <- avatar initial lines are ignored
+--        Claire14m ago
+--        01:01:06:18
+--         I like the addition of a hit here...
+--
+--      Each comment becomes a "Picture Markers" item at its timecode, noted
+--      "Author: comment". Auto-detected when the clipboard has no "--" separators.
+--
+--      (Mode 2 detail:) Blocks are separated by a line containing only "--". The first block is the
 --      header (PROJECT/VERSION/START/FPS/DATE fields, plus any other lines as
 --      general project notes); every block after that is a cue (ID/IN/OUT fields,
 --      plus any other lines as that cue's notes).
@@ -348,6 +363,58 @@ local function parsePastedNotesText(text)
     end
 
     return { header = header, cues = cues }, nil
+end
+
+-- ============================================================================
+-- REVIEW COMMENT PARSER
+-- Handles pasted review-page comments: an author line ("Blake2h ago"), a bare
+-- timecode line, then one or more lines of comment text. Single-letter avatar
+-- initials are skipped.
+-- ============================================================================
+
+local function isAuthorAgeLine(line)
+    local t = trim(line)
+    local name = t:match("^(.-)%s*%d+%s*%a+%s+ago$") or t:match("^(.-)%s*just now$")
+    if name then return name end -- "" when the line is only the age ("2h ago")
+    return nil
+end
+
+---@return table[] comments { author, timecodeString, text }
+local function parseReviewComments(text)
+    local comments = {}
+    local author, current = "", nil
+
+    local function finish()
+        if current then
+            local joined = table.concat(current.parts, " "):gsub("%s+([,.;:!?])", "%1")
+            current.text = trim(joined)
+            if current.text ~= "" then table.insert(comments, current) end
+            current = nil
+        end
+    end
+
+    local prevLine = ""
+    for line in (text .. "\n"):gmatch("(.-)\r?\n") do
+        local t = trim(line)
+        local tc, rest = t:match("^(%d%d?[:;.]%d%d[:;.]%d%d[:;.]%d%d)%s*(.*)$")
+        local name = isAuthorAgeLine(t)
+        if t == "" or t:match("^%u$") then
+            -- blank line or avatar initial
+        elseif name then
+            finish()
+            -- Age on its own line ("2h ago") means the author was the previous line
+            author = name ~= "" and name or prevLine
+        elseif tc then
+            finish()
+            current = { author = author, timecodeString = (tc:gsub("[;.]", ":")), parts = {} }
+            if rest ~= "" then table.insert(current.parts, rest) end
+        elseif current then
+            table.insert(current.parts, t)
+        end
+        if t ~= "" and not t:match("^%u$") then prevLine = t end
+    end
+    finish()
+    return comments
 end
 
 -- ============================================================================
@@ -732,13 +799,14 @@ end
 ---@return number cuesSkipped
 ---@return number notesCreated
 ---@return number notesFlagged
-local function runImport(cues, extraNoteBlocks)
+local function runImport(cues, extraNoteBlocks, presetMarkers)
     reaper.Undo_BeginBlock()
     reaper.PreventUIRefresh(1)
 
     local cuesTrackA, cuesTrackB, notesTrack
     local cuesOnA, cuesOnB, cuesSkipped = 0, 0, 0
     local allNoteMarkers = {} -- { position, noteText, needsReview }
+    for _, m in ipairs(presetMarkers or {}) do table.insert(allNoteMarkers, m) end
 
     for _, block in ipairs(extraNoteBlocks or {}) do
         if block.notes ~= "" and block.anchorTimecode then
@@ -843,6 +911,26 @@ local function importFromClipboard()
     if not text or trim(text) == "" then
         reaper.ShowMessageBox("Clipboard is empty. Copy your spotting notes text, then run this again.", SCRIPT_TITLE, 0)
         return
+    end
+
+    if not text:find("\n%s*%-%-%s*\n") then
+        local comments = parseReviewComments(text)
+        if #comments > 0 then
+            activeOffsetSeconds = nil
+            local markers = {}
+            for _, c in ipairs(comments) do
+                local pos = timecodeStringToProjectTime(c.timecodeString)
+                if pos then
+                    local noteText = c.author ~= "" and (c.author .. ": " .. c.text) or c.text
+                    table.insert(markers, { position = pos, noteText = noteText, needsReview = false })
+                end
+            end
+            local _, _, _, notesCreated = runImport({}, nil, markers)
+            reaper.ShowConsoleMsg(string.format(
+                "[Spotting Notes] Pasted review comments: %d note item(s) created on '%s'.\n",
+                notesCreated, NOTES_TRACK_NAME))
+            return
+        end
     end
 
     local parsed, err = parsePastedNotesText(text)

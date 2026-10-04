@@ -348,6 +348,9 @@ D s 48000 n 2 l 4:45.733 i 1381k
 F 2026-little-deaths-02-for-taylor-bounce-01.wav 187765968 0 1770491280 0
 D y 2026-02-06 s 96000 n 2 r 1:00:00.000
 D l 5:25.557 i 24
+F "20260424 - Improve Section.wav" 408268630 0 1790729952 0
+D y 2026-04-27 s 96000 n 2 r 2:32:48.554
+D l 11:45.066 i 24
 F 250531_03.MP3 408048243 0 1748741858 0
 D t 250531_03 a "My Recording" s 44100 n 2
 D l 2:50:00.059 i 320k
@@ -421,6 +424,8 @@ D i 1536k
 F "CFC Satellites- Reality Check- Reimagining the Exploration and Expression of Reality.m4a" 274484858 0 1768338291 0
 D y 2026-01-13T21:04:48.000000Z s 48000 n 1 l 2:29:03.658
 D i 244k
+F "Conversation ends..wav" 74835104 0 1790729981 0
+D s 48000 n 2 l 4:19.843 i 24
 F "corpus match sine stacker 2026-05-30 23-04-38 (yafw balanced).mp4" 6669434 0 1780204131 0
 D s 48000 n 2 l 3:09.866 i 272k
 F "corpus match sine stacker 2026-05-30 23-04-38.mp4" 33563873 0 1780204069 0
@@ -557,6 +562,8 @@ D y 2025-07-06 s 96000 n 2 r 1:00:00.000
 D l 11:43.250 i 24
 F "HGG_RoughCut_V04 [26-07-14].mp4" 749469753 0 1784253223 0
 D s 44100 n 2 l 24:43.150 i 4038k
+F "I can feel the tech tightening..wav" 105962822 0 1790729972 0
+D s 48000 n 2 l 6:07.926 i 24
 F IMG_1382.mov 8349196 0 1727547290 0
 D y 2024-09-24T21:26:52.000000Z s 44100 n 2 l 0:25.200
 D i 2647k
@@ -616,6 +623,8 @@ D i 2998k
 F IMG_9958.MOV 1856179 0 1766509328 0
 D y 2024-05-23T22:46:29.000000Z s 44100 n 2 l 0:01.835
 D i 8046k
+F "Improv Section Mastered.wav" 203059262 0 1790729962 0
+D s 48000 n 2 l 11:45.066 i 24
 F "initial destination.RPP" 0 0 0 0
 D p 120 n 2
 F "initial source 01.RPP" 0 0 0 0
@@ -660,6 +669,10 @@ D i 132k j "mime:image/png offset:802 length:598470"
 F "Julian call.m4a" 10806792 0 1772562423 0
 D t "Julian call " y 2026-03-03T18:06:22.000000Z s 48000 n 1
 D l 20:31.125 i 65k
+F "JW_0508 interview FIT.mp3" 43144592 0 1790724834 0
+D s 44100 n 2 l 27:07.626 i 212k
+F JW_0508.mp4 176362865 0 1790724517 0
+D s 48000 n 2 l 27:07.626
 F "KelpReverberations_snapshotVideo (yafw balanced).mp4" 27345514 0 1770777480 0
 D s 48000 n 2 l 1:14.007 i 2947k
 F KelpReverberations_snapshotVideo.mov 140273571 0 1770768118 0
@@ -871,6 +884,8 @@ D i 128k
 F "test tempo.mid" 245 0 1740959974 0
 D t "NPC Template Holding Cell_31.MID" d "Studio Grand" p 104.606 k C
 D n 1 l 0:19.663
+F "their blessing weighs on me.wav" 130352720 0 1790730000 0
+D s 96000 n 2 l 3:46.306 i 24
 F "Tina Deenik - 2025-06-13 04.27.08.mp4" 698679 0 1749788828 0
 D s 44100 n 2 l 0:03.645 i 1553k
 F "Tina Deenik - 2025-06-13 04.27.08_aggressive_denoised.mp4" 278937 0 1749790174 0
