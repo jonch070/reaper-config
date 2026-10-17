@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "browse packa",
+		SEARCH = "",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -82,6 +82,22 @@ return {
 		},
 		project_directories_sort = "Name",
 		recent = {
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: BFO & LKC - Folder items.lua (RS9001b897c7f216af4aa6541d7d30154e00f94781) (Main)",
+				type = "action"
+			},
 			{
 				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
 				type = "action"
@@ -208,10 +224,6 @@ return {
 			},
 			{
 				id = "Xenakios/SWS: Toggle selected items selected randomly... (XENAKIOS_RANDOM_ITEM_SELTOGGLE) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
 				type = "action"
 			},
 			{
@@ -468,18 +480,6 @@ return {
 			},
 			{
 				id = "Script: jk_Explode regions to tracks.lua (RS187a6a9095dba488fdfada3f01121f0b912a967a) (Main)",
-				type = "action"
-			},
-			{
-				id = "Track: Toggle show/hide in mixer (40250) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Suzuki_ReaDrum_Machine_Instruments_Rack.lua (RS8a88874a6e8cb9f68f16f1896439adfc51917908) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Split MIDI item into voices (one track per voice).lua (RSb5861d8a3d94627d6cf84cc0083a68586872218f) (Main)",
 				type = "action"
 			}
 		},
