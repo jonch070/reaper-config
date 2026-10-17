@@ -33,7 +33,7 @@
 
  <category name="TK Workbench">
      <reapack name="TK_Workbench.lua" type="script" desc="TK Workbench">
-    <version name="0.9.7" author="TouristKiller" time="2026-09-06T12:55:14Z">
+    <version name="0.9.8" author="TouristKiller" time="2026-10-13T22:06:54Z">
      <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Workbench.lua</source>
      <source main="main" file="TK_Workbench_2.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Workbench_2.lua</source>
      <source main="main" file="TK_Instrument_Rack_Horizontal.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Instrument_Rack_Horizontal.lua</source>
@@ -86,6 +86,10 @@
     <source file="core/quick_fx_menu.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/quick_fx_menu.lua</source>
     <source file="core/routing.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/routing.lua</source>
     <source file="core/fx_chunk.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/fx_chunk.lua</source>
+    <source file="core/track_chunk.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/track_chunk.lua</source>
+    <source file="core/rpp_diff.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/rpp_diff.lua</source>
+    <source file="core/time_machine_store.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/time_machine_store.lua</source>
+    <source file="core/time_machine_restore.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/time_machine_restore.lua</source>
     <source file="core/workbench_module_action_runner.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/workbench_module_action_runner.lua</source>
     <source file="core/idea_vault_store.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/idea_vault_store.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Control_Room_Dim.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Control_Room_Dim.lua</source>
@@ -113,6 +117,8 @@
     <source main="main" file="Module Actions/TK_Workbench_Open_Project_Overview.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Project_Overview.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Script_Launcher.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Script_Launcher.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Track_Recall.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Track_Recall.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Time_Machine.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Time_Machine.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Time_Machine_AB.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Time_Machine_AB.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Arrange_BG.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Arrange_BG.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Timepiece.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Timepiece.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Transport.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Transport.lua</source>
@@ -147,6 +153,7 @@
      <source file="modules/navigator.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/navigator.lua</source>
      <source file="modules/transport.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/transport.lua</source>
      <source file="modules/track_recall.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/track_recall.lua</source>
+    <source file="modules/time_machine.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/time_machine.lua</source>
      <source file="modules/idea_vault.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/idea_vault.lua</source>
       <source file="modules/track_tags.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/track_tags.lua</source>
      <source file="modules/render_hub.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/render_hub.lua</source>
@@ -154,8 +161,18 @@
      <source type="effect" file="TK Scripts/Mixer/TK_Control_Room_Meter.jsfx">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Effects/TK_Control_Room_Meter.jsfx</source>
      <source type="effect" file="TK Scripts/Mixer/TK_Control_Room_Downmix.jsfx">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Effects/TK_Control_Room_Downmix.jsfx</source>
     <changelog><![CDATA[
-            v0.9.7
-            + Media Browser: External rating detection no longer opens the entire audio library while browsing. Tag reads are now demand-driven, limited per frame and batched when rating sort or filtering needs a wider scan, restoring responsive browsing in large libraries. Reported on the forum
+            v0.9.8
+            + Time Machine (new module): Keeps a copy of every saved version of a project and says in plain words what changed between saves: tracks, plugins, items, envelopes, mixer settings, tempo, markers and the master. Versions are kept outside the project, in a "TK Time Machine" folder at a location of your choice, so the .rpp itself never grows. Saves are picked up in the background whenever Workbench runs, and copying and comparing are spread over frames so even very large projects do not stall the window
+            + Time Machine: Anything from an older version can be put back into the open project: one plugin, an envelope, a track's items or mixer settings, a whole track, a deleted track or a marker. Right-click a line in the list of changes or use a track's Restore menu; every restore is a single undo step, and tracks and plugins are found by their id, so a restore lands on the right track even after reordering or renaming
+            + Time Machine: "Versus now" compares a saved version with the project as it is, unsaved changes included. Select the newest version to see exactly what you changed since the last save, and undo any of it line by line
+            + Time Machine: History shows every saved change to one track or one plugin, newest first, so a question like "when did that reverb disappear?" no longer means clicking through every version. Open it from a track's History button, by right-clicking a plugin, or with Track for the track selected in REAPER
+            + Time Machine: Versions can be labelled ("Mix v1 sent to client") with a note, and labelled versions are never cleaned up. Other versions are thinned out automatically: every save is kept for a day, then one per hour for a week, then one per day, within a size limit per project
+            + Time Machine: VST, VST3 and CLAP plugins store their settings as an unreadable blob, so the list can only say "state changed". Explain plugin changes loads both versions on a hidden temporary track and names the parameters that actually moved, or tells you only the plugin's private data changed. JSFX sliders are named straight from the effect's source, and hidden sliders that meters write their readings into are ignored, so a meter on the master no longer shows up as an edit
+            + Time Machine: REAPER's own .rpp-bak backups (beside the project and in its Backups folder) can be imported, dated by when they were saved, to give a project a history from before Time Machine was installed
+            + Time Machine: A history follows its project when the project is moved or renamed, a Save As starts a new history that remembers where it came from, and Link reconnects a history by hand. When the storage location is changed, existing histories can be moved along and are merged with any already there
+            + Time Machine: An old version can be opened as a copy in a new tab and compared by ear with A/B, which switches between the two at the same play position (also available as an action for a shortcut). A track can be borrowed from any version of any project, with fresh ids and its media paths kept working. The list of changes can be copied as text, and a storage overview shows the space each history takes and cleans up histories whose project is gone
+            + Track Recall: Time Machine can save a track as it was in an older version as a recall, without changing the track now. The track chunk handling moved into a shared core file for this; restoring recalls works exactly as before
+            + Media Browser: Ratings in an ID3 chunk at the end of a WAV file are now found in WAVs larger than 50 MB. The scan stopped at the first chunk over 50 MB, which is normally the audio itself; now only the ID3 chunk is held to that limit
 ]]></changelog>
      </version>
      </reapack>
@@ -187,7 +204,7 @@
 
  <category name="FX">
     <reapack name="TK_FX_BROWSER.lua" type="script" desc="TK FX BROWSER">
-    <version name="3.2.18" author="TouristKiller" time="2026-08-19T13:11:57Z">
+    <version name="3.2.19" author="TouristKiller" time="2026-10-14T20:57:08Z">
     <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_FX_BROWSER.lua</source>
     <source file="DrawMeter.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/DrawMeter.lua</source>
     <source file="TKFXBVariables.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TKFXBVariables.lua</source>
@@ -203,25 +220,51 @@
     <source main="main" file="TK_NOTES_OpenGlobalMode.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_NOTES_OpenGlobalMode.lua</source>
     <source main="main" file="TK_FX_BROWSER_SnapshotFX.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_FX_BROWSER_SnapshotFX.lua</source>
                 <changelog><![CDATA[
+                v3.2.19:
+                + Patchbay: FX node view: double-click a track node (or use the FX icon on the node, or click the FX schema panel) to dive into that track and see its FX chain as nodes and cables instead of a strip, nested containers and parallel lanes included.
+                + Patchbay: FX node view: reorder by dragging - drop on a cable to place an FX in series, on a node to run it in parallel, or into a container. Parallel lanes can be reordered in both directions.
+                + Patchbay: FX node view: add FX after any node or inside a container, through a search box and browse menus for All plugins, Category, Developer, Folders and your own TK FX BROWSER custom folders.
+                + Patchbay: FX node view: bypass, offline, wet, rename, delete and open the FX window from the node or its right-click menu; wrap a plugin in a new container or unpack a container. Containers fold shut per container, and the choice is remembered.
+                + Patchbay: FX node view: nodes can be placed freely and keep their position per project. Prevent overlap keeps them from landing on top of each other, and TK FX BROWSER screenshots can optionally be shown in the node bodies.
+                + Patchbay: FX node view: Follow switches the view to whichever track you select in REAPER, so it can stay open while you work.
+                + Patchbay: FX node view: Routing shows the real pin wiring with one colour per channel, so a compressor's detector on channels 3/4, an output sent somewhere unusual or a crossed pair is visible without opening the pin connector. The plain stereo path is only drawn when Routing is on, so it does not bury the routing worth seeing.
+                + Patchbay: FX node view: pin-level patching. Drag from an output pin, or from a track channel on the IN box, to an input pin to wire it - feeding a sidechain is one drag. Right-click a pin to disconnect it; Reset pin routing puts a plugin back to its defaults. A connection that REAPER would wire differently from how it is drawn - across a container wall, backwards in the chain, between parallel lanes, from a bypassed plugin, or past a plugin that overwrites the channel on the way - is refused with an explanation instead of silently wiring something else.
+                + Patchbay: FX node view: the drawn routing follows REAPER's own signal flow, checked by measurement on REAPER 7.75: bypassed and offline plugins pass their input through, a container's output pins carry its internal channels, parallel lanes sum only what each lane writes, and plugins with more than 12 pins or tracks with more than 16 channels are followed in full (the extra pins collapse onto the last drawn pin, marked +N).
+                + Patchbay: FX node view: instruments get a dashed MIDI cable from the track, so a synth without audio inputs no longer looks as if it plays on its own.
+                + Patchbay: FX node view: every pin change - connect, disconnect, Reset pin routing - is its own undo step. REAPER does not register a pin change as an edit by itself, so without help Undo skipped it and took back the step before.
+                + Patchbay: Ctrl+Z undoes and Ctrl+Shift+Z / Ctrl+Y redo while the Patchbay window has focus; until now only the arrow buttons did, because the keys went to the script instead of REAPER.
+                + Patchbay: The track graph is no longer drawn underneath the FX node view, and a right-click inside the view no longer also opens the track graph's menus behind it.
+                + Patchbay: Notes panel: reads the shared TK Notes / Workbench note store first, so a note edited in either app shows up.
                 v3.2.18:
                 + Track templates: a template with a preview beside it can be auditioned without loading it. TK Idea Vault renders one when it saves a template, and any audio file sharing a template's name counts - so a preview put there by hand works the same way. Right-click a template in the list, or click the play badge on its thumbnail.
                 + Track templates: the preview plays at the project's tempo rather than at whatever it was recorded at, without transposing it. The tempo it was played at comes from the .tkidea file Idea Vault leaves beside the template; without one the preview simply plays at its own speed.
                 + Track templates: thumbnails carrying a preview are marked with a play badge, so it is visible which ones have something to hear instead of having to right-click each to find out. The badge turns into a pause symbol while it sounds, and clicking it plays rather than loading the template.
-                v3.2.17:
-                + Visibility settings: added a separate option to show or hide the scrollbar in the Browser/INFO panel; the screenshot scrollbar remains independently configurable.
 
 ]]></changelog>
     </version>
     </reapack>
 
     <reapack name="TK_Patchbay_Standalone.lua" type="script" desc="TK Patchbay Viewer (Standalone)">
-    <version name="1.2.1" author="TouristKiller" time="2026-06-11T00:40:00Z">
+    <version name="1.3.0" author="TouristKiller" time="2026-10-14T20:57:08Z">
     <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_Patchbay_Standalone.lua</source>
     <source file="TKFXBPatchbay_Standalone.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TKFXBPatchbay_Standalone.lua</source>
                 <changelog><![CDATA[
-            v1.2.1
-            + Added a Track notes panel (View > Show notes) that shows read-only track notes from TK Notes or Workbench directly inside the canvas.
-            + The notes panel can be dragged anywhere in the canvas, resized via the bottom-right grip, and switched between TK Notes and Workbench sources.
+            v1.3.0
+            + FX node view: double-click a track node (or use the FX icon on the node, or click the FX schema panel) to dive into that track and see its FX chain as nodes and cables instead of a strip, nested containers and parallel lanes included.
+            + FX node view: reorder by dragging - drop on a cable to place an FX in series, on a node to run it in parallel, or into a container. Parallel lanes can be reordered in both directions.
+            + FX node view: add FX after any node or inside a container, through a search box and browse menus for All plugins, Category, Developer, Folders and your own TK FX BROWSER custom folders.
+            + FX node view: bypass, offline, wet, rename, delete and open the FX window from the node or its right-click menu; wrap a plugin in a new container or unpack a container. Containers fold shut per container, and the choice is remembered.
+            + FX node view: nodes can be placed freely and keep their position per project. Prevent overlap keeps them from landing on top of each other, and TK FX BROWSER screenshots can optionally be shown in the node bodies.
+            + FX node view: Follow switches the view to whichever track you select in REAPER, so it can stay open while you work.
+            + FX node view: Routing shows the real pin wiring with one colour per channel, so a compressor's detector on channels 3/4, an output sent somewhere unusual or a crossed pair is visible without opening the pin connector. The plain stereo path is only drawn when Routing is on, so it does not bury the routing worth seeing.
+            + FX node view: pin-level patching. Drag from an output pin, or from a track channel on the IN box, to an input pin to wire it - feeding a sidechain is one drag. Right-click a pin to disconnect it; Reset pin routing puts a plugin back to its defaults. A connection that REAPER would wire differently from how it is drawn - across a container wall, backwards in the chain, between parallel lanes, from a bypassed plugin, or past a plugin that overwrites the channel on the way - is refused with an explanation instead of silently wiring something else.
+            + FX node view: the drawn routing follows REAPER's own signal flow, checked by measurement on REAPER 7.75: bypassed and offline plugins pass their input through, a container's output pins carry its internal channels, parallel lanes sum only what each lane writes, and plugins with more than 12 pins or tracks with more than 16 channels are followed in full (the extra pins collapse onto the last drawn pin, marked +N).
+            + FX node view: instruments get a dashed MIDI cable from the track, so a synth without audio inputs no longer looks as if it plays on its own.
+            + FX node view: every pin change - connect, disconnect, Reset pin routing - is its own undo step. REAPER does not register a pin change as an edit by itself, so without help Undo skipped it and took back the step before.
+            + Ctrl+Z undoes and Ctrl+Shift+Z / Ctrl+Y redo while the Patchbay window has focus; until now only the arrow buttons did, because the keys went to the script instead of REAPER.
+            + The track graph is no longer drawn underneath the FX node view, and a right-click inside the view no longer also opens the track graph's menus behind it.
+            + Notes panel: reads the shared TK Notes / Workbench note store first, so a note edited in either app shows up.
+            + Fixed: the notes panel's settings (shown/hidden, source, size and position) and several other Patchbay preferences were forgotten after restarting the standalone, because its settings table did not declare them.
 ]]></changelog>
     </version>
     </reapack>
@@ -546,7 +589,7 @@ v0.2.51
 
 <category name="Transport">
     <reapack name="TK_TRANSPORT.lua" type="script" desc="TK_TRANSPORT">
-        <version name="2.0.5" author="TouristKiller" time="2026-07-25T20:50:00Z">
+        <version name="2.0.7" author="TouristKiller" time="2026-10-15T21:28:00Z">
             <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/TK_TRANSPORT.lua</source>
             <source file="json.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/json.lua</source>
             <source file="button_editor.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/button_editor.lua</source>
@@ -555,13 +598,26 @@ v0.2.51
             <source file="icon_browser.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/icon_browser.lua</source>
             <source file="toolbar_images.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/toolbar_images.zip</source>
             <changelog><![CDATA[
-    v2.0.5:
-    + Fixed: Monitor Volume did not reflect or control the actual master hardware output volume - it now reads/writes the master output 1 send volume directly instead of nudging via SWS actions and tracking a cached value that drifted out of sync
-    + Fixed: Right-click reset on Monitor Volume only reset the display, not the real output volume
-    + Removed: SWS dependency for Monitor Volume (native REAPER API is used now)
+    v2.0.7:
+    + Added: Decorative / Image Only buttons have a "Behind Transport" option that draws them behind the transport elements, so they can be used as backgrounds and frames
+    + Added: New "Background Buttons" layer in Z-Order (Layer), below Transport by default, to set how deep those buttons sit
+    + Changed: Decorative / Image Only buttons can now be as wide and tall as the transport window instead of being limited to 400 px; regular buttons keep the 400 px limit
+    + Changed: Copy Style and "Copy style from last button" also copy the "Behind Transport" option
 
-    v2.0.4:
-    + Fixed: Icon Browser could crash after being accidentally docked - the window can no longer be docked and is automatically undocked
+    v2.0.6:
+    + Changed: Copy Style now also copies height, icon/image (incl. custom image path), image tinting (incl. Tint ON/OFF), Invisible BG, text position, toggle ON/OFF colors and the System Fonts setting
+    + Fixed: Paste Style did not reset values that were at their default on the source button - for example a custom tint on the target button stayed after pasting
+    + Changed: "New button - Copy style from last button" now copies the same appearance settings as Copy Style
+    + Changed: Copy Style Settings window redesigned - two columns grouped like the button editor, a checkbox per group, quick All / None / Colors only / Layout only buttons and a count of selected properties
+    + Added: Confirmation before deleting a transport preset or button preset and before Reset Defaults, so a misclick no longer throws work away
+    + Changed: Settings list split into General and Components; each component shows a dot for its visibility that you can click to show or hide it
+    + Changed: Transport and button preset bars now share one layout and color scheme; the new-name field shows a hint and Resave is highlighted while there are unsaved changes
+    + Changed: All settings sections use one heading style
+    + Changed: "(Toggle active ...)" notes in the button Properties now link straight to the Toggle view
+    + Changed: Button editor columns scale with the available width instead of fixed pixel positions
+    + Changed: Group settings moved to a fixed group bar below the button settings, visible in Properties, Actions and Toggle; Paste Style to Group moved there as well
+    + Fixed: With current ReaImGui versions, TK Transport's own window could be mistaken for REAPER's native transport when positioning relative to the REAPER transport or TCP
+    + Removed: Debug console output when creating a preset-load action, and outdated help text in the Buttons tab
 
 ]]></changelog>
         </version>
@@ -692,7 +748,7 @@ v0.2.51
 
  <category name="Media">
     <reapack name="TK_PROJECT_CLIPS.lua" type="script" desc="TK Project Clips">
-        <version name="0.6.4" author="TouristKiller" time="2026-09-07T14:59:36Z">
+        <version name="0.6.5" author="TouristKiller" time="2026-10-16T14:58:12Z">
         <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/TK_PROJECT_CLIPS.lua</source>
         <source file="TK_PROJECT_CLIPS/launcher.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/TK_PROJECT_CLIPS/launcher.lua</source>
         <source file="TK_PROJECT_CLIPS/chord_engine.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/TK_PROJECT_CLIPS/chord_engine.lua</source>
@@ -743,6 +799,20 @@ v0.2.51
         <source file="TK_PROJECT_CLIPS_ACTIONS/TK Project Clips - Launch scene 32.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/TK_PROJECT_CLIPS_ACTIONS/TK%20Project%20Clips%20-%20Launch%20scene%2032.lua</source>
         <source file="TK_Project_Clips_Launcher.pdf">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/TK_Project_Clips_Launcher.pdf</source>
         <changelog><![CDATA[
+            v0.6.5
+            + Launcher: Everything that blinks now runs off one clock on the project's beat - the record pads and the record rings included, which kept their own time - and it keeps that beat with the transport stopped. Reported by AndreiMir
+            + Launcher: The Launchpad's own flashing and pulsing is no longer used: a board runs those on its own clock, 120 BPM unless it is fed MIDI clock, so at any other tempo its pads beat against the rest. A playing pad now pulses on the project's beat like everything else
+            + Launcher: The blink follows what the meter counts, an eighth in 6/8 and a quarter in 4/4, the same rule the launch quantize follows
+            + Launcher: A take winding down to its bar line blinks the learned Record pad instead of sitting the same steady red as one that is still running
+            + Launcher: Send to launcher, in the right-click menu of an Items or Source Media card: the route to a clip in another open project tab or a loaded subproject, which nothing that starts from the arrange selection could reach. Asked by AndreiMir
+            + Launcher: An item sent over keeps the trim it was given in its own arrange and brings MIDI that exists only inside that project; a source card comes in as its file, Sync BPM and all
+            + Launcher: The lane is chosen for you - the track the clip came from where this project has one by that name, the selected track otherwise - in the first free row of that lane, and several selected items go over at once
+            + Launcher: A media strip beside the grid - the Items and Source Media lists, narrow - so a clip can be dragged straight into a slot, from this project or from any other open tab. Switch it on under Settings; it is off by default because the grid wants the width. Asked by AndreiMir
+            + Launcher: The strip drag is not an OS drag, both halves being one window, so it works docked as well as floating, and the slot you drop on is the slot it lands in
+            + Launcher: Drag the bar between strip and grid to set its width, and that is remembered; double-click a row instead and the lane is picked for you
+            + Launcher: Hover a strip row for a triangle that auditions it - the clip editor's own preview engine, so it leaves the transport, the edit cursor and every solo alone and can be used mid-jam. Needs SWS; audio only. Asked by AndreiMir
+            + Launcher: With the strip open the project scan keeps running, minus the once-a-second check for missing media, which is the half that costs anything
+            + Launcher: The manual says where the one-project boundary lies now that clips can cross it
             v0.6.4
             + Launcher: Recording-ready and queued Launchpad pads now blink in time with the project tempo
             v0.6.3
@@ -1025,8 +1095,12 @@ v0.2.51
 
 <category name="Track">
     <reapack name="TK_Trackname_in_Arrange.lua" type="script" desc="TK_Trackname_in_Arrange">
-        <version name="1.9.9" author="TouristKiller" time="2026-09-07T00:00:00Z">
+        <version name="2.0.0" author="TouristKiller" time="2026-10-14T17:31:53Z">
             <changelog><![CDATA[
+            v2.0.0:
+            + Added Activity Glow (new Activity tab): each visible track lights up with its post-fader level, so in a large session you can see at a glance which tracks are sounding. Choose a level bar at the lane edge, a pulsing track color, or both, with adjustable floor, release and bar width
+            + Activity Glow: optional clip flash turns the glow red for a moment when a track goes over 0 dBFS
+
             v1.9.9:
             + Added individual color controls for the record-arm, solo, and mute status dots
 
@@ -1045,10 +1119,7 @@ v0.2.51
             v1.9.4:
             + Fixed: in very large templates (1000+ tracks) some tracks consistently showed no label/color while scrolling; the visible-range detection no longer relies on a binary search over I_TCPY (which broke on hidden/zero-height tracks) but uses a robust linear scan
 
-            v1.9.3:
-            + Fixed: volume envelope value labels drifted away from their points on taller lanes (positioning now uses the fader-scaled domain so labels stay glued to the points)
-
-            ]]></changelog>
+]]></changelog>
             <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/Track/TK_Trackname_in_Arrange.lua</source>
             <source main="main" file="TK_Trackname_Overlay_Toggle.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Track/TK_Trackname_Overlay_Toggle.lua</source>
             <source main="main" file="TK_Trackname_Settings_Toggle.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Track/TK_Trackname_Settings_Toggle.lua</source>

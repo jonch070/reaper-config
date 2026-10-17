@@ -1,0 +1,19 @@
+C10018 "/Users/jonathankawchuk/Documents/Projects/Film/Gilbert Hunter Stone/GHS Grab Bag"
+F "04-cello 1-251128_1237-jsfx.wav" 8755376 0 1764358666 0
+D y 2025-11-28 s 48000 n 2 l 0:22.798
+D i 32
+F "divisi internal and midinous test_001 - 00.58.37.23 - Master.mp3" 8082240 0 1763084438 0
+D s 48000 n 2 l 3:22.000 i 320k
+F "Peking_001 - snippet.mp3" 1456057 0 1784237861 0
+D y 2026-07-16 s 48000 n 2 r 2:00:07.200
+D l 1:30.950 i 129k
+F "piano para sine stack_001.mp3" 1842240 0 1782431629 0
+D s 48000 n 2 l 0:46.000 i 320k
+F "vln smang - Cello 2026-10-05 pizz 100.31bpm SLOWpatat_001_SKETCH_20261005-1525.mp3" 2578938 0 1791228355 0
+D t "vln smang - Cello 2026-10-05 pizz 100.31bpm SLOWpatat_001" b "Life Story of an Orca" y 2026 g SKETCH
+D s 48000 n 2 r 2:00:07.200 l 1:38.095
+D i 211k
+F "vln smang - Cello 2026-10-05 pizz 120bpm patat_SKETCH_20261005-1521.mp3" 1152415 0 1791228069 0
+D t "vln smang - Cello 2026-10-05 pizz 120bpm patat" b "Life Story of an Orca" y 2026 g SKETCH
+D s 48000 n 2 r 2:03:23.391 l 1:06.000
+D i 140k

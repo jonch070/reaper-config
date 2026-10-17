@@ -27,3 +27,6 @@ F "07 - Thinking about Terns.flac" 8728790 0 1784347008 0
 D t "Thinking about Terns" a "Justin Wright" b "Numb Fingers" y 2026
 D d "Visit https://www.justinwright.ca/numb-fingers" s 44100 n 2 l 2:06.500
 D i 16 m 07
+F Dialogue-glued.wav 255750496 0 1792190198 0
+D y 2026-10-16 s 96000 n 2 r 1:00:00.000
+D l 7:24.010 i 24

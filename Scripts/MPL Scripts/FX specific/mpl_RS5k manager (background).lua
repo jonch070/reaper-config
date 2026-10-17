@@ -1,5 +1,5 @@
  -- @description RS5k manager
--- @version 4.83
+-- @version 4.85
 -- @author MPL
 -- @website https://forum.cockos.com/showthread.php?t=207971
 -- @about Script for handling ReaSamplomatic5000 data on group of connected tracks
@@ -23,10 +23,10 @@
 --    mpl_RS5K_manager_functions.lua
 --    [main] mpl_RS5k_manager_ToggleShowChildren.lua
 -- @changelog
---    # fix: RS5K mgr handle invalid media source lengths and prevent crashes (https://github.com/MichaelPilyavskiy/ReaScripts/pull/63 by bjarkihall)
+--    # fix ImGui_ChildFlags_Borders
 
 
-rs5kman_vrs = '4.83'
+rs5kman_vrs = '4.85'
 
 
 
@@ -87,7 +87,7 @@ rs5kman_vrs = '4.83'
     
     if not reaper.ImGui_GetBuiltinPath then return reaper.MB('This script require reaimgui extension','',0) end
     package.path =   reaper.ImGui_GetBuiltinPath() .. '/?.lua'
-    ImGui = require 'imgui' '0.9.3.2'
+    ImGui = require 'imgui' '0.10.0.1'
     
     --[[
       gmem 1025: actions 
@@ -372,7 +372,7 @@ rs5kman_vrs = '4.83'
   
   --------------------------------------------------------------------------------  
   function UI.transparentButton(ctx, str_id, w,h)
-    ImGui.PushFont(ctx, DATA.font4) 
+    ImGui.PushFont(ctx, DATA.font, UI.font4sz) 
     UI.draw_setbuttonbackgtransparent()
     ImGui.Button(ctx, str_id, w,h)
     UI.Tools_unsetbuttonstyle()
@@ -398,7 +398,7 @@ rs5kman_vrs = '4.83'
       
     -- window_flags
       local window_flags = ImGui.WindowFlags_None
-      window_flags = window_flags | ImGui.WindowFlags_NoTitleBar
+      --window_flags = window_flags | ImGui.WindowFlags_NoTitleBar
       window_flags = window_flags | ImGui.WindowFlags_NoScrollbar
       --window_flags = window_flags | ImGui.WindowFlags_MenuBar
       --window_flags = window_flags | ImGui.WindowFlags_NoMove()
@@ -411,7 +411,7 @@ rs5kman_vrs = '4.83'
       window_flags = window_flags | ImGui.WindowFlags_NoScrollWithMouse
       --window_flags = window_flags | ImGui.WindowFlags_NoSavedSettings
       --window_flags = window_flags | ImGui.WindowFlags_UnsavedDocument
-      --open = false -- disable the close button
+      open = true -- disable the close button
     
     
     -- rounding
@@ -474,19 +474,15 @@ rs5kman_vrs = '4.83'
       local main_viewport = ImGui.GetMainViewport(ctx)
       local x, y, w, h =EXT.viewport_posX,EXT.viewport_posY, EXT.viewport_posW,EXT.viewport_posH
       
-      --ImGui.SetNextWindowPos(ctx, x, y, ImGui.Cond_Appearing )
-      --ImGui.SetNextWindowSize(ctx, w, h, ImGui.Cond_Appearing)
-      --ImGui.SetNextWindowDockID( ctx, EXT.viewport_dockID)
-      
     -- init UI 
-      ImGui.PushFont(ctx, DATA.font2) 
+      ImGui.PushFont(ctx, DATA.font,UI.font2sz) 
       DATA.titlename_reduced = ''
       if DATA.parent_track and DATA.parent_track.name and DATA.parent_track.IP_TRACKNUMBER_0based then 
         --DATA.titlename = '[Track '..math.floor(DATA.parent_track.IP_TRACKNUMBER_0based+1)..'] '..DATA.parent_track.name..' // '..DATA.UI_name..' '..rs5kman_vrs 
-        DATA.titlename_reduced = DATA.parent_track.name
+        DATA.titlename_reduced = 'Parent: '..DATA.parent_track.name
       end
       
-      local rv,open = ImGui.Begin(ctx, DATA.UI_name, open, window_flags) --
+      local rv,open = ImGui.Begin(ctx, '##'..DATA.UI_name, open, window_flags) --
       if rv then
         local Viewport = ImGui.GetWindowViewport(ctx)
         DATA.display_x, DATA.display_y = ImGui.Viewport_GetPos(Viewport) 
@@ -511,7 +507,7 @@ rs5kman_vrs = '4.83'
         if UI.hide_tabs == true then UI.calc_settingsW = 0 end 
         
         -- calc padoverview
-        UI.calc_padoverviewH = DATA.display_h- UI.spacingY*3- UI.calc_itemH
+        UI.calc_padoverviewH = DATA.display_h- UI.spacingY*3 - UI.calc_itemH
         UI.calc_padoverview_cellside = UI.calc_padoverviewH/32  
         UI.calc_padoverviewW = UI.calc_padoverview_cellside * 4 + UI.spacingX*2
         if UI.calc_padoverviewW < 30 or UI.calc_padoverviewW > 60 or EXT.UI_drracklayout == 2 then UI.hide_padoverview = true end
@@ -526,11 +522,11 @@ rs5kman_vrs = '4.83'
         local rack_max_width = 500
         local rack_min_height = 250
         UI.calc_rackX = DATA.display_x + UI.spacingX + UI.calc_padoverviewW
-        UI.calc_rackY = DATA.display_y + UI.spacingY 
+        UI.calc_rackY = DATA.display_y + UI.spacingY + UI.calc_itemH
         if ImGui_IsWindowDocked( ctx ) then UI.calc_rackY = DATA.display_y + UI.spacingY end
         if EXT.UI_drracklayout == 2  then rack_max_width = 600 end --launch
         UI.calc_rackW = math.min(DATA.display_w - UI.calc_settingsW - UI.calc_padoverviewW,rack_max_width)
-        UI.calc_rackH = math.max(math.floor(DATA.display_h  -UI.spacingY )-1,rack_min_height)
+        UI.calc_rackH = math.max(math.floor(DATA.display_h  -UI.spacingY )-1,rack_min_height) - UI.calc_itemH
         
         UI.calc_rack_padw = math.floor((UI.calc_rackW-UI.spacingX*3) / 4)
         UI.calc_rack_padh = math.floor((UI.calc_rackH-UI.spacingY*3) / 4)
@@ -598,24 +594,45 @@ rs5kman_vrs = '4.83'
         end
         
         
-        
-        if DATA.parent_track and DATA.parent_track.valid == true and UI.hide_tabs ~= true  then
-          ImGui.SetCursorPos(ctx,UI.calc_settingsX,UI.spacingY)
-          ImGui.BeginDisabled(ctx, true) ImGui.Text(ctx, DATA.UI_name_vrs)ImGui.EndDisabled(ctx)
-          ImGui.SameLine(ctx)
-          ImGui.Dummy(ctx,5,0)
-          ImGui.SameLine(ctx)
-          ImGui.Text(ctx, DATA.titlename_reduced)
+        local col_txt = 0x404040FF
+        local col_DB = 0x105010FF
+        --if DATA.parent_track and DATA.parent_track.valid == true and UI.hide_tabs ~= true  then
+        local draw_list = reaper.ImGui_GetForegroundDrawList( ctx )
+          ImGui.PushFont(ctx, DATA.font, UI.font2sz)
+          local vrsw = ImGui.CalcTextSize(ctx,DATA.UI_name_vrs)
+          local titlename_reducedw = ImGui.CalcTextSize(ctx,DATA.titlename_reduced)
+          local offsX = 10
+          local space = 20
+          ImGui.DrawList_AddTextEx( draw_list, 
+                                    DATA.font, 
+                                    UI.font2sz, 
+                                    DATA.display_x+offsX, 
+                                    DATA.display_y+3, 
+                                    col_txt, 
+                                    DATA.UI_name_vrs )
+          ImGui.DrawList_AddTextEx( draw_list, 
+                                    DATA.font, 
+                                    UI.font2sz, 
+                                    DATA.display_x+offsX + vrsw + space, 
+                                    DATA.display_y+3, 
+                                    col_txt, 
+                                    DATA.titlename_reduced )
           if EXT.UI_showcurrentdbmap == 1 then 
             local map_name = EXT.UIdatabase_maps_current
             if DATA.database_maps and DATA.database_maps[map_name] and DATA.database_maps[map_name].dbname then 
               map_name = DATA.database_maps[map_name].dbname
             end
-            ImGui.SameLine(ctx)
-            ImGui.Text(ctx, '/ db map: '..map_name)
-          end
-        end
-        
+            map_name = 'DB map: '..map_name
+            ImGui.DrawList_AddTextEx( draw_list, 
+                                    DATA.font, 
+                                    UI.font2sz, 
+                                    DATA.display_x+offsX + vrsw + titlename_reducedw + space*2, 
+                                    DATA.display_y+3, 
+                                    col_txt, 
+                                    map_name )
+                                    
+          end                         
+          ImGui.PopFont(ctx)
         ImGui.End(ctx)
       end 
      
@@ -667,6 +684,9 @@ rs5kman_vrs = '4.83'
     -- data
     if UI.open  and not DATA.trig_stopdefer then defer(UI.MAIN_loop) else
       gmem_write(1026, 0) -- rs5k manager opened
+      local is_new_value, filename, sec, cmd, mode, resolution, val = reaper.get_action_context()
+      reaper.SetToggleCommandState(sec, cmd, 0)
+      reaper.RefreshToolbar2(sec, cmd)
       --DATA:Auto_StuffSysex_sub('on release') -- send keys layout to launchpad
     end
   end
@@ -676,12 +696,7 @@ rs5kman_vrs = '4.83'
     
     -- imgUI init
     ctx = ImGui.CreateContext(DATA.UI_name) 
-    -- fonts
-    DATA.font1 = ImGui.CreateFont(UI.font, UI.font1sz) ImGui.Attach(ctx, DATA.font1)
-    DATA.font2 = ImGui.CreateFont(UI.font, UI.font2sz) ImGui.Attach(ctx, DATA.font2)
-    DATA.font3 = ImGui.CreateFont(UI.font, UI.font3sz) ImGui.Attach(ctx, DATA.font3)  
-    DATA.font4 = ImGui.CreateFont(UI.font, UI.font4sz) ImGui.Attach(ctx, DATA.font4)  
-    DATA.font5 = ImGui.CreateFont(UI.font, UI.font5sz) ImGui.Attach(ctx, DATA.font5)  
+    DATA.font = ImGui.CreateFont(UI.font) ImGui.Attach(ctx, DATA.font)
      
     -- config
     ImGui.SetConfigVar(ctx, ImGui.ConfigVar_HoverDelayNormal, UI.hoverdelay)
@@ -1817,7 +1832,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
     if not UI.tab_last or (UI.tab_last and UI.tab_last ~= UI.tab_current ) then EXT.UI_activeTab = UI.tab_current EXT:save() end
     
     UI.tab_last = UI.tab_current 
-    if ImGui.BeginChild( ctx, '##settingscontent',-1, 0, ImGui.ChildFlags_None, ImGui.WindowFlags_None ) then --|ImGui.ChildFlags_Border- --|ImGui.WindowFlags_NoScrollWithMouse
+    if ImGui.BeginChild( ctx, '##settingscontent',-1, 0, ImGui.ChildFlags_None, ImGui.WindowFlags_None ) then 
       
       
       UI.draw_tabs_settings_database()
@@ -1850,7 +1865,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
     ImGui.PushStyleVar(ctx, ImGui.StyleVar_ItemSpacing,0,0) 
     
     ImGui.SetCursorScreenPos(ctx,UI.calc_rackX,UI.calc_rackY)
-    if ImGui.BeginChild( ctx, 'rack', UI.calc_rackW, 0, ImGui.ChildFlags_None, ImGui.WindowFlags_None |ImGui.WindowFlags_NoScrollbar ) then--|ImGui.ChildFlags_Border --|ImGui.WindowFlags_MenuBar
+    if ImGui.BeginChild( ctx, 'rack', UI.calc_rackW, 0, ImGui.ChildFlags_None, ImGui.WindowFlags_None |ImGui.WindowFlags_NoScrollbar ) then
       UI.draw_Rack_Pads()  
       ImGui.EndChild( ctx)
     end
@@ -2196,7 +2211,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
       
     
     ImGui.SetCursorScreenPos( ctx, x, y )  
-    if ImGui.BeginChild( ctx, '##rackpad'..note, w, h, ImGui.ChildFlags_None , ImGui.WindowFlags_None|ImGui.WindowFlags_NoScrollbar) then--|ImGui.ChildFlags_Border
+    if ImGui.BeginChild( ctx, '##rackpad'..note, w, h, ImGui.ChildFlags_None , ImGui.WindowFlags_None|ImGui.WindowFlags_NoScrollbar) then
       local note_format = VF_Format_Note(note,note_t)
       if note_format then
         if EXT.UI_drracklayout == 2 then note_format = note_format..' ('..note..')' end
@@ -2208,7 +2223,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
       UI.Tools_setbuttonbackg() 
       
       -- name 
-        ImGui.PushFont(ctx, DATA.font3) 
+        ImGui.PushFont(ctx, DATA.font,UI.font3sz) 
         ImGui.PushStyleVar(ctx, ImGui.StyleVar_WindowPadding,UI.spacingX, UI.spacingY)
         local local_pos_x, local_pos_y = ImGui.GetCursorPos( ctx )
         ImGui.SetCursorPos( ctx, local_pos_x+UI.spacingX, local_pos_y+UI.spacingY )
@@ -2443,7 +2458,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
     --ImGui.SetNextWindowPos(ctx, center_x+windw/2-25, center_y+windh/2-10, ImGui.Cond_Appearing, 0.5, 0.5)
     ImGui.SetNextWindowPos(ctx, center_x-25, center_y-10, ImGui.Cond_Appearing, 0, 0)
     ImGui.SetNextWindowSize(ctx, 0, 0, ImGui.Cond_Always)
-    if ImGui.BeginPopup(ctx, 'mainRCmenu',ImGui.WindowFlags_AlwaysAutoResize|ImGui.ChildFlags_Border) then 
+    if ImGui.BeginPopup(ctx, 'mainRCmenu',ImGui.WindowFlags_AlwaysAutoResize|ImGui.ChildFlags_Borders) then 
        
       UI.draw_popups_pad()
       UI.draw_popups_macro() 
@@ -2574,7 +2589,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
     local tabW = -1
     local cur_w = DATA.display_w - ImGui.GetCursorPosX(ctx)
     if cur_w > UI.settingsfixedW then tabW = UI.settingsfixedW end
-    if ImGui.BeginChild( ctx, 'tabs', tabW, 0, ImGui.ChildFlags_None , ImGui.WindowFlags_None|ImGui.WindowFlags_NoScrollbar) then --|ImGui.ChildFlags_Border
+    if ImGui.BeginChild( ctx, 'tabs', tabW, 0, ImGui.ChildFlags_None , ImGui.WindowFlags_None|ImGui.WindowFlags_NoScrollbar) then 
       if ImGui.BeginTabBar( ctx, 'tabsbar', ImGui.TabItemFlags_None ) then
         
         function __f_tabs() end
@@ -2667,7 +2682,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
           h = macro_h,
           colfill_rgb = colfill_rgb,
           name = name, 
-          customfont = DATA.font4,
+          customfont = DATA.font,
           active_name = DATA.parent_track.macro.sliders[sliderID].has_links ,
           appfunc_atclick = function(v) 
                                   DATA.parent_track.ext.PARENT_LASTACTIVEMACRO = sliderID
@@ -2727,7 +2742,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
       
       
     -- link list
-    if ImGui.BeginChild( ctx, 'macrolinks', 0, 0, ImGui.ChildFlags_None|ImGui.ChildFlags_Border, ImGui.WindowFlags_None ) then--|ImGui.ChildFlags_Border --|ImGui.WindowFlags_MenuBar-- |ImGui.WindowFlags_NoScrollbar -- UI.calc_rackW
+    if ImGui.BeginChild( ctx, 'macrolinks', 0, 0, ImGui.ChildFlags_None|ImGui.ChildFlags_Borders, ImGui.WindowFlags_None ) then
     
       
       
@@ -2876,7 +2891,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
     -- size 
       local knobname_h = UI.calc_itemH
       local knobctrl_h = h- knobname_h-      UI.spacingY
-      if not knob_t.customfont then ImGui.PushFont(ctx, DATA.font3) else ImGui.PushFont(ctx, knob_t.customfont)  end
+      if not knob_t.customfont then ImGui.PushFont(ctx, knob_t.customfont,UI.font3sz) else ImGui.PushFont(ctx, knob_t.customfont, UI.font2sz)  end
       if knob_t.is_small_knob == true then  
         knobname_h = UI.calc_itemH
         knobctrl_h = h- knobname_h-UI.spacingY -UI.calc_itemH
@@ -3142,10 +3157,10 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
           ImGui.SetNextItemWidth(ctx, -1) 
           ImGui.InputText(ctx,'##forumlink','https://forum.cockos.com/showthread.php?t=207971', ImGui.InputTextFlags_AutoSelectAll)
           
-          UI.Link('Telegram chat', 'https://t.me/mplscripts_chat')
+          UI.Link('Telegram', 'https://t.me/m_pilyavskiy')
           ImGui.SameLine(ctx) 
           ImGui.SetNextItemWidth(ctx, -1) 
-          ImGui.InputText(ctx,'##telegrchat','https://t.me/mplscripts_chat', ImGui.InputTextFlags_AutoSelectAll)
+          ImGui.InputText(ctx,'##telegrchat','https://t.me/m_pilyavskiy', ImGui.InputTextFlags_AutoSelectAll)
           
     end
   end
@@ -3175,7 +3190,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
     ImGui.PushStyleVar(ctx, ImGui.StyleVar_WindowPadding,0,0)  
     ImGui.PushStyleVar(ctx, ImGui.StyleVar_ItemSpacing,0,0)
     ImGui.SetCursorScreenPos(ctx,UI.calc_rackX,UI.calc_rackY)
-    if ImGui.BeginChild( ctx, 'FixingMetadata_modal', UI.calc_rackW, 0, ImGui.ChildFlags_Border, ImGui.WindowFlags_None |ImGui.WindowFlags_NoScrollbar ) then--|ImGui.ChildFlags_Border --|ImGui.WindowFlags_MenuBar
+    if ImGui.BeginChild( ctx, 'FixingMetadata_modal', UI.calc_rackW, 0, ImGui.ChildFlags_Borders, ImGui.WindowFlags_None |ImGui.WindowFlags_NoScrollbar ) then
       ImGui.TextWrapped(ctx,
           [[
           
@@ -3204,9 +3219,9 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
       UI.knob_handle = UI.knob_handle_vca2       
     end
     
-    local closew
+    --[[local closew
     if (DATA.parent_track and DATA.parent_track.valid == true) and UI.calc_padoverviewW and UI.hide_padoverview ~= true then closew = UI.calc_padoverviewW-UI.spacingX*2  end
-    if ImGui.Button(ctx, 'X',closew) then DATA.trig_stopdefer = true end 
+    if ImGui.Button(ctx, 'X',closew) then DATA.trig_stopdefer = true end ]]
     
     UI.draw_startup()
     if DATA.wrong_parent_track_metadata == true then
@@ -3233,7 +3248,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
       local posy = mousey-UI.calc_itemH*4 -- add as single button
       ImGui.SetNextWindowPos( ctx,posx, posy, ImGui.Cond_Once )
       ImGui.SetNextWindowSize( ctx, out_w, 0, ImGui.Cond_Always )
-      if ImGui.BeginPopupModal( ctx, 'autoslice_confirmation', true, ImGui.WindowFlags_AlwaysAutoResize|ImGui.ChildFlags_Border ) then
+      if ImGui.BeginPopupModal( ctx, 'autoslice_confirmation', true, ImGui.WindowFlags_AlwaysAutoResize|ImGui.ChildFlags_Borders ) then
         local loop_t=  DATA.temp_loopslice_askforadd.loop_t
         local note=  DATA.temp_loopslice_askforadd.note
         local filename=  DATA.temp_loopslice_askforadd.filename
@@ -3829,7 +3844,7 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
     
     
     ImGui.SetCursorScreenPos(ctx, curposx_abs + (UI.calc_knob_w_small + UI.spacingX)*2, curposy_abs)
-    if ImGui.BeginChild(ctx,'tabsbar_sampler_boundarychild', 0,0,reaper.ImGui_ChildFlags_Border()) then
+    if ImGui.BeginChild(ctx,'tabsbar_sampler_boundarychild', 0,0,reaper.ImGui_ChildFlags_Borders()) then 
       if ImGui.BeginTabBar( ctx, '##tabsbar_sampler_boundary', ImGui.TabItemFlags_None ) then 
         
         -- start offset
@@ -4768,4 +4783,6 @@ BUT if you use step sequencer you have to turn this MIDI Hardware output OFF. Ot
   end 
     -----------------------------------------------------------------------------------------       
   _main()
-   
+  local is_new_value, filename, sec, cmd, mode, resolution, val = reaper.get_action_context()
+  reaper.SetToggleCommandState(sec, cmd, 1)
+  reaper.RefreshToolbar2(sec, cmd)

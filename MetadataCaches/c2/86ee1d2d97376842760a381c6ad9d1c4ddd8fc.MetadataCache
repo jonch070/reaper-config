@@ -24,6 +24,13 @@ F "bongcloud opening mystery alt - v01.01.01_SKETCH_20260818-1817.mp3" 1262613 0
 D t "bongcloud opening mystery alt - v01.01.01" b "Hunt for the Grey Ghost" y 2026 g SKETCH
 D p 85 s 48000 n 2 r 2:00:29.788
 D l 0:47.294 i 214k
+F "crit and okinawa_002 GHS_FAST_005_IDEA_20261015-2338 SLOW 100bpm.mp3" 3985116 0 1792121929 0
+D t "crit and okinawa_002 GHS_FAST_005" b "Gilbert Hunter Stone" y 2026 g IDEA
+D s 48000 n 2 r 2:24:46.311 l 2:21.600
+D i 226k
+F penny_IDEA_20261016-1743.mp3 3362185 0 1792187073 0
+D t penny y 2026 g IDEA s 48000
+D n 2 r 2:00:07.200 l 1:58.000 i 228k
 F "sumu - v01.01.01_SKETCH_20260819-1845.mp3" 957390 0 1787186714 0
 D t "sumu - v01.01.01" b "Hunt for the Grey Ghost" y 2026 g SKETCH
 D s 48000 n 2 r 2:00:07.200 l 1:02.000
@@ -60,6 +67,18 @@ F tukan_IDEA_20260813-1243.mp3 1444599 0 1786646620 0
 D t tukan b "Hunt for the Grey Ghost" y 2026 g IDEA
 D s 48000 n 2 r 2:01:51.200 l 1:46.000
 D i 109k
+F "vln smang - Cello 2026-10-05 pizz 100.31bpm SLOWpatat_001_SKETCH_20261005-1525.mp3" 2578938 0 1791228355 0
+D t "vln smang - Cello 2026-10-05 pizz 100.31bpm SLOWpatat_001" b "Life Story of an Orca" y 2026 g SKETCH
+D s 48000 n 2 r 2:00:07.200 l 1:38.095
+D i 211k
+F "vln smang - Cello 2026-10-05 pizz 100.31bpm SLOWpatat_SKETCH_20261005-1521.mp3" 2592614 0 1791228123 0
+D t "vln smang - Cello 2026-10-05 pizz 100.31bpm SLOWpatat" b "Life Story of an Orca" y 2026 g SKETCH
+D s 48000 n 2 r 2:00:07.200 l 1:38.095
+D i 212k
+F "vln smang - Cello 2026-10-05 pizz 120bpm patat_SKETCH_20261005-1521.mp3" 1152415 0 1791228069 0
+D t "vln smang - Cello 2026-10-05 pizz 120bpm patat" b "Life Story of an Orca" y 2026 g SKETCH
+D s 48000 n 2 r 2:03:23.391 l 1:06.000
+D i 140k
 F "vln smang rp - 01.01.01_IDEA_20260818-1722.mp3" 2031620 0 1787095447 0
 D t "vln smang rp - 01.01.01" y 2026 g IDEA s 48000
 D n 2 r 2:00:07.200 l 1:30.918 i 179k

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="bdf2b8fc934ebda6ffa62db0c3d0007bf6939d3d" name="MPL Scripts">
+<index version="1" commit="d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af" name="MPL Scripts">
   <category name="Automation Items">
     <reapack name="mpl_Convert selected envelope points to automation item.lua" type="script" desc="Convert selected envelope points to automation item">
       <metadata>
@@ -2380,22 +2380,6 @@
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/c74083e3db48aaade22fa6f5d96fc638d82f3e31/FX/mpl_ModulationEditor.lua</source>
       </version>
     </reapack>
-    <reapack name="mpl_Multi-mono container.lua" type="script" desc="Multi-mono container">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 Convert any plugin into multi-mono container and managing it\par}
-}
-]]></description>
-        <link rel="website">https://forum.cockos.com/showthread.php?t=207971</link>
-      </metadata>
-      <version name="1.0" author="MPL" time="2025-07-30T00:45:30Z">
-        <changelog><![CDATA[+ initial release]]></changelog>
-        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/0a55c99a7d378fd612a483671a233870f2a89c68/FX/mpl_Multi-mono%20container.lua</source>
-      </version>
-    </reapack>
     <reapack name="mpl_Offline all the track FX before focused FX (including focused FX).lua" type="script" desc="Offline all the track FX before focused FX (including focused FX)">
       <metadata>
         <link rel="website">https://forum.cockos.com/showthread.php?t=188335</link>
@@ -2908,6 +2892,22 @@
       <version name="1.02" author="MPL" time="2024-08-18T11:12:58Z">
         <changelog><![CDATA[# VF independent]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/82bd289bb859259bd77f16aa313acf6b95947ae1/FX/mpl_Set%20main%20input%20as%20a%20modulation%20for%20last%20touched%20parameter.lua</source>
+      </version>
+    </reapack>
+    <reapack name="mpl_Set mono processing for focused FX.lua" type="script" desc="Set mono processing for focused FX">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Set plugins bus size to 1 channel if available, share left to right channel\par}
+}
+]]></description>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=188335</link>
+      </metadata>
+      <version name="1.0" author="MPL" time="2026-09-27T18:33:28Z">
+        <changelog><![CDATA[+ fork from mpl_Set mono processing for selected tracks]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/9f8be7ac12492f503d7ae4d31de68d1669d8d2cb/FX/mpl_Set%20mono%20processing%20for%20focused%20FX.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Set mono processing for selected tracks.lua" type="script" desc="Set mono processing for selected tracks">
@@ -4042,6 +4042,12 @@
         <changelog><![CDATA[# sort files]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/554e3e94234691ab447332a2d11eff629399d47e/FX%20specific/mpl_List%20next%20sample%20in%20directory%20for%20RS5k%20on%20selected%20track.lua</source>
       </version>
+      <version name="1.04" author="MPL" time="2026-09-27T19:14:27Z">
+        <changelog><![CDATA[# fix version check
++ Support wrap
++ Use native API instead chunking, require REAPER 6.37+]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/63fab396ef154fd03987840553e9b38ea783dc49/FX%20specific/mpl_List%20next%20sample%20in%20directory%20for%20RS5k%20on%20selected%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="mpl_List previous sample in directory for focused RS5k.lua" type="script" desc="List previous sample in directory for focused RS5k">
       <metadata>
@@ -4059,6 +4065,12 @@
       <version name="1.03" author="MPL" time="2023-04-02T20:21:00Z">
         <changelog><![CDATA[# sort files]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/554e3e94234691ab447332a2d11eff629399d47e/FX%20specific/mpl_List%20previous%20sample%20in%20directory%20for%20RS5k%20on%20selected%20track.lua</source>
+      </version>
+      <version name="1.04" author="MPL" time="2026-09-27T19:14:27Z">
+        <changelog><![CDATA[# fix version check
++ Support wrap
++ Use native API instead chunking, require REAPER 6.37+]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/63fab396ef154fd03987840553e9b38ea783dc49/FX%20specific/mpl_List%20previous%20sample%20in%20directory%20for%20RS5k%20on%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_List random impulse in directory for focused ReaVerb.lua" type="script" desc="List random impulse in directory for focused ReaVerb">
@@ -7362,6 +7374,52 @@
         <source type="effect" file="mpl_RS5K_manager_sysex_handler.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/bf9fa5547e4528ff2c0cdcf854a2a59e83c3433e/FX%20specific/mpl_RS5K_manager_sysex_handler.jsfx</source>
         <source file="mpl_RS5K_manager_functions.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/bf9fa5547e4528ff2c0cdcf854a2a59e83c3433e/FX%20specific/mpl_RS5K_manager_functions.lua</source>
         <source main="main" file="mpl_RS5k_manager_ToggleShowChildren.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/bf9fa5547e4528ff2c0cdcf854a2a59e83c3433e/FX%20specific/mpl_RS5k_manager_ToggleShowChildren.lua</source>
+      </version>
+      <version name="4.84" author="MPL" time="2026-09-27T20:31:09Z">
+        <changelog><![CDATA[+ Add toolbar states for states and sequencer 
+# move to 0.10 ReaImgui
+# cleanup header, add close button]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k%20manager%20(background).lua</source>
+        <source main="main" file="mpl_RS5k_StepSequencer.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_StepSequencer.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_NewKit.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Database_NewKit.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_LoadAllPads.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Database_LoadAllPads.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_LoadSelectedPads.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Database_LoadSelectedPads.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_NextMap.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Database_NextMap.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_PrevMap.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Database_PrevMap.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_Lock.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Database_Lock.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Sampler_PreviousSample.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Sampler_PreviousSample.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Sampler_NextSample.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Sampler_NextSample.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Sampler_RandSample.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_Sampler_RandSample.lua</source>
+        <source main="main" file="mpl_RS5k_manager_DrumRack_Solo.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_DrumRack_Solo.lua</source>
+        <source main="main" file="mpl_RS5k_manager_DrumRack_Mute.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_DrumRack_Mute.lua</source>
+        <source main="main" file="mpl_RS5k_manager_DrumRack_Clear.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_DrumRack_Clear.lua</source>
+        <source type="effect" file="mpl_RS5k_manager_MacroControls.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_MacroControls.jsfx</source>
+        <source type="effect" file="mpl_RS5K_manager_MIDIBUS_choke.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5K_manager_MIDIBUS_choke.jsfx</source>
+        <source type="effect" file="mpl_RS5K_manager_sysex_handler.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5K_manager_sysex_handler.jsfx</source>
+        <source file="mpl_RS5K_manager_functions.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5K_manager_functions.lua</source>
+        <source main="main" file="mpl_RS5k_manager_ToggleShowChildren.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/1454fe02e08485b3f85a36ab2dec5e28df8a8e56/FX%20specific/mpl_RS5k_manager_ToggleShowChildren.lua</source>
+      </version>
+      <version name="4.85" author="MPL" time="2026-09-28T18:34:20Z">
+        <changelog><![CDATA[# fix ImGui_ChildFlags_Borders]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k%20manager%20(background).lua</source>
+        <source main="main" file="mpl_RS5k_StepSequencer.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_StepSequencer.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_NewKit.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Database_NewKit.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_LoadAllPads.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Database_LoadAllPads.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_LoadSelectedPads.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Database_LoadSelectedPads.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_NextMap.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Database_NextMap.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_PrevMap.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Database_PrevMap.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Database_Lock.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Database_Lock.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Sampler_PreviousSample.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Sampler_PreviousSample.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Sampler_NextSample.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Sampler_NextSample.lua</source>
+        <source main="main" file="mpl_RS5k_manager_Sampler_RandSample.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_Sampler_RandSample.lua</source>
+        <source main="main" file="mpl_RS5k_manager_DrumRack_Solo.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_DrumRack_Solo.lua</source>
+        <source main="main" file="mpl_RS5k_manager_DrumRack_Mute.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_DrumRack_Mute.lua</source>
+        <source main="main" file="mpl_RS5k_manager_DrumRack_Clear.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_DrumRack_Clear.lua</source>
+        <source type="effect" file="mpl_RS5k_manager_MacroControls.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_MacroControls.jsfx</source>
+        <source type="effect" file="mpl_RS5K_manager_MIDIBUS_choke.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5K_manager_MIDIBUS_choke.jsfx</source>
+        <source type="effect" file="mpl_RS5K_manager_sysex_handler.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5K_manager_sysex_handler.jsfx</source>
+        <source file="mpl_RS5K_manager_functions.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5K_manager_functions.lua</source>
+        <source main="main" file="mpl_RS5k_manager_ToggleShowChildren.lua">https://github.com/MichaelPilyavskiy/ReaScripts/raw/d4b0d91405b10c4b4dbc2bbf02d3db5a36a296af/FX%20specific/mpl_RS5k_manager_ToggleShowChildren.lua</source>
       </version>
     </reapack>
     <reapack name="mpl_Scale focused ReaEQ bands gain down.lua" type="script" desc="Scale focused ReaEQ bands gain down">
@@ -15310,6 +15368,12 @@ various fixes]]></changelog>
         <source type="effect" file="mpl_MappingPanel_master.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/77e7e2680c64e776259b7afd7e07b770e0ae5f78/Various/mpl_MappingPanel_master.jsfx</source>
         <source type="effect" file="mpl_MappingPanel_slave.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/77e7e2680c64e776259b7afd7e07b770e0ae5f78/Various/mpl_MappingPanel_slave.jsfx</source>
       </version>
+      <version name="4.24" author="MPL" time="2026-09-27T19:34:56Z">
+        <changelog><![CDATA[# text-height-derived layout (DPI-agnostic on Linux/Mac)]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/64aaa314cc52f73fd6a918c7af253c4c5c8c5964/Various/mpl_Mapping%20Panel%20(background).lua</source>
+        <source type="effect" file="mpl_MappingPanel_master.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/64aaa314cc52f73fd6a918c7af253c4c5c8c5964/Various/mpl_MappingPanel_master.jsfx</source>
+        <source type="effect" file="mpl_MappingPanel_slave.jsfx">https://github.com/MichaelPilyavskiy/ReaScripts/raw/64aaa314cc52f73fd6a918c7af253c4c5c8c5964/Various/mpl_MappingPanel_slave.jsfx</source>
+      </version>
     </reapack>
     <reapack name="mpl_Open and Close Media Explorer when item is inserted (background).lua" type="script" desc="Open and Close Media Explorer when item is inserted">
       <version name="1.0" author="MPL" time="2018-01-27T04:42:47Z">
@@ -15962,6 +16026,13 @@ various fixes]]></changelog>
       <version name="3.21" author="MPL" time="2026-09-27T16:36:53Z">
         <changelog><![CDATA[# fix taking 'v' by vca shotcut call]]></changelog>
         <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/bdf2b8fc934ebda6ffa62db0c3d0007bf6939d3d/Various/mpl_SendFader%20(background).lua</source>
+      </version>
+      <version name="3.22" author="MPL" time="2026-09-27T17:44:56Z">
+        <changelog><![CDATA[+ Show sends and receives simultaneously instead of toggling, suppress CONF_allowreceivefader_mode flag
++ VCA support both receives and sends
+# fix renaming at receive mode
+# block VCA checkbox for receives]]></changelog>
+        <source main="main">https://github.com/MichaelPilyavskiy/ReaScripts/raw/fbb6c3cc3329acbb0f5cdbfdfeed9904fb095a9c/Various/mpl_SendFader%20(background).lua</source>
       </version>
     </reapack>
     <reapack name="mpl_TaskScheduler.lua" type="script" desc="TaskScheduler">
