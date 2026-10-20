@@ -83,6 +83,114 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Export project MIDI... (40849) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Glue items within time selection (42432) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
+				type = "action"
+			},
+			{
+				id = "View: Show navigator window (40268) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:Little Plate (Soundtoys)",
+				type = "vst"
+			},
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: sinestacker_build.lua (RSeeec6ce14c440cb6c3e880cabbc71fa03d7bfd40) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: jk_Select items shorter than.lua (RS9e284702e783c2a44c73cae4fa78400fc267414b) (Main)",
+				type = "action"
+			},
+			{
+				id = "Edit: Delete notes of less than 1/8 note in length in selected MIDI items (41734) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: pandabot_Select every N notes within selection.eel (RS7d3c_3e95dddee564fb49f5a0a6a5fc639e699cb5e3f2) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "JS:MIDI Note Filter",
+				type = "jsfx"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: mpl_Split selected notes to equal parts.lua (RS7d3c_6df1c1bb05709a62f6d9db6b07f1ee643c3b25aa) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "Split notes on grid (40641) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "Edit: Split notes (40046) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Insert click track (SWS_AWINSERTCLICKTRK) (Main)",
+				type = "action"
+			},
+			{
+				id = "Insert click source (40013) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Open render queue (40929) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Resources - Add media file to selected items as takes, last slot (S&M_ADDMEDIA_SELITEMl) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - export midi - tracks to orchestrate.lua (RS6ca88a1353d273569b9e08e6e0aba8f200a41017) (Main)",
+				type = "action"
+			},
+			{
 				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
 				type = "action"
 			},
@@ -96,10 +204,6 @@ return {
 			},
 			{
 				id = "Script: BFO & LKC - Folder items.lua (RS9001b897c7f216af4aa6541d7d30154e00f94781) (Main)",
-				type = "action"
-			},
-			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
 				type = "action"
 			},
 			{
@@ -155,28 +259,12 @@ return {
 				type = "vst3"
 			},
 			{
-				id = "VST:Little Plate (Soundtoys)",
-				type = "vst"
-			},
-			{
 				id = "Item: Reverse items to new take (40270) (Main)",
-				type = "action"
-			},
-			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
 				type = "action"
 			},
 			{
 				id = "VST3:Nectar 3 (iZotope, Inc.)",
 				type = "vst3"
-			},
-			{
-				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
-				type = "action"
 			},
 			{
 				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
@@ -295,10 +383,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
-				type = "action"
-			},
-			{
 				id = "JS:Green Dynamic EQ S2 (Tukan)",
 				type = "jsfx"
 			},
@@ -315,19 +399,7 @@ return {
 				type = "au"
 			},
 			{
-				id = "File: Export project MIDI... (40849) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: rewgs - export midi - tracks to improve.lua (RS4fca1e4bf9ce621d53c6ed8dca420943bbdc5cb6) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
 				type = "action"
 			},
 			{
@@ -352,10 +424,6 @@ return {
 			},
 			{
 				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
 				type = "action"
 			},
 			{
@@ -413,74 +481,6 @@ return {
 			{
 				id = "JS:MIDI Arpeggiator (Tukan)",
 				type = "jsfx"
-			},
-			{
-				id = "File: Batch file converter (41076) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Re-render selected subprojects.lua (RS91759db6bc002c0dfda511203b34b4d14082d246) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Check selected subprojects are latest version.lua (RS8014663ae3ca22cdba2f2aad2613745aa72737d1) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Export selected subprojects PROX to WAV.lua (RS945ef919567c25663cb1864ab99dac3220ed742d) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Open selected subprojects in tabs.lua (RSf9945d2cb753911cf082e498b5a5e4bd0baee424) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Slide item contents so right edge lands at edit cursor.lua (RS7343fdfd6e30a6ecbbaff623fed584bb627737cd) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Item Sampler (Snap Offset Mod).lua (RS50b152607b4bb4d4ade2d56fa440ca88ea1a5668) (Main)",
-				type = "action"
-			},
-			{
-				id = "Peaks: Rebuild peaks for selected items (40441) (Main)",
-				type = "action"
-			},
-			{
-				id = "Options: Allow reordering/empty slots in TCP/MCP send lists (42803) (Main)",
-				type = "action"
-			},
-			{
-				id = "Options: Allow empty slots in TCP/MCP FX lists (40147) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST:ReaFir (FFT EQ+Dynamics Processor) (Cockos)",
-				type = "vst"
-			},
-			{
-				id = "Script: JK - Toggle run action on item time-selection drag release.lua (RSc821b00f01ac075c79143f3500511ff37bd2ae5a) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: ek_Edge silence cropper.lua (RSc3809e389f25d6fe893751ab9ebed190a1e10414) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Snap region edges to adjacent items.lua (RS7a1ec1106ed7421c05fe6a6229c0390465e2b294) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Create regions from items by source name.lua (RSc5e5e8dd0cafb22fdca5fd846ae355e3dfa497d8) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Reassemble tracks to regions.lua (RSc00c476ead8d59d6e1644ed9243d903d934b3998) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Explode regions to tracks.lua (RS187a6a9095dba488fdfada3f01121f0b912a967a) (Main)",
-				type = "action"
 			}
 		},
 		recent_results_amount = 30,
