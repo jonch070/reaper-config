@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "",
+		SEARCH = "nvk item res",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,7 +83,19 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				type = "action"
+			},
+			{
 				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Re-render selected subprojects.lua (RS91759db6bc002c0dfda511203b34b4d14082d246) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
 				type = "action"
 			},
 			{
@@ -195,10 +207,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
 				type = "action"
 			},
@@ -265,10 +273,6 @@ return {
 			{
 				id = "VST3:Nectar 3 (iZotope, Inc.)",
 				type = "vst3"
-			},
-			{
-				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
-				type = "action"
 			},
 			{
 				id = "Script: JK - Import Notes to Project from SpotNotes.lua (RS8db8e22ebcc5fafd4209354ec4b67e642b2282cb) (Main)",
@@ -477,10 +481,6 @@ return {
 			{
 				id = "SWS/S&M: Copy selected tracks routings (S&M_COPYSNDRCV2) (Main)",
 				type = "action"
-			},
-			{
-				id = "JS:MIDI Arpeggiator (Tukan)",
-				type = "jsfx"
 			}
 		},
 		recent_results_amount = 30,

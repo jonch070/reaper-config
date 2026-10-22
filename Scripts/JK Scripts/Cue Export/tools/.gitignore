@@ -1,0 +1,11 @@
+# config.json holds the real paths and is not tracked
+config.json
+
+# the nightly supervisor's state and logs
+state.json
+logs/
+reports/
+
+__pycache__/
+*.pyc
+.DS_Store

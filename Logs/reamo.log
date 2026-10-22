@@ -12611,3 +12611,31 @@
 [20.10.2026 23:06:32.096] INFO  shutdown() complete
 === Extension Unloaded ===
 
+=== Reamo Extension Log ===
+[21.10.2026 12:36:03.181] INFO  REAmo v0.7.3 starting
+[21.10.2026 12:36:03.182] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[21.10.2026 12:36:03.182] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[21.10.2026 12:36:03.184] INFO  Tiered arenas initialized: 19MB total
+[21.10.2026 12:36:03.184] INFO  Session token generated
+[21.10.2026 12:36:03.184] INFO  CSurf registered for push-based callbacks
+[21.10.2026 12:36:03.184] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[21.10.2026 12:36:03.184] INFO  Loaded 0 playlists from project
+[21.10.2026 12:36:03.184] INFO  Initialization complete, waiting for warmup
+[21.10.2026 12:36:03.888] INFO  Initialization complete, starting processing timer
+[21.10.2026 12:36:04.824] INFO  Starting HTTP+WS server (deferred)...
+[21.10.2026 12:36:04.825] INFO  HTTP+WS server started on port 9224
+[21.10.2026 12:36:04.825] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[21.10.2026 12:46:52.778] INFO  REAmo v0.7.3 starting
+[21.10.2026 12:46:52.779] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[21.10.2026 12:46:52.779] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[21.10.2026 12:46:52.781] INFO  Tiered arenas initialized: 19MB total
+[21.10.2026 12:46:52.781] INFO  Session token generated
+[21.10.2026 12:46:52.781] INFO  CSurf registered for push-based callbacks
+[21.10.2026 12:46:52.781] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[21.10.2026 12:46:52.781] INFO  Loaded 0 playlists from project
+[21.10.2026 12:46:52.781] INFO  Initialization complete, waiting for warmup
+[21.10.2026 12:46:53.123] INFO  Initialization complete, starting processing timer
+[21.10.2026 12:46:54.066] INFO  Starting HTTP+WS server (deferred)...
+[21.10.2026 12:46:54.069] INFO  HTTP+WS server started on port 9224
+[21.10.2026 12:46:54.069] INFO  FastTimer: started at 10ms interval (native)

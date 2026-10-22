@@ -1,0 +1,17 @@
+{
+  "dropbox_root": "/Users/jonathankawchuk/Library/CloudStorage/Dropbox",
+  "reaper_app": "/Applications/REAPER.app",
+  "nightly_time": "02:00",
+  "project_load_wait_s": 60,
+  "project_timeout_s": 1800,
+  "retries": 1,
+  "max_file_mb": 2000,
+  "films": [
+    {
+      "name": "Hunt for the Grey Ghost",
+      "cue_projects_dir": "/Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects",
+      "master_project": null,
+      "backup_improve_orch": false
+    }
+  ]
+}
