@@ -1,0 +1,5 @@
+-- @description Select every track HeDa has archived (used or not)
+-- @author Jonathan Kawchuk (generated with Claude)
+local script_path = ({ reaper.get_action_context() })[2]:match('^(.*[\\/])')
+local export = dofile(script_path .. "jk_export.lua")
+export.select_and_report(export.archived_tracks(), "Archived tracks", "Every track HeDa has archived in this project, used or not.")

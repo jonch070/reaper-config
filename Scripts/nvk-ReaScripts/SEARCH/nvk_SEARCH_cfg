@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "nvk item res",
+		SEARCH = "hide all en",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,11 +83,51 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				id = "Envelope: Hide all envelopes for tracks (40889) (Main)",
 				type = "action"
 			},
 			{
 				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: timtam_IntelliFreeze Freeze all selected tracks to stereo recursively.lua (RS19d824b9e2e3639c6d82ba3eb0ebeba8e232f24a) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: select_leaf_tracks_whole_project.lua (RS6c19c9ab4619345a31130193b981186cdf5855fa) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: timtam_IntelliFreeze Unfreeze all selected tracks recursively.lua (RSc25b01f2f7891fd90eb1d8b12f9d0555e2238733) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Open render queue (40929) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_TI_Archiving_Archive External.lua (RS169be698a371ebf8b7611a0f5fa01f4d3614ac89) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Status (subprojects).lua (RSc4924da8cd4084d2e92f0bcb87d76e4ad9062a06) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Status.lua (RS680fa4ecada7f7214afe21b563d497639634114e) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaScript: Run ReaScript (EEL2, Lua, or python)... (41060) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
 				type = "action"
 			},
 			{
@@ -163,10 +203,6 @@ return {
 				type = "jsfx"
 			},
 			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: mpl_Split selected notes to equal parts.lua (RS7d3c_6df1c1bb05709a62f6d9db6b07f1ee643c3b25aa) (MIDI Editor)",
 				type = "action"
 			},
@@ -184,10 +220,6 @@ return {
 			},
 			{
 				id = "Insert click source (40013) (Main)",
-				type = "action"
-			},
-			{
-				id = "File: Open render queue (40929) (Main)",
 				type = "action"
 			},
 			{
@@ -448,38 +480,6 @@ return {
 			},
 			{
 				id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
-				type = "action"
-			},
-			{
-				id = "JS:Loudness Meter Peak/RMS/LUFS (Cockos)",
-				type = "jsfx"
-			},
-			{
-				id = "Item edit: Nudge/Set... (41226) (Main)",
-				type = "action"
-			},
-			{
-				id = "Xenakios/SWS: Nudge item positions right, time based (XENAKIOS_NUDGEITEMPOS_PLUS_SECS) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Ensembler.lua (RS32b04a4950695b976ddab1d8dcec169b5f955cb2) (Main)",
-				type = "action"
-			},
-			{
-				id = "JS:Ensembler Filter - MIDI Chord Splitter with Enhanced Chord Detection",
-				type = "jsfx"
-			},
-			{
-				id = "VST3i:Kontakt 7 (Native Instruments) (64 out)",
-				type = "vst3i"
-			},
-			{
-				id = "SWS/S&M: Paste routings to selected tracks (S&M_PASTSNDRCV2) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Copy selected tracks routings (S&M_COPYSNDRCV2) (Main)",
 				type = "action"
 			}
 		},

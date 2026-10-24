@@ -12639,3 +12639,491 @@
 [21.10.2026 12:46:54.066] INFO  Starting HTTP+WS server (deferred)...
 [21.10.2026 12:46:54.069] INFO  HTTP+WS server started on port 9224
 [21.10.2026 12:46:54.069] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 11:14:00.717] INFO  REAmo v0.7.3 starting
+[23.10.2026 11:14:00.717] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 11:14:00.717] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 11:14:00.718] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 11:14:00.718] INFO  Session token generated
+[23.10.2026 11:14:00.718] INFO  CSurf registered for push-based callbacks
+[23.10.2026 11:14:00.718] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 11:14:00.719] INFO  Loaded 0 playlists from project
+[23.10.2026 11:14:00.719] INFO  Initialization complete, waiting for warmup
+[23.10.2026 11:14:01.086] INFO  Initialization complete, starting processing timer
+[23.10.2026 11:14:01.986] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 11:14:01.987] INFO  HTTP+WS server started on port 9224
+[23.10.2026 11:14:01.987] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 22:11:30.552] INFO  REAmo v0.7.3 starting
+[23.10.2026 22:11:30.553] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 22:11:30.553] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 22:11:30.555] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 22:11:30.555] INFO  Session token generated
+[23.10.2026 22:11:30.555] INFO  CSurf registered for push-based callbacks
+[23.10.2026 22:11:30.555] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 22:11:30.556] INFO  Loaded 0 playlists from project
+[23.10.2026 22:11:30.556] INFO  Initialization complete, waiting for warmup
+[23.10.2026 22:11:31.136] INFO  Initialization complete, starting processing timer
+[23.10.2026 22:11:32.107] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 22:11:32.109] INFO  HTTP+WS server started on port 9224
+[23.10.2026 22:11:32.109] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 22:15:12.220] INFO  REAmo v0.7.3 starting
+[23.10.2026 22:15:12.221] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 22:15:12.221] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 22:15:12.222] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 22:15:12.222] INFO  Session token generated
+[23.10.2026 22:15:12.222] INFO  CSurf registered for push-based callbacks
+[23.10.2026 22:15:12.223] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 22:15:12.223] INFO  Loaded 0 playlists from project
+[23.10.2026 22:15:12.223] INFO  Initialization complete, waiting for warmup
+[23.10.2026 22:15:12.787] INFO  Initialization complete, starting processing timer
+[23.10.2026 22:15:13.732] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 22:15:13.735] INFO  HTTP+WS server started on port 9224
+[23.10.2026 22:15:13.735] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 22:18:28.017] INFO  REAmo v0.7.3 starting
+[23.10.2026 22:18:28.017] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 22:18:28.017] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 22:18:28.019] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 22:18:28.019] INFO  Session token generated
+[23.10.2026 22:18:28.019] INFO  CSurf registered for push-based callbacks
+[23.10.2026 22:18:28.019] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 22:18:28.019] INFO  Loaded 0 playlists from project
+[23.10.2026 22:18:28.019] INFO  Initialization complete, waiting for warmup
+[23.10.2026 22:18:28.554] INFO  Initialization complete, starting processing timer
+[23.10.2026 22:18:29.539] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 22:18:29.541] INFO  HTTP+WS server started on port 9224
+[23.10.2026 22:18:29.541] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 22:21:13.503] INFO  REAmo v0.7.3 starting
+[23.10.2026 22:21:13.503] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 22:21:13.503] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 22:21:13.505] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 22:21:13.505] INFO  Session token generated
+[23.10.2026 22:21:13.505] INFO  CSurf registered for push-based callbacks
+[23.10.2026 22:21:13.505] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 22:21:13.505] INFO  Loaded 0 playlists from project
+[23.10.2026 22:21:13.505] INFO  Initialization complete, waiting for warmup
+[23.10.2026 22:21:14.483] INFO  Initialization complete, starting processing timer
+[23.10.2026 22:21:15.522] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 22:21:15.524] INFO  HTTP+WS server started on port 9224
+[23.10.2026 22:21:15.524] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 22:37:43.958] INFO  REAmo v0.7.3 starting
+[23.10.2026 22:37:43.958] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 22:37:43.958] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 22:37:43.960] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 22:37:43.960] INFO  Session token generated
+[23.10.2026 22:37:43.960] INFO  CSurf registered for push-based callbacks
+[23.10.2026 22:37:43.960] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 22:37:43.960] INFO  Loaded 0 playlists from project
+[23.10.2026 22:37:43.960] INFO  Initialization complete, waiting for warmup
+[23.10.2026 22:37:45.039] INFO  Initialization complete, starting processing timer
+[23.10.2026 22:37:45.993] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 22:37:45.996] INFO  HTTP+WS server started on port 9224
+[23.10.2026 22:37:45.996] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 22:42:42.794] INFO  REAmo v0.7.3 starting
+[23.10.2026 22:42:42.794] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 22:42:42.794] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 22:42:42.796] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 22:42:42.796] INFO  Session token generated
+[23.10.2026 22:42:42.796] INFO  CSurf registered for push-based callbacks
+[23.10.2026 22:42:42.796] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 22:42:42.796] INFO  Loaded 0 playlists from project
+[23.10.2026 22:42:42.796] INFO  Initialization complete, waiting for warmup
+[23.10.2026 22:42:44.146] INFO  Initialization complete, starting processing timer
+[23.10.2026 22:42:45.199] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 22:42:45.201] INFO  HTTP+WS server started on port 9224
+[23.10.2026 22:42:45.201] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 22:58:30.156] INFO  REAmo v0.7.3 starting
+[23.10.2026 22:58:30.157] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 22:58:30.157] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 22:58:30.158] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 22:58:30.158] INFO  Session token generated
+[23.10.2026 22:58:30.158] INFO  CSurf registered for push-based callbacks
+[23.10.2026 22:58:30.158] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 22:58:30.158] INFO  Loaded 0 playlists from project
+[23.10.2026 22:58:30.158] INFO  Initialization complete, waiting for warmup
+[23.10.2026 22:58:31.080] INFO  Initialization complete, starting processing timer
+[23.10.2026 22:58:32.104] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 22:58:32.106] INFO  HTTP+WS server started on port 9224
+[23.10.2026 22:58:32.106] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:04:27.572] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:04:27.572] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:04:27.572] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:04:27.573] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:04:27.573] INFO  Session token generated
+[23.10.2026 23:04:27.573] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:04:27.573] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:04:27.573] INFO  Loaded 0 playlists from project
+[23.10.2026 23:04:27.573] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:04:30.838] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:04:31.930] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:04:31.933] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:04:31.933] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:10:31.633] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:10:31.633] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:10:31.633] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:10:31.635] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:10:31.635] INFO  Session token generated
+[23.10.2026 23:10:31.635] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:10:31.635] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:10:31.637] INFO  Loaded 0 playlists from project
+[23.10.2026 23:10:31.637] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:10:32.587] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:10:33.654] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:10:33.656] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:10:33.656] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:15:37.349] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:15:37.350] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:15:37.350] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:15:37.351] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:15:37.351] INFO  Session token generated
+[23.10.2026 23:15:37.351] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:15:37.355] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:15:37.355] INFO  Loaded 0 playlists from project
+[23.10.2026 23:15:37.355] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:15:38.305] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:15:39.267] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:15:39.271] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:15:39.271] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:27:38.379] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:27:38.379] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:27:38.379] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:27:38.381] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:27:38.381] INFO  Session token generated
+[23.10.2026 23:27:38.381] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:27:38.381] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:27:38.381] INFO  Loaded 0 playlists from project
+[23.10.2026 23:27:38.381] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:27:40.799] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:27:41.954] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:27:41.956] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:27:41.956] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:31:39.019] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:31:39.019] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:31:39.019] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:31:39.021] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:31:39.021] INFO  Session token generated
+[23.10.2026 23:31:39.021] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:31:39.021] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:31:39.021] INFO  Loaded 0 playlists from project
+[23.10.2026 23:31:39.021] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:31:39.894] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:31:40.841] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:31:40.843] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:31:40.843] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:34:41.250] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:34:41.250] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:34:41.250] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:34:41.252] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:34:41.252] INFO  Session token generated
+[23.10.2026 23:34:41.252] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:34:41.252] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:34:41.252] INFO  Loaded 0 playlists from project
+[23.10.2026 23:34:41.252] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:34:41.894] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:34:42.850] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:34:42.851] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:34:42.851] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:40:13.972] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:40:13.972] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:40:13.973] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:40:13.974] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:40:13.974] INFO  Session token generated
+[23.10.2026 23:40:13.974] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:40:13.974] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:40:13.974] INFO  Loaded 0 playlists from project
+[23.10.2026 23:40:13.974] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:40:14.764] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:40:15.744] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:40:15.746] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:40:15.746] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:48:01.632] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:48:01.632] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:48:01.632] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:48:01.634] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:48:01.634] INFO  Session token generated
+[23.10.2026 23:48:01.634] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:48:01.634] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:48:01.634] INFO  Loaded 0 playlists from project
+[23.10.2026 23:48:01.634] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:48:02.556] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:48:03.578] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:48:03.581] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:48:03.581] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[23.10.2026 23:57:03.270] INFO  REAmo v0.7.3 starting
+[23.10.2026 23:57:03.270] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[23.10.2026 23:57:03.270] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[23.10.2026 23:57:03.274] INFO  Tiered arenas initialized: 19MB total
+[23.10.2026 23:57:03.274] INFO  Session token generated
+[23.10.2026 23:57:03.274] INFO  CSurf registered for push-based callbacks
+[23.10.2026 23:57:03.274] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[23.10.2026 23:57:03.275] INFO  Loaded 0 playlists from project
+[23.10.2026 23:57:03.275] INFO  Initialization complete, waiting for warmup
+[23.10.2026 23:57:05.230] INFO  Initialization complete, starting processing timer
+[23.10.2026 23:57:06.318] INFO  Starting HTTP+WS server (deferred)...
+[23.10.2026 23:57:06.320] INFO  HTTP+WS server started on port 9224
+[23.10.2026 23:57:06.320] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 00:04:28.137] INFO  REAmo v0.7.3 starting
+[24.10.2026 00:04:28.137] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 00:04:28.137] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 00:04:28.138] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 00:04:28.138] INFO  Session token generated
+[24.10.2026 00:04:28.138] INFO  CSurf registered for push-based callbacks
+[24.10.2026 00:04:28.138] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 00:04:28.139] INFO  Loaded 0 playlists from project
+[24.10.2026 00:04:28.139] INFO  Initialization complete, waiting for warmup
+[24.10.2026 00:04:29.073] INFO  Initialization complete, starting processing timer
+[24.10.2026 00:04:30.072] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 00:04:30.075] INFO  HTTP+WS server started on port 9224
+[24.10.2026 00:04:30.075] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 00:21:05.437] INFO  REAmo v0.7.3 starting
+[24.10.2026 00:21:05.438] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 00:21:05.438] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 00:21:05.439] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 00:21:05.439] INFO  Session token generated
+[24.10.2026 00:21:05.439] INFO  CSurf registered for push-based callbacks
+[24.10.2026 00:21:05.439] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 00:21:05.439] INFO  Loaded 0 playlists from project
+[24.10.2026 00:21:05.439] INFO  Initialization complete, waiting for warmup
+[24.10.2026 00:21:06.395] INFO  Initialization complete, starting processing timer
+[24.10.2026 00:21:07.419] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 00:21:07.423] INFO  HTTP+WS server started on port 9224
+[24.10.2026 00:21:07.423] INFO  FastTimer: started at 10ms interval (native)
+[24.10.2026 00:21:55.624] INFO  shutdown() called
+[24.10.2026 00:21:55.624] INFO  FastTimer: stopped
+[24.10.2026 00:21:55.624] INFO  timers stopped
+[24.10.2026 00:21:55.624] INFO  cleaning up CSurf
+[24.10.2026 00:21:55.624] INFO  CSurf cleaned up
+[24.10.2026 00:21:55.624] INFO  cleaning up audio stream
+[24.10.2026 00:21:55.624] INFO  audio stream cleaned up
+[24.10.2026 00:21:55.624] INFO  menu: unregistered
+[24.10.2026 00:21:55.624] INFO  stopping server
+[24.10.2026 00:21:55.625] INFO  server stopped
+[24.10.2026 00:21:55.625] INFO  cleaning up gesture state
+[24.10.2026 00:21:55.625] INFO  gesture state cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up toggle subscriptions
+[24.10.2026 00:21:55.625] INFO  toggle subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up notes subscriptions
+[24.10.2026 00:21:55.625] INFO  notes subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up track subscriptions
+[24.10.2026 00:21:55.625] INFO  track subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up peaks subscriptions
+[24.10.2026 00:21:55.625] INFO  peaks subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up routing subscriptions
+[24.10.2026 00:21:55.625] INFO  routing subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up track FX subscriptions
+[24.10.2026 00:21:55.625] INFO  track FX subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up track FX param subscriptions
+[24.10.2026 00:21:55.625] INFO  track FX param subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up tuner subscriptions
+[24.10.2026 00:21:55.625] INFO  tuner subscriptions cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up tile cache
+[24.10.2026 00:21:55.625] INFO  tile cache cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up GUID cache
+[24.10.2026 00:21:55.625] INFO  GUID cache cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up item GUID cache
+[24.10.2026 00:21:55.625] INFO  item GUID cache cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up shared state
+[24.10.2026 00:21:55.625] INFO  shared state cleaned up
+[24.10.2026 00:21:55.625] INFO  cleaning up tiered arenas
+[24.10.2026 00:21:55.628] INFO  tiered arenas cleaned up
+[24.10.2026 00:21:55.628] INFO  shutdown() complete
+=== Extension Unloaded ===
+
+=== Reamo Extension Log ===
+[24.10.2026 00:22:02.334] INFO  REAmo v0.7.3 starting
+[24.10.2026 00:22:02.334] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 00:22:02.334] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 00:22:02.336] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 00:22:02.336] INFO  Session token generated
+[24.10.2026 00:22:02.336] INFO  CSurf registered for push-based callbacks
+[24.10.2026 00:22:02.336] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 00:22:02.336] INFO  Loaded 0 playlists from project
+[24.10.2026 00:22:02.336] INFO  Initialization complete, waiting for warmup
+[24.10.2026 00:22:02.589] INFO  Initialization complete, starting processing timer
+[24.10.2026 00:22:03.563] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 00:22:03.564] INFO  HTTP+WS server started on port 9224
+[24.10.2026 00:22:03.564] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 00:26:12.250] INFO  REAmo v0.7.3 starting
+[24.10.2026 00:26:12.250] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 00:26:12.250] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 00:26:12.252] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 00:26:12.252] INFO  Session token generated
+[24.10.2026 00:26:12.252] INFO  CSurf registered for push-based callbacks
+[24.10.2026 00:26:12.252] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 00:26:12.252] INFO  Loaded 0 playlists from project
+[24.10.2026 00:26:12.252] INFO  Initialization complete, waiting for warmup
+[24.10.2026 00:26:12.826] INFO  Initialization complete, starting processing timer
+[24.10.2026 00:26:13.887] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 00:26:13.889] INFO  HTTP+WS server started on port 9224
+[24.10.2026 00:26:13.889] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 01:08:08.816] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:08:08.816] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:08:08.816] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:08:08.818] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:08:08.818] INFO  Session token generated
+[24.10.2026 01:08:08.818] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:08:08.818] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:08:08.818] INFO  Loaded 0 playlists from project
+[24.10.2026 01:08:08.818] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:08:09.469] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:08:10.421] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:08:10.423] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:08:10.423] INFO  FastTimer: started at 10ms interval (native)
+[24.10.2026 01:12:26.897] INFO  shutdown() called
+[24.10.2026 01:12:26.897] INFO  FastTimer: stopped
+[24.10.2026 01:12:26.897] INFO  timers stopped
+[24.10.2026 01:12:26.897] INFO  cleaning up CSurf
+[24.10.2026 01:12:26.897] INFO  CSurf cleaned up
+[24.10.2026 01:12:26.897] INFO  cleaning up audio stream
+[24.10.2026 01:12:26.897] INFO  audio stream cleaned up
+[24.10.2026 01:12:26.897] INFO  menu: unregistered
+[24.10.2026 01:12:26.897] INFO  stopping server
+[24.10.2026 01:12:26.898] INFO  server stopped
+[24.10.2026 01:12:26.898] INFO  cleaning up gesture state
+[24.10.2026 01:12:26.898] INFO  gesture state cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up toggle subscriptions
+[24.10.2026 01:12:26.898] INFO  toggle subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up notes subscriptions
+[24.10.2026 01:12:26.898] INFO  notes subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up track subscriptions
+[24.10.2026 01:12:26.898] INFO  track subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up peaks subscriptions
+[24.10.2026 01:12:26.898] INFO  peaks subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up routing subscriptions
+[24.10.2026 01:12:26.898] INFO  routing subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up track FX subscriptions
+[24.10.2026 01:12:26.898] INFO  track FX subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up track FX param subscriptions
+[24.10.2026 01:12:26.898] INFO  track FX param subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up tuner subscriptions
+[24.10.2026 01:12:26.898] INFO  tuner subscriptions cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up tile cache
+[24.10.2026 01:12:26.898] INFO  tile cache cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up GUID cache
+[24.10.2026 01:12:26.898] INFO  GUID cache cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up item GUID cache
+[24.10.2026 01:12:26.898] INFO  item GUID cache cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up shared state
+[24.10.2026 01:12:26.898] INFO  shared state cleaned up
+[24.10.2026 01:12:26.898] INFO  cleaning up tiered arenas
+[24.10.2026 01:12:26.902] INFO  tiered arenas cleaned up
+[24.10.2026 01:12:26.902] INFO  shutdown() complete
+=== Extension Unloaded ===
+
+=== Reamo Extension Log ===
+[24.10.2026 01:17:46.416] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:17:46.416] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:17:46.416] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:17:46.418] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:17:46.418] INFO  Session token generated
+[24.10.2026 01:17:46.418] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:17:46.418] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:17:46.418] INFO  Loaded 0 playlists from project
+[24.10.2026 01:17:46.418] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:17:47.391] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:17:48.359] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:17:48.361] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:17:48.361] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 01:21:01.670] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:21:01.670] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:21:01.670] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:21:01.672] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:21:01.672] INFO  Session token generated
+[24.10.2026 01:21:01.672] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:21:01.672] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:21:01.672] INFO  Loaded 0 playlists from project
+[24.10.2026 01:21:01.672] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:21:02.506] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:21:03.546] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:21:03.547] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:21:03.547] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 01:25:36.012] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:25:36.012] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:25:36.012] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:25:36.014] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:25:36.014] INFO  Session token generated
+[24.10.2026 01:25:36.014] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:25:36.014] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:25:36.014] INFO  Loaded 0 playlists from project
+[24.10.2026 01:25:36.014] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:25:36.973] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:25:38.005] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:25:38.007] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:25:38.007] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 01:37:37.004] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:37:37.005] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:37:37.005] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:37:37.006] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:37:37.006] INFO  Session token generated
+[24.10.2026 01:37:37.006] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:37:37.006] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:37:37.006] INFO  Loaded 0 playlists from project
+[24.10.2026 01:37:37.006] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:37:37.670] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:37:38.624] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:37:38.625] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:37:38.625] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 01:41:29.132] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:41:29.132] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:41:29.132] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:41:29.134] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:41:29.134] INFO  Session token generated
+[24.10.2026 01:41:29.134] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:41:29.134] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:41:29.134] INFO  Loaded 0 playlists from project
+[24.10.2026 01:41:29.134] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:41:29.689] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:41:30.682] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:41:30.684] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:41:30.684] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 01:48:18.183] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:48:18.183] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:48:18.183] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:48:18.185] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:48:18.185] INFO  Session token generated
+[24.10.2026 01:48:18.185] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:48:18.185] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:48:18.185] INFO  Loaded 0 playlists from project
+[24.10.2026 01:48:18.185] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:48:18.647] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:48:19.601] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:48:19.603] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:48:19.603] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[24.10.2026 01:50:09.552] INFO  REAmo v0.7.3 starting
+[24.10.2026 01:50:09.553] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[24.10.2026 01:50:09.553] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[24.10.2026 01:50:09.554] INFO  Tiered arenas initialized: 19MB total
+[24.10.2026 01:50:09.554] INFO  Session token generated
+[24.10.2026 01:50:09.554] INFO  CSurf registered for push-based callbacks
+[24.10.2026 01:50:09.554] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[24.10.2026 01:50:09.554] INFO  Loaded 0 playlists from project
+[24.10.2026 01:50:09.554] INFO  Initialization complete, waiting for warmup
+[24.10.2026 01:50:10.451] INFO  Initialization complete, starting processing timer
+[24.10.2026 01:50:11.426] INFO  Starting HTTP+WS server (deferred)...
+[24.10.2026 01:50:11.428] INFO  HTTP+WS server started on port 9224
+[24.10.2026 01:50:11.428] INFO  FastTimer: started at 10ms interval (native)

@@ -10,7 +10,8 @@ local M = {}
 local PPQ = 960
 -- Source flags: 128 = selected tracks via master; 524288 = "Via master, fast" (all stems in one pass).
 -- 524416 is what the Film IMPROVE / Film ORCH presets and REAPER's own saved projects use.
-local STEMS_SETTINGS = 524416
+local STEMS_SETTINGS = 524416 -- fast: all stems in one pass
+local STEMS_SETTINGS_SLOW = 128 -- selected tracks via master, one track at a time
 local RENDER_ACTION = 42230 -- File: Render project, using the most recent settings, auto-close dialog
 
 local RENDER_KEYS = { "RENDER_SETTINGS", "RENDER_BOUNDSFLAG", "RENDER_STARTPOS", "RENDER_ENDPOS",
@@ -835,7 +836,7 @@ local function render_click(ctx, preset, pattern)
         reaper.SelectAllMediaItems(0, false)
         for _, it in ipairs(saved) do reaper.SetMediaItemSelected(it, true) end
     else
-        render_pass(ctx, preset, pattern, STEMS_SETTINGS, { click }, "click")
+        render_pass(ctx, preset, pattern, ctx.stems_settings, { click }, "click")
     end
     restore_mutes(ctx)
     return true
@@ -957,7 +958,7 @@ local function stems_job(job, ctx)
     else
         -- Stems: selected tracks, via master, fast: all in one pass
         clear_old(ctx, expected, "stems")
-        local targets = render_pass(ctx, preset, preset.pattern, STEMS_SETTINGS, tracks, "stems")
+        local targets = render_pass(ctx, preset, preset.pattern, ctx.stems_settings, tracks, "stems")
         if #targets > 0 then
             out_dir = dirname(targets[1])
             tc = targets[1]:match("([^\\/]*)$"):sub(#ctx.project_name + 4):match("^(%S+) %- ")
@@ -1033,6 +1034,137 @@ local function leaf_tracks(region)
         if has_item_in_range(tr, region) or has_live_routing(tr, outgoing) then leaves[#leaves + 1] = tr end
     end
     return leaves
+end
+
+-- Tracks that do nothing in this cue: muted (or inside a muted folder), or with no unmuted
+-- item in the range and no live send/receive to a track that is used, and not a folder
+-- holding a used track. Effects / Movie / Utility folders and the click track are never
+-- listed. Used to select them for archiving (nothing is changed here).
+-- HeDa Track Inspector archiving leaves the track in the project, muted, with its FX chain
+-- saved to a file; it marks the track with an "Archived" key in its extension data and a
+-- "*** archived ***" name suffix
+local function is_archived(tr)
+    local _, flag = reaper.GetSetMediaTrackInfo_String(tr, "P_EXT:Archived", "", false)
+    if flag == "1" then return true end
+    local _, name = reaper.GetTrackName(tr)
+    return name:lower():find("*** archived ***", 1, true) ~= nil
+end
+
+local function unused_tracks(region, include_archived)
+    local list, parent, stack = {}, {}, {}
+    for i = 0, reaper.CountTracks(0) - 1 do
+        local tr = reaper.GetTrack(0, i)
+        local depth = reaper.GetMediaTrackInfo_Value(tr, "I_FOLDERDEPTH")
+        parent[tr] = stack[#stack]
+        list[#list + 1] = tr
+        if depth == 1 then stack[#stack + 1] = tr end
+        for _ = 1, math.max(0, -depth) do stack[#stack] = nil end
+    end
+    local info = {}
+    for _, t in ipairs(scan_tracks()) do info[t.track] = t end
+
+    local function silent(tr) -- muted itself, or inside a muted folder
+        while tr do
+            if reaper.GetMediaTrackInfo_Value(tr, "B_MUTE") == 1 then return true end
+            tr = parent[tr]
+        end
+        return false
+    end
+    local function has_live_item(tr)
+        for j = 0, reaper.CountTrackMediaItems(tr) - 1 do
+            local item = reaper.GetTrackMediaItem(tr, j)
+            local pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
+            local len = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
+            if reaper.GetMediaItemInfo_Value(item, "B_MUTE") == 0 and pos < region.finish and pos + len > region.start then
+                return true
+            end
+        end
+        return false
+    end
+
+    local used = {}
+    for _, tr in ipairs(list) do
+        if not silent(tr) and has_live_item(tr) then used[tr] = true end
+    end
+    local changed = true
+    while changed do
+        changed = false
+        for _, tr in ipairs(list) do
+            if not used[tr] and not silent(tr) then
+                local keep = false
+                -- a folder holding a used track
+                for other in pairs(used) do
+                    local up = parent[other]
+                    while up do
+                        if up == tr then keep = true break end
+                        up = parent[up]
+                    end
+                    if keep then break end
+                end
+                -- live send to / receive from a used track
+                for category, key in pairs({ [0] = "P_DESTTRACK", [-1] = "P_SRCTRACK" }) do
+                    for n = 0, reaper.GetTrackNumSends(tr, category) - 1 do
+                        local other = reaper.GetTrackSendInfo_Value(tr, category, n, key)
+                        if used[other] and reaper.GetTrackSendInfo_Value(tr, category, n, "B_MUTE") == 0 then keep = true end
+                    end
+                end
+                if keep then used[tr] = true changed = true end
+            end
+        end
+    end
+    -- a used track's own routing can also depend on item-less tracks that feed it: covered by the receive check above
+
+    local out, archived = {}, 0
+    for _, tr in ipairs(list) do
+        local t = info[tr]
+        if not used[tr] and t and not t.excluded and not t.click then
+            if is_archived(tr) then
+                archived = archived + 1
+                if include_archived then out[#out + 1] = tr end
+            else
+                out[#out + 1] = tr
+            end
+        end
+    end
+    -- unused tracks (archived ones only when asked for), and how many unused tracks are archived
+    return out, archived
+end
+M.unused_tracks = unused_tracks
+
+M.is_archived = is_archived
+
+-- Every HeDa-archived track in the project, used or not
+function M.archived_tracks()
+    local out = {}
+    for i = 0, reaper.CountTracks(0) - 1 do
+        local tr = reaper.GetTrack(0, i)
+        if is_archived(tr) then out[#out + 1] = tr end
+    end
+    return out
+end
+
+-- Select exactly these tracks and say so; `lines` (optional) is extra text for the message
+function M.select_and_report(tracks, title, lines)
+    reaper.Main_OnCommand(40297, 0) -- unselect all tracks
+    for _, tr in ipairs(tracks) do reaper.SetTrackSelected(tr, true) end
+    reaper.UpdateArrange()
+    local names = {}
+    for i = 1, math.min(#tracks, 25) do
+        local _, name = reaper.GetTrackName(tracks[i])
+        names[#names + 1] = "  " .. name
+    end
+    if #tracks > 25 then names[#names + 1] = string.format("  ... and %d more", #tracks - 25) end
+    local text = string.format("%d of %d tracks selected.\n%s\n\n%s", #tracks, reaper.CountTracks(0),
+        lines or "", table.concat(names, "\n"))
+    reaper.ShowMessageBox(text, title, 0)
+end
+
+-- Ask HeDa's Track Inspector to archive the selected tracks, exactly as its own "Archive
+-- External" / "Archive Global" action scripts do. The Track Inspector must be running; it
+-- picks the request up on its own schedule, so this cannot tell when it has finished.
+function M.heda_archive(kind) -- "external" or "global"
+    reaper.SetProjExtState(0, "HeDaTrackInspector", "ADDONACTION", "Archiving")
+    reaper.SetProjExtState(0, "HeDaTrackInspector", kind == "global" and "ArchiveExternalGlobal" or "ArchiveExternal", "1")
 end
 
 -- Folder-name prefixes dropped from multitrack filenames ($folder[_] includes every
@@ -1163,7 +1295,7 @@ local function multitrack_job(job, ctx)
     end
     local targets = {}
     if not stems_kept then clear_old(ctx, stem_dir, "mt_stems", job.mute_effects and "dry" or "wet") end
-    if not stems_kept then targets = render_pass(ctx, preset, pattern, STEMS_SETTINGS, tracks, job.label) end
+    if not stems_kept then targets = render_pass(ctx, preset, pattern, ctx.stems_settings, tracks, job.label) end
     restore_mutes(ctx)
 
     if stems_kept then
@@ -1503,6 +1635,7 @@ end
 --         resume = bool (skip steps an interrupted run already finished),
 --         replace = bool (move existing files for this cue to _replaced/ before rendering),
 --         remove_click = bool (delete the click track this run inserted, instead of leaving it muted),
+--         slow_stems = bool (stems via master WITHOUT the "fast" bit, one track at a time; a crash test),
 --         delay = seconds to wait before and after every render pass (default 0),
 --         freeze_ui = bool (PreventUIRefresh during the run; off by default),
 --         open_queue_action = action ID to run after queueing (opens the render queue) }
@@ -1516,6 +1649,7 @@ function M.run(opts)
 
     local ctx = { region = region, project_name = project_name, master_preset = master_preset,
         queue = opts.queue and true or false, midi_only = opts.midi_only and true or false,
+        stems_settings = opts.slow_stems and STEMS_SETTINGS_SLOW or STEMS_SETTINGS,
         delay = (not opts.queue) and tonumber(opts.delay) or 0, -- adding to the queue renders nothing, so no waiting
         resume = opts.resume and not opts.queue and not opts.midi_only,
         replace = opts.replace and not opts.resume and not opts.queue and not opts.midi_only,
