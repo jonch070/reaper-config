@@ -228,6 +228,15 @@ function text(str,x,y,w,h,align,col,style,lineSpacing,vCenter,wrap)
 end
 
 function textWrap(str,w) -- returns array of lines
+  local function chars(s) return utf8.len(s) or #s end -- character count; bytes if s isn't valid UTF-8
+  local function cut(s, k) -- split s after its first k characters, so a multi-byte character is never cut in half
+    local b = utf8.len(s) and (utf8.offset(s, k+1) or #s+1) - 1 or k
+    return s:sub(1, b), s:sub(b+1)
+  end
+  local function hyphenFor(piece) -- the hyphen for a broken word, but none after CJK (codepoint U+2E80 and up)
+    if utf8.len(piece) and utf8.codepoint(piece, utf8.offset(piece, -1)) >= 0x2E80 then return "" end
+    return "-"
+  end
   local lines,curlen,curline,last_sspace = {}, 0, "", false
   -- already translated text
   -- enumerate words
@@ -250,19 +259,18 @@ function textWrap(str,w) -- returns array of lines
         curline = ""
       end
       curlen = 0
-      while w>0 and  length>w do -- split up a long word, decimating measure_s as we go
-        local wlen = string.len(measure_s) - 1
-        while wlen > 0 do
-          local sstr = string.format("%s%s",measure_s:sub(1,wlen), wlen>1 and "-" or "")
-          local slen = gfx.measurestr(sstr)
-          if slen <= w or wlen == 1 then
-            table.insert(lines,sstr)
-            measure_s = measure_s:sub(wlen+1)
-            length = gfx.measurestr(measure_s)
-            break
-          end
-          wlen = wlen - 1
+      measure_s, length = s, gfx.measurestr(s) -- the line was just flushed, so drop the leading space
+      while w>0 and  length>w and chars(measure_s)>1 do -- split up a long word, decimating measure_s as we go
+        local lo, hi, k = 1, chars(measure_s) - 1, 1 -- binary search for the longest prefix that fits with its hyphen; 1 character (no hyphen) if none does
+        while lo <= hi do
+          local mid = (lo + hi) // 2
+          local p = (cut(measure_s, mid))
+          if gfx.measurestr(p .. hyphenFor(p)) <= w then k, lo = mid, mid + 1 else hi = mid - 1 end
         end
+        local piece, remainder = cut(measure_s, k)
+        table.insert(lines, k > 1 and piece .. hyphenFor(piece) or piece)
+        measure_s = remainder
+        length = gfx.measurestr(measure_s)
       end
     end
     if measure_s ~= "" then
@@ -3189,13 +3197,17 @@ function Populate()
     text={str= translate('REAPER version : ')..reaper.GetAppVersion(), style=2, align=0, col=c_Grey60}
     })
 
-  showRawPageController = Controller:new({parent=debugBox, x=0, y=0, w=0, h=0, desc='Show raw theme parameters page',
+  showRawPageController = Controller:new({parent=debugBox, x=0, y=0, w=0, h=0, desc='Show raw theme parameters page', controlType='',
+    onUpdate = function(k)
+      k.paramV = showPages.Generic and 1 or 0
+      for i,a in ipairs (k.agents) do if a.onNewValue then a:onNewValue() end end
+    end,
     onClick = function(k)
       showPages.Generic = not showPages.Generic
       pageController:onNewValue()
-      for i,a in ipairs (k.target.agents) do if a.onNewValue then a:onNewValue() end end
+      k.target:onUpdate()
     end
-    }) 
+    })
   Button:new({parent=debugBox, x=10, y=2, flow=true, style='button', target=showRawPageController, img='button_off', imgOn='button_on', iType=3 })
   Label:new({parent=debugBox, x=0, y=2, w=280, h=20, flow=true, target=showRawPageController,
     text={str='Show \"Theme Controls\" page of raw parameters', style=2, align=0, col=labelColMA, mouseOverCol=labelColMO } })  

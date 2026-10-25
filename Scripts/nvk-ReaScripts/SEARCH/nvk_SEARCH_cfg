@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "hide all en",
+		SEARCH = "",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,11 +83,27 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "Envelope: Hide all envelopes for tracks (40889) (Main)",
+				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				id = "Script: mpl_ImportSessionData.lua (RSe960e68555dfce225c9c5535ed2346fa34dd0209) (Main)",
+				type = "action"
+			},
+			{
+				id = "PT/RPP: Import PTX Session Data (IMPORT_PTX_SESSION) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: REAPER Update Utility.lua (RS852f0872789b997921f7f9d40e6f997553bd5147) (Main)",
+				type = "action"
+			},
+			{
+				id = "Envelope: Hide all envelopes for tracks (40889) (Main)",
 				type = "action"
 			},
 			{
@@ -464,22 +480,6 @@ return {
 			},
 			{
 				id = "Close all projects but current (41922) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS: Show Tracklist with filter focused (SWSTL_OPENFILT) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Render latest subproject versions (PROX).lua (RSde4028839f518b38176016a9e7b30da358b0ac9c) (Main)",
-				type = "action"
-			},
-			{
-				id = "Transient detection sensitivity/threshold: Adjust... (41208) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
 				type = "action"
 			}
 		},

@@ -879,6 +879,7 @@ function draw_value_tweaker(xpos,ypos,midimem,draw, lbl)
   cap_mode == midimem ? (
     t = (mouse_y-cap_last_y)/4;
     lbl == "RDC" ? (
+      mouse_cap |= 65536;
       t ? (
         cap_last_y = mouse_y;
         midimem[0] = min(max(midimem[0]-t*(.1*4),0),500);
@@ -891,6 +892,7 @@ function draw_value_tweaker(xpos,ypos,midimem,draw, lbl)
         draw=1;
       );
     ) : lbl == "div" ? (
+      mouse_cap |= 65536;
       (tw=(t|0)) ? (
         cap_last_y = mouse_y - (t - tw)*4;
         t = min(max(midimem[0] - tw,1),64);
@@ -902,6 +904,7 @@ function draw_value_tweaker(xpos,ypos,midimem,draw, lbl)
         );
       );
     ) : lbl == "fad" ? (
+      mouse_cap |= 65536;
       (tw=-(t|0)) ? (
         cap_last_y = mouse_y - (t + tw)*4;
         t = max(midimem[0],0);
@@ -919,6 +922,7 @@ function draw_value_tweaker(xpos,ypos,midimem,draw, lbl)
         );
       );
     ) : (
+      mouse_cap |= 65536;
       (tw=(t|0)) ? (
         cap_last_y = mouse_y - (t - tw)*4;
         t = (t = (midimem[0]%129) - tw) < 0 ? 128 : t > 128 ? 0 : t;
@@ -1426,22 +1430,28 @@ function draw_topbar(need_ref) local(s,i,t, lastlen, lastgate, lastlatch, lastcl
         ((lastclickcount||lastsync)&&vclick_button.hit_topbar_button(mouse_x,mouse_y,cfgp_vclick))||
         fadesz_button.hit_topbar_button(mouse_x,mouse_y,cfgp_fade);
       );
-    ) : (cap_mode >= mem_gen_cfg && cap_mode < mem_gen_cfg+mem_gen_sz && (dy = mouse_y - cap_last_y)) ? (
+    ) : (cap_mode >= mem_gen_cfg && cap_mode < mem_gen_cfg+mem_gen_sz) ? (
+      dy = mouse_y - cap_last_y;
       cap_mode == cfgp_gate ? (
-        cap_mode[0] = min(max(cap_mode[0]-dy*.2,g_infthreshdb),-1);
+        dy ? cap_mode[0] = min(max(cap_mode[0]-dy*.2,g_infthreshdb),-1);
+        mouse_cap |= 65536;
       ) : cap_mode == cfgp_fade ? (
-        cap_mode[0] = min(max(cap_mode[0]-dy*0.05,0),500);
+        dy ? cap_mode[0] = min(max(cap_mode[0]-dy*0.05,0),500);
+        mouse_cap |= 65536;
       ) : cap_mode == cfgp_length ? (
         t = g_length - dy*((mouse_cap&8)?4:100);
-        (t=max(t|0,1)) != g_length ? (
+        dy && (t=max(t|0,1)) != g_length ? (
           g_length = t;
           g_pos %= g_length;
           g_edgetrim_drawstate=1;
         );
+        mouse_cap |= 65536;
       ) : cap_mode == cfgp_clickcnt ? (
-        g_slider_click_cnt = (cap_mode[0] = min(max(cap_mode[0]-dy*0.05,0),64))|0;
+        dy ? g_slider_click_cnt = (cap_mode[0] = min(max(cap_mode[0]-dy*0.05,0),64))|0;
+        mouse_cap |= 65536;
       ) : cap_mode == cfgp_vclick ? (
-        cap_mode[0] = min(max(cap_mode[0]-dy*0.05,0),100);
+        dy ? cap_mode[0] = min(max(cap_mode[0]-dy*0.05,0),100);
+        mouse_cap |= 65536;
       ) : cap_mode == cfgp_offs ? (
         t = (dy*((mouse_cap&8)?4:100))|0;
         t ? (
@@ -1452,6 +1462,7 @@ function draw_topbar(need_ref) local(s,i,t, lastlen, lastgate, lastlatch, lastcl
           g_pos = (g_pos + t) % g_length;
           g_edgetrim_drawstate=1;
         );
+        mouse_cap |= 65536;
       );
       cap_last_y=mouse_y;
     );

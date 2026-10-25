@@ -82,7 +82,7 @@ UI_SLIDER_MASK=(1<<16)-1;
 
 ext_noinit=1;
 ext_nodenorm=1;
-gfx_ext_retina=max(gfx_ext_retina,1);
+gfx_ext_retina=1;
 
 sliders_showing=0;
 

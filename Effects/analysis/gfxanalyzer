@@ -358,6 +358,7 @@ update ? (
   fft_real(fftworkspace,fftsize);
   fft_permute(fftworkspace,fftsize/2);
   fftworkspace[1]=0;
+  fftworkspace[0] *= 0.5;
 
   ascale=gfx_h/$pi*0.25;
   xscale=800/(fftsize-4);

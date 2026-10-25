@@ -179,7 +179,17 @@ function text(str,x,y,w,h,align,col,style,lineSpacing,vCenter,wrap)
 end
 
 function textWrap(str,w) -- returns array of lines
+  local function chars(s) return utf8.len(s) or #s end -- character count; bytes if s isn't valid UTF-8
+  local function cut(s, k) -- split s after its first k characters, so a multi-byte character is never cut in half
+    local b = utf8.len(s) and (utf8.offset(s, k+1) or #s+1) - 1 or k
+    return s:sub(1, b), s:sub(b+1)
+  end
+  local function hyphenFor(piece) -- the hyphen for a broken word, but none after CJK (codepoint U+2E80 and up)
+    if utf8.len(piece) and utf8.codepoint(piece, utf8.offset(piece, -1)) >= 0x2E80 then return "" end
+    return "-"
+  end
   local lines,curlen,curline,last_sspace = {}, 0, "", false
+  -- already translated text
   -- enumerate words
   for s in str:gmatch("([^%s-/]*[-/]* ?)") do
     local sspace = false -- set if space was the delimiter
@@ -200,28 +210,25 @@ function textWrap(str,w) -- returns array of lines
         curline = ""
       end
       curlen = 0
-      while length > w do
-        -- split up a long word, decimating measure_s as we go
-        local wlen = string.len(measure_s) - 1
-        while wlen > 0 do
-          local sstr = string.format("%s%s",measure_s:sub(1,wlen), wlen>1 and "-" or "")
-          local slen = gfx.measurestr(sstr)
-          if slen <= w or wlen == 1 then
-            table.insert(lines,sstr)
-            measure_s = measure_s:sub(wlen+1)
-            length = gfx.measurestr(measure_s)
-            break
-          end
-          wlen = wlen - 1
+      measure_s, length = s, gfx.measurestr(s) -- the line was just flushed, so drop the leading space
+      while w>0 and  length>w and chars(measure_s)>1 do -- split up a long word, decimating measure_s as we go
+        local lo, hi, k = 1, chars(measure_s) - 1, 1 -- binary search for the longest prefix that fits with its hyphen; 1 character (no hyphen) if none does
+        while lo <= hi do
+          local mid = (lo + hi) // 2
+          local p = (cut(measure_s, mid))
+          if gfx.measurestr(p .. hyphenFor(p)) <= w then k, lo = mid, mid + 1 else hi = mid - 1 end
         end
+        local piece, remainder = cut(measure_s, k)
+        table.insert(lines, k > 1 and piece .. hyphenFor(piece) or piece)
+        measure_s = remainder
+        length = gfx.measurestr(measure_s)
       end
     end
     if measure_s ~= "" then
       if curlen == 0 or curlen + length <= w then
         curline = curline .. measure_s
         curlen = curlen + length
-      else
-        -- word would not fit, add without leading space and remeasure
+      else -- word would not fit, add without leading space and remeasure
         table.insert(lines,curline)
         curline = s
         curlen = gfx.measurestr(s)
