@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "",
+		SEARCH = "batch",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -82,6 +82,10 @@ return {
 		},
 		project_directories_sort = "Name",
 		recent = {
+			{
+				id = "File: Batch file converter (41076) (Main)",
+				type = "action"
+			},
 			{
 				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
 				type = "action"
@@ -476,10 +480,6 @@ return {
 			},
 			{
 				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
-				type = "action"
-			},
-			{
-				id = "Close all projects but current (41922) (Main)",
 				type = "action"
 			}
 		},
