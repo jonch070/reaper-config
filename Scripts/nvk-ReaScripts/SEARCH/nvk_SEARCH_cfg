@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "batch",
+		SEARCH = "close all ",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,11 +83,119 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "File: Batch file converter (41076) (Main)",
+				id = "Close all projects but current (41922) (Main)",
 				type = "action"
 			},
 			{
 				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Apply track/take FX to items (MIDI output) (40436) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST3:Air (Sound Particles)",
+				type = "vst3"
+			},
+			{
+				id = "Custom: MIDI Merge Items Across Tracks (1da1b25fcd05447fb15c1c3ffe88b01a) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Explode MIDI note rows (pitch) to new items (40920) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:MIDI Arpeggiator",
+				type = "jsfx"
+			},
+			{
+				id = "JS:MIDI Arpeggiator (Tukan)",
+				type = "jsfx"
+			},
+			{
+				id = "VSTi:hypercyclic (mucoder)",
+				type = "vsti"
+			},
+			{
+				id = "AU:hypercyclic (mucoder)",
+				type = "aui"
+			},
+			{
+				id = "Script: Saxmand_FX Modulator Linking.lua (RS0459c20bd2f786f027d3f24fad53a5963fac78d4) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS: Normalize items to overall peak RMS (SWS_NORMPEAKRMSALL) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item properties: Normalize items (to loudest item) to +0dB peak (40254) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item properties: Normalize items (peak/RMS/LUFS)... (42460) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS: Normalize item(s) to peak RMS (SWS_NORMPEAKRMS) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaScript: Run ReaScript (EEL2, Lua, or python)... (41060) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
+				type = "action"
+			},
+			{
+				id = "Envelope: Hide all envelopes for all tracks (41150) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Select all MIDI items (BR_SEL_ALL_ITEMS_MIDI) (Main)",
+				type = "action"
+			},
+			{
+				id = "Edit: Make notes legato, preserving note start times (40765) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "Item properties: Unlock (40689) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Glue items within time selection (42432) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Batch file converter (41076) (Main)",
 				type = "action"
 			},
 			{
@@ -143,14 +251,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "ReaScript: Run ReaScript (EEL2, Lua, or python)... (41060) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: JK - Re-render selected subprojects.lua (RS91759db6bc002c0dfda511203b34b4d14082d246) (Main)",
 				type = "action"
 			},
@@ -164,14 +264,6 @@ return {
 			},
 			{
 				id = "File: Export project MIDI... (40849) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Glue items within time selection (42432) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
 				type = "action"
 			},
 			{
@@ -191,19 +283,7 @@ return {
 				type = "vst"
 			},
 			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: sinestacker_build.lua (RSeeec6ce14c440cb6c3e880cabbc71fa03d7bfd40) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
 				type = "action"
 			},
 			{
@@ -275,10 +355,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
-				type = "action"
-			},
-			{
 				id = "JS:Tintinnabulator",
 				type = "jsfx"
 			},
@@ -313,10 +389,6 @@ return {
 			{
 				id = "Script: JK Key Item Inserter.lua (RS9324dbbda328fbdb20921d2e5d8214815bf258a6) (Main)",
 				type = "action"
-			},
-			{
-				id = "VST3:Air (Sound Particles)",
-				type = "vst3"
 			},
 			{
 				id = "Item: Reverse items to new take (40270) (Main)",
@@ -383,10 +455,6 @@ return {
 				type = "vst3"
 			},
 			{
-				id = "Custom: MIDI Merge Items Across Tracks (1da1b25fcd05447fb15c1c3ffe88b01a) (Main)",
-				type = "action"
-			},
-			{
 				id = "JS:Exciter+Sub (Tukan)",
 				type = "jsfx"
 			},
@@ -412,74 +480,6 @@ return {
 			},
 			{
 				id = "Item: Snap stretch markers to grid (41846) (Main)",
-				type = "action"
-			},
-			{
-				id = "Edit: Dynamic split items... (40760) (Main)",
-				type = "action"
-			},
-			{
-				id = "JS:Channel Time Delayer",
-				type = "jsfx"
-			},
-			{
-				id = "Script: JK - Move item contents right by grid division.lua (RS7a06062e3c18f255040e3dd86c1294d66132ca54) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3:UADx Pure Plate Reverb (Universal Audio (UADx))",
-				type = "vst3"
-			},
-			{
-				id = "Script: DM_AssetVideoOverlay.lua (RSac10d9074eb45712b94a59a5e84d3bf3db31b649) (Main)",
-				type = "action"
-			},
-			{
-				id = "JS:Green Dynamic EQ S2 (Tukan)",
-				type = "jsfx"
-			},
-			{
-				id = "AU:MTremolo (MeldaProduction)",
-				type = "au"
-			},
-			{
-				id = "VST3:MTremolo (MeldaProduction)",
-				type = "vst3"
-			},
-			{
-				id = "AU:Spectral Blurring (Michael Norris)",
-				type = "au"
-			},
-			{
-				id = "Script: rewgs - export midi - tracks to improve.lua (RS4fca1e4bf9ce621d53c6ed8dca420943bbdc5cb6) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Apply track/take FX to items (MIDI output) (40436) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3:Transient Master (Native Instruments)",
-				type = "vst3"
-			},
-			{
-				id = "Script: nvk_TRACK - Remove bypassed and offline FX from selected tracks.lua (RS5a6b68d29511f3d5f799e296792f54c5e6d5a952) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Remove Bypassed FX.lua (RS901dc16f96d894b8e0320e220eda49d3260a1f5a) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Open item copies in primary external editor (40132) (Main)",
-				type = "action"
-			},
-			{
-				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
 				type = "action"
 			}
 		},

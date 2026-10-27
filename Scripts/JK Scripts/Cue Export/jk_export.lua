@@ -66,10 +66,13 @@ local TRANSPARENT_FOLDERS = { ["music sub mix"] = true }
 -- Every track in order, with its folder depth, whether it's visible, and
 -- whether it is (or sits inside) an excluded folder
 local function scan_tracks()
-    local list, stack = {}, {}
+    local list, stack, mutes = {}, {}, {}
     for i = 0, reaper.CountTracks(0) - 1 do
         local tr = reaper.GetTrack(0, i)
         local name = track_name(tr)
+        local own_mute = reaper.GetMediaTrackInfo_Value(tr, "B_MUTE") == 1
+        local muted = own_mute
+        for _, m in ipairs(mutes) do if m then muted = true end end
         local depth = reaper.GetMediaTrackInfo_Value(tr, "I_FOLDERDEPTH")
         local excluded = EXCLUDED_FOLDERS[name:lower()] and true or false
         for _, ancestor in ipairs(stack) do if EXCLUDED_FOLDERS[ancestor:lower()] then excluded = true end end
@@ -77,10 +80,10 @@ local function scan_tracks()
         for _, ancestor in ipairs(stack) do if not TRANSPARENT_FOLDERS[ancestor:lower()] then elevel = elevel + 1 end end
         list[#list + 1] = { track = tr, name = name, depth = depth, excluded = excluded, level = elevel,
             transparent = depth == 1 and TRANSPARENT_FOLDERS[name:lower()] or false,
-            click = is_click_name(name) or has_click_item(tr),
+            click = is_click_name(name) or has_click_item(tr), muted = muted,
             visible = reaper.GetMediaTrackInfo_Value(tr, "B_SHOWINTCP") == 1 }
-        if depth == 1 then stack[#stack + 1] = name end
-        for _ = 1, math.max(0, -depth) do stack[#stack] = nil end
+        if depth == 1 then stack[#stack + 1] = name mutes[#mutes + 1] = own_mute end
+        for _ = 1, math.max(0, -depth) do stack[#stack] = nil mutes[#mutes] = nil end
     end
     return list
 end
@@ -88,7 +91,8 @@ end
 local function marked_tracks(marks)
     local out = {}
     for _, t in ipairs(scan_tracks()) do
-        if not t.excluded and not t.click and has_mark(t.name, marks) then out[#out + 1] = t.track end
+        -- muted tracks stay out: selecting one crashes REAPER's render dialog, and it would print silence
+        if not t.excluded and not t.click and not t.muted and has_mark(t.name, marks) then out[#out + 1] = t.track end
     end
     return out
 end
@@ -128,14 +132,15 @@ end
 -- A time selection wins when set (explicit override), then =START/=END, then
 -- the region under the edit cursor. `ignore_time_selection` is for batch runs.
 local function cue_region(ignore_time_selection)
+    -- =START / =END markers win over a time selection; the selection is the fallback
+    local markers = start_end_markers()
+    if markers then return markers end
     if not ignore_time_selection then
         local ts_start, ts_end = reaper.GetSet_LoopTimeRange(false, false, 0, 0, false)
         if ts_end > ts_start then
             return { start = ts_start, finish = ts_end, name = "time selection" }
         end
     end
-    local markers = start_end_markers()
-    if markers then return markers end
     local cursor = reaper.GetCursorPosition()
     local region, num_regions = region_at(cursor)
     if region then return region end
@@ -204,7 +209,9 @@ end
 
 local function apply_render(preset, region, pattern, settings, norm)
     reaper.GetSetProjectInfo(0, "RENDER_SETTINGS", settings, true)
-    reaper.GetSetProjectInfo(0, "RENDER_BOUNDSFLAG", 0, true) -- custom range = cue region
+    -- A cue taken from the time selection renders as "time selection" (what the project and presets
+    -- normally use); markers / regions need the custom range
+    reaper.GetSetProjectInfo(0, "RENDER_BOUNDSFLAG", region.name == "time selection" and 2 or 0, true)
     reaper.GetSetProjectInfo(0, "RENDER_STARTPOS", region.start, true)
     reaper.GetSetProjectInfo(0, "RENDER_ENDPOS", region.finish, true)
     reaper.GetSetProjectInfo(0, "RENDER_TAILFLAG", preset.tailflag or 0, true)
@@ -488,7 +495,18 @@ local function set_log(ctx, job, preset)
     ctx.log_dir = expected_dir(preset, ctx.project_name, "$project/x")
 end
 
+-- Crash trail: one line per step in <REAPER resource path>/JK_export_trace.log, opened and closed
+-- every time, so whatever REAPER was doing when it died is the last line
+local function trace(text)
+    local f = io.open(reaper.GetResourcePath() .. "/JK_export_trace.log", "ab")
+    if not f then return end
+    f:write(os.date("%H:%M:%S"), "  ", text, "\n")
+    f:close()
+end
+M.trace = trace
+
 local function log_event(ctx, state, detail)
+    trace(string.format("%s %s %s", ctx.log_job or "-", state, detail or ""))
     if not ctx.log_dir then return end
     reaper.RecursiveCreateDirectory(ctx.log_dir, 0)
     local f = io.open(ctx.log_dir .. "/_export_log.tsv", "ab")
@@ -672,7 +690,9 @@ local function fire(ctx)
         ctx.queued = ctx.queued + 1
         return {}
     end
+    trace("about to run render action " .. RENDER_ACTION)
     reaper.Main_OnCommand(RENDER_ACTION, 0)
+    trace("render action returned")
     return render_targets()
 end
 
@@ -720,7 +740,15 @@ end
 local function select_only(tracks)
     reaper.Main_OnCommand(40297, 0) -- unselect all tracks
     reaper.SetTrackSelected(reaper.GetMasterTrack(0), false) -- a selected master would join the stems list
-    for _, tr in ipairs(tracks) do reaper.SetTrackSelected(tr, true) end
+    for _, tr in ipairs(tracks) do
+        -- a muted track in the selection crashes REAPER's render dialog (null track in
+        -- CalcChannelCountForTrack); checked here, at selection time, since passes mute things
+        if reaper.GetMediaTrackInfo_Value(tr, "B_MUTE") == 1 then
+            trace("select_only skipped a muted track: " .. track_name(tr))
+        else
+            reaper.SetTrackSelected(tr, true)
+        end
+    end
 end
 
 -- One render pass over `tracks` (or none, for a master mix), at `settings`
@@ -1024,7 +1052,7 @@ end
 local function leaf_tracks(region)
     local candidates, outgoing = {}, {}
     for _, t in ipairs(scan_tracks()) do
-        if t.depth ~= 1 and t.visible and not t.excluded and not t.click then
+        if t.depth ~= 1 and t.visible and not t.excluded and not t.click and not t.muted then
             candidates[#candidates + 1] = t.track
             outgoing[t.track] = true
         end
@@ -1656,6 +1684,8 @@ function M.run(opts)
         midi = opts.midi_only or opts.midi ~= false,
         saved_mutes = {}, saved_mainsend = {}, dirs = {}, queued = 0, notes = {} }
 
+    trace(string.format("=== run %s  jobs=%s  project=%s  cue=%.3f-%.3f", os.date("%Y-%m-%d"),
+        table.concat(opts.jobs, ","), project_name, region.start, region.finish))
     local saved_render = save_render_state()
     local saved_selection = {}
     for i = 0, reaper.CountSelectedTracks(0) - 1 do saved_selection[#saved_selection + 1] = reaper.GetSelectedTrack(0, i) end

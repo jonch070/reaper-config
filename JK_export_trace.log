@@ -1,0 +1,107 @@
+14:58:57  === run 2026-10-26  jobs=orch  project=penny_003  cue=0.000-132.000
+14:58:57  ORCH start 5 marked tracks
+14:58:57  ORCH note stems range 0.000000 - 132.000000 (cue 0.000000 - 132.000000)
+14:58:57  about to run render action 42230
+15:01:20  === run 2026-10-26  jobs=orch  project=penny_003  cue=0.000-130.000
+15:01:20  ORCH start 5 marked tracks
+15:01:20  ORCH note stems range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:01:20  about to run render action 42230
+15:05:33  === run 2026-10-26  jobs=orch  project=penny_003  cue=0.000-130.000
+15:05:33  ORCH start 5 marked tracks
+15:05:33  ORCH note stems range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:05:33  about to run render action 42230
+15:06:36  BISECT stage 1: nothing changed
+15:06:36  BISECT stage 1 about to open render
+15:06:49  BISECT stage 1 returned
+15:07:02  BISECT stage 2: nothing changed ... + source 524416, bounds time selection
+15:07:02  BISECT stage 2 about to open render
+15:07:16  BISECT stage 2 returned
+15:07:26  BISECT stage 3: nothing changed ... + marked tracks selected
+15:07:26  BISECT stage 3 about to open render
+15:10:19  BISECT stage 1: render source 524416 + time selection, no tracks selected
+15:10:19  BISECT stage 1 about to open render
+15:10:32  BISECT stage 1 returned
+15:10:37  BISECT stage 2: + the UNMUTED marked tracks selected
+15:10:37  BISECT stage 2 about to open render
+15:10:57  BISECT stage 2 returned
+15:11:04  BISECT stage 3: + the MUTED marked tracks selected too
+15:11:04  BISECT stage 3 about to open render
+15:15:31  === run 2026-10-26  jobs=orch  project=penny_003  cue=0.000-130.000
+15:15:31  ORCH start 3 marked tracks
+15:15:31  ORCH note stems range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:15:31  about to run render action 42230
+15:15:56  render action returned
+15:15:56  ORCH step stems
+15:15:56  ORCH note master range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:15:56  about to run render action 42230
+15:16:14  render action returned
+15:16:14  ORCH step master
+15:16:14  ORCH note mix minus range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:16:14  about to run render action 42230
+15:16:29  render action returned
+15:16:29  ORCH step mix minus
+15:16:30  ORCH step midi (none in range)
+15:16:30  ORCH done 
+15:16:30  ORCH note click range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:16:30  about to run render action 42230
+15:16:39  render action returned
+15:16:39  ORCH step click
+15:16:59  === run 2026-10-26  jobs=orch  project=penny_003  cue=0.000-130.000
+15:16:59  ORCH start 3 marked tracks
+15:16:59  ORCH note stems range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:16:59  about to run render action 42230
+15:17:23  render action returned
+15:17:23  ORCH step stems
+15:17:23  ORCH note master range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:17:23  about to run render action 42230
+15:17:41  render action returned
+15:17:41  ORCH step master
+15:17:41  ORCH note mix minus range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:17:41  about to run render action 42230
+15:17:58  render action returned
+15:17:58  ORCH step mix minus
+15:17:58  ORCH step midi (none in range)
+15:17:58  ORCH done 
+15:17:58  ORCH note click range 0.000000 - 130.000000 (cue 0.000000 - 130.000000)
+15:17:58  about to run render action 42230
+15:18:09  render action returned
+15:18:09  ORCH step click
+15:19:53  === run 2026-10-26  jobs=prox,orch  project=1M04 - The Birds - v02.01.02  cue=60.000-118.000
+15:21:09  ORCH start 5 marked tracks
+15:21:09  ORCH note stems range 60.000000 - 118.000000 (cue 60.000000 - 118.000000)
+15:21:09  about to run render action 42230
+15:24:00  === run 2026-10-26  jobs=prox,multitrack_dry,multitrack_wet  project=1M04 - The Birds - v02.01.02  cue=0.000-117.000
+15:25:10  multitrack dry start 34 tracks
+15:25:10  multitrack dry note replaced files moved to /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v02.01.02/1M04 - The Birds - v02.01.02 MULTITRACK/_replaced/20261026-152510
+15:25:10  multitrack dry note master ref range 0.000000 - 117.000000 (cue 0.000000 - 117.000000)
+15:25:10  about to run render action 42230
+15:26:17  render action returned
+15:26:17  multitrack dry step master ref
+15:26:17  multitrack dry step tempo map
+15:26:17  multitrack dry note replaced files moved to /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v02.01.02/1M04 - The Birds - v02.01.02 MULTITRACK/DRY/_replaced/20261026-152617
+15:26:17  multitrack dry note multitrack dry range 0.000000 - 117.000000 (cue 0.000000 - 117.000000)
+15:26:17  about to run render action 42230
+19:43:01  === run 2026-10-26  jobs=orch  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+19:43:01  ORCH start 14 marked tracks
+19:43:01  ORCH note stems range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+19:43:01  about to run render action 42230
+20:33:18  === run 2026-10-26  jobs=orch  project=penny_005  cue=0.000-170.000
+20:33:18  ORCH start 3 marked tracks
+20:33:18  ORCH note stems range 0.000000 - 170.000000 (cue 0.000000 - 170.000000)
+20:33:18  about to run render action 42230
+20:33:33  render action returned
+20:33:33  ORCH step stems
+20:33:33  ORCH note master range 0.000000 - 170.000000 (cue 0.000000 - 170.000000)
+20:33:33  about to run render action 42230
+20:33:45  render action returned
+20:33:45  ORCH step master
+20:33:45  ORCH note mix minus range 0.000000 - 170.000000 (cue 0.000000 - 170.000000)
+20:33:45  about to run render action 42230
+20:33:55  render action returned
+20:33:55  ORCH step mix minus
+20:33:55  ORCH step midi (none in range)
+20:33:55  ORCH done 
+20:33:55  ORCH note click range 0.000000 - 170.000000 (cue 0.000000 - 170.000000)
+20:33:55  about to run render action 42230
+20:33:59  render action returned
+20:33:59  ORCH step click
