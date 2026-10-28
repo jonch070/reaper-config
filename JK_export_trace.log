@@ -105,3 +105,282 @@
 20:33:55  about to run render action 42230
 20:33:59  render action returned
 20:33:59  ORCH step click
+23:03:23  === run 2026-10-26  jobs=orch  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+23:03:23  ORCH start 14 marked tracks
+23:03:23  ORCH note replaced files moved to /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v03.01.07/1M04 - The Birds - v03.01.07 ORCH/_replaced/20261026-230323
+23:03:23  ORCH note stems range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:03:23  about to run render action 42230
+23:20:37  === run 2026-10-26  jobs=multitrack_dry,multitrack_wet  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+23:20:37  multitrack dry start 37 tracks
+23:20:37  multitrack dry note master ref range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:20:37  about to run render action 42230
+23:21:21  render action returned
+23:21:21  multitrack dry step master ref
+23:21:21  multitrack dry step tempo map
+23:21:21  multitrack dry note multitrack dry range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:21:21  about to run render action 42230
+23:23:58  === run 2026-10-26  jobs=multitrack_dry,multitrack_wet  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+23:23:58  multitrack dry start 37 tracks
+23:23:58  multitrack dry note master ref range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:24:01  multitrack dry queued master ref
+23:24:01  multitrack dry step tempo map
+23:24:01  multitrack dry note multitrack dry range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:24:04  multitrack dry queued multitrack dry
+23:24:04  multitrack dry note fx return range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:24:05  multitrack dry queued fx return
+23:24:05  multitrack dry queued 
+23:24:05  multitrack wet start 37 tracks
+23:24:05  multitrack wet note multitrack wet range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:24:06  multitrack wet queued multitrack wet
+23:24:06  multitrack wet queued 
+23:24:06  multitrack dry note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:24:07  multitrack dry queued click
+23:25:25  === run 2026-10-26  jobs=multitrack_dry,multitrack_wet  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+23:25:25  multitrack dry start 37 tracks
+23:25:25  multitrack dry note master ref range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:25:26  multitrack dry queued master ref
+23:25:26  multitrack dry step tempo map
+23:25:26  multitrack dry note multitrack dry range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:25:27  multitrack dry queued multitrack dry
+23:25:27  multitrack dry note fx return range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:25:28  multitrack dry queued fx return
+23:25:28  multitrack dry queued 
+23:25:28  multitrack wet start 37 tracks
+23:25:28  multitrack wet note multitrack wet range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:25:30  multitrack wet queued multitrack wet
+23:25:30  multitrack wet queued 
+23:25:30  multitrack dry note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:25:31  multitrack dry queued click
+23:32:03  === run 2026-10-26  jobs=orch  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+23:32:03  ORCH start 14 marked tracks
+23:32:03  ORCH note stems range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:32:03  about to run render action 42230
+23:35:21  === run 2026-10-26  jobs=orch  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+23:35:21  ORCH start 10 marked tracks
+23:35:21  ORCH note replaced files moved to /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v03.01.07/1M04 - The Birds - v03.01.07 ORCH/_replaced/20261026-233521
+23:35:21  ORCH note stems range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:35:31  about to run render action 42230
+23:36:41  render action returned
+23:36:41  ORCH step stems
+23:36:51  ORCH note master range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:37:02  about to run render action 42230
+23:37:37  render action returned
+23:37:37  ORCH step master
+23:37:47  ORCH note mix minus range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:37:57  about to run render action 42230
+23:38:25  render action returned
+23:38:25  ORCH step mix minus
+23:38:35  ORCH step midi
+23:38:35  ORCH done 
+23:38:35  ORCH note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:38:45  about to run render action 42230
+23:39:03  render action returned
+23:39:03  ORCH step click
+23:45:12  === run 2026-10-26  jobs=multitrack_dry,multitrack_wet  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+23:45:12  multitrack dry start 37 tracks
+23:45:12  multitrack dry note replaced files moved to /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v03.01.07/1M04 - The Birds - v03.01.07 MULTITRACK/_replaced/20261026-234512
+23:45:12  multitrack dry note master ref range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:45:22  about to run render action 42230
+23:45:52  render action returned
+23:45:52  multitrack dry step master ref
+23:46:02  multitrack dry step tempo map
+23:46:02  multitrack dry note multitrack dry range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+23:46:12  about to run render action 42230
+00:01:42  === run 2026-10-27  jobs=multitrack_dry,multitrack_wet  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+00:01:42  multitrack dry start 37 tracks
+00:01:42  multitrack dry note master ref range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+00:01:52  about to run render action 42230
+00:02:16  render action returned
+00:02:16  multitrack dry step master ref
+00:02:26  multitrack dry step tempo map
+00:02:26  multitrack dry note multitrack dry range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+00:02:36  about to run render action 42230
+00:06:45  === run 2026-10-27  jobs=multitrack_dry,multitrack_wet  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+00:06:45  multitrack dry start 37 tracks
+00:06:45  multitrack dry note master ref range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+00:06:55  about to run render action 42230
+00:07:19  render action returned
+00:07:19  multitrack dry step master ref
+00:07:29  multitrack dry step tempo map
+00:07:29  multitrack dry note multitrack dry range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+00:07:39  about to run render action 42230
+00:15:53  render action returned
+00:15:53  multitrack dry step multitrack dry
+00:16:03  multitrack dry note fx return range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+00:16:13  about to run render action 42230
+00:16:40  render action returned
+00:16:40  multitrack dry step fx return
+00:16:50  multitrack dry done 
+00:16:50  multitrack wet start 37 tracks
+00:16:50  multitrack wet note multitrack wet range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+00:17:00  about to run render action 42230
+00:30:43  render action returned
+00:30:43  multitrack wet step multitrack wet
+00:30:53  multitrack wet done 
+00:30:53  click track 1  muted=0.0  items in range=1  inserted=true
+00:30:53  multitrack dry note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+00:31:03  about to run render action 42230
+00:31:14  render action returned
+00:31:14  multitrack dry step click
+08:55:37  === run 2026-10-27  jobs=improve,orch  project=1M04 - The Birds - v03.01.07  cue=0.000-69.319
+08:55:37  ORCH start 10 marked tracks
+08:55:37  ORCH note replaced: deleted 10 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v03.01.07/1M04 - The Birds - v03.01.07 ORCH
+08:55:37  ORCH note stems range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+08:55:47  about to run render action 42230
+08:58:33  render action returned
+08:58:33  ORCH step stems
+08:58:43  ORCH note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v03.01.07/1M04 - The Birds - v03.01.07 ORCH
+08:58:43  ORCH note master range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+08:58:53  about to run render action 42230
+08:59:16  render action returned
+08:59:16  ORCH step master
+08:59:26  ORCH note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M04 - The Birds/exports/1M04 - The Birds - v03.01.07/1M04 - The Birds - v03.01.07 ORCH
+08:59:26  ORCH note mix minus range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+08:59:36  about to run render action 42230
+08:59:57  render action returned
+08:59:57  ORCH step mix minus
+09:00:07  ORCH step midi
+09:00:07  ORCH done 
+09:00:07  click track 1  muted=0.0  items in range=1  inserted=true
+09:00:07  ORCH note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+09:00:17  about to run render action 42230
+09:00:28  render action returned
+09:00:28  ORCH step click
+09:02:23  === run 2026-10-27  jobs=improve,orch,multitrack_dry,multitrack_wet  project=1M01 - Grey Ghost - v01.01.08 TEST_002  cue=0.000-79.663
+09:02:23  IMPROVE start 3 marked tracks
+09:02:23  IMPROVE note stems range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:02:33  about to run render action 42230
+09:03:21  render action returned
+09:03:21  IMPROVE step stems
+09:03:31  IMPROVE note master range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:03:41  about to run render action 42230
+09:03:59  render action returned
+09:03:59  IMPROVE step master
+09:04:09  IMPROVE note mix minus range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:04:19  about to run render action 42230
+09:04:33  render action returned
+09:04:33  IMPROVE step mix minus
+09:04:43  IMPROVE step midi
+09:04:43  IMPROVE done 
+09:04:43  ORCH start 2 marked tracks
+09:04:43  ORCH note stems range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:04:53  about to run render action 42230
+09:05:33  render action returned
+09:05:33  ORCH step stems
+09:05:43  ORCH note master range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:05:53  about to run render action 42230
+09:06:11  render action returned
+09:06:11  ORCH step master
+09:06:21  ORCH note mix minus range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:06:31  about to run render action 42230
+09:06:45  render action returned
+09:06:45  ORCH step mix minus
+09:06:55  ORCH step midi
+09:06:55  ORCH done 
+09:06:55  multitrack dry start 12 tracks
+09:06:55  multitrack dry note master ref range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:07:05  about to run render action 42230
+09:07:22  render action returned
+09:07:22  multitrack dry step master ref
+09:07:32  multitrack dry step tempo map
+09:07:32  multitrack dry note multitrack dry range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:07:42  about to run render action 42230
+09:11:28  render action returned
+09:11:28  multitrack dry step multitrack dry
+09:11:38  multitrack dry note fx return range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:11:48  about to run render action 42230
+09:12:07  render action returned
+09:12:07  multitrack dry step fx return
+09:12:17  multitrack dry done 
+09:12:17  multitrack wet start 12 tracks
+09:12:17  multitrack wet note multitrack wet range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:12:27  about to run render action 42230
+09:16:16  render action returned
+09:16:16  multitrack wet step multitrack wet
+09:16:26  multitrack wet done 
+09:16:26  click track 1  muted=0.0  items in range=1  inserted=true
+09:16:26  IMPROVE note click range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:16:36  about to run render action 42230
+09:16:40  render action returned
+09:16:40  IMPROVE step click
+09:16:50  click track 1  muted=0.0  items in range=1  inserted=true
+09:16:50  ORCH note click range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:17:00  about to run render action 42230
+09:17:04  render action returned
+09:17:04  ORCH step click
+09:17:14  click track 1  muted=0.0  items in range=1  inserted=true
+09:17:14  multitrack dry note click range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+09:17:24  about to run render action 42230
+09:17:28  render action returned
+09:17:28  multitrack dry step click
+09:33:02  === run 2026-10-27  jobs=improve,orch,multitrack_dry,multitrack_wet  project=1M03 - Never Say Never - v02.01.04  cue=0.000-84.042
+09:33:02  IMPROVE start 8 marked tracks
+09:33:02  IMPROVE note replaced: deleted 8 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M03 - Never Say Never/exports/1M03 - Never Say Never - v02.01.04/1M03 - Never Say Never - v02.01.04 IMPROVE
+09:33:02  IMPROVE note stems range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:33:12  about to run render action 42230
+09:37:22  render action returned
+09:37:22  IMPROVE step stems
+09:37:32  IMPROVE note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M03 - Never Say Never/exports/1M03 - Never Say Never - v02.01.04/1M03 - Never Say Never - v02.01.04 IMPROVE
+09:37:32  IMPROVE note master range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:37:42  about to run render action 42230
+09:38:34  render action returned
+09:38:34  IMPROVE step master
+09:38:44  IMPROVE note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M03 - Never Say Never/exports/1M03 - Never Say Never - v02.01.04/1M03 - Never Say Never - v02.01.04 IMPROVE
+09:38:44  IMPROVE note mix minus range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:38:54  about to run render action 42230
+09:39:38  render action returned
+09:39:38  IMPROVE step mix minus
+09:39:48  IMPROVE step midi
+09:39:48  IMPROVE done 
+09:39:49  ORCH start 3 marked tracks
+09:39:49  ORCH note stems range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:39:59  about to run render action 42230
+09:41:49  render action returned
+09:41:49  ORCH step stems
+09:41:59  ORCH note master range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:42:09  about to run render action 42230
+09:42:53  render action returned
+09:42:53  ORCH step master
+09:43:03  ORCH note mix minus range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:43:13  about to run render action 42230
+09:43:48  render action returned
+09:43:48  ORCH step mix minus
+09:43:58  ORCH step midi
+09:43:58  ORCH done 
+09:43:58  multitrack dry start 23 tracks
+09:43:58  multitrack dry note master ref range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:44:08  about to run render action 42230
+09:44:53  render action returned
+09:44:53  multitrack dry step master ref
+09:45:03  multitrack dry step tempo map
+09:45:03  multitrack dry note multitrack dry range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:45:13  about to run render action 42230
+09:55:35  render action returned
+09:55:35  multitrack dry step multitrack dry
+09:55:45  multitrack dry note fx return range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:55:55  about to run render action 42230
+09:56:39  render action returned
+09:56:39  multitrack dry step fx return
+09:56:49  multitrack dry done 
+09:56:49  multitrack wet start 23 tracks
+09:56:49  multitrack wet note multitrack wet range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+09:56:59  about to run render action 42230
+10:09:25  render action returned
+10:09:25  multitrack wet step multitrack wet
+10:09:36  multitrack wet done 
+10:09:36  IMPROVE note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M03 - Never Say Never/exports/1M03 - Never Say Never - v02.01.04/1M03 - Never Say Never - v02.01.04 IMPROVE
+10:09:36  click track 1  muted=0.0  items in range=1  inserted=true
+10:09:36  IMPROVE note click range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+10:09:46  about to run render action 42230
+10:10:05  render action returned
+10:10:05  IMPROVE step click
+10:10:15  click track 1  muted=0.0  items in range=1  inserted=true
+10:10:15  ORCH note click range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+10:10:25  about to run render action 42230
+10:10:45  render action returned
+10:10:45  ORCH step click
+10:10:55  click track 1  muted=0.0  items in range=1  inserted=true
+10:10:55  multitrack dry note click range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+10:11:05  about to run render action 42230
+10:11:24  render action returned
+10:11:24  multitrack dry step click

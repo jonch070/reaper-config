@@ -182,7 +182,7 @@ local function loop()
         local _
         _, midi = reaper.ImGui_Checkbox(ctx, "Write MIDI (IMPROVE / ORCH / multitrack)", midi)
         _, resume = reaper.ImGui_Checkbox(ctx, "Resume: skip steps an interrupted run already finished", resume)
-        _, replace = reaper.ImGui_Checkbox(ctx, "Replace existing files (old ones move to _replaced, no overwrite prompt)", replace)
+        _, replace = reaper.ImGui_Checkbox(ctx, "Replace existing files (old ones are deleted first, no overwrite prompt)", replace)
         _, remove_click = reaper.ImGui_Checkbox(ctx, "Remove the click track when done (instead of leaving it muted)", remove_click)
         _, archive_first = reaper.ImGui_Checkbox(ctx, "Archive unused tracks first (HeDa External, permanent once saved)", archive_first)
         _, slow_stems = reaper.ImGui_Checkbox(ctx, "Slow stems: not 'fast via master' (crash test, one track at a time)", slow_stems)

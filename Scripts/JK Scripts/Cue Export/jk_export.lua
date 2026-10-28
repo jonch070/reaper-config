@@ -616,9 +616,9 @@ local function read_log(dir)
     return last
 end
 
--- Replace mode: before a render pass, move the files that pass is about to write (same
--- project name, cue start within a frame or two) into <dir>/_replaced/<time>/ so REAPER
--- never meets an existing file and asks about overwriting. Nothing is deleted.
+-- Replace mode: before a render pass, delete the files that pass is about to write (same
+-- project name, cue start within a frame or two) so REAPER never meets an existing file and
+-- asks about overwriting. Old copies are not kept.
 local function clear_old(ctx, dir, kind, dry)
     if not ctx.replace then return end
     local root = ctx.project_name
@@ -649,15 +649,11 @@ local function clear_old(ctx, dir, kind, dry)
         end
         return false
     end
-    local moved_to
+    local removed = 0
     for _, name in ipairs(list_files(dir)) do
-        if matches(name) then
-            moved_to = moved_to or (dir .. "/_replaced/" .. os.date("%Y%m%d-%H%M%S"))
-            reaper.RecursiveCreateDirectory(moved_to, 0)
-            os.rename(dir .. "/" .. name, moved_to .. "/" .. name)
-        end
+        if matches(name) and os.remove(dir .. "/" .. name) then removed = removed + 1 end
     end
-    if moved_to then log_event(ctx, "note", "replaced files moved to " .. moved_to) end
+    if removed > 0 then log_event(ctx, "note", "replaced: deleted " .. removed .. " old files in " .. dir) end
 end
 
 -- Resume: steps (stems, master, ...) that an earlier unfinished attempt of this job
@@ -777,6 +773,7 @@ local function render_pass(ctx, preset, pattern, settings, tracks, label, norm)
     reaper.UpdateArrange()
     pause(ctx)
     local targets = fire(ctx)
+    if not ctx.queue and #targets == 0 then log_event(ctx, "note", label .. ": render wrote no new file") end
     log_event(ctx, ctx.queue and "queued" or "step", label)
     pause(ctx)
     return targets
@@ -853,6 +850,8 @@ local function render_click(ctx, preset, pattern)
         if pos < ctx.region.finish and pos + len > ctx.region.start then items[#items + 1] = { item, pos, len } end
     end
     local span = ctx.region.finish - ctx.region.start
+    trace(string.format("click track %d  muted=%s  items in range=%d  inserted=%s", reaper.GetMediaTrackInfo_Value(click, "IP_TRACKNUMBER"),
+        tostring(reaper.GetMediaTrackInfo_Value(click, "B_MUTE")), #items, tostring(ctx.inserted_click == click)))
     local exact = #items == 1 and math.abs(items[1][2] - ctx.region.start) < 0.01 and math.abs(items[1][3] - span) < 0.01
 
     if exact then
@@ -1661,7 +1660,7 @@ end
 
 -- opts: { jobs = { "improve", "orch", ... }, queue = bool, midi = bool (default true),
 --         resume = bool (skip steps an interrupted run already finished),
---         replace = bool (move existing files for this cue to _replaced/ before rendering),
+--         replace = bool (delete this cue's existing files before rendering, so no overwrite prompt),
 --         remove_click = bool (delete the click track this run inserted, instead of leaving it muted),
 --         slow_stems = bool (stems via master WITHOUT the "fast" bit, one track at a time; a crash test),
 --         delay = seconds to wait before and after every render pass (default 0),

@@ -56,6 +56,12 @@ LENGTH_TOLERANCE_S = 0.001
 ENVELOPE_HOP_MS = 10
 ENVELOPE_PASS_CORR = 0.90
 ENVELOPE_PASS_GAIN_DB = 3.0
+# Level agreement, no fitting: the stems' sum against the reference over the whole file and in
+# 5 s windows.  Randomised renders (humanising MIDI, round-robin samples) decorrelate the
+# waveforms and the envelopes a little, but a correct mix still lands at the same level.
+LEVEL_TOL_DB = 1.5
+LEVEL_WINDOW_TOL_DB = 2.5
+LEVEL_WINDOW_S = 5.0
 
 # --- file naming ----------------------------------------------------------
 TC_RE = r"\d{2}\.\d{2}\.\d{2}\.\d{2}"
@@ -696,7 +702,21 @@ def _null_metrics(reference: np.ndarray, mixed: np.ndarray, sr: int) -> dict:
     else:
         env_gain, env_residual_db, env_corr, env_gain_db = 0.0, float("-inf"), 0.0, float("-inf")
 
+    ref_m, mix_m = reference[:n], mixed[:n]
+    ref_rms = math.sqrt(float(np.mean(ref_m.astype(np.float64) ** 2))) if n else 0.0
+    mix_rms = math.sqrt(float(np.mean(mix_m.astype(np.float64) ** 2))) if n else 0.0
+    level_diff_db = dbfs(mix_rms / ref_rms) if ref_rms > 0 and mix_rms > 0 else float("-inf")
+    win = max(1, int(LEVEL_WINDOW_S * sr))
+    worst_win = 0.0
+    for i in range(0, n - win + 1, win):
+        r = math.sqrt(float(np.mean(ref_m[i:i + win].astype(np.float64) ** 2)))
+        m = math.sqrt(float(np.mean(mix_m[i:i + win].astype(np.float64) ** 2)))
+        if r > 1e-6:  # skip near-silent windows, where a dB ratio means nothing
+            worst_win = max(worst_win, abs(dbfs(max(m, 1e-9) / r)))
+
     return {
+        "level_diff_db": level_diff_db,
+        "level_worst_window_db": worst_win,
         "sample_residual_db": sample_residual_db,
         "gain": gain,
         "gain_db": dbfs(abs(gain)),
@@ -722,9 +742,14 @@ def _null_status(metrics: dict, strict: bool) -> tuple[str, str]:
         return PASS, ""
     if sample_db <= NULL_WARN_DB:
         return WARN, ""
-    if not strict and env_ok:
+    level_ok = (abs(metrics.get("level_diff_db", float("inf"))) <= LEVEL_TOL_DB
+                and metrics.get("level_worst_window_db", float("inf")) <= LEVEL_WINDOW_TOL_DB)
+    if not strict and (env_ok or level_ok):
+        why = "the envelope matches" if env_ok else (
+            f"the level matches ({metrics['level_diff_db']:+.2f} dB overall, "
+            f"worst 5 s window {metrics['level_worst_window_db']:.1f} dB)")
         return WARN, ("renders are not sample-identical, so the sample-accurate null "
-                      "cannot hold; the envelope matches")
+                      "cannot hold; " + why)
     return FAIL, ""
 
 
