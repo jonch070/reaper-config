@@ -384,3 +384,73 @@
 10:11:05  about to run render action 42230
 10:11:24  render action returned
 10:11:24  multitrack dry step click
+11:43:00  === run 2026-10-28  jobs=improve,orch,multitrack_dry,multitrack_wet  project=1M08 - We Live in Hope - v03.01.02  cue=0.000-191.730
+11:43:00  ORCH start 3 marked tracks
+11:43:00  ORCH note stems range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+11:43:05  about to run render action 42230
+11:45:54  render action returned
+11:45:54  ORCH step stems
+11:45:59  ORCH note master range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+11:46:04  about to run render action 42230
+11:46:51  render action returned
+11:46:51  ORCH step master
+11:46:56  ORCH note mix minus range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+11:47:01  about to run render action 42230
+11:47:45  render action returned
+11:47:45  ORCH step mix minus
+11:47:50  ORCH step midi
+11:47:50  ORCH done 
+11:47:50  multitrack dry start 30 tracks
+11:47:50  multitrack dry note master ref range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+11:47:55  about to run render action 42230
+11:48:53  render action returned
+11:48:53  multitrack dry step master ref
+11:48:58  multitrack dry step tempo map
+11:48:58  multitrack dry note multitrack dry range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+11:49:03  about to run render action 42230
+09:13:35  render action returned
+09:13:35  multitrack dry step multitrack dry
+09:13:40  multitrack dry note fx return range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+09:13:45  about to run render action 42230
+09:14:28  render action returned
+09:14:28  multitrack dry step fx return
+09:14:33  multitrack dry done 
+09:14:33  multitrack wet start 30 tracks
+09:14:33  multitrack wet note multitrack wet range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+09:14:38  about to run render action 42230
+09:48:47  render action returned
+09:48:47  multitrack wet step multitrack wet
+09:48:52  multitrack wet done 
+09:48:52  click track 1  muted=0.0  items in range=1  inserted=true
+09:48:52  ORCH note click range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+09:48:57  about to run render action 42230
+09:49:05  render action returned
+09:49:05  ORCH step click
+09:49:10  click track 1  muted=0.0  items in range=1  inserted=true
+09:49:10  multitrack dry note click range 0.000000 - 191.729538 (cue 0.000000 - 191.729538)
+09:49:15  about to run render action 42230
+09:49:23  render action returned
+09:49:23  multitrack dry step click
+17:16:00  === run 2026-10-28  jobs=prox  project=1M08 - We Live in Hope - v05.01.07  cue=28.711-191.730
+17:17:14  === run 2026-10-28  jobs=prox  project=1M08 - We Live in Hope - v05.01.07  cue=0.000-199.616
+17:21:20  === run 2026-10-28  jobs=improve,orch  project=1M08 - We Live in Hope - v05.01.07  cue=0.000-199.616
+17:21:20  ORCH start 13 marked tracks
+17:21:20  ORCH note stems range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+17:21:25  about to run render action 42230
+17:45:12  render action returned
+17:45:12  ORCH step stems
+17:45:17  ORCH note master range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+17:45:22  about to run render action 42230
+17:47:12  render action returned
+17:47:12  ORCH step master
+17:47:17  ORCH note mix minus range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+17:47:22  about to run render action 42230
+17:48:55  render action returned
+17:48:55  ORCH step mix minus
+17:49:00  ORCH step midi
+17:49:00  ORCH done 
+17:49:00  click track 1  muted=0.0  items in range=1  inserted=true
+17:49:00  ORCH note click range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+17:49:05  about to run render action 42230
+17:49:12  render action returned
+17:49:12  ORCH step click

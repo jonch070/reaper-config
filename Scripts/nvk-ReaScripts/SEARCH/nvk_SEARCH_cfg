@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "",
+		SEARCH = "pref pos",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -62,7 +62,7 @@ return {
 		keys = {
 			
 		},
-		last_cursor_context = 1,
+		last_cursor_context = 0,
 		load_last_search_on_startup = false,
 		new_instance_close = true,
 		open_projects_in_new_tab = false,
@@ -82,6 +82,66 @@ return {
 		},
 		project_directories_sort = "Name",
 		recent = {
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:ReEQ",
+				type = "jsfx"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: daniellumertz_Backup Manager.lua (RS96575f1fce973daa3fba389403d3aac45490d324) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Odedd_Project Archiver.lua (RS8efa0fc70b8d05833bfd4c961aa7524ae5d2ca6b) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: DM_RENAMER_Main.lua (RSe347ac6272e029fae1128e0028cc47a4f81eb67a) (Main)",
+				type = "action"
+			},
 			{
 				id = "Script: timtam_IntelliFreeze Unfreeze all selected tracks recursively.lua (RSc25b01f2f7891fd90eb1d8b12f9d0555e2238733) (Main)",
 				type = "action"
@@ -111,16 +171,8 @@ return {
 				type = "jsfx"
 			},
 			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-				type = "action"
-			},
-			{
 				id = "VST:ReaInsert (Cockos)",
 				type = "vst"
-			},
-			{
-				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
-				type = "action"
 			},
 			{
 				id = "File: Open render queue (40929) (Main)",
@@ -128,14 +180,6 @@ return {
 			},
 			{
 				id = "Close all projects but current (41922) (Main)",
-				type = "action"
-			},
-			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
 				type = "action"
 			},
 			{
@@ -207,10 +251,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
-				type = "action"
-			},
-			{
 				id = "Envelope: Hide all envelopes for all tracks (41150) (Main)",
 				type = "action"
 			},
@@ -224,10 +264,6 @@ return {
 			},
 			{
 				id = "Item properties: Unlock (40689) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
 				type = "action"
 			},
 			{
@@ -272,14 +308,6 @@ return {
 			},
 			{
 				id = "Script: JK - Re-render selected subprojects.lua (RS91759db6bc002c0dfda511203b34b4d14082d246) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
 				type = "action"
 			},
 			{
@@ -355,14 +383,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: BFO & LKC - Folder items.lua (RS9001b897c7f216af4aa6541d7d30154e00f94781) (Main)",
 				type = "action"
 			},
@@ -423,10 +443,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: DM_RENAMER_Main.lua (RSe347ac6272e029fae1128e0028cc47a4f81eb67a) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: jk_Rename item takes by source filename.lua (RS0675b284e1916d1ee208f8a2441b4d4f3386e71f) (Main)",
 				type = "action"
 			},
@@ -441,10 +457,6 @@ return {
 			{
 				id = "VST3:SurferEQ (Sound Radix)",
 				type = "vst3"
-			},
-			{
-				id = "JS:ReEQ",
-				type = "jsfx"
 			},
 			{
 				id = "File: Close all projects (40886) (Main)",
@@ -469,18 +481,6 @@ return {
 			{
 				id = "VST3:kHs Gain (Kilohearts)",
 				type = "vst3"
-			},
-			{
-				id = "JS:Exciter+Sub (Tukan)",
-				type = "jsfx"
-			},
-			{
-				id = "Item: Set snap offset to cursor (40541) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_FOLDER_ITEMS - Move snap offset to edit cursor.lua (RS65d08e34ed1dd9eedab76ccf38efc4e654275d4b) (Main)",
-				type = "action"
 			}
 		},
 		recent_results_amount = 30,
