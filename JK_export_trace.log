@@ -454,3 +454,24 @@
 17:49:05  about to run render action 42230
 17:49:12  render action returned
 17:49:12  ORCH step click
+07:17:02  === run 2026-10-29  jobs=improve,orch  project=1M08 - We Live in Hope - v05.02.07 EXPORT  cue=0.000-199.616
+07:17:02  ORCH start 13 marked tracks
+07:17:02  ORCH note stems range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+07:17:07  about to run render action 42230
+07:46:34  render action returned
+07:46:34  ORCH step stems
+07:46:39  ORCH note master range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+07:46:44  about to run render action 42230
+07:50:00  render action returned
+07:50:00  ORCH step master
+07:50:05  ORCH note mix minus range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+07:50:10  about to run render action 42230
+07:52:35  render action returned
+07:52:35  ORCH step mix minus
+07:52:40  ORCH step midi
+07:52:40  ORCH done 
+07:52:40  click track 1  muted=0.0  items in range=1  inserted=true
+07:52:40  ORCH note click range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+07:52:45  about to run render action 42230
+07:52:58  render action returned
+07:52:58  ORCH step click

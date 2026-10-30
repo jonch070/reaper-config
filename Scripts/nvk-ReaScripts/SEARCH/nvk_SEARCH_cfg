@@ -87,7 +87,39 @@ return {
 				type = "action"
 			},
 			{
+				id = "Script: HeDa_TI_Archiving_Unarchive.lua (RSddf65cf8e60394a7368e3a62d9194456baa48e46) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:Little Plate (Soundtoys)",
+				type = "vst"
+			},
+			{
+				id = "Script: REAPER Update Utility.lua (RS852f0872789b997921f7f9d40e6f997553bd5147) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: timtam_IntelliFreeze Freeze all selected tracks to stereo recursively.lua (RS19d824b9e2e3639c6d82ba3eb0ebeba8e232f24a) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: select_leaf_tracks_whole_project.lua (RS6c19c9ab4619345a31130193b981186cdf5855fa) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Select unused tracks and archive them.lua (RSd27706beb284641bfc448f75c2990b0a08aff693) (Main)",
+				type = "action"
+			},
+			{
 				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Apply track/take FX to items (MIDI output) (40436) (Main)",
 				type = "action"
 			},
 			{
@@ -127,10 +159,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: rodilab_Color palette.lua (RSee6a1ac287680935843ea018df04dcdae861618d) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
 				type = "action"
 			},
@@ -148,14 +176,6 @@ return {
 			},
 			{
 				id = "Track: Insert visual spacer after tracks (42666) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: timtam_IntelliFreeze Freeze all selected tracks to stereo recursively.lua (RS19d824b9e2e3639c6d82ba3eb0ebeba8e232f24a) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: select_leaf_tracks_whole_project.lua (RS6c19c9ab4619345a31130193b981186cdf5855fa) (Main)",
 				type = "action"
 			},
 			{
@@ -184,10 +204,6 @@ return {
 			},
 			{
 				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Apply track/take FX to items (MIDI output) (40436) (Main)",
 				type = "action"
 			},
 			{
@@ -287,10 +303,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: REAPER Update Utility.lua (RS852f0872789b997921f7f9d40e6f997553bd5147) (Main)",
-				type = "action"
-			},
-			{
 				id = "Envelope: Hide all envelopes for tracks (40889) (Main)",
 				type = "action"
 			},
@@ -325,10 +337,6 @@ return {
 			{
 				id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
 				type = "action"
-			},
-			{
-				id = "VST:Little Plate (Soundtoys)",
-				type = "vst"
 			},
 			{
 				id = "Script: sinestacker_build.lua (RSeeec6ce14c440cb6c3e880cabbc71fa03d7bfd40) (Main)",
@@ -473,14 +481,6 @@ return {
 			{
 				id = "AU:Nectar 3 (iZotope)",
 				type = "au"
-			},
-			{
-				id = "VST3:Dodo MIDI (Dodo Bird)",
-				type = "vst3"
-			},
-			{
-				id = "VST3:kHs Gain (Kilohearts)",
-				type = "vst3"
 			}
 		},
 		recent_results_amount = 30,
