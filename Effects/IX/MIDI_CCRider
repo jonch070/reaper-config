@@ -1,14 +1,17 @@
 /*******************************************************************************
-*  Copyright 2007 - 2011, Philip S. Considine                                  *
-*  This program is free software: you can redistribute it and/or modify        *
-*  it under the terms of the GNU General Public License as published by        *
-*  the Free Software Foundation, either version 3 of the License, or           *
-*  (at your option) any later version.                                         *
-*                                                                              *
-*  This program is distributed in the hope that it will be useful,             *
-*  but WITHOUT ANY WARRANTY; without even the implied warranty of              *
-*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the                *
-*  GNU General Public License (http://www.gnu.org/licenses/)for more details.  *
+version: 1.0
+desc: MIDI_CCRider (CC LFO generator)
+author: IX
+provides: . > ../../MIDI_CCRider
+about:
+  # MIDI CC Rider
+  Generates MIDI CC messages with an LFO.
+  Useful back in the day. Pretty obsolete these days. 
+  
+  http://wiki.cockos.com/wiki/index.php/Jesusonic_Effects_Documentation#CCRider
+********************************************************************************
+* Copyright 2007-2011 Philip S. Considine
+* License: GPL - http://www.gnu.org/licenses/gpl.html
 *******************************************************************************/
 
 desc: MIDI CC LFO Generator

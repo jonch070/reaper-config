@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "pref pos",
+		SEARCH = "sws click",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,6 +83,146 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "SWS/AW: Insert click track (SWS_AWINSERTCLICKTRK) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: js_LFO Tool (MIDI editor version, insert CCs in time selection in last clicked lane).lua (RS7d3c_6d0dbfd00ea9b324f5eeec96b49f2c29ee9b880f) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "Script: js_Mouse editing - Draw LFO.lua (RS7d3c_da2b073644760e743ecb04dce2a97bac5299f7a7) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "JS:MIDI CC LFO Generator",
+				type = "jsfx"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:MIDI CC Mapper",
+				type = "jsfx"
+			},
+			{
+				id = "JS:MIDI Envelope Modulator (SNJUK2)",
+				type = "jsfx"
+			},
+			{
+				id = "JS:MIDI Tool",
+				type = "jsfx"
+			},
+			{
+				id = "JS:MIDI CC Mapper X",
+				type = "jsfx"
+			},
+			{
+				id = "VST3i:SINE Player (Orchestral Tools) (32 out)",
+				type = "vst3i"
+			},
+			{
+				id = "VST3i:Phrasebox (Venomode)",
+				type = "vst3i"
+			},
+			{
+				id = "JS:Partials (Saike)",
+				type = "jsfx"
+			},
+			{
+				id = "AU:Serum 2 (Xfer Records)",
+				type = "aui"
+			},
+			{
+				id = "VST3i:Serum 2 (Xfer Records)",
+				type = "vst3i"
+			},
+			{
+				id = "Insert click source (40013) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Select all click source items (BR_SEL_ALL_ITEMS_CLICK) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_Track Inspector 2 VIP_Master.lua (RS46ef68cefefd381d79a3389dbbc0c31e821d6a68) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)",
+				type = "action"
+			},
+			{
+				id = "Monitoring FX: Toggle bypass (41884) (Main)",
+				type = "action"
+			},
+			{
+				id = "View: Show monitoring FX chain (41882) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Show project/global startup actions (S&M_SHOW_PRJ_ACTION) (Main)",
+				type = "action"
+			},
+			{
+				id = "New project tab, ignore default template (41929) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: sockmonkey72_StartupManager.lua (RS2af1f2a87373fb4e11747db22ea548541fcf0b19) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: BirdBird_Global Sampler.lua (RSdbf64708ea8abea46b82a08cabc050148d65176c) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:Global Sampler",
+				type = "jsfx"
+			},
+			{
+				id = "File: Export project MIDI... (40849) (Main)",
+				type = "action"
+			},
+			{
+				id = "View: Show routing matrix window (40251) (Main)",
+				type = "action"
+			},
+			{
+				id = "File/Notation: Export (PDF, MusicXML)... (41747) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "Notation: Identify chords on editor grid (41281) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "Edit: Join notes (40456) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Cascade selected track inputs (SWS_AWCSCINP) (Main)",
+				type = "action"
+			},
+			{
+				id = "Track: Invert track polarity/phase (40282) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:ReaInsert (Cockos)",
+				type = "vst"
+			},
+			{
+				id = "SWS/S&M: Live Config #1 - Toggle option 'Disarm all but active track' (S&M_LIVECFG_DISARMBUT_TGL1) (Main)",
+				type = "action"
+			},
+			{
 				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
 				type = "action"
 			},
@@ -135,10 +275,6 @@ return {
 				type = "jsfx"
 			},
 			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
 				type = "action"
 			},
@@ -183,16 +319,8 @@ return {
 				type = "action"
 			},
 			{
-				id = "JS:Partials (Saike)",
-				type = "jsfx"
-			},
-			{
 				id = "JS:Time Adjustment Delay",
 				type = "jsfx"
-			},
-			{
-				id = "VST:ReaInsert (Cockos)",
-				type = "vst"
 			},
 			{
 				id = "File: Open render queue (40929) (Main)",
@@ -323,10 +451,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "File: Export project MIDI... (40849) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
 				type = "action"
 			},
@@ -357,130 +481,6 @@ return {
 			{
 				id = "JS:MIDI Note Filter",
 				type = "jsfx"
-			},
-			{
-				id = "Script: mpl_Split selected notes to equal parts.lua (RS7d3c_6df1c1bb05709a62f6d9db6b07f1ee643c3b25aa) (MIDI Editor)",
-				type = "action"
-			},
-			{
-				id = "Split notes on grid (40641) (MIDI Editor)",
-				type = "action"
-			},
-			{
-				id = "Edit: Split notes (40046) (MIDI Editor)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Insert click track (SWS_AWINSERTCLICKTRK) (Main)",
-				type = "action"
-			},
-			{
-				id = "Insert click source (40013) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Odedd_Stem Manager.lua (RSd516de9c6cc86adeb31354fb208ba5ea4c51b152) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Resources - Add media file to selected items as takes, last slot (S&M_ADDMEDIA_SELITEMl) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: rewgs - export midi - tracks to orchestrate.lua (RS6ca88a1353d273569b9e08e6e0aba8f200a41017) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: BFO & LKC - Folder items.lua (RS9001b897c7f216af4aa6541d7d30154e00f94781) (Main)",
-				type = "action"
-			},
-			{
-				id = "ReaPack: Manage repositories... (REAPACK_MANAGE) (Main)",
-				type = "action"
-			},
-			{
-				id = "ReaPack: Import repositories... (REAPACK_IMPORT) (Main)",
-				type = "action"
-			},
-			{
-				id = "JS:Tintinnabulator",
-				type = "jsfx"
-			},
-			{
-				id = "JS:MIDI Tool v2",
-				type = "jsfx"
-			},
-			{
-				id = "VST:ReaTune (Cockos)",
-				type = "vst"
-			},
-			{
-				id = "VST3i:Serum 2 (Xfer Records)",
-				type = "vst3i"
-			},
-			{
-				id = "AU:Serum 2 (Xfer Records)",
-				type = "aui"
-			},
-			{
-				id = "AU:Serum 2 FX (Xfer Records)",
-				type = "au"
-			},
-			{
-				id = "VST3:Serum 2 FX (Xfer Records)",
-				type = "vst3"
-			},
-			{
-				id = "Item: Reorder adjacent items randomly (41638) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK Key Item Inserter.lua (RS9324dbbda328fbdb20921d2e5d8214815bf258a6) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Reverse items to new take (40270) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3:Nectar 3 (iZotope, Inc.)",
-				type = "vst3"
-			},
-			{
-				id = "Script: JK - Import Notes to Project from SpotNotes.lua (RS8db8e22ebcc5fafd4209354ec4b67e642b2282cb) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Rename item takes by source filename.lua (RS0675b284e1916d1ee208f8a2441b4d4f3386e71f) (Main)",
-				type = "action"
-			},
-			{
-				id = "Xenakios/SWS: Choose new source file for selected takes... (XENAKIOS_CHANGESOURCEFILE) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST3:Trackspacer 2.5 (Wavesfactory)",
-				type = "vst3"
-			},
-			{
-				id = "VST3:SurferEQ (Sound Radix)",
-				type = "vst3"
-			},
-			{
-				id = "File: Close all projects (40886) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: VF - ITEM - Advanced items repositioning - no GUI 0.0 secs_end_track_xfade.lua (RS6bfa296ddb4bfff597e9d0d94b48ed805a97c623) (Main)",
-				type = "action"
-			},
-			{
-				id = "Xenakios/SWS: Toggle selected items selected randomly... (XENAKIOS_RANDOM_ITEM_SELTOGGLE) (Main)",
-				type = "action"
-			},
-			{
-				id = "AU:Nectar 3 (iZotope)",
-				type = "au"
 			}
 		},
 		recent_results_amount = 30,
