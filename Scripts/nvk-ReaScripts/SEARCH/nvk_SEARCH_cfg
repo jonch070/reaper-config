@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "sws click",
+		SEARCH = "",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -82,6 +82,22 @@ return {
 		},
 		project_directories_sort = "Name",
 		recent = {
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item edit: Nudge/Set... (41226) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
+				type = "action"
+			},
 			{
 				id = "SWS/AW: Insert click track (SWS_AWINSERTCLICKTRK) (Main)",
 				type = "action"
@@ -287,14 +303,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
 				type = "action"
 			},
@@ -473,14 +481,6 @@ return {
 			{
 				id = "Edit: Delete notes of less than 1/8 note in length in selected MIDI items (41734) (Main)",
 				type = "action"
-			},
-			{
-				id = "Script: pandabot_Select every N notes within selection.eel (RS7d3c_3e95dddee564fb49f5a0a6a5fc639e699cb5e3f2) (MIDI Editor)",
-				type = "action"
-			},
-			{
-				id = "JS:MIDI Note Filter",
-				type = "jsfx"
 			}
 		},
 		recent_results_amount = 30,

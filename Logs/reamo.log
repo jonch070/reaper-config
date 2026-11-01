@@ -14568,3 +14568,44 @@
 [31.10.2026 03:00:12.319] INFO  Starting HTTP+WS server (deferred)...
 [31.10.2026 03:00:12.320] INFO  HTTP+WS server started on port 9224
 [31.10.2026 03:00:12.320] INFO  FastTimer: started at 10ms interval (native)
+[31.10.2026 21:29:54.126] INFO  shutdown() called
+[31.10.2026 21:29:54.128] INFO  FastTimer: stopped
+[31.10.2026 21:29:54.128] INFO  timers stopped
+[31.10.2026 21:29:54.128] INFO  cleaning up CSurf
+[31.10.2026 21:29:54.128] INFO  CSurf cleaned up
+[31.10.2026 21:29:54.128] INFO  cleaning up audio stream
+[31.10.2026 21:29:54.128] INFO  audio stream cleaned up
+[31.10.2026 21:29:54.128] INFO  menu: unregistered
+[31.10.2026 21:29:54.128] INFO  stopping server
+[31.10.2026 21:29:54.129] INFO  server stopped
+[31.10.2026 21:29:54.129] INFO  cleaning up gesture state
+[31.10.2026 21:29:54.129] INFO  gesture state cleaned up
+[31.10.2026 21:29:54.129] INFO  cleaning up toggle subscriptions
+[31.10.2026 21:29:54.129] INFO  toggle subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up notes subscriptions
+[31.10.2026 21:29:54.130] INFO  notes subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up track subscriptions
+[31.10.2026 21:29:54.130] INFO  track subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up peaks subscriptions
+[31.10.2026 21:29:54.130] INFO  peaks subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up routing subscriptions
+[31.10.2026 21:29:54.130] INFO  routing subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up track FX subscriptions
+[31.10.2026 21:29:54.130] INFO  track FX subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up track FX param subscriptions
+[31.10.2026 21:29:54.130] INFO  track FX param subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up tuner subscriptions
+[31.10.2026 21:29:54.130] INFO  tuner subscriptions cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up tile cache
+[31.10.2026 21:29:54.130] INFO  tile cache cleaned up
+[31.10.2026 21:29:54.130] INFO  cleaning up GUID cache
+[31.10.2026 21:29:54.131] INFO  GUID cache cleaned up
+[31.10.2026 21:29:54.131] INFO  cleaning up item GUID cache
+[31.10.2026 21:29:54.131] INFO  item GUID cache cleaned up
+[31.10.2026 21:29:54.131] INFO  cleaning up shared state
+[31.10.2026 21:29:54.131] INFO  shared state cleaned up
+[31.10.2026 21:29:54.131] INFO  cleaning up tiered arenas
+[31.10.2026 21:29:54.135] INFO  tiered arenas cleaned up
+[31.10.2026 21:29:54.135] INFO  shutdown() complete
+=== Extension Unloaded ===
+
