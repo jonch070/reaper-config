@@ -14609,3 +14609,17 @@
 [31.10.2026 21:29:54.135] INFO  shutdown() complete
 === Extension Unloaded ===
 
+=== Reamo Extension Log ===
+[01.11.2026 23:17:20.907] INFO  REAmo v0.7.3 starting
+[01.11.2026 23:17:20.908] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[01.11.2026 23:17:20.908] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[01.11.2026 23:17:20.910] INFO  Tiered arenas initialized: 19MB total
+[01.11.2026 23:17:20.910] INFO  Session token generated
+[01.11.2026 23:17:20.910] INFO  CSurf registered for push-based callbacks
+[01.11.2026 23:17:20.910] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[01.11.2026 23:17:20.910] INFO  Loaded 0 playlists from project
+[01.11.2026 23:17:20.910] INFO  Initialization complete, waiting for warmup
+[01.11.2026 23:17:24.172] INFO  Initialization complete, starting processing timer
+[01.11.2026 23:17:25.052] INFO  Starting HTTP+WS server (deferred)...
+[01.11.2026 23:17:25.054] INFO  HTTP+WS server started on port 9224
+[01.11.2026 23:17:25.054] INFO  FastTimer: started at 10ms interval (native)
