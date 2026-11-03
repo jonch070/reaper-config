@@ -27,13 +27,76 @@ local cachedAnalysis = nil ---@type TemplateAnalysis?
 ---@field hasEndMarker boolean? Whether the template has an =END marker
 ---@field endMarkerStart number? Byte index of =END position number start (if exists)
 ---@field endMarkerEnd number? Byte index of =END position number end (if exists)
----@field endMarkerInsertPos number? Byte position to insert new =END marker line (if no =END)
+---@field endMarkerInsertPos number? Byte position to insert new marker lines (if no marker exists)
 ---@field endMarkerInsertPrefix string? Text to prepend before the marker line at insertion
+---@field hasStartMarker boolean? Whether the template has an =START marker
+---@field startMarkerStart number? Byte index of =START position number start (if exists)
+---@field startMarkerEnd number? Byte index of =START position number end (if exists)
+---@field firstTrackPos number? Byte position of the first <TRACK line (nil if no tracks)
 ---@field smptesyncStart number? Byte index where SMPTESYNC line content begins (at keyword)
 ---@field smptesyncEnd number? Byte index where SMPTESYNC line content ends (before newline)
 ---@field timemodeStart number? Byte index where TIMEMODE line content begins (at keyword)
 ---@field timemodeEnd number? Byte index where TIMEMODE line content ends (before newline)
 ---@field trackCache table<string, number|false>? Lazy cache: trackName -> closing > byte position, or false if not found
+
+---Finds where a new project marker line should be inserted: after the last
+---existing marker line if there is one, otherwise before <PROJBAY / tracks.
+---@param content string Template content
+---@param firstTrackPos number? Byte position of the first <TRACK line
+---@return number? insertPos Byte position to insert at
+local function findMarkerInsertPos(content, firstTrackPos)
+    local lastMarkerLineEnd = nil
+    local searchPos = 1
+    while true do
+        local ms = content:find("\n[ \t]*MARKER%s+", searchPos)
+        if not ms or (firstTrackPos and ms >= firstTrackPos) then break end
+        local lineEnd = content:find("\n", ms + 1)
+        if not lineEnd then break end
+        lastMarkerLineEnd = lineEnd
+        searchPos = lineEnd + 1
+    end
+
+    if lastMarkerLineEnd then
+        return lastMarkerLineEnd + 1
+    end
+
+    -- No markers yet: stay above the project bay / track list so marker lines
+    -- are written before any <TRACK block
+    local projbayPos = content:find("\n[ \t]*<PROJBAY", 1)
+    if projbayPos and (not firstTrackPos or projbayPos < firstTrackPos) then
+        return projbayPos + 1
+    end
+
+    return firstTrackPos
+end
+
+---Locates a project marker line by name and returns the byte range of its
+---position number.
+---@param content string Template content
+---@param markerName string Marker name (e.g. "=START")
+---@return boolean exists
+---@return number? startPos
+---@return number? endPos
+local function findNamedMarker(content, markerName)
+    local markerPos = content:find(" " .. markerName .. " ", 1, true)
+    if not markerPos then
+        return false
+    end
+
+    local lineStart = markerPos
+    while lineStart > 1 and content:byte(lineStart - 1) ~= 10 do
+        lineStart = lineStart - 1
+    end
+    local _, afterIndex = content:find("MARKER%s+%d+%s+", lineStart)
+    if afterIndex then
+        local numStart, numEnd = content:find("[%d%.%-]+", afterIndex + 1)
+        if numStart and numStart <= markerPos then
+            return true, numStart, numEnd
+        end
+    end
+
+    return true
+end
 
 ---Pre-analyzes the cached template to find byte positions of all edit targets
 ---@param content string Template content
@@ -41,6 +104,11 @@ local cachedAnalysis = nil ---@type TemplateAnalysis?
 local function analyzeTemplate(content)
     local a = {}
     local stepStart = reaper.time_precise()
+
+    -- First track block (used for marker insertion and marker-track creation)
+    local firstTrack = content:find("\n[ \t]*<TRACK", 1)
+    a.firstTrackPos = firstTrack and (firstTrack + 1) or content:find("<TRACK", 1, true)
+
 
     -- TEMPO number position
     local s = content:find("TEMPO%s+[%d%.]+")
@@ -76,53 +144,12 @@ local function analyzeTemplate(content)
         a.projoffsEnd = numEnd
     end
 
-    -- =END marker
-    local endPos = content:find(' =END ', 1, true)
-    a.hasEndMarker = endPos ~= nil
+    -- =START and =END markers
+    local markerInsertPos = findMarkerInsertPos(content, a.firstTrackPos)
+    a.endMarkerInsertPos = markerInsertPos
 
-    if endPos then
-        -- Find the position number to replace
-        local lineStart = endPos
-        while lineStart > 1 and content:byte(lineStart - 1) ~= 10 do
-            lineStart = lineStart - 1
-        end
-        local _, afterIndex = content:find("MARKER%s+%d+%s+", lineStart)
-        if afterIndex then
-            local numStart, numEnd = content:find("[%d%.%-]+", afterIndex + 1)
-            if numStart and numStart <= endPos then
-                a.endMarkerStart = numStart
-                a.endMarkerEnd = numEnd
-            end
-        end
-    else
-        -- Find insertion point for new =END marker
-        local trackPos = content:find("<TRACK", 1, true)
-        if trackPos then
-            local lastMarkerLineEnd = nil
-            local searchPos = 1
-            while searchPos < trackPos do
-                local ms = content:find("\n%s*MARKER%s+", searchPos)
-                if not ms or ms >= trackPos then break end
-                local lineEnd = content:find("\n", ms + 1)
-                if lineEnd then
-                    lastMarkerLineEnd = lineEnd
-                    searchPos = lineEnd + 1
-                else
-                    break
-                end
-            end
-
-            if lastMarkerLineEnd then
-                -- Insert after the last MARKER line's newline
-                a.endMarkerInsertPos = lastMarkerLineEnd + 1
-                a.endMarkerInsertPrefix = ""
-            else
-                -- No markers exist, insert before first <TRACK
-                a.endMarkerInsertPos = trackPos
-                a.endMarkerInsertPrefix = ""
-            end
-        end
-    end
+    a.hasEndMarker, a.endMarkerStart, a.endMarkerEnd = findNamedMarker(content, "=END")
+    a.hasStartMarker, a.startMarkerStart, a.startMarkerEnd = findNamedMarker(content, "=START")
 
     -- SMPTESYNC line (frame rate and SMPTE sync settings)
     local smptesyncPos = content:find("SMPTESYNC%s+")
@@ -169,6 +196,7 @@ local function analyzeTemplate(content)
         NW.log("RPPModifier", "  PROJOFFS: not found")
     end
     NW.log("RPPModifier", string.format("  =END marker: %s", a.hasEndMarker and "found" or "not found (will insert)"))
+    NW.log("RPPModifier", string.format("  =START marker: %s", a.hasStartMarker and "found" or "not found (will insert)"))
     if a.smptesyncStart then
         NW.log("RPPModifier", string.format("  SMPTESYNC at [%d-%d]: '%s'", a.smptesyncStart, a.smptesyncEnd, content:sub(a.smptesyncStart, a.smptesyncEnd)))
     end
@@ -217,7 +245,7 @@ local function analyzeTrack(content, trackName, analysis)
     end
 
     if not namePos then
-        NW.log("RPPModifier", "Warning: Track '" .. trackName .. "' not found in template - items won't be inserted")
+        NW.log("RPPModifier", "Track '" .. trackName .. "' not found in template")
         analysis.trackCache[trackName] = false
         return nil
     end
@@ -389,11 +417,49 @@ end
 ---@field noteText string Text for item notes
 ---@field customColor number|nil Optional color in REAPER BGR format (e.g., 0x0000FF for red)
 
+---Builds a minimal track block, used when the template does not have the
+---marker track (e.g. "Picture Markers"). Without this, MX IN/OUT and spotting
+---items had nowhere to go and were silently skipped.
+---@param trackName string Name for the new track
+---@param itemsStr string Pre-built item blocks (each ends with a newline)
+---@return string trackBlock
+local function createMarkerTrackBlock(trackName, itemsStr)
+    local guid = RPPModifier.generateGUID()
+    local escapedName = trackName:gsub('"', '\\"')
+    return string.format([[  <TRACK %s
+    NAME "%s"
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0
+    FREEMODE 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 2
+    TRACKHEIGHT 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID %s
+    PERF 0
+    MIDIOUT -1
+    MAINSEND 1 0
+%s  >
+]], guid, escapedName, guid, itemsStr)
+end
+
 ---@class CueConfig
 ---@field tempo number BPM
 ---@field projoffs number PROJOFFS value (timecode seconds at cue project time 0)
 ---@field mxInProjectTime number MX IN position in cue project local time (seconds)
 ---@field mxOutProjectTime number MX OUT position in cue project local time (seconds)
+---@field startMarkerProjectTime number =START marker position in cue project local time (seconds)
 ---@field endMarkerProjectTime number =END marker position in cue project local time (seconds)
 ---@field markerTrackName string Name of track for MX IN/OUT items
 ---@field markerItemLength number Length of marker items in seconds
@@ -436,8 +502,9 @@ function RPPModifier.createCueProject(templatePath, destPath, config)
     NW.FileUtils.ensureParentDirectory(destPath)
 
     -- All positions are pre-calculated by CueCreator
-    NW.log("RPPModifier", string.format("  PROJOFFS=%.10f  mxIn=%.10f  mxOut=%.10f  =END=%.10f",
-        config.projoffs, config.mxInProjectTime, config.mxOutProjectTime, config.endMarkerProjectTime))
+    NW.log("RPPModifier", string.format("  PROJOFFS=%.10f  =START=%.10f  mxIn=%.10f  mxOut=%.10f  =END=%.10f",
+        config.projoffs, config.startMarkerProjectTime, config.mxInProjectTime,
+        config.mxOutProjectTime, config.endMarkerProjectTime))
 
     -- ========================================================================
     -- Collect all edits as {startPos, replacement, endPos} referencing the
@@ -473,7 +540,23 @@ function RPPModifier.createCueProject(templatePath, destPath, config)
         }
     end
 
-    -- 3. =END marker: replace existing position or insert new marker line
+    -- 3. =START and =END markers: replace existing positions or insert lines
+    if analysis.startMarkerStart then
+        edits[#edits + 1] = {
+            analysis.startMarkerStart,
+            string.format("%.8f", config.startMarkerProjectTime),
+            analysis.startMarkerEnd
+        }
+    elseif analysis.endMarkerInsertPos then
+        local markerLine = string.format('  MARKER 901 %.8f =START 0 0 1 B %s 0\n',
+            config.startMarkerProjectTime, RPPModifier.generateGUID())
+        edits[#edits + 1] = {
+            analysis.endMarkerInsertPos,
+            markerLine,
+            analysis.endMarkerInsertPos - 1  -- zero-width insertion
+        }
+    end
+
     if analysis.endMarkerStart then
         edits[#edits + 1] = {
             analysis.endMarkerStart,
@@ -519,8 +602,14 @@ function RPPModifier.createCueProject(templatePath, destPath, config)
         end
     end
 
-    -- 6. Track item insertion
+    -- 6. Track item insertion (creates the marker track if the template lacks it)
     local trackInsertPos = analyzeTrack(content, config.markerTrackName, analysis)
+    local createMarkerTrack = false
+    if not trackInsertPos and config.markerTrackName and config.markerTrackName ~= "" then
+        trackInsertPos = analysis.firstTrackPos
+        createMarkerTrack = trackInsertPos ~= nil
+    end
+
     if trackInsertPos then
         local itemBlocks = {}
         itemBlocks[#itemBlocks + 1] = createItemBlock(
@@ -537,6 +626,12 @@ function RPPModifier.createCueProject(templatePath, destPath, config)
         end
 
         local insertStr = table.concat(itemBlocks, "\n") .. "\n"
+        if createMarkerTrack then
+            insertStr = createMarkerTrackBlock(config.markerTrackName, insertStr)
+            NW.log("RPPModifier", string.format(
+                "  Created marker track '%s' with %d item(s)", config.markerTrackName, #itemBlocks))
+        end
+
         edits[#edits + 1] = {
             trackInsertPos,
             insertStr,

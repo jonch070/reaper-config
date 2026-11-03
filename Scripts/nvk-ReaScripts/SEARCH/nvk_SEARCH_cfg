@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "",
+		SEARCH = "copy ",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,11 +83,15 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
 				type = "action"
 			},
 			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				id = "Script: DM_AssetVideoOverlay.lua (RSac10d9074eb45712b94a59a5e84d3bf3db31b649) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: NateWeiner - Set project frame rate from video.lua (RSffa88234af6d0278615a8b8b967c0dbb42a91461) (Main)",
 				type = "action"
 			},
 			{
@@ -95,7 +99,31 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
+				id = "Script: NateWeiner - Batch Create Cues jk.lua (RS3449c16195cc9a50212d5dca98c07631ca95a0b4) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Take: Explode takes on selected tracks to fixed lanes (42635) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: importaaf.py (RSa5f9d8ab6f10cfded30a600c906ed7fbb3af43de) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
 				type = "action"
 			},
 			{
@@ -113,10 +141,6 @@ return {
 			{
 				id = "JS:MIDI CC LFO Generator",
 				type = "jsfx"
-			},
-			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-				type = "action"
 			},
 			{
 				id = "JS:MIDI CC Mapper",
@@ -236,10 +260,6 @@ return {
 			},
 			{
 				id = "SWS/S&M: Live Config #1 - Toggle option 'Disarm all but active track' (S&M_LIVECFG_DISARMBUT_TGL1) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
 				type = "action"
 			},
 			{
@@ -460,26 +480,6 @@ return {
 			},
 			{
 				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
-				type = "action"
-			},
-			{
-				id = "View: Show navigator window (40268) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: sinestacker_build.lua (RSeeec6ce14c440cb6c3e880cabbc71fa03d7bfd40) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: jk_Select items shorter than.lua (RS9e284702e783c2a44c73cae4fa78400fc267414b) (Main)",
-				type = "action"
-			},
-			{
-				id = "Edit: Delete notes of less than 1/8 note in length in selected MIDI items (41734) (Main)",
 				type = "action"
 			}
 		},

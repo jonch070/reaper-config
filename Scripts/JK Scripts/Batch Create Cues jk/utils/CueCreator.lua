@@ -580,8 +580,8 @@ local function createSingleCue(vidProj, region, settings, spotNotes, smptesyncLi
         cueId, fps, mxInTimecodeSeconds, mxOutTimecodeSeconds))
     NW.log("CueCreator", string.format("  %s: PROJOFFS=%.10f  countIn=%.10f  rawProjoffs=%.10f",
         cueId, subprojectStartTimecodeSeconds, countInSeconds, rawProjoffs))
-    NW.log("CueCreator", string.format("  %s: mxIn proj=%.10f  mxOut proj=%.10f  =END proj=%.10f",
-        cueId, mxInProjectTime, mxOutProjectTime, endMarkerProjectTime))
+    NW.log("CueCreator", string.format("  %s: mxIn proj=%.10f  mxOut proj=%.10f  =START proj=%.10f  =END proj=%.10f",
+        cueId, mxInProjectTime, mxOutProjectTime, mxInProjectTime, endMarkerProjectTime))
     NW.log("CueCreator", string.format("  %s: subproj start=%.10f  end=%.10f (video project time)",
         cueId, subprojectStartProjectSeconds, subprojectEndProjectSeconds))
 
@@ -647,6 +647,7 @@ local function createSingleCue(vidProj, region, settings, spotNotes, smptesyncLi
         projoffs = subprojectStartTimecodeSeconds,
         mxInProjectTime = mxInProjectTime,
         mxOutProjectTime = mxOutProjectTime,
+        startMarkerProjectTime = mxInProjectTime,
         endMarkerProjectTime = endMarkerProjectTime,
         markerTrackName = settings.markerTrackName,
         markerItemLength = MARKER_ITEM_LENGTH_SECONDS,
