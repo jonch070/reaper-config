@@ -14816,3 +14816,17 @@
 [02.11.2026 23:15:28.446] INFO  Starting HTTP+WS server (deferred)...
 [02.11.2026 23:15:28.449] INFO  HTTP+WS server started on port 9224
 [02.11.2026 23:15:28.449] INFO  FastTimer: started at 10ms interval (native)
+=== Reamo Extension Log ===
+[04.11.2026 21:46:56.542] INFO  REAmo v0.7.3 starting
+[04.11.2026 21:46:56.543] INFO  Project entities: tracks=1 items=0 markers=0 regions=0 fx=1 sends=0 tempo=0
+[04.11.2026 21:46:56.543] INFO  Arena sizes: HIGH=1011KB MEDIUM=4045KB LOW=126KB SCRATCH=10113KB total=19MB
+[04.11.2026 21:46:56.547] INFO  Tiered arenas initialized: 19MB total
+[04.11.2026 21:46:56.547] INFO  Session token generated
+[04.11.2026 21:46:56.547] INFO  CSurf registered for push-based callbacks
+[04.11.2026 21:46:56.547] INFO  Auto-detected hostname: Jonathans-M1-MacBook-Pro-3.local
+[04.11.2026 21:46:56.547] INFO  Loaded 0 playlists from project
+[04.11.2026 21:46:56.547] INFO  Initialization complete, waiting for warmup
+[04.11.2026 21:47:01.101] INFO  Initialization complete, starting processing timer
+[04.11.2026 21:47:02.256] INFO  Starting HTTP+WS server (deferred)...
+[04.11.2026 21:47:02.257] INFO  HTTP+WS server started on port 9224
+[04.11.2026 21:47:02.257] INFO  FastTimer: started at 10ms interval (native)
