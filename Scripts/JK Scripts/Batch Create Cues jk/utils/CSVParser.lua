@@ -183,7 +183,70 @@ end
 -- PUBLIC API
 -- ============================================================================
 
----Parses a SpotNotes or CuePrint CSV file.
+---Parses spotting notes in the plain-text block format:
+---  ID: 1m01 / TITLE: x (optional) / TYPE: Score / IN: tc / OUT: tc / <notes lines>
+---with blocks separated by a line containing only "--".
+---@param content string
+---@return table<string, SpotNote> spotNotes
+---@return string? error
+---@return SpotNote[] orderedNotes
+function CSVParser.parseText(content)
+    local spotNotes, ordered = {}, {}
+    content = content:gsub("\r\n?", "\n")
+    local cur
+    local function finish()
+        if cur and cur.cueId ~= "" then
+            cur.notes = trim(table.concat(cur.noteLines, "\n"))
+            cur.noteLines = nil
+            spotNotes[cur.cueId] = cur
+            ordered[#ordered + 1] = cur
+        end
+        cur = nil
+    end
+    local function new()
+        return { cueId = "", title = "", type = nil, inTimecode = "", outTimecode = "", noteLines = {}, notes = "" }
+    end
+    for line in (content .. "\n"):gmatch("(.-)\n") do
+        if trim(line) == "--" then
+            finish()
+        else
+            local key, val = line:match("^%s*(%a+)%s*:%s*(.-)%s*$")
+            key = key and key:upper()
+            if key == "ID" then
+                finish()
+                cur = new()
+                cur.cueId = val
+            elseif cur and key == "TITLE" and cur.title == "" and #cur.noteLines == 0 then
+                cur.title = val
+            elseif cur and key == "TYPE" and #cur.noteLines == 0 then
+                cur.type = val
+            elseif cur and key == "IN" and #cur.noteLines == 0 then
+                cur.inTimecode = normalizeTimecode(val)
+            elseif cur and key == "OUT" and #cur.noteLines == 0 then
+                cur.outTimecode = normalizeTimecode(val)
+            elseif cur and (trim(line) ~= "" or #cur.noteLines > 0) then
+                cur.noteLines[#cur.noteLines + 1] = line
+            end
+        end
+    end
+    finish()
+    if #ordered == 0 then
+        return {}, "No 'ID:' blocks found in spotting notes text", {}
+    end
+    return spotNotes, nil, ordered
+end
+
+---True when a file's content looks like the text block format rather than CSV.
+local function looksLikeText(path)
+    local f = io.open(path, "r")
+    if not f then return false end
+    local content = f:read("*all")
+    f:close()
+    if path:lower():match("%.md$") or path:lower():match("%.txt$") then return true, content end
+    return content:match("^%s*ID%s*:") ~= nil, content
+end
+
+---Parses a SpotNotes or CuePrint CSV file (or a .md/.txt text-block file).
 ---SpotNotes exports use "IN"/"OUT" columns; CuePrint exports use "Music In"/
 ---"Music Out" (with "Spotting In"/"Spotting Out" as a fallback if Music In/Out
 ---are missing) and an "Omit" column flagging rows to skip.
@@ -192,6 +255,10 @@ end
 ---@return string? error Error message if parsing failed
 ---@return SpotNote[] orderedNotes Rows in file order (for CSV-driven cue creation)
 function CSVParser.parse(csvPath)
+    local isText, content = looksLikeText(csvPath)
+    if isText then
+        return CSVParser.parseText(content)
+    end
     local rows, headers = readCSVFile(csvPath)
 
     if #headers == 0 then

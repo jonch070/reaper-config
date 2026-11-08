@@ -431,9 +431,30 @@ local function drawSettingsForm()
         "spotnotes",
         settings.spotNotesPath,
         function()
-            return openFilePicker("Select SpotNotes CSV", "*.csv", settings.spotNotesPath)
+            return openFilePicker("Select spotting notes (CSV / MD / TXT)", "", settings.spotNotesPath)
         end
     )
+
+    -- JK addition: paste spotting notes (ID:/IN:/OUT: blocks) from the clipboard
+    if ImGui.ImGui_Button(ctx, "Paste notes from clipboard##pastenotes") then
+        local clip = ImGui.ImGui_GetClipboardText(ctx) or ""
+        if clip == "" or not clip:match("ID%s*:") then
+            reaper.ShowMessageBox("Clipboard has no spotting notes (expected 'ID: 1m01' blocks).", "Batch Create Cues", 0)
+        else
+            local path = reaper.GetResourcePath() .. "/Data/JK_spotting_notes_clipboard.md"
+            local f = io.open(path, "w")
+            if f then
+                f:write(clip)
+                f:close()
+                settings.spotNotesPath = path
+                settings.csvSource = true
+            else
+                reaper.ShowMessageBox("Could not write " .. path, "Batch Create Cues", 0)
+            end
+        end
+    end
+    ImGui.ImGui_SameLine(ctx)
+    ImGui.ImGui_TextDisabled(ctx, "(or Browse to a .md/.txt/.csv file)")
 
     -- JK addition: drive cue creation from the CSV itself (IN/OUT timecodes)
     local rvCsv
@@ -441,8 +462,8 @@ local function drawSettingsForm()
     if ImGui.ImGui_IsItemHovered(ctx) then
         ImGui.ImGui_SetTooltip(ctx,
             "On: each CSV row becomes a cue named 'CueID - Title', timed by\n" ..
-            "its IN/OUT timecode columns. No video project or regions needed;\n" ..
-            "cues are created as standalone files only.\n" ..
+            "its IN/OUT timecode columns. Tick 'Insert cue items into session'\n" ..
+            "to also place them on the cues track.\n" ..
             "Off: regions in the session define the cues (CSV only annotates).")
     end
 
@@ -715,7 +736,7 @@ local function updateRegionData()
 
     if classifyRegionsCallback then
         local opts = {
-            filesOnly = (not settings.insertItems) or settings.csvSource,
+            filesOnly = not settings.insertItems,
             outputFolder = settings.outputFolder,
         }
         local classified = classifyRegionsCallback(regions, settings.cuesTrackName, settings.altCuesTrackName, settings.filenameSuffix, settings.versionTagAtEnd, opts)

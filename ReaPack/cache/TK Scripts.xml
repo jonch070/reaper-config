@@ -33,12 +33,13 @@
 
  <category name="TK Workbench">
      <reapack name="TK_Workbench.lua" type="script" desc="TK Workbench">
-    <version name="0.9.8" author="TouristKiller" time="2026-10-13T22:06:54Z">
+    <version name="1.0.5" author="TouristKiller" time="2026-11-07T20:26:52Z">
      <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Workbench.lua</source>
      <source main="main" file="TK_Workbench_2.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Workbench_2.lua</source>
      <source main="main" file="TK_Instrument_Rack_Horizontal.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Instrument_Rack_Horizontal.lua</source>
      <source main="main" file="TK_Idea_Capture.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Idea_Capture.lua</source>
      <source main="main" file="TK_Idea_Preview_Check.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Idea_Preview_Check.lua</source>
+     <source main="main" file="TK_Idea_Swap_To_Tracks.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Idea_Swap_To_Tracks.lua</source>
      <source main="main" file="Module Actions/TK_Workbench_Open_Cue.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Cue.lua</source>
      <source file="modules/cue.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/cue.lua</source>
      <source file="core/cue_engine.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/cue_engine.lua</source>
@@ -77,6 +78,7 @@
      <source file="core/project_health.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/project_health.lua</source>
      <source file="core/selection.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/selection.lua</source>
      <source file="core/settings.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/settings.lua</source>
+     <source file="core/profile.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/profile.lua</source>
      <source file="core/navigator.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/navigator.lua</source>
      <source file="core/notes_store.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/notes_store.lua</source>
      <source file="core/text.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/core/text.lua</source>
@@ -112,6 +114,7 @@
     <source main="main" file="Module Actions/TK_Workbench_Open_Instrument_Rack.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Instrument_Rack.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Media_Browser.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Media_Browser.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Notes.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Notes.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Notes_Toggle_focus.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Notes_Toggle_focus.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Plugin_Browser.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Plugin_Browser.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Project_Browser.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Project_Browser.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Project_Overview.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Project_Overview.lua</source>
@@ -130,6 +133,16 @@
     <source main="main" file="Module Actions/TK_Workbench_Open_Sidechain.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Sidechain.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Open_Idea_Vault.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Idea_Vault.lua</source>
     <source main="main" file="Module Actions/TK_Workbench_Idea_Vault_Capture.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Idea_Vault_Capture.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_1.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_1.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_2.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_2.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_3.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_3.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_4.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_4.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_5.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_5.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_6.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_6.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_7.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_7.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_8.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_8.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_9.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_9.lua</source>
+    <source main="main" file="Module Actions/TK_Workbench_Open_Workspace_10.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Module%20Actions/TK_Workbench_Open_Workspace_10.lua</source>
      <source file="modules/action_browser.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/action_browser.lua</source>
     <source file="modules/arrange_bg_presets.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/arrange_bg_presets.lua</source>
     <source file="modules/calculator.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/modules/calculator.lua</source>
@@ -161,31 +174,385 @@
      <source type="effect" file="TK Scripts/Mixer/TK_Control_Room_Meter.jsfx">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Effects/TK_Control_Room_Meter.jsfx</source>
      <source type="effect" file="TK Scripts/Mixer/TK_Control_Room_Downmix.jsfx">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Effects/TK_Control_Room_Downmix.jsfx</source>
     <changelog><![CDATA[
-            v0.9.8
-            + Time Machine (new module): Keeps a copy of every saved version of a project and says in plain words what changed between saves: tracks, plugins, items, envelopes, mixer settings, tempo, markers and the master. Versions are kept outside the project, in a "TK Time Machine" folder at a location of your choice, so the .rpp itself never grows. Saves are picked up in the background whenever Workbench runs, and copying and comparing are spread over frames so even very large projects do not stall the window
-            + Time Machine: Anything from an older version can be put back into the open project: one plugin, an envelope, a track's items or mixer settings, a whole track, a deleted track or a marker. Right-click a line in the list of changes or use a track's Restore menu; every restore is a single undo step, and tracks and plugins are found by their id, so a restore lands on the right track even after reordering or renaming
-            + Time Machine: "Versus now" compares a saved version with the project as it is, unsaved changes included. Select the newest version to see exactly what you changed since the last save, and undo any of it line by line
-            + Time Machine: History shows every saved change to one track or one plugin, newest first, so a question like "when did that reverb disappear?" no longer means clicking through every version. Open it from a track's History button, by right-clicking a plugin, or with Track for the track selected in REAPER
-            + Time Machine: Versions can be labelled ("Mix v1 sent to client") with a note, and labelled versions are never cleaned up. Other versions are thinned out automatically: every save is kept for a day, then one per hour for a week, then one per day, within a size limit per project
-            + Time Machine: VST, VST3 and CLAP plugins store their settings as an unreadable blob, so the list can only say "state changed". Explain plugin changes loads both versions on a hidden temporary track and names the parameters that actually moved, or tells you only the plugin's private data changed. JSFX sliders are named straight from the effect's source, and hidden sliders that meters write their readings into are ignored, so a meter on the master no longer shows up as an edit
-            + Time Machine: REAPER's own .rpp-bak backups (beside the project and in its Backups folder) can be imported, dated by when they were saved, to give a project a history from before Time Machine was installed
-            + Time Machine: A history follows its project when the project is moved or renamed, a Save As starts a new history that remembers where it came from, and Link reconnects a history by hand. When the storage location is changed, existing histories can be moved along and are merged with any already there
-            + Time Machine: An old version can be opened as a copy in a new tab and compared by ear with A/B, which switches between the two at the same play position (also available as an action for a shortcut). A track can be borrowed from any version of any project, with fresh ids and its media paths kept working. The list of changes can be copied as text, and a storage overview shows the space each history takes and cleans up histories whose project is gone
-            + Track Recall: Time Machine can save a track as it was in an older version as a recall, without changing the track now. The track chunk handling moved into a shared core file for this; restoring recalls works exactly as before
-            + Media Browser: Ratings in an ID3 chunk at the end of a WAV file are now found in WAVs larger than 50 MB. The scan stopped at the first chunk over 50 MB, which is normally the audio itself; now only the ID3 chunk is held to that limit
+            v1.0.5
+            + Idea Vault: Fixed Swap for tracks scattering the items of an idea with more than one item on a track when the preview audio sat later in the song than where the idea was captured. REAPER keeps a track's items sorted by position, and moving them one by one let an item jump past the others, so some were moved twice and others not at all. The same mistake could misplace items when Load into project fitted a multi-item idea to a slower project tempo. Gluing items before capturing is no longer needed as a workaround. Reported by sridhar
 ]]></changelog>
      </version>
      </reapack>
  </category>
 
+ <category name="TK Theme">
+    <reapack name="TK_Theme_Dark" type="script" desc="TK Theme">
+    <version name="0.9.15" author="TouristKiller" time="2026-11-07T20:18:41Z">
+     <source main="main" file="TK_Theme_Settings.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Settings.lua</source>
+     <source main="main" file="TK_Theme_Metronome.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Metronome.lua</source>
+     <source main="main" file="TK_Theme_Metronome_Watch.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Metronome_Watch.lua</source>
+     <source main="main" file="TK_Theme_Toggle_Menu_Bar.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Toggle_Menu_Bar.lua</source>
+     <source main="main" file="TK_Theme_Make_Divider.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Make_Divider.lua</source>
+     <source main="main" file="TK_Theme_Toggle_TCP_Lists.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Toggle_TCP_Lists.lua</source>
+     <source main="main" file="TK_Theme_Toggle_TCP_Meter.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Toggle_TCP_Meter.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_actions.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_actions.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_bay.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_bay.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_clock.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_clock.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_explorer.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_explorer.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_free1.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_free1.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_free2.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_free2.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_free3.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_free3.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_fxbrowser.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_fxbrowser.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_mixer.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_mixer.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_regions.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_regions.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_routing.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_routing.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_trackmgr.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_trackmgr.lua</source>
+     <source main="main" file="slots/TK_Theme_Slot_vkb.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_vkb.lua</source>
+     <source file="TK_Theme_Slot.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Slot.lua</source>
+     <source file="TK_Theme_Zip.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Zip.lua</source>
+     <source file="dist/darkmode_colors.txt">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/darkmode_colors.txt</source>
+     <source file="dist/TK Theme Dark.factory.ReaperTheme">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/TK%20Theme%20Dark.factory.ReaperTheme</source>
+     <source file="dist/TK Theme Light.factory.ReaperTheme">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/TK%20Theme%20Light.factory.ReaperTheme</source>
+     <source file="dist/looks/TK Theme Dark.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/looks/TK%20Theme%20Dark.png</source>
+     <source file="dist/looks/TK Theme Light.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/looks/TK%20Theme%20Light.png</source>
+     <source file="dist/look_icons/TK Theme Dark.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/look_icons/TK%20Theme%20Dark.zip</source>
+     <source file="dist/look_icons/TK Theme Light.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/look_icons/TK%20Theme%20Light.zip</source>
+     <source file="dist/accents/TK Theme Dark/blue.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/blue.zip</source>
+     <source file="dist/accents/TK Theme Dark/orange.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/orange.zip</source>
+     <source file="dist/accents/TK Theme Dark/red.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/red.zip</source>
+     <source file="dist/accents/TK Theme Dark/violet.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/violet.zip</source>
+     <source file="dist/accents/TK Theme Light/blue.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/blue.zip</source>
+     <source file="dist/accents/TK Theme Light/orange.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/orange.zip</source>
+     <source file="dist/accents/TK Theme Light/red.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/red.zip</source>
+     <source file="dist/accents/TK Theme Light/violet.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/violet.zip</source>
+     <source file="dist/display/TK Theme Dark standard.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/TK%20Theme%20Dark%20standard.zip</source>
+     <source file="dist/display/TK Theme Light standard.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/TK%20Theme%20Light%20standard.zip</source>
+     <source file="dist/display/amber.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/amber.zip</source>
+     <source file="dist/display/blue.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/blue.zip</source>
+     <source file="dist/display/green.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/green.zip</source>
+     <source file="dist/display/ice.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/ice.zip</source>
+     <source file="dist/display/red.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/red.zip</source>
+     <source type="theme" file="TK Theme Dark.ReaperThemeZip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK%20Theme%20Dark.ReaperThemeZip</source>
+     <source type="theme" file="TK Theme Dark.ReaperTheme">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK%20Theme%20Dark.ReaperTheme</source>
+     <source type="theme" file="TK Theme Light.ReaperThemeZip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK%20Theme%20Light.ReaperThemeZip</source>
+     <source type="theme" file="TK Theme Light.ReaperTheme">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK%20Theme%20Light.ReaperTheme</source>
+     <source type="data" file="toolbar_icons/150/TK_Actions_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Actions_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Actions_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Actions_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Add_Track.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Add_Track.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Arm_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Arm_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Arm_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Arm_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Auto_Play_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Auto_Play_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Auto_Play_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Auto_Play_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Car_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Car_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Car_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Car_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Color.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Color.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Copy.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Copy.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Cut.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Cut.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Delete.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Delete.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Envelope_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Envelope_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Envelope_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Envelope_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_FX_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_FX_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_FX_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_FX_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Fade.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Fade.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Fixed_Lanes_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Fixed_Lanes_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Fixed_Lanes_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Fixed_Lanes_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Folder.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Folder.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Free_Position_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Free_Position_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Free_Position_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Free_Position_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Freeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Freeze.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Glue.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Glue.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Grid_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Grid_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Grid_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Grid_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Group_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Group_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Group_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Group_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Loop_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Loop_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Loop_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Loop_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_CC_Follows_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_CC_Follows_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_CC_Follows_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_CC_Follows_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Center_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Center_Notes.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Filter_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Filter_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Filter_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Filter_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Hide_Unused_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Hide_Unused_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Hide_Unused_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Hide_Unused_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Legato.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Legato.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Multitool.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Multitool.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Named_Notes_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Named_Notes_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Named_Notes_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Named_Notes_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Notation_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Notation_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Notation_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Notation_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Notes_To_Time.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Notes_To_Time.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Only_Used_CC_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Only_Used_CC_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Only_Used_CC_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Only_Used_CC_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Piano_Roll_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Piano_Roll_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Piano_Roll_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Piano_Roll_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Quantize_Ends.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Quantize_Ends.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Split.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Split.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Step_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Step_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Step_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Step_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Strum.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Strum.png</source>
+     <source type="data" file="toolbar_icons/150/TK_MIDI_Zoom_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_MIDI_Zoom_Notes.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Marker.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Marker.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Marquee_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Marquee_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Marquee_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Marquee_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Media_Explorer_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Media_Explorer_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Media_Explorer_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Media_Explorer_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Metronome_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Metronome_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Metronome_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Metronome_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Mixer_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Mixer_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Mixer_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Mixer_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Mute_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Mute_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Mute_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Mute_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Normalize.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Normalize.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Notes.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Paste.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Paste.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Plate_TK-S73.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Plate_TK-S73.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Play_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Play_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Play_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Play_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Preferences.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Preferences.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Razor_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Razor_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Razor_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Razor_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Record_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Record_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Record_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Record_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Redo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Redo.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Region.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Region.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Remove_Track.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Remove_Track.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Render.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Render.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Reverse.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Reverse.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Ripple_All.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Ripple_All.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Ripple_Off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Ripple_Off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Ripple_One.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Ripple_One.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Routing_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Routing_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Routing_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Routing_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Save.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Save.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Settings.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Settings.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Snap_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Snap_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Snap_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Snap_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Solo_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Solo_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Solo_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Solo_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Split.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Split.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Stop.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Stop.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Track_Manager_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Track_Manager_off.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Track_Manager_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Track_Manager_on.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Trim.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Trim.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Undo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Undo.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Unfreeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Unfreeze.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Zoom.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Zoom.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Actions_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Actions_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Actions_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Actions_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Add_Track.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Add_Track.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Arm_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Arm_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Arm_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Arm_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Auto_Play_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Auto_Play_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Auto_Play_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Auto_Play_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Car_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Car_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Car_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Car_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Color.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Color.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Copy.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Copy.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Cut.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Cut.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Delete.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Delete.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Envelope_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Envelope_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Envelope_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Envelope_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_FX_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_FX_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_FX_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_FX_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Fade.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Fade.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Fixed_Lanes_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Fixed_Lanes_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Fixed_Lanes_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Fixed_Lanes_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Folder.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Folder.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Free_Position_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Free_Position_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Free_Position_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Free_Position_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Freeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Freeze.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Glue.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Glue.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Grid_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Grid_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Grid_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Grid_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Group_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Group_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Group_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Group_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Loop_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Loop_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Loop_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Loop_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_CC_Follows_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_CC_Follows_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_CC_Follows_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_CC_Follows_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Center_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Center_Notes.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Filter_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Filter_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Filter_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Filter_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Hide_Unused_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Hide_Unused_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Hide_Unused_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Hide_Unused_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Legato.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Legato.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Multitool.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Multitool.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Named_Notes_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Named_Notes_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Named_Notes_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Named_Notes_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Notation_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Notation_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Notation_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Notation_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Notes_To_Time.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Notes_To_Time.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Only_Used_CC_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Only_Used_CC_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Only_Used_CC_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Only_Used_CC_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Piano_Roll_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Piano_Roll_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Piano_Roll_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Piano_Roll_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Quantize_Ends.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Quantize_Ends.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Split.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Split.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Step_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Step_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Step_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Step_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Strum.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Strum.png</source>
+     <source type="data" file="toolbar_icons/200/TK_MIDI_Zoom_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_MIDI_Zoom_Notes.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Marker.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Marker.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Marquee_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Marquee_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Marquee_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Marquee_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Media_Explorer_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Media_Explorer_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Media_Explorer_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Media_Explorer_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Metronome_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Metronome_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Metronome_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Metronome_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Mixer_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Mixer_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Mixer_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Mixer_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Mute_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Mute_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Mute_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Mute_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Normalize.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Normalize.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Notes.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Paste.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Paste.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Plate_TK-S73.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Plate_TK-S73.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Play_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Play_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Play_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Play_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Preferences.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Preferences.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Razor_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Razor_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Razor_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Razor_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Record_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Record_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Record_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Record_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Redo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Redo.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Region.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Region.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Remove_Track.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Remove_Track.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Render.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Render.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Reverse.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Reverse.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Ripple_All.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Ripple_All.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Ripple_Off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Ripple_Off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Ripple_One.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Ripple_One.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Routing_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Routing_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Routing_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Routing_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Save.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Save.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Settings.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Settings.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Snap_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Snap_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Snap_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Snap_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Solo_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Solo_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Solo_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Solo_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Split.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Split.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Stop.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Stop.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Track_Manager_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Track_Manager_off.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Track_Manager_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Track_Manager_on.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Trim.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Trim.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Undo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Undo.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Unfreeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Unfreeze.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Zoom.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Zoom.png</source>
+     <source type="data" file="toolbar_icons/TK_Actions_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Actions_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Actions_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Actions_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Add_Track.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Add_Track.png</source>
+     <source type="data" file="toolbar_icons/TK_Arm_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Arm_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Arm_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Arm_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Auto_Play_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Auto_Play_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Auto_Play_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Auto_Play_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Car_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Car_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Car_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Car_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Color.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Color.png</source>
+     <source type="data" file="toolbar_icons/TK_Copy.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Copy.png</source>
+     <source type="data" file="toolbar_icons/TK_Cut.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Cut.png</source>
+     <source type="data" file="toolbar_icons/TK_Delete.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Delete.png</source>
+     <source type="data" file="toolbar_icons/TK_Envelope_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Envelope_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Envelope_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Envelope_on.png</source>
+     <source type="data" file="toolbar_icons/TK_FX_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_FX_off.png</source>
+     <source type="data" file="toolbar_icons/TK_FX_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_FX_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Fade.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Fade.png</source>
+     <source type="data" file="toolbar_icons/TK_Fixed_Lanes_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Fixed_Lanes_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Fixed_Lanes_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Fixed_Lanes_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Folder.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Folder.png</source>
+     <source type="data" file="toolbar_icons/TK_Free_Position_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Free_Position_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Free_Position_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Free_Position_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Freeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Freeze.png</source>
+     <source type="data" file="toolbar_icons/TK_Glue.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Glue.png</source>
+     <source type="data" file="toolbar_icons/TK_Grid_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Grid_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Grid_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Grid_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Group_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Group_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Group_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Group_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Loop_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Loop_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Loop_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Loop_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_CC_Follows_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_CC_Follows_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_CC_Follows_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_CC_Follows_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Center_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Center_Notes.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Filter_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Filter_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Filter_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Filter_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Hide_Unused_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Hide_Unused_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Hide_Unused_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Hide_Unused_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Legato.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Legato.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Multitool.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Multitool.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Named_Notes_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Named_Notes_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Named_Notes_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Named_Notes_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Notation_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Notation_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Notation_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Notation_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Notes_To_Time.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Notes_To_Time.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Only_Used_CC_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Only_Used_CC_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Only_Used_CC_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Only_Used_CC_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Piano_Roll_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Piano_Roll_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Piano_Roll_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Piano_Roll_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Quantize_Ends.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Quantize_Ends.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Split.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Split.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Step_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Step_off.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Step_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Step_on.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Strum.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Strum.png</source>
+     <source type="data" file="toolbar_icons/TK_MIDI_Zoom_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_MIDI_Zoom_Notes.png</source>
+     <source type="data" file="toolbar_icons/TK_Marker.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Marker.png</source>
+     <source type="data" file="toolbar_icons/TK_Marquee_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Marquee_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Marquee_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Marquee_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Media_Explorer_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Media_Explorer_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Media_Explorer_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Media_Explorer_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Metronome_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Metronome_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Metronome_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Metronome_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Mixer_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Mixer_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Mixer_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Mixer_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Mute_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Mute_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Mute_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Mute_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Normalize.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Normalize.png</source>
+     <source type="data" file="toolbar_icons/TK_Notes.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Notes.png</source>
+     <source type="data" file="toolbar_icons/TK_Paste.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Paste.png</source>
+     <source type="data" file="toolbar_icons/TK_Plate_TK-S73.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Plate_TK-S73.png</source>
+     <source type="data" file="toolbar_icons/TK_Play_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Play_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Play_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Play_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Preferences.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Preferences.png</source>
+     <source type="data" file="toolbar_icons/TK_Razor_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Razor_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Razor_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Razor_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Record_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Record_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Record_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Record_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Redo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Redo.png</source>
+     <source type="data" file="toolbar_icons/TK_Region.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Region.png</source>
+     <source type="data" file="toolbar_icons/TK_Remove_Track.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Remove_Track.png</source>
+     <source type="data" file="toolbar_icons/TK_Render.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Render.png</source>
+     <source type="data" file="toolbar_icons/TK_Reverse.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Reverse.png</source>
+     <source type="data" file="toolbar_icons/TK_Ripple_All.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Ripple_All.png</source>
+     <source type="data" file="toolbar_icons/TK_Ripple_Off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Ripple_Off.png</source>
+     <source type="data" file="toolbar_icons/TK_Ripple_One.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Ripple_One.png</source>
+     <source type="data" file="toolbar_icons/TK_Routing_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Routing_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Routing_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Routing_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Save.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Save.png</source>
+     <source type="data" file="toolbar_icons/TK_Settings.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Settings.png</source>
+     <source type="data" file="toolbar_icons/TK_Snap_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Snap_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Snap_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Snap_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Solo_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Solo_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Solo_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Solo_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Split.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Split.png</source>
+     <source type="data" file="toolbar_icons/TK_Stop.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Stop.png</source>
+     <source type="data" file="toolbar_icons/TK_Track_Manager_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Track_Manager_off.png</source>
+     <source type="data" file="toolbar_icons/TK_Track_Manager_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Track_Manager_on.png</source>
+     <source type="data" file="toolbar_icons/TK_Trim.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Trim.png</source>
+     <source type="data" file="toolbar_icons/TK_Undo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Undo.png</source>
+     <source type="data" file="toolbar_icons/TK_Unfreeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Unfreeze.png</source>
+     <source type="data" file="toolbar_icons/TK_Zoom.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Zoom.png</source>
+     <changelog><![CDATA[
++ Changed: the track panel can be made narrower. Its minimum width now follows the button row (or the first row, when that needs more), instead of an old Default 7 setting the theme's settings never showed: about 26 px narrower with the standard settings.
+]]></changelog>
+    </version>
+    </reapack>
+ </category>
+
  <category name="Extensions">
     <reapack name="reaper_tk_native_helper" type="extension" desc="TK Native Helper">
-    <version name="1.0.0" author="TouristKiller" time="2026-07-05T12:00:00Z">
+    <version name="1.1.0" author="TouristKiller" time="2026-11-02T14:04:03Z">
     <source platform="win64" file="reaper_tk_native_helper.dll">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Native/TKNativeHelper/bin/windows-x64/reaper_tk_native_helper.dll</source>
     <source platform="darwin" file="reaper_tk_native_helper.dylib">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Native/TKNativeHelper/bin/macos-universal/reaper_tk_native_helper.dylib</source>
     <source platform="linux64" file="reaper_tk_native_helper.so">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Native/TKNativeHelper/bin/linux-x64/reaper_tk_native_helper.so</source>
     <changelog><![CDATA[
-+ Initial release - native drag-and-drop helper that lets TK Media Browser and TK Workbench drop samples straight onto external plugin windows. Restart REAPER after install.
++ Added TK_SetMainMenuVisible and TK_IsMainMenuVisible (Windows only), used by TK Theme to hide REAPER's menu bar. Restart REAPER after the update.
 ]]></changelog>
     </version>
     </reapack>
@@ -204,7 +571,7 @@
 
  <category name="FX">
     <reapack name="TK_FX_BROWSER.lua" type="script" desc="TK FX BROWSER">
-    <version name="3.2.19" author="TouristKiller" time="2026-10-14T20:57:08Z">
+    <version name="3.2.27" author="TouristKiller" time="2026-11-07T21:40:00Z">
     <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_FX_BROWSER.lua</source>
     <source file="DrawMeter.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/DrawMeter.lua</source>
     <source file="TKFXBVariables.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TKFXBVariables.lua</source>
@@ -218,53 +585,27 @@
     <source main="main" file="TK_NOTES_OpenItemMode.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_NOTES_OpenItemMode.lua</source>
     <source main="main" file="TK_NOTES_OpenProjectMode.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_NOTES_OpenProjectMode.lua</source>
     <source main="main" file="TK_NOTES_OpenGlobalMode.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_NOTES_OpenGlobalMode.lua</source>
+    <source main="main" file="TK_Notes_Toggle_focus.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_Notes_Toggle_focus.lua</source>
     <source main="main" file="TK_FX_BROWSER_SnapshotFX.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_FX_BROWSER_SnapshotFX.lua</source>
                 <changelog><![CDATA[
-                v3.2.19:
-                + Patchbay: FX node view: double-click a track node (or use the FX icon on the node, or click the FX schema panel) to dive into that track and see its FX chain as nodes and cables instead of a strip, nested containers and parallel lanes included.
-                + Patchbay: FX node view: reorder by dragging - drop on a cable to place an FX in series, on a node to run it in parallel, or into a container. Parallel lanes can be reordered in both directions.
-                + Patchbay: FX node view: add FX after any node or inside a container, through a search box and browse menus for All plugins, Category, Developer, Folders and your own TK FX BROWSER custom folders.
-                + Patchbay: FX node view: bypass, offline, wet, rename, delete and open the FX window from the node or its right-click menu; wrap a plugin in a new container or unpack a container. Containers fold shut per container, and the choice is remembered.
-                + Patchbay: FX node view: nodes can be placed freely and keep their position per project. Prevent overlap keeps them from landing on top of each other, and TK FX BROWSER screenshots can optionally be shown in the node bodies.
-                + Patchbay: FX node view: Follow switches the view to whichever track you select in REAPER, so it can stay open while you work.
-                + Patchbay: FX node view: Routing shows the real pin wiring with one colour per channel, so a compressor's detector on channels 3/4, an output sent somewhere unusual or a crossed pair is visible without opening the pin connector. The plain stereo path is only drawn when Routing is on, so it does not bury the routing worth seeing.
-                + Patchbay: FX node view: pin-level patching. Drag from an output pin, or from a track channel on the IN box, to an input pin to wire it - feeding a sidechain is one drag. Right-click a pin to disconnect it; Reset pin routing puts a plugin back to its defaults. A connection that REAPER would wire differently from how it is drawn - across a container wall, backwards in the chain, between parallel lanes, from a bypassed plugin, or past a plugin that overwrites the channel on the way - is refused with an explanation instead of silently wiring something else.
-                + Patchbay: FX node view: the drawn routing follows REAPER's own signal flow, checked by measurement on REAPER 7.75: bypassed and offline plugins pass their input through, a container's output pins carry its internal channels, parallel lanes sum only what each lane writes, and plugins with more than 12 pins or tracks with more than 16 channels are followed in full (the extra pins collapse onto the last drawn pin, marked +N).
-                + Patchbay: FX node view: instruments get a dashed MIDI cable from the track, so a synth without audio inputs no longer looks as if it plays on its own.
-                + Patchbay: FX node view: every pin change - connect, disconnect, Reset pin routing - is its own undo step. REAPER does not register a pin change as an edit by itself, so without help Undo skipped it and took back the step before.
-                + Patchbay: Ctrl+Z undoes and Ctrl+Shift+Z / Ctrl+Y redo while the Patchbay window has focus; until now only the arrow buttons did, because the keys went to the script instead of REAPER.
-                + Patchbay: The track graph is no longer drawn underneath the FX node view, and a right-click inside the view no longer also opens the track graph's menus behind it.
-                + Patchbay: Notes panel: reads the shared TK Notes / Workbench note store first, so a note edited in either app shows up.
-                v3.2.18:
-                + Track templates: a template with a preview beside it can be auditioned without loading it. TK Idea Vault renders one when it saves a template, and any audio file sharing a template's name counts - so a preview put there by hand works the same way. Right-click a template in the list, or click the play badge on its thumbnail.
-                + Track templates: the preview plays at the project's tempo rather than at whatever it was recorded at, without transposing it. The tempo it was played at comes from the .tkidea file Idea Vault leaves beside the template; without one the preview simply plays at its own speed.
-                + Track templates: thumbnails carrying a preview are marked with a play badge, so it is visible which ones have something to hear instead of having to right-click each to find out. The badge turns into a pause symbol while it sounds, and clicking it plays rather than loading the template.
-
+                v3.2.27:
+                + Main window: The colours you give folders in the Browser/INFO panel (right-click > Set Color...) now show in the main window's menus too: the subfolders under All Plugins, Category, Developer and Folders, and the main headers. Only the folder's own name takes the colour, not the plugins in it. Your own (custom) folders already did this. Requested on the REAPER forum
+                + Main window: Drag a plugin from the track's FX list onto another track in the arrange view or the mixer to move it there (hold Ctrl to copy it instead). While dragging, the tooltip says which track it will go to. Dropping inside the list still changes the order. Requested on the REAPER forum
+                + Main window: The track FX list has Cut Plugin next to Copy Plugin; pasting after a cut moves the plugin, also to another track. Right-click an empty part of the list to paste at the end of the chain - this now also works on a track that has no FX yet, and in the thumbnail view. The clipboard remembers the plugin itself, so pasting still takes the right one after the chain has changed
+                + Track FX lists: The main window's FX list (list and thumbnail view) and the Track FX list in the INFO panel of the screenshot window now share one right-click menu: Bypass/Enable, Offline/Online, Float Window, Show in FX Chain, Move Up/Down, Cut/Copy/Paste Plugin, Copy to all tracks, Favorites, A/B Snapshot and Delete. The INFO panel also gets dragging a plugin onto another track (Ctrl: copy) and pasting by right-clicking an empty part of its Track FX list
+                + TK FX BROWSER Mini 1.2.24: the folder colours in the main window menus, and the shared Track FX menu, dragging and pasting in the INFO panel.
 ]]></changelog>
     </version>
     </reapack>
 
     <reapack name="TK_Patchbay_Standalone.lua" type="script" desc="TK Patchbay Viewer (Standalone)">
-    <version name="1.3.0" author="TouristKiller" time="2026-10-14T20:57:08Z">
+    <version name="1.3.3" author="TouristKiller" time="2026-10-31T19:42:00Z">
     <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_Patchbay_Standalone.lua</source>
     <source file="TKFXBPatchbay_Standalone.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TKFXBPatchbay_Standalone.lua</source>
                 <changelog><![CDATA[
-            v1.3.0
-            + FX node view: double-click a track node (or use the FX icon on the node, or click the FX schema panel) to dive into that track and see its FX chain as nodes and cables instead of a strip, nested containers and parallel lanes included.
-            + FX node view: reorder by dragging - drop on a cable to place an FX in series, on a node to run it in parallel, or into a container. Parallel lanes can be reordered in both directions.
-            + FX node view: add FX after any node or inside a container, through a search box and browse menus for All plugins, Category, Developer, Folders and your own TK FX BROWSER custom folders.
-            + FX node view: bypass, offline, wet, rename, delete and open the FX window from the node or its right-click menu; wrap a plugin in a new container or unpack a container. Containers fold shut per container, and the choice is remembered.
-            + FX node view: nodes can be placed freely and keep their position per project. Prevent overlap keeps them from landing on top of each other, and TK FX BROWSER screenshots can optionally be shown in the node bodies.
-            + FX node view: Follow switches the view to whichever track you select in REAPER, so it can stay open while you work.
-            + FX node view: Routing shows the real pin wiring with one colour per channel, so a compressor's detector on channels 3/4, an output sent somewhere unusual or a crossed pair is visible without opening the pin connector. The plain stereo path is only drawn when Routing is on, so it does not bury the routing worth seeing.
-            + FX node view: pin-level patching. Drag from an output pin, or from a track channel on the IN box, to an input pin to wire it - feeding a sidechain is one drag. Right-click a pin to disconnect it; Reset pin routing puts a plugin back to its defaults. A connection that REAPER would wire differently from how it is drawn - across a container wall, backwards in the chain, between parallel lanes, from a bypassed plugin, or past a plugin that overwrites the channel on the way - is refused with an explanation instead of silently wiring something else.
-            + FX node view: the drawn routing follows REAPER's own signal flow, checked by measurement on REAPER 7.75: bypassed and offline plugins pass their input through, a container's output pins carry its internal channels, parallel lanes sum only what each lane writes, and plugins with more than 12 pins or tracks with more than 16 channels are followed in full (the extra pins collapse onto the last drawn pin, marked +N).
-            + FX node view: instruments get a dashed MIDI cable from the track, so a synth without audio inputs no longer looks as if it plays on its own.
-            + FX node view: every pin change - connect, disconnect, Reset pin routing - is its own undo step. REAPER does not register a pin change as an edit by itself, so without help Undo skipped it and took back the step before.
-            + Ctrl+Z undoes and Ctrl+Shift+Z / Ctrl+Y redo while the Patchbay window has focus; until now only the arrow buttons did, because the keys went to the script instead of REAPER.
-            + The track graph is no longer drawn underneath the FX node view, and a right-click inside the view no longer also opens the track graph's menus behind it.
-            + Notes panel: reads the shared TK Notes / Workbench note store first, so a note edited in either app shows up.
-            + Fixed: the notes panel's settings (shown/hidden, source, size and position) and several other Patchbay preferences were forgotten after restarting the standalone, because its settings table did not declare them.
+            v1.3.3
+            + FX node view: Replace FX... in a plugin's right-click menu swaps it for another plugin, picked through the same search and browse menus as Add FX. The new plugin takes over the old one's place: in series or in parallel, the pin routing for the pins both plugins have (so a sidechain stays wired), and a node position you set by hand. It is one undo step, and it is not offered on a container, where it would throw away everything inside. Requested by AndreiMir.
+            + FX node view: Copy FX in the right-click menu, then Paste after this or Replace with copied on another plugin. The copy keeps all its settings and can be pasted on another track too. While something is copied, every Add FX popup (the + and = buttons, and a right-click on the empty canvas) offers it at the top, so it can also go in series, in parallel or at the end of the chain. Requested by AndreiMir.
 ]]></changelog>
     </version>
     </reapack>
@@ -385,7 +726,6 @@
     <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK_Add_ReVue_to_Tracks.lua</source>
                 <changelog><![CDATA[           
 + v1.1: Improved timing with extra defer cycles and verification for reliable MCP embedding
-+ Initial release
 ]]></changelog>
     </version>
     </reapack>
@@ -404,7 +744,6 @@
     <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK_Create_Tracks_with_ReVue.lua</source>
                 <changelog><![CDATA[           
 + v1.1: Improved timing with extra defer cycles and verification for reliable MCP embedding
-+ Initial release
 ]]></changelog>
     </version>
     </reapack>
@@ -552,36 +891,6 @@ v0.2.52
 # A cover image deleted from disk no longer stops Kit Maker on startup. Its stale browser reference is removed before ReaImGui tries to load it.
 + Browser sorting by transient and frequency, in both directions. Existing sample analysis is reused; unanalysed samples stay at the end of the list.
 + All, Loop and One-shot filters in the Browser, Folder Explosion and each Builder pool, using cached waveform shape and filename evidence.
-
-v0.2.51
-# Export to MIDI now plays what the sequencer plays. It did not, in three different ways, and all three came down to one thing: two notes of the same pitch that touch cannot both be struck. The engine sends a note-off and then a note-on for every hit, so a repeat always re-articulates; a note rectangle that ends exactly where the next begins does not.
-# A gate of 100% over a length of one fills its step precisely and meets the next one, so a run of steps came out as a single sustained note.
-# A groove that pulls a note early made it start inside the one before it, so a swung double hit exported as one hit - the second was there in the item and could not sound.
-# A one-shot lane threw away every hit after the first. Four kicks became one note running to the end of the bar: not a note that failed to sound, three that were never written. The engine plays all four.
-# Every exported note now ends a hair before the next of its pitch begins. The gap is a sixty-fourth of a step - about two milliseconds at 120 - which is far under hearing and far over the rounding.
-# Per-step pitch in an exported pattern no longer runs away. A step at -18 wrote its envelope point and a step at 0 wrote nothing, so an envelope holds its last value and every step after that one played at -18, right to the end where the single reset point sat. Steps with no offset now write their point too, which is what playback has always done.
-# Per-step pitch, pan, volume, attack and release are only written when the step they belong to is actually going to be struck. These are plugin parameters shared by every note a pad plays, so each write bends whatever is still ringing - and preparing a step with no hit on it spent the tail of the note you had just heard on a value nothing was going to use. A hit now keeps its own pitch for as long as it rings, which is most of what made an exported pattern sound cleaner than the one you were listening to.
-# A lane running backwards or as a pendulum now prepares the right step. The look-ahead worked out the next step by counting forwards, so those two were handed the values of a step they were not about to play: wrong, rather than late.
-+ Per-step pan and volume, and the Euclid page's attack and release, now survive the export. They live on the sampler rather than in the notes, so an exported pattern said nothing about them at all - you could program them, hear them, and get none of it back. All four are written as FX parameter envelopes, the way per-step pitch already was.
-# Attack and release were the worst of it: set on the Euclid page, applied on every step while it played, and then wiped from the sampler the moment you stopped. They did not survive the session, let alone the export.
-# A step back at centre writes its point too, so a pan that swung left returns rather than staying there for the rest of the bar. All of them go back to neutral after the pattern, so a rack is not left panned or turned down by a kit exported an hour ago.
-# The values come from the same code that sets them during playback, asked not to write. Working the numbers out a second time in the exporter is how the sound you heard and the file you got would drift apart.
-# An envelope and the sequencer cannot both own a parameter, and the envelope wins - so the sequencer would have looked broken on any pad you had ever exported. Pitch already handed the parameter back and forth at play and stop; all five do now.
-# The export reads whether a pad's sampler obeys note-offs, which it never actually did: "a and b or true" cannot return false, so a pad that ignores note-offs answered "yes" and got gate-length notes anyway. Those lengths mean nothing while the sampler ignores them - and start cutting samples the moment Note-off is switched on afterwards. A pad that ignores note-offs now exports notes that run to the next hit, which is what you were hearing when you exported.
-# Save kit takes off a slot number it put on last time, so saving a kit twice no longer gives you 010_010_Cymbal, and a sample brought in from another kit does not land as 010_013_Cymbal. Only a number that could have been one of ours: slots run 1 to 16, so 808_kick keeps its 808 and 909_snare its 909. That is the same test the Browser already uses in the other direction.
-- Retrig is gone from the Step and Euclid pages. The engine never read it: it sends a note-off before every note-on whatever the setting said, so the switch changed nothing you could hear - while the export took it seriously, which is where the one-long-note came from.
-# Both of its meanings were already Note-off's. With Note-off on a hit cuts the one before it and restarts; with it off the sampler ignores the note-off and the sample rings on and layers. That is the switch that was doing the work all along.
-# Audition and playback agreed with each other even less than they agreed with the export: the click-preview honoured Retrig, the engine did not. All three now do the same thing.
-+ Container racks, experimental: a kit as ONE track with sixteen samplers inside a single FX container, instead of sixteen tracks. Right-click a kit collection in the Kits browser for "Create Drum Rack (Container)". For AndreiMir, who asked for a way to stop a project filling up with dozens of tracks per kit.
-# The Step and Euclid pages drive it, it exports, and per-pad pitch, pan, volume, attack and release all work. The engine goes on the rack track itself, above the container, so there is no bus and there are no sends - everything it has to reach is already on that track.
-# The Kit Manager sees one too: the pads, their samples and their names, dropping a sample on a pad, and Save kit. Two things a single track cannot do are per-pad record arm and a colour per pad.
-# A pad blinks on the hit rather than staying lit for as long as the note lasts. That was fine while exported notes were a step long and wrong the moment they were not - a one-shot lane writes a note that runs to the next hit, so a kick on step 1 with the next on step 9 held its pad lit for eight steps. The sequencer's own indicator has always worked off the moment of the trigger; this now matches it.
-# Playing an exported pattern lights the pad the note belongs to, not all sixteen. The Kit Manager asked whether anything was sounding on the pad's TRACK, which on a folder rack is the same question - one pad per track, with a note filter in front of it. Sixteen pads on one track have no such luck. It reads the note now, and scans a track once rather than once per pad.
-# Still experimental. Relinking a rack whose samples moved, and undo around building one, have not been gone through yet. Needs REAPER 7.
-# A pad is found by which plugin it is, not by where it sits. The rack writes down its pads' FX GUIDs while it is built, and the position is only a hint - right almost always, and one read to check. Drop an FX into the container and every pad would otherwise have addressed the one next door, which reads exactly like a rack that works until it does not.
-# Nothing about existing racks changes. A folder rack is still a folder rack, and this is a second shape beside it rather than a replacement.
-
-
 ]]></changelog>
         </version>
     </reapack>
@@ -589,7 +898,7 @@ v0.2.51
 
 <category name="Transport">
     <reapack name="TK_TRANSPORT.lua" type="script" desc="TK_TRANSPORT">
-        <version name="2.0.7" author="TouristKiller" time="2026-10-15T21:28:00Z">
+        <version name="2.0.9" author="TouristKiller" time="2026-10-31T19:15:00Z">
             <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/TK_TRANSPORT.lua</source>
             <source file="json.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/json.lua</source>
             <source file="button_editor.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/button_editor.lua</source>
@@ -598,27 +907,8 @@ v0.2.51
             <source file="icon_browser.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/icon_browser.lua</source>
             <source file="toolbar_images.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/Transport/toolbar_images.zip</source>
             <changelog><![CDATA[
-    v2.0.7:
-    + Added: Decorative / Image Only buttons have a "Behind Transport" option that draws them behind the transport elements, so they can be used as backgrounds and frames
-    + Added: New "Background Buttons" layer in Z-Order (Layer), below Transport by default, to set how deep those buttons sit
-    + Changed: Decorative / Image Only buttons can now be as wide and tall as the transport window instead of being limited to 400 px; regular buttons keep the 400 px limit
-    + Changed: Copy Style and "Copy style from last button" also copy the "Behind Transport" option
-
-    v2.0.6:
-    + Changed: Copy Style now also copies height, icon/image (incl. custom image path), image tinting (incl. Tint ON/OFF), Invisible BG, text position, toggle ON/OFF colors and the System Fonts setting
-    + Fixed: Paste Style did not reset values that were at their default on the source button - for example a custom tint on the target button stayed after pasting
-    + Changed: "New button - Copy style from last button" now copies the same appearance settings as Copy Style
-    + Changed: Copy Style Settings window redesigned - two columns grouped like the button editor, a checkbox per group, quick All / None / Colors only / Layout only buttons and a count of selected properties
-    + Added: Confirmation before deleting a transport preset or button preset and before Reset Defaults, so a misclick no longer throws work away
-    + Changed: Settings list split into General and Components; each component shows a dot for its visibility that you can click to show or hide it
-    + Changed: Transport and button preset bars now share one layout and color scheme; the new-name field shows a hint and Resave is highlighted while there are unsaved changes
-    + Changed: All settings sections use one heading style
-    + Changed: "(Toggle active ...)" notes in the button Properties now link straight to the Toggle view
-    + Changed: Button editor columns scale with the available width instead of fixed pixel positions
-    + Changed: Group settings moved to a fixed group bar below the button settings, visible in Properties, Actions and Toggle; Paste Style to Group moved there as well
-    + Fixed: With current ReaImGui versions, TK Transport's own window could be mistaken for REAPER's native transport when positioning relative to the REAPER transport or TCP
-    + Removed: Debug console output when creating a preset-load action, and outdated help text in the Buttons tab
-
+    v2.0.9:
+    + Fixed: TK Transport crashed right after starting with "ImGui_End: Missing PopStyleColor()" on new installs - the Envelope (ENV) button, visible by default, treated REAPER's "No override" state as an active override and pushed one color too many - Reported by Loukas and Bone (SP)
 ]]></changelog>
         </version>
     </reapack>
@@ -643,15 +933,6 @@ v0.2.51
             + Instance state: each mixer keeps its own tracks, hidden state, snapshots, pinned parameters, layout, docking and window position
             + Window: press Escape to close the focused TK Mixer
             + Action: running the same mixer action again reliably closes that instance
-
-            v1.3.7
-            + Fixed: Icon Browser could crash after being accidentally docked - the window can no longer be docked and is automatically undocked
-
-            v1.3.6
-            + Instrument Rack: the mixer's rack panel is now powered by the shared TK Workbench Instrument Rack module (shim) instead of the mixer's own implementation - same features and theming as the standalone rack; requires TK Workbench (shows a message when it is not installed)
-            + Drag & drop: plugins from a TK FX Browser can be dropped onto Mixer FX slots and the Instrument Rack, regardless of window open order, and multiple browsers can be open at once
-            + Sidebar: added an auto-hide option (hover to open, right-click for options) with a pin-open toggle
-            + Channels: added a separate Master channel width slider, independent from the normal channel width
 ]]></changelog>
         </version>
     </reapack>
@@ -813,79 +1094,28 @@ v0.2.51
             + Launcher: Hover a strip row for a triangle that auditions it - the clip editor's own preview engine, so it leaves the transport, the edit cursor and every solo alone and can be used mid-jam. Needs SWS; audio only. Asked by AndreiMir
             + Launcher: With the strip open the project scan keeps running, minus the once-a-second check for missing media, which is the half that costs anything
             + Launcher: The manual says where the one-project boundary lies now that clips can cross it
-            v0.6.4
-            + Launcher: Recording-ready and queued Launchpad pads now blink in time with the project tempo
-            v0.6.3
-            + Launcher: Armed empty MIDI pads now start and stop recording into their clip slots
-            + Launcher: Learned MIDI commands light up, flash when pressed and show active Record and scene states
-            + Launcher: DAW mode now clearly identifies the Launchpad's dedicated input and output ports
-            + Launcher: Optional ReaLearn actions install as a Core set of 8 or a Full set of 40, and can be removed again
-            + Launcher: ReaLearn actions use the same quantized commands as MIDI control, with Record and scene feedback
-            + Launcher: Auto run-up no longer changes REAPER's global media buffer preference
-            + Launcher: Hidden lane tracks are configured more reliably when created or reused
-            v0.6.2
-            + Launcher: Edit clip - a window on the file behind an audio clip, with its waveform, a grid over it and the part that plays marked out
-            + Launcher: Start and end are set by dragging the lines in the waveform or the faders under it, snapped to bars, beats, half or quarter beats
-            + Launcher: Fade in and fade out per clip, honoured by the voices as well, with the launcher's own short guard against clicks kept underneath
-            + Launcher: Stopping a lane now fades into the bar line it stops on rather than losing the clip's own fade, and never takes any longer for it
-            + Launcher: Fade every pass lays a loop down one pass at a time so every round fades, instead of once at each end
-            + Launcher: Reverse, pitch in semitones and normalise, none of which write a thing into the audio
-            + Launcher: Play and stop in the editor use the preview engine, through the lane's own track, without touching the transport or the edit cursor
-            + Launcher: Fades, level, speed and pitch reach a running preview as you change them
-            + Launcher: Fade in, fade out, gain and pitch are knobs - drag up and down, ctrl for fine, double click to clear
-            + Launcher: The editor is a window of its own rather than a popup, so it stays where you put it and comes back there
-            + Launcher: A clip's picture in the grid is redrawn when it is trimmed, sped up or reversed, instead of at the next restart
-            v0.6.1
-            + Launcher: A Launchpad is taken over in DAW mode now, the way Ableton and PlayTime do it: the board keeps its own Session and Custom buttons and its second port stays free for playing. Reported by AndreiMir
-            + Launcher: Programmer mode is still on offer for a board that will not talk in DAW mode
-            + Launcher: In DAW mode the scene strip on the right works as control changes, lit and read
-            + Launcher: On the RGB boards a clip waiting for its bar line flashes and the playing clip pulses in hardware, instead of being blinked from the script
-            v0.6.0
-            + Launcher: Configurable MIDI control with Keyboard, Pads and Custom Grid layouts, banking and scene launching
-            + Launcher: MIDI Learn for notes and commands, with reusable MIDI setup presets
-            + Launcher: Launchpad layout - the 8 x 8 note grid of a Mini MK3, X, Pro MK3, MK2, S or Mini MK1, with the right hand strip launching scenes
-            + Launcher: The pads light up with the grid - filled, playing, waiting and armed - in the clip's own colour where the board has one
-            + Launcher: Faster scene switching with fewer project-state writes and a shorter retrigger horizon
-            + Launcher: Automation lanes follow their Arrange envelope heights and can follow, pause or resume independently
-            + Launcher: Import a selected Arrange automation item into the matching automation clip lane
-            + Launcher: Automation clips - a clip that is a curve instead of a sound, played as an automation item on the track's own envelope, on the same bar line as everything else
-            + Launcher: Automation clips sit in a lane of their own under the track lane, one per parameter, so a curve runs while the track's clip keeps playing
-            + Launcher: A clip takes the curves in its row with it, a curve can be fired on its own, and stopping a track stops its curves
-            + Launcher: Draw a curve in the arrange from the clip's own menu and take it back into the clip, its length with it
-            + Launcher: Load and save REAPER's own automation items, the AutomationItems folder and everything under it
-            + Launcher: Hold to play works for a curve as well, with no gate effect involved
-            + Launcher: When it has played reads Next scene literally, with Next scene with a clip for skipping the empty rows
-            + Launcher: The FX button lists the FX already on the track - click opens one floating, right-click bypasses it
-            + Launcher: A stop-all square beside the bar count and the time signature
-            + Launcher: The play triangle leads the scene number
-            + Items and Source Media can include open project tabs and loaded subprojects
-            + Filter Items and Source Media by project, tab or subproject
-            + Insert or drag clips from another project into the active project
-            + Added separate tile scaling for Items, Source Media and Automation
-            + Fixed project-aware GUID handling and track collapse controls
-
-        ]]></changelog>
+]]></changelog>
         </version>
     </reapack>
     <reapack name="TK_MEDIA_BROWSER(SA).lua" type="script" desc="TK MEDIA BROWSER">
-        <version name="1.3.0" author="TouristKiller" time="2026-09-01T17:47:06Z">
+        <version name="1.4.0" author="TouristKiller" time="2026-11-07T01:41:16Z">
         <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/TK_MEDIA_BROWSER(SA).lua</source>
         <source file="json_tkmb.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/json_tkmb.lua</source>
         <source file="tk_filename_categorizer.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/tk_filename_categorizer.lua</source>
         <source file="TKMBSETTINGS.png">https://github.com/TouristKiller/TK-Scripts/raw/master/Media/TKMBSETTINGS.png</source>
         <changelog><![CDATA[
-            v1.3.0:
-            + Tree View: macOS AppleDouble metadata files whose names start with ._ are no longer shown or added by new scans, and are filtered from existing caches immediately
-            + Sync: right-click the sync button to choose half-speed (/2), normal (1x) or double-speed (2x) tempo matching for previews and inserted media
-            + Waveform: right-click the peak waveform and choose Reveal in Tree to return to the displayed file; the browser switches to Tree View, opens its parent folders and scrolls the file into view
-
-            v1.2.0:
-            + New: a fourth view mode, Grouped, on the Tree / Flat / Compact button (T -> F -> G -> C). It is the flat list with a collapsible header per folder, so a location reads as an overview of what is in it and opens where you want it, instead of being scrolled through as one long list. Folders start collapsed, and which ones you opened is remembered per location. Requested by Heavy
-            + Grouped: the header names the folder relative to the location and counts the files in it, so two folders that happen to share a name stay apart. That path is worked out from the file itself rather than read from what the scan stored, which means no library has to be scanned again for this
-            + Grouped: the grouping is worked out once per change and then cached, and which folder a file belongs to is remembered for as long as the location does not change. Typing in the search box rebuilds the list on every keystroke, and that is what keeps it from costing anything
-            + New: Show Progress Bar, under Settings. Switched off, the transport hands its space back to the oscilloscope, or to the folder pane and the file list in the single pane layout - the transport measures its own height, so nothing else needs adjusting for it
-            + Fixed: an image that cannot be decoded no longer takes the whole browser down with it. ReaImGui reads what stb_image reads, and webp is not on that list - nor is anything that is not really an image at all, such as an audio file picked as a folder image by mistake. Such a file reached ImGui_CreateImage, and the failure came back as an error dialog for every frame the thumbnail was on screen, which made the browser unusable and, once docked, impossible to start. Wrapping the call in a pcall does not help: the decode happens inside ImGui after the call has already returned, so the failure never arrives as something the script could check. A file that cannot be decoded is therefore never handed to ImGui at all - not as a cover found in a pack, not as a folder image chosen by hand, and not in the image viewer. That folder simply shows no thumbnail. Reported by Heavy
-
+            v1.4.0:
+            + New: Normalize preview, the "norm" button on the transport row. Files from different packs no longer jump in level while you browse. Peak mode brings every file's loudest peak to a target (default -3 dBFS) and works straight away, because it reads the waveform the browser already caches. LUFS mode uses a file's stored LUFS reading and falls back to peak for files that were never analysed, since analysing means putting a temporary track in the project and clicking a file should never do that. The volume knob still works on top of it. Right-click the button for the mode and both targets; the tooltip shows the gain applied to the current file. Requested on the forum
+            + Settings: Show Oscilloscope and Show Waveform checkboxes. The oscilloscope could already be hidden, but only with the small toggle at the end of the transport row, which few people found. With the waveform switched off, the file list takes its space in both layouts. Requested on the forum
+            + Selection: Shift+click now selects a range, the way it does in every other browser, and Ctrl+A selects every file in view. Inserting moved to a double-click or Alt+click; Settings has a switch to turn double-click insert off. A range follows the order on screen, so in Grouped view it skips closed folders and in Tree view it follows the open branches. Tree view supports multi-selection now as well. Requested on the forum
+            + Selection: inserting several files at once. Alt+click on a file that is part of a multi-selection inserts the whole selection end to end on the selected track, starting at the edit cursor and in the order of the list. The right-click menu offers that as well, plus "on separate tracks", which gives each file a new track of its own, named after the file, below the selected one. Both are a single undo step, and the edit cursor ends up after the last inserted file so the next insert follows on. A double-click still inserts just the one file, because its first click has already cleared the selection. Requested on the forum
+            + Selection: the file that was highlighted before a Ctrl- or Shift-click counts as part of the selection, and right-clicking a file outside the selection acts on that file only, rather than on a selection somewhere else in the list
+            + New: a row of your collections above the file list. A collection already works as a free-form label a file can carry any number of, so rather than adding a tag system as a third way of labelling files next to the automatic categories and the collections, the collections themselves are made quicker to use. Click one to show only the files in it, or Ctrl+click to combine several. Right-click one to add the selected files to it or remove them, and + makes a new collection with the selected files in it. Each shows how many files in the list it holds, the collections of the current file are outlined, and the row folds away with its arrow or can be switched off in Settings. A file in Drums / Kick also counts as being in Drums. Requested on the forum
+            + Transport: the minimum display time label ("off" / "1s") and the Auto Key badge are drawn in the same font and colours as auto, sync and tape below them. They used to be in two different styles, one of them hard to read. The oscilloscope toggle now follows the badge instead of landing on top of it, and the left pane can no longer be dragged narrower than the transport needs, so nothing on it gets cut off or overlaps. The transport measures that width itself, because it depends on the fonts and on the key Auto Key shows
+            + Waveform: a selection can be dragged straight from the waveform onto a track, as in REAPER's Media Explorer, and only that section is inserted. Over a selection the cursor turns into a hand: press there and drag. Snapping to the grid, fixed lanes and Shift for a new lane all work as they do when dragging from the file list. A press that does not move still acts as a click (new selection, seek), and dragging outside the selection still makes a new one. The section is not passed to plugin windows or other scripts as a file, because they would receive the whole sample. Until then, a section could only be inserted by dragging the file from the list after selecting part of it. Requested on the forum
+            + Search: typing in the search box no longer lags after every letter. Measured on a 15,000 file location, each letter cost two full filter passes of about 15 ms each: the search bar filtered the list and then the list filtered it again. On top of that, the browser copied the whole visible list on every frame, about 19 ms, whether you were typing or not. Now the text appears in the box at once and the list follows after a short pause in typing, at once on Enter or when you leave the box, and immediately when the box is cleared. The filter runs once and remembers the lower-cased folder names. A letter that only adds to the term searches the previous hits instead of the whole location, which takes under 2 ms. The list copy is only made again when the list itself changes. Tree view was the slowest of all, because it counted the matches per folder by walking the tree: the first search read every folder of the library from disk, and the counting was redone for every visible folder on every frame. Those counts now come from the location's file cache, in one pass per term that takes 5 to 60 ms on the same location, and they match a count taken straight from disk. Reported on the forum
+            + Settings: Settings and Keyboard Shortcuts open in a window of their own, switched with two buttons at the top, instead of taking the place of the file list. Like the browser it has no standard title bar but its own header in the window colour, with the same red close dot, and the sliders have a fixed width so their labels fit without making the window very wide. In a narrow dock the settings page did not fit, so the dock had to be widened every time something needed changing. Now the browser keeps showing its files while you adjust it, so the effect of a setting is visible straight away. The window can float or be docked, and it remembers its size and position. Escape closes it, and while it has focus the arrow keys no longer move through the file list
+            + New: Set Category in the file menu. When the automatic category guesses wrong it can be corrected by hand, for one file or for a whole selection at once, and Automatic puts it back. Corrections are stored per file in CACHE/category_overrides.json and apply everywhere the category is used: the column, sorting and the Auto view
 ]]></changelog>
         </version>
     </reapack>
@@ -958,34 +1188,7 @@ v0.2.51
 
         [Menus]
         + The Dice right-click menu holds randomize settings only (Progression Length, Always Start on Tonic, Use Selected Chord Types). Playback settings live on PLAY, chord length on the [+] panel. Tooltips now name what a menu contains instead of saying "Settings".
-
-        v2.5.6
-
-        [Time Selection / Insert]
-        + Bug fix — when Note Length is set to "Time Selection" but no time selection is active, the length now correctly falls back to the MIDI Editor grid. Previously the -1 sentinel leaked into the grid calculation, producing tiny notes and a cursor that jumped back one beat.
-
-        [Note Length / Grid]
-        + Bug fix — "Grid" note length now uses the project/arrange grid when no MIDI editor is open (was: defaulted to 1/32, or even a zero-length/invisible note on the very first insert, until an item had been opened in the MIDI editor at least once). The grid length now always falls back to a valid value, so notes are never zero-length.
-        + "Grid" note length now follows the MIDI Editor grid only when the editor is actually visible. A docked MIDI Editor in a closed/hidden docker no longer counts as "open" (it kept a valid pointer), so the length correctly falls back to the arrange grid instead of a leftover editor grid (e.g. 1/32). Requires js_ReaScriptAPI for visibility detection.
-
-        [Inversion]
-        + Simplified the inversion system to a single source of truth: Ctrl+Click on a chord button now cycles the global inversion for that scale degree (root → 1st → 2nd → ... → root, based on the actual number of chord notes) and previews it. The "Inv:" value box in the top frame always reflects the current value.
-        + Click (preview), Shift+Click (insert) and Alt+Click (add to slot) now all respect the selected inversion automatically — re-previewing is just another Click, no special modifier needed.
-        + Drag & drop onto a progression slot now also carries the selected inversion (was: always inserted the root-position chord).
-        + Removed the separate temporary cycle system: no more 2-second reset timer, no more "I1/I2/I3" badge, and Ctrl+Shift+Click / Ctrl+Alt+Click are no longer needed (they now behave like Shift+Click / Alt+Click). This fixes the preview/badge mismatch and the inability to re-preview an inversion.
-
-        [MIDI Trigger]
-        + Bug fix — "Clear All Mappings" in the MIDI Trigger menu did nothing when no ChordMap presets were saved. The greyed-out "(no presets)" placeholder still consumed a menu index, so the Clear action ended up on the wrong index. The index is now calculated from the actual number of delete-menu items, so Clear All Mappings works with or without saved presets.
-
-        [MIDI Playback / Recording]
-        + Bug fix — note-off messages from button clicks now always use the same MIDI channel as the matching note-on. Previously the channel was re-read at note-off time, so if it changed in between (MIDI editor opening/closing, or toggling Scale Filter / MIDI Trigger) the note-off landed on a different channel and the note was never released. This caused stuck notes that, with retroactive MIDI recording, were stretched all the way to the end of the item. stopAllNotesFromPlaying now also clears every channel that was actually used.
-
-        [MIDI Trigger / Learn]
-        + The "Assign MIDI Trigger" / "Assign Column Trigger" flow now uses a non-blocking on-screen overlay instead of a modal pop-up. While listening you see a centered prompt; the moment a MIDI note arrives it is mapped, a short "Assigned: <note>" confirmation is shown, and the overlay closes automatically — no more clicking OK and no more wondering whether it worked.
-        + Assigning a trigger now also works while MIDI Trigger is globally OFF. The overlay shows a reminder that you still have to enable the connector icon (top bar) for triggers to actually fire, since it is off by default and the icon is not obvious.
-        + The MIDI Trigger icon now pulses with an extra ring while you are assigning a trigger, making it clear the script is waiting for a note.
-        + Press Esc or click anywhere to cancel an assignment in progress.
- ]]></changelog>
+]]></changelog>
 
         <source main="main midi_editor" file="TK_ChordGun/TK_ChordGun.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Midi/TK_ChordGun/TK_ChordGun.lua</source>
         <source file="TK_ChordGun/TK_ChordGun_Help.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Midi/TK_ChordGun/TK_ChordGun_Help.lua</source>
@@ -1053,40 +1256,8 @@ v0.2.51
     <reapack name="TK_Find Similar MIDI Items.lua" type="script" desc="TK Find Similar MIDI Items - Find matching MIDI patterns">
       <version name="1.8" author="TouristKiller" time="2025-12-11T15:00:00Z">
         <changelog><![CDATA[
-        + Initial release
-        + Find MIDI items similar to reference item
-        + Percentage-based similarity threshold
-        + Overlay comparison with detailed statistics
-        + Color coding by similarity percentage
-        + Select, color, and delete similar items
-        + Added pattern matching with offset detection
-        + Can now find similar patterns even if notes are shifted in time
-        + Added segment matching - find partial matches within larger items
-        + Search modes: Full Item / Segment (find reference pattern in larger items)
-        + Added Time Selection mode - use time selection within item as search pattern
-        + Fixed segment matching - extra notes in matched section now reduce similarity score
-        + Added Note Range Filter (ignore keyswitches)
-        + Added "Pin to Top" option for created tracks
-        + Added "Max Similarity" threshold
-        + Added global settings persistence (Save/Load options)
-        + Added "Show Reference" button
-        + Improved UI with tooltips and collapsible options
-        + Matches are now grouped by source track when copying
-        + Added Track Batch Mode: Select a track (without selecting items) to scan all items on that track
-        + Results are now grouped by Reference Item in Batch Mode
-        + UI Overhaul: Compact layout, collapsible settings, improved button organization
-        + Improved Sorting: Fixed sorting for items with identical similarity scores (Track # priority)
-        + Workflow: Single-click details for single matches, auto-reselect reference after replace
-        + Fix: "Replace Phrase" now correctly handles time selections with leading silence
-        + Fix: Multi-match items now sort based on their best match
-        + Added Track Selector popup - easily select which tracks to search
-        + Track selector shows track number, name and color
-        + Search/filter tracks by name in the popup
-        + Select All / Deselect All / Invert buttons for quick selection
-        + Only tracks containing MIDI items are shown
-        + Added progress indicator during analysis - UI no longer freezes
-        + Added "Lock" checkbox in Track Batch mode to lock the reference track
-        ]]></changelog>
+        + Added "NEW" button to clear all results and start a fresh search
+]]></changelog>
         <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/Midi/TK_Find%20Similar%20MIDI%20Items.lua</source>
         <source file="TK_Find Similar MIDI Items (CORE).lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Midi/TK_Find%20Similar%20MIDI%20Items%20(CORE).lua</source>
       </version>
@@ -1095,30 +1266,12 @@ v0.2.51
 
 <category name="Track">
     <reapack name="TK_Trackname_in_Arrange.lua" type="script" desc="TK_Trackname_in_Arrange">
-        <version name="2.0.0" author="TouristKiller" time="2026-10-14T17:31:53Z">
+        <version name="2.0.2" author="TouristKiller" time="2026-10-28T16:14:39Z">
             <changelog><![CDATA[
-            v2.0.0:
-            + Added Activity Glow (new Activity tab): each visible track lights up with its post-fader level, so in a large session you can see at a glance which tracks are sounding. Choose a level bar at the lane edge, a pulsing track color, or both, with adjustable floor, release and bar width
-            + Activity Glow: optional clip flash turns the glow red for a moment when a track goes over 0 dBFS
-
-            v1.9.9:
-            + Added individual color controls for the record-arm, solo, and mute status dots
-
-            v1.9.8:
-            + Added optional master-gap fill with adjustable track-background matching for a seamless appearance at every master color intensity
-
-            v1.9.7:
-            + Fixed: a visible but unpinned master track could incorrectly clip the top of the first track's color overlay; master pinning now uses REAPER's B_TCPPIN state
-
-            v1.9.6:
-            + Fixed: the 8 px divider below pinned master/tracks could inherit the next track's overlay at certain track heights; pinned tracks are now detected through REAPER's B_TCPPIN state
-
-            v1.9.5:
-            + Added a Labels setting to show or hide the record-arm, solo, and mute status dots
-
-            v1.9.4:
-            + Fixed: in very large templates (1000+ tracks) some tracks consistently showed no label/color while scrolling; the visible-range detection no longer relies on a binary search over I_TCPY (which broke on hidden/zero-height tracks) but uses a robust linear scan
-
+            v2.0.2:
+            + Added: label font can now be any font installed on your system, e.g. to match your theme. Tick "System Fonts" at the top of the font list to browse and search all installed fonts; the choice is stored by name, so it is kept in presets
+            + System font scan covers fonts installed for all users and fonts installed for your account only (Windows), plus macOS and Linux; use "Rescan" after installing a new font
+            + The built-in font list and existing presets are unchanged
 ]]></changelog>
             <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/Track/TK_Trackname_in_Arrange.lua</source>
             <source main="main" file="TK_Trackname_Overlay_Toggle.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/Track/TK_Trackname_Overlay_Toggle.lua</source>
@@ -1168,7 +1321,7 @@ v0.2.51
     </reapack>
 
     <reapack name="TK_Arrange_Background_Presets.lua" type="script" desc="TK Arrange Background Presets">
-        <version name="1.5.0" author="TouristKiller" time="2026-04-28T02:4500Z">
+        <version name="1.5.0" author="TouristKiller" time="2026-04-28T02:45:00Z">
             <changelog><![CDATA[
             + Initial release
             + English UI labels

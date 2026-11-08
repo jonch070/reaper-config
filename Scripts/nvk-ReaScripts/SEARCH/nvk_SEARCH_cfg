@@ -83,6 +83,50 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - export midi - tracks to orchestrate.lua (RS6ca88a1353d273569b9e08e6e0aba8f200a41017) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Status (subprojects).lua (RSc4924da8cd4084d2e92f0bcb87d76e4ad9062a06) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Status.lua (RS680fa4ecada7f7214afe21b563d497639634114e) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: NateWeiner - Batch Create Cues jk.lua (RS3449c16195cc9a50212d5dca98c07631ca95a0b4) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
+				type = "action"
+			},
+			{
+				id = "Take: Crop to active take in items (40131) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: DM_SubprojectManager.lua (RSb2d0bccea0cfe66bbe8a7b8585180e292f24d520) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Open/close Notes window (S&M_SHOW_NOTES_VIEW) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_TI_Archiving_Unarchive.lua (RS936ae53c376a40f959ef82048f129ac000ca93b1) (Main)",
+				type = "action"
+			},
+			{
 				id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
 				type = "action"
 			},
@@ -99,10 +143,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: NateWeiner - Batch Create Cues jk.lua (RS3449c16195cc9a50212d5dca98c07631ca95a0b4) (Main)",
-				type = "action"
-			},
-			{
 				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
 				type = "action"
 			},
@@ -112,10 +152,6 @@ return {
 			},
 			{
 				id = "Script: importaaf.py (RSa5f9d8ab6f10cfded30a600c906ed7fbb3af43de) (Main)",
-				type = "action"
-			},
-			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
 				type = "action"
 			},
 			{
@@ -323,10 +359,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
 				type = "action"
 			},
@@ -356,10 +388,6 @@ return {
 			},
 			{
 				id = "Close all projects but current (41922) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
 				type = "action"
 			},
 			{
@@ -452,34 +480,6 @@ return {
 			},
 			{
 				id = "PT/RPP: Import PTX Session Data (IMPORT_PTX_SESSION) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: spk77_Set track names to first item (active take) name.eel (RSa12140afebc07479b88918190b755d48a8ce5e9f) (Main)",
-				type = "action"
-			},
-			{
-				id = "Envelope: Hide all envelopes for tracks (40889) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_TI_Archiving_Archive External.lua (RS169be698a371ebf8b7611a0f5fa01f4d3614ac89) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Export Status (subprojects).lua (RSc4924da8cd4084d2e92f0bcb87d76e4ad9062a06) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Export Status.lua (RS680fa4ecada7f7214afe21b563d497639634114e) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Re-render selected subprojects.lua (RS91759db6bc002c0dfda511203b34b4d14082d246) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
 				type = "action"
 			}
 		},

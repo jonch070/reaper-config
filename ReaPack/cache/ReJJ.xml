@@ -9,6 +9,118 @@
         <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/0f94ef04a7131df71b2ad2293ce312111073b871/ReEQ/Dependencies/spectrum.jsfx-inc</source>
         <source file="Dependencies/svf_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/0f94ef04a7131df71b2ad2293ce312111073b871/ReEQ/Dependencies/svf_filter.jsfx-inc</source>
       </version>
+      <version name="1.2.1" author="Justin Johnson" time="2026-10-29T20:00:00Z">
+        <changelog><![CDATA[ReEQ2 is here: a new interface, decramped filters up to 30 kHz and per-band dynamic EQ with sidechain inputs.
+Install "ReEQ2" from Extensions > ReaPack > Browse packages. It comes with an action to move your projects over with all their settings: search the Actions window for "ReEQ upgrade".
+This update changes nothing in ReEQ 1.2, so your projects sound exactly as before.]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/97769537b9c973281bbf9bdb8f870d26e5dfb231/ReEQ/ReEQ.jsfx</source>
+        <source file="Dependencies/firhalfband.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/0f94ef04a7131df71b2ad2293ce312111073b871/ReEQ/Dependencies/firhalfband.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/0f94ef04a7131df71b2ad2293ce312111073b871/ReEQ/Dependencies/spectrum.jsfx-inc</source>
+        <source file="Dependencies/svf_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/0f94ef04a7131df71b2ad2293ce312111073b871/ReEQ/Dependencies/svf_filter.jsfx-inc</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="ReEQ2">
+    <reapack name="ReEQ2.jsfx" type="effect" desc="Parametric Graphic Equalizer">
+      <version name="2.0.0" author="Justin Johnson" time="2026-10-29T20:00:00Z">
+        <changelog><![CDATA[ReEQ2: a new interface, decramped filters to 30 kHz and per-band dynamic EQ
+- Redesigned interface: node panel with machined dials, Shape and Stereo pickers, node action card, Analyzer, Settings and Range popovers, gradient meters with clip alerts
+- Decramped Ivantsov filters replace the SVFs and Eco/HQ oversampling, matching the analogue curve up to Nyquist
+- Per-band dynamic EQ for bells and shelves: threshold, ratio, range, Auto or manual timing, sidechain inputs (channels 3/4, 5/6, 7/8), an unlinked detector with its own node, Listen, and optional lookahead
+- Analyser drawn per pixel with Fill, Line and Heat displays; curve-based auto gain; input trim
+- Embedded TCP/MCP view
+Includes an action that moves projects from ReEQ 1.2 over with all their settings: search the Actions window for "ReEQ upgrade". ReEQ 1.2 stays available as its own package.]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.0/ReEQ2/ReEQ2.jsfx</source>
+        <source file="Dependencies/ivantsov_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.0/ReEQ2/Dependencies/ivantsov_filter.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.0/ReEQ2/Dependencies/spectrum.jsfx-inc</source>
+        <source file="ReEQ upgrade to ReEQ2.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.0/Scripts/ReEQ%20upgrade%20to%20ReEQ2.lua</source>
+      </version>
+      <version name="2.0.1" author="Justin Johnson" time="2026-10-30T01:08:46Z">
+        <changelog><![CDATA[Lower CPU: roughly 40-50% less with a typical handful of bands and 10-15% less with 14-16, with exactly the same sound
+- Bands that aren't moving skip their per-sample glide update
+- The output Mid/Side gain stage is skipped when it does nothing
+- Faster filter sections when many bands run in series]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.1/ReEQ2/ReEQ2.jsfx</source>
+        <source file="Dependencies/ivantsov_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.1/ReEQ2/Dependencies/ivantsov_filter.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.1/ReEQ2/Dependencies/spectrum.jsfx-inc</source>
+        <source file="ReEQ upgrade to ReEQ2.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.1/Scripts/ReEQ%20upgrade%20to%20ReEQ2.lua</source>
+      </version>
+      <version name="2.0.2" author="Justin Johnson" time="2026-10-30T08:14:29Z">
+        <changelog><![CDATA[Set any value exactly with the new value stepper
+- Double-click a dial, dynamics knob or toolbar field to open it: each digit has up and down arrows (hold to repeat, or use the mouse wheel over a digit), with a sign column where the value can be negative
+- Changes apply as you click; values stay within each control's range; the revert icon puts back the value you started with
+- Cmd+double-click (Ctrl on Windows) resets any dial, knob or field to its default, the dynamics knobs included
+- Undo and automation now record the new value when you drag a panel dial]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.2/ReEQ2/ReEQ2.jsfx</source>
+        <source file="Dependencies/ivantsov_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.2/ReEQ2/Dependencies/ivantsov_filter.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.2/ReEQ2/Dependencies/spectrum.jsfx-inc</source>
+        <source file="ReEQ upgrade to ReEQ2.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.0.2/Scripts/ReEQ%20upgrade%20to%20ReEQ2.lua</source>
+      </version>
+      <version name="2.1.0" author="Justin Johnson" time="2026-10-31T16:22:57Z">
+        <changelog><![CDATA[Themes, a theme editor and clearer text
+- Every colour and opacity in ReEQ2 can now be themed, and 16 themes come with it: Default, High Contrast, Synthwave, Paper, Amber, Ocean, Forest, Mono, Midnight Neon, Sunset, Glacier, Matcha, Rosé, Phosphor, Fjord and Espresso
+- The ReEQ2 Theme Editor action (search the Actions window for "ReEQ2 Theme Editor") edits them on a preview of ReEQ2: click anything to pick its colour, then use the colour picker, whole-theme hue, saturation and brightness, band colour harmonies and a gallery of themes; open ReEQ2 windows follow your changes as you make them
+- The editor can also set the size new ReEQ2 windows open at; an update puts it back to 922 x 564, and the editor offers to apply your size again
+- Settings shows the theme in use
+- Text uses one consistent set of sizes, the smallest text is larger, and secondary text and the grid lines are a little brighter
+- A small speed-up in the listen filter (thanks, Tale)]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/ReEQ2.jsfx</source>
+        <source file="Dependencies/ivantsov_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Dependencies/ivantsov_filter.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Dependencies/spectrum.jsfx-inc</source>
+        <source file="ReEQ upgrade to ReEQ2.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/Scripts/ReEQ%20upgrade%20to%20ReEQ2.lua</source>
+        <source file="ReEQ2 Theme Editor.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/Scripts/ReEQ2%20Theme%20Editor.lua</source>
+        <source file="ReEQ2/Themes/Amber.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Amber.txt</source>
+        <source file="ReEQ2/Themes/Default.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Default.txt</source>
+        <source file="ReEQ2/Themes/Espresso.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Espresso.txt</source>
+        <source file="ReEQ2/Themes/Fjord.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Fjord.txt</source>
+        <source file="ReEQ2/Themes/Forest.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Forest.txt</source>
+        <source file="ReEQ2/Themes/Glacier.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Glacier.txt</source>
+        <source file="ReEQ2/Themes/High Contrast.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/High%20Contrast.txt</source>
+        <source file="ReEQ2/Themes/Matcha.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Matcha.txt</source>
+        <source file="ReEQ2/Themes/Midnight Neon.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Midnight%20Neon.txt</source>
+        <source file="ReEQ2/Themes/Mono.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Mono.txt</source>
+        <source file="ReEQ2/Themes/Ocean.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Ocean.txt</source>
+        <source file="ReEQ2/Themes/Paper.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Paper.txt</source>
+        <source file="ReEQ2/Themes/Phosphor.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Phosphor.txt</source>
+        <source file="ReEQ2/Themes/Rose.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Rose.txt</source>
+        <source file="ReEQ2/Themes/Sunset.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Sunset.txt</source>
+        <source file="ReEQ2/Themes/Synthwave.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.1.0/ReEQ2/Themes/Synthwave.txt</source>
+      </version>
+      <version name="2.2.0" author="Justin Johnson" time="2026-11-05T12:17:35Z">
+        <changelog><![CDATA[Closer analogue high end, a UI size setting and larger text
+- The filters match their analogue curves more closely near Nyquist, including bands set above it. Projects keep their band settings and automation, but high-frequency bands can sound a little different
+- UI size, 100% to 200%, under Settings > Display, for displays where the text is small (such as 1080p at 100% scaling): it scales the whole window, as far as the window size allows. Each ReEQ2 saves its own size with the project, or follows the default
+- The ReEQ2 Theme Editor sets the default UI size (125% until you change it), and open ReEQ2 windows follow it
+- Larger frequency and dB labels, dB range button, and filter names in the Shape and Stereo pickers
+- Settings is laid out in two columns
+- Double-click a dial, dynamics knob or toolbar field to reset it to its default; Alt+double-click (Option on macOS) opens the value stepper
+- The Theme Editor's own text is larger]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/ReEQ2.jsfx</source>
+        <source file="Dependencies/analog-fast.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Dependencies/analog-fast.jsfx-inc</source>
+        <source file="Dependencies/ivantsov_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Dependencies/ivantsov_filter.jsfx-inc</source>
+        <source file="Dependencies/reeq-analog-adapter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Dependencies/reeq-analog-adapter.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Dependencies/spectrum.jsfx-inc</source>
+        <source file="Dependencies/wide-curves.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Dependencies/wide-curves.jsfx-inc</source>
+        <source file="Dependencies/wide-math.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Dependencies/wide-math.jsfx-inc</source>
+        <source file="ReEQ upgrade to ReEQ2.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/Scripts/ReEQ%20upgrade%20to%20ReEQ2.lua</source>
+        <source file="ReEQ2 Theme Editor.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/Scripts/ReEQ2%20Theme%20Editor.lua</source>
+        <source file="ReEQ2/Themes/Amber.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Amber.txt</source>
+        <source file="ReEQ2/Themes/Default.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Default.txt</source>
+        <source file="ReEQ2/Themes/Espresso.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Espresso.txt</source>
+        <source file="ReEQ2/Themes/Fjord.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Fjord.txt</source>
+        <source file="ReEQ2/Themes/Forest.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Forest.txt</source>
+        <source file="ReEQ2/Themes/Glacier.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Glacier.txt</source>
+        <source file="ReEQ2/Themes/High Contrast.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/High%20Contrast.txt</source>
+        <source file="ReEQ2/Themes/Matcha.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Matcha.txt</source>
+        <source file="ReEQ2/Themes/Midnight Neon.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Midnight%20Neon.txt</source>
+        <source file="ReEQ2/Themes/Mono.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Mono.txt</source>
+        <source file="ReEQ2/Themes/Ocean.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Ocean.txt</source>
+        <source file="ReEQ2/Themes/Paper.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Paper.txt</source>
+        <source file="ReEQ2/Themes/Phosphor.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Phosphor.txt</source>
+        <source file="ReEQ2/Themes/Rose.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Rose.txt</source>
+        <source file="ReEQ2/Themes/Sunset.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Sunset.txt</source>
+        <source file="ReEQ2/Themes/Synthwave.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Synthwave.txt</source>
+      </version>
     </reapack>
   </category>
   <category name="ReSpectrum">

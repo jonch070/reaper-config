@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="zaibuyidao Scripts" commit="518d0b0f114bfd8d79a37dfeef72d0f9e35b659e">
+<index version="1" name="zaibuyidao Scripts" commit="9b03f030e9da958a5dcb76a370904cea88f8998b">
   <category name="Development">
     <reapack name="Lokasenna_GUI library.lua" type="script" desc="Get Lokasenna_GUI library">
       <metadata>
@@ -7150,6 +7150,30 @@ Added mode selection:
       </version>
     </reapack>
   </category>
+  <category name="Modules/AppManager">
+    <reapack name="AppManager - Package.lua" type="script" desc="ReaWebAPI App Manager">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Lightweight manager for registered ReaWebAPI apps and JSFX WebUIs in REAPER. Browse and search registrations, inspect details, open folders and remove registrations without deleting application files or user data. Requires the separately installed ReaWebAPI extension with the ReaWeb_AppManager Lua interface. Run ReaWebAPI_AppManager.lua from the REAPER Action List.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/zaibuyidao/ReaWebAPI">ReaWebAPI</link>
+      </metadata>
+      <version name="0.1.0" author="zaibuyidao" time="2026-11-07T18:28:44Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source file="app.json">https://github.com/zaibuyidao/ReaScripts/raw/9b03f030e9da958a5dcb76a370904cea88f8998b/Modules/AppManager/app.json</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/9b03f030e9da958a5dcb76a370904cea88f8998b/Modules/AppManager/index.html</source>
+        <source file="locales.json">https://github.com/zaibuyidao/ReaScripts/raw/9b03f030e9da958a5dcb76a370904cea88f8998b/Modules/AppManager/locales.json</source>
+        <source file="lua/association.lua">https://github.com/zaibuyidao/ReaScripts/raw/9b03f030e9da958a5dcb76a370904cea88f8998b/Modules/AppManager/lua/association.lua</source>
+        <source file="lua/folders.lua">https://github.com/zaibuyidao/ReaScripts/raw/9b03f030e9da958a5dcb76a370904cea88f8998b/Modules/AppManager/lua/folders.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/9b03f030e9da958a5dcb76a370904cea88f8998b/Modules/AppManager/lua/json.lua</source>
+        <source main="main" file="ReaWebAPI_AppManager.lua">https://github.com/zaibuyidao/ReaScripts/raw/9b03f030e9da958a5dcb76a370904cea88f8998b/Modules/AppManager/ReaWebAPI_AppManager.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Modules/ReaFolio">
     <reapack name="reafolio - Package.lua" type="script" desc="ReaFolio">
       <metadata>
@@ -7215,6 +7239,356 @@ Added mode selection:
         <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/10a766f9b3e165531cb8e3d138260e4f966ff11c/Modules/ReaFolio/lua/backend.lua</source>
         <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/10a766f9b3e165531cb8e3d138260e4f966ff11c/Modules/ReaFolio/lua/json.lua</source>
         <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/10a766f9b3e165531cb8e3d138260e4f966ff11c/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.1.2" author="zaibuyidao" time="2026-10-29T18:11:08Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source file="app.json">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/app.json</source>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/e3a033ac72a55482bc6408935688dcb4b9871157/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.1.3" author="zaibuyidao" time="2026-11-02T14:28:57Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source file="app.json">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/app.json</source>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/b1948bf1fd4d421a378d47aceada107b812f27ee/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.1.4" author="zaibuyidao" time="2026-11-04T06:58:38Z">
+        <changelog><![CDATA[Added Project Notes that follow the active project, with a configurable folder defaulting to .reafolio/.
+Added a top-left Global / Project switch that remembers the last selection.
+Added unsaved-project guidance and draft protection when switching projects.
+Unified Settings styling and updated translations.]]></changelog>
+        <source file="app.json">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/app.json</source>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/dbaa2daa480e628629172b6e32a7d6a9854ea59a/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.1.5" author="zaibuyidao" time="2026-11-04T07:24:16Z">
+        <changelog><![CDATA[Added Project Notes that follow the active project, with a configurable folder defaulting to .reafolio/.
+Added a top-left Global / Project switch that remembers the last selection.
+Added unsaved-project guidance and draft protection when switching projects.
+Unified Settings styling and updated translations.]]></changelog>
+        <source file="app.json">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/app.json</source>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/ProjectNotes.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/ProjectNotes.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/47d04bf34eecb9ab75755fbf37afa524f725c504/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.1.6" author="zaibuyidao" time="2026-11-06T06:16:55Z">
+        <changelog><![CDATA[Added support for pasting text and images from Word/WPS, thanks to @noiZ's contribution.]]></changelog>
+        <source file="app.json">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/app.json</source>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/ProjectNotes.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/ProjectNotes.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/d0e573a5c50b77ab4972ca93ee2f1f26bcfe4917/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.1.7" author="zaibuyidao" time="2026-11-06T12:13:16Z">
+        <changelog><![CDATA[Added support for pasting text and images from Word/WPS, thanks to @noiZ's contribution.]]></changelog>
+        <source file="app.json">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/app.json</source>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/ProjectNotes.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/ProjectNotes.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/WordPaste.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/WordPaste.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/0b5c8208808bb59736ed9d31776057191030b69d/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.1.9" author="zaibuyidao" time="2026-11-06T12:47:28Z">
+        <changelog><![CDATA[Added support for pasting text and images from Word/WPS, thanks to @noiZ's contribution.
+Preserved Markdown source when switching editor modes and unchanged blocks after visual edits.
+Fixed the Shortcuts page scrolling in small windows.
+Hid the manual disk refresh menu item while retaining automatic refresh.]]></changelog>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/ProjectNotes.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/ProjectNotes.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/WordPaste.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/WordPaste.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/dc42ae2b93c195f7357a8f600783ab185a0ed4d4/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.2.0" author="zaibuyidao" time="2026-11-06T15:07:08Z">
+        <changelog><![CDATA[Added Quick Links for local files, folders, REAPER projects, Actions and project locations.
+Added project-aware navigation and shorter, readable links with Chinese path support.
+Improved Quick Links styling, icons and small-window scrolling.
+Enabled single-click activation in reading and preview modes.]]></changelog>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LinkMenu.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/LinkMenu.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/ProjectNotes.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/ProjectNotes.js</source>
+        <source file="assets/js/ReaperLinks.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/ReaperLinks.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/WordPaste.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/WordPaste.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/integration.lua">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/lua/integration.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/43944fe5329e70e281e627183a89cb478aed8867/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.2.1" author="zaibuyidao" time="2026-11-06T15:29:23Z">
+        <changelog><![CDATA[Fixed ResizeObserver loop errors when resizing the editor window.
+Kept the toolbar responsive and cancelled pending layout updates when closing the editor.]]></changelog>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LinkMenu.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/LinkMenu.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/ProjectNotes.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/ProjectNotes.js</source>
+        <source file="assets/js/ReaperLinks.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/ReaperLinks.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/WordPaste.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/WordPaste.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/integration.lua">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/lua/integration.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/fd8f7e42c366480325327721779d69d41f5cbfab/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
+      </version>
+      <version name="0.2.2" author="zaibuyidao" time="2026-11-06T15:45:38Z">
+        <changelog><![CDATA[Kept the editor toolbar on one row while resizing, with extra buttons in the More menu.
+Removed toolbar wrapping flicker while retaining the ResizeObserver fix.]]></changelog>
+        <source file="assets/css/LoadingIndicator.css">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/css/LoadingIndicator.css</source>
+        <source file="assets/css/Note.css">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/css/Note.css</source>
+        <source file="assets/css/SearchResults.css">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/css/SearchResults.css</source>
+        <source file="assets/css/Tags.css">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/css/Tags.css</source>
+        <source file="assets/css/constants.css">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/css/constants.css</source>
+        <source file="assets/css/style.css">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/css/style.css</source>
+        <source file="assets/fonts/Poppins/Poppins-Italic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Italic.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-Regular.ttf">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/fonts/Poppins/Poppins-Regular.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBold.ttf">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBold.ttf</source>
+        <source file="assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf</source>
+        <source file="assets/icons/apple-touch-icon.png">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/icons/apple-touch-icon.png</source>
+        <source file="assets/icons/favicon-16x16.png">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/icons/favicon-16x16.png</source>
+        <source file="assets/icons/favicon-32x32.png">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/icons/favicon-32x32.png</source>
+        <source file="assets/icons/favicon.ico">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/icons/favicon.ico</source>
+        <source file="assets/icons/safari-pinned-tab.svg">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/icons/safari-pinned-tab.svg</source>
+        <source file="assets/js/Home.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/Home.js</source>
+        <source file="assets/js/LinkMenu.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/LinkMenu.js</source>
+        <source file="assets/js/LoadingIndicator.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/LoadingIndicator.js</source>
+        <source file="assets/js/Note.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/Note.js</source>
+        <source file="assets/js/NoteInteractions.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/NoteInteractions.js</source>
+        <source file="assets/js/ProjectNotes.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/ProjectNotes.js</source>
+        <source file="assets/js/ReaperLinks.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/ReaperLinks.js</source>
+        <source file="assets/js/SearchResults.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/SearchResults.js</source>
+        <source file="assets/js/Shortcuts.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/Shortcuts.js</source>
+        <source file="assets/js/Tags.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/Tags.js</source>
+        <source file="assets/js/WordPaste.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/WordPaste.js</source>
+        <source file="assets/js/constants.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/constants.js</source>
+        <source file="assets/js/index.js">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/assets/js/index.js</source>
+        <source file="index.html">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/index.html</source>
+        <source file="lua/backend.lua">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/lua/backend.lua</source>
+        <source file="lua/integration.lua">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/lua/integration.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/lua/json.lua</source>
+        <source main="main" file="zaibuyidao_ReaFolio.lua">https://github.com/zaibuyidao/ReaScripts/raw/983e622f6fa7218a98b7262a111c1296297f6220/Modules/ReaFolio/zaibuyidao_ReaFolio.lua</source>
       </version>
     </reapack>
   </category>
@@ -7374,6 +7748,39 @@ Fix low-frequency distortion in GB/GBC audio resampling.]]></changelog>
         <source type="script" file="web/game.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/d11f6667cbce2baea981f7b93fc59f46b0820f2c/Modules/ReaGBA/web/game.html</source>
         <source type="script" file="web/game.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/d11f6667cbce2baea981f7b93fc59f46b0820f2c/Modules/ReaGBA/web/game.js</source>
         <source type="script" file="web/gamepad.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/d11f6667cbce2baea981f7b93fc59f46b0820f2c/Modules/ReaGBA/web/gamepad.js</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Modules/ReaKeymap">
+    <reapack name="ReaKeymap - Package.lua" type="script" desc="ReaKeymap">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 REAPER shortcut manager with a Lua backend and Vue 3 WebView UI. Run ReaKeymap.lua with the lua/ and web/ folders beside it. Requires ReaWebAPI; js_ReaScriptAPI for advanced action management. Search actions, edit shortcuts, manage favorites, detect conflicts, add notes, and import/export presets with backup and restore. Settings and backups: Data/ReaKeymap.\par}
+}
+]]></description>
+        <link rel="website" href="https://github.com/zaibuyidao/ReaWebAPI">ReaWebAPI</link>
+      </metadata>
+      <version name="0.1.0" author="zaibuyidao" time="2026-10-31T14:36:06Z">
+        <changelog><![CDATA[Initial release.]]></changelog>
+        <source main="main" file="ReaKeymap.lua">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/ReaKeymap.lua</source>
+        <source file="lua/engine.lua">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/lua/engine.lua</source>
+        <source file="lua/json.lua">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/lua/json.lua</source>
+        <source file="lua/service.lua">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/lua/service.lua</source>
+        <source file="web/app.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/app.js</source>
+        <source file="web/brand.svg">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/brand.svg</source>
+        <source file="web/bridge.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/bridge.js</source>
+        <source file="web/i18n.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/i18n.js</source>
+        <source file="web/index.html">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/index.html</source>
+        <source file="web/list-data.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/list-data.js</source>
+        <source file="web/locales.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/locales.js</source>
+        <source file="web/shortcut-names.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/shortcut-names.js</source>
+        <source file="web/style.css">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/style.css</source>
+        <source file="web/themes.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/themes.js</source>
+        <source file="web/vendor/VUE-LICENSE.md">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/vendor/VUE-LICENSE.md</source>
+        <source file="web/vendor/vue.global.prod.js">https://github.com/zaibuyidao/ReaScripts/raw/311475fb3aa14cc30ad0bdcbeee61e92474a5327/Modules/ReaKeymap/web/vendor/vue.global.prod.js</source>
       </version>
     </reapack>
   </category>
@@ -9690,6 +10097,145 @@ Added EEL2 WebView examples for bidirectional messaging and track volume, pan, c
         <source main="main" type="script" file="web/transparent/reawebapi-transparent.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/518d0b0f114bfd8d79a37dfeef72d0f9e35b659e/ReaWebAPI/web/transparent/reawebapi-transparent.lua</source>
         <source type="script" file="web/transparent/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/518d0b0f114bfd8d79a37dfeef72d0f9e35b659e/ReaWebAPI/web/transparent/style.css</source>
       </version>
+      <version name="0.3.9.16" author="zaibuyidao" time="2026-10-30T19:49:24Z">
+        <changelog><![CDATA[Fix Lua/EEL2 message starvation across multiple WebView windows by improving scheduling fairness.
+Reduce multi-window message and frame latency with independent, bounded updates while preserving message ordering.]]></changelog>
+        <source platform="win64" type="extension" file="reaper_reawebapi-x64.dll">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/extension/reaper_reawebapi-x64.dll</source>
+        <source platform="darwin-arm64" type="extension" file="reaper_reawebapi-arm64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/extension/reaper_reawebapi-arm64.dylib</source>
+        <source platform="darwin64" type="extension" file="reaper_reawebapi-x86_64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/extension/reaper_reawebapi-x86_64.dylib</source>
+        <source platform="linux64" type="extension" file="reaper_reawebapi-x86_64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/extension/reaper_reawebapi-x86_64.so</source>
+        <source platform="linux64" type="extension" file="reawebapi-webview-x86_64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/extension/reawebapi-webview-x86_64</source>
+        <source platform="linux-aarch64" type="extension" file="reaper_reawebapi-aarch64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/extension/reaper_reawebapi-aarch64.so</source>
+        <source platform="linux-aarch64" type="extension" file="reawebapi-webview-aarch64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/extension/reawebapi-webview-aarch64</source>
+        <source main="main" type="script" file="web/ReaWebAPI_Demo.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/ReaWebAPI_Demo.lua</source>
+        <source type="script" file="web/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/app.js</source>
+        <source type="script" file="web/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/app.json</source>
+        <source type="script" file="web/eel-backend/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-backend/README.md</source>
+        <source type="script" file="web/eel-backend/README.zh-CN.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-backend/README.zh-CN.md</source>
+        <source type="script" file="web/eel-backend/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-backend/app.js</source>
+        <source type="script" file="web/eel-backend/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-backend/app.json</source>
+        <source type="script" file="web/eel-backend/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-backend/index.html</source>
+        <source main="main" type="script" file="web/eel-backend/reawebapi-eel-backend.eel">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-backend/reawebapi-eel-backend.eel</source>
+        <source type="script" file="web/eel-backend/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-backend/style.css</source>
+        <source type="script" file="web/eel-mixer/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-mixer/README.md</source>
+        <source type="script" file="web/eel-mixer/README.zh-CN.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-mixer/README.zh-CN.md</source>
+        <source type="script" file="web/eel-mixer/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-mixer/app.js</source>
+        <source type="script" file="web/eel-mixer/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-mixer/app.json</source>
+        <source type="script" file="web/eel-mixer/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-mixer/index.html</source>
+        <source main="main" type="script" file="web/eel-mixer/reawebapi-eel-mixer.eel">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-mixer/reawebapi-eel-mixer.eel</source>
+        <source type="script" file="web/eel-mixer/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/eel-mixer/style.css</source>
+        <source type="script" file="web/external-client/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/external-client/README.md</source>
+        <source type="script" file="web/external-client/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/external-client/app.js</source>
+        <source type="script" file="web/external-client/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/external-client/index.html</source>
+        <source type="script" file="web/external-client/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/external-client/style.css</source>
+        <source type="script" file="web/frameless/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/README.md</source>
+        <source type="script" file="web/frameless/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/app.js</source>
+        <source type="script" file="web/frameless/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/app.json</source>
+        <source type="script" file="web/frameless/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/index.html</source>
+        <source type="script" file="web/frameless/launch.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/launch.lua</source>
+        <source main="main" type="script" file="web/frameless/reawebapi-frameless-fixed.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/reawebapi-frameless-fixed.lua</source>
+        <source main="main" type="script" file="web/frameless/reawebapi-frameless-resizable.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/reawebapi-frameless-resizable.lua</source>
+        <source type="script" file="web/frameless/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/frameless/style.css</source>
+        <source type="script" file="web/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/index.html</source>
+        <source type="script" file="web/logo.svg">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/logo.svg</source>
+        <source type="script" file="web/lua-backend/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/lua-backend/README.md</source>
+        <source type="script" file="web/lua-backend/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/lua-backend/app.js</source>
+        <source type="script" file="web/lua-backend/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/lua-backend/app.json</source>
+        <source type="script" file="web/lua-backend/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/lua-backend/index.html</source>
+        <source main="main" type="script" file="web/lua-backend/reawebapi-lua-backend.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/lua-backend/reawebapi-lua-backend.lua</source>
+        <source type="script" file="web/lua-backend/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/lua-backend/style.css</source>
+        <source main="main" type="script" file="web/native-service/Coexist.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-service/Coexist.lua</source>
+        <source type="script" file="web/native-service/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-service/README.md</source>
+        <source type="script" file="web/native-service/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-service/app.js</source>
+        <source type="script" file="web/native-service/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-service/app.json</source>
+        <source type="script" file="web/native-service/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-service/index.html</source>
+        <source main="main" type="script" file="web/native-service/reawebapi-native-service.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-service/reawebapi-native-service.lua</source>
+        <source type="script" file="web/native-service/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-service/style.css</source>
+        <source type="script" file="web/native-stream/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-stream/README.md</source>
+        <source type="script" file="web/native-stream/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-stream/app.js</source>
+        <source type="script" file="web/native-stream/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-stream/app.json</source>
+        <source type="script" file="web/native-stream/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-stream/index.html</source>
+        <source main="main" type="script" file="web/native-stream/reawebapi-native-stream.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-stream/reawebapi-native-stream.lua</source>
+        <source type="script" file="web/native-stream/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/native-stream/style.css</source>
+        <source type="script" file="web/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/style.css</source>
+        <source type="script" file="web/transparent/README.md">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/transparent/README.md</source>
+        <source type="script" file="web/transparent/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/transparent/app.js</source>
+        <source type="script" file="web/transparent/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/transparent/app.json</source>
+        <source type="script" file="web/transparent/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/transparent/index.html</source>
+        <source main="main" type="script" file="web/transparent/reawebapi-transparent.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/transparent/reawebapi-transparent.lua</source>
+        <source type="script" file="web/transparent/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/66174298809715e4f183a35904fbc60a960bb5c0/ReaWebAPI/web/transparent/style.css</source>
+      </version>
+      <version name="0.3.9.19" author="zaibuyidao" time="2026-11-01T17:48:10Z">
+        <changelog><![CDATA[Add shared App and JSFX WebUI health probes, host tick delay and slow completion diagnostics, enabled by matching App or Runtime debug settings.
+Record bridge queue context, browser error and stream counters, failed API/service names and WebView process failures without persisting payloads.]]></changelog>
+        <source platform="win64" type="extension" file="reaper_reawebapi-x64.dll">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/extension/reaper_reawebapi-x64.dll</source>
+        <source platform="darwin-arm64" type="extension" file="reaper_reawebapi-arm64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/extension/reaper_reawebapi-arm64.dylib</source>
+        <source platform="darwin64" type="extension" file="reaper_reawebapi-x86_64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/extension/reaper_reawebapi-x86_64.dylib</source>
+        <source platform="linux64" type="extension" file="reaper_reawebapi-x86_64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/extension/reaper_reawebapi-x86_64.so</source>
+        <source platform="linux64" type="extension" file="reawebapi-webview-x86_64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/extension/reawebapi-webview-x86_64</source>
+        <source platform="linux-aarch64" type="extension" file="reaper_reawebapi-aarch64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/extension/reaper_reawebapi-aarch64.so</source>
+        <source platform="linux-aarch64" type="extension" file="reawebapi-webview-aarch64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/extension/reawebapi-webview-aarch64</source>
+        <source main="main" type="script" file="web/ReaWebAPI_Demo.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/web/ReaWebAPI_Demo.lua</source>
+        <source type="script" file="web/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/web/app.js</source>
+        <source type="script" file="web/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/web/app.json</source>
+        <source type="script" file="web/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/web/index.html</source>
+        <source type="script" file="web/logo.svg">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/web/logo.svg</source>
+        <source type="script" file="web/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/a4de79d5de4d08c94b1cd6f78815005c84b009a7/ReaWebAPI/web/style.css</source>
+      </version>
+      <version name="0.3.9.21" author="zaibuyidao" time="2026-11-02T13:00:41Z">
+        <changelog><![CDATA[Recover stale App bindings when the previous root or recorded HTML entry is missing, preserving App identity and user data.
+Extend schema 2 with an optional entry path, retain legacy records and normalize root comparisons across platforms.
+Protect active bindings and concurrent opens, preserve metadata during atomic updates, and report actionable conflict and path-check errors.
+Persist random IDs for ordinary WebUIs without app.json.id in a private .reawebapi/identity.json marker, independent of launcher names.
+Preserve automatic identity across moves and restarts, and assign separate identities to copied Apps when the original binding remains valid, with serialized initialization and updates.
+Replace launcher-derived fallback identities without migrating their storage. Existing data is retained, and explicit IDs, JSFX identity derivation and window instance rules remain unchanged.]]></changelog>
+        <source platform="win64" type="extension" file="reaper_reawebapi-x64.dll">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/extension/reaper_reawebapi-x64.dll</source>
+        <source platform="darwin-arm64" type="extension" file="reaper_reawebapi-arm64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/extension/reaper_reawebapi-arm64.dylib</source>
+        <source platform="darwin64" type="extension" file="reaper_reawebapi-x86_64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/extension/reaper_reawebapi-x86_64.dylib</source>
+        <source platform="linux64" type="extension" file="reaper_reawebapi-x86_64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/extension/reaper_reawebapi-x86_64.so</source>
+        <source platform="linux64" type="extension" file="reawebapi-webview-x86_64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/extension/reawebapi-webview-x86_64</source>
+        <source platform="linux-aarch64" type="extension" file="reaper_reawebapi-aarch64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/extension/reaper_reawebapi-aarch64.so</source>
+        <source platform="linux-aarch64" type="extension" file="reawebapi-webview-aarch64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/extension/reawebapi-webview-aarch64</source>
+        <source main="main" type="script" file="web/ReaWebAPI_Demo.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/web/ReaWebAPI_Demo.lua</source>
+        <source type="script" file="web/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/web/app.js</source>
+        <source type="script" file="web/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/web/app.json</source>
+        <source type="script" file="web/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/web/index.html</source>
+        <source type="script" file="web/logo.svg">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/web/logo.svg</source>
+        <source type="script" file="web/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/7a7af206135691287c97541c2d3fcf8ff37a1410/ReaWebAPI/web/style.css</source>
+      </version>
+      <version name="0.3.9.26" author="zaibuyidao" time="2026-11-05T17:07:25Z">
+        <changelog><![CDATA[Hide and lock the pointer during SVG parameter dragging, restoring its starting position on release. Authorize Pointer Lock for standalone overlays on macOS and Linux.]]></changelog>
+        <source platform="win64" type="extension" file="reaper_reawebapi-x64.dll">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/extension/reaper_reawebapi-x64.dll</source>
+        <source platform="darwin-arm64" type="extension" file="reaper_reawebapi-arm64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/extension/reaper_reawebapi-arm64.dylib</source>
+        <source platform="darwin64" type="extension" file="reaper_reawebapi-x86_64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/extension/reaper_reawebapi-x86_64.dylib</source>
+        <source platform="linux64" type="extension" file="reaper_reawebapi-x86_64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/extension/reaper_reawebapi-x86_64.so</source>
+        <source platform="linux64" type="extension" file="reawebapi-webview-x86_64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/extension/reawebapi-webview-x86_64</source>
+        <source platform="linux-aarch64" type="extension" file="reaper_reawebapi-aarch64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/extension/reaper_reawebapi-aarch64.so</source>
+        <source platform="linux-aarch64" type="extension" file="reawebapi-webview-aarch64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/extension/reawebapi-webview-aarch64</source>
+        <source main="main" type="script" file="web/ReaWebAPI_Demo.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/web/ReaWebAPI_Demo.lua</source>
+        <source type="script" file="web/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/web/app.js</source>
+        <source type="script" file="web/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/web/app.json</source>
+        <source type="script" file="web/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/web/index.html</source>
+        <source type="script" file="web/logo.svg">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/web/logo.svg</source>
+        <source type="script" file="web/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/fd35bee4dc37775cea631d1d1d2872def1191d61/ReaWebAPI/web/style.css</source>
+      </version>
+      <version name="0.3.9.28" author="zaibuyidao" time="2026-11-07T13:51:22Z">
+        <changelog><![CDATA[Add reaper.video project preview with fixed update rates or automatic project frame-rate tracking (default).
+Add project video output and a Canvas preview demo.]]></changelog>
+        <source platform="win64" type="extension" file="reaper_reawebapi-x64.dll">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/extension/reaper_reawebapi-x64.dll</source>
+        <source platform="darwin-arm64" type="extension" file="reaper_reawebapi-arm64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/extension/reaper_reawebapi-arm64.dylib</source>
+        <source platform="darwin64" type="extension" file="reaper_reawebapi-x86_64.dylib">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/extension/reaper_reawebapi-x86_64.dylib</source>
+        <source platform="linux64" type="extension" file="reaper_reawebapi-x86_64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/extension/reaper_reawebapi-x86_64.so</source>
+        <source platform="linux64" type="extension" file="reawebapi-webview-x86_64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/extension/reawebapi-webview-x86_64</source>
+        <source platform="linux-aarch64" type="extension" file="reaper_reawebapi-aarch64.so">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/extension/reaper_reawebapi-aarch64.so</source>
+        <source platform="linux-aarch64" type="extension" file="reawebapi-webview-aarch64">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/extension/reawebapi-webview-aarch64</source>
+        <source main="main" type="script" file="web/ReaWebAPI_Demo.lua">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/web/ReaWebAPI_Demo.lua</source>
+        <source type="script" file="web/app.js">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/web/app.js</source>
+        <source type="script" file="web/app.json">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/web/app.json</source>
+        <source type="script" file="web/index.html">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/web/index.html</source>
+        <source type="script" file="web/logo.svg">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/web/logo.svg</source>
+        <source type="script" file="web/style.css">https://raw.githubusercontent.com/zaibuyidao/ReaScripts/03b9538a610ef12836bacbc6325870e12cf3cb09/ReaWebAPI/web/style.css</source>
+      </version>
     </reapack>
   </category>
   <category name="Regions">
@@ -10618,6 +11164,14 @@ Added EEL2 WebView examples for bidirectional messaging and track volume, pan, c
         <changelog><![CDATA[Brand new REAPER: 7.78, SWS: 2.14.0.7]]></changelog>
         <source>https://github.com/zaibuyidao/ReaScripts/raw/09aa0ee6ebd517e777db3956021dfab41a6dd9a6/Translations/Chinese%20(Simplified).ReaperLangPack</source>
       </version>
+      <version name="7.83" author="zaibuyidao (再補一刀)" time="2026-10-29T05:43:40Z">
+        <changelog><![CDATA[Brand new REAPER: 7.83, SWS: 2.14.0.7]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/212c8adad148327839caecfc64280ce575a1f3ce/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
+      <version name="7.84" author="zaibuyidao (再補一刀)" time="2026-11-03T03:51:41Z">
+        <changelog><![CDATA[Brand new REAPER: 7.84, SWS: 2.14.0.7]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/4bd7bd782729bf95f6489e16a272b5f62d5e4581/Translations/Chinese%20(Simplified).ReaperLangPack</source>
+      </version>
     </reapack>
     <reapack name="Chinese (Traditional).ReaperLangPack" type="langpack" desc="Chinese Traditional (繁體中文)">
       <metadata>
@@ -10734,6 +11288,14 @@ Added EEL2 WebView examples for bidirectional messaging and track volume, pan, c
       <version name="7.78" author="zaibuyidao (再補一刀)" time="2026-08-11T14:17:54Z">
         <changelog><![CDATA[Brand new REAPER: 7.78, SWS: 2.14.0.7]]></changelog>
         <source>https://github.com/zaibuyidao/ReaScripts/raw/09aa0ee6ebd517e777db3956021dfab41a6dd9a6/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.83" author="zaibuyidao (再補一刀)" time="2026-10-29T05:43:40Z">
+        <changelog><![CDATA[Brand new REAPER: 7.83, SWS: 2.14.0.7]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/212c8adad148327839caecfc64280ce575a1f3ce/Translations/Chinese%20(Traditional).ReaperLangPack</source>
+      </version>
+      <version name="7.84" author="zaibuyidao (再補一刀)" time="2026-11-03T03:51:41Z">
+        <changelog><![CDATA[Brand new REAPER: 7.84, SWS: 2.14.0.7]]></changelog>
+        <source>https://github.com/zaibuyidao/ReaScripts/raw/4bd7bd782729bf95f6489e16a272b5f62d5e4581/Translations/Chinese%20(Traditional).ReaperLangPack</source>
       </version>
     </reapack>
   </category>

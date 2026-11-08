@@ -532,6 +532,9 @@ local function createSingleCue(vidProj, region, settings, spotNotes, smptesyncLi
     -- fps resolved from the template (see initProcessing). Region-driven cues
     -- keep the video-project offset and live project fps.
     local vidProjOffset = settings.csvSource and 0 or NW.TimeUtils.getProjectOffset(vidProj)
+    -- Where items land on the session timeline: always the real project offset,
+    -- even in CSV mode (CSV timecodes are absolute, the session timeline is not).
+    local placeOffset = NW.TimeUtils.getProjectOffset(vidProj)
     local fps = (settings.csvSource and settings.csvFps) or getProjectFps(vidProj)
 
     -- Step 1: Snap MX IN/OUT to exact frame boundaries in absolute timecode.
@@ -554,7 +557,7 @@ local function createSingleCue(vidProj, region, settings, spotNotes, smptesyncLi
     local subprojectStartTimecodeSeconds = snapToFrameCeil(rawProjoffs, fps)
 
     -- Where the subproject item starts in video project time (offset removed)
-    local subprojectStartProjectSeconds = subprojectStartTimecodeSeconds - vidProjOffset
+    local subprojectStartProjectSeconds = subprojectStartTimecodeSeconds - placeOffset
 
     -- Step 3: Snap item positions to frames in timecode space.
     -- Each item's timecode (projoffs + position) is snapped to the nearest
@@ -574,7 +577,7 @@ local function createSingleCue(vidProj, region, settings, spotNotes, smptesyncLi
 
     -- Where the subproject item ends in video project time
     local subprojectEndTimecodeSeconds = subprojectStartTimecodeSeconds + endMarkerProjectTime
-    local subprojectEndProjectSeconds = subprojectEndTimecodeSeconds - vidProjOffset
+    local subprojectEndProjectSeconds = subprojectEndTimecodeSeconds - placeOffset
 
     NW.log("CueCreator", string.format("  %s: fps=%.5f  mxIn TC=%.10f  mxOut TC=%.10f",
         cueId, fps, mxInTimecodeSeconds, mxOutTimecodeSeconds))
@@ -751,7 +754,6 @@ function CueCreator.initProcessing(vidProj, videoProjectPath, regions, settings,
     -- SpotNotes are still loaded normally below - they are the cue source.
     local smptesyncLine, timemodeFields
     if settings.csvSource then
-        settings.insertItems = false
         settings.csvFps = CueCreator.getTemplateFps(settings.templatePath) or getProjectFps(vidProj)
         NW.log("CueCreator", string.format("CSV mode: template fps resolved to %.6f",
             settings.csvFps or 0))
