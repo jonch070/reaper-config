@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "",
+		SEARCH = "markers notes",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,8 +83,48 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "Item: Glue items, ignoring time selection (40362) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Export project MIDI... (40849) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:ReaControlMIDI (Cockos)",
+				type = "vst"
+			},
+			{
+				id = "JS:MIDI Tool v2",
+				type = "jsfx"
+			},
+			{
+				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
 				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
 				type = "action"
+			},
+			{
+				id = "VST3:NeuralNote (Dr. Audio)",
+				type = "vst3"
+			},
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "AU:Spectral Freezing (Michael Norris)",
+				type = "au"
 			},
 			{
 				id = "Script: rewgs - export midi - tracks to orchestrate.lua (RS6ca88a1353d273569b9e08e6e0aba8f200a41017) (Main)",
@@ -143,19 +183,11 @@ return {
 				type = "action"
 			},
 			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
-				type = "action"
-			},
-			{
 				id = "Take: Explode takes on selected tracks to fixed lanes (42635) (Main)",
 				type = "action"
 			},
 			{
 				id = "Script: importaaf.py (RSa5f9d8ab6f10cfded30a600c906ed7fbb3af43de) (Main)",
-				type = "action"
-			},
-			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
 				type = "action"
 			},
 			{
@@ -263,10 +295,6 @@ return {
 				type = "jsfx"
 			},
 			{
-				id = "File: Export project MIDI... (40849) (Main)",
-				type = "action"
-			},
-			{
 				id = "View: Show routing matrix window (40251) (Main)",
 				type = "action"
 			},
@@ -327,19 +355,11 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
-				type = "action"
-			},
-			{
 				id = "Item: Apply track/take FX to items (MIDI output) (40436) (Main)",
 				type = "action"
 			},
 			{
 				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
 				type = "action"
 			},
 			{
@@ -460,26 +480,6 @@ return {
 			},
 			{
 				id = "Edit: Make notes legato, preserving note start times (40765) (MIDI Editor)",
-				type = "action"
-			},
-			{
-				id = "Item properties: Unlock (40689) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Glue items within time selection (42432) (Main)",
-				type = "action"
-			},
-			{
-				id = "File: Batch file converter (41076) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: mpl_ImportSessionData.lua (RSe960e68555dfce225c9c5535ed2346fa34dd0209) (Main)",
-				type = "action"
-			},
-			{
-				id = "PT/RPP: Import PTX Session Data (IMPORT_PTX_SESSION) (Main)",
 				type = "action"
 			}
 		},
