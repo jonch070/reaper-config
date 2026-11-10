@@ -876,7 +876,7 @@ function draw_value_tweaker(xpos,ypos,midimem,draw, lbl)
 (          
   w = 24;
   xpos < 0 ? xpos = (-xpos)-w;
-  cap_mode == midimem ? (
+  cap_mode == midimem && (!cap_cnt || (mouse_cap&2)) ? (
     t = (mouse_y-cap_last_y)/4;
     lbl == "RDC" ? (
       mouse_cap |= 65536;

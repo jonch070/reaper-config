@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "markers notes",
+		SEARCH = "",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -62,7 +62,7 @@ return {
 		keys = {
 			
 		},
-		last_cursor_context = 0,
+		last_cursor_context = 1,
 		load_last_search_on_startup = false,
 		new_instance_close = true,
 		open_projects_in_new_tab = false,
@@ -83,35 +83,59 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "Item: Glue items, ignoring time selection (40362) (Main)",
+				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
 				type = "action"
 			},
 			{
-				id = "File: Export project MIDI... (40849) (Main)",
+				id = "JS:Gaussian Humanization",
+				type = "jsfx"
+			},
+			{
+				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
 				type = "action"
 			},
 			{
-				id = "VST:ReaControlMIDI (Cockos)",
+				id = "VST:ReaTune (Cockos)",
 				type = "vst"
+			},
+			{
+				id = "JS:MIDI Map To Key",
+				type = "jsfx"
+			},
+			{
+				id = "JS:TK Scale Filter & Remap",
+				type = "jsfx"
 			},
 			{
 				id = "JS:MIDI Tool v2",
 				type = "jsfx"
 			},
 			{
-				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
+				id = "VST3i:Serum 2 (Xfer Records)",
+				type = "vst3i"
+			},
+			{
+				id = "VST3:Dodo MIDI (Dodo Bird)",
+				type = "vst3"
+			},
+			{
+				id = "Item: Open item copies in primary external editor (40132) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				id = "VST3:Density (Sound Particles)",
+				type = "vst3"
+			},
+			{
+				id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
-				type = "action"
+				id = "VST3:kHs Formant Filter (Kilohearts)",
+				type = "vst3"
 			},
 			{
-				id = "VST3:NeuralNote (Dr. Audio)",
+				id = "VST3:Air (Sound Particles)",
 				type = "vst3"
 			},
 			{
@@ -119,8 +143,56 @@ return {
 				type = "action"
 			},
 			{
+				id = "SWS/S&M: Resources - Add media file to selected items as takes, last slot (S&M_ADDMEDIA_SELITEMl) (Main)",
+				type = "action"
+			},
+			{
+				id = "Media: Insert in selected media items as new take (41003) (Media Explorer)",
+				type = "action"
+			},
+			{
+				id = "VST3:kHs Gain (Kilohearts)",
+				type = "vst3"
+			},
+			{
 				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
 				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Open render queue (40929) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: REAPER Update Utility.lua (RS852f0872789b997921f7f9d40e6f997553bd5147) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Export project MIDI... (40849) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Glue items, ignoring time selection (40362) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:ReaControlMIDI (Cockos)",
+				type = "vst"
+			},
+			{
+				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST3:NeuralNote (Dr. Audio)",
+				type = "vst3"
 			},
 			{
 				id = "AU:Spectral Freezing (Michael Norris)",
@@ -191,10 +263,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
-				type = "action"
-			},
-			{
 				id = "SWS/AW: Insert click track (SWS_AWINSERTCLICKTRK) (Main)",
 				type = "action"
 			},
@@ -241,10 +309,6 @@ return {
 			{
 				id = "AU:Serum 2 (Xfer Records)",
 				type = "aui"
-			},
-			{
-				id = "VST3i:Serum 2 (Xfer Records)",
-				type = "vst3i"
 			},
 			{
 				id = "Insert click source (40013) (Main)",
@@ -339,10 +403,6 @@ return {
 				type = "vst"
 			},
 			{
-				id = "Script: REAPER Update Utility.lua (RS852f0872789b997921f7f9d40e6f997553bd5147) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: timtam_IntelliFreeze Freeze all selected tracks to stereo recursively.lua (RS19d824b9e2e3639c6d82ba3eb0ebeba8e232f24a) (Main)",
 				type = "action"
 			},
@@ -379,10 +439,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: DM_RENAMER_Main.lua (RSe347ac6272e029fae1128e0028cc47a4f81eb67a) (Main)",
 				type = "action"
 			},
@@ -403,16 +459,8 @@ return {
 				type = "jsfx"
 			},
 			{
-				id = "File: Open render queue (40929) (Main)",
-				type = "action"
-			},
-			{
 				id = "Close all projects but current (41922) (Main)",
 				type = "action"
-			},
-			{
-				id = "VST3:Air (Sound Particles)",
-				type = "vst3"
 			},
 			{
 				id = "Custom: MIDI Merge Items Across Tracks (1da1b25fcd05447fb15c1c3ffe88b01a) (Main)",
@@ -433,54 +481,6 @@ return {
 			{
 				id = "VSTi:hypercyclic (mucoder)",
 				type = "vsti"
-			},
-			{
-				id = "AU:hypercyclic (mucoder)",
-				type = "aui"
-			},
-			{
-				id = "Script: Saxmand_FX Modulator Linking.lua (RS0459c20bd2f786f027d3f24fad53a5963fac78d4) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS: Normalize items to overall peak RMS (SWS_NORMPEAKRMSALL) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item properties: Normalize items (to loudest item) to +0dB peak (40254) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item properties: Normalize items (peak/RMS/LUFS)... (42460) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS: Normalize item(s) to peak RMS (SWS_NORMPEAKRMS) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Auto trim/split items (remove silence)... (40315) (Main)",
-				type = "action"
-			},
-			{
-				id = "ReaScript: Run ReaScript (EEL2, Lua, or python)... (41060) (Main)",
-				type = "action"
-			},
-			{
-				id = "Envelope: Hide all envelopes for all tracks (41150) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/BR: Select all MIDI items (BR_SEL_ALL_ITEMS_MIDI) (Main)",
-				type = "action"
-			},
-			{
-				id = "Edit: Make notes legato, preserving note start times (40765) (MIDI Editor)",
-				type = "action"
 			}
 		},
 		recent_results_amount = 30,
