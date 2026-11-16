@@ -15355,3 +15355,44 @@
 [12.11.2026 22:04:25.647] INFO  Starting HTTP+WS server (deferred)...
 [12.11.2026 22:04:25.649] INFO  HTTP+WS server started on port 9224
 [12.11.2026 22:04:25.649] INFO  FastTimer: started at 10ms interval (native)
+[16.11.2026 03:57:15.080] INFO  shutdown() called
+[16.11.2026 03:57:15.082] INFO  FastTimer: stopped
+[16.11.2026 03:57:15.082] INFO  timers stopped
+[16.11.2026 03:57:15.082] INFO  cleaning up CSurf
+[16.11.2026 03:57:15.082] INFO  CSurf cleaned up
+[16.11.2026 03:57:15.082] INFO  cleaning up audio stream
+[16.11.2026 03:57:15.082] INFO  audio stream cleaned up
+[16.11.2026 03:57:15.082] INFO  menu: unregistered
+[16.11.2026 03:57:15.082] INFO  stopping server
+[16.11.2026 03:57:15.084] INFO  server stopped
+[16.11.2026 03:57:15.084] INFO  cleaning up gesture state
+[16.11.2026 03:57:15.084] INFO  gesture state cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up toggle subscriptions
+[16.11.2026 03:57:15.084] INFO  toggle subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up notes subscriptions
+[16.11.2026 03:57:15.084] INFO  notes subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up track subscriptions
+[16.11.2026 03:57:15.084] INFO  track subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up peaks subscriptions
+[16.11.2026 03:57:15.084] INFO  peaks subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up routing subscriptions
+[16.11.2026 03:57:15.084] INFO  routing subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up track FX subscriptions
+[16.11.2026 03:57:15.084] INFO  track FX subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up track FX param subscriptions
+[16.11.2026 03:57:15.084] INFO  track FX param subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up tuner subscriptions
+[16.11.2026 03:57:15.084] INFO  tuner subscriptions cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up tile cache
+[16.11.2026 03:57:15.084] INFO  tile cache cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up GUID cache
+[16.11.2026 03:57:15.084] INFO  GUID cache cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up item GUID cache
+[16.11.2026 03:57:15.084] INFO  item GUID cache cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up shared state
+[16.11.2026 03:57:15.084] INFO  shared state cleaned up
+[16.11.2026 03:57:15.084] INFO  cleaning up tiered arenas
+[16.11.2026 03:57:15.086] INFO  tiered arenas cleaned up
+[16.11.2026 03:57:15.086] INFO  shutdown() complete
+=== Extension Unloaded ===
+
