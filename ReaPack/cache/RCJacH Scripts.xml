@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="b94c659eb9f518ee2e9d457b4e90b5933dd037fe" name="RCJacH Scripts">
+<index version="1" commit="fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c" name="RCJacH Scripts">
   <category name="Item Editing">
     <reapack name="RCJacH_Delete content under mouse (contextual).lua" type="script" desc="Delete Content Under Mouse (Contextual)">
       <metadata>
@@ -288,6 +288,53 @@ Potential Addition:
  * Fixed sustain.
  * Renamed to RCNoiseBuzz since the update broke backward compatibility.]]></changelog>
         <source>https://github.com/RCJacH/ReaScripts/raw/816dd1874831b2dc6b0ded3a6e6edf670973d0ed/JSFX/Audio/RCNoiseBuzz.jsfx</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="JSFX/Audio/RCBassAmp">
+    <reapack name="RCBassAmp.jsfx" type="effect" desc="RCBassAmp">
+      <metadata>
+        <link rel="website">https://github.com/RCJacH/ReaScripts</link>
+      </metadata>
+      <version name="0.1.0" author="RCJacH" time="2026-11-08T14:40:19Z">
+        <changelog><![CDATA[initial release]]></changelog>
+        <source>https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/RCBassAmp.jsfx</source>
+        <source file="modules/acoustic_common.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/acoustic_common.jsfx-inc</source>
+        <source file="modules/cabinet.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/cabinet.jsfx-inc</source>
+        <source file="modules/clean_low.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/clean_low.jsfx-inc</source>
+        <source file="modules/compressor.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/compressor.jsfx-inc</source>
+        <source file="modules/compressor_buttercomp2.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/compressor_buttercomp2.jsfx-inc</source>
+        <source file="modules/compressor_common.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/compressor_common.jsfx-inc</source>
+        <source file="modules/compressor_makeup.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/compressor_makeup.jsfx-inc</source>
+        <source file="modules/compressor_opto.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/compressor_opto.jsfx-inc</source>
+        <source file="modules/compressor_purestsquish.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/compressor_purestsquish.jsfx-inc</source>
+        <source file="modules/gate.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/gate.jsfx-inc</source>
+        <source file="modules/gate_gatelope.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/gate_gatelope.jsfx-inc</source>
+        <source file="modules/gate_softgate.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/gate_softgate.jsfx-inc</source>
+        <source file="modules/gate_standard.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/gate_standard.jsfx-inc</source>
+        <source file="modules/global.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/global.jsfx-inc</source>
+        <source file="modules/input_filters.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/input_filters.jsfx-inc</source>
+        <source file="modules/input_hpf.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/input_hpf.jsfx-inc</source>
+        <source file="modules/input_lpf.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/input_lpf.jsfx-inc</source>
+        <source file="modules/microphone.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/microphone.jsfx-inc</source>
+        <source file="modules/microphones.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/microphones.jsfx-inc</source>
+        <source file="modules/post_eq.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/post_eq.jsfx-inc</source>
+        <source file="modules/post_eq_pear.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/post_eq_pear.jsfx-inc</source>
+        <source file="modules/post_eq_standard.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/post_eq_standard.jsfx-inc</source>
+        <source file="modules/power_amp.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/power_amp.jsfx-inc</source>
+        <source file="modules/pre_eq.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/pre_eq.jsfx-inc</source>
+        <source file="modules/pre_eq_baxandall.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/pre_eq_baxandall.jsfx-inc</source>
+        <source file="modules/pre_eq_common.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/pre_eq_common.jsfx-inc</source>
+        <source file="modules/pre_eq_parametric.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/pre_eq_parametric.jsfx-inc</source>
+        <source file="modules/pre_eq_smooth.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/pre_eq_smooth.jsfx-inc</source>
+        <source file="modules/preamp.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/preamp.jsfx-inc</source>
+        <source file="modules/preamp_bassdrive.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/preamp_bassdrive.jsfx-inc</source>
+        <source file="modules/preamp_drive.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/preamp_drive.jsfx-inc</source>
+        <source file="modules/preamp_tunable.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/preamp_tunable.jsfx-inc</source>
+        <source file="modules/speaker.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/speaker.jsfx-inc</source>
+        <source file="modules/split_common.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/split_common.jsfx-inc</source>
+        <source file="modules/stereo_width.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/stereo_width.jsfx-inc</source>
+        <source file="modules/visibility.jsfx-inc">https://github.com/RCJacH/ReaScripts/raw/fbf9f0c86556f1ed42ca79d90d1aa33a9d7f1a8c/JSFX/Audio/RCBassAmp/modules/visibility.jsfx-inc</source>
       </version>
     </reapack>
   </category>

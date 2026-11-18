@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "",
+		SEARCH = "air vst",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,6 +83,118 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "VST3:Air (Sound Particles)",
+				type = "vst3"
+			},
+			{
+				id = "Script: select_non_leaf_tracks_from_selected.lua (RS0bc4347f3e121f59c6a503e1aecfa4b2144bb123) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Take: Crop to active take in items (40131) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item length to take length.lua (RS3eb8e3ef0fde33b52944ff503bef3ae70d6ccdfc) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Remove all empty takes (41348) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Take: Implode items across tracks into takes (40438) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:ReaTune (Cockos)",
+				type = "vst"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Hide unused tracks and empty parents (keep muted with items or routing).lua (RS4283285956669382cb1b028a1601c1af3be660e1) (Main)",
+				type = "action"
+			},
+			{
+				id = "Transient detection sensitivity/threshold: Adjust... (41208) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item edit: Nudge/Set... (41226) (Main)",
+				type = "action"
+			},
+			{
+				id = "Track: Unarm all tracks for recording (40491) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: DM_RENAMER_Main.lua (RSe347ac6272e029fae1128e0028cc47a4f81eb67a) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: acendan_Multi Mic Manager - Create Mic Lanes.lua (RS83721d660ccead0fa6a160a200f1b35856e013df) (Main)",
+				type = "action"
+			},
+			{
+				id = "Take: Explode takes on selected tracks to fixed lanes (42635) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Takes - Activate lanes from selected items (S&M_LANETAKE2) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Open item copies in primary external editor (40132) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:ReaComp (Cockos)",
+				type = "vst"
+			},
+			{
+				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_Render Loop.lua (RS2a5397157ef2050405b658425b6f13db22fee594) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDaScripts Manager.lua (RS976cf69213f7dfdb703d673a16ea57ff856f6433) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_LOOPMAKER.lua (RS5f32b287d220f783c566770ad66a5e7930882f20) (Main)",
+				type = "action"
+			},
+			{
+				id = "AU:Spectral Blurring (Michael Norris)",
+				type = "au"
+			},
+			{
+				id = "Track: Render selected area of tracks to stereo post-fader stem tracks (and mute originals) (41716) (Main)",
+				type = "action"
+			},
+			{
 				id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
 				type = "action"
 			},
@@ -119,20 +231,8 @@ return {
 				type = "vst3"
 			},
 			{
-				id = "VST:ReaTune (Cockos)",
-				type = "vst"
-			},
-			{
-				id = "Item: Open item copies in primary external editor (40132) (Main)",
-				type = "action"
-			},
-			{
 				id = "VST3:Fresh Air (Slate Digital)",
 				type = "vst3"
-			},
-			{
-				id = "Script: JK - Hide unused tracks and empty parents (keep muted with items or routing).lua (RS4283285956669382cb1b028a1601c1af3be660e1) (Main)",
-				type = "action"
 			},
 			{
 				id = "Script: HeDa_TI_Archiving_Unarchive.lua (RSddf65cf8e60394a7368e3a62d9194456baa48e46) (Main)",
@@ -191,10 +291,6 @@ return {
 				type = "jsfx"
 			},
 			{
-				id = "VST3:Air (Sound Particles)",
-				type = "vst3"
-			},
-			{
 				id = "JS:Gaussian Humanization",
 				type = "jsfx"
 			},
@@ -223,16 +319,8 @@ return {
 				type = "action"
 			},
 			{
-				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
-				type = "action"
-			},
-			{
 				id = "JS:Seawater Absorption",
 				type = "jsfx"
-			},
-			{
-				id = "AU:Spectral Blurring (Michael Norris)",
-				type = "au"
 			},
 			{
 				id = "Script: Set bar at cursor to Bar 1.lua (RSe17917c5fe6e5034f883ec6b05bd264509772257) (Main)",
@@ -240,10 +328,6 @@ return {
 			},
 			{
 				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: rewgs - toggle mark track to improve.lua (RSc76ab09a87b144518a88582ff7ac2df141355064) (Main)",
 				type = "action"
 			},
 			{
@@ -256,10 +340,6 @@ return {
 			},
 			{
 				id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
 				type = "action"
 			},
 			{
@@ -295,10 +375,6 @@ return {
 				type = "vst3"
 			},
 			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
-				type = "action"
-			},
-			{
 				id = "SWS/S&M: Resources - Add media file to selected items as takes, last slot (S&M_ADDMEDIA_SELITEMl) (Main)",
 				type = "action"
 			},
@@ -312,10 +388,6 @@ return {
 			},
 			{
 				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
 				type = "action"
 			},
 			{
@@ -339,19 +411,11 @@ return {
 				type = "action"
 			},
 			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: JK - Export Status (subprojects).lua (RSc4924da8cd4084d2e92f0bcb87d76e4ad9062a06) (Main)",
 				type = "action"
 			},
 			{
 				id = "Script: JK - Export Status.lua (RS680fa4ecada7f7214afe21b563d497639634114e) (Main)",
-				type = "action"
-			},
-			{
-				id = "Take: Crop to active take in items (40131) (Main)",
 				type = "action"
 			},
 			{
@@ -376,14 +440,6 @@ return {
 			},
 			{
 				id = "Script: NateWeiner - Set project frame rate from video.lua (RSffa88234af6d0278615a8b8b967c0dbb42a91461) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item edit: Nudge/Set... (41226) (Main)",
-				type = "action"
-			},
-			{
-				id = "Take: Explode takes on selected tracks to fixed lanes (42635) (Main)",
 				type = "action"
 			},
 			{
@@ -425,62 +481,6 @@ return {
 			{
 				id = "VST3i:SINE Player (Orchestral Tools) (32 out)",
 				type = "vst3i"
-			},
-			{
-				id = "VST3i:Phrasebox (Venomode)",
-				type = "vst3i"
-			},
-			{
-				id = "JS:Partials (Saike)",
-				type = "jsfx"
-			},
-			{
-				id = "AU:Serum 2 (Xfer Records)",
-				type = "aui"
-			},
-			{
-				id = "Insert click source (40013) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/BR: Select all click source items (BR_SEL_ALL_ITEMS_CLICK) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Track Inspector 2 VIP_Master.lua (RS46ef68cefefd381d79a3389dbbc0c31e821d6a68) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Track Inspector 2 VIP.lua (RSc18de16721a3c34e4867889bd9bf02450163b2f8) (Main)",
-				type = "action"
-			},
-			{
-				id = "Monitoring FX: Toggle bypass (41884) (Main)",
-				type = "action"
-			},
-			{
-				id = "View: Show monitoring FX chain (41882) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Show project/global startup actions (S&M_SHOW_PRJ_ACTION) (Main)",
-				type = "action"
-			},
-			{
-				id = "New project tab, ignore default template (41929) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: sockmonkey72_StartupManager.lua (RS2af1f2a87373fb4e11747db22ea548541fcf0b19) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_Region Tracks VIP.lua (RS33c36901779e76d0ef0542466abe875e36c6b57d) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: BirdBird_Global Sampler.lua (RSdbf64708ea8abea46b82a08cabc050148d65176c) (Main)",
-				type = "action"
 			}
 		},
 		recent_results_amount = 30,

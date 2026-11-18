@@ -2,6 +2,9 @@
   HeDaMixer Graph VIP - Changelog (What's new)     
 ---------------------------------------------------------------------------------------
 
+* v2.1.6 (2026-09-12)
+  # fix: maintenance update for Cockos Loudness jsfx parameters, cockoslufs_param...
+
 * v2.1.5 (2024-11-15)
   + setting: added Show Region ID number toggle.
 

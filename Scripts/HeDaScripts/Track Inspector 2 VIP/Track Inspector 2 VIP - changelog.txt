@@ -2,6 +2,11 @@
   Track Inspector 2 - Changelog     
 ---------------------------------------------------------------------------------------
 
+* v2.4.49 (2026-09-12)
+  # fix: configurable parameters and fix for Cockos Loudness jsfx plugin, cockoslufs_param...
+  # fix: hide change VU mode button on master track
+  # improve pan fader. better fit to width of TI window.
+
 * v2.4.48 (2026-08-17)
   # Maintenance updates
   # fix: Don't crash if SWS is not installed.

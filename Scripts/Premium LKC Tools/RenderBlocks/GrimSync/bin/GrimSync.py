@@ -94,6 +94,7 @@ ALLOWED_HIER_TYPES = { #types allowed for creation of link region in REAPER
     "MusicSwitchContainer": True,
     "MusicSegment": True,
     "MusicPlaylistContainer": True,
+    "PropertyContainer": True,
 }
 
 def wcalculate_dynamic_path(client,guid,dynamic_config,final_path=None):
@@ -125,8 +126,6 @@ def wcalculate_dynamic_path(client,guid,dynamic_config,final_path=None):
     name = res['return'][0]['name']
     ttype =res['return'][0]['type']
 
-
-
     # print("-PATH:" + path)s
     # print("-NAME:" + name)
     # print("-TYPE:" + ttype)
@@ -135,13 +134,14 @@ def wcalculate_dynamic_path(client,guid,dynamic_config,final_path=None):
         final_path=""
         return final_path
     if name != "Actor-Mixer Hierarchy": # for all other cases, we are making dynamic path for origs and events, based on CONTAINER path in Actor-Mixer Hierarchy
-        if name != "Interactive Music Hierarchy":
-            if name != "Default Work Unit":
-                if dynamic_config.get(ttype,False):
-                    # final_path = "<" + ttype + ">" + name + "/" + final_path
-                    final_path = name + "/" + final_path
-                # else:
-            #     final_path = name + final_path
+        if name != "Containers":
+            if name != "Interactive Music Hierarchy":
+                if name != "Default Work Unit":
+                    if dynamic_config.get(ttype,False):
+                        # final_path = "<" + ttype + ">" + name + "/" + final_path
+                        final_path = name + "/" + final_path
+                    # else:
+                #     final_path = name + final_path
     try:
         parentObject = res['return'][0]['parent']
         # print("-PARENT GUID:" + parentObject['id'])
@@ -703,8 +703,8 @@ log("SCRIPT_PATH:"+script_path)
 
 #------------------------------------------------------------------------------------------------------
 
-log("GrimSync Client v1.05")
-log("LKC TOOLS (C) 2025")
+log("GrimSync Client v1.06")
+log("LKC TOOLS (C) 2026")
 log("Arguments: command (url)")
 # log ('Number of arguments:' + str(len(sys.argv)) + ' arguments.')
 # log ('Argument List:'+ str(sys.argv))

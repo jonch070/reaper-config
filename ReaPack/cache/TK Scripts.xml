@@ -33,7 +33,7 @@
 
  <category name="TK Workbench">
      <reapack name="TK_Workbench.lua" type="script" desc="TK Workbench">
-    <version name="1.0.5" author="TouristKiller" time="2026-11-07T20:26:52Z">
+    <version name="1.0.7" author="TouristKiller" time="2026-11-17T21:00:00Z">
      <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Workbench.lua</source>
      <source main="main" file="TK_Workbench_2.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Workbench_2.lua</source>
      <source main="main" file="TK_Instrument_Rack_Horizontal.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/TK_Instrument_Rack_Horizontal.lua</source>
@@ -174,8 +174,9 @@
      <source type="effect" file="TK Scripts/Mixer/TK_Control_Room_Meter.jsfx">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Effects/TK_Control_Room_Meter.jsfx</source>
      <source type="effect" file="TK Scripts/Mixer/TK_Control_Room_Downmix.jsfx">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Workbench/Effects/TK_Control_Room_Downmix.jsfx</source>
     <changelog><![CDATA[
-            v1.0.5
-            + Idea Vault: Fixed Swap for tracks scattering the items of an idea with more than one item on a track when the preview audio sat later in the song than where the idea was captured. REAPER keeps a track's items sorted by position, and moving them one by one let an item jump past the others, so some were moved twice and others not at all. The same mistake could misplace items when Load into project fitted a multi-item idea to a slower project tempo. Gluing items before capturing is no longer needed as a workaround. Reported by sridhar
+            v1.0.7
+            + Notes: Letter spacing fixed. Letters drifted apart or bunched up along a line, most visibly in larger and bold text, because each letter was measured on its own at the base size and then scaled, and the rounding of all those separate widths added up across the line. Text is now measured and drawn in runs at the size it is shown in, so letters sit at their natural distance and the caret and selection line up with them again.
+            + Control Room: The volume faders could not be dragged when TK Workbench was floating instead of docked: clicking a fader moved the whole window, so the only way to change the level was Shift+scroll. The faders are drawn by hand and ImGui took a click on them for a click on empty window. They now catch the mouse themselves, so dragging works in a floating window too. Reported on the forum.
 ]]></changelog>
      </version>
      </reapack>
@@ -183,7 +184,7 @@
 
  <category name="TK Theme">
     <reapack name="TK_Theme_Dark" type="script" desc="TK Theme">
-    <version name="0.9.15" author="TouristKiller" time="2026-11-07T20:18:41Z">
+    <version name="0.9.93" author="TouristKiller" time="2026-11-17T20:34:56Z">
      <source main="main" file="TK_Theme_Settings.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Settings.lua</source>
      <source main="main" file="TK_Theme_Metronome.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Metronome.lua</source>
      <source main="main" file="TK_Theme_Metronome_Watch.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Metronome_Watch.lua</source>
@@ -191,6 +192,9 @@
      <source main="main" file="TK_Theme_Make_Divider.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Make_Divider.lua</source>
      <source main="main" file="TK_Theme_Toggle_TCP_Lists.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Toggle_TCP_Lists.lua</source>
      <source main="main" file="TK_Theme_Toggle_TCP_Meter.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Toggle_TCP_Meter.lua</source>
+     <source main="main" file="TK_Theme_Cycle_Layout.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Cycle_Layout.lua</source>
+     <source main="main" file="TK_Theme_Grid_Menu.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Grid_Menu.lua</source>
+     <source main="main" file="TK_Theme_Snap.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Snap.lua</source>
      <source main="main" file="slots/TK_Theme_Slot_actions.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_actions.lua</source>
      <source main="main" file="slots/TK_Theme_Slot_bay.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_bay.lua</source>
      <source main="main" file="slots/TK_Theme_Slot_clock.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_clock.lua</source>
@@ -206,7 +210,15 @@
      <source main="main" file="slots/TK_Theme_Slot_vkb.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/slots/TK_Theme_Slot_vkb.lua</source>
      <source file="TK_Theme_Slot.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Slot.lua</source>
      <source file="TK_Theme_Zip.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Zip.lua</source>
+     <source file="TK_Theme_Grid.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Grid.lua</source>
+     <source file="TK_Theme_Auto.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Auto.lua</source>
+     <source file="TK_Theme_Plate.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Plate.lua</source>
+     <source file="TK_Theme_Code.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Code.lua</source>
+     <source file="TK_Theme_Patina.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Patina.lua</source>
+     <source file="TK_Theme_Forge.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Forge.lua</source>
+     <source file="TK_Theme_Graffiti.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK_Theme_Graffiti.lua</source>
      <source file="dist/darkmode_colors.txt">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/darkmode_colors.txt</source>
+     <source file="dist/plate_font.bin">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/plate_font.bin</source>
      <source file="dist/TK Theme Dark.factory.ReaperTheme">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/TK%20Theme%20Dark.factory.ReaperTheme</source>
      <source file="dist/TK Theme Light.factory.ReaperTheme">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/TK%20Theme%20Light.factory.ReaperTheme</source>
      <source file="dist/looks/TK Theme Dark.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/looks/TK%20Theme%20Dark.png</source>
@@ -214,10 +226,17 @@
      <source file="dist/look_icons/TK Theme Dark.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/look_icons/TK%20Theme%20Dark.zip</source>
      <source file="dist/look_icons/TK Theme Light.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/look_icons/TK%20Theme%20Light.zip</source>
      <source file="dist/accents/TK Theme Dark/blue.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/blue.zip</source>
+     <source file="dist/accents/TK Theme Dark/common.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/common.zip</source>
+     <source file="dist/accents/TK Theme Dark/graphite.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/graphite.zip</source>
+     <source file="dist/accents/TK Theme Dark/green.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/green.zip</source>
      <source file="dist/accents/TK Theme Dark/orange.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/orange.zip</source>
      <source file="dist/accents/TK Theme Dark/red.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/red.zip</source>
      <source file="dist/accents/TK Theme Dark/violet.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Dark/violet.zip</source>
      <source file="dist/accents/TK Theme Light/blue.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/blue.zip</source>
+     <source file="dist/accents/TK Theme Light/common.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/common.zip</source>
+     <source file="dist/accents/TK Theme Light/glass.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/glass.zip</source>
+     <source file="dist/accents/TK Theme Light/graphite.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/graphite.zip</source>
+     <source file="dist/accents/TK Theme Light/green.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/green.zip</source>
      <source file="dist/accents/TK Theme Light/orange.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/orange.zip</source>
      <source file="dist/accents/TK Theme Light/red.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/red.zip</source>
      <source file="dist/accents/TK Theme Light/violet.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/accents/TK%20Theme%20Light/violet.zip</source>
@@ -228,6 +247,9 @@
      <source file="dist/display/green.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/green.zip</source>
      <source file="dist/display/ice.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/ice.zip</source>
      <source file="dist/display/red.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/red.zip</source>
+     <source file="dist/display/violet.zip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/display/violet.zip</source>
+     <source file="dist/fonts/TKLCD-Bold.ttf">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/fonts/TKLCD-Bold.ttf</source>
+     <source file="dist/fonts/TKLCD-LICENSE.txt">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/dist/fonts/TKLCD-LICENSE.txt</source>
      <source type="theme" file="TK Theme Dark.ReaperThemeZip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK%20Theme%20Dark.ReaperThemeZip</source>
      <source type="theme" file="TK Theme Dark.ReaperTheme">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK%20Theme%20Dark.ReaperTheme</source>
      <source type="theme" file="TK Theme Light.ReaperThemeZip">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/TK%20Theme%20Light.ReaperThemeZip</source>
@@ -333,6 +355,24 @@
      <source type="data" file="toolbar_icons/150/TK_Trim.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Trim.png</source>
      <source type="data" file="toolbar_icons/150/TK_Undo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Undo.png</source>
      <source type="data" file="toolbar_icons/150/TK_Unfreeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Unfreeze.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_40.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_40.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_50.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_50.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_60.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_60.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_Tall.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_Tall.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Bridge.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Bridge.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Planks.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Planks.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Planks_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Planks_Plate.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Teak_Tall_Plate.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_40.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_40.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_50.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_50.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_60.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_60.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_Tall.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_Tall.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Bridge.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Bridge.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Planks.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Planks.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Planks_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Planks_Plate.png</source>
+     <source type="data" file="toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Wood_Bar_Walnut_Tall_Plate.png</source>
      <source type="data" file="toolbar_icons/150/TK_Zoom.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/150/TK_Zoom.png</source>
      <source type="data" file="toolbar_icons/200/TK_Actions_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Actions_off.png</source>
      <source type="data" file="toolbar_icons/200/TK_Actions_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Actions_on.png</source>
@@ -435,6 +475,24 @@
      <source type="data" file="toolbar_icons/200/TK_Trim.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Trim.png</source>
      <source type="data" file="toolbar_icons/200/TK_Undo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Undo.png</source>
      <source type="data" file="toolbar_icons/200/TK_Unfreeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Unfreeze.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_40.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_40.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_50.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_50.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_60.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_60.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_Tall.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_Tall.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Bridge.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Bridge.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Planks.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Planks.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Planks_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Planks_Plate.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Teak_Tall_Plate.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_40.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_40.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_50.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_50.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_60.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_60.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_Tall.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_Tall.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Bridge.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Bridge.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Planks.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Planks.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Planks_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Planks_Plate.png</source>
+     <source type="data" file="toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Wood_Bar_Walnut_Tall_Plate.png</source>
      <source type="data" file="toolbar_icons/200/TK_Zoom.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/200/TK_Zoom.png</source>
      <source type="data" file="toolbar_icons/TK_Actions_off.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Actions_off.png</source>
      <source type="data" file="toolbar_icons/TK_Actions_on.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Actions_on.png</source>
@@ -537,9 +595,34 @@
      <source type="data" file="toolbar_icons/TK_Trim.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Trim.png</source>
      <source type="data" file="toolbar_icons/TK_Undo.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Undo.png</source>
      <source type="data" file="toolbar_icons/TK_Unfreeze.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Unfreeze.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_40.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_40.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_50.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_50.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_60.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_60.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_Tall.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_Tall.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_Tall_Bridge.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_Tall_Bridge.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_Tall_Planks.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_Tall_Planks.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_Tall_Planks_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_Tall_Planks_Plate.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Teak_Tall_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Teak_Tall_Plate.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_40.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_40.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_50.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_50.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_60.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_60.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_Tall.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_Tall.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_Tall_Bridge.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_Tall_Bridge.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_Tall_Planks.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_Tall_Planks.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_Tall_Planks_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_Tall_Planks_Plate.png</source>
+     <source type="data" file="toolbar_icons/TK_Wood_Bar_Walnut_Tall_Plate.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Wood_Bar_Walnut_Tall_Plate.png</source>
      <source type="data" file="toolbar_icons/TK_Zoom.png">https://github.com/TouristKiller/TK-Scripts/raw/master/TK%20Theme/toolbar_icons/TK_Zoom.png</source>
      <changelog><![CDATA[
-+ Changed: the track panel can be made narrower. Its minimum width now follows the button row (or the first row, when that needs more), instead of an old Default 7 setting the theme's settings never showed: about 26 px narrower with the standard settings.
++ Added: Track LCDs (Look page, Display): the display windows of the track panels and the mixer in the display's colour (Display colour), or like the transport with their buttons in it too, dimmed when off (Like the transport). The accent and the display go together then.
++ Added: Unselected tracks dimmed (General page, Displays): the display windows of the tracks and strips that aren't selected go darker, with their text.
++ Added: Green as an accent colour and Violet as a display; the accent Orange is now called Amber, like its display.
++ Added: An optional LCD font for the transport's time (Transport page, Time display): TK LCD, made from DSEG14 by keshikan (SIL Open Font License). A button installs it in your own font folder, no admin rights needed.
++ Changed: Accent colour, display and track LCDs are picked first and applied together with one Apply, so the theme is rebuilt once.
++ Fixed: The transport's time jittered while playing: its font (now Tahoma Bold) has digits of one width.
++ Fixed: Hardware in a metal lost its metal when the accent changed along with the display.
++ Changed: The folder rack has 22 mounting holes per level instead of 24 (REAPER draws only about 200 elements per track panel).
 ]]></changelog>
     </version>
     </reapack>
@@ -571,7 +654,7 @@
 
  <category name="FX">
     <reapack name="TK_FX_BROWSER.lua" type="script" desc="TK FX BROWSER">
-    <version name="3.2.27" author="TouristKiller" time="2026-11-07T21:40:00Z">
+    <version name="3.2.32" author="TouristKiller" time="2026-11-17T21:00:00Z">
     <source main="main">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_FX_BROWSER.lua</source>
     <source file="DrawMeter.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/DrawMeter.lua</source>
     <source file="TKFXBVariables.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TKFXBVariables.lua</source>
@@ -588,12 +671,9 @@
     <source main="main" file="TK_Notes_Toggle_focus.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_Notes_Toggle_focus.lua</source>
     <source main="main" file="TK_FX_BROWSER_SnapshotFX.lua">https://github.com/TouristKiller/TK-Scripts/raw/master/FX/TK%20FX%20BROWSER/TK_FX_BROWSER_SnapshotFX.lua</source>
                 <changelog><![CDATA[
-                v3.2.27:
-                + Main window: The colours you give folders in the Browser/INFO panel (right-click > Set Color...) now show in the main window's menus too: the subfolders under All Plugins, Category, Developer and Folders, and the main headers. Only the folder's own name takes the colour, not the plugins in it. Your own (custom) folders already did this. Requested on the REAPER forum
-                + Main window: Drag a plugin from the track's FX list onto another track in the arrange view or the mixer to move it there (hold Ctrl to copy it instead). While dragging, the tooltip says which track it will go to. Dropping inside the list still changes the order. Requested on the REAPER forum
-                + Main window: The track FX list has Cut Plugin next to Copy Plugin; pasting after a cut moves the plugin, also to another track. Right-click an empty part of the list to paste at the end of the chain - this now also works on a track that has no FX yet, and in the thumbnail view. The clipboard remembers the plugin itself, so pasting still takes the right one after the chain has changed
-                + Track FX lists: The main window's FX list (list and thumbnail view) and the Track FX list in the INFO panel of the screenshot window now share one right-click menu: Bypass/Enable, Offline/Online, Float Window, Show in FX Chain, Move Up/Down, Cut/Copy/Paste Plugin, Copy to all tracks, Favorites, A/B Snapshot and Delete. The INFO panel also gets dragging a plugin onto another track (Ctrl: copy) and pasting by right-clicking an empty part of its Track FX list
-                + TK FX BROWSER Mini 1.2.24: the folder colours in the main window menus, and the shared Track FX menu, dragging and pasting in the INFO panel.
+                v3.2.32:
+                + TK Notes 2.8.1: Letter spacing fixed. Letters drifted apart or bunched up along a line, most visibly in larger and bold text, because each letter was measured on its own at the base size and then scaled, and the rounding of all those separate widths added up across the line. Text is now measured and drawn in runs at the size it is shown in, so letters sit at their natural distance and the caret and selection line up with them again.
+                + TK FX BROWSER Mini 1.2.28: no changes of its own; it moves up with the package.
 ]]></changelog>
     </version>
     </reapack>

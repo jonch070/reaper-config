@@ -121,6 +121,78 @@ Includes an action that moves projects from ReEQ 1.2 over with all their setting
         <source file="ReEQ2/Themes/Sunset.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Sunset.txt</source>
         <source file="ReEQ2/Themes/Synthwave.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.2.0/ReEQ2/Themes/Synthwave.txt</source>
       </version>
+      <version name="2.3.0" author="Justin Johnson" time="2026-11-11T16:41:22Z">
+        <changelog><![CDATA[Slopes for bells and shelves, resonance on the cuts, and less to load
+- Bells take 12, 24, 36 or 48 dB/oct. The steeper ones are flat-topped
+- Shelves take 6, 12, 18, 24 or 36 dB/oct
+- Pick a slope from the slope chips or the node's menu; each shape offers only its own slopes. Dynamic bands stay at 12 dB/oct
+- Low Cut and High Cut have resonance: drag the node up or down, or set Q. At Q 0.71 they are the plain Butterworth cuts they were
+- The older resonant Low Cut and High Cut are kept, marked as legacy, and offered only while a band uses one
+- Existing projects keep their sound: 12 dB/oct bells and shelves and the cuts in older projects are the same filters as in 2.2.0
+- For the slow loading reported with 2.2.0 on Windows: ReEQ2 now compiles less than half the code it did, and its filter tables are arranged so REAPER reads them faster
+- The graph draws about twice as fast]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/ReEQ2.jsfx</source>
+        <source file="Dependencies/analog-fast.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Dependencies/analog-fast.jsfx-inc</source>
+        <source file="Dependencies/analog-tables.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Dependencies/analog-tables.jsfx-inc</source>
+        <source file="Dependencies/ivantsov_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Dependencies/ivantsov_filter.jsfx-inc</source>
+        <source file="Dependencies/reeq-analog-adapter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Dependencies/reeq-analog-adapter.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Dependencies/spectrum.jsfx-inc</source>
+        <source file="Dependencies/wide-curves.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Dependencies/wide-curves.jsfx-inc</source>
+        <source file="Dependencies/wide-math.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Dependencies/wide-math.jsfx-inc</source>
+        <source file="ReEQ upgrade to ReEQ2.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/Scripts/ReEQ%20upgrade%20to%20ReEQ2.lua</source>
+        <source file="ReEQ2 Theme Editor.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/Scripts/ReEQ2%20Theme%20Editor.lua</source>
+        <source file="ReEQ2/Themes/Amber.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Amber.txt</source>
+        <source file="ReEQ2/Themes/Default.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Default.txt</source>
+        <source file="ReEQ2/Themes/Espresso.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Espresso.txt</source>
+        <source file="ReEQ2/Themes/Fjord.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Fjord.txt</source>
+        <source file="ReEQ2/Themes/Forest.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Forest.txt</source>
+        <source file="ReEQ2/Themes/Glacier.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Glacier.txt</source>
+        <source file="ReEQ2/Themes/High Contrast.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/High%20Contrast.txt</source>
+        <source file="ReEQ2/Themes/Matcha.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Matcha.txt</source>
+        <source file="ReEQ2/Themes/Midnight Neon.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Midnight%20Neon.txt</source>
+        <source file="ReEQ2/Themes/Mono.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Mono.txt</source>
+        <source file="ReEQ2/Themes/Ocean.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Ocean.txt</source>
+        <source file="ReEQ2/Themes/Paper.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Paper.txt</source>
+        <source file="ReEQ2/Themes/Phosphor.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Phosphor.txt</source>
+        <source file="ReEQ2/Themes/Rose.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Rose.txt</source>
+        <source file="ReEQ2/Themes/Sunset.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Sunset.txt</source>
+        <source file="ReEQ2/Themes/Synthwave.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.3.0/ReEQ2/Themes/Synthwave.txt</source>
+      </version>
+      <version name="2.4.0" author="Justin Johnson" time="2026-11-15T21:37:59Z">
+        <changelog><![CDATA[A help card, a lighter card style and a lower band panel
+- The ? button at the top right, after the settings button, opens a card listing the mouse gestures and keys. Each one names its Mac and Windows modifiers (Cmd/Ctrl, Opt/Alt)
+- OK, a click outside the card or Esc closes it. In a small window the card draws smaller to fit
+- The ? key opens the card and Esc closes it when REAPER's "Send all keyboard input to plug-in" is on
+- The help card and the credits card have a soft light from the top. Themes can set its colour and strength as card_glow
+- The band panel sits a little lower, so the graph above it is a little taller
+- Theme Editor 1.3.0: Card glow under Surfaces, and a Help card button that shows the card on the preview so its colours can be edited]]></changelog>
+        <source>https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/ReEQ2.jsfx</source>
+        <source file="Dependencies/analog-fast.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Dependencies/analog-fast.jsfx-inc</source>
+        <source file="Dependencies/analog-tables.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Dependencies/analog-tables.jsfx-inc</source>
+        <source file="Dependencies/ivantsov_filter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Dependencies/ivantsov_filter.jsfx-inc</source>
+        <source file="Dependencies/reeq-analog-adapter.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Dependencies/reeq-analog-adapter.jsfx-inc</source>
+        <source file="Dependencies/spectrum.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Dependencies/spectrum.jsfx-inc</source>
+        <source file="Dependencies/wide-curves.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Dependencies/wide-curves.jsfx-inc</source>
+        <source file="Dependencies/wide-math.jsfx-inc">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Dependencies/wide-math.jsfx-inc</source>
+        <source file="ReEQ upgrade to ReEQ2.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/Scripts/ReEQ%20upgrade%20to%20ReEQ2.lua</source>
+        <source file="ReEQ2 Theme Editor.lua" type="script" main="main">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/Scripts/ReEQ2%20Theme%20Editor.lua</source>
+        <source file="ReEQ2/Themes/Amber.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Amber.txt</source>
+        <source file="ReEQ2/Themes/Default.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Default.txt</source>
+        <source file="ReEQ2/Themes/Espresso.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Espresso.txt</source>
+        <source file="ReEQ2/Themes/Fjord.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Fjord.txt</source>
+        <source file="ReEQ2/Themes/Forest.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Forest.txt</source>
+        <source file="ReEQ2/Themes/Glacier.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Glacier.txt</source>
+        <source file="ReEQ2/Themes/High Contrast.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/High%20Contrast.txt</source>
+        <source file="ReEQ2/Themes/Matcha.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Matcha.txt</source>
+        <source file="ReEQ2/Themes/Midnight Neon.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Midnight%20Neon.txt</source>
+        <source file="ReEQ2/Themes/Mono.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Mono.txt</source>
+        <source file="ReEQ2/Themes/Ocean.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Ocean.txt</source>
+        <source file="ReEQ2/Themes/Paper.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Paper.txt</source>
+        <source file="ReEQ2/Themes/Phosphor.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Phosphor.txt</source>
+        <source file="ReEQ2/Themes/Rose.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Rose.txt</source>
+        <source file="ReEQ2/Themes/Sunset.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Sunset.txt</source>
+        <source file="ReEQ2/Themes/Synthwave.txt" type="data">https://raw.githubusercontent.com/Justin-Johnson/ReJJ/v2.4.0/ReEQ2/Themes/Synthwave.txt</source>
+      </version>
     </reapack>
   </category>
   <category name="ReSpectrum">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="FTC Tools" commit="e9593ff5305cba91aeb8acbed1f955d96b14ad1f">
+<index version="1" name="FTC Tools" commit="11a040aa4c9f77c049db6ddb4f25d95691599caf">
   <category name="Adaptive grid">
     <reapack name="Adaptive grid.lua" type="script">
       <metadata>
@@ -815,6 +815,10 @@
         <changelog><![CDATA[- Fix REAPER freezing when loading certain projects]]></changelog>
         <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/e9593ff5305cba91aeb8acbed1f955d96b14ad1f/Adaptive%20grid/Gridbox.lua</source>
       </version>
+      <version name="2.8.5" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-10T16:05:35Z">
+        <changelog><![CDATA[- Attempt to fix menu behavior in Linux mint]]></changelog>
+        <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/6a0a06000d86a9b81d8199a165769e167ab86c44/Adaptive%20grid/Gridbox.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="Auto-Hide">
@@ -1585,7 +1589,7 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Adds a little box to the MIDI editor that displays chord information\par}
+{\pard \ql \f0 \fs24 \sa180 \li0 \fi0 Adds a little box to the MIDI editor that displays chord information\par}
 }
 ]]></description>
       </metadata>
@@ -1791,6 +1795,21 @@
 - Option to reuse chord track now enabled by default
 - Ensure that text on chord track items is stretched]]></changelog>
         <source main="main midi_editor">https://github.com/iliaspoulakis/Reaper-Tools/raw/cea3005b0ad92b0ec64997d0bc01d3c0a0a474e7/MIDI%20editor/Lil%20Chordbox.lua</source>
+      </version>
+      <version name="2.7.0" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-11T12:40:12Z">
+        <changelog><![CDATA[- Add option to detect single notes (enabled by default)]]></changelog>
+        <source main="main midi_editor">https://github.com/iliaspoulakis/Reaper-Tools/raw/07da4824a30c4f597a14fc5a240f28f8f06725ae/MIDI%20editor/Lil%20Chordbox.lua</source>
+      </version>
+      <version name="2.7.1" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-11T14:32:10Z">
+        <changelog><![CDATA[- Fix degree display mode not being remembered
+- Improve consistency of chord and interval names
+- Reuse existing chord track anywhere in the project
+- Group chord detection options in preferences menu]]></changelog>
+        <source main="main midi_editor">https://github.com/iliaspoulakis/Reaper-Tools/raw/f70e47da88433963bad72624d615bd56e1d04b87/MIDI%20editor/Lil%20Chordbox.lua</source>
+      </version>
+      <version name="2.7.2" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-11T14:58:12Z">
+        <changelog><![CDATA[- Add octave number to single notes]]></changelog>
+        <source main="main midi_editor">https://github.com/iliaspoulakis/Reaper-Tools/raw/11a040aa4c9f77c049db6ddb4f25d95691599caf/MIDI%20editor/Lil%20Chordbox.lua</source>
       </version>
     </reapack>
   </category>
@@ -3664,7 +3683,7 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Adds a little box to transport that displays chord information\par}
+{\pard \ql \f0 \fs24 \sa180 \li0 \fi0 Adds a little box to transport that displays chord information\par}
 }
 ]]></description>
       </metadata>
@@ -3709,6 +3728,19 @@
       <version name="1.2.3" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-08-18T11:34:58Z">
         <changelog><![CDATA[- Support advanced UI scaling (via preferences) on MacOS]]></changelog>
         <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/0096db5b054e73c3b11fc4da79470e37e1c262b5/Transport/Chordbox.lua</source>
+      </version>
+      <version name="1.3.0" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-11T12:40:12Z">
+        <changelog><![CDATA[- Add option to detect single notes (enabled by default)]]></changelog>
+        <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/07da4824a30c4f597a14fc5a240f28f8f06725ae/Transport/Chordbox.lua</source>
+      </version>
+      <version name="1.3.1" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-11T14:32:10Z">
+        <changelog><![CDATA[- Fix explicit major option not being remembered
+- Improve consistency of chord and interval names]]></changelog>
+        <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/f70e47da88433963bad72624d615bd56e1d04b87/Transport/Chordbox.lua</source>
+      </version>
+      <version name="1.3.2" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-11T14:58:12Z">
+        <changelog><![CDATA[- Add octave number to single notes]]></changelog>
+        <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/11a040aa4c9f77c049db6ddb4f25d95691599caf/Transport/Chordbox.lua</source>
       </version>
     </reapack>
   </category>
@@ -3815,7 +3847,7 @@
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Simple utility to update REAPER to the latest version\par}
+{\pard \ql \f0 \fs24 \sa180 \li0 \fi0 Simple utility to update REAPER to the latest version\par}
 }
 ]]></description>
       </metadata>
@@ -4082,6 +4114,11 @@
       <version name="3.0.2" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-06-12T12:39:50Z">
         <changelog><![CDATA[- Fix possible update issue on Windows]]></changelog>
         <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/d6b7789d6af3b642540e705e45ca3c986192b2bd/Various/REAPER%20Update%20Utility.lua</source>
+      </version>
+      <version name="3.1.0" author="Ilias-Timon Poulakis (FeedTheCat)" time="2026-11-10T16:51:29Z">
+        <changelog><![CDATA[- Add menu option to set how long to wait for REAPER to close on Windows
+- Increase default wait time before installing to 10 seconds on Windows]]></changelog>
+        <source main="main">https://github.com/iliaspoulakis/Reaper-Tools/raw/dd123360739dd3eadd933dfd21c20d5e88df1361/Various/REAPER%20Update%20Utility.lua</source>
       </version>
     </reapack>
   </category>

@@ -10,23 +10,19 @@
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.bin</key>
 		<data>
-		9EuCcTnMWc21Ahpo952xsyFDgfI=
-		</data>
-		<key>Resources/flutter_assets/AssetManifest.json</key>
-		<data>
-		I+9FE/HDdOF9vLXDDfQ4yHPlbmo=
+		CcNMU55dvqDGDx8gY/suEBoYGts=
 		</data>
 		<key>Resources/flutter_assets/FontManifest.json</key>
 		<data>
-		Qx5BAxloISDAaelcVyAmVUCfcec=
+		ZaosonvM9FbI/6VK0/SkFxJGTPI=
 		</data>
 		<key>Resources/flutter_assets/NOTICES.Z</key>
 		<data>
-		2mRYYbIC9+KrHy/H/D9XRJv0RBE=
+		5tAIlaSjVI8RW0CiPb4E/09i8l0=
 		</data>
 		<key>Resources/flutter_assets/NativeAssetsManifest.json</key>
 		<data>
-		re4p7E8rPLLsN+wzaPN/+AVpXTY=
+		sqUFytA4BWxtz8uFPHD24zn60xI=
 		</data>
 		<key>Resources/flutter_assets/assets/demo/Chill%20Loop%20Guitar.caf.reapeaks</key>
 		<data>
@@ -58,7 +54,7 @@
 		</data>
 		<key>Resources/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
-		LZDAFV4k8+eySwQgL0NAda/AbHY=
+		kEfBsJireU85pI06XK0Bbn8eQ5E=
 		</data>
 		<key>Resources/flutter_assets/fonts/NotoSansMath-Regular.ttf</key>
 		<data>
@@ -72,29 +68,37 @@
 		<data>
 		fPzO3QPxcs61S/mjq3e6fwI8hFA=
 		</data>
-		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>
+		<key>Resources/flutter_assets/packages/flutter_material_design_icons/assets/materialdesignicons-webfont.ttf</key>
 		<data>
-		1YgiqewKG8yNGNLPs9fG8LM65Wk=
+		ia0wqaS+KKWaxVfSE3uzGRGpOJc=
 		</data>
-		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf</key>
+		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Brands-Regular-400.otf</key>
 		<data>
-		nIiBDVk/Tfz0TaB6x5v2N1Oc9vw=
+		rw0TjKJZtC0AHOMxTRpOzuSkprg=
 		</data>
-		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf</key>
+		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Regular-400.otf</key>
 		<data>
-		p1OQKrVlOLdZaugoaUsW1q3gMPI=
+		vuRqQ/ki4HQept65ExRshTMuZp8=
+		</data>
+		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Solid-900.otf</key>
+		<data>
+		ccVyiZNdcCnUDzLPzMbtpghq8Gg=
 		</data>
 		<key>Resources/flutter_assets/packages/geekyants_flutter_gauges/assets/fonts/Roboto-Regular.ttf</key>
 		<data>
 		VsXA04veTB8VSd2kPbN7CcYIqtM=
 		</data>
-		<key>Resources/flutter_assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf</key>
+		<key>Resources/flutter_assets/packages/material_ui/shaders/ink_sparkle.frag</key>
 		<data>
-		b6BErIpJBC8vTuhwqEzpDZz9VpM=
+		NAa66dzMWpIpWUSq3255PIKJ6iw=
 		</data>
 		<key>Resources/flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
-		VoVnsu58hN7wrwazX0nyAopiB0Q=
+		NAa66dzMWpIpWUSq3255PIKJ6iw=
+		</data>
+		<key>Resources/flutter_assets/shaders/stretch_effect.frag</key>
+		<data>
+		z+dFYnHzQNZ09Pq74gKGCWkpYfY=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -110,35 +114,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			T8qUj0vvwwkn7tLOq4KfNANUQQJdoIqrUI1aUBkBUvo=
-			</data>
-		</dict>
-		<key>Resources/flutter_assets/AssetManifest.json</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			W5tXVU4ws/w/T8OG5EBbbmWIr3psK+TIviJaJTIpj3I=
+			GZUUlmqxoMqIhlb8VidzQv5XzWB5dsoRf4b5/H9eS/c=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ooEoSkTR5wRd51pudJTDZWldfMaEZvdyPg8uXELNuZg=
+			Tj1V25y0bQBv5M8IsJn+lyfVHXz9PdSm0gmxGMCaGkw=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kP82B3WU1KV5ZcgWg2gkZP+3PjbXTt6edS51LaA+dtU=
+			31/9PKjYh4ZwvnnSGVQYNMe8voPKisY4/wE/vZy57S8=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/NativeAssetsManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lUijHkoEgTXB2U+Rkyi/tirix7s8q5ZVfHlB2ql3dss=
+			lG5uzcSmw3+kL7/ddSoLhRV5K1fqYEJGPWg+tRG7uL4=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/assets/demo/Chill%20Loop%20Guitar.caf.reapeaks</key>
@@ -194,7 +191,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S9DXFyTcwq63crQBVzChj2D9ZgYx7TvoA3xDCLC6lZI=
+			fNUNLtPm0Ug9Na+KuubA7AmArjmg7CxfumL7IH+TAAM=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/fonts/NotoSansMath-Regular.ttf</key>
@@ -218,25 +215,32 @@
 			q4A10oJSPheYNXnHZKmDM5TbpOqk4LtHZJSdxlEfbEA=
 			</data>
 		</dict>
-		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf</key>
+		<key>Resources/flutter_assets/packages/flutter_material_design_icons/assets/materialdesignicons-webfont.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8p//M0dH7H0wO/WBMc7d0o0b/elz6YHOcx4tK7k8xOY=
+			4J3QKPNXujJqVnq/AePmJ/FTbtZU+xRGraGUr6Ze5XE=
 			</data>
 		</dict>
-		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf</key>
+		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Brands-Regular-400.otf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B5QTt2BhkeGjk7RnxqRn88Lum+3Yrn6YCpMTR1jF9Rw=
+			XKRaiWbirKkZmDnkhOQpraNuUlx2N/2RBhPd/lFzg3U=
 			</data>
 		</dict>
-		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf</key>
+		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Regular-400.otf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cqQs+Vg/0XoJ7E3vLIvPnJAtXVU0MFzxcgH72FGebNc=
+			xiZcpYOZOGJaPIw3oAzcsmM9GtarLAlsl7WQonFitno=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/packages/font_awesome_flutter/lib/fonts/Font-Awesome-7-Free-Solid-900.otf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zrMoiIf5/eCcdP/RyoIKv8icEDffvcMbS4jCd9+jRpg=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/packages/geekyants_flutter_gauges/assets/fonts/Roboto-Regular.ttf</key>
@@ -246,18 +250,25 @@
 			ThR6tkuf322J0B9rjDygs83cWdYIqOIhj5olBLXJjhQ=
 			</data>
 		</dict>
-		<key>Resources/flutter_assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf</key>
+		<key>Resources/flutter_assets/packages/material_ui/shaders/ink_sparkle.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XKrqLGzQPM1N5+D0F+E7/tAADkKGRD8wFELTiHiJITE=
+			xLP10dtAXVC4t2eNi7RGI3836thlAeMsenf6yWO6/y0=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/shaders/ink_sparkle.frag</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4PC1vOWKHlNOnW4dGwFfD4TPwBCllniPCsOy7+1X5co=
+			xLP10dtAXVC4t2eNi7RGI3836thlAeMsenf6yWO6/y0=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/shaders/stretch_effect.frag</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			UMjCJaaLyzaAWp0/3lvijjFeZm/RwUKi2I8/td/H2f8=
 			</data>
 		</dict>
 	</dict>
