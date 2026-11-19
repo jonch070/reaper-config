@@ -1,0 +1,190 @@
+desc:SIG Keyswitch Gate (order-independent keyswitch + key, optional tap blip)
+// Put this on the track BEFORE Decent Sampler (FX chain order: this, then DS).
+//
+// Input (what the show/podium sends):
+//   keyswitch notes  C2 C#2 D2 (36 37 38) -> layer Morpheus / Realm / Snow
+//   key notes        C3..G3 (48..55)      -> touch points 1..8
+//
+// Output (what Decent Sampler receives):
+//   * keyswitch notes pass through (DS plays Humidity from them)
+//   * key notes pass through always (DS plays Temperature from them)
+//   * while a keyswitch is HELD *and* key k is HELD (pressed in either order, any delay):
+//       chord layer note, Winter note and Single-to-Blizzard note for key k are held on.
+//     They are released as soon as either the key or all keyswitches are released.
+//   * releasing the last keyswitch also stops Temperature notes that were sounding.
+//   * several keyswitches held: the most recently pressed one picks the layer; releasing
+//     it falls back to the one still held.
+//   * everything else (e.g. ambience C8) passes through untouched.
+//
+// TAP BLIP MODE (slider "Tap blip mode", default OFF):
+//   If only ONE side is touched, the chord layer (only) gets a very brief note-on/note-off,
+//   so you hear just the chord group's release fade:
+//     - key (1-8) touched with no keyswitch held -> chord of the LAST touched keyswitch layer
+//     - keyswitch touched with no key held       -> chord of the LAST touched key, in that layer
+//   Before anything has been touched the defaults are Morpheus and key 1.
+//   If the other side arrives while the blip is still pending, the held chord restarts.
+
+slider1:36<0,120,1>Keyswitch 1 note (Morpheus; +1 Realm, +2 Snow)
+slider2:48<0,112,1>First key note (touch point 1; 8 keys)
+slider3:60<0,120,1>Out base: Morpheus
+slider4:72<0,120,1>Out base: Realm
+slider5:84<0,120,1>Out base: Snow
+slider6:96<0,120,1>Out base: Winter
+slider7:24<0,120,1>Out base: Single to Blizzard
+slider8:0<0,1,1{Off,On}>Tap blip mode
+slider9:30<5,300,1>Blip length (ms, rounded up to audio block size)
+
+@init
+ext_noinit = 1;
+// memory map
+ks_stamp = 0;    // 0..2   press order stamp per keyswitch (0 = not held)
+key_held = 10;   // 10..17
+key_vel  = 20;   // 20..27
+temp_on  = 30;   // 30..37 Temperature note currently on
+chord_on = 40;   // 40..47 layer+1 of the chord note currently on (0 = none)
+wb_on    = 50;   // 50..57 Winter + Blizzard notes currently on
+lbase    = 60;   // 60..62 chord out bases
+blip_note = 70;  // 70..85 pending blip notes (0 = free slot)
+blip_left = 90;  // 90..105 samples until the blip's note-off
+stamp = 0;
+prev_gate = 0;
+lastlayer = 0;   // default Morpheus
+lastkey = 0;     // default key 1
+
+@block
+ksb = slider1|0;
+kyb = slider2|0;
+lbase[0] = slider3|0;
+lbase[1] = slider4|0;
+lbase[2] = slider5|0;
+wbase = slider6|0;
+sbase = slider7|0;
+blipmode = slider8|0;
+bliplen = slider9 * srate / 1000;
+
+// send note-offs for blips whose time is up
+s = 0;
+loop(16,
+  blip_note[s] ? (
+    blip_left[s] <= 0 ? (
+      midisend(0, 0x80, blip_note[s], 0);
+      blip_note[s] = 0;
+    ) : (
+      blip_left[s] -= samplesblock;
+    );
+  );
+  s += 1;
+);
+
+while (midirecv(offs, m1, m2, m3)) (
+  st = m1 & 0xF0;
+  non  = (st == 0x90 && m3 > 0);
+  noff = (st == 0x80) || (st == 0x90 && m3 == 0);
+  isks  = (non || noff) && m2 >= ksb && m2 < ksb + 3;
+  iskey = (non || noff) && m2 >= kyb && m2 < kyb + 8;
+  doblip = 0;
+
+  isks ? (
+    i = m2 - ksb;
+    non ? (
+      // tap blip: keyswitch with no key held -> last touched key in this layer
+      anyheld = 0; k = 0;
+      loop(8, key_held[k] ? anyheld = 1; k += 1;);
+      (blipmode && !anyheld) ? ( doblip = 1; bn = lbase[i] + lastkey; bv = m3; );
+      lastlayer = i;
+      stamp += 1; ks_stamp[i] = stamp;
+      midisend(offs, 0x90, m2, m3);
+    ) : (
+      ks_stamp[i] = 0;
+      midisend(offs, 0x80, m2, 0);
+    );
+  ) : iskey ? (
+    k = m2 - kyb;
+    non ? (
+      // tap blip: key with no keyswitch held -> last touched layer
+      anyks = (ks_stamp[0] > 0) || (ks_stamp[1] > 0) || (ks_stamp[2] > 0);
+      (blipmode && !anyks) ? ( doblip = 1; bn = lbase[lastlayer] + k; bv = m3; );
+      lastkey = k;
+      key_held[k] = 1; key_vel[k] = m3;
+      temp_on[k] = 1;
+      midisend(offs, 0x90, m2, m3);
+    ) : (
+      key_held[k] = 0;
+      temp_on[k] ? ( temp_on[k] = 0; midisend(offs, 0x80, m2, 0); );
+    );
+  ) : (
+    // All Notes Off: release everything we are holding, clear state
+    (st == 0xB0 && m2 == 123) ? (
+      k = 0;
+      loop(8,
+        temp_on[k] ? midisend(offs, 0x80, kyb + k, 0);
+        chord_on[k] ? midisend(offs, 0x80, lbase[chord_on[k] - 1] + k, 0);
+        wb_on[k] ? ( midisend(offs, 0x80, wbase + k, 0); midisend(offs, 0x80, sbase + k, 0); );
+        temp_on[k] = 0; chord_on[k] = 0; wb_on[k] = 0; key_held[k] = 0;
+        k += 1;
+      );
+      s = 0;
+      loop(16, blip_note[s] ? ( midisend(offs, 0x80, blip_note[s], 0); blip_note[s] = 0; ); s += 1;);
+      ks_stamp[0] = 0; ks_stamp[1] = 0; ks_stamp[2] = 0;
+    );
+    midisend(offs, m1, m2, m3);
+  );
+
+  // start a tap blip (chord layer only): note-on now, note-off after bliplen samples
+  doblip ? (
+    slot = -1; s = 0;
+    loop(16, (slot < 0 && !blip_note[s]) ? slot = s; s += 1;);
+    slot >= 0 ? (
+      blip_note[slot] = bn;
+      blip_left[slot] = bliplen;
+      midisend(offs, 0x90, bn, bv);
+    );
+  );
+
+  // ---- recompute what should be sounding and diff against what is ----
+  best = 0; layer = 0; i = 0;
+  loop(3,
+    ks_stamp[i] > best ? ( best = ks_stamp[i]; layer = i; );
+    i += 1;
+  );
+  gate = best > 0;
+
+  // last keyswitch released: stop Temperature notes still sounding
+  (!gate && prev_gate) ? (
+    k = 0;
+    loop(8,
+      temp_on[k] ? ( temp_on[k] = 0; midisend(offs, 0x80, kyb + k, 0); );
+      k += 1;
+    );
+  );
+  prev_gate = gate;
+
+  k = 0;
+  loop(8,
+    want  = gate && key_held[k];
+    wantc = want ? layer + 1 : 0;
+    cur = chord_on[k];
+    cur != wantc ? (
+      cur ? midisend(offs, 0x80, lbase[cur - 1] + k, 0);
+      wantc ? (
+        nn = lbase[wantc - 1] + k;
+        // restart: end a still-pending blip of this same note before the held chord starts
+        s = 0;
+        loop(16, (blip_note[s] == nn) ? ( midisend(offs, 0x80, nn, 0); blip_note[s] = 0; ); s += 1;);
+        midisend(offs, 0x90, nn, key_vel[k]);
+      );
+      chord_on[k] = wantc;
+    );
+    want != wb_on[k] ? (
+      want ? (
+        midisend(offs, 0x90, wbase + k, key_vel[k]);
+        midisend(offs, 0x90, sbase + k, key_vel[k]);
+      ) : (
+        midisend(offs, 0x80, wbase + k, 0);
+        midisend(offs, 0x80, sbase + k, 0);
+      );
+      wb_on[k] = want;
+    );
+    k += 1;
+  );
+);

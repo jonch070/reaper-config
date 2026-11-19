@@ -500,3 +500,201 @@
 17:44:12  about to run render action 42230
 17:44:19  render action returned
 17:44:19  ORCH step click
+14:01:18  === run 2026-11-18  jobs=improve  project=1M01 - Grey Ghost - v02.01.01  cue=0.000-79.663
+14:01:18  - start 3 marked tracks
+14:01:18  - step midi
+14:01:18  - done 
+14:01:31  === run 2026-11-18  jobs=improve  project=1M02 - Keep the Search Alive - v03.01.03  cue=0.000-80.789
+14:01:31  - start 2 marked tracks
+14:01:31  - step midi
+14:01:31  - done 
+14:01:43  === run 2026-11-18  jobs=improve  project=1M03 - Never Say Never - v03.01.01  cue=0.000-84.042
+14:01:43  - start 8 marked tracks
+14:01:43  - step midi
+14:01:43  - done 
+14:01:57  === run 2026-11-18  jobs=improve  project=1M04 - The Birds - v05.01.01  cue=0.000-69.319
+14:01:57  - start 5 marked tracks
+14:01:57  - step midi
+14:01:57  - done 
+14:02:10  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.05  cue=0.000-134.400
+14:02:10  - start 10 marked tracks
+14:02:10  - step midi
+14:02:10  - done 
+14:02:58  === run 2026-11-18  jobs=improve  project=1M01 - Grey Ghost - v02.01.01  cue=0.000-79.663
+14:02:58  IMPROVE start 3 marked tracks
+14:02:58  IMPROVE note stems range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:02:59  IMPROVE queued stems
+14:02:59  IMPROVE note master range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:02:59  IMPROVE queued master
+14:02:59  IMPROVE note mix minus range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:03:00  IMPROVE queued mix minus
+14:03:00  IMPROVE queued midi
+14:03:00  IMPROVE queued 
+14:03:00  click track 1  muted=0.0  items in range=1  inserted=true
+14:03:00  IMPROVE note click range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:03:00  IMPROVE queued click
+14:03:12  === run 2026-11-18  jobs=improve  project=1M02 - Keep the Search Alive - v03.01.03  cue=0.000-80.789
+14:03:12  IMPROVE start 2 marked tracks
+14:03:12  IMPROVE note stems range 0.000000 - 80.789042 (cue 0.000000 - 80.789042)
+14:03:13  IMPROVE queued stems
+14:03:13  IMPROVE note master range 0.000000 - 80.789042 (cue 0.000000 - 80.789042)
+14:03:13  IMPROVE queued master
+14:03:13  IMPROVE note mix minus range 0.000000 - 80.789042 (cue 0.000000 - 80.789042)
+14:03:13  IMPROVE queued mix minus
+14:03:13  IMPROVE queued midi
+14:03:13  IMPROVE queued 
+14:03:13  click track 1  muted=0.0  items in range=1  inserted=false
+14:03:13  IMPROVE note click range 0.000000 - 80.789042 (cue 0.000000 - 80.789042)
+14:03:23  IMPROVE queued click
+14:03:31  === run 2026-11-18  jobs=improve  project=1M03 - Never Say Never - v03.01.01  cue=0.000-84.042
+14:03:31  IMPROVE start 8 marked tracks
+14:03:31  IMPROVE note stems range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+14:03:32  IMPROVE queued stems
+14:03:32  IMPROVE note master range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+14:03:32  IMPROVE queued master
+14:03:32  IMPROVE note mix minus range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+14:03:33  IMPROVE queued mix minus
+14:03:33  IMPROVE queued midi
+14:03:33  IMPROVE queued 
+14:03:33  click track 1  muted=0.0  items in range=1  inserted=true
+14:03:33  IMPROVE note click range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+14:03:33  IMPROVE queued click
+14:03:43  === run 2026-11-18  jobs=improve  project=1M04 - The Birds - v05.01.01  cue=0.000-69.319
+14:03:43  IMPROVE start 5 marked tracks
+14:03:43  IMPROVE note stems range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+14:03:45  IMPROVE queued stems
+14:03:45  IMPROVE note master range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+14:03:46  IMPROVE queued master
+14:03:46  IMPROVE note mix minus range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+14:03:47  IMPROVE queued mix minus
+14:03:47  IMPROVE queued midi
+14:03:47  IMPROVE queued 
+14:03:47  click track 1  muted=0.0  items in range=1  inserted=true
+14:03:47  IMPROVE note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+14:03:48  IMPROVE queued click
+14:03:55  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.05  cue=0.000-134.400
+14:03:55  IMPROVE start 10 marked tracks
+14:03:55  IMPROVE note stems range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+14:03:56  IMPROVE queued stems
+14:03:56  IMPROVE note master range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+14:03:57  IMPROVE queued master
+14:03:57  IMPROVE note mix minus range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+14:03:57  IMPROVE queued mix minus
+14:03:57  IMPROVE queued midi
+14:03:57  IMPROVE queued 
+14:03:57  click track 1  muted=0.0  items in range=1  inserted=true
+14:03:57  IMPROVE note click range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+14:03:58  IMPROVE queued click
+14:04:15  === run 2026-11-18  jobs=improve  project=1M01 - Grey Ghost - v02.01.01  cue=0.000-79.663
+14:04:15  IMPROVE start 3 marked tracks
+14:04:15  IMPROVE note stems range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:04:20  about to run render action 42230
+14:07:01  render action returned
+14:07:01  IMPROVE step stems
+14:07:06  IMPROVE note master range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:07:11  about to run render action 42230
+14:09:00  render action returned
+14:09:00  IMPROVE step master
+14:09:05  IMPROVE note mix minus range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:09:10  about to run render action 42230
+14:10:47  render action returned
+14:10:47  IMPROVE step mix minus
+14:10:52  IMPROVE step midi
+14:10:52  IMPROVE done 
+14:10:52  click track 1  muted=0.0  items in range=1  inserted=true
+14:10:52  IMPROVE note click range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+14:10:57  about to run render action 42230
+14:12:39  render action returned
+14:12:39  IMPROVE step click
+14:15:02  === run 2026-11-18  jobs=improve  project=1M02 - Keep the Search Alive - v03.01.03  cue=0.000-80.789
+14:15:02  - start 2 marked tracks
+14:15:02  - step midi
+14:15:02  - done 
+16:34:52  === run 2026-11-18  jobs=improve  project=1M03 - Never Say Never - v03.01.01  cue=0.000-84.042
+16:34:52  IMPROVE start 8 marked tracks
+16:34:52  IMPROVE note stems range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+16:34:57  about to run render action 42230
+16:39:16  render action returned
+16:39:16  IMPROVE step stems
+16:39:21  IMPROVE note master range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+16:39:26  about to run render action 42230
+16:40:07  render action returned
+16:40:07  IMPROVE step master
+16:40:12  IMPROVE note mix minus range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+16:40:17  about to run render action 42230
+16:40:56  render action returned
+16:40:56  IMPROVE step mix minus
+16:41:01  IMPROVE step midi
+16:41:01  IMPROVE done 
+16:41:01  click track 1  muted=0.0  items in range=1  inserted=true
+16:41:01  IMPROVE note click range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+16:41:06  about to run render action 42230
+16:41:18  render action returned
+16:41:18  IMPROVE step click
+18:16:34  === run 2026-11-18  jobs=improve  project=1M04 - The Birds - v05.01.01  cue=0.000-69.319
+18:16:34  IMPROVE start 5 marked tracks
+18:16:34  IMPROVE note stems range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+18:16:39  about to run render action 42230
+18:17:05  render action returned
+18:17:05  IMPROVE step stems
+18:17:10  IMPROVE note master range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+18:17:15  about to run render action 42230
+18:17:55  render action returned
+18:17:55  IMPROVE step master
+18:18:00  IMPROVE note mix minus range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+18:18:05  about to run render action 42230
+18:18:43  render action returned
+18:18:43  IMPROVE step mix minus
+18:18:48  IMPROVE step midi
+18:18:48  IMPROVE done 
+18:18:48  click track 1  muted=0.0  items in range=1  inserted=true
+18:18:48  IMPROVE note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+18:18:53  about to run render action 42230
+18:19:12  render action returned
+18:19:12  IMPROVE step click
+18:21:17  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.05  cue=0.000-134.400
+18:21:17  IMPROVE start 10 marked tracks
+18:21:17  IMPROVE note stems range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+18:21:22  about to run render action 42230
+18:25:13  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.05  cue=0.000-134.400
+18:25:13  IMPROVE start 10 marked tracks
+18:25:13  IMPROVE note stems range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+18:25:18  about to run render action 42230
+18:29:43  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.05  cue=0.000-134.400
+18:29:43  IMPROVE start 10 marked tracks
+18:29:43  IMPROVE note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M05 - Ghost Stories/exports/1M05 - Ghost Stories - v01.01.05/1M05 - Ghost Stories - v01.01.05 IMPROVE
+18:29:43  IMPROVE note stems range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+18:29:48  about to run render action 42230
+18:35:13  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.05  cue=0.000-134.400
+18:35:13  IMPROVE start 10 marked tracks
+18:35:13  IMPROVE note stems range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+18:35:18  about to run render action 42230
+18:54:18  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.06  cue=0.000-134.400
+18:54:18  IMPROVE start 10 marked tracks
+18:54:18  IMPROVE note stems range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+18:54:23  about to run render action 42230
+18:56:14  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.06  cue=0.000-134.400
+18:56:14  - start 10 marked tracks
+18:56:14  - step midi
+18:56:14  - done 
+19:02:18  === run 2026-11-18  jobs=improve  project=1M05 - Ghost Stories - v01.01.06  cue=0.000-134.400
+19:02:18  IMPROVE start 10 marked tracks
+19:02:18  IMPROVE note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Hunt for the Grey Ghost/HGG Reaper Projects/1M05 - Ghost Stories/exports/1M05 - Ghost Stories - v01.01.06/1M05 - Ghost Stories - v01.01.06 IMPROVE
+19:02:18  IMPROVE note stems range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+19:02:23  about to run render action 42230
+19:10:31  render action returned
+19:10:31  IMPROVE step stems
+19:10:36  IMPROVE note master range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+19:10:41  about to run render action 42230
+19:11:35  render action returned
+19:11:35  IMPROVE step master
+19:11:40  IMPROVE note mix minus range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+19:11:45  about to run render action 42230
+19:12:33  render action returned
+19:12:33  IMPROVE step mix minus
+19:12:38  IMPROVE done 
+19:12:38  click track 1  muted=0.0  items in range=1  inserted=true
+19:12:38  IMPROVE note click range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+19:12:43  about to run render action 42230
+19:12:56  render action returned
+19:12:56  IMPROVE step click
