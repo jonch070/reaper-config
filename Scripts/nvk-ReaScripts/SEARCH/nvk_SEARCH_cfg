@@ -62,7 +62,7 @@ return {
 		keys = {
 			
 		},
-		last_cursor_context = 0,
+		last_cursor_context = 1,
 		load_last_search_on_startup = false,
 		new_instance_close = true,
 		open_projects_in_new_tab = false,
@@ -83,7 +83,59 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
+				id = "Script: LKC - RenderBlocks - Render.lua (RSf32da68248e18f77d376da6d25c8e4b1ecb00efa) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - Enter name.lua (RSb389eebe0c433b827f5c873478a9373a539d43b1) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - Pack clusters and Enter name.lua (RSfbceb6c12902c0f7fde704da17bf0a24a356cf52) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - Pack or Unpack.lua (RSb835639b40cd391b1ec3664c2ecc255a79b6c0a9) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - Settings.lua (RS2d95a289c8495b7081d24aa3fe4610f3e6f15a12) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - Pack clusters.lua (RS06c6146f233b1e6cfc1f654e2c9b671552502f37) (Main)",
+				type = "action"
+			},
+			{
+				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - AutoName.lua (RSdf339410c59229e095c4f17daff30782d6f51458) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Reapertips_Project Launcher.lua (RS7df81f4a0eea01208f22396bdf933be8c6a3fa28) (Main)",
+				type = "action"
+			},
+			{
 				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Apply track/take FX to items (MIDI output) (40436) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Hide unused tracks and empty parents (keep muted with items or routing).lua (RS4283285956669382cb1b028a1601c1af3be660e1) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Saxmand_FX Modulator Linking.lua (RS0459c20bd2f786f027d3f24fad53a5963fac78d4) (Main)",
 				type = "action"
 			},
 			{
@@ -116,10 +168,6 @@ return {
 			},
 			{
 				id = "File: Open render queue (40929) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
 				type = "action"
 			},
 			{
@@ -175,20 +223,12 @@ return {
 				type = "action"
 			},
 			{
-				id = "ReaPack: Browse packages... (REAPACK_BROWSE) (Main)",
-				type = "action"
-			},
-			{
 				id = "Take: Implode items across tracks into takes (40438) (Main)",
 				type = "action"
 			},
 			{
 				id = "VST:ReaTune (Cockos)",
 				type = "vst"
-			},
-			{
-				id = "Script: JK - Hide unused tracks and empty parents (keep muted with items or routing).lua (RS4283285956669382cb1b028a1601c1af3be660e1) (Main)",
-				type = "action"
 			},
 			{
 				id = "Transient detection sensitivity/threshold: Adjust... (41208) (Main)",
@@ -440,46 +480,6 @@ return {
 			},
 			{
 				id = "Script: JK - Export Status (subprojects).lua (RSc4924da8cd4084d2e92f0bcb87d76e4ad9062a06) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Export Status.lua (RS680fa4ecada7f7214afe21b563d497639634114e) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: DM_SubprojectManager.lua (RSb2d0bccea0cfe66bbe8a7b8585180e292f24d520) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Open/close Notes window (S&M_SHOW_NOTES_VIEW) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: HeDa_TI_Archiving_Unarchive.lua (RS936ae53c376a40f959ef82048f129ac000ca93b1) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: solger_ReaLauncher.lua (RS64c58143c69f93c74347ca8caed894d680cec4a5) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: DM_AssetVideoOverlay.lua (RSac10d9074eb45712b94a59a5e84d3bf3db31b649) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: NateWeiner - Set project frame rate from video.lua (RSffa88234af6d0278615a8b8b967c0dbb42a91461) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: importaaf.py (RSa5f9d8ab6f10cfded30a600c906ed7fbb3af43de) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Insert click track (SWS_AWINSERTCLICKTRK) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: js_LFO Tool (MIDI editor version, insert CCs in time selection in last clicked lane).lua (RS7d3c_6d0dbfd00ea9b324f5eeec96b49f2c29ee9b880f) (MIDI Editor)",
 				type = "action"
 			}
 		},
