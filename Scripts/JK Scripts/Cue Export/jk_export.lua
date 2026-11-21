@@ -779,6 +779,31 @@ local function render_pass(ctx, preset, pattern, settings, tracks, label, norm)
     return targets
 end
 
+-- Hand-off for the slow multitrack stems: select the tracks, mute what the pass needs, apply
+-- the preset, then open REAPER's own render dialog (File > Render) for the user to press
+-- "Add to render queue" (or Render). The queue takes a snapshot of the project, so mutes and
+-- selection are free to be restored as soon as the dialog closes. Returns how many files
+-- appeared in QueuedRenders.
+local function queued_count()
+    return #list_files(reaper.GetResourcePath() .. "/QueuedRenders")
+end
+
+local function dialog_pass(ctx, preset, pattern, settings, tracks, label, note)
+    select_only(tracks)
+    apply_render(preset, ctx.region, pattern, settings)
+    reaper.TrackList_AdjustWindows(false)
+    reaper.UpdateArrange()
+    reaper.ShowMessageBox(string.format("%s: %d tracks selected%s.\n\nThe render dialog opens next, already set up. Click \"Add to render queue\", then close the dialog. The other exports start after that.",
+        label, #tracks, note or ""), "Cue export", 0)
+    local before = queued_count()
+    log_event(ctx, "note", label .. ": render dialog opened for the user")
+    reaper.Main_OnCommand(40015, 0) -- File: Render project to disk... (returns when the dialog closes)
+    local added = queued_count() - before
+    if added > 0 then ctx.queued = ctx.queued + added end
+    log_event(ctx, added > 0 and "queued" or "note", label .. (added > 0 and " (queued by user)" or ": nothing was added to the render queue"))
+    if added <= 0 then ctx.notes[#ctx.notes + 1] = label .. ": nothing was added to the render queue" end
+end
+
 -- Reference files (master, mix minus, click) get a leading "_" so they sort above the stems:
 -- the preset's pattern with "$track" replaced by `name` and "_" prepended to the filename
 local function ref_pattern(pattern, name)
@@ -1210,6 +1235,29 @@ local function strip_prefixes(targets)
     end
 end
 
+-- Standalone cleanup for queued multitrack renders: strips STRIP_PREFIXES from the
+-- files in this project's MULTITRACK/DRY and WET folders. Returns (renamed, message).
+function M.clean_multitrack_names()
+    local project_name = reaper.GetProjectName(0):gsub("%.[Rr][Pp][Pp]$", "")
+    if project_name == "" then return nil, "Save the project first." end
+    local renamed = 0
+    for _, spec in ipairs({ { "Film Multitrack Dry", "DRY" }, { "Film Multitrack Wet", "WET" } }) do
+        local preset = load_preset(spec[1])
+        if preset then
+            local dir = expected_dir(preset, project_name, "$project/$project MULTITRACK/" .. spec[2] .. "/x")
+            local targets = {}
+            for _, name in ipairs(list_files(dir)) do targets[#targets + 1] = dir .. "/" .. name end
+            local before = {}
+            for _, path in ipairs(targets) do before[path] = true end
+            strip_prefixes(targets)
+            for _, path in ipairs(targets) do
+                if not reaper.file_exists(path) then renamed = renamed + 1 end
+            end
+        end
+    end
+    return renamed, renamed .. " files renamed"
+end
+
 -- Effects / reverb returns as their own stem: with Effects live, every top-level
 -- track except Effects stops feeding the master, so only the returns are heard.
 local function fx_return_pass(ctx, preset, pattern)
@@ -1219,13 +1267,10 @@ local function fx_return_pass(ctx, preset, pattern)
         if t.name:lower() == "effects" and t.depth == 1 then fx = t break end
     end
     if not fx then ctx.notes[#ctx.notes + 1] = "FX RETURN skipped: no Effects folder" return end
-    if fx.level ~= 0 then ctx.notes[#ctx.notes + 1] = "FX RETURN skipped: Effects folder is nested, not top-level" return end
+    -- The Effects folder, unmuted and selected, renders as one stem (a folder stem is its whole bus);
+    -- source 128 = selected tracks via master, one at a time (the fast bit crashes here)
     set_muted(ctx, fx.track, false)
-    for _, t in ipairs(scan) do
-        if t.level == 0 and not t.transparent and t.track ~= fx.track then set_main_send(ctx, t.track, false) end
-    end
-    render_pass(ctx, preset, pattern, 0, nil, "fx return")
-    restore_main_sends(ctx)
+    render_pass(ctx, preset, pattern, STEMS_SETTINGS_SLOW, { fx.track }, "fx return")
     restore_mutes(ctx)
 end
 
@@ -1264,6 +1309,21 @@ local function multitrack_job(job, ctx)
     local etc = near_tc(top .. "/DRY", ctx.project_name, near_tc(top, ctx.project_name, start_timecode(ctx.region)))
     local function have(dir, test, min)
         return check_files(dir, { { label = "x", min = min or 1, test = test } }) == "complete"
+    end
+
+    -- Dialog mode: the stems are the slow part, so they go first, through the render dialog
+    -- for the user to queue; everything after this renders normally
+    if ctx.dialog then
+        local dsub = job.mute_effects and "DRY/" or "WET/"
+        local dpattern = base .. dsub .. preset.pattern:match("([^/]*)$")
+        if job.mute_effects then
+            for _, t in ipairs(scan_tracks()) do
+                if t.name:lower() == "effects" and t.depth == 1 then set_muted(ctx, t.track, true) end
+            end
+        end
+        dialog_pass(ctx, preset, dpattern, ctx.dialog_settings, tracks, job.label,
+            job.mute_effects and ", Effects folder muted" or "")
+        restore_mutes(ctx)
     end
 
     -- Reference mix and click once per cue, before anything is muted.
@@ -1311,7 +1371,7 @@ local function multitrack_job(job, ctx)
     local pattern = base .. sub .. preset.pattern:match("([^/]*)$")
     local stem_dir = expected_dir(preset, ctx.project_name, pattern)
     local tag = (job.mute_effects and " dry - " or " wet - ") .. ctx.project_name .. " - " .. etc
-    local stems_kept = keep(job.label, function()
+    local stems_kept = ctx.dialog or ctx.no_stems or keep(job.label, function()
         return have(stem_dir, function(n) return ends_with(n, ".wav") and not starts_with(n, "_") and n:find(tag, 1, true) ~= nil end, #tracks)
     end)
     if not stems_kept and job.mute_effects then
@@ -1325,7 +1385,9 @@ local function multitrack_job(job, ctx)
     if not stems_kept then targets = render_pass(ctx, preset, pattern, ctx.stems_settings, tracks, job.label) end
     restore_mutes(ctx)
 
-    if stems_kept then
+    if ctx.no_stems then
+        ctx.dirs[#ctx.dirs + 1] = top
+    elseif stems_kept then
         ctx.dirs[#ctx.dirs + 1] = stem_dir
     elseif #targets > 0 then
         strip_prefixes(targets)
@@ -1337,13 +1399,102 @@ local function multitrack_job(job, ctx)
         error("multitrack render produced no files")
     end
 
-    if job.mute_effects and not keep("fx return", function()
+    if job.mute_effects and not ctx.no_stems and not keep("fx return", function()
             return have(stem_dir, function(n) return n == ctx.project_name .. " - " .. etc .. " - FX RETURN.wav" end)
         end) then
         clear_old(ctx, stem_dir, "fxreturn")
         fx_return_pass(ctx, preset, base .. sub .. "$project - $starttc - FX RETURN")
     end
-    log_event(ctx, ctx.queue and "queued" or "done")
+    log_event(ctx, (ctx.queue or ctx.dialog) and "queued" or "done")
+end
+
+-- Hand setup for the multitrack render dialog ------------------------------------
+-- The setup actions select the right tracks, mute / cut what the pass needs, and apply the
+-- render preset; the user then opens File > Render and queues it. What they changed is
+-- remembered in the project (ProjExtState) so "reset" can put it back, even after a restart.
+local SETUP = "JK_MultitrackSetup"
+
+local function load_saved()
+    local _, s = reaper.GetProjExtState(0, SETUP, "saved")
+    local list = {}
+    for kind, guid, v in s:gmatch("(%a)|([^|\n]+)|([^\n]*)") do list[#list + 1] = { kind = kind, guid = guid, v = tonumber(v) or 0 } end
+    return list
+end
+
+local function save_saved(list)
+    local out = {}
+    for _, e in ipairs(list) do out[#out + 1] = e.kind .. "|" .. e.guid .. "|" .. e.v end
+    reaper.SetProjExtState(0, SETUP, "saved", table.concat(out, "\n"))
+end
+
+-- kind "m" = mute, "s" = send to parent / master
+local function remember_and_set(kind, tr, value)
+    local key = kind == "m" and "B_MUTE" or "B_MAINSEND"
+    local list, guid = load_saved(), reaper.GetTrackGUID(tr)
+    local have = false
+    for _, e in ipairs(list) do if e.kind == kind and e.guid == guid then have = true end end
+    if not have then list[#list + 1] = { kind = kind, guid = guid, v = reaper.GetMediaTrackInfo_Value(tr, key) } save_saved(list) end
+    reaper.SetMediaTrackInfo_Value(tr, key, value)
+end
+
+function M.multitrack_reset()
+    local list, by_guid = load_saved(), {}
+    for i = 0, reaper.CountTracks(0) - 1 do
+        local tr = reaper.GetTrack(0, i)
+        by_guid[reaper.GetTrackGUID(tr)] = tr
+    end
+    local n = 0
+    for _, e in ipairs(list) do
+        local tr = by_guid[e.guid]
+        if tr then
+            reaper.SetMediaTrackInfo_Value(tr, e.kind == "m" and "B_MUTE" or "B_MAINSEND", e.v)
+            n = n + 1
+        end
+    end
+    reaper.SetProjExtState(0, SETUP, "saved", "")
+    reaper.UpdateArrange()
+    return n
+end
+
+-- mode: "dry" (select the multitrack tracks, mute Effects), "wet" (select them),
+--       "fx" (Effects folder unmuted and selected, source 128 = FX RETURN)
+function M.multitrack_setup(mode)
+    local project_name = reaper.GetProjectName(0):gsub("%.[Rr][Pp][Pp]$", "")
+    if project_name == "" then return alert("Save the project first.") end
+    local region, why = cue_region()
+    if not region then return alert(why) end
+    local job = M.jobs[mode == "wet" and "multitrack_wet" or "multitrack_dry"]
+    local preset, err = load_preset(job.preset)
+    if not preset then return alert(err) end
+    M.multitrack_reset() -- start from the original state, never stack setups
+
+    local scan = scan_tracks()
+    local fx
+    for _, t in ipairs(scan) do
+        if t.name:lower() == "effects" and t.depth == 1 then fx = t break end
+    end
+    local base = "$project/$project MULTITRACK/"
+    local pattern, settings, selected, detail = nil, 128, {}, ""
+    if mode == "fx" then
+        if not fx then return alert("No Effects folder found.") end
+        remember_and_set("m", fx.track, 0)
+        selected = { fx.track }
+        pattern = base .. "DRY/$project - $starttc - FX RETURN"
+        detail = "Effects folder unmuted and selected (it renders as one stem)"
+    else
+        selected = leaf_tracks(region)
+        if #selected == 0 then return alert("No tracks with items or routing in the cue range.") end
+        pattern = base .. (mode == "dry" and "DRY/" or "WET/") .. preset.pattern:match("([^/]*)$")
+        if mode == "dry" then
+            if fx then remember_and_set("m", fx.track, 1) detail = ", Effects folder muted"
+            else detail = ", no Effects folder found" end
+        end
+        detail = #selected .. " tracks selected" .. detail
+    end
+    select_only(selected)
+    apply_render(preset, region, pattern, settings)
+    reaper.TrackList_AdjustWindows(false)
+    reaper.UpdateArrange()
 end
 
 -- Deepest folder that contains every output dir
@@ -1662,9 +1813,13 @@ end
 --         resume = bool (skip steps an interrupted run already finished),
 --         replace = bool (delete this cue's existing files before rendering, so no overwrite prompt),
 --         remove_click = bool (delete the click track this run inserted, instead of leaving it muted),
---         slow_stems = bool (stems via master WITHOUT the "fast" bit, one track at a time; a crash test),
+--         fast_live / fast_queue = bool (stems via master WITH the "fast" bit when rendering now / when queueing;
+--           false = one track at a time, a crash test; nil = fast),
 --         delay = seconds to wait before and after every render pass (default 0),
 --         freeze_ui = bool (PreventUIRefresh during the run; off by default),
+--         multitrack_dialog = bool (multitrack stems: open the render dialog for the user to queue, first;
+--           everything else renders now; not with queue / midi_only),
+--         multitrack_no_stems = bool (multitrack: only MASTER REF, CLICK, tempo map, MIDI; no stems, no FX RETURN),
 --         open_queue_action = action ID to run after queueing (opens the render queue) }
 function M.run(opts)
     local project_name = reaper.GetProjectName(0):gsub("%.[Rr][Pp][Pp]$", "")
@@ -1676,12 +1831,23 @@ function M.run(opts)
 
     local ctx = { region = region, project_name = project_name, master_preset = master_preset,
         queue = opts.queue and true or false, midi_only = opts.midi_only and true or false,
-        stems_settings = opts.slow_stems and STEMS_SETTINGS_SLOW or STEMS_SETTINGS,
+        stems_settings = ((opts.queue and opts.fast_queue or (not opts.queue and opts.fast_live)) ~= false
+            and STEMS_SETTINGS or STEMS_SETTINGS_SLOW),
         delay = (not opts.queue) and tonumber(opts.delay) or 0, -- adding to the queue renders nothing, so no waiting
         resume = opts.resume and not opts.queue and not opts.midi_only,
         replace = opts.replace and not opts.resume and not opts.queue and not opts.midi_only,
         midi = opts.midi_only or opts.midi ~= false,
         saved_mutes = {}, saved_mainsend = {}, dirs = {}, queued = 0, notes = {} }
+    -- Multitrack stems go through the render dialog for the user to queue; the rest renders now
+    ctx.dialog = opts.multitrack_dialog and not ctx.queue and not ctx.midi_only or false
+    ctx.no_stems = opts.multitrack_no_stems and true or false -- multitrack: references only, no stems / FX RETURN
+    ctx.dialog_settings = opts.fast_queue ~= false and STEMS_SETTINGS or STEMS_SETTINGS_SLOW
+    local job_list = opts.jobs
+    if ctx.dialog then -- multitrack first, so the user can queue it and walk away
+        job_list = {}
+        for _, key in ipairs(opts.jobs) do if M.jobs[key].kind == "multitrack" then job_list[#job_list + 1] = key end end
+        for _, key in ipairs(opts.jobs) do if M.jobs[key].kind ~= "multitrack" then job_list[#job_list + 1] = key end end
+    end
 
     trace(string.format("=== run %s  jobs=%s  project=%s  cue=%.3f-%.3f", os.date("%Y-%m-%d"),
         table.concat(opts.jobs, ","), project_name, region.start, region.finish))
@@ -1693,7 +1859,7 @@ function M.run(opts)
         ctx.queue and " -> render queue" or ""))
     if opts.freeze_ui then reaper.PreventUIRefresh(1) end -- off by default: a frozen UI can leave REAPER's track list stale for the render dialog
     local ok, problem = pcall(function()
-        for _, key in ipairs(opts.jobs) do
+        for _, key in ipairs(job_list) do
             local job = M.jobs[key]
             if job.kind == "stems" then stems_job(job, ctx)
             elseif job.kind == "prox" then prox_job(job, ctx)
@@ -1733,6 +1899,10 @@ function M.run(opts)
     if ctx.queue then
         if opts.open_queue_action and opts.open_queue_action ~= "" then run_action(opts.open_queue_action) end
         return alert(ctx.queued .. " renders added to the render queue." .. notes)
+    end
+    if ctx.dialog and ctx.queued > 0 then
+        notes = notes .. string.format("\n\n%d multitrack render(s) are waiting in the render queue. Start the queue, and when it finishes run \"JK - Clean multitrack filenames\".", ctx.queued)
+        if opts.open_queue_action and opts.open_queue_action ~= "" then run_action(opts.open_queue_action) end
     end
     local open_dir = common_dir(ctx.dirs)
     if open_dir then

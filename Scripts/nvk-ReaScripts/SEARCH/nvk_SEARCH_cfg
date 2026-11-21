@@ -62,7 +62,7 @@ return {
 		keys = {
 			
 		},
-		last_cursor_context = 1,
+		last_cursor_context = 0,
 		load_last_search_on_startup = false,
 		new_instance_close = true,
 		open_projects_in_new_tab = false,
@@ -83,15 +83,111 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "Script: LKC - RenderBlocks - Render.lua (RSf32da68248e18f77d376da6d25c8e4b1ecb00efa) (Main)",
+				id = "Script: JK - Select unused tracks (including archived).lua (RS956fbb46a8308e1dd4f1a3e9e13afb984bc8e243) (Main)",
 				type = "action"
 			},
 			{
-				id = "Script: LKC - RenderBlocks - Enter name.lua (RSb389eebe0c433b827f5c873478a9373a539d43b1) (Main)",
+				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Open render queue (40929) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Spawn new instance of REAPER (40063) (Main)",
+				type = "action"
+			},
+			{
+				id = "Track: Set to random colors (40358) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_THEME - Settings.lua (RS5090bcf8eb35e73f381a07670564e93f184342d7) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS: Toggle auto track coloring enable (SWSAUTOCOLOR_ENABLE) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS: Apply auto coloring (SWSAUTOCOLOR_APPLY) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Randomize item positions... (XENAKIOS_RANDOMIZE_ITEMPOS) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Open item copies in primary external editor (40132) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Open items in primary external editor (40109) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Open item copies in secondary external editor (40203) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Close all projects (40886) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Export project MIDI... (40849) (Main)",
+				type = "action"
+			},
+			{
+				id = "Track: Set all FX offline for selected tracks (40535) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/BR: Copy take media source file path of selected items to clipboard (BR_TSOURCE_PATH_TO_CLIPBOARD) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Item - Glue items separately (preserve stuff).lua (RS64c12754a7ae464866adba419bd12d627e3b2915) (Main)",
 				type = "action"
 			},
 			{
 				id = "Script: LKC - RenderBlocks - Pack clusters and Enter name.lua (RSfbceb6c12902c0f7fde704da17bf0a24a356cf52) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - Render.lua (RSf32da68248e18f77d376da6d25c8e4b1ecb00efa) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: Item - Glue items separately, ignoring time selection (preserve stuff).lua (RS984f432a1f31a0767bda1278d9f00d2890a5f7f9) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: LKC - RenderBlocks - Enter name.lua (RSb389eebe0c433b827f5c873478a9373a539d43b1) (Main)",
 				type = "action"
 			},
 			{
@@ -119,19 +215,11 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
-				type = "action"
-			},
-			{
 				id = "Item: Apply track/take FX to items (MIDI output) (40436) (Main)",
 				type = "action"
 			},
 			{
 				id = "Script: JK - Hide unused tracks and empty parents (keep muted with items or routing).lua (RS4283285956669382cb1b028a1601c1af3be660e1) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
 				type = "action"
 			},
 			{
@@ -167,14 +255,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "File: Open render queue (40929) (Main)",
-				type = "action"
-			},
-			{
-				id = "File: Close all projects (40886) (Main)",
-				type = "action"
-			},
-			{
 				id = "AU:MTremolo (MeldaProduction)",
 				type = "au"
 			},
@@ -191,15 +271,7 @@ return {
 				type = "action"
 			},
 			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-				type = "action"
-			},
-			{
 				id = "Track: Duplicate tracks (40062) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
 				type = "action"
 			},
 			{
@@ -260,14 +332,6 @@ return {
 			},
 			{
 				id = "SWS/S&M: Takes - Activate lanes from selected items (S&M_LANETAKE2) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Open item copies in primary external editor (40132) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
 				type = "action"
 			},
 			{
@@ -335,10 +399,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Item: Open items in primary external editor (40109) (Main)",
-				type = "action"
-			},
-			{
 				id = "Xenakios/SWS: Choose new source file for selected takes... (XENAKIOS_CHANGESOURCEFILE) (Main)",
 				type = "action"
 			},
@@ -403,15 +463,7 @@ return {
 				type = "vst3i"
 			},
 			{
-				id = "SWS/BR: Normalize loudness of selected items to -23 LUFS (BR_NORMALIZE_LOUDNESS_ITEMS23) (Main)",
-				type = "action"
-			},
-			{
 				id = "Insert empty item (40142) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_THEME - Track Colors - Apply - Auto.lua (RSe085574d2b4a331306da5e236b361d886ae0ef78) (Main)",
 				type = "action"
 			},
 			{
@@ -428,58 +480,6 @@ return {
 			},
 			{
 				id = "Script: jk_Move selected items to tracks with same name as items (create tracks).lua (RSceef681170fcae867d8152a6703c34b5db23dae7) (Main)",
-				type = "action"
-			},
-			{
-				id = "JS:MIDI Map To Key",
-				type = "jsfx"
-			},
-			{
-				id = "JS:TK Scale Filter & Remap",
-				type = "jsfx"
-			},
-			{
-				id = "VST3:Dodo MIDI (Dodo Bird)",
-				type = "vst3"
-			},
-			{
-				id = "VST3:Density (Sound Particles)",
-				type = "vst3"
-			},
-			{
-				id = "VST3:kHs Formant Filter (Kilohearts)",
-				type = "vst3"
-			},
-			{
-				id = "SWS/S&M: Resources - Add media file to selected items as takes, last slot (S&M_ADDMEDIA_SELITEMl) (Main)",
-				type = "action"
-			},
-			{
-				id = "Media: Insert in selected media items as new take (41003) (Media Explorer)",
-				type = "action"
-			},
-			{
-				id = "VST3:kHs Gain (Kilohearts)",
-				type = "vst3"
-			},
-			{
-				id = "File: Export project MIDI... (40849) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST:ReaControlMIDI (Cockos)",
-				type = "vst"
-			},
-			{
-				id = "AU:Spectral Freezing (Michael Norris)",
-				type = "au"
-			},
-			{
-				id = "Script: rewgs - export midi - tracks to orchestrate.lua (RS6ca88a1353d273569b9e08e6e0aba8f200a41017) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Export Status (subprojects).lua (RSc4924da8cd4084d2e92f0bcb87d76e4ad9062a06) (Main)",
 				type = "action"
 			}
 		},

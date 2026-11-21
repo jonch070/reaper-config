@@ -1,11 +1,11 @@
 config = {
 	MAINWIND = {
 		cursor_x = 8.0,
-		cursor_y = 611.0,
-		h = 611.0,
-		w = 430.0,
-		x = 942.0,
-		y = 259.0
+		cursor_y = 1438.0,
+		h = 1434.0,
+		w = 800.0,
+		x = 640.0,
+		y = 151.0
 	},
 	always_add_new_instance = false,
 	always_on_top = false,
@@ -13,7 +13,7 @@ config = {
 	auto_update_warning = true,
 	child_brightness = 0.88,
 	child_color_increment = 0,
-	child_gradient = false,
+	child_gradient = true,
 	color_theme = {
 		colors = {
 			5207853,
@@ -81,8 +81,8 @@ config = {
 		
 	},
 	tab_active = 0,
-	track_color_depth = false,
-	track_color_preserve = false,
+	track_color_depth = true,
+	track_color_preserve = true,
 	track_color_project_confirm = true,
 	track_color_randomize_all = false,
 	track_color_randomize_starting = false,

@@ -28,8 +28,10 @@ local replace = load_flag("replace", false)
 local remove_click = load_flag("remove_click", false)
 local archive_first = load_flag("archive_first", false)
 local freeze_ui = load_flag("freeze_ui", false)
-local slow_stems = load_flag("slow_stems", false)
+local fast_live = load_flag("fast_live", false) -- "fast via master" when rendering now (crashes here)
+local fast_queue = load_flag("fast_queue", true) -- "fast via master" when adding to the render queue
 local delay = tonumber(reaper.GetExtState(SECTION, "delay")) or 0
+local mt_dialog = load_flag("mt_dialog", true) -- multitrack stems: set up the render dialog, I queue them
 local open_queue = load_flag("open_queue", false)
 local queue_action = reaper.GetExtState(SECTION, "queue_action") -- ID of the "show render queue" action
 
@@ -75,15 +77,18 @@ local function prepare_run()
     save_flag("remove_click", remove_click)
     save_flag("archive_first", archive_first)
     save_flag("freeze_ui", freeze_ui)
-    save_flag("slow_stems", slow_stems)
+    save_flag("fast_live", fast_live)
+    save_flag("fast_queue", fast_queue)
     reaper.SetExtState(SECTION, "delay", tostring(delay), true)
     save_flag("open_queue", open_queue)
+    save_flag("mt_dialog", mt_dialog)
     reaper.SetExtState(SECTION, "queue_action", queue_action, true)
     if #jobs == 0 then return nil end
     return { jobs = jobs, queue = queue and not midi_only, midi = midi, midi_only = midi_only, resume = resume,
-        replace = replace, remove_click = remove_click, freeze_ui = freeze_ui, slow_stems = slow_stems, delay = delay,
+        replace = replace, remove_click = remove_click, freeze_ui = freeze_ui, fast_live = fast_live, fast_queue = fast_queue, delay = delay,
         archive_first = archive_first and not midi_only,
-        open_queue_action = (queue and open_queue) and queue_action or nil }
+        multitrack_dialog = mt_dialog and not queue and not midi_only,
+        open_queue_action = (open_queue and (queue or mt_dialog)) and queue_action or nil }
 end
 
 -- Archive the unused tracks (HeDa, External) and wait until HeDa has marked every one of
@@ -185,7 +190,8 @@ local function loop()
         _, replace = reaper.ImGui_Checkbox(ctx, "Replace existing files (old ones are deleted first, no overwrite prompt)", replace)
         _, remove_click = reaper.ImGui_Checkbox(ctx, "Remove the click track when done (instead of leaving it muted)", remove_click)
         _, archive_first = reaper.ImGui_Checkbox(ctx, "Archive unused tracks first (HeDa External, permanent once saved)", archive_first)
-        _, slow_stems = reaper.ImGui_Checkbox(ctx, "Slow stems: not 'fast via master' (crash test, one track at a time)", slow_stems)
+        _, fast_live = reaper.ImGui_Checkbox(ctx, "Stems 'fast via master' when rendering now (off = one track at a time)", fast_live)
+        _, fast_queue = reaper.ImGui_Checkbox(ctx, "Stems 'fast via master' when adding to the render queue", fast_queue)
         _, freeze_ui = reaper.ImGui_Checkbox(ctx, "Freeze the screen while exporting (try both if REAPER crashes)", freeze_ui)
         reaper.ImGui_SetNextItemWidth(ctx, 90)
         local changed
@@ -194,8 +200,11 @@ local function loop()
         _, midi_only = reaper.ImGui_Checkbox(ctx, "MIDI only (no rendering; IMPROVE / ORCH)", midi_only)
         if not midi_only then
             _, queue = reaper.ImGui_Checkbox(ctx, "Add to render queue instead of rendering now", queue)
+            if not queue then
+                _, mt_dialog = reaper.ImGui_Checkbox(ctx, "Multitrack: open the render dialog for ME to queue (first), then render everything else now", mt_dialog)
+            end
         end
-        if queue and not midi_only then
+        if (queue or mt_dialog) and not midi_only then
             _, open_queue = reaper.ImGui_Checkbox(ctx, "Open the render queue afterwards", open_queue)
             if open_queue then
                 reaper.ImGui_SetNextItemWidth(ctx, 220)

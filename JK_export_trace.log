@@ -735,3 +735,111 @@
 10:01:33  - start 9 marked tracks
 10:01:33  - step midi
 10:01:33  - done 
+13:58:53  === run 2026-11-20  jobs=multitrack_dry,multitrack_wet  project=1M07 - I'm Being Watched - v03.01.01  cue=0.000-114.000
+13:58:53  multitrack dry start 29 tracks
+13:58:53  multitrack dry note master ref range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+13:58:58  about to run render action 42230
+13:59:46  render action returned
+13:59:46  multitrack dry step master ref
+13:59:51  multitrack dry step tempo map
+13:59:51  multitrack dry note multitrack dry range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+13:59:56  about to run render action 42230
+14:02:26  === run 2026-11-20  jobs=multitrack_dry,multitrack_wet  project=1M07 - I'm Being Watched - v03.01.01  cue=0.000-114.000
+14:02:26  multitrack dry start 29 tracks
+14:02:26  multitrack dry note master ref range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:02:29  multitrack dry queued master ref
+14:02:29  multitrack dry step tempo map
+14:02:29  multitrack dry note multitrack dry range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:02:31  multitrack dry queued multitrack dry
+14:02:31  multitrack dry note fx return range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:02:31  multitrack dry queued fx return
+14:02:31  multitrack dry queued 
+14:02:31  multitrack wet start 29 tracks
+14:02:31  multitrack wet note multitrack wet range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:02:31  multitrack wet queued multitrack wet
+14:02:31  multitrack wet queued 
+14:02:32  click track 1  muted=0.0  items in range=1  inserted=true
+14:02:32  multitrack dry note click range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:02:32  multitrack dry queued click
+14:05:59  === run 2026-11-20  jobs=multitrack_dry,multitrack_wet  project=1M07 - I'm Being Watched - v03.01.01  cue=0.000-114.000
+14:05:59  multitrack dry start 29 tracks
+14:05:59  multitrack dry note master ref range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:06:04  about to run render action 42230
+14:06:53  render action returned
+14:06:53  multitrack dry step master ref
+14:06:58  multitrack dry step tempo map
+14:06:58  multitrack dry note multitrack dry range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:07:03  about to run render action 42230
+14:29:40  render action returned
+14:29:40  multitrack dry step multitrack dry
+14:29:45  multitrack dry note fx return range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:29:50  about to run render action 42230
+14:55:25  render action returned
+14:55:25  multitrack dry step fx return
+14:55:30  multitrack dry done 
+14:55:30  multitrack wet start 29 tracks
+14:55:30  multitrack wet note multitrack wet range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+14:55:35  about to run render action 42230
+14:56:14  render action returned
+14:56:14  multitrack wet step multitrack wet
+14:56:19  multitrack wet done 
+15:12:48  === run 2026-11-20  jobs=multitrack_dry,multitrack_wet  project=1M07 - I'm Being Watched - v03.01.01  cue=0.000-114.000
+15:12:48  multitrack dry start 29 tracks
+15:12:52  multitrack dry note multitrack dry: render dialog opened for the user
+15:12:52  multitrack dry note multitrack dry: nothing was added to the render queue
+15:12:52  multitrack dry note master ref range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+15:12:57  about to run render action 42230
+15:13:52  render action returned
+15:13:52  multitrack dry step master ref
+15:13:57  multitrack dry step tempo map
+15:13:57  multitrack dry note fx return range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+15:14:02  about to run render action 42230
+18:33:24  render action returned
+18:33:24  multitrack dry step fx return
+18:33:29  multitrack dry queued 
+18:33:29  multitrack wet start 29 tracks
+18:33:31  multitrack wet note multitrack wet: render dialog opened for the user
+18:33:31  multitrack wet note multitrack wet: nothing was added to the render queue
+18:33:31  multitrack wet queued 
+18:33:31  click track 1  muted=0.0  items in range=1  inserted=true
+18:33:31  multitrack dry note click range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+18:33:36  about to run render action 42230
+18:45:57  === run 2026-11-20  jobs=multitrack_dry  project=1M07 - I'm Being Watched - v03.01.01  cue=0.000-114.000
+18:45:57  multitrack dry start 29 tracks
+18:45:57  multitrack dry note master ref range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+18:45:57  about to run render action 42230
+18:46:51  render action returned
+18:46:51  multitrack dry step master ref
+18:46:51  multitrack dry step tempo map
+18:46:51  multitrack dry done 
+18:46:51  click track 1  muted=0.0  items in range=1  inserted=true
+18:46:51  multitrack dry note click range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+18:46:51  about to run render action 42230
+18:54:17  render action returned
+18:54:17  multitrack dry step click
+19:32:50  === run 2026-11-20  jobs=multitrack_dry  project=1M02 - Keep the Search Alive - v04.01.01  cue=0.000-80.789
+19:32:50  multitrack dry start 29 tracks
+19:32:50  multitrack dry note master ref range 0.000000 - 80.789042 (cue 0.000000 - 80.789042)
+19:32:50  about to run render action 42230
+19:33:40  render action returned
+19:33:40  multitrack dry step master ref
+19:33:41  multitrack dry step tempo map
+19:33:41  multitrack dry done 
+19:33:41  click track 1  muted=0.0  items in range=1  inserted=false
+19:33:41  multitrack dry note click range 0.000000 - 80.789042 (cue 0.000000 - 80.789042)
+19:33:41  about to run render action 42230
+19:33:59  render action returned
+19:33:59  multitrack dry step click
+21:43:52  === run 2026-11-20  jobs=multitrack_dry  project=1M05 - Ghost Stories - v02.01.01  cue=0.000-134.400
+21:43:52  multitrack dry start 32 tracks
+21:43:52  multitrack dry note master ref range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+21:43:52  about to run render action 42230
+21:45:57  render action returned
+21:45:57  multitrack dry step master ref
+21:45:57  multitrack dry step tempo map
+21:45:58  multitrack dry done 
+21:45:58  click track 1  muted=0.0  items in range=1  inserted=true
+21:45:58  multitrack dry note click range 0.000000 - 134.400000 (cue 0.000000 - 134.400000)
+21:45:58  about to run render action 42230
+21:46:34  render action returned
+21:46:34  multitrack dry step click

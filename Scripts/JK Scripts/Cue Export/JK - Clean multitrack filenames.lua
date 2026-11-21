@@ -1,0 +1,5 @@
+-- @description Strip the "Music Sub Mix_" prefix from this project's rendered multitrack filenames (after a queued render)
+-- @author Jonathan Kawchuk (generated with Claude)
+local script_path = ({ reaper.get_action_context() })[2]:match('^(.*[\\/])')
+local _, msg = dofile(script_path .. "jk_export.lua").clean_multitrack_names()
+reaper.ShowMessageBox(msg, "Clean multitrack filenames", 0)
