@@ -1,0 +1,117 @@
+=== 2026-11-21 17:32:29  DRY  notes=Beat Markers;Orch-Mix Markers;Picture Markers;Utility + To-Do
+272 tracks, 415 items from 8 cues (DRY, by instrument).
+
+1M01 - Grey Ghost - v03.01.01  (48 stems)
+1M02 - Keep the Search Alive - v04.01.01  (30 stems)
+1M03 - Never Say Never - v04.01.01  (62 stems)
+1M04 - The Birds - v05.01.02  (87 stems)
+1M05 - Ghost Stories - v02.01.01  (32 stems)
+1M06 - Predators - v04.01.01  (16 stems)
+1M07 - I'm Being Watched - v03.01.01  (28 stems)
+1M08 - We Live in Hope - v06.01.06  (89 stems)
+
+Coloured sections: Choir Pad, Organ, Pitched Percussion, Synth Bass, Synth General, Synth General 2 / Misc, Woodwinds
+
+Notes:
+  1M01: no session file found for notes
+  1M02: no session file found for notes
+  1M03: no session file found for notes
+  1M04: no session file found for notes
+  1M05: no session file found for notes
+  1M06: no session file found for notes
+  1M07: no session file found for notes
+  1M08: no session file found for notes
+=== 2026-11-21 17:32:52  DRY  notes=Beat Markers;Orch-Mix Markers;Picture Markers;Utility + To-Do
+272 tracks, 415 items from 8 cues (DRY, by instrument).
+
+1M01 - Grey Ghost - v03.01.01  (48 stems)
+1M02 - Keep the Search Alive - v04.01.01  (30 stems)
+1M03 - Never Say Never - v04.01.01  (62 stems)
+1M04 - The Birds - v05.01.02  (87 stems)
+1M05 - Ghost Stories - v02.01.01  (32 stems)
+1M06 - Predators - v04.01.01  (16 stems)
+1M07 - I'm Being Watched - v03.01.01  (28 stems)
+1M08 - We Live in Hope - v06.01.06  (89 stems)
+
+Coloured sections: Choir Pad, Organ, Pitched Percussion, Synth Bass, Synth General, Synth General 2 / Misc, Woodwinds
+
+Notes:
+  1M01: no session file found for notes
+  1M02: no session file found for notes
+  1M03: no session file found for notes
+  1M04: no session file found for notes
+  1M05: no session file found for notes
+  1M06: no session file found for notes
+  1M07: no session file found for notes
+  1M08: no session file found for notes
+=== 2026-11-21 17:34:06  DRY  notes=Beat Markers;Orch-Mix Markers;Picture Markers;Utility + To-Do
+272 tracks, 415 items from 8 cues (DRY, by instrument).
+
+1M01 - Grey Ghost - v03.01.01  (48 stems)
+1M02 - Keep the Search Alive - v04.01.01  (30 stems)
+1M03 - Never Say Never - v04.01.01  (62 stems)
+1M04 - The Birds - v05.01.02  (87 stems)
+1M05 - Ghost Stories - v02.01.01  (32 stems)
+1M06 - Predators - v04.01.01  (16 stems)
+1M07 - I'm Being Watched - v03.01.01  (28 stems)
+1M08 - We Live in Hope - v06.01.06  (89 stems)
+
+Coloured sections: Choir Pad, Organ, Pitched Percussion, Synth Bass, Synth General, Synth General 2 / Misc, Woodwinds
+
+Notes:
+  1M01: no session file found for notes
+  1M02: no session file found for notes
+  1M03: no session file found for notes
+  1M04: no session file found for notes
+  1M05: no session file found for notes
+  1M06: no session file found for notes
+  1M07: no session file found for notes
+  1M08: no session file found for notes
+=== 2026-11-21 17:35:15  DRY  notes=Beat Markers;Orch-Mix Markers;Picture Markers;Utility + To-Do
+272 tracks, 415 items from 8 cues (DRY, by instrument).
+
+1M01 - Grey Ghost - v03.01.01  (48 stems)
+1M02 - Keep the Search Alive - v04.01.01  (30 stems)
+1M03 - Never Say Never - v04.01.01  (62 stems)
+1M04 - The Birds - v05.01.02  (87 stems)
+1M05 - Ghost Stories - v02.01.01  (32 stems)
+1M06 - Predators - v04.01.01  (16 stems)
+1M07 - I'm Being Watched - v03.01.01  (28 stems)
+1M08 - We Live in Hope - v06.01.06  (89 stems)
+
+Notes imported (85): Picture Markers 60, Beat Markers 0, Orch-Mix Markers 13, Utility + To-Do 12  [first note at 0:01:05 project time]
+
+Coloured sections: Choir Pad, Organ, Pitched Percussion, Synth Bass, Synth General, Synth General 2 / Misc, Woodwinds
+--- notes report
+85 notes from 8 cues.
+
+Picture Markers    60
+Beat Markers       0
+Orch-Mix Markers   13
+Utility + To-Do    12
+
+1M01  1M01 - Grey Ghost - v03.01.01.RPP  (4 notes found in the file, 4 placed)
+1M02  1M02 - Keep the Search Alive - v04.01.01.RPP  (4 notes found in the file, 4 placed)
+1M03  1M03 - Never Say Never - v04.01.01.RPP  (17 notes found in the file, 17 placed)
+1M04  1M04 - The Birds - v05.01.02.RPP  (11 notes found in the file, 11 placed)
+1M05  1M05 - Ghost Stories - v02.01.01.RPP  (13 notes found in the file, 13 placed)
+1M06  1M06 - Predators - v04.01.01.RPP  (6 notes found in the file, 6 placed)
+1M07  1M07 - I'm Being Watched - v03.01.01.RPP  (14 notes found in the file, 14 placed)
+1M08  1M08 - We Live in Hope - v06.01.06.RPP  (16 notes found in the file, 16 placed)
+=== 2026-11-21 18:00:50  DRY  notes=Beat Markers;Orch-Mix Markers;Picture Markers;Utility + To-Do
+56 tracks, 51 items from 1 cues (DRY, by instrument).
+
+1M01 - Grey Ghost - v03.01.01  (48 stems)
+
+Notes imported (4): Picture Markers 2, Beat Markers 0, Orch-Mix Markers 0, Utility + To-Do 2  [first note at 0:01:35 project time]
+
+Coloured sections: Choir Pad, Organ, Pitched Percussion, Synth Bass, Synth General 2 / Misc
+--- notes report
+4 notes from 1 cues.
+
+Picture Markers    2
+Beat Markers       0
+Orch-Mix Markers   0
+Utility + To-Do    2
+
+1M01  1M01 - Grey Ghost - v03.01.01.RPP  (4 notes found in the file, 4 placed)

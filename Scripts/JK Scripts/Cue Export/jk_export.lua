@@ -457,6 +457,7 @@ M.jobs = {
     prox = { kind = "prox", label = "PROX" },
     improve = { kind = "stems", label = "IMPROVE", marks = { IM = true }, mark_names = { "IM" }, preset = "Film IMPROVE" },
     orch = { kind = "stems", label = "ORCH", marks = { REC = true, TR = true }, mark_names = { "REC", "TR" }, preset = "Film ORCH" },
+    orch_playalong = { kind = "playalong", label = "ORCH PLAYALONG", preset = "Film ORCH" },
     multitrack_dry = { kind = "multitrack", label = "multitrack dry", preset = "Film Multitrack Dry", mute_effects = true },
     multitrack_wet = { kind = "multitrack", label = "multitrack wet", preset = "Film Multitrack Wet" },
 }
@@ -1053,6 +1054,55 @@ local function stems_job(job, ctx)
         log_event(ctx, ctx.queue and "queued" or "step", count > 0 and "midi" or "midi (none in range)")
         if skipped > 0 then ctx.notes[#ctx.notes + 1] = job.label .. ": " .. skipped .. " MIDI tracks left out (only 16 channels)" end
     end
+    ctx.dirs[#ctx.dirs + 1] = out_dir
+    log_event(ctx, ctx.queue and "queued" or "done")
+end
+
+-- Playalong: no marked tracks needed. Renders only what someone playing over the cue needs:
+-- the full master, the click, and a tempo-map MIDI file, in the same folder ORCH uses.
+local function playalong_job(job, ctx)
+    local preset, err = load_preset(job.preset)
+    if not preset then error(err) end
+    set_log(ctx, job, preset)
+    local before = finished_steps(ctx, job.label)
+    local keep = step_keeper(ctx, before)
+    log_event(ctx, "start", "master + click + tempo map" .. (next(before) and ", resuming" or ""))
+
+    local expected = expected_dir(preset, ctx.project_name)
+    local expected_tc = near_tc(expected, ctx.project_name, start_timecode(ctx.region))
+    local function have(test)
+        return check_files(expected, { { label = "x", min = 1, test = test } }) == "complete"
+    end
+
+    -- Master of everything (Film Master's normalize/limiter); the click is kept out of it
+    local out_dir, tc = expected, expected_tc
+    silence_click(ctx)
+    if not keep("master", function() return have(function(n)
+            return n == "_" .. ctx.project_name .. " - " .. expected_tc .. " - MASTER.wav" end) end) then
+        clear_old(ctx, expected, "master")
+        local targets = render_pass(ctx, preset, ref_pattern(preset.pattern, "MASTER"), 0, nil, "master", ctx.master_preset)
+        if #targets > 0 then
+            out_dir = dirname(targets[1])
+            tc = targets[1]:match("([^\\/]*)$"):sub(#ctx.project_name + 5):match("^(%S+) %- ") or tc
+        elseif not ctx.queue then
+            error("master render produced no file (check overwrite prompt / preset)")
+        end
+    end
+    unsilence(ctx)
+
+    -- Tempo / time-signature map as MIDI, aligned to the cue start
+    reaper.RecursiveCreateDirectory(out_dir, 0)
+    write_tempo_map(ctx.region, out_dir .. "/_" .. ctx.project_name .. " - " .. tc .. " - TEMPO MAP.mid")
+    log_event(ctx, ctx.queue and "queued" or "step", "tempo map")
+
+    -- Click, rendered last (see render_pending_clicks)
+    local click_kept = keep("click", function()
+        return have(function(n) return starts_with(n, "_" .. ctx.project_name .. " - ") and ends_with(n, " - CLICK.wav") end)
+    end)
+    if not click_kept then
+        defer_click(ctx, job.label, preset, ref_pattern(preset.pattern, "CLICK"), expected)
+    end
+
     ctx.dirs[#ctx.dirs + 1] = out_dir
     log_event(ctx, ctx.queue and "queued" or "done")
 end
@@ -1863,6 +1913,7 @@ function M.run(opts)
             local job = M.jobs[key]
             if job.kind == "stems" then stems_job(job, ctx)
             elseif job.kind == "prox" then prox_job(job, ctx)
+            elseif job.kind == "playalong" then playalong_job(job, ctx)
             else multitrack_job(job, ctx) end
         end
         render_pending_clicks(ctx)

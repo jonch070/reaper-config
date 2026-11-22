@@ -843,3 +843,116 @@
 21:45:58  about to run render action 42230
 21:46:34  render action returned
 21:46:34  multitrack dry step click
+08:15:04  === run 2026-11-21  jobs=multitrack_dry  project=1M03 - Never Say Never - v04.01.01  cue=0.000-84.042
+08:15:04  multitrack dry start 65 tracks
+08:15:04  multitrack dry note master ref range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+08:15:04  about to run render action 42230
+08:16:11  render action returned
+08:16:11  multitrack dry step master ref
+08:16:11  multitrack dry step tempo map
+08:16:11  multitrack dry done 
+08:16:11  click track 1  muted=0.0  items in range=1  inserted=true
+08:16:11  multitrack dry note click range 0.000000 - 84.042292 (cue 0.000000 - 84.042292)
+08:16:11  about to run render action 42230
+08:17:01  render action returned
+08:17:01  multitrack dry step click
+08:17:49  === run 2026-11-21  jobs=multitrack_dry  project=1M07 - I'm Being Watched - v03.01.01  cue=0.000-114.000
+08:17:49  multitrack dry start 29 tracks
+08:17:49  multitrack dry note master ref range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+08:17:49  about to run render action 42230
+08:24:46  render action returned
+08:24:46  multitrack dry step master ref
+08:24:46  multitrack dry step tempo map
+08:24:46  multitrack dry done 
+08:24:46  click track 1  muted=0.0  items in range=1  inserted=true
+08:24:46  multitrack dry note click range 0.000000 - 114.000000 (cue 0.000000 - 114.000000)
+08:24:46  about to run render action 42230
+08:25:16  render action returned
+08:25:16  multitrack dry step click
+08:25:57  === run 2026-11-21  jobs=multitrack_dry  project=1M01 - Grey Ghost - v03.01.01  cue=0.000-79.663
+08:25:57  multitrack dry start 48 tracks
+08:25:57  multitrack dry note master ref range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+08:25:57  about to run render action 42230
+08:26:26  render action returned
+08:26:26  multitrack dry step master ref
+08:26:26  multitrack dry step tempo map
+08:26:26  multitrack dry done 
+08:26:26  click track 1  muted=0.0  items in range=1  inserted=true
+08:26:26  multitrack dry note click range 0.000000 - 79.662917 (cue 0.000000 - 79.662917)
+08:26:26  about to run render action 42230
+08:26:32  render action returned
+08:26:32  multitrack dry step click
+08:27:33  === run 2026-11-21  jobs=multitrack_dry  project=1M06 - Predators - v04.01.01  cue=1.412-80.205
+08:27:33  multitrack dry start 16 tracks
+08:27:33  multitrack dry note master ref range 1.411765 - 80.205125 (cue 1.411765 - 80.205125)
+08:27:33  about to run render action 42230
+08:28:02  render action returned
+08:28:02  multitrack dry step master ref
+08:28:03  multitrack dry step tempo map
+08:28:03  multitrack dry done 
+08:28:03  click track 1  muted=0.0  items in range=1  inserted=false
+08:28:03  multitrack dry note click range 1.411765 - 80.205125 (cue 1.411765 - 80.205125)
+08:28:03  about to run render action 42230
+08:28:10  render action returned
+08:28:10  multitrack dry step click
+08:34:43  === run 2026-11-21  jobs=orch  project=1m08 - v01.01.01  cue=0.000-66.483
+08:35:13  === run 2026-11-21  jobs=orch  project=1m08 - v01.01.01  cue=0.000-66.483
+08:35:13  ORCH start 4 marked tracks
+08:35:13  ORCH note stems range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+08:35:18  about to run render action 42230
+08:35:29  render action returned
+08:35:29  ORCH step stems
+08:35:34  ORCH note master range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+08:35:39  about to run render action 42230
+08:35:43  render action returned
+08:35:43  ORCH step master
+08:35:48  ORCH note mix minus range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+08:35:53  about to run render action 42230
+08:35:56  render action returned
+08:35:56  ORCH step mix minus
+08:36:01  ORCH step midi (none in range)
+08:36:01  ORCH done 
+08:36:01  click track 1  muted=0.0  items in range=1  inserted=true
+08:36:01  ORCH note click range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+08:36:06  about to run render action 42230
+08:36:08  render action returned
+08:36:08  ORCH step click
+09:07:32  === run 2026-11-21  jobs=orch_playalong  project=1m14-1m15 - v01.01.01  cue=0.000-220.220
+09:07:32  ORCH PLAYALONG start master + click + tempo map
+09:07:32  ORCH PLAYALONG note master range 0.000000 - 220.220000 (cue 0.000000 - 220.220000)
+09:07:32  about to run render action 42230
+09:08:13  render action returned
+09:08:13  ORCH PLAYALONG step master
+09:08:13  ORCH PLAYALONG step tempo map
+09:08:13  ORCH PLAYALONG done 
+09:08:13  click track 1  muted=0.0  items in range=1  inserted=true
+09:08:13  ORCH PLAYALONG note click range 0.000000 - 220.220000 (cue 0.000000 - 220.220000)
+09:08:13  about to run render action 42230
+09:08:19  render action returned
+09:08:19  ORCH PLAYALONG step click
+11:56:25  === run 2026-11-21  jobs=multitrack_dry  project=1M04 - The Birds - v05.01.02  cue=0.000-69.319
+11:56:25  multitrack dry start 87 tracks
+11:56:25  multitrack dry note master ref range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+11:56:25  about to run render action 42230
+11:57:06  render action returned
+11:57:06  multitrack dry step master ref
+11:57:06  multitrack dry step tempo map
+11:57:06  multitrack dry done 
+11:57:07  click track 1  muted=0.0  items in range=1  inserted=true
+11:57:07  multitrack dry note click range 0.000000 - 69.319250 (cue 0.000000 - 69.319250)
+11:57:07  about to run render action 42230
+11:57:27  render action returned
+11:57:27  multitrack dry step click
+13:16:11  === run 2026-11-21  jobs=multitrack_dry  project=1M08 - We Live in Hope - v06.01.06  cue=0.000-199.616
+13:16:11  multitrack dry start 92 tracks
+13:16:11  multitrack dry note master ref range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+13:16:11  about to run render action 42230
+13:18:23  render action returned
+13:18:23  multitrack dry step master ref
+13:18:23  multitrack dry step tempo map
+13:18:23  multitrack dry done 
+13:18:24  click track 1  muted=0.0  items in range=1  inserted=true
+13:18:24  multitrack dry note click range 0.000000 - 199.616083 (cue 0.000000 - 199.616083)
+13:18:24  about to run render action 42230
+13:18:42  render action returned
+13:18:42  multitrack dry step click

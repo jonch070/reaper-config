@@ -93,6 +93,22 @@ local function version_key(name)
     return tonumber(a) * 1e8 + tonumber(b) * 1e4 + tonumber(c)
 end
 
+-- Newest-versioned RPP in one cue folder (file names start with the cue code)
+function M.newest_rpp(dir, code)
+    local best, bestkey
+    local j = 0
+    while true do
+        local file = reaper.EnumerateFiles(dir, j)
+        if not file then break end
+        j = j + 1
+        if file:match("%.[Rr][Pp][Pp]$") and file:sub(1, #code) == code then
+            local k = version_key(file)
+            if not best or k > bestkey or (k == bestkey and file > best) then best, bestkey = file, k end
+        end
+    end
+    return best
+end
+
 -- Newest-versioned RPP in each cue folder (<root>/<cue>/...). Returns { {code, path, name}, ... }
 function M.find_cues(root)
     local cues = {}
@@ -103,17 +119,7 @@ function M.find_cues(root)
         i = i + 1
         local code = dir:match("^(%d+M%d+)")
         if code then
-            local best, bestkey
-            local j = 0
-            while true do
-                local file = reaper.EnumerateFiles(root .. "/" .. dir, j)
-                if not file then break end
-                j = j + 1
-                if file:match("%.[Rr][Pp][Pp]$") and file:sub(1, #code) == code then
-                    local k = version_key(file)
-                    if not best or k > bestkey or (k == bestkey and file > best) then best, bestkey = file, k end
-                end
-            end
+            local best = M.newest_rpp(root .. "/" .. dir, code)
             if best then cues[#cues + 1] = { code = code, dir = dir, file = best, path = root .. "/" .. dir .. "/" .. best } end
         end
     end
@@ -145,16 +151,20 @@ local function cue_pos_to_mix(cue_projoffs, item_pos, mix_offs)
 end
 
 -- Parse the given cues and (re)create their note items in the open project.
--- cues: from find_cues. Returns a report string.
-function M.import(cues)
+-- cues: from find_cues. opts.tracks = set of note track names to import (default all four).
+-- Returns report string, per-track counts, total.
+function M.import(cues, opts)
+    local use = opts and opts.tracks
     local mix_offs = reaper.GetProjectTimeOffset(0, false)
     local by_track, report, problems, total = {}, {}, {}, 0
-    local colors = {}
+    local colors, first = {}, nil
     reaper.Undo_BeginBlock()
     reaper.PreventUIRefresh(1)
 
     local mix_tracks = {}
-    for _, name in ipairs(M.TRACKS) do mix_tracks[name] = find_track(name) end
+    for _, name in ipairs(M.TRACKS) do
+        if not use or use[name] then mix_tracks[name] = find_track(name) end
+    end
     for _, tr in pairs(mix_tracks) do clear_previous(tr) end
 
     for _, cue in ipairs(cues) do
@@ -165,7 +175,7 @@ function M.import(cues)
             local seen, n = {}, 0
             for _, it in ipairs(res.items) do
                 local key = it.track .. "|" .. string.format("%.3f", it.pos) .. "|" .. it.text
-                if not seen[key] then
+                if not seen[key] and (not use or use[it.track]) then
                     seen[key] = true
                     if not mix_tracks[it.track] then
                         reaper.InsertTrackAtIndex(reaper.CountTracks(0), true)
@@ -185,12 +195,13 @@ function M.import(cues)
                         if it.color then reaper.SetMediaItemInfo_Value(item, "I_CUSTOMCOLOR", it.color) end
                         reaper.GetSetMediaItemInfo_String(item, "P_NOTES", cue.code .. ": " .. it.text, true)
                         reaper.GetSetMediaItemInfo_String(item, "P_EXT:" .. TAG, cue.code, true)
+                        if not first or pos < first then first = pos end
                         by_track[it.track] = (by_track[it.track] or 0) + 1
                         n, total = n + 1, total + 1
                     end
                 end
             end
-            report[#report + 1] = string.format("%s  %s  (%d notes)", cue.code, cue.file, n)
+            report[#report + 1] = string.format("%s  %s  (%d notes found in the file, %d placed)", cue.code, cue.file, #res.items, n)
         end
     end
 
@@ -207,7 +218,7 @@ function M.import(cues)
         lines[#lines + 1] = "Problems:"
         for _, p in ipairs(problems) do lines[#lines + 1] = "  " .. p end
     end
-    return table.concat(lines, "\n")
+    return table.concat(lines, "\n"), by_track, total, first, problems
 end
 
 -- Entry point for the action script.
