@@ -1273,15 +1273,22 @@ end
 -- parent), e.g. the template's master sub-mix folder. Only possible after a real render.
 local STRIP_PREFIXES = { "Music Sub Mix_" }
 
+local stemnames = dofile(debug.getinfo(1, "S").source:sub(2):match("^(.*[\\/])") .. "jk_stemnames.lua")
+
+-- Strips STRIP_PREFIXES, and shortens over-long track names (stemnames.LIMIT; Pro Tools and
+-- the interleaver reject very long filenames). Fresh renders are renamed in place.
 local function strip_prefixes(targets)
     for _, path in ipairs(targets) do
         local dir, file = dirname(path), path:match("([^\\/]*)$")
+        local new = file
         for _, prefix in ipairs(STRIP_PREFIXES) do
-            if file:lower():sub(1, #prefix) == prefix:lower() then
-                os.rename(path, dir .. "/" .. file:sub(#prefix + 1))
+            if new:lower():sub(1, #prefix) == prefix:lower() then
+                new = new:sub(#prefix + 1)
                 break
             end
         end
+        new = stemnames.short(new) or new
+        if new ~= file and not reaper.file_exists(dir .. "/" .. new) then os.rename(path, dir .. "/" .. new) end
     end
 end
 

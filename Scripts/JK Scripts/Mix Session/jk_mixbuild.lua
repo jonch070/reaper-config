@@ -88,6 +88,8 @@ end
 function M.parse_stem(file, tag)
     if file:sub(1, 1) == "_" then return nil end
     local base, rest = file:match("^(.*) " .. tag .. " %- (.+)%.[Ww][Aa][Vv]$")
+    -- a track with an EMPTY name leaves "<folder>_dry - ..." (no space): the last folder is then the track
+    if not base then base, rest = file:match("^(.*)_" .. tag .. " %- (.+)%.[Ww][Aa][Vv]$") end
     if not base then return nil end
     local changed = true
     while changed do
@@ -150,8 +152,12 @@ end
 function M.load_cue(code, name, stemdir, mt, variant)
     local tag = variant:lower()
     local cue = { code = code, name = name, dir = mt, stems = {} }
+    -- long-named originals that have a short-named copy (Cue Export/jk_stemnames.lua) are skipped
+    local here = debug.getinfo(1, "S").source:match("^@(.*[\\/])") or ""
+    local okn, stemnames = pcall(dofile, here .. "../Cue Export/jk_stemnames.lua")
+    local skip = okn and stemnames.originals(stemdir) or {}
     for _, file in ipairs(files(stemdir)) do
-        local p = M.parse_stem(file, tag)
+        local p = (not skip[file]) and M.parse_stem(file, tag) or nil
         if p then
             p.path, p.file = stemdir .. "/" .. file, file
             cue.stems[#cue.stems + 1] = p

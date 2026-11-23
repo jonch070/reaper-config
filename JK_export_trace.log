@@ -956,3 +956,47 @@
 13:18:24  about to run render action 42230
 13:18:42  render action returned
 13:18:42  multitrack dry step click
+19:01:37  === run 2026-11-22  jobs=orch  project=1m14-1m15 - v01.01.01  cue=0.000-220.220
+19:01:37  ORCH start 4 marked tracks
+19:01:37  ORCH note stems range 0.000000 - 220.220000 (cue 0.000000 - 220.220000)
+19:01:42  about to run render action 42230
+19:04:15  render action returned
+19:04:15  ORCH step stems
+19:04:20  ORCH note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Gilbert Hunter Stone/GHS Reaper Projects/1m14-1m15/exports/1m14-1m15 - v01.01.01/1m14-1m15 - v01.01.01 ORCH
+19:04:20  ORCH note master range 0.000000 - 220.220000 (cue 0.000000 - 220.220000)
+19:04:25  about to run render action 42230
+19:05:14  render action returned
+19:05:14  ORCH step master
+19:05:19  ORCH note mix minus range 0.000000 - 220.220000 (cue 0.000000 - 220.220000)
+19:05:24  about to run render action 42230
+19:06:08  render action returned
+19:06:08  ORCH step mix minus
+19:06:13  ORCH step midi
+19:06:13  ORCH done 
+19:06:13  ORCH note replaced: deleted 1 old files in /Users/jonathankawchuk/Documents/Projects/Film/Gilbert Hunter Stone/GHS Reaper Projects/1m14-1m15/exports/1m14-1m15 - v01.01.01/1m14-1m15 - v01.01.01 ORCH
+19:06:13  click track 1  muted=0.0  items in range=1  inserted=true
+19:06:13  ORCH note click range 0.000000 - 220.220000 (cue 0.000000 - 220.220000)
+19:06:18  about to run render action 42230
+19:06:30  render action returned
+19:06:30  ORCH step click
+19:10:13  === run 2026-11-22  jobs=orch  project=1m12 - v01.01.04  cue=0.000-147.814
+19:10:13  ORCH start 1 marked tracks
+19:10:13  ORCH note stems range 0.000000 - 147.814333 (cue 0.000000 - 147.814333)
+19:10:18  about to run render action 42230
+19:10:37  render action returned
+19:10:37  ORCH step stems
+19:10:42  ORCH note master range 0.000000 - 147.814333 (cue 0.000000 - 147.814333)
+19:10:47  about to run render action 42230
+19:11:08  render action returned
+19:11:08  ORCH step master
+19:11:13  ORCH note mix minus range 0.000000 - 147.814333 (cue 0.000000 - 147.814333)
+19:11:18  about to run render action 42230
+19:11:38  render action returned
+19:11:38  ORCH step mix minus
+19:11:43  ORCH step midi
+19:11:43  ORCH done 
+19:11:43  click track 1  muted=0.0  items in range=1  inserted=true
+19:11:43  ORCH note click range 0.000000 - 147.814333 (cue 0.000000 - 147.814333)
+19:11:48  about to run render action 42230
+19:12:00  render action returned
+19:12:00  ORCH step click
