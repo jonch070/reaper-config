@@ -104,7 +104,7 @@ function M.parse_stem(file, tag)
     end
     if #segs == 0 then return nil end
     local track = table.remove(segs)
-    return { folders = segs, track = track, tc = rest:match("(%d+%.%d+%.%d+%.%d+)%-?%d*$") }
+    return { folders = segs, track = track, base = base, tc = rest:match("(%d+%.%d+%.%d+%.%d+)%-?%d*$") }
 end
 
 -- The stem folder and the MULTITRACK folder for a user-chosen folder: accepts the MULTITRACK
@@ -603,7 +603,7 @@ end
 
 local PALETTE = { {230, 80, 80}, {235, 140, 60}, {225, 190, 60}, {150, 200, 70}, {70, 180, 110}, {60, 190, 190},
     {70, 140, 230}, {110, 100, 230}, {170, 100, 220}, {220, 100, 180}, {170, 130, 90}, {120, 150, 170} }
-local SPECIAL = { click = {140, 140, 140}, fx = {235, 235, 235}, cue = {70, 70, 70}, ref = {190, 190, 190} }
+local SPECIAL = { click = {140, 140, 140}, fx = {235, 235, 235}, cue = {70, 70, 70}, ref = {190, 190, 190}, ret = {200, 215, 235} }
 
 local function native(rgb) return reaper.ColorToNative(rgb[1], rgb[2], rgb[3]) | 0x1000000 end
 
@@ -640,13 +640,13 @@ function M.plan(cues, layout, variant, opts)
     local refs = opts.refs or {}
     local want_click = refs.click ~= false -- the click reference is on unless switched off
     if opts.profile then M.apply_groups(cues, opts.profile) end
-    local function add_item(list, cue, path, label, name_hint)
+    local function add_item(list, cue, path, label, name_hint, stem)
         local pos, bwf, len = item_pos(path, name_hint or path)
         if not pos then
             problems[#problems + 1] = cue.code .. ": no timestamp for " .. label .. ", skipped"
         else
             if not bwf then problems[#problems + 1] = cue.code .. ": no BWF time in " .. label .. ", used filename TC" end
-            list[#list + 1] = { path = path, pos = pos, len = len or 0, label = label }
+            list[#list + 1] = { path = path, pos = pos, len = len or 0, label = label, sends = stem and stem.sends, cue = cue }
         end
     end
 
@@ -658,7 +658,7 @@ function M.plan(cues, layout, variant, opts)
         if layout == 2 then map, order = {}, {} per_cue[ci] = order end
         for _, s in ipairs(cue.stems) do
             local leaf = leaf_for(map, order, cue.code, s)
-            add_item(leaf.items, cue, s.path, s.file, s.tc or "")
+            add_item(leaf.items, cue, s.path, s.file, s.tc or "", s)
         end
     end
     if opts.profile then
@@ -727,17 +727,24 @@ function M.plan(cues, layout, variant, opts)
             end
         end
     end
+    if opts.sends and opts.sends.on and variant == "DRY" then
+        local lines, sp, nret = dofile(SCRIPT_DIR .. "jk_mixsends.lua").finish(out, cues, reaper.ScaleFromEnvelopeMode)
+        out.sendlines, out.nret = lines, nret
+        for _, p in ipairs(sp) do problems[#problems + 1] = p end
+    end
     return out, problems
 end
 
 -- Create the planned tracks and items in the open project. Returns tracks, items created.
-function M.create(out)
+function M.create(out, opts)
     local offs = reaper.GetProjectTimeOffset(0, false)
     local base = reaper.CountTracks(0)
     local n_items = 0
+    local made = {}
     for i, e in ipairs(out) do
         reaper.InsertTrackAtIndex(base + i - 1, true)
         local tr = reaper.GetTrack(0, base + i - 1)
+        made[i] = tr
         reaper.GetSetMediaTrackInfo_String(tr, "P_NAME", e.name, true)
         if e.color then reaper.SetMediaTrackInfo_Value(tr, "I_CUSTOMCOLOR", e.color) end
         if e.mute then reaper.SetMediaTrackInfo_Value(tr, "B_MUTE", 1) end
@@ -756,7 +763,11 @@ function M.create(out)
             end
         end
     end
-    return #out, n_items
+    local n_sends, send_problems = 0, {}
+    if out.sendlines then
+        n_sends, send_problems = dofile(SCRIPT_DIR .. "jk_mixsends.lua").apply(out, made, offs, opts and opts.sends)
+    end
+    return #out, n_items, n_sends, send_problems
 end
 
 local function summarize(out)
@@ -800,8 +811,26 @@ function M.build(opts)
         reaper.ShowMessageBox("Nothing to build.\n\n" .. table.concat(problems, "\n"), "Mix session", 0)
         return
     end
+    -- read each cue session's FX-return sends (dry builds only; wet stems already contain the reverb)
+    local use_sends = opts.sends and opts.sends.on and opts.variant == "DRY"
+    if use_sends then
+        local sm = dofile(SCRIPT_DIR .. "jk_mixsends.lua")
+        for _, c in ipairs(cues) do
+            local info = rpp_for(c)
+            if not info then
+                problems[#problems + 1] = c.code .. ": no session file found, reverb sends skipped"
+            else
+                local rpp, err = sm.parse_rpp(info.path)
+                if not rpp then problems[#problems + 1] = c.code .. ": " .. err
+                else
+                    for _, p in ipairs(sm.match(c, rpp, sm.analyse(rpp))) do problems[#problems + 1] = p end
+                end
+            end
+        end
+    end
     local out, plan_problems = M.plan(cues, opts.layout, opts.variant,
-        { mode = opts.mode, modes = opts.modes, override = opts.section_depth, profile = opts.profile, refs = opts.refs })
+        { mode = opts.mode, modes = opts.modes, override = opts.section_depth, profile = opts.profile, refs = opts.refs,
+          sends = use_sends and opts.sends or nil })
     for _, p in ipairs(plan_problems) do problems[#problems + 1] = p end
     local sections
     if opts.colour then
@@ -846,7 +875,8 @@ function M.build(opts)
 
     reaper.Undo_BeginBlock()
     reaper.PreventUIRefresh(1)
-    local n_tracks, n_items = M.create(out)
+    local n_tracks, n_items, n_sends, send_problems = M.create(out, { sends = opts.sends })
+    for _, p in ipairs(send_problems or {}) do problems[#problems + 1] = p end
     reaper.PreventUIRefresh(-1)
     reaper.TrackList_AdjustWindows(false)
     reaper.UpdateArrange()
@@ -856,6 +886,13 @@ function M.build(opts)
         opts.layout == 1 and "by instrument" or "by cue", (opts.mode and opts.mode ~= "individual") and ", consolidated" or ""), "" }
     for _, c in ipairs(cues) do lines[#lines + 1] = c.name .. "  (" .. #c.stems .. " stems)" end
     if note_lines then lines[#lines + 1] = "" lines[#lines + 1] = note_lines end
+    if out.sendlines then
+        local sheet = (opts.sheet_path and opts.sheet_path ~= "") and opts.sheet_path or (SCRIPT_DIR .. "mixbuild_sends.tsv")
+        local ok = dofile(SCRIPT_DIR .. "jk_mixsends.lua").sheet(out.sendlines, sheet)
+        lines[#lines + 1] = ""
+        lines[#lines + 1] = string.format("Reverb sends: %d sends rebuilt to %d return tracks%s", n_sends or 0, out.nret or 0,
+            ok and ("; send sheet: " .. sheet) or "")
+    end
     if sections and #sections > 0 then
         lines[#lines + 1] = ""
         lines[#lines + 1] = "Coloured sections: " .. table.concat(sections, ", ")
@@ -894,11 +931,11 @@ function M.build_each(opts)
         if opts.template and opts.template ~= "" then reaper.Main_openProject("template:" .. opts.template) end
         local o = {}
         for k, v in pairs(opts) do o[k] = v end
-        o.cues, o.quiet = { c }, true
-        local text, n = M.build(o)
         local name = safe_name(c.name) .. " - MIX " .. opts.variant
         local dir = outdir .. "/" .. name
         reaper.RecursiveCreateDirectory(dir, 0)
+        o.cues, o.quiet, o.sheet_path = { c }, true, dir .. "/" .. name .. " - reverb sends.tsv"
+        local text, n = M.build(o)
         reaper.Main_SaveProjectEx(0, dir .. "/" .. name .. ".rpp", 0)
         lines[#lines + 1] = string.format("%s: %s tracks", name, tostring(n or 0))
         local extra = text and text:match("Notes:.*$")
@@ -928,7 +965,7 @@ function M.pick(variant)
         rows = {}, extra = {}, rev = 0,
         usegroups = flag("usegroups", "0") == "1", pname = flag("profile", "HGG"),
         outdir = flag("outdir", ""), template = flag("template", ""), newname = "",
-        notes = {}, ref_click = flag("ref_click", "1") == "1", ref_master = flag("ref_master", "0") == "1", ref_mute = flag("ref_mute", "1") == "1",
+        notes = {}, sends_on = flag("sends_on", "0") == "1", sends_ph = flag("sends_ph", "0") == "1", ref_click = flag("ref_click", "1") == "1", ref_master = flag("ref_master", "0") == "1", ref_mute = flag("ref_mute", "1") == "1",
     }
     for name in (flag("notes", "") .. ";"):gmatch("([^;]*);") do if name ~= "" then st.notes[name] = true end end
     st.profile_names = M.list_profiles()
@@ -1071,6 +1108,13 @@ function M.pick(variant)
             if st.ref_master then
                 reaper.ImGui_SameLine(ctx)
                 _, st.ref_mute = reaper.ImGui_Checkbox(ctx, "muted", st.ref_mute)
+            end
+            if st.variant == "DRY" then
+                _, st.sends_on = reaper.ImGui_Checkbox(ctx, "Rebuild reverb sends (from each cue session, incl. folder sends + send automation)", st.sends_on)
+                if st.sends_on then
+                    reaper.ImGui_SameLine(ctx)
+                    _, st.sends_ph = reaper.ImGui_Checkbox(ctx, "ReaVerb placeholder on the returns", st.sends_ph)
+                end
             end
             reaper.ImGui_Text(ctx, "Notes from the cue sessions:")
             for _, name in ipairs({ "Picture Markers", "Beat Markers", "Orch-Mix Markers", "Utility + To-Do" }) do
@@ -1250,7 +1294,8 @@ function M.pick(variant)
                 return { variant = st.variant, layout = st.layout, mode = st.mode, modes = active, colour = st.colour,
                     section_depth = st.sdepth, cues = selected_cues(), batch = batch, root = st.root,
                     profile = st.usegroups and st.profile or nil, outdir = st.outdir, template = st.template,
-                    refs = { click = st.ref_click, master = st.ref_master, mute = st.ref_mute }, notes = st.notes }
+                    refs = { click = st.ref_click, master = st.ref_master, mute = st.ref_mute }, notes = st.notes,
+                    sends = { on = st.sends_on, placeholder = st.sends_ph } }
             end
             if reaper.ImGui_Button(ctx, "Build into the open project") then result = make_result(false) end
             reaper.ImGui_SameLine(ctx)
@@ -1278,6 +1323,8 @@ function M.pick(variant)
             for name in pairs(st.notes) do nl[#nl + 1] = name end
             table.sort(nl)
             reaper.SetExtState(EXT_SECTION, "notes", table.concat(nl, ";"), true)
+            reaper.SetExtState(EXT_SECTION, "sends_on", st.sends_on and "1" or "0", true)
+            reaper.SetExtState(EXT_SECTION, "sends_ph", st.sends_ph and "1" or "0", true)
             reaper.SetExtState(EXT_SECTION, "ref_click", st.ref_click and "1" or "0", true)
             reaper.SetExtState(EXT_SECTION, "ref_master", st.ref_master and "1" or "0", true)
             reaper.SetExtState(EXT_SECTION, "ref_mute", st.ref_mute and "1" or "0", true)

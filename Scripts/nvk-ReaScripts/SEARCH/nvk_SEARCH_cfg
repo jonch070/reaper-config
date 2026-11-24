@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "reset track colo",
+		SEARCH = "asset",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -83,7 +83,11 @@ return {
 		project_directories_sort = "Name",
 		recent = {
 			{
-				id = "Script: nvk_TRACK - Reset track or item color depending on focus.lua (RS29f196c4c7d5a05bfcb386b96ddeb1600b518f4e) (Main)",
+				id = "Script: DM_AssetVideoOverlay.lua (RSac10d9074eb45712b94a59a5e84d3bf3db31b649) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Set snap offset to cursor (40541) (Main)",
 				type = "action"
 			},
 			{
@@ -95,7 +99,15 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
+				id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
 				type = "action"
 			},
 			{
@@ -103,16 +115,124 @@ return {
 				type = "au"
 			},
 			{
-				id = "VST3:MCompressor (MeldaProduction)",
-				type = "vst3"
+				id = "Create measure from time selection (detect tempo, detect number of measures) (40338) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_TI_Archiving_Unarchive.lua (RS936ae53c376a40f959ef82048f129ac000ca93b1) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:MIDI Arpeggiator (Tukan)",
+				type = "jsfx"
+			},
+			{
+				id = "JS:Exciter+Sub (Tukan)",
+				type = "jsfx"
+			},
+			{
+				id = "Script: LKC - Variator - GUI.lua (RS9226d1697cffeb49eb0f21a52c56938609945fda) (Main)",
+				type = "action"
+			},
+			{
+				id = "Track: Move tracks to subproject (41997) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: sinestacker_build.lua (RSeeec6ce14c440cb6c3e880cabbc71fa03d7bfd40) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS: Normalize item(s) to peak RMS (SWS_NORMPEAKRMS) (Main)",
+				type = "action"
 			},
 			{
 				id = "VST3:Air (Sound Particles)",
 				type = "vst3"
 			},
 			{
+				id = "SWS/S&M: Open/close Notes window (S&M_SHOW_NOTES_VIEW) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/S&M: Open/close Notes window (project notes) (S&M_SHOWNOTESHELP) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
+				type = "action"
+			},
+			{
+				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST3:MTremolo (MeldaProduction)",
+				type = "vst3"
+			},
+			{
+				id = "VST3:Concatenator (DataMind Audio)",
+				type = "vst3"
+			},
+			{
+				id = "VST3i:Serum 2 (Xfer Records)",
+				type = "vst3i"
+			},
+			{
+				id = "VST3:Dodo MIDI (Dodo Bird)",
+				type = "vst3"
+			},
+			{
+				id = "Set note ends to start of next note (legato) (40405) (MIDI Editor)",
+				type = "action"
+			},
+			{
+				id = "VST3:AirMusic (Sound Particles)",
+				type = "vst3"
+			},
+			{
+				id = "VST3:NeuralNote (Dr. Audio)",
+				type = "vst3"
+			},
+			{
+				id = "VST3:UAD bx_subsynth (Universal Audio)",
+				type = "vst3"
+			},
+			{
 				id = "Script: JK - Hide unused tracks and empty parents (keep muted with items or routing).lua (RS4283285956669382cb1b028a1601c1af3be660e1) (Main)",
 				type = "action"
+			},
+			{
+				id = "Ruler: Show/collapse all ruler lanes (42323) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Open render queue (40929) (Main)",
+				type = "action"
+			},
+			{
+				id = "File: Spawn new instance of REAPER (40063) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: nvk_TRACK - Reset track or item color depending on focus.lua (RS29f196c4c7d5a05bfcb386b96ddeb1600b518f4e) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST3:MCompressor (MeldaProduction)",
+				type = "vst3"
 			},
 			{
 				id = "Item: Select all items in current time selection (40717) (Main)",
@@ -143,18 +263,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: HeDa_TI_Archiving_Unarchive.lua (RS936ae53c376a40f959ef82048f129ac000ca93b1) (Main)",
-				type = "action"
-			},
-			{
-				id = "Track: Move tracks to subproject (41997) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: sinestacker_build.lua (RSeeec6ce14c440cb6c3e880cabbc71fa03d7bfd40) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: JK - Select items by key.lua (RSb0bb975395aecc4b2b37aec124c1b15200891a5d) (Main)",
 				type = "action"
 			},
@@ -167,24 +275,12 @@ return {
 				type = "action"
 			},
 			{
-				id = "Item: Set snap offset to cursor (40541) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
-				type = "action"
-			},
-			{
 				id = "Item: Open item copies in primary external editor (40132) (Main)",
 				type = "action"
 			},
 			{
 				id = "AU:Spectral Freezing (Michael Norris)",
 				type = "au"
-			},
-			{
-				id = "JS:MIDI Arpeggiator (Tukan)",
-				type = "jsfx"
 			},
 			{
 				id = "VSTi:hypercyclic (mucoder)",
@@ -200,10 +296,6 @@ return {
 			},
 			{
 				id = "File: Close all projects (40886) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
 				type = "action"
 			},
 			{
@@ -223,10 +315,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Script: JK - Open selected subprojects in tabs (FX offline).lua (RS0a658fb54a952b1284c81f39decd0c29a27535c5) (Main)",
-				type = "action"
-			},
-			{
 				id = "Peaks: Rebuild peaks for selected items (40441) (Main)",
 				type = "action"
 			},
@@ -236,14 +324,6 @@ return {
 			},
 			{
 				id = "Peaks: Rebuild all peaks (40048) (Main)",
-				type = "action"
-			},
-			{
-				id = "File: Open render queue (40929) (Main)",
-				type = "action"
-			},
-			{
-				id = "File: Spawn new instance of REAPER (40063) (Main)",
 				type = "action"
 			},
 			{
@@ -271,23 +351,11 @@ return {
 				type = "action"
 			},
 			{
-				id = "Create measure from time selection (detect tempo, detect number of measures) (40338) (Main)",
-				type = "action"
-			},
-			{
 				id = "Perken: Detect tempo of selected item (PERKEN_DetectTempo) (Main)",
 				type = "action"
 			},
 			{
 				id = "ReaPack: Manage repositories... (REAPACK_MANAGE) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: !bobobo_rename_child_track_append_parent_if_not_parent.eel (RS39a0afce1c95f45949b6c20c98f021e3e9fcf06e) (Main)",
 				type = "action"
 			},
 			{
@@ -412,74 +480,6 @@ return {
 			},
 			{
 				id = "Script: JK Key Item Inserter.lua (RS9324dbbda328fbdb20921d2e5d8214815bf258a6) (Main)",
-				type = "action"
-			},
-			{
-				id = "AU:MTremolo (MeldaProduction)",
-				type = "au"
-			},
-			{
-				id = "JS:Seawater Absorption",
-				type = "jsfx"
-			},
-			{
-				id = "Track: Duplicate tracks (40062) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: select_non_leaf_tracks_from_selected.lua (RS0bc4347f3e121f59c6a503e1aecfa4b2144bb123) (Main)",
-				type = "action"
-			},
-			{
-				id = "Take: Crop to active take in items (40131) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_ITEMS - Reset item length to take length.lua (RS3eb8e3ef0fde33b52944ff503bef3ae70d6ccdfc) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item: Remove all empty takes (41348) (Main)",
-				type = "action"
-			},
-			{
-				id = "Take: Implode items across tracks into takes (40438) (Main)",
-				type = "action"
-			},
-			{
-				id = "Transient detection sensitivity/threshold: Adjust... (41208) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: nvk_ITEMS - Reset item to original state.lua (RS3371d3d8d734d51fc3411df3586d84a084c772be) (Main)",
-				type = "action"
-			},
-			{
-				id = "Item edit: Nudge/Set... (41226) (Main)",
-				type = "action"
-			},
-			{
-				id = "Track: Unarm all tracks for recording (40491) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: acendan_Multi Mic Manager - Create Mic Lanes.lua (RS83721d660ccead0fa6a160a200f1b35856e013df) (Main)",
-				type = "action"
-			},
-			{
-				id = "Take: Explode takes on selected tracks to fixed lanes (42635) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/S&M: Takes - Activate lanes from selected items (S&M_LANETAKE2) (Main)",
-				type = "action"
-			},
-			{
-				id = "VST:ReaComp (Cockos)",
-				type = "vst"
-			},
-			{
-				id = "Custom: JK - Glue and Loop (b912b28e83c44b28bde4b1c97444a73b) (Main)",
 				type = "action"
 			}
 		},
