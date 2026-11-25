@@ -60,6 +60,13 @@ end
 -- Folders whose contents never go out (sound design, video, session plumbing)
 local EXCLUDED_FOLDERS = { effects = true, movie = true, utility = true }
 
+-- Tracks that are never stems or marked tracks: the folders above, anything named "...Markers"
+-- (Picture Markers, Beat Markers, Orch-Mix Markers) and "Utility + To-Do" style tracks
+local function name_excluded(name)
+    local n = name:lower()
+    return EXCLUDED_FOLDERS[n] or n:find("markers", 1, true) or n:find("^utility") or n:find("to%-do") and true or false
+end
+
 -- Wrapper folders that don't count as a level (everything sits inside the master sub-mix)
 local TRANSPARENT_FOLDERS = { ["music sub mix"] = true }
 
@@ -74,8 +81,8 @@ local function scan_tracks()
         local muted = own_mute
         for _, m in ipairs(mutes) do if m then muted = true end end
         local depth = reaper.GetMediaTrackInfo_Value(tr, "I_FOLDERDEPTH")
-        local excluded = EXCLUDED_FOLDERS[name:lower()] and true or false
-        for _, ancestor in ipairs(stack) do if EXCLUDED_FOLDERS[ancestor:lower()] then excluded = true end end
+        local excluded = name_excluded(name) and true or false
+        for _, ancestor in ipairs(stack) do if name_excluded(ancestor) then excluded = true end end
         local elevel = 0
         for _, ancestor in ipairs(stack) do if not TRANSPARENT_FOLDERS[ancestor:lower()] then elevel = elevel + 1 end end
         list[#list + 1] = { track = tr, name = name, depth = depth, excluded = excluded, level = elevel,
@@ -1121,20 +1128,58 @@ local function has_live_routing(tr, outgoing)
     return false
 end
 
--- Lowest-level visible tracks (not folders), outside Effects / Movie / Utility
--- folders, that have an item in the range or are wired to another such track
-local function leaf_tracks(region)
-    local candidates, outgoing = {}, {}
-    for _, t in ipairs(scan_tracks()) do
-        if t.depth ~= 1 and t.visible and not t.excluded and not t.click and not t.muted then
-            candidates[#candidates + 1] = t.track
-            outgoing[t.track] = true
+-- An unmuted audio item (not MIDI) that overlaps the range
+local function has_audio_item_in_range(tr, region)
+    for j = 0, reaper.CountTrackMediaItems(tr) - 1 do
+        local item = reaper.GetTrackMediaItem(tr, j)
+        local pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION")
+        local len = reaper.GetMediaItemInfo_Value(item, "D_LENGTH")
+        if pos < region.finish and pos + len > region.start
+            and reaper.GetMediaItemInfo_Value(item, "B_MUTE") == 0 then
+            local take = reaper.GetActiveTake(item)
+            if take and not reaper.TakeIsMIDI(take) then return true end
         end
     end
-    local leaves = {}
-    for _, tr in ipairs(candidates) do
-        if has_item_in_range(tr, region) or has_live_routing(tr, outgoing) then leaves[#leaves + 1] = tr end
+    return false
+end
+
+-- Lowest-level visible tracks (not folders), outside Effects / Movie / Utility
+-- folders, that have an item in the range or are wired to another such track.
+-- A folder that carries an audible item of its own (e.g. a freeze of its children) is a
+-- stem itself, taken as the folder bus, and nothing below it is taken separately: the
+-- children are its source and already play inside the bus, visible or not.
+local function leaf_tracks(region)
+    local list = scan_tracks()
+    local candidates, outgoing, folders = {}, {}, {}
+    local stack = {} -- open folders: true when it is a stem folder
+    local inside = 0 -- number of open stem folders
+    for _, t in ipairs(list) do
+        local ok = not t.excluded and t.visible and not t.click and not t.muted
+        if inside == 0 then
+            if t.depth == 1 and ok and has_audio_item_in_range(t.track, region) then
+                folders[t.track] = true
+            elseif t.depth ~= 1 and ok then
+                candidates[#candidates + 1] = t.track
+                outgoing[t.track] = true
+            end
+        end
+        if t.depth == 1 then
+            local is_stem = folders[t.track] and true or false
+            stack[#stack + 1] = is_stem
+            if is_stem then inside = inside + 1 end
+        end
+        for _ = 1, math.max(0, -t.depth) do
+            if stack[#stack] then inside = inside - 1 end
+            stack[#stack] = nil
+        end
     end
+    local keep = {}
+    for _, tr in ipairs(candidates) do
+        if has_item_in_range(tr, region) or has_live_routing(tr, outgoing) then keep[tr] = true end
+    end
+    for tr in pairs(folders) do keep[tr] = true end
+    local leaves = {}
+    for _, t in ipairs(list) do if keep[t.track] then leaves[#leaves + 1] = t.track end end
     return leaves
 end
 
@@ -1799,7 +1844,7 @@ local function read_rpp(path)
             local n = 0
             for raw in text:gmatch('\n%s*<TRACK[^\n]*\n%s*NAME ([^\n]*)') do
                 local name = raw:match('^"(.*)"$') or raw
-                if has_mark(name, job.marks) and not EXCLUDED_FOLDERS[name:lower()] then n = n + 1 end
+                if has_mark(name, job.marks) and not name_excluded(name) then n = n + 1 end
             end
             info.marked[key] = n
         end

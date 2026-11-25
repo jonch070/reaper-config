@@ -1052,3 +1052,111 @@
 13:29:23  about to run render action 42230
 13:30:16  render action returned
 13:30:16  ORCH PLAYALONG step click
+18:53:26  === run 2026-11-24  jobs=multitrack_dry,multitrack_wet  project=1m16 - v01.01.01  cue=0.000-36.000
+18:53:26  multitrack dry start 8 tracks
+18:53:26  multitrack dry note master ref range 0.000000 - 36.000000 (cue 0.000000 - 36.000000)
+18:53:31  about to run render action 42230
+18:53:35  render action returned
+18:53:35  multitrack dry step master ref
+18:53:40  multitrack dry step tempo map
+18:53:40  multitrack dry note multitrack dry range 0.000000 - 36.000000 (cue 0.000000 - 36.000000)
+18:53:45  about to run render action 42230
+18:53:54  render action returned
+18:53:54  multitrack dry step multitrack dry
+18:53:59  multitrack dry note fx return range 0.000000 - 36.000000 (cue 0.000000 - 36.000000)
+18:54:04  about to run render action 42230
+18:54:07  render action returned
+18:54:07  multitrack dry step fx return
+18:54:12  multitrack dry done 
+18:54:12  multitrack wet start 8 tracks
+18:54:12  multitrack wet note multitrack wet range 0.000000 - 36.000000 (cue 0.000000 - 36.000000)
+18:54:17  about to run render action 42230
+18:54:32  render action returned
+18:54:32  multitrack wet step multitrack wet
+18:54:37  multitrack wet done 
+18:54:37  click track 1  muted=0.0  items in range=1  inserted=true
+18:54:37  multitrack dry note click range 0.000000 - 36.000000 (cue 0.000000 - 36.000000)
+18:54:42  about to run render action 42230
+18:54:45  render action returned
+18:54:45  multitrack dry step click
+21:29:29  === run 2026-11-24  jobs=multitrack_dry,multitrack_wet  project=1m08 - v01.01.01  cue=0.000-66.483
+21:29:29  multitrack dry start 4 tracks
+21:29:29  multitrack dry note master ref range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+21:29:34  about to run render action 42230
+21:29:47  render action returned
+21:29:47  multitrack dry step master ref
+21:29:52  multitrack dry step tempo map
+21:29:53  multitrack dry note multitrack dry range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+21:29:58  about to run render action 42230
+21:30:10  render action returned
+21:30:10  multitrack dry step multitrack dry
+21:30:15  multitrack dry note fx return range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+21:30:20  about to run render action 42230
+21:30:28  render action returned
+21:30:28  multitrack dry step fx return
+21:30:33  multitrack dry done 
+21:30:33  multitrack wet start 4 tracks
+21:30:33  multitrack wet note multitrack wet range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+21:30:38  about to run render action 42230
+21:30:57  render action returned
+21:30:57  multitrack wet step multitrack wet
+21:31:02  multitrack wet done 
+21:31:02  click track 1  muted=0.0  items in range=1  inserted=true
+21:31:02  multitrack dry note click range 0.000000 - 66.483083 (cue 0.000000 - 66.483083)
+21:31:07  about to run render action 42230
+21:31:13  render action returned
+21:31:13  multitrack dry step click
+21:33:17  === run 2026-11-24  jobs=multitrack_dry,multitrack_wet  project=1m01-1m02 - v01.01.06  cue=0.000-139.000
+21:33:17  multitrack dry start 15 tracks
+21:33:17  multitrack dry note master ref range 0.000000 - 139.000000 (cue 0.000000 - 139.000000)
+21:33:22  about to run render action 42230
+21:33:44  render action returned
+21:33:44  multitrack dry step master ref
+21:33:49  multitrack dry step tempo map
+21:33:49  multitrack dry note multitrack dry range 0.000000 - 139.000000 (cue 0.000000 - 139.000000)
+21:33:54  about to run render action 42230
+21:35:01  render action returned
+21:35:01  multitrack dry step multitrack dry
+21:35:06  multitrack dry note fx return range 0.000000 - 139.000000 (cue 0.000000 - 139.000000)
+21:35:11  about to run render action 42230
+21:35:41  render action returned
+21:35:41  multitrack dry step fx return
+21:35:46  multitrack dry done 
+21:35:46  multitrack wet start 15 tracks
+21:35:46  multitrack wet note multitrack wet range 0.000000 - 139.000000 (cue 0.000000 - 139.000000)
+21:35:51  about to run render action 42230
+21:38:28  render action returned
+21:38:28  multitrack wet step multitrack wet
+21:38:33  multitrack wet done 
+21:38:33  click track 1  muted=0.0  items in range=1  inserted=true
+21:38:33  multitrack dry note click range 0.000000 - 139.000000 (cue 0.000000 - 139.000000)
+21:38:38  about to run render action 42230
+21:38:51  render action returned
+21:38:51  multitrack dry step click
+21:48:37  === run 2026-11-24  jobs=multitrack_dry,multitrack_wet  project=1m06 - v01.01.02  cue=0.000-143.101
+21:48:37  multitrack dry start 9 tracks
+21:48:37  multitrack dry note master ref range 0.000000 - 143.101292 (cue 0.000000 - 143.101292)
+21:48:42  about to run render action 42230
+21:49:03  render action returned
+21:49:03  multitrack dry step master ref
+21:49:08  multitrack dry step tempo map
+21:49:08  multitrack dry note multitrack dry range 0.000000 - 143.101292 (cue 0.000000 - 143.101292)
+21:49:13  about to run render action 42230
+21:50:10  render action returned
+21:50:10  multitrack dry step multitrack dry
+21:50:15  multitrack dry note fx return range 0.000000 - 143.101292 (cue 0.000000 - 143.101292)
+21:50:20  about to run render action 42230
+21:50:40  render action returned
+21:50:40  multitrack dry step fx return
+21:50:45  multitrack dry done 
+21:50:45  multitrack wet start 9 tracks
+21:50:45  multitrack wet note multitrack wet range 0.000000 - 143.101292 (cue 0.000000 - 143.101292)
+21:50:50  about to run render action 42230
+21:52:14  render action returned
+21:52:14  multitrack wet step multitrack wet
+21:52:19  multitrack wet done 
+21:52:19  click track 1  muted=0.0  items in range=1  inserted=true
+21:52:19  multitrack dry note click range 0.000000 - 143.101292 (cue 0.000000 - 143.101292)
+21:52:24  about to run render action 42230
+21:52:36  render action returned
+21:52:36  multitrack dry step click
