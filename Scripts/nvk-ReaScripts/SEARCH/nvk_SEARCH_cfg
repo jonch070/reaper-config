@@ -6,7 +6,7 @@ return {
 			x = 212.0,
 			y = 71.0
 		},
-		SEARCH = "export picker",
+		SEARCH = "pref pos",
 		active_filter_disables_filter_keys = false,
 		always_add_to_track = true,
 		always_on_top = false,
@@ -62,7 +62,7 @@ return {
 		keys = {
 			
 		},
-		last_cursor_context = 1,
+		last_cursor_context = 0,
 		load_last_search_on_startup = false,
 		new_instance_close = true,
 		open_projects_in_new_tab = false,
@@ -82,6 +82,58 @@ return {
 		},
 		project_directories_sort = "Name",
 		recent = {
+			{
+				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
+				type = "action"
+			},
+			{
+				id = "VST:ReaSurroundPan (Cockos)",
+				type = "vst"
+			},
+			{
+				id = "Script: HeDaScripts Manager.lua (RS0eb437b72166d636edbfe514962ca0f49db7fa9a) (Main)",
+				type = "action"
+			},
+			{
+				id = "Script: HeDa_Track Inspector 2 VIP Add-ons Manager.lua (RS95feeeea35c4140ef1c4f2b7504358872cb24ff2) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Remove all stretch markers (41844) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Snap stretch markers to grid (41846) (Main)",
+				type = "action"
+			},
+			{
+				id = "Edit: Dynamic split items... (40760) (Main)",
+				type = "action"
+			},
+			{
+				id = "Track: Render tracks to stereo stem tracks (and mute originals) (40788) (Main)",
+				type = "action"
+			},
+			{
+				id = "JS:Pink Noise Generator",
+				type = "jsfx"
+			},
+			{
+				id = "Script: sbp_ReaWhoosh.lua (RS25c12552244727e4302f76432c944627214aa90e) (Main)",
+				type = "action"
+			},
+			{
+				id = "Item: Reverse items to new take (40270) (Main)",
+				type = "action"
+			},
+			{
+				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
+				type = "action"
+			},
+			{
+				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
+				type = "action"
+			},
 			{
 				id = "Script: JK - Export Cue (picker).lua (RSeab5315c6d344b275cde7315f500c26a336df79f) (Main)",
 				type = "action"
@@ -175,14 +227,6 @@ return {
 				type = "action"
 			},
 			{
-				id = "Xenakios/SWS: Pan selected tracks randomly (XENAKIOS_PANTRACKSRANDOM) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/AW: Set selected tracks pan mode to stereo pan (SWS_AWPANSTEREOPAN) (Main)",
-				type = "action"
-			},
-			{
 				id = "Script: Move_Selected_Items_To_Individual_Tracks.lua (RSdbda24a13e8972c0a71d7cbb9e804d6f151780f8) (Main)",
 				type = "action"
 			},
@@ -197,10 +241,6 @@ return {
 			{
 				id = "AU:Spectral Blurring (Michael Norris)",
 				type = "au"
-			},
-			{
-				id = "Item: Move to media source preferred position (BWF timecode start offset) (40299) (Main)",
-				type = "action"
 			},
 			{
 				id = "Script: rewgs - toggle mark track to record.lua (RS2b7b123f11de379fa9b6284b7f4cab07b733b407) (Main)",
@@ -440,46 +480,6 @@ return {
 			},
 			{
 				id = "Item: Open item copies in secondary external editor (40203) (Main)",
-				type = "action"
-			},
-			{
-				id = "File: Export project MIDI... (40849) (Main)",
-				type = "action"
-			},
-			{
-				id = "Track: Set all FX offline for selected tracks (40535) (Main)",
-				type = "action"
-			},
-			{
-				id = "SWS/BR: Copy take media source file path of selected items to clipboard (BR_TSOURCE_PATH_TO_CLIPBOARD) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Item - Glue items separately (preserve stuff).lua (RS64c12754a7ae464866adba419bd12d627e3b2915) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: LKC - RenderBlocks - Pack clusters and Enter name.lua (RSfbceb6c12902c0f7fde704da17bf0a24a356cf52) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: LKC - RenderBlocks - Render.lua (RSf32da68248e18f77d376da6d25c8e4b1ecb00efa) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: Item - Glue items separately, ignoring time selection (preserve stuff).lua (RS984f432a1f31a0767bda1278d9f00d2890a5f7f9) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: LKC - RenderBlocks - Enter name.lua (RSb389eebe0c433b827f5c873478a9373a539d43b1) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: LKC - RenderBlocks - Pack or Unpack.lua (RSb835639b40cd391b1ec3664c2ecc255a79b6c0a9) (Main)",
-				type = "action"
-			},
-			{
-				id = "Script: LKC - RenderBlocks - Settings.lua (RS2d95a289c8495b7081d24aa3fe4610f3e6f15a12) (Main)",
 				type = "action"
 			}
 		},
